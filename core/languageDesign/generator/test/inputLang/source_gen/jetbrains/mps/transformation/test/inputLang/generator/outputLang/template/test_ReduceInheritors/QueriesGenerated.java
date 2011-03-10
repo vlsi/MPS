@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1206461877475(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -36,9 +37,9 @@ public class QueriesGenerated {
   }
 
   public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:b7e03598-55b4-440a-91da-cf1721f37e9e.GlobalParameters.list")) == null ?
+    return (((Integer) _context.getGenerationParameter("r:408996b0-ebf2-476e-82c9-2fe87b3109af.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:b7e03598-55b4-440a-91da-cf1721f37e9e.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:408996b0-ebf2-476e-82c9-2fe87b3109af.GlobalParameters.list")) < 2
     );
   }
 
@@ -48,7 +49,7 @@ public class QueriesGenerated {
     return inode;
   }
 
-  public static TemplateModel getDescriptor() {
-    return new TemplateModelImpl();
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }

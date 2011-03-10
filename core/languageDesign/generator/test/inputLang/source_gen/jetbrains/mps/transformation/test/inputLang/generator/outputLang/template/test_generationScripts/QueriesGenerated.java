@@ -15,6 +15,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1202245164352(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -74,7 +75,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(outputRoot, "name", "created by post-processing script");
   }
 
-  public static TemplateModel getDescriptor() {
-    return new TemplateModelImpl();
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }

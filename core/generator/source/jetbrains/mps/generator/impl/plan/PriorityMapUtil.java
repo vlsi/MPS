@@ -17,8 +17,8 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -53,15 +53,15 @@ class PriorityMapUtil {
     return result;
   }
 
-  public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<SNode, Map<SNode, PriorityData>> priorityMap, Set<MappingPriorityRule> conflictingRules) {
+  public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, Set<MappingPriorityRule> conflictingRules) {
     for (CoherentSetData coherentSetData : coherentMappings) {
-      Set<SNode> coherentMappingSet = coherentSetData.myMappings;
+      Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       // collect
-      Map<SNode, PriorityData> joinedLocks = new HashMap<SNode, PriorityData>();
-      for (SNode coherentMapping : coherentMappingSet) {
-        Map<SNode, PriorityData> locks = priorityMap.get(coherentMapping);
-        for (Map.Entry<SNode, PriorityData> entry : locks.entrySet()) {
-          SNode lockMapping = entry.getKey();
+      Map<TemplateMappingConfiguration, PriorityData> joinedLocks = new HashMap<TemplateMappingConfiguration, PriorityData>();
+      for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
+        Map<TemplateMappingConfiguration, PriorityData> locks = priorityMap.get(coherentMapping);
+        for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : locks.entrySet()) {
+          TemplateMappingConfiguration lockMapping = entry.getKey();
           PriorityData priorityData = entry.getValue();
           // exclude coherent mappings themself
           if (coherentMappingSet.contains(lockMapping)) {
@@ -83,10 +83,10 @@ class PriorityMapUtil {
       }
 
       // update
-      for (SNode coherentMapping : coherentMappingSet) {
+      for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
         // make deep copy
-        Map<SNode, PriorityData> joinedLocks_1 = new HashMap<SNode, PriorityData>();
-        for (Map.Entry<SNode, PriorityData> entry : joinedLocks.entrySet()) {
+        Map<TemplateMappingConfiguration, PriorityData> joinedLocks_1 = new HashMap<TemplateMappingConfiguration, PriorityData>();
+        for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : joinedLocks.entrySet()) {
           joinedLocks_1.put(entry.getKey(), new PriorityData(entry.getValue()));
         }
         priorityMap.put(coherentMapping, joinedLocks_1);
@@ -97,25 +97,25 @@ class PriorityMapUtil {
   /**
    * mappings locked by any of 'coherent mapping' should be locked by all 'coherent mappings'
    */
-  public static void makeLockedByAllCoherentIfLockedByOne(List<CoherentSetData> coherentMappings, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
+  public static void makeLockedByAllCoherentIfLockedByOne(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
     for (CoherentSetData coherentSetData : coherentMappings) {
-      Set<SNode> coherentMappingSet = coherentSetData.myMappings;
-      for (SNode mapping : priorityMap.keySet()) {
+      Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
+      for (TemplateMappingConfiguration mapping : priorityMap.keySet()) {
         if (coherentMappingSet.contains(mapping)) continue;
-        Map<SNode, PriorityData> locks = priorityMap.get(mapping);
+        Map<TemplateMappingConfiguration, PriorityData> locks = priorityMap.get(mapping);
         if (locks.isEmpty()) continue;
-        List<SNode> lockingCoherentMappings = CollectionUtil.intersect(coherentMappingSet, locks.keySet());
+        List<TemplateMappingConfiguration> lockingCoherentMappings = CollectionUtil.intersect(coherentMappingSet, locks.keySet());
         if (lockingCoherentMappings.isEmpty()) continue;
         // if any one locks strictly, then all should lock strictly
         boolean isStrict = false;
-        for (SNode mapping1 : lockingCoherentMappings) {
+        for (TemplateMappingConfiguration mapping1 : lockingCoherentMappings) {
           if (locks.get(mapping1).isStrict()) {
             isStrict = true;
             break;
           }
         }
         // update
-        for (SNode coherentMapping : coherentMappingSet) {
+        for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
           PriorityData priorityData = locks.get(coherentMapping);
           if (priorityData != null) {
             priorityData.myCauseRules.addAll(coherentSetData.myCauseRules);
@@ -127,10 +127,10 @@ class PriorityMapUtil {
     }
   }
 
-  static List<SNode> getWeakLockMappingsForLockedMapping(SNode mapping, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    List<SNode> result = new ArrayList<SNode>();
-    Map<SNode, PriorityData> grtPriMappings = priorityMap.get(mapping);
-    for (Map.Entry<SNode, PriorityData> entry : grtPriMappings.entrySet()) {
+  static List<TemplateMappingConfiguration> getWeakLockMappingsForLockedMapping(TemplateMappingConfiguration mapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
+    Map<TemplateMappingConfiguration, PriorityData> grtPriMappings = priorityMap.get(mapping);
+    for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : grtPriMappings.entrySet()) {
       if (!entry.getValue().isStrict()) {
         result.add(entry.getKey());
       }
@@ -138,10 +138,10 @@ class PriorityMapUtil {
     return result;
   }
 
-  static List<SNode> getStrictLockedMappingsForLockMapping(SNode lockMapping, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (Map.Entry<SNode, Map<SNode, PriorityData>> entry : priorityMap.entrySet()) {
-      Map<SNode, PriorityData> locks = entry.getValue();
+  static List<TemplateMappingConfiguration> getStrictLockedMappingsForLockMapping(TemplateMappingConfiguration lockMapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
+    for (Map.Entry<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> entry : priorityMap.entrySet()) {
+      Map<TemplateMappingConfiguration, PriorityData> locks = entry.getValue();
       PriorityData priorityData = locks.get(lockMapping);
       if (priorityData != null && priorityData.isStrict()) {
         result.add(entry.getKey());
@@ -150,8 +150,8 @@ class PriorityMapUtil {
     return result;
   }
 
-  static boolean addLock(SNode lockedMapping, SNode lockMapping, PriorityData priorityDataToApply, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    Map<SNode, PriorityData> locks = priorityMap.get(lockedMapping);
+  static boolean addLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration lockMapping, PriorityData priorityDataToApply, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    Map<TemplateMappingConfiguration, PriorityData> locks = priorityMap.get(lockedMapping);
     PriorityData priorityData = locks.get(lockMapping);
     if (priorityData != null) {
       priorityData.update(priorityDataToApply);
@@ -161,9 +161,9 @@ class PriorityMapUtil {
     return priorityData == null; // true - new lock added
   }
 
-  static List<SNode> getLockedMappingsForLockMapping(SNode lockMapping, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (Map.Entry<SNode, Map<SNode, PriorityData>> entry : priorityMap.entrySet()) {
+  static List<TemplateMappingConfiguration> getLockedMappingsForLockMapping(TemplateMappingConfiguration lockMapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
+    for (Map.Entry<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> entry : priorityMap.entrySet()) {
       if (entry.getValue().containsKey(lockMapping)) {
         result.add(entry.getKey());
       }
@@ -171,8 +171,8 @@ class PriorityMapUtil {
     return result;
   }
 
-  static boolean isLockingMapping(SNode mapping, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    for (Map<SNode, PriorityData> locks : priorityMap.values()) {
+  static boolean isLockingMapping(TemplateMappingConfiguration mapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    for (Map<TemplateMappingConfiguration, PriorityData> locks : priorityMap.values()) {
       if (locks.containsKey(mapping)) {
         return true;
       }
@@ -187,13 +187,13 @@ class PriorityMapUtil {
    * with
    * lockedMapping -> ..., all locks from weak-lockMapping ,...
    */
-  static void replaceWeakLock(SNode lockedMapping, SNode weakLockMapping, Map<SNode, Map<SNode, PriorityData>> priorityMap) {
-    Map<SNode, PriorityData> locksToUpdate = priorityMap.get(lockedMapping);
+  static void replaceWeakLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration weakLockMapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
+    Map<TemplateMappingConfiguration, PriorityData> locksToUpdate = priorityMap.get(lockedMapping);
     PriorityData dataToKeep = locksToUpdate.get(weakLockMapping);
     locksToUpdate.remove(weakLockMapping);
 
-    Map<SNode, PriorityData> locksToAdd = priorityMap.get(weakLockMapping);
-    for (SNode lockMappingToAdd : locksToAdd.keySet()) {
+    Map<TemplateMappingConfiguration, PriorityData> locksToAdd = priorityMap.get(weakLockMapping);
+    for (TemplateMappingConfiguration lockMappingToAdd : locksToAdd.keySet()) {
       PriorityData priorityData = locksToUpdate.get(lockMappingToAdd);
       if (priorityData != null) {
         priorityData.update(locksToAdd.get(lockMappingToAdd));

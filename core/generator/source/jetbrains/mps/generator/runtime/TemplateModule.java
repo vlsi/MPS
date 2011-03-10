@@ -15,25 +15,22 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
- * Evgeny Gryaznov, Nov 29, 2010
+ * evgeny, 3/10/11
  */
-public interface TemplateModel {
+public interface TemplateModule {
 
-  String getLongName();
+  ModuleReference getReference();
 
-  SModelReference getSModelReference();
+  List<MappingPriorityRule> getPriorities();
 
-  Collection<TemplateSwitchMapping> getSwitches();
+  Collection<TemplateModel> getModels();
 
-  Collection<TemplateMappingConfiguration> getConfigurations();
-
-  TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments);
-
-  TemplateModule getModule();
+  String getAlias();
 }

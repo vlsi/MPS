@@ -93,6 +93,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return preScripts;
   }
 
+  public boolean isTopPriority() {
+    return false;
+  }
+
   public class ReductionRule0 implements TemplateReductionRule {
     public ReductionRule0() {
     }

@@ -10,6 +10,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
@@ -21,10 +22,12 @@ public class TemplateModelImpl implements TemplateModel {
 
   private final Collection<TemplateMappingConfiguration> mappings;
   private final Collection<TemplateSwitchMapping> switches;
+  private final TemplateModule templateModule;
 
-  public TemplateModelImpl() {
+  public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchcustomStatement());
+    templateModule = module;
   }
 
   public String getLongName() {
@@ -101,5 +104,9 @@ public class TemplateModelImpl implements TemplateModel {
       }
     }
     return null;
+  }
+
+  public TemplateModule getModule() {
+    return templateModule;
   }
 }
