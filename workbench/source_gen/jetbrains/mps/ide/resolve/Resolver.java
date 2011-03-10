@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashSet;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.util.Iterator;
@@ -196,12 +195,12 @@ public class Resolver {
     frontier.add(editorCell);
     while (!(frontier.isEmpty())) {
       for (EditorCell cell : frontier) {
-        LinkDeclaration userObject = cell.getLinkDeclaration();
         if (cell.getSNode() == sourceNode) {
-          if (BaseAdapter.fromAdapter(userObject) == refLinkDeclaration) {
+          SNode userObject = BaseAdapter.fromAdapter(cell.getLinkDeclaration());
+          if (userObject == refLinkDeclaration) {
             return cell;
           }
-          if (childLinkDeclaration != null && BaseAdapter.fromAdapter(userObject) == childLinkDeclaration) {
+          if (childLinkDeclaration != null && userObject == childLinkDeclaration) {
             if (foundCell == null) {
               foundCell = cell;
             }
