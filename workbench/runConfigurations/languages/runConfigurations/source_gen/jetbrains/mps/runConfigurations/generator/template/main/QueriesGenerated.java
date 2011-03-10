@@ -1318,7 +1318,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:37b431b5-5df4-4ede-90b5-64de64810162(jetbrains.mps.runConfigurations.runtime)"), SNodeId.fromString("4087584177122787107")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("r:37b431b5-5df4-4ede-90b5-64de64810162(jetbrains.mps.runConfigurations.runtime)"), SNodeId.fromString("4087584177122787159")));
           {
             quotedNode_5 = (SNode) parameter_13;
             SNode quotedNode1_10;
