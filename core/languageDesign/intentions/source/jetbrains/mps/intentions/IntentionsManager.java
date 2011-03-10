@@ -24,15 +24,10 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
-import jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration;
-import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
-import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
-import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -67,10 +62,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
   }
 
-  private Map<Intention, SNode> myNodesByIntentions = new HashMap<Intention, SNode>();
+  private Map<Intention, SNodePointer> myNodesByIntentions = new HashMap<Intention, SNodePointer>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
   private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
-  private HashMap<Class, Language> myIntentionsLanguages = new HashMap<Class, Language>();
+  private HashMap<Class, ModuleReference> myIntentionsLanguages = new HashMap<Class, ModuleReference>();
   private boolean myCachesAreValid = false;
   private boolean myLoaded = false;
 
@@ -254,19 +249,22 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------node info by intention-----------------
 
+  @Nullable
   public Language getIntentionLanguage(Intention intention) {
     checkLoaded();
-    return myIntentionsLanguages.get(intention.getClass());
+    ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
+    if (ref==null) return null;
+    return MPSModuleRepository.getInstance().getLanguage(ref);
   }
 
   @Nullable
   public SNode getNodeByIntention(Intention intention) {
     checkLoaded();
-    SNode sNode = myNodesByIntentions.get(intention);
-    if (sNode == null) {
-      return intention.getNodeByIntention();
-    }
-    return sNode;
+    SNodePointer pointer = myNodesByIntentions.get(intention);
+    if (pointer==null) return intention.getNodeByIntention();
+    SNode node = pointer.getNode();
+    if (node == null) return intention.getNodeByIntention();
+    return node;
   }
 
   @NotNull
@@ -277,7 +275,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------reloading-----------------
 
-  private void checkLoaded(){
+  public void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodePointer node) {
+    Set<Intention> intentions = myIntentions.get(intention.getConcept());
+    if (intentions == null) {
+      intentions = new HashSet<Intention>();
+      myIntentions.put(InternUtil.intern(intention.getConcept()), intentions);
+    }
+    intentions.add(intention);
+
+    myNodesByIntentions.put(intention, node);
+    myIntentionsLanguages.put(intention.getClass(), lang);
+  }
+
+  private void checkLoaded() {
     if (myLoaded) return;
     myLoaded = true;
     load();
@@ -287,8 +297,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-          addIntentionsFromLanguage(language);
-          addMigrationsFromLanguage(language);
+          String descriptorClassName = "IntentionsDescriptor";
+          initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, descriptorClassName);
+          initIntentionsDescriptor(language, LanguageAspect.SCRIPTS, descriptorClassName);
         }
       }
     });
@@ -306,68 +317,18 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  private void addMigrationsFromLanguage(Language language) {
-    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
-    if (scriptsModel == null) return;
-
-    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-
-    Map<BaseMigrationScript, MigrationScript> scripts = new com.intellij.util.containers.HashMap<BaseMigrationScript, MigrationScript>();
-    for (MigrationScript migrationScript : migrationScripts) {
-      // IOperationContext operationContext = new ModuleContext(language, ...);
-      //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
-      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null/*TODO???*/, migrationScript.getNode());
-      if (script == null) continue;
-      scripts.put(script, migrationScript);
-    }
-
-    for (BaseMigrationScript script : scripts.keySet()) {
-      MigrationScript migrationScript = scripts.get(script);
-      for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        if (refactoring.isShowAsIntention()) {
-          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
-          addIntention(intention);
-          myNodesByIntentions.put(intention, migrationScript.getNode());
-        }
+  private void initIntentionsDescriptor(Language language, LanguageAspect aspect, String classShortName) {
+    try {
+      Class<?> cls = language.getClass(language.getModuleFqName() + "." + aspect.getName() + "." + classShortName);
+      if (cls != null) {
+        BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
+        desc.init();
       }
+    } catch (Throwable throwable) {
+      LOG.error("Error while initializing intentions descriptor for language " + language.getModuleFqName(), throwable);
     }
   }
 
-  private void addIntentionsFromLanguage(Language l) {
-    SModelDescriptor intentionsModelDescriptor = LanguageAspect.INTENTIONS.get(l);
-    if (intentionsModelDescriptor != null) {
-      SModel smodel = intentionsModelDescriptor.getSModel();
-      for (BaseIntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(BaseIntentionDeclaration.class)) {
-/*
- Warning:
- BaseIntentionDeclaration_Behavior class will be loaded using platform classloader here.
- As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- */
-        String className = smodel.getSModelReference().getLongName() + "." + BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(intentionDeclaration.getNode());
-        try {
-          Class<?> cls = l.getClass(className);
-
-          if (cls != null) {
-            Intention intention = (Intention) cls.newInstance();
-            addIntention(intention);
-            myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
-            myIntentionsLanguages.put(cls, l);
-          }
-        } catch (Throwable throwable) {
-          LOG.error(throwable, intentionDeclaration);
-        }
-      }
-    }
-  }
-
-  private void addIntention(Intention intention) {
-    Set<Intention> intentions = myIntentions.get(intention.getConcept());
-    if (intentions == null) {
-      intentions = new HashSet<Intention>();
-    }
-    intentions.add((Intention) intention);
-    myIntentions.put(InternUtil.intern(intention.getConcept()), intentions);
-  }
 
   //-------------queryDescriptor-----------------
 
