@@ -284,6 +284,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
+    types = eliminateSubOrSuperTypes(types, true);
     return LatticeUtil.meetNodes(new HashSet<SNode>(types));
   }
 
