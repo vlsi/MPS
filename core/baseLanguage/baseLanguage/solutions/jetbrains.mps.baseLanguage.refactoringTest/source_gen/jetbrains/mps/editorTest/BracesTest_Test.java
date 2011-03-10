@@ -26,7 +26,7 @@ public class BracesTest_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("8497577741385040369", "3167392541572926816");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
 
     }
   }

@@ -30,7 +30,7 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
       editorComponent.getNodeSubstituteChooser().setVisible(false);
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
     }
   }
 }

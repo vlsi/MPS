@@ -13,8 +13,6 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class DefaultCellInfoTest_Test extends BaseTransformationTest {
@@ -38,7 +36,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
         }
       });
       inspector.getSelectionManager().setSelection(editorCell);
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

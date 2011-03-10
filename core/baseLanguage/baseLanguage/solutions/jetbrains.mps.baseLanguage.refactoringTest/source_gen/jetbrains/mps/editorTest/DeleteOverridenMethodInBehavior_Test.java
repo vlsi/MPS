@@ -25,7 +25,7 @@ public class DeleteOverridenMethodInBehavior_Test extends BaseTransformationTest
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1232554649248", "1232555746044");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
       for (int i = 0; i < 5; i++) {
         BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       }

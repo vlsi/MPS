@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class SubstituteSmallPatternInLeft_Test extends BaseTransformationTest {
@@ -26,7 +24,7 @@ public class SubstituteSmallPatternInLeft_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("1574561129028803924", "1574561129028803928");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "t");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.typeString(editorComponent, "--");
     }
   }

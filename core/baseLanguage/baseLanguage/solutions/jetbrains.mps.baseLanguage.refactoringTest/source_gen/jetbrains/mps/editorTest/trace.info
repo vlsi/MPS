@@ -105,12 +105,11 @@
   <unitInfo fileName="AssignmentExpression_Test.java" startLine="22" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.AssignmentExpression_Test$TestBody" />
   <unitInfo fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptUnset_Test$TestBody" />
   <unitInfo fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptSet_Test$TestBody" />
+  <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test$TestBody" />
   <unitInfo fileName="SimpleRedoTest_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SimpleRedoTest_Test$TestBody" />
   <unitInfo fileName="SurroundExpressionWithParenthesis_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test$TestBody" />
   <unitInfo fileName="LT_DotExpression_with_Parenthesis_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_Parenthesis_Test$TestBody" />
   <unitInfo fileName="LT_DotExpression_with_Not_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test$TestBody" />
-  <unitInfo fileName="TestAutoresolve_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test$TestBody" />
-  <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test$TestBody" />
   <unitInfo fileName="IntelligentInputWithSubstitutionChooser_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.IntelligentInputWithSubstitutionChooser_Test$TestBody" />
   <unitInfo fileName="SurrondByParensesis_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondByParensesis_Test$TestBody" />
   <unitInfo fileName="AssignLeftTransform_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.AssignLeftTransform_Test$TestBody" />
@@ -119,17 +118,18 @@
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test$TestBody" />
   <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="20" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test$TestBody" />
-  <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test$TestBody" />
-  <unitInfo fileName="CompexTransformTest_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test$TestBody" />
+  <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="20" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test$TestBody" />
+  <unitInfo fileName="TestAutoresolve_Test.java" startLine="20" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test$TestBody" />
   <unitInfo fileName="TryingToLeftTransformNewExpression_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test$TestBody" />
   <unitInfo fileName="Post_ThisRemovingClassConcept_Test.java" startLine="22" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisRemovingClassConcept_Test$TestBody" />
+  <unitInfo fileName="IfAndElseTest_Test.java" startLine="20" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.IfAndElseTest_Test$TestBody" />
   <unitInfo fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="22" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWhithBackSpace_Test$TestBody" />
-  <unitInfo fileName="IfAndElseTest_Test.java" startLine="22" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.IfAndElseTest_Test$TestBody" />
+  <unitInfo fileName="CompexTransformTest_Test.java" startLine="22" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test$TestBody" />
   <unitInfo fileName="MovingNode_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MovingNode_Test$TestBody" />
   <unitInfo fileName="PriorityCheckTest_Test.java" startLine="28" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody" />
   <unitInfo fileName="MoveNodeRange_Test.java" startLine="25" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test$TestBody" />
   <unitInfo fileName="SmartReferenseUpdateOnChange_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
-  <unitInfo fileName="DefaultCellInfoTest_Test.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
+  <unitInfo fileName="DefaultCellInfoTest_Test.java" startLine="25" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
   <unitInfo fileName="NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test" />
   <unitInfo fileName="RT_ClassTypeVariableDeclaration_with_ampersand_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVariableDeclaration_with_ampersand_Test" />
   <unitInfo fileName="RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test" />
@@ -235,12 +235,11 @@
   <unitInfo fileName="AssignmentExpression_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.AssignmentExpression_Test" />
   <unitInfo fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptUnset_Test" />
   <unitInfo fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptSet_Test" />
+  <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test" />
   <unitInfo fileName="SimpleRedoTest_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SimpleRedoTest_Test" />
   <unitInfo fileName="SurroundExpressionWithParenthesis_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test" />
   <unitInfo fileName="LT_DotExpression_with_Parenthesis_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_Parenthesis_Test" />
   <unitInfo fileName="LT_DotExpression_with_Not_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test" />
-  <unitInfo fileName="TestAutoresolve_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test" />
-  <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test" />
   <unitInfo fileName="IntelligentInputWithSubstitutionChooser_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.IntelligentInputWithSubstitutionChooser_Test" />
   <unitInfo fileName="SurrondByParensesis_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondByParensesis_Test" />
   <unitInfo fileName="AssignLeftTransform_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.AssignLeftTransform_Test" />
@@ -249,21 +248,22 @@
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test" />
   <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test" />
-  <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test" />
-  <unitInfo fileName="CompexTransformTest_Test.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test" />
+  <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test" />
+  <unitInfo fileName="TestAutoresolve_Test.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test" />
   <unitInfo fileName="TryingToLeftTransformNewExpression_Test.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test" />
-  <unitInfo fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="22" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test$TestBody" />
+  <unitInfo fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="20" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test$TestBody" />
   <unitInfo fileName="Post_ThisRemovingClassConcept_Test.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisRemovingClassConcept_Test" />
+  <unitInfo fileName="IfAndElseTest_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.IfAndElseTest_Test" />
   <unitInfo fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.SideDeleteAtEndWhithBackSpace_Test" />
-  <unitInfo fileName="IfAndElseTest_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.IfAndElseTest_Test" />
+  <unitInfo fileName="CompexTransformTest_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test" />
   <unitInfo fileName="MovingNode_Test.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.MovingNode_Test" />
+  <unitInfo fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="20" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test$TestBody" />
   <unitInfo fileName="PriorityCheckTest_Test.java" startLine="20" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTest_Test" />
-  <unitInfo fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="22" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test$TestBody" />
   <unitInfo fileName="MoveNodeRange_Test.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test" />
   <unitInfo fileName="SmartReferenseUpdateOnChange_Test.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
-  <unitInfo fileName="DefaultCellInfoTest_Test.java" startLine="19" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
-  <unitInfo fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test" />
-  <unitInfo fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test" />
+  <unitInfo fileName="DefaultCellInfoTest_Test.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
+  <unitInfo fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test" />
+  <unitInfo fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test" />
   <unitInfo fileName="SurrondWithParenthesisTest_Test.java" startLine="37" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test$TestBody" />
   <unitInfo fileName="SurrondWithParenthesisTest_Test.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondWithParenthesisTest_Test" />
   <root nodeId="1086097794003843976">
@@ -311,13 +311,13 @@
     <nodeInfo nodeId="1230058635880" fileName="ReturnNullTest_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1230058635881">
-    <nodeInfo nodeId="1230058635895" fileName="IfAndElseTest_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015297885" fileName="IfAndElseTest_Test.java" startLine="28" startPosition="63" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015309615" fileName="IfAndElseTest_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015608243" fileName="IfAndElseTest_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015840233" fileName="IfAndElseTest_Test.java" startLine="31" startPosition="69" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015840236" fileName="IfAndElseTest_Test.java" startLine="32" startPosition="117" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236015848046" fileName="IfAndElseTest_Test.java" startLine="33" startPosition="117" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230058635895" fileName="IfAndElseTest_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445089" fileName="IfAndElseTest_Test.java" startLine="26" startPosition="63" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445093" fileName="IfAndElseTest_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236015608243" fileName="IfAndElseTest_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445096" fileName="IfAndElseTest_Test.java" startLine="29" startPosition="69" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445098" fileName="IfAndElseTest_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236015848046" fileName="IfAndElseTest_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1230058635925">
     <nodeInfo nodeId="1230058635941" fileName="TwoPlusTwo_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -369,11 +369,11 @@
     <nodeInfo nodeId="1232458365771" fileName="DeleteFirstChild_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1232554293720">
-    <nodeInfo nodeId="1232557553681" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445085" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1232555834148" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="29" startPosition="35" endLine="30" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1232555810959" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="28" startPosition="118" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1232555810959" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="28" startPosition="108" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <scopeInfo nodeId="1232555834147" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="29" startPosition="35" endLine="30" endPosition="121" />
-    <scopeInfo nodeId="1232555810959" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="28" startPosition="118" endLine="31" endPosition="7">
+    <scopeInfo nodeId="1232555810959" fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="28" startPosition="108" endLine="31" endPosition="7">
       <varInfo nodeId="1232555810960" varName="i" />
     </scopeInfo>
   </root>
@@ -398,12 +398,12 @@
   <root nodeId="1232980648942">
     <nodeInfo nodeId="1232980750082" fileName="PressingEndWithSelectedNode_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1211716198725181144" fileName="PressingEndWithSelectedNode_Test.java" startLine="28" startPosition="141" endLine="29" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1232980788138" fileName="PressingEndWithSelectedNode_Test.java" startLine="29" startPosition="102" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445179" fileName="PressingEndWithSelectedNode_Test.java" startLine="29" startPosition="102" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1233333241782">
     <nodeInfo nodeId="3167392541572726587" fileName="BracesTest_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5293915241398230541" fileName="BracesTest_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5152201093378696005" fileName="BracesTest_Test.java" startLine="29" startPosition="115" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="403806536168332657" fileName="BracesTest_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5152201093378696005" fileName="BracesTest_Test.java" startLine="29" startPosition="105" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
   </root>
   <root nodeId="1234447176815">
     <nodeInfo nodeId="1234448038163" fileName="TypeToTypeof_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -417,18 +417,20 @@
   <root nodeId="1236013278645">
     <nodeInfo nodeId="1236013432477" fileName="CompexTransformTest_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236013460770" fileName="CompexTransformTest_Test.java" startLine="28" startPosition="138" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236013504817" fileName="CompexTransformTest_Test.java" startLine="29" startPosition="58" endLine="30" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236014863171" fileName="CompexTransformTest_Test.java" startLine="30" startPosition="135" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236014863172" fileName="CompexTransformTest_Test.java" startLine="31" startPosition="58" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168414086" fileName="CompexTransformTest_Test.java" startLine="29" startPosition="58" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168414090" fileName="CompexTransformTest_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168414092" fileName="CompexTransformTest_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236014863171" fileName="CompexTransformTest_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236014863172" fileName="CompexTransformTest_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1236090523881">
     <nodeInfo nodeId="1236090613502" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236090646490" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236090661518" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236090662719" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236090664947" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237739771103" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="32" startPosition="117" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236090706857" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="33" startPosition="117" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445183" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445187" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="29" startPosition="107" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445189" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445191" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445193" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236090706857" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1238485466527">
     <nodeInfo nodeId="1238485611465" fileName="AssignLeftTransform_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -481,9 +483,9 @@
     <nodeInfo nodeId="1528454294471625138" fileName="NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1574561129028766962">
-    <nodeInfo nodeId="1574561129028805663" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1574561129028805665" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1574561129028805668" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1574561129028805663" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445196" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="26" startPosition="58" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1574561129028805668" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1622243561473092614">
     <nodeInfo nodeId="1622243561473155044" fileName="TypingIncorrectTextInFields_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -544,9 +546,9 @@
   </root>
   <root nodeId="2671731496587878888">
     <nodeInfo nodeId="3837470425931687091" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2671731496587878972" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2671731496587878974" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="29" startPosition="115" endLine="30" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2671731496587878976" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="30" startPosition="115" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445133" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445137" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="29" startPosition="105" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2671731496587878976" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="30" startPosition="105" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6399376622786816211" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3837470425931687094" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="32" startPosition="105" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
@@ -558,7 +560,7 @@
     <nodeInfo nodeId="2907839077757049951" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="29" startPosition="58" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2907839077757057119" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="30" startPosition="122" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2907839077757066996" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="31" startPosition="80" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2907839077757067009" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="32" startPosition="67" endLine="33" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445210" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="32" startPosition="67" endLine="33" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="3294454325389348340">
     <nodeInfo nodeId="3294454325389417940" fileName="IntelligentInputWithSubstitutionChooser_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -736,48 +738,48 @@
     <nodeInfo nodeId="6230565632479560208" fileName="DeleteOnSelectedNode_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6249787563914683642">
-    <nodeInfo nodeId="5423119640845749257" fileName="DefaultCellInfoTest_Test.java" startLine="32" startPosition="75" endLine="33" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5423119640845751028" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="100" endLine="34" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5423119640845780913" fileName="DefaultCellInfoTest_Test.java" startLine="36" startPosition="42" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3349229934431906055" fileName="DefaultCellInfoTest_Test.java" startLine="39" startPosition="9" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5984013018584968938" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="63" endLine="41" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="35" startPosition="96" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
-    <nodeInfo nodeId="5423119640845780895" fileName="DefaultCellInfoTest_Test.java" startLine="34" startPosition="100" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <scopeInfo nodeId="5423119640845780912" fileName="DefaultCellInfoTest_Test.java" startLine="36" startPosition="42" endLine="37" endPosition="47" />
-    <scopeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="35" startPosition="96" endLine="39" endPosition="0">
+    <nodeInfo nodeId="5423119640845749257" fileName="DefaultCellInfoTest_Test.java" startLine="30" startPosition="75" endLine="31" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5423119640845751028" fileName="DefaultCellInfoTest_Test.java" startLine="31" startPosition="100" endLine="32" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5423119640845780913" fileName="DefaultCellInfoTest_Test.java" startLine="34" startPosition="42" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3349229934431906055" fileName="DefaultCellInfoTest_Test.java" startLine="37" startPosition="9" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445080" fileName="DefaultCellInfoTest_Test.java" startLine="38" startPosition="63" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="96" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+    <nodeInfo nodeId="5423119640845780895" fileName="DefaultCellInfoTest_Test.java" startLine="32" startPosition="100" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <scopeInfo nodeId="5423119640845780912" fileName="DefaultCellInfoTest_Test.java" startLine="34" startPosition="42" endLine="35" endPosition="47" />
+    <scopeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="96" endLine="37" endPosition="0">
       <varInfo nodeId="5423119640845780910" varName="c" />
     </scopeInfo>
-    <unitInfo nodeId="5423119640845780905" fileName="DefaultCellInfoTest_Test.java" startLine="35" startPosition="71" endLine="39" endPosition="7" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
+    <unitInfo nodeId="5423119640845780905" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="71" endLine="37" endPosition="7" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
   </root>
   <root nodeId="6386137884199284577">
     <nodeInfo nodeId="6386137884199290167" fileName="LT_ListElementAccess_with_PlusOperation_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="654795966042457025">
-    <nodeInfo nodeId="3837470425931687103" fileName="Post_ThisSettingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654795966042575127" fileName="Post_ThisSettingClassConcept_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654795966042575130" fileName="Post_ThisSettingClassConcept_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654795966042575133" fileName="Post_ThisSettingClassConcept_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3837470425931687106" fileName="Post_ThisSettingClassConcept_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687103" fileName="Post_ThisSettingClassConcept_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445140" fileName="Post_ThisSettingClassConcept_Test.java" startLine="26" startPosition="64" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445145" fileName="Post_ThisSettingClassConcept_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445147" fileName="Post_ThisSettingClassConcept_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687106" fileName="Post_ThisSettingClassConcept_Test.java" startLine="29" startPosition="107" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6615429292103589151">
     <nodeInfo nodeId="6615429292103628166" fileName="RestoringSThintCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5995251966313996626" fileName="RestoringSThintCell_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6769498721974583566">
-    <nodeInfo nodeId="3837470425931687109" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638243" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638245" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638247" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638252" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638255" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="32" startPosition="117" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638258" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="33" startPosition="117" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638261" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="34" startPosition="117" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638264" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="35" startPosition="117" endLine="36" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638267" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="36" startPosition="117" endLine="37" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638270" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="37" startPosition="117" endLine="38" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638273" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="38" startPosition="117" endLine="39" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6769498721974638276" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="39" startPosition="117" endLine="40" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3837470425931687112" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="40" startPosition="117" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687109" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445150" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="26" startPosition="64" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445156" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445158" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445160" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="29" startPosition="107" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445162" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445164" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445166" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445168" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445170" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445172" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445174" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445176" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687112" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="38" startPosition="107" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6778605776625957377">
     <nodeInfo nodeId="6778605776625985226" fileName="PriorityProblem_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -822,9 +824,11 @@
     <nodeInfo nodeId="2340678293597547557" fileName="SelectionOfWrappedCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="7704251192656077259">
-    <nodeInfo nodeId="3837470425931687115" fileName="TestAutoresolve_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704251192656123749" fileName="TestAutoresolve_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3837470425931687118" fileName="TestAutoresolve_Test.java" startLine="29" startPosition="135" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687115" fileName="TestAutoresolve_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445201" fileName="TestAutoresolve_Test.java" startLine="26" startPosition="64" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445205" fileName="TestAutoresolve_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445207" fileName="TestAutoresolve_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687118" fileName="TestAutoresolve_Test.java" startLine="29" startPosition="107" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8221415467041264294">
     <nodeInfo nodeId="8221415467041374129" fileName="RT_addTypeVariable_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -833,22 +837,22 @@
     <nodeInfo nodeId="8221415467041384679" fileName="RT_toArray_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8350369201053315001">
-    <nodeInfo nodeId="3837470425931687085" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334951" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334953" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334955" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334957" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334959" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="32" startPosition="117" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334961" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="33" startPosition="117" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334963" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="34" startPosition="117" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334965" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="35" startPosition="117" endLine="36" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334967" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="36" startPosition="117" endLine="37" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334969" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="37" startPosition="117" endLine="38" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334971" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="38" startPosition="117" endLine="39" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334973" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="39" startPosition="117" endLine="40" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334978" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="40" startPosition="117" endLine="41" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8350369201053334981" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="41" startPosition="117" endLine="42" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3837470425931687088" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="42" startPosition="117" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687085" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445102" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="26" startPosition="64" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445106" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445108" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445110" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="29" startPosition="107" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445112" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445114" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445116" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445118" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445120" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445122" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445124" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445126" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445128" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="38" startPosition="107" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445130" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="39" startPosition="107" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3837470425931687088" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="40" startPosition="107" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8547191361977403062">
     <nodeInfo nodeId="8547191361977426913" fileName="ReturnFollowerByVarName_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
