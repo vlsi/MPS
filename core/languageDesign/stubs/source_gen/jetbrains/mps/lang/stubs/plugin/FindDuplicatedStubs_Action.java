@@ -74,7 +74,7 @@ public class FindDuplicatedStubs_Action extends GeneratedAction {
           System.out.print(it.key() + ":\n");
           ListSequence.fromList(it.value()).visitAll(new IVisitor<SModelReference>() {
             public void visit(SModelReference el) {
-              System.out.print("  " + el.getSModelId() + ":\n");
+              System.out.print("  " + el + ":\n");
             }
           });
         }
