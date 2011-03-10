@@ -16,6 +16,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class PropertyInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder");
 
+  public PropertyInstances_Finder() {
+  }
+
   public String getDescription() {
     return "Property Instances";
   }

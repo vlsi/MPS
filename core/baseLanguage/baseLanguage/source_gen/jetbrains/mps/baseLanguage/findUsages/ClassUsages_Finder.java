@@ -15,6 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ClassUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder");
 
+  public ClassUsages_Finder() {
+  }
+
   public String getDescription() {
     return "Class Usages";
   }

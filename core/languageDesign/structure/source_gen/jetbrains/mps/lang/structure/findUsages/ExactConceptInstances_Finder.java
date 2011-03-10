@@ -15,6 +15,9 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 public class ExactConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
 
+  public ExactConceptInstances_Finder() {
+  }
+
   public String getDescription() {
     return "Exact Concept Instances";
   }

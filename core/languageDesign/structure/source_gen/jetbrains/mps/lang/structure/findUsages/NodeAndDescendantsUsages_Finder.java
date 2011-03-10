@@ -19,6 +19,9 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
 
+  public NodeAndDescendantsUsages_Finder() {
+  }
+
   public String getDescription() {
     return "Node & Descendants Usages";
   }

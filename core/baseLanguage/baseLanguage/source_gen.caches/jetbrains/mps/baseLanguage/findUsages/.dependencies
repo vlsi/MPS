@@ -154,6 +154,30 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" file="ImplementedInterfaces_Finder.java">
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="java.util.List" />

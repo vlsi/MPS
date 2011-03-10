@@ -20,6 +20,9 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 public class LinkInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder");
 
+  public LinkInstances_Finder() {
+  }
+
   public String getDescription() {
     return "Link Instances";
   }

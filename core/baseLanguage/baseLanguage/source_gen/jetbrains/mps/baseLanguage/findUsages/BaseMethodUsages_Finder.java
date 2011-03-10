@@ -17,6 +17,9 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 public class BaseMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
 
+  public BaseMethodUsages_Finder() {
+  }
+
   public String getDescription() {
     return "Base Method Usages";
   }

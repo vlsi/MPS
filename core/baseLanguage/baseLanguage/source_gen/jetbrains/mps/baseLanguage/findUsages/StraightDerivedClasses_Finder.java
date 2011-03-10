@@ -15,6 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
 
+  public StraightDerivedClasses_Finder() {
+  }
+
   public String getDescription() {
     return "Straight Derivatives";
   }

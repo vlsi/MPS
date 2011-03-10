@@ -16,6 +16,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class OverridingMethods_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
 
+  public OverridingMethods_Finder() {
+  }
+
   public String getDescription() {
     return "Overriding Methods";
   }
