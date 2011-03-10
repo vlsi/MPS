@@ -82,7 +82,10 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             }
           }
         });
-        StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
+        for (StubPath path:pathsToAdd){
+          myAuxModule.addStubPath(path.getPath());
+        }
+        StubReloadManager.getInstance().reload();
 
         createNodesToShow(myAuxModel);
       }
