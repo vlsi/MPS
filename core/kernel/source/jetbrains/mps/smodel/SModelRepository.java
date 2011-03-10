@@ -245,12 +245,10 @@ public class SModelRepository implements ApplicationComponent {
 
         if (!myWasError){
           myWasError = true;
-          //LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
+          LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
         }
-        for (SModelDescriptor d : myModelsWithOwners.keySet()) {
-          if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
-        }
-        return null;
+
+        return getModelDescriptor(fqName);
       }
 
       return myIdToModelDescriptorMap.get(id);
@@ -439,8 +437,12 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   @Deprecated
-  public SModelDescriptor getModelDescriptor(SModelFqName sModelFqName) {
-    return getModelDescriptor(new SModelReference(sModelFqName, null));
+  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+    if (fqName == null) return null;
+    for (SModelDescriptor d : myModelsWithOwners.keySet()) {
+      if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+    }
+    return null;
   }
 
   private class ModelChangeListener extends SModelAdapter {
