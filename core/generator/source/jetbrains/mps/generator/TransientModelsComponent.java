@@ -115,7 +115,6 @@ public class TransientModelsComponent implements ProjectComponent {
         for(TransientModelsModule m : toRemove) {
           m.disposeModule();
         }
-        SModelRepository.getInstance().removeUnusedDescriptors();
       }
     });
 

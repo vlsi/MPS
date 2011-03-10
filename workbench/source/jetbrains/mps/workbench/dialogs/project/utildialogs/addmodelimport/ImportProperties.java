@@ -118,7 +118,10 @@ public class ImportProperties {
     SModelReference modelRef = getModelList().get(numberInList).getModel();
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
 
-    Set<IModule> modules = new HashSet<IModule>(model.getModules());
+    Set<IModule> modules = new HashSet<IModule>();
+    if (model.getModule() != null) {
+      modules.add(model.getModule());
+    }
     modules.retainAll(mySourceModule.getDependenciesManager().getAllDependOnModules());
     modules.add(mySourceModule);
     modules.removeAll(myTargetModule.getDependenciesManager().getAllDependOnModules());
@@ -154,20 +157,15 @@ public class ImportProperties {
       // Model was deleted.
       return null;
     }
-    Set<IModule> owners = model.getModules();
+    IModule module = model.getModule();
 
-    if (owners.contains(myTargetModule)) return null;
+    if (module == myTargetModule) return null;
     Set<IModule> deps = myTargetModule.getDependenciesManager().getAllDependOnModules();
-    for (IModule owner : owners) {
-      if (deps.contains(owner)) return null;
-    }
-    if (owners.contains(mySourceModule)) {
-      return mySourceModule.getModuleReference();
-    }
-    for (IModule owner : owners) {
-      if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(owner))
-        return owner.getModuleReference();
-    }
+    if (deps.contains(module)) return null;
+    if (module == mySourceModule) return mySourceModule.getModuleReference();
+
+    if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(module))
+      return module.getModuleReference();
 
     return null;
   }
@@ -228,7 +226,7 @@ public class ImportProperties {
           descriptor.getDependencies().add(dep);
         }
         targetModule.setModuleDescriptor(descriptor, true);
-      }  else {
+      } else {
         targetModule.invalidateCaches();
       }
     }

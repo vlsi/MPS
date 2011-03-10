@@ -75,15 +75,6 @@ public enum LanguageAspect {
   },
 
   TYPESYSTEM("typesystem") {
-    public EditableSModelDescriptor get(Language l) {
-      SModelDescriptor result = super.get(l);
-      if (result == null) {
-        //todo backward compatibility
-        result = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(l.getModuleFqName() + ".helgins"));
-      }
-      return (EditableSModelDescriptor) result;
-    }
-
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.TYPESYSTEM;
     }
@@ -204,7 +195,8 @@ public enum LanguageAspect {
   }
 
   public EditableSModelDescriptor get(Language l) {
-    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getModuleFqName() + "." + myName, null), l);
+    SModelReference ref = new SModelReference(l.getModuleFqName() + "." + myName, null);
+    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(ref);
   }
 
   public SModelReference get(ModuleReference l) {

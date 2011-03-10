@@ -22,8 +22,8 @@ import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode.AllModelsTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -258,10 +258,9 @@ public abstract class ProjectTreeFindHelper {
 
   public static IModule getModuleForModel(MPSProject project, SModelDescriptor model) {
     //language's and solution's own models (+generator models in language)
-    for (IModule owner : model.getModules()) {
-      IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
-      if (project.isProjectModule(mainModule)) return owner;
-    }
+    IModule owner = model.getModule();
+    IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
+    if (project.isProjectModule(mainModule)) return owner;
 
     //accessories models in languages
     /*
@@ -274,10 +273,7 @@ public abstract class ProjectTreeFindHelper {
     //runtime models in languages
     for (Language l : project.getProjectLanguages()) {
       for (IModule depModule : ((LanguageDepsManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
-        for (IModule owner : model.getModules()) {
-          IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
-          if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;
-        }
+        if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;
       }
     }
 
@@ -285,6 +281,6 @@ public abstract class ProjectTreeFindHelper {
 
     //runtime models in devkits
 
-    return model.getModule();
+    return owner;
   }
 }

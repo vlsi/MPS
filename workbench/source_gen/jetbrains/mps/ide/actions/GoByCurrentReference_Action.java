@@ -102,10 +102,8 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       } else {
         SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
         SModel model = node.getModel();
-        Set<IModule> modules = model.getModelDescriptor().getModules();
-        assert !(modules.isEmpty());
-        Iterator<IModule> it = modules.iterator();
-        IModule module = it.next();
+        IModule module = model.getModelDescriptor().getModule();
+        assert module!=null;
         if (module instanceof Solution && ((Solution) module).isStub()) {
           Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
           assert !(owners.isEmpty());
@@ -113,8 +111,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         } else if (module instanceof Generator) {
           module = ((Generator) module).getSourceLanguage();
         } else if (module.getDescriptorFile() == null) {
-          assert it.hasNext();
-          module = it.next();
+          assert false;
         }
         final String modulePath = module.getDescriptorFile().getAbsolutePath();
 

@@ -45,7 +45,7 @@ public class StubModelDescriptors {
         SModelDescriptor descById = SModelRepository.getInstance().getModelDescriptor(smref);
         SModelDescriptor descByFqName = SModelRepository.getInstance().getModelDescriptor(smref2);
         if (descById != null && descByFqName != null) {
-          SModelRepository.getInstance().addOwnerForDescriptor(descByFqName, loc.getModule());
+          assert descById.getModule()==loc.getModule();
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descByFqName));
         } else {
           BaseStubModelDescriptor desc = new BaseStubModelDescriptor(mrm, null, smref);

@@ -320,19 +320,19 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       // file might be not the same if user, for example, moved model file using external file manager
       ((DefaultSModelDescriptor) modelDescriptor).changeModelFile(newFile);
     }
-    modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
+    modelRepository.registerModelDescriptor(modelDescriptor, owner);
     return modelDescriptor;
   }
 
-  private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelFqName modelUID, DescriptorLoadResult d, ModelOwner owner) {
-    LOG.debug("create model uid=\"" + modelUID.getLongName() + "\" file=\"" + fileName + "\" owner: " + owner);
+  private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelFqName modelFqName, DescriptorLoadResult d, ModelOwner owner) {
+    LOG.debug("create model uid=\"" + modelFqName.getLongName() + "\" file=\"" + fileName + "\" owner: " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (modelRepository.getModelDescriptor(modelUID) != null) {
-      LOG.error("Couldn't create new model \"" + modelUID.getLongName() + "\" because such model exists");
+    if (modelRepository.getModelDescriptor(modelFqName) != null) {
+      LOG.error("Couldn't create new model \"" + modelFqName.getLongName() + "\" because such model exists");
     }
 
-    DefaultSModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getInstance().getFileByPath(fileName), new SModelReference(modelUID, SModelId.generate()), d);
+    DefaultSModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getInstance().getFileByPath(fileName), new SModelReference(modelFqName, SModelId.generate()), d);
     SModelRepository.getInstance().createNewModel(modelDescriptor, owner);
     modelDescriptor.getSModel();
     return modelDescriptor;

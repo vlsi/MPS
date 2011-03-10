@@ -99,7 +99,6 @@ public class TestModule extends AbstractModule {
 
   private void clearAll() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().removeUnusedDescriptors();
     invalidateCaches();
     myPeer = null;
     myModels.clear();
@@ -182,11 +181,6 @@ public class TestModule extends AbstractModule {
       SModel result = ModelPersistence.readModel(document, NameUtil.shortNameFromLongName(myToCopy.getLongName()), myToCopy.getStereotype());
       result.setLoading(true);
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
-    }
-
-    @Override
-    public Set<IModule> getModules() {
-      return Collections.<IModule>singleton(TestModule.this);
     }
 
     @Override

@@ -53,9 +53,7 @@ public abstract class DefaultScope extends BaseScope {
     synchronized (LOCK) {
       initialize();
 
-      for (IModule module : model.getModules()) {
-        if (myVisibleModules.contains(module)) return model;
-      }
+      if (myVisibleModules.contains(model.getModule())) return model;
 
       for (Language l : myUsedLanguages) {
         if (l.getAccessoryModels().contains(model)) return model;

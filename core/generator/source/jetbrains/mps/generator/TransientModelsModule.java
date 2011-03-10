@@ -290,11 +290,6 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     @Override
-    public Set<IModule> getModules() {
-      return Collections.<IModule>singleton(TransientModelsModule.this);
-    }
-
-    @Override
     public SModelDescriptor resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
         SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());

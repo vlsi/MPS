@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 
-public class TemporaryModelOwner extends AbstractModule implements ModelOwner {
+public class TemporaryModelOwner extends AbstractModule {
   public TemporaryModelOwner() {
     setModuleReference(ModuleReference.fromString("TemporaryModelOwner #" + System.identityHashCode(this)));
     ModelAccess.instance().runWriteAction(new Runnable() {

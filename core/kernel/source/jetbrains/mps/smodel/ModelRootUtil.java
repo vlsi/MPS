@@ -25,14 +25,13 @@ public class ModelRootUtil {
     IFile modelFile = ((EditableSModelDescriptor) model).getModelFile();
     if (modelFile == null) return result;
 
-    for (IModule module : model.getModules()) {
-      for (SModelRoot modelRoot : module.getSModelRoots()) {
-        String modelCanonicalPath = IFileUtils.getCanonicalPath(modelFile);
-        String rootCanonicalPath = FileUtil.getCanonicalPath(modelRoot.getPath());
+    IModule module = model.getModule();
+    for (SModelRoot modelRoot : module.getSModelRoots()) {
+      String modelCanonicalPath = IFileUtils.getCanonicalPath(modelFile);
+      String rootCanonicalPath = FileUtil.getCanonicalPath(modelRoot.getPath());
 
-        if (modelCanonicalPath.startsWith(rootCanonicalPath)) {
-          result.add(modelRoot);
-        }
+      if (modelCanonicalPath.startsWith(rootCanonicalPath)) {
+        result.add(modelRoot);
       }
     }
     return result;

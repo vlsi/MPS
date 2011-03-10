@@ -34,7 +34,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Set;
 
 public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
@@ -111,9 +110,9 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
       for (SModelDescriptor model : sortedModels) {
-        Set<IModule> modules = model.getModules();
-        boolean currentModule = modules.contains(myLanguage) || modules.isEmpty();
-        IModule module = currentModule ? myLanguage : model.getModule();
+        IModule m = model.getModule();
+        boolean currentModule = m == null || m == myLanguage;
+        IModule module = m == null ? myLanguage : m;
         if (!currentModule) {
           accessories.add(new SModelReferenceTreeNode(model, new ModuleContext(module, myProject)));
         } else {

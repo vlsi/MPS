@@ -175,7 +175,7 @@ public class OptimizeImportsHelper {
     for (SModelReference mr : result.myUsedModels) {
       SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
       if (md == null) continue;
-      if (md.getModules().contains(module)) {
+      if (md.getModule() == module) {
         used = true;
         break;
       }

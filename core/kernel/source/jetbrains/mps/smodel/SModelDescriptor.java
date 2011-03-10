@@ -71,9 +71,4 @@ public interface SModelDescriptor {
   void addModelCommandListener(@NotNull SModelCommandListener listener);
 
   void removeModelCommandListener(@NotNull SModelCommandListener listener);
-
-  //------todo get rid of
-
-  @Deprecated
-  Set<IModule> getModules();
 }
