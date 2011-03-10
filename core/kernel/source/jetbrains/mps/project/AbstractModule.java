@@ -16,6 +16,8 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
+import gnu.trove.THashMap;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependencyManager;
 import jetbrains.mps.project.dependency.ModuleDepsManager;
@@ -61,6 +63,8 @@ public abstract class AbstractModule implements IModule {
 
   private CompositeClassPathItem myCachedClassPathItem;
   private DependencyManager myDepsManager;
+
+  private Map<Pair<String,String>,ModuleReference> myStubModulesCache = new HashMap<Pair<String, String>, ModuleReference>();
 
   //----model creation
 
@@ -544,8 +548,13 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public ModuleReference getModuleFor(String packageName, String langID) {
+    Pair<String, String> id = new Pair<String, String>(packageName, langID);
+    if (myStubModulesCache.containsKey(id)) return myStubModulesCache.get(id);
+
+
     for (SModelDescriptor model : getOwnModelDescriptors()) {
       if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
+        myStubModulesCache.put(id,getModuleReference());
         return getModuleReference();
       }
     }
@@ -555,10 +564,13 @@ public abstract class AbstractModule implements IModule {
     for (IModule module : deps) {
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
         if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
+          myStubModulesCache.put(id,module.getModuleReference());
           return module.getModuleReference();
         }
       }
     }
+
+    myStubModulesCache.put(id,null);
     return null;
   }
 

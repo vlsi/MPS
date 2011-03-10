@@ -195,8 +195,8 @@ public enum LanguageAspect {
   }
 
   public EditableSModelDescriptor get(Language l) {
-    SModelReference ref = new SModelReference(l.getModuleFqName() + "." + myName, null);
-    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(ref);
+    SModelFqName fqName = new SModelFqName(l.getModuleFqName() + "." + myName, null);
+    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
   }
 
   public SModelReference get(ModuleReference l) {
