@@ -105,13 +105,13 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     if(myFilesDir != null) {
       for (IFile f : myFilesDir.list()) {
         try {
+          if (f.isDirectory() || f.getName().equals(TraceInfoCache.TRACE_FILE_NAME))  continue;
           String s = FileUtil.read(new InputStreamReader(f.openInputStream(), FileUtil.DEFAULT_CHARSET));
           existingContent.put(f.getName(), s);
         } catch (IOException e) {
           throw new RuntimeException(e);
         }
       }
-      existingContent.remove(TraceInfoCache.TRACE_FILE_NAME);
     }
   }
 
