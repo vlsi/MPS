@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.IntentionsDescriptor" />
   <unitInfo fileName="ImplementMethods_Intention.java" startLine="21" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.ImplementMethods_Intention" />
   <unitInfo fileName="MakeVirtual_Intention.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention" />
   <unitInfo fileName="MakeAbstract_Intention.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" />

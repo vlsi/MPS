@@ -102,6 +102,7 @@
   <unitInfo fileName="ReplaceBlockWithItsContent_Intention.java" startLine="17" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceBlockWithItsContent_Intention" />
   <unitInfo fileName="UnwrapIfThenBlock_Intention.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
   <unitInfo fileName="GenerateEqualsAndHashcode_Intention.java" startLine="1811" startPosition="0" endLine="1881" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$QuotationClass_4qz7hx_a0a0a3a42a7" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
   <unitInfo fileName="UnwrapTryCatch_Intention.java" startLine="16" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention" />
   <unitInfo fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention" />
   <unitInfo fileName="ReplaceConditionalWithIf_Intention.java" startLine="14" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceConditionalWithIf_Intention" />

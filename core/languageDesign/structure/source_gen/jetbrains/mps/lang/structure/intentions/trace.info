@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a1a7" />
   <unitInfo fileName="MakeRootable_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
   <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="115" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a11a7" />

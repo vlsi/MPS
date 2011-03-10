@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.closures.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_from_unrestricted_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_restricted_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_unrestricted_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.ToggleMultiLine_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.intentions.add_throws_to_FunctionType_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.intentions.ToggleMultiLine_Intention" file="ToggleMultiLine_Intention.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
   <unitInfo fileName="IterateOverSequence_Intention.java" startLine="70" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention$QuotationClass_wo71su_a1a0a1a6" />
   <unitInfo fileName="add_sequence_initializer_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention" />
   <unitInfo fileName="CreateInitializer_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention" />

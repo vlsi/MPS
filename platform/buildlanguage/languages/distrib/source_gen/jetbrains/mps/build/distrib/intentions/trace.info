@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.distrib.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreateDigitalSignatureConfiguration_Intension_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.distrib.intentions.CreateDigitalSignatureConfiguration_Intension_Intention" />
   <root nodeId="1231856929425">
     <nodeInfo nodeId="1231856972504" fileName="CreateDigitalSignatureConfiguration_Intension_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

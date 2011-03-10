@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.IntentionsDescriptor" />
   <unitInfo fileName="SetUniqueNameInFile_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.SetUniqueNameInFile_Intention" />
   <unitInfo fileName="AddRemoveSeparator_Intention.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention" />
   <unitInfo fileName="SetWithIndent_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.textGen.intentions.SetWithIndent_Intention" />

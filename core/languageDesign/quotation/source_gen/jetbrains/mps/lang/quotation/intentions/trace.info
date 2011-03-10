@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreateAntiquotation_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.CreateAntiquotation_Intention" />
   <unitInfo fileName="CreateListAntiquotation_Intention.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.CreateListAntiquotation_Intention" />
   <unitInfo fileName="CreatePropertyAntiquotation_Intention.java" startLine="19" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.CreatePropertyAntiquotation_Intention" />

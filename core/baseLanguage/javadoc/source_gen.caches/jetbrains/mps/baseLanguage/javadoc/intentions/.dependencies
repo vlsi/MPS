@@ -143,5 +143,22 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
 </dependenciesRoot>
 

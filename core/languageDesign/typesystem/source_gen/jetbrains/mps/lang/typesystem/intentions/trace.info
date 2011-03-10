@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="107" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a2a7" />
   <unitInfo fileName="MakeInequalityCheckOnly_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
   <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />

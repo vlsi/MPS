@@ -89,6 +89,21 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.AddSNodeCastStatement_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ConvertInstanceofToNodeInstanceof_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ConvertConceptPropertySetToAssignment_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.AddOperationParameter_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ConvertLinkSetToAssignment_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ChangeAsCast_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ConvertCastToNodeCast_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.Replace_ListType_withNodeListType_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ConvertPropertySetToAssignment_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.intentions.ReplaceConceptIsWithConceptEquals_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.intentions.ReplaceConceptIsWithConceptEquals_Intention" file="ReplaceConceptIsWithConceptEquals_Intention.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

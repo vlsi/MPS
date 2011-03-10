@@ -39,6 +39,17 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.add_copy_from_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention" file="IterateOverSequence_Intention.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
