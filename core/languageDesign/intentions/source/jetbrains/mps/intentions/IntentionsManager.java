@@ -24,6 +24,10 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
+import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -294,16 +298,48 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void load() {
+    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+      String descriptorClassName = "IntentionsDescriptor";
+      initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, descriptorClassName);
+    }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-          String descriptorClassName = "IntentionsDescriptor";
-          initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, descriptorClassName);
-          initIntentionsDescriptor(language, LanguageAspect.SCRIPTS, descriptorClassName);
+          addMigrationsFromLanguage(language);
         }
       }
     });
   }
+
+  private void addMigrationsFromLanguage(Language language) {
+    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
+    if (scriptsModel == null) return;
+
+    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
+
+    Map<BaseMigrationScript, MigrationScript> scripts = new HashMap<BaseMigrationScript, MigrationScript>();
+    for (MigrationScript migrationScript : migrationScripts) {
+      // IOperationContext operationContext = new ModuleContext(language, ...);
+      //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
+      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null, migrationScript.getNode());
+      if (script == null) continue;
+      scripts.put(script, migrationScript);
+    }
+
+    for (BaseMigrationScript script : scripts.keySet()) {
+      MigrationScript migrationScript = scripts.get(script);
+      for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
+        if (refactoring.isShowAsIntention()) {
+          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
+          ModuleReference moduleRef = language.getModuleReference();
+          SNodePointer node = new SNodePointer(migrationScript.getNode());
+          IntentionsManager.getInstance().addIntention(intention, moduleRef, node);
+        }
+      }
+    }
+  }
+
 
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {

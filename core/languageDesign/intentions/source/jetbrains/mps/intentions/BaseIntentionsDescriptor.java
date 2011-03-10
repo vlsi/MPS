@@ -29,80 +29,10 @@ public abstract class BaseIntentionsDescriptor {
     myModelRef = modelRef;
   }
 
-  public abstract void init();// {
-/*
-    addIntentionsFromLanguage(language);
-    IntentionsManager.getInstance().addIntention(intention);
-    myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
-    myIntentionsLanguages.put(cls, l);
-*/
-
-//  }
+  public abstract void init();
 
   protected void add(Intention intention, String nodeId) {
     SNodePointer np = new SNodePointer(myModelRef, SNodeId.fromString(nodeId));
     IntentionsManager.getInstance().addIntention(intention, myModuleRef, np);
   }
-
-
-/*
-
-  private void addIntentionsFromLanguage(Language l) {
-    SModelDescriptor intentionsModelDescriptor = LanguageAspect.INTENTIONS.get(l);
-    if (intentionsModelDescriptor != null) {
-      SModel smodel = intentionsModelDescriptor.getSModel();
-      for (BaseIntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(BaseIntentionDeclaration.class)) {
-*/
-/*
- Warning:
- BaseIntentionDeclaration_Behavior class will be loaded using platform classloader here.
- As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- *//*
-
-        String className = smodel.getSModelReference().getLongName() + "." + BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(intentionDeclaration.getNode());
-        try {
-          Class<?> cls = l.getClass(className);
-
-          if (cls != null) {
-            Intention intention = (Intention) cls.newInstance();
-            IntentionsManager.getInstance().addIntention(intention);
-            myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
-            myIntentionsLanguages.put(cls, l);
-          }
-        } catch (Throwable throwable) {
-          LOG.error(throwable, intentionDeclaration);
-        }
-      }
-    }
-  }
-
-  private void addMigrationsFromLanguage(Language language) {
-    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
-    if (scriptsModel == null) return;
-
-    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-
-    Map<BaseMigrationScript, MigrationScript> scripts = new com.intellij.util.containers.HashMap<BaseMigrationScript, MigrationScript>();
-    for (MigrationScript migrationScript : migrationScripts) {
-      // IOperationContext operationContext = new ModuleContext(language, ...);
-      //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
-      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null*/
-/*TODO???*//*
-, migrationScript.getNode());
-      if (script == null) continue;
-      scripts.put(script, migrationScript);
-    }
-
-    for (BaseMigrationScript script : scripts.keySet()) {
-      MigrationScript migrationScript = scripts.get(script);
-      for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        if (refactoring.isShowAsIntention()) {
-          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
-          IntentionsManager.getInstance().addIntention(intention,language,migrationScript.getNode());
-        }
-      }
-    }
-  }
-*/
-
 }
