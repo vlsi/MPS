@@ -83,7 +83,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         repository.registerModelDescriptor(descriptor, module);
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
-        LOG.assertLog(oldDescr.getModule() == module , oldDescr.getModule().getModuleFqName() + " --->> " + module.getModuleFqName());
+        LOG.assertLog(oldDescr.getModule() == module, descriptor.getSModelReference().toString() + " :: " + oldDescr.getModule().getModuleFqName() + " --->> " + module.getModuleFqName());
       }
 
       descriptor.setModelRootManager(this);
