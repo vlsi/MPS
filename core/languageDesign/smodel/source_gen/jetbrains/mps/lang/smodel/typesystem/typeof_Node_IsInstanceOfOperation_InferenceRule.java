@@ -37,7 +37,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450650", 0, intentionProvider);
-        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(op), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450640", true), (SNode) new typeof_Node_IsInstanceOfOperation_InferenceRule.QuotationClass_bsicn0_a0a1a0b0a().createNode(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false), typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(op), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450640", true), (SNode) new typeof_Node_IsInstanceOfOperation_InferenceRule.QuotationClass_bsicn0_a0a1a0b0a().createNode(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false), typeCheckingContext), false, _info_12389875345);
       }
     }
   }
