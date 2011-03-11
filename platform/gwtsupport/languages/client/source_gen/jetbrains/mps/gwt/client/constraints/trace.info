@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="GWTModule_Constraints.java" startLine="13" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_Constraints" />
+  <unitInfo fileName="SuperSource_Constraints.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.SuperSource_Constraints" />
+  <unitInfo fileName="Source_Constraints.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Source_Constraints" />
+  <unitInfo fileName="Public_Constraints.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Public_Constraints" />
+  <unitInfo fileName="PatternFilter_Constraints.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.PatternFilter_Constraints" />
   <unitInfo fileName="GWTModule_resolveInfo_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.GWTModule_resolveInfo_PropertyConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="Inherits_module_ReferentConstraint.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.gwt.client.constraints.Inherits_module_ReferentConstraint" />
