@@ -3,6 +3,7 @@ package jetbrains.mps.testbench;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -122,7 +123,8 @@ public class GenerationCycle {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler,
+        GenerationOptions.getDefaults().saveTransientModels(false).rebuildAll(true).create());
     }
 
     @Override

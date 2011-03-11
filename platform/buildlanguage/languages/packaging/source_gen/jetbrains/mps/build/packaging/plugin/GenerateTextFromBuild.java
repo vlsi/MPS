@@ -12,15 +12,16 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.generator.GenerationFacade;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -40,7 +41,6 @@ public class GenerateTextFromBuild {
       }
     });
     // generate files 
-    final GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
     final File[] fileToRun = new File[]{null};
     TextGenerationHandler generationHandler = new TextGenerationHandler() {
       @Override
@@ -61,7 +61,7 @@ public class GenerateTextFromBuild {
     if (showWindow) {
       GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, false);
     } else {
-      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
+      GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
     }
     return fileToRun[0];
   }

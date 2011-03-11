@@ -19,10 +19,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.generator.GenerationAdapter;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -246,7 +243,8 @@ public class GeneratorWorker extends MpsWorker {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler,
+        GenerationOptions.getDefaults().create());
     }
 
     @Override
