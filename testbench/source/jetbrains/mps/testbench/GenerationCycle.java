@@ -122,7 +122,7 @@ public class GenerationCycle {
       }
 
       GenerationFacade.generateModels(myProject.getProject(), inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler,
-        GenerationOptions.getDefaults().generateInParallel(parallel, 8).create());
+        GenerationOptions.getDefaults().strictMode(parallel).generateInParallel(parallel, 8).create());
     }
 
     @Override
