@@ -3,35 +3,35 @@
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <import index="33" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" version="-1" />
-  <import index="34" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs.newvfs.events(MPS.Classpath/com.intellij.openapi.vfs.newvfs.events@java_stub)" version="-1" />
-  <import index="35" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.fileEditor(MPS.Classpath/com.intellij.openapi.fileEditor@java_stub)" version="-1" />
-  <import index="36" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.descriptor(MPS.Classpath/jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
-  <import index="37" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="38" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(MPS.Classpath/jetbrains.mps.vfs@java_stub)" version="-1" />
-  <import index="39" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="40" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(MPS.Classpath/com.intellij.openapi.vfs@java_stub)" version="-1" />
-  <import index="41" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
-  <import index="42" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="44" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" />
-  <import index="45" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.library(MPS.Classpath/jetbrains.mps.library@java_stub)" version="-1" />
-  <import index="46" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(MPS.Classpath/jetbrains.mps.reloading@java_stub)" version="-1" />
-  <import index="47" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="48" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
-  <import index="49" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="50" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" version="-1" />
-  <import index="51" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="52" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs.newvfs(MPS.Classpath/com.intellij.openapi.vfs.newvfs@java_stub)" version="-1" />
-  <import index="53" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vfs(MPS.Classpath/jetbrains.mps.ide.vfs@java_stub)" version="-1" />
-  <import index="54" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util(MPS.Classpath/com.intellij.util@java_stub)" version="-1" />
-  <import index="55" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.fileTypes(MPS.Classpath/jetbrains.mps.fileTypes@java_stub)" version="-1" />
-  <import index="56" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" version="-1" />
-  <import index="57" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util.io(MPS.Classpath/com.intellij.openapi.util.io@java_stub)" version="-1" />
-  <import index="58" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.ui(MPS.Classpath/com.intellij.util.ui@java_stub)" version="-1" />
-  <import index="59" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.messages(MPS.Classpath/com.intellij.util.messages@java_stub)" version="-1" />
-  <import index="60" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(MPS.Classpath/com.intellij.openapi.vcs@java_stub)" version="-1" />
-  <import index="61" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(MPS.Classpath/jetbrains.mps@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
+  <import index="34" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs.newvfs.events(com.intellij.openapi.vfs.newvfs.events@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.fileEditor(com.intellij.openapi.fileEditor@java_stub)" version="-1" />
+  <import index="36" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="37" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="38" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="39" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="40" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
+  <import index="41" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
+  <import index="42" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
+  <import index="44" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="45" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
+  <import index="46" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
+  <import index="47" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
+  <import index="48" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="49" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="50" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="51" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="52" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs.newvfs(com.intellij.openapi.vfs.newvfs@java_stub)" version="-1" />
+  <import index="53" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
+  <import index="54" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
+  <import index="55" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.fileTypes(jetbrains.mps.fileTypes@java_stub)" version="-1" />
+  <import index="56" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
+  <import index="57" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util.io(com.intellij.openapi.util.io@java_stub)" version="-1" />
+  <import index="58" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.ui(com.intellij.util.ui@java_stub)" version="-1" />
+  <import index="59" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.messages(com.intellij.util.messages@java_stub)" version="-1" />
+  <import index="60" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(com.intellij.openapi.vcs@java_stub)" version="-1" />
+  <import index="61" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="9" modelUID="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)" version="-1" implicit="yes" />
@@ -3510,92 +3510,77 @@
                           <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247362119">
                             <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4707157387247362120">
                               <node role="6.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247362121">
-                                <property name="2.name:0" value="modules" />
-                                <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247362122">
-                                  <link role="6.classifier:3" targetNodeId="47.~Set" />
-                                  <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247362123">
-                                    <link role="6.classifier:3" targetNodeId="42.~IModule" />
-                                  </node>
+                                <property name="2.name:0" value="module" />
+                                <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6855990328449181660">
+                                  <link role="6.classifier:3" targetNodeId="42.~IModule" resolveInfo="IModule" />
                                 </node>
                                 <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247362124">
                                   <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362125">
                                     <link role="6.variableDeclaration:3" targetNodeId="4707157387247362117" resolveInfo="modelDescriptor" />
                                   </node>
                                   <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247362126">
-                                    <link role="6.baseMethodDeclaration:3" targetNodeId="37.~SModelDescriptor.getModules():java.util.Set" />
+                                    <link role="6.baseMethodDeclaration:3" targetNodeId="37.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                                   </node>
                                 </node>
                               </node>
                             </node>
-                            <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="4707157387247362127">
-                              <node role="6.iterable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362128">
-                                <link role="6.variableDeclaration:3" targetNodeId="4707157387247362121" resolveInfo="modules" />
-                              </node>
-                              <node role="6.variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247362129">
-                                <property name="2.name:0" value="module" />
-                                <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247362130">
-                                  <link role="6.classifier:3" targetNodeId="42.~IModule" />
+                            <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6855990328449181685" />
+                            <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6855990328449181662">
+                              <node role="6.condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6855990328449181663">
+                                <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6855990328449181664">
+                                  <link role="6.variableDeclaration:3" targetNodeId="4707157387247361468" resolveInfo="myChangedModules" />
+                                </node>
+                                <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6855990328449181665">
+                                  <link role="6.baseMethodDeclaration:3" targetNodeId="47.~Set.contains(java.lang.Object):boolean" resolveInfo="contains" />
+                                  <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6855990328449181666">
+                                    <link role="6.variableDeclaration:3" targetNodeId="4707157387247362121" resolveInfo="module" />
+                                  </node>
                                 </node>
                               </node>
-                              <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247362131">
-                                <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4707157387247362132">
-                                  <node role="6.condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247362133">
-                                    <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247362134">
-                                      <link role="6.variableDeclaration:3" targetNodeId="4707157387247361468" resolveInfo="myChangedModules" />
+                              <node role="6.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6855990328449181667">
+                                <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6855990328449181668">
+                                  <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6855990328449181669">
+                                    <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6855990328449181670">
+                                      <link role="6.classifier:3" targetNodeId="4707157387247361448" resolveInfo="ReloadSession" />
+                                      <link role="6.variableDeclaration:3" targetNodeId="4707157387247361449" resolveInfo="LOG" />
                                     </node>
-                                    <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247362135">
-                                      <link role="6.baseMethodDeclaration:3" targetNodeId="47.~Set.contains(java.lang.Object):boolean" />
-                                      <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362136">
-                                        <link role="6.variableDeclaration:3" targetNodeId="4707157387247362129" resolveInfo="module" />
+                                    <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6855990328449181671">
+                                      <link role="6.baseMethodDeclaration:3" targetNodeId="33.~Logger.debug(java.lang.String):void" resolveInfo="debug" />
+                                      <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6855990328449181672">
+                                        <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6855990328449181673">
+                                          <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6855990328449181674">
+                                            <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6855990328449181675">
+                                              <property name="6.value:3" value="Skip model " />
+                                            </node>
+                                            <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6855990328449181676">
+                                              <link role="6.variableDeclaration:3" targetNodeId="4707157387247362117" resolveInfo="modelDescriptor" />
+                                            </node>
+                                          </node>
+                                          <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6855990328449181677">
+                                            <property name="6.value:3" value=" since we want to reload " />
+                                          </node>
+                                        </node>
+                                        <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6855990328449181678">
+                                          <link role="6.variableDeclaration:3" targetNodeId="4707157387247362121" resolveInfo="module" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="6.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247362137">
-                                    <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4707157387247362138">
-                                      <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247362139">
-                                        <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4707157387247362140">
-                                          <link role="6.classifier:3" targetNodeId="4707157387247361448" resolveInfo="ReloadSession" />
-                                          <link role="6.variableDeclaration:3" targetNodeId="4707157387247361449" resolveInfo="LOG" />
-                                        </node>
-                                        <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247362141">
-                                          <link role="6.baseMethodDeclaration:3" targetNodeId="33.~Logger.debug(java.lang.String):void" />
-                                          <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4707157387247362142">
-                                            <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4707157387247362143">
-                                              <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4707157387247362144">
-                                                <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4707157387247362145">
-                                                  <property name="6.value:3" value="Skip model " />
-                                                </node>
-                                                <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362146">
-                                                  <link role="6.variableDeclaration:3" targetNodeId="4707157387247362117" resolveInfo="modelDescriptor" />
-                                                </node>
-                                              </node>
-                                              <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4707157387247362147">
-                                                <property name="6.value:3" value=" since we want to reload " />
-                                              </node>
-                                            </node>
-                                            <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362148">
-                                              <link role="6.variableDeclaration:3" targetNodeId="4707157387247362129" resolveInfo="module" />
-                                            </node>
-                                          </node>
-                                        </node>
+                                </node>
+                                <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6855990328449181679">
+                                  <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6855990328449181680">
+                                    <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6855990328449181681">
+                                      <link role="6.variableDeclaration:3" targetNodeId="4707157387247362109" resolveInfo="skip" />
+                                    </node>
+                                    <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6855990328449181682">
+                                      <link role="6.baseMethodDeclaration:3" targetNodeId="47.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
+                                      <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6855990328449181683">
+                                        <link role="6.variableDeclaration:3" targetNodeId="4707157387247362117" resolveInfo="modelDescriptor" />
                                       </node>
                                     </node>
-                                    <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4707157387247362149">
-                                      <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247362150">
-                                        <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362151">
-                                          <link role="6.variableDeclaration:3" targetNodeId="4707157387247362109" resolveInfo="skip" />
-                                        </node>
-                                        <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247362152">
-                                          <link role="6.baseMethodDeclaration:3" targetNodeId="47.~Set.add(java.lang.Object):boolean" />
-                                          <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247362153">
-                                            <link role="6.variableDeclaration:3" targetNodeId="4707157387247362117" resolveInfo="modelDescriptor" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="4707157387247362154" />
                                   </node>
                                 </node>
+                                <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="6855990328449181684" />
                               </node>
                             </node>
                           </node>

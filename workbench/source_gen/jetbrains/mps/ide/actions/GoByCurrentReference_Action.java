@@ -17,10 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModel;
-import java.util.Set;
 import jetbrains.mps.project.IModule;
-import java.util.Iterator;
 import jetbrains.mps.project.Solution;
+import java.util.Set;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
@@ -103,7 +102,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
         SModel model = node.getModel();
         IModule module = model.getModelDescriptor().getModule();
-        assert module!=null;
+        assert module != null;
         if (module instanceof Solution && ((Solution) module).isStub()) {
           Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
           assert !(owners.isEmpty());
