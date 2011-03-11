@@ -28,8 +28,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import javax.swing.JLabel;
-import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -46,7 +44,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
-  private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
+  private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
@@ -68,8 +66,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
-    myContainer = new JPanel(new BorderLayout());
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(GoToNeighbourOccurence.previousInstance(myMergeContext, this), GoToNeighbourOccurence.nextInstance(myMergeContext, this), Separator.getInstance(), new ApplyNonConflictsForRoot(myMergeContext, this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(GoToNeighbourMergeRoot.previousInstance(myMergeContext, this), GoToNeighbourMergeRoot.nextInstance(myMergeContext, this), Separator.getInstance(), new ApplyNonConflictsForRoot(myMergeContext, this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
@@ -149,11 +146,11 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
       myBottomPanel :
       myTopPanel
     );
-    ((GridBagLayout) panel.getLayout()).setConstraints(strip, new GridBagConstraints((mine ?
+    GridBagConstraints gbc = new GridBagConstraints((mine ?
       1 :
       3
-    ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
-    panel.add(strip);
+    ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
+    panel.add(strip, gbc);
     MergeButtonsPainter.addTo(this, (mine ?
       myMineEditor :
       myRepositoryEditor
@@ -161,17 +158,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    SNode node = model.getNodeById(myRootId);
-    final DiffEditor result = new DiffEditor(myOperationContext, node);
-    result.getMainEditor().editNode(node, myOperationContext);
-    result.setReadOnly(true);
-
-    JPanel panel = new JPanel(new BorderLayout());
-    JLabel title = new JLabel(myModelsDialog.getContentTitles()[index]);
-    title.setToolTipText(myModelsDialog.getContentTitles()[index]);
-    panel.add(title, BorderLayout.NORTH);
-    panel.add(result.getMainEditor().getExternalComponent(), BorderLayout.CENTER);
-    panel.setPreferredSize(new Dimension());
+    final DiffEditor result = new DiffEditor(myOperationContext, model.getNodeById(myRootId), myModelsDialog.getContentTitles()[index]);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -180,12 +167,8 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
       5 :
       0
     )), 0, 0);
-    ((GridBagLayout) myTopPanel.getLayout()).setConstraints(panel, gbc);
-    myTopPanel.add(panel);
-    JComponent inspector = result.getInspector().getExternalComponent();
-    inspector.setPreferredSize(new Dimension());
-    ((GridBagLayout) myBottomPanel.getLayout()).setConstraints(inspector, gbc);
-    myBottomPanel.add(inspector);
+    myTopPanel.add(result.getTopComponent(), gbc);
+    myBottomPanel.add(result.getInspector().getExternalComponent(), gbc);
 
     myDiffEditorsGroup.add(result);
     return result;

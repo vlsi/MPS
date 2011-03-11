@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -41,8 +42,8 @@ public class ModelDiffTool implements DiffTool {
     try {
       final SModel oldModel = ModelDiffTool.readModel(contents[0], ModelDiffTool.getFilePath(request));
       final SModel newModel = ModelDiffTool.readModel(contents[1], ModelDiffTool.getFilePath(request));
-      final OldModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<OldModelDifferenceDialog>() {
-        public OldModelDifferenceDialog compute() {
+      final BaseDialog d = ModelAccess.instance().runReadAction(new Computable<BaseDialog>() {
+        public BaseDialog compute() {
           SModelDescriptor modelDescriptor = oldModel.getModelDescriptor();
           if (modelDescriptor == null) {
             modelDescriptor = newModel.getModelDescriptor();
@@ -58,19 +59,23 @@ public class ModelDiffTool implements DiffTool {
           }
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
-          return new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
-        }
-      });
-      AnAction action = new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {
-        public void actionPerformed(AnActionEvent e) {
-          DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
-          if (ideaDiffTool.canShow(request)) {
-            d.dispose();
-            ideaDiffTool.show(request);
+          if (MergeModelsDialog.isNewMergeEnabled()) {
+            return new ModelDifferenceDialog(request.getProject(), context, oldModel, newModel, request.getContentTitles());
+          } else {
+            final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
+            d.addAction(new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {
+              public void actionPerformed(AnActionEvent e) {
+                DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
+                if (ideaDiffTool.canShow(request)) {
+                  d.dispose();
+                  ideaDiffTool.show(request);
+                }
+              }
+            });
+            return d;
           }
         }
-      };
-      d.addAction(action);
+      });
       d.showDialog();
     } catch (ModelDiffTool.ReadException e) {
       LOG.warning("Can't read models. Using text based merge...", e);

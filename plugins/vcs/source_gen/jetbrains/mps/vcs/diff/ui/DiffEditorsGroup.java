@@ -18,18 +18,18 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public class DiffEditorComponentsGroup {
+public class DiffEditorsGroup {
   private List<DiffEditor> myDiffEditors = ListSequence.fromList(new ArrayList<DiffEditor>());
-  private DiffEditorComponentsGroup.MyCellSelectionListener myCellSelectionListener = new DiffEditorComponentsGroup.MyCellSelectionListener();
+  private DiffEditorsGroup.MyCellSelectionListener myCellSelectionListener = new DiffEditorsGroup.MyCellSelectionListener();
   private boolean myViewportSetInProgress = false;
 
-  public DiffEditorComponentsGroup() {
+  public DiffEditorsGroup() {
   }
 
   public void add(DiffEditor diffEditor) {
     ListSequence.fromList(myDiffEditors).addElement(diffEditor);
     diffEditor.getMainEditor().addCellSelectionListener(myCellSelectionListener);
-    diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorComponentsGroup.MyViewportChangeListener(diffEditor));
+    diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
 
   private static SNode getFirstVisibleNode(EditorComponent editor, SNode node) {
@@ -86,28 +86,28 @@ public class DiffEditorComponentsGroup {
     });
   }
 
-  private static SNodeId check_53tvmj_a0a0a0a0a(SNode checkedDotOperand) {
+  private static SNodeId check_s6qw4f_a0a0a0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNode check_53tvmj_a0a0a0a0a0(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0a0a0a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static SNode check_53tvmj_a0a0a0a1a0a0a0(SModel checkedDotOperand, SNodeId selectionId) {
+  private static SNode check_s6qw4f_a0a0a0a1a0a0a0(SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeById(selectionId);
     }
     return null;
   }
 
-  private static SModel check_53tvmj_a0a0a0a0b0a0a0a(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0a0a0a0b0a0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
@@ -121,10 +121,10 @@ public class DiffEditorComponentsGroup {
     public void selectionChanged(EditorComponent component, EditorCell oldSelection, final EditorCell newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNodeId selectionId = check_53tvmj_a0a0a0a0a(check_53tvmj_a0a0a0a0a0(newSelection));
+          SNodeId selectionId = check_s6qw4f_a0a0a0a0a(check_s6qw4f_a0a0a0a0a0(newSelection));
           if (selectionId != null) {
             for (DiffEditor diffEditor : ListSequence.fromList(myDiffEditors)) {
-              diffEditor.inspect(check_53tvmj_a0a0a0a1a0a0a0(check_53tvmj_a0a0a0a0b0a0a0a(diffEditor.getMainEditor().getEditedNode()), selectionId));
+              diffEditor.inspect(check_s6qw4f_a0a0a0a1a0a0a0(check_s6qw4f_a0a0a0a0b0a0a0a(diffEditor.getMainEditor().getEditedNode()), selectionId));
             }
           }
         }

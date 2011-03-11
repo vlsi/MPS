@@ -40,7 +40,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import javax.swing.JPopupMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.lang.StringUtils;
@@ -50,6 +49,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.util.NameUtil;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -60,7 +60,7 @@ public class MergeModelsDialog extends BaseDialog {
   private Project myProject;
   private IOperationContext myOperationContext;
   private MergeContext myMergeContext;
-  private MergeModelsDialog.MergeModelsTree myMergeModelsTree;
+  private MergeModelsDialog.MergeModelsTree myMergeTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myApplyChanges = false;
   private boolean myRootsDialogInvoked = false;
@@ -73,13 +73,13 @@ public class MergeModelsDialog extends BaseDialog {
     myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
-    myMergeModelsTree = new MergeModelsDialog.MergeModelsTree();
+    myMergeTree = new MergeModelsDialog.MergeModelsTree();
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
-    myPanel.add(new JScrollPane(myMergeModelsTree), BorderLayout.CENTER);
+    myPanel.add(new JScrollPane(myMergeTree), BorderLayout.CENTER);
   }
 
   public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel) {
@@ -122,7 +122,7 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   /*package*/ void rebuildLater() {
-    myMergeModelsTree.rebuildLater();
+    myMergeTree.rebuildLater();
   }
 
   /*package*/ IOperationContext getOperationContext() {
@@ -141,7 +141,7 @@ public class MergeModelsDialog extends BaseDialog {
 
   @Nullable
   private SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
-    MPSTreeNode modelTreeNode = myMergeModelsTree.getRootNode();
+    MPSTreeNode modelTreeNode = myMergeTree.getRootNode();
     MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
     if (rootTreeNode == null) {
       return null;
@@ -159,7 +159,7 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   private MergeModelsDialog.RootTreeNode findRootTreeNode(SNodeId rootId) {
-    MPSTreeNode modelTreeNode = myMergeModelsTree.getRootNode();
+    MPSTreeNode modelTreeNode = myMergeTree.getRootNode();
     for (MPSTreeNode rootTreeNode : Sequence.fromIterable(modelTreeNode)) {
       if (rootId.equals(((MergeModelsDialog.RootTreeNode) rootTreeNode).myRootId)) {
         return ((MergeModelsDialog.RootTreeNode) rootTreeNode);
@@ -188,7 +188,7 @@ public class MergeModelsDialog extends BaseDialog {
   public void acceptVersionForSelectedRoots(boolean mine) {
     final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
     final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
-    for (MergeModelsDialog.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeModelsTree.getSelectedNodes(MergeModelsDialog.RootTreeNode.class, null)))) {
+    for (MergeModelsDialog.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(MergeModelsDialog.RootTreeNode.class, null)))) {
       for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(rtn.myRootId))) {
         if (!(myMergeContext.isChangeResolved(change))) {
           if (mine == myMergeContext.isMyChange(change)) {
@@ -203,7 +203,7 @@ public class MergeModelsDialog extends BaseDialog {
       public void run() {
         myMergeContext.applyChanges(changesToApply);
         myMergeContext.excludeChanges(changesToExclude);
-        myMergeModelsTree.rebuildNow();
+        myMergeTree.rebuildNow();
       }
     });
   }
@@ -248,16 +248,6 @@ public class MergeModelsDialog extends BaseDialog {
     public void rebuildNow() {
       super.rebuildNow();
       expandAll();
-    }
-
-    @Override
-    protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-      if (node instanceof MergeModelsDialog.RootTreeNode) {
-        DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeModelsDialog.MergeRootsAction(((MergeModelsDialog.RootTreeNode) node).myRootId), AcceptYoursTheirs.yoursInstance(MergeModelsDialog.this), AcceptYoursTheirs.theirsInstance(MergeModelsDialog.this));
-        return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
-      } else {
-        return null;
-      }
     }
   }
 
@@ -369,19 +359,15 @@ public class MergeModelsDialog extends BaseDialog {
     public void doubleClick() {
       invokeMergeRoots(myRootId);
     }
-  }
 
-  /*package*/ class MergeRootsAction extends BaseAction {
-    private SNodeId myRootId;
-
-    public MergeRootsAction(SNodeId rootId) {
-      super("Merge Root");
-      myRootId = rootId;
-      setDisableOnNoProject(false);
-    }
-
-    protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      invokeMergeRoots(myRootId);
+    @Override
+    public ActionGroup getActionGroup() {
+      BaseAction defaultAction = new BaseAction("Merge Root") {
+        protected void doExecute(AnActionEvent e, Map<String, Object> m) {
+          doubleClick();
+        }
+      };
+      return ActionUtils.groupFromActions(defaultAction, AcceptYoursTheirs.yoursInstance(MergeModelsDialog.this), AcceptYoursTheirs.theirsInstance(MergeModelsDialog.this));
     }
   }
 }

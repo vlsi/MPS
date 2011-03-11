@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.MergeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -23,7 +24,7 @@ public class ChangeGroup {
   private ChangeType myChangeType;
   private boolean myConflicted;
 
-  public ChangeGroup(final Map<ModelChange, Integer> leftStarts, final Map<ModelChange, Integer> leftEnds, final Map<ModelChange, Integer> rightStarts, final Map<ModelChange, Integer> rightEnds, List<ModelChange> changes, final MergeContext mergeContext) {
+  public ChangeGroup(final Map<ModelChange, Integer> leftStarts, final Map<ModelChange, Integer> leftEnds, final Map<ModelChange, Integer> rightStarts, final Map<ModelChange, Integer> rightEnds, List<ModelChange> changes, @Nullable final MergeContext mergeContext) {
     myLeftStart = ListSequence.fromList(changes).<Integer>select(new ISelector<ModelChange, Integer>() {
       public Integer select(ModelChange ch) {
         return MapSequence.fromMap(leftStarts).get(ch);
@@ -74,7 +75,7 @@ public class ChangeGroup {
         );
       }
     });
-    myConflicted = ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
+    myConflicted = mergeContext != null && ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return Sequence.fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
       }

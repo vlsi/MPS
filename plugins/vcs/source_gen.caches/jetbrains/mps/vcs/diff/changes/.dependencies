@@ -66,6 +66,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.ChangeType" file="ChangeType.java">
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.awt.Color" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.DeleteNodeGroupChange" file="DeleteNodeGroupChange.java">

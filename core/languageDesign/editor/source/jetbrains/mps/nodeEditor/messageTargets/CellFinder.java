@@ -85,7 +85,8 @@ public class CellFinder {
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {
-        return role.equals(cell.getRole()) && node == cell.getSNode();
+        return role.equals(cell.getRole()) &&
+          (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBigCell());
       }
     }, true), true);
     if (child != null) {

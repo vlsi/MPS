@@ -10,11 +10,11 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.workbench.search.icons.Icons;
 
-public abstract class GoToNeighbourOccurence extends BaseAction {
+public abstract class GoToNeighbourMergeRoot extends BaseAction {
   private MergeContext myMergeContext;
   protected MergeRootsDialog myMergeRootsDialog;
 
-  private GoToNeighbourOccurence(String type, MergeContext mergeContext, MergeRootsDialog mergeRootsDialog, Icon icon) {
+  private GoToNeighbourMergeRoot(String type, MergeContext mergeContext, MergeRootsDialog mergeRootsDialog, Icon icon) {
     super("Go to " + type + " Root", null, icon);
     myMergeContext = mergeContext;
     myMergeRootsDialog = mergeRootsDialog;
@@ -38,16 +38,16 @@ public abstract class GoToNeighbourOccurence extends BaseAction {
 
   protected abstract SNodeId getNeighbourId();
 
-  public static GoToNeighbourOccurence nextInstance(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
-    return new GoToNeighbourOccurence("Next", mergeContext, mergeRootsDialog, Icons.NEXT_ICON) {
+  public static GoToNeighbourMergeRoot nextInstance(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
+    return new GoToNeighbourMergeRoot("Next", mergeContext, mergeRootsDialog, Icons.NEXT_ICON) {
       protected SNodeId getNeighbourId() {
         return myMergeRootsDialog.getModelsDialog().getNextRoot(myMergeRootsDialog.getRootId());
       }
     };
   }
 
-  public static GoToNeighbourOccurence previousInstance(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
-    return new GoToNeighbourOccurence("Previous", mergeContext, mergeRootsDialog, Icons.PREVIOUS_ICON) {
+  public static GoToNeighbourMergeRoot previousInstance(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
+    return new GoToNeighbourMergeRoot("Previous", mergeContext, mergeRootsDialog, Icons.PREVIOUS_ICON) {
       protected SNodeId getNeighbourId() {
         return myMergeRootsDialog.getModelsDialog().getPreviousRoot(myMergeRootsDialog.getRootId());
       }

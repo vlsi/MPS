@@ -90,6 +90,10 @@ public class ModelUtils {
   }
 
   public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException {
+    return ModelUtils.loadZippedModels(zipfile, versions, true);
+  }
+
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
     String zipfilename = zipfile.getName();
@@ -99,13 +103,17 @@ public class ModelUtils {
     int index = 0;
     for (final Version v : versions) {
       File file;
-      File[] files = tmpdir.listFiles(new FilenameFilter() {
-        public boolean accept(File dir, String name) {
-          return name.endsWith(v.getSuffix());
-        }
-      });
-      LOG.assertLog((files != null) && (files.length == 1));
-      file = files[0];
+      if (useZipName) {
+        file = new File(prefix + v.getSuffix());
+      } else {
+        File[] files = tmpdir.listFiles(new FilenameFilter() {
+          public boolean accept(File dir, String name) {
+            return name.endsWith(v.getSuffix());
+          }
+        });
+        LOG.assertLog((files != null) && (files.length == 1));
+        file = files[0];
+      }
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       FileInputStream fis = new FileInputStream(file);
       while (true) {
@@ -192,7 +200,7 @@ public class ModelUtils {
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
     File[] files = new File(VcsHelperUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
-        return name.contains(modelFileName) && name.endsWith(".zip");
+        return name.contains(modelFileName) && modelFileName.endsWith(".zip");
       }
     });
     return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {

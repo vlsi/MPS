@@ -7,6 +7,8 @@ import jetbrains.mps.vcs.diff.changes.ChangeSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -19,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ChangeGroupBuilder {
@@ -31,7 +32,7 @@ public class ChangeGroupBuilder {
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(MergeContext mergeContext, ChangeSet changeSet, DiffEditor leftEditor, DiffEditor rightEditor, boolean inspector) {
+  public ChangeGroupBuilder(@Nullable MergeContext mergeContext, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
     myMergeContext = mergeContext;
     myChangeSet = changeSet;
     myLeftEditor = leftEditor;
@@ -148,6 +149,7 @@ public class ChangeGroupBuilder {
     });
   }
 
+  @Nullable
   public MergeContext getMergeContext() {
     return myMergeContext;
   }

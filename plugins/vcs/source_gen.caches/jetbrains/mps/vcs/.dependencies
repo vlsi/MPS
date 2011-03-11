@@ -37,15 +37,15 @@
     <classNode extendsClassName="jetbrains.mps.generator.GenerationListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.MPSVcsProjectConfiguration" file="MPSVcsProjectConfiguration.java">
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.ProjectTopics" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" />
-    <classNode dependClassName="com.intellij.openapi.roots.impl.ModuleRootEventImpl" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="com.intellij.openapi.components.Storage" />
-    <classNode dependClassName="com.intellij.openapi.components.State" />
-    <classNode dependClassName="com.intellij.openapi.roots.ModuleRootListener" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.components.Storage" />
+    <classNode dependClassName="com.intellij.openapi.roots.ModuleRootListener" />
+    <classNode dependClassName="com.intellij.openapi.components.State" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
+    <classNode dependClassName="com.intellij.openapi.roots.impl.ModuleRootEventImpl" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
@@ -103,41 +103,41 @@
   <dependency className="jetbrains.mps.vcs.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">
     <classNode dependClassName="com.intellij.openapi.vcs.ui.RefreshableOnComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.project.OptimizeImportsHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ProjectCheckoutListener" file="ProjectCheckoutListener.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="java.io.FilenameFilter" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
-    <classNode dependClassName="java.io.FilenameFilter" />
+    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkout.CheckoutListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.RealVcsHandler" file="RealVcsHandler.java">
@@ -191,11 +191,11 @@
     <classNode extendsClassName="jetbrains.mps.vcs.queue.TaskQueue" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ToolsAppComponent" file="ToolsAppComponent.java">
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDiffTool" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelMergeTool" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelMergeTool" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDiffTool" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsHelper" file="VcsHelper.java">
@@ -232,20 +232,20 @@
     <classNode extendsClassName="jetbrains.mps.vcs.Version" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsRootsManager" file="VcsRootsManager.java">
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsDirectoryMapping" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.vcs.VcsSettingsHolder" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
-    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="com.intellij.util.containers.ConcurrentHashSet" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -255,31 +255,31 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsSettingsHolder" />
+    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsSettingsHolder" file="VcsSettingsHolder.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsIdeSettings" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsIdeSettings" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
