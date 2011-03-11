@@ -197,6 +197,7 @@
   <unitInfo fileName="GetUserDataExpression.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetUserDataExpression" />
   <unitInfo fileName="AddTabOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddTabOperation" />
   <unitInfo fileName="ParameterizedShortcutChange.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange" />
+  <unitInfo fileName="IconResource.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IconResource" />
   <unitInfo fileName="ActionListStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionListStatement" />
   <unitInfo fileName="ProcessHandlerStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement" />
   <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" />
@@ -237,7 +238,7 @@
   <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="EditorTab.java" startLine="16" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="17" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
-  <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
+  <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
   <root nodeId="485694842829280671">
     <nodeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" />
     <scopeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">

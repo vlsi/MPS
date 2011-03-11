@@ -176,6 +176,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_6wnsz8_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6wnsz8_b4b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6wnsz8_c4b1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_6wnsz8_d4b1a(editorContext, node));
     return editorCell;
   }
 
@@ -225,6 +226,18 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createImage_6wnsz8_a0b2e1b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6wnsz8_b0b2e1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_6wnsz8_d4b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_6wnsz8_d4b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_6wnsz8_a3e1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6wnsz8_b3e1b0(editorContext, node));
     return editorCell;
   }
 
@@ -354,6 +367,17 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6wnsz8_a3e1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new icon:");
+    editorCell.setCellId("Constant_6wnsz8_a3e1b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -569,6 +593,23 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createJComponent_6wnsz8_c2e1b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ActionDeclaration_Editor._QueryFunction_JComponent_6wnsz8_a2c4b1a(node, editorContext), "_6wnsz8_c2e1b0");
     editorCell.setCellId("JComponent_6wnsz8_c2e1b0");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_6wnsz8_b3e1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("icon");
+    provider.setNoTargetText("<no icon>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
