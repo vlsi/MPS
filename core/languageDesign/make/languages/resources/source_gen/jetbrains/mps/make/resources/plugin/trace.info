@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Resources_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.Resources_ProjectPlugin" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.FacetManifest" />
+  <unitInfo fileName="Resources_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.Resources_ApplicationPlugin" />
+  <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.Facets_CustomApplicationPlugin" />
   <unitInfo fileName="GenerateResources_Facet.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet" />
   <root nodeId="5674250849982862992">
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="54" startPosition="58" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
@@ -80,6 +83,40 @@
     <unitInfo nodeId="5674250849982863016" fileName="GenerateResources_Facet.java" startLine="70" startPosition="30" endLine="79" endPosition="15" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$2" />
     <unitInfo nodeId="5674250849982862997" fileName="GenerateResources_Facet.java" startLine="61" startPosition="17" endLine="84" endPosition="7" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$1" />
     <unitInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="54" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$Target_2cno5k_a" />
+  </root>
+  <root nodeId="8976425910814177807">
+    <nodeInfo nodeId="8976425910814177868" fileName="Facets_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="manifest" />
+    <nodeInfo nodeId="8976425910814177828" fileName="Facets_CustomApplicationPlugin.java" startLine="19" startPosition="9" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8976425910814177833" fileName="Facets_CustomApplicationPlugin.java" startLine="20" startPosition="40" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8976425910814177840" fileName="Facets_CustomApplicationPlugin.java" startLine="21" startPosition="36" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8976425910814177846" fileName="Facets_CustomApplicationPlugin.java" startLine="22" startPosition="58" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8976425910814177854" fileName="Facets_CustomApplicationPlugin.java" startLine="23" startPosition="71" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8976425910814177864" fileName="Facets_CustomApplicationPlugin.java" startLine="25" startPosition="27" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8976425910814177875" fileName="Facets_CustomApplicationPlugin.java" startLine="31" startPosition="9" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8976425910814177884" fileName="Facets_CustomApplicationPlugin.java" startLine="32" startPosition="76" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8976425910814177892" fileName="Facets_CustomApplicationPlugin.java" startLine="33" startPosition="73" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8976425910814177904" fileName="Facets_CustomApplicationPlugin.java" startLine="35" startPosition="27" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8976425910814177873" fileName="Facets_CustomApplicationPlugin.java" startLine="30" startPosition="27" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8976425910814177810" fileName="Facets_CustomApplicationPlugin.java" startLine="18" startPosition="24" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <scopeInfo nodeId="8976425910814177860" fileName="Facets_CustomApplicationPlugin.java" startLine="25" startPosition="0" endLine="26" endPosition="26">
+      <varInfo nodeId="8976425910814177861" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8976425910814177863" fileName="Facets_CustomApplicationPlugin.java" startLine="25" startPosition="27" endLine="26" endPosition="26" />
+    <scopeInfo nodeId="8976425910814177900" fileName="Facets_CustomApplicationPlugin.java" startLine="35" startPosition="0" endLine="36" endPosition="26">
+      <varInfo nodeId="8976425910814177901" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8976425910814177903" fileName="Facets_CustomApplicationPlugin.java" startLine="35" startPosition="27" endLine="36" endPosition="26" />
+    <scopeInfo nodeId="8976425910814177874" fileName="Facets_CustomApplicationPlugin.java" startLine="31" startPosition="9" endLine="34" endPosition="92">
+      <varInfo nodeId="8976425910814177876" varName="mf" />
+      <varInfo nodeId="8976425910814177885" varName="mth" />
+    </scopeInfo>
+    <scopeInfo nodeId="8976425910814177811" fileName="Facets_CustomApplicationPlugin.java" startLine="19" startPosition="9" endLine="24" endPosition="52">
+      <varInfo nodeId="8976425910814177834" varName="mf" />
+      <varInfo nodeId="8976425910814177829" varName="inst" />
+      <varInfo nodeId="8976425910814177847" varName="mth" />
+    </scopeInfo>
+    <scopeInfo nodeId="8976425910814177872" fileName="Facets_CustomApplicationPlugin.java" startLine="30" startPosition="27" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="8976425910814177809" fileName="Facets_CustomApplicationPlugin.java" startLine="18" startPosition="24" endLine="27" endPosition="5" />
   </root>
 </debugInfo>
 
