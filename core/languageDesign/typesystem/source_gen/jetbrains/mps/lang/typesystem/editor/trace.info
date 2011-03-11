@@ -6,6 +6,7 @@
   <unitInfo fileName="IsStrongSubtypeExpression_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.IsStrongSubtypeExpression_Editor$ReplaceWith_IsSubtypeExpression_cellMenu_a0a0_0" />
   <unitInfo fileName="AbstractEquationStatement_Editor.java" startLine="132" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0" />
   <unitInfo fileName="CreateEquationStatement_Editor.java" startLine="177" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.CreateEquationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0" />
+  <unitInfo fileName="AbstractComparableStatement_Editor.java" startLine="298" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractComparableStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_1" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="384" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="393" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0c1a" />
   <unitInfo fileName="TypeOfExpression_Editor.java" startLine="57" startPosition="48" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.TypeOfExpression_Editor$1" />
@@ -14,6 +15,7 @@
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="132" startPosition="48" endLine="142" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$2" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="155" startPosition="48" endLine="165" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$3" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="177" startPosition="48" endLine="187" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$4" />
+  <unitInfo fileName="AbstractComparableStatement_Editor.java" startLine="267" startPosition="48" endLine="277" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractComparableStatement_Editor$1" />
   <unitInfo fileName="SimpleRule_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SimpleRule_Editor" />
   <unitInfo fileName="TypeClause_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeClause_Editor" />
   <unitInfo fileName="ApplicableNodeCondition_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ApplicableNodeCondition_Editor" />
@@ -151,6 +153,7 @@
   <unitInfo fileName="InequationReplacementRule_Editor.java" startLine="23" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InequationReplacementRule_Editor" />
   <unitInfo fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="31" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOpTypeRule_OneTypeSpecified_Editor" />
   <unitInfo fileName="ComparisonRule_Editor.java" startLine="20" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ComparisonRule_Editor" />
+  <unitInfo fileName="AbstractComparableStatement_Editor.java" startLine="26" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractComparableStatement_Editor" />
   <unitInfo fileName="DependentComputationItem_Editor.java" startLine="21" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.DependentComputationItem_Editor" />
   <unitInfo fileName="SubtypingRule_Editor.java" startLine="23" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SubtypingRule_Editor" />
   <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
@@ -261,6 +264,15 @@
   <root nodeId="5548354512157832014">
     <nodeInfo nodeId="4197825331980781020" fileName="ReplacementRuleReference_Editor.java" startLine="81" startPosition="111" endLine="82" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4197825331980780995" fileName="ReplacementRuleReference_Editor.java" startLine="81" startPosition="111" endLine="82" endPosition="77" />
+  </root>
+  <root nodeId="6005837154535148805">
+    <nodeInfo nodeId="6005837154535148820" fileName="AbstractComparableStatement_Editor.java" startLine="291" startPosition="60" endLine="292" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005837154535148824" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="12" endLine="294" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005837154535148822" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="10" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6005837154535148815" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="106" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="6005837154535148819" fileName="AbstractComparableStatement_Editor.java" startLine="291" startPosition="60" endLine="292" endPosition="24" />
+    <scopeInfo nodeId="6005837154535148823" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="12" endLine="294" endPosition="25" />
+    <scopeInfo nodeId="6005837154535148814" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="106" endLine="295" endPosition="5" />
   </root>
   <root nodeId="8124453027370845380">
     <nodeInfo nodeId="2885635457272643352" fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="253" startPosition="112" endLine="254" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
