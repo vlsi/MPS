@@ -18,8 +18,9 @@ package jetbrains.mps.newTypesystem.state;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
-import java.util.Set;
+import java.util.*;
 
 public abstract class RelationBlock extends Block {
   protected RelationKind myRelationKind;
@@ -75,4 +76,6 @@ public abstract class RelationBlock extends Block {
   public Set<SNode> getInputs() {
     return CollectionUtil.set(myLeftNode, myRightNode);
   }
+
+  public abstract List<com.intellij.openapi.util.Pair<SNode,SNode>> getInputsAndOutputs();
 }
