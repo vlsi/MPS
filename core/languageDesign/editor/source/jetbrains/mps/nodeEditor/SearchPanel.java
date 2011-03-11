@@ -328,6 +328,7 @@ public class SearchPanel extends AbstractSearchPanel {
     myText.setText("");
     myText.setBackground(Color.white);
     revalidate();
+    myEditor.removeUpperComponent(this);
     myEditor.requestFocus();
   }
 
@@ -340,6 +341,7 @@ public class SearchPanel extends AbstractSearchPanel {
       }
     }
     setInitialText(initValue);
+    myEditor.addUpperComponent(this);
     super.activate();
   }
 
