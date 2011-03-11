@@ -349,18 +349,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        moveCurrentUp();
-      }
-    }, KeyStroke.getKeyStroke("alt UP"), WHEN_FOCUSED);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        moveCurrentDown();
-      }
-    }, KeyStroke.getKeyStroke("alt DOWN"), WHEN_FOCUSED);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
         goToNextErrorCell(false);
       }
     }, KeyStroke.getKeyStroke("F2"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -612,11 +600,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
-  private void moveCurrentUp() {
+  public void moveCurrentUp() {
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
-  private void moveCurrentDown() {
+  public void moveCurrentDown() {
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 

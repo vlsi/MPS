@@ -92,12 +92,14 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.LocalEnd_Action" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.RootEnd_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Insert_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.RootEnd_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveUp_Action" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.LocalEnd_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.RootHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />
@@ -107,7 +109,7 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveRight_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.End_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.LocalHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Mac_KeymapChanges" />
@@ -286,6 +288,36 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" file="MoveElementsDown_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" file="MoveElementsUp_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.MoveLeft_Action" file="MoveLeft_Action.java">

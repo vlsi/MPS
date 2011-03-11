@@ -257,19 +257,6 @@ public class NodeRangeSelection implements KeyboardHandler {
     }
 
     if (!isSelectionKeystroke(keyEvent)) {
-      // any navigation key - deactivate
-      if (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-        keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
-        keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-        keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-
-        if (keyEvent.isAltDown()) {
-          //alt + arrows node movement will be handled by editor 
-          return false;
-        }
-
-        deactivate();
-      }
       // eat it anyway
       return false;
     }
