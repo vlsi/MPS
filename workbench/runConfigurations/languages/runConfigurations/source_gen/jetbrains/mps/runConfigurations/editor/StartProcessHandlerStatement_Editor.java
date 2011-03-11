@@ -20,7 +20,7 @@ public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_iy02al_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iy02al_a");
     editorCell.addEditorCell(this.createConstant_iy02al_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_iy02al_b0(editorContext, node));

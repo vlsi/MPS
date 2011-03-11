@@ -7,8 +7,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class CommandDeclaration_Behavior {
+  private static Class[] PARAMETERS_24844921359538836 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -24,11 +32,42 @@ public class CommandDeclaration_Behavior {
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)) + "." + CommandDeclaration_Behavior.call_getGeneratedClassName_456055012090410556(thisNode);
   }
 
+  public static SNode virtual_createType_1213877527970(SNode thisNode) {
+    return new CommandDeclaration_Behavior.QuotationClass_5aznw1_a0a0e().createNode(thisNode, thisNode);
+  }
+
+  public static SNode call_createType_24844921359538836(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_24844921359538836);
+  }
+
+  public static SNode callSuper_createType_24844921359538836(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_24844921359538836);
+  }
+
   public static String getCreateProcessMethodName_456055012090411356() {
     return "createProcess";
   }
 
   public static String getGetDebuggerMethodName_456055012090411369() {
     return "getDebugger";
+  }
+
+  public static class QuotationClass_5aznw1_a0a0e {
+    public QuotationClass_5aznw1_a0a0e() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_4);
+        quotedNode1_2.setReferent("command", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

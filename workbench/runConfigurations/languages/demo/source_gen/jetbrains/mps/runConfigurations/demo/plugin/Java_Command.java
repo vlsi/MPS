@@ -12,12 +12,20 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.reloading.ClasspathStringCollector;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.apache.commons.lang.StringUtils;
 
 public class Java_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
-  private String myJrePath = getJdkHome();
+  private String myJrePath = Java_Command.getJdkHome();
   private String myProgramParameter;
   private String myVirtualMachineParameter;
   private String myClassName;
@@ -57,8 +65,8 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess() throws ExecutionException {
-    String java = getJavaCommand(myJrePath);
-    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), ps());
+    String java = Java_Command.getJavaCommand(myJrePath);
+    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), Java_Command.ps());
     return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build();
   }
 
@@ -66,8 +74,29 @@ public class Java_Command {
     return Debuggers.getInstance().getDebuggerByName("Java");
   }
 
+  public static List<String> getClasspath(final SNode node) {
+    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        module.value = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+      }
+    });
+    return Java_Command.getClasspath(module.value);
+  }
+
+  public static List<String> getClasspath(final IModule module) {
+    final ClasspathStringCollector visitor = new ClasspathStringCollector();
+    module.getClassPathItem().accept(visitor);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), true).accept(visitor);
+      }
+    });
+    return visitor.getResultAndReInit();
+  }
+
   private static String getJavaCommand(String javaHome) {
-    String result = javaHome + fs() + "bin" + fs();
+    String result = javaHome + Java_Command.fs() + "bin" + Java_Command.fs();
     String osName = System.getProperty("os.name");
     if (osName.startsWith("Mac OS")) {
       return result + "java";
@@ -103,9 +132,9 @@ public class Java_Command {
   }
 
   private static String getJdkHome() {
-    List<String> homes = getJavaHomes();
+    List<String> homes = Java_Command.getJavaHomes();
     for (String javaHome : ListSequence.fromList(homes)) {
-      if (new File(getJavaCommand(javaHome)).exists()) {
+      if (new File(Java_Command.getJavaCommand(javaHome)).exists()) {
         return javaHome;
       }
     }

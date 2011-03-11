@@ -24,7 +24,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = commandReferenceExpression;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "24844921359487170", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "24844921359487167", true), (SNode) new typeof_CommandReferenceExpression_InferenceRule.QuotationClass_ec8mha_a0a0a0_0().createNode(SLinkOperations.getTarget(commandReferenceExpression, "command", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "24844921359487167", true), (SNode) new typeof_CommandReferenceExpression_InferenceRule.QuotationClass_ec8mha_a0a0a0().createNode(SLinkOperations.getTarget(commandReferenceExpression, "command", false), SLinkOperations.getTarget(commandReferenceExpression, "command", false), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -43,30 +43,32 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
     return false;
   }
 
-  public static class QuotationClass_ec8mha_a0a0a0_0 {
-    public QuotationClass_ec8mha_a0a0a0_0() {
+  public static class QuotationClass_ec8mha_a0a0a0 {
+    public QuotationClass_ec8mha_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_4);
         quotedNode1_2.setReferent("command", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_4);
         quotedNode1_2.setReferent("command", (SNode) parameter_3);
         result = quotedNode1_2;
       }

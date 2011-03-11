@@ -8,48 +8,52 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class CommandParameterAssignment_Editor extends DefaultNodeEditor {
+public class CommandType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_bofzf4_a(editorContext, node);
+    return this.createCollection_2uesqr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_bofzf4_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_bofzf4_a");
-    editorCell.addEditorCell(this.createRefCell_bofzf4_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_bofzf4_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_bofzf4_c0(editorContext, node));
+  private EditorCell createCollection_2uesqr_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2uesqr_a");
+    editorCell.addEditorCell(this.createConceptProperty_2uesqr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2uesqr_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2uesqr_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2uesqr_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_bofzf4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_bofzf4_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
+  private EditorCell createConstant_2uesqr_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    editorCell.setCellId("Constant_2uesqr_b0");
+    RunConfigurations_StyleSheet.getLessThen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_bofzf4_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2uesqr_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_2uesqr_d0");
+    RunConfigurations_StyleSheet.getGreaterThen(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_2uesqr_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("parameterDeclaration");
-    provider.setNoTargetText("<no parameterDeclaration>");
+    provider.setRole("command");
+    provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandParameterAssignment_Editor._Inline_bofzf4_a0a());
+    provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,12 +66,14 @@ public class CommandParameterAssignment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_bofzf4_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+  private EditorCell createConceptProperty_2uesqr_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,8 +85,8 @@ public class CommandParameterAssignment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_bofzf4_a0a extends InlineCellProvider {
-    public _Inline_bofzf4_a0a() {
+  public static class _Inline_2uesqr_a2a extends InlineCellProvider {
+    public _Inline_2uesqr_a2a() {
       super();
     }
 
@@ -89,10 +95,10 @@ public class CommandParameterAssignment_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_bofzf4_a0a0(editorContext, node);
+      return this.createProperty_2uesqr_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_bofzf4_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2uesqr_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
