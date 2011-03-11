@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,13 +23,13 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = commandReferenceExpression;
       BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "456055012090232815", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "456055012090197968", true), (SNode) new typeof_CommandReferenceExpression_InferenceRule.QuotationClass_ec8mha_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "24844921359487170", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "24844921359487167", true), (SNode) new typeof_CommandReferenceExpression_InferenceRule.QuotationClass_ec8mha_a0a0a0_0().createNode(SLinkOperations.getTarget(commandReferenceExpression, "command", false), typeCheckingContext), _info_12389875345);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.CommandBuilderExpression";
+    return "jetbrains.mps.runConfigurations.structure.CommandReferenceExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -42,29 +43,31 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
     return false;
   }
 
-  public static class QuotationClass_ec8mha_a0a0a0 {
-    public QuotationClass_ec8mha_a0a0a0() {
+  public static class QuotationClass_ec8mha_a0a0a0_0 {
+    public QuotationClass_ec8mha_a0a0a0_0() {
     }
 
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("command", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("command", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

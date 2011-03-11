@@ -74,10 +74,6 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ProcessBuilderPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
     </node>
-    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2866018809102008341">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_Execute_Function" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
-    </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6355961872152786127">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
@@ -116,6 +112,10 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="24844921358835899">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandParameterReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+    </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="24844921359487163">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_CommandReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
     </node>
   </roots>
@@ -712,39 +712,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.5812151570929638024" resolveInfo="ProcessStatementPart" />
     </node>
   </root>
-  <root id="2866018809102008341">
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2866018809102008342">
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="2866018809102008358">
-        <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="2866018809102008359" />
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2866018809102008362">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="2866018809102008345">
-            <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2866018809102008348">
-              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2866018809102008347">
-                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2866018809102008343" resolveInfo="execute_Function" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2866018809102008352">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.2866018809101862242" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6957430790227205477">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6957430790227205478">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="6957430790227205480">
-              <node role="argument" roleId="tpd4.1179479418730" type="uhxm.ProcessType" typeId="uhxm.2866018809102008315" id="6957430790227205481" />
-              <node role="argument" roleId="tpd4.1179479418730" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6957430790227205485">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2866018809102008343">
-      <property name="name" nameId="tpck.1169194664001" value="execute_Function" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.6139196002333163564" resolveInfo="Execute_Function" />
-    </node>
-  </root>
   <root id="6355961872152786127">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6355961872152786128">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="456055012090232815">
@@ -1084,6 +1051,40 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="24844921358835901">
       <property name="name" nameId="tpck.1169194664001" value="commandParameterReference" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.7100369931888933679" resolveInfo="CommandParameterReference" />
+    </node>
+  </root>
+  <root id="24844921359487163">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="24844921359487164">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="24844921359487170">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="24844921359487174">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="24844921359487175">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.CommandType" typeId="uhxm.24844921359456990" id="24844921359487177">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="24844921359523805">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="command" />
+                <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="24844921359523808">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="24844921359523807">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="24844921359487165" resolveInfo="commandReferenceExpression" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="24844921359523812">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.4371737370140112220" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="24844921359487173">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="24844921359487167">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="24844921359487169">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="24844921359487165" resolveInfo="commandReferenceExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="24844921359487165">
+      <property name="name" nameId="tpck.1169194664001" value="commandReferenceExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4371737370140112219" resolveInfo="CommandReferenceExpression" />
     </node>
   </root>
 </model>
