@@ -13,11 +13,11 @@
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="84" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0d" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="102" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0i" />
-  <unitInfo fileName="ProcessBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessBuilderExpression_Behavior" />
-  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
-  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
-  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
   <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
+  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
+  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
+  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="ProcessBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessBuilderExpression_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="55" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior$QuotationClass_5aznw1_a0a0e" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
@@ -66,6 +66,7 @@
     <nodeInfo nodeId="223733852661818513" fileName="PersistentConfiguration_Behavior.java" startLine="76" startPosition="91" endLine="77" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="223733852661818520" fileName="PersistentConfiguration_Behavior.java" startLine="78" startPosition="130" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="223733852661818533" fileName="PersistentConfiguration_Behavior.java" startLine="80" startPosition="5" endLine="81" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5211959367043500207" fileName="PersistentConfiguration_Behavior.java" startLine="84" startPosition="65" endLine="85" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1252300412034469141" fileName="PersistentConfiguration_Behavior.java" startLine="25" startPosition="87" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="223733852661818488" fileName="PersistentConfiguration_Behavior.java" startLine="68" startPosition="141" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="223733852661818518" fileName="PersistentConfiguration_Behavior.java" startLine="77" startPosition="126" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -82,6 +83,7 @@
     <scopeInfo nodeId="3257967158569718557" fileName="PersistentConfiguration_Behavior.java" startLine="50" startPosition="39" endLine="51" endPosition="95" />
     <scopeInfo nodeId="223733852661818489" fileName="PersistentConfiguration_Behavior.java" startLine="69" startPosition="29" endLine="70" endPosition="87" />
     <scopeInfo nodeId="223733852661818519" fileName="PersistentConfiguration_Behavior.java" startLine="78" startPosition="130" endLine="79" endPosition="36" />
+    <scopeInfo nodeId="5211959367043499045" fileName="PersistentConfiguration_Behavior.java" startLine="84" startPosition="65" endLine="85" endPosition="32" />
     <scopeInfo nodeId="1252300412034469140" fileName="PersistentConfiguration_Behavior.java" startLine="25" startPosition="87" endLine="29" endPosition="95" />
     <scopeInfo nodeId="3257967158569718528" fileName="PersistentConfiguration_Behavior.java" startLine="41" startPosition="132" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3257967158569718556" fileName="PersistentConfiguration_Behavior.java" startLine="49" startPosition="132" endLine="53" endPosition="0" />

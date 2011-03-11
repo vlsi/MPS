@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
+import jetbrains.mps.runConfigurations.util.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;

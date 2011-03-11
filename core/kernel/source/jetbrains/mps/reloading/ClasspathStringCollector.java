@@ -15,11 +15,22 @@
  */
 package jetbrains.mps.reloading;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClasspathStringCollector extends EachClassPathItemVisitor {
-  private List<String> myStrings = new ArrayList<String>();
+  @NotNull
+  private List<String> myStrings;
+
+  public ClasspathStringCollector(List<String> strings) {
+    myStrings = strings;
+  }
+
+  public ClasspathStringCollector() {
+    this(new ArrayList<String>());
+  }
 
   @Override
   public void visit(FileClassPathItem cpItem) {

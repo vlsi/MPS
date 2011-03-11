@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.openapi.options.SettingsEditor;
 import javax.swing.JLabel;
+import jetbrains.mps.runConfigurations.util.Node_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
@@ -21,13 +22,13 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
     myMake = make;
   }
 
-  protected void disposeEditor() {
+  public void disposeEditor() {
     Disposer.dispose(myNode);
     Disposer.dispose(myMake);
   }
 
   @NotNull
-  protected JPanel createEditor() {
+  public JPanel createEditor() {
     myLabel = new JLabel("Select some node:");
     MainNodeChooser nodeChooser = myNode.createEditor();
     JPanel panel = new JPanel(new BorderLayout());
@@ -37,12 +38,12 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
     return panel;
   }
 
-  protected void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
+  public void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     myMake.applyEditorTo(configuration.getMake());
   }
 
-  protected void resetEditorFrom(final DemoApplication_Configuration configuration) {
+  public void resetEditorFrom(final DemoApplication_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     myMake.resetEditorFrom(configuration.getMake());
   }

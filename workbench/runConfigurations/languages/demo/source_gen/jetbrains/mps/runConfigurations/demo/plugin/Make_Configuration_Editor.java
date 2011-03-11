@@ -13,20 +13,20 @@ public class Make_Configuration_Editor extends SettingsEditor<Make_Configuration
   public Make_Configuration_Editor() {
   }
 
-  protected void disposeEditor() {
+  public void disposeEditor() {
   }
 
   @NotNull
-  protected JCheckBox createEditor() {
+  public JCheckBox createEditor() {
     myCheckBox = new JCheckBox("Make Before Run");
     return myCheckBox;
   }
 
-  protected void applyEditorTo(final Make_Configuration configuration) throws ConfigurationException {
+  public void applyEditorTo(final Make_Configuration configuration) throws ConfigurationException {
     configuration.setMake(myCheckBox.isSelected());
   }
 
-  protected void resetEditorFrom(final Make_Configuration configuration) {
+  public void resetEditorFrom(final Make_Configuration configuration) {
     myCheckBox.setSelected(configuration.getMake());
   }
 }

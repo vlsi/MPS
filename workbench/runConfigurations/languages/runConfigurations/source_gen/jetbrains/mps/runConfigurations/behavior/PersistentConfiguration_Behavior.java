@@ -81,6 +81,10 @@ public class PersistentConfiguration_Behavior {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false), "persistentProperty", true);
   }
 
+  public static String getCheckMethodName_5211959367043499042() {
+    return "checkConfiguration";
+  }
+
   public static class QuotationClass_4ves9l_a0a0d {
     public QuotationClass_4ves9l_a0a0d() {
     }
