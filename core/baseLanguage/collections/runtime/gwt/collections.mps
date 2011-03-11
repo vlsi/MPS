@@ -5,28 +5,18 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="k1iy" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" implicit="yes" />
   <roots>
-    <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="3687926015106425021">
-      <property name="name" nameId="tpck.1169194664001" value="runtime" />
+    <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="2413200550064256033">
+      <property name="name" nameId="tpck.1169194664001" value="runtime-gwt" />
     </node>
   </roots>
-  <root id="3687926015106425021">
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Source" typeId="k1iy.1572321421811416498" id="3687926015106425022">
-      <node role="path" roleId="k1iy.1572321421811299609" type="k1iy.Path" typeId="k1iy.1572321421811299588" id="3687926015106425023">
-        <property name="value" nameId="k1iy.1572321421811299589" value="runtime" />
-      </node>
-      <node role="pattern" roleId="k1iy.1572321421811299560" type="k1iy.Exclude" typeId="k1iy.1572321421811299558" id="3687926015106425024">
-        <node role="pattern" roleId="k1iy.1572321421811299571" type="k1iy.Pattern" typeId="k1iy.1572321421811299563" id="3687926015106425025">
-          <property name="value" nameId="k1iy.1572321421811299564" value="**/ArrayUtils.java" />
-        </node>
-      </node>
-    </node>
-    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.SuperSource" typeId="k1iy.1572321421811416500" id="3687926015106425026">
-      <node role="path" roleId="k1iy.1572321421811299609" type="k1iy.Path" typeId="k1iy.1572321421811299588" id="3687926015106425027">
+  <root id="2413200550064256033">
+    <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.SuperSource" typeId="k1iy.1572321421811416500" id="2413200550064256038">
+      <node role="path" roleId="k1iy.1572321421811299609" type="k1iy.Path" typeId="k1iy.1572321421811299588" id="2413200550064256039">
         <property name="value" nameId="k1iy.1572321421811299589" value="gwt" />
       </node>
     </node>
-    <node role="renameTo" roleId="k1iy.1572321421813882749" type="k1iy.RenameTo" typeId="k1iy.1572321421813875986" id="3687926015106425028">
-      <property name="value" nameId="k1iy.1572321421813882746" value="jetbrains.mps.baseLanguage.collections.runtime" />
+    <node role="renameTo" roleId="k1iy.1572321421813882749" type="k1iy.RenameTo" typeId="k1iy.1572321421813875986" id="2413200550064256040">
+      <property name="value" nameId="k1iy.1572321421813882746" value="jetbrains.mps.baseLanguage.collections.runtime.gwt" />
     </node>
   </root>
 </model>

@@ -12,6 +12,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
@@ -36,7 +38,10 @@ public class Inherits_module_ReferentConstraint extends BaseNodeReferenceSearchS
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return "gwt_stub".equals(smd.getStereotype());
+        return ((smd.getModelRootManager() instanceof BaseStubModelRootManager) ?
+          "gwt_stub".equals(smd.getStereotype()) :
+          Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
+        );
       }
     }).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
       public Iterable<SNode> translate(SModelDescriptor smd) {
