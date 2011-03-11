@@ -3174,7 +3174,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2970227569291910192">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qaz0.~EditorCell%dexecuteAction(jetbrains%dmps%dnodeEditor%dCellActionType)%cboolean" resolveInfo="executeAction" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q66k.~EditorCell%dexecuteAction(jetbrains%dmps%dnodeEditor%dCellActionType)%cboolean" resolveInfo="executeAction" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2970227569291910194">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="s7ft.~CellActionType%dLEFT" resolveInfo="LEFT" />
                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="s7ft.~CellActionType" resolveInfo="CellActionType" />
@@ -3198,7 +3198,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5826399350075689965">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpnt.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5826399350075689966">
