@@ -256,11 +256,6 @@ public class NodeRangeSelection implements KeyboardHandler {
       }
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
-      deactivate();
-      return true;
-    }
-
     if (!isSelectionKeystroke(keyEvent)) {
       // any navigation key - deactivate
       if (keyEvent.getKeyCode() == KeyEvent.VK_UP ||

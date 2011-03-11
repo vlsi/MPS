@@ -347,19 +347,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
 
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          if (mySearchPanel != null) {
-            mySearchPanel.deactivate();
-          }
-          if (getHighlightManager().clearForOwner(myOwner) || onEscape()) {
-            e.consume();
-          }
-        }
-      }
-    });
-
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         moveCurrentUp();
@@ -580,7 +567,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     listener.editorComponentDisposed(this);
   }
 
-  protected boolean onEscape() {
+  public boolean onEscape() {
     return false;
   }
 
@@ -888,6 +875,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       mySearchPanel = new SearchPanel(this);
     }
     return mySearchPanel;
+  }
+
+  public boolean isSearchPanelVisible() {
+    return mySearchPanel != null && mySearchPanel.isVisible();
   }
 
   public JPanel getUpperPanel() {

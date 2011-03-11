@@ -13,6 +13,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.CopyThisDown_Action", getShortcut("ctrl D"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.DeleteLine_Action", getShortcut("ctrl Y"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.End_Action", getShortcut(" END"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.Escape_Action", getShortcut(" ESCAPE"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.ExtractComponent_Action", getShortcut("ctrl alt C"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.Home_Action", getShortcut(" HOME"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.InsertBefore_Action", getShortcut(" INSERT"), getShortcut("shift ENTER"));

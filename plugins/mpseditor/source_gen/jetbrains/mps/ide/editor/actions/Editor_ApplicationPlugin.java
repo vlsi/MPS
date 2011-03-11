@@ -26,6 +26,7 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyThisDown_Action());
     addAction(new DeleteLine_Action());
     addAction(new End_Action());
+    addAction(new Escape_Action());
     addAction(new ExtractComponent_Action());
     addAction(new Home_Action());
     addAction(new InsertBefore_Action());
