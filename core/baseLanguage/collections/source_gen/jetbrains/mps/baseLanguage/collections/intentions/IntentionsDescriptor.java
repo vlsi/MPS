@@ -15,6 +15,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new Add_Comparator_Intention(), "2261417478149151571");
     add(new ConvertForEachStatementToForeachStatement_Intention(), "1193396656620");
     add(new CreateInitializer_Intention(), "1206658014161");
+    add(new IterateOverSequence_Intention(), "309173295241374789");
     add(new add_copy_from_Intention(), "1237739246401");
     add(new add_init_values_Intention(), "1237739140549");
     add(new add_sequence_initializer_Intention(), "2826767102480497650");

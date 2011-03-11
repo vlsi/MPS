@@ -13,5 +13,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     add(new ExtractGroup_Intention(), "1204990433124");
+    add(new SurroundWithExecuteLightweightCommandStatement_Intention(), "1616052750811363739");
   }
 }

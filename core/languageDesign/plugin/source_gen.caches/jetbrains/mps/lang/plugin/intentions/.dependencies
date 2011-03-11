@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.intentions.ExtractGroup_Intention" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.intentions.SurroundWithExecuteLightweightCommandStatement_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.intentions.SurroundWithExecuteLightweightCommandStatement_Intention" file="SurroundWithExecuteLightweightCommandStatement_Intention.java">

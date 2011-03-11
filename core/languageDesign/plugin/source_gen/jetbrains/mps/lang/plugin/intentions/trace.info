@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.IntentionsDescriptor" />
   <unitInfo fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.SurroundWithExecuteLightweightCommandStatement_Intention" />
   <unitInfo fileName="ExtractGroup_Intention.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.ExtractGroup_Intention" />
   <root nodeId="1204990433124">
