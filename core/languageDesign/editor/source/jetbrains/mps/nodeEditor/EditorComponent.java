@@ -918,7 +918,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void removeUpperComponent(String id) {
     JComponent component = myUpperComponents.get(id);
     if (component != null) {
-      removeUpperComponent(id);
+      removeUpperComponent(component);
     }
   }
 
