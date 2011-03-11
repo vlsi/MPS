@@ -108,8 +108,8 @@
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="3804167831988450903">
       <property name="name" nameId="tpck.1169194664001" value="map_IntentionConstructor" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tp3j.1192794744107" resolveInfo="IntentionDeclaration" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
+      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tp3j.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="3355120809064708277">
       <property name="name" nameId="tpck.1169194664001" value="methodBodyFromConceptFunction" />
@@ -1757,7 +1757,7 @@
                                   <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalInputModel" typeId="tpf3.1217026863835" id="7040691005578862326" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsOperation" typeId="tp25.1171315804604" id="7040691005578862327">
-                                  <link role="concept" roleId="tp25.1171315804605" targetNodeId="tp3j.1192794744107" resolveInfo="IntentionDeclaration" />
+                                  <link role="concept" roleId="tp25.1171315804605" targetNodeId="tp3j.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp2q.WhereOperation" typeId="tp2q.1202120902084" id="7040691005578862328">
@@ -1813,7 +1813,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetInputModel" typeId="tpf3.1217004708011" id="757674412958069676" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsOperation" typeId="tp25.1171315804604" id="3804167831988450890">
-                        <link role="concept" roleId="tp25.1171315804605" targetNodeId="tp3j.1192794744107" resolveInfo="IntentionDeclaration" />
+                        <link role="concept" roleId="tp25.1171315804605" targetNodeId="tp3j.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.SortOperation" typeId="tp2q.1205679737078" id="7040691005578851901">
@@ -1841,6 +1841,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="6855990328449460323" />
               </node>
             </node>
           </node>

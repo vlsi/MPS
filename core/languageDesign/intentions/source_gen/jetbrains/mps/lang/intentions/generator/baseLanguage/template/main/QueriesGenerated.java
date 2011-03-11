@@ -86,7 +86,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7040691005578862316(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0o(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
@@ -231,11 +231,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3804167831988450081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
     }, true);
+
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0o(Object a, Object b) {
