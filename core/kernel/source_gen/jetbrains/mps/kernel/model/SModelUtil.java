@@ -8,7 +8,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
@@ -19,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -48,8 +48,10 @@ public class SModelUtil {
   }
 
   public static void conceptRenamed(String oldName, String newName) {
-    MapSequence.fromMap(myFQNameToConcepDecl).put(InternUtil.intern(newName), MapSequence.fromMap(myFQNameToConcepDecl).get(oldName));
-    myFQNameToConcepDecl.remove(oldName);
+    SNode concept = myFQNameToConcepDecl.remove(oldName);
+    if ((concept != null)) {
+      myFQNameToConcepDecl.put(InternUtil.intern(newName), concept);
+    }
   }
 
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
@@ -89,7 +91,9 @@ public class SModelUtil {
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         SNode result = (SNode) language.findConceptDeclaration(conceptName);
-        SModelUtil.myFQNameToConcepDecl.putIfAbsent(InternUtil.intern(conceptFQName), result);
+        if (result != null) {
+          SModelUtil.myFQNameToConcepDecl.putIfAbsent(InternUtil.intern(conceptFQName), result);
+        }
         return result;
       }
     });
