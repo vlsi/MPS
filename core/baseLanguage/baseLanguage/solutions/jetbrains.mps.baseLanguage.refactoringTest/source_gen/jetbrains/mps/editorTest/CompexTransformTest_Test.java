@@ -31,7 +31,7 @@ public class CompexTransformTest_Test extends BaseTransformationTest {
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.typeString(editorComponent, "!");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

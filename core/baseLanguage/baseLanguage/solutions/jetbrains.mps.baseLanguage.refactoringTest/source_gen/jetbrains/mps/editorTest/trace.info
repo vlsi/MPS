@@ -421,7 +421,7 @@
     <nodeInfo nodeId="403806536168414090" fileName="CompexTransformTest_Test.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="403806536168414092" fileName="CompexTransformTest_Test.java" startLine="31" startPosition="107" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236014863171" fileName="CompexTransformTest_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236014863172" fileName="CompexTransformTest_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1570321191484024614" fileName="CompexTransformTest_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1236090523881">
     <nodeInfo nodeId="1236090613502" fileName="SideDeleteAtEndWhithBackSpace_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
