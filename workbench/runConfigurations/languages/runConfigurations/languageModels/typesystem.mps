@@ -118,6 +118,10 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
     </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5211959367043716086">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="name" nameId="tpck.1169194664001" value="processIsProcessHandler" />
+    </node>
   </roots>
   <root id="4777576391478107089">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4777576391478107090">
@@ -1113,6 +1117,21 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="24844921359487165">
       <property name="name" nameId="tpck.1169194664001" value="commandReferenceExpression" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4371737370140112219" resolveInfo="CommandReferenceExpression" />
+    </node>
+  </root>
+  <root id="5211959367043716086">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="5211959367043716087">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5211959367043723293">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5211959367043723295">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5211959367043723296">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5211959367043716088">
+      <property name="name" nameId="tpck.1169194664001" value="processType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.2866018809102008315" resolveInfo="ProcessType" />
     </node>
   </root>
 </model>

@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="module" module-name="analyzers" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

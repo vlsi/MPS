@@ -100,5 +100,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       SubtypingRule_Runtime subtypingRule = new SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
+    {
+      SubtypingRule_Runtime subtypingRule = new processIsProcessHandler_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
   }
 }

@@ -9,7 +9,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.runConfigurations.util.Node_Configuration;
+import jetbrains.mps.runConfigurations.utils.Node_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;

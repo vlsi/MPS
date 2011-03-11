@@ -37,8 +37,8 @@
     <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" file="IPersistentConfiguration.java">
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode extendsClassName="com.intellij.openapi.util.JDOMExternalizable" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder" file="ProcessHandlerBuilder.java">
@@ -48,7 +48,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="com.intellij.execution.configurations.GeneralCommandLine" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.List" />
@@ -57,10 +59,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessNotCreatedException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
 </dependenciesRoot>

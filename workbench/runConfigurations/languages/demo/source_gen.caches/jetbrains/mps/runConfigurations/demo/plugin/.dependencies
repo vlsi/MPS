@@ -22,12 +22,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.util.Node_Configuration" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.utils.Node_Configuration" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -46,8 +46,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.utils.Node_Configuration_Editor" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.util.Node_Configuration_Editor" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -68,7 +68,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.util.Java_Command" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
@@ -85,6 +84,7 @@
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.utils.Java_Command" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />

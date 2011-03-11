@@ -11,6 +11,7 @@
       <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="old.usages" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.runtime/jetbrains.mps.runConfigurations.runtime.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.sandbox/jetbrains.mps.runConfigurations.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.util/jetbrains.mps.runConfigurations.util.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="old.usages" />

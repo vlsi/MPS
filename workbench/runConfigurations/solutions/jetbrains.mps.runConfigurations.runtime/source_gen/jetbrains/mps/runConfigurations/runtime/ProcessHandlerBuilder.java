@@ -17,6 +17,8 @@ import java.io.File;
 import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
+import com.intellij.execution.process.ProcessNotCreatedException;
+import com.intellij.execution.configurations.GeneralCommandLine;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -101,11 +103,23 @@ public class ProcessHandlerBuilder {
       }), listener);
       return processHandler;
     } catch (IOException e) {
-      throw new ExecutionException("Start process failed", e);
+      throw new ProcessNotCreatedException("Start process failed", e, getCommandLine(workingDirectory.getAbsolutePath()));
+    } catch (NullPointerException e) {
+      throw new ProcessNotCreatedException("Start process failed: one of the command line arguments is null", e, getCommandLine(workingDirectory.getAbsolutePath()));
+    } catch (Throwable t) {
+      throw new ProcessNotCreatedException("Start process failed", t, getCommandLine(workingDirectory.getAbsolutePath()));
     }
   }
 
   private String[] splitCommandInParts(@NotNull String command) {
     return command.split("(\\s)+");
+  }
+
+  private GeneralCommandLine getCommandLine(String workingDirectory) {
+    GeneralCommandLine commandLine = new GeneralCommandLine();
+    commandLine.setExePath(ListSequence.fromList(myCommandLine).getElement(0));
+    commandLine.setWorkDirectory(workingDirectory);
+    commandLine.addParameters(ListSequence.fromList(myCommandLine).tailListSequence(1));
+    return commandLine;
   }
 }

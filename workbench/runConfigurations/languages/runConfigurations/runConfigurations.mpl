@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.runConfigurations" />
   </models>
-  <accessoryModels>
-    <model modelUID="r:568cfa38-e523-48dc-af46-ab38750a4614(jetbrains.mps.runConfigurations.util)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator name="" generatorUID="jetbrains.mps.runConfigurations#3754890006475631525" uuid="d84d74f3-ca7f-48ba-ab57-d22a60cad837">
       <models>
@@ -86,10 +84,10 @@
   </runtimeStubModels>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)</dependency>
     <dependency reexport="false">bdfab909-4d8f-4566-b44e-c33957ce28ef(jetbrains.mps.lang.dataFlow#1206455293228)</dependency>
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
-    <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</usedLanguage>
@@ -103,6 +101,7 @@
   </usedDevKits>
   <runtime>
     <dependency reexport="false">36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.runConfigurations.runtime)</dependency>
+    <dependency reexport="false">04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.runConfigurations.util)</dependency>
   </runtime>
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
