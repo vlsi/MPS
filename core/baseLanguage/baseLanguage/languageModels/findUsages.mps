@@ -23,7 +23,6 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpeg" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200309609796">
       <property name="name" nameId="tpck.1169194664001" value="OverridingMethods" />
@@ -196,7 +195,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1200413471960" resolveInfo="sMethod" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3165939133470357001">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877350435" resolveInfo="hasSameSignature" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp3b.ConceptFunctionParameter_node" typeId="tp3b.1197386047362" id="3165939133470357002" />
                     </node>
                   </node>
@@ -1425,7 +1424,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1200499549085">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877337313" resolveInfo="getErasureSignature" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877337313" resolveInfo="getErasureSignature" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1204332444250">
@@ -1438,7 +1437,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1200499562551">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877337313" resolveInfo="getErasureSignature" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877337313" resolveInfo="getErasureSignature" />
                           </node>
                         </node>
                       </node>
@@ -1602,7 +1601,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1200425863013" resolveInfo="sMethod" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1204901471067">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877350435" resolveInfo="hasSameSignature" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp3b.ConceptFunctionParameter_node" typeId="tp3b.1197386047362" id="1206444905148" />
                     </node>
                   </node>
@@ -2913,7 +2912,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1216393234217" resolveInfo="classMethod" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1216393234223">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877350435" resolveInfo="hasSameSignature" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1216393234262">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1216391860777" resolveInfo="method" />
                       </node>
@@ -3609,7 +3608,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4151347580001040947" resolveInfo="instanceMethod" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1622582681834357612">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877350435" resolveInfo="hasSameSignature" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1622582681834357639">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4151347580001030865" resolveInfo="it" />
                               </node>
@@ -3679,7 +3678,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4151347580001040947" resolveInfo="instanceMethod" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4717960406884170470">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877350435" resolveInfo="hasSameSignature" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4717960406884170471">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4717960406884169461" resolveInfo="it" />
                                       </node>
