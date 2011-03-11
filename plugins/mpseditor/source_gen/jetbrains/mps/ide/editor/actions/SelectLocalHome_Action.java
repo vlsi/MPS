@@ -14,10 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.CellActionType;
-import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 public class SelectLocalHome_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -63,13 +61,10 @@ public class SelectLocalHome_Action extends GeneratedAction {
     try {
       if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isFirstCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isFirstPositionAllowed()) {
         ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_HOME);
-      } else if (event.getInputEvent() instanceof KeyEvent) {
-        KeyEvent keyEvent = (KeyEvent) event.getInputEvent();
+      } else {
         NodeRangeSelection rangeSelection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection();
-        if (rangeSelection.isActive()) {
-          rangeSelection.processKeyPressed(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), keyEvent);
-        } else {
-          rangeSelection.activate(keyEvent);
+        if (!(rangeSelection.isActive())) {
+          rangeSelection.activate(false);
         }
       }
     } catch (Throwable t) {

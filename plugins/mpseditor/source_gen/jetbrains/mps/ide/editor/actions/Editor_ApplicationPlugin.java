@@ -44,6 +44,8 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new SelectDown_Action());
     addAction(new SelectLocalEnd_Action());
     addAction(new SelectLocalHome_Action());
+    addAction(new SelectNext_Action());
+    addAction(new SelectPrevious_Action());
     addAction(new SelectUp_Action());
     // groups 
     addGroup(new EditMenuActions_ActionGroup());

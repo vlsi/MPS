@@ -59,16 +59,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (!keyEvent.isConsumed()) {
-        // Following code is necessary for processing Shift+Up/Shift+Down keys (checked in editor tests)
-        if (editorContext.getNodeEditorComponent().getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
-          final NodeRangeSelection selection = editorContext.getNodeEditorComponent().getNodeRangeSelection();
-          boolean b = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            public Boolean compute() {
-              return selection.activate(keyEvent);
-            }
-          });
-          if (b) return true;
-        }
         // allow selected cell to process event.
         if (selectedCell.processKeyPressed(keyEvent, true)) {
           return true;

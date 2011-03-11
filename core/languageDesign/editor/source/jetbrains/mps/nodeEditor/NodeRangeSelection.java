@@ -53,24 +53,6 @@ public class NodeRangeSelection implements KeyboardHandler {
     myEditorComponent = editorComponent;
   }
 
-  public boolean isSelectionKeystroke(KeyEvent keyEvent) {
-    if (keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
-      (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-        keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
-        keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-        keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)) {
-      return true;
-    }
-
-    if (keyEvent.isShiftDown() && !(keyEvent.isAltDown()) &&
-      (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-        keyEvent.getKeyCode() == KeyEvent.VK_DOWN)) {
-      return true;
-    }
-
-    return false;
-  }
-
   public boolean isActive() {
     return myActive;
   }
@@ -116,7 +98,7 @@ public class NodeRangeSelection implements KeyboardHandler {
     myEditorComponent.repaint();
   }
 
-  public boolean activate(KeyEvent keyEvent) {
+  public boolean activate(boolean next) {
     final EditorCell selectedCell = myEditorComponent.getSelectedCell();
     SNode childNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
 
@@ -125,11 +107,6 @@ public class NodeRangeSelection implements KeyboardHandler {
         return findAppropriateNode(selectedCell);
       }
     });
-
-    if (childNode != selectedCell.getSNode()) {
-      myEditorComponent.selectNode(childNode);
-      return true;
-    }
 
     if (childNode.getParent() == null) {
       return false;
@@ -149,7 +126,7 @@ public class NodeRangeSelection implements KeyboardHandler {
       return true;
     }
 
-    processKeyPressed(myEditorComponent.getEditorContext(), keyEvent);
+    enlargeSelection(next);
     return true;
   }
 
@@ -255,13 +232,11 @@ public class NodeRangeSelection implements KeyboardHandler {
         return true;
       }
     }
+    // eat it anyway
+    return false;
+  }
 
-    if (!isSelectionKeystroke(keyEvent)) {
-      // eat it anyway
-      return false;
-    }
-
-    boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);
+  public void enlargeSelection(boolean next) {
     SNode newLastNode = null;
     List<SNode> children = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
@@ -289,8 +264,6 @@ public class NodeRangeSelection implements KeyboardHandler {
       myEditorComponent.scrollToNode(myLastNode);
       myEditorComponent.repaint();
     }
-
-    return true;
   }
 
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
