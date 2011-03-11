@@ -44,9 +44,10 @@ public class StaticReference extends SReferenceBase {
   }
 
   @Nullable
-  public synchronized SNodeId getTargetNodeId() {
-    if (mature()) return myTargetNodeId;
-    return myImmatureTargetNode.getSNodeId();
+  public SNodeId getTargetNodeId() {
+    SNode immatureNode = myImmatureTargetNode;
+    if (immatureNode == null || mature()) return myTargetNodeId;
+    return immatureNode.getSNodeId();
   }
 
   public synchronized void setTargetNodeId(SNodeId nodeId) {
@@ -57,9 +58,11 @@ public class StaticReference extends SReferenceBase {
   protected SNode getTargetNode_internal(boolean silently) {
     NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
-    synchronized (this) {
-      if (!mature()) {
-        return myImmatureTargetNode;
+    if(myImmatureTargetNode != null) {
+      synchronized (this) {
+        if (!mature()) {
+          return myImmatureTargetNode;
+        }
       }
     }
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -62,9 +61,10 @@ abstract class SReferenceBase extends SReference {
     return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
   }
 
-  public synchronized SModelReference getTargetSModelReference() {
-    if (mature()) return myTargetModelReference;
-    return myImmatureTargetNode.getModel().getSModelReference();
+  public SModelReference getTargetSModelReference() {
+    SNode immatureNode = myImmatureTargetNode;
+    if (immatureNode == null || mature()) return myTargetModelReference;
+    return immatureNode.getModel().getSModelReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
