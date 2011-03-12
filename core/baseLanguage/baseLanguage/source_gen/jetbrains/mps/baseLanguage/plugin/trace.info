@@ -31,8 +31,8 @@
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
+  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
-  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="304" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
   <unitInfo fileName="AnalyzeStacktrace_Action.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
   <unitInfo fileName="ShowNullDFA_Action.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
@@ -307,7 +307,7 @@
     <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="29" startPosition="36" endLine="30" endPosition="44" />
   </root>
   <root nodeId="1217597602946">
-    <nodeInfo nodeId="1217598015336" fileName="ShowTodoViewer_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217598015336" fileName="ShowTodoViewer_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1217598080127">
     <nodeInfo nodeId="1217598105552" fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

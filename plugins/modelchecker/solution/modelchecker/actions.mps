@@ -193,7 +193,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Show Model Checker" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelChecker.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423276216">
@@ -201,7 +200,6 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Check Project" />
       <property name="description" nameId="tp4k.1213273179528" value="Check project for unresolved references and typesystem rules" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelChecker.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423276236">
@@ -209,7 +207,6 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Check [Module]" />
       <property name="description" nameId="tp4k.1213273179528" value="Check [module] for structure and typesystem rules" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelChecker.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423276340">
@@ -217,7 +214,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Check Model" />
       <property name="description" nameId="tp4k.1213273179528" value="Check model for unresolved references and typesystem rules" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelChecker.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423411352">
@@ -9868,6 +9864,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091399">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+    </node>
   </root>
   <root id="1453248744423276216">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1453248744423276217">
@@ -9914,6 +9913,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091409">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423276236">
@@ -10150,6 +10152,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091406">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+    </node>
   </root>
   <root id="1453248744423276340">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1453248744423276341">
@@ -10338,6 +10343,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091393">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423411352">

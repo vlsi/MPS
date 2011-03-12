@@ -66,7 +66,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Next Change" />
       <property name="description" nameId="tp4k.1213273179528" value="Go to next change" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/nextOccurence.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6763225944573363067">
@@ -74,13 +73,11 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Previous Change" />
       <property name="description" nameId="tp4k.1213273179528" value="Go to previous change" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/previousOccurence.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6763225944573363107">
       <property name="name" nameId="tpck.1169194664001" value="RollbackChanges" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rollback" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/reset.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573505210">
@@ -159,7 +156,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ShowDiffererenesWithCurrentRevision" />
       <property name="caption" nameId="tp4k.1205250923097" value="Compare with the Same Repository Revision" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/diff.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8076150362379026983">
@@ -320,6 +316,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091392">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/nextOccurence.png" />
+    </node>
   </root>
   <root id="6763225944573363067">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="6763225944573363068">
@@ -431,6 +430,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091403">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/previousOccurence.png" />
+    </node>
   </root>
   <root id="6763225944573363107">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="6763225944573363108">
@@ -520,6 +522,9 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7076648626338595221" />
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091387">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/reset.png" />
     </node>
   </root>
   <root id="6763225944573505210">
@@ -2836,6 +2841,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091390">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/diff.png" />
     </node>
   </root>
   <root id="8076150362379026983">

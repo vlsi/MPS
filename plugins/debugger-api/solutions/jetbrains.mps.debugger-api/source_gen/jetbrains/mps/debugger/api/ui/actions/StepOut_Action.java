@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class StepOut_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(StepOut_Action.class.getResource("icons/stepOut.png"));
+  private static final Icon ICON = new ImageIcon(StepOut_Action.class.getResource("stepOut.png"));
   protected static Log log = LogFactory.getLog(StepOut_Action.class);
 
   public StepOut_Action() {

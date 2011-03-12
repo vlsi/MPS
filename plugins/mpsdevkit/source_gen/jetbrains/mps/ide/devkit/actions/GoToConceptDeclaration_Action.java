@@ -4,8 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/structure.png", "jetbrains.mps.ide.mpsdevkit"), true);
+  private static final Icon ICON = new ImageIcon(GoToConceptDeclaration_Action.class.getResource("structure.png"));
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   public GoToConceptDeclaration_Action() {

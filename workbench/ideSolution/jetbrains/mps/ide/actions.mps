@@ -342,7 +342,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1216120033386">
       <property name="name" nameId="tpck.1169194664001" value="ShowConceptInHierarchy" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Concept in Hierarchy" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/hierarchyView.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1216120752903">
@@ -354,7 +353,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ShowInProject" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Node in Project" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/project.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1216125431295">
@@ -366,7 +364,6 @@
       <property name="name" nameId="tpck.1169194664001" value="SolutionProperties" />
       <property name="caption" nameId="tp4k.1205250923097" value="Solution Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/solutionProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Solution" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1216127622518">
@@ -490,14 +487,12 @@
       <property name="name" nameId="tpck.1169194664001" value="ModelProperties" />
       <property name="caption" nameId="tp4k.1205250923097" value="Model Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1235248353146">
       <property name="name" nameId="tpck.1169194664001" value="ModelPropertiesWOShortcut" />
       <property name="caption" nameId="tp4k.1205250923097" value="Model Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/modelProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1236183891533">
@@ -570,26 +565,22 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5033107305426684804">
       <property name="name" nameId="tpck.1169194664001" value="CopyNode" />
       <property name="caption" nameId="tp4k.1205250923097" value="Copy" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/menu-copy.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5033107305426722313">
       <property name="name" nameId="tpck.1169194664001" value="CutNode" />
       <property name="caption" nameId="tp4k.1205250923097" value="Cut" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/menu-cut.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5033107305426734988">
       <property name="name" nameId="tpck.1169194664001" value="FastFindNodeUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages (Without Options Dialog)" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/find.png" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5033107305426766812">
       <property name="name" nameId="tpck.1169194664001" value="FindSpecificNodeUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages..." />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/find.png" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="mnemonic" nameId="tp4k.1215865999894" value="U" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
@@ -655,7 +646,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Paste" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/menu-paste.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.EditActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6840593892233915864">
@@ -813,7 +803,6 @@
       <property name="name" nameId="tpck.1169194664001" value="NewSubModel" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Model" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/model.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1420252515663985887">
@@ -913,7 +902,6 @@
       <property name="name" nameId="tpck.1169194664001" value="NewSubTestModel" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Test Model" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/testModel.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2834677590307284262">
@@ -924,7 +912,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2834677590307342574">
       <property name="name" nameId="tpck.1169194664001" value="AddToNewFavoritesList" />
       <property name="caption" nameId="tp4k.1205250923097" value="Add to New Favorites List" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/addFavoritesList.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Favorites" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2834677590307809739">
@@ -949,7 +936,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8243555296290550384">
       <property name="name" nameId="tpck.1169194664001" value="RenameFavoritesList" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Favorites List" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/menu-replace.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Favorites" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8243555296290550413">
@@ -4040,6 +4026,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091400">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/hierarchyView.png" />
+    </node>
   </root>
   <root id="1216120752903">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1216120752904">
@@ -4141,6 +4130,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1217420649084">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dNODE" resolveInfo="NODE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091410">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/project.png" />
     </node>
   </root>
   <root id="1216125431295">
@@ -4310,6 +4302,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1239369259546">
       <property name="name" nameId="tpck.1169194664001" value="module" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091384">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/solutionProperties.png" />
     </node>
   </root>
   <root id="1216127622518">
@@ -6506,6 +6501,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091397">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelProperties.png" />
+    </node>
   </root>
   <root id="1235248353146">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1235248353147">
@@ -6546,6 +6544,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1235248353163">
       <property name="name" nameId="tpck.1169194664001" value="place" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dPLACE" resolveInfo="PLACE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091383">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelProperties.png" />
     </node>
   </root>
   <root id="1236183891533">
@@ -7958,6 +7959,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091388">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/menu-copy.png" />
+    </node>
   </root>
   <root id="5033107305426722313">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="7360913708305936147">
@@ -8161,6 +8165,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091401">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/menu-cut.png" />
+    </node>
   </root>
   <root id="5033107305426734988">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5033107305426734997">
@@ -8351,6 +8358,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091368">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/find.png" />
     </node>
   </root>
   <root id="5033107305426766812">
@@ -8775,6 +8785,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091402">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/find.png" />
     </node>
   </root>
   <root id="142393105344666009">
@@ -13093,6 +13106,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091391">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/menu-paste.png" />
+    </node>
   </root>
   <root id="6840593892233915864">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6840593892233915865">
@@ -16562,6 +16578,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091395">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/model.png" />
     </node>
   </root>
   <root id="1420252515663985887">
@@ -24829,6 +24848,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091396">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/testModel.png" />
+    </node>
   </root>
   <root id="2834677590307284262">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2834677590307738359">
@@ -25088,6 +25110,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091407">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/addFavoritesList.png" />
     </node>
   </root>
   <root id="2834677590307809739">
@@ -25874,6 +25899,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091371">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/menu-replace.png" />
     </node>
   </root>
   <root id="8243555296290550413">

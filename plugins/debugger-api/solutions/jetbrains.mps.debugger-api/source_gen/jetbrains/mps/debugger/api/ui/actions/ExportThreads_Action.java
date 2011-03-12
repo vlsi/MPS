@@ -24,7 +24,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class ExportThreads_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ExportThreads_Action.class.getResource("icons/export.png"));
+  private static final Icon ICON = new ImageIcon(ExportThreads_Action.class.getResource("export.png"));
   protected static Log log = LogFactory.getLog(ExportThreads_Action.class);
 
   public ExportThreads_Action() {

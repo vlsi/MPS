@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Pause_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(Pause_Action.class.getResource("icons/pause.png"));
+  private static final Icon ICON = new ImageIcon(Pause_Action.class.getResource("pause.png"));
   protected static Log log = LogFactory.getLog(Pause_Action.class);
 
   public Pause_Action() {

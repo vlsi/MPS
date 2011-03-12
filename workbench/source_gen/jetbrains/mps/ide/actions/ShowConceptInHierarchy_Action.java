@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,7 +21,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(ShowConceptInHierarchy_Action.class.getResource("hierarchyView.png"));
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
   public ShowConceptInHierarchy_Action() {

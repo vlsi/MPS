@@ -135,13 +135,11 @@
       <property name="name" nameId="tpck.1169194664001" value="GoToEditorDeclaration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Editor Declaration" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/editor.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Goto" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1744445256079578766">
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Concept Declaration" />
       <property name="name" nameId="tpck.1169194664001" value="GoToConceptDeclaration" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/structure.png" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Goto" />
     </node>
@@ -196,7 +194,6 @@
       <property name="name" nameId="tpck.1169194664001" value="GeneratorProperties" />
       <property name="caption" nameId="tp4k.1205250923097" value="Generator Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/generatorProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Properties" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1683977858888862610">
@@ -232,7 +229,6 @@
       <property name="name" nameId="tpck.1169194664001" value="LanguageProperties" />
       <property name="caption" nameId="tp4k.1205250923097" value="Language Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/languageProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Properties" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1936689137035777973">
@@ -289,7 +285,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2662234144540708724">
       <property name="name" nameId="tpck.1169194664001" value="ShowCellInExplorer" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Cell In Explorer" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/cellExplorer.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InternalActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2662234144540708741">
@@ -317,7 +312,6 @@
       <property name="name" nameId="tpck.1169194664001" value="DevkitProperties" />
       <property name="caption" nameId="tp4k.1205250923097" value="DevKit Properties" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/languageProperties.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Properties" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1784959407586169192">
@@ -429,7 +423,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Reload All Classes" />
       <property name="name" nameId="tpck.1169194664001" value="ReloadAll" />
       <property name="description" nameId="tp4k.1213273179528" value="Reload all MPS classes" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/reload.png" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKitTools" />
     </node>
@@ -1360,6 +1353,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091404">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/editor.png" />
+    </node>
   </root>
   <root id="1744445256079578766">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1744445256079578767">
@@ -1435,6 +1431,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1744445256079578798">
       <property name="name" nameId="tpck.1169194664001" value="context" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091398">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/structure.png" />
     </node>
   </root>
   <root id="1744445256079578802">
@@ -2712,6 +2711,9 @@
       <property name="name" nameId="tpck.1169194664001" value="module" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091412">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/generatorProperties.png" />
+    </node>
   </root>
   <root id="1683977858888862610">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1683977858888862611">
@@ -3483,6 +3485,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1936689137035744608">
       <property name="name" nameId="tpck.1169194664001" value="module" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091375">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/languageProperties.png" />
     </node>
   </root>
   <root id="1936689137035777973">
@@ -5156,6 +5161,9 @@
       <property name="name" nameId="tpck.1169194664001" value="cell" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091372">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/cellExplorer.png" />
+    </node>
   </root>
   <root id="2662234144540708741">
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="2662234144540708742">
@@ -6045,6 +6053,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091408">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/languageProperties.png" />
     </node>
   </root>
   <root id="1784959407586169192">
@@ -7917,6 +7928,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="2191995028863072591">
       <property name="name" nameId="tpck.1169194664001" value="project" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="4zw2.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091386">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/reload.png" />
     </node>
   </root>
   <root id="2191995028863072592">

@@ -7,42 +7,42 @@
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Default_KeymapChanges" />
   <unitInfo fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Core_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
-  <unitInfo fileName="FindModelUsages_Action.java" startLine="26" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
-  <unitInfo fileName="FindLanguageUsages_Action.java" startLine="26" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
+  <unitInfo fileName="FindModelUsages_Action.java" startLine="25" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
+  <unitInfo fileName="FindLanguageUsages_Action.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
   <unitInfo fileName="ShowNodeMessages_Action.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
-  <unitInfo fileName="FindLanguageConceptsUsages_Action.java" startLine="27" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
+  <unitInfo fileName="FindLanguageConceptsUsages_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
   <root nodeId="1209308509191">
-    <nodeInfo nodeId="1212510263877" fileName="FindModelUsages_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212510263886" fileName="FindModelUsages_Action.java" startLine="66" startPosition="53" endLine="67" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213881488061" fileName="FindModelUsages_Action.java" startLine="67" startPosition="64" endLine="68" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213881499688" fileName="FindModelUsages_Action.java" startLine="68" startPosition="102" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212510263908" fileName="FindModelUsages_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212510263918" fileName="FindModelUsages_Action.java" startLine="72" startPosition="51" endLine="73" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212510263925" fileName="FindModelUsages_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="70" startPosition="59" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1212510263905" fileName="FindModelUsages_Action.java" startLine="69" startPosition="80" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1212510263907" fileName="FindModelUsages_Action.java" startLine="71" startPosition="27" endLine="73" endPosition="72" />
-    <scopeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="70" startPosition="59" endLine="75" endPosition="0" />
-    <unitInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="70" startPosition="47" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action$1" />
+    <nodeInfo nodeId="1212510263877" fileName="FindModelUsages_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212510263886" fileName="FindModelUsages_Action.java" startLine="65" startPosition="53" endLine="66" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213881488061" fileName="FindModelUsages_Action.java" startLine="66" startPosition="64" endLine="67" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213881499688" fileName="FindModelUsages_Action.java" startLine="67" startPosition="102" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212510263908" fileName="FindModelUsages_Action.java" startLine="70" startPosition="27" endLine="71" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212510263918" fileName="FindModelUsages_Action.java" startLine="71" startPosition="51" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212510263925" fileName="FindModelUsages_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="69" startPosition="59" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1212510263905" fileName="FindModelUsages_Action.java" startLine="68" startPosition="80" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1212510263907" fileName="FindModelUsages_Action.java" startLine="70" startPosition="27" endLine="72" endPosition="72" />
+    <scopeInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="69" startPosition="59" endLine="74" endPosition="0" />
+    <unitInfo nodeId="1212510263906" fileName="FindModelUsages_Action.java" startLine="69" startPosition="47" endLine="74" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action$1" />
   </root>
   <root nodeId="1209309487963">
     <nodeInfo nodeId="1209309503949" fileName="FindModelUsages_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1209824745368">
-    <nodeInfo nodeId="1209825243697" fileName="FindLanguageUsages_Action.java" startLine="36" startPosition="87" endLine="37" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212508818624" fileName="FindLanguageUsages_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212508818627" fileName="FindLanguageUsages_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212509212700" fileName="FindLanguageUsages_Action.java" startLine="74" startPosition="64" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213881523711" fileName="FindLanguageUsages_Action.java" startLine="75" startPosition="84" endLine="76" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212509902424" fileName="FindLanguageUsages_Action.java" startLine="78" startPosition="27" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212509902434" fileName="FindLanguageUsages_Action.java" startLine="79" startPosition="52" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209824745404" fileName="FindLanguageUsages_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="77" startPosition="59" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1212509897275" fileName="FindLanguageUsages_Action.java" startLine="76" startPosition="80" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1209825222421" fileName="FindLanguageUsages_Action.java" startLine="36" startPosition="87" endLine="37" endPosition="86" />
-    <scopeInfo nodeId="1212509897277" fileName="FindLanguageUsages_Action.java" startLine="78" startPosition="27" endLine="80" endPosition="75" />
-    <scopeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="77" startPosition="59" endLine="82" endPosition="0" />
-    <unitInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="77" startPosition="47" endLine="82" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action$1" />
+    <nodeInfo nodeId="1209825243697" fileName="FindLanguageUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212508818624" fileName="FindLanguageUsages_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212508818627" fileName="FindLanguageUsages_Action.java" startLine="72" startPosition="53" endLine="73" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212509212700" fileName="FindLanguageUsages_Action.java" startLine="73" startPosition="64" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213881523711" fileName="FindLanguageUsages_Action.java" startLine="74" startPosition="84" endLine="75" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212509902424" fileName="FindLanguageUsages_Action.java" startLine="77" startPosition="27" endLine="78" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212509902434" fileName="FindLanguageUsages_Action.java" startLine="78" startPosition="52" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209824745404" fileName="FindLanguageUsages_Action.java" startLine="81" startPosition="9" endLine="82" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="76" startPosition="59" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1212509897275" fileName="FindLanguageUsages_Action.java" startLine="75" startPosition="80" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1209825222421" fileName="FindLanguageUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="86" />
+    <scopeInfo nodeId="1212509897277" fileName="FindLanguageUsages_Action.java" startLine="77" startPosition="27" endLine="79" endPosition="75" />
+    <scopeInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="76" startPosition="59" endLine="81" endPosition="0" />
+    <unitInfo nodeId="1212509897276" fileName="FindLanguageUsages_Action.java" startLine="76" startPosition="47" endLine="81" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action$1" />
   </root>
   <root nodeId="1209825453635">
     <nodeInfo nodeId="1209825453638" fileName="FindLanguageUsages_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -68,34 +68,34 @@
     <nodeInfo nodeId="1210953638916" fileName="CoreActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1225978220759">
-    <nodeInfo nodeId="1225979441294" fileName="FindLanguageConceptsUsages_Action.java" startLine="38" startPosition="88" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225979453804" fileName="FindLanguageConceptsUsages_Action.java" startLine="40" startPosition="5" endLine="41" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225979524713" fileName="FindLanguageConceptsUsages_Action.java" startLine="41" startPosition="90" endLine="42" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225979502798" fileName="FindLanguageConceptsUsages_Action.java" startLine="43" startPosition="43" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225979544421" fileName="FindLanguageConceptsUsages_Action.java" startLine="46" startPosition="65" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225978220834" fileName="FindLanguageConceptsUsages_Action.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225978220762" fileName="FindLanguageConceptsUsages_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225978220771" fileName="FindLanguageConceptsUsages_Action.java" startLine="85" startPosition="53" endLine="86" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225978220780" fileName="FindLanguageConceptsUsages_Action.java" startLine="86" startPosition="64" endLine="87" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225978220786" fileName="FindLanguageConceptsUsages_Action.java" startLine="87" startPosition="84" endLine="88" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225978220795" fileName="FindLanguageConceptsUsages_Action.java" startLine="90" startPosition="27" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225978220804" fileName="FindLanguageConceptsUsages_Action.java" startLine="91" startPosition="52" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225978220812" fileName="FindLanguageConceptsUsages_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225978353908" fileName="FindLanguageConceptsUsages_Action.java" startLine="37" startPosition="87" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225979445830" fileName="FindLanguageConceptsUsages_Action.java" startLine="42" startPosition="87" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225979507209" fileName="FindLanguageConceptsUsages_Action.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="89" startPosition="59" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1225978220792" fileName="FindLanguageConceptsUsages_Action.java" startLine="88" startPosition="80" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1225978353909" fileName="FindLanguageConceptsUsages_Action.java" startLine="38" startPosition="88" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1225979445831" fileName="FindLanguageConceptsUsages_Action.java" startLine="43" startPosition="43" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1225979507210" fileName="FindLanguageConceptsUsages_Action.java" startLine="46" startPosition="65" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="1225978220794" fileName="FindLanguageConceptsUsages_Action.java" startLine="90" startPosition="27" endLine="92" endPosition="83" />
-    <scopeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="89" startPosition="59" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1225978220833" fileName="FindLanguageConceptsUsages_Action.java" startLine="37" startPosition="87" endLine="49" endPosition="16">
+    <nodeInfo nodeId="1225979441294" fileName="FindLanguageConceptsUsages_Action.java" startLine="37" startPosition="88" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225979453804" fileName="FindLanguageConceptsUsages_Action.java" startLine="39" startPosition="5" endLine="40" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225979524713" fileName="FindLanguageConceptsUsages_Action.java" startLine="40" startPosition="90" endLine="41" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225979502798" fileName="FindLanguageConceptsUsages_Action.java" startLine="42" startPosition="43" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225979544421" fileName="FindLanguageConceptsUsages_Action.java" startLine="45" startPosition="65" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225978220834" fileName="FindLanguageConceptsUsages_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225978220762" fileName="FindLanguageConceptsUsages_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225978220771" fileName="FindLanguageConceptsUsages_Action.java" startLine="84" startPosition="53" endLine="85" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225978220780" fileName="FindLanguageConceptsUsages_Action.java" startLine="85" startPosition="64" endLine="86" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225978220786" fileName="FindLanguageConceptsUsages_Action.java" startLine="86" startPosition="84" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225978220795" fileName="FindLanguageConceptsUsages_Action.java" startLine="89" startPosition="27" endLine="90" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225978220804" fileName="FindLanguageConceptsUsages_Action.java" startLine="90" startPosition="52" endLine="91" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225978220812" fileName="FindLanguageConceptsUsages_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225978353908" fileName="FindLanguageConceptsUsages_Action.java" startLine="36" startPosition="87" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225979445830" fileName="FindLanguageConceptsUsages_Action.java" startLine="41" startPosition="87" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225979507209" fileName="FindLanguageConceptsUsages_Action.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="88" startPosition="59" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1225978220792" fileName="FindLanguageConceptsUsages_Action.java" startLine="87" startPosition="80" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1225978353909" fileName="FindLanguageConceptsUsages_Action.java" startLine="37" startPosition="88" endLine="38" endPosition="19" />
+    <scopeInfo nodeId="1225979445831" fileName="FindLanguageConceptsUsages_Action.java" startLine="42" startPosition="43" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="1225979507210" fileName="FindLanguageConceptsUsages_Action.java" startLine="45" startPosition="65" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="1225978220794" fileName="FindLanguageConceptsUsages_Action.java" startLine="89" startPosition="27" endLine="91" endPosition="83" />
+    <scopeInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="88" startPosition="59" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1225978220833" fileName="FindLanguageConceptsUsages_Action.java" startLine="36" startPosition="87" endLine="48" endPosition="16">
       <varInfo nodeId="1225979524714" varName="structureModelDescriptor" />
       <varInfo nodeId="1225979453805" varName="language" />
     </scopeInfo>
-    <unitInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="89" startPosition="47" endLine="94" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action$1" />
+    <unitInfo nodeId="1225978220793" fileName="FindLanguageConceptsUsages_Action.java" startLine="88" startPosition="47" endLine="93" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action$1" />
   </root>
   <root nodeId="3382625879346929484">
     <nodeInfo nodeId="3382625879346929515" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="9" startPosition="87" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
