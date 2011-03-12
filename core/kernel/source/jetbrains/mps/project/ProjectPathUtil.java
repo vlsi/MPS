@@ -39,6 +39,19 @@ public class ProjectPathUtil {
     return parent != null ? parent.child("classes_gen") : null;
   }
 
+  public static IFile getClassesFolder(IFile moduleDescriptor) {
+    if (moduleDescriptor == null) {
+      return null;
+    }
+    if (moduleDescriptor.isReadOnly()) {
+      // packaged
+      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getAbsolutePath() + "!";
+      return FileSystem.getInstance().getFileByPath(filename);
+    }
+    IFile parent = moduleDescriptor.getParent();
+    return parent != null ? parent.child("classes") : null;
+  }
+
   public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
