@@ -16,7 +16,7 @@
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="91" startPosition="46" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="95" startPosition="43" endLine="96" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="99" startPosition="47" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="103" startPosition="44" endLine="104" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="103" startPosition="44" endLine="104" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="107" startPosition="35" endLine="108" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="111" startPosition="36" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="115" startPosition="37" endLine="116" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -50,7 +50,7 @@
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="91" startPosition="46" endLine="92" endPosition="18" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="95" startPosition="43" endLine="96" endPosition="83" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="99" startPosition="47" endLine="100" endPosition="18" />
-    <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="103" startPosition="44" endLine="104" endPosition="78" />
+    <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="103" startPosition="44" endLine="104" endPosition="107" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="107" startPosition="35" endLine="108" endPosition="18" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="111" startPosition="36" endLine="112" endPosition="18" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="115" startPosition="37" endLine="116" endPosition="18" />

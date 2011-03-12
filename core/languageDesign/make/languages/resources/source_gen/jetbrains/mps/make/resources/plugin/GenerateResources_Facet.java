@@ -40,7 +40,7 @@ public class GenerateResources_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Make"), new IFacet.Name("Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Make"), new IFacet.Name("Generate"), new IFacet.Name("JavaCompile")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -70,7 +70,7 @@ public class GenerateResources_Facet implements IFacet {
               }).visitAll(new IVisitor<SModelDescriptor>() {
                 public void visit(SModelDescriptor it) {
                   SModel model = it.getSModel();
-                  ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.make.resources.structure.Resource")).visitAll(new IVisitor<SNode>() {
+                  ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.make.resources.structure.Resource")).visitAll(new IVisitor<SNode>() {
                     public void visit(SNode res) {
                       Resource_Behavior.call_generate_5674250849982863634(res);
                     }
@@ -101,7 +101,7 @@ public class GenerateResources_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("compile")});
     }
 
     public ITarget.Name getName() {
