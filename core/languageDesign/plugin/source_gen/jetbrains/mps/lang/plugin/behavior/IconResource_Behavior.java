@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.io.File;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -21,7 +21,7 @@ public class IconResource_Behavior {
   }
 
   public static void virtual_generate_5674250849982863634(final SNode thisNode) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
         SModelDescriptor model = SNodeOperations.getModel(thisNode).getModelDescriptor();
         String outputRoot = model.getModule().getOutputFor(model);
@@ -29,7 +29,7 @@ public class IconResource_Behavior {
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
         // copy 
-        String source = SPropertyOperations.getString(thisNode, "path").replaceAll("/", File.separator);
+        String source = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), model.getModule().getModuleFqName());
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.child(sourceFile.getName()));
