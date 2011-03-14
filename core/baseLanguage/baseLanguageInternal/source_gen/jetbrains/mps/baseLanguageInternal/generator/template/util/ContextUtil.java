@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ContextUtil {
   public ContextUtil() {
@@ -59,6 +60,9 @@ public class ContextUtil {
   public static SNode getContextForInnerClass(TemplateQueryContext genContext, SNode node, boolean topmost) {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "classUsageExpr");
     if ((usage != null)) {
+      if (SPropertyOperations.getBoolean(node, "nonStatic")) {
+        return SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      }
       if (topmost) {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
       } else {
