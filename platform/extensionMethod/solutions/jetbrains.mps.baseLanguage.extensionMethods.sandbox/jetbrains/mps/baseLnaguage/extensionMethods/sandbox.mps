@@ -6,12 +6,12 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="uigu" modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="5jv" modelUID="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)" version="-1" implicit="yes" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="uigu.TypeExtension" typeId="uigu.1894531970723270160" id="6791353716095480383">
       <property name="name" nameId="tpck.1169194664001" value="StringExtensionMethods" />
@@ -30,7 +30,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6791353716095480392">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920163917">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7517860079983492246">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7685333756920163924">
               <property name="value" nameId="tpee.1068580320021" value="2" />
             </node>
@@ -38,7 +38,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920172843">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7517860079983492181">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7685333756920172847">
               <property name="value" nameId="tpee.1068580320021" value="3" />
             </node>
@@ -46,7 +46,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920232198">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7685333756920232199">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7685333756920232200">
               <property name="value" nameId="tpee.1068580320021" value="4" />
             </node>
@@ -54,7 +54,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920232202">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7517860079983492180">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7685333756920232209">
               <property name="value" nameId="tpee.1070475926801" value="" />
             </node>
@@ -62,7 +62,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920232211">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7517860079983492179">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7685333756920232215">
               <property name="value" nameId="tpee.1070475926801" value="" />
             </node>
@@ -70,7 +70,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7685333756920232217">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7685333756920232218">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolveInfo="contains" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7685333756920232219">
               <property name="value" nameId="tpee.1070475926801" value="df" />
             </node>
@@ -78,7 +78,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7517860079983474761">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="7517860079983474762">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7517860079983474763">
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
@@ -86,7 +86,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="688031995686448475">
           <node role="expression" roleId="tpee.1068580123156" type="uigu.LocalExtendedMethodCall" typeId="uigu.7685333756920172912" id="688031995686448483">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="688031995686448482">
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
@@ -200,9 +200,9 @@
         </node>
       </node>
       <node role="extendedType" roleId="uigu.8022092943109605394" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7517860079983491635">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~LinkedList" resolveInfo="LinkedList" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~LinkedList" resolveInfo="LinkedList" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7517860079983491637">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
         </node>
       </node>
     </node>
@@ -233,16 +233,16 @@
             <property name="name" nameId="tpck.1169194664001" value="fl" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7517860079983491629">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7517860079983491631">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t1ti.~LinkedList%d&lt;init&gt;()" resolveInfo="LinkedList" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~LinkedList%d&lt;init&gt;()" resolveInfo="LinkedList" />
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7517860079983491633">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7517860079983491625">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~LinkedList" resolveInfo="LinkedList" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~LinkedList" resolveInfo="LinkedList" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7517860079983491627">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
               </node>
             </node>
           </node>

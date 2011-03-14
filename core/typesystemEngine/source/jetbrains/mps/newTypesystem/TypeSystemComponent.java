@@ -192,7 +192,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode, boolean finalExpansion) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -208,7 +208,7 @@ class TypeSystemComponent extends CheckingComponent {
       }
 
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
-      solveInequalitiesAndExpandTypes();
+      solveInequalitiesAndExpandTypes(finalExpansion);
       performActionsAfterChecking();
     } finally {
       myInvalidationWasPerformed = false;
@@ -233,11 +233,11 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, true, false, additionalNodes, inferenceMode);
+      computeTypes(node, true, false, additionalNodes, inferenceMode, false);
       type = getType(initialNode);
       if (type == null || HUtil.hasVariablesInside(type)) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode);
+          computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode, true);
           type = getType(initialNode);
           return type;
         }
@@ -359,9 +359,9 @@ class TypeSystemComponent extends CheckingComponent {
     }
   }
 
-  public void solveInequalitiesAndExpandTypes() {
+  public void solveInequalitiesAndExpandTypes(boolean finalExpansion) {
     myState.solveInequalities();
-    myState.expandAll(myJustInvalidatedNodes);
+    myState.expandAll(myJustInvalidatedNodes, finalExpansion);
     myJustInvalidatedNodes.clear();
   }
 
@@ -373,7 +373,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), false);
+    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), false, true);
   }
 
   private void performActionsAfterChecking() {
@@ -391,7 +391,7 @@ class TypeSystemComponent extends CheckingComponent {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
+        myState.applyRuleToNode(node, rule.o1, rule.o2);
       }
       myCurrentCheckedNode = oldCheckedNode;
       result = myCurrentTypeAffected;

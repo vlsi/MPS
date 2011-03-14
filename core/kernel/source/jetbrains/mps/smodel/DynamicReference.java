@@ -49,9 +49,11 @@ public class DynamicReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal(boolean silently) {
-    synchronized (this) {
-      if (!mature()) {
-        return myImmatureTargetNode;
+    if(myImmatureTargetNode != null) {
+      synchronized (this) {
+        if (!mature()) {
+          return myImmatureTargetNode;
+        }
       }
     }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.resolve.MethodDeclarationsFixer;
+import jetbrains.mps.ide.resolve.MethodDeclarationsFixer;
 
 public class RefactorAnonymousClasses_MigrationScript extends BaseMigrationScript {
   public RefactorAnonymousClasses_MigrationScript(IOperationContext operationContext) {

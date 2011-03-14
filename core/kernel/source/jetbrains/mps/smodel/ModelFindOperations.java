@@ -21,7 +21,7 @@ public class ModelFindOperations {
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
     myNeedSearchForStrings = myModelDescriptor.getLoadingState() != ModelLoadingState.FULLY_LOADED;
     if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor) {
-      myNeedSearchForStrings = !SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
+      myNeedSearchForStrings = !((EditableSModelDescriptor) myModelDescriptor).isChanged();
     }
   }
 
@@ -103,7 +103,7 @@ public class ModelFindOperations {
     if (!myFindUsagesSupported) return new HashSet<SNode>();
     boolean changed = false;
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
-      changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
+      changed = ((EditableSModelDescriptor) myModelDescriptor).isChanged();
     }
     boolean atLeastRootsLoaded = myModelDescriptor.getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0;
     if (atLeastRootsLoaded && !changed && !descendantsKnownInModel.isEmpty())

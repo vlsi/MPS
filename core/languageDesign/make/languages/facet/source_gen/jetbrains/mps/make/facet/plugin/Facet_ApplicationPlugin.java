@@ -4,19 +4,10 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
-import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.Build_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.make.facet");
@@ -28,46 +19,9 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
     return myId;
   }
 
-  public void createGroups() {
-    // actions w/o parameters 
-    addAction(new MakeProject_Action());
-    addAction(new MakeSelectedModels_Action());
-    addAction(new MakeSelectedModules_Action());
-    addAction(new RebuildProject_Action());
-    addAction(new RebuildSelectedModels_Action());
-    addAction(new RebuildSelectedModules_Action());
-    addAction(new TextPreviewModel_Action());
-    // groups 
-    addGroup(new GlobalMake_ActionGroup());
-    addGroup(new Make_ActionGroup());
-    addGroup(new NamespaceMake_ActionGroup());
-    addGroup(new ProjectMake_ActionGroup());
-    addGroup(new TextPreviewGroup_ActionGroup());
-    addGroup(new ToolbarMake_ActionGroup());
-  }
-
-  public void adjustRegularGroups() {
-    insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, Make_ActionGroup.ID, Make_ActionGroup.LABEL_ID_preview);
-    insertGroupIntoAnother(ToolbarMake_ActionGroup.ID, "MPSToolbarRunGroup", null);
-    insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(Make_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(Make_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(Make_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_make);
-    insertGroupIntoAnother(GlobalMake_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_make);
-  }
-
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new Facets_CustomApplicationPlugin());
-    return res;
-  }
-
-  public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 

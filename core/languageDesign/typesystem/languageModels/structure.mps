@@ -11,7 +11,7 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="a0xp" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174642743670">
@@ -62,7 +62,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174663314467">
       <property name="name" nameId="tpck.1169194664001" value="CreateComparableEquationStatement" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4315056782306262711" resolveInfo="AbstractComparableStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174665551739">
       <property name="name" nameId="tpck.1169194664001" value="TypeVarDeclaration" />
@@ -161,7 +161,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180099659756">
       <property name="name" nameId="tpck.1169194664001" value="CreateComparableEquationStatementStrong" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4315056782306262711" resolveInfo="AbstractComparableStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1185281562361">
       <property name="name" nameId="tpck.1169194664001" value="RuntimeErrorType" />
@@ -601,6 +601,10 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3585736512129529703">
       <property name="name" nameId="tpck.1169194664001" value="CreateStrongGreaterThanInequationStatement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4315056782306262711">
+      <property name="name" nameId="tpck.1169194664001" value="AbstractComparableStatement" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
     </node>
   </roots>
   <root id="1174642743670">
@@ -2373,7 +2377,7 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="3701925705266318591">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3701925705266318820">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="a0xp.~EditorContext" resolveInfo="EditorContext" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s7ft.~EditorContext" resolveInfo="EditorContext" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3701925705266318589">
@@ -2458,6 +2462,12 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3585736512129529707">
       <property name="value" nameId="tpce.1105725733873" value="strong subtyping" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </root>
+  <root id="4315056782306262711">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4315056782306320180">
+      <property name="name" nameId="tpck.1169194664001" value="infer" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
 </model>

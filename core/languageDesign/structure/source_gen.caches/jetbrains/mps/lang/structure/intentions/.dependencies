@@ -37,6 +37,14 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" file="MakeRootable_Intention.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

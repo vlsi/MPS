@@ -21,6 +21,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -38,8 +39,9 @@ public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   private static SModelRepository ourInstance = null;
+
   public static SModelRepository getInstance() {
-    if (ourInstance ==null){
+    if (ourInstance == null) {
       ourInstance = ApplicationManager.getApplication().getComponent(SModelRepository.class);
     }
     return ourInstance;
@@ -141,7 +143,7 @@ public class SModelRepository implements ApplicationComponent {
     ModelAccess.assertLegalWrite();
 
     registerModelDescriptor(modelDescriptor, owner);
-    markChanged(modelDescriptor, true);
+    modelDescriptor.setChanged(true);
     fireModelCreatedEvent(modelDescriptor);
   }
 
@@ -166,6 +168,10 @@ public class SModelRepository implements ApplicationComponent {
         throw new IllegalStateException();
       }
 
+      if (modelDescriptor.getModule() != null && modelDescriptor.getModule() != owner && modelDescriptor.getStereotype() != "java_stub") {
+        throw new IllegalStateException();
+      }
+
       myModelsToOwners.addLink(modelDescriptor, owner);
       myModelsWithNoOwners.remove(modelDescriptor);
     }
@@ -182,12 +188,14 @@ public class SModelRepository implements ApplicationComponent {
       "Another model \"" + modelReference + "\" is already registered!");
 
     SModelDescriptor modelDescByName = getModelDescriptor(modelReference.getSModelFqName());
+/*
     if (modelDescByName != null && modelDescByName != modelDescriptor) {
       LOG.error("can't register model descriptor " + modelReference
         + "model with the same fq name but different id is already registered: id = "
         + modelDescByName.getSModelReference().getSModelId());
       registerModelDescriptor(modelDescByName, owner);
     }
+*/
 
     synchronized (myModelsLock) {
       Set<ModelOwner> owners = myModelsToOwners.getByFirst(modelDescriptor);
@@ -284,10 +292,19 @@ public class SModelRepository implements ApplicationComponent {
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
-    if (modelReference.getSModelId() != null) {
-      return myIdToModelDescriptorMap.get(modelReference.getSModelId());
-    }
-    return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+
+    SModelId id = modelReference.getSModelId();
+    if (id == null) return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+
+    SModelDescriptor model = myIdToModelDescriptorMap.get(id);
+    if (model != null) return model;
+
+    if (!(id instanceof RegularSModelId)) return null;
+
+    SModelFqName fqName = modelReference.getSModelFqName();
+    if (fqName == null) return null;
+
+    return myFqNameToModelDescriptorMap.get(fqName);
   }
 
   public SModelDescriptor getModelDescriptor(SModelFqName modelFqName) {
@@ -350,20 +367,8 @@ public class SModelRepository implements ApplicationComponent {
       try {
         emd.save();
         emd.setChanged(false);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void updateReferences() {
-    ModelAccess.assertLegalWrite();
-
-    for (SModelDescriptor sm : getModelDescriptors()) {
-      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-
-      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor)) {
-        markChanged(((EditableSModelDescriptor) sm), true);
+      } catch (Exception e) {
+        LOG.error(e);
       }
     }
   }
@@ -515,30 +520,22 @@ public class SModelRepository implements ApplicationComponent {
 
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
+  @Deprecated
   private void markChanged(SModel model, boolean changed) {
-    SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModelDescriptor) {
-      markChanged(((EditableSModelDescriptor) modelDescriptor), changed);
+      ((EditableSModelDescriptor) modelDescriptor).setChanged(changed);
     }
   }
 
+  @Deprecated
   public void markChanged(SModel model) {
     markChanged(model, true);
   }
 
+  @Deprecated
   public void markUnchanged(SModel model) {
     markChanged(model, false);
-  }
-
-  public void markChanged(EditableSModelDescriptor descriptor, boolean b) {
-    synchronized (myModelsLock) {
-      if (!myModelDescriptors.contains(descriptor)) return;
-      descriptor.setChanged(b);
-    }
-  }
-
-  public boolean isChanged(EditableSModelDescriptor descriptor) {
-    return descriptor.isChanged();
   }
 
   public Set<SModelDescriptor> getChangedModels() {

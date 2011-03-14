@@ -13,5 +13,11 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.intentions.AddTestReferenceAnnotation_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
 </dependenciesRoot>
 

@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.IsInstanceCondition" file="IsInstanceCondition.java">
     <classNode dependClassName="java.lang.String" />

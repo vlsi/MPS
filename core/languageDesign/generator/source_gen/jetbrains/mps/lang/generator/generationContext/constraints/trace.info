@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_importClause_ReferentConstraint" />
   <unitInfo fileName="GenerationContextOp_ParameterRef_parameter_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_ParameterRef_parameter_ReferentConstraint" />
   <unitInfo fileName="GenerationContextOp_NodePatternRef_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_patternVarDecl_ReferentConstraint" />
   <unitInfo fileName="GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint" />
@@ -28,6 +29,15 @@
       <varInfo nodeId="1758784108619297788" varName="result" />
       <varInfo nodeId="1758784108619297794" varName="rule" />
     </scopeInfo>
+  </root>
+  <root nodeId="2507865635201658711">
+    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="31" startPosition="50" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="30" startPosition="195" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2507865635201658753" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="31" startPosition="50" endLine="32" endPosition="76" />
+    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="30" startPosition="195" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2507865635201658714" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="7" />
+    <unitInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_importClause_ReferentConstraint.java" startLine="30" startPosition="165" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_importClause_ReferentConstraint$1" />
   </root>
   <root nodeId="4589968773278063862">
     <nodeInfo nodeId="4589968773278089269" fileName="GenerationContextOp_NodePatternRef_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

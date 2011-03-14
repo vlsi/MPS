@@ -190,7 +190,6 @@ public final class SNode {
       }
     }
     result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
-    result.addAll(getLinkNamesFromAttributes());  // compatibility
     return result;
   }
 
@@ -293,93 +292,6 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  public List<SNode> getNodeAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
-        attributes.add(child);
-      }
-    }
-    return attributes;
-  }
-
-  public List<SNode> getAllAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      // for migration period:
-      if (AttributeOperations.isAttribute(child)) {
-        attributes.add(child);
-      }
-    }
-    return attributes;
-  }
-
-  public boolean isAttribute() {
-    return AttributeOperations.isAttribute(this);
-//    String role_ = getRole_();
-//    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
-  }
-
-  public SNode getAttribute(String role) {
-    return AttributeOperations.getNodeAttribute(this, role);
-  }
-
-  public List<SNode> getAttributes(String role) {
-    return AttributeOperations.getNodeAttributes(this, role);
-  }
-
-  public void setAttribute(String role, SNode attribute) {
-    AttributeOperations.setNodeAttribute(this, role, attribute);
-  }
-
-  public void addAttribute(String role, SNode attribute) {
-    AttributeOperations.addNodeAttribute(this, role, attribute);
-  }
-
-  //property
-
-  public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    AttributeOperations.setPropertyAttribute(this, role, propertyName, propertyAttribute);
-  }
-
-  public void addPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    AttributeOperations.addPropertyAttribute(this, role, propertyName, propertyAttribute);
-  }
-
-  public SNode getPropertyAttribute(String role, String propertyName) {
-    return AttributeOperations.getPropertyAttribute(this, role, propertyName);
-  }
-
-  public List<SNode> getPropertyAttributes(String role, String propertyName) {
-    return AttributeOperations.getPropertyAttributes(this, role, propertyName);
-  }
-
-  public Set<SNode> getPropertyAttributesForPropertyName(String propertyName) {
-    return AttributeOperations.getPropertyAttributeForPropertyName(this, propertyName);
-  }
-
-  //link
-
-  public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    AttributeOperations.setLinkAttribute(this, role, linkRole, linkAttribute);
-  }
-
-  public void addLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    AttributeOperations.addLinkAttribute(this, role, linkRole, linkAttribute);
-  }
-
-  public SNode getLinkAttribute(String role, String linkRole) {
-    return AttributeOperations.getLinkAttribute(this, role, linkRole);
-  }
-
-  public List<SNode> getLinkAttributes(String role, String linkRole) {
-    return AttributeOperations.getLinkAttributes(this, role, linkRole);
-  }
-
-  public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
-    return AttributeOperations.getLinkAttributeForLinkRole(this, linkRole);
-  }
-
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
 
@@ -405,29 +317,10 @@ public final class SNode {
 
     fireNodeReadAccess();
     Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
-    result.addAll(getPropertyNamesFromAttributes());  // compatibility
     if (myProperties != null) {
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(myProperties[i]);
       }
-    }
-    return result;
-  }
-
-  protected Set<String> getPropertyNamesFromAttributes() {
-    Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles(true)) {
-      String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-      if (propertyName != null) result.add(propertyName);
-    }
-    return result;
-  }
-
-  protected Set<String> getLinkNamesFromAttributes() {
-    Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles(true)) {
-      String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-      if (linkRole != null) result.add(linkRole);
     }
     return result;
   }
@@ -1595,7 +1488,7 @@ public final class SNode {
     node.myParent = null;
   }
 
-  private class ChildrenList extends AbstractImmutableList<SNode> {
+  private static class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
       super(first);
     }
@@ -1620,26 +1513,29 @@ public final class SNode {
     }
   }
 
-  private class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
+  private static class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
     public SkipAttributesChildrenList(SNode first) {
-      super(first);
+      super(skipAttributes(first));
     }
 
     public SkipAttributesChildrenList(SNode first, int size) {
-      super(first, size);
+      super(skipAttributes(first), size);
+    }
+
+    private static SNode skipAttributes(SNode node) {
+      while (node != null && AttributeOperations.isAttribute(node)) {
+        node = node.myNextSibling;
+      }
+      return node;
     }
 
     protected SNode next(SNode node) {
-      SNode result = node.myNextSibling;
-      while (result != null && result.isAttribute()) {
-        result = result.myNextSibling;
-      }
-      return result;
+      return skipAttributes(node.myNextSibling);
     }
 
     protected SNode prev(SNode node) {
       SNode result = myFirst == node ? null : node.myPrevSibling;
-      while (result != null && result.isAttribute()) {
+      while (result != null && AttributeOperations.isAttribute(result)) {
         result = myFirst == result ? null : result.myPrevSibling;
       }
       return result;
@@ -1852,37 +1748,4 @@ public final class SNode {
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
-  //------------deprecated-------------
-
-  @Deprecated
-  public SNode getAttribute() {
-    return AttributeOperations.getNodeAttribute(this, null);
-  }
-
-  @Deprecated
-  public void setAttribute(SNode attributeConcept) {
-    AttributeOperations.setNodeAttribute(this, null, attributeConcept);
-  }
-
-  @Deprecated
-  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
-    // 'default' property attr
-    setPropertyAttribute(null, propertyName, propertyAttribute);
-  }
-
-  @Deprecated
-  public SNode getPropertyAttribute(String propertyName) {
-    return AttributeOperations.getPropertyAttribute(this, null, propertyName);
-  }
-
-  @Deprecated
-  public void setLinkAttribute(String role, SNode linkAttribute) {
-    // 'default' link attr
-    setLinkAttribute(null, role, linkAttribute);
-  }
-
-  @Deprecated
-  public SNode getLinkAttribute(String role) {
-    return AttributeOperations.getLinkAttribute(this, null, role);
-  }
 }

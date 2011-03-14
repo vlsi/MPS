@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -78,7 +79,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
-    SModelRepository.getInstance().markChanged(model, true);
+    model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(model)) {
@@ -197,24 +198,24 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getOwnStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
     if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
-      result.add(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
     }
-    return result;
+    return Collections.emptyList();
   }
 
   public List<StubPath> getStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
-
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (StubModelsEntry entry : getModuleDescriptor().getStubModelEntries()) {
+      List<StubModelsEntry> stubModelEntries = getModuleDescriptor().getStubModelEntries();
+      ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+      for (StubModelsEntry entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
       }
+      return result;
     }
 
-    return result;
+    return Collections.emptyList();
   }
 
   protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
@@ -402,25 +403,11 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public List<SModelDescriptor> getEditableUserModels() {
-    return Collections.<SModelDescriptor>emptyList();
+    return Collections.emptyList();
   }
 
   public IFile getClassesGen() {
-    IFile classesDir = getClassesDirParent();
-    if (classesDir == null) return null;
-    if (isPackaged()) return classesDir;
-
-    return classesDir.child("classes_gen");
-  }
-
-  private IFile getClassesDirParent() {
-    if (isPackaged()) {
-      String filename = getBundleHome().getAbsolutePath() + "!";
-      return FileSystem.getInstance().getFileByPath(filename);
-    } else {
-      if (getDescriptorFile() == null) return null;
-      return getDescriptorFile().getParent();
-    }
+    return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
@@ -553,6 +540,26 @@ public abstract class AbstractModule implements IModule {
     if (timestampString == null) return true;
     long timestamp = Long.decode(timestampString);
     return timestamp != myDescriptorFile.lastModified();
+  }
+
+  @Override
+  public ModuleReference getModuleFor(String packageName, String langID) {
+    for (SModelDescriptor model : getOwnModelDescriptors()) {
+      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
+        return getModuleReference();
+      }
+    }
+
+    Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
+    Set<IModule> deps = new HashSet<IModule>(scopeModules);
+    for (IModule module : deps) {
+      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
+          return module.getModuleReference();
+        }
+      }
+    }
+    return null;
   }
 
   public String getOutputFor(SModelDescriptor model) {

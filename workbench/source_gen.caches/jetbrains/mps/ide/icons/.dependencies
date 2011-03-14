@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.icons.IconManager" file="IconManager.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="java.awt.MediaTracker" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="com.intellij.ui.RowIcon" />
+    <classNode dependClassName="com.intellij.ui.LayeredIcon" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeOperations" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="com.intellij.openapi.util.Computable" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.project.DevKit" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
+    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+

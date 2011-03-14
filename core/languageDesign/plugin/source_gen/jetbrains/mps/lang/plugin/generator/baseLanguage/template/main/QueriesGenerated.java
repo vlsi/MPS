@@ -174,6 +174,11 @@ public class QueriesGenerated {
     );
   }
 
+  public static Object propertyMacro_GetPropertyValue_3531082374270459708(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    // todo this is a hack to support icons in plugins 
+    return ActionDeclaration_Behavior.call_getIconResourcePath_1588596821190635995(_context.getNode(), _context.getOriginalInputModel().getModelDescriptor().getModule());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1215793681588(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "caption");
   }
@@ -741,6 +746,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1213878132458(final IOperationContext operationContext, final IfMacroContext _context) {
+    // hack for icons inside plugins 
+    return SPropertyOperations.getString(_context.getNode(), "iconPath") != null && !(ActionDeclaration_Behavior.call_isLoadIconFromResoures_1588596821190606499(_context.getNode(), _context.getOriginalInputModel().getModelDescriptor().getModule()));
+  }
+
+  public static boolean ifMacro_Condition_3531082374270482112(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "iconPath") != null;
   }
 
@@ -845,10 +855,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static boolean ifMacro_Condition_3415553850105280972(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
-  }
-
   public static boolean ifMacro_Condition_1218028307705(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.EditorTab")).isNotEmpty();
   }
@@ -903,10 +909,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_3001545589053200118(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "beforeWriteBlock", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_8871657905861834590(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
   }
 
   public static boolean ifMacro_Condition_1218034274586(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1712,7 +1714,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
         result = quotedNode1_2;
       }
       return result;
@@ -1764,8 +1766,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager")));
-        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager.EMPTY_ICON")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)"), SNodeId.fromString("~IconManager.EMPTY_ICON")));
         result = quotedNode1_2;
       }
       return result;
@@ -1835,7 +1837,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)"), SNodeId.fromString("~GeneratedTool")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)"), SNodeId.fromString("~GeneratedTool")));
         result = quotedNode1_2;
       }
       return result;
@@ -1853,7 +1855,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)"), SNodeId.fromString("~GeneratedTabbedTool")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)"), SNodeId.fromString("~GeneratedTabbedTool")));
         result = quotedNode1_2;
       }
       return result;
@@ -1905,7 +1907,7 @@ public class QueriesGenerated {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+            quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
             quotedNode_2.addChild("valueType", quotedNode1_8);
           }
           quotedNode_1.addChild("type", quotedNode1_6);
@@ -1942,7 +1944,7 @@ public class QueriesGenerated {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+            quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
             quotedNode_2.addChild("valueType", quotedNode1_8);
           }
           quotedNode_1.addChild("type", quotedNode1_6);

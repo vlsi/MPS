@@ -132,18 +132,15 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public boolean isValid() {
-    return true;
-/*
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        SNode node = myNode.getNode();
-        if (node == null) {
-          return false;
-        }
-        return node.isRegistered();
-      }
-    });
-*/
+    return myNode != null;
+  }
+
+  void invalidate() {
+    myNode = null;
+  }
+
+  public boolean hasValidMPSNode() {
+    return isValid() && MPSNodesVirtualFileSystem.getInstance().hasVirtualFileFor(myNode);
   }
 
   public long getTimeStamp() {

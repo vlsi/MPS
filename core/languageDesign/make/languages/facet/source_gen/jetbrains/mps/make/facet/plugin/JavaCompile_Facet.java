@@ -380,9 +380,9 @@ public class JavaCompile_Facet implements IFacet {
               Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
               for (IResource r : Sequence.fromIterable(input)) {
                 FResource fres = ((FResource) r);
-                MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, String>>() {
-                  public void visit(IMapping<String, String> m) {
-                    jc.addSource(m.key(), m.value());
+                MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
+                  public void visit(IMapping<String, Object> m) {
+                    jc.addSourceFile("", m.key(), m.value());
                   }
                 });
                 if (fres.module() != null) {

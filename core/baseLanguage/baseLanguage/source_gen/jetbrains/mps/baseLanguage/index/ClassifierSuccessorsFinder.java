@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -54,7 +53,7 @@ public class ClassifierSuccessorsFinder {
       if (modelFile == null) {
         continue;
       }
-      if (SModelRepository.getInstance().isChanged(emd)) {
+      if (emd.isChanged()) {
         SModel sModel = md.getSModel();
         for (SNode sNode : ListSequence.fromList(SModelOperations.getNodes(sModel, null))) {
           if (SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {

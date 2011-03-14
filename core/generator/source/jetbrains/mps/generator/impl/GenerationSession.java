@@ -172,7 +172,9 @@ public class GenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      // FIXME
+      if(gfe.getCause() != null) {
+        myLogger.handleException(gfe.getCause());
+      }
       myLogger.error(gfe.getMessage());
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
       return new GenerationStatus.ERROR(myOriginalInputModel);

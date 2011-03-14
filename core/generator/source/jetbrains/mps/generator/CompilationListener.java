@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.List;
 
+@Deprecated
 public interface CompilationListener {
   void beforeModelsCompiled(List<SModelDescriptor> models, boolean success);
 

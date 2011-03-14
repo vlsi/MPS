@@ -27,7 +27,6 @@ public class typeof_ModuleTarget_InferenceRule extends AbstractInferenceRule_Run
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(target, "moduleType", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4413749148913634044", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4413749148913634036", true), (SNode) new typeof_ModuleTarget_InferenceRule.QuotationClass_rkxyo0_a0a0a0().createNode(typeCheckingContext), true, _info_12389875345);
     }
   }
@@ -58,7 +57,7 @@ public class typeof_ModuleTarget_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~IModule")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~IModule")));
         result = quotedNode1_2;
       }
       return result;
@@ -71,7 +70,7 @@ public class typeof_ModuleTarget_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~IModule")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~IModule")));
         result = quotedNode1_2;
       }
       return result;

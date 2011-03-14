@@ -69,24 +69,24 @@
   <unitInfo fileName="IfNotNullAll.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
   <unitInfo fileName="RuleMethodCall.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
   <unitInfo fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="116" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="132" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="176" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="192" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="206" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="266" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <unitInfo fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   <unitInfo fileName="IfEqualsNullAll.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
   <unitInfo fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner$NullableAnalyzer" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="115" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="131" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="183" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="199" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="273" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a" />
   <unitInfo fileName="NullableAnalyzerRunner.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
   <unitInfo fileName="NullableAnalyzerRules.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRules" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="26" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull$Pattern_ah97h0_a0a" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="12" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull" />
-  <unitInfo fileName="WhileNotNull.java" startLine="26" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull$Pattern_pezsk4_a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="12" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="26" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull$Pattern_vwsftd_a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="12" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="26" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull$Pattern_ah97h0_a0a" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="12" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull" />
+  <unitInfo fileName="WhileNotNull.java" startLine="26" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull$Pattern_pezsk4_a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="12" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="26" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull$Pattern_vwsftd_a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="12" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
   <root nodeId="1206454554507">
     <nodeInfo nodeId="1206454560120" fileName="IfStatement_DataFlow.java" startLine="18" startPosition="102" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220014062836" fileName="IfStatement_DataFlow.java" startLine="20" startPosition="161" endLine="21" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -961,22 +961,22 @@
     </scopeInfo>
   </root>
   <root nodeId="5730083271929368106">
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="99" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="45" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="101" startPosition="33" endLine="102" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="103" startPosition="23" endLine="104" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="105" startPosition="18" endLine="106" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="107" startPosition="11" endLine="108" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="108" startPosition="98" endLine="109" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="109" startPosition="92" endLine="110" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="105" startPosition="16" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="102" startPosition="23" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="99" startPosition="83" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="97" startPosition="42" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="103" startPosition="23" endLine="104" endPosition="56" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="105" startPosition="18" endLine="106" endPosition="54" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="45" endLine="110" endPosition="70" />
-    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="111" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="99" startPosition="7" endLine="100" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="102" startPosition="33" endLine="103" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="104" startPosition="23" endLine="105" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="106" startPosition="18" endLine="107" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="108" startPosition="11" endLine="109" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="109" startPosition="98" endLine="110" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="110" startPosition="92" endLine="111" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="106" startPosition="16" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="103" startPosition="23" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="83" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="42" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="104" startPosition="23" endLine="105" endPosition="56" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="106" startPosition="18" endLine="107" endPosition="54" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="111" endPosition="70" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="99" startPosition="7" endLine="112" endPosition="9" />
   </root>
   <root nodeId="6023428257643051553">
     <nodeInfo nodeId="6023428257643052113" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1147,54 +1147,54 @@
     <scopeInfo nodeId="6868777471677432396" fileName="RuleCreator.java" startLine="25" startPosition="53" endLine="35" endPosition="5" />
   </root>
   <root nodeId="6868777471677432402">
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="159" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="45" endLine="161" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="161" startPosition="32" endLine="162" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="163" startPosition="23" endLine="164" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="165" startPosition="18" endLine="166" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="167" startPosition="11" endLine="168" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="168" startPosition="98" endLine="169" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="169" startPosition="63" endLine="170" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="7" endLine="174" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="175" startPosition="45" endLine="176" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="176" startPosition="33" endLine="177" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="178" startPosition="23" endLine="179" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="180" startPosition="18" endLine="181" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="182" startPosition="11" endLine="183" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="183" startPosition="99" endLine="184" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="184" startPosition="64" endLine="185" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="188" startPosition="7" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="190" startPosition="45" endLine="191" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="191" startPosition="32" endLine="192" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="193" startPosition="23" endLine="194" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="195" startPosition="18" endLine="196" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="197" startPosition="11" endLine="198" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="198" startPosition="95" endLine="199" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="199" startPosition="63" endLine="200" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="165" startPosition="16" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="180" startPosition="16" endLine="182" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="195" startPosition="16" endLine="197" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="162" startPosition="23" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="177" startPosition="23" endLine="182" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="192" startPosition="23" endLine="197" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="159" startPosition="54" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="174" startPosition="55" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="189" startPosition="54" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="157" startPosition="42" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="172" startPosition="7" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="187" startPosition="7" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="163" startPosition="23" endLine="164" endPosition="56" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="165" startPosition="18" endLine="166" endPosition="54" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="178" startPosition="23" endLine="179" endPosition="56" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="180" startPosition="18" endLine="181" endPosition="54" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="193" startPosition="23" endLine="194" endPosition="56" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="195" startPosition="18" endLine="196" endPosition="54" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="45" endLine="170" endPosition="70" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="175" startPosition="45" endLine="185" endPosition="70" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="190" startPosition="45" endLine="200" endPosition="70" />
-    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="171" endPosition="9" />
-    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="7" endLine="186" endPosition="9" />
-    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="188" startPosition="7" endLine="201" endPosition="9" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="159" startPosition="7" endLine="160" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="162" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="162" startPosition="32" endLine="163" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="164" startPosition="23" endLine="165" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="166" startPosition="18" endLine="167" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="168" startPosition="11" endLine="169" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="169" startPosition="98" endLine="170" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="170" startPosition="63" endLine="171" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="174" startPosition="7" endLine="175" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="176" startPosition="45" endLine="177" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="177" startPosition="33" endLine="178" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="179" startPosition="23" endLine="180" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="181" startPosition="18" endLine="182" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="183" startPosition="11" endLine="184" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="184" startPosition="99" endLine="185" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="185" startPosition="64" endLine="186" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="189" startPosition="7" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="191" startPosition="45" endLine="192" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="192" startPosition="32" endLine="193" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="194" startPosition="23" endLine="195" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="196" startPosition="18" endLine="197" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="198" startPosition="11" endLine="199" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="199" startPosition="95" endLine="200" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="200" startPosition="63" endLine="201" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="166" startPosition="16" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="181" startPosition="16" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="196" startPosition="16" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="163" startPosition="23" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="178" startPosition="23" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="193" startPosition="23" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="54" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="175" startPosition="55" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="190" startPosition="54" endLine="202" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="42" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="7" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="188" startPosition="7" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="164" startPosition="23" endLine="165" endPosition="56" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="166" startPosition="18" endLine="167" endPosition="54" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="179" startPosition="23" endLine="180" endPosition="56" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="181" startPosition="18" endLine="182" endPosition="54" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="194" startPosition="23" endLine="195" endPosition="56" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="196" startPosition="18" endLine="197" endPosition="54" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="171" endPosition="70" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="176" startPosition="45" endLine="186" endPosition="70" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="191" startPosition="45" endLine="201" endPosition="70" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="159" startPosition="7" endLine="172" endPosition="9" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="174" startPosition="7" endLine="187" endPosition="9" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="189" startPosition="7" endLine="202" endPosition="9" />
   </root>
   <root nodeId="6868777471677432435">
     <nodeInfo nodeId="6868777471677432451" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="30" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1205,13 +1205,13 @@
     <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="37" startPosition="126" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="38" startPosition="42" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="33" startPosition="33" endLine="40" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="31" startPosition="190" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="31" startPosition="241" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6868777471677432473" fileName="RuleFieldReference.java" startLine="30" startPosition="120" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432447" fileName="RuleFieldReference.java" startLine="28" startPosition="128" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432438" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="49" endLine="39" endPosition="74" />
     <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="32" startPosition="11" endLine="40" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432474" fileName="RuleFieldReference.java" startLine="31" startPosition="190" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432474" fileName="RuleFieldReference.java" startLine="31" startPosition="241" endLine="41" endPosition="11" />
     <scopeInfo nodeId="6868777471677432450" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="42" endPosition="9">
       <varInfo nodeId="6868777471677432452" varName="name" />
     </scopeInfo>
@@ -1237,8 +1237,8 @@
     <nodeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="49" startPosition="42" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="32" startPosition="33" endLine="39" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="44" startPosition="33" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="30" startPosition="191" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="42" startPosition="190" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="30" startPosition="242" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="42" startPosition="241" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6868777471677432526" fileName="RuleMethodCall.java" startLine="29" startPosition="141" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432538" fileName="RuleMethodCall.java" startLine="41" startPosition="9" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432522" fileName="RuleMethodCall.java" startLine="28" startPosition="127" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1247,8 +1247,8 @@
     <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="45" startPosition="49" endLine="50" endPosition="74" />
     <scopeInfo nodeId="6868777471677432528" fileName="RuleMethodCall.java" startLine="31" startPosition="11" endLine="39" endPosition="13" />
     <scopeInfo nodeId="6868777471677432540" fileName="RuleMethodCall.java" startLine="43" startPosition="11" endLine="51" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432527" fileName="RuleMethodCall.java" startLine="30" startPosition="191" endLine="40" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432539" fileName="RuleMethodCall.java" startLine="42" startPosition="190" endLine="52" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432527" fileName="RuleMethodCall.java" startLine="30" startPosition="242" endLine="40" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432539" fileName="RuleMethodCall.java" startLine="42" startPosition="241" endLine="52" endPosition="11" />
     <scopeInfo nodeId="6868777471677432525" fileName="RuleMethodCall.java" startLine="29" startPosition="141" endLine="53" endPosition="9" />
     <scopeInfo nodeId="6868777471677432521" fileName="RuleMethodCall.java" startLine="28" startPosition="127" endLine="54" endPosition="7" />
     <scopeInfo nodeId="6868777471677432522" fileName="RuleMethodCall.java" startLine="28" startPosition="127" endLine="54" endPosition="7">
@@ -1287,8 +1287,8 @@
     <nodeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="50" startPosition="42" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="33" startPosition="33" endLine="40" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="45" startPosition="33" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="31" startPosition="191" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="43" startPosition="190" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="31" startPosition="242" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="43" startPosition="241" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6868777471677432641" fileName="RuleVariableDeclaration.java" startLine="30" startPosition="120" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432653" fileName="RuleVariableDeclaration.java" startLine="42" startPosition="9" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432629" fileName="RuleVariableDeclaration.java" startLine="28" startPosition="71" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1297,8 +1297,8 @@
     <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="46" startPosition="49" endLine="51" endPosition="74" />
     <scopeInfo nodeId="6868777471677432643" fileName="RuleVariableDeclaration.java" startLine="32" startPosition="11" endLine="40" endPosition="13" />
     <scopeInfo nodeId="6868777471677432655" fileName="RuleVariableDeclaration.java" startLine="44" startPosition="11" endLine="52" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432642" fileName="RuleVariableDeclaration.java" startLine="31" startPosition="191" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432654" fileName="RuleVariableDeclaration.java" startLine="43" startPosition="190" endLine="53" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432642" fileName="RuleVariableDeclaration.java" startLine="31" startPosition="242" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432654" fileName="RuleVariableDeclaration.java" startLine="43" startPosition="241" endLine="53" endPosition="11" />
     <scopeInfo nodeId="6868777471677432632" fileName="RuleVariableDeclaration.java" startLine="29" startPosition="85" endLine="54" endPosition="9">
       <varInfo nodeId="6868777471677432634" varName="name" />
     </scopeInfo>
@@ -1309,22 +1309,22 @@
     <scopeInfo nodeId="6868777471677432626" fileName="RuleVariableDeclaration.java" startLine="27" startPosition="53" endLine="56" endPosition="5" />
   </root>
   <root nodeId="6868777471677432673">
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="114" startPosition="7" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="116" startPosition="45" endLine="117" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="117" startPosition="32" endLine="118" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="119" startPosition="23" endLine="120" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="18" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="123" startPosition="11" endLine="124" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="124" startPosition="98" endLine="125" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="125" startPosition="66" endLine="126" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="16" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="118" startPosition="23" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="115" startPosition="57" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="113" startPosition="42" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="119" startPosition="23" endLine="120" endPosition="56" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="18" endLine="122" endPosition="54" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="116" startPosition="45" endLine="126" endPosition="70" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="114" startPosition="7" endLine="127" endPosition="9" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="115" startPosition="7" endLine="116" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="117" startPosition="45" endLine="118" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="118" startPosition="32" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="120" startPosition="23" endLine="121" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="122" startPosition="18" endLine="123" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="124" startPosition="11" endLine="125" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="125" startPosition="98" endLine="126" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="126" startPosition="66" endLine="127" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="122" startPosition="16" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="119" startPosition="23" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="116" startPosition="57" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="114" startPosition="42" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="120" startPosition="23" endLine="121" endPosition="56" />
+    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="122" startPosition="18" endLine="123" endPosition="54" />
+    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="117" startPosition="45" endLine="127" endPosition="70" />
+    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="115" startPosition="7" endLine="128" endPosition="9" />
   </root>
   <root nodeId="7597254041024463759">
     <nodeInfo nodeId="7597254041024527612" fileName="DataFlowTryCatchUtil.java" startLine="25" startPosition="88" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1339,24 +1339,24 @@
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="50" startPosition="67" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="52" startPosition="7" endLine="53" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="53" startPosition="163" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="54" startPosition="43" endLine="55" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="55" startPosition="187" endLine="56" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="54" startPosition="43" endLine="55" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="55" startPosition="224" endLine="56" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="66" startPosition="31" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="67" startPosition="26" endLine="68" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="68" startPosition="67" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="70" startPosition="7" endLine="71" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="71" startPosition="163" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="72" startPosition="43" endLine="73" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="73" startPosition="198" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="72" startPosition="43" endLine="73" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="73" startPosition="235" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="75" startPosition="7" endLine="76" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="84" startPosition="31" endLine="85" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="85" startPosition="26" endLine="86" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="86" startPosition="67" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="88" startPosition="7" endLine="89" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="89" startPosition="163" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="90" startPosition="43" endLine="91" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="91" startPosition="191" endLine="92" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="90" startPosition="43" endLine="91" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="91" startPosition="228" endLine="92" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="93" startPosition="7" endLine="94" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="102" startPosition="49" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="103" startPosition="26" endLine="104" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

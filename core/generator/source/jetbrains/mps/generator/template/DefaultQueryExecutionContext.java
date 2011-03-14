@@ -204,6 +204,27 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
+  @Override
+  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    String methodName = TemplateFunctionMethodName.insertMacro_Query(query);
+    try {
+      Object result = QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new TemplateQueryContextWithMacro(inputNode, macroNode, context, generator),
+        query.getModel());
+
+      return (SNode) result;
+    } catch (NoSuchMethodException e) {
+      generator.getLogger().warning(macroNode, "cannot find query '" + methodName + "' : evaluate to null");
+      return null;
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query");
+      generator.getLogger().handleException(e);
+      return null;
+    }
+  }
+
   public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     SNode fragment = RuleUtil.getTemplateFragmentByAnnotatedNode(templateFragmentNode);
     // has custom context builder provider?

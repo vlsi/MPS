@@ -535,7 +535,7 @@
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="434" startPosition="78" endLine="435" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="435" startPosition="78" endLine="436" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="436" startPosition="39" endLine="437" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="438" startPosition="28" endLine="439" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="438" startPosition="28" endLine="439" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="439" startPosition="128" endLine="440" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="440" startPosition="38" endLine="441" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1199715845748" fileName="SnodeDemo.java" startLine="442" startPosition="28" endLine="443" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -571,7 +571,7 @@
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="523" startPosition="28" endLine="524" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="524" startPosition="39" endLine="525" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="525" startPosition="44" endLine="526" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="527" startPosition="27" endLine="528" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="527" startPosition="27" endLine="528" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="528" startPosition="42" endLine="529" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="529" startPosition="38" endLine="530" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="7098165822327680680" fileName="SnodeDemo.java" startLine="531" startPosition="27" endLine="532" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

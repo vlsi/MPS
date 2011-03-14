@@ -190,8 +190,10 @@ public class Classifier_Behavior {
     if (i < 0) {
       resolvedVar = reference;
       // todo method vars 
-    } else {
+    } else if (ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count() > 0) {
       resolvedVar = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).getElement(i));
+    } else {
+      resolvedVar = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(decl);
     }
     return resolvedVar;
   }
@@ -304,8 +306,9 @@ public class Classifier_Behavior {
   }
 
   public static class Pattern_qw8l7c_a1a0a0a71 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ List<SNode> PatternVar_l;
-    /*package*/ SNode PatternVar_foo;
+    public static List<SNode> PatternVar_l;
+    public static SNode PatternVar_foo;
+
     /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a61;
 
     public Pattern_qw8l7c_a1a0a0a71(Object parameter_qw8l7c_a0a0a0a0a61) {
@@ -329,9 +332,9 @@ public class Classifier_Behavior {
         {
           String childRole_qw8l7c_ = "parameter";
           this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          this.PatternVar_foo = null;
+          PatternVar_foo = null;
           for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_)) {
-            this.PatternVar_foo = childVar;
+            PatternVar_foo = childVar;
             ListSequence.fromList(this.PatternVar_l).addElement(childVar);
           }
         }
@@ -345,17 +348,17 @@ public class Classifier_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        this.PatternVar_foo = (SNode) pattern.getFieldValue("PatternVar_foo");
+        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
+        PatternVar_foo = (SNode) pattern.getFieldValue("PatternVar_foo");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_l".equals(fieldName)) {
-        return this.PatternVar_l;
+        return PatternVar_l;
       }
       if ("PatternVar_foo".equals(fieldName)) {
-        return this.PatternVar_foo;
+        return PatternVar_foo;
       }
       return null;
     }

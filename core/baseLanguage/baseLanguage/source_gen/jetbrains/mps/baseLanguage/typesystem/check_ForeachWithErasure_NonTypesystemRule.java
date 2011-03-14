@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  private static SNodePointer SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
@@ -70,7 +70,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   }
 
   public static class Pattern_aftnu9_a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
+    public static SNode PatternVar_p;
 
     public Pattern_aftnu9_a0a0a2a0() {
     }
@@ -109,13 +109,13 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_p".equals(fieldName)) {
-        return this.PatternVar_p;
+        return PatternVar_p;
       }
       return null;
     }
@@ -135,7 +135,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -148,7 +148,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

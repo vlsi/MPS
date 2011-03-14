@@ -10,13 +10,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
   private static SNodePointer template_q702qm_a0a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
   private static SNodePointer templateNode_q702qm_a0a0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
-  private static SNodePointer copySrcListMacro_q702qm_a0a0a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460249785");
+  private static SNodePointer insertMacro_q702qm_a0a0a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "7612440128092282149");
+  private static SNodePointer copySrcListMacro_q702qm_a0a0a1a6a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460249785");
 
   public TemplateOutputRoot() {
   }
@@ -34,16 +36,33 @@ public class TemplateOutputRoot implements TemplateDeclaration {
       tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");
 
       {
-        Collection<SNode> tlist2 = null;
+        SNode tnode2 = null;
         try {
-          environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a5a1a1);
-          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1206460249786(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, copySrcListMacro_q702qm_a0a0a1a5a1a1, context, environment.getGenerator()));
-          tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_q702qm_a0a0a1a5a1a1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", null, context);
+          environment.getTracer().pushMacro(insertMacro_q702qm_a0a0a1a5a1a1);
+          final SNode insertInput2 = QueriesGenerated.insertMacro_Query_7612440128092282150(environment.getOperationContext(), new TemplateQueryContextWithMacro(context.getInput(), insertMacro_q702qm_a0a0a1a5a1a1, context, environment.getGenerator()));
+          tnode2 = environment.insertNode(insertInput2, insertMacro_q702qm_a0a0a1a5a1a1, context);
+          if (tnode2 != null) {
+            environment.registerLabel(context.getInput(), tnode2, "testLabel1");
+          }
         } finally {
-          environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a5a1a1);
+          environment.getTracer().closeMacro(insertMacro_q702qm_a0a0a1a5a1a1);
         }
-        for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child3);
+        if (tnode2 != null) {
+          tnode1.addChild("outputChild", tnode2);
+        }
+        // TODO validate child 
+      }
+      {
+        Collection<SNode> tlist3 = null;
+        try {
+          environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a6a1a1);
+          final Iterable<SNode> copyListInput3 = QueriesGenerated.sourceNodesQuery_1206460249786(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, copySrcListMacro_q702qm_a0a0a1a6a1a1, context, environment.getGenerator()));
+          tlist3 = environment.copyNodes(copyListInput3, copySrcListMacro_q702qm_a0a0a1a6a1a1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", null, context);
+        } finally {
+          environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a6a1a1);
+        }
+        for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
+          tnode1.addChild("outputChild", child4);
         }
         // TODO validate child 
       }

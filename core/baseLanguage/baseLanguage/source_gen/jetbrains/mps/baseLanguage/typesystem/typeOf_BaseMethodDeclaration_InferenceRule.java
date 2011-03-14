@@ -36,7 +36,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) throwsItem, (SNode) new typeOf_BaseMethodDeclaration_InferenceRule.QuotationClass_ifzhbs_a0a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
@@ -80,7 +79,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", 0, intentionProvider);
-            _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
           }
         }
@@ -96,7 +94,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
         }
       }
@@ -129,7 +126,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
         result = quotedNode1_2;
       }
       return result;
@@ -142,7 +139,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
         result = quotedNode1_2;
       }
       return result;

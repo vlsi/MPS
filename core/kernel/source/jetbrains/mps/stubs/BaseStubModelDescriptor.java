@@ -5,7 +5,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -19,18 +21,25 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   private final Object myUpdatersLock = new Object();
   private Set<ModelUpdater> myUpdaters = null;
 
+  private final StubSource mySource;
+
   //todo left for compatibility. Should be removed
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelReference, true);
+    this(manager, modelReference, true, modelFile != null ? new FileStubSource(modelFile) : null);
   }
 
-  protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup) {
+  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, @Nullable StubSource stubSource) {
+    this(manager, modelReference, true, stubSource);
+  }
+
+  protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup, StubSource source) {
     super(manager, modelReference, checkDup);
+    this.mySource = source;
     updateManagerId();
   }
 
   public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
-    return new BaseStubModelDescriptor(manager, myModelReference, false);
+    return new BaseStubModelDescriptor(manager, myModelReference, false, mySource);
   }
 
   private void updateAfterLoad(SModel model) {
@@ -103,6 +112,10 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     myManagerClass = myModelRootManager.getClass().getName();
   }
 
+  public StubSource getSource() {
+    return mySource;
+  }
+
   //------------common descriptor stuff-------------------
 
 
@@ -119,5 +132,18 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
       LOG.error("Error on model load. Model: " + model.getLongName(), t);
     }
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+  }
+
+  @ImmutableObject
+  public static class FileStubSource implements StubSource {
+    private IFile myFile;
+
+    public FileStubSource(IFile file) {
+      myFile = file;
+    }
+
+    public IFile getFile() {
+      return myFile;
+    }
   }
 }

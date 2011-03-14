@@ -275,6 +275,39 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddReferenceMacroParam_link_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.ConvertClassConceptToExtract_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.CreateScript_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_loopMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddPropertyMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddPropertyMacroParam_property_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.ConvertTemplateDeclRefToInlineTemplate_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddReferenceMacro_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchDefault_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" file="MacroIntentionsUtil.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

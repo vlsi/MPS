@@ -60,6 +60,14 @@ class JavaStreamHandler implements StreamHandler {
   }
 
   @Override
+  public void saveStream(String name, byte[] content, boolean isCache) {
+    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    myProcessor.saveContent(file, content);
+    mySavedFiles.add(file);
+  }
+
+  @Override
   public boolean touch(String name, boolean isCache) {
     IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);

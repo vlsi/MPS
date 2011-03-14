@@ -38,7 +38,7 @@
   <root id="1646518082434566195">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1646518082434566197">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1646518082434566200">
-        <property name="text" nameId="tpc2.1073389577007" value="namespace" />
+        <property name="text" nameId="tpc2.1073389577007" value="parameter definitions" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1646518082434566202">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />

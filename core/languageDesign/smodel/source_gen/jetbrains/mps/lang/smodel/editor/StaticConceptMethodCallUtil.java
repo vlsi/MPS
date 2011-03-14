@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class StaticConceptMethodCallUtil {
   public static List<SNode> getParameterObjectsForMethodDeclaration(SNode staticConceptMethodCall, IScope scope) {
@@ -34,9 +36,9 @@ public class StaticConceptMethodCallUtil {
         ListSequence.fromList(SLinkOperations.getTargets(staticConceptMethodCall, "actualArgument", true)).addElement(SNodeOperations.copyNode(it));
       }
     });
-    for (SNode attribute : ListSequence.fromList(existingNode.getAllAttributes())) {
+    for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(existingNode, new IAttributeDescriptor.AllAttributes()))) {
       String role = existingNode.getRoleOf(attribute);
-      staticConceptMethodCall.addChild(role, SNodeOperations.copyNode(((SNode) attribute)));
+      staticConceptMethodCall.addChild(role, SNodeOperations.copyNode(attribute));
     }
     return staticConceptMethodCall;
   }

@@ -131,8 +131,8 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   }
 
   public static class Pattern_y1o6nk_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_KEY;
-    /*package*/ SNode PatternVar_VALUE;
+    public static SNode PatternVar_KEY;
+    public static SNode PatternVar_VALUE;
 
     public Pattern_y1o6nk_a0a0a0a2() {
     }
@@ -175,17 +175,17 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
-        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+        PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
+        PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_KEY".equals(fieldName)) {
-        return this.PatternVar_KEY;
+        return PatternVar_KEY;
       }
       if ("PatternVar_VALUE".equals(fieldName)) {
-        return this.PatternVar_VALUE;
+        return PatternVar_VALUE;
       }
       return null;
     }

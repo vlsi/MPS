@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 

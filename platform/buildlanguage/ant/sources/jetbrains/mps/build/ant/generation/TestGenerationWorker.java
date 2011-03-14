@@ -534,8 +534,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,
-        isInvokeTestsSet(),
-        true);
+        GenerationOptions.getDefaults().saveTransientModels(isInvokeTestsSet()).rebuildAll(true).create());
     }
 
     private List<File> classPathItemToFiles(IClassPathItem cp) {

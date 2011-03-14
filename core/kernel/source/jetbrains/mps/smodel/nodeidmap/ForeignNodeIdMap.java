@@ -19,7 +19,6 @@ import gnu.trove.THashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
-import jetbrains.mps.util.CompositeIterable;
 
 import java.util.ArrayList;
 import java.util.List;

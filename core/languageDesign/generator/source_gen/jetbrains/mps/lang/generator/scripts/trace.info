@@ -2,7 +2,45 @@
 <debugInfo>
   <unitInfo fileName="RemoveObsoleteLinks_MigrationScript.java" startLine="14" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.RemoveObsoleteLinks_MigrationScript$1" />
   <unitInfo fileName="RemoveObsoleteLinks_MigrationScript.java" startLine="40" startPosition="28" endLine="65" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.RemoveObsoleteLinks_MigrationScript$2" />
+  <unitInfo fileName="UpdateMacros_MigrationScript.java" startLine="60" startPosition="28" endLine="90" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateMacros_MigrationScript$2" />
+  <unitInfo fileName="UpdateMacros_MigrationScript.java" startLine="20" startPosition="28" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateMacros_MigrationScript$1" />
   <unitInfo fileName="RemoveObsoleteLinks_MigrationScript.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.RemoveObsoleteLinks_MigrationScript" />
+  <unitInfo fileName="UpdateMacros_MigrationScript.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.UpdateMacros_MigrationScript" />
+  <root nodeId="2533362239921665181">
+    <nodeInfo nodeId="2533362239921712882" fileName="UpdateMacros_MigrationScript.java" startLine="34" startPosition="197" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921712901" fileName="UpdateMacros_MigrationScript.java" startLine="37" startPosition="88" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921712962" fileName="UpdateMacros_MigrationScript.java" startLine="39" startPosition="9" endLine="40" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533362239921712986" fileName="UpdateMacros_MigrationScript.java" startLine="41" startPosition="37" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921713011" fileName="UpdateMacros_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533362239921713061" fileName="UpdateMacros_MigrationScript.java" startLine="45" startPosition="140" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921713065" fileName="UpdateMacros_MigrationScript.java" startLine="47" startPosition="9" endLine="48" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533362239921712905" fileName="UpdateMacros_MigrationScript.java" startLine="48" startPosition="160" endLine="49" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2533362239921712840" fileName="UpdateMacros_MigrationScript.java" startLine="52" startPosition="52" endLine="53" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="301857324384080288" fileName="UpdateMacros_MigrationScript.java" startLine="74" startPosition="197" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="301857324384112902" fileName="UpdateMacros_MigrationScript.java" startLine="77" startPosition="223" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="301857324384080306" fileName="UpdateMacros_MigrationScript.java" startLine="79" startPosition="9" endLine="80" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="301857324384112905" fileName="UpdateMacros_MigrationScript.java" startLine="83" startPosition="52" endLine="84" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2533362239921712848" fileName="UpdateMacros_MigrationScript.java" startLine="33" startPosition="59" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2533362239921712886" fileName="UpdateMacros_MigrationScript.java" startLine="36" startPosition="9" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2533362239921712972" fileName="UpdateMacros_MigrationScript.java" startLine="40" startPosition="180" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2533362239921713031" fileName="UpdateMacros_MigrationScript.java" startLine="44" startPosition="68" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="301857324384080286" fileName="UpdateMacros_MigrationScript.java" startLine="73" startPosition="59" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="301857324384080310" fileName="UpdateMacros_MigrationScript.java" startLine="76" startPosition="9" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="2533362239921712849" fileName="UpdateMacros_MigrationScript.java" startLine="34" startPosition="197" endLine="35" endPosition="23" />
+    <scopeInfo nodeId="2533362239921712887" fileName="UpdateMacros_MigrationScript.java" startLine="37" startPosition="88" endLine="38" endPosition="23" />
+    <scopeInfo nodeId="2533362239921712973" fileName="UpdateMacros_MigrationScript.java" startLine="41" startPosition="37" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="2533362239921713032" fileName="UpdateMacros_MigrationScript.java" startLine="45" startPosition="140" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="2533362239921665187" fileName="UpdateMacros_MigrationScript.java" startLine="52" startPosition="52" endLine="53" endPosition="110" />
+    <scopeInfo nodeId="301857324384080287" fileName="UpdateMacros_MigrationScript.java" startLine="74" startPosition="197" endLine="75" endPosition="23" />
+    <scopeInfo nodeId="301857324384080311" fileName="UpdateMacros_MigrationScript.java" startLine="77" startPosition="223" endLine="78" endPosition="23" />
+    <scopeInfo nodeId="301857324384065060" fileName="UpdateMacros_MigrationScript.java" startLine="83" startPosition="52" endLine="84" endPosition="110" />
+    <scopeInfo nodeId="301857324384067604" fileName="UpdateMacros_MigrationScript.java" startLine="73" startPosition="59" endLine="80" endPosition="20" />
+    <scopeInfo nodeId="2533362239921667731" fileName="UpdateMacros_MigrationScript.java" startLine="33" startPosition="59" endLine="49" endPosition="233">
+      <varInfo nodeId="2533362239921713012" varName="statement" />
+      <varInfo nodeId="2533362239921712963" varName="statements" />
+      <varInfo nodeId="2533362239921713066" varName="expr" />
+    </scopeInfo>
+  </root>
   <root nodeId="8699312839322091092">
     <nodeInfo nodeId="8699312839322091098" fileName="RemoveObsoleteLinks_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8699312839322091122" fileName="RemoveObsoleteLinks_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

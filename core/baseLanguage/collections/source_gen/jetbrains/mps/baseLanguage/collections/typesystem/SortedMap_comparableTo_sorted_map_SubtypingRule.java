@@ -17,7 +17,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_nagdzg_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~SortedMap");
+  private static SNodePointer SNODE_POINTER_nagdzg_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedMap");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -131,8 +131,8 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   }
 
   public static class Pattern_nagdzg_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_KEY;
-    /*package*/ SNode PatternVar_VALUE;
+    public static SNode PatternVar_KEY;
+    public static SNode PatternVar_VALUE;
 
     public Pattern_nagdzg_a0a0a0a2() {
     }
@@ -175,17 +175,17 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
-        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+        PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
+        PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_KEY".equals(fieldName)) {
-        return this.PatternVar_KEY;
+        return PatternVar_KEY;
       }
       if ("PatternVar_VALUE".equals(fieldName)) {
-        return this.PatternVar_VALUE;
+        return PatternVar_VALUE;
       }
       return null;
     }

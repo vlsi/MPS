@@ -53,7 +53,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       }
     }
     // --- 
-    SNode constructedType = new typeof_ClassCreator_InferenceRule.QuotationClass_4w0o2k_a0a5a0().createNode(methodClassifier, SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier, typeCheckingContext);
+    SNode constructedType = new typeof_ClassCreator_InferenceRule.QuotationClass_4w0o2k_a0a5a0().createNode(methodClassifier, SLinkOperations.getTargets(creator, "typeParameter", true), typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseQuickFixProvider intentionProvider = null;
@@ -124,7 +124,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     public QuotationClass_4w0o2k_a0a5a0() {
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -144,7 +144,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       return result;
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

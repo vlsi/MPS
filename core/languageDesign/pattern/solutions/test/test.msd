@@ -9,11 +9,6 @@
     </stubModelEntry>
   </stubModelEntries>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-    <dependency reexport="false">cccc689c-f365-4862-a8b6-34ecddf8ee26(jetbrains.mps.baseLanguage.dates)</dependency>
-    <dependency reexport="false">1991585e-225e-4371-977a-68a7888adae2(jetbrains.mps.baseLanguage.datesInternal)</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
     <usedLanguage>5206c888-7c5d-4275-bc0a-7c4da12f46e8(jetbrains.mps.lang.pattern.testLang)</usedLanguage>

@@ -17,16 +17,14 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.fileTypes.FileTypeManager;
-import jetbrains.mps.generator.cache.BaseModelCache;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
@@ -40,8 +38,9 @@ public class MPSModuleRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private static MPSModuleRepository ourInstance = null;
+
   public static MPSModuleRepository getInstance() {
-    if (ourInstance ==null){
+    if (ourInstance == null) {
       ourInstance = ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
     }
     return ourInstance;
@@ -60,10 +59,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private boolean myDirtyFlag = false;
 
-  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
-
   public MPSModuleRepository() {
-    initializeExtensionsToModuleTypesMap();
   }
 
   public void initComponent() {
@@ -79,40 +75,11 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   }
 
-  private void initializeExtensionsToModuleTypesMap() {
-    myExtensionsToModuleTypes.put(MPSExtentions.LANGUAGE, Language.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.SOLUTION, Solution.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.DEVKIT, DevKit.class);
-  }
-
-  public Set<String> getModuleExtensions() {
-    return new HashSet<String>(myExtensionsToModuleTypes.keySet());
-  }
-
-  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.remove(listener);
-  }
-
-  private void fireRepositoryChanged() {
-    invalidateCaches();
-
-    for (MPSModuleRepositoryListener listener : myListeners) {
-      listener.repositoryChanged();
-    }
-  }
-
   public void invalidateCaches() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MPSProjects projects = MPSProjects.instance();
-        if (projects != null) {
-          for (MPSProject p : projects.getProjects()) {
-            p.getProject().getComponent(ProjectScope.class).invalidateCaches();
-          }
+        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+          p.getComponent(ProjectScope.class).invalidateCaches();
         }
 
         for (IModule m : getAllModules()) {
@@ -123,66 +90,18 @@ public class MPSModuleRepository implements ApplicationComponent {
     });
   }
 
-  public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
-    myModuleListeners.add(listener);
-  }
-
-  public void removeModuleRepositoryListener(ModuleRepositoryListener listener) {
-    myModuleListeners.remove(listener);
-  }
-
-  private void fireModuleAdded(IModule module) {
-    for (ModuleRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.moduleAdded(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireBeforeModuleRemoved(IModule module) {
-    for (ModuleRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.beforeModuleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModuleRemoved(IModule module) {
-    for (ModuleRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.moduleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   public boolean isKnownModule(IModule m) {
     return myModules.contains(m);
   }
 
-  public void fireModuleChanged(IModule m) {
-    if (!myModules.contains(m)) return;
-
-    for (ModuleRepositoryListener l : myModuleListeners) {
-      try {
-        l.moduleChanged(m);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+  public boolean existsModule(ModuleReference ref) {
+    return getModule(ref) != null;
   }
 
-  public void fireModuleInitialized(IModule module) {
+  public boolean existsModule(IModule module, MPSModuleOwner owner) {
     assertCanRead();
 
-    for (ModuleRepositoryListener listener : myModuleListeners) {
-      listener.moduleInitialized(module);
-    }
+    return myModuleToOwners.contains(module, owner);
   }
 
   public Set<MPSModuleOwner> getOwners(IModule module) {
@@ -269,22 +188,12 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (TM) module;
   }
 
-  public boolean existsModule(ModuleReference ref) {
-    return getModule(ref) != null;
-  }
-
-  public boolean existsModule(IModule module, MPSModuleOwner owner) {
-    assertCanRead();
-
-    return myModuleToOwners.contains(module, owner);
-  }
-
   public void addModule(IModule module, MPSModuleOwner owner) {
     assertCanWrite();
 
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
-      throw new RuntimeException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
+      throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
     String canonicalDescriptorPath = IFileUtils.getCanonicalPath(module.getDescriptorFile());
     if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
@@ -313,6 +222,29 @@ public class MPSModuleRepository implements ApplicationComponent {
     myModules.add(module);
 
     fireModuleAdded(module);
+  }
+
+  public void removeModule(IModule module) {
+    assertCanWrite();
+
+    if (!myModules.contains(module)) {
+      return;
+    }
+
+    IFile descriptorFile = module.getDescriptorFile();
+
+    myModuleToOwners.clearFirst(module);
+    myModules.remove(module);
+    myFqNameToModulesMap.remove(module.getModuleFqName());
+    if (module.getModuleReference().getModuleId() != null) {
+      myIdToModuleMap.remove(module.getModuleReference().getModuleId());
+    }
+
+    if (descriptorFile != null) {
+      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
+    }
+
+    fireModuleRemoved(module);
   }
 
   public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
@@ -359,7 +291,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
     }
 
-    Set<IModule> visibleModules = new HashSet<IModule>();
+    Set<IModule> visibleModules = new HashSet<IModule>(myModules.size());
     for (IModule m : myModules) {
       if (m instanceof Solution && ((Solution) m).isStub()) {
         visibleModules.add(m);
@@ -390,138 +322,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     Set<IModule> toBeRemoved = new HashSet<IModule>(myModules);
     toBeRemoved.removeAll(visibleModules);
     return toBeRemoved;
-  }
-
-  public void removeModule(IModule module) {
-    assertCanWrite();
-
-    if (!myModules.contains(module)) {
-      return;
-    }
-
-    IFile descriptorFile = module.getDescriptorFile();
-
-    myModuleToOwners.clearFirst(module);
-    myModules.remove(module);
-    myFqNameToModulesMap.remove(module.getModuleFqName());
-    if (module.getModuleReference().getModuleId() != null) {
-      myIdToModuleMap.remove(module.getModuleReference().getModuleId());
-    }
-
-    if (descriptorFile != null) {
-      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
-    }
-
-    fireModuleRemoved(module);
-  }
-
-  public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
-    assertCanWrite();
-
-    while (roots.hasNext()) {
-      RootReference root = roots.next();
-      IFile moduleRoot = FileSystem.getInstance().getFileByPath(root.getPath());
-
-      if (moduleRoot.exists()) {
-        readModuleDescriptors(moduleRoot, owner);
-      } else {
-        String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
-          "\nDirectory doesn't exist: ";
-        LOG.error(error);
-      }
-    }
-  }
-
-  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
-    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), false);
-  }
-
-  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, boolean refreshFiles) {
-    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), refreshFiles);
-  }
-
-  private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes, boolean refreshFiles) {
-    assertCanWrite();
-
-    if (refreshFiles) {
-      FileSystem.getInstance().refresh(dir);
-    }
-
-    List<IModule> result = new ArrayList<IModule>();
-    String dirName = dir.getName();
-
-    if (FileTypeManager.getInstance().isFileIgnored(dirName)) return result;
-
-    List<IFile> files = dir.list();
-    if (files == null) {
-      return result;
-    }
-
-    for (IFile file : files) {
-      if (hasModuleExtension(file.getName())) {
-        IModule module = readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()), excludes);
-        if (module != null) {
-          result.add(module);
-        }
-      }
-    }
-
-    for (IFile childDir : files) {
-      if (FileTypeManager.getInstance().isFileIgnored(childDir.getName())) continue;
-      if (hasModuleExtension(childDir.getName())) continue;
-      if (excludes.contains(childDir)) continue;
-
-      if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
-        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
-        result.addAll(readModuleDescriptors(dirInJar, owner, excludes, refreshFiles));
-      }
-
-      result.addAll(readModuleDescriptors(childDir, owner, excludes, refreshFiles));
-    }
-    return result;
-  }
-
-  private boolean hasModuleExtension(String name) {
-    return getModuleExtension(name) != null;
-  }
-
-  private String getModuleExtension(String name) {
-    if (name.endsWith(MPSExtentions.DOT_LANGUAGE)) return MPSExtentions.LANGUAGE;
-    if (name.endsWith(MPSExtentions.DOT_SOLUTION)) return MPSExtentions.SOLUTION;
-    if (name.endsWith(MPSExtentions.DOT_DEVKIT)) return MPSExtentions.DEVKIT;
-    return null;
-  }
-
-  private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
-    AbstractModule module = null;
-    try {
-      Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-      module = (AbstractModule) registerModule(dir, owner, cls);
-
-      for (String sourceDir : module.getSourcePaths()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(sourceDir));
-      }
-      if (module.getGeneratorOutputPath() != null) {
-        excludes.add(BaseModelCache.getCachesDir(module, module.getGeneratorOutputPath()));
-      }
-      if (module.getTestsGeneratorOutputPath() != null) {
-        excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
-      }
-      for (SModelRoot root : module.getSModelRoots()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
-      }
-
-      if (module.getClassesGen() != null) {
-        excludes.add(module.getClassesGen());
-      }
-      for (StubPath sp : module.getStubPaths()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(sp.getPath()));
-      }
-    } catch (Throwable t) {
-      LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
-    }
-
-    return module;
   }
 
   public Language getLanguage(String namespace) {
@@ -579,7 +379,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getModules(moduleOwner, IModule.class);
   }
 
-  public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
+  private <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
     assertCanRead();
 
     List<MT> result = new ArrayList<MT>();
@@ -609,6 +409,16 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getAllModules(IModule.class);
   }
 
+  public Set<Language> getAllExtendingLanguages(Language l) {
+    Set<Language> result = new HashSet<Language>();
+    for (Language lang : getAllLanguages()) {
+      if (lang.getExtendedLanguages().contains(l)) {
+        result.add(lang);
+      }
+    }
+    return result;
+  }
+
   public List<IModule> getAllModulesInDirectory(IFile file) {
     assertCanRead();
 
@@ -618,16 +428,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       String moduleCanonicalPath = IFileUtils.getCanonicalPath(m.getDescriptorFile());
       if (moduleCanonicalPath != null && moduleCanonicalPath.startsWith(path)) {
         result.add(m);
-      }
-    }
-    return result;
-  }
-
-  public Set<Language> getAllExtendingLanguages(Language l) {
-    Set<Language> result = new HashSet<Language>();
-    for (Language lang : getAllLanguages()) {
-      if (lang.getExtendedLanguages().contains(l)) {
-        result.add(lang);
       }
     }
     return result;
@@ -648,28 +448,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  public void updateReferences() {
-    assertCanWrite();
-
-    for (IModule m : getAllModules()) {
-      AbstractModule module = (AbstractModule) m;
-
-      boolean needSaving = false;
-
-      if (module.updateSModelReferences()) {
-        needSaving = true;
-      }
-
-      if (module.updateModuleReferences()) {
-        needSaving = true;
-      }
-
-      if (needSaving && !module.isPackaged()) {
-        module.save();
-      }
-    }
-  }
-
   private void assertCanRead() {
     if (!ModelAccess.instance().canRead()) {
       throw new IllegalStateException("Can't read");
@@ -677,8 +455,80 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void assertCanWrite() {
-    if (!ModelAccess.instance().canWrite()) {
-      throw new IllegalStateException("Can't write");
+    ModelAccess.assertLegalWrite();
+  }
+
+  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.remove(listener);
+  }
+
+  public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
+    myModuleListeners.add(listener);
+  }
+
+  public void removeModuleRepositoryListener(ModuleRepositoryListener listener) {
+    myModuleListeners.remove(listener);
+  }
+
+  private void fireRepositoryChanged() {
+    invalidateCaches();
+
+    for (MPSModuleRepositoryListener listener : myListeners) {
+      listener.repositoryChanged();
+    }
+  }
+
+  private void fireModuleAdded(IModule module) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      try {
+        listener.moduleAdded(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireBeforeModuleRemoved(IModule module) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      try {
+        listener.beforeModuleRemoved(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireModuleRemoved(IModule module) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      try {
+        listener.moduleRemoved(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  public void fireModuleChanged(IModule m) {
+    if (!myModules.contains(m)) return;
+
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      try {
+        l.moduleChanged(m);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  public void fireModuleInitialized(IModule module) {
+    assertCanRead();
+
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      listener.moduleInitialized(module);
     }
   }
 }

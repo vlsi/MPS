@@ -36,13 +36,11 @@ import java.util.*;
 
 public class SubTypingManagerNew extends SubtypingManager {
   private TypeChecker myTypeChecker;
-  private State myState;
   private CoercionManager myCoercionManager;
 
   public SubTypingManagerNew(TypeChecker typeChecker) {
     super(typeChecker);
     myTypeChecker = typeChecker;
-    myState = null;
     myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
@@ -60,6 +58,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (null == subType || null == superType) {
       return false;
     }
+    if (isWeak && TypesUtil.match(subType, superType, null, null)) {
+      return true;
+    }
     if (isSubTypeByReplacementRules(subType, superType)) {
       return true;
     }
@@ -69,7 +70,6 @@ public class SubTypingManagerNew extends SubtypingManager {
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
       public Boolean compute() {
-        myState = state;
         if (subType == superType) {
           return true;
         }
@@ -83,28 +83,28 @@ public class SubTypingManagerNew extends SubtypingManager {
           }
         }
 
-        if (meetsAndJoins(subType, superType, info, isWeak)) {
+        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
           return true;
         }
         Equations equations = null;
-        if (myState!=null) {
-          equations = myState.getEquations();
+        if (state!=null) {
+          equations = state.getEquations();
         }
         if (TypesUtil.match(subType, superType, equations, info)) {
           return true;
         }
-        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak);
+        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak, state);
       }
     });
   }
 
-  private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak) {
+  private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, State state) {
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
         if (!TypesUtil.hasVariablesInside(argument) && isSubTypeByReplacementRules(subType, argument)) {
           return true;
         }
-        if (isSubType(subType, argument, info, myState, isWeak)) {
+        if (isSubType(subType, argument, info, state, isWeak)) {
           return true;
         }
       }
@@ -114,7 +114,7 @@ public class SubTypingManagerNew extends SubtypingManager {
        if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType)) {
           return true;
         }
-        if (isSubType(argument, superType, info, myState, isWeak)) {
+        if (isSubType(argument, superType, info, state, isWeak)) {
           return true;
         }
       }
@@ -122,7 +122,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (LatticeUtil.isMeet(superType)) {
       boolean result = true;
       for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
-        if (result && !isSubType(subType, argument, info, myState, isWeak)) {
+        if (result && !isSubType(subType, argument, info, state, isWeak)) {
           result = false;
         }
       }
@@ -133,8 +133,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
-    TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
+  boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak, State state) {
+    TypeCheckingContextNew typeCheckingContextNew = state == null ? null : state.getTypeCheckingContext();
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
@@ -233,8 +233,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  private Set<SNode> leastCommonSuperTypes(SNode left, SNode right) {
-    TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
+  private Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
@@ -245,7 +244,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        collectImmediateSuperTypes(node, true, ancestors, typeCheckingContextNew);
+        collectImmediateSuperTypes(node, true, ancestors, context);
         yetPassedRaw.add(node);
       }
       for (SNode ancestor : ancestors) {
@@ -273,7 +272,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
-  private SNode leastCommonSuperType(List<SNode> types) {
+  private SNode leastCommonSuperType(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 0) {
       return null;
     }
@@ -281,10 +280,11 @@ public class SubTypingManagerNew extends SubtypingManager {
     while (types.size() > newNodesSize) {
       SNode left = types.remove(0);
       SNode right = types.remove(0);
-      Set<SNode> newNodes = leastCommonSuperTypes(left, right);
+      Set<SNode> newNodes = leastCommonSuperTypes(left, right, context);
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
+    types = eliminateSubOrSuperTypes(types, true);
     return LatticeUtil.meetNodes(new HashSet<SNode>(types));
   }
 
@@ -296,7 +296,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }  
 
-  public SNode createLCS(List<SNode> types) {
+  public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 1) {
       return types.iterator().next();
     }
@@ -308,7 +308,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       }) ;
       types = eliminateSubOrSuperTypes(types, false);
     }
-    return leastCommonSuperType(types);
+    return leastCommonSuperType(types, context);
   }
 
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {

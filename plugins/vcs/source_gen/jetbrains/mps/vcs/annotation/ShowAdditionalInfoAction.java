@@ -13,15 +13,14 @@ import java.util.Map;
     myAnnotationColumn = annotationColumn;
   }
 
-  protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
-    myAnnotationColumn.setShowAdditionalInfo(!(myAnnotationColumn.isShowAdditionalInfo()));
-  }
-
-  @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
     event.getPresentation().setText(((myAnnotationColumn.isShowAdditionalInfo() ?
       "Hide" :
       "Show"
     )) + " Additional Info");
+  }
+
+  protected void doExecute(AnActionEvent event, Map<String, Object> map) {
+    myAnnotationColumn.setShowAdditionalInfo(!(myAnnotationColumn.isShowAdditionalInfo()));
   }
 }

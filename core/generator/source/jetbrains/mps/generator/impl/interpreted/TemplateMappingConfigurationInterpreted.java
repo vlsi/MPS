@@ -75,6 +75,11 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
+  public boolean isTopPriority() {
+    return RuleUtil.getMappingConfiguration_TopPrio(myMappingConfiguration);
+  }
+
+  @Override
   public SNodePointer getMappingNode() {
     return new SNodePointer(myMappingConfiguration);
   }

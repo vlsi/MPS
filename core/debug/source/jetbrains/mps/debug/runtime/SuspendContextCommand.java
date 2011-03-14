@@ -1,6 +1,6 @@
 package jetbrains.mps.debug.runtime;
 
-import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
 /**

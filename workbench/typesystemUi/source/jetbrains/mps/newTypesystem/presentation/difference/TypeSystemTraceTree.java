@@ -24,21 +24,26 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
 import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
+import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
-import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.TreePath;
 import java.awt.Frame;
 import java.util.*;
 
@@ -50,92 +55,96 @@ import java.util.*;
  */
 public class TypeSystemTraceTree extends MPSTree {
   private final IOperationContext myOperationContext;
-  private AbstractOperation myDifference;
-  private final Frame myFrame;
+  private AbstractOperation myOperation;
   private final TypeCheckingContextNew myTypeCheckingContextNew;
   private TypeCheckingContextNew myCurrentContext;
   private final SNode mySelectedNode;
   private final Set<SNode> myNodes;
-  private boolean showDependencyOperations = false;
-  private boolean traceForNode = false;
   private boolean generationMode = false;
-
-  public boolean isTraceForNode() {
-     return traceForNode;
-  }
-
-  public void setTraceForNode(boolean traceForNode) {
-    this.traceForNode = traceForNode;
-  }
+  private ShowTypeSystemTrace myParent;
+  private State myStateCopy;
+  private State myGenerationStateCopy;
+  private AbstractOperation myOldOperation;
 
   public void setGenerationMode(boolean generationMode) {
     this.generationMode = generationMode;
+    myOldOperation = null;
     if (this.generationMode) {
       TypeCheckingContextNew context = (TypeCheckingContextNew)TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
       context.getTypeInGenerationMode(mySelectedNode);
-      myDifference = context.getOperation();
+      myGenerationStateCopy = context.getState();
+      myOperation = context.getOperation();
       myCurrentContext = context;
     } else {
-      myDifference = myTypeCheckingContextNew.getOperation();
+      myOperation = myTypeCheckingContextNew.getOperation();
       myCurrentContext = myTypeCheckingContextNew;
     }
   }
 
-  public void setShowDependencyOperations(boolean showDependencyOperations) {
-    this.showDependencyOperations = showDependencyOperations;
-  }
-
-  public boolean isShowDependencyOperations() {
-    return showDependencyOperations;
-  }
-
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, ShowTypeSystemTrace parent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
-    myDifference = tcc.getOperation();
-    myFrame = frame;
+    myOperation = tcc.getOperation();
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
     myNodes.addAll(node.getDescendants());
     myNodes.add(node);
     myCurrentContext = tcc;
+    myParent = parent;
+    myStateCopy = new State(tcc, tcc.getState().getOperation());
     this.rebuildNow();
     expandAll();
+    addTreeSelectionListener(new MyTreeSelectionListener());
   }
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame) {
-    this(operationContext, tcc, frame, null);
+  public State getState() {
+    return myStateCopy;
   }
 
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
-    if (traceForNode && mySelectedNode !=null) {
-      getSliceVars(myDifference);
+    setGenerationMode(TraceSettings.isGenerationMode());
+    if (TraceSettings.isTraceForSelectedNode() && mySelectedNode !=null) {
+      getSliceVars(myOperation);
       return createListTraceForNode();
     }
-    return createNode(myDifference);
+    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(myStateCopy.getOperation(), myOperationContext);
+    create(myOperation, result);
+    return result;
   }
 
   private TypeSystemTraceTreeNode createNode(AbstractOperation diff) {
-
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
     if (diff.getConsequences() != null) {
       for (AbstractOperation child : diff.getConsequences()) {
         if (filterNodeType(child)) {
           TypeSystemTraceTreeNode node = createNode(child);
           result.add(node);
-          
         }
       }
     }
     return result;
   }
 
+  private void create(AbstractOperation diff, TypeSystemTraceTreeNode result) {
+    if (diff.getConsequences() != null) {
+      for (AbstractOperation child : diff.getConsequences()) {
+        if (filterNodeType(child)) {
+          TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext);
+          create(child, node);
+          result.add(node);
+        } else {
+          create(child, result);
+        }
+      }
+    }
+  }
+
   private MPSTreeNode createListTraceForNode() {
-    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myDifference, myOperationContext);
+    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myOperation, myOperationContext);
     List<TypeSystemTraceTreeNode> result = new LinkedList<TypeSystemTraceTreeNode>();
-    createList(myDifference, result);
+    createList(myOperation, result);
     for (TypeSystemTraceTreeNode node : result) {
       root.add(node);
     }
@@ -154,8 +163,7 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private boolean showNode(AbstractOperation diff) {
-
-    if (mySelectedNode == null && traceForNode) {
+    if (mySelectedNode == null && TraceSettings.isTraceForSelectedNode()) {
       return true;
     }
     if (myNodes.contains(diff.getSource())) {
@@ -175,15 +183,17 @@ public class TypeSystemTraceTree extends MPSTree {
         }
       }
     }
-
     return false;
   }
 
   private boolean filterNodeType(AbstractOperation operation) {
-    if (showDependencyOperations) {
-      return true;
+    if (!TraceSettings.isShowTypesExpansion() && operation instanceof TypeExpandedOperation) {
+      return false;
     }
-    if (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
+    if (!TraceSettings.isShowApplyRuleOperations() && operation instanceof ApplyRuleOperation)  {
+      return false;
+    }
+    if (!TraceSettings.isShowBlockDependencies() && operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
       return false;
     }
     return true;
@@ -229,25 +239,35 @@ public class TypeSystemTraceTree extends MPSTree {
         ((TypeSystemTraceTreeNode) treeNode).goToNode();
       }
     };
-    BaseAction showState = new BaseAction("Show state") {
-      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        showState(treeNode);
-      }
-    };
-
-    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode, showState);
+    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
-  private void showState(MPSTreeNode node) {
-    State state = myCurrentContext.getState();
-    AbstractOperation rootDifference = myCurrentContext.getOperation();
-    Object difference = node.getUserObject();
-    State copy = new State(state.getTypeCheckingContext());
-    copy.executeOperationsBeforeAnchor(rootDifference, difference);
-    new ShowTypeSystemState(copy, myOperationContext, myFrame);
-    state.reset();
+  private void showState(final MPSTreeNode newNode) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        State state =  TraceSettings.isGenerationMode() ? myGenerationStateCopy : myStateCopy;
+        AbstractOperation rootDifference = myCurrentContext.getOperation();
+        Object difference = newNode.getUserObject();
+        if (myOldOperation == null) {
+          state.clear(false);
+          state.executeOperationsBeforeAnchor(rootDifference, difference);
+        } else {
+          state.updateState(myOldOperation, (AbstractOperation)difference);
+        }
+        myParent.resetState(state);
+        myOldOperation = (AbstractOperation)difference;
+      }
+    });
   }
 
-
+  private class MyTreeSelectionListener implements TreeSelectionListener {
+    @Override
+    public void valueChanged(TreeSelectionEvent e) {
+      TreePath path = e.getNewLeadSelectionPath();
+      if (path == null) return;
+      Object treeNode = path.getLastPathComponent();
+      showState((MPSTreeNode)treeNode);
+    }
+  }
 }

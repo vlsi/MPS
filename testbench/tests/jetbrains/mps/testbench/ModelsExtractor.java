@@ -3,6 +3,7 @@ package jetbrains.mps.testbench;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
@@ -81,7 +82,7 @@ public class ModelsExtractor {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
+          return ModulesMiner.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
           });
         }
       });

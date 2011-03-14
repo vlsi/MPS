@@ -21,7 +21,7 @@ import com.sun.jdi.ReferenceType;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
@@ -32,6 +32,7 @@ import java.util.List;
 
 public abstract class JavaBreakpoint extends jetbrains.mps.debug.api.breakpoints.AbstractBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
+  private boolean myLogMessage = false;
   private final Logger LOG = Logger.getLogger(JavaBreakpoint.class);
 
   protected JavaBreakpoint(Project project) {
@@ -107,6 +108,14 @@ public abstract class JavaBreakpoint extends jetbrains.mps.debug.api.breakpoints
       removeFromRunningSessions();
       addToRunningSessions();
     }
+  }
+
+  public boolean isLogMessage() {
+    return myLogMessage;
+  }
+
+  public void setLogMessage(boolean logMessage) {
+    myLogMessage = logMessage;
   }
 
   @Override

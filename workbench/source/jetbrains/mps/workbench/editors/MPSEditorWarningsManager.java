@@ -184,10 +184,10 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private class MyReloadListener extends ReloadAdapter {
-    @Override
     public void onAfterReload() {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
+          if (myProject.isDisposed()) return;
           updateAllWarnings();
         }
       });

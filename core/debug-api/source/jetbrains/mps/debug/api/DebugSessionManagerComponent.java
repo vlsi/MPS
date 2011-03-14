@@ -126,13 +126,13 @@ public class DebugSessionManagerComponent implements ProjectComponent {
   }
 
 
-  public void addCurrentDebugSessionListener(DebugSessionListener listener) {
+  public void addDebugSessionListener(DebugSessionListener listener) {
     synchronized (myCurrentDebugSessionListeners) {
       myCurrentDebugSessionListeners.add(listener);
     }
   }
 
-  public void removeCurrentDebugSessionListener(DebugSessionListener listener) {
+  public void removeDebugSessionListener(DebugSessionListener listener) {
     synchronized (myCurrentDebugSessionListeners) {
       myCurrentDebugSessionListeners.remove(listener);
     }

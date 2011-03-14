@@ -41,6 +41,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
@@ -229,6 +230,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
   private SearchPanel mySearchPanel = null;
+  private JPanel myUpperPanel = null;
+  private Map<String, JComponent> myUpperComponents = new HashMap<String, JComponent>();
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
@@ -886,9 +889,43 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public SearchPanel getSearchPanel() {
     if (mySearchPanel == null) {
       mySearchPanel = new SearchPanel(this);
-      myContainer.add(mySearchPanel, BorderLayout.NORTH);
     }
     return mySearchPanel;
+  }
+
+  public JPanel getUpperPanel() {
+    if (myUpperPanel == null) {
+      myUpperPanel = new JPanel();
+      myUpperPanel.setLayout(new GridLayout(0,1));
+      myContainer.add(myUpperPanel, BorderLayout.NORTH);
+    }
+    return myUpperPanel;
+  }
+
+  public void addUpperComponent(JComponent component) {
+    getUpperPanel().add(component);
+  }
+
+  public void addUpperComponent(JComponent component, String id) {
+    getUpperPanel().add(component);
+    myUpperComponents.put(id, component);
+  }
+
+  public void removeUpperComponent(JComponent component) {
+    if (myUpperPanel == null) return;
+    getUpperPanel().remove(component);
+    for (String key : new HashSet<String>(myUpperComponents.keySet())) {
+      if (component == myUpperComponents) {
+        myUpperComponents.remove(key);
+      }
+    }
+  }
+
+  public void removeUpperComponent(String id) {
+    JComponent component = myUpperComponents.get(id);
+    if (component != null) {
+      removeUpperComponent(component);
+    }
   }
 
   public void updateMessages() {
@@ -1347,7 +1384,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return CellActionType.DELETE;
       }
 
-      if (selectedCell.getAction(CellActionType.DELETE) != null) {
+      if (selectedCell != null && selectedCell.getAction(CellActionType.DELETE) != null) {
         return CellActionType.DELETE;
       }
 
@@ -1570,7 +1607,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (root instanceof EditorCell_Collection) {
       for (EditorCell child : ((EditorCell_Collection) root)) {
         SNode childNode = child.getSNode();
-        if (childNode == node || (childNode != null && childNode.isAttribute() && childNode.getParent() == node)) {
+        if (childNode == node || (childNode != null && AttributeOperations.isAttribute(childNode) && childNode.getParent() == node)) {
           EditorCell result = findCellWithIdWithingBigCell(child, id, node);
           if (result != null) {
             return result;

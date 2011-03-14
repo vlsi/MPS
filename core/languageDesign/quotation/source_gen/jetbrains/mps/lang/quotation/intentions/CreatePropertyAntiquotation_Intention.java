@@ -74,7 +74,6 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention impleme
       SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
       assert attributedNode != null;
       AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName), null);
-      attributedNode.setAttribute(null);
       return;
     }
     if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName)) != null) {

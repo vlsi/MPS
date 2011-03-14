@@ -95,6 +95,10 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
+  public void discardTracing() {
+  }
+
+  @Override
   public void discardTracing(SModel inputModel, SModel outputModel) {
   }
 

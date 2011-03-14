@@ -25,7 +25,6 @@ public class typeof_TakeOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "elementsToTake", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847269142", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847262796", true), (SNode) new typeof_TakeOperation_InferenceRule.QuotationClass_xcnvas_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

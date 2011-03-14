@@ -109,10 +109,6 @@ public class AttributeOperations {
   }
 
   public static String getLinkRole(SNode attribute) {
-    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
-      // compatibility with old attributes 
-      return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
-    }
     return SPropertyOperations.getString(attribute, "linkRole");
   }
 
@@ -121,10 +117,6 @@ public class AttributeOperations {
   }
 
   public static String getPropertyName(SNode attribute) {
-    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
-      // compatibility with old attributes 
-      return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
-    }
     return SPropertyOperations.getString(attribute, "propertyName");
   }
 
@@ -232,7 +224,7 @@ public class AttributeOperations {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "_$attribute", AttributeOperations.getAttribute(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor));
+      super(attributed, "_$attribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
 

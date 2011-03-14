@@ -92,7 +92,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
     if (GeneratorManager.isDoNotGenerate(sm)) return false;
-    if (SModelRepository.getInstance().isChanged(esm)) return true;
+    if (esm.isChanged()) return true;
 
     IFile modelFile = esm.getModelFile();
     if (modelFile == null) return true;

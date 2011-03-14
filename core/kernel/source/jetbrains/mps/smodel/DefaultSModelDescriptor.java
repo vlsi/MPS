@@ -131,7 +131,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public void reloadFromDiskSafe() {
-    if (SModelRepository.getInstance().isChanged(this)) {
+    if (isChanged()) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
@@ -161,10 +161,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
    */
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+
     DescriptorLoadResult dr = ModelPersistence.loadDescriptor(getModelFile());
     myPersistenceVersion = dr.getPersistenceVersion();
     myMetadata = dr.getMetadata();
+
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
@@ -235,7 +237,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
     if (needsReloading()) return;
 
-    SModelRepository.getInstance().markChanged(this, false);
+    setChanged(false);
     SModel newData = myModelRootManager.saveModel(this, true);
     if (newData != null) {
       replaceModel(newData);
@@ -274,7 +276,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (mySModel != null) {
       mySModel.setModelDescriptor(this);
     }
-    SModelRepository.getInstance().markChanged(this, false);
+    setChanged(false);
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       public void run() {

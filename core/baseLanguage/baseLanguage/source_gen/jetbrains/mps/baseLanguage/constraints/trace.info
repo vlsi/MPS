@@ -228,7 +228,7 @@
     <nodeInfo nodeId="1382946559831559097" fileName="ClassConcept_Constraints.java" startLine="20" startPosition="5" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4980874121082275161" fileName="ClassConcept_isStatic_PropertyConstraint.java" startLine="27" startPosition="80" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4980874121082275172" fileName="ClassConcept_isStatic_PropertyConstraint.java" startLine="31" startPosition="124" endLine="32" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5363084893386562003" fileName="ClassConcept_Constraints.java" startLine="12" startPosition="159" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5363084893386562003" fileName="ClassConcept_Constraints.java" startLine="12" startPosition="200" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1382946559831559076" fileName="ClassConcept_Constraints.java" startLine="17" startPosition="5" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213104847629" fileName="ClassConcept_DefaultSearchScope.java" startLine="25" startPosition="132" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5363084893386560588" fileName="ClassConcept_Constraints.java" startLine="11" startPosition="52" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -236,7 +236,7 @@
     <scopeInfo nodeId="1382946559831559078" fileName="ClassConcept_Constraints.java" startLine="18" startPosition="64" endLine="19" endPosition="62" />
     <scopeInfo nodeId="4980874121082275160" fileName="ClassConcept_isStatic_PropertyConstraint.java" startLine="27" startPosition="80" endLine="28" endPosition="64" />
     <scopeInfo nodeId="4980874121082275171" fileName="ClassConcept_isStatic_PropertyConstraint.java" startLine="31" startPosition="124" endLine="32" endPosition="104" />
-    <scopeInfo nodeId="5363084893386560589" fileName="ClassConcept_Constraints.java" startLine="12" startPosition="159" endLine="16" endPosition="63" />
+    <scopeInfo nodeId="5363084893386560589" fileName="ClassConcept_Constraints.java" startLine="12" startPosition="200" endLine="16" endPosition="63" />
     <scopeInfo nodeId="1213104847628" fileName="ClassConcept_DefaultSearchScope.java" startLine="25" startPosition="132" endLine="29" endPosition="67" />
     <scopeInfo nodeId="1382946559831552448" fileName="ClassConcept_Constraints.java" startLine="11" startPosition="52" endLine="21" endPosition="16" />
   </root>

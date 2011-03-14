@@ -19,6 +19,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
   public static final String EXTENSION = "extension";
+  public static final String ENCODING = "encoding";
   public static final String TEXT_GEN_BLOCK = "textGenBlock";
   public static final String _$ATTRIBUTE = "_$attribute";
 
@@ -64,6 +65,14 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
 
   public void setExtension(ExtensionDeclaration node) {
     super.setChild(ConceptTextGenDeclaration.EXTENSION, node);
+  }
+
+  public EncodingDeclarationBase getEncoding() {
+    return (EncodingDeclarationBase) this.getChild(EncodingDeclarationBase.class, ConceptTextGenDeclaration.ENCODING);
+  }
+
+  public void setEncoding(EncodingDeclarationBase node) {
+    super.setChild(ConceptTextGenDeclaration.ENCODING, node);
   }
 
   public GenerateTextDeclaration getTextGenBlock() {

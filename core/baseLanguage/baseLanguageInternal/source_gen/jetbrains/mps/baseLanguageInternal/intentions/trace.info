@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.IntentionsDescriptor" />
   <unitInfo fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.intentions.add_parameter_to_InternalClassifierType_Intention" />
   <root nodeId="1229871155083">
     <nodeInfo nodeId="1229871173583" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

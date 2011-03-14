@@ -27,7 +27,6 @@ public class typeof_CloseTabOperation_InferenceRule extends AbstractInferenceRul
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "componentExpression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "5818192529492111961", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "5818192529492111967", true), (SNode) new typeof_CloseTabOperation_InferenceRule.QuotationClass_9bbjh5_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
@@ -58,7 +57,7 @@ public class typeof_CloseTabOperation_InferenceRule extends AbstractInferenceRul
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
         result = quotedNode1_2;
       }
       return result;
@@ -71,7 +70,7 @@ public class typeof_CloseTabOperation_InferenceRule extends AbstractInferenceRul
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
         result = quotedNode1_2;
       }
       return result;

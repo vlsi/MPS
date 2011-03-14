@@ -76,7 +76,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
-      if ((model instanceof EditableSModelDescriptor) && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) model))) {
+      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
         result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -100,7 +100,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
-      if ((model instanceof EditableSModelDescriptor) && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) model))) {
+      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
         result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -143,7 +143,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-      if (SModelRepository.getInstance().isChanged(esm)) {
+      if (esm.isChanged()) {
         sm.getSModel();
         result.addAll(new ModelFindOperations(sm).findUsages(nodes));
       }
@@ -322,7 +322,9 @@ public class FastFindUsagesManager extends FindUsagesManager {
           int start = end;
           while (start >= offset && chars[start] != '.')  --start;
           offset = start + 1;
+        if (end > offset) {
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        }
   //      }
       }
     }

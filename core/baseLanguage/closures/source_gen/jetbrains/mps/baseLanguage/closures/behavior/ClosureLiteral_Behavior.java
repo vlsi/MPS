@@ -62,6 +62,10 @@ public class ClosureLiteral_Behavior {
     return new ArrayList<SNode>();
   }
 
+  public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return true;
+  }
+
   public static boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
     return true;
   }
@@ -138,7 +142,7 @@ public class ClosureLiteral_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -41,7 +41,6 @@ public class typeof_UIObjectStatement_InferenceRule extends AbstractInferenceRul
         SNode _nodeToCheck_1029348928467 = IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios));
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413336", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413328", true), (SNode) UIObjectStatement_Behavior.call_expectedContextType_5197527271413889619(uios, abt), false, _info_12389875345);
       }
     }

@@ -27,8 +27,8 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
     if ((superMethod == null)) {
       return;
     }
-    if (BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(superMethod, SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull"))) {
-      if (!(BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")))) {
+    if (BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(superMethod, SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+      if (!(BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~NotNull")))) {
         {
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.Add_NotNullAnnotation_QuickFix", false);
@@ -39,9 +39,9 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
       }
     }
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).count(); i++) {
-      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable"))) {
+      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)", "6868777471677432036"))) {
         SNode param = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
-        if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")))) {
+        if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)", "6868777471677432036")))) {
           {
             BaseQuickFixProvider intentionProvider = null;
             intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.Add_NullableAnnotationToParameter_QuickFix", false);

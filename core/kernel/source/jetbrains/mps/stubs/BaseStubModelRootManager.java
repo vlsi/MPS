@@ -134,13 +134,13 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model) {
-    if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
+  private void updateModelInLoadingState(BaseStubModelDescriptor descriptor, SModel model) {
+    if (!StubReloadManager.getInstance().needsUpdate(descriptor, myLocation)) return;
 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      updateModel(myLocation, model);
+      updateModel(myLocation, model, descriptor.getSource());
     } catch (Throwable t) {
       LOG.error(t);
     } finally {
@@ -154,7 +154,12 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   protected abstract Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location);
 
-  protected abstract void updateModel(StubLocation location, SModel model);
+  @Deprecated
+  protected void updateModel(StubLocation location, SModel model) {}
+
+  protected void updateModel(StubLocation location, SModel model, StubSource source) {
+    updateModel(location, model);
+  }
 
   protected abstract Set<Language> getLanguagesToImport();
 

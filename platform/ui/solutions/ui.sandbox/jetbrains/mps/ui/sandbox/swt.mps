@@ -3,15 +3,14 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language-engaged-on-generation namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
-  <import index="as08" modelUID="f:java_stub#org.eclipse.swt.widgets(org.eclipse.swt.widgets@java_stub)" version="-1" />
-  <import index="f0q9" modelUID="f:java_stub#org.eclipse.swt.layout(org.eclipse.swt.layout@java_stub)" version="-1" />
-  <import index="4x4r" modelUID="r:1930e6a1-4a0c-4ebc-8fc7-2b26cd59b380(jetbrains.mps.ui.sandbox.demo)" version="-1" />
-  <import index="5s0i" modelUID="f:java_stub#org.eclipse.swt.graphics(org.eclipse.swt.graphics@java_stub)" version="-1" />
   <import index="1taj" modelUID="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" version="-1" />
   <import index="lb0i" modelUID="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="xtmr" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.widgets(org.eclipse.swt.widgets@java_stub)" version="-1" />
+  <import index="j02e" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.layout(org.eclipse.swt.layout@java_stub)" version="-1" />
+  <import index="48dz" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.graphics(org.eclipse.swt.graphics@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="syy9" modelUID="r:4f857b30-414f-4703-8cf7-80455f6ad887(jetbrains.mps.ui.sandbox.swt)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1880762541167901442">
@@ -42,7 +41,7 @@
         <property name="name" nameId="tpck.1169194664001" value="args" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1880762541167901453">
           <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1880762541167901454">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~String" resolveInfo="String" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
@@ -57,11 +56,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1880762541167901460">
             <property name="name" nameId="tpck.1169194664001" value="dsp" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1880762541167901461">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="as08.~Display" resolveInfo="Display" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xtmr.~Display" resolveInfo="Display" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1880762541167901462">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1880762541167901463">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Display%d&lt;init&gt;()" resolveInfo="Display" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Display%d&lt;init&gt;()" resolveInfo="Display" />
               </node>
             </node>
           </node>
@@ -70,11 +69,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1880762541167901465">
             <property name="name" nameId="tpck.1169194664001" value="sh" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1880762541167901466">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="as08.~Shell" resolveInfo="Shell" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xtmr.~Shell" resolveInfo="Shell" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1880762541167901467">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1880762541167901468">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Shell%d&lt;init&gt;(org%declipse%dswt%dwidgets%dDisplay)" resolveInfo="Shell" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Shell%d&lt;init&gt;(org%declipse%dswt%dwidgets%dDisplay)" resolveInfo="Shell" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1880762541167901469">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901460" resolveInfo="dsp" />
                 </node>
@@ -88,10 +87,10 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901465" resolveInfo="sh" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901473">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Composite%dsetLayout(org%declipse%dswt%dwidgets%dLayout)%cvoid" resolveInfo="setLayout" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Composite%dsetLayout(org%declipse%dswt%dwidgets%dLayout)%cvoid" resolveInfo="setLayout" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1880762541167901474">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1880762541167901475">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f0q9.~FillLayout%d&lt;init&gt;()" resolveInfo="FillLayout" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j02e.~FillLayout%d&lt;init&gt;()" resolveInfo="FillLayout" />
                 </node>
               </node>
             </node>
@@ -114,7 +113,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901465" resolveInfo="sh" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901484">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Control%dpack()%cvoid" resolveInfo="pack" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Control%dpack()%cvoid" resolveInfo="pack" />
             </node>
           </node>
         </node>
@@ -124,7 +123,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901465" resolveInfo="sh" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901488">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Control%dsetSize(int,int)%cvoid" resolveInfo="setSize" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Control%dsetSize(int,int)%cvoid" resolveInfo="setSize" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1880762541167901489">
                 <property name="value" nameId="tpee.1068580320021" value="800" />
               </node>
@@ -140,7 +139,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901465" resolveInfo="sh" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901494">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Shell%dopen()%cvoid" resolveInfo="open" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Shell%dopen()%cvoid" resolveInfo="open" />
             </node>
           </node>
         </node>
@@ -151,7 +150,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901465" resolveInfo="sh" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901499">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Widget%disDisposed()%cboolean" resolveInfo="isDisposed" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Widget%disDisposed()%cboolean" resolveInfo="isDisposed" />
               </node>
             </node>
           </node>
@@ -163,7 +162,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901460" resolveInfo="dsp" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901505">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Display%dreadAndDispatch()%cboolean" resolveInfo="readAndDispatch" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Display%dreadAndDispatch()%cboolean" resolveInfo="readAndDispatch" />
                   </node>
                 </node>
               </node>
@@ -174,7 +173,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901460" resolveInfo="dsp" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901510">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="as08.~Display%dsleep()%cboolean" resolveInfo="sleep" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xtmr.~Display%dsleep()%cboolean" resolveInfo="sleep" />
                     </node>
                   </node>
                 </node>
@@ -188,7 +187,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1880762541167901460" resolveInfo="dsp" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1880762541167901514">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5s0i.~Device%ddispose()%cvoid" resolveInfo="dispose" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="48dz.~Device%ddispose()%cvoid" resolveInfo="dispose" />
             </node>
           </node>
         </node>

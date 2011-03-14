@@ -15,16 +15,15 @@
   <language namespace="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <import index="j1at" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="nubx" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
   <import index="zmlh" modelUID="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)" version="-1" />
   <import index="tpsf" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
-  <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="jt7v" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="60oz" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" />
-  <import index="zh5n" modelUID="f:java_stub#jetbrains.mps.samples(jetbrains.mps.samples@java_stub)" version="-1" />
+  <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="eh1m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
@@ -53,7 +52,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MPS-autodist" />
       <property name="startupClass" nameId="60oz.1230058022109" value="jetbrains.mps.Launcher" />
       <property name="useVMOptionsFile" nameId="60oz.1231691563959" value="true" />
-      <property name="defaultVMOptions" nameId="60oz.1231691593776" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+      <property name="defaultVMOptions" nameId="60oz.1231691593776" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
       <property name="additionalVMOptions" nameId="60oz.1240321503907" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
       <link role="buildScriptConfiguration" roleId="60oz.1230216533585" targetNodeId="1233926062534" resolveInfo="default" />
     </node>
@@ -1664,7 +1663,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2235195415637077355">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jt7v.~IModule%dgetModuleFqName()%cjava%dlang%dString" resolveInfo="getModuleFqName" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~IModule%dgetModuleFqName()%cjava%dlang%dString" resolveInfo="getModuleFqName" />
                                 </node>
                               </node>
                             </node>
@@ -2346,10 +2345,10 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8716889635481488912">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8716889635481488913">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="8716889635481488914">
-                        <link role="classifier" roleId="tpee.1116615189566" targetNodeId="nubx.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
+                        <link role="classifier" roleId="tpee.1116615189566" targetNodeId="eh1m.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8716889635481488915">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
@@ -2388,14 +2387,14 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8716889635481488928">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8716889635481488929">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8716889635481488930">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nubx.~BuiltInLibrariesIO%dgetModifiedConfigurationFile()%cjava%dlang%dString" resolveInfo="getModifiedConfigurationFile" />
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nubx.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eh1m.~BuiltInLibrariesIO%dgetModifiedConfigurationFile()%cjava%dlang%dString" resolveInfo="getModifiedConfigurationFile" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eh1m.~BuiltInLibrariesIO" resolveInfo="BuiltInLibrariesIO" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8716889635481488931">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dreplace(java%dlang%dCharSequence,java%dlang%dCharSequence)%cjava%dlang%dString" resolveInfo="replace" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dreplace(java%dlang%dCharSequence,java%dlang%dCharSequence)%cjava%dlang%dString" resolveInfo="replace" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8716889635481488932">
-                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="n1y2.~File" resolveInfo="File" />
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="n1y2.~File%dseparator" resolveInfo="separator" />
+                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxg7.~File" resolveInfo="File" />
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxg7.~File%dseparator" resolveInfo="separator" />
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8716889635481488933">
                               <property name="value" nameId="tpee.1070475926801" value="/" />

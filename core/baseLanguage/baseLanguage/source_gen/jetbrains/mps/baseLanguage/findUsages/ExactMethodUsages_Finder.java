@@ -16,6 +16,9 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
 public class ExactMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
 
+  public ExactMethodUsages_Finder() {
+  }
+
   public String getDescription() {
     return "Exact Method Usages";
   }

@@ -13,6 +13,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import java.io.OutputStreamWriter;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 
@@ -39,6 +40,10 @@ public class FileProcessor {
 
   public void saveContent(IFile file, Element content) {
     saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.XMLFileContent(content)));
+  }
+
+  public void saveContent(IFile file, byte[] content) {
+    saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.BinaryFileContent(content)));
   }
 
   private void saveContent(FileProcessor.FileAndContent fileAndContent) {
@@ -100,6 +105,31 @@ public class FileProcessor {
         if (writer != null) {
           try {
             writer.close();
+          } catch (IOException ignored) {
+          }
+        }
+      }
+    }
+  }
+
+  private static class BinaryFileContent implements FileProcessor.FileContent {
+    private byte[] myContent;
+
+    private BinaryFileContent(byte[] content) {
+      myContent = content;
+    }
+
+    public void saveToFile(IFile file) {
+      OutputStream stream = null;
+      try {
+        stream = file.openOutputStream();
+        stream.write(myContent);
+      } catch (IOException e) {
+        FileProcessor.LOG.error(e);
+      } finally {
+        if (stream != null) {
+          try {
+            stream.close();
           } catch (IOException ignored) {
           }
         }

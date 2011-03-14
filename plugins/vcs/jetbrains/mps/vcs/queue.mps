@@ -3,16 +3,16 @@
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="3" modelUID="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)" version="-1" />
-  <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
+  <import index="13" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.ui(MPS.Classpath/com.intellij.util.ui@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(MPS.Classpath/com.intellij.openapi.vfs@java_stub)" version="-1" />
+  <import index="17" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(MPS.Classpath/com.intellij.openapi.vcs@java_stub)" version="-1" />
+  <import index="19" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="5" modelUID="f:java_stub#com.intellij.openapi.vcs(com.intellij.openapi.vcs@java_stub)" version="-1" implicit="yes" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
-  <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="8" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" implicit="yes" />
-  <import index="10" modelUID="f:java_stub#com.intellij.util.ui(com.intellij.util.ui@java_stub)" version="-1" implicit="yes" />
   <import index="11" modelUID="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.queue)" version="-1" implicit="yes" />
-  <import index="12" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" implicit="yes" />
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247635635">
       <property name="6.abstractClass:3" value="true" />
@@ -34,19 +34,19 @@
       <property name="6.isFinal:3" value="true" />
       <property name="2.name:0" value="LOCK" />
       <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635639">
-        <link role="6.classifier:3" targetNodeId="4.~Object" />
+        <link role="6.classifier:3" targetNodeId="13.~Object" />
       </node>
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635640" />
       <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4707157387247635641">
         <node role="6.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4707157387247635642">
-          <link role="6.baseMethodDeclaration:3" targetNodeId="4.~Object.&lt;init&gt;()" />
+          <link role="6.baseMethodDeclaration:3" targetNodeId="13.~Object.&lt;init&gt;()" />
         </node>
       </node>
     </node>
     <node role="6.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4707157387247635643">
       <property name="2.name:0" value="myTasks" />
       <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635644">
-        <link role="6.classifier:3" targetNodeId="7.~List" />
+        <link role="6.classifier:3" targetNodeId="14.~List" />
         <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4707157387247635645">
           <link role="6.typeVariableDeclaration:3" targetNodeId="4707157387247635637" resolveInfo="T" />
         </node>
@@ -54,7 +54,7 @@
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635646" />
       <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4707157387247635647">
         <node role="6.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4707157387247635648">
-          <link role="6.baseMethodDeclaration:3" targetNodeId="7.~LinkedList.&lt;init&gt;()" />
+          <link role="6.baseMethodDeclaration:3" targetNodeId="14.~LinkedList.&lt;init&gt;()" />
           <node role="6.typeParameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4707157387247635649">
             <link role="6.typeVariableDeclaration:3" targetNodeId="4707157387247635637" resolveInfo="T" />
           </node>
@@ -64,7 +64,7 @@
     <node role="6.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4707157387247635650">
       <property name="2.name:0" value="myTimer" />
       <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635651">
-        <link role="6.classifier:3" targetNodeId="10.~Timer" />
+        <link role="6.classifier:3" targetNodeId="15.~Timer" />
       </node>
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4707157387247635652" />
     </node>
@@ -81,8 +81,8 @@
               <node role="6.creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4707157387247635661">
                 <node role="6.cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="4707157387247635662">
                   <property name="2.name:0" value="" />
-                  <link role="6.classifier:3" targetNodeId="10.~Timer" resolveInfo="Timer" />
-                  <link role="6.baseMethodDeclaration:3" targetNodeId="10.~Timer.&lt;init&gt;(java.lang.String,int)" />
+                  <link role="6.classifier:3" targetNodeId="15.~Timer" resolveInfo="Timer" />
+                  <link role="6.baseMethodDeclaration:3" targetNodeId="15.~Timer.&lt;init&gt;(java.lang.String,int)" />
                   <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247635663">
                     <property name="2.name:0" value="onTimer" />
                     <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4707157387247635664" />
@@ -95,7 +95,7 @@
                       </node>
                     </node>
                     <node role="6.throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635741">
-                      <link role="6.classifier:3" targetNodeId="4.~InterruptedException" />
+                      <link role="6.classifier:3" targetNodeId="13.~InterruptedException" />
                     </node>
                   </node>
                   <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4707157387247635666">
@@ -133,7 +133,7 @@
                   <link role="6.variableDeclaration:3" targetNodeId="4707157387247635643" resolveInfo="myTasks" />
                 </node>
                 <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635680">
-                  <link role="6.baseMethodDeclaration:3" targetNodeId="7.~List.add(java.lang.Object):boolean" />
+                  <link role="6.baseMethodDeclaration:3" targetNodeId="14.~List.add(java.lang.Object):boolean" />
                   <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247635681">
                     <link role="6.variableDeclaration:3" targetNodeId="4707157387247635671" resolveInfo="task" />
                   </node>
@@ -154,7 +154,7 @@
                     <link role="6.variableDeclaration:3" targetNodeId="4707157387247635650" resolveInfo="myTimer" />
                   </node>
                   <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635689">
-                    <link role="6.baseMethodDeclaration:3" targetNodeId="10.~Timer.resume():void" />
+                    <link role="6.baseMethodDeclaration:3" targetNodeId="15.~Timer.resume():void" />
                   </node>
                 </node>
               </node>
@@ -181,7 +181,7 @@
               <link role="6.variableDeclaration:3" targetNodeId="4707157387247635650" resolveInfo="myTimer" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635700">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="10.~Timer.suspend():void" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="15.~Timer.suspend():void" />
             </node>
           </node>
         </node>
@@ -191,7 +191,7 @@
               <link role="6.variableDeclaration:3" targetNodeId="4707157387247635643" resolveInfo="myTasks" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635704">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="7.~List.isEmpty():boolean" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="14.~List.isEmpty():boolean" />
             </node>
           </node>
           <node role="6.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635705">
@@ -202,7 +202,7 @@
           <node role="6.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247635708">
             <property name="2.name:0" value="tasks" />
             <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635709">
-              <link role="6.classifier:3" targetNodeId="7.~List" />
+              <link role="6.classifier:3" targetNodeId="14.~List" />
               <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4707157387247635710">
                 <link role="6.typeVariableDeclaration:3" targetNodeId="4707157387247635637" resolveInfo="T" />
               </node>
@@ -231,7 +231,7 @@
                 </node>
                 <node role="6.rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4707157387247635721">
                   <node role="6.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4707157387247635722">
-                    <link role="6.baseMethodDeclaration:3" targetNodeId="7.~LinkedList.&lt;init&gt;()" />
+                    <link role="6.baseMethodDeclaration:3" targetNodeId="14.~LinkedList.&lt;init&gt;()" />
                     <node role="6.typeParameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4707157387247635723">
                       <link role="6.typeVariableDeclaration:3" targetNodeId="4707157387247635637" resolveInfo="T" />
                     </node>
@@ -266,7 +266,7 @@
       <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635734">
         <property name="2.name:0" value="tasks" />
         <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635735">
-          <link role="6.classifier:3" targetNodeId="7.~List" />
+          <link role="6.classifier:3" targetNodeId="14.~List" />
           <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4707157387247635736">
             <link role="6.typeVariableDeclaration:3" targetNodeId="4707157387247635637" resolveInfo="T" />
           </node>
@@ -293,7 +293,7 @@
       <property name="6.nonStatic:3" value="true" />
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635748" />
       <node role="6.implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635749">
-        <link role="6.classifier:3" targetNodeId="12.~VirtualFileManagerListener" />
+        <link role="6.classifier:3" targetNodeId="16.~VirtualFileManagerListener" />
       </node>
       <node role="6.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4707157387247635750">
         <property name="2.name:0" value="myVFMBan" />
@@ -473,7 +473,7 @@
     <node role="6.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4707157387247635797">
       <property name="2.name:0" value="myManager" />
       <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635798">
-        <link role="6.classifier:3" targetNodeId="8.~ProjectManager" />
+        <link role="6.classifier:3" targetNodeId="17.~ProjectManager" />
       </node>
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635799" />
     </node>
@@ -487,7 +487,7 @@
     <node role="6.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4707157387247635803">
       <property name="2.name:0" value="myVirtualFileManager" />
       <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635804">
-        <link role="6.classifier:3" targetNodeId="12.~VirtualFileManager" />
+        <link role="6.classifier:3" targetNodeId="16.~VirtualFileManager" />
       </node>
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635805" />
     </node>
@@ -497,7 +497,7 @@
       <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635809">
         <property name="2.name:0" value="manager" />
         <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635810">
-          <link role="6.classifier:3" targetNodeId="8.~ProjectManager" />
+          <link role="6.classifier:3" targetNodeId="17.~ProjectManager" />
         </node>
       </node>
       <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635811">
@@ -509,7 +509,7 @@
       <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635813">
         <property name="2.name:0" value="virtualFileManager" />
         <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635814">
-          <link role="6.classifier:3" targetNodeId="12.~VirtualFileManager" />
+          <link role="6.classifier:3" targetNodeId="16.~VirtualFileManager" />
         </node>
       </node>
       <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635815">
@@ -565,7 +565,7 @@
               <link role="6.variableDeclaration:3" targetNodeId="4707157387247635803" resolveInfo="myVirtualFileManager" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635837">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="12.~VirtualFileManager.addVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="16.~VirtualFileManager.addVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" />
               <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247635838">
                 <link role="6.variableDeclaration:3" targetNodeId="4707157387247635787" resolveInfo="myVirtualFileManagerListener" />
               </node>
@@ -598,7 +598,7 @@
               <link role="6.variableDeclaration:3" targetNodeId="4707157387247635803" resolveInfo="myVirtualFileManager" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635851">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="12.~VirtualFileManager.removeVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="16.~VirtualFileManager.removeVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" />
               <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247635852">
                 <link role="6.variableDeclaration:3" targetNodeId="4707157387247635787" resolveInfo="myVirtualFileManagerListener" />
               </node>
@@ -618,13 +618,13 @@
               <link role="6.variableDeclaration:3" targetNodeId="4707157387247635797" resolveInfo="myManager" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635860">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="8.~ProjectManager.getOpenProjects():com.intellij.openapi.project.Project[]" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="17.~ProjectManager.getOpenProjects():com.intellij.openapi.project.Project[]" />
             </node>
           </node>
           <node role="6.variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247635861">
             <property name="2.name:0" value="p" />
             <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635862">
-              <link role="6.classifier:3" targetNodeId="8.~Project" />
+              <link role="6.classifier:3" targetNodeId="17.~Project" />
             </node>
           </node>
           <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635863">
@@ -632,16 +632,16 @@
               <node role="6.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247635865">
                 <property name="2.name:0" value="vcsMan" />
                 <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635866">
-                  <link role="6.classifier:3" targetNodeId="5.~ProjectLevelVcsManager" />
+                  <link role="6.classifier:3" targetNodeId="18.~ProjectLevelVcsManager" />
                 </node>
                 <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247635867">
                   <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247635868">
                     <link role="6.variableDeclaration:3" targetNodeId="4707157387247635861" resolveInfo="p" />
                   </node>
                   <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635869">
-                    <link role="6.baseMethodDeclaration:3" targetNodeId="1.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
+                    <link role="6.baseMethodDeclaration:3" targetNodeId="19.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
                     <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="4707157387247635870">
-                      <link role="6.classifier:3" targetNodeId="5.~ProjectLevelVcsManager" />
+                      <link role="6.classifier:3" targetNodeId="18.~ProjectLevelVcsManager" />
                     </node>
                   </node>
                 </node>
@@ -653,7 +653,7 @@
                   <link role="6.variableDeclaration:3" targetNodeId="4707157387247635865" resolveInfo="vcsMan" />
                 </node>
                 <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635874">
-                  <link role="6.baseMethodDeclaration:3" targetNodeId="5.~ProjectLevelVcsManager.isBackgroundVcsOperationRunning():boolean" />
+                  <link role="6.baseMethodDeclaration:3" targetNodeId="18.~ProjectLevelVcsManager.isBackgroundVcsOperationRunning():boolean" />
                 </node>
               </node>
               <node role="6.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635875">

@@ -28,15 +28,13 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
       BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147198311", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true), (SNode) new typeOf_ForeachStatement_InferenceRule.QuotationClass_9mvp38_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext), false, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2262344491709407306", 0, intentionProvider);
+      typeCheckingContext.createGreaterThanInequation((SNode) new typeOf_ForeachStatement_InferenceRule.QuotationClass_9mvp38_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "variable", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358399", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1176561507041), true, _info_12389875345);
     }
   }
@@ -74,7 +72,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
-          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
+          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
           {
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
@@ -127,7 +125,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
-          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
+          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
           {
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;

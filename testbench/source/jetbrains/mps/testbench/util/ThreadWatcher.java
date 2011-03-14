@@ -37,7 +37,8 @@ public class ThreadWatcher implements Output {
         "(LowMemoryWatcher)|" +
         "(Timer\\-.*)|" +
         "(FS Sync.*)|" +
-        "(timed reference disposer)");
+        "(timed reference disposer)|" +
+        "(Alarm pool\\(own\\))");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();

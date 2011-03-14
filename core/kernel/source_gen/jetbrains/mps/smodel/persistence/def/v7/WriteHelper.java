@@ -40,6 +40,9 @@ public class WriteHelper {
   }
 
   public void addModelReference(@NotNull SModelReference model) {
+    if (MapSequence.fromMap(myModelIndex).containsKey(model)) {
+      return;
+    }
     int hash = (model.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
     while (SetSequence.fromSet(myUsedIndexes).contains(hash)) {
       hash = (hash + 1) % HASH_SIZE;

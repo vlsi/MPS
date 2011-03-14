@@ -44,11 +44,6 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
       SNode _nodeToCheck_1029348928467 = node;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057690603", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
-      _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
-      _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
-      _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
-      _info_12389875345.addInequationGroupBefore("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057680866", true), (SNode) new typeOf_Node_GetAdapterOperation_InferenceRule.QuotationClass_j10w9m_a0a3a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
@@ -79,7 +74,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)"), SNodeId.fromString("~BaseConcept")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#ceab5195-25ea-4f22-9b92-103b95ca8c0c#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)"), SNodeId.fromString("~BaseConcept")));
         result = quotedNode1_2;
       }
       return result;
@@ -92,7 +87,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)"), SNodeId.fromString("~BaseConcept")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#ceab5195-25ea-4f22-9b92-103b95ca8c0c#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)"), SNodeId.fromString("~BaseConcept")));
         result = quotedNode1_2;
       }
       return result;

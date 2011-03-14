@@ -15,32 +15,33 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.DataManager;
+import com.intellij.ide.IdeBundle;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.util.Computable;
+import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.util.Computable;
-import com.intellij.ide.DataManager;
-import com.intellij.ide.IdeBundle;
-import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.Icon;
 import java.awt.Point;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class CreateFromUsageUtil {
@@ -107,7 +108,7 @@ public final class CreateFromUsageUtil {
             protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
-                  SNode result = NodeFactoryManager.createNode((ConceptDeclaration) BaseAdapter.fromNode(concept), null, null, model, scope);
+                  SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
                   model.addRoot(result);
                   if (newRootHandler != null) {
                     newRootHandler.set(result);

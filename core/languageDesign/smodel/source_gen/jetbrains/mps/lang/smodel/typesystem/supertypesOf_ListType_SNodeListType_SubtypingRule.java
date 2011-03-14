@@ -73,7 +73,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public static class Pattern_l03ebm_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    public static SNode PatternVar_elem;
 
     public Pattern_l03ebm_a0a0a0a2() {
     }
@@ -98,7 +98,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iav8o_a0a0.getConceptFqName()))) {
                 return false;
               }
-              this.PatternVar_elem = nodeToMatch_iav8o_a0a0.getReferent("concept");
+              PatternVar_elem = nodeToMatch_iav8o_a0a0.getReferent("concept");
             }
           }
         }
@@ -112,13 +112,13 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+        return PatternVar_elem;
       }
       return null;
     }

@@ -37,7 +37,6 @@ public class typeof_MatrixDivExpression_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "rightExpression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210152315156", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210152315158", true), (SNode) new typeof_MatrixDivExpression_InferenceRule.QuotationClass_ubl348_a0a3a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

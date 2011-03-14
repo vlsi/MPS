@@ -28,7 +28,6 @@ public class set_covariant_with_extends_InequationReplacementRule extends Abstra
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7707298106572041860", 0, intentionProvider);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(supertype, "elementType", true), "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), false, _info_12389875345);
     }
   }

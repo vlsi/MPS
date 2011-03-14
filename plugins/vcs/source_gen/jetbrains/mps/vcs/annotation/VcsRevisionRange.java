@@ -38,7 +38,7 @@ public class VcsRevisionRange extends BaseGroup {
     add(myBeforeAction);
     add(myAfterAction);
     add(new BaseAction("Remove Highlighting") {
-      protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
+      protected void doExecute(AnActionEvent event, Map<String, Object> map) {
         myBeforeAction.myRevision = null;
         myAfterAction.myRevision = null;
         myColumn.invalidateLayout();
@@ -82,8 +82,7 @@ public class VcsRevisionRange extends BaseGroup {
       }
     }
 
-    @Override
-    protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
+    protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       String text = (myBefore ?
         "Show Before..." :
         "Show After..."

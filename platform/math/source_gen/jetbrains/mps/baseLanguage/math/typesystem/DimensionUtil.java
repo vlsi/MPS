@@ -83,7 +83,6 @@ public class DimensionUtil {
                 SNode _nodeToCheck_1029348928467 = null;
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652074322", 0, intentionProvider);
-                _info_12389875345.setInequationGroup("default");
                 typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
               }
               break;
@@ -133,7 +132,6 @@ public class DimensionUtil {
                 SNode _nodeToCheck_1029348928467 = null;
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, intentionProvider);
-                _info_12389875345.setInequationGroup("default");
                 typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
               }
               break;
@@ -143,7 +141,6 @@ public class DimensionUtil {
             SNode _nodeToCheck_1029348928467 = null;
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652104638", 0, intentionProvider);
-            _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
           }
           if (row) {

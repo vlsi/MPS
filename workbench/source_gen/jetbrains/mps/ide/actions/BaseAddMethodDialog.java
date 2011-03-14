@@ -19,15 +19,13 @@ import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.ui.treeStructure.actions.CollapseAllAction;
 import com.intellij.ui.treeStructure.actions.ExpandAllAction;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
-import java.util.Map;
-import java.util.LinkedHashMap;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.util.containers.MultiMap;
-import java.util.Collections;
-import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JScrollPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -38,9 +36,9 @@ import java.awt.BorderLayout;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.TreePath;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
+import java.util.Collections;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public abstract class BaseAddMethodDialog extends BaseDialog {
   private EditorContext myContext;
@@ -77,48 +75,39 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     myTree.rebuildLater();
   }
 
-  protected abstract List<BaseMethodDeclaration> collectImplementableMethods();
+  protected abstract List<SNode> collectImplementableMethods();
 
-  protected abstract int compareMethods(BaseMethodDeclaration m1, BaseMethodDeclaration m2);
+  protected abstract int compareMethods(SNode m1, SNode m2);
 
-  protected abstract List<BaseMethodDeclaration> doAddMethods(List<BaseAddMethodDialog.MethodTreeNode> paths);
+  protected abstract List<SNode> doAddMethods(List<BaseAddMethodDialog.MethodTreeNode> paths);
 
-  protected abstract INodeAdapter getContainer(BaseMethodDeclaration bm);
+  protected abstract SNode getContainer(SNode bm);
 
-  protected abstract int compareContainers(INodeAdapter c1, INodeAdapter c2);
+  protected abstract int compareContainers(SNode c1, SNode c2);
 
   protected abstract JComponent createAdditionalOptionsComponent();
 
   private MPSTreeNode rebuildOurTree() {
-    Map<String, BaseMethodDeclaration> possibleMethods = new LinkedHashMap<String, BaseMethodDeclaration>();
-    for (BaseMethodDeclaration method : collectImplementableMethods()) {
-      String signature = BaseConcept_Behavior.call_getPresentation_1213877396640(method.getNode());
-      if (possibleMethods.containsKey(signature)) {
-        possibleMethods.put(signature, method);
-      } else {
-        possibleMethods.put(signature, method);
-      }
-    }
-    MultiMap<INodeAdapter, BaseMethodDeclaration> methodsByContainer = new MultiMap<INodeAdapter, BaseMethodDeclaration>();
-    for (BaseMethodDeclaration method : possibleMethods.values()) {
+    MultiMap<SNode, SNode> methodsByContainer = new MultiMap<SNode, SNode>();
+    for (SNode method : ListSequence.fromList(collectImplementableMethods())) {
       methodsByContainer.putValue(getContainer(method), method);
     }
-    List<INodeAdapter> containers = new ArrayList<INodeAdapter>(methodsByContainer.keySet());
-    Collections.sort(containers, new Comparator<INodeAdapter>() {
-      public int compare(INodeAdapter o1, INodeAdapter o2) {
-        return compareContainers(o1, o2);
-      }
-    });
+    List<SNode> containers = new ArrayList<SNode>();
+    ListSequence.fromList(containers).addSequence(SetSequence.fromSet(methodsByContainer.keySet()));
     TextTreeNode root = new TextTreeNode("Methods");
-    for (INodeAdapter container : containers) {
+    for (SNode container : ListSequence.fromList(containers).sort(new Comparator<SNode>() {
+      public int compare(SNode a, SNode b) {
+        return compareContainers(a, b);
+      }
+    }, true)) {
+      List<SNode> methods = new ArrayList<SNode>();
+      ListSequence.fromList(methods).addSequence(Sequence.fromIterable(methodsByContainer.get(container)));
       BaseAddMethodDialog.NodeTreeNode node = new BaseAddMethodDialog.NodeTreeNode(container);
-      List<BaseMethodDeclaration> methods = new ArrayList<BaseMethodDeclaration>(methodsByContainer.get(container));
-      Collections.sort(methods, new Comparator<BaseMethodDeclaration>() {
-        public int compare(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
-          return compareMethods(m1, m2);
+      for (SNode method : ListSequence.fromList(methods).sort(new Comparator<SNode>() {
+        public int compare(SNode a, SNode b) {
+          return compareMethods(a, b);
         }
-      });
-      for (BaseMethodDeclaration method : methods) {
+      }, true)) {
         node.add(new BaseAddMethodDialog.MethodTreeNode(method));
       }
       root.add(node);
@@ -158,7 +147,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
         List<BaseAddMethodDialog.MethodTreeNode> methodNodes = ListSequence.fromList(new ArrayList<BaseAddMethodDialog.MethodTreeNode>());
         for (TreePath path : paths) {
           if (path.getLastPathComponent() instanceof BaseAddMethodDialog.MethodTreeNode) {
-            methodNodes.add((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
+            ListSequence.fromList(methodNodes).addElement((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
           }
         }
         Collections.sort(methodNodes, new Comparator<BaseAddMethodDialog.MethodTreeNode>() {
@@ -166,16 +155,16 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
             return compareMethods(m1.getMethod(), m2.getMethod());
           }
         });
-        List<BaseMethodDeclaration> methods = doAddMethods(ListSequence.fromList(methodNodes).reversedList());
+        List<SNode> methods = doAddMethods(ListSequence.fromList(methodNodes).reversedList());
         if (methods.isEmpty()) {
           return;
         }
         if (methods.size() == 1) {
-          SNode node = methods.get(0).getNode();
+          SNode node = methods.get(0);
           myContext.selectAfter(node);
         } else {
-          SNode first = methods.get(methods.size() - 1).getNode();
-          SNode last = methods.get(0).getNode();
+          SNode first = methods.get(methods.size() - 1);
+          SNode last = methods.get(0);
           myContext.select(first);
           myContext.selectRange(first, last);
         }
@@ -189,27 +178,27 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
   }
 
   private static class NodeTreeNode extends MPSTreeNode {
-    private INodeAdapter myNodeAdapter;
+    private SNode myNode;
 
-    public NodeTreeNode(INodeAdapter nodeAdapter) {
+    public NodeTreeNode(SNode node) {
       super(null);
-      myNodeAdapter = nodeAdapter;
-      setIcon(IconManager.getIconFor(myNodeAdapter.getNode()));
-      setNodeIdentifier(myNodeAdapter.getNode().getName());
+      myNode = node;
+      setIcon(IconManager.getIconFor(myNode));
+      setNodeIdentifier(myNode.getName());
     }
   }
 
   public static class MethodTreeNode extends MPSTreeNode {
-    private BaseMethodDeclaration myMethod;
+    private SNode myMethod;
 
-    public MethodTreeNode(BaseMethodDeclaration method) {
+    public MethodTreeNode(SNode method) {
       super(null);
       myMethod = method;
-      setIcon(IconManager.getIconFor(myMethod.getNode()));
-      setNodeIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(myMethod.getNode()));
+      setIcon(IconManager.getIconFor(myMethod));
+      setNodeIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(myMethod));
     }
 
-    public BaseMethodDeclaration getMethod() {
+    public SNode getMethod() {
       return myMethod;
     }
   }

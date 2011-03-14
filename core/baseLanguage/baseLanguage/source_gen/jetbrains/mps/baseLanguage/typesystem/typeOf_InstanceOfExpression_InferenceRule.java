@@ -24,7 +24,7 @@ public class typeOf_InstanceOfExpression_InferenceRule extends AbstractInference
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176907635591", 0, intentionProvider);
-      typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176907625382", true), (SNode) SLinkOperations.getTarget(instanceOfExpression, "classType", true), _info_12389875345);
+      typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176907625382", true), (SNode) SLinkOperations.getTarget(instanceOfExpression, "classType", true), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = instanceOfExpression;

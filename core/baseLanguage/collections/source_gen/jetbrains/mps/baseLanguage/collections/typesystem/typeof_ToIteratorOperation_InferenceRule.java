@@ -29,7 +29,6 @@ public class typeof_ToIteratorOperation_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = input;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1207236221836", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1207236221844", true), (SNode) new typeof_ToIteratorOperation_InferenceRule.QuotationClass_qlsgpf_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1207236221835), typeCheckingContext), false, _info_12389875345);
     }
     {
@@ -124,7 +123,7 @@ public class typeof_ToIteratorOperation_InferenceRule extends AbstractInferenceR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
@@ -151,7 +150,7 @@ public class typeof_ToIteratorOperation_InferenceRule extends AbstractInferenceR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;

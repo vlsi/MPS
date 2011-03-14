@@ -156,16 +156,16 @@ public class NodeMaps {
     return result;
   }
 
-  public void expandAll(Set<SNode> nodes) {
+  public void expandAll(Set<SNode> nodes, boolean finalExpansion) {
     for (SNode node : nodes) {
       SNode var = myNodesToTypes.get(node);
-      SNode type = myState.getEquations().expandNode(var, true);
+      SNode type = myState.getEquations().expandNode(var, finalExpansion);
       updateNodeToType(node, type, null);
     }
   }
 
-  public void expandAll() {
-     expandAll(new HashSet<SNode>(myNodesToTypes.keySet()));
+  public void expandAll(boolean finalExpansion) {
+     expandAll(new HashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
   }
 
   public SNode getNode(SNode type) {

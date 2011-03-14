@@ -97,7 +97,7 @@ public class RulesManager {
 
   //todo: we should not change language models while loading language
   public boolean loadLanguage(final Language l) {
-    synchronized (RULES_LOCK) {
+   // synchronized (RULES_LOCK) {
       if (myLoadedLanguages.contains(l.getModuleFqName())) {
         return true;
       }
@@ -142,68 +142,72 @@ public class RulesManager {
       } finally {
         myLoadedLanguages.add(l.getModuleFqName());
       }
-    }
+   // }
   }
 
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
-    synchronized (RULES_LOCK) {
+   // synchronized (RULES_LOCK) {
       for (IVariableConverter_Runtime converter : myVariableConverters) {
         if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
       }
       return null;
-    }
+   // }
   }
 
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
-    synchronized (RULES_LOCK) {
-      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result =
-        new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
-      Set<InferenceRule_Runtime> ruleSet = myInferenceRules.getRules(node);
-      for (InferenceRule_Runtime rule : ruleSet) {
-        IsApplicableStatus status = rule.isApplicableAndPattern(node);
-        if (status.isApplicable()) {
-          result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
-        }
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+    Set<InferenceRule_Runtime> ruleSet;
+ //   synchronized (RULES_LOCK) {
+      ruleSet = myInferenceRules.getRules(node);
+ //   }
+    for (InferenceRule_Runtime rule : ruleSet) {
+      IsApplicableStatus status = rule.isApplicableAndPattern(node);
+      if (status.isApplicable()) {
+        result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
       }
-      return result;
     }
+    return result;
   }
+
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
-    synchronized (RULES_LOCK) {
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
-        new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
-      Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
-      for (NonTypesystemRule_Runtime rule : ruleSet) {
-        IsApplicableStatus status = rule.isApplicableAndPattern(node);
-        if (status.isApplicable()) {
-          result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
-        }
+      new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
+    Set<NonTypesystemRule_Runtime> ruleSet;
+ //   synchronized (RULES_LOCK) {
+      ruleSet = myNonTypesystemRules.getRules(node);
+  //  }
+    for (NonTypesystemRule_Runtime rule : ruleSet) {
+      IsApplicableStatus status = rule.isApplicableAndPattern(node);
+      if (status.isApplicable()) {
+        result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
       }
-      return result;
     }
+    return result;
   }
+
 
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
-    synchronized (RULES_LOCK) {
+   List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
+    Set<SubtypingRule_Runtime> ruleSet;
+ //   synchronized (RULES_LOCK) {
       loadLanguage(node.getLanguageNamespace());
-      List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result =
-        new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
-      Set<SubtypingRule_Runtime> ruleSet = mySubtypingRules.getRules(node);
-      for (SubtypingRule_Runtime rule : ruleSet) {
-        if ((isWeak || !rule.isWeak())) {
-          IsApplicableStatus status = rule.isApplicableAndPattern(node);
-          if (status.isApplicable()) {
-            result.add(new Pair<SubtypingRule_Runtime, IsApplicableStatus>(rule, status));
-          }
+      ruleSet = mySubtypingRules.getRules(node);
+  //  }
+    for (SubtypingRule_Runtime rule : ruleSet) {
+      if ((isWeak || !rule.isWeak())) {
+        IsApplicableStatus status = rule.isApplicableAndPattern(node);
+        if (status.isApplicable()) {
+          result.add(new Pair<SubtypingRule_Runtime, IsApplicableStatus>(rule, status));
         }
       }
-      return result;
     }
+    return result;
   }
 
+
   public boolean subtypingRulesByNodeAreAllByConcept(final SNode node, boolean isWeak) {
-    synchronized (RULES_LOCK) {
+  //  synchronized (RULES_LOCK) {
       loadLanguage(node.getLanguageNamespace());
       for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
         if (!isWeak && rule.isWeak()) {
@@ -214,39 +218,42 @@ public class RulesManager {
         }
       }
       return true;
-    }
+   // }
   }
 
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
-    synchronized (RULES_LOCK) {
+    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
+    Set<ComparisonRule_Runtime> ruleSet;
+  //  synchronized (RULES_LOCK) {
       loadLanguage(node1.getLanguageNamespace());
       loadLanguage(node2.getLanguageNamespace());
-      List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
-      Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
-      for (ComparisonRule_Runtime rule : ruleSet) {
-        if (isWeak || !rule.isWeak()) {
-          IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
-          if (status.isApplicable()) {
-            result.add(new Pair<ComparisonRule_Runtime, IsApplicable2Status>(rule, status));
-          }
-        }
-      }
-      return result;
-    }
-  }
-
-  public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
-    synchronized (RULES_LOCK) {
-      List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
-      Set<InequationReplacementRule_Runtime> ruleSet = myReplacementRules.getRules(node1, node2);
-      for (InequationReplacementRule_Runtime rule : ruleSet) {
+      ruleSet = myComparisonRules.getRules(node1, node2);
+  //  }
+    for (ComparisonRule_Runtime rule : ruleSet) {
+      if (isWeak || !rule.isWeak()) {
         IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
         if (status.isApplicable()) {
-          result.add(new Pair<InequationReplacementRule_Runtime, IsApplicable2Status>(rule, status));
+          result.add(new Pair<ComparisonRule_Runtime, IsApplicable2Status>(rule, status));
         }
       }
-      return result;
     }
+    return result;
+  }
+
+
+  public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
+    List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
+    Set<InequationReplacementRule_Runtime> ruleSet;
+  //  synchronized (RULES_LOCK) {
+      ruleSet = myReplacementRules.getRules(node1, node2);
+  //  }
+    for (InequationReplacementRule_Runtime rule : ruleSet) {
+      IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
+      if (status.isApplicable()) {
+        result.add(new Pair<InequationReplacementRule_Runtime, IsApplicable2Status>(rule, status));
+      }
+    }
+    return result;
   }
 
   public Set<SNode> getDependencies(SNode node) {
@@ -262,26 +269,30 @@ public class RulesManager {
   }
 
   public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
-    synchronized (RULES_LOCK) {
-      return CollectionUtil.filter(myDependentComputations.getRules(node), new Condition<AbstractDependentComputation_Runtime>() {
-        @Override
-        public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
-          return dependentComputation.isApplicable(node);
-        }
-      });
-    }
+    Set<AbstractDependentComputation_Runtime> rules;
+  //  synchronized (RULES_LOCK) {
+      rules = myDependentComputations.getRules(node);
+  //  }
+    return CollectionUtil.filter(rules, new Condition<AbstractDependentComputation_Runtime>() {
+      @Override
+      public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
+        return dependentComputation.isApplicable(node);
+      }
+    });
   }
 
   public boolean isBlockingDependentComputationNode(SNode node) {
-    synchronized (RULES_LOCK) {
-      Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
-      if (set == null) return false;
-      for (DependentComputationWrapper wrapper : set) {
-        if (wrapper.isBlocking(node)) {
-          return true;
-        }
+    Set<DependentComputationWrapper> set;
+   // synchronized (RULES_LOCK) {
+      set = myDependentComputationsBlockedNodes.getRules(node);
+   // }
+    if (set == null) return false;
+    for (DependentComputationWrapper wrapper : set) {
+      if (wrapper.isBlocking(node)) {
+        return true;
       }
-      return false;
     }
+    return false;
   }
 }
+

@@ -17,7 +17,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_36aa7y_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Iterator");
+  private static SNodePointer SNODE_POINTER_36aa7y_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -103,7 +103,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   }
 
   public static class Pattern_36aa7y_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
+    public static SNode PatternVar_p;
 
     public Pattern_36aa7y_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_p".equals(fieldName)) {
-        return this.PatternVar_p;
+        return PatternVar_p;
       }
       return null;
     }

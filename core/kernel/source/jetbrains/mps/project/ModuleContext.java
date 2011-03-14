@@ -23,8 +23,6 @@ import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Set;
-
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
@@ -101,22 +99,18 @@ public class ModuleContext extends StandaloneMPSContext {
   @Nullable
   public static ModuleContext create(@NotNull final SModelDescriptor model, Project project) {
 
-    Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-      public Set<IModule> compute() {
-        return model.getModules();
+    IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      public IModule compute() {
+        return model.getModule();
       }
     });
 
-    if (owningModules.isEmpty()) {
+    if (owningModule == null) {
       LOG.error("couldn't create module context for node:" +
         "\ncouldn't find owner module for model '" + model.getSModelReference() + "'");
       return null;
     }
 
-    IModule module = owningModules.iterator().next();
-
-    if (module == null) return null;
-
-    return new ModuleContext(module, project);
+    return new ModuleContext(owningModule, project);
   }
 }

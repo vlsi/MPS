@@ -92,13 +92,13 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private boolean isValidText_internal(String text) {
+    if (text != null && text.length() == 0) {
+      text = null;
+    }
+
     if (myReadOnly) {
       String propertyValue = getText();
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
-    }
-
-    if (text != null && text.length() == 0) {
-      text = null;
     }
 
     if (myPropertyDeclaration != null) {

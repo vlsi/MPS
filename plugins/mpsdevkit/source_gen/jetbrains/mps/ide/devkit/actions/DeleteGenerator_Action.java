@@ -18,7 +18,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.workbench.actions.language.DeleteGeneratorHelper;
+import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
 
 public class DeleteGenerator_Action extends GeneratedAction {
   private static final Icon ICON = null;

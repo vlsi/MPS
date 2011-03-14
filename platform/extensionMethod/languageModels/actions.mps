@@ -8,8 +8,8 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <import index="5n0f" modelUID="f:java_stub#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
-  <import index="wt1u" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
+  <import index="4rr4" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
+  <import index="espb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.search(MPS.Classpath/jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -275,7 +275,7 @@
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5417760646066155100">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5417760646066155090">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5417760646066155091">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5n0f.~InstanceMethodCall_InstanceMethodScope%d&lt;init&gt;(jetbrains%dmps%dbaseLanguage%dstructure%dClassifierType,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="InstanceMethodCall_InstanceMethodScope" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rr4.~InstanceMethodCall_InstanceMethodScope%d&lt;init&gt;(jetbrains%dmps%dbaseLanguage%dstructure%dClassifierType,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="InstanceMethodCall_InstanceMethodScope" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5417760646066155092">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5417760646066155093">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5417760646066155077" resolveInfo="classifierType" />
@@ -286,7 +286,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5417760646066156527">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~AbstractSearchScope%dgetNodes()%cjava%dutil%dList" resolveInfo="getNodes" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="espb.~AbstractSearchScope%dgetNodes()%cjava%dutil%dList" resolveInfo="getNodes" />
                   </node>
                 </node>
               </node>

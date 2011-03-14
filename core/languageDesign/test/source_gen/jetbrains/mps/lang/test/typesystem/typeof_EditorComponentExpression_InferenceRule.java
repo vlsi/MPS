@@ -56,7 +56,7 @@ public class typeof_EditorComponentExpression_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
         result = quotedNode1_2;
       }
       return result;
@@ -69,7 +69,7 @@ public class typeof_EditorComponentExpression_InferenceRule extends AbstractInfe
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
         result = quotedNode1_2;
       }
       return result;

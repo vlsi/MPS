@@ -27,7 +27,6 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
       SNode _nodeToCheck_1029348928467 = intervalType;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425320", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_zf55c1_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
@@ -58,7 +57,7 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
         result = quotedNode1_2;
       }
       return result;
@@ -71,7 +70,7 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
         result = quotedNode1_2;
       }
       return result;

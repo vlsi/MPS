@@ -182,6 +182,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
         style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
       editorCell.setDefaultText("");

@@ -397,30 +397,30 @@
     <unitInfo nodeId="4642948870877888908" fileName="EmptySearchScope.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.smodel.search.EmptySearchScope" />
   </root>
   <root nodeId="4642948870877889221">
-    <nodeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="17" startPosition="77" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="20" startPosition="32" endLine="21" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
+    <nodeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="19" startPosition="77" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="22" startPosition="32" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
     <nodeInfo nodeId="4642948870877889223" fileName="ISearchScope.java" startLine="11" startPosition="31" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="13" startPosition="58" endLine="15" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="15" startPosition="75" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljava/lang/Class;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="18" startPosition="39" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
-    <scopeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="17" startPosition="77" endLine="18" endPosition="39">
+    <nodeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="20" startPosition="39" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
+    <nodeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="13" startPosition="58" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="16" startPosition="75" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljava/lang/Class;)Ljava/util/List;" />
+    <scopeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="19" startPosition="77" endLine="20" endPosition="39">
       <varInfo nodeId="4642948870877889255" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="20" startPosition="32" endLine="21" endPosition="99">
+    <scopeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="22" startPosition="32" endLine="23" endPosition="99">
       <varInfo nodeId="4642948870877889267" varName="referenceNode" />
       <varInfo nodeId="4642948870877889269" varName="targetConcept" />
     </scopeInfo>
     <scopeInfo nodeId="4642948870877889223" fileName="ISearchScope.java" startLine="11" startPosition="31" endLine="13" endPosition="58">
       <varInfo nodeId="4642948870877889227" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="13" startPosition="58" endLine="15" endPosition="75">
+    <scopeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="20" startPosition="39" endLine="22" endPosition="32" />
+    <scopeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="13" startPosition="58" endLine="16" endPosition="75">
       <varInfo nodeId="4642948870877889236" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="15" startPosition="75" endLine="17" endPosition="77">
+    <scopeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="16" startPosition="75" endLine="19" endPosition="77">
       <varInfo nodeId="4642948870877889247" varName="adapterClass" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="18" startPosition="39" endLine="20" endPosition="32" />
-    <unitInfo nodeId="4642948870877889221" fileName="ISearchScope.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.smodel.search.ISearchScope" />
+    <unitInfo nodeId="4642948870877889221" fileName="ISearchScope.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.smodel.search.ISearchScope" />
   </root>
   <root nodeId="4642948870877889272">
     <nodeInfo nodeId="4642948870877889276" fileName="IsInstanceCondition.java" startLine="9" startPosition="62" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConceptFqName" />

@@ -19,5 +19,9 @@ package jetbrains.mps.smodel;
  * @author Kostik
  */
 public interface MPSModuleRepositoryListener {
+
+  /**
+   *  Always invoked with write lock.
+   */
   void repositoryChanged();
 }

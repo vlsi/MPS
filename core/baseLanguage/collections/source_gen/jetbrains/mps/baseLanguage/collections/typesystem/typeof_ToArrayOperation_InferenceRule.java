@@ -26,7 +26,6 @@ public class typeof_ToArrayOperation_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = input;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184970400761", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184970400767", true), (SNode) new typeof_ToArrayOperation_InferenceRule.QuotationClass_3zkh2_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184970400760), typeCheckingContext), false, _info_12389875345);
     }
     {

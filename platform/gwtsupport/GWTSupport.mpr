@@ -25,6 +25,7 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="" />
       <solutionPath path="${project}/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="" />
+      <solutionPath path="${mps_home}/core/kernel/stubUtils/stubUtils.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/client/client.mpl" folder="" />
@@ -75,7 +76,7 @@
     <subPane />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="" vcs="" />
   </component>
 </project>
 

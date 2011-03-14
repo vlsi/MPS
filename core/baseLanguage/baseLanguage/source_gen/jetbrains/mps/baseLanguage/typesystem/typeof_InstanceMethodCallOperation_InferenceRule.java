@@ -42,8 +42,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       SNode _nodeToCheck_1029348928467 = imco;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a6a0().createNode(methodClassifier, methodClassifier, typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a6a0().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
@@ -85,7 +84,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     public QuotationClass_ecn83h_a0a6a0() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -98,7 +97,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       return result;
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

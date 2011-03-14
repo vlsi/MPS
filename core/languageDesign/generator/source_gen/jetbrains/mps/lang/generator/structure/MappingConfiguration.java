@@ -21,6 +21,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TOP_PRIORITY_GROUP = "topPriorityGroup";
+  public static final String CONDITION = "condition";
   public static final String ROOT_MAPPING_RULE = "rootMappingRule";
   public static final String WEAVING_MAPPING_RULE = "weavingMappingRule";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
@@ -30,6 +31,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
   public static final String POST_MAPPING_SCRIPT = "postMappingScript";
   public static final String MAPPING_LABEL = "mappingLabel";
+  public static final String GENERATION_PARAMETERS = "generationParameters";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public MappingConfiguration(SNode node) {
@@ -74,6 +76,14 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void setTopPriorityGroup(boolean value) {
     this.setBooleanProperty(MappingConfiguration.TOP_PRIORITY_GROUP, value);
+  }
+
+  public MappingConfiguration_Condition getCondition() {
+    return (MappingConfiguration_Condition) this.getChild(MappingConfiguration_Condition.class, MappingConfiguration.CONDITION);
+  }
+
+  public void setCondition(MappingConfiguration_Condition node) {
+    super.setChild(MappingConfiguration.CONDITION, node);
   }
 
   public int getRootMappingRulesCount() {
@@ -254,6 +264,26 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertMappingLabel(MappingLabelDeclaration prev, MappingLabelDeclaration node) {
     this.insertChild(prev, MappingConfiguration.MAPPING_LABEL, node);
+  }
+
+  public int getGenerationParametersesCount() {
+    return this.getChildCount(MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public Iterator<GeneratorParameterReference> generationParameterses() {
+    return this.children(GeneratorParameterReference.class, MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public List<GeneratorParameterReference> getGenerationParameterses() {
+    return this.getChildren(GeneratorParameterReference.class, MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public void addGenerationParameters(GeneratorParameterReference node) {
+    this.addChild(MappingConfiguration.GENERATION_PARAMETERS, node);
+  }
+
+  public void insertGenerationParameters(GeneratorParameterReference prev, GeneratorParameterReference node) {
+    this.insertChild(prev, MappingConfiguration.GENERATION_PARAMETERS, node);
   }
 
   public int get_$attributesCount() {

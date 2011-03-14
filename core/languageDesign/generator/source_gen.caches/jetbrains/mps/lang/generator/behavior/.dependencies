@@ -72,6 +72,9 @@
     <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" file="InsertMacro_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" file="LoopMacro_Behavior.java">
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

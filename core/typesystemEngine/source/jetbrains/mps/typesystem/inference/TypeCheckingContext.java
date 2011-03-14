@@ -266,7 +266,7 @@ public class TypeCheckingContext {
                                        String ruleModel,
                                        String ruleId,
                                        QuickFixProvider intentionProvider) {
-    getNodeTypesComponent().getEquationManager().addInequationComparable(
+    createComparableEquation(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
@@ -366,6 +366,15 @@ public class TypeCheckingContext {
 
   public void createComparableEquation(SNode node1,
                                        SNode node2,
+                                       EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      equationInfo);
+  }
+
+  public void createComparableEquation(SNode node1,
+                                       SNode node2, boolean inference,
                                        EquationInfo equationInfo) {
     getNodeTypesComponent().getEquationManager().addInequationComparable(
       node1,

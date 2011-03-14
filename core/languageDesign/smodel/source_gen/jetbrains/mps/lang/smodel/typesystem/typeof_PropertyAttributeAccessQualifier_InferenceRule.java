@@ -58,7 +58,6 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(propQ, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998060", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998062", false), (SNode) new typeof_PropertyAttributeAccessQualifier_InferenceRule.QuotationClass_iup6w1_a0a1a7a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }

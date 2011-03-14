@@ -38,13 +38,13 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(superMethodCall);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a0a0g0a().createNode(typeVariableDeclaration, typeVariableDeclaration, typeCheckingContext));
+      ListSequence.fromList(typeVarRefs).addElement(new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a0a0g0a().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
       SNode _nodeToCheck_1029348928467 = superMethodCall;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5569019188765067989", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), (SNode) new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a7a0().createNode(classifier, typeVarRefs, classifier, typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), (SNode) new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a7a0().createNode(classifier, typeVarRefs, typeCheckingContext), _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
@@ -73,7 +73,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
     public QuotationClass_okooqp_a0a0a0g0a() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -86,7 +86,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
       return result;
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -104,7 +104,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
     public QuotationClass_okooqp_a0a7a0() {
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -124,7 +124,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
       return result;
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

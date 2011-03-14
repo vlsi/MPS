@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -50,7 +49,7 @@ public class GoToModelAction extends BaseAction {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
             SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
-            projectPane.selectModel(md, false);
+            projectPane.selectModel(md, true);
           }
         };
       }
@@ -75,17 +74,6 @@ public class GoToModelAction extends BaseAction {
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
 
     popup.setShowListForEmptyPattern(true);
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void onClose() {
-      }
-
-      public void elementChosen(final Object element) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ((NavigationItem) element).navigate(true);
-          }
-        });
-      }
-    }, ModalityState.current(), true);
+    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }
 }

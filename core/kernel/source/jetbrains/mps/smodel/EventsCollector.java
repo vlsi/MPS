@@ -85,7 +85,7 @@ public class EventsCollector {
 
   public void add(@NotNull SModelDescriptor sm) {
     checkDisposed();
-    assert !myModelDescriptors.contains(sm) : "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getSModelReference().toString();
+    //assert !myModelDescriptors.contains(sm) : "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getSModelReference().toString();
     myModelDescriptors.add(sm);
     sm.addModelListener(myListener);
   }

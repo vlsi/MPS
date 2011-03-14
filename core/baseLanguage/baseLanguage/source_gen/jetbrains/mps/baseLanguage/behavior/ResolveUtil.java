@@ -66,8 +66,14 @@ public class ResolveUtil {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
     List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(classifierSubtype, "parameter", true)).toListSequence();
-    for (SNode varRef : varRefs) {
-      SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)))));
+    if (ListSequence.fromList(params).count() == ListSequence.fromList(varRefs).count()) {
+      for (SNode varRef : varRefs) {
+        SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)))));
+      }
+    } else {
+      for (SNode varRef : varRefs) {
+        SNodeOperations.replaceWithAnother(varRef, TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)));
+      }
     }
     return result;
   }
@@ -242,7 +248,7 @@ outer:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup";
+  public static final String LABEL_ID_newModel = ID + "newModel";
 
   public SolutionNewActions_ActionGroup() {
     super("New", ID);
@@ -15,7 +19,12 @@ public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action");
-      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionNewActions_ActionGroup.LABEL_ID_newModel);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionNewActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

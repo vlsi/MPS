@@ -13,11 +13,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
+import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class GoToRules_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -73,7 +72,7 @@ public class GoToRules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((AbstractConceptDeclaration) SNodeOperations.getAdapter(((SNode) MapSequence.fromMap(_params).get("node")))));
+      GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRules", t);

@@ -77,7 +77,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
 
 
   public CellContext getCellContext() {
-    return new ConceptPropertyCellContext(getSNode(), myConceptPropertyDeclaration);
+    return new ConceptPropertyCellContext(getSNode(), BaseAdapter.fromAdapter(myConceptPropertyDeclaration));
   }
 
   //To change body of overridden methods use File | Settings | File Templates.

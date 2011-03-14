@@ -14,7 +14,10 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_projectNew = ID + "projectNew";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generate = ID + "generate";
+  public static final String LABEL_ID_check = ID + "check";
+  public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
+  public static final String LABEL_ID_migration = ID + "migration";
 
   public ProjectActions_ActionGroup() {
     super("ProjectActions", ID);
@@ -41,10 +44,18 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         ProjectActions_ActionGroup.this.addAction(action);
       }
       ProjectActions_ActionGroup.this.addSeparator();
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CompileProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RecompileProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_check);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_compileJava);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -52,7 +63,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         ProjectActions_ActionGroup.this.addAction(action);
       }
       ProjectActions_ActionGroup.this.addSeparator();
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInProject_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_migration);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action");
     } catch (Throwable t) {

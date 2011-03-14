@@ -52,7 +52,7 @@ public class TextGenerator {
   public boolean handleOutput(IOperationContext context, GenerationStatus status) {
     if (!status.isOk()) return false;
 
-    Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
+    Map<SNode, Object> outputNodeContents = new LinkedHashMap<SNode, Object>();
     if (!generateText(context, status, outputNodeContents)) return false;
 
     generateFiles(status, outputNodeContents);
@@ -60,7 +60,7 @@ public class TextGenerator {
     return true;
   }
 
-  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
+  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
@@ -78,7 +78,7 @@ public class TextGenerator {
         fillDependencies(dependRoot, outputNode, fileName, result);
 
         hasErrors |= result.hasErrors();
-        outputNodeContents.put(outputNode, result.getText());
+        outputNodeContents.put(outputNode, result.getResult());
       } finally {
         TextGenManager.reset();
       }
@@ -179,10 +179,15 @@ public class TextGenerator {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  private void generateFiles(GenerationStatus status, Map<SNode, String> outputNodeContents) {
+  private void generateFiles(GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       String name = getFileName(outputRootNode);
-      myStreamHandler.saveStream(name, outputNodeContents.get(outputRootNode), false);
+      Object contents = outputNodeContents.get(outputRootNode);
+      if(contents instanceof String) {
+        myStreamHandler.saveStream(name, (String) contents, false);
+      } else {
+        myStreamHandler.saveStream(name, (byte []) contents, false);
+      }
     }
 
     DebugInfo debugInfoCache = null;

@@ -34,7 +34,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(anonymousClass, SLinkOperations.getTargets(anonymousClass, "typeParameter", true), anonymousClass, typeCheckingContext);
+    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(anonymousClass, SLinkOperations.getTargets(anonymousClass, "typeParameter", true), typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
       BaseQuickFixProvider intentionProvider = null;
@@ -93,7 +93,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     public QuotationClass_fj2vg7_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -113,7 +113,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       return result;
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

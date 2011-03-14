@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -118,9 +117,8 @@ public class Solution extends AbstractModule {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor sm : getOwnModelDescriptors()) {
       if (SModelStereotype.isUserModel(sm) &&
-          (sm instanceof EditableSModelDescriptor) &&
-          !((EditableSModelDescriptor) sm).isPackaged())
-      {
+        (sm instanceof EditableSModelDescriptor) &&
+        !((EditableSModelDescriptor) sm).isPackaged()) {
         models.add(sm);
       }
     }
@@ -178,16 +176,13 @@ public class Solution extends AbstractModule {
   }
 
   public String getGeneratorOutputPath() {
-    String generatorOutputPath = mySolutionDescriptor.getOutputPath();
-    if (generatorOutputPath != null) return generatorOutputPath;
-    assert myDescriptorFile != null;
-    generatorOutputPath = myDescriptorFile.getParent().child("source_gen").getAbsolutePath();
-    return generatorOutputPath;
+    IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return result != null ? result.getAbsolutePath() : null;
   }
 
   public String getTestsGeneratorOutputPath() {
-    assert myDescriptorFile != null;
-    return myDescriptorFile.getParent().child("test_gen").getAbsolutePath();
+    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return result != null ? result.getAbsolutePath() : null;
   }
 
   public boolean reloadClassesAfterGeneration() {

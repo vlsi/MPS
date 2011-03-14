@@ -3,7 +3,7 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

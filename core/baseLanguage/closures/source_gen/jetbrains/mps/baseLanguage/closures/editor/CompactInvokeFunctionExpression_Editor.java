@@ -17,8 +17,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -27,6 +29,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Style;
 
 public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -93,11 +96,13 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1dey68_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    SNode functionType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+    return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_1dey68_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
+    SNode functionType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+    return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isEmpty();
   }
 
   private static class parameterListHandler_1dey68_c0 extends RefNodeListHandler {
@@ -154,6 +159,11 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_1dey68_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1dey68_a2a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      }
       editorCell.setDefaultText("");
       return editorCell;
     }

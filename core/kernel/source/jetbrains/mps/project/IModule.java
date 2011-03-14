@@ -109,6 +109,8 @@ public interface IModule extends ModelOwner {
 
   boolean setStubPathExcluded(String path, boolean b);
 
+  ModuleReference getModuleFor(String packageName, String langID);
+
   //-----todo ret rid of
   String getModuleFqName();
 

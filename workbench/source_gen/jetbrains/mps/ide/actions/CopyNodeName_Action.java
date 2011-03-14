@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyNodeName_Action extends GeneratedAction {
   private static final Icon ICON = null;

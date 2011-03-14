@@ -28,7 +28,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      ListSequence.fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, classifier, typeCheckingContext));
+      ListSequence.fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, typeCheckingContext));
     }
     return result;
   }
@@ -52,7 +52,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     public QuotationClass_b0gd6z_a0a0a0c0a() {
     }
 
-    public SNode createNode(Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -60,7 +60,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -72,7 +72,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
       return result;
     }
 
-    public SNode createNode(Object parameter_5, Object parameter_6) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -80,7 +80,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;

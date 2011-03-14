@@ -16,10 +16,7 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
@@ -33,11 +30,13 @@ import java.util.Collection;
  */
 public class TemplateModelInterpreted implements TemplateModel {
 
+  private final TemplateModule myModule;
   private final SModel myModel;
   private Collection<TemplateSwitchMapping> mySwitches;
   private Collection<TemplateMappingConfiguration> myMappings;
 
-  public TemplateModelInterpreted(SModel model) {
+  public TemplateModelInterpreted(TemplateModule module, SModel model) {
+    myModule = module;
     myModel = model;
     mySwitches = new ArrayList<TemplateSwitchMapping>();
     myMappings = new ArrayList<TemplateMappingConfiguration>();
@@ -84,5 +83,10 @@ public class TemplateModelInterpreted implements TemplateModel {
   @Override
   public SModelReference getSModelReference() {
     return myModel.getSModelReference();
+  }
+
+  @Override
+  public TemplateModule getModule() {
+    return myModule;
   }
 }

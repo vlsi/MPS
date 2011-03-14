@@ -51,6 +51,8 @@ public abstract class Block {
 
   public abstract String getPresentation();
 
+  public abstract String getShortPresentation();
+
   public abstract void performAction();
 
   public abstract Set<SNode> getInputs();

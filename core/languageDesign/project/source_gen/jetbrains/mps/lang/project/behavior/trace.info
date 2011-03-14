@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Module_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
+  <root nodeId="6370754048397723597">
+    <nodeInfo nodeId="6370754048397730440" fileName="Module_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6370754048397730461" fileName="Module_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6370754048397723599" fileName="Module_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="6370754048397730434" fileName="Module_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="64" />
+    <scopeInfo nodeId="6370754048397730454" fileName="Module_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="64" />
+  </root>
+</debugInfo>
+

@@ -59,7 +59,7 @@ public class OverridingMethodsFinder {
       SNode clazz = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       SNode superClass = ((SLinkOperations.getTarget(clazz, "superclass", true) != null) ?
         SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false) :
-        SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object")
+        SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")
       );
       if (addIfNotContains(visitedClassifiers, superClass)) {
         collectOverridingMethods(superClass, nameToMethodsMap, visitedClassifiers);

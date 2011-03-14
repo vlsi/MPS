@@ -3,8 +3,8 @@
   <persistence version="7" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="ctdc" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -27,7 +27,7 @@
         </node>
       </node>
       <node role="runtimeType" roleId="tp2q.6099516049394485312" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4498918741262375235">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~WeakHashMap" resolveInfo="WeakHashMap" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~WeakHashMap" resolveInfo="WeakHashMap" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="4498918741262381420">
           <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="4498918741262375231" resolveInfo="K" />
         </node>
@@ -51,7 +51,7 @@
         </node>
       </node>
       <node role="runtimeType" roleId="tp2q.6099516049394485312" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4498918741262482972">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ctdc.~WeakSet" resolveInfo="WeakSet" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="30pf.~WeakSet" resolveInfo="WeakSet" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="4498918741262482974">
           <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="4498918741262480978" resolveInfo="E" />
         </node>

@@ -16,12 +16,14 @@
 package jetbrains.mps.newTypesystem.state;
 
 public enum RelationKind {
-  WEAK(" <= ", "SubTyping", true, false, false),
-  STRONG(" <<= ", "SubTyping (strong)", false, false, false),
-  WEAK_CHECK(" <=' ", "Check-only subTyping", true, true, false),
-  STRONG_CHECK(" <<=' ", "Check-only subTyping (strong)", false, true, false),
-  WEAK_COMPARABLE(" ~ ", "Comparable", true, true, true),
-  STRONG_COMPARABLE(" ~~ ", "Comparable (strong)", false, true, true);
+  WEAK("<=", "SubTyping", true, false, false),
+  STRONG("<<=", "SubTyping (strong)", false, false, false),
+  WEAK_CHECK("<='", "Check-only subTyping", true, true, false),
+  STRONG_CHECK("<<='", "Check-only subTyping (strong)", false, true, false),
+  WEAK_COMPARABLE("~", "Comparable", true, false, true),
+  STRONG_COMPARABLE("~~", "Comparable (strong)", false, false, true),
+  WEAK_COMPARABLE_CHECK("~", "Comparable", true, true, true),
+  STRONG_COMPARABLE_CHECK("~~", "Comparable (strong)", false, true, true);
 
   private String myRelationSign;
   private String myTitle;
@@ -60,10 +62,18 @@ public enum RelationKind {
 
   public static RelationKind fromFlags(boolean isWeak, boolean isCheckOnly, boolean isComparable) {
     if (isComparable) {
-      if (isWeak) {
-        return WEAK_COMPARABLE;
+      if (isCheckOnly) {
+        if (isWeak) {
+          return WEAK_COMPARABLE_CHECK;
+        } else {
+          return STRONG_COMPARABLE_CHECK;
+        }
       } else {
-        return STRONG_COMPARABLE;
+        if (isWeak) {
+          return WEAK_COMPARABLE;
+        } else {
+          return STRONG_COMPARABLE;
+        }
       }
     } else {
       if (isCheckOnly) {

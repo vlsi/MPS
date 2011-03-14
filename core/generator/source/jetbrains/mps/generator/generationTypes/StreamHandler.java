@@ -26,6 +26,8 @@ public interface StreamHandler {
 
   void saveStream(String name, Element content, boolean isCache);
 
+  void saveStream(String name, byte[] content, boolean isCache);
+
   boolean touch(String name, boolean isCache);
 
   void dispose();

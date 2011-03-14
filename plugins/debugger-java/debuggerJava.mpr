@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
+      <solutionPath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
+      <solutionPath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
+      <languagePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" />
+      <languagePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="evaluation" />
+      <languagePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs>
+      <genConfModule name="customViewers" moduleRef="jetbrains.mps.debug.customViewers" />
+      <genConfModule name="evaluation" moduleRef="jetbrains.mps.debug.evaluation" />
+      <genConfModule name="java" moduleRef="jetbrains.mps.debugger.java" />
+      <genConfModule name="privateMembers" moduleRef="jetbrains.mps.debug.privateMembers" />
+      <genConfModule name="sandbox" moduleRef="jetbrains.mps.debug.tests" />
+      <genConfModule name="ui" moduleRef="jetbrains.mps.debug.evaluation.ui" />
+    </genConfs>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+</project>
+

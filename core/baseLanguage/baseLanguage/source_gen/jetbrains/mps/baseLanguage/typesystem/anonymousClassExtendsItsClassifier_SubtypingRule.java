@@ -34,7 +34,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
           }
         }
         if (matches_q6q799_a1a) {
-          ListSequence.fromList(result).addElement(new anonymousClassExtendsItsClassifier_SubtypingRule.QuotationClass_r0kks7_a0a0a0a0c0b0b0a().createNode(SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), SLinkOperations.getTargets(matchedNode_q6q799_b0, "typeParameter", true), SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), typeCheckingContext));
+          ListSequence.fromList(result).addElement(new anonymousClassExtendsItsClassifier_SubtypingRule.QuotationClass_r0kks7_a0a0a0a0c0b0b0a().createNode(SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), SLinkOperations.getTargets(matchedNode_q6q799_b0, "typeParameter", true), typeCheckingContext));
           break;
         }
       }
@@ -61,7 +61,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
     public QuotationClass_r0kks7_a0a0a0a0c0b0b0a() {
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -81,7 +81,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       return result;
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

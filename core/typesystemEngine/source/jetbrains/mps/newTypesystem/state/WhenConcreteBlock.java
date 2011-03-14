@@ -70,6 +70,11 @@ public class WhenConcreteBlock extends Block {
   }
 
   @Override
+  public String getShortPresentation() {
+    return myConditionKind.getPresentation() +  myArgument;
+  }
+
+  @Override
   public BlockKind getBlockKind() {
     return BlockKind.WHEN_CONCRETE;
   }

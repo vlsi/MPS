@@ -16,10 +16,13 @@
 package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 
+@Deprecated
+@ToRemove(version = 2.0)
 public class DummyEvaluationProvider implements IEvaluationProvider {
   private final AbstractDebugSession mySession;
 

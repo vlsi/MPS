@@ -56,7 +56,7 @@ public class typeof_AnalyzerFunParameterProgramState_InferenceRule extends Abstr
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)"), SNodeId.fromString("~ProgramState")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)"), SNodeId.fromString("~ProgramState")));
         result = quotedNode1_2;
       }
       return result;
@@ -69,7 +69,7 @@ public class typeof_AnalyzerFunParameterProgramState_InferenceRule extends Abstr
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)"), SNodeId.fromString("~ProgramState")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)"), SNodeId.fromString("~ProgramState")));
         result = quotedNode1_2;
       }
       return result;

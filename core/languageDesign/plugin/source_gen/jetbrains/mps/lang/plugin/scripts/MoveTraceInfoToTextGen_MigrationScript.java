@@ -276,7 +276,7 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("annotation", quotedNode1_10, SModelReference.fromString("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)"), SNodeId.fromString("~Nullable")));
+          quotedNode1_10.addReference(SReference.create("annotation", quotedNode1_10, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)"), SNodeId.fromString("~Nullable")));
           quotedNode_1.addChild("annotation", quotedNode1_10);
         }
         {

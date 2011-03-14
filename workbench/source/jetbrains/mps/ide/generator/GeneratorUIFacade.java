@@ -32,7 +32,6 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
@@ -191,15 +190,20 @@ public class GeneratorUIFacade {
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(@NotNull ProgressIndicator progress) {
-        GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-
         if (!saveTransientModels) {
-          project.getComponent(GenerationTracer.class).discardTracing();
+          IGenerationTracer component = project.getComponent(IGenerationTracer.class);
+          if (component != null) {
+            component.discardTracing();
+          }
         }
 
         IGenerationTracer tracer = saveTransientModels
-          ? project.getComponent(GenerationTracer.class)
-          : new NullGenerationTracer();
+          ? project.getComponent(IGenerationTracer.class)
+          : null;
+
+        if (tracer == null) {
+          tracer = new NullGenerationTracer();
+        }
 
         IncrementalGenerationStrategy strategy = null;
         if (settings.isIncremental()) {
@@ -240,7 +244,7 @@ public class GeneratorUIFacade {
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
           .create();
 
-        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
       }
     }, "Generation", true, invocationContext.getProject());
 

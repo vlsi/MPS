@@ -35,7 +35,6 @@ public class typeof_GetUserDataExpression_InferenceRule extends AbstractInferenc
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(getUserDataExpression, "argument", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "492938830216854137", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "492938830216854127", true), (SNode) new typeof_GetUserDataExpression_InferenceRule.QuotationClass_xw47et_a0a2a0().createNode(typeCheckingContext.getRepresentative(t_typevar_492938830216854136), typeCheckingContext), false, _info_12389875345);
     }
   }
@@ -67,7 +66,7 @@ public class typeof_GetUserDataExpression_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)"), SNodeId.fromString("~Key")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)"), SNodeId.fromString("~Key")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
@@ -94,7 +93,7 @@ public class typeof_GetUserDataExpression_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)"), SNodeId.fromString("~Key")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)"), SNodeId.fromString("~Key")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;

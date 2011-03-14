@@ -6,8 +6,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -43,7 +42,7 @@ public class Typesystem_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> rules = (List<SNode>) GoToRulesHelper.getRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), false);
+    List<SNode> rules = (List<SNode>) GoToRulesHelper.getRules(node, false);
     return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");

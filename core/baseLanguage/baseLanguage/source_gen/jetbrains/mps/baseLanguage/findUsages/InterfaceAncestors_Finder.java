@@ -15,6 +15,9 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 public class InterfaceAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder");
 
+  public InterfaceAncestors_Finder() {
+  }
+
   public boolean isVisible(SNode node, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }

@@ -13,7 +13,7 @@
       <external-templates />
       <dependencies>
         <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
-        <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(runtime)</dependency>
+        <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -25,7 +25,7 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(runtime)</dependency>
+    <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>

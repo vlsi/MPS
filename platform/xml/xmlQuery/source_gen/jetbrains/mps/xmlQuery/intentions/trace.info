@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.xmlQuery.intentions.IntentionsDescriptor" />
   <unitInfo fileName="Switch_HasAttributes_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.xmlQuery.intentions.Switch_HasAttributes_Intention" />
   <unitInfo fileName="addHandler_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.xmlQuery.intentions.addHandler_Intention" />
   <root nodeId="2286463592495362683">

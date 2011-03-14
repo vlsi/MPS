@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -77,7 +78,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
   private SNode myRefNode;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
@@ -372,12 +373,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     myRole = role;
   }
 
-  public void setLinkDeclaration(final LinkDeclaration link) {
+  public void setLinkDeclaration(final SNode link) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = link;
         if (myLinkDeclaration != null) {
-          myIsReferenceCell = link.getMetaClass() != LinkMetaclass.aggregation;
+          myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
         } else {
           myIsReferenceCell = false;
         }
@@ -390,7 +391,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (role != null) {
       return (LinkDeclaration) BaseAdapter.fromNode(getSNode().getLinkDeclaration(role));
     }
-    return myLinkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
   }
 
   public boolean isReferenceCell() {
@@ -499,7 +500,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNode replaceWithDefault() {
     EditorContext editorContext = getEditorContext();
     SNode node = getSNode();
-    while (node.isAttribute()) {
+    while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
     LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(node.getParent().getLinkDeclaration(node.getRole_()));

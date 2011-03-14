@@ -41,7 +41,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     while (currentClassifier != null && currentClassifier != methodClassifier && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, methodCall, IClassifiersSearchScope.INSTANCE_METHOD)).contains(methodDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
-    SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a8a0().createNode(currentClassifier, currentClassifier, typeCheckingContext);
+    SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a8a0().createNode(currentClassifier, typeCheckingContext);
     for (SNode tvd : SLinkOperations.getTargets(currentClassifier, "typeVariableDeclaration", true)) {
       SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
@@ -57,8 +57,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = methodCall;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1126608406759381109", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0_0().createNode(currentClassifier, currentClassifier, typeCheckingContext), (SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0().createNode(methodClassifier, methodClassifier, typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0_0().createNode(currentClassifier, typeCheckingContext), (SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0().createNode(methodClassifier, typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -81,7 +80,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     public QuotationClass_h4n2qb_a0a8a0() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -94,7 +93,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -112,7 +111,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     public QuotationClass_h4n2qb_a0a41a0() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -125,7 +124,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -143,7 +142,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     public QuotationClass_h4n2qb_a0a41a0_0() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -156,7 +155,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

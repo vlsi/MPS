@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs>
+      <genConfModule name="api" moduleRef="jetbrains.mps.debugger.api" />
+      <genConfModule name="apiLang" moduleRef="jetbrains.mps.debug.apiLang" />
+    </genConfs>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+</project>
+

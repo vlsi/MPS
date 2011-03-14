@@ -28,7 +28,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/core/mps.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternOrPattern_Test$TestBody", "testOrPattern", true);
   }
 
@@ -94,7 +94,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
-              quotedNode1_12.addReference(SReference.create("classifier", quotedNode1_12, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+              quotedNode1_12.addReference(SReference.create("classifier", quotedNode1_12, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
               quotedNode_3.addChild("leftExpression", quotedNode1_12);
             }
             quotedNode_1.addChild("condition", quotedNode1_10);
@@ -106,8 +106,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_qttyfe_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_body;
-      /*package*/ SNode PatternVar_ds;
+      public static SNode PatternVar_body;
+      public static SNode PatternVar_ds;
+
       private GeneratedMatchingPattern myOrPattern_7ozj7q_a0a;
 
       public Pattern_qttyfe_a0a1a1a() {
@@ -186,17 +187,17 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-          this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
+          PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
+          PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
         }
       }
 
       public Object getFieldValue(String fieldName) {
         if ("PatternVar_body".equals(fieldName)) {
-          return this.PatternVar_body;
+          return PatternVar_body;
         }
         if ("PatternVar_ds".equals(fieldName)) {
-          return myOrPattern_7ozj7q_a0a.getFieldValue(fieldName);
+          return PatternVar_ds;
         }
         return null;
       }
@@ -205,8 +206,6 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_ds;
-
         public Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -256,15 +255,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_ds".equals(fieldName)) {
-            return this.PatternVar_ds;
-          }
           return null;
         }
 
@@ -273,8 +266,6 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_ds;
-
         public Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -324,15 +315,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_ds".equals(fieldName)) {
-            return this.PatternVar_ds;
-          }
           return null;
         }
 
@@ -352,7 +337,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
           result = quotedNode1_2;
         }
         return result;

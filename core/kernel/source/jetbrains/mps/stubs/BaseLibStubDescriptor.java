@@ -1,6 +1,7 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
 import java.util.List;
 
@@ -13,6 +14,10 @@ public abstract class BaseLibStubDescriptor {
     myModuleName = moduleName;
     myModuleId = moduleId;
     myManager = manager;
+  }
+
+  public void init(SolutionDescriptor solution){
+
   }
 
   public String getModuleName() {

@@ -35,7 +35,6 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractI
       SNode _nodeToCheck_1029348928467 = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation"));
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "304383685097613988", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "304383685097613973", true), (SNode) new typeof_NodeAttributeAccessQualifier_InferenceRule.QuotationClass_wn8es8_a0a3a0().createNode(SLinkOperations.getTarget(annotationLink, "source", false), typeCheckingContext), true, _info_12389875345);
     }
     // assign type 

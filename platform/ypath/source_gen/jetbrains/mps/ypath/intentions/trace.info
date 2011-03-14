@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ypath.intentions.IntentionsDescriptor" />
   <unitInfo fileName="RemoveExclamationMark_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ypath.intentions.RemoveExclamationMark_Intention" />
   <unitInfo fileName="SwitchDefault_Intention.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ypath.intentions.SwitchDefault_Intention" />
   <unitInfo fileName="replace_whereBlock_with_closure_Intention.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ypath.intentions.replace_whereBlock_with_closure_Intention" />

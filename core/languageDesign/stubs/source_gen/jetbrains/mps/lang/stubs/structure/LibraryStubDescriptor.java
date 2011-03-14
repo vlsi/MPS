@@ -24,6 +24,7 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
   public static final String CREATOR = "creator";
   public static final String ROOTS_BLOCK = "rootsBlock";
   public static final String EXPORT = "export";
+  public static final String INIT_BLOCK = "initBlock";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public LibraryStubDescriptor(SNode node) {
@@ -100,6 +101,14 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
 
   public void setExport(ExportScope node) {
     super.setChild(LibraryStubDescriptor.EXPORT, node);
+  }
+
+  public InitModuleBlock getInitBlock() {
+    return (InitModuleBlock) this.getChild(InitModuleBlock.class, LibraryStubDescriptor.INIT_BLOCK);
+  }
+
+  public void setInitBlock(InitModuleBlock node) {
+    super.setChild(LibraryStubDescriptor.INIT_BLOCK, node);
   }
 
   public int get_$attributesCount() {

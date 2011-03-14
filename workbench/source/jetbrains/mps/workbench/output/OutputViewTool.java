@@ -34,6 +34,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+// FIXME get rid of
 public class OutputViewTool extends BaseProjectTool {
   private JPanel myComponent = new JPanel(new BorderLayout());
   private JTextArea myTextArea = new JTextArea();

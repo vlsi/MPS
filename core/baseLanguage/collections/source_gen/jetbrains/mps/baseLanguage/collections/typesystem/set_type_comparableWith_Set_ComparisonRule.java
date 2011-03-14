@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_3k2v7g_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTER_3k2v7g_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -52,7 +52,7 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
   }
 
   public static class Pattern_3k2v7g_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT;
+    public static SNode PatternVar_ELEMENT;
 
     public Pattern_3k2v7g_a0a0a0a3() {
     }
@@ -91,13 +91,13 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+        PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT".equals(fieldName)) {
-        return this.PatternVar_ELEMENT;
+        return PatternVar_ELEMENT;
       }
       return null;
     }

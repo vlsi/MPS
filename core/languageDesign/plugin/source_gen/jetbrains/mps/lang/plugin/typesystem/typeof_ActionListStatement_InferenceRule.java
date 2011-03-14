@@ -27,7 +27,6 @@ public class typeof_ActionListStatement_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(statement, "actions", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6586153900349329842", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6586153900349329844", true), (SNode) new typeof_ActionListStatement_InferenceRule.QuotationClass_aab8tt_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
@@ -62,7 +61,7 @@ public class typeof_ActionListStatement_InferenceRule extends AbstractInferenceR
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
+          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -81,7 +80,7 @@ public class typeof_ActionListStatement_InferenceRule extends AbstractInferenceR
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
+          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)"), SNodeId.fromString("~AnAction")));
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
         result = quotedNode1_3;

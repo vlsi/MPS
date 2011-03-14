@@ -19,10 +19,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.generator.GenerationAdapter;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -202,24 +199,19 @@ public class GeneratorWorker extends MpsWorker {
     for (final SModelDescriptor model : models) {
       assert model != null;
 
-      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-        public Set<IModule> compute() {
-          return model.getModules();
+      IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        public IModule compute() {
+          return model.getModule();
         }
       });
 
-      IModule module = null;
-      if (owningModules.size() > 0) {
-        module = owningModules.iterator().next();
-      }
-
-      if (module == null) {
+      if (owningModule == null) {
         warning("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
       } else {
-        List<SModelDescriptor> modelsList = moduleToModels.get(module);
+        List<SModelDescriptor> modelsList = moduleToModels.get(owningModule);
         if (modelsList == null) {
           modelsList = new ArrayList<SModelDescriptor>();
-          moduleToModels.put(module, modelsList);
+          moduleToModels.put(owningModule, modelsList);
         }
         modelsList.add(model);
       }
@@ -251,7 +243,8 @@ public class GeneratorWorker extends MpsWorker {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler,
+        GenerationOptions.getDefaults().create());
     }
 
     @Override

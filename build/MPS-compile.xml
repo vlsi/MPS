@@ -24,8 +24,10 @@
   <property name="jetbrains.mps.build.packaging.classes" value="platform/buildlanguage/languages/packaging/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="platform/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="platform/buildlanguage/languages/buildlanguage/classes_gen" />
-  <property name="jetbrains.mps.debug.apiLang.classes" value="core/debug-api/debugApiProject/languages/api/classes_gen" />
-  <property name="jetbrains.mps.debug.privateMembers.classes" value="core/debug/debugProject/languages/privateMembers/classes_gen" />
+  <property name="jetbrains.mps.debug.apiLang.classes" value="core/debug-api/languages/api/classes_gen" />
+  <property name="jetbrains.mps.debug.customViewers.classes" value="core/debug/languages/customViewers/classes_gen" />
+  <property name="jetbrains.mps.debug.evaluation.classes" value="core/debug/languages/evaluation/classes_gen" />
+  <property name="jetbrains.mps.debug.privateMembers.classes" value="core/debug/languages/privateMembers/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="platform/gtext/classes_gen" />
   <property name="jetbrains.mps.gtext.runtime.classes" value="platform/gtext/runtime/classes_gen" />
   <property name="jetbrains.mps.gwt.client.classes" value="platform/gwtsupport/languages/client/classes_gen" />
@@ -33,6 +35,7 @@
   <property name="jetbrains.mps.ide.uiLanguage.runtime.classes" value="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.classes" value="core/languageDesign/editor/languages/table/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+  <property name="jetbrains.mps.lang.project.classes" value="core/languageDesign/project/classes_gen" />
   <property name="jetbrains.mps.quickQueryLanguage.classes" value="platform/quickQueryLanguage/classes_gen" />
   <property name="jetbrains.mps.ui.classes" value="platform/ui/languages/ui/classes_gen" />
   <property name="jetbrains.mps.ui.gwt.classes" value="platform/ui/languages/gwt/classes_gen" />
@@ -76,7 +79,6 @@
     <path path="lib/platform.jar" />
     <path path="lib/util.jar" />
     <path path="workbench/classes" />
-    <path path="workbench/javaParser/classes" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.src">
     <path path="platform/analyzers/languages/analyzers/source_gen" />
@@ -154,10 +156,16 @@
     <path path="platform/buildlanguage/languages/buildlanguage/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debug.apiLang_tjc.src">
-    <path path="core/debug-api/debugApiProject/languages/api/source_gen" />
+    <path path="core/debug-api/languages/api/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.debug.customViewers_tjc.src">
+    <path path="core/debug/languages/customViewers/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.debug.evaluation_tjc.src">
+    <path path="core/debug/languages/evaluation/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.src">
-    <path path="core/debug/debugProject/languages/privateMembers/source_gen" />
+    <path path="core/debug/languages/privateMembers/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.gtext_tjc.src">
     <path path="platform/gtext/source_gen" />
@@ -184,19 +192,21 @@
     <path path="core/languageDesign/editor/languages/table/runtime/source_gen" />
     <path path="core/languageDesign/editor/languages/table/runtime/test_gen" />
   </path>
+  <path id="cycle.jetbrains.mps.lang.project_tjc.src">
+    <path path="core/languageDesign/project/source_gen" />
+  </path>
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.src">
     <path path="platform/quickQueryLanguage/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.ui_tjc.src">
     <path path="platform/ui/languages/ui/source_gen" />
     <path path="platform/ui/languages/internal/source_gen" />
-    <path path="platform/ui/languages/meta/source_gen" />
-    <path path="platform/ui/languages/swt/source_gen" />
-    <path path="platform/ui/languages/swt/runtime/source_gen" />
-    <path path="platform/ui/languages/swt/runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.ui.gwt_tjc.src">
     <path path="platform/ui/languages/gwt/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.modeling_tjc.src">
+    <path path="platform/ui/languages/meta/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing_tjc.src">
     <path path="platform/ui/languages/swing/source_gen" />
@@ -204,6 +214,13 @@
   <path id="cycle.jetbrains.mps.ui.swing.runtime_tjc.src">
     <path path="platform/ui/languages/swing/runtime/source_gen" />
     <path path="platform/ui/languages/swing/runtime/test_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.swt_tjc.src">
+    <path path="platform/ui/languages/swt/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.src">
+    <path path="platform/ui/languages/swt/runtime/source_gen" />
+    <path path="platform/ui/languages/swt/runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.uiLanguage_tjc.src">
     <path path="platform/uiLanguage/source_gen" />
@@ -256,7 +273,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -266,8 +282,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -289,6 +307,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -301,7 +320,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -311,6 +329,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -356,7 +375,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -366,8 +384,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -389,6 +409,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -401,7 +422,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -411,6 +431,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -456,7 +477,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -466,8 +486,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -489,6 +511,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -501,7 +524,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -511,6 +533,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -556,7 +579,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -566,8 +588,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -589,6 +613,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -601,7 +626,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -611,6 +635,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -656,7 +681,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -666,8 +690,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -689,6 +715,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -701,7 +728,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -711,6 +737,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/contracts/languages/contracts/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
@@ -758,7 +785,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -768,8 +794,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -791,6 +819,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -803,7 +832,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -813,6 +841,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/dates/classes_gen" />
     <path path="platform/dates/internal/classes_gen" />
     <path path="platform/dates/runtime/classes_gen" />
@@ -864,7 +893,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -874,8 +902,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -897,6 +927,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -909,7 +940,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -919,6 +949,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/dates/runtime/classes_gen" />
     <path path="platform/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -966,7 +997,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -976,8 +1006,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -999,6 +1031,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1011,7 +1044,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1021,6 +1053,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1067,7 +1100,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1077,8 +1109,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1100,6 +1134,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1112,7 +1147,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1122,6 +1156,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1170,7 +1205,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1180,8 +1214,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1203,6 +1239,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1215,7 +1252,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1225,6 +1261,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1271,7 +1308,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1281,8 +1317,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1304,6 +1342,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1316,7 +1355,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1326,6 +1364,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1373,7 +1412,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1383,8 +1421,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1406,6 +1446,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1418,7 +1459,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1428,6 +1468,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1474,7 +1515,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1484,8 +1524,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1507,6 +1549,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1519,7 +1562,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1529,6 +1571,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1576,7 +1619,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1586,8 +1628,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1609,6 +1653,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1621,7 +1666,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1631,6 +1675,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1676,7 +1721,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1686,8 +1730,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1709,6 +1755,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1721,7 +1768,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1731,6 +1777,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1756,7 +1803,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1785,7 +1831,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1795,8 +1840,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1818,6 +1865,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1830,7 +1878,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1840,6 +1887,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1885,7 +1933,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1895,8 +1942,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -1918,6 +1967,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -1930,7 +1980,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -1941,6 +1990,7 @@
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1986,7 +2036,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1996,8 +2045,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2019,6 +2070,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2031,7 +2083,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
+    <path path="lib/ant/lib/ant-launcher.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2052,6 +2104,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2101,7 +2154,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2111,8 +2163,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2134,6 +2188,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2146,7 +2201,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
+    <path path="lib/ant/lib/ant-launcher.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2164,6 +2219,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2211,7 +2267,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2221,8 +2276,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2244,6 +2301,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2256,7 +2314,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
+    <path path="lib/ant/lib/ant-launcher.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2275,6 +2333,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2325,7 +2384,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2335,8 +2393,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2358,6 +2418,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2370,7 +2431,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
+    <path path="lib/ant/lib/ant-launcher.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2385,6 +2446,7 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2411,7 +2473,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.apiLang_tjc.classpaths">
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -2432,7 +2494,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2442,8 +2503,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2465,6 +2528,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2477,7 +2541,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2487,6 +2550,211 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths">
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.debug.evaluation_tjc.classpaths">
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2511,7 +2779,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths">
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -2532,7 +2800,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2542,8 +2809,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2565,6 +2834,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2577,7 +2847,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2587,6 +2856,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2632,7 +2902,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2642,8 +2911,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2665,6 +2936,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2677,7 +2949,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2687,6 +2958,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2742,7 +3014,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2752,8 +3023,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2775,6 +3048,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2787,7 +3061,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2797,6 +3070,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2842,7 +3116,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2852,8 +3125,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2875,6 +3150,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2887,7 +3163,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2897,6 +3172,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2942,7 +3218,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2952,8 +3227,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -2975,6 +3252,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -2987,7 +3265,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -2997,6 +3274,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3042,7 +3320,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3052,8 +3329,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3075,6 +3354,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3087,7 +3367,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3097,6 +3376,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3142,7 +3422,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3152,8 +3431,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3175,6 +3456,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3187,7 +3469,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3197,6 +3478,109 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.project_tjc.classpaths">
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3243,7 +3627,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3253,8 +3636,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3276,6 +3661,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3288,7 +3674,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3298,6 +3683,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3324,10 +3710,6 @@
   <path id="cycle.jetbrains.mps.ui_tjc.classpaths">
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/ui/languages/internal/classes_gen" />
-    <path path="platform/ui/languages/meta/classes_gen" />
-    <path path="platform/ui/languages/swt/classes_gen" />
-    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
-    <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -3348,7 +3730,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3358,8 +3739,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3381,6 +3764,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3393,7 +3777,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3403,6 +3786,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3413,16 +3797,8 @@
     <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
-    <path path="platform/ui/languages/gwt/classes_gen" />
-    <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="platform/ui/languages/internal/classes_gen" />
     <path path="platform/ui/languages/meta/classes_gen" />
-    <path path="platform/ui/languages/swing/classes_gen" />
-    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
-    <path path="platform/ui/languages/swing/runtime/classes_gen" />
-    <path path="platform/ui/languages/swt/classes_gen" />
-    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
-    <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3459,7 +3835,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3469,8 +3844,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3492,6 +3869,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3504,7 +3882,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3514,6 +3891,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3528,13 +3906,112 @@
     <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="platform/ui/languages/internal/classes_gen" />
     <path path="platform/ui/languages/meta/classes_gen" />
-    <path path="platform/ui/languages/swing/classes_gen" />
-    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
-    <path path="platform/ui/languages/swing/runtime/classes_gen" />
-    <path path="platform/ui/languages/swt/classes_gen" />
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.modeling_tjc.classpaths">
+    <path path="platform/ui/languages/meta/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/ui/languages/meta/classes_gen" />
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
@@ -3571,7 +4048,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3581,8 +4057,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3604,6 +4082,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3616,7 +4095,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3626,6 +4104,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3643,7 +4122,6 @@
     <path path="platform/ui/languages/swing/classes_gen" />
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="platform/ui/languages/swing/runtime/classes_gen" />
-    <path path="platform/ui/languages/swt/classes_gen" />
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
@@ -3683,7 +4161,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3693,8 +4170,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3716,6 +4195,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3728,7 +4208,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3738,6 +4217,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3750,6 +4230,224 @@
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="platform/ui/languages/swing/runtime/classes_gen" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.swt_tjc.classpaths">
+    <path path="platform/ui/languages/swt/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/ui/languages/gwt/classes_gen" />
+    <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="platform/ui/languages/internal/classes_gen" />
+    <path path="platform/ui/languages/meta/classes_gen" />
+    <path path="platform/ui/languages/swing/classes_gen" />
+    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+    <path path="platform/ui/languages/swing/runtime/classes_gen" />
+    <path path="platform/ui/languages/swt/classes_gen" />
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
+    <path path="platform/ui/languages/ui/classes_gen" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths">
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
@@ -3786,7 +4484,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3796,8 +4493,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3819,6 +4518,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3831,7 +4531,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3841,6 +4540,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3888,7 +4588,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3898,8 +4597,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -3921,6 +4622,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -3933,7 +4635,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -3943,6 +4644,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3989,7 +4691,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3999,8 +4700,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4022,6 +4725,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4034,7 +4738,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4044,6 +4747,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4091,7 +4795,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4101,8 +4804,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4124,6 +4829,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4136,7 +4842,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4146,6 +4851,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4191,7 +4897,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4201,8 +4906,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4224,6 +4931,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4236,7 +4944,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4246,6 +4953,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4294,7 +5002,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4304,8 +5011,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4327,6 +5036,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4339,7 +5049,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4349,6 +5058,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4394,7 +5104,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4404,8 +5113,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4427,6 +5138,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4439,7 +5151,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4449,6 +5160,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4495,7 +5207,6 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
-    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4505,8 +5216,10 @@
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="core/debug-api/debugApiProject/languages/api/classes_gen" />
-    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/kernel/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/behavior/classes" />
@@ -4528,6 +5241,7 @@
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
     <path path="core/languageDesign/quotation/classes" />
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
@@ -4540,7 +5254,6 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/typesystemIntegration/classes" />
-    <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
@@ -4550,6 +5263,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4575,7 +5289,7 @@
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="platform/analyzers/languages/analyzers/source_gen" />
@@ -4937,7 +5651,7 @@
   </target>
   <target name="compile.cycle.jetbrains.mps.debug.apiLang_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debug.apiLang.classes}.tmp" />
-    <mkdir dir="core/debug-api/debugApiProject/languages/api/source_gen" />
+    <mkdir dir="core/debug-api/languages/api/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debug.apiLang.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debug.apiLang_tjc.classpaths" destdir="${classes.dump}">
@@ -4945,14 +5659,44 @@
     </javac>
     <javac classpathref="cycle.jetbrains.mps.debug.apiLang_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.apiLang.classes}">
       <src>
-        <path path="core/debug-api/debugApiProject/languages/api/source_gen" />
+        <path path="core/debug-api/languages/api/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.debug.customViewers_tjc" depends="compile.cycle.jetbrains.mps.debug.evaluation_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.debug.customViewers.classes}.tmp" />
+    <mkdir dir="core/debug/languages/customViewers/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.debug.customViewers.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.debug.customViewers_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.customViewers.classes}">
+      <src>
+        <path path="core/debug/languages/customViewers/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.debug.evaluation_tjc" depends="compile.cycle.jetbrains.mps.debug.privateMembers_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.debug.evaluation.classes}.tmp" />
+    <mkdir dir="core/debug/languages/evaluation/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.debug.evaluation.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.debug.evaluation_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.debug.evaluation_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.debug.evaluation_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.evaluation.classes}">
+      <src>
+        <path path="core/debug/languages/evaluation/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
   </target>
   <target name="compile.cycle.jetbrains.mps.debug.privateMembers_tjc" depends="compile.cycle.jetbrains.mps.debug.apiLang_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debug.privateMembers.classes}.tmp" />
-    <mkdir dir="core/debug/debugProject/languages/privateMembers/source_gen" />
+    <mkdir dir="core/debug/languages/privateMembers/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debug.privateMembers.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths" destdir="${classes.dump}">
@@ -4960,7 +5704,7 @@
     </javac>
     <javac classpathref="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.privateMembers.classes}">
       <src>
-        <path path="core/debug/debugProject/languages/privateMembers/source_gen" />
+        <path path="core/debug/languages/privateMembers/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -4999,7 +5743,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.debug.privateMembers_tjc">
+  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.debug.customViewers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <mkdir dir="platform/gwtsupport/languages/client/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -5078,7 +5822,22 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.lang.editor.table_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.project_tjc" depends="compile.cycle.jetbrains.mps.lang.editor.table_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.lang.project.classes}.tmp" />
+    <mkdir dir="core/languageDesign/project/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.project.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.lang.project_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.lang.project_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.lang.project_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.project.classes}">
+      <src>
+        <path path="core/languageDesign/project/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.lang.project_tjc">
     <property name="classes.dump" value="${jetbrains.mps.quickQueryLanguage.classes}.tmp" />
     <mkdir dir="platform/quickQueryLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -5093,20 +5852,13 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui_tjc" depends="compile.cycle.jetbrains.mps.ui.modeling_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.classes}.tmp" />
     <mkdir dir="platform/ui/languages/ui/source_gen" />
     <mkdir dir="platform/ui/languages/internal/source_gen" />
-    <mkdir dir="platform/ui/languages/meta/source_gen" />
-    <mkdir dir="platform/ui/languages/swt/source_gen" />
-    <mkdir dir="platform/ui/languages/swt/runtime/source_gen" />
-    <mkdir dir="platform/ui/languages/swt/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.classes}" />
     <mkdir dir="${jetbrains.mps.ui.internal.classes}" />
-    <mkdir dir="${jetbrains.mps.ui.modeling.classes}" />
-    <mkdir dir="${jetbrains.mps.ui.swt.classes}" />
-    <mkdir dir="${jetbrains.mps.ui.swt.runtime.classes}" />
     <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.ui_tjc.src" />
     </javac>
@@ -5120,25 +5872,9 @@
         <path path="platform/ui/languages/internal/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.classes}">
-      <src>
-        <path path="platform/ui/languages/meta/source_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.classes}">
-      <src>
-        <path path="platform/ui/languages/swt/source_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.runtime.classes}">
-      <src>
-        <path path="platform/ui/languages/swt/runtime/source_gen" />
-        <path path="platform/ui/languages/swt/runtime/test_gen" />
-      </src>
-    </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.gwt_tjc" depends="compile.cycle.jetbrains.mps.ui.swing_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.gwt_tjc" depends="compile.cycle.jetbrains.mps.ui.swt.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.gwt.classes}.tmp" />
     <mkdir dir="platform/ui/languages/gwt/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -5149,6 +5885,21 @@
     <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.gwt.classes}">
       <src>
         <path path="platform/ui/languages/gwt/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.ui.modeling_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.ui.modeling.classes}.tmp" />
+    <mkdir dir="platform/ui/languages/meta/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.ui.modeling.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.ui.modeling_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.classes}">
+      <src>
+        <path path="platform/ui/languages/meta/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -5168,7 +5919,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc" depends="compile.cycle.jetbrains.mps.ui_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc" depends="compile.cycle.jetbrains.mps.ui.gwt_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.swing.runtime.classes}.tmp" />
     <mkdir dir="platform/ui/languages/swing/runtime/source_gen" />
     <mkdir dir="platform/ui/languages/swing/runtime/test_gen" />
@@ -5181,6 +5932,38 @@
       <src>
         <path path="platform/ui/languages/swing/runtime/source_gen" />
         <path path="platform/ui/languages/swing/runtime/test_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.ui.swt_tjc" depends="compile.cycle.jetbrains.mps.ui.swing_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.ui.swt.classes}.tmp" />
+    <mkdir dir="platform/ui/languages/swt/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.ui.swt.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.ui.swt_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.classes}">
+      <src>
+        <path path="platform/ui/languages/swt/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.ui.swt.runtime_tjc" depends="compile.cycle.jetbrains.mps.ui_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.ui.swt.runtime.classes}.tmp" />
+    <mkdir dir="platform/ui/languages/swt/runtime/source_gen" />
+    <mkdir dir="platform/ui/languages/swt/runtime/test_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.ui.swt.runtime.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.ui.swt.runtime_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.runtime.classes}">
+      <src>
+        <path path="platform/ui/languages/swt/runtime/source_gen" />
+        <path path="platform/ui/languages/swt/runtime/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -5200,7 +5983,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xml_tjc" depends="compile.cycle.jetbrains.mps.ui.gwt_tjc">
+  <target name="compile.cycle.jetbrains.mps.xml_tjc" depends="compile.cycle.jetbrains.mps.ui.swt_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xml.classes}.tmp" />
     <mkdir dir="platform/xml/xml/source_gen" />
     <mkdir dir="platform/xml/xmlInternal/source_gen" />
@@ -5352,6 +6135,8 @@
     <delete dir="${jetbrains.mps.build.property.classes}" />
     <delete dir="${jetbrains.mps.buildlanguage.classes}" />
     <delete dir="${jetbrains.mps.debug.apiLang.classes}" />
+    <delete dir="${jetbrains.mps.debug.customViewers.classes}" />
+    <delete dir="${jetbrains.mps.debug.evaluation.classes}" />
     <delete dir="${jetbrains.mps.debug.privateMembers.classes}" />
     <delete dir="${jetbrains.mps.gtext.classes}" />
     <delete dir="${jetbrains.mps.gtext.runtime.classes}" />
@@ -5360,15 +6145,16 @@
     <delete dir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
+    <delete dir="${jetbrains.mps.lang.project.classes}" />
     <delete dir="${jetbrains.mps.quickQueryLanguage.classes}" />
     <delete dir="${jetbrains.mps.ui.classes}" />
     <delete dir="${jetbrains.mps.ui.internal.classes}" />
-    <delete dir="${jetbrains.mps.ui.modeling.classes}" />
-    <delete dir="${jetbrains.mps.ui.swt.classes}" />
-    <delete dir="${jetbrains.mps.ui.swt.runtime.classes}" />
     <delete dir="${jetbrains.mps.ui.gwt.classes}" />
+    <delete dir="${jetbrains.mps.ui.modeling.classes}" />
     <delete dir="${jetbrains.mps.ui.swing.classes}" />
     <delete dir="${jetbrains.mps.ui.swing.runtime.classes}" />
+    <delete dir="${jetbrains.mps.ui.swt.classes}" />
+    <delete dir="${jetbrains.mps.ui.swt.runtime.classes}" />
     <delete dir="${jetbrains.mps.uiLanguage.classes}" />
     <delete dir="${jetbrains.mps.xml.classes}" />
     <delete dir="${jetbrains.mps.xmlInternal.classes}" />

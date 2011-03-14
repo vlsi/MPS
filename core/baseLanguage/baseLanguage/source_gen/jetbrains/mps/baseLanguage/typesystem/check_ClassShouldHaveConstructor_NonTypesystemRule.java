@@ -24,6 +24,8 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
     if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).isNotEmpty())) {
         BaseQuickFixProvider intentionProvider = null;
+        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.CreateDefaultConstructor_QuickFix", false);
+        intentionProvider.putArgument("classConcept", classConcept);
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "a class should have at least one constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8974945326827961340", intentionProvider, errorTarget);
       }

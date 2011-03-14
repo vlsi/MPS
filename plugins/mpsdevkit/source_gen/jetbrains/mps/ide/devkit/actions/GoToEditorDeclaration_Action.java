@@ -22,10 +22,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
+import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.ModuleContext;
@@ -119,10 +117,10 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-      final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
+      final Wrappers._T<SNode> conceptDeclaration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          conceptDeclaration.value = ((ConceptDeclaration) BaseAdapter.fromNode(((SNode) MapSequence.fromMap(_params).get("node")).getConceptDeclarationNode()));
+          conceptDeclaration.value = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
       SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration.value, ((IScope) MapSequence.fromMap(_params).get("scope")));

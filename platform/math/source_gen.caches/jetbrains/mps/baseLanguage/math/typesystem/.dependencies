@@ -97,6 +97,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.matrix_vector_replacement_rule_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.biginteger_extends_bigdecimal_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.SubtypingManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.bigdecimal_extends_BigDecimal_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MathUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.vector_element_must_be_number_NonTypesystemRule" />
@@ -121,6 +122,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.complex_extends_Complex_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.double_extends_complex_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.typeof_TrigonometricExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.typesystem.matrix_replacement_rule_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />

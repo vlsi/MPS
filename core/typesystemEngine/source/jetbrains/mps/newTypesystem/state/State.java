@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -53,7 +55,9 @@ public class State {
 
   private final Stack<AbstractOperation> myOperationStack;
   private AbstractOperation myOperation;
+  private List<AbstractOperation> myOperationsAsList;
   private boolean myInsideStateChangeAction = false;
+  private Thread myThread = null;
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -74,6 +78,24 @@ public class State {
     }
     myOperationStack = new Stack<AbstractOperation>();
     myOperation = new CheckAllOperation();
+    myOperationStack.push(myOperation);
+    if (myThread == null) {
+      myThread = Thread.currentThread();
+    }
+  }
+
+  public State(TypeCheckingContextNew tcc, AbstractOperation operation) {
+    myTypeCheckingContext = tcc;
+    myEquations = new Equations(this);
+    myInequalities = new Inequalities(this);
+    myNodeMaps = new NodeMaps(this);
+    myVariableIdentifier = new VariableIdentifier();
+    {
+      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
+      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
+    }
+    myOperationStack = new Stack<AbstractOperation>();
+    myOperation = operation;
     myOperationStack.push(myOperation);
   }
 
@@ -119,6 +141,14 @@ public class State {
     }
     boolean addedAnew = myBlocks.add(dataFlowBlock);
     assert addedAnew;
+  }
+
+  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+    try{
+      executeOperation(new ApplyRuleOperation(node, rule, status));
+    } catch (Throwable t) {
+      LOG.error("an error occurred while applying rule to node " + node, t, node);
+    }
   }
 
   public void substitute(SNode oldVar, SNode type) {
@@ -201,8 +231,8 @@ public class State {
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
-  public void addComparable(SNode left, SNode right, boolean isWeak, EquationInfo info) {
-     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
+  public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
+     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
   public NodeMaps getNodeMaps() {
@@ -227,6 +257,9 @@ public class State {
   }
 
   public void assertIsInStateChangeAction() {
+    if (myThread == null) {
+      myThread = Thread.currentThread();
+    }
     LOG.assertLog(myInsideStateChangeAction, "state change can be executed only inside state change action");
   }
 
@@ -239,7 +272,11 @@ public class State {
     }
     myOperationStack.push(operation);
     operation.execute(this);
-    myOperationStack.pop();
+    if (!myOperationStack.empty()) {
+      myOperationStack.pop();
+    } else {
+      LOG.warning("Operation stack in type system state was empty");
+    }
   }
 
   public AbstractOperation getLastOperation() {
@@ -262,7 +299,7 @@ public class State {
   }
 
   public List<AbstractOperation> getOperationsAsList() {
-    List<AbstractOperation> result = new LinkedList<AbstractOperation>();
+    List<AbstractOperation> result = new ArrayList<AbstractOperation>();
     visit(myOperation, result);
     return result;
   }
@@ -300,10 +337,10 @@ public class State {
   }
 
   public void solveInequalities() {
-    if (!myInequalities.getInequalitiesToSolve().isEmpty()) {
+    if (!myInequalities.getRelationsToSolve().isEmpty()) {
       executeOperation(new SolveInequalitiesOperation(new Runnable() {
         public void run() {
-          myInequalities.solveInequalities();
+          myInequalities.solveRelations();
         }
       }));
     }
@@ -351,20 +388,20 @@ public class State {
     return myOperation;
   }
 
-  public void expandAll(final Set<SNode> nodes) {
+  public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
     if (nodes != null && !nodes.isEmpty()) {
       executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
         public void run() {
-          myNodeMaps.expandAll(nodes);
+          myNodeMaps.expandAll(nodes, finalExpansion);
         }
       }));
     }
   }
 
-  public void expandAll() {
+  public void expandAll(final boolean finalExpansion) {
     executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
       public void run() {
-        myNodeMaps.expandAll();
+        myNodeMaps.expandAll(finalExpansion);
       }
     }));
   }
@@ -398,11 +435,6 @@ public class State {
     return typeVar;
   }
 
-  public void reset() {
-    clear(false);
-    myOperation.playRecursively(this);
-  }
-
   public Set<Block> getBlocks() {
     return myBlocks;
   }
@@ -415,6 +447,44 @@ public class State {
       }
     }
     return result;
+  }
+
+  public Set<Block> getCheckingInequalities() {
+    Set<Block> result = new HashSet<Block>();
+    Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
+    for (Block block: blocks) {
+      if (((RelationBlock)block).getRelationKind().isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
+        result.add(block);
+      }
+    }
+    return result;
+  }
+
+  private void executeOperationsFromTo(int from, int to) {
+    assert from < to;
+    for (int i = from+1; i <= to; i++) {
+      myOperationsAsList.get(i).redo(this);
+    }
+  }
+
+  private void revertOperationsFromTo(int from, int to) {
+    assert from > to;
+    for (int i = from; i > to; i--) {
+      myOperationsAsList.get(i).undo(this);
+    }
+  }
+
+  public void updateState(AbstractOperation from, AbstractOperation to) {
+    if (myOperationsAsList == null) {
+      myOperationsAsList = getOperationsAsList();
+    }
+    int fromIndex = myOperationsAsList.indexOf(from);
+    int toIndex = myOperationsAsList.indexOf(to);
+    if (fromIndex > toIndex) {
+      revertOperationsFromTo(fromIndex, toIndex);
+    } else if (fromIndex < toIndex) {
+      executeOperationsFromTo(fromIndex, toIndex);
+    }
   }
 
   

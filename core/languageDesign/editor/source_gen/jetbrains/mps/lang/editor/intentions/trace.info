@@ -5,6 +5,7 @@
   <unitInfo fileName="ExtractComponent_Intention.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.ExtractComponent_Intention" />
   <unitInfo fileName="AddExtendsClause_Intention.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.AddExtendsClause_Intention" />
   <unitInfo fileName="ChangeOrientationAlternation_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.ChangeOrientationAlternation_Intention" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.IntentionsDescriptor" />
   <unitInfo fileName="UseIndentLayoutInRefNodeList_Intention.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.UseIndentLayoutInRefNodeList_Intention" />
   <unitInfo fileName="UseIndentLayoutInCollection_Intention.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.UseIndentLayoutInCollection_Intention" />
   <unitInfo fileName="FontStyleQuery_Intention.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.FontStyleQuery_Intention" />

@@ -10,12 +10,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -77,7 +76,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      node.setAttribute(SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.WildcardPattern", null));
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern")), "jetbrains.mps.lang.pattern.structure.WildcardPattern");
     }
 
     public String getKeyStroke() {
@@ -208,7 +207,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
-      node.setPropertyAttribute(propertyName, SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), propertyName), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration");
     }
 
     public String getKeyStroke() {
@@ -302,11 +301,10 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return;
       }
-      SModel model = SNodeOperations.getModel(contextNode);
       if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation"))) != null) {
-        contextNode.setAttribute(null);
+        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")), null);
       } else
-      contextNode.setAttribute(SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null));
+      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")), "jetbrains.mps.lang.quotation.structure.Antiquotation");
     }
 
     public String getKeyStroke() {
@@ -356,14 +354,13 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
-        attributedNode.setAttribute(null);
+        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), null);
         return;
       }
-      SModel model = SNodeOperations.getModel(contextNode);
-      if (SNodeOperations.isInstanceOf(((SNode) contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
-        contextNode.setAttribute(null);
+      if ((AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation"))) != null)) {
+        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), null);
       } else
-      contextNode.setAttribute(SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
+      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
     }
 
     public String getKeyStroke() {
@@ -424,7 +421,6 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;
         AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
-        attributedNode.setAttribute(null);
         return;
       }
       if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null) {

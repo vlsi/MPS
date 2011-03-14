@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="rt0h4ppgp5l646acjdva6s0n72hpwn">
+<dependencies version="2" modelHash="-87c4388vzx128433atal87spcumdhwd">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7j7f23wpy27xm5qbrp0hshvy38yttz0" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-d7iz155b0biu1ihrkmfx6r8rjwyp26c" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="2iyur8k94ponui6te6icqasd0yli4zv" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-83ifaukb89vccacv002uuddrxswzuxf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2xqme5k39llx07ihnvoll33v8m215e" />
-  <common hash="3efeofbxw9a42bhgdk4mut66cexaiqi" />
-  <source id="4282822416100096601" name="WriteBlock" hash="xc622cwzwax67nloasuxjs1ybqeqz3">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="8piw64nlwt97de6k6fho9w6eaml5xak" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
+  <common hash="-2uc5j82oyzcindqgymyhq8hmr14fizf" />
+  <source id="4282822416100096601" name="WriteBlock" hash="bz1z4s2afaklsu0gqgdlwrkq9bxsb39">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WriteBlock.java" />
   </source>
-  <source id="4282822416100096467" name="InstructionWrapper" hash="-9wbjfia0un5228zx5rq7n002qijbrhg">
+  <source id="4282822416100096467" name="InstructionWrapper" hash="-1snjsz9i2biq8qr0pm2eacciluu8838">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -22,7 +22,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InstructionWrapper.java" />
   </source>
-  <source id="4282822416100096810" name="GraphCreator" hash="-8pd4cmprhqr9r0c7k5vbx5636shehs8">
+  <source id="4282822416100096810" name="GraphCreator" hash="9rx037u6m11kjp1c249n63282jzms3i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GraphCreator.java" />
   </source>
-  <source id="4282822416100096982" name="SimpleBlock" hash="-2svnpsv6mh9v71zd6jckc78lpe7s78n">
+  <source id="4282822416100096982" name="SimpleBlock" hash="eobip962w0ifu1bcoz9jwsjc89q5j0p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleBlock.java" />
   </source>
-  <source id="4282822416100097099" name="AbstractBlock" hash="clylkg0wro0xqdzc0uz9h7stp4kisgl">
+  <source id="4282822416100097099" name="AbstractBlock" hash="-be3jr7yir51r2fz4q73biobsn37hxit">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -46,11 +46,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AbstractBlock.java" />
   </source>
-  <source id="4282822416100097565" name="IInstruction" hash="coagan6elmjxcxrixeszddzqjm7zphc">
+  <source id="4282822416100097565" name="IInstruction" hash="-7luuz6t74p70jsfb81z69tjd24w8vsb">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IInstruction.java" />
   </source>
-  <source id="4282822416100097580" name="ControlFlowGraph" hash="-c5nb4sal7urb2nu2gegfxl8mikiudkj">
+  <source id="4282822416100097580" name="ControlFlowGraph" hash="5dqcj2ezxxcm4n9rh479lml6penmue1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -62,15 +62,15 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IGraphCreator.java" />
   </source>
-  <source id="4282822416100098574" name="IBlock" hash="-16tzz9qdhn4piqxxh593u7xmk80zs3s">
+  <source id="4282822416100098574" name="IBlock" hash="4ll8rlwu0ilmbm8dwo0zsh4cg37fk4q">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IBlock.java" />
   </source>
-  <source id="4282822416100096466" name="IBlockListener" hash="9dep76hn7086j5tqoh2jyhdh4k2809v">
+  <source id="4282822416100096466" name="IBlockListener" hash="-9ce4he09hxs1a9py50plz8rk4ryw5o6">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IBlockListener.java" />
   </source>
-  <source id="4282822416100098971" name="ReturnBlock" hash="-eu8cfmewmt51oteh5mh8391gombmmgl">
+  <source id="4282822416100098971" name="ReturnBlock" hash="-a5s2bv8y2xmqk73d4pm9119adn61q99">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -78,7 +78,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReturnBlock.java" />
   </source>
-  <source id="4282822416100099297" name="ArrowHead" hash="a0mewoiouukms0m750ds5nfmbemd1vy">
+  <source id="4282822416100099297" name="ArrowHead" hash="-plgnobfo0eierrimgmry74di040vwb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -86,7 +86,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrowHead.java" />
   </source>
-  <source id="4282822416100099402" name="AltBlock" hash="1i5r2sqh0ex9181113n8na5fgsz57do">
+  <source id="4282822416100099402" name="AltBlock" hash="-5pe516k8ufuy62c27apm2goypgn97x6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -94,7 +94,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AltBlock.java" />
   </source>
-  <source id="4282822416100099480" name="ShowCFGDialog" hash="-1tlzillxos3g92wtdokzpcfekrila8t">
+  <source id="4282822416100099480" name="ShowCFGDialog" hash="338aohx8zw0i3am26r9c6u9yohf3og8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -102,7 +102,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ShowCFGDialog.java" />
   </source>
-  <source id="4282822416100099790" name="ProgramWrapper" hash="-378z3sb8n9iior9jzrgeqjmhreuc852">
+  <source id="4282822416100099790" name="ProgramWrapper" hash="em31dzieuaxqdxcz8br1k1q3g9sc7gr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -110,7 +110,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProgramWrapper.java" />
   </source>
-  <source id="4282822416100099867" name="LineDirection" hash="-6hted441ztds5h4kmykseam61olb0io">
+  <source id="4282822416100099867" name="LineDirection" hash="772wec8t9au58blkvvm6pcipbx0di0y">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -118,7 +118,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LineDirection.java" />
   </source>
-  <source id="4282822416100100062" name="JumpBlock" hash="-4w8qnu54dwsuoq5jyeknsei15fv4xhw">
+  <source id="4282822416100100062" name="JumpBlock" hash="9t5ik8e1vvrxk62do3nsznu7o83o786">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -134,7 +134,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FreeZone.java" />
   </source>
-  <source id="4282822416100100468" name="ReadBlock" hash="axsh519z126upndcpp9f435muww6cae">
+  <source id="4282822416100100468" name="ReadBlock" hash="-3p00z44x1kncimkqsfpd142xqdwxohj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -142,11 +142,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReadBlock.java" />
   </source>
-  <source id="4282822416100100546" name="IProgram" hash="23qtprhtoa7s47bmaehkygtuut86tqi">
+  <source id="4282822416100100546" name="IProgram" hash="2h2m5gof5s9465rgxf1k00ycyr6r1vt">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IProgram.java" />
   </source>
-  <source id="4282822416100100567" name="ArrowHeadDirection" hash="-2ygw0e7a7ohvbix1zkj8jbxqe1rvrl2">
+  <source id="4282822416100100567" name="ArrowHeadDirection" hash="3zkvaxicl3q2d6r9bnzgzd8nbejmkv1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -154,7 +154,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrowHeadDirection.java" />
   </source>
-  <source id="4282822416100100761" name="Line" hash="-4ew4qyl5qjzidqbtu848ojv3vvm4mbe">
+  <source id="4282822416100100761" name="Line" hash="5pek4ck3fviknfco1ly5r5huxxa4nfz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

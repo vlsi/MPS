@@ -17,7 +17,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_cwf9bn_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_cwf9bn_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -131,8 +131,8 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public static class Pattern_cwf9bn_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_keyType;
-    /*package*/ SNode PatternVar_valueType;
+    public static SNode PatternVar_keyType;
+    public static SNode PatternVar_valueType;
 
     public Pattern_cwf9bn_a0a0a0a2() {
     }
@@ -175,17 +175,17 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_keyType = (SNode) pattern.getFieldValue("PatternVar_keyType");
-        this.PatternVar_valueType = (SNode) pattern.getFieldValue("PatternVar_valueType");
+        PatternVar_keyType = (SNode) pattern.getFieldValue("PatternVar_keyType");
+        PatternVar_valueType = (SNode) pattern.getFieldValue("PatternVar_valueType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_keyType".equals(fieldName)) {
-        return this.PatternVar_keyType;
+        return PatternVar_keyType;
       }
       if ("PatternVar_valueType".equals(fieldName)) {
-        return this.PatternVar_valueType;
+        return PatternVar_valueType;
       }
       return null;
     }

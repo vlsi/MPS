@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.refactoring.renameSolution;
 
+import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SolutionRenamer {
   private Solution mySolution;
@@ -34,6 +34,6 @@ public class SolutionRenamer {
     mySolution.setSolutionDescriptor(solutionDescriptor, true);
     mySolution.save();
 
-    MPSModuleRepository.getInstance().updateReferences();
+    ReferenceUpdater.getInstance().updateModuleReferences();
   }
 }

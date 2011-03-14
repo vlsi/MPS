@@ -25,11 +25,27 @@ import org.jetbrains.annotations.Nullable;
  */
 abstract class SReferenceBase extends SReference {
 
+  public static boolean ourStubMode = true;
+
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);
+
+    if (ourStubMode) {
+      if (targetModelReference != null) {
+        try {
+          SModelId id = targetModelReference.getSModelId();
+          SModelId nid = StubMigrationHelper.convertModelId(id,false);
+          if (nid!=null){
+            targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
+          }
+        } catch (Throwable t) {
+        }
+      }
+    }
+
 
     // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
     myTargetModelReference = targetModelReference;
@@ -45,9 +61,10 @@ abstract class SReferenceBase extends SReference {
     return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
   }
 
-  public synchronized SModelReference getTargetSModelReference() {
-    if (mature()) return myTargetModelReference;
-    return myImmatureTargetNode.getModel().getSModelReference();
+  public SModelReference getTargetSModelReference() {
+    SNode immatureNode = myImmatureTargetNode;
+    if (immatureNode == null || mature()) return myTargetModelReference;
+    return immatureNode.getModel().getSModelReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {

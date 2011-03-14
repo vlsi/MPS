@@ -1,11 +1,10 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.IncompatibleThreadStateException;
-import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,7 +39,7 @@ public class JavaThread extends ProxyForJava implements IThread {
       }
       return frames;
     } catch (IncompatibleThreadStateException ex) {
-      LOG.warning("IncompatibleThreadStateException", ex);
+      LOG.debug("IncompatibleThreadStateException", ex);
       return Collections.emptyList();
     }
   }

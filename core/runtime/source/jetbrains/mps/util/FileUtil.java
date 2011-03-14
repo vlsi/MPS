@@ -278,6 +278,22 @@ public class FileUtil {
     }
   }
 
+  public static void write(File file, byte[] content) {
+    OutputStream writer = null;
+    try {
+      writer = new FileOutputStream(file);
+      writer.write(content);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    } finally {
+      if (writer != null) {
+        try {
+          writer.close();
+        } catch (IOException e) {}
+      }
+    }
+  }
+
   public static String read(File file) {
     try {
       return read(new FileReader(file));

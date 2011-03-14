@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreatePatternVariable_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
-  <unitInfo fileName="CreateWildcardPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
   <unitInfo fileName="CreateAsPattern_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
-  <unitInfo fileName="CreatePropertyPatternVariable_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
+  <unitInfo fileName="CreateWildcardPattern_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
   <unitInfo fileName="CreateActionAsPattern_Intention.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
+  <unitInfo fileName="CreatePropertyPatternVariable_Intention.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
   <unitInfo fileName="CreateOrPattern_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention" />
   <unitInfo fileName="CreateListPattern_Intention.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
   <root nodeId="3514655265371682052">
@@ -16,16 +17,18 @@
     <scopeInfo nodeId="3514655265371682056" fileName="CreatePatternVariable_Intention.java" startLine="46" startPosition="76" endLine="47" endPosition="56" />
   </root>
   <root nodeId="3514655265371724198">
-    <nodeInfo nodeId="3514655265371753275" fileName="CreatePropertyPatternVariable_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371724205" fileName="CreatePropertyPatternVariable_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371756788" fileName="CreatePropertyPatternVariable_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3514655265371756796" fileName="CreatePropertyPatternVariable_Intention.java" startLine="51" startPosition="85" endLine="52" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3514655265371756807" fileName="CreatePropertyPatternVariable_Intention.java" startLine="52" startPosition="89" endLine="53" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="3514655265371724200" fileName="CreatePropertyPatternVariable_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="46" />
-    <scopeInfo nodeId="3514655265371724204" fileName="CreatePropertyPatternVariable_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="132" />
-    <scopeInfo nodeId="3514655265371724202" fileName="CreatePropertyPatternVariable_Intention.java" startLine="50" startPosition="76" endLine="53" endPosition="206">
+    <nodeInfo nodeId="3514655265371753275" fileName="CreatePropertyPatternVariable_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371724205" fileName="CreatePropertyPatternVariable_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371756788" fileName="CreatePropertyPatternVariable_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3514655265371756796" fileName="CreatePropertyPatternVariable_Intention.java" startLine="52" startPosition="85" endLine="53" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116965300" fileName="CreatePropertyPatternVariable_Intention.java" startLine="53" startPosition="89" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116965308" fileName="CreatePropertyPatternVariable_Intention.java" startLine="54" startPosition="37" endLine="55" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3514655265371724200" fileName="CreatePropertyPatternVariable_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="46" />
+    <scopeInfo nodeId="3514655265371724204" fileName="CreatePropertyPatternVariable_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="132" />
+    <scopeInfo nodeId="3514655265371724202" fileName="CreatePropertyPatternVariable_Intention.java" startLine="51" startPosition="76" endLine="55" endPosition="304">
       <varInfo nodeId="3514655265371756797" varName="propertyName" />
       <varInfo nodeId="3514655265371756789" varName="cell" />
+      <varInfo nodeId="8843103228116965301" varName="cellNode" />
     </scopeInfo>
   </root>
   <root nodeId="3514655265371785881">
@@ -51,13 +54,13 @@
     </scopeInfo>
   </root>
   <root nodeId="3514655265371789444">
-    <nodeInfo nodeId="3514655265371789449" fileName="CreateWildcardPattern_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371789453" fileName="CreateWildcardPattern_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8134378564421759415" fileName="CreateWildcardPattern_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3514655265371789456" fileName="CreateWildcardPattern_Intention.java" startLine="49" startPosition="56" endLine="50" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="3514655265371789446" fileName="CreateWildcardPattern_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="29" />
-    <scopeInfo nodeId="3514655265371789452" fileName="CreateWildcardPattern_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="64" />
-    <scopeInfo nodeId="3514655265371789448" fileName="CreateWildcardPattern_Intention.java" startLine="48" startPosition="76" endLine="50" endPosition="168">
+    <nodeInfo nodeId="3514655265371789449" fileName="CreateWildcardPattern_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371789453" fileName="CreateWildcardPattern_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8134378564421759415" fileName="CreateWildcardPattern_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116876382" fileName="CreateWildcardPattern_Intention.java" startLine="50" startPosition="56" endLine="51" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3514655265371789446" fileName="CreateWildcardPattern_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="29" />
+    <scopeInfo nodeId="3514655265371789452" fileName="CreateWildcardPattern_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="64" />
+    <scopeInfo nodeId="3514655265371789448" fileName="CreateWildcardPattern_Intention.java" startLine="49" startPosition="76" endLine="51" endPosition="243">
       <varInfo nodeId="8134378564421759416" varName="currentNode" />
     </scopeInfo>
   </root>

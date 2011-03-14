@@ -66,8 +66,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
-  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept1, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
-    SNode nodeConcept = BaseAdapter.fromAdapter(nodeConcept1);
+  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
@@ -85,6 +84,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
+  }
+
+  @Deprecated
+  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept1, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+    return createNode(BaseAdapter.fromAdapter(nodeConcept1), sampleNode, enclosingNode, model, scope);
   }
 
   private static void createNodeStructure(SNode nodeConcept,

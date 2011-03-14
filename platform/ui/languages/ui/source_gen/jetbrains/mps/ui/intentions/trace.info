@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.intentions.IntentionsDescriptor" />
   <unitInfo fileName="Classifier_add_GenerateVariant_Intention.java" startLine="127" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0a" />
   <unitInfo fileName="Classifier_add_GenerateVariant_Intention.java" startLine="145" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0a0f" />
   <unitInfo fileName="Classifier_add_GenerateVariant_Intention.java" startLine="194" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.ui.intentions.Classifier_add_GenerateVariant_Intention$QuotationClass_iyz6y8_a0a0d0f" />

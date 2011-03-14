@@ -41,7 +41,6 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1225552004404", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(ExpType_typevar_1190288659521), (SNode) SLinkOperations.getTarget(treePathType, "nodeType", true), true, _info_12389875345);
     }
   }

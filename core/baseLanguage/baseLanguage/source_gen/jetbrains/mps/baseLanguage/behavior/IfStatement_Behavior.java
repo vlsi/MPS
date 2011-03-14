@@ -30,7 +30,7 @@ public class IfStatement_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).isNotEmpty()) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1 || !(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "ifTrue", true)))) {
       return false;
     }
 

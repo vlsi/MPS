@@ -104,7 +104,7 @@ public class StructureModificationProcessor {
       modificationLog.addStructureModification(data);
       model.setVersion(dependency.value() + 1);
       model.saveStructureModificationLog(modificationLog);
-      SModelRepository.getInstance().markChanged(model, true);
+      model.setChanged(true);
     }
   }
 

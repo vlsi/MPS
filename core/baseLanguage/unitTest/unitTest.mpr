@@ -28,36 +28,10 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Sequence_Test" type="JUnit" factoryName="JUnit">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" />
-            <option name="alternativeJRE" />
-            <option name="make" value="false" />
-            <option name="programParameters" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" />
-          </ConfigRunParameters>
-        </option>
-        <option name="nodes" />
-        <option name="model" value="jetbrains.mps.internalCollections.test.basicOperations" />
-        <option name="module" value="internalCollections.test" />
-        <option name="fullMethodNames">
-          <list />
-        </option>
-        <option name="type" value="NODE" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$APPLICATION_HOME_DIR$">
+        <entry key="$mps_home$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchMap">
@@ -91,7 +65,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$mps_home$" vcs="Git" />
   </component>
 </project>
 

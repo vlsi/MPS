@@ -28,7 +28,6 @@ public class typeof_Concept_IsSubConceptOfOperation_InferenceRule extends Abstra
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206661693384", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206661693386", false), (SNode) new typeof_Concept_IsSubConceptOfOperation_InferenceRule.QuotationClass_35z7h3_a0a1a1a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }

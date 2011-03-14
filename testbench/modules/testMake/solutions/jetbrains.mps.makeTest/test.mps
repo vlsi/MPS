@@ -13,35 +13,33 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
-  <maxImportIndex value="33" />
-  <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
+  <maxImportIndex value="35" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
-  <import index="13" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
-  <import index="14" modelUID="f:java_stub#jetbrains.mps.generator.generationTypes(jetbrains.mps.generator.generationTypes@java_stub)" version="-1" />
-  <import index="15" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
-  <import index="16" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
-  <import index="17" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" />
-  <import index="20" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="24" modelUID="f:java_stub#jetbrains.mps.make(jetbrains.mps.make@java_stub)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.generationTypes(jetbrains.mps.generator.generationTypes@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.framework(junit.framework@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
+  <import index="19" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" />
+  <import index="20" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="28" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
-  <import index="29" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
-  <import index="32" modelUID="f:java_stub#jetbrains.mps.messages(jetbrains.mps.messages@java_stub)" version="-1" />
-  <import index="33" modelUID="f:java_stub#jetbrains.mps.generator.generationTypes.java(jetbrains.mps.generator.generationTypes.java@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="31" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="32" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.messages(jetbrains.mps.messages@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.generationTypes.java(jetbrains.mps.generator.generationTypes.java@java_stub)" version="-1" />
+  <import index="34" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.make(jetbrains.mps.make@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1957199320903967681">
     <property name="name:3" value="ChangeModel" />
     <property name="abstractClass:3" value="true" />
@@ -938,8 +936,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1957199320903968150">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1957199320903968151">
-            <link role="classConcept:3" targetNodeId="17.~TestMain" resolveInfo="TestMain" />
-            <link role="baseMethodDeclaration:3" targetNodeId="17.~TestMain.configureMPS():void" resolveInfo="configureMPS" />
+            <link role="classConcept:3" targetNodeId="35.~TestMain" resolveInfo="TestMain" />
+            <link role="baseMethodDeclaration:3" targetNodeId="35.~TestMain.configureMPS():void" resolveInfo="configureMPS" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1957199320903968152">
@@ -976,8 +974,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1957199320903968165">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1787456828538706965">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1957199320903968166">
-              <link role="baseMethodDeclaration:3" targetNodeId="17.~TestMain.loadProject(java.io.File):jetbrains.mps.project.MPSProject" resolveInfo="loadProject" />
-              <link role="classConcept:3" targetNodeId="17.~TestMain" resolveInfo="TestMain" />
+              <link role="classConcept:3" targetNodeId="35.~TestMain" resolveInfo="TestMain" />
+              <link role="baseMethodDeclaration:3" targetNodeId="35.~TestMain.loadProject(java.io.File):jetbrains.mps.project.MPSProject" resolveInfo="loadProject" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1957199320903968167">
                 <link role="variableDeclaration:3" targetNodeId="1957199320903968142" resolveInfo="projectFile" />
               </node>
@@ -1672,15 +1670,15 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382576">
             <property name="name:3" value="cr" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="7196776143116382577">
-              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6230892064087990846">
-                <link role="classifier:3" targetNodeId="24.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
+              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4572036660521623981">
+                <link role="classifier:3" targetNodeId="34.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382579">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="7196776143116382580">
                 <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7196776143116382581" />
                 <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6230892064087990847">
-                  <link role="classifier:3" targetNodeId="24.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
+                  <link role="classifier:3" targetNodeId="34.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
                 </node>
               </node>
             </node>
@@ -1702,11 +1700,11 @@
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382591">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382592">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7196776143116382593">
-                        <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.&lt;init&gt;()" resolveInfo="ModuleMaker" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="34.~ModuleMaker.&lt;init&gt;()" resolveInfo="ModuleMaker" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382594">
-                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.MPSCompilationResult" resolveInfo="make" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="34.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.MPSCompilationResult" resolveInfo="make" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7196776143116382595">
                         <link role="baseMethodDeclaration:3" targetNodeId="8.~Collections.singleton(java.lang.Object):java.util.Set" resolveInfo="singleton" />
                         <link role="classConcept:3" targetNodeId="8.~Collections" resolveInfo="Collections" />
@@ -1779,7 +1777,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382622">
-              <link role="baseMethodDeclaration:3" targetNodeId="24.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="34.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>
@@ -1847,7 +1845,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382646">
-              <link role="baseMethodDeclaration:3" targetNodeId="24.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="34.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>
@@ -1967,28 +1965,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116382700">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382701">
-            <property name="name:3" value="gm" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382702">
-              <link role="classifier:3" targetNodeId="12.~GeneratorManager" resolveInfo="GeneratorManager" />
-            </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382703">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382892">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7196776143116382893">
-                  <link role="fieldDeclaration:3" targetNodeId="7196776143116382460" resolveInfo="myProject" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7196776143116382894" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382705">
-                <link role="baseMethodDeclaration:3" targetNodeId="30.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7196776143116382706">
-                  <link role="classifier:3" targetNodeId="12.~GeneratorManager" resolveInfo="GeneratorManager" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116382707">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382708">
             <property name="name:3" value="handler" />
@@ -2085,45 +2061,56 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7196776143116382743">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382744">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382745">
-              <link role="variableDeclaration:3" targetNodeId="7196776143116382701" resolveInfo="gm" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6166056446716858278">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6166056446716858280">
+            <link role="baseMethodDeclaration:3" targetNodeId="12.~GenerationFacade.generateModels(com.intellij.openapi.project.Project,java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,jetbrains.mps.generator.GenerationOptions):boolean" resolveInfo="generateModels" />
+            <link role="classConcept:3" targetNodeId="12.~GenerationFacade" resolveInfo="GenerationFacade" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6166056446716858281">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="6166056446716858282">
+                <link role="fieldDeclaration:3" targetNodeId="7196776143116382460" resolveInfo="myProject" />
+              </node>
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6166056446716858283" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382746">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382747">
-                <link role="variableDeclaration:3" targetNodeId="7196776143116382695" resolveInfo="models" />
-              </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382748">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7196776143116382749">
-                  <link role="baseMethodDeclaration:3" targetNodeId="20.~ModuleContext.&lt;init&gt;(jetbrains.mps.project.IModule,com.intellij.openapi.project.Project)" resolveInfo="ModuleContext" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382750">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7196776143116384894">
-                      <link role="variableDeclaration:3" targetNodeId="7196776143116382670" resolveInfo="model" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382752">
-                      <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
-                    </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6166056446716858285">
+              <link role="variableDeclaration:3" targetNodeId="7196776143116382695" resolveInfo="models" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6166056446716858286">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6166056446716858287">
+                <link role="baseMethodDeclaration:3" targetNodeId="20.~ModuleContext.&lt;init&gt;(jetbrains.mps.project.IModule,com.intellij.openapi.project.Project)" resolveInfo="ModuleContext" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6166056446716858288">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6166056446716858289">
+                    <link role="variableDeclaration:3" targetNodeId="7196776143116382670" resolveInfo="model" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382896">
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7196776143116382897">
-                      <link role="fieldDeclaration:3" targetNodeId="7196776143116382460" resolveInfo="myProject" />
-                    </node>
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7196776143116382898" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6166056446716858290">
+                    <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                   </node>
                 </node>
-              </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5311359939641099039">
-                <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="generationHandler" />
-              </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382755">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7196776143116382756">
-                  <link role="baseMethodDeclaration:3" targetNodeId="15.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6166056446716858291">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="6166056446716858292">
+                    <link role="fieldDeclaration:3" targetNodeId="7196776143116382460" resolveInfo="myProject" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6166056446716858293" />
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382757">
-                <link role="variableDeclaration:3" targetNodeId="7196776143116382708" resolveInfo="handler" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6166056446716858294">
+              <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="generationHandler" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6166056446716858295">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6166056446716858296">
+                <link role="baseMethodDeclaration:3" targetNodeId="15.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+              </node>
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6166056446716858297">
+              <link role="variableDeclaration:3" targetNodeId="7196776143116382708" resolveInfo="handler" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6166056446716858301">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6166056446716858300">
+                <link role="baseMethodDeclaration:3" targetNodeId="12.~GenerationOptions.getDefaults():jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolveInfo="getDefaults" />
+                <link role="classConcept:3" targetNodeId="12.~GenerationOptions" resolveInfo="GenerationOptions" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6166056446716858305">
+                <link role="baseMethodDeclaration:3" targetNodeId="12.~GenerationOptions$OptionsBuilder.create():jetbrains.mps.generator.GenerationOptions" resolveInfo="create" />
               </node>
             </node>
           </node>

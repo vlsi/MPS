@@ -26,7 +26,7 @@ public class CopySrcListMacro_Behavior {
   }
 
   public static class Pattern_26ny8p_a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_concept;
+    public static SNode PatternVar_concept;
 
     public Pattern_26ny8p_a0a0a1a1() {
     }
@@ -51,7 +51,7 @@ public class CopySrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_26ny8p_a0a0b0a.getConceptFqName()))) {
                 return false;
               }
-              this.PatternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferent("concept");
+              PatternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferent("concept");
             }
           }
         }
@@ -65,13 +65,13 @@ public class CopySrcListMacro_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_concept".equals(fieldName)) {
-        return this.PatternVar_concept;
+        return PatternVar_concept;
       }
       return null;
     }

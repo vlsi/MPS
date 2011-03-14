@@ -150,5 +150,33 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Convert smodel @<all> attribute access operation";
+      }
+
+      public String getAdditionalInfo() {
+        return "Convert smodel @<all> attribute access operation";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "attributeQualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributesQualifier");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        // build new AttributeAccess operation and replace old with it 
+        SNode attr = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.AttributeAccess", null);
+        SLinkOperations.setTarget(attr, "qualifier", SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", null), true);
+        SNodeOperations.replaceWithAnother(node, attr);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }

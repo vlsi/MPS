@@ -39,6 +39,13 @@ public abstract class SModelId {
     return new ForeignSModelId(kind + "#" + id);
   }
 
+  public static SModelId foreign(String kind, String moduleId, String id) {
+    if (moduleId==null||moduleId.length()==0){
+      return new ForeignSModelId(kind + "#" + id);
+    }
+    return new ForeignSModelId(kind + "#" + moduleId + "#" + id);
+  }
+
   public static SModelId fromString(String id) {
     if (id.startsWith(REGULAR_PREFIX)) {
       String suffix = id.substring(REGULAR_PREFIX.length());

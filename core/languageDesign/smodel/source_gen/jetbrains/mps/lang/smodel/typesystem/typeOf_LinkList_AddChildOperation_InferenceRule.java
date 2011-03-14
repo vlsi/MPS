@@ -27,7 +27,6 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule extends AbstractInf
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272443656", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) parmType, (SNode) typeCheckingContext.getRepresentative(ExpectedType_typevar_1206101161890), false, _info_12389875345);
       }
     }

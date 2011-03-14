@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints" />
+  <unitInfo fileName="AbstractFunctionType_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.AbstractFunctionType_Constraints" />
   <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints" />
   <unitInfo fileName="FunctionMethodDeclaration_isAbstract_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_isAbstract_PropertyConstraint" />
   <unitInfo fileName="FunctionMethodDeclaration_name_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_name_PropertyConstraint" />
@@ -103,16 +104,16 @@
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="264" startPosition="67" endLine="265" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="266" startPosition="7" endLine="267" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="267" startPosition="163" endLine="268" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="268" startPosition="43" endLine="269" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="269" startPosition="188" endLine="270" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="268" startPosition="43" endLine="269" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="269" startPosition="225" endLine="270" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="271" startPosition="7" endLine="272" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="280" startPosition="31" endLine="281" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="281" startPosition="26" endLine="282" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="282" startPosition="67" endLine="283" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="284" startPosition="7" endLine="285" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="285" startPosition="163" endLine="286" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="286" startPosition="43" endLine="287" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="287" startPosition="263" endLine="288" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="286" startPosition="43" endLine="287" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="287" startPosition="300" endLine="288" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="289" startPosition="7" endLine="290" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="298" startPosition="49" endLine="299" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="299" startPosition="26" endLine="300" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -517,6 +518,10 @@
     <nodeInfo nodeId="27727482733946040" fileName="FunctionMethodDeclaration_isAbstract_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2411622665278491648" fileName="FunctionMethodDeclaration_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="20" />
     <scopeInfo nodeId="2684105348703956782" fileName="FunctionMethodDeclaration_isAbstract_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="17" />
+  </root>
+  <root nodeId="5612111951671408000">
+    <nodeInfo nodeId="5612111951671415373" fileName="AbstractFunctionType_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5612111951671408002" fileName="AbstractFunctionType_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="92" />
   </root>
 </debugInfo>
 

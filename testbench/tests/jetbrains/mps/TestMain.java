@@ -31,6 +31,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
@@ -603,7 +604,8 @@ public class TestMain {
                 new ModuleContext(parms.getModule(), myProject),
                 generationHandler,
                 new EmptyProgressIndicator(),
-                handler
+                handler,
+                GenerationOptions.getDefaults().create()
               );
 
               if (myIsRunnable) {

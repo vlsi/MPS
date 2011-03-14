@@ -10,6 +10,6 @@ public class NodeAttributeQualifier_Behavior {
   }
 
   public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "attributeConcept", false);
+    return (SNode) SLinkOperations.getTarget(thisNode, "attributeConcept", false);
   }
 }

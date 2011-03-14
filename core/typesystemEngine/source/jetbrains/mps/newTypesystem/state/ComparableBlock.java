@@ -22,6 +22,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -56,6 +59,14 @@ public class ComparableBlock extends RelationBlock {
       return;
     }
     myState.getNodeMaps().reportComparableError(left, right, myEquationInfo, isWeak);
+  }
+
+  @Override
+  public List<Pair<SNode, SNode>> getInputsAndOutputs() {
+    List<Pair<SNode, SNode>> result = new LinkedList<Pair<SNode, SNode>>();
+    result.add(new Pair<SNode, SNode>(myLeftNode, myRightNode));
+    result.add(new Pair<SNode, SNode>(myRightNode, myLeftNode));
+    return result;
   }
 
   @Override

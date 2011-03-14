@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 

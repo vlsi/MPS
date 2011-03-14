@@ -12,6 +12,7 @@
     <pathelement location="classes_gen"/>
     <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source"/>
     <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source_gen"/>
+    <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/source_gen.gwt"/>
     <pathelement location="${mps.home}/core/baseLanguage/collections/runtime/classes"/>
     <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source"/>
     <pathelement location="${mps.home}/core/baseLanguage/closures/runtime/source_gen"/>

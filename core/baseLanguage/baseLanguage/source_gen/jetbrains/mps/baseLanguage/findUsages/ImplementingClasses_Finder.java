@@ -17,6 +17,9 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 public class ImplementingClasses_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
 
+  public ImplementingClasses_Finder() {
+  }
+
   public String getDescription() {
     return "Implementing Classes";
   }

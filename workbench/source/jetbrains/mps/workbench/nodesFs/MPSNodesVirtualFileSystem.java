@@ -126,6 +126,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return null;
   }
 
+  boolean hasVirtualFileFor(SNodePointer nodePointer) {
+    return myVirtualFiles.containsKey(nodePointer);
+  }
+
   protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
   }
@@ -161,43 +165,29 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
-      final MyModelEventVisitor visitor = new MyModelEventVisitor();
+      MyModelEventVisitor visitor = new MyModelEventVisitor();
       for (SModelEvent e : events) {
         e.accept(visitor);
       }
-      if (visitor.myDeletedFiles.isEmpty() && visitor.myRenamedFiles.isEmpty()) {
-        return;
-      }
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              for(MPSNodeVirtualFile deletedFile : visitor.myDeletedFiles) {
-                if (deletedFile.isValid()) {
-                  fireBeforeFileDeletion(this, deletedFile);
-                }
-                fireFileDeleted(this, deletedFile, deletedFile.getName(), null);
-                myVirtualFiles.remove(deletedFile.getSNodePointer());
-              }
-
-              for (Pair<MPSNodeVirtualFile, String> renamedFile : visitor.myRenamedFiles) {
-                MPSNodeVirtualFile vf = renamedFile.o1;
-                String oldName = vf.getName();
-                String newName = renamedFile.o2;
-                fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, oldName, newName);
-                vf.updateFields();
-                firePropertyChanged(this, vf, VirtualFile.PROP_NAME, oldName, newName);
-              }
-            }
-          });
+      final VFSNotifier vfsNotifier = new VFSNotifier(visitor.myDeletedFiles, visitor.myRenamedFiles);
+      if (vfsNotifier.hasPendingNotifications()) {
+        for (MPSNodeVirtualFile deletedFile : visitor.myDeletedFiles) {
+          myVirtualFiles.remove(deletedFile.getSNodePointer());
         }
-      });
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(vfsNotifier);
+          }
+        });
+      }
+
     }
   }
 
   private class MyModelEventVisitor extends SModelEventVisitorAdapter {
-    private List<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
-    private List<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+    private Collection<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
+    private Collection<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
 
     public void visitRootEvent(SModelRootEvent event) {
       if (!event.isRemoved()) return;
@@ -225,19 +215,17 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
-      for (final SNode root : modelDescriptor.getSModel().roots()) {
-        final SNodePointer pointer = new SNodePointer(root);
-        final VirtualFile vf = myVirtualFiles.get(pointer);
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
+      for (SNode root : modelDescriptor.getSModel().roots()) {
+        SNodePointer pointer = new SNodePointer(root);
+        MPSNodeVirtualFile vf = myVirtualFiles.get(pointer);
         if (vf == null) continue;
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-            if (vf.isValid()) {
-              fireBeforeFileDeletion(this, vf);
-            }
-            fireFileDeleted(this, vf, vf.getName(), null);
-            myVirtualFiles.remove(pointer);
-          }
-        });
+        deletedFiles.add(vf);
+        myVirtualFiles.remove(pointer);
+      }
+      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, Collections.<Pair<MPSNodeVirtualFile,String>>emptyList());
+      if (vfsNotifier.hasPendingNotifications()) {
+        ModelAccess.instance().runWriteInEDT(vfsNotifier);
       }
     }
   }
@@ -253,34 +241,61 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         updateModificationStamp(root);
       }
 
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        public void run() {
-          onModelReplaced(sm);
-        }
-      });
-    }
-
-    private void onModelReplaced(SModelDescriptor sm) {
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
+      Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
       for (Entry<SNodePointer, MPSNodeVirtualFile> entry : myVirtualFiles.entrySet()) {
         if (entry.getKey().getModel() != sm) continue;
 
         SNode node = entry.getKey().getNode();
         MPSNodeVirtualFile file = entry.getValue();
         if (node == null) {
-          if (file.isValid()) {
-            fireBeforeFileDeletion(this, file);
-          }
-          fireFileDeleted(this, file, file.getName(), null);
+          deletedFiles.add(file);
+          myVirtualFiles.remove(file.getSNodePointer());
         } else {
           String oldName = file.getName();
-          String newName = node.getName();
+          String newName = node.getPresentation();
           if (!oldName.equals(newName)) {
-            fireBeforePropertyChange(this, file, VirtualFile.PROP_NAME, oldName, newName);
-            file.updateFields();
-            firePropertyChanged(this, file, VirtualFile.PROP_NAME, oldName, newName);
+            renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(file, newName));
           }
         }
       }
+
+      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, renamedFiles);
+      if (vfsNotifier.hasPendingNotifications()) {
+        ModelAccess.instance().runWriteInEDT(vfsNotifier);
+      }
+    }
+  }
+
+  private class VFSNotifier implements Runnable {
+    private Collection<MPSNodeVirtualFile> myDeleterFiles;
+    private Collection<Pair<MPSNodeVirtualFile, String>> myRenamedFiles;
+
+    private VFSNotifier(Collection<MPSNodeVirtualFile> deletedFiles, Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles) {
+      myDeleterFiles = deletedFiles;
+      myRenamedFiles = renamedFiles;
+    }
+
+    @Override
+    public void run() {
+      for (MPSNodeVirtualFile deletedFile : myDeleterFiles) {
+        fireBeforeFileDeletion(this, deletedFile);
+        deletedFile.invalidate();
+        fireFileDeleted(this, deletedFile, deletedFile.getName(), null);
+      }
+
+      for (Pair<MPSNodeVirtualFile, String> renamedFile : myRenamedFiles) {
+        MPSNodeVirtualFile vf = renamedFile.o1;
+        String oldName = vf.getName();
+        String newName = renamedFile.o2;
+        fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, oldName, newName);
+        vf.updateFields();
+        firePropertyChanged(this, vf, VirtualFile.PROP_NAME, oldName, newName);
+      }
+    }
+
+    public boolean hasPendingNotifications() {
+      return !myDeleterFiles.isEmpty() || !myRenamedFiles.isEmpty();
     }
   }
 }

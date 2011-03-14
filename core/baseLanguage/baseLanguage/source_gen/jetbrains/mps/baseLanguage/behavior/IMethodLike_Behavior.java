@@ -16,6 +16,7 @@ public class IMethodLike_Behavior {
   private static Class[] PARAMETERS_1239354409446 = {SNode.class};
   private static Class[] PARAMETERS_1239354440022 = {SNode.class};
   private static Class[] PARAMETERS_6204026822016975623 = {SNode.class};
+  private static Class[] PARAMETERS_4989157187872658723 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -42,6 +43,10 @@ public class IMethodLike_Behavior {
     return lastStatement;
   }
 
+  public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return false;
+  }
+
   public static SNode call_getExpectedRetType_1239354342632(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
   }
@@ -58,6 +63,10 @@ public class IMethodLike_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623);
   }
 
+  public static boolean call_implicitThrows_4989157187872658723(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_implicitThrows_4989157187872658723", PARAMETERS_4989157187872658723);
+  }
+
   public static SNode callSuper_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
   }
@@ -72,5 +81,9 @@ public class IMethodLike_Behavior {
 
   public static List<SNode> callSuper_getThrowableTypes_6204026822016975623(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623);
+  }
+
+  public static boolean callSuper_implicitThrows_4989157187872658723(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_implicitThrows_4989157187872658723", PARAMETERS_4989157187872658723);
   }
 }

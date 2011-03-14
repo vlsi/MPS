@@ -79,7 +79,6 @@ public class ProjectTest {
       // Applications tests
       "/core/make-runtime/Make-runtime.mpr",
       "/core/kernel/kernel.mpr",
-      "/core/debug/debugProject/debugProject.mpr",
       "/core/kernel/traceinfo/traceInfo.mpr",
       "/platform/mps-lite/mps-lite.mpr",
       "/platform/quickQueryLanguage/quickQueryLanguage.mpr",
@@ -94,6 +93,8 @@ public class ProjectTest {
       "/workbench/ideSolution/ide.mpr",
 
       "/plugins/vcs/vcs.mpr",
+      "/plugins/debugger-java/debuggerJava.mpr",
+      "/plugins/debugger-api/debuggerApi.mpr",
 
       //  Samples
       "/samples/complexLanguage/Complex.mpr",

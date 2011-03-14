@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -100,7 +101,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
     }
-    if ((SLinkOperations.getTarget(myNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null)) {
+    //if ((SLinkOperations.getTarget(myNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null)) {
+    if (AttributeOperations.getNodeAttribute(myNode, "deprecatedNode") != null) {
       addFontAttribute(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
     }
 

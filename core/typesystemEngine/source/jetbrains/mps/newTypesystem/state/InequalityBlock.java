@@ -28,6 +28,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -56,6 +59,13 @@ public class InequalityBlock extends RelationBlock {
     } else {
       return myLeftNode;
     }
+  }
+
+  @Override
+  public List<Pair<SNode, SNode>> getInputsAndOutputs() {
+    List<Pair<SNode, SNode>> result = new LinkedList<Pair<SNode, SNode>>();
+    result.add(new Pair<SNode, SNode>(getInput(), getOutput()));
+    return result;
   }
 
   public InequalityBlock(State state, SNode left, SNode right, boolean lessThen, RelationKind kind, EquationInfo equationInfo) {
@@ -128,16 +138,15 @@ public class InequalityBlock extends RelationBlock {
   private String getPresentationInternal(SNode left, SNode right) {
     String sign = myRelationKind.getRelationSign();
     if (lessThen) {
-      sign = " : " + sign;
+      sign = ":" + sign;
     } else {
-      sign = sign + " : ";
+      sign = sign + ":";
     }
-    return myRelationKind.getTitle() + " : " +
-      left + sign + right;
+    return left + sign + right;
   }
 
   @Override
-  public String getPresentation() {
+  public String getShortPresentation() {
     return getPresentationInternal(myLeftNode, myRightNode);
   }
 

@@ -4,7 +4,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <import index="tpor" modelUID="r:00000000-0000-4000-0000-011c89590457(jetbrains.mps.samples.matrixLanguage.runtime)" version="-1" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpok" modelUID="r:00000000-0000-4000-0000-011c89590458(jetbrains.mps.samples.matrixLanguage.runtime.test)" version="-1" implicit="yes" />
@@ -28,7 +28,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209982388255">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159496371">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209982076240" />
@@ -38,13 +38,13 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216562295417">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpor.1210153033269" resolveInfo="Matrix" />
               <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159500237">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1209982669820">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1209982669821">
                   <node role="componentType" roleId="tpee.1154542793668" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1209982669822">
                     <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159521368">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                     </node>
                   </node>
                   <node role="initValue" roleId="tpee.1154542803372" type="tpee.ArrayLiteral" typeId="tpee.1188220165133" id="1209982669824">
@@ -81,7 +81,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209979090781">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159531131">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                 </node>
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1209982711038">
@@ -112,7 +112,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1210159538995">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Double%ddoubleValue()%cdouble" resolveInfo="doubleValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Double%ddoubleValue()%cdouble" resolveInfo="doubleValue" />
               </node>
             </node>
           </node>
@@ -136,7 +136,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1210159544671">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Double%ddoubleValue()%cdouble" resolveInfo="doubleValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Double%ddoubleValue()%cdouble" resolveInfo="doubleValue" />
               </node>
             </node>
           </node>
@@ -323,20 +323,20 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209996084284">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159427972">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                 </node>
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1216562281989">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216562281992">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpor.1210153033269" resolveInfo="Matrix" />
                   <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159422477">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1209996084286">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1209996084287">
                       <node role="componentType" roleId="tpee.1154542793668" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1209996084288">
                         <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210159392056">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                         </node>
                       </node>
                       <node role="initValue" roleId="tpee.1154542803372" type="tpee.ArrayLiteral" typeId="tpee.1188220165133" id="1209996084290">
@@ -516,7 +516,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210242090508">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210242118265">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                 </node>
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210242101906">

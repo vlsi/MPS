@@ -17,7 +17,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_lt6k7h_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTER_lt6k7h_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -103,7 +103,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
   }
 
   public static class Pattern_lt6k7h_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elementType;
+    public static SNode PatternVar_elementType;
 
     public Pattern_lt6k7h_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
+        PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elementType".equals(fieldName)) {
-        return this.PatternVar_elementType;
+        return PatternVar_elementType;
       }
       return null;
     }

@@ -12,7 +12,6 @@
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="283" startPosition="35" endLine="293" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
   <unitInfo fileName="DefaultJavaApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory" />
   <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
-  <unitInfo fileName="BaseLanguageEditorPopupInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
   <unitInfo fileName="PrintNodePosition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup" />
   <unitInfo fileName="AnalyzersActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup" />
@@ -47,7 +46,7 @@
   <unitInfo fileName="CommentStatements_Action.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentStatements_Action" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
   <unitInfo fileName="ShowMembers_Action.java" startLine="24" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
-  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="IntroduceField_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
   <unitInfo fileName="InlineMethod_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineMethod_Action" />
   <unitInfo fileName="IntroduceConstant_Action.java" startLine="23" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action" />

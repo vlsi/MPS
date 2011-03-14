@@ -6,12 +6,12 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="d8ec" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="nk6r" modelUID="f:java_stub#jetbrains.mps.lang.script.util(jetbrains.mps.lang.script.util@java_stub)" version="-1" />
-  <import index="4o5j" modelUID="f:java_stub#jetbrains.mps.lang.script.runtime(jetbrains.mps.lang.script.runtime@java_stub)" version="-1" />
-  <import index="ctdc" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpe8" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
+  <import index="oh2d" modelUID="f:java_stub#0e7e6e38-fc52-4859-a8a9-7c262a5ee452#jetbrains.mps.lang.script.runtime(jetbrains.mps.lang.script#1172274134493/jetbrains.mps.lang.script.runtime@java_stub)" version="-1" />
+  <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="vu6t" modelUID="f:java_stub#0e7e6e38-fc52-4859-a8a9-7c262a5ee452#jetbrains.mps.lang.script.util(jetbrains.mps.lang.script#1172274134493/jetbrains.mps.lang.script.util@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -64,12 +64,12 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1209063913083">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1177464921008" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1209063913084">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4o5j.~BaseMigrationScript%daddRefactoring(jetbrains%dmps%dlang%dscript%druntime%dAbstractMigrationRefactoring)%cvoid" resolveInfo="addRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oh2d.~BaseMigrationScript%daddRefactoring(jetbrains%dmps%dlang%dscript%druntime%dAbstractMigrationRefactoring)%cvoid" resolveInfo="addRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1182161166528">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1182161166529">
                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1177465195992">
-                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="4o5j.~AbstractMigrationRefactoring" resolveInfo="AbstractMigrationRefactoring" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4o5j.~AbstractMigrationRefactoring%d&lt;init&gt;(jetbrains%dmps%dsmodel%dIOperationContext)" resolveInfo="AbstractMigrationRefactoring" />
+                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="oh2d.~AbstractMigrationRefactoring" resolveInfo="AbstractMigrationRefactoring" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oh2d.~AbstractMigrationRefactoring%d&lt;init&gt;(jetbrains%dmps%dsmodel%dIOperationContext)" resolveInfo="AbstractMigrationRefactoring" />
                     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1177555338045">
                       <property name="name" nameId="tpck.1169194664001" value="getName" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192995641" />
@@ -196,8 +196,8 @@
                                   </node>
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1177465347693">
                                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1177466258811">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~NameUtil%dnodeFQName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
-                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~NameUtil" resolveInfo="NameUtil" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dnodeFQName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
+                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1177466261809">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1177466244887" resolveInfo="affectedConcept" />
                                       </node>
@@ -355,7 +355,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1177464748270">
         <property name="name" nameId="tpck.1169194664001" value="operationContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177464748271">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~IOperationContext" resolveInfo="IOperationContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~IOperationContext" resolveInfo="IOperationContext" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1178546096172" />
@@ -364,7 +364,7 @@
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tp33.1177457067821" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1177464644170">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4o5j.~BaseMigrationScript" resolveInfo="BaseMigrationScript" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oh2d.~BaseMigrationScript" resolveInfo="BaseMigrationScript" />
     </node>
     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1177464650515">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -372,8 +372,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1177464650517">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1177464658798">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1177464708046">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nk6r.~ScriptNameUtil%dgetMigrationScriptClassName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getMigrationScriptClassName" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nk6r.~ScriptNameUtil" resolveInfo="ScriptNameUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vu6t.~ScriptNameUtil%dgetMigrationScriptClassName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getMigrationScriptClassName" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vu6t.~ScriptNameUtil" resolveInfo="ScriptNameUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1177464711781" />
             </node>
           </node>

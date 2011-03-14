@@ -18,8 +18,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class IterateOverIterable_Intention extends BaseIntention implements Intention {
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 
   public IterateOverIterable_Intention() {
   }
@@ -77,7 +77,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public static class Pattern_w1n2qe_a1a0a0a0g extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    public static SNode PatternVar_elem;
 
     public Pattern_w1n2qe_a1a0a0a0g() {
     }
@@ -116,13 +116,13 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+        return PatternVar_elem;
       }
       return null;
     }
@@ -132,7 +132,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public static class Pattern_w1n2qe_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    public static SNode PatternVar_elem;
 
     public Pattern_w1n2qe_a0a0a0a7() {
     }
@@ -171,13 +171,13 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+        return PatternVar_elem;
       }
       return null;
     }

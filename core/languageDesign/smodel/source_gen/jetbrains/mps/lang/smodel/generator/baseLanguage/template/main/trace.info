@@ -1155,7 +1155,7 @@
   </root>
   <root nodeId="6407023681583038100">
     <nodeInfo nodeId="6407023681583065504" fileName="QueriesGenerated.java" startLine="338" startPosition="152" endLine="339" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2788452359612009083" fileName="QueriesGenerated.java" startLine="339" startPosition="87" endLine="340" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2788452359612009083" fileName="QueriesGenerated.java" startLine="339" startPosition="87" endLine="340" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6407023681583065539" fileName="QueriesGenerated.java" startLine="343" startPosition="152" endLine="344" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6407023681583065573" fileName="QueriesGenerated.java" startLine="347" startPosition="152" endLine="348" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6407023681583065601" fileName="QueriesGenerated.java" startLine="351" startPosition="152" endLine="352" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1212,7 +1212,7 @@
     <scopeInfo nodeId="6407023681583065839" fileName="QueriesGenerated.java" startLine="1847" startPosition="150" endLine="1848" endPosition="224" />
     <scopeInfo nodeId="6960953357954129041" fileName="QueriesGenerated.java" startLine="1851" startPosition="150" endLine="1852" endPosition="106" />
     <scopeInfo nodeId="6960953357954129054" fileName="QueriesGenerated.java" startLine="1855" startPosition="150" endLine="1856" endPosition="224" />
-    <scopeInfo nodeId="6407023681583039953" fileName="QueriesGenerated.java" startLine="338" startPosition="152" endLine="340" endPosition="257">
+    <scopeInfo nodeId="6407023681583039953" fileName="QueriesGenerated.java" startLine="338" startPosition="152" endLine="340" endPosition="247">
       <varInfo nodeId="6407023681583065505" varName="qualifier" />
     </scopeInfo>
     <scopeInfo nodeId="6407023681583065849" fileName="QueriesGenerated.java" startLine="855" startPosition="154" endLine="860" endPosition="44">

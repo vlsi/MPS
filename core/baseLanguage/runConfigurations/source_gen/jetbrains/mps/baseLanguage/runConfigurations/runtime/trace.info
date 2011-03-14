@@ -599,16 +599,16 @@
     <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="31" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
   </root>
   <root nodeId="8255351389869681567">
-    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaRunProfileState#()V" />
-    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
-    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
-    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />
-    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaRunProfileState#()V" />
+    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
+    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
+    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="110" />
+    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="8255351389869715940" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
+    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
   </root>
 </debugInfo>
 

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -52,7 +52,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
   }
 
   public static class Pattern_9xe6am_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT_TYPE;
+    public static SNode PatternVar_ELEMENT_TYPE;
 
     public Pattern_9xe6am_a0a0a0a3() {
     }
@@ -91,13 +91,13 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
+        PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT_TYPE".equals(fieldName)) {
-        return this.PatternVar_ELEMENT_TYPE;
+        return PatternVar_ELEMENT_TYPE;
       }
       return null;
     }
