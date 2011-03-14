@@ -227,6 +227,7 @@
     <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
     <antcall target="MPS-languages.pack.collections.runtime" />
+    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
     <antcall target="MPS-languages.pack.collections_trove.runtime" />
     <antcall target="MPS-languages.pack.collections_samples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
@@ -273,6 +274,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.make.facet" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.project" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.script" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.make.resources" />
     <mkdir dir="${deploy.dir}/MPS/core/languageDesign" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
@@ -357,6 +359,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.runConfigurations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.runConfigurations.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.runConfigurations.util" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">

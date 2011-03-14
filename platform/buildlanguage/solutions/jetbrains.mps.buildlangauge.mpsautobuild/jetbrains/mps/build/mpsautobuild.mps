@@ -1563,6 +1563,10 @@
       <property name="id" nameId="tps4.1222447189012" value="36c11d2d-1875-4a95-8bdb-70ea1ac63222" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations.runtime" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7197035105459246381">
+      <property name="id" nameId="tps4.1222447189012" value="04b376d5-fc16-403b-a344-c68b30193c6a" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.runConfigurations.util" />
+    </node>
   </root>
   <root id="8431776905956472858">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472859">
@@ -1625,6 +1629,10 @@
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472876">
         <property name="id" nameId="tps4.1222447189012" value="9b80526e-f0bf-4992-bdf5-cee39c1833f3" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7197035105459849906">
+        <property name="id" nameId="tps4.1222447189012" value="86abb39a-11fb-4a1e-ae95-ea43cc94ae42" />
+        <property name="name" nameId="tpck.1169194664001" value="collections.runtime.gwt" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472877">
         <property name="id" nameId="tps4.1222447189012" value="134ef213-c518-42b0-b12c-c109aa13d320" />
@@ -1815,6 +1823,10 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3646513537108689213">
         <property name="id" nameId="tps4.1222447189012" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.script" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7197035105459849904">
+        <property name="id" nameId="tps4.1222447189012" value="3d60ffbd-ae79-4d7b-a1c0-810dfec83399" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.resources" />
       </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472939">
         <property name="name" nameId="tps4.1223641503366" value="languageDesign" />
