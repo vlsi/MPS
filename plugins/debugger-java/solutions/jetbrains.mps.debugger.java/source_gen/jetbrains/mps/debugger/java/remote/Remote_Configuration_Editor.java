@@ -12,19 +12,19 @@ public class Remote_Configuration_Editor extends SettingsEditor<Remote_Configura
   public Remote_Configuration_Editor() {
   }
 
-  protected void disposeEditor() {
+  public void disposeEditor() {
   }
 
   @NotNull
-  protected RemoteSettingsEditor createEditor() {
+  public RemoteSettingsEditor createEditor() {
     return myEditor = new RemoteSettingsEditor();
   }
 
-  protected void applyEditorTo(final Remote_Configuration configuration) throws ConfigurationException {
+  public void applyEditorTo(final Remote_Configuration configuration) throws ConfigurationException {
     myEditor.apply(configuration.getSettings());
   }
 
-  protected void resetEditorFrom(final Remote_Configuration configuration) {
+  public void resetEditorFrom(final Remote_Configuration configuration) {
     myEditor.reset(configuration.getSettings());
   }
 }
