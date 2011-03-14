@@ -32,7 +32,7 @@ public class Node_Configuration implements IPersistentConfiguration {
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
-      final SNode node = this.getNode();
+      final SNode node = getNode();
       if (node == null) {
         throw new RuntimeConfigurationException("Node is not specified.");
       }
