@@ -435,8 +435,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
-      myAddedLanguageNamespaces.put(namespace, loadedConstraints);
       loadConstraints(namespace, loadedConstraints);
+      myAddedLanguageNamespaces.put(namespace, loadedConstraints);
     }
   }
 
@@ -447,11 +447,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
         return;
       }
 
-      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
+      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.remove(namespace);
       for (IModelConstraints constraints : loadedConstraints) {
         constraints.unRegisterSelf(this);
       }
-      myAddedLanguageNamespaces.remove(namespace);
     }
   }
 
