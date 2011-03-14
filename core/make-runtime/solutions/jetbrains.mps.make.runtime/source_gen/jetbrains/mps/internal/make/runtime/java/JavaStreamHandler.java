@@ -79,6 +79,10 @@ public class JavaStreamHandler implements StreamHandler {
         if (outputDirectoryFile.isDirectory()) {
           continue;
         }
+        // todo hack to fix tests (icons as resources) 
+        if (outputDirectoryFile.getName().endsWith(".png")) {
+          continue;
+        }
         if (mySavedFiles.contains(outputDirectoryFile)) {
           continue;
         }
