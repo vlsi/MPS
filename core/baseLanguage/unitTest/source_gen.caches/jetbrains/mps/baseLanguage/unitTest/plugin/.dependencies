@@ -977,6 +977,7 @@
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.utils.ClassRunner" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
