@@ -37,10 +37,10 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
-import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.runConfigurations.utils.Java_Command;
+import java.io.File;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -155,21 +155,16 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E1<DefaultProcessHandler, ExecutionException>() {
-              public DefaultProcessHandler invoke() throws ExecutionException {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
+              public ProcessHandler invoke() {
                 try {
-                  ClassRunner classRunner = new ClassRunner(javaRunParameters);
                   final Wrappers._T<String> className = new Wrappers._T<String>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       className.value = INamedConcept_Behavior.call_getFqName_1213877404258(node);
                     }
                   });
-                  if (className.value == null) {
-                    throw new ExecutionException("Class name of a node is null. Cant run.");
-                  }
-                  Process process = classRunner.run(node, className.value);
-                  return new DefaultProcessHandler(consoleView_22042010, process, classRunner.getCommandString());
+                  return new Java_Command().setClassPath(Java_Command.getClasspath(node)).setVirtualMachineParameter(javaRunParameters.getVMParameters()).setClassName(className.value).setProgramParameter(javaRunParameters.getProgramParameters()).setWorkingDirectory(new File(javaRunParameters.getWorkingDirectory())).createProcess();
                 } catch (ExecutionException e) {
                   ex.value = e;
                   return null;
