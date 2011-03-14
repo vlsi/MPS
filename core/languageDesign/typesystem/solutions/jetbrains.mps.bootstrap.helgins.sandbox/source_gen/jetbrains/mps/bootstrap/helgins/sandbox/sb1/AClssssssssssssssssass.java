@@ -24,7 +24,7 @@ public class AClssssssssssssssssass {
         matches_axt657_a1a0 = matchingPattern.match(matchedNode_axt657_b0a);
         if (matches_axt657_a1a0) {
           {
-            SNode d = ((SNode) matchingPattern.getFieldValue("PatternVar_class"));
+            SNode d = ((SNode) matchingPattern.getFieldValue("patternVar_class"));
           }
           break;
         }
@@ -78,7 +78,7 @@ public class AClssssssssssssssssass {
   }
 
   public static class Pattern_axt657_a0a1a1a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_class;
+    /*package*/ SNode patternVar_class;
 
     public Pattern_axt657_a0a1a1a1a0() {
     }
@@ -90,7 +90,7 @@ public class AClssssssssssssssssass {
         if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_axt657_a0a0b0a.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_class = nodeToMatch_axt657_a0a0b0a.getReferent("classifier");
+        patternVar_class = nodeToMatch_axt657_a0a0b0a.getReferent("classifier");
       }
       return true;
     }
@@ -101,13 +101,13 @@ public class AClssssssssssssssssass {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_class = (SNode) pattern.getFieldValue("PatternVar_class");
+        patternVar_class = (SNode) pattern.getFieldValue("patternVar_class");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_class".equals(fieldName)) {
-        return this.PatternVar_class;
+      if ("patternVar_class".equals(fieldName)) {
+        return patternVar_class;
       }
       return null;
     }

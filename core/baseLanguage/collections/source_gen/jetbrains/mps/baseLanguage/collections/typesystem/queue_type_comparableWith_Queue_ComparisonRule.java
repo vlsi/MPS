@@ -10,9 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_ma7wq5_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
+  private static SNodePointer SNODE_POINTER_ma7wq5_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -52,7 +53,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
   }
 
   public static class Pattern_ma7wq5_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_ELEMENT_TYPE;
+    /*package*/ SNode patternVar_ELEMENT_TYPE;
 
     public Pattern_ma7wq5_a0a0a0a3() {
     }
@@ -65,9 +66,8 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_ma7wq5_a0a1a0a1a2a0a0a0a0a0a3.getNode();
-          if (nodeToMatch_jt8ol0_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_ma7wq5_a0a0a0a0b0c0a0a0a0a0a0d;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_jt8ol0_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -78,7 +78,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
           }
           {
             SNode childVar_jt8ol0_a0a0 = nodeToMatch_jt8ol0_a0a.getChildren(childRole_jt8ol0_).get(0);
-            this.PatternVar_ELEMENT_TYPE = childVar_jt8ol0_a0a0;
+            this.patternVar_ELEMENT_TYPE = childVar_jt8ol0_a0a0;
           }
         }
       }
@@ -91,13 +91,13 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
+        patternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("patternVar_ELEMENT_TYPE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_ELEMENT_TYPE".equals(fieldName)) {
-        return PatternVar_ELEMENT_TYPE;
+      if ("patternVar_ELEMENT_TYPE".equals(fieldName)) {
+        return patternVar_ELEMENT_TYPE;
       }
       return null;
     }

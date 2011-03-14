@@ -69,7 +69,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
   }
 
   public static class Pattern_2juelu_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_sub;
+    /*package*/ SNode patternVar_sub;
 
     public Pattern_2juelu_a0a0a0a3() {
     }
@@ -88,7 +88,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
           }
           {
             SNode childVar_l7cfoj_a0a0 = nodeToMatch_l7cfoj_a0a.getChildren(childRole_l7cfoj_).get(0);
-            this.PatternVar_sub = childVar_l7cfoj_a0a0;
+            this.patternVar_sub = childVar_l7cfoj_a0a0;
           }
         }
       }
@@ -101,13 +101,13 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_sub = (SNode) pattern.getFieldValue("PatternVar_sub");
+        patternVar_sub = (SNode) pattern.getFieldValue("patternVar_sub");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_sub".equals(fieldName)) {
-        return PatternVar_sub;
+      if ("patternVar_sub".equals(fieldName)) {
+        return patternVar_sub;
       }
       return null;
     }
@@ -117,7 +117,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
   }
 
   public static class Pattern_2juelu_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_super;
+    /*package*/ SNode patternVar_super;
 
     public Pattern_2juelu_a0a0a0a4() {
     }
@@ -149,7 +149,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
                 }
                 {
                   SNode childVar_l7cfoj_a0a0a = nodeToMatch_l7cfoj_a0a0.getChildren(childRole_l7cfoj__1).get(0);
-                  this.PatternVar_super = childVar_l7cfoj_a0a0a;
+                  this.patternVar_super = childVar_l7cfoj_a0a0a;
                 }
               }
             }
@@ -165,13 +165,13 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_super = (SNode) pattern.getFieldValue("PatternVar_super");
+        patternVar_super = (SNode) pattern.getFieldValue("patternVar_super");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_super".equals(fieldName)) {
-        return PatternVar_super;
+      if ("patternVar_super".equals(fieldName)) {
+        return patternVar_super;
       }
       return null;
     }

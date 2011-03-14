@@ -10,9 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_vbthi0_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -63,9 +64,8 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_vbthi0_a0a1a0a1a2a0a0a0a0a0a3.getNode();
-          if (nodeToMatch_ityt7t_a0a.getReferent("concept") != referent) {
+          SNodePointer pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0d;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ityt7t_a0a.getReferent("concept")))) {
             return false;
           }
         }

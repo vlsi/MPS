@@ -24,9 +24,8 @@ public class RuleAssertNull extends DataFlowConstructor {
   }
 
   public static class Pattern_ah97h0_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_p;
-    public static SNode PatternVar_action_var_5730083271929368110;
-
+    /*package*/ SNode patternVar_p;
+    /*package*/ SNode patternVar_action_var_5730083271929368110;
     private GeneratedMatchingPattern myOrPattern_ah97h0_a0a0;
 
     public Pattern_ah97h0_a0a() {
@@ -36,7 +35,7 @@ public class RuleAssertNull extends DataFlowConstructor {
       {
         SNode nodeToMatch_ah97h0_a0a;
         nodeToMatch_ah97h0_a0a = nodeToMatch;
-        PatternVar_action_var_5730083271929368110 = nodeToMatch_ah97h0_a0a;
+        patternVar_action_var_5730083271929368110 = nodeToMatch_ah97h0_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_ah97h0_a0a.getConceptFqName()))) {
           return false;
         }
@@ -80,17 +79,17 @@ public class RuleAssertNull extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        PatternVar_action_var_5730083271929368110 = (SNode) pattern.getFieldValue("PatternVar_action_var_5730083271929368110");
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+        patternVar_action_var_5730083271929368110 = (SNode) pattern.getFieldValue("patternVar_action_var_5730083271929368110");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_p".equals(fieldName)) {
-        return PatternVar_p;
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
       }
-      if ("PatternVar_action_var_5730083271929368110".equals(fieldName)) {
-        return PatternVar_action_var_5730083271929368110;
+      if ("patternVar_action_var_5730083271929368110".equals(fieldName)) {
+        return patternVar_action_var_5730083271929368110;
       }
       return null;
     }
@@ -106,14 +105,14 @@ public class RuleAssertNull extends DataFlowConstructor {
           } else {
             position = ((Program) (o)).getEnd(object);
           }
-          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
           instruction.setSource(getFieldValue("PatternVar_action_var_5730083271929368110"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
     }
 
-    public static class Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public class Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a() {
       }
 
@@ -134,7 +133,7 @@ public class RuleAssertNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_ah97h0_a0a0a0a;
                 nodeToMatch_ah97h0_a0a0a0a = childVar_ah97h0_a0a0a0a;
-                PatternVar_p = nodeToMatch_ah97h0_a0a0a0a;
+                patternVar_p = nodeToMatch_ah97h0_a0a0a0a;
               }
             }
           }
@@ -173,7 +172,7 @@ public class RuleAssertNull extends DataFlowConstructor {
       }
     }
 
-    public static class Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public class Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a() {
       }
 
@@ -210,7 +209,7 @@ public class RuleAssertNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_ah97h0_a0b0a0a_0;
                 nodeToMatch_ah97h0_a0b0a0a_0 = childVar_ah97h0_a0b0a0a_0;
-                PatternVar_p = nodeToMatch_ah97h0_a0b0a0a_0;
+                patternVar_p = nodeToMatch_ah97h0_a0b0a0a_0;
               }
             }
           }

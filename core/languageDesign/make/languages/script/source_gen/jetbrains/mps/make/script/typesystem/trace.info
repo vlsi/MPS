@@ -8,14 +8,14 @@
   <unitInfo fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule$QuotationClass_9rsqz7_a1a0a0" />
   <unitInfo fileName="typeof_RelayQueryExpression_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryExpression_InferenceRule$QuotationClass_7onn49_a0a0a0" />
   <unitInfo fileName="typeof_OptionExpression_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule$QuotationClass_2d0o4o_a0a0a0" />
+  <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="55" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule$Pattern_v5k8je_a0a0a0a3" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="54" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule$Pattern_v5k8je_a0a0a0a3" />
   <unitInfo fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule" />
   <unitInfo fileName="typeof_AllWorkLeftExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_AllWorkLeftExpression_InferenceRule" />
   <unitInfo fileName="typeof_RelayQueryExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryExpression_InferenceRule" />
   <unitInfo fileName="typeof_OptionExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule" />
   <unitInfo fileName="typeof_OutputResources_InferenceRule.java" startLine="46" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule$QuotationClass_rptc1i_a0a0a0" />
-  <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
+  <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
   <unitInfo fileName="typeof_BeginWorkStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_BeginWorkStatement_InferenceRule" />
   <unitInfo fileName="typeof_OutputResources_InferenceRule.java" startLine="18" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule" />
   <unitInfo fileName="typeof_DoneWorkStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_DoneWorkStatement_InferenceRule" />
@@ -61,8 +61,8 @@
     <scopeInfo nodeId="1977954644795311538" fileName="typeof_RelayQueryExpression_InferenceRule.java" startLine="23" startPosition="116" endLine="29" endPosition="5" />
   </root>
   <root nodeId="2360002718792535571">
-    <nodeInfo nodeId="2360002718792583534" fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2360002718792535573" fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <nodeInfo nodeId="2360002718792583534" fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="23" startPosition="86" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2360002718792535573" fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="23" startPosition="86" endLine="24" endPosition="16" />
   </root>
   <root nodeId="2360002718792583537">
     <nodeInfo nodeId="2360002718792583542" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
