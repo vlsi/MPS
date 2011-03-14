@@ -783,35 +783,24 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.MoveNodeRange_Test" file="MoveNodeRange_Test.java">
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.MovingNode_Test" file="MovingNode_Test.java">
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
@@ -1249,16 +1238,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.SelectionByShiftArrows_Test" file="SelectionByShiftArrows_Test.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>

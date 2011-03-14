@@ -8,11 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import javax.swing.SwingUtilities;
-import java.awt.event.ActionListener;
-import javax.swing.KeyStroke;
 
 @MPSLaunch
 public class MoveNodeRange_Test extends BaseTransformationTest {
@@ -28,14 +23,9 @@ public class MoveNodeRange_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7247887419163198992", "7247887419163198996");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ActionListener actionListener = editor.getCurrentEditorComponent().getActionForKeyStroke(KeyStroke.getKeyStroke("alt UP"));
-          actionListener.actionPerformed(null);
-        }
-      });
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectNext_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectNext_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
     }
   }
 }

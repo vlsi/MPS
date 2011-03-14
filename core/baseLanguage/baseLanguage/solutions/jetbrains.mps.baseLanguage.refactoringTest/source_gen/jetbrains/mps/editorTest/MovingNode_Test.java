@@ -8,9 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import javax.swing.SwingUtilities;
-import java.awt.event.ActionListener;
-import javax.swing.KeyStroke;
 
 @MPSLaunch
 public class MovingNode_Test extends BaseTransformationTest {
@@ -27,12 +24,7 @@ public class MovingNode_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("1452412866770394613", "1452412866770394617");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       final IEditor editorVar = editor;
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ActionListener actionListener = editorVar.getCurrentEditorComponent().getActionForKeyStroke(KeyStroke.getKeyStroke("alt DOWN"));
-          actionListener.actionPerformed(null);
-        }
-      });
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
   }
 }
