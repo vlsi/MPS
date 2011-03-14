@@ -29,7 +29,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternListPattern_Test$TestBody", "testListPattern", true);
   }
 
@@ -112,11 +112,11 @@ public class PatternListPattern_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_i79cpz_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public static List<SNode> PatternVar_list;
-      public static SNode PatternVar_ignore;
-      public static SNode PatternVar_field;
-      public static SNode PatternVar_className;
-      public static SNode PatternVar_method;
+      /*package*/ List<SNode> patternVar_list;
+      /*package*/ SNode patternVar_ignore;
+      /*package*/ SNode patternVar_field;
+      /*package*/ SNode patternVar_className;
+      /*package*/ SNode patternVar_method;
 
       public Pattern_i79cpz_a0a1a1a() {
       }
@@ -141,14 +141,14 @@ public class PatternListPattern_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_9twfax_a0a.getConceptFqName()))) {
                   return false;
                 }
-                PatternVar_method = nodeToMatch_9twfax_a0a.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_9twfax_a0a.getReferent("baseMethodDeclaration");
                 {
                   String childRole_9twfax__0 = "actualArgument";
-                  this.PatternVar_list = ListSequence.fromList(new ArrayList<SNode>());
-                  PatternVar_ignore = null;
+                  this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
+                  patternVar_ignore = null;
                   for (SNode childVar : nodeToMatch_9twfax_a0a.getChildren(childRole_9twfax__0)) {
-                    PatternVar_ignore = childVar;
-                    ListSequence.fromList(this.PatternVar_list).addElement(childVar);
+                    patternVar_ignore = childVar;
+                    ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }
                 }
               }
@@ -167,8 +167,8 @@ public class PatternListPattern_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_9twfax_a0a_0.getConceptFqName()))) {
                   return false;
                 }
-                PatternVar_field = nodeToMatch_9twfax_a0a_0.getReferent("variableDeclaration");
-                PatternVar_className = nodeToMatch_9twfax_a0a_0.getReferent("classifier");
+                patternVar_field = nodeToMatch_9twfax_a0a_0.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_9twfax_a0a_0.getReferent("classifier");
               }
             }
           }
@@ -182,29 +182,29 @@ public class PatternListPattern_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          PatternVar_list = (List<SNode>) pattern.getFieldValue("PatternVar_list");
-          PatternVar_ignore = (SNode) pattern.getFieldValue("PatternVar_ignore");
-          PatternVar_field = (SNode) pattern.getFieldValue("PatternVar_field");
-          PatternVar_className = (SNode) pattern.getFieldValue("PatternVar_className");
-          PatternVar_method = (SNode) pattern.getFieldValue("PatternVar_method");
+          patternVar_list = (List<SNode>) pattern.getFieldValue("patternVar_list");
+          patternVar_ignore = (SNode) pattern.getFieldValue("patternVar_ignore");
+          patternVar_field = (SNode) pattern.getFieldValue("patternVar_field");
+          patternVar_className = (SNode) pattern.getFieldValue("patternVar_className");
+          patternVar_method = (SNode) pattern.getFieldValue("patternVar_method");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_list".equals(fieldName)) {
-          return PatternVar_list;
+        if ("patternVar_list".equals(fieldName)) {
+          return patternVar_list;
         }
-        if ("PatternVar_ignore".equals(fieldName)) {
-          return PatternVar_ignore;
+        if ("patternVar_ignore".equals(fieldName)) {
+          return patternVar_ignore;
         }
-        if ("PatternVar_field".equals(fieldName)) {
-          return PatternVar_field;
+        if ("patternVar_field".equals(fieldName)) {
+          return patternVar_field;
         }
-        if ("PatternVar_className".equals(fieldName)) {
-          return PatternVar_className;
+        if ("patternVar_className".equals(fieldName)) {
+          return patternVar_className;
         }
-        if ("PatternVar_method".equals(fieldName)) {
-          return PatternVar_method;
+        if ("patternVar_method".equals(fieldName)) {
+          return patternVar_method;
         }
         return null;
       }

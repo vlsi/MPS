@@ -25,7 +25,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternProperty_Test$TestBody", "testProperty", true);
   }
 
@@ -94,10 +94,10 @@ public class PatternProperty_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_xihehy_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public static SNode PatternVar_field;
-      public static SNode PatternVar_className;
-      public static SNode PatternVar_method;
-      public static String PatternVar_printed;
+      /*package*/ SNode patternVar_field;
+      /*package*/ SNode patternVar_className;
+      /*package*/ SNode patternVar_method;
+      /*package*/ String patternVar_printed;
 
       public Pattern_xihehy_a0a1a1a() {
       }
@@ -122,7 +122,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_ru5khm_a0a.getConceptFqName()))) {
                   return false;
                 }
-                PatternVar_method = nodeToMatch_ru5khm_a0a.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_ru5khm_a0a.getReferent("baseMethodDeclaration");
                 {
                   String childRole_ru5khm__0 = "actualArgument";
                   if (nodeToMatch_ru5khm_a0a.getChildCount(childRole_ru5khm__0) != 1) {
@@ -136,7 +136,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
                       if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_ru5khm_a0a0.getConceptFqName()))) {
                         return false;
                       }
-                      PatternVar_printed = nodeToMatch_ru5khm_a0a0.getProperty("value");
+                      patternVar_printed = nodeToMatch_ru5khm_a0a0.getProperty("value");
                     }
                   }
                 }
@@ -156,8 +156,8 @@ public class PatternProperty_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ru5khm_a0a_0.getConceptFqName()))) {
                   return false;
                 }
-                PatternVar_field = nodeToMatch_ru5khm_a0a_0.getReferent("variableDeclaration");
-                PatternVar_className = nodeToMatch_ru5khm_a0a_0.getReferent("classifier");
+                patternVar_field = nodeToMatch_ru5khm_a0a_0.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_ru5khm_a0a_0.getReferent("classifier");
               }
             }
           }
@@ -171,25 +171,25 @@ public class PatternProperty_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          PatternVar_field = (SNode) pattern.getFieldValue("PatternVar_field");
-          PatternVar_className = (SNode) pattern.getFieldValue("PatternVar_className");
-          PatternVar_method = (SNode) pattern.getFieldValue("PatternVar_method");
-          PatternVar_printed = (String) pattern.getFieldValue("PatternVar_printed");
+          patternVar_field = (SNode) pattern.getFieldValue("patternVar_field");
+          patternVar_className = (SNode) pattern.getFieldValue("patternVar_className");
+          patternVar_method = (SNode) pattern.getFieldValue("patternVar_method");
+          patternVar_printed = (String) pattern.getFieldValue("patternVar_printed");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_field".equals(fieldName)) {
-          return PatternVar_field;
+        if ("patternVar_field".equals(fieldName)) {
+          return patternVar_field;
         }
-        if ("PatternVar_className".equals(fieldName)) {
-          return PatternVar_className;
+        if ("patternVar_className".equals(fieldName)) {
+          return patternVar_className;
         }
-        if ("PatternVar_method".equals(fieldName)) {
-          return PatternVar_method;
+        if ("patternVar_method".equals(fieldName)) {
+          return patternVar_method;
         }
-        if ("PatternVar_printed".equals(fieldName)) {
-          return PatternVar_printed;
+        if ("patternVar_printed".equals(fieldName)) {
+          return patternVar_printed;
         }
         return null;
       }
