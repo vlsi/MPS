@@ -75,26 +75,30 @@ public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor() {
     this.myThis = this;
     JUnitConfigEditor component = this;
-    myThis.setGroup(new ButtonGroup());
-    myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
-      public void run() {
-        myThis.setProject(myThis.findProjectFromContext());
-        if (myThis.getProject() != null && myThis.getProject().getProject() != null) {
-          myThis.setProjectName(myThis.getProject().getProject().getName());
-          if (myThis.myProjectName_d3c0 != null) {
-            myThis.myProjectName_d3c0.setText(myThis.getProjectName());
-          }
-          if (myThis.myTestCases_d0 != null) {
-            myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
-          }
-          if (myThis.myTestMethods_e0 != null) {
-            myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+    {
+      final JUnitConfigEditor _this = myThis;
+      _this.setGroup(new ButtonGroup());
+      _this.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      _this.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      // todo -- problem with generation: this stopped working in the anonimous class 
+      IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+        public void run() {
+          _this.setProject(_this.findProjectFromContext());
+          if (_this.getProject() != null && _this.getProject().getProject() != null) {
+            _this.setProjectName(_this.getProject().getProject().getName());
+            if (myThis.myProjectName_d3c0 != null) {
+              myThis.myProjectName_d3c0.setText(_this.getProjectName());
+            }
+            if (myThis.myTestCases_d0 != null) {
+              myThis.myTestCases_d0.setProject(_this.getProject().getProject());
+            }
+            if (myThis.myTestMethods_e0 != null) {
+              myThis.myTestMethods_e0.setProject(_this.getProject().getProject());
+            }
           }
         }
-      }
-    });
+      });
+    }
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_b0(), LayoutUtil.createFieldConstraints(0));
     component.add(this.createComponent_c0(), LayoutUtil.createPanelConstraints(1));

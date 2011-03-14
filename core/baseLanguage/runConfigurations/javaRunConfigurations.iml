@@ -17,6 +17,7 @@
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="plugin" />
   </component>
 </module>
 

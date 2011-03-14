@@ -121,11 +121,11 @@ public class Java_Command {
 
   }
 
-  private static String fs() {
+  public static String fs() {
     return System.getProperty("file.separator");
   }
 
-  private static String ps() {
+  public static String ps() {
     return System.getProperty("path.separator");
   }
 
