@@ -156,7 +156,7 @@ public class RuleEqualsNull extends DataFlowConstructor {
 
     public void performActions(Object o) {
       {
-        Object object = getFieldValue("PatternVar_f");
+        Object object = getFieldValue("patternVar_f");
         if (((Program) o).contains(object)) {
           boolean before = true;
           int position;
@@ -166,12 +166,12 @@ public class RuleEqualsNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_f"));
+          instruction.setSource(getFieldValue("patternVar_f"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
       {
-        Object object = getFieldValue("PatternVar_fd");
+        Object object = getFieldValue("patternVar_fd");
         if (((Program) o).contains(object)) {
           boolean before = false;
           int position;
@@ -181,12 +181,12 @@ public class RuleEqualsNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new nullableInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_fd"));
+          instruction.setSource(getFieldValue("patternVar_fd"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
       {
-        Object object = getFieldValue("PatternVar_d");
+        Object object = getFieldValue("patternVar_d");
         if (((Program) o).contains(object)) {
           boolean before = true;
           int position;
@@ -196,7 +196,7 @@ public class RuleEqualsNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new nullInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_d"));
+          instruction.setSource(getFieldValue("patternVar_d"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }

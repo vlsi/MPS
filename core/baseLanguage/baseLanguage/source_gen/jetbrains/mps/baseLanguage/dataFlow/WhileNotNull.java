@@ -112,7 +112,7 @@ public class WhileNotNull extends DataFlowConstructor {
 
     public void performActions(Object o) {
       {
-        Object object = getFieldValue("PatternVar_body");
+        Object object = getFieldValue("patternVar_body");
         if (((Program) o).contains(object)) {
           boolean before = true;
           int position;
@@ -122,7 +122,7 @@ public class WhileNotNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_body"));
+          instruction.setSource(getFieldValue("patternVar_body"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }

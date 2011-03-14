@@ -96,7 +96,7 @@ public class RuleAssertNull extends DataFlowConstructor {
 
     public void performActions(Object o) {
       {
-        Object object = getFieldValue("PatternVar_action_var_5730083271929368110");
+        Object object = getFieldValue("patternVar_action_var_5730083271929368110");
         if (((Program) o).contains(object)) {
           boolean before = false;
           int position;
@@ -106,7 +106,7 @@ public class RuleAssertNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_action_var_5730083271929368110"));
+          instruction.setSource(getFieldValue("patternVar_action_var_5730083271929368110"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
