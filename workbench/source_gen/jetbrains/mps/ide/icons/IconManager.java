@@ -14,6 +14,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -119,7 +120,8 @@ public class IconManager {
         if (model.isDisposed()) {
           return mainIcon;
         }
-        if (model.isNotEditable()) {
+        if (!SModelStereotype.isUserModel(model) || model.getModelDescriptor() instanceof EditableSModelDescriptor
+            && ((EditableSModelDescriptor) model.getModelDescriptor()).isPackaged()) {
           mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
