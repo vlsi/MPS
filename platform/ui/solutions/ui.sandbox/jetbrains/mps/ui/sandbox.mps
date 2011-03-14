@@ -23,6 +23,8 @@
   <import index="lb0i" modelUID="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" version="-1" implicit="yes" />
   <import index="1taj" modelUID="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" version="-1" implicit="yes" />
   <import index="3ly5" modelUID="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" version="-1" implicit="yes" />
+  <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" version="-1" implicit="yes" />
+  <import index="ries" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7046856741208198715">
       <property name="name" nameId="tpck.1169194664001" value="UIDemo" />
@@ -870,10 +872,10 @@
   </root>
   <root id="7046856741208290890">
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="7046856741208293875">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="143.~User" resolveInfo="User" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="vibg.~User" resolveInfo="User" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="7046856741208356230">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="smp9.~Standard" resolveInfo="Standard" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="ries.~Standard" resolveInfo="Standard" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Source" typeId="k1iy.1572321421811416498" id="7046856741208290898">
       <node role="pattern" roleId="k1iy.1572321421811299560" type="k1iy.Exclude" typeId="k1iy.1572321421811299558" id="7046856741208290903">
