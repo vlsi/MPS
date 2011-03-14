@@ -53,7 +53,7 @@ public class Patternv2_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv2_Test.TestBody.QuotationClass_ofki36_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_ifbody"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv2_Test.TestBody.QuotationClass_ofki36_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_ifbody"))));
       return true;
     }
 
@@ -171,8 +171,8 @@ public class Patternv2_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_ofki36_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public static SNode PatternVar_p;
-      public static SNode PatternVar_ifbody;
+      /*package*/ SNode patternVar_p;
+      /*package*/ SNode patternVar_ifbody;
 
       public Pattern_ofki36_a0a1a1a() {
       }
@@ -201,22 +201,22 @@ public class Patternv2_Test extends BaseTransformationTest {
                   return false;
                 }
                 {
-                  String childRole_1fi__1 = "ifTrue";
+                  String childRole_1fi__0 = "ifTrue";
+                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__0) != 1) {
+                    return false;
+                  }
+                  {
+                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__0).get(0);
+                    this.patternVar_ifbody = childVar_1fi_a1a0;
+                  }
+                }
+                {
+                  String childRole_1fi__1 = "condition";
                   if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__1) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__1).get(0);
-                    this.PatternVar_ifbody = childVar_1fi_a1a0;
-                  }
-                }
-                {
-                  String childRole_1fi__2 = "condition";
-                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__2) != 1) {
-                    return false;
-                  }
-                  {
-                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__2).get(0);
+                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__1).get(0);
                     {
                       SNode nodeToMatch_1fi_a1a0;
                       nodeToMatch_1fi_a1a0 = childVar_1fi_a1a0_0;
@@ -224,22 +224,22 @@ public class Patternv2_Test extends BaseTransformationTest {
                         return false;
                       }
                       {
-                        String childRole_1fi__3 = "leftExpression";
+                        String childRole_1fi__2 = "leftExpression";
+                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__2) != 1) {
+                          return false;
+                        }
+                        {
+                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__2).get(0);
+                          this.patternVar_p = childVar_1fi_a0b0a;
+                        }
+                      }
+                      {
+                        String childRole_1fi__3 = "rightExpression";
                         if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__3) != 1) {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__3).get(0);
-                          this.PatternVar_p = childVar_1fi_a0b0a;
-                        }
-                      }
-                      {
-                        String childRole_1fi__4 = "rightExpression";
-                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__4) != 1) {
-                          return false;
-                        }
-                        {
-                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__4).get(0);
+                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__3).get(0);
                           {
                             SNode nodeToMatch_1fi_a0b0a;
                             nodeToMatch_1fi_a0b0a = childVar_1fi_a0b0a_0;
@@ -268,17 +268,17 @@ public class Patternv2_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-          PatternVar_ifbody = (SNode) pattern.getFieldValue("PatternVar_ifbody");
+          patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+          patternVar_ifbody = (SNode) pattern.getFieldValue("patternVar_ifbody");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_p".equals(fieldName)) {
-          return PatternVar_p;
+        if ("patternVar_p".equals(fieldName)) {
+          return patternVar_p;
         }
-        if ("PatternVar_ifbody".equals(fieldName)) {
-          return PatternVar_ifbody;
+        if ("patternVar_ifbody".equals(fieldName)) {
+          return patternVar_ifbody;
         }
         return null;
       }

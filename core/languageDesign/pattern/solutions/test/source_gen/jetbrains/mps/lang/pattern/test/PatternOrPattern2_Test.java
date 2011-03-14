@@ -53,7 +53,8 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern2_Test.TestBody.QuotationClass_49ctdq_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_s"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern2_Test.TestBody.QuotationClass_49ctdq_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("" +
+        "patternVar_s"))));
       return true;
     }
 
@@ -106,9 +107,8 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_49ctdq_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public static SNode PatternVar_body;
-      public static SNode PatternVar_s;
-
+      /*package*/ SNode patternVar_body;
+      /*package*/ SNode patternVar_s;
       private GeneratedMatchingPattern myOrPattern_pf9dr6_a0a;
 
       public Pattern_49ctdq_a0a1a1a() {
@@ -141,7 +141,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
                   }
                   {
                     SNode childVar_pf9dr6_a0a0 = nodeToMatch_pf9dr6_a0a.getChildren(childRole_pf9dr6__0).get(0);
-                    this.PatternVar_body = childVar_pf9dr6_a0a0;
+                    this.patternVar_body = childVar_pf9dr6_a0a0;
                   }
                 }
               }
@@ -187,17 +187,17 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-          PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          patternVar_body = (SNode) pattern.getFieldValue("patternVar_body");
+          patternVar_s = (SNode) pattern.getFieldValue("patternVar_s");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_body".equals(fieldName)) {
-          return PatternVar_body;
+        if ("patternVar_body".equals(fieldName)) {
+          return patternVar_body;
         }
-        if ("PatternVar_s".equals(fieldName)) {
-          return PatternVar_s;
+        if ("patternVar_s".equals(fieldName)) {
+          return patternVar_s;
         }
         return null;
       }
@@ -205,7 +205,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
       public void performActions(Object o) {
       }
 
-      public static class Pattern_49ctdq_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_49ctdq_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_49ctdq_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -226,7 +226,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_pf9dr6_a0a0a0;
                   nodeToMatch_pf9dr6_a0a0a0 = childVar_pf9dr6_a0a0a0;
-                  PatternVar_s = nodeToMatch_pf9dr6_a0a0a0;
+                  patternVar_s = nodeToMatch_pf9dr6_a0a0a0;
                 }
               }
             }
@@ -265,7 +265,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
         }
       }
 
-      public static class Pattern_49ctdq_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_49ctdq_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_49ctdq_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -302,7 +302,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_pf9dr6_a0b0a0_0;
                   nodeToMatch_pf9dr6_a0b0a0_0 = childVar_pf9dr6_a0b0a0_0;
-                  PatternVar_s = nodeToMatch_pf9dr6_a0b0a0_0;
+                  patternVar_s = nodeToMatch_pf9dr6_a0b0a0_0;
                 }
               }
             }

@@ -306,9 +306,8 @@ public class Classifier_Behavior {
   }
 
   public static class Pattern_qw8l7c_a1a0a0a71 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static List<SNode> PatternVar_l;
-    public static SNode PatternVar_foo;
-
+    /*package*/ List<SNode> patternVar_l;
+    /*package*/ SNode patternVar_foo;
     /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a61;
 
     public Pattern_qw8l7c_a1a0a0a71(Object parameter_qw8l7c_a0a0a0a0a61) {
@@ -331,11 +330,11 @@ public class Classifier_Behavior {
         }
         {
           String childRole_qw8l7c_ = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          PatternVar_foo = null;
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_foo = null;
           for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_)) {
-            PatternVar_foo = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+            patternVar_foo = childVar;
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }
@@ -348,17 +347,17 @@ public class Classifier_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        PatternVar_foo = (SNode) pattern.getFieldValue("PatternVar_foo");
+        patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
+        patternVar_foo = (SNode) pattern.getFieldValue("patternVar_foo");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_l".equals(fieldName)) {
-        return PatternVar_l;
+      if ("patternVar_l".equals(fieldName)) {
+        return patternVar_l;
       }
-      if ("PatternVar_foo".equals(fieldName)) {
-        return PatternVar_foo;
+      if ("patternVar_foo".equals(fieldName)) {
+        return patternVar_foo;
       }
       return null;
     }

@@ -23,11 +23,12 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import java.util.ArrayList;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
-  private static SNodePointer SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a1a1a0a0a01 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 
   public static void init(SNode thisNode) {
   }
@@ -139,7 +140,7 @@ public class ClassifierType_Behavior {
         {
           SNode typeParam;
           SNode myParam;
-          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("PatternVar_l"))).iterator();
+          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
           Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
           while (true) {
             if (!(typeParam_iterator.hasNext())) {
@@ -240,9 +241,8 @@ public class ClassifierType_Behavior {
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a1a1a0a0a01.getNode();
-          if (nodeToMatch_hz3823_a0a0a0a0j.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferent("classifier")))) {
             return false;
           }
         }
@@ -266,9 +266,8 @@ public class ClassifierType_Behavior {
   }
 
   public static class Pattern_hz3823_a0a0a1a01 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static List<SNode> PatternVar_l;
-    public static SNode PatternVar_ignored;
-
+    /*package*/ List<SNode> patternVar_l;
+    /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_hz3823_a0a0a1a9;
 
     public Pattern_hz3823_a0a0a1a01(Object parameter_hz3823_a0a0a1a9) {
@@ -291,11 +290,11 @@ public class ClassifierType_Behavior {
         }
         {
           String childRole_hz3823_ = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          PatternVar_ignored = null;
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
-            PatternVar_ignored = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+            patternVar_ignored = childVar;
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }
@@ -308,17 +307,17 @@ public class ClassifierType_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        PatternVar_ignored = (SNode) pattern.getFieldValue("PatternVar_ignored");
+        patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
+        patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_l".equals(fieldName)) {
-        return PatternVar_l;
+      if ("patternVar_l".equals(fieldName)) {
+        return patternVar_l;
       }
-      if ("PatternVar_ignored".equals(fieldName)) {
-        return PatternVar_ignored;
+      if ("patternVar_ignored".equals(fieldName)) {
+        return patternVar_ignored;
       }
       return null;
     }

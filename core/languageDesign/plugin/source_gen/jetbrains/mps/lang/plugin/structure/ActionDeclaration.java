@@ -26,6 +26,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   public static final String IS_ALWAYS_VISIBLE = "isAlwaysVisible";
   public static final String OUTSIDE_COMMAND_EXECUTION = "outsideCommandExecution";
   public static final String UPDATE_BLOCK = "updateBlock";
+  public static final String ICON = "icon";
   public static final String EXECUTE_FUNCTION = "executeFunction";
   public static final String KEYSTROKE = "keystroke";
   public static final String METHOD_DECLARATION = "methodDeclaration";
@@ -124,6 +125,14 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
 
   public void setUpdateBlock(UpdateBlock node) {
     super.setChild(ActionDeclaration.UPDATE_BLOCK, node);
+  }
+
+  public IconResource getIcon() {
+    return (IconResource) this.getChild(IconResource.class, ActionDeclaration.ICON);
+  }
+
+  public void setIcon(IconResource node) {
+    super.setChild(ActionDeclaration.ICON, node);
   }
 
   public ExecuteBlock getExecuteFunction() {

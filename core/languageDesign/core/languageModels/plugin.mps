@@ -38,7 +38,7 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="2b02" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
   <import index="bw1v" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
-  <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
+  <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -54,7 +54,6 @@
       <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
       <property name="executeInNewThread" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/icons/find.png" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1209309487963">
       <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
@@ -64,7 +63,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
       <property name="executeInNewThread" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/icons/find.png" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1209825453635">
       <property name="name" nameId="tpck.1169194664001" value="FindLanguageUsages" />
@@ -81,7 +79,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Find Concepts Usages" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
       <property name="executeInNewThread" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/icons/find.png" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9077133196728617147">
       <property name="name" nameId="tpck.1169194664001" value="ConstraintsChecker" />
@@ -306,6 +303,9 @@
       <property name="name" nameId="tpck.1169194664001" value="model" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODEL" resolveInfo="MODEL" />
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091394">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/icons/find.png" />
+    </node>
   </root>
   <root id="1209309487963">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1209309519622">
@@ -525,6 +525,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1217420648398">
       <property name="name" nameId="tpck.1169194664001" value="scope" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dSCOPE" resolveInfo="SCOPE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091373">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/icons/find.png" />
     </node>
   </root>
   <root id="1209825453635">
@@ -1060,6 +1063,9 @@
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1225978220842">
       <property name="name" nameId="tpck.1169194664001" value="scope" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dSCOPE" resolveInfo="SCOPE" />
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4241251026052807971">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/icons/find.png" />
     </node>
   </root>
   <root id="9077133196728617147">

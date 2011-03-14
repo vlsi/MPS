@@ -14,9 +14,10 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_qc0dd6_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)", "~SNode");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -85,9 +86,8 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_qc0dd6_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_semtjk_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_semtjk_a0a.getReferent("classifier")))) {
             return false;
           }
         }

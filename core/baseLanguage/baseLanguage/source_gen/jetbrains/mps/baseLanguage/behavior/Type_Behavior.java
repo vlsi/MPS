@@ -325,7 +325,7 @@ public class Type_Behavior {
       {
         SNode nodeToMatch_smb55n_a0a0a41;
         nodeToMatch_smb55n_a0a0a41 = nodeToMatch;
-        if (MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_smb55n_a0a0a41)) {
+        if (!(MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_smb55n_a0a0a41))) {
           return false;
         }
       }

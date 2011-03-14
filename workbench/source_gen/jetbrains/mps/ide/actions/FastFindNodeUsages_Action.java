@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -26,7 +25,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class FastFindNodeUsages_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/find.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(FastFindNodeUsages_Action.class.getResource("find.png"));
   protected static Log log = LogFactory.getLog(FastFindNodeUsages_Action.class);
 
   public FastFindNodeUsages_Action() {

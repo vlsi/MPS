@@ -15,9 +15,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_36aa7y_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
+  private static SNodePointer SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -25,7 +26,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   }
 
   public SNode getSubOrSuperType(SNode iterator, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new supertypesOf_ClassifierType_Iterator_SubtypingRule.QuotationClass_36aa7y_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_p")), typeCheckingContext);
+    return new supertypesOf_ClassifierType_Iterator_SubtypingRule.QuotationClass_36aa7y_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_p")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -103,7 +104,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   }
 
   public static class Pattern_36aa7y_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_p;
+    /*package*/ SNode patternVar_p;
 
     public Pattern_36aa7y_a0a0a0a2() {
     }
@@ -116,9 +117,8 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_36aa7y_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_2lqiec_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_2lqiec_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -129,7 +129,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
           }
           {
             SNode childVar_2lqiec_a0a0 = nodeToMatch_2lqiec_a0a.getChildren(childRole_2lqiec_).get(0);
-            this.PatternVar_p = childVar_2lqiec_a0a0;
+            this.patternVar_p = childVar_2lqiec_a0a0;
           }
         }
       }
@@ -142,13 +142,13 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_p".equals(fieldName)) {
-        return PatternVar_p;
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
       }
       return null;
     }

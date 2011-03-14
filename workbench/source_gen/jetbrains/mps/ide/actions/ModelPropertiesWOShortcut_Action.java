@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelProperties.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(ModelPropertiesWOShortcut_Action.class.getResource("modelProperties.png"));
   protected static Log log = LogFactory.getLog(ModelPropertiesWOShortcut_Action.class);
 
   public ModelPropertiesWOShortcut_Action() {

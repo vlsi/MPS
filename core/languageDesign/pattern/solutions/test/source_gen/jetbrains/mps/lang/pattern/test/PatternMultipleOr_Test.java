@@ -50,7 +50,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternMultipleOr_Test.TestBody.QuotationClass_ay21uv_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_s"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternMultipleOr_Test.TestBody.QuotationClass_ay21uv_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_s"))));
       return true;
     }
 
@@ -128,8 +128,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_ay21uv_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public static SNode PatternVar_s;
-
+      /*package*/ SNode patternVar_s;
       private GeneratedMatchingPattern myOrPattern_qy0uft_a0a;
 
       public Pattern_ay21uv_a0a1a1a() {
@@ -208,13 +207,13 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          patternVar_s = (SNode) pattern.getFieldValue("patternVar_s");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_s".equals(fieldName)) {
-          return PatternVar_s;
+        if ("patternVar_s".equals(fieldName)) {
+          return patternVar_s;
         }
         return null;
       }
@@ -222,7 +221,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       public void performActions(Object o) {
       }
 
-      public static class Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -259,7 +258,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_qy0uft_a0a0a0_0;
                   nodeToMatch_qy0uft_a0a0a0_0 = childVar_qy0uft_a0a0a0_0;
-                  PatternVar_s = nodeToMatch_qy0uft_a0a0a0_0;
+                  patternVar_s = nodeToMatch_qy0uft_a0a0a0_0;
                 }
               }
             }
@@ -282,7 +281,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public static class Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -303,7 +302,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_qy0uft_a0b0a0;
                   nodeToMatch_qy0uft_a0b0a0 = childVar_qy0uft_a0b0a0;
-                  PatternVar_s = nodeToMatch_qy0uft_a0b0a0;
+                  patternVar_s = nodeToMatch_qy0uft_a0b0a0;
                 }
               }
             }
@@ -342,7 +341,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public static class Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -376,7 +375,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                       {
                         SNode nodeToMatch_qy0uft_a0a2a0a;
                         nodeToMatch_qy0uft_a0a2a0a = childVar_qy0uft_a0a2a0a;
-                        PatternVar_s = nodeToMatch_qy0uft_a0a2a0a;
+                        patternVar_s = nodeToMatch_qy0uft_a0a2a0a;
                       }
                     }
                   }
@@ -427,7 +426,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public static class Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public class Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -477,7 +476,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                       {
                         SNode nodeToMatch_qy0uft_a0a3a0a_0;
                         nodeToMatch_qy0uft_a0a3a0a_0 = childVar_qy0uft_a0a3a0a_0;
-                        PatternVar_s = nodeToMatch_qy0uft_a0a3a0a_0;
+                        patternVar_s = nodeToMatch_qy0uft_a0a3a0a_0;
                       }
                     }
                   }

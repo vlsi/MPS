@@ -22,7 +22,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_5z9xz6_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elementType")), typeCheckingContext);
+    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_5z9xz6_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_elementType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -100,7 +100,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public static class Pattern_5z9xz6_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_elementType;
+    /*package*/ SNode patternVar_elementType;
 
     public Pattern_5z9xz6_a0a0a0a2() {
     }
@@ -119,7 +119,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
           }
           {
             SNode childVar_twopzc_a0a0 = nodeToMatch_twopzc_a0a.getChildren(childRole_twopzc_).get(0);
-            this.PatternVar_elementType = childVar_twopzc_a0a0;
+            this.patternVar_elementType = childVar_twopzc_a0a0;
           }
         }
       }
@@ -132,13 +132,13 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
+        patternVar_elementType = (SNode) pattern.getFieldValue("patternVar_elementType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_elementType".equals(fieldName)) {
-        return PatternVar_elementType;
+      if ("patternVar_elementType".equals(fieldName)) {
+        return patternVar_elementType;
       }
       return null;
     }

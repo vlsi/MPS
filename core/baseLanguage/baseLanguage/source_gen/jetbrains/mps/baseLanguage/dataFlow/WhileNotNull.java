@@ -24,9 +24,8 @@ public class WhileNotNull extends DataFlowConstructor {
   }
 
   public static class Pattern_pezsk4_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_p;
-    public static SNode PatternVar_body;
-
+    /*package*/ SNode patternVar_p;
+    /*package*/ SNode patternVar_body;
     private GeneratedMatchingPattern myOrPattern_pezsk4_a0a0;
 
     public Pattern_pezsk4_a0a() {
@@ -53,7 +52,7 @@ public class WhileNotNull extends DataFlowConstructor {
                 return false;
               }
             }
-            this.PatternVar_body = childVar_pezsk4_a0a0;
+            this.patternVar_body = childVar_pezsk4_a0a0;
           }
         }
         {
@@ -96,24 +95,24 @@ public class WhileNotNull extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+        patternVar_body = (SNode) pattern.getFieldValue("patternVar_body");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_p".equals(fieldName)) {
-        return PatternVar_p;
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
       }
-      if ("PatternVar_body".equals(fieldName)) {
-        return PatternVar_body;
+      if ("patternVar_body".equals(fieldName)) {
+        return patternVar_body;
       }
       return null;
     }
 
     public void performActions(Object o) {
       {
-        Object object = getFieldValue("PatternVar_body");
+        Object object = getFieldValue("patternVar_body");
         if (((Program) o).contains(object)) {
           boolean before = true;
           int position;
@@ -122,14 +121,14 @@ public class WhileNotNull extends DataFlowConstructor {
           } else {
             position = ((Program) (o)).getEnd(object);
           }
-          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_body"));
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
+          instruction.setSource(getFieldValue("patternVar_body"));
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
     }
 
-    public static class Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public class Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a() {
       }
 
@@ -150,7 +149,7 @@ public class WhileNotNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_pezsk4_a0a0a0a;
                 nodeToMatch_pezsk4_a0a0a0a = childVar_pezsk4_a0a0a0a;
-                PatternVar_p = nodeToMatch_pezsk4_a0a0a0a;
+                patternVar_p = nodeToMatch_pezsk4_a0a0a0a;
               }
             }
           }
@@ -189,7 +188,7 @@ public class WhileNotNull extends DataFlowConstructor {
       }
     }
 
-    public static class Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public class Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a() {
       }
 
@@ -226,7 +225,7 @@ public class WhileNotNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_pezsk4_a0b0a0a_0;
                 nodeToMatch_pezsk4_a0b0a0a_0 = childVar_pezsk4_a0b0a0a_0;
-                PatternVar_p = nodeToMatch_pezsk4_a0b0a0a_0;
+                patternVar_p = nodeToMatch_pezsk4_a0b0a0a_0;
               }
             }
           }

@@ -54,13 +54,14 @@
   <unitInfo fileName="RunConfigCreator_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigCreator_Behavior" />
   <unitInfo fileName="OrderReference_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OrderReference_Behavior" />
   <unitInfo fileName="ActionGroupDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior" />
+  <unitInfo fileName="IconResource_Behavior.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
   <unitInfo fileName="MultitabbedEditorTab_Behavior.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.MultitabbedEditorTab_Behavior" />
   <unitInfo fileName="SingletabbedEditorTab_Behavior.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SingletabbedEditorTab_Behavior" />
   <unitInfo fileName="ParametrizedExecuteConsole_Behavior.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteConsole_Behavior$QuotationClass_n7vuic_a0a0b" />
   <unitInfo fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AbstractEnhancedConceptFunction_Behavior" />
   <unitInfo fileName="ParametrizedExecuteConsole_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteConsole_Behavior" />
   <unitInfo fileName="Order_Behavior.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.Order_Behavior" />
-  <unitInfo fileName="ActionDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
+  <unitInfo fileName="ActionDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
   <unitInfo fileName="BaseToolDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
   <unitInfo fileName="ICheckedNamePolicy_Behavior.java" startLine="13" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior" />
   <unitInfo fileName="ActionParameterDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_Behavior" />
@@ -459,8 +460,8 @@
     <scopeInfo nodeId="3636700473138833181" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="25" startPosition="141" endLine="26" endPosition="183" />
     <scopeInfo nodeId="3636700473138841123" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="30" startPosition="110" endLine="31" endPosition="275" />
     <scopeInfo nodeId="3636700473138833164" fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="21" startPosition="81" endLine="36" endPosition="44">
-      <varInfo nodeId="3636700473138833166" varName="conceptFunctionParameterConcepts" />
       <varInfo nodeId="3636700473138833173" varName="parametrizedExecuteBlock" />
+      <varInfo nodeId="3636700473138833166" varName="conceptFunctionParameterConcepts" />
       <varInfo nodeId="3636700473138841151" varName="root" />
     </scopeInfo>
   </root>
@@ -640,6 +641,32 @@
     <scopeInfo nodeId="8179323502814694239" fileName="RunConfigExecutionParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="8179323502814694243" fileName="RunConfigExecutionParameterDeclaration_Behavior.java" startLine="12" startPosition="106" endLine="13" endPosition="156" />
     <scopeInfo nodeId="4593153787954614903" fileName="RunConfigExecutionParameterDeclaration_Behavior.java" startLine="16" startPosition="107" endLine="17" endPosition="134" />
+  </root>
+  <root nodeId="8976425910813622806">
+    <nodeInfo nodeId="7846267543229743645" fileName="IconResource_Behavior.java" startLine="25" startPosition="25" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743654" fileName="IconResource_Behavior.java" startLine="26" startPosition="89" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743663" fileName="IconResource_Behavior.java" startLine="27" startPosition="66" endLine="28" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743670" fileName="IconResource_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743676" fileName="IconResource_Behavior.java" startLine="29" startPosition="85" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7846267543229743677" fileName="IconResource_Behavior.java" startLine="30" startPosition="0" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7846267543229743679" fileName="IconResource_Behavior.java" startLine="31" startPosition="16" endLine="32" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743691" fileName="IconResource_Behavior.java" startLine="32" startPosition="132" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7846267543229743698" fileName="IconResource_Behavior.java" startLine="33" startPosition="74" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7846267543229743699" fileName="IconResource_Behavior.java" startLine="34" startPosition="0" endLine="35" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7846267543229743637" fileName="IconResource_Behavior.java" startLine="24" startPosition="59" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7846267543229743156" fileName="IconResource_Behavior.java" startLine="23" startPosition="81" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8976425910813622808" fileName="IconResource_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="7846267543229743638" fileName="IconResource_Behavior.java" startLine="25" startPosition="25" endLine="35" endPosition="83">
+      <varInfo nodeId="7846267543229743646" varName="model" />
+      <varInfo nodeId="7846267543229743692" varName="sourceFile" />
+      <varInfo nodeId="7846267543229743680" varName="source" />
+      <varInfo nodeId="7846267543229743664" varName="outputRootFile" />
+      <varInfo nodeId="7846267543229743655" varName="outputRoot" />
+      <varInfo nodeId="7846267543229743671" varName="output" />
+    </scopeInfo>
+    <scopeInfo nodeId="7846267543229743637" fileName="IconResource_Behavior.java" startLine="24" startPosition="59" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8976425910813640828" fileName="IconResource_Behavior.java" startLine="23" startPosition="81" endLine="37" endPosition="7" />
+    <unitInfo nodeId="7846267543229743637" fileName="IconResource_Behavior.java" startLine="24" startPosition="47" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior$1" />
   </root>
   <root nodeId="9017024590937198544">
     <nodeInfo nodeId="9017024590937198564" fileName="PrepareConceptFunction_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

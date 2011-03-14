@@ -55,6 +55,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_azestd_a_0");
     editorCell.addEditorCell(this.createCollection_azestd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_azestd_b0(editorContext, node));
     return editorCell;
   }
 
@@ -67,6 +68,18 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     }
     editorCell.addEditorCell(this.createConstant_azestd_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_azestd_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_azestd_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_azestd_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_azestd_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_azestd_b1a(editorContext, node));
     return editorCell;
   }
 
@@ -107,8 +120,15 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_azestd_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make unique");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "non static");
     editorCell.setCellId("Constant_azestd_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_azestd_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make unique");
+    editorCell.setCellId("Constant_azestd_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -148,6 +168,24 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createProperty_azestd_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("nonStatic");
+    provider.setNoTargetText("<no nonStatic>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_nonStatic");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_azestd_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("makeUnique");
     provider.setNoTargetText("<no makeUnique>");

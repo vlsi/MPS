@@ -124,7 +124,7 @@ public class QueriesGenerated {
       GeneratedMatchingPattern pattern_x583g4_a0s = new QueriesGenerated.Pattern_x583g4_a0a0a0a81();
       SNode coercedNode_x583g4_a0s = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_x583g4_a0s);
       if (coercedNode_x583g4_a0s != null) {
-        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_x583g4_a0s.getFieldValue("PatternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_x583g4_a0s.getFieldValue("patternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
         return SNodeOperations.getModel(abstractConceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       } else {
       }
@@ -864,7 +864,7 @@ public class QueriesGenerated {
   }
 
   public static class Pattern_x583g4_a0a0a0a81 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_concept;
+    /*package*/ SNode patternVar_concept;
 
     public Pattern_x583g4_a0a0a0a81() {
     }
@@ -876,7 +876,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a0a81.getConceptFqName()))) {
           return false;
         }
-        PatternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
+        patternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
       }
       return true;
     }
@@ -887,13 +887,13 @@ public class QueriesGenerated {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_concept".equals(fieldName)) {
-        return PatternVar_concept;
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
       }
       return null;
     }

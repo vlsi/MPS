@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class StepInto_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(StepInto_Action.class.getResource("icons/stepInto.png"));
+  private static final Icon ICON = new ImageIcon(StepInto_Action.class.getResource("stepInto.png"));
   protected static Log log = LogFactory.getLog(StepInto_Action.class);
 
   public StepInto_Action() {

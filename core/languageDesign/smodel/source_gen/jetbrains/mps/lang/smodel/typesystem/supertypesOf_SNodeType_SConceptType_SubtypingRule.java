@@ -14,9 +14,10 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_6gcjzy_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+  private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -85,9 +86,8 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_6gcjzy_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_auyr2c_a0a.getReferent("concept") != referent) {
+          SNodePointer pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferent("concept")))) {
             return false;
           }
         }
