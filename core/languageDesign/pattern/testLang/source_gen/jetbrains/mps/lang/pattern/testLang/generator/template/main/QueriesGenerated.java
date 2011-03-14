@@ -21,15 +21,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1563914226484903755(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "PatternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1563914226484925040(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "PatternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1563914226484968044(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "PatternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "listPattern", false), "varName");
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "listPattern", false), "varName");
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637730(final IOperationContext operationContext, final PropertyMacroContext _context) {

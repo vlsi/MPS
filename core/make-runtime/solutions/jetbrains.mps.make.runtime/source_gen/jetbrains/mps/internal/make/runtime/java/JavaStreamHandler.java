@@ -82,6 +82,10 @@ public class JavaStreamHandler implements StreamHandler {
         if (mySavedFiles.contains(outputDirectoryFile)) {
           continue;
         }
+        // todo temporaty hack to fix tests (icons as resources) 
+        if (outputDirectoryFile.getName().endsWith(".png")) {
+          continue;
+        }
         filesToDelete.add(outputDirectoryFile);
       }
     }

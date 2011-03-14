@@ -29,7 +29,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternListPattern_Test$TestBody", "testListPattern", true);
   }
 
@@ -55,7 +55,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
         return true;
       }
       {
-        List<SNode> list = (List<SNode>) pattern.getFieldValue("PatternVar_list");
+        List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
         Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternListPattern_Test.TestBody.QuotationClass_i79cpz_a1b0a0c0g0b0().createNode())));
         i++;
