@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -36,7 +36,7 @@ public class ProcessBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_9ousyc_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9ousyc_a");
     editorCell.addEditorCell(this.createRefNodeList_9ousyc_a0(editorContext, node));
     if (renderingCondition_9ousyc_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -49,7 +49,7 @@ public class ProcessBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_9ousyc_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9ousyc_b0");
     {
       Style style = editorCell.getStyle();
@@ -61,7 +61,7 @@ public class ProcessBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_9ousyc_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9ousyc_c0");
     {
       Style style = editorCell.getStyle();
@@ -135,7 +135,7 @@ public class ProcessBuilderExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNodeList_9ousyc_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ProcessBuilderExpression_Editor.partListHandler_9ousyc_a0(node, "part", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;

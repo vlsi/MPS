@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.util.FileUtil;
+import java.io.PrintWriter;
 import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
+import java.io.FileNotFoundException;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.smodel.SNode;
@@ -68,11 +71,30 @@ public class Java_Command {
   public ProcessHandler createProcess() throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), Java_Command.ps());
-    return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build();
+    if (myProgramParameter.length() >= Java_Command.getMaxCommandLine()) {
+      File tmpFile = FileUtil.createTmpFile();
+      // we want to be sure that file is deleted, even when process is not started 
+      tmpFile.deleteOnExit();
+      try {
+        PrintWriter writer = new PrintWriter(tmpFile);
+        writer.append(myProgramParameter);
+        writer.flush();
+        writer.close();
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build();
+      } catch (FileNotFoundException e) {
+        throw new ExecutionException("Could not create temporal file for program parameters.", e);
+      }
+    } else {
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build();
+    }
   }
 
   public static IDebugger getDebugger() {
     return Debuggers.getInstance().getDebuggerByName("Java");
+  }
+
+  private static int getMaxCommandLine() {
+    return 16384;
   }
 
   public static List<String> getClasspath(final SNode node) {

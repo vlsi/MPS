@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.ReportErrorStatement_Behavior" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />

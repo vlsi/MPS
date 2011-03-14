@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.util.Calculable" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
   </dependency>

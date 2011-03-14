@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -87,6 +88,34 @@ public class QueriesGenerated {
             });
           }
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_2339523472236310452(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.ReportExecutionError");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SConceptOperations.createNewNode("jetbrains.mps.runConfigurations.structure.ReportExecutionError", null);
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "report execution error";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "report";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
       }
     }
     return result;
