@@ -140,7 +140,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     myIdeTooltip = new IdeTooltip(component, point, label) {
       @Override
       protected boolean canAutohideOn(TooltipEvent event) {
-        return false;
+        return !(event.isIsEventInsideBalloon());
       }
     };
     IdeTooltipManager.getInstance().show(myIdeTooltip, true);

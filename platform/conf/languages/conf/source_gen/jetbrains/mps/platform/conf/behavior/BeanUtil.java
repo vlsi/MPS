@@ -23,7 +23,6 @@ public class BeanUtil {
 
   public static boolean isBean(final SNode _this) {
     final SNode attrAnn = SLinkOperations.getTarget(new BeanUtil.QuotationClass_bgndvd_a0a0a0a().createNode(), "annotation", false);
-    System.out.println("*** Annotation=" + attrAnn);
     return ListSequence.fromList(SLinkOperations.getTargets(_this, "field", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "annotation", true);
@@ -34,7 +33,6 @@ public class BeanUtil {
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
-        System.out.println("***** Got " + ann + ", returning " + (attrAnn == ann));
         return attrAnn == ann;
       }
     });

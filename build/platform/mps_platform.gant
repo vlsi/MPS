@@ -58,8 +58,15 @@ def layoutFull(String home, String targetDirectory) {
         jar("resources.jar") {
           module("resources"){
             exclude(name: "**/IdeaPlugin.xml")
+            exclude(name: "componentSets/*")
           }
-          module("platform-resources")
+          module("platform-resources") {
+            exclude(name: "META-INF/LangExtensions.xml")
+            exclude(name: "META-INF/PlatformLangPlugin.xml")
+            exclude(name: "META-INF/PlatformLangXmlPlugin.xml")
+            exclude(name: "META-INF/XmlPlugin.xml")
+            exclude(name: "META-INF/XmlActions.xml")
+          }
         }
         jar("resources_en.jar") {
           module("resources-en")
@@ -84,6 +91,11 @@ def layoutFull(String home, String targetDirectory) {
           exclude(name: "foundrylogic-vpp-2.2.1.jar")
           exclude(name: "groovy-all-1.7.3.jar")
           exclude(name: "jaxen-1.1.1.jar")
+          exclude(name: "automaton.jar")
+          exclude(name: "jaxen-1.1.3.jar")
+          exclude(name: "junit-4.8.jar")
+          exclude(name: "junit.jar")
+          exclude(name: "winp-1.14.jar")
 
           //this is replaced by MPS asm.jar, which contains more packages
           exclude(name: "asm.jar")
@@ -172,7 +184,8 @@ private List platformImplementationModules() {
           "tests_bootstrap",
           "xml",
           "images",
-          "execution-openapi"
+          "execution-openapi",
+          "execution-impl"
   ]
 }
 

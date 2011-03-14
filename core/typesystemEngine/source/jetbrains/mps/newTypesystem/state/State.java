@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -141,6 +143,14 @@ public class State {
     assert addedAnew;
   }
 
+  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+    try{
+      executeOperation(new ApplyRuleOperation(node, rule, status));
+    } catch (Throwable t) {
+      LOG.error("an error occurred while applying rule to node " + node, t, node);
+    }
+  }
+
   public void substitute(SNode oldVar, SNode type) {
     for (ConditionKind conditionKind : new HashSet<ConditionKind>(myBlocksAndInputs.keySet())) {
       ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(conditionKind);
@@ -221,8 +231,8 @@ public class State {
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
-  public void addComparable(SNode left, SNode right, boolean isWeak, EquationInfo info) {
-     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
+  public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
+     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
   public NodeMaps getNodeMaps() {
@@ -327,10 +337,10 @@ public class State {
   }
 
   public void solveInequalities() {
-    if (!myInequalities.getInequalitiesToSolve().isEmpty()) {
+    if (!myInequalities.getRelationsToSolve().isEmpty()) {
       executeOperation(new SolveInequalitiesOperation(new Runnable() {
         public void run() {
-          myInequalities.solveInequalities();
+          myInequalities.solveRelations();
         }
       }));
     }

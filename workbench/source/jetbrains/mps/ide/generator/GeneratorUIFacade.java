@@ -190,8 +190,6 @@ public class GeneratorUIFacade {
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(@NotNull ProgressIndicator progress) {
-        GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-
         if (!saveTransientModels) {
           IGenerationTracer component = project.getComponent(IGenerationTracer.class);
           if (component != null) {
@@ -246,7 +244,7 @@ public class GeneratorUIFacade {
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
           .create();
 
-        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
       }
     }, "Generation", true, invocationContext.getProject());
 

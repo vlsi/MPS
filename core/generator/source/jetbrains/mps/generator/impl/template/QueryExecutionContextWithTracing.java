@@ -110,6 +110,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
+  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    try {
+      tracer.push(taskName("insert node query", query), true);
+      return wrapped.evaluateInsertQuery(inputNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
   public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("context for template fragment", templateFragmentNode), true);

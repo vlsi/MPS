@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.IntentionsDescriptor" />
   <unitInfo fileName="RemoveConditions_Intention.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention" />
   <unitInfo fileName="AddConditions_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.AddConditions_Intention" />
   <root nodeId="6302815655306137097">

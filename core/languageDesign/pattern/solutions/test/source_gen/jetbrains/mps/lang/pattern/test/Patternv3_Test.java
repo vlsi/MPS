@@ -28,7 +28,7 @@ public class Patternv3_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.Patternv3_Test$TestBody", "testv3", true);
   }
 
@@ -97,10 +97,10 @@ public class Patternv3_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_oo3baa_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_printed;
-      /*package*/ SNode PatternVar_field;
-      /*package*/ SNode PatternVar_className;
-      /*package*/ SNode PatternVar_method;
+      /*package*/ SNode patternVar_printed;
+      /*package*/ SNode patternVar_field;
+      /*package*/ SNode patternVar_className;
+      /*package*/ SNode patternVar_method;
 
       public Pattern_oo3baa_a0a1a1a() {
       }
@@ -125,7 +125,7 @@ public class Patternv3_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1fi_a0a.getConceptFqName()))) {
                   return false;
                 }
-                this.PatternVar_method = nodeToMatch_1fi_a0a.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_1fi_a0a.getReferent("baseMethodDeclaration");
                 {
                   String childRole_1fi__5 = "actualArgument";
                   if (nodeToMatch_1fi_a0a.getChildCount(childRole_1fi__5) != 1) {
@@ -133,7 +133,7 @@ public class Patternv3_Test extends BaseTransformationTest {
                   }
                   {
                     SNode childVar_1fi_a0a0 = nodeToMatch_1fi_a0a.getChildren(childRole_1fi__5).get(0);
-                    this.PatternVar_printed = childVar_1fi_a0a0;
+                    this.patternVar_printed = childVar_1fi_a0a0;
                   }
                 }
               }
@@ -152,8 +152,8 @@ public class Patternv3_Test extends BaseTransformationTest {
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1fi_a0a_0.getConceptFqName()))) {
                   return false;
                 }
-                this.PatternVar_field = nodeToMatch_1fi_a0a_0.getReferent("variableDeclaration");
-                this.PatternVar_className = nodeToMatch_1fi_a0a_0.getReferent("classifier");
+                patternVar_field = nodeToMatch_1fi_a0a_0.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_1fi_a0a_0.getReferent("classifier");
               }
             }
           }
@@ -167,25 +167,25 @@ public class Patternv3_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_printed = (SNode) pattern.getFieldValue("PatternVar_printed");
-          this.PatternVar_field = (SNode) pattern.getFieldValue("PatternVar_field");
-          this.PatternVar_className = (SNode) pattern.getFieldValue("PatternVar_className");
-          this.PatternVar_method = (SNode) pattern.getFieldValue("PatternVar_method");
+          patternVar_printed = (SNode) pattern.getFieldValue("patternVar_printed");
+          patternVar_field = (SNode) pattern.getFieldValue("patternVar_field");
+          patternVar_className = (SNode) pattern.getFieldValue("patternVar_className");
+          patternVar_method = (SNode) pattern.getFieldValue("patternVar_method");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_printed".equals(fieldName)) {
-          return this.PatternVar_printed;
+        if ("patternVar_printed".equals(fieldName)) {
+          return patternVar_printed;
         }
-        if ("PatternVar_field".equals(fieldName)) {
-          return this.PatternVar_field;
+        if ("patternVar_field".equals(fieldName)) {
+          return patternVar_field;
         }
-        if ("PatternVar_className".equals(fieldName)) {
-          return this.PatternVar_className;
+        if ("patternVar_className".equals(fieldName)) {
+          return patternVar_className;
         }
-        if ("PatternVar_method".equals(fieldName)) {
-          return this.PatternVar_method;
+        if ("patternVar_method".equals(fieldName)) {
+          return patternVar_method;
         }
         return null;
       }

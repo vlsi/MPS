@@ -25,21 +25,21 @@ import java.util.*;
 public class StubReloadManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
 
-  private MPSModuleRepository myRepos;
+  private MPSModuleRepository myModuleRepository;
 
   private Map<StubPath, Map<ModuleId, PathData>> myPath2Data = new HashMap<StubPath, Map<ModuleId, PathData>>();
 
   private List<String> myLoadedSolutions = new ArrayList<String>();
   private MyStubPaths myLoadedStubPaths = new MyStubPaths();
-  private List<StubPath> myNotChangedStubPaths;
+  private Set<StubPath> myUnchangedStubPaths;
 
-  public StubReloadManager(MPSModuleRepository repos) {
-    myRepos = repos;
+  public StubReloadManager(MPSModuleRepository moduleRepository) {
+    myModuleRepository = moduleRepository;
   }
 
   public void reload() {
     loadNewStubSolutions();
-    updateNotChangedStubPaths();
+    buildUnchangedPaths();
     disposeStubManagers();
 
     markOldStubs();
@@ -100,7 +100,7 @@ public class StubReloadManager implements ApplicationComponent {
       if (myLoadedSolutions.contains(d.getModuleId())) continue;
 
       myLoadedSolutions.add(d.getModuleId());
-      Solution solution = this.myRepos.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
+      Solution solution = myModuleRepository.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
       assert solution != null : d.getModuleName();
 
       SolutionDescriptor sd = solution.getModuleDescriptor();
@@ -131,7 +131,7 @@ public class StubReloadManager implements ApplicationComponent {
   private List<BaseLibStubDescriptor> createLibDescrs() {
     List<BaseLibStubDescriptor> result = new ArrayList<BaseLibStubDescriptor>();
 
-    List<Language> languages = this.myRepos.getAllLanguages();
+    List<Language> languages = myModuleRepository.getAllLanguages();
     for (Language l : languages) {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;
@@ -166,9 +166,9 @@ public class StubReloadManager implements ApplicationComponent {
       if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
       BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
-      if (modelPathsNotChanged(baseDescriptor)) continue;
-
-      baseDescriptor.markReload();
+      if (modelPathsAffected(baseDescriptor)) {
+        baseDescriptor.markReload();
+      }
     }
   }
 
@@ -197,7 +197,7 @@ public class StubReloadManager implements ApplicationComponent {
   private void releaseOldStubDescriptors() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      if (!StubReloadManager.getInstance().needsFullReload(((BaseStubModelDescriptor) sm))) continue;
+      if (!needsFullReload(((BaseStubModelDescriptor) sm))) continue;
 
       SModelRepository.getInstance().removeModelDescriptor(sm);
     }
@@ -255,7 +255,8 @@ public class StubReloadManager implements ApplicationComponent {
     for (AbstractModule m : getAllModules()) {
       for (StubPath sp : getModuleStubPaths(m)) {
         //error was already reported in loadNewStubs
-        if (myPath2Data.get(sp) == null || myPath2Data.get(sp).get(m.getModuleReference().getModuleId()) == null) continue;
+        if (myPath2Data.get(sp) == null || myPath2Data.get(sp).get(m.getModuleReference().getModuleId()) == null)
+          continue;
         myLoadedStubPaths.add(m, sp);
       }
     }
@@ -265,33 +266,47 @@ public class StubReloadManager implements ApplicationComponent {
     return m.areJavaStubsEnabled() ? m.getAllStubPaths() : m.getStubPaths();
   }
 
-  private void updateNotChangedStubPaths() {
+  private void buildUnchangedPaths() {
     List<StubPath> newStubs = new ArrayList<StubPath>();
     for (AbstractModule module : getAllModules()) {
       List<StubPath> moduleStubs = getModuleStubPaths(module);
       newStubs.addAll(moduleStubs);
     }
 
-    myNotChangedStubPaths = computeNotChangedStubPaths(myLoadedStubPaths.getAllStubPaths(), newStubs);
-  }
+    Set<StubPath> oldStubs = myLoadedStubPaths.getAllStubPaths();
+    Set<StubPath> unchangedStubPaths = new HashSet<StubPath>(oldStubs.size());
 
-  private boolean modelPathsNotChanged(BaseStubModelDescriptor sm) {
-    for (StubPath s : sm.getPaths()) {
-      boolean contains = false;
-      for (StubPath notChanged : myNotChangedStubPaths) {
-        if (!ObjectUtils.equals(s, notChanged)) continue;
-
-        contains = true;
-        break;
+    outer:
+    for (StubPath nns : newStubs) {
+      if (!oldStubs.contains(nns)) {
+        continue;
       }
-      if (!contains) return false;
+
+      Map<ModuleId, PathData> p = myPath2Data.get(nns);
+      if (p == null || p.size() == 0) continue;
+      for (PathData pd : p.values()) {
+        if (!pd.isFresh()) continue outer;
+      }
+
+      unchangedStubPaths.add(nns);
     }
 
-    return true;
+    // publish
+    myUnchangedStubPaths = unchangedStubPaths;
+  }
+
+  private boolean modelPathsAffected(BaseStubModelDescriptor sm) {
+    for (StubPath s : sm.getPaths()) {
+      if (!myUnchangedStubPaths.contains(s)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   private boolean isNewPath(BaseStubModelDescriptor descriptor, String path) {
-    for (StubPath sp : myNotChangedStubPaths) {
+    for (StubPath sp : myUnchangedStubPaths) {
       String oldManagerClass = descriptor.getManagerClass();
       String newManagerClass = sp.getManager().getClassName();
       boolean managersEqual = ObjectUtils.equals(oldManagerClass, newManagerClass);
@@ -303,7 +318,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private List<AbstractModule> getAllModules() {
     List<AbstractModule> modules = new ArrayList<AbstractModule>();
-    for (IModule m : myRepos.getAllModules()) {
+    for (IModule m : myModuleRepository.getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
       modules.add(((AbstractModule) m));
     }
@@ -342,29 +357,9 @@ public class StubReloadManager implements ApplicationComponent {
     }
   }
 
-  private List<StubPath> computeNotChangedStubPaths(Collection<StubPath> oldStubs, Collection<StubPath> newStubs) {
-    List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
-
-    //todo make time linear [due to stubs list size this is not very significant]
-    outer:
-    for (StubPath os : oldStubs) {
-      Map<ModuleId, PathData> p = myPath2Data.get(os);
-      if (p.size() == 0) continue;
-      for (PathData pd : p.values()) {
-        if (!pd.isFresh()) continue outer;
-      }
-
-      for (StubPath ns : newStubs) {
-        if (!ObjectUtils.equals(os, ns)) continue;
-        notChangedStubPaths.add(ns);
-      }
-    }
-    return notChangedStubPaths;
-  }
-
   private static class MyStubPaths extends HashMap<ModuleId, List<StubPath>> {
-    public List<StubPath> getAllStubPaths() {
-      List<StubPath> result = new ArrayList<StubPath>();
+    public Set<StubPath> getAllStubPaths() {
+      Set<StubPath> result = new HashSet<StubPath>();
       for (List<StubPath> lsp : values()) {
         result.addAll(lsp);
       }
@@ -377,14 +372,15 @@ public class StubReloadManager implements ApplicationComponent {
       return res;
     }
 
-    public void add(AbstractModule m, StubPath sp) {
-      List<StubPath> oldList = get(m.getModuleReference().getModuleId());
-      if (oldList == null) {
-        oldList = new ArrayList<StubPath>();
+    public void add(final AbstractModule m, StubPath sp) {
+      ModuleId key = m.getModuleReference().getModuleId();
+      List<StubPath> value = get(key);
+      if (value == null) {
+        value = new ArrayList<StubPath>();
       }
 
-      oldList.add(sp);
-      put(m.getModuleReference().getModuleId(), oldList);
+      value.add(sp);
+      put(key, value);
     }
   }
 

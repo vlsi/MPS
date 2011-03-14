@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1209150617830(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -24,7 +25,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "statementList", true);
   }
 
-  public static TemplateModel getDescriptor() {
-    return new TemplateModelImpl();
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }

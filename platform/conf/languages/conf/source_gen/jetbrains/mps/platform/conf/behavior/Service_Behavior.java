@@ -9,7 +9,7 @@ public class Service_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String call_name_6121364846593753707(SNode thisNode) {
+  public static String call_canonicName_6121364846593753707(SNode thisNode) {
     return SPropertyOperations.getString_def(thisNode, "level", "APPLICATION").toLowerCase() + "Service";
   }
 }

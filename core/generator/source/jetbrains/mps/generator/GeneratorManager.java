@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GeneratorManager {
@@ -40,7 +41,6 @@ public class GeneratorManager {
   public static final String DO_NOT_GENERATE = "doNotGenerate";
 
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
-  private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
 
   private Project myProject;
 
@@ -49,19 +49,21 @@ public class GeneratorManager {
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false, true);
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, GenerationOptions.getDefaults().create());
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
@@ -79,8 +81,9 @@ public class GeneratorManager {
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
@@ -98,11 +101,15 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-        final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
+        final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            return gc.generate();
+            boolean success = gc.generate();
+            if(success) {
+              fireModelsGenerated(Collections.unmodifiableList(inputModels), success);
+            }
+            return success;
           }
         });
         options.getGenerationTracer().finishTracing();
@@ -136,35 +143,12 @@ public class GeneratorManager {
     }
   }
 
-  public class GeneratorNotifierHelper {
-
-    public void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
-      for (GenerationListener l : myGenerationListeners) {
-        try {
-          l.modelsGenerated(models, success);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    }
-
-    public void fireBeforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
-      for (CompilationListener l : myCompilationListeners) {
-        try {
-          l.beforeModelsCompiled(models, success);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    }
-
-    public void fireAfterModelsCompiled(List<SModelDescriptor> models, boolean success) {
-      for (CompilationListener l : myCompilationListeners) {
-        try {
-          l.afterModelsCompiled(models, success);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+  private void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
+    for (GenerationListener l : myGenerationListeners) {
+      try {
+        l.modelsGenerated(models, success);
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
   }
@@ -177,12 +161,12 @@ public class GeneratorManager {
     myGenerationListeners.remove(l);
   }
 
+  @Deprecated
   public void addCompilationListener(CompilationListener l) {
-    myCompilationListeners.add(l);
   }
 
+  @Deprecated
   public void removeCompilationListener(CompilationListener l) {
-    myCompilationListeners.remove(l);
   }
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {

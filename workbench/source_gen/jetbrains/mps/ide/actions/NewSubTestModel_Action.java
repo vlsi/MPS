@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -29,7 +28,7 @@ import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
 
 public class NewSubTestModel_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/testModel.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(NewSubTestModel_Action.class.getResource("testModel.png"));
   protected static Log log = LogFactory.getLog(NewSubTestModel_Action.class);
 
   public NewSubTestModel_Action() {

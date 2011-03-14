@@ -19,6 +19,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
 
+  public InterfaceMethodImplementations_Finder() {
+  }
+
   public String getDescription() {
     return "Interface Method Implementations";
   }

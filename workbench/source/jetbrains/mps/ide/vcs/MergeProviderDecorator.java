@@ -56,7 +56,7 @@ class MergeProviderDecorator implements MergeProvider {
       String rightText = VcsHelperUtil.decodeContent(file, mergeData.LAST);
       String originalText = VcsHelperUtil.decodeContent(file, mergeData.ORIGINAL);
       DiffRequestFactory diffRequestFactory = DiffRequestFactory.getInstance();
-      MergeRequest request = diffRequestFactory.createMergeRequest(leftText, rightText, originalText, file, myProject, ActionButtonPresentation.createApplyButton());
+      MergeRequest request = diffRequestFactory.createMergeRequest(leftText, rightText, originalText, file, myProject, ActionButtonPresentation.APPLY, ActionButtonPresentation.CANCEL_WITH_PROMPT);
       try {
         myBackup = VcsHelperUtil.zipModel(mergeData, request.getContents(), file);
       } catch (IOException e) {

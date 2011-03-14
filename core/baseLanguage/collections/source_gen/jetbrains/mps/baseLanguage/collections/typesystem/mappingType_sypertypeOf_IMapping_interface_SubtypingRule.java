@@ -15,9 +15,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_y1o6nk_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
+  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -25,7 +26,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.QuotationClass_y1o6nk_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_KEY")), ((SNode) status.getPattern().getFieldValue("PatternVar_VALUE")), typeCheckingContext);
+    return new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.QuotationClass_y1o6nk_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_KEY")), ((SNode) status.getPattern().getFieldValue("patternVar_VALUE")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -131,8 +132,8 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   }
 
   public static class Pattern_y1o6nk_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_KEY;
-    /*package*/ SNode PatternVar_VALUE;
+    /*package*/ SNode patternVar_KEY;
+    /*package*/ SNode patternVar_VALUE;
 
     public Pattern_y1o6nk_a0a0a0a2() {
     }
@@ -145,9 +146,8 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_y1o6nk_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_6v7ed2_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v7ed2_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -158,11 +158,11 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
           }
           {
             SNode childVar_6v7ed2_a0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(0);
-            this.PatternVar_KEY = childVar_6v7ed2_a0a0;
+            this.patternVar_KEY = childVar_6v7ed2_a0a0;
           }
           {
             SNode childVar_6v7ed2_b0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(1);
-            this.PatternVar_VALUE = childVar_6v7ed2_b0a0;
+            this.patternVar_VALUE = childVar_6v7ed2_b0a0;
           }
         }
       }
@@ -175,17 +175,17 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
-        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+        patternVar_KEY = (SNode) pattern.getFieldValue("patternVar_KEY");
+        patternVar_VALUE = (SNode) pattern.getFieldValue("patternVar_VALUE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_KEY".equals(fieldName)) {
-        return this.PatternVar_KEY;
+      if ("patternVar_KEY".equals(fieldName)) {
+        return patternVar_KEY;
       }
-      if ("PatternVar_VALUE".equals(fieldName)) {
-        return this.PatternVar_VALUE;
+      if ("patternVar_VALUE".equals(fieldName)) {
+        return patternVar_VALUE;
       }
       return null;
     }

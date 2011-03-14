@@ -3,9 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import org.jetbrains.annotations.NotNull;
 
 /**

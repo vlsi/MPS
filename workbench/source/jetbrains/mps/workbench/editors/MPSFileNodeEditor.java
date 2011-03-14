@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -133,7 +132,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       public Boolean compute() {
         SModelDescriptor md = myFile.getNode().getModel().getModelDescriptor();
         if (!(md instanceof EditableSModelDescriptor)) return false;
-        return SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+        return ((EditableSModelDescriptor) md).isChanged();
       }
     });
   }

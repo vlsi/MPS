@@ -29,6 +29,7 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowInferredNodeType_Action());
     addAction(new ShowNodeType_Action());
     addAction(new ShowRulesWhichAffectNodeType_Action());
+    addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
     // groups 
     addGroup(new GoToTypeErrorGroup_ActionGroup());

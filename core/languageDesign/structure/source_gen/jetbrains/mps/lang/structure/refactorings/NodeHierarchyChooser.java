@@ -10,10 +10,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -44,38 +42,34 @@ public class NodeHierarchyChooser extends JScrollPane {
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        INodeAdapter nodeAdapter = (INodeAdapter) treeNode.getNode();
-        result.value = (nodeAdapter == null ?
-          null :
-          nodeAdapter.getNode()
-        );
+        result.value = treeNode.getNode();
       }
     });
     return ((SNode) result.value);
   }
 
-  public static class MyHierarchyTree extends AbstractHierarchyTree<INodeAdapter> {
+  public static class MyHierarchyTree extends AbstractHierarchyTree {
     private ConceptAncestorsProvider ancestorsProvider;
 
     public MyHierarchyTree() {
-      super(null, INodeAdapter.class, false);
+      super(null, "jetbrains.mps.lang.core.structure.BaseConcept", false);
     }
 
     public void setHierarchyNode(SNode node) {
-      this.myHierarchyNode = ((BaseConcept) SNodeOperations.getAdapter(node));
+      this.myHierarchyNode = node;
     }
 
-    protected Set<INodeAdapter> getDescendants(INodeAdapter adapter, Set<INodeAdapter> visited) {
+    protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       this.ancestorsProvider = new ConceptAncestorsProvider();
-      return this.ancestorsProvider.getDescendants(adapter);
+      return this.ancestorsProvider.getDescendants(node);
     }
 
-    protected INodeAdapter getParent(INodeAdapter adapter) {
+    protected SNode getParent(SNode node) {
       return null;
     }
 
-    protected Set<INodeAdapter> getParents(INodeAdapter adapter, Set<INodeAdapter> visited) {
-      return new HashSet();
+    protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
+      return new HashSet<SNode>();
     }
 
     protected String noNodeString() {

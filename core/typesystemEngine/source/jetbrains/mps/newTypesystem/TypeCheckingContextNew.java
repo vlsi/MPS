@@ -83,11 +83,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    myState.addComparable(node1, node2, true, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
-  }
-
-  @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo, true);
   }
@@ -250,12 +245,17 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createComparableEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, true, equationInfo);
+    myState.addComparable(node1, node2, true, false, equationInfo);
+  }
+
+  @Override
+  public void createComparableEquation(SNode node1, SNode node2, boolean inference, EquationInfo equationInfo) {
+    myState.addComparable(node1, node2, true, inference,equationInfo);
   }
 
   @Override
   public void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, false, equationInfo);
+    myState.addComparable(node1, node2, false, false,  equationInfo);
   }
 
   @Override

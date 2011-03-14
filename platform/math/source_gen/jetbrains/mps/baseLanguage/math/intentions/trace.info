@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.IntentionsDescriptor" />
   <unitInfo fileName="DeleteMathContext_Intention.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DeleteMathContext_Intention" />
   <unitInfo fileName="SpecifyMathContext_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.SpecifyMathContext_Intention" />
   <unitInfo fileName="DivExpressionDivToFraction_Intention.java" startLine="49" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention$QuotationClass_hz695l_a0a0a0f" />

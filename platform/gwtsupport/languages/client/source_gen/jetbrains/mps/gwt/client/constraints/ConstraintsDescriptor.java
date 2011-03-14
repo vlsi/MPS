@@ -12,6 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new GWTModule_resolveInfo_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Inherits_module_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

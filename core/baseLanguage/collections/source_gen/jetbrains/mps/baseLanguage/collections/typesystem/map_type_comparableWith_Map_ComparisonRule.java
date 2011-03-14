@@ -10,9 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_yoc8ci_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -52,8 +53,8 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
   }
 
   public static class Pattern_yoc8ci_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_KEY;
-    /*package*/ SNode PatternVar_VALUE;
+    /*package*/ SNode patternVar_KEY;
+    /*package*/ SNode patternVar_VALUE;
 
     public Pattern_yoc8ci_a0a0a0a3() {
     }
@@ -66,9 +67,8 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_yoc8ci_a0a1a0a1a2a0a0a0a0a0a3.getNode();
-          if (nodeToMatch_a1tqv3_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0d;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_a1tqv3_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -79,11 +79,11 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
           }
           {
             SNode childVar_a1tqv3_a0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(0);
-            this.PatternVar_KEY = childVar_a1tqv3_a0a0;
+            this.patternVar_KEY = childVar_a1tqv3_a0a0;
           }
           {
             SNode childVar_a1tqv3_b0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(1);
-            this.PatternVar_VALUE = childVar_a1tqv3_b0a0;
+            this.patternVar_VALUE = childVar_a1tqv3_b0a0;
           }
         }
       }
@@ -96,17 +96,17 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
-        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+        patternVar_KEY = (SNode) pattern.getFieldValue("patternVar_KEY");
+        patternVar_VALUE = (SNode) pattern.getFieldValue("patternVar_VALUE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_KEY".equals(fieldName)) {
-        return this.PatternVar_KEY;
+      if ("patternVar_KEY".equals(fieldName)) {
+        return patternVar_KEY;
       }
-      if ("PatternVar_VALUE".equals(fieldName)) {
-        return this.PatternVar_VALUE;
+      if ("patternVar_VALUE".equals(fieldName)) {
+        return patternVar_VALUE;
       }
       return null;
     }

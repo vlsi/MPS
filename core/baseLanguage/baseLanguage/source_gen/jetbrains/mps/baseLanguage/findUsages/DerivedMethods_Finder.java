@@ -19,6 +19,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class DerivedMethods_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
 
+  public DerivedMethods_Finder() {
+  }
+
   public String getDescription() {
     return "Derived Methods";
   }

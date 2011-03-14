@@ -84,7 +84,8 @@ public interface EditorCell extends Cloneable {
   SNode getRefNode();
   void setRefNode(SNode refNode);
 
-  void setLinkDeclaration(LinkDeclaration link);
+  // FIXME
+  void setLinkDeclaration(SNode link);
   LinkDeclaration getLinkDeclaration();
 
   boolean isReferenceCell();

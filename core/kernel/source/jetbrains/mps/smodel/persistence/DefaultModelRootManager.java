@@ -133,7 +133,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    if (SModelRepository.getInstance().isChanged(dsm)) return true;
+    if (dsm.isChanged()) return true;
 
     IFile modelFile = dsm.getModelFile();
     if (!modelFile.exists()) return true;

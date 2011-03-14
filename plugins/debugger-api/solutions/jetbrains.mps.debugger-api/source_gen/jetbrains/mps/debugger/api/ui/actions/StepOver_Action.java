@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class StepOver_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(StepOver_Action.class.getResource("icons/stepOver.png"));
+  private static final Icon ICON = new ImageIcon(StepOver_Action.class.getResource("stepOver.png"));
   protected static Log log = LogFactory.getLog(StepOver_Action.class);
 
   public StepOver_Action() {

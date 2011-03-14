@@ -21,7 +21,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_l03ebm_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elem")), typeCheckingContext);
+    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_l03ebm_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_elem")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -73,7 +73,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public static class Pattern_l03ebm_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    /*package*/ SNode patternVar_elem;
 
     public Pattern_l03ebm_a0a0a0a2() {
     }
@@ -98,7 +98,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iav8o_a0a0.getConceptFqName()))) {
                 return false;
               }
-              this.PatternVar_elem = nodeToMatch_iav8o_a0a0.getReferent("concept");
+              patternVar_elem = nodeToMatch_iav8o_a0a0.getReferent("concept");
             }
           }
         }
@@ -112,13 +112,13 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+      if ("patternVar_elem".equals(fieldName)) {
+        return patternVar_elem;
       }
       return null;
     }

@@ -11,7 +11,7 @@ public class PatternVarsUtil {
   }
 
   public static String getFieldName(SNode patternVar) {
-    String prefix = "PatternVar_";
+    String prefix = "patternVar_";
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) {
       return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), "varName");
     }

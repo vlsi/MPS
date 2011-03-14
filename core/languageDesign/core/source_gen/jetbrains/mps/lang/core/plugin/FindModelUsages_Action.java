@@ -4,8 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -24,7 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/find.png", "jetbrains.mps.lang.core"), true);
+  private static final Icon ICON = new ImageIcon(FindModelUsages_Action.class.getResource("find.png"));
   private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
   public FindModelUsages_Action() {

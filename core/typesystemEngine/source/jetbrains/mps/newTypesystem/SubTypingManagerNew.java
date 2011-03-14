@@ -58,6 +58,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (null == subType || null == superType) {
       return false;
     }
+    if (isWeak && TypesUtil.match(subType, superType, null, null)) {
+      return true;
+    }
     if (isSubTypeByReplacementRules(subType, superType)) {
       return true;
     }
@@ -281,6 +284,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
+    types = eliminateSubOrSuperTypes(types, true);
     return LatticeUtil.meetNodes(new HashSet<SNode>(types));
   }
 

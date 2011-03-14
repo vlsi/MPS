@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
 
 
 public abstract class InlineCellProvider extends AbstractCellProvider {
   private SNode myRefNode;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
 
   public void setRefNode(SNode refNode) {
     myRefNode = refNode;
@@ -32,11 +32,11 @@ public abstract class InlineCellProvider extends AbstractCellProvider {
     return myRefNode;
   }
 
-  public void setLinkDeclaration(LinkDeclaration linkDeclaration) {
+  public void setLinkDeclaration(SNode linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return myLinkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
   }
 }

@@ -14,9 +14,10 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_9ehkah_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
+  private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -85,9 +86,8 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_9ehkah_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_7vgvj3_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_7vgvj3_a0a.getReferent("classifier")))) {
             return false;
           }
         }

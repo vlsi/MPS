@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="XInclude_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.XInclude_Behavior" />
   <unitInfo fileName="Components_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Components_Behavior" />
   <unitInfo fileName="Service_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Service_Behavior" />
   <unitInfo fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Component_Behavior" />
-  <unitInfo fileName="BeanUtil.java" startLine="64" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
-  <unitInfo fileName="BeanUtil.java" startLine="82" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
+  <unitInfo fileName="BeanUtil.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
+  <unitInfo fileName="BeanUtil.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
   <unitInfo fileName="BeanProperty.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanProperty" />
   <unitInfo fileName="BeanExtensionPoint_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior" />
-  <unitInfo fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
+  <unitInfo fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
   <root nodeId="1740160309778233536">
-    <nodeInfo nodeId="2955496203775061909" fileName="Component_Behavior.java" startLine="13" startPosition="70" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2955496203775061909" fileName="Component_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2955496203775038500" fileName="Component_Behavior.java" startLine="14" startPosition="123" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1740160309778233538" fileName="Component_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="1740160309778233542" fileName="Component_Behavior.java" startLine="13" startPosition="70" endLine="18" endPosition="6">
+    <scopeInfo nodeId="1740160309778233542" fileName="Component_Behavior.java" startLine="13" startPosition="77" endLine="18" endPosition="6">
       <varInfo nodeId="2955496203775061910" varName="cs" />
     </scopeInfo>
+  </root>
+  <root nodeId="1829899669318982165">
+    <nodeInfo nodeId="1829899669319019850" fileName="XInclude_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1829899669318982167" fileName="XInclude_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1829899669318982171" fileName="XInclude_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" />
   </root>
   <root nodeId="3919891163767797429">
     <nodeInfo nodeId="3919891163767798722" fileName="Components_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -22,9 +28,9 @@
     <scopeInfo nodeId="3919891163767797435" fileName="Components_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="108" />
   </root>
   <root nodeId="6121364846593753704">
-    <nodeInfo nodeId="6121364846593753712" fileName="Service_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593753712" fileName="Service_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6121364846593753706" fileName="Service_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6121364846593753710" fileName="Service_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="105" />
+    <scopeInfo nodeId="6121364846593753710" fileName="Service_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="105" />
   </root>
   <root nodeId="6121364846593790730">
     <nodeInfo nodeId="6618365175184971386" fileName="BeanExtensionPoint_Behavior.java" startLine="15" startPosition="92" endLine="16" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -47,52 +53,50 @@
   </root>
   <root nodeId="6121364846593825092">
     <nodeInfo nodeId="6121364846593826264" fileName="BeanUtil.java" startLine="24" startPosition="51" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6183559520328571467" fileName="BeanUtil.java" startLine="25" startPosition="132" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="28" startPosition="50" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4625881316788229060" fileName="BeanUtil.java" startLine="32" startPosition="37" endLine="33" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6183559520328571477" fileName="BeanUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6121364846593826355" fileName="BeanUtil.java" startLine="37" startPosition="83" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826361" fileName="BeanUtil.java" startLine="43" startPosition="70" endLine="44" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4625881316788229069" fileName="BeanUtil.java" startLine="48" startPosition="41" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826462" fileName="BeanUtil.java" startLine="52" startPosition="44" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826478" fileName="BeanUtil.java" startLine="58" startPosition="44" endLine="59" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="27" startPosition="134" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="31" startPosition="52" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="47" startPosition="134" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="51" startPosition="42" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="57" startPosition="66" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/platform/conf/behavior/BeanProperty;" />
-    <nodeInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="35" startPosition="38" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6121364846593826429" fileName="BeanUtil.java" startLine="46" startPosition="39" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="45" startPosition="116" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6121364846593826310" fileName="BeanUtil.java" startLine="26" startPosition="52" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6121364846593826413" fileName="BeanUtil.java" startLine="44" startPosition="132" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="28" startPosition="50" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="4625881316788229059" fileName="BeanUtil.java" startLine="32" startPosition="37" endLine="33" endPosition="66" />
-    <scopeInfo nodeId="4625881316788229068" fileName="BeanUtil.java" startLine="48" startPosition="41" endLine="49" endPosition="70" />
-    <scopeInfo nodeId="6121364846593826459" fileName="BeanUtil.java" startLine="52" startPosition="44" endLine="53" endPosition="34" />
-    <scopeInfo nodeId="6121364846593826475" fileName="BeanUtil.java" startLine="58" startPosition="44" endLine="59" endPosition="81" />
-    <scopeInfo nodeId="6121364846593826345" fileName="BeanUtil.java" startLine="36" startPosition="40" endLine="38" endPosition="30" />
-    <scopeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="27" startPosition="134" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="31" startPosition="52" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="47" startPosition="134" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="51" startPosition="42" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="57" startPosition="66" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="35" startPosition="38" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="6121364846593826426" fileName="BeanUtil.java" startLine="46" startPosition="39" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="45" startPosition="116" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="6121364846593825107" fileName="BeanUtil.java" startLine="24" startPosition="51" endLine="40" endPosition="7">
+    <nodeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="27" startPosition="50" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4625881316788229060" fileName="BeanUtil.java" startLine="31" startPosition="37" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826355" fileName="BeanUtil.java" startLine="35" startPosition="40" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826361" fileName="BeanUtil.java" startLine="41" startPosition="70" endLine="42" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4625881316788229069" fileName="BeanUtil.java" startLine="46" startPosition="41" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826462" fileName="BeanUtil.java" startLine="50" startPosition="44" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826478" fileName="BeanUtil.java" startLine="56" startPosition="44" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="26" startPosition="134" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="30" startPosition="52" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="34" startPosition="38" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="45" startPosition="134" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="49" startPosition="42" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="55" startPosition="66" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/platform/conf/behavior/BeanProperty;" />
+    <nodeInfo nodeId="6121364846593826429" fileName="BeanUtil.java" startLine="44" startPosition="39" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="43" startPosition="116" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6121364846593826310" fileName="BeanUtil.java" startLine="25" startPosition="132" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6121364846593826413" fileName="BeanUtil.java" startLine="42" startPosition="132" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="27" startPosition="50" endLine="28" endPosition="66" />
+    <scopeInfo nodeId="4625881316788229059" fileName="BeanUtil.java" startLine="31" startPosition="37" endLine="32" endPosition="66" />
+    <scopeInfo nodeId="6121364846593826345" fileName="BeanUtil.java" startLine="35" startPosition="40" endLine="36" endPosition="30" />
+    <scopeInfo nodeId="4625881316788229068" fileName="BeanUtil.java" startLine="46" startPosition="41" endLine="47" endPosition="70" />
+    <scopeInfo nodeId="6121364846593826459" fileName="BeanUtil.java" startLine="50" startPosition="44" endLine="51" endPosition="34" />
+    <scopeInfo nodeId="6121364846593826475" fileName="BeanUtil.java" startLine="56" startPosition="44" endLine="57" endPosition="81" />
+    <scopeInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="26" startPosition="134" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="30" startPosition="52" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="34" startPosition="38" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="45" startPosition="134" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="49" startPosition="42" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="55" startPosition="66" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="6121364846593826426" fileName="BeanUtil.java" startLine="44" startPosition="39" endLine="53" endPosition="11" />
+    <scopeInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="43" startPosition="116" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6121364846593825107" fileName="BeanUtil.java" startLine="24" startPosition="51" endLine="38" endPosition="7">
       <varInfo nodeId="6121364846593826265" varName="attrAnn" />
     </scopeInfo>
-    <scopeInfo nodeId="6121364846593825100" fileName="BeanUtil.java" startLine="43" startPosition="70" endLine="61" endPosition="7">
+    <scopeInfo nodeId="6121364846593825100" fileName="BeanUtil.java" startLine="41" startPosition="70" endLine="59" endPosition="7">
       <varInfo nodeId="6121364846593826362" varName="attrAnn" />
     </scopeInfo>
-    <unitInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="27" startPosition="104" endLine="31" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$1" />
-    <unitInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="31" startPosition="25" endLine="35" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$2" />
-    <unitInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="47" startPosition="107" endLine="51" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
-    <unitInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="51" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
-    <unitInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="57" startPosition="32" endLine="61" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
-    <unitInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="35" startPosition="15" endLine="40" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$3" />
-    <unitInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="45" startPosition="93" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$4" />
+    <unitInfo nodeId="6121364846593826321" fileName="BeanUtil.java" startLine="26" startPosition="104" endLine="30" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$1" />
+    <unitInfo nodeId="4625881316788229058" fileName="BeanUtil.java" startLine="30" startPosition="25" endLine="34" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$2" />
+    <unitInfo nodeId="6121364846593826344" fileName="BeanUtil.java" startLine="34" startPosition="15" endLine="38" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$3" />
+    <unitInfo nodeId="4625881316788229067" fileName="BeanUtil.java" startLine="45" startPosition="107" endLine="49" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
+    <unitInfo nodeId="6121364846593826458" fileName="BeanUtil.java" startLine="49" startPosition="19" endLine="53" endPosition="9" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
+    <unitInfo nodeId="6121364846593826474" fileName="BeanUtil.java" startLine="55" startPosition="32" endLine="59" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$5" />
+    <unitInfo nodeId="6121364846593826425" fileName="BeanUtil.java" startLine="43" startPosition="93" endLine="55" endPosition="5" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$4" />
   </root>
 </debugInfo>
 

@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -35,202 +35,75 @@ import java.util.*;
 public class GenerationPartitioner {
   private static final Logger LOG = Logger.getLogger(GenerationPartitioner.class);
 
-  private Map<SNode, Map<SNode, PriorityData>> myPriorityMap;
-  private List<CoherentSetData> myCoherentMappings;
+  // generators
+  private final Collection<TemplateModule> myGenerators;
+
+  // maps
+  private final Map<ModuleReference,TemplateModule> myModulesMap;
+  private final Map<SModelReference,TemplateModel> myModelMap;
+  private final Map<SNodePointer,TemplateMappingConfiguration> myMappingsMap;
+
+  // result
+  private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
+  private final List<CoherentSetData> myCoherentMappings;
   private Set<MappingPriorityRule> myConflictingRules;
 
-  public List<List<TemplateMappingConfiguration>> createMappingSets(Collection<Generator> generators, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
-    return convertPlan(doPartitioning(null, generators), mappingsMap);
-  }
-
-  public List<List<SNode>> createMappingSets(Collection<Generator> generators) {
-    return doPartitioning(null, generators);
-  }
-
-  private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<SNode>> plan, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
-    List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>();
-
-    for (List<SNode> step : plan) {
-      List<TemplateMappingConfiguration> s = new ArrayList<TemplateMappingConfiguration>(step.size());
-      for (SNode c : step) {
-        TemplateMappingConfiguration configuration = mappingsMap.get(new SNodePointer(c));
-        if (configuration == null) {
-          throw new IllegalStateException("unknown configuration found: " + c.getName());
-        }
-        s.add(configuration);
-      }
-      result.add(s);
-    }
-    return result;
-  }
-
-  private void reset() {
-    myPriorityMap = new HashMap<SNode, Map<SNode, PriorityData>>();
+  public GenerationPartitioner(Collection<TemplateModule> generators) {
+    myGenerators = generators;
+    myPriorityMap = new HashMap<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>>();
     myCoherentMappings = new ArrayList<CoherentSetData>();
     myConflictingRules = new HashSet<MappingPriorityRule>();
+
+    myModulesMap = new HashMap<ModuleReference, TemplateModule>(myGenerators.size());
+    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    myMappingsMap = new HashMap<SNodePointer, TemplateMappingConfiguration>();
+    for(TemplateModule module : myGenerators) {
+      myModulesMap.put(module.getReference(), module);
+      for (TemplateModel model : module.getModels()) {
+        myModelMap.put(model.getSModelReference(), model);
+        for (TemplateMappingConfiguration templateMappingConfiguration : model.getConfigurations()) {
+          SNodePointer mnode = templateMappingConfiguration.getMappingNode();
+          myMappingsMap.put(mnode, templateMappingConfiguration);
+        }
+      }
+    }
+
   }
 
-  private List<List<SNode>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, Collection<Generator> generators) {
-    reset();
-    for (Generator generator : generators) {
-      for (SNode m : GenerationFacade.getOwnMappings(generator)) {
-        myPriorityMap.put(m, new HashMap<SNode, PriorityData>());
+  public List<List<TemplateMappingConfiguration>> createMappingSets() {
+    for (TemplateModule generator : myGenerators) {
+      for (TemplateModel model : generator.getModels()) {
+        for(TemplateMappingConfiguration m : model.getConfigurations()) {
+          myPriorityMap.put(m, new HashMap<TemplateMappingConfiguration, PriorityData>());
+        }
       }
     }
 
     // get priority mapping rules from generators and build 'priority map'
-    for (Generator generator : generators) {
-      GeneratorDescriptor descriptor = (GeneratorDescriptor) generator.getModuleDescriptor();
-      List<MappingPriorityRule> rules;
-      if (descriptorWorkingCopy != null &&
-        descriptorWorkingCopy.getGeneratorUID().equals(descriptor.getGeneratorUID())) {
-        rules = descriptorWorkingCopy.getPriorityRules();
-      } else {
-        rules = descriptor.getPriorityRules();
-      }
+    loadRules();
+
+    // solve
+    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflictingRules).solve();
+  }
+
+  private void loadRules() {
+    for (TemplateModule generator : myGenerators) {
+      List<MappingPriorityRule> rules = generator.getPriorities();
       for (MappingPriorityRule rule : rules) {
         processRule(rule, generator);
       }
     }
-
-    // early error detection
-    for (SNode mapping : myPriorityMap.keySet()) {
-      checkSelfLocking(mapping);
-    }
-
-    // process coherent mappings
-    myCoherentMappings = PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
-    PriorityMapUtil.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings, myPriorityMap);
-    PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
-
-    // remove 'weak' priorities
-    boolean need_more_passes = true;
-    while (need_more_passes) {
-      need_more_passes = false;
-      iterate_all_mappings:
-      for (SNode lockedMapping : myPriorityMap.keySet()) {
-        while (true) {
-          List<SNode> weakLockMappings = PriorityMapUtil.getWeakLockMappingsForLockedMapping(lockedMapping, myPriorityMap);
-          if (weakLockMappings.isEmpty()) break;
-          for (SNode weakLockMapping : weakLockMappings) {
-            // remove 'weak' dependency but don't allow locked-lockedMapping to go before weak-lock lockedMapping
-            PriorityMapUtil.replaceWeakLock(lockedMapping, weakLockMapping, myPriorityMap);
-            checkSelfLocking(lockedMapping);
-//          // if locked-mapping is strict lock for other mappings,
-//          // then weak-lock-mapping should be strict lock for them as well.
-//          List<SNode> lockedMappings_1 = PriorityMapUtil.getStrictLockedMappingsForLockMapping(lockedMapping, myPriorityMap);
-//          for (SNode lockedMapping_1 : lockedMappings_1) {
-//            Map<SNode, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
-//            PriorityData priorityDataToApply = locks_1.get(lockedMapping);
-//            PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
-//            checkSelfLocking(lockedMapping_1);
-//          }
-
-            // if locked-lockedMapping is a lock for other mappings,
-            // then weak-lock-lockedMapping should be a lock for them as well.
-            List<SNode> lockedMappings_1 = PriorityMapUtil.getLockedMappingsForLockMapping(lockedMapping, myPriorityMap);
-            for (SNode lockedMapping_1 : lockedMappings_1) {
-              Map<SNode, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
-              PriorityData priorityDataToApply = locks_1.get(lockedMapping);
-              boolean newLockAdded = PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
-              checkSelfLocking(lockedMapping_1);
-              if (newLockAdded) {
-                // if new lock is a weak lock, then better start all over again (weak locks cleaning)
-                if (myPriorityMap.get(lockedMapping_1).get(weakLockMapping).isWeak()) {
-                  need_more_passes = true;
-                  break iterate_all_mappings;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    // paranoid check
-    for (Map<SNode, PriorityData> locks : myPriorityMap.values()) {
-      for (PriorityData priorityData : locks.values()) {
-        if (!priorityData.isStrict()) {
-          throw new RuntimeException("Unexpected weak priority");
-        }
-      }
-    }
-
-    // create mappings partitioning
-    List<List<SNode>> mappingSets = createMappingSets();
-    // if the priority map is still not empty, then there are some conflicting rules
-    for (Map<SNode, PriorityData> grtPriMappings : myPriorityMap.values()) {
-      for (PriorityData priorityData : grtPriMappings.values()) {
-        myConflictingRules.addAll(priorityData.myCauseRules);
-      }
-    }
-    return mappingSets;
   }
 
-  private void checkSelfLocking(SNode mapping) {
-    Map<SNode, PriorityData> locks = myPriorityMap.get(mapping);
-    PriorityData priorityData = locks.get(mapping);
-    if (priorityData != null) {
-      if (priorityData.isStrict()) {
-        // error
-        myConflictingRules.addAll(priorityData.myCauseRules);
-      }
-      locks.remove(mapping);
-    }
-  }
-
-  private List<List<SNode>> createMappingSets() {
-    // reversed order
-    boolean topPriorityGroup = false;
-    List<List<SNode>> mappingSets = new ArrayList<List<SNode>>();
-    while (!myPriorityMap.isEmpty()) {
-      List<SNode> mappingSet = createMappingSet(topPriorityGroup);
-      if (mappingSet.isEmpty()) {
-        if (!topPriorityGroup) {
-          topPriorityGroup = true;
-          continue;
-        }
-        // error!!!
-        break;
-      }
-      mappingSets.add(mappingSet);
-    }
-    Collections.reverse(mappingSets);
-    // sort mappings within each set: generation must be deterministic
-    for (List<SNode> mappingSet : mappingSets) {
-      Collections.sort(mappingSet, new Comparator<SNode>() {
-        public int compare(SNode o1, SNode o2) {
-          return o1.getId().compareTo(o2.getId());
-        }
-      });
-    }
-    return mappingSets;
-  }
-
-  private List<SNode> createMappingSet(boolean topPriorityGroup) {
-    // add all not-locking-mappinds to set
-    List<SNode> mappingSet = new ArrayList<SNode>();
-    for (SNode mapping : myPriorityMap.keySet()) {
-      if (RuleUtil.getMappingConfiguration_TopPrio(mapping) != topPriorityGroup) continue;
-      if (!PriorityMapUtil.isLockingMapping(mapping, myPriorityMap)) {
-        mappingSet.add(mapping);
-      }
-    }
-    for (SNode mapping : mappingSet) {
-      myPriorityMap.remove(mapping);
-    }
-    return mappingSet;
-  }
-
-  private void processRule(MappingPriorityRule rule, Generator generator) {
+  private void processRule(MappingPriorityRule rule, TemplateModule generator) {
     MappingConfig_AbstractRef left = rule.getLeft();
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    List<SNode> greaterPriMappings = getMappingsFromRef(left, generator);
-    List<SNode> lesserPriMappings = getMappingsFromRef(right, generator);
+    Collection<TemplateMappingConfiguration> greaterPriMappings = getMappingsFromRef(left, generator);
+    Collection<TemplateMappingConfiguration> lesserPriMappings = getMappingsFromRef(right, generator);
     if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
-      Set<SNode> coherentMappings = new HashSet<SNode>(lesserPriMappings);
+      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(lesserPriMappings);
       coherentMappings.addAll(greaterPriMappings);
       myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
 
@@ -238,10 +111,10 @@ public class GenerationPartitioner {
       // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }
       lesserPriMappings = CollectionUtil.subtract(lesserPriMappings, greaterPriMappings);
 
-      for (SNode lesserPriMapping : lesserPriMappings) {
-        Map<SNode, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
+      for (TemplateMappingConfiguration lesserPriMapping : lesserPriMappings) {
+        Map<TemplateMappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
 
-        for (SNode grtPriMapping : greaterPriMappings) {
+        for (TemplateMappingConfiguration grtPriMapping : greaterPriMappings) {
           boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
           if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
             grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
@@ -255,21 +128,23 @@ public class GenerationPartitioner {
     }
   }
 
-  private List<SNode> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, Generator refGenerator) {
+  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      return new ArrayList<SNode>(myPriorityMap.keySet());
+      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keySet());
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      List<SNode> mappingConf = new ArrayList<SNode>();
-      for (SNode n : GenerationFacade.getOwnMappings(refGenerator)) {
-        mappingConf.add(n);
+      List<TemplateMappingConfiguration> mappingConf = new ArrayList<TemplateMappingConfiguration>();
+      for (TemplateModel templateModel : refGenerator.getModels()) {
+        for(TemplateMappingConfiguration n : templateModel.getConfigurations()) {
+          mappingConf.add(n);
+        }
       }
       return mappingConf;
     }
 
     if (mappingRef instanceof MappingConfig_RefSet) {
-      List<SNode> result = new ArrayList<SNode>();
+      List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
       MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
       for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
         result.addAll(getMappingsFromRef(simpleRef, refGenerator));
@@ -281,11 +156,12 @@ public class GenerationPartitioner {
       ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
         ModuleReference genRef = generatorRef;
-        Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
+        TemplateModule newRefGenerator = myModulesMap.get(genRef);
         if (newRefGenerator != null) {
           return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
         } else {
-          LOG.error("couldn't get generator by uid: '" + genRef + "'");
+          // generator is not in the plan - just ignore
+          // LOG.error("couldn't get generator by uid: '" + genRef + "'");
         }
       }
       return Collections.emptyList();
@@ -296,21 +172,22 @@ public class GenerationPartitioner {
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       if (modelUID != null && nodeID != null) {
         SModelReference reference = SModelReference.fromString(modelUID);
-        SModelDescriptor refModel = GlobalScope.getInstance().getModelDescriptor(reference);
+        TemplateModel refModel = myModelMap.get(reference);
 
         if (refModel != null) {
           if (nodeID.equals("*")) {
-            return refModel.getSModel().getFastNodeFinder().getNodes(RuleUtil.concept_MappingConfiguration, true);
+            return refModel.getConfigurations();
           } else {
-            SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
-            if (mappingConfig != null) {
-              return Collections.singletonList(mappingConfig);
-            } else {
-              LOG.error("couldn't get node by id: '" + nodeID + "' in model " + modelUID);
+            SNodePointer node = new SNodePointer(reference, SNodeId.fromString(nodeID));
+            for(TemplateMappingConfiguration m : refModel.getConfigurations()) {
+              if (node != null && node.equals(m.getMappingNode())) {
+                return Collections.singletonList(m);
+              }
             }
+            LOG.warning("couldn't get node by id: '" + nodeID + "' in model " + modelUID);
           }
         } else {
-          LOG.error("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias());
+          LOG.warning("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias());
         }
       }
       return Collections.emptyList();
@@ -363,10 +240,10 @@ public class GenerationPartitioner {
   } // class PriorityData
 
   static class CoherentSetData {
-    Set<SNode> myMappings;
+    Set<TemplateMappingConfiguration> myMappings;
     Set<MappingPriorityRule> myCauseRules;
 
-    public CoherentSetData(Set<SNode> mappings, MappingPriorityRule rule) {
+    public CoherentSetData(Set<TemplateMappingConfiguration> mappings, MappingPriorityRule rule) {
       myMappings = mappings;
       myCauseRules = new HashSet<MappingPriorityRule>();
       myCauseRules.add(rule);

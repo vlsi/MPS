@@ -65,10 +65,6 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
 
   @Override
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    if (event instanceof ExceptionEvent) {
-      ObjectReference exception = ((ExceptionEvent) event).exception();
-      System.err.println("Exception event " + exception);
-    }
     return true;
   }
 
@@ -92,6 +88,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
     public String myExceptionName;
     public long myCreationTime;
     public int mySuspendPolicy;
+    public boolean myIsLogMessage;
     public boolean myIsEnabled;
 
     public ExceptionBreakpointInfo(ExceptionBreakpoint breakpoint) {
@@ -99,6 +96,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       myCreationTime = breakpoint.myCreationTime;
       myIsEnabled = breakpoint.isEnabled();
       mySuspendPolicy = breakpoint.getSuspendPolicy();
+      myIsLogMessage = breakpoint.isLogMessage();
     }
 
     public ExceptionBreakpointInfo() {
@@ -108,6 +106,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       breakpoint.setEnabled(myIsEnabled);
       breakpoint.setCreationTime(myCreationTime);
       breakpoint.setSuspendPolicy(mySuspendPolicy);
+      breakpoint.setLogMessage(myIsLogMessage);
     }
   }
 }

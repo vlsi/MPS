@@ -19,6 +19,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -27,7 +28,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  private static SNodePointer SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0a = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
@@ -70,7 +71,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   }
 
   public static class Pattern_aftnu9_a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
+    /*package*/ SNode patternVar_p;
 
     public Pattern_aftnu9_a0a0a2a0() {
     }
@@ -83,9 +84,8 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0.getNode();
-          if (nodeToMatch_gn1qzs_a0a2a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0a;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gn1qzs_a0a2a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -96,7 +96,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
           }
           {
             SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_gn1qzs_).get(0);
-            this.PatternVar_p = childVar_gn1qzs_a0a0c0;
+            this.patternVar_p = childVar_gn1qzs_a0a0c0;
           }
         }
       }
@@ -109,13 +109,13 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_p".equals(fieldName)) {
-        return this.PatternVar_p;
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
       }
       return null;
     }

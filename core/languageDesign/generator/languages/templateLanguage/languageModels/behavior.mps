@@ -115,9 +115,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.650531548511609556" resolveInfo="IGeneratorParameter" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5023471013036171786">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.650531548511911817" resolveInfo="GeneratorDescriptor" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2902001550281906068">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.argument" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.4816349095291127781" resolveInfo="TemplateArgumentPatternRef" />
@@ -133,6 +130,13 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2902001550282064516">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.argument" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.4816349095291149799" resolveInfo="TemplateArgumentPropertyPatternRefExpression" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5023471013036171786">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.650531548511911817" resolveInfo="GeneratorDescriptor" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1311078761699602468">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.1311078761699563726" resolveInfo="InsertMacro" />
     </node>
   </roots>
   <root id="1213877219536">
@@ -2642,11 +2646,6 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="650531548511609564" />
     </node>
   </root>
-  <root id="5023471013036171786">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5023471013036171787">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5023471013036171788" />
-    </node>
-  </root>
   <root id="2902001550281906068">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="2902001550281937661">
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
@@ -2736,6 +2735,16 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="2902001550282064522" />
+    </node>
+  </root>
+  <root id="5023471013036171786">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5023471013036171787">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5023471013036171788" />
+    </node>
+  </root>
+  <root id="1311078761699602468">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1311078761699602469">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1311078761699602470" />
     </node>
   </root>
 </model>

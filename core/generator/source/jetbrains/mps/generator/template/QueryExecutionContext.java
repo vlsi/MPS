@@ -33,6 +33,8 @@ public interface QueryExecutionContext {
 
   List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
+  SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
+
   SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
 
   Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context);

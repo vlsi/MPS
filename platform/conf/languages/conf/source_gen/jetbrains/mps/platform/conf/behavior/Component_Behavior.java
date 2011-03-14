@@ -10,7 +10,7 @@ public class Component_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String call_name_1740160309778233539(SNode thisNode) {
+  public static String call_canonicName_1740160309778233539(SNode thisNode) {
     SNode cs = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.platform.conf.structure.Components");
     return (cs != null ?
       (SPropertyOperations.getString_def(cs, "level", "APPLICATION").toLowerCase() + "Component") :

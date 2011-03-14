@@ -39,8 +39,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.TextPasteUtil" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" file="AnalyzeStacktrace_Action.java">
@@ -92,11 +92,11 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.resolve.MethodDeclarationsFixer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" file="BaseLanguageEditorPopup_ActionGroup.java">
@@ -955,20 +955,19 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" file="ShowTodoViewer_Action.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" file="SubclassedClassifierEditorMessage.java">

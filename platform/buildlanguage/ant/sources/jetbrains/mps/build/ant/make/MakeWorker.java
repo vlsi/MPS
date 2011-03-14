@@ -56,13 +56,13 @@ public class MakeWorker extends MpsWorker {
       toCompile.addAll(p.getModules());  
     }
     for (final SModelDescriptor modelDescriptor : go.getModels()) {
-      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-        public Set<IModule> compute() {
-          return modelDescriptor.getModules();
+      IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        public IModule compute() {
+          return modelDescriptor.getModule();
         }
       });
 
-      toCompile.addAll(owningModules);  
+      toCompile.add(owningModule);
     }
     final Set<IModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<IModule>() {
       @Override

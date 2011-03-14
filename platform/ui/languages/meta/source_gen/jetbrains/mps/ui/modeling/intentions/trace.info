@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.IntentionsDescriptor" />
   <unitInfo fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.LinkDeclaration_addOverrideAnnotation_Intention" />
   <unitInfo fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.ChildAspectDefinition_makeOptional_Intention" />
   <root nodeId="6030013275786405059">

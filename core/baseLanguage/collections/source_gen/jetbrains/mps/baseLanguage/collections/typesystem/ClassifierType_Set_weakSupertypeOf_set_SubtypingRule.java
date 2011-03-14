@@ -25,7 +25,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.QuotationClass_jipg91_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elementType")), typeCheckingContext);
+    return new ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.QuotationClass_jipg91_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_elementType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -105,7 +105,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public static class Pattern_jipg91_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elementType;
+    /*package*/ SNode patternVar_elementType;
 
     public Pattern_jipg91_a0a0a0a2() {
     }
@@ -124,7 +124,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
           }
           {
             SNode childVar_nbr2nf_a0a0 = nodeToMatch_nbr2nf_a0a.getChildren(childRole_nbr2nf_).get(0);
-            this.PatternVar_elementType = childVar_nbr2nf_a0a0;
+            this.patternVar_elementType = childVar_nbr2nf_a0a0;
           }
         }
       }
@@ -137,13 +137,13 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
+        patternVar_elementType = (SNode) pattern.getFieldValue("patternVar_elementType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_elementType".equals(fieldName)) {
-        return this.PatternVar_elementType;
+      if ("patternVar_elementType".equals(fieldName)) {
+        return patternVar_elementType;
       }
       return null;
     }

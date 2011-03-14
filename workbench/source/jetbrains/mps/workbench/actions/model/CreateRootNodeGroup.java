@@ -31,7 +31,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -194,7 +193,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       final SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
         public SNode compute() {
-          SNode result = NodeFactoryManager.createNode((ConceptDeclaration) myNodeConcept.getNode().getAdapter(), null, null, myModelDescriptor.getSModel(), myScope);
+          SNode result = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
           result.setProperty(SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(result);
           return result;

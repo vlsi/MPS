@@ -22,6 +22,8 @@ public class RuleUtil {
   public static final String concept_CopySrcListMacro = "jetbrains.mps.lang.generator.structure.CopySrcListMacro";
   public static final String concept_IncludeMacro = "jetbrains.mps.lang.generator.structure.IncludeMacro";
   public static final String concept_LoopMacro = "jetbrains.mps.lang.generator.structure.LoopMacro";
+  public static final String concept_LabelMacro = "jetbrains.mps.lang.generator.structure.LabelMacro";
+  public static final String concept_InsertMacro = "jetbrains.mps.lang.generator.structure.InsertMacro";
   public static final String concept_MapSrcNodeMacro = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
   public static final String concept_MapSrcListMacro = "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
   public static final String concept_SwitchMacro = "jetbrains.mps.lang.generator.structure.SwitchMacro";
@@ -317,5 +319,9 @@ public class RuleUtil {
 
   public static SNode getMappingScript_CodeBlock(SNode script) {
     return SLinkOperations.getTarget(script, "codeBlock", true);
+  }
+
+  public static SNode getInsertMacro_Query(SNode macro) {
+    return SLinkOperations.getTarget(macro, "createNodeQuery", true);
   }
 }

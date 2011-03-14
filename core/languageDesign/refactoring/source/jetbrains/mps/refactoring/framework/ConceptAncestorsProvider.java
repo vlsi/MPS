@@ -19,28 +19,29 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class ConceptAncestorsProvider implements IDescendantsProvider {
-  public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter) {
-    Set<INodeAdapter> result = new HashSet<INodeAdapter>();
-    if (nodeAdapter instanceof ConceptDeclaration) {
-      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) nodeAdapter;
+  public Set<SNode> getDescendants(SNode nodeAdapter) {
+    Set<SNode> result = new HashSet<SNode>();
+    if (nodeAdapter.getAdapter() instanceof ConceptDeclaration) {
+      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) nodeAdapter.getAdapter();
       ConceptDeclaration parent = conceptDeclaration.getExtends();
       if (parent != null) {
-        result.add(parent);
+        result.add(parent.getNode());
       }
 
       for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
-        result.add(interfaceConceptReference.getIntfc());
+        result.add(interfaceConceptReference.getIntfc().getNode());
       }
     }
-    if (nodeAdapter instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration interfaceConceptDeclaration = (InterfaceConceptDeclaration) nodeAdapter;
+    if (nodeAdapter.getAdapter() instanceof InterfaceConceptDeclaration) {
+      InterfaceConceptDeclaration interfaceConceptDeclaration = (InterfaceConceptDeclaration) nodeAdapter.getAdapter();
       for (InterfaceConceptReference interfaceConceptReference : interfaceConceptDeclaration.getExtendses()) {
-        result.add(interfaceConceptReference.getIntfc());
+        result.add(interfaceConceptReference.getIntfc().getNode());
       }
     }
     return result;

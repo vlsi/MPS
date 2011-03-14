@@ -34,7 +34,6 @@
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1218738658950">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1218738789586" resolveInfo="map_outputNode" />
-      <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1218739483594" resolveInfo="generated_root" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1218738676457">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1218738676458">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1218738691459">
@@ -117,6 +116,9 @@
     </node>
     <node role="specialChild" roleId="tq1l.1218735665292" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="1218738814182">
       <property name="text" nameId="tq1l.1195170441111" value="this is 'special child' in root template" />
+    </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4684453936266155603">
+      <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1218739483594" resolveInfo="generated_root" />
     </node>
   </root>
   <root id="1218738992784">

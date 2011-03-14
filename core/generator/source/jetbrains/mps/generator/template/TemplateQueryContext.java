@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -181,6 +180,10 @@ public class TemplateQueryContext {
 
   public Object getPatternVariable(String name) {
     return myContext == null ? null : myContext.getPatternVariable(name);
+  }
+
+  public Object getGenerationParameter(String name) {
+    return null;
   }
 
   public Object putStepObject(Object key, Object o) {

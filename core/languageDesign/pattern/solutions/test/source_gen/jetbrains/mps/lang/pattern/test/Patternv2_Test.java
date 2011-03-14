@@ -28,7 +28,7 @@ public class Patternv2_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.Patternv2_Test$TestBody", "testv2", true);
   }
 
@@ -171,8 +171,8 @@ public class Patternv2_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_ofki36_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_p;
-      /*package*/ SNode PatternVar_ifbody;
+      /*package*/ SNode patternVar_p;
+      /*package*/ SNode patternVar_ifbody;
 
       public Pattern_ofki36_a0a1a1a() {
       }
@@ -207,7 +207,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                   }
                   {
                     SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__0).get(0);
-                    this.PatternVar_ifbody = childVar_1fi_a1a0;
+                    this.patternVar_ifbody = childVar_1fi_a1a0;
                   }
                 }
                 {
@@ -230,7 +230,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                         }
                         {
                           SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__2).get(0);
-                          this.PatternVar_p = childVar_1fi_a0b0a;
+                          this.patternVar_p = childVar_1fi_a0b0a;
                         }
                       }
                       {
@@ -268,17 +268,17 @@ public class Patternv2_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-          this.PatternVar_ifbody = (SNode) pattern.getFieldValue("PatternVar_ifbody");
+          patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+          patternVar_ifbody = (SNode) pattern.getFieldValue("patternVar_ifbody");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_p".equals(fieldName)) {
-          return this.PatternVar_p;
+        if ("patternVar_p".equals(fieldName)) {
+          return patternVar_p;
         }
-        if ("PatternVar_ifbody".equals(fieldName)) {
-          return this.PatternVar_ifbody;
+        if ("patternVar_ifbody".equals(fieldName)) {
+          return patternVar_ifbody;
         }
         return null;
       }

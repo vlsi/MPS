@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.plugin;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
@@ -88,11 +89,11 @@ public class PluginStateMonitor implements ProjectComponent {
 
     myTimer = new MyTimer(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new Thread("connection checker") {
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
             tick();
           }
-        }.start();
+        });
       }
     });
     myTimer.start();

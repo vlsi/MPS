@@ -1706,11 +1706,29 @@
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="9047349009208173117">
-      <property name="name" nameId="tpck.1169194664001" value="concept_MapSrcNodeMacro" />
+      <property name="name" nameId="tpck.1169194664001" value="concept_LabelMacro" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9047349009208173118" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="9047349009208173119" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="9047349009208173120">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.5133195082121471908" resolveInfo="LabelMacro" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1311078761699865379">
+      <property name="name" nameId="tpck.1169194664001" value="concept_InsertMacro" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1311078761699865380" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1311078761699865381" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="1311078761699865382">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.1311078761699563726" resolveInfo="InsertMacro" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5133195082121477316">
+      <property name="name" nameId="tpck.1169194664001" value="concept_MapSrcNodeMacro" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5133195082121477317" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5133195082121477318" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="5133195082121477319">
         <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
       </node>
     </node>
@@ -3830,6 +3848,31 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2831583045484014438">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1195500722856" resolveInfo="MappingScript_CodeBlock" />
+      </node>
+    </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1311078761699865384">
+      <property name="name" nameId="tpck.1169194664001" value="getInsertMacro_Query" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1311078761699865385" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1311078761699865386">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1311078761699865387">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1311078761699865388">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1311078761699865389">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1311078761699865391" resolveInfo="script" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1311078761699865394">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1311078761699602381" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1311078761699865391">
+        <property name="name" nameId="tpck.1169194664001" value="macro" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1311078761699865392">
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1311078761699563726" resolveInfo="InsertMacro" />
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1311078761699865393">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1311078761699563727" resolveInfo="InsertMacro_CreateNodeQuery" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1733398552130474120" />

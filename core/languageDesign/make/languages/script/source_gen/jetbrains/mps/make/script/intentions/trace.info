@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.intentions.IntentionsDescriptor" />
   <unitInfo fileName="Option_makeDefault_Intention.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.script.intentions.Option_makeDefault_Intention" />
   <root nodeId="8626841540115943116">
     <nodeInfo nodeId="8626841540116025441" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

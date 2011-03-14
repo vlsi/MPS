@@ -106,7 +106,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.GeneratorParameterReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -237,6 +236,34 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.RuleConsequence" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.structure.InsertMacro" file="InsertMacro.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.NodeMacro" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery" file="InsertMacro_CreateNodeQuery.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.TemplateQueryBase" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.structure.LabelMacro" file="LabelMacro.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.NodeMacro" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.LoopMacro" file="LoopMacro.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -291,9 +318,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.MappingConfiguration" file="MappingConfiguration.java">
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.DropRootRule" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.IConceptAspect" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.GeneratorParameterReference" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.CreateRootRule" />
@@ -306,9 +335,18 @@
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.MappingScriptReference" />
     <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.IConceptAspect" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition" file="MappingConfiguration_Condition.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.structure.TemplateQueryBase" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" file="MappingLabelDeclaration.java">

@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.generator;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 
@@ -44,7 +50,29 @@ public class GenerationFacade {
   }
 
   public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<Generator> generators) {
-    GenerationPartitioner partitioner = new GenerationPartitioner();
-    return partitioner.createMappingSets(generators);
+    GenerationPartitioner partitioner = new GenerationPartitioner(GenerationPlan.convert(generators));
+    List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets();
+
+    // convert
+    List<List<SNode>> result = new ArrayList<List<SNode>>(mappingSets.size());
+    for(List<TemplateMappingConfiguration> configurations : mappingSets) {
+      List<SNode> step = new ArrayList<SNode>(configurations.size());
+      for(TemplateMappingConfiguration c : configurations) {
+        step.add(c.getMappingNode().getNode());
+      }
+      result.add(step);
+    }
+    return result;
+  }
+
+  public static boolean generateModels(Project p,
+                                       List<SModelDescriptor> inputModels,
+                                       IOperationContext invocationContext,
+                                       IGenerationHandler generationHandler,
+                                       ProgressIndicator progress,
+                                       IMessageHandler messages,
+                                       GenerationOptions options) {
+    return p.getComponent(GeneratorManager.class).
+      generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
   }
 }

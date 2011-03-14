@@ -24,7 +24,9 @@
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="63" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$QuotationClass_ft56mw_a0a0d0e0a0a0b0a" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript" />
+  <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="16" startPosition="28" endLine="49" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript$1" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$1" />
+  <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript" />
   <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="18" startPosition="28" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$1" />
   <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="62" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$2" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="188" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a" />
@@ -206,6 +208,16 @@
     <unitInfo nodeId="3822000666564662820" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="138" startPosition="121" endLine="146" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$2" />
     <unitInfo nodeId="3822000666564607326" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="72" startPosition="95" endLine="89" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$2" />
   </root>
+  <root nodeId="4470409037200904672">
+    <nodeInfo nodeId="4470409037201191088" fileName="UpdateActionIcons_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4470409037200947794" fileName="UpdateActionIcons_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4470409037200947804" fileName="UpdateActionIcons_MigrationScript.java" startLine="34" startPosition="115" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4470409037200947825" fileName="UpdateActionIcons_MigrationScript.java" startLine="35" startPosition="95" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="4470409037201191068" fileName="UpdateActionIcons_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="146" />
+    <scopeInfo nodeId="4470409037200904675" fileName="UpdateActionIcons_MigrationScript.java" startLine="33" startPosition="52" endLine="36" endPosition="56">
+      <varInfo nodeId="4470409037200947795" varName="icon" />
+    </scopeInfo>
+  </root>
   <root nodeId="4729897692521570243">
     <nodeInfo nodeId="4729897692521570249" fileName="NewKeymaps_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4729897692521570293" fileName="NewKeymaps_MigrationScript.java" startLine="43" startPosition="43" endLine="44" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -318,8 +330,8 @@
       <varInfo nodeId="2974336669142017079" varName="p1" />
       <varInfo nodeId="2974336669141988726" varName="method" />
       <varInfo nodeId="2974336669141907543" varName="helperClass" />
-      <varInfo nodeId="2974336669142069930" varName="tabs" />
       <varInfo nodeId="5032697908782435756" varName="callHelperStmt" />
+      <varInfo nodeId="2974336669142069930" varName="tabs" />
     </scopeInfo>
     <unitInfo nodeId="2974336669142017057" fileName="SplitTabbedEditors_MigrationScript.java" startLine="57" startPosition="175" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
     <unitInfo nodeId="2974336669142017111" fileName="SplitTabbedEditors_MigrationScript.java" startLine="62" startPosition="187" endLine="66" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
@@ -380,14 +392,14 @@
     <scopeInfo nodeId="8849278392331870383" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="35" startPosition="52" endLine="55" endPosition="41">
       <varInfo nodeId="8849278392331870532" varName="initBlock" />
       <varInfo nodeId="8849278392331870521" varName="methodBody" />
-      <varInfo nodeId="8849278392331870565" varName="projectRefs" />
       <varInfo nodeId="8849278392331870398" varName="tool" />
+      <varInfo nodeId="8849278392331870565" varName="projectRefs" />
     </scopeInfo>
     <scopeInfo nodeId="8849278392331870580" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="79" startPosition="52" endLine="99" endPosition="41">
       <varInfo nodeId="8849278392331870591" varName="methodBody" />
-      <varInfo nodeId="8849278392331870616" varName="disposeBlock" />
-      <varInfo nodeId="8849278392331870597" varName="projectRefs" />
       <varInfo nodeId="8849278392331870582" varName="tool" />
+      <varInfo nodeId="8849278392331870597" varName="projectRefs" />
+      <varInfo nodeId="8849278392331870616" varName="disposeBlock" />
     </scopeInfo>
   </root>
 </debugInfo>

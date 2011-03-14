@@ -4,8 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 
 public class MakeProject_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/make.png", "jetbrains.mps.ide.make"), true);
+  private static final Icon ICON = new ImageIcon(MakeProject_Action.class.getResource("make.png"));
   protected static Log log = LogFactory.getLog(MakeProject_Action.class);
 
   public MakeProject_Action() {

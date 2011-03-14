@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InsertMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" />
   <unitInfo fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   <unitInfo fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
   <unitInfo fileName="IfMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
@@ -324,6 +325,9 @@
     <scopeInfo nodeId="1213877522475" fileName="SwitchMacro_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="80" />
     <scopeInfo nodeId="1213877522465" fileName="SwitchMacro_Behavior.java" startLine="16" startPosition="5" endLine="22" endPosition="7" />
     <scopeInfo nodeId="1213877522464" fileName="SwitchMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="148" />
+  </root>
+  <root nodeId="1311078761699602468">
+    <scopeInfo nodeId="1311078761699602470" fileName="InsertMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1510949579266902209">
     <nodeInfo nodeId="1510949579266902214" fileName="TemplateCallMacro_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" file="OverridingMethods_Finder.java">
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="java.util.List" />

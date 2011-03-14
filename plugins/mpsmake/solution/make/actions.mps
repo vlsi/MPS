@@ -56,20 +56,17 @@
       <property name="name" nameId="tpck.1169194664001" value="GenerateFilesFromModel" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Generate Files from Current Model" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/generateFiles.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Model" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5882989260841437419">
       <property name="name" nameId="tpck.1169194664001" value="GenerateTextFromModel" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Generate Text from Current Model" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/generateText.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Model" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5882989260841437446">
       <property name="name" nameId="tpck.1169194664001" value="RegenerateFilesFromModel" />
       <property name="caption" nameId="tp4k.1205250923097" value="Regenerate Files from Current Model" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/generateFiles.png" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Model" />
     </node>
@@ -286,7 +283,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Make _Project" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/make.png" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8610665572788515222">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Make.groups" />
@@ -413,6 +409,9 @@
         </node>
       </node>
     </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091374">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/generateFiles.png" />
+    </node>
   </root>
   <root id="5882989260841437419">
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="5882989260841437420">
@@ -467,6 +466,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091389">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/generateText.png" />
     </node>
   </root>
   <root id="5882989260841437446">
@@ -523,6 +525,9 @@
       </node>
     </node>
     <node role="places" roleId="tp4k.394857668356997869" type="tp4k.EverywhereActionPlace" typeId="tp4k.394857668357342104" id="5882989260841437472" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091382">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/generateFiles.png" />
+    </node>
   </root>
   <root id="5882989260841437473">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5882989260841437474">
@@ -4832,6 +4837,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091411">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/make.png" />
     </node>
   </root>
   <root id="8610665572788515222">

@@ -58,21 +58,21 @@ public class ConfStubs extends BaseStubModelRootManager {
 
   protected void updateModel(final StubLocation location, final SModel model) {
     String pkg = model.getSModelFqName().getLongName();
-    List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
+    List<Tuples._3<String, String, SNode>> doclst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     PathItem pi = ConfPathItem.getPathItem(location.getPath());
-    for (String modres : ListSequence.fromList(pi.resources(pkg))) {
-      SNodeId id = ConfReader.createId(pi.baseName(modres));
+    for (String docres : ListSequence.fromList(pi.resources(pkg))) {
+      SNodeId id = ConfReader.createForeignId(pi.baseName(docres));
       SNode doc = (SNode) model.getNodeById(id);
       if ((doc == null)) {
         doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);
         doc.setId(id);
-        SPropertyOperations.set(doc, "name", pi.baseName(modres));
+        SPropertyOperations.set(doc, "name", pi.baseName(docres));
         SModelOperations.addRootNode(model, doc);
       }
-      ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, doc));
+      ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
     }
-    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"));
+    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), ConfStubs.this, location);
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {
       public SModelReference stubModelReference(String pk) {
         return descs.javaStubRef(pk);
@@ -82,11 +82,11 @@ public class ConfStubs extends BaseStubModelRootManager {
         return descs.smodelRefWithId(pk);
       }
     });
-    for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(modlst)) {
+    for (Tuples._3<String, String, SNode> doctuple : ListSequence.fromList(doclst)) {
       InputStream is = null;
       try {
-        is = pi.openResource(modpair._0(), modpair._1());
-        reader.read(modpair._2(), new SAXBuilder().build(is));
+        is = pi.openResource(doctuple._0(), doctuple._1());
+        reader.read(doctuple._2(), new SAXBuilder().build(is));
       } catch (IOException e) {
         e.printStackTrace();
       } catch (JDOMException e) {
@@ -103,7 +103,7 @@ public class ConfStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf")).getDescriptors(ConfStubs.this, location, new _FunctionTypes._return_P1_E0<PathItem, String>() {
+    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), ConfStubs.this, location).getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
       public PathItem invoke(String path) {
         return ConfPathItem.getPathItem(path);
       }

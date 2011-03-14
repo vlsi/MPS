@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Resume_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(Resume_Action.class.getResource("icons/resume.png"));
+  private static final Icon ICON = new ImageIcon(Resume_Action.class.getResource("resume.png"));
   protected static Log log = LogFactory.getLog(Resume_Action.class);
 
   public Resume_Action() {

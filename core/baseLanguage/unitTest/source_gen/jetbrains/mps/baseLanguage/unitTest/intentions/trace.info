@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.IntentionsDescriptor" />
   <unitInfo fileName="convert_test_case_to_unittest_case_Intention.java" startLine="83" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention$QuotationClass_p2nyw8_a1a0a0a6" />
   <unitInfo fileName="convert_test_case_to_unittest_case_Intention.java" startLine="101" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention$QuotationClass_p2nyw8_a0a0a3a7" />
   <unitInfo fileName="FlipAssertEquals_Intention.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" />

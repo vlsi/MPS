@@ -12,22 +12,23 @@ import jetbrains.mps.project.GlobalScope;
 
 public class XInclude extends ConfigurationXmlNode implements IExternalConfigurationFragment {
   public static final String concept = "jetbrains.mps.platform.conf.structure.XInclude";
-  public static final String XPOINTER = "xpointer";
+  public static final String INCLUDE_ROOT = "includeRoot";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DOCUMENT = "document";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public XInclude(SNode node) {
     super(node);
   }
 
-  public String getXpointer() {
-    return this.getProperty(XInclude.XPOINTER);
+  public String getIncludeRoot() {
+    return this.getProperty(XInclude.INCLUDE_ROOT);
   }
 
-  public void setXpointer(String value) {
-    this.setProperty(XInclude.XPOINTER, value);
+  public void setIncludeRoot(String value) {
+    this.setProperty(XInclude.INCLUDE_ROOT, value);
   }
 
   public String getShortDescription() {
@@ -52,6 +53,14 @@ public class XInclude extends ConfigurationXmlNode implements IExternalConfigura
 
   public void setVirtualPackage(String value) {
     this.setProperty(XInclude.VIRTUAL_PACKAGE, value);
+  }
+
+  public ConfigurationXmlDocument getDocument() {
+    return (ConfigurationXmlDocument) this.getReferent(ConfigurationXmlDocument.class, XInclude.DOCUMENT);
+  }
+
+  public void setDocument(ConfigurationXmlDocument node) {
+    super.setReferent(XInclude.DOCUMENT, node);
   }
 
   public int get_$attributesCount() {

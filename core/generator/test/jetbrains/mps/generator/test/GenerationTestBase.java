@@ -75,7 +75,6 @@ public class GenerationTestBase {
   }
 
   protected void doMeasureParallelGeneration(final MPSProject p, final SModelDescriptor descr, int threads) throws IOException {
-    GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
 
     // Stage 1. Regenerate
 
@@ -83,7 +82,7 @@ public class GenerationTestBase {
       .generateInParallel(false, 1)
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
-    gm.generateModels(
+    GenerationFacade.generateModels(p.getProject(),
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
       new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
@@ -97,7 +96,7 @@ public class GenerationTestBase {
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
     generationHandler = new IncrementalTestGenerationHandler();
     long start = System.nanoTime();
-    gm.generateModels(
+    GenerationFacade.generateModels(p.getProject(),
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
       new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
@@ -110,7 +109,7 @@ public class GenerationTestBase {
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
     generationHandler = new IncrementalTestGenerationHandler();
     start = System.nanoTime();
-    gm.generateModels(
+    GenerationFacade.generateModels(p.getProject(),
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
       new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
@@ -140,8 +139,6 @@ public class GenerationTestBase {
       });
       final SModelDescriptor descr = descr1[0];
 
-      GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
-
       File generatorCaches = new File(PathManager.getSystemPath(), "mps-generator-test");
       if (generatorCaches.exists()) {
         Assert.assertTrue(FileUtil.delete(generatorCaches));
@@ -163,7 +160,7 @@ public class GenerationTestBase {
       GenerationOptions options = GenerationOptions.getDefaults()
         .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
-      gm.generateModels(
+      GenerationFacade.generateModels(p.getProject(),
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
         generationHandler,
         new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
@@ -207,7 +204,7 @@ public class GenerationTestBase {
         generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
-        gm.generateModels(
+        GenerationFacade.generateModels(p.getProject(),
           Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
           generationHandler,
           new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
@@ -224,7 +221,7 @@ public class GenerationTestBase {
         .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
       long start = System.nanoTime();
-      gm.generateModels(
+      GenerationFacade.generateModels(p.getProject(),
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
         generationHandler,
         new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);

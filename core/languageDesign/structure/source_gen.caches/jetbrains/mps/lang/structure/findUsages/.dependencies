@@ -24,6 +24,17 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" file="LinkInstances_Finder.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

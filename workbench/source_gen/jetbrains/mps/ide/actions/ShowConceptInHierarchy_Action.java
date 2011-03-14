@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -16,14 +15,13 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(ShowConceptInHierarchy_Action.class.getResource("hierarchyView.png"));
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
   public ShowConceptInHierarchy_Action() {
@@ -81,7 +79,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       HierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
-      tool.showItemInHierarchy(((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode(_params))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

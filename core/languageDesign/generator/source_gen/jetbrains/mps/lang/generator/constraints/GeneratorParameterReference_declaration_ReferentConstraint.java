@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GeneratorParameterReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public GeneratorParameterReference_declaration_ReferentConstraint() {
@@ -26,6 +27,6 @@ public class GeneratorParameterReference_declaration_ReferentConstraint extends 
   }
 
   public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
-    return SPropertyOperations.getString(_context.getParameterNode(), "name");
+    return SPropertyOperations.getString(_context.getParameterNode(), "name") + " : " + SLinkOperations.getTarget(_context.getParameterNode(), "type", true);
   }
 }

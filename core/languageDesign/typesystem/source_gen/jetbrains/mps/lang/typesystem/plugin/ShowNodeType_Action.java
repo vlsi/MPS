@@ -4,8 +4,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -24,7 +23,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class ShowNodeType_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/types.png", "jetbrains.mps.lang.typesystem"), true);
+  private static final Icon ICON = new ImageIcon(ShowNodeType_Action.class.getResource("types.png"));
   private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 
   public ShowNodeType_Action() {

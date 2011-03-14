@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ExtractStaticInnerClassExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression";
   public static final String MAKE_UNIQUE = "makeUnique";
+  public static final String NON_STATIC = "nonStatic";
   public static final String INNER_CLASS = "innerClass";
   public static final String INNER = "inner";
 
@@ -24,6 +25,14 @@ public class ExtractStaticInnerClassExpression extends Expression {
 
   public void setMakeUnique(boolean value) {
     this.setBooleanProperty(ExtractStaticInnerClassExpression.MAKE_UNIQUE, value);
+  }
+
+  public boolean getNonStatic() {
+    return this.getBooleanProperty(ExtractStaticInnerClassExpression.NON_STATIC);
+  }
+
+  public void setNonStatic(boolean value) {
+    this.setBooleanProperty(ExtractStaticInnerClassExpression.NON_STATIC, value);
   }
 
   public ExtractStaticInnerClassConcept getInnerClass() {

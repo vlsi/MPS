@@ -2,19 +2,13 @@
 <model modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
   <persistence version="7" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
-  <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)" />
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
   <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.runConfigurations)" />
@@ -39,7 +33,6 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" version="-1" />
   <import index="qaz0" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
-  <import index="oe7v" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.resolve(jetbrains.mps.resolve@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="4zw2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="dl2z" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)" version="-1" />
@@ -93,6 +86,8 @@
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.runConfigurations.utils)" version="-1" />
+  <import index="mztn" modelUID="r:66ce2b91-7b81-4bbb-b893-ddc7adce1336(jetbrains.mps.ide.resolve)" version="-1" />
+  <import index="dp1x" modelUID="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="24" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -136,7 +131,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1217597602946">
       <property name="name" nameId="tpck.1169194664001" value="ShowTodoViewer" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Todo Tool" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
@@ -1017,12 +1011,12 @@
     <node role="fieldDeclaration" roleId="tp4k.1206112250032" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="2345890179797527164">
       <property name="name" nameId="tpck.1169194664001" value="myMethodDeclFixer" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2345890179797527165" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3912187081987993018">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oe7v.~MethodDeclarationsFixer" resolveInfo="MethodDeclarationsFixer" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2378204549815495109">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mztn.2378204549815375367" resolveInfo="MethodDeclarationsFixer" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2345890179797527167">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3912187081988067497">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe7v.~MethodDeclarationsFixer%d&lt;init&gt;()" resolveInfo="MethodDeclarationsFixer" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mztn.2378204549815375448" resolveInfo="MethodDeclarationsFixer" />
         </node>
       </node>
     </node>
@@ -1116,7 +1110,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1751532732861406185">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe7v.~MethodDeclarationsFixer%dinit()%cvoid" resolveInfo="init" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mztn.2378204549815375452" resolveInfo="init" />
                 </node>
               </node>
             </node>
@@ -1160,7 +1154,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1751532732861413595">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe7v.~MethodDeclarationsFixer%ddispose()%cvoid" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mztn.2378204549815375461" resolveInfo="dispose" />
                 </node>
               </node>
             </node>
@@ -1310,6 +1304,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091381">
+      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
     </node>
   </root>
   <root id="1223452095337">
@@ -4951,9 +4948,9 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9039238144051954633">
             <property name="name" nameId="tpck.1169194664001" value="str" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="9039238144051954646" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9039238144051954635">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dpeu.~TextPasteUtil%dgetStringFromClipboard()%cjava%dlang%dString" resolveInfo="getStringFromClipboard" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dpeu.~TextPasteUtil" resolveInfo="TextPasteUtil" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3551442599395438951">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dp1x.6299533519672652374" resolveInfo="getStringFromClipboard" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dp1x.6299533519672652334" resolveInfo="TextPasteUtil" />
             </node>
           </node>
         </node>

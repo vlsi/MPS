@@ -19,6 +19,14 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.behavior.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.ImplementMethods_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" file="MakeAbstract_Intention.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

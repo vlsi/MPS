@@ -34,4 +34,6 @@ public interface TemplateModel {
   Collection<TemplateMappingConfiguration> getConfigurations();
 
   TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments);
+
+  TemplateModule getModule();
 }

@@ -109,6 +109,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
+  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluateInsertQuery(inputNode, macroNode, query, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
   public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);

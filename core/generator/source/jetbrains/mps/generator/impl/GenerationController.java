@@ -17,8 +17,10 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.TransientModelsComponent;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
@@ -37,16 +39,13 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GenerationController implements ITaskPoolProvider {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private final TransientModelsComponent myTransientModelsComponent;
-  private GeneratorNotifierHelper myNotifierHelper;
   private List<SModelDescriptor> myInputModels;
   private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
@@ -58,10 +57,8 @@ public class GenerationController implements ITaskPoolProvider {
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
   public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsComponent transientModelsComponent, GenerationOptions options,
-                              IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
-                              GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressIndicator progress) {
+                              IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressIndicator progress) {
     myTransientModelsComponent = transientModelsComponent;
-    myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
@@ -75,7 +72,7 @@ public class GenerationController implements ITaskPoolProvider {
     ArrayList<SModelDescriptor> currentList = null;
     for (SModelDescriptor inputModel : myInputModels) {
       IModule newModule = inputModel.getModule();
-      if(newModule == null) {
+      if (newModule == null) {
         myLogger.warning("Model " + inputModel.getLongName() + " won't be generated");
         continue;
       }
@@ -114,12 +111,12 @@ public class GenerationController implements ITaskPoolProvider {
         if (myLogger.needsInfo()) {
           myLogger.info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
         }
+        // compile
+        generationOK = myGenerationHandler.compile(myOperationContext, myModuleSequence, true, progressHelper);
       } else {
         myLogger.error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }
-      generationOK = compile(progressHelper, generationOK);
 
-      fireModelsGenerated(generationOK);
       return generationOK;
     } catch (GenerationCanceledException gce) {
       myLogger.warning("generation canceled");
@@ -133,13 +130,6 @@ public class GenerationController implements ITaskPoolProvider {
     } finally {
       myGenerationHandler.finishGeneration(progressHelper);
     }
-  }
-
-  private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws IOException, GenerationCanceledException {
-    fireBeforeModelsCompiled(generationOK);
-    generationOK = generationOK && myGenerationHandler.compile(myOperationContext, myModuleSequence, generationOK, progressHelper);
-    fireAfterModelsCompiled(generationOK);
-    return generationOK;
   }
 
   protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
@@ -271,18 +261,6 @@ public class GenerationController implements ITaskPoolProvider {
       }
     }
     return Math.max(totalJob, 1000);
-  }
-
-  private void fireModelsGenerated(boolean success) {
-    myNotifierHelper.fireModelsGenerated(Collections.unmodifiableList(myInputModels), success);
-  }
-
-  private void fireBeforeModelsCompiled(boolean success) {
-    myNotifierHelper.fireBeforeModelsCompiled(Collections.unmodifiableList(myInputModels), success);
-  }
-
-  private void fireAfterModelsCompiled(boolean success) {
-    myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
   protected void checkMonitorCanceled() throws GenerationCanceledException {

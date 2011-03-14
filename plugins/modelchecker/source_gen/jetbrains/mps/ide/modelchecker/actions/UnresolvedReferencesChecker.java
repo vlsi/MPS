@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.ide.resolve.Resolver;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {

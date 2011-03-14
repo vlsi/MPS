@@ -17,6 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ImplementedInterfaces_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder");
 
+  public ImplementedInterfaces_Finder() {
+  }
+
   public String getDescription() {
     return "Implemented Interfaces";
   }

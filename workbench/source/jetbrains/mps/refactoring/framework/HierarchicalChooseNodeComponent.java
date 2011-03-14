@@ -18,10 +18,10 @@ package jetbrains.mps.refactoring.framework;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
@@ -116,7 +116,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     final HierarchyTreeNode selectedTreeNode = (HierarchyTreeNode) lastComponent;
     SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return selectedTreeNode.getNode().getNode();
+        return selectedTreeNode.getNode();
       }
     });
     return node;
@@ -126,11 +126,11 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     return this;
   }
 
-  class MyHierarchyTree extends AbstractHierarchyTree<INodeAdapter> {
+  class MyHierarchyTree extends AbstractHierarchyTree {
     private IDescendantsProvider myDescendantsProvider;
 
     public MyHierarchyTree(IDescendantsProvider descendantsProvider) {
-      super(null, INodeAdapter.class, false);
+      super(null, SNodeUtil.concept_BaseConcept, false);
       myDescendantsProvider = descendantsProvider;
     }
 
@@ -138,20 +138,20 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
       return "no node";
     }
 
-    protected INodeAdapter getParent(INodeAdapter node) {
+    protected SNode getParent(SNode node) {
       return null;
     }
 
-    protected Set<INodeAdapter> getParents(INodeAdapter node, Set<INodeAdapter> visited) {
-      return new HashSet();
+    protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
+      return new HashSet<SNode>();
     }
 
-    protected Set<INodeAdapter> getDescendants(INodeAdapter node, Set<INodeAdapter> visited) {
+    protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       return myDescendantsProvider.getDescendants(node);
     }
 
     public void setHierarchyNode(SNode node) {
-      myHierarchyNode = node.getAdapter();
+      myHierarchyNode = node;
     }
 
   }

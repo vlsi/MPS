@@ -69,24 +69,24 @@
   <unitInfo fileName="IfNotNullAll.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
   <unitInfo fileName="RuleMethodCall.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
   <unitInfo fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="115" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="131" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="175" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="191" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="265" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <unitInfo fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   <unitInfo fileName="IfEqualsNullAll.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
   <unitInfo fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner$NullableAnalyzer" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="115" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="131" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="183" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="199" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="273" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a" />
   <unitInfo fileName="NullableAnalyzerRunner.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
   <unitInfo fileName="NullableAnalyzerRules.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRules" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="26" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull$Pattern_ah97h0_a0a" />
-  <unitInfo fileName="RuleAssertNull.java" startLine="12" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull" />
-  <unitInfo fileName="WhileNotNull.java" startLine="26" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull$Pattern_pezsk4_a0a" />
-  <unitInfo fileName="WhileNotNull.java" startLine="12" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="26" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull$Pattern_vwsftd_a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="12" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="26" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull$Pattern_ah97h0_a0a" />
+  <unitInfo fileName="RuleAssertNull.java" startLine="12" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull" />
+  <unitInfo fileName="WhileNotNull.java" startLine="26" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull$Pattern_pezsk4_a0a" />
+  <unitInfo fileName="WhileNotNull.java" startLine="12" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="26" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull$Pattern_vwsftd_a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="12" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
   <root nodeId="1206454554507">
     <nodeInfo nodeId="1206454560120" fileName="IfStatement_DataFlow.java" startLine="18" startPosition="102" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220014062836" fileName="IfStatement_DataFlow.java" startLine="20" startPosition="161" endLine="21" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

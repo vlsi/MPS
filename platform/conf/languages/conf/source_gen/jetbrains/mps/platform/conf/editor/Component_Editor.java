@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -28,6 +29,10 @@ public class Component_Editor extends DefaultNodeEditor {
     return this.createCollection_3k4y3b_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_3k4y3b_a(editorContext, node);
+  }
+
   private EditorCell createCollection_3k4y3b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3k4y3b_a");
@@ -40,6 +45,12 @@ public class Component_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_3k4y3b_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3k4y3b_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3k4y3b_e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_3k4y3b_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -60,7 +71,7 @@ public class Component_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_3k4y3b_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return Component_Behavior.call_name_1740160309778233539(node);
+        return Component_Behavior.call_canonicName_1740160309778233539(node);
       }
 
       public void setText(String s) {

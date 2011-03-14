@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bash.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreateProperVariableReferance_Intention.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.intentions.CreateProperVariableReferance_Intention" />
   <unitInfo fileName="UncommentCommand_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.bash.intentions.UncommentCommand_Intention" />
   <unitInfo fileName="CommentOutCommand_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.intentions.CommentOutCommand_Intention" />

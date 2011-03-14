@@ -11,9 +11,9 @@
   <unitInfo fileName="InternalStaticFieldReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" />
   <unitInfo fileName="TypeHintExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression" />
   <unitInfo fileName="InternalVariableReference.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" />
-  <unitInfo fileName="ExtractStaticInnerClassExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression" />
   <unitInfo fileName="ExtractToConstantExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression" />
   <unitInfo fileName="ExtractStaticMethodExpression.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression" />
+  <unitInfo fileName="ExtractStaticInnerClassExpression.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression" />
   <unitInfo fileName="InternalNewExpression.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" />
   <unitInfo fileName="InternalStaticMethodCall.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" />
   <unitInfo fileName="ExtractStatementListInnerExpression.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression" />

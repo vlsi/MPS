@@ -43,6 +43,15 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" file="MakeInequalityCheckOnly_Intention.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

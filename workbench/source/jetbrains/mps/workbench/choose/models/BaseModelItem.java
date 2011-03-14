@@ -48,7 +48,7 @@ public abstract class BaseModelItem implements NavigationItem {
     boolean changed = false;
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (md instanceof EditableSModelDescriptor) {
-      changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+      changed = ((EditableSModelDescriptor) md).isChanged();
     }
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }

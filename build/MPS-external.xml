@@ -288,6 +288,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.stubUtils" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.typesystemEngine" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />

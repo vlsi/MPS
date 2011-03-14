@@ -1,4 +1,8 @@
 <extensions>
+  <!-- copied from LangExtensions.xml -->
+  <projectService serviceInterface="com.intellij.psi.PsiFileFactory"
+                  serviceImplementation="com.intellij.psi.impl.PsiFileFactoryImpl"/>
+
   <applicationService serviceInterface="com.intellij.openapi.vcs.actions.VcsContextFactory"
                       serviceImplementation="com.intellij.peer.impl.VcsContextFactoryImpl"/>
 

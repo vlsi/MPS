@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.ide.resolve.Resolver;
 import org.jetbrains.annotations.Nullable;
 
 public class GoByReference_ActionGroup extends GeneratedActionGroup {

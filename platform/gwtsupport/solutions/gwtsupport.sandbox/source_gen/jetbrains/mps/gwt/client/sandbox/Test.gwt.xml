@@ -5,8 +5,8 @@
 >
 <module rename-to="test"><inherits name="collections.runtime"></inherits>
 <inherits name="jetbrains.mps.baseLanguage.closures.runtime"></inherits>
-<inherits name=""></inherits>
-<inherits name=""></inherits>
+<inherits name="com.google.gwt.core.Core"></inherits>
+<inherits name="com.google.gwt.user.User"></inherits>
 <source path=""></source>
 <entry-point class="jetbrains.mps.gwt.client.sandbox.Test"></entry-point>
 </module>

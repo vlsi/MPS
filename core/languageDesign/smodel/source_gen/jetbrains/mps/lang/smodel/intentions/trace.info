@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.IntentionsDescriptor" />
   <unitInfo fileName="ChangeAsCast_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ChangeAsCast_Intention" />
   <unitInfo fileName="ConvertConceptPropertySetToAssignment_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertConceptPropertySetToAssignment_Intention" />
   <unitInfo fileName="ConvertLinkSetToAssignment_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.intentions.ConvertLinkSetToAssignment_Intention" />

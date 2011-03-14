@@ -27,7 +27,7 @@ public class TemplateSwitchGraph {
 
   private Map<SNodePointer, Node> mySwitchToNode = new HashMap<SNodePointer, Node>();
 
-  public TemplateSwitchGraph(List<TemplateModel> templateModels) {
+  public TemplateSwitchGraph(Collection<TemplateModel> templateModels) {
     for (TemplateModel templateModel : templateModels) {
       for (TemplateSwitchMapping root : templateModel.getSwitches()) {
         mySwitchToNode.put(root.getSwitchNode(), new Node(root));

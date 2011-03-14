@@ -4,6 +4,7 @@ package jetbrains.mps.gwt.client.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -12,12 +13,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GWTModule extends BaseConcept implements INamedConcept {
+public class GWTModule extends BaseConcept implements INamedConcept, IResolveInfo {
   public static final String concept = "jetbrains.mps.gwt.client.structure.GWTModule";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String RENAME_TO = "renameTo";
   public static final String ELEMENT = "element";
   public static final String _$ATTRIBUTE = "_$attribute";
@@ -56,6 +58,14 @@ public class GWTModule extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GWTModule.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(GWTModule.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(GWTModule.RESOLVE_INFO, value);
   }
 
   public RenameTo getRenameTo() {

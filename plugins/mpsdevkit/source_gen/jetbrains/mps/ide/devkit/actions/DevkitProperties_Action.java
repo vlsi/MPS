@@ -4,8 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,7 +21,7 @@ import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class DevkitProperties_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/languageProperties.png", "jetbrains.mps.ide.mpsdevkit"), true);
+  private static final Icon ICON = new ImageIcon(DevkitProperties_Action.class.getResource("languageProperties.png"));
   protected static Log log = LogFactory.getLog(DevkitProperties_Action.class);
 
   public DevkitProperties_Action() {

@@ -16,10 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class IterateOverIterable_Intention extends BaseIntention implements Intention {
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0h = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 
   public IterateOverIterable_Intention() {
   }
@@ -62,8 +63,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       if (coercedNode_6isygg_a0a != null) {
         SNode foreachStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
         SNode variableDeclaration = SNodeFactoryOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem"))), true);
-        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem")))));
+        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_6isygg_a0a.getFieldValue("patternVar_elem"))), true);
+        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_6isygg_a0a.getFieldValue("patternVar_elem")))));
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
         SNodeOperations.insertNextSiblingChild(node, foreachStatement);
         SNodeOperations.deleteNode(node);
@@ -77,7 +78,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public static class Pattern_w1n2qe_a1a0a0a0g extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    /*package*/ SNode patternVar_elem;
 
     public Pattern_w1n2qe_a1a0a0a0g() {
     }
@@ -90,9 +91,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g.getNode();
-          if (nodeToMatch_6isygg_a0a0a0a0.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferent("classifier")))) {
             return false;
           }
         }
@@ -103,7 +103,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           }
           {
             SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0).get(0);
-            this.PatternVar_elem = childVar_6isygg_a0a0a0a0a;
+            this.patternVar_elem = childVar_6isygg_a0a0a0a0a;
           }
         }
       }
@@ -116,13 +116,13 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+      if ("patternVar_elem".equals(fieldName)) {
+        return patternVar_elem;
       }
       return null;
     }
@@ -132,7 +132,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public static class Pattern_w1n2qe_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elem;
+    /*package*/ SNode patternVar_elem;
 
     public Pattern_w1n2qe_a0a0a0a7() {
     }
@@ -145,9 +145,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7.getNode();
-          if (nodeToMatch_6isygg_a0a0a0.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0h;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferent("classifier")))) {
             return false;
           }
         }
@@ -158,7 +157,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           }
           {
             SNode childVar_6isygg_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_).get(0);
-            this.PatternVar_elem = childVar_6isygg_a0a0a0a;
+            this.patternVar_elem = childVar_6isygg_a0a0a0a;
           }
         }
       }
@@ -171,13 +170,13 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+        patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_elem".equals(fieldName)) {
-        return this.PatternVar_elem;
+      if ("patternVar_elem".equals(fieldName)) {
+        return patternVar_elem;
       }
       return null;
     }

@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -65,7 +66,7 @@ public abstract class ProjectTreeFindHelper {
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
     MPSProject project = getProject().getComponent(MPSProject.class);
 
-    IModule module = jetbrains.mps.ide.projectPane.logicalview.FindUtil.getModuleForModel(project, model);
+    IModule module = getModuleForModel(project, model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
     ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
@@ -252,4 +253,38 @@ public abstract class ProjectTreeFindHelper {
   }
 
   protected abstract ProjectTree getTree();
+
+  //-----------find module by model------------
+
+  public static IModule getModuleForModel(MPSProject project, SModelDescriptor model) {
+    //language's and solution's own models (+generator models in language)
+    for (IModule owner : model.getModules()) {
+      IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
+      if (project.isProjectModule(mainModule)) return owner;
+    }
+
+    //accessories models in languages
+    /*
+      //with this enabled, alt-f1 does not work in case node is in non-owned accessory model to a project language
+      for (Language l : project.getProjectLanguages()) {
+        if (l.isAccessoryModel(model.getSModelReference())) return l;
+      }
+    */
+
+    //runtime models in languages
+    for (Language l : project.getProjectLanguages()) {
+      for (IModule depModule : ((LanguageDepsManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
+        for (IModule owner : model.getModules()) {
+          IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
+          if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;
+        }
+      }
+    }
+
+    //accessories models in devkits
+
+    //runtime models in devkits
+
+    return model.getModule();
+  }
 }

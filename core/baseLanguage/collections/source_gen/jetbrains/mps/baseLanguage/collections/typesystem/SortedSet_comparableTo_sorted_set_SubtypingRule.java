@@ -15,9 +15,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_9omwya_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
+  private static SNodePointer SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -25,7 +26,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new SortedSet_comparableTo_sorted_set_SubtypingRule.QuotationClass_9omwya_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_ELEMENT")), typeCheckingContext);
+    return new SortedSet_comparableTo_sorted_set_SubtypingRule.QuotationClass_9omwya_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("patternVar_ELEMENT")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -103,7 +104,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public static class Pattern_9omwya_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT;
+    /*package*/ SNode patternVar_ELEMENT;
 
     public Pattern_9omwya_a0a0a0a2() {
     }
@@ -116,9 +117,8 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_9omwya_a0a1a0a1a2a0a0a0a0a0a2.getNode();
-          if (nodeToMatch_h9rz5k_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0c;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h9rz5k_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -129,7 +129,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
           }
           {
             SNode childVar_h9rz5k_a0a0 = nodeToMatch_h9rz5k_a0a.getChildren(childRole_h9rz5k_).get(0);
-            this.PatternVar_ELEMENT = childVar_h9rz5k_a0a0;
+            this.patternVar_ELEMENT = childVar_h9rz5k_a0a0;
           }
         }
       }
@@ -142,13 +142,13 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+        patternVar_ELEMENT = (SNode) pattern.getFieldValue("patternVar_ELEMENT");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_ELEMENT".equals(fieldName)) {
-        return this.PatternVar_ELEMENT;
+      if ("patternVar_ELEMENT".equals(fieldName)) {
+        return patternVar_ELEMENT;
       }
       return null;
     }

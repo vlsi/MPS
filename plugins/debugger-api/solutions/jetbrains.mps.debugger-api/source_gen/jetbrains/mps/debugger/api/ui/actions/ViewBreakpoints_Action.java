@@ -18,7 +18,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class ViewBreakpoints_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ViewBreakpoints_Action.class.getResource("icons/viewBreakpoints.png"));
+  private static final Icon ICON = new ImageIcon(ViewBreakpoints_Action.class.getResource("viewBreakpoints.png"));
   protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 
   public ViewBreakpoints_Action() {

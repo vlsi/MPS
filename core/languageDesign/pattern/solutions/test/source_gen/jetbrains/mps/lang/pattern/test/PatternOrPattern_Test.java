@@ -28,7 +28,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternOrPattern_Test$TestBody", "testOrPattern", true);
   }
 
@@ -106,8 +106,8 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_qttyfe_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_body;
-      /*package*/ SNode PatternVar_ds;
+      /*package*/ SNode patternVar_body;
+      /*package*/ SNode patternVar_ds;
       private GeneratedMatchingPattern myOrPattern_7ozj7q_a0a;
 
       public Pattern_qttyfe_a0a1a1a() {
@@ -140,7 +140,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
                   }
                   {
                     SNode childVar_7ozj7q_a0a0 = nodeToMatch_7ozj7q_a0a.getChildren(childRole_7ozj7q__0).get(0);
-                    this.PatternVar_body = childVar_7ozj7q_a0a0;
+                    this.patternVar_body = childVar_7ozj7q_a0a0;
                   }
                 }
               }
@@ -186,17 +186,17 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-          this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
+          patternVar_body = (SNode) pattern.getFieldValue("patternVar_body");
+          patternVar_ds = (SNode) pattern.getFieldValue("patternVar_ds");
         }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_body".equals(fieldName)) {
-          return this.PatternVar_body;
+        if ("patternVar_body".equals(fieldName)) {
+          return patternVar_body;
         }
-        if ("PatternVar_ds".equals(fieldName)) {
-          return myOrPattern_7ozj7q_a0a.getFieldValue(fieldName);
+        if ("patternVar_ds".equals(fieldName)) {
+          return patternVar_ds;
         }
         return null;
       }
@@ -204,9 +204,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       public void performActions(Object o) {
       }
 
-      public static class Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_ds;
-
+      public class Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -227,7 +225,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_7ozj7q_a0a0a0;
                   nodeToMatch_7ozj7q_a0a0a0 = childVar_7ozj7q_a0a0a0;
-                  PatternVar_ds = nodeToMatch_7ozj7q_a0a0a0;
+                  patternVar_ds = nodeToMatch_7ozj7q_a0a0a0;
                 }
               }
             }
@@ -256,15 +254,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_ds".equals(fieldName)) {
-            return this.PatternVar_ds;
-          }
           return null;
         }
 
@@ -272,9 +264,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
       }
 
-      public static class Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_ds;
-
+      public class Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -311,7 +301,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
                 {
                   SNode nodeToMatch_7ozj7q_a0b0a0_0;
                   nodeToMatch_7ozj7q_a0b0a0_0 = childVar_7ozj7q_a0b0a0_0;
-                  PatternVar_ds = nodeToMatch_7ozj7q_a0b0a0_0;
+                  patternVar_ds = nodeToMatch_7ozj7q_a0b0a0_0;
                 }
               }
             }
@@ -324,15 +314,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_ds".equals(fieldName)) {
-            return this.PatternVar_ds;
-          }
           return null;
         }
 
