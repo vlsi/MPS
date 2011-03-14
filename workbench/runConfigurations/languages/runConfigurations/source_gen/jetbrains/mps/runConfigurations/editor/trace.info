@@ -56,6 +56,7 @@
   <unitInfo fileName="CommandParameterAssignment_Editor.java" startLine="22" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.CommandParameterAssignment_Editor" />
   <unitInfo fileName="EditorPropertyDeclaration_Editor.java" startLine="23" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.EditorPropertyDeclaration_Editor" />
   <unitInfo fileName="PersistentPropertyDeclaration_Editor.java" startLine="23" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.PersistentPropertyDeclaration_Editor" />
+  <unitInfo fileName="ReportErrorStatement_Editor.java" startLine="21" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.ReportErrorStatement_Editor" />
   <unitInfo fileName="CommandType_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.CommandType_Editor" />
   <unitInfo fileName="SettingsEditorType_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.SettingsEditorType_Editor" />
   <unitInfo fileName="PersistentConfigurationType_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.PersistentConfigurationType_Editor" />
