@@ -86,26 +86,27 @@ public class IntelligentInputUtil {
       SNode newNode = item.substitute(editorContext, smallPattern);
       editorContext.flushEvents();
       EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
-
-      EditorCell_Label target = null;
-      EditorCell errorOrEditable = cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
-      if (errorOrEditable instanceof EditorCell_Label) {
-        target = (EditorCell_Label) errorOrEditable;
-      }
-
-      if (target != null) {
-        target.changeText(tail);
-        target.end();
-
-        if (target.isErrorState()) {
-          target.validate(true, false);
+      if (cellForNewNode != null) {
+        EditorCell_Label target = null;
+        EditorCell errorOrEditable = cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
+        if (errorOrEditable instanceof EditorCell_Label) {
+          target = (EditorCell_Label) errorOrEditable;
         }
 
-        editorContext.flushEvents();
+        if (target != null) {
+          target.changeText(tail);
+          target.end();
 
-        if (editorContext.getSelectedCell() instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) editorContext.getSelectedCell();
-          label.end();
+          if (target.isErrorState()) {
+            target.validate(true, false);
+          }
+
+          editorContext.flushEvents();
+
+          if (editorContext.getSelectedCell() instanceof EditorCell_Label) {
+            EditorCell_Label label = (EditorCell_Label) editorContext.getSelectedCell();
+            label.end();
+          }
         }
       }
     } else if (info.getMatchingActions(pattern, false).isEmpty() &&
