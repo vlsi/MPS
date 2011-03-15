@@ -326,6 +326,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.SELECT_DOWN, new NodeEditorActions.SelectDown());
     myActionMap.put(CellActionType.SELECT_RIGHT, new NodeEditorActions.SideSelect(CellSide.RIGHT));
     myActionMap.put(CellActionType.SELECT_LEFT, new NodeEditorActions.SideSelect(CellSide.LEFT));
+    myActionMap.put(CellActionType.SELECT_NEXT, new NodeEditorActions.EnlargeSelection(true));
+    myActionMap.put(CellActionType.SELECT_PREVIOUS, new NodeEditorActions.EnlargeSelection(false));
 
     myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
     myActionMap.put(CellActionType.CUT, new CellAction_CutNode());

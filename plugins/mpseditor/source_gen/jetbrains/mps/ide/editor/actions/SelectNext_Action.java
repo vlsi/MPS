@@ -6,13 +6,13 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class SelectNext_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -24,9 +24,16 @@ public class SelectNext_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SelectNext", t);
@@ -48,12 +55,11 @@ public class SelectNext_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeRangeSelection rangeSelection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection();
-      if (rangeSelection.isActive()) {
-        rangeSelection.enlargeSelection(true);
-      } else {
-        rangeSelection.activate(true);
-      }
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().selectNext();
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SelectNext", t);

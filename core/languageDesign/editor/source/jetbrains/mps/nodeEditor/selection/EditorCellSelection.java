@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
@@ -117,5 +118,15 @@ public class EditorCellSelection implements SingularSelection {
       return false;
     }
     return true;
+  }
+
+  @Override
+  public void selectNext() {
+    myEditorCell.executeAction(CellActionType.SELECT_NEXT);
+  }
+
+  @Override
+  public void selectPrevious() {
+    myEditorCell.executeAction(CellActionType.SELECT_PREVIOUS);
   }
 }

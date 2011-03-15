@@ -14,10 +14,10 @@
   <unitInfo fileName="LocalEnd_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.LocalEnd_Action" />
   <unitInfo fileName="Home_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Home_Action" />
   <unitInfo fileName="End_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.End_Action" />
-  <unitInfo fileName="SelectPrevious_Action.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" />
-  <unitInfo fileName="SelectNext_Action.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectNext_Action" />
   <unitInfo fileName="MoveElementsDown_Action.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" />
   <unitInfo fileName="MoveElementsUp_Action.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" />
+  <unitInfo fileName="SelectPrevious_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" />
+  <unitInfo fileName="SelectNext_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectNext_Action" />
   <unitInfo fileName="InsertBefore_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.InsertBefore_Action" />
   <unitInfo fileName="MoveDown_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveDown_Action" />
   <unitInfo fileName="MoveUp_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveUp_Action" />
@@ -127,22 +127,24 @@
     </scopeInfo>
   </root>
   <root nodeId="4225699205371269974">
-    <nodeInfo nodeId="4225699205371415307" fileName="SelectNext_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4225699205371415347" fileName="SelectNext_Action.java" startLine="52" startPosition="38" endLine="53" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225699205371415317" fileName="SelectNext_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225699205371415345" fileName="SelectNext_Action.java" startLine="54" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4225699205371415315" fileName="SelectNext_Action.java" startLine="51" startPosition="138" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4225699205371415316" fileName="SelectNext_Action.java" startLine="52" startPosition="38" endLine="53" endPosition="46" />
-    <scopeInfo nodeId="4225699205371415346" fileName="SelectNext_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="38" />
+    <nodeInfo nodeId="1066551691825037534" fileName="SelectNext_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5953549292353129136" fileName="SelectNext_Action.java" startLine="59" startPosition="27" endLine="60" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5953549292353129132" fileName="SelectNext_Action.java" startLine="58" startPosition="58" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5953549292353129119" fileName="SelectNext_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1066551691825037533" fileName="SelectNext_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="128" />
+    <scopeInfo nodeId="5953549292353129135" fileName="SelectNext_Action.java" startLine="59" startPosition="27" endLine="60" endPosition="132" />
+    <scopeInfo nodeId="5953549292353129132" fileName="SelectNext_Action.java" startLine="58" startPosition="58" endLine="62" endPosition="0" />
+    <unitInfo nodeId="5953549292353129130" fileName="SelectNext_Action.java" startLine="58" startPosition="46" endLine="62" endPosition="7" unitName="jetbrains.mps.ide.editor.actions.SelectNext_Action$1" />
   </root>
   <root nodeId="4225699205371269977">
-    <nodeInfo nodeId="4225699205371415326" fileName="SelectPrevious_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4225699205371415357" fileName="SelectPrevious_Action.java" startLine="52" startPosition="38" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225699205371415336" fileName="SelectPrevious_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225699205371415355" fileName="SelectPrevious_Action.java" startLine="54" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4225699205371415334" fileName="SelectPrevious_Action.java" startLine="51" startPosition="138" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4225699205371415335" fileName="SelectPrevious_Action.java" startLine="52" startPosition="38" endLine="53" endPosition="47" />
-    <scopeInfo nodeId="4225699205371415356" fileName="SelectPrevious_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="39" />
+    <nodeInfo nodeId="1066551691825038015" fileName="SelectPrevious_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5953549292353129099" fileName="SelectPrevious_Action.java" startLine="59" startPosition="27" endLine="60" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5953549292353128601" fileName="SelectPrevious_Action.java" startLine="58" startPosition="58" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5953549292353122454" fileName="SelectPrevious_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1066551691825038014" fileName="SelectPrevious_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="128" />
+    <scopeInfo nodeId="5953549292353128604" fileName="SelectPrevious_Action.java" startLine="59" startPosition="27" endLine="60" endPosition="136" />
+    <scopeInfo nodeId="5953549292353128601" fileName="SelectPrevious_Action.java" startLine="58" startPosition="58" endLine="62" endPosition="0" />
+    <unitInfo nodeId="5953549292353128599" fileName="SelectPrevious_Action.java" startLine="58" startPosition="46" endLine="62" endPosition="7" unitName="jetbrains.mps.ide.editor.actions.SelectPrevious_Action$1" />
   </root>
   <root nodeId="4362199797783336764">
     <nodeInfo nodeId="4362199797783345681" fileName="EditMenuActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

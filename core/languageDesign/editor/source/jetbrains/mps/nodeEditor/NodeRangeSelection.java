@@ -100,13 +100,7 @@ public class NodeRangeSelection implements KeyboardHandler {
 
   public boolean activate(boolean next) {
     final EditorCell selectedCell = myEditorComponent.getSelectedCell();
-    SNode childNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-
-      @Override
-      public SNode compute() {
-        return findAppropriateNode(selectedCell);
-      }
-    });
+    SNode childNode = selectedCell.getSNode();
 
     if (childNode.getParent() == null) {
       return false;
@@ -128,30 +122,6 @@ public class NodeRangeSelection implements KeyboardHandler {
 
     enlargeSelection(next);
     return true;
-  }
-
-  private SNode findAppropriateNode(EditorCell selectedCell) {
-    SNode childNode = selectedCell.getSNode();
-    SNode parentNode = childNode.getParent();
-    String role = null;
-    while (parentNode != null) {
-      role = childNode.getRole_();
-      LinkDeclaration childDeclaration = (LinkDeclaration) BaseAdapter.fromNode(parentNode.getLinkDeclaration(role));
-
-      if (childDeclaration == null) {
-        if (!AttributesRolesUtil.isAttributeRole(role)) {
-          break;
-        }
-      } else {
-        Cardinality cardinality = childDeclaration.getSourceCardinality();
-        if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
-          break;
-        }
-      }
-      childNode = parentNode;
-      parentNode = childNode.getParent();
-    }
-    return childNode;
   }
 
   public List<SNode> getNodes() {

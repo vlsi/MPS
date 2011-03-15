@@ -221,6 +221,10 @@ public class SNodeUtil {
     return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1");
   }
 
+  public static boolean getLinkDeclaration_IsSingular(SNode link) {
+    return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}));
+  }
+
   public static boolean isInstanceOfIntegerConceptProperty(SNode node) {
     if (node == null) {
       return false;

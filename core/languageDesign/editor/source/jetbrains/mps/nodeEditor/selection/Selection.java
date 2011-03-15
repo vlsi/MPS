@@ -31,6 +31,10 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
+  void selectNext();
+
+  void selectPrevious();
+
   //void paintSelection();
 
   //void getSelectedNode();

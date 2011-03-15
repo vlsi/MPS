@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.selection.MultipleSelection;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
 
 import java.awt.*;
@@ -474,6 +476,47 @@ public class NodeEditorActions {
         result = result.getParent();
       }
       return null;
+    }
+  }
+
+  public static class EnlargeSelection extends NavigationAction {
+
+    private boolean myUp;
+
+    public EnlargeSelection(boolean up) {
+      myUp = up;
+    }
+
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return context.getSelectedCell() != null;
+    }
+
+    @Override
+    public void execute(final EditorContext context) {
+      EditorCell selectedCell = context.getSelectedCell();
+      SNode selectedNode = selectedCell.getSNode();
+      SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
+      if (topMostNodeInSingularContainment != selectedNode) {
+        EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
+        if (nodeCell != null) {
+          context.getNodeEditorComponent().pushSelection(nodeCell);
+        }
+      } else {
+        NodeRangeSelection nodeRangeSelection = context.getNodeEditorComponent().getNodeRangeSelection();
+        if (nodeRangeSelection.isActive()) {
+          nodeRangeSelection.enlargeSelection(myUp);
+        } else {
+          nodeRangeSelection.activate(myUp);
+        }
+      }
+    }
+
+    private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
+      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(childNode.getRoleLink())) {
+        childNode = childNode.getParent();
+      }
+      return childNode;
     }
   }
 

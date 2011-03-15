@@ -130,6 +130,16 @@ public class NodeRangeSelection implements MultipleSelection {
   }
 
   @Override
+  public void selectNext() {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public void selectPrevious() {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
   public Iterable<EditorCell> getSelectedSells() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
