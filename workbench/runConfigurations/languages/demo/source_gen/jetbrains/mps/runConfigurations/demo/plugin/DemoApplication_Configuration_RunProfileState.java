@@ -14,7 +14,6 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.runConfigurations.lib.JavaNode_Command;
 import com.intellij.execution.impl.ConsoleViewImpl;
@@ -51,9 +50,8 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    SNode node = myConfiguration.getNode().getNode();
     {
-      ProcessHandler _processHandler = new JavaNode_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).createProcess(node);
+      ProcessHandler _processHandler = new JavaNode_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNode());
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

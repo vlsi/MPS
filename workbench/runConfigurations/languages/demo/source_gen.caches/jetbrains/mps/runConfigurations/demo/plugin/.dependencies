@@ -85,7 +85,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
