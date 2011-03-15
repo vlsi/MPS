@@ -100,8 +100,8 @@ public class SModelFqName implements Comparable<Object> {
     return myStereotype.length() > 0;
   }
 
-  public SModelFqName withoutStereotype() {
-    return new SModelFqName(this.getLongName(), "");
+  public SModelFqName withStereotype(String newStereo) {
+    return new SModelFqName(myModuleFqName, myLongName, newStereo);
   }
 
   public int compareTo(Object o) {

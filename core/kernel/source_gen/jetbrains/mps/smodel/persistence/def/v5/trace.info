@@ -86,25 +86,28 @@
     </scopeInfo>
   </root>
   <root nodeId="2286463592495498121">
-    <nodeInfo nodeId="2286463592495498180" fileName="ModelUtil.java" startLine="14" startPosition="56" endLine="15" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2286463592495498184" fileName="ModelUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2286463592495498143" fileName="ModelUtil.java" startLine="20" startPosition="81" endLine="21" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUtil#()V" />
-    <nodeInfo nodeId="2286463592495498170" fileName="ModelUtil.java" startLine="13" startPosition="61" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeModelUID#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeStereotype#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2286463592495498126" fileName="ModelUtil.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
-    <scopeInfo nodeId="2286463592495498172" fileName="ModelUtil.java" startLine="14" startPosition="56" endLine="15" endPosition="40" />
-    <scopeInfo nodeId="2286463592495498130" fileName="ModelUtil.java" startLine="20" startPosition="81" endLine="21" endPosition="160" />
-    <scopeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="2286463592495498165" fileName="ModelUtil.java" startLine="13" startPosition="61" endLine="17" endPosition="22" />
-    <scopeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="2286463592495498180" fileName="ModelUtil.java" startLine="13" startPosition="56" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2286463592495498184" fileName="ModelUtil.java" startLine="15" startPosition="5" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9034052485202337810" fileName="ModelUtil.java" startLine="19" startPosition="81" endLine="20" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2286463592495498143" fileName="ModelUtil.java" startLine="20" startPosition="73" endLine="21" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="8" startPosition="24" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUtil#()V" />
+    <nodeInfo nodeId="2286463592495498170" fileName="ModelUtil.java" startLine="12" startPosition="61" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeModelUID#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="11" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeStereotype#(Ljava/lang/String;)Ljava/lang/String;" />
+    <scopeInfo nodeId="2286463592495498126" fileName="ModelUtil.java" startLine="9" startPosition="22" endLine="9" endPosition="22" />
+    <scopeInfo nodeId="2286463592495498172" fileName="ModelUtil.java" startLine="13" startPosition="56" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="8" startPosition="24" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="2286463592495498130" fileName="ModelUtil.java" startLine="19" startPosition="81" endLine="21" endPosition="121">
+      <varInfo nodeId="9034052485202337811" varName="newStereo" />
+    </scopeInfo>
+    <scopeInfo nodeId="2286463592495498165" fileName="ModelUtil.java" startLine="12" startPosition="61" endLine="16" endPosition="22" />
+    <scopeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2286463592495498140" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="11" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="2286463592495498168" varName="stereotype" />
     </scopeInfo>
-    <unitInfo nodeId="2286463592495498121" fileName="ModelUtil.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
+    <unitInfo nodeId="2286463592495498121" fileName="ModelUtil.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
   </root>
   <root nodeId="651246788329828609">
     <nodeInfo nodeId="7606567306781657993" fileName="LineToContentMapReader5Handler.java" startLine="104" startPosition="64" endLine="105" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
