@@ -14,11 +14,11 @@
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="103" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0e" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="121" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0m" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="123" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior$QuotationClass_5aznw1_a1a0a4" />
-  <unitInfo fileName="ProcessBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessBuilderExpression_Behavior" />
-  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
-  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
-  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
   <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
+  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
+  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
+  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="ProcessBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessBuilderExpression_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="104" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior$QuotationClass_5aznw1_a0a0d" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
@@ -343,6 +343,11 @@
     <nodeInfo nodeId="7902226081039510327" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7902226081039506466" fileName="SettingsEditor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="7902226081039506470" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" />
+  </root>
+  <root nodeId="7991611468341395794">
+    <nodeInfo nodeId="7991611468341396977" fileName="CommandBuilderExpression_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7991611468341395796" fileName="CommandBuilderExpression_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="7991611468341395799" fileName="CommandBuilderExpression_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" />
   </root>
   <root nodeId="823947676949146898">
     <nodeInfo nodeId="823947676949156178" fileName="ProcessBuilderExpression_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

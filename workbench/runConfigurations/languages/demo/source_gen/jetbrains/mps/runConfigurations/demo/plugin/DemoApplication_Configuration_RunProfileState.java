@@ -14,19 +14,16 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.NameUtil;
-import java.util.List;
-import jetbrains.mps.runConfigurations.lib.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.runConfigurations.lib.JavaNode_Command;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.runConfigurations.lib.Java_Command;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import com.intellij.execution.executors.DefaultRunExecutor;
@@ -54,16 +51,9 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    final Wrappers._T<String> fqName = new Wrappers._T<String>();
-    final SNode node = myConfiguration.getNode().getNode();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        fqName.value = NameUtil.nodeFQName(node);
-      }
-    });
-    List<String> cp = Java_Command.getClasspath(node);
+    SNode node = myConfiguration.getNode().getNode();
     {
-      ProcessHandler _processHandler = new Java_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).setClassPath(Java_Command.getClasspath(node)).setClassName(fqName.value).createProcess();
+      ProcessHandler _processHandler = new JavaNode_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).createProcess(node);
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

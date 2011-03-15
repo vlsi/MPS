@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="module" module-name="generator-engine" />
   </component>
 </module>
 
