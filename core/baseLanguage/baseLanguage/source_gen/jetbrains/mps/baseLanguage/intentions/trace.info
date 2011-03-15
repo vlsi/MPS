@@ -87,12 +87,12 @@
   <unitInfo fileName="ReplaceEqualsWithEquality_Intention.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualsWithEquality_Intention" />
   <unitInfo fileName="AddMainMethod_Intention.java" startLine="62" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention$QuotationClass_gghypg_a0a0a7" />
   <unitInfo fileName="GenerateMainMethod_Intention.java" startLine="73" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateMainMethod_Intention$QuotationClass_r69zem_a0a0a7" />
-  <unitInfo fileName="MakeMethodAbstarct_Intention.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
   <unitInfo fileName="ElsifTransform_Intention.java" startLine="13" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ElsifTransform_Intention" />
   <unitInfo fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForLoopWithWhileLoop_Intention" />
   <unitInfo fileName="CreateReferenceOnClass_Intention.java" startLine="12" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateReferenceOnClass_Intention" />
   <unitInfo fileName="MakeMethodFinal_Intention.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
   <unitInfo fileName="AddFinalModifierToAny_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
+  <unitInfo fileName="MakeMethodAbstarct_Intention.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="352" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a6a7" />
   <unitInfo fileName="ConvertToClosure_Intention.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention" />
   <unitInfo fileName="MoveInitializerToConstructor_Intention.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MoveInitializerToConstructor_Intention" />
@@ -1234,25 +1234,30 @@
   <root nodeId="1236187435379">
     <nodeInfo nodeId="4975090607137411447" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4975090607137411455" fileName="MakeMethodAbstarct_Intention.java" startLine="52" startPosition="30" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411460" fileName="MakeMethodAbstarct_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4975090607137411478" fileName="MakeMethodAbstarct_Intention.java" startLine="57" startPosition="39" endLine="58" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411484" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187518965" fileName="MakeMethodAbstarct_Intention.java" startLine="64" startPosition="76" endLine="65" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="224249931928959397" fileName="MakeMethodAbstarct_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="224249931928959420" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="117" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411460" fileName="MakeMethodAbstarct_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4975090607137411478" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411484" fileName="MakeMethodAbstarct_Intention.java" startLine="64" startPosition="7" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187518965" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="76" endLine="69" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4975090607137411453" fileName="MakeMethodAbstarct_Intention.java" startLine="51" startPosition="56" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="224249931928959406" fileName="MakeMethodAbstarct_Intention.java" startLine="55" startPosition="139" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236187505489" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="85" endLine="40" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="118" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4975090607137411469" fileName="MakeMethodAbstarct_Intention.java" startLine="55" startPosition="144" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="118" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4975090607137411469" fileName="MakeMethodAbstarct_Intention.java" startLine="59" startPosition="144" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <scopeInfo nodeId="4975090607137411454" fileName="MakeMethodAbstarct_Intention.java" startLine="52" startPosition="30" endLine="53" endPosition="18" />
-    <scopeInfo nodeId="4975090607137411477" fileName="MakeMethodAbstarct_Intention.java" startLine="57" startPosition="39" endLine="58" endPosition="113" />
-    <scopeInfo nodeId="1236187435383" fileName="MakeMethodAbstarct_Intention.java" startLine="64" startPosition="76" endLine="65" endPosition="108" />
+    <scopeInfo nodeId="224249931928959407" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="117" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="4975090607137411477" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="113" />
+    <scopeInfo nodeId="1236187435383" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="76" endLine="69" endPosition="108" />
     <scopeInfo nodeId="1236187435381" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="85" endLine="40" endPosition="6" />
-    <scopeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="118" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="4975090607137411446" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="90" endLine="61" endPosition="60">
+    <scopeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="118" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4975090607137411446" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="90" endLine="65" endPosition="60">
       <varInfo nodeId="4975090607137411448" varName="contextNode" />
       <varInfo nodeId="4975090607137411461" varName="includingStatementLists" />
+      <varInfo nodeId="224249931928959398" varName="containingClassifier" />
       <varInfo nodeId="4975090607137411470" varName="includingBodies" />
     </scopeInfo>
-    <unitInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="95" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention$1" />
+    <unitInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="95" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention$1" />
   </root>
   <root nodeId="1238764345596">
     <nodeInfo nodeId="1238764448898" fileName="IterateOverIterable_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
