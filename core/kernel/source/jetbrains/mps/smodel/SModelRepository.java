@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -232,6 +231,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private boolean myWasError = false;
+
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
 
@@ -243,7 +243,7 @@ public class SModelRepository implements ApplicationComponent {
         SModelFqName fqName = modelReference.getSModelFqName();
         if (fqName == null) return null;
 
-        if (!myWasError){
+        if (!myWasError) {
           myWasError = true;
           LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
         }
@@ -283,16 +283,18 @@ public class SModelRepository implements ApplicationComponent {
   public void saveAll() {
     ModelAccess.assertLegalWrite();
 
-    for (SModelDescriptor md : myModelsWithOwners.keySet()) {
-      if (!(md instanceof EditableSModelDescriptor)) continue;
-      EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
-      if (!emd.isChanged()) continue;
+    synchronized (myModelsLock) {
+      for (SModelDescriptor md : myModelsWithOwners.keySet()) {
+        if (!(md instanceof EditableSModelDescriptor)) continue;
+        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+        if (!emd.isChanged()) continue;
 
-      try {
-        emd.save();
-        emd.setChanged(false);
-      } catch (Exception e) {
-        LOG.error(e);
+        try {
+          emd.save();
+          emd.setChanged(false);
+        } catch (Exception e) {
+          LOG.error(e);
+        }
       }
     }
   }
@@ -439,8 +441,10 @@ public class SModelRepository implements ApplicationComponent {
   @Deprecated
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
-    for (SModelDescriptor d : myModelsWithOwners.keySet()) {
-      if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+    synchronized (myModelsLock) {
+      for (SModelDescriptor d : myModelsWithOwners.keySet()) {
+        if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+      }
     }
     return null;
   }
