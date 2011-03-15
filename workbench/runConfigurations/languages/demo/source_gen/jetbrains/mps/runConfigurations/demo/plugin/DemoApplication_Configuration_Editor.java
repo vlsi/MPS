@@ -4,7 +4,7 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.openapi.options.SettingsEditor;
 import javax.swing.JLabel;
-import jetbrains.mps.runConfigurations.utils.Node_Configuration_Editor;
+import jetbrains.mps.runConfigurations.lib.Node_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;

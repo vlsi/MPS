@@ -9,11 +9,12 @@
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" file="BaseRunner.java">
+    <classNode dependClassName="jetbrains.mps.runConfigurations.lib.Java_Command" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.utils.Java_Command" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="com.intellij.execution.configurations.GeneralCommandLine" />
     <classNode dependClassName="java.util.Set" />
@@ -26,7 +27,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

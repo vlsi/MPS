@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.runConfigurations.utils)">
+<model modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.runConfigurations.lib)">
   <persistence version="7" />
   <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.runConfigurations)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -26,7 +26,7 @@
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.runConfigurations.utils)" version="-1" implicit="yes" />
+  <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.runConfigurations.lib)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
@@ -42,6 +42,12 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7197035105459954540">
       <property name="name" nameId="tpck.1169194664001" value="ClassRunner" />
+    </node>
+    <node type="uhxm.CommandDeclaration" typeId="uhxm.6957430790227171559" id="6075055250644449720">
+      <property name="name" nameId="tpck.1169194664001" value="junit" />
+    </node>
+    <node type="uhxm.CommandDeclaration" typeId="uhxm.6957430790227171559" id="7991611468341333073">
+      <property name="name" nameId="tpck.1169194664001" value="java.node" />
     </node>
   </roots>
   <root id="3107334613900743948">
@@ -2192,6 +2198,24 @@
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7197035105459978408">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="r27b.~NotNull" resolveInfo="NotNull" />
+      </node>
+    </node>
+  </root>
+  <root id="6075055250644449720">
+    <node role="execute" roleId="uhxm.6110408870098804607" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6075055250644449721">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6075055250644449722">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2309921853483618217">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2309921853483618219" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7991611468341333073">
+    <node role="execute" roleId="uhxm.6110408870098804607" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="7991611468341333074">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="7991611468341333075">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7991611468341334972">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7991611468341334973" />
+        </node>
       </node>
     </node>
   </root>

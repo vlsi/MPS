@@ -39,7 +39,7 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.runConfigurations.utils.Java_Command;
+import jetbrains.mps.runConfigurations.lib.Java_Command;
 import java.io.File;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
