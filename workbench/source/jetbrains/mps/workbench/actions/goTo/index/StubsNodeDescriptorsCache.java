@@ -30,7 +30,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
       clearCache(modelDescriptor);
     }
 
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       clearCache(modelDescriptor);
     }
   };
