@@ -215,6 +215,10 @@ public class TransientModelsModule extends AbstractModule {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
+  public List<SModelDescriptor> getHiddenModelDescriptors() {
+    return new ArrayList<SModelDescriptor>(myModels.values());
+  }
+
   protected ModuleScope createScope() {
     return new TransientModuleScope();
   }
