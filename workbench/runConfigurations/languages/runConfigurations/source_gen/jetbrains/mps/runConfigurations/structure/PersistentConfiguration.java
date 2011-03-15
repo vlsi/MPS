@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PersistentConfiguration extends BaseConcept implements IPersistentPropertyHolder, INamedConcept, IClassifier {
+public class PersistentConfiguration extends BaseConcept implements IPersistentPropertyHolder, INamedConcept, IClassifier, IGeneratedToClass {
   public static final String concept = "jetbrains.mps.runConfigurations.structure.PersistentConfiguration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

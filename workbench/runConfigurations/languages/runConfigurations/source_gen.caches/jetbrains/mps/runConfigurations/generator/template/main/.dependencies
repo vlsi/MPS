@@ -26,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroPostProcContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.IGeneratedToClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -48,7 +49,6 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>

@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -37,12 +35,12 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static String call_getTypeFqName_6589514334700622462(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_3257967158569673046(thisNode);
-    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template);
+    return IGeneratedToClass_Behavior.call_getFullName_2309921853483530335(template);
   }
 
   public static String call_getTypeEditorFqName_3257967158569673018(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_3257967158569673046(thisNode);
-    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedEditorName_3257967158569669322(template);
+    return PersistentConfiguration_Behavior.call_getFullEditorName_2309921853483568805(template);
   }
 
   public static SNode call_getTemplate_3257967158569673046(SNode thisNode) {
