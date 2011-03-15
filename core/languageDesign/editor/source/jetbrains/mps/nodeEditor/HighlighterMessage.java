@@ -50,20 +50,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
-    if (getNode() == null) return null;
-    if (!(editor instanceof NodeEditorComponent)) {
-      return null;
-    }
-    SNode parent = getNode().getParent();
-    EditorCell result = null;
-    while (parent != null) {
-      result = editor.getBigValidCellForNode(parent);
-      if (result != null) {
-        return result;
-      }
-      parent = parent.getParent();
-    }
-    return result;
+    return super.getCellForParentNodeInMainEditor(editor);
   }
 
   public boolean isBackground() {

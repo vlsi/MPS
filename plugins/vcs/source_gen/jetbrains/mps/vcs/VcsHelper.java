@@ -15,7 +15,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -25,7 +25,7 @@ import jetbrains.mps.project.ModuleContext;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
+import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
@@ -83,7 +83,7 @@ public class VcsHelper {
     if (modelFile.exists()) {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
-    File zipfile = VcsHelperUtil.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
+    File zipfile = VcsHelperUtil.chooseZipFileForModelFile(modelFile.getName());
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
     return zipfile;
@@ -102,8 +102,8 @@ public class VcsHelper {
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     LOG.assertLog(file != null);
-    final ModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
-      public ModelDifferenceDialog compute() {
+    final OldModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<OldModelDifferenceDialog>() {
+      public OldModelDifferenceDialog compute() {
         SModelDescriptor modelDescriptor = diskModel.getModelDescriptor();
         if (modelDescriptor == null) {
           modelDescriptor = memoryModel.getModelDescriptor();
@@ -118,7 +118,7 @@ public class VcsHelper {
           context = new ModuleContext(modelDescriptor.getModule(), project);
         }
         JFrame frame = WindowManager.getInstance().getFrame(project);
-        return new ModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (read-only)", "Memory version"});
+        return new OldModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (read-only)", "Memory version"});
       }
     });
     dialog.showDialog();
@@ -133,10 +133,10 @@ public class VcsHelper {
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     LOG.assertLog(file != null);
-    final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
-      public MergeModelsDialog compute() {
+    final OldMergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<OldMergeModelsDialog>() {
+      public OldMergeModelsDialog compute() {
         IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), project);
-        return new MergeModelsDialog(context, base, mine, repo);
+        return new OldMergeModelsDialog(context, base, mine, repo);
       }
     });
     dialog.showDialog();

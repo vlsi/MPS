@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -17,7 +16,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToPreviousChange_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(GoToPreviousChange_Action.class.getResource("previousOccurence.png"));
+  private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToPreviousChange_Action.class);
 
   public GoToPreviousChange_Action() {

@@ -26,7 +26,10 @@ import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.util.Ref;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ModelUtils {
   private static final Logger LOG = Logger.getLogger(ModelUtils.class);
@@ -177,7 +180,7 @@ public class ModelUtils {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         public SModel compute() {
           try {
-            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype);
+            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype, ModelLoadingState.FULLY_LOADED).getModel();
           } catch (IOException e) {
             ex.set(e);
             return null;
@@ -194,14 +197,17 @@ public class ModelUtils {
     }
   }
 
-  public static File[] findZipFileNameForModelFile(final String modelFilePath) {
-    File parentFile = new File(modelFilePath).getParentFile();
-    return parentFile.listFiles(new FilenameFilter() {
+  public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
+    File[] files = new File(VcsHelperUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
-        String fullName = dir.getPath() + File.separator + name;
-        return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
+        return name.contains(modelFileName) && modelFileName.endsWith(".zip");
       }
     });
+    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
+      public Comparable<?> select(File f) {
+        return f.getName();
+      }
+    }, false);
   }
 
   private static interface InputSourceFactory {

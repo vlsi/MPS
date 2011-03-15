@@ -34,7 +34,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), anonymousClass, typeCheckingContext);
+    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(anonymousClass, SLinkOperations.getTargets(anonymousClass, "typeParameter", true), typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
       BaseQuickFixProvider intentionProvider = null;
@@ -101,9 +101,9 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
@@ -121,9 +121,9 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }

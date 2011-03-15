@@ -534,7 +534,13 @@ public class SNodeOperations {
     assert node != null : "can't replace node. node is NULL";
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
-      return anotherNode;
+      if (node.isRoot()) {
+        SModel model = node.getModel();
+        node.delete();
+        model.addRoot(anotherNode);
+      } else {
+        return anotherNode;
+      }
     }
     if (anotherNode != null) {
       SNode anotherNodeParent = anotherNode.getParent();

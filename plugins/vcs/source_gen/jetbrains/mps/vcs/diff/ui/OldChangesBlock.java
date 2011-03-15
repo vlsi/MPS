@@ -13,16 +13,16 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 
-public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
-  private List<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
+public class OldChangesBlock extends AbstractAdditionalPainter<OldChangesBlock> {
+  private List<OldChangeEditorMessage> myChanges = new ArrayList<OldChangeEditorMessage>();
   private int myMinY = 0;
   private int myMaxY = 0;
   private JComponent myRollbackIcon;
 
-  public ChangesBlock() {
+  public OldChangesBlock() {
   }
 
-  public void addChange(ChangeEditorMessage message, EditorCell cell) {
+  public void addChange(OldChangeEditorMessage message, EditorCell cell) {
     if (myChanges.isEmpty()) {
       myMinY = cell.getY();
       myMaxY = cell.getY() + cell.getHeight();
@@ -63,7 +63,7 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     }
   }
 
-  public List<ChangeEditorMessage> getChanges() {
+  public List<OldChangeEditorMessage> getChanges() {
     return myChanges;
   }
 
@@ -92,7 +92,7 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
   public void paintBackground(Graphics g, EditorComponent editorComponent) {
   }
 
-  public ChangesBlock getItem() {
+  public OldChangesBlock getItem() {
     return this;
   }
 }

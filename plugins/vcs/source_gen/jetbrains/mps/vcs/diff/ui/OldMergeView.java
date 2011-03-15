@@ -25,14 +25,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-public class NewMergeView extends JPanel {
+public class OldMergeView extends JPanel {
   private Merger myMerger;
   private IOperationContext myContext;
-  private ModelChangesTree myMineChangesTree;
-  private ModelChangesTree myRepoChangesTree;
-  private MergeResultView myResultView;
+  private OldModelChangesTree myMineChangesTree;
+  private OldModelChangesTree myRepoChangesTree;
+  private OldMergeResultView myResultView;
 
-  public NewMergeView(final IOperationContext context, final SModel baseModel, final SModel mine, final SModel repo) {
+  public OldMergeView(final IOperationContext context, final SModel baseModel, final SModel mine, final SModel repo) {
     setLayout(new BorderLayout());
     myContext = context;
     JPanel controlsPanel = createControlsPanel();
@@ -44,11 +44,11 @@ public class NewMergeView extends JPanel {
           public void run() {
           }
         });
-        ModelDifferenceComponent mineModelDiff = new ModelDifferenceComponent(context);
+        OldModelDifferenceComponent mineModelDiff = new OldModelDifferenceComponent(context);
         mineModelDiff.showDifference(baseModel, mine, myMerger.getBaseMineChanges());
         myMineChangesTree = mineModelDiff.getModelTree();
         panel.add(new HeaderWrapper("My Changes", mineModelDiff));
-        myResultView = new MergeResultView(context, baseModel, mine, repo, myMerger) {
+        myResultView = new OldMergeResultView(context, baseModel, mine, repo, myMerger) {
           @Override
           protected void showConflict(Conflict conflict) {
             SNode node;
@@ -67,7 +67,7 @@ public class NewMergeView extends JPanel {
           }
         };
         panel.add(new HeaderWrapper("Merge Result", myResultView));
-        ModelDifferenceComponent repoModelDiff = new ModelDifferenceComponent(context);
+        OldModelDifferenceComponent repoModelDiff = new OldModelDifferenceComponent(context);
         repoModelDiff.showDifference(baseModel, repo, myMerger.getBaseRepoChanges());
         myRepoChangesTree = repoModelDiff.getModelTree();
         panel.add(new HeaderWrapper("Repository Changes", repoModelDiff));
@@ -116,7 +116,7 @@ public class NewMergeView extends JPanel {
     return myMerger.getResultModel();
   }
 
-  private class MyChangesTree extends ModelChangesTree {
+  private class MyChangesTree extends OldModelChangesTree {
     /*package*/ MyChangesTree(IOperationContext context) {
       super(context);
     }

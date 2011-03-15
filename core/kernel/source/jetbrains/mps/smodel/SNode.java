@@ -26,6 +26,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -1182,8 +1183,8 @@ public final class SNode {
     return myId;
   }
 
-  public void setId(SNodeId id) {
-    if (id.equals(myId)) return;
+  public void setId(@Nullable SNodeId id) {
+    if (ObjectUtils.equals(id, myId)) return;
 
     if (!isRegistered()) {
       myId = id;

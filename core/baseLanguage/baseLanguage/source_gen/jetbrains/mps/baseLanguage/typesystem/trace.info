@@ -266,8 +266,8 @@
   <unitInfo fileName="check_StaticFinalFieldWasAssigned_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_StaticFinalFieldWasAssigned_NonTypesystemRule" />
   <unitInfo fileName="check_parametersCount_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_parametersCount_NonTypesystemRule" />
   <unitInfo fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule" />
-  <unitInfo fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
   <unitInfo fileName="check_EnumConstantHasConstructorDeclaration_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_EnumConstantHasConstructorDeclaration_NonTypesystemRule" />
+  <unitInfo fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
   <unitInfo fileName="check_VariableArityType_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_VariableArityType_NonTypesystemRule" />
   <unitInfo fileName="check_AbstractMethodsInClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AbstractMethodsInClass_NonTypesystemRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="1280" startPosition="0" endLine="1329" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
@@ -3368,7 +3368,7 @@
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="33" startPosition="54" endLine="34" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="34" startPosition="212" endLine="35" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="35" startPosition="64" endLine="36" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220443995701" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="43" startPosition="103" endLine="44" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220443995701" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="43" startPosition="103" endLine="44" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="12" endLine="46" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220444023164" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="10" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220443943109" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="42" startPosition="35" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3437,7 +3437,7 @@
     <nodeInfo nodeId="1220523357876" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="136" startPosition="15" endLine="137" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6281385834685063550" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="137" startPosition="55" endLine="138" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220523357880" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="139" startPosition="17" endLine="140" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220523357903" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="141" startPosition="328" endLine="142" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220523357903" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="141" startPosition="328" endLine="142" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227258840880" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="148" startPosition="16" endLine="149" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227258925906" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="149" startPosition="64" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1233155321686" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="151" startPosition="139" endLine="152" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5870,36 +5870,37 @@
     </scopeInfo>
   </root>
   <root nodeId="6654001062452780370">
-    <nodeInfo nodeId="4579166930940688817" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="133" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6654001062452862401" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="76" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3199803390871455357" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="80" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4579166930940319793" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="30" startPosition="23" endLine="31" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4579166930940320135" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="31" startPosition="142" endLine="32" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4579166930940320548" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="32" startPosition="163" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4579166930940321047" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="35" startPosition="31" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1592896280557388099" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="151" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="44" startPosition="9" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="56" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="46" startPosition="62" endLine="47" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4579166930940320972" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="34" startPosition="39" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1592896280557388068" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="39" startPosition="36" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4579166930940320739" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="54" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="230" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6654001062452862442" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="42" startPosition="7" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6654001062452862412" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="4579166930940320973" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="35" startPosition="31" endLine="36" endPosition="60" />
-    <scopeInfo nodeId="1592896280557388069" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="151" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="4579166930940320740" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="34" startPosition="39" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="44" startPosition="9" endLine="47" endPosition="354" />
-    <scopeInfo nodeId="4579166930940320739" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="54" endLine="38" endPosition="5">
+    <nodeInfo nodeId="4579166930940688817" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="133" endLine="29" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6654001062452862401" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="76" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3199803390871455357" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="30" startPosition="80" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4579166930940319793" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="31" startPosition="23" endLine="32" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4579166930940320135" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="32" startPosition="142" endLine="33" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4579166930940320548" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="163" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4579166930940321047" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="36" startPosition="31" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1592896280557388099" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="151" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="9" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="46" startPosition="56" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="47" startPosition="62" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="48" startPosition="58" endLine="49" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4579166930940320972" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="35" startPosition="39" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1592896280557388068" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="36" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4579166930940320739" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="34" startPosition="54" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="44" startPosition="230" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6654001062452862442" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6654001062452862412" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="4579166930940320973" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="36" startPosition="31" endLine="37" endPosition="60" />
+    <scopeInfo nodeId="1592896280557388069" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="151" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="4579166930940320740" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="35" startPosition="39" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="9" endLine="49" endPosition="354" />
+    <scopeInfo nodeId="4579166930940320739" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="34" startPosition="54" endLine="39" endPosition="5">
       <varInfo nodeId="4579166930940320743" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="6654001062452862443" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="230" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="6654001062452862413" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="39" startPosition="36" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="6654001062452862412" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="50" endPosition="5">
+    <scopeInfo nodeId="6654001062452862443" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="44" startPosition="230" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="6654001062452862413" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="36" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="6654001062452862412" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="52" endPosition="5">
       <varInfo nodeId="6654001062452862416" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="6654001062452780371" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="133" endLine="50" endPosition="5">
+    <scopeInfo nodeId="6654001062452780371" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="133" endLine="52" endPosition="5">
       <varInfo nodeId="4579166930940320549" varName="intersection" />
       <varInfo nodeId="4579166930940320136" varName="methodVariables" />
       <varInfo nodeId="6654001062452862402" varName="vars" />

@@ -194,7 +194,7 @@ __switch__:
         SNode _nodeToCheck_1029348928467 = null;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "549437922610106082", 0, intentionProvider);
-        typeCheckingContext.createGreaterThanInequation((SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(params, genericClassifier, typeCheckingContext), (SNode) instanceType, false, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequation((SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(genericClassifier, params, typeCheckingContext), (SNode) instanceType, false, _info_12389875345);
       }
     }
   }
@@ -747,9 +747,9 @@ with_anc:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
@@ -767,9 +767,9 @@ with_anc:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }

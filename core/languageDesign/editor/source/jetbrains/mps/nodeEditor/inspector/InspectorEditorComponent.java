@@ -96,10 +96,6 @@ public class InspectorEditorComponent extends EditorComponent {
     return getEditorContext().createInspectedCell(getEditedNode(), events);
   }
 
-  public EditorCell createRootCell() {
-    return createRootCell(null);
-  }
-
   //inspector is always the same, but inspection sessions differ
   public Object getInspectionSessionId() {
     return myInspectionSessionId;

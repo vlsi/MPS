@@ -4,6 +4,11 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSFavoritesManager">
+    <favorites_list name="tocheck">
+      <favorite_root model_ref="r:970edf9c-72c9-452a-b424-33bc075087b9(jetbrains.mps.baseLanguage.typesystem)" />
+    </favorites_list>
+  </component>
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/jetbrains.mps.vcs.msd" />
@@ -23,7 +28,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$mps_home$" vcs="Git" />
   </component>
 </project>
 

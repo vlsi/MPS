@@ -61,7 +61,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 
-/*package*/ class ModelChangesTree extends MPSTree {
+/*package*/ class OldModelChangesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
 
   private SModel myNewModel;
@@ -76,7 +76,7 @@ import jetbrains.mps.ide.projectPane.Icons;
   private Set<SNodeId> myConflicts = new HashSet<SNodeId>();
   private List<Change> myChanges;
 
-  /*package*/ ModelChangesTree(IOperationContext context) {
+  /*package*/ OldModelChangesTree(IOperationContext context) {
     myContext = context;
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
@@ -122,11 +122,11 @@ import jetbrains.mps.ide.projectPane.Icons;
     if (myNewModel == null) {
       return new TextTreeNode("No Model To Display");
     } else {
-      return new ModelChangesTree.MySModelTreeNode(myNewModel, "", myContext);
+      return new OldModelChangesTree.MySModelTreeNode(myNewModel, "", myContext);
     }
   }
 
-  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {
+  public OldModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {
     myChanges = changes;
     myOldModel = oldModel;
     myNewModel = newModel;
@@ -251,7 +251,7 @@ import jetbrains.mps.ide.projectPane.Icons;
     private SModel myModel;
 
     public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
-      super(null, label, operationContext, new ModelChangesTree.MyCondition(myChangedSubtree));
+      super(null, label, operationContext, new OldModelChangesTree.MyCondition(myChangedSubtree));
       myModel = model;
     }
 
@@ -302,7 +302,7 @@ import jetbrains.mps.ide.projectPane.Icons;
         SNode parent = rootInOldModel.getParent();
         if (parent == null) {
           SNodeTreeNode treeNode = idToTreeNode.get(root);
-          treeNode.setTree(ModelChangesTree.this);
+          treeNode.setTree(OldModelChangesTree.this);
           treeNode.init();
           add(treeNode);
         } else {
@@ -317,7 +317,7 @@ import jetbrains.mps.ide.projectPane.Icons;
           });
           if (parentTreeNode != null) {
             SNodeTreeNode treeNode = idToTreeNode.get(root);
-            treeNode.setTree(ModelChangesTree.this);
+            treeNode.setTree(OldModelChangesTree.this);
             treeNode.init();
             parentTreeNode.add(treeNode);
           }
@@ -329,17 +329,17 @@ import jetbrains.mps.ide.projectPane.Icons;
       modelPropertyChanges.addAll(CollectionUtil.filter(UsedDevkitsChange.class, myChanges));
       modelPropertyChanges.addAll(CollectionUtil.filter(EngagedOnGenerationLanguagesChange.class, myChanges));
       if (!(modelPropertyChanges.isEmpty())) {
-        ModelChangesTree.SModelPropertiesTreeNode propertiesNode = new ModelChangesTree.SModelPropertiesTreeNode(getOperationContext());
+        OldModelChangesTree.SModelPropertiesTreeNode propertiesNode = new OldModelChangesTree.SModelPropertiesTreeNode(getOperationContext());
         getRootNode().add(propertiesNode);
         for (Change change : modelPropertyChanges) {
-          propertiesNode.add(new ModelChangesTree.ModelPropertyChangeTreeNode(getOperationContext(), change));
+          propertiesNode.add(new OldModelChangesTree.ModelPropertyChangeTreeNode(getOperationContext(), change));
         }
       }
     }
 
     @NotNull
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-      return new ModelChangesTree.MySNodeTreeNode(node, role, operationContext, condition);
+      return new OldModelChangesTree.MySNodeTreeNode(node, role, operationContext, condition);
     }
 
     public SModel getSModel() {
@@ -513,7 +513,7 @@ import jetbrains.mps.ide.projectPane.Icons;
       super(operationContext);
       setIcon(null);
       setText(change.toString());
-      setColor(ModelChangesTree.getColorForChangeType(change.getChangeType()));
+      setColor(OldModelChangesTree.getColorForChangeType(change.getChangeType()));
     }
 
     @Override

@@ -37,6 +37,7 @@ import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
 import jetbrains.mps.vcs.diff.oldchanges.ModelImportChange;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 
+@Deprecated
 public class Merger {
   private final SModel[] mySourceModels = new SModel[Merger.Version.values().length];
   private SModel myResultModel;
@@ -52,6 +53,7 @@ public class Merger {
   private Set<Change> mySymmetricChanges = new HashSet<Change>();
   private boolean myPreviewMode = false;
 
+  @Deprecated
   public Merger(SModel base, SModel mine, SModel repo) {
     mySourceModels[Merger.Version.BASE.ordinal()] = base;
     mySourceModels[Merger.Version.MINE.ordinal()] = mine;
