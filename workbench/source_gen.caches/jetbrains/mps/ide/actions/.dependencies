@@ -1565,7 +1565,7 @@
     <classNode dependClassName="com.intellij.ui.treeStructure.Tree" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="javax.swing.tree.TreeSelectionModel" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
@@ -1581,6 +1581,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
@@ -1588,7 +1589,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
