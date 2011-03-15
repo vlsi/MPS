@@ -23,6 +23,7 @@
     <projectSolutions>
       <solutionPath path="${mps_home}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="bash" />
       <solutionPath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="ant" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/platform/bash/languages/bash/bash.mpl" folder="bash" />

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.build.ant.generation;
+package jetbrains.mps.build.ant.generation.workers;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
@@ -23,6 +23,10 @@ import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.build.ant.generation.ConsoleMessageFormat;
+import jetbrains.mps.build.ant.generation.GenerateTask;
+import jetbrains.mps.build.ant.generation.PerfomanceReport;
+import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;

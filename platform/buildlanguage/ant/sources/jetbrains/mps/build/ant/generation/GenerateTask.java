@@ -17,6 +17,7 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
 
 public class GenerateTask extends MpsLoadTask {
   public static final String COMPILE = "COMPILE";
