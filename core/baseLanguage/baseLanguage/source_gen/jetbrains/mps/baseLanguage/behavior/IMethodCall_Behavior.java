@@ -12,8 +12,6 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -102,16 +100,16 @@ public class IMethodCall_Behavior {
     return null;
   }
 
-  public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+  public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
-    HashMap<TypeVariableDeclaration, Type> result = new HashMap<TypeVariableDeclaration, Type>();
+    HashMap<SNode, SNode> result = new HashMap<SNode, SNode>();
     if ((instanceType == null)) {
       return result;
     }
     Iterator<SNode> typeParms = ListSequence.fromList(SLinkOperations.getTargets(instanceType, "parameter", true)).iterator();
     Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instanceType, "classifier", false), "typeVariableDeclaration", true)).iterator();
     while (typeParms.hasNext() && typeVars.hasNext()) {
-      result.put(((TypeVariableDeclaration) SNodeOperations.getAdapter(typeVars.next())), ((Type) SNodeOperations.getAdapter(typeParms.next())));
+      result.put(typeVars.next(), typeParms.next());
     }
     return result;
   }
@@ -124,8 +122,8 @@ public class IMethodCall_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
   }
 
-  public static Map<TypeVariableDeclaration, Type> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return (Map<TypeVariableDeclaration, Type>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
+  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return (Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
   }
 
   public static List<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
@@ -136,8 +134,8 @@ public class IMethodCall_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
   }
 
-  public static Map<TypeVariableDeclaration, Type> callSuper_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
-    return (Map<TypeVariableDeclaration, Type>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
+  public static Map<SNode, SNode> callSuper_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
+    return (Map<SNode, SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
   }
 
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
