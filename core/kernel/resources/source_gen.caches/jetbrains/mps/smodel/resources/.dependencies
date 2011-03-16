@@ -62,11 +62,12 @@
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.TResource" file="TResource.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.IDelta" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
   </dependency>
 </dependenciesRoot>
 
