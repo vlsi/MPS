@@ -46,6 +46,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
@@ -76,6 +77,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
     }
     editorCell.setDefaultText("");
     return editorCell;

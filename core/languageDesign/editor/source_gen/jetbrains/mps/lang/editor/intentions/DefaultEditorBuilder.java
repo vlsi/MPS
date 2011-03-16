@@ -63,6 +63,7 @@ public class DefaultEditorBuilder {
     buildHeader(references);
     if (Sequence.fromIterable(props).count() > 0 || ListSequence.fromList(children).count() > 0) {
       addLabel("{");
+      setMatchingLabel("body-brace");
       newLine();
       pushCollection();
       indent();
@@ -89,7 +90,7 @@ public class DefaultEditorBuilder {
           addRefNode(linkDeclaration);
         } else {
           addRefNodeList(linkDeclaration, null);
-          setStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
+          setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
         }
         indent();
         newLine();
@@ -97,6 +98,7 @@ public class DefaultEditorBuilder {
       }
       popCollection();
       addLabel("}");
+      setMatchingLabel("body-brace");
     } else {
       addPunctuation(";");
     }
@@ -130,6 +132,8 @@ public class DefaultEditorBuilder {
 
     buildHeader(references);
     addPunctuation("(");
+    setMatchingLabel("body-paren");
+
     noSpace();
     boolean first = true;
     for (SNode property : Sequence.fromIterable(props)) {
@@ -155,14 +159,18 @@ public class DefaultEditorBuilder {
         addRefNode(linkDeclaration);
       } else {
         addPunctuation("(");
+        setMatchingLabel("paren-" + SPropertyOperations.getString(linkDeclaration, "role"));
+
         noSpace();
         addRefNodeList(linkDeclaration, null);
         addPunctuation(")");
+        setMatchingLabel("paren-" + SPropertyOperations.getString(linkDeclaration, "role"));
       }
       noSpace();
       first = false;
     }
     addPunctuation(")");
+    setMatchingLabel("body-paren");
     popCollection();
   }
 
@@ -204,21 +212,27 @@ public class DefaultEditorBuilder {
     ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(nameCell);
   }
 
+  public void setMatchingLabel(String matchingLabel) {
+    SNode style = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", null);
+    SPropertyOperations.set(style, "labelName", matchingLabel);
+    setStyle(style);
+  }
+
   private void addPunctuation(String text) {
     addLabel(text);
-    setStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
   }
 
   private void noSpace() {
-    setStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
+    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
   }
 
   private void indent() {
-    setStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
+    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
   }
 
   private void newLine() {
-    setStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
+    setBooleanStyle(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
   }
 
   private void addEmptyLine() {
@@ -226,7 +240,7 @@ public class DefaultEditorBuilder {
     newLine();
   }
 
-  private void setStyle(SNode concept) {
+  private void setBooleanStyle(SNode concept) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
     SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
       collection :
@@ -235,6 +249,15 @@ public class DefaultEditorBuilder {
     SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     SPropertyOperations.set(classItem, "flag", "" + true);
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
+  }
+
+  public void setStyle(SNode style) {
+    SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
+    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
+      collection :
+      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
+    );
+    ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(style);
   }
 
   private void addProperty(SNode property) {
@@ -304,7 +327,7 @@ public class DefaultEditorBuilder {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }
-    if (!(eq_xgdobq_a0a1a81(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "string"))) {
+    if (!(eq_xgdobq_a0a1a02(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "string"))) {
       return false;
     }
     return true;
@@ -314,7 +337,7 @@ public class DefaultEditorBuilder {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }
-    if (!(eq_xgdobq_a0a1a91(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "boolean"))) {
+    if (!(eq_xgdobq_a0a1a12(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "boolean"))) {
       return false;
     }
     return true;
@@ -385,14 +408,14 @@ public class DefaultEditorBuilder {
     return count == 1;
   }
 
-  private static boolean eq_xgdobq_a0a1a81(Object a, Object b) {
+  private static boolean eq_xgdobq_a0a1a02(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_xgdobq_a0a1a91(Object a, Object b) {
+  private static boolean eq_xgdobq_a0a1a12(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

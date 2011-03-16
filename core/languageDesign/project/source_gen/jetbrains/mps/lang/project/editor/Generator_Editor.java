@@ -105,6 +105,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cqvux8_c0");
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -426,6 +427,10 @@ public class Generator_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_cqvux8_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_cqvux8_e0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
