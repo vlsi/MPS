@@ -8,7 +8,7 @@ import jetbrains.mps.internal.make.runtime.util.IDelta;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class TResource extends MultiTuple._2<IModule, IDelta> implements IResource {
+public class TResource extends MultiTuple._2<IModule, IDelta> implements IResource, ITResource {
   public TResource() {
     super();
   }
