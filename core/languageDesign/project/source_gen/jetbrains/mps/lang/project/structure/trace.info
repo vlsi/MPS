@@ -2,14 +2,18 @@
 <debugInfo>
   <unitInfo fileName="Project_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Project_Language" />
   <unitInfo fileName="DevKit.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.DevKit" />
-  <unitInfo fileName="Generator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Generator" />
-  <unitInfo fileName="Solution.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Solution" />
+  <unitInfo fileName="Solution.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Solution" />
   <unitInfo fileName="MappingPriorityRule.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingPriorityRule" />
   <unitInfo fileName="ModuleDependency.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleDependency" />
   <unitInfo fileName="ModelReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelReference" />
+  <unitInfo fileName="ModelRootManager.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelRootManager" />
+  <unitInfo fileName="ModuleReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleReference" />
   <unitInfo fileName="Language.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Language" />
   <unitInfo fileName="RuleType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType_PropertySupport" />
+  <unitInfo fileName="ModelRoot.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelRoot" />
+  <unitInfo fileName="StubEntry.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StubEntry" />
   <unitInfo fileName="RuleType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType" />
-  <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
+  <unitInfo fileName="Generator.java" startLine="12" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Generator" />
+  <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
 </debugInfo>
 

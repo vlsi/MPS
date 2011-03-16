@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Solution extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Solution";
+  public static final String A = "a";
 
   public Solution(SNode node) {
     super(node);
+  }
+
+  public Solution getA() {
+    return (Solution) this.getChild(Solution.class, Solution.A);
+  }
+
+  public void setA(Solution node) {
+    super.setChild(Solution.A, node);
   }
 
   public static Solution newInstance(SModel sm, boolean init) {

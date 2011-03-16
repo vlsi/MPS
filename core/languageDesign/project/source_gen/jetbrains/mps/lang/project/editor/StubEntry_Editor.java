@@ -16,37 +16,38 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class ModuleDependency_Editor extends DefaultNodeEditor {
+public class StubEntry_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_c4v0tm_a(editorContext, node);
+    return this.createCollection_cypwxg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_c4v0tm_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_cypwxg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_c4v0tm_a");
-    editorCell.addEditorCell(this.createConstant_c4v0tm_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_c4v0tm_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_h0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_c4v0tm_i0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c4v0tm_j0(editorContext, node));
+    editorCell.setCellId("Collection_cypwxg_a");
+    editorCell.addEditorCell(this.createConstant_cypwxg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cypwxg_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cypwxg_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_i0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_cypwxg_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_k0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module dependency");
-    editorCell.setCellId("Constant_c4v0tm_a0");
+  private EditorCell createConstant_cypwxg_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stub entry");
+    editorCell.setCellId("Constant_cypwxg_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_c4v0tm_b0");
+    editorCell.setCellId("Constant_cypwxg_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -56,16 +57,16 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport");
-    editorCell.setCellId("Constant_c4v0tm_c0");
+  private EditorCell createConstant_cypwxg_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "included in VCS");
+    editorCell.setCellId("Constant_cypwxg_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_c4v0tm_d0");
+    editorCell.setCellId("Constant_cypwxg_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -74,9 +75,9 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_c4v0tm_f0");
+    editorCell.setCellId("Constant_cypwxg_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -85,16 +86,16 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module ref");
-    editorCell.setCellId("Constant_c4v0tm_g0");
+  private EditorCell createConstant_cypwxg_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "manager");
+    editorCell.setCellId("Constant_cypwxg_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_c4v0tm_h0");
+    editorCell.setCellId("Constant_cypwxg_i0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -103,9 +104,9 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_c4v0tm_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_c4v0tm_j0");
+    editorCell.setCellId("Constant_cypwxg_k0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -114,10 +115,10 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_c4v0tm_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_cypwxg_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("moduleRef");
-    provider.setNoTargetText("<no moduleRef>");
+    provider.setRole("manager");
+    provider.setNoTargetText("<no manager>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {
@@ -135,13 +136,31 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_c4v0tm_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cypwxg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("reexport");
-    provider.setNoTargetText("<no reexport>");
+    provider.setRole("path");
+    provider.setNoTargetText("<no path>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_reexport");
+    editorCell.setCellId("property_path");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_cypwxg_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("includedInVCS");
+    provider.setNoTargetText("<no includedInVCS>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_includedInVCS");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

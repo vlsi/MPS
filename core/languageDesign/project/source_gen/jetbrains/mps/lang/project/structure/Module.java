@@ -21,8 +21,13 @@ public class Module extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMPILE_IN_M_P_S = "compileInMPS";
+  public static final String ENABLE_JAVA_STUBS = "enableJavaStubs";
   public static final String MODEL = "model";
-  public static final String DEPENDENCY = "dependency";
+  public static final String MODEL_ROOTS = "modelRoots";
+  public static final String DEPENDENCIES = "dependencies";
+  public static final String USED_LANGUAGES = "usedLanguages";
+  public static final String USED_DEVKITS = "usedDevkits";
+  public static final String STUB_MODELS = "stubModels";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public Module(SNode node) {
@@ -85,6 +90,14 @@ public class Module extends BaseConcept implements INamedConcept {
     this.setBooleanProperty(Module.COMPILE_IN_M_P_S, value);
   }
 
+  public boolean getEnableJavaStubs() {
+    return this.getBooleanProperty(Module.ENABLE_JAVA_STUBS);
+  }
+
+  public void setEnableJavaStubs(boolean value) {
+    this.setBooleanProperty(Module.ENABLE_JAVA_STUBS, value);
+  }
+
   public int getModelsCount() {
     return this.getChildCount(Module.MODEL);
   }
@@ -105,24 +118,104 @@ public class Module extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Module.MODEL, node);
   }
 
-  public int getDependenciesCount() {
-    return this.getChildCount(Module.DEPENDENCY);
+  public int getModelRootsesCount() {
+    return this.getChildCount(Module.MODEL_ROOTS);
   }
 
-  public Iterator<ModuleDependency> dependencies() {
-    return this.children(ModuleDependency.class, Module.DEPENDENCY);
+  public Iterator<ModelRoot> modelRootses() {
+    return this.children(ModelRoot.class, Module.MODEL_ROOTS);
   }
 
-  public List<ModuleDependency> getDependencies() {
-    return this.getChildren(ModuleDependency.class, Module.DEPENDENCY);
+  public List<ModelRoot> getModelRootses() {
+    return this.getChildren(ModelRoot.class, Module.MODEL_ROOTS);
   }
 
-  public void addDependency(ModuleDependency node) {
-    this.addChild(Module.DEPENDENCY, node);
+  public void addModelRoots(ModelRoot node) {
+    this.addChild(Module.MODEL_ROOTS, node);
   }
 
-  public void insertDependency(ModuleDependency prev, ModuleDependency node) {
-    this.insertChild(prev, Module.DEPENDENCY, node);
+  public void insertModelRoots(ModelRoot prev, ModelRoot node) {
+    this.insertChild(prev, Module.MODEL_ROOTS, node);
+  }
+
+  public int getDependenciesesCount() {
+    return this.getChildCount(Module.DEPENDENCIES);
+  }
+
+  public Iterator<ModuleDependency> dependencieses() {
+    return this.children(ModuleDependency.class, Module.DEPENDENCIES);
+  }
+
+  public List<ModuleDependency> getDependencieses() {
+    return this.getChildren(ModuleDependency.class, Module.DEPENDENCIES);
+  }
+
+  public void addDependencies(ModuleDependency node) {
+    this.addChild(Module.DEPENDENCIES, node);
+  }
+
+  public void insertDependencies(ModuleDependency prev, ModuleDependency node) {
+    this.insertChild(prev, Module.DEPENDENCIES, node);
+  }
+
+  public int getUsedLanguagesesCount() {
+    return this.getChildCount(Module.USED_LANGUAGES);
+  }
+
+  public Iterator<ModuleReference> usedLanguageses() {
+    return this.children(ModuleReference.class, Module.USED_LANGUAGES);
+  }
+
+  public List<ModuleReference> getUsedLanguageses() {
+    return this.getChildren(ModuleReference.class, Module.USED_LANGUAGES);
+  }
+
+  public void addUsedLanguages(ModuleReference node) {
+    this.addChild(Module.USED_LANGUAGES, node);
+  }
+
+  public void insertUsedLanguages(ModuleReference prev, ModuleReference node) {
+    this.insertChild(prev, Module.USED_LANGUAGES, node);
+  }
+
+  public int getUsedDevkitsesCount() {
+    return this.getChildCount(Module.USED_DEVKITS);
+  }
+
+  public Iterator<ModuleReference> usedDevkitses() {
+    return this.children(ModuleReference.class, Module.USED_DEVKITS);
+  }
+
+  public List<ModuleReference> getUsedDevkitses() {
+    return this.getChildren(ModuleReference.class, Module.USED_DEVKITS);
+  }
+
+  public void addUsedDevkits(ModuleReference node) {
+    this.addChild(Module.USED_DEVKITS, node);
+  }
+
+  public void insertUsedDevkits(ModuleReference prev, ModuleReference node) {
+    this.insertChild(prev, Module.USED_DEVKITS, node);
+  }
+
+  public int getStubModelsesCount() {
+    return this.getChildCount(Module.STUB_MODELS);
+  }
+
+  public Iterator<StubEntry> stubModelses() {
+    return this.children(StubEntry.class, Module.STUB_MODELS);
+  }
+
+  public List<StubEntry> getStubModelses() {
+    return this.getChildren(StubEntry.class, Module.STUB_MODELS);
+  }
+
+  public void addStubModels(StubEntry node) {
+    this.addChild(Module.STUB_MODELS, node);
+  }
+
+  public void insertStubModels(StubEntry prev, StubEntry node) {
+    this.insertChild(prev, Module.STUB_MODELS, node);
   }
 
   public int get_$attributesCount() {
