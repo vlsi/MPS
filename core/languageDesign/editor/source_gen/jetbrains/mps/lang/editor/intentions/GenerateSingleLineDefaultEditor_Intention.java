@@ -7,8 +7,8 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
-public class GenerateDefaultEditor_Intention extends BaseIntention implements Intention {
-  public GenerateDefaultEditor_Intention() {
+public class GenerateSingleLineDefaultEditor_Intention extends BaseIntention implements Intention {
+  public GenerateSingleLineDefaultEditor_Intention() {
   }
 
   public String getConcept() {
@@ -28,11 +28,11 @@ public class GenerateDefaultEditor_Intention extends BaseIntention implements In
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Generate Default Editor";
+    return "Generate Default (Expression-like)";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    DefaultEditorBuilder.buildDefaultEditor(node);
+    new DefaultEditorBuilder(node).buildExpressionLike();
   }
 
   public String getLocationString() {

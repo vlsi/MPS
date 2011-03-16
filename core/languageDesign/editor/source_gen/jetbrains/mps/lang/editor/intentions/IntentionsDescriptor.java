@@ -28,7 +28,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ColorQuery_Intention(), "1221475845846");
     add(new ExtractComponent_Intention(), "98380422618971761");
     add(new FontStyleQuery_Intention(), "1221476558282");
-    add(new GenerateDefaultEditor_Intention(), "1239368960873");
+    add(new GenerateMultiLineDefaultEditor_Intention(), "1239368960873");
+    add(new GenerateSingleLineDefaultEditor_Intention(), "5469351333089013987");
     add(new MigrateToIndentLayout_Intention(), "1237485920293");
     add(new RemoveIndent_Intention(), "1237403857170");
     add(new RemoveNewLine_Intention(), "1237403993138");
