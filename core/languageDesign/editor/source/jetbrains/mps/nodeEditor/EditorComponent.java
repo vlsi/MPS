@@ -1363,25 +1363,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_C && (com.intellij.openapi.util.SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.COPY;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_X && (com.intellij.openapi.util.SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
-      return CellActionType.CUT;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_V) {
-      if (ctrlDown(keyEvent)) {
-        return CellActionType.PASTE;
-      }
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && ctrlDown(keyEvent)) {
-      return CellActionType.COPY;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && shiftDown(keyEvent)) {
-      return CellActionType.PASTE;
-    }
-
     return null;
   }
 
@@ -2228,7 +2209,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         case PAGE_DOWN:
         case NEXT:
         case PREV:
-        case COPY:
           return true;
       }
     }
@@ -3055,19 +3035,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           EditorCell selectedCell = getSelectedCell();
-          assert selectedCell != null;
-          selectedCell.executeAction(CellActionType.CUT);
+          if (selectedCell != null) {
+            selectedCell.executeAction(CellActionType.CUT);
+          } else {
+            executeComponentAction(CellActionType.CUT);
+          }
         }
-      });
+      }, getCurrentProject());
     }
 
     public boolean isCutEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || isInvalid() || getSelectedCell() == null || isReadOnly()) {
+          if (isDisposed() || isInvalid() || isReadOnly()) {
             return false;
           }
-          return getSelectedCell().canExecuteAction(CellActionType.CUT);
+          EditorCell selectedCell = getSelectedCell();
+          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.CUT) : getSelectionManager().getSelection() != null;
         }
       });
     }
@@ -3082,19 +3066,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           EditorCell selectedCell = getSelectedCell();
-          assert selectedCell != null;
-          selectedCell.executeAction(CellActionType.COPY);
+          if (selectedCell != null) {
+            selectedCell.executeAction(CellActionType.COPY);
+          } else {
+            executeComponentAction(CellActionType.COPY);
+          }
         }
-      });
+      }, getCurrentProject());
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || isInvalid() || getSelectedCell() == null) {
+          if (isDisposed() || isInvalid()) {
             return false;
           }
-          return getSelectedCell().canExecuteAction(CellActionType.COPY);
+          EditorCell selectedCell = getSelectedCell();
+          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.COPY) : getSelectionManager().getSelection() != null;
         }
       });
     }
@@ -3109,19 +3097,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           EditorCell selectedCell = getSelectedCell();
-          assert selectedCell != null;
-          selectedCell.executeAction(CellActionType.PASTE);
+          if (selectedCell != null) {
+            selectedCell.executeAction(CellActionType.PASTE);
+          } else {
+            executeComponentAction(CellActionType.PASTE);
+          }
         }
-      });
+      }, getCurrentProject());
     }
 
     public boolean isPastePossible(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (isDisposed() || isInvalid() || getSelectedCell() == null || isReadOnly()) {
+          if (isDisposed() || isInvalid() || isReadOnly()) {
             return false;
           }
-          return getSelectedCell().canExecuteAction(CellActionType.PASTE);
+          EditorCell selectedCell = getSelectedCell();
+          return selectedCell != null ? selectedCell.canExecuteAction(CellActionType.PASTE) : getSelectionManager().getSelection() != null;
         }
       });
     }

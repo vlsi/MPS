@@ -193,14 +193,6 @@ public class NodeRangeSelection implements KeyboardHandler {
         doDeleteNodes(editorContext);
         return true;
       }
-      if (actionType == CellActionType.COPY) {
-        myEditorComponent.executeComponentAction(CellActionType.COPY);
-        return true;
-      }
-      if (actionType == CellActionType.CUT) {
-        myEditorComponent.executeComponentAction(CellActionType.CUT);
-        return true;
-      }
     }
     // eat it anyway
     return false;
