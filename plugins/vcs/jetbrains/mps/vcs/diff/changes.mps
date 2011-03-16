@@ -7,7 +7,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
-  <import index="9" modelUID="r:8c4cce03-71f2-4761-b048-dfb0e38b99b6(jetbrains.mps.util)" version="0" />
+  <import index="9" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="0" />
   <import index="20" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
@@ -17,6 +17,7 @@
   <import index="26" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(com.intellij.openapi.vcs@java_stub)" version="-1" />
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="30" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="31" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -24,7 +25,6 @@
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="11" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="28" modelUID="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" version="-1" implicit="yes" />
-  <import index="29" modelUID="r:fc5218ea-4258-4b67-bf23-8cd003b3a308(jetbrains.mps.util)" version="-1" implicit="yes" />
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8813828754313712692">
       <property name="1.name:0" value="ModelChange" />
@@ -1252,14 +1252,14 @@
               <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4972886494893415493">
                 <property name="1.name:0" value="finder" />
                 <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4972886494893415494">
-                  <link role="2.classifier:3" targetNodeId="29.4972886494893373483" resolveInfo="LongestCommonSubsequenceFinder" />
+                  <link role="2.classifier:3" targetNodeId="31.4972886494893373483" resolveInfo="LongestCommonSubsequenceFinder" />
                   <node role="2.parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4972886494893415495">
                     <link role="2.classifier:3" targetNodeId="21.~SNodeId" resolveInfo="SNodeId" />
                   </node>
                 </node>
                 <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4972886494893415496">
                   <node role="2.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4972886494893415497">
-                    <link role="2.baseMethodDeclaration:3" targetNodeId="29.4972886494893373484" resolveInfo="LongestCommonSubsequenceFinder" />
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893373484:0" resolveInfo="LongestCommonSubsequenceFinder" />
                     <node role="2.typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4972886494893415498">
                       <link role="2.classifier:3" targetNodeId="21.~SNodeId" resolveInfo="SNodeId" />
                     </node>
@@ -1299,7 +1299,7 @@
                     <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
                   </node>
                   <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3056334993733464216">
-                    <link role="2.baseMethodDeclaration:3" targetNodeId="29.4972886494893402109" resolveInfo="getDifferentIndices" />
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="31.4972886494893402109" resolveInfo="getDifferentIndices" />
                   </node>
                 </node>
               </node>
@@ -1568,7 +1568,7 @@
                     <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
                   </node>
                   <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2729259761015898460">
-                    <link role="2.baseMethodDeclaration:3" targetNodeId="29.4972886494893401870" resolveInfo="getCommonIndices" />
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="31.4972886494893401870" resolveInfo="getCommonIndices" />
                   </node>
                 </node>
               </node>

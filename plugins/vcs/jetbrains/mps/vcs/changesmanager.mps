@@ -14,9 +14,9 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="iwwu" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="9axq" modelUID="r:91e131da-c441-4d42-b39f-bb542f2f9d52(jetbrains.mps.vcs.plugin)" version="0" />
-  <import index="tthh" modelUID="r:5decfd29-3bc2-4558-b5df-ec14bcc404e0(jetbrains.mps.vcs)" version="-1" />
+  <import index="tthh" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" />
   <import index="jila" modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)" version="-1" />
-  <import index="vdwh" modelUID="r:6fe02ed6-ad22-41fd-b056-ab96d4685a9c(jetbrains.mps.vcs.diff)" version="-1" />
+  <import index="vdwh" modelUID="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" version="-1" />
   <import index="1bso" modelUID="r:e7eb8d2d-304d-447e-8625-ba74a8b15edf(jetbrains.mps.vcs.ui)" version="-1" />
   <import index="u0kk" modelUID="r:8c4cce03-71f2-4761-b048-dfb0e38b99b6(jetbrains.mps.util)" version="0" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />

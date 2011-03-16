@@ -5,7 +5,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="32" modelUID="r:e7eb8d2d-304d-447e-8625-ba74a8b15edf(jetbrains.mps.vcs.ui)" version="-1" />
-  <import index="14" modelUID="r:f94d34e5-10ba-4623-ae5e-914a67a305ef(jetbrains.mps.vcs.diff.ui)" version="-1" />
+  <import index="14" modelUID="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" version="-1" />
   <import index="63" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="64" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="65" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
@@ -58,7 +58,7 @@
   <import index="9" modelUID="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)" version="-1" implicit="yes" />
   <import index="21" modelUID="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.queue)" version="-1" implicit="yes" />
   <import index="34" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="44" modelUID="r:5decfd29-3bc2-4558-b5df-ec14bcc404e0(jetbrains.mps.vcs)" version="-1" implicit="yes" />
+  <import index="44" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" implicit="yes" />
   <import index="55" modelUID="r:43e0ac78-ea80-4032-8b3a-2710b3192190(jetbrains.mps.vcs.conflictable)" version="-1" implicit="yes" />
   <import index="61" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="62" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
