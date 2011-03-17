@@ -7,8 +7,6 @@ import java.util.List;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
   public Structure_ProjectPlugin() {
@@ -29,11 +27,5 @@ public class Structure_ProjectPlugin extends BaseProjectPlugin {
     result.add(new Textgen_TabDescriptor());
     result.add(new Typesystem_TabDescriptor());
     return result;
-  }
-
-  public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.fromList(tools).addElement(new StructureView_Tool(project));
-    return tools;
   }
 }
