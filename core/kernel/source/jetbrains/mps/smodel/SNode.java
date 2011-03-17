@@ -1213,9 +1213,9 @@ public final class SNode {
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
  */
       if (detailed) {
-        return SNodeUtil.getDetailedPresentation(this);
+        return "" + SNodeUtil.getDetailedPresentation(this);
       } else {
-        return SNodeUtil.getPresentation(this);
+        return "" + SNodeUtil.getPresentation(this);
       }
     } catch (RuntimeException t) {
       LOG.error(t);
