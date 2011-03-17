@@ -49,7 +49,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private boolean myIsChanged = false;
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     public void moduleAdded(IModule module) {
-      if (module.isPackaged()) return;
+      //if (module.isPackaged()) return;
       GlobalClassPathIndex.this.moduleAdded(module);
     }
 

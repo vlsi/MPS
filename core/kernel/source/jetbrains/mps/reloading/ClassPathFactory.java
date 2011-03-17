@@ -3,6 +3,8 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -29,7 +31,7 @@ public class ClassPathFactory {
   }
 
   public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    File file = new File(path);
+    IFile file = FileSystem.getInstance().getFileByPath(path);
 
     if (!file.exists()) {
       String moduleString = module == null ? "" : (" in " + module.toString());
