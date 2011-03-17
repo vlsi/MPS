@@ -9,6 +9,6 @@
   <unitInfo fileName="ConceptDeclarationsHolder.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder" />
   <unitInfo fileName="LocalBehaviorMethodCall.java" startLine="16" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" />
   <unitInfo fileName="ConceptMethodDeclaration.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" />
-  <unitInfo fileName="ConceptBehavior.java" startLine="26" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" />
+  <unitInfo fileName="ConceptBehavior.java" startLine="20" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" />
 </debugInfo>
 
