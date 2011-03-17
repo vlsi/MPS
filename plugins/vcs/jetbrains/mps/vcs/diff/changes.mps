@@ -15,8 +15,6 @@
   <import index="24" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" version="-1" />
   <import index="26" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(com.intellij.openapi.vcs@java_stub)" version="-1" />
-  <import index="27" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="30" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="31" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -1259,7 +1257,7 @@
                 </node>
                 <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4972886494893415496">
                   <node role="2.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4972886494893415497">
-                    <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893373484:0" resolveInfo="LongestCommonSubsequenceFinder" />
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="31.4972886494893373484" resolveInfo="LongestCommonSubsequenceFinder" />
                     <node role="2.typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4972886494893415498">
                       <link role="2.classifier:3" targetNodeId="21.~SNodeId" resolveInfo="SNodeId" />
                     </node>
