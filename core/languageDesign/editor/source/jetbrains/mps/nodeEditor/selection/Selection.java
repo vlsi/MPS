@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.nodeEditor.CellActionType;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Alexander Shatalin
@@ -31,9 +33,7 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
-  void selectNext();
-
-  void selectPrevious();
+  void executeAction(CellActionType type);
 
   //void paintSelection();
 

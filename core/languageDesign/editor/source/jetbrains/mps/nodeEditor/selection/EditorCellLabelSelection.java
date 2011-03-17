@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -61,6 +64,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     myNonTrivialSelection = mySelectionStart != mySelectionEnd;
   }
 
+  @NotNull
   public EditorCell_Label getEditorCellLabel() {
     return (EditorCell_Label) getEditorCell();
   }
@@ -140,5 +144,90 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       }
     }
     return true;
+  }
+
+  @Override
+  public void executeAction(CellActionType type) {
+    if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {
+      performDeleteAction(type);
+    }
+    if (type == CellActionType.DELETE_TO_WORD_END) {
+      super.executeAction(CellActionType.DELETE);
+    }
+    super.executeAction(type);
+  }
+
+  @Override
+  protected boolean suppressDelete() {
+    if (!super.suppressDelete()) {
+      return false;
+    }
+    EditorCell_Label label = getEditorCellLabel();
+    if (label.getText().length() == 0) {
+      return false;
+    }
+    if (label instanceof EditorCell_Constant || label instanceof EditorCell_Property) {
+      return label.isEditable() || label.getContainingBigCell().getLastLeaf(CellConditions.SELECTABLE) != label;
+    }
+    return true;
+  }
+
+  private void performDeleteAction(CellActionType type) {
+    if (getEditorCellLabel().executeTextAction(type, false)) {
+      return;
+    }
+    if (processSideDeletes(type)) {
+      return;
+    }
+    if (getEditorCellLabel().executeTextAction(type, true)) {
+      return;
+    }
+    // TODO: add separate handler for Backspace action.
+    super.executeAction(CellActionType.DELETE);
+  }
+
+  private boolean processSideDeletes(CellActionType type) {
+    // TODO: review this logic - it was originally copied from EditorComponentKeyboardHandler
+    final EditorCell selectedCell = getEditorCell();
+    if (type == CellActionType.DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
+      final EditorCell target;
+      if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
+        target = selectedCell.getContainingBigCell().getNextSibling();
+      } else if (selectedCell.getNextSibling() != null) {
+        target = selectedCell.getNextSibling();
+      } else {
+        target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+      }
+
+      if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+        }
+      })) return false;
+
+      return target.executeAction(CellActionType.DELETE);
+    }
+
+    if (type == CellActionType.BACKSPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
+      final EditorCell target;
+      if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
+        target = selectedCell.getContainingBigCell().getPrevSibling();
+      } else if (selectedCell.getPrevSibling() != null) {
+        target = selectedCell.getPrevSibling();
+      } else {
+        target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+      }
+
+      if (target == null) return false;
+      /*
+      if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+        }
+      })) return false;
+      */
+      return target.executeAction(CellActionType.DELETE);
+    }
+    return false;
   }
 }

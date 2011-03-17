@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.CellActionType;
 
 public class SelectNext_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -57,7 +58,7 @@ public class SelectNext_Action extends GeneratedAction {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().selectNext();
+          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_NEXT);
         }
       });
     } catch (Throwable t) {

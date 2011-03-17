@@ -10,8 +10,11 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.Backspace_Action", getShortcut(" BACK_SPACE"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.CopyThisDown_Action", getShortcut("ctrl D"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.DeleteLine_Action", getShortcut("ctrl Y"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action", getShortcut("ctrl DELETE"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.Delete_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.End_Action", getShortcut(" END"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.Escape_Action", getShortcut(" ESCAPE"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.ExtractComponent_Action", getShortcut("ctrl alt C"));

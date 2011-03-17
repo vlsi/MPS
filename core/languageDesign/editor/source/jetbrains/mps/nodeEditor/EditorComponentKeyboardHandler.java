@@ -16,15 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.command.CommandProcessor;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
@@ -35,15 +27,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    if (processKeyPressedOnCell(editorContext, keyEvent, false)) {
-      return true;
-    }
-
     if (processKeyMaps(editorContext, keyEvent)) {
-      return true;
-    }
-
-    if (processSideDeletes(editorContext, keyEvent)) {
       return true;
     }
 
@@ -51,25 +35,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     // process action
-    if (selectedCell != null) {
-      if (actionType != null && actionType != CellActionType.DELETE) {
-        if (selectedCell.executeAction(actionType)) {
-          return true;
-        }
-      }
-
-      if (!keyEvent.isConsumed()) {
-        // allow selected cell to process event.
-        if (selectedCell.processKeyPressed(keyEvent, true)) {
-          return true;
-        }
-      }
-
-      if (actionType == CellActionType.DELETE) {
-        if (selectedCell.executeAction(actionType)) {
-          return true;
-        }
-      }
+    if (selectedCell != null && actionType != null && selectedCell.executeAction(actionType)) {
+      return true;
     }
 
     // special case - don't allow kbd focus to leave editor area
@@ -125,16 +92,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
-  private boolean processKeyPressedOnCell(EditorContext editorContext, KeyEvent event, boolean allowErrors) {
-    EditorCell selectedCell = editorContext.getSelectedCell();
-    if (selectedCell != null) {
-      if (selectedCell.processKeyPressed(event, allowErrors)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   private boolean processKeyMaps(EditorContext editorContext, KeyEvent keyEvent) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell != null) {
@@ -152,68 +109,5 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
     }
     return false;
-  }
-
-  private boolean processSideDeletes(EditorContext editorContext, KeyEvent keyEvent) {
-    final EditorCell selectedCell = editorContext.getSelectedCell();
-    if (selectedCell == null) return false;
-    if (areModifiersPressed(keyEvent)) return false;
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
-      final EditorCell target;
-      if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
-        target = selectedCell.getContainingBigCell().getNextSibling();
-      } else if (selectedCell.getNextSibling() != null) {
-        target = selectedCell.getNextSibling();
-      } else {
-        target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
-      }
-
-      if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return target.getSNode().isAncestorOf(selectedCell.getSNode());
-        }
-      })) return false;
-
-      return target.executeAction(CellActionType.DELETE);
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
-      final EditorCell target;
-      if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
-        target = selectedCell.getContainingBigCell().getPrevSibling();
-      } else if (selectedCell.getPrevSibling() != null) {
-        target = selectedCell.getPrevSibling();
-      } else {
-        target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
-      }
-
-      if (target == null) return false;
-      /*
-      if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return target.getSNode().isAncestorOf(selectedCell.getSNode());
-        }
-      })) return false;
-      */
-
-      return target.executeAction(CellActionType.DELETE);
-    }
-
-    return false;
-  }
-
-  private boolean areModifiersPressed(KeyEvent e) {
-    return e.isControlDown() || e.isAltDown() || e.isShiftDown();
-  }
-
-  private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
-    return (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-  }
-
-  private boolean isLinkCollection(EditorCell cell) {
-    String role = cell.getRole();
-    if (role == null) return false;
-    return true;
   }
 }

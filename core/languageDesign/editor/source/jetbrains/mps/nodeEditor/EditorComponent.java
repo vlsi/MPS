@@ -1336,42 +1336,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     }
-
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && ctrlDown(keyEvent)) {
-      return CellActionType.DELETE;
-    }
-
-    if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
-      && noKeysDown(keyEvent)) {
-
-      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-      if (selectedCell != null && selectedCell.isBigCell()) {
-        return CellActionType.DELETE;
-      }
-
-      if (selectedCell != null && selectedCell.getAction(CellActionType.DELETE) != null) {
-        return CellActionType.DELETE;
-      }
-
-      if (selectedCell instanceof EditorCell_Label) {
-        EditorCell_Label label = (EditorCell_Label) selectedCell;
-        if (label.getText().length() == 0 || ((label instanceof EditorCell_Constant || label instanceof EditorCell_Property) && !label.isEditable() &&
-          (label.getContainingBigCell().getLastLeaf(CellConditions.SELECTABLE) == label))) {
-          return CellActionType.DELETE;
-        }
-      }
-    }
-
     return null;
   }
 
   private boolean ctrlShiftDown(KeyEvent keyEvent) {
     return keyEvent.getModifiers() == (KeyEvent.CTRL_MASK + KeyEvent.SHIFT_MASK);
-  }
-
-  private boolean altShiftDown(KeyEvent keyEvent) {
-    return keyEvent.getModifiers() == (KeyEvent.ALT_MASK + KeyEvent.SHIFT_MASK);
   }
 
   private boolean shiftDown(KeyEvent keyEvent) {
@@ -1388,14 +1357,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean ctrlDown(KeyEvent keyEvent) {
     return keyEvent.getModifiers() == KeyEvent.CTRL_MASK;
-  }
-
-  private boolean altDown(KeyEvent keyEvent) {
-    return keyEvent.getModifiers() == KeyEvent.ALT_MASK;
-  }
-
-  private boolean metaDown(KeyEvent keyEvent) {
-    return keyEvent.getModifiers() == KeyEvent.META_MASK;
   }
 
   boolean executeComponentAction(CellActionType type) {

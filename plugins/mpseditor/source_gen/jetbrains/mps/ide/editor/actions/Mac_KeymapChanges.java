@@ -10,6 +10,7 @@ import javax.swing.KeyStroke;
 public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action", getShortcut("alt DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.End_Action", getShortcut(" END"), getShortcut("meta RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.Home_Action", getShortcut(" HOME"), getShortcut("meta LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.InsertBefore_Action", getShortcut("shift ENTER"));

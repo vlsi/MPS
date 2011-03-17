@@ -19,6 +19,9 @@ public enum CellActionType {
   INSERT,
   INSERT_BEFORE,
   DELETE,
+  BACKSPACE,
+  DELETE_TO_WORD_END,
+// TODO: DELETE_TO_WORD_START,
 
   COPY,
   CUT,

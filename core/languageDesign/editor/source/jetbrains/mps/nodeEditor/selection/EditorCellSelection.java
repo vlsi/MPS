@@ -121,12 +121,14 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   @Override
-  public void selectNext() {
-    myEditorCell.executeAction(CellActionType.SELECT_NEXT);
+  public void executeAction(CellActionType type) {
+    if (type == CellActionType.DELETE && suppressDelete()) {
+      return;
+    }
+    myEditorCell.executeAction(type);
   }
 
-  @Override
-  public void selectPrevious() {
-    myEditorCell.executeAction(CellActionType.SELECT_PREVIOUS);
+  protected boolean suppressDelete() {
+    return !myEditorCell.isBigCell() && myEditorCell.getAction(CellActionType.DELETE) == null;
   }
 }

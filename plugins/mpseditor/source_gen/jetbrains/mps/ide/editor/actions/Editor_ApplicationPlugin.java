@@ -23,8 +23,11 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new Backspace_Action());
     addAction(new CopyThisDown_Action());
     addAction(new DeleteLine_Action());
+    addAction(new DeleteToWordEnd_Action());
+    addAction(new Delete_Action());
     addAction(new End_Action());
     addAction(new Escape_Action());
     addAction(new ExtractComponent_Action());

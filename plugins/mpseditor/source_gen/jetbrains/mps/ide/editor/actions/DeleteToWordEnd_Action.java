@@ -12,21 +12,20 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.CellActionType;
 
-public class SelectPrevious_Action extends GeneratedAction {
+public class DeleteToWordEnd_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SelectPrevious_Action.class);
+  protected static Log log = LogFactory.getLog(DeleteToWordEnd_Action.class);
 
-  public SelectPrevious_Action() {
-    super("Select Previous", "", ICON);
+  public DeleteToWordEnd_Action() {
+    super("Delete to Word End", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) && ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -37,7 +36,7 @@ public class SelectPrevious_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SelectPrevious", t);
+        log.error("User's action doUpdate method failed. Action:" + "DeleteToWordEnd", t);
       }
       this.disable(event.getPresentation());
     }
@@ -56,14 +55,10 @@ public class SelectPrevious_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_PREVIOUS);
-        }
-      });
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE_TO_WORD_END);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SelectPrevious", t);
+        log.error("User's action execute method failed. Action:" + "DeleteToWordEnd", t);
       }
     }
   }

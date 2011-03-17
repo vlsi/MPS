@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -130,12 +131,8 @@ public class NodeRangeSelection implements MultipleSelection {
   }
 
   @Override
-  public void selectNext() {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public void selectPrevious() {
+  public void executeAction(CellActionType type) {
+    // TODO: handle all MultipleSelection-specific actions here.
     //To change body of implemented methods use File | Settings | File Templates.
   }
 

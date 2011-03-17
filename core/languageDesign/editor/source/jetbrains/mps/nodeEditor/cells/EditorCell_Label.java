@@ -406,19 +406,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     editor.scrollRectToVisible(new Rectangle(getCaretX() - 2 * myTextLine.charWidth(), myY, 4 * myTextLine.charWidth(), myHeight));
   }
 
-  protected boolean doProcessKeyPressed(KeyEvent keyEvent, boolean allowErrors) {
-    myCaretIsVisible = true;
-
-    if (isNotApplicableKeyEvent(keyEvent)) return false;
-
-    if (processMutableKeyPressed(keyEvent, allowErrors)) {
-      getEditorContext().flushEvents();
-
-      return true;
-    }
-    return false;
-  }
-
   protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
     final int wasPosition = getCaretPosition();
     final CellSide side;
@@ -481,11 +468,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return UIUtil.isReallyTypedEvent(keyEvent);
   }
 
-  private boolean isMutableKeystroke(KeyEvent keyEvent) {
-    return keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE ||
-      keyEvent.getKeyCode() == KeyEvent.VK_DELETE;
-  }
-
   private String getRenderedTextOn(KeyEvent keyEvent) {
     return emulateKeyType(keyEvent, new Computable<String>() {
       public String compute() {
@@ -510,87 +492,26 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return result;
   }
 
-  private boolean processMutableKeyPressed(final KeyEvent keyEvent, final boolean allowErrors) {
+  public boolean executeTextAction(CellActionType type, boolean allowErrors) {
+    // only following actions are supported on text
+    switch (type) {
+      case DELETE:
+      case BACKSPACE:
+        break;
+      default:
+        return false;
+    }
+    // TODO: perform only if action was executed
+    myCaretIsVisible = true;
     if (!isEditable()) {
       return false;
     }
-    if (!isMutableKeystroke(keyEvent)) {
-      return false;
+    // TODO: check if we need command here or we can execute command from UI action...
+    boolean result = getEditorContext().executeCommand(new ProcessTextActionCommand(type, allowErrors));
+    if (result) {
+      getEditorContext().flushEvents();
     }
-
-    final boolean[] result = new boolean[1];
-
-    getEditorContext().executeCommand(new Runnable() {
-      public void run() {
-        result[0] = processMutableKeyPressed_impl(keyEvent, allowErrors);
-        return;
-      }
-    });
-
-    return result[0];
-  }
-
-  private boolean processMutableKeyPressed_impl(KeyEvent keyEvent, boolean allowErrors) {
-    String oldText = myTextLine.getText();
-    int caretPosition = myTextLine.getCaretPosition();
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-      if (myTextLine.hasNonTrivialSelection()) {
-        deleteSelection();
-        deleteIfPossible();
-        return true;
-      }
-
-      if (caretPosition > 0) {
-        String newText = oldText.substring(0, caretPosition - 1) + oldText.substring(caretPosition);
-        if (!allowErrors && !isValidText(newText)) {
-          return false;
-        }
-        changeText(newText);
-        if (!isCaretPositionAllowed(caretPosition - 1)) return false;
-        setCaretPosition(caretPosition - 1);
-        ensureCaretVisible();
-        deleteIfPossible();
-        return true;
-      } else {
-        if (allowErrors && canDeleteFrom(getPrevLeaf())) {
-          EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
-          getEditorContext().getNodeEditorComponent().changeSelection(label);
-          label.end();
-          label.doProcessKeyPressed(keyEvent, true);
-          return true;
-        }
-        return false;
-      }
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
-      if (myTextLine.hasNonTrivialSelection()) {
-        deleteSelection();
-        deleteIfPossible();
-        return true;
-      } else if (caretPosition < oldText.length()) {
-        String newText = oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1);
-        if (!allowErrors && !isValidText(newText)) {
-          return false;
-        }
-        changeText(newText);
-        ensureCaretVisible();
-        deleteIfPossible();
-        return true;
-      } else {
-        if (allowErrors && canDeleteFrom(getNextLeaf())) {
-          EditorCell_Label label = (EditorCell_Label) getNextLeaf();
-          getEditorContext().getNodeEditorComponent().changeSelection(label);
-          label.home();
-          label.doProcessKeyPressed(keyEvent, true);
-          return true;
-        }
-        return false;
-      }
-    }
-
-    return false;
+    return result;
   }
 
   private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
@@ -652,12 +573,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void setSelectionEnd(int position) {
     myTextLine.setEndTextSelectionPosition(position);
-  }
-
-  private boolean isNotApplicableKeyEvent(KeyEvent keyEvent) {
-    return (keyEvent.isControlDown() &&
-      !(keyEvent.getKeyCode() == KeyEvent.VK_LEFT || keyEvent.getKeyCode() == KeyEvent.VK_RIGHT))
-      || keyEvent.isAltDown();
   }
 
   public void deleteSelection() {
@@ -929,6 +844,79 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (label.canPasteText()) {
         label.deleteSelection();
       }
+    }
+  }
+
+  private class ProcessTextActionCommand implements Computable<Boolean> {
+
+    private CellActionType myActionType;
+    private boolean myAllowErrors;
+
+    ProcessTextActionCommand(CellActionType type, boolean allowErrors) {
+      myActionType = type;
+      myAllowErrors = allowErrors;
+    }
+
+    @Override
+    public Boolean compute() {
+      String oldText = myTextLine.getText();
+      int caretPosition = myTextLine.getCaretPosition();
+
+      if (myActionType == CellActionType.BACKSPACE) {
+        if (myTextLine.hasNonTrivialSelection()) {
+          deleteSelection();
+          deleteIfPossible();
+          return true;
+        }
+
+        if (caretPosition > 0) {
+          String newText = oldText.substring(0, caretPosition - 1) + oldText.substring(caretPosition);
+          if (!myAllowErrors && !isValidText(newText)) {
+            return false;
+          }
+          changeText(newText);
+          if (!isCaretPositionAllowed(caretPosition - 1)) return false;
+          setCaretPosition(caretPosition - 1);
+          ensureCaretVisible();
+          deleteIfPossible();
+          return true;
+        } else {
+          if (myAllowErrors && canDeleteFrom(getPrevLeaf())) {
+            EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
+            getEditorContext().getNodeEditorComponent().changeSelection(label);
+            label.end();
+            label.executeTextAction(myActionType, true);
+            return true;
+          }
+          return false;
+        }
+      } else if (myActionType == CellActionType.DELETE) {
+        if (myTextLine.hasNonTrivialSelection()) {
+          deleteSelection();
+          deleteIfPossible();
+          return true;
+        } else if (caretPosition < oldText.length()) {
+          String newText = oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1);
+          if (!myAllowErrors && !isValidText(newText)) {
+            return false;
+          }
+          changeText(newText);
+          ensureCaretVisible();
+          deleteIfPossible();
+          return true;
+        } else {
+          if (myAllowErrors && canDeleteFrom(getNextLeaf())) {
+            EditorCell_Label label = (EditorCell_Label) getNextLeaf();
+            getEditorContext().getNodeEditorComponent().changeSelection(label);
+            label.home();
+            label.executeTextAction(myActionType, true);
+            return true;
+          }
+          return false;
+        }
+      }
+
+      return false;
     }
   }
 }

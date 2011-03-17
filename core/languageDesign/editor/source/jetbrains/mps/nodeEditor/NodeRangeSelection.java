@@ -15,33 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.intellij.openapi.util.Computable;
-
 // ----- range selection ----
 
-public class NodeRangeSelection implements KeyboardHandler {
+public class NodeRangeSelection {
   private EditorComponent myEditorComponent;
   private boolean myActive;
   private String myRole;
@@ -73,7 +66,6 @@ public class NodeRangeSelection implements KeyboardHandler {
       myFirstNode = null;
       myLastNode = null;
       myEditorComponent.repaint();
-      myEditorComponent.popKeyboardHandler();
     }
   }
 
@@ -83,7 +75,6 @@ public class NodeRangeSelection implements KeyboardHandler {
 
     if (!myActive) {
       myActive = true;
-      myEditorComponent.pushKeyboardHandler(this);
     }
 
     myFirstNode = first;
@@ -112,7 +103,6 @@ public class NodeRangeSelection implements KeyboardHandler {
     myFirstNode = childNode;
     myLastNode = childNode;
     myEditorComponent.repaint();
-    myEditorComponent.pushKeyboardHandler(this);
 
     myEditorComponent.scrollToNode(myFirstNode);
 
@@ -157,47 +147,6 @@ public class NodeRangeSelection implements KeyboardHandler {
     });
   }
 
-  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    List<SNode> nodes = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-      public List<SNode> compute() {
-        return getNodes();
-      }
-    });
-    if (nodes.size() != 0) {
-      EditorComponent editor = editorContext.getNodeEditorComponent();
-      SNode node = nodes.get(0);
-      EditorCell cell = editor.findNodeCell(node);
-      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
-      if (actionsInfo.size() == 1) {
-        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
-        EditorCell contextCell = actionsInfo.get(0).o2;
-        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
-        return true;
-      } else if (actionsInfo.size() > 1) {
-        // show menu
-        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, cell);
-        return true;
-      }
-    }
-
-
-    CellActionType actionType = myEditorComponent.getActionType(keyEvent, editorContext);
-    if (actionType == null) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-        actionType = CellActionType.DELETE;
-      }
-    }
-    // only DELETE and COPY and CUT and RENDER_TEXT are supported in this mode
-    if (actionType != null) {
-      if (actionType == CellActionType.DELETE) {
-        doDeleteNodes(editorContext);
-        return true;
-      }
-    }
-    // eat it anyway
-    return false;
-  }
-
   public void enlargeSelection(boolean next) {
     SNode newLastNode = null;
     List<SNode> children = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
@@ -228,15 +177,7 @@ public class NodeRangeSelection implements KeyboardHandler {
     }
   }
 
-  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
-  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
-  private void doDeleteNodes(final EditorContext editorContext) {
+  public void doDeleteNodes(final EditorContext editorContext) {
     if (getNodes().size() > 1) {
       editorContext.executeCommand(new Runnable() {
         public void run() {
