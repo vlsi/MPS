@@ -62,7 +62,6 @@
     <orderEntry type="library" scope="PROVIDED" name="IDEA-vcs-plugins" level="project" />
     <orderEntry type="module" module-name="make-runtime" exported="" />
     <orderEntry type="module" module-name="startup" />
-    <orderEntry type="module" module-name="resourcesLang" exported="" />
   </component>
   <component name="copyright">
     <Base>
