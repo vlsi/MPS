@@ -105,6 +105,17 @@ public class ProjectStructureBuilder {
   private SNode convertDevkit(DevkitDescriptor source) {
     SNode result = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.lang.project.structure.DevKit", null);
     fill(result, source);
+    SPropertyOperations.set(result, "devkitPath", myFile.getAbsolutePath());
+    SPropertyOperations.set(result, "plugin", source.getPlugin());
+    for (ModuleReference ref : source.getExtendedDevkits()) {
+      SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
+    }
+    for (ModuleReference ref : source.getExportedLanguages()) {
+      SLinkOperations.getTargets(result, "exportedLanguages", true).add(convert(ref));
+    }
+    for (ModuleReference ref : source.getExportedSolutions()) {
+      SLinkOperations.getTargets(result, "exportedSolutions", true).add(convert(ref));
+    }
     return result;
   }
 

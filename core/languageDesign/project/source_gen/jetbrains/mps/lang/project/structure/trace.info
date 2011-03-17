@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Project_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Project_Language" />
-  <unitInfo fileName="DevKit.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.DevKit" />
   <unitInfo fileName="MappingConfigRefAllLocal.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal" />
   <unitInfo fileName="MappingConfigRefAllGlobal.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal" />
   <unitInfo fileName="MappingConfigRefBase.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefBase" />
@@ -21,6 +20,7 @@
   <unitInfo fileName="MappingPriorityRule.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingPriorityRule" />
   <unitInfo fileName="RuleType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType" />
   <unitInfo fileName="Generator.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Generator" />
+  <unitInfo fileName="DevKit.java" startLine="12" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.project.structure.DevKit" />
   <unitInfo fileName="Language.java" startLine="12" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Language" />
   <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
 </debugInfo>

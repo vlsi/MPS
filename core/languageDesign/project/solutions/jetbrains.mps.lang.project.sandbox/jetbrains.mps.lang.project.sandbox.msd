@@ -4,6 +4,9 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
+    <stubModelEntry path="${mps_home}/core/devkits" include="false">
+      <manager moduleId="86ef8290-12bb-4ca7-947f-093788f263a9" className="jetbrains.mps.lang.project.stubs.ProjectStubs" />
+    </stubModelEntry>
     <stubModelEntry path="${mps_home}/platform" include="false">
       <manager moduleId="86ef8290-12bb-4ca7-947f-093788f263a9" className="jetbrains.mps.lang.project.stubs.ProjectStubs" />
     </stubModelEntry>
