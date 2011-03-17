@@ -187,6 +187,13 @@
     <scopeInfo nodeId="7544464876070881649" fileName="ICResouce.java" startLine="8" startPosition="46" endLine="9" endPosition="32" />
     <unitInfo nodeId="7544464876070881646" fileName="ICResouce.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.smodel.resources.ICResouce" />
   </root>
+  <root nodeId="7544464876070905006">
+    <nodeInfo nodeId="7544464876071181368" fileName="ITResource.java" startLine="9" startPosition="47" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="7544464876071181375" fileName="ITResource.java" startLine="10" startPosition="26" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljetbrains/mps/internal/make/runtime/util/IDelta;" />
+    <scopeInfo nodeId="7544464876071181368" fileName="ITResource.java" startLine="9" startPosition="47" endLine="10" endPosition="26" />
+    <scopeInfo nodeId="7544464876071181375" fileName="ITResource.java" startLine="10" startPosition="26" endLine="11" endPosition="24" />
+    <unitInfo nodeId="7544464876070905006" fileName="ITResource.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.smodel.resources.ITResource" />
+  </root>
   <root nodeId="7544464876071189843">
     <nodeInfo nodeId="7544464876071189846" fileName="IGResource.java" startLine="10" startPosition="47" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="7544464876071189854" fileName="IGResource.java" startLine="11" startPosition="26" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Ljetbrains/mps/smodel/SModelDescriptor;" />
