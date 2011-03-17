@@ -50,7 +50,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_c4v0tm_a1a");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");

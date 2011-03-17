@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Language extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Language";
   public static final String GEN_PATH = "genPath";
+  public static final String LANGUAGE_PATH = "languagePath";
   public static final String DO_NOT_GENERATE_ADAPTERS = "doNotGenerateAdapters";
   public static final String GENERATOR = "generator";
   public static final String ACCESSORY_MODELS = "accessoryModels";
@@ -30,6 +31,14 @@ public class Language extends Module {
 
   public void setGenPath(String value) {
     this.setProperty(Language.GEN_PATH, value);
+  }
+
+  public String getLanguagePath() {
+    return this.getProperty(Language.LANGUAGE_PATH);
+  }
+
+  public void setLanguagePath(String value) {
+    this.setProperty(Language.LANGUAGE_PATH, value);
   }
 
   public boolean getDoNotGenerateAdapters() {

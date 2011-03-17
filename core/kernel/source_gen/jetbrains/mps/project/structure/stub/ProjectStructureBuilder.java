@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -56,6 +57,7 @@ public class ProjectStructureBuilder {
     fill(result, source);
     SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
     SPropertyOperations.set(result, "genPath", source.getGenPath());
+    SPropertyOperations.set(result, "languagePath", myFile.getAbsolutePath());
     for (SModelReference ref : source.getAccessoryModels()) {
       SLinkOperations.getTargets(result, "accessoryModels", true).add(convert(ref));
     }
@@ -96,6 +98,7 @@ public class ProjectStructureBuilder {
     fill(result, source);
     SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
+    SPropertyOperations.set(result, "solutionPath", myFile.getAbsolutePath());
     return result;
   }
 
@@ -174,6 +177,10 @@ public class ProjectStructureBuilder {
     SNode generator = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.Generator", null);
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
+    SPropertyOperations.set(generator, "namespace", (StringUtils.isNotEmpty(source.getNamespace()) ?
+      source.getNamespace() :
+      null
+    ));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getTargets(generator, "priorityRules", true).add(convert(rule));
     }
@@ -188,8 +195,10 @@ public class ProjectStructureBuilder {
     switch (source.getType()) {
       case BEFORE_OR_TOGETHER:
         SPropertyOperations.set(rule, "type", "before_or_together");
+        break;
       case STRICTLY_BEFORE:
         SPropertyOperations.set(rule, "type", "strictly_before");
+        break;
       default:
         SPropertyOperations.set(rule, "type", "strictly_together");
     }

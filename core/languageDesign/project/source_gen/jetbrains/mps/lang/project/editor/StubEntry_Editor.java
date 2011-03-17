@@ -24,49 +24,39 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cypwxg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cypwxg_a");
-    editorCell.addEditorCell(this.createConstant_cypwxg_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_cypwxg_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cypwxg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cypwxg_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cypwxg_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cypwxg_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_cypwxg_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cypwxg_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cypwxg_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cypwxg_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_cypwxg_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cypwxg_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cypwxg_i0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_cypwxg_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cypwxg_k0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_cypwxg_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stub entry");
-    editorCell.setCellId("Constant_cypwxg_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_cypwxg_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_cypwxg_c0");
+    editorCell.setCellId("Constant_cypwxg_b0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_cypwxg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "included in VCS");
-    editorCell.setCellId("Constant_cypwxg_d0");
+  private EditorCell createConstant_cypwxg_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in vcs");
+    editorCell.setCellId("Constant_cypwxg_c0");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_cypwxg_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_cypwxg_e0");
+    editorCell.setCellId("Constant_cypwxg_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -75,9 +65,9 @@ public class StubEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_cypwxg_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cypwxg_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_cypwxg_g0");
+    editorCell.setCellId("Constant_cypwxg_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -87,26 +77,8 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "manager");
-    editorCell.setCellId("Constant_cypwxg_h0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_cypwxg_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_cypwxg_i0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_cypwxg_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_cypwxg_k0");
+    editorCell.setCellId("Constant_cypwxg_h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -115,7 +87,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_cypwxg_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_cypwxg_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("manager");
     provider.setNoTargetText("<no manager>");
@@ -136,7 +108,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_cypwxg_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cypwxg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");
@@ -154,7 +126,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_cypwxg_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cypwxg_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("includedInVCS");
     provider.setNoTargetText("<no includedInVCS>");
