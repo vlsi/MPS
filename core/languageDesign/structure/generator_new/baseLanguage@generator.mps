@@ -8840,9 +8840,6 @@
         </node>
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8583823249302555300">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tsnk.~ConceptDescriptor" resolveInfo="ConceptDescriptor" />
-    </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8583823249302555303">
       <property name="name" nameId="tpck.1169194664001" value="invokeSuper" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8583823249302555304" />
@@ -9163,15 +9160,36 @@
         </node>
       </node>
     </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5629249995614206657">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3157361072876504995" resolveInfo="ConceptDescriptor" />
+    </node>
   </root>
   <root id="3157361072876778597">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3157361072876778599">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3157361072876504995" resolveInfo="ConceptDescriptor" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5629249995614206681">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5629249995614206682">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5629249995614206683">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5629249995614206684">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3157361072876816812">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpce.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3157361072876504995" resolveInfo="ConceptDescriptor" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5629249995614206677">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5629249995614206678">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5629249995614206679">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5629249995614206680">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

@@ -150,6 +150,14 @@ public class QueriesGenerated {
     return QueriesUtil.propertyDataType_isEnum(_context.getNode());
   }
 
+  public static boolean baseMappingRule_Condition_5629249995614206681(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
+  public static boolean baseMappingRule_Condition_5629249995614206677(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1170239141486(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
@@ -869,26 +877,26 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_545838410333599568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (QueriesUtil.propertyDataType_isBoolean(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0oh().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0qh().createNode();
     }
     if (QueriesUtil.propertyDataType_isString(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0oh().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0qh().createNode();
     }
     if (QueriesUtil.propertyDataType_isInteger(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0c0oh().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0c0qh().createNode();
     }
     return null;
   }
 
   public static SNode sourceNodeQuery_545838410333599629(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (QueriesUtil.propertyDataType_isBoolean(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0ph().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0rh().createNode();
     }
     if (QueriesUtil.propertyDataType_isString(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0ph().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0rh().createNode();
     }
     if (QueriesUtil.propertyDataType_isInteger(_context.getNode())) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0c0ph().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0c0rh().createNode();
     }
     return null;
   }
@@ -1254,8 +1262,8 @@ __switch__:
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
-  public static class QuotationClass_x583g4_a0a0a0oh {
-    public QuotationClass_x583g4_a0a0a0oh() {
+  public static class QuotationClass_x583g4_a0a0a0qh {
+    public QuotationClass_x583g4_a0a0a0qh() {
     }
 
     public SNode createNode() {
@@ -1271,8 +1279,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0b0oh {
-    public QuotationClass_x583g4_a0a0b0oh() {
+  public static class QuotationClass_x583g4_a0a0b0qh {
+    public QuotationClass_x583g4_a0a0b0qh() {
     }
 
     public SNode createNode() {
@@ -1288,8 +1296,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0c0oh {
-    public QuotationClass_x583g4_a0a0c0oh() {
+  public static class QuotationClass_x583g4_a0a0c0qh {
+    public QuotationClass_x583g4_a0a0c0qh() {
     }
 
     public SNode createNode() {
@@ -1305,8 +1313,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0ph {
-    public QuotationClass_x583g4_a0a0a0ph() {
+  public static class QuotationClass_x583g4_a0a0a0rh {
+    public QuotationClass_x583g4_a0a0a0rh() {
     }
 
     public SNode createNode() {
@@ -1322,8 +1330,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0b0ph {
-    public QuotationClass_x583g4_a0a0b0ph() {
+  public static class QuotationClass_x583g4_a0a0b0rh {
+    public QuotationClass_x583g4_a0a0b0rh() {
     }
 
     public SNode createNode() {
@@ -1339,8 +1347,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0c0ph {
-    public QuotationClass_x583g4_a0a0c0ph() {
+  public static class QuotationClass_x583g4_a0a0c0rh {
+    public QuotationClass_x583g4_a0a0c0rh() {
     }
 
     public SNode createNode() {
