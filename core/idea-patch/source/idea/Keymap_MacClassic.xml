@@ -3,24 +3,6 @@
     <action id="FileChooser.TogglePathShowing">
       <keyboard-shortcut first-keystroke="meta P"/>
     </action>
-    <action id="Debugger.PreviousContent">
-      <keyboard-shortcut first-keystroke="control alt shift LEFT" />
-    </action>
-    <action id="Debugger.NextContent">
-      <keyboard-shortcut first-keystroke="control alt shift RIGHT" />
-    </action>
-    <action id="Debugger.MaximizeContent">
-      <keyboard-shortcut first-keystroke="control alt shift UP" />
-    </action>
-    <action id="Debugger.RestoreContent">
-      <keyboard-shortcut first-keystroke="control alt shift DOWN" />
-    </action>
-    <action id="Debugger.HideContent">
-      <keyboard-shortcut first-keystroke="control alt shift BACK_SPACE" />
-    </action>
-    <action id="Debugger.DetachContent">
-      <keyboard-shortcut first-keystroke="control alt shift ENTER" />
-    </action>
 
 
     <action id="NextSplitter">
@@ -163,11 +145,6 @@
     <action id="NextTab">
       <keyboard-shortcut first-keystroke="control RIGHT"/>
     </action>
-<!--
-    <action id="ShowContent">
-      <keyboard-shortcut first-keystroke="control DOWN"/>
-    </action>
--->
     <action id="NextEditorTab">
       <keyboard-shortcut first-keystroke="control shift RIGHT"/>
     </action>
@@ -192,30 +169,27 @@
       <keyboard-shortcut first-keystroke="shift HOME"/>
       <keyboard-shortcut first-keystroke="meta shift LEFT"/>
     </action>
-    <!--MPS Patch
     <action id="ContextHelp">
       <keyboard-shortcut first-keystroke="F1"/>
     </action>
     <action id="ActivateMessagesToolWindow">
       <keyboard-shortcut first-keystroke="meta 0"/>
-    </action>-->
+    </action>
     <action id="ActivateProjectToolWindow">
       <keyboard-shortcut first-keystroke="meta 1"/>
     </action>
-    <!--MPS Patch
     <action id="ActivateCommanderToolWindow">
       <keyboard-shortcut first-keystroke="meta 2"/>
     </action>
     <action id="ActivateFindToolWindow">
       <keyboard-shortcut first-keystroke="meta 3"/>
-    </action>-->
+    </action>
     <action id="ActivateRunToolWindow">
       <keyboard-shortcut first-keystroke="meta 4"/>
     </action>
     <action id="ActivateDebugToolWindow">
       <keyboard-shortcut first-keystroke="meta 5"/>
     </action>
-    <!--MPS Patch
     <action id="ActivateTODOToolWindow">
       <keyboard-shortcut first-keystroke="meta 6"/>
     </action>
@@ -224,13 +198,16 @@
     </action>
     <action id="ActivateHierarchyToolWindow">
       <keyboard-shortcut first-keystroke="meta 8"/>
-    </action>-->
+    </action>
     <action id="ActivateChangesToolWindow">
       <keyboard-shortcut first-keystroke="meta 9"/>
     </action>
     <action id="NewElement">
       <keyboard-shortcut first-keystroke="control N"/>
       <keyboard-shortcut first-keystroke="control ENTER"/>
+    </action>
+    <action id="NewElementSamePlace">
+      <keyboard-shortcut first-keystroke="control alt N"/>
     </action>
     <action id="Generate">
       <keyboard-shortcut first-keystroke="control N"/>
@@ -250,7 +227,6 @@
       <keyboard-shortcut first-keystroke="END"/>
       <keyboard-shortcut first-keystroke="meta RIGHT"/>
     </action>
-    <action id="CreateConfiguration"/>
     <action id="CloseWindow"/>
     <action id="Exit">
       <keyboard-shortcut first-keystroke="meta Q"/>
@@ -317,7 +293,7 @@
     <action id="TestGestureAction">
       <keyboard-gesture-shortcut keystroke="meta 1" modifier="dblClick"/>
     </action>
-    <action id="ToolWindowSwitcher">
+    <action id="Switcher">
       <keyboard-shortcut first-keystroke="ctrl TAB"/>
       <keyboard-shortcut first-keystroke="ctrl shift TAB"/>
     </action>
@@ -327,6 +303,16 @@
     <action id="$Undo">
       <keyboard-shortcut first-keystroke="meta Z"/>
     </action>
+
+    <action id="MinimizeCurrentWindow">
+      <keyboard-shortcut first-keystroke="meta M"/>
+    </action>
+
+    <action id="Vcs.ShowMessageHistory">
+      <keyboard-shortcut first-keystroke="control M"/>
+    </action>
+
+    <action id="EditorScrollToCenter"/> <!-- Disables meta M -->
 
     <action id="QuickChangeScheme">
       <keyboard-shortcut first-keystroke="control BACK_QUOTE"/>
