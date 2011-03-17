@@ -49,7 +49,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   protected JarFileClassPathItem(String path) {
     if (path.endsWith("!/")) {
-      path = path.substring(path.length() - 2);
+      path = path.substring(0, path.length() - 2);
     }
     try {
       myFile = transformFile(FileSystem.getInstance().getFileByPath(path));
