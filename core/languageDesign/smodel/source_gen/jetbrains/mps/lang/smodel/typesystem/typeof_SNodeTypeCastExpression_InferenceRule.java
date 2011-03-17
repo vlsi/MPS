@@ -49,17 +49,10 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
             }
           }
           {
-            final SNode ignore2 = typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928);
-            typeCheckingContext.whenConcrete(ignore2, new Runnable() {
-              public void run() {
-                {
-                  SNode _nodeToCheck_1029348928467 = expr;
-                  BaseQuickFixProvider intentionProvider = null;
-                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", 0, intentionProvider);
-                  typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), (SNode) typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928), false, _info_12389875345);
-                }
-              }
-            }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1239380067971", false, true);
+            SNode _nodeToCheck_1029348928467 = expr;
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5638817076583666571", 0, intentionProvider);
+            typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5638817076583666575", true), (SNode) typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928), false, _info_12389875345);
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061660362", true, false);
