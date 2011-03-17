@@ -11,11 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Generator extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Generator";
+  public static final String GENERATOR_U_I_D = "generatorUID";
   public static final String PRIORITY_RULES = "priorityRules";
   public static final String DEP_GENERATORS = "depGenerators";
 
   public Generator(SNode node) {
     super(node);
+  }
+
+  public String getGeneratorUID() {
+    return this.getProperty(Generator.GENERATOR_U_I_D);
+  }
+
+  public void setGeneratorUID(String value) {
+    this.setProperty(Generator.GENERATOR_U_I_D, value);
   }
 
   public int getPriorityRulesesCount() {

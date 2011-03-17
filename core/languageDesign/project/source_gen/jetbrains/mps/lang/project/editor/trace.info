@@ -1,52 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MappingConfigRefAllGlobal_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefAllGlobal_Editor" />
-  <unitInfo fileName="MappingConfigRefAllLocal_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefAllLocal_Editor" />
-  <unitInfo fileName="MappingConfigRefSet_Editor.java" startLine="78" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefSet_Editor$refsListHandler_3pyl5y_c0" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="560" startPosition="0" endLine="597" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$modelListHandler_ks60l1_p3a" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="598" startPosition="0" endLine="635" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$modelRootsListHandler_ks60l1_t3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="608" startPosition="0" endLine="645" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$generatorListHandler_75gu8q_p3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="617" startPosition="0" endLine="654" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$modelListHandler_w5u0zd_t3a" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="636" startPosition="0" endLine="673" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$dependenciesListHandler_ks60l1_x3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="646" startPosition="0" endLine="683" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$modelListHandler_75gu8q_t3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="655" startPosition="0" endLine="692" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$modelRootsListHandler_w5u0zd_x3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="656" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$priorityRulesListHandler_cqvux8_p3a" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="674" startPosition="0" endLine="711" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$usedLanguagesListHandler_ks60l1_bb3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="684" startPosition="0" endLine="721" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$modelRootsListHandler_75gu8q_x3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="693" startPosition="0" endLine="730" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$dependenciesListHandler_w5u0zd_bb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="694" startPosition="0" endLine="731" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$depGeneratorsListHandler_cqvux8_t3a" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="712" startPosition="0" endLine="749" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$usedDevkitsListHandler_ks60l1_fb3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="722" startPosition="0" endLine="759" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$dependenciesListHandler_75gu8q_bb3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="731" startPosition="0" endLine="768" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$usedLanguagesListHandler_w5u0zd_fb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="732" startPosition="0" endLine="769" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$modelListHandler_cqvux8_x3a" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="750" startPosition="0" endLine="787" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$stubModelsListHandler_ks60l1_jb3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="760" startPosition="0" endLine="797" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$usedLanguagesListHandler_75gu8q_fb3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="769" startPosition="0" endLine="806" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$usedDevkitsListHandler_w5u0zd_jb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="770" startPosition="0" endLine="807" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$modelRootsListHandler_cqvux8_bb3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="798" startPosition="0" endLine="835" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$usedDevkitsListHandler_75gu8q_jb3a" />
-  <unitInfo fileName="Solution_Editor.java" startLine="807" startPosition="0" endLine="844" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$stubModelsListHandler_w5u0zd_nb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="808" startPosition="0" endLine="845" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$dependenciesListHandler_cqvux8_fb3a" />
-  <unitInfo fileName="Language_Editor.java" startLine="836" startPosition="0" endLine="873" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$stubModelsListHandler_75gu8q_nb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="846" startPosition="0" endLine="883" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$usedLanguagesListHandler_cqvux8_jb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="884" startPosition="0" endLine="921" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$usedDevkitsListHandler_cqvux8_nb3a" />
-  <unitInfo fileName="Generator_Editor.java" startLine="922" startPosition="0" endLine="959" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$stubModelsListHandler_cqvux8_rb3a" />
-  <unitInfo fileName="MappingConfigExternalRef_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigExternalRef_Editor" />
-  <unitInfo fileName="MappingConfigNormalRef_Editor.java" startLine="20" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigNormalRef_Editor" />
-  <unitInfo fileName="MappingConfigRefSet_Editor.java" startLine="22" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefSet_Editor" />
-  <unitInfo fileName="ModuleReference_Editor.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleReference_Editor" />
+  <unitInfo fileName="ProjectStructure_StyleSheet.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
+  <unitInfo fileName="MappingConfigRefAllGlobal_Editor.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefAllGlobal_Editor" />
+  <unitInfo fileName="MappingConfigRefAllLocal_Editor.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefAllLocal_Editor" />
+  <unitInfo fileName="SourcePath_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.project.editor.SourcePath_Editor" />
+  <unitInfo fileName="MappingConfigRefSet_Editor.java" startLine="82" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefSet_Editor$refsListHandler_3pyl5y_c0" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="527" startPosition="0" endLine="564" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$modelListHandler_ks60l1_m3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="527" startPosition="0" endLine="564" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$modelListHandler_w5u0zd_m3a" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="565" startPosition="0" endLine="602" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$modelRootsListHandler_ks60l1_q3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="565" startPosition="0" endLine="602" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$modelRootsListHandler_w5u0zd_q3a" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="603" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$dependenciesListHandler_ks60l1_u3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="603" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$dependenciesListHandler_w5u0zd_u3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="625" startPosition="0" endLine="662" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$modelListHandler_cqvux8_m3a" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="641" startPosition="0" endLine="678" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$usedLanguagesListHandler_ks60l1_y3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="641" startPosition="0" endLine="678" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$usedLanguagesListHandler_w5u0zd_y3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="663" startPosition="0" endLine="700" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$modelRootsListHandler_cqvux8_q3a" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="679" startPosition="0" endLine="716" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$usedDevkitsListHandler_ks60l1_cb3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="679" startPosition="0" endLine="716" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$usedDevkitsListHandler_w5u0zd_cb3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="701" startPosition="0" endLine="738" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$usedLanguagesListHandler_cqvux8_u3a" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="717" startPosition="0" endLine="754" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor$stubModelsListHandler_ks60l1_gb3a" />
+  <unitInfo fileName="Solution_Editor.java" startLine="717" startPosition="0" endLine="754" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor$stubModelsListHandler_w5u0zd_gb3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="739" startPosition="0" endLine="776" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$usedDevkitsListHandler_cqvux8_y3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="777" startPosition="0" endLine="814" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$dependenciesListHandler_cqvux8_cb3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="815" startPosition="0" endLine="852" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$depGeneratorsListHandler_cqvux8_gb3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="853" startPosition="0" endLine="890" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$priorityRulesListHandler_cqvux8_kb3a" />
+  <unitInfo fileName="Generator_Editor.java" startLine="891" startPosition="0" endLine="928" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor$stubModelsListHandler_cqvux8_ob3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="985" startPosition="0" endLine="1022" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$modelListHandler_75gu8q_p3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1023" startPosition="0" endLine="1060" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$modelRootsListHandler_75gu8q_t3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1061" startPosition="0" endLine="1098" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$accessoryModelsListHandler_75gu8q_x3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1099" startPosition="0" endLine="1136" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$usedLanguagesListHandler_75gu8q_bb3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1137" startPosition="0" endLine="1174" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$usedDevkitsListHandler_75gu8q_fb3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1175" startPosition="0" endLine="1212" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$dependenciesListHandler_75gu8q_jb3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1213" startPosition="0" endLine="1250" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$extendedLanguagesListHandler_75gu8q_nb3a" />
+  <unitInfo fileName="Language_Editor.java" startLine="1251" startPosition="0" endLine="1288" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$sourcePathsListHandler_75gu8q_c34d0" />
+  <unitInfo fileName="Language_Editor.java" startLine="1289" startPosition="0" endLine="1326" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$stubSolutionsListHandler_75gu8q_g34d0" />
+  <unitInfo fileName="Language_Editor.java" startLine="1327" startPosition="0" endLine="1364" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$stubModelsListHandler_75gu8q_k34d0" />
+  <unitInfo fileName="Language_Editor.java" startLine="1365" startPosition="0" endLine="1402" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$runtimeModulesListHandler_75gu8q_c84d0" />
+  <unitInfo fileName="Language_Editor.java" startLine="1403" startPosition="0" endLine="1440" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$runtimeStubModelsListHandler_75gu8q_g84d0" />
+  <unitInfo fileName="Language_Editor.java" startLine="1441" startPosition="0" endLine="1494" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$generatorListHandler_75gu8q_zb3a" />
+  <unitInfo fileName="MappingConfigNormalRef_Editor.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigNormalRef_Editor" />
+  <unitInfo fileName="ModuleDependency_Editor.java" startLine="20" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleDependency_Editor" />
+  <unitInfo fileName="StubSolution_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.project.editor.StubSolution_Editor" />
+  <unitInfo fileName="MappingConfigExternalRef_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigExternalRef_Editor" />
+  <unitInfo fileName="MappingConfigRefSet_Editor.java" startLine="22" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingConfigRefSet_Editor" />
+  <unitInfo fileName="ModuleReference_Editor.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleReference_Editor" />
+  <unitInfo fileName="ModelReference_Editor.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModelReference_Editor" />
   <unitInfo fileName="ModelRootManager_Editor.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModelRootManager_Editor" />
-  <unitInfo fileName="ModelReference_Editor.java" startLine="18" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModelReference_Editor" />
-  <unitInfo fileName="MappingPriorityRule_Editor.java" startLine="19" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingPriorityRule_Editor" />
-  <unitInfo fileName="ModuleDependency_Editor.java" startLine="19" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleDependency_Editor" />
+  <unitInfo fileName="MappingPriorityRule_Editor.java" startLine="19" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.project.editor.MappingPriorityRule_Editor" />
   <unitInfo fileName="StubEntry_Editor.java" startLine="19" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.project.editor.StubEntry_Editor" />
   <unitInfo fileName="ModelRoot_Editor.java" startLine="19" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModelRoot_Editor" />
-  <unitInfo fileName="DevKit_Editor.java" startLine="26" startPosition="0" endLine="788" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor" />
-  <unitInfo fileName="Solution_Editor.java" startLine="27" startPosition="0" endLine="845" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor" />
-  <unitInfo fileName="Language_Editor.java" startLine="26" startPosition="0" endLine="874" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor" />
-  <unitInfo fileName="Generator_Editor.java" startLine="26" startPosition="0" endLine="960" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor" />
+  <unitInfo fileName="DevKit_Editor.java" startLine="26" startPosition="0" endLine="755" endPosition="0" unitName="jetbrains.mps.lang.project.editor.DevKit_Editor" />
+  <unitInfo fileName="Solution_Editor.java" startLine="26" startPosition="0" endLine="755" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor" />
+  <unitInfo fileName="Generator_Editor.java" startLine="26" startPosition="0" endLine="929" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Generator_Editor" />
+  <unitInfo fileName="Language_Editor.java" startLine="28" startPosition="0" endLine="1495" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor" />
   <root nodeId="2721285250110400378">
-    <nodeInfo nodeId="2721285250110400520" fileName="MappingConfigNormalRef_Editor.java" startLine="98" startPosition="111" endLine="99" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2721285250110400519" fileName="MappingConfigNormalRef_Editor.java" startLine="98" startPosition="111" endLine="99" endPosition="82" />
+    <nodeInfo nodeId="2721285250110400520" fileName="MappingConfigNormalRef_Editor.java" startLine="90" startPosition="111" endLine="91" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2721285250110400519" fileName="MappingConfigNormalRef_Editor.java" startLine="90" startPosition="111" endLine="91" endPosition="82" />
+  </root>
+  <root nodeId="6370754048397652402">
+    <nodeInfo nodeId="269654322145139487" fileName="ModuleDependency_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="269654322145139486" fileName="ModuleDependency_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="60" />
   </root>
 </debugInfo>
 

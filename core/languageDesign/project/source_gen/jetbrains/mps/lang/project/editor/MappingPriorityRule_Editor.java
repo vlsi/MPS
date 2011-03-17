@@ -27,15 +27,17 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6p5nan_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6p5nan_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6p5nan_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6p5nan_d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6p5nan_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6p5nan_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6p5nan_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6p5nan_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6p5nan_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6p5nan_g0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_6p5nan_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "priority rule");
     editorCell.setCellId("Constant_6p5nan_a0");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,14 +50,27 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6p5nan_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6p5nan_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
+    editorCell.setCellId("Constant_6p5nan_d0");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6p5nan_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6p5nan_f0");
+    editorCell.setCellId("Constant_6p5nan_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -74,6 +89,8 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -86,7 +103,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6p5nan_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6p5nan_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");
@@ -95,6 +112,8 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -107,13 +126,17 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6p5nan_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6p5nan_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_type");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

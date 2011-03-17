@@ -28,6 +28,7 @@ public class Module extends BaseConcept implements INamedConcept {
   public static final String USED_LANGUAGES = "usedLanguages";
   public static final String USED_DEVKITS = "usedDevkits";
   public static final String STUB_MODELS = "stubModels";
+  public static final String SOURCE_PATHS = "sourcePaths";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public Module(SNode node) {
@@ -216,6 +217,26 @@ public class Module extends BaseConcept implements INamedConcept {
 
   public void insertStubModels(StubEntry prev, StubEntry node) {
     this.insertChild(prev, Module.STUB_MODELS, node);
+  }
+
+  public int getSourcePathsesCount() {
+    return this.getChildCount(Module.SOURCE_PATHS);
+  }
+
+  public Iterator<SourcePath> sourcePathses() {
+    return this.children(SourcePath.class, Module.SOURCE_PATHS);
+  }
+
+  public List<SourcePath> getSourcePathses() {
+    return this.getChildren(SourcePath.class, Module.SOURCE_PATHS);
+  }
+
+  public void addSourcePaths(SourcePath node) {
+    this.addChild(Module.SOURCE_PATHS, node);
+  }
+
+  public void insertSourcePaths(SourcePath prev, SourcePath node) {
+    this.insertChild(prev, Module.SOURCE_PATHS, node);
   }
 
   public int get_$attributesCount() {
