@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TargetDependency_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$ReplaceWith_TargetDependency_cellMenu_a0a0" />
-  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="479" startPosition="0" endLine="490" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$TargetDeclaration_component_cellMenu_a0b0b1e0" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="543" startPosition="0" endLine="554" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$TargetDeclaration_component_cellMenu_a0b0b1e0" />
   <unitInfo fileName="TargetDeclaration_resourcesPolicy.java" startLine="22" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy$TargetDeclaration_generic_cellMenu_a0" />
   <unitInfo fileName="LocalParametersExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.make.facet.editor.LocalParametersExpression_Editor" />
   <unitInfo fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy" />
   <unitInfo fileName="LocalParametersComponentExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.facet.editor.LocalParametersComponentExpression_Editor" />
   <unitInfo fileName="FacetReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetReference_Editor$_Inline_7rmqfw_a0a" />
   <unitInfo fileName="TargetDependency_Editor.java" startLine="71" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$_Inline_x08tk8_a1a" />
-  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="397" startPosition="0" endLine="429" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$_Inline_xfdsch_a3a" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="461" startPosition="0" endLine="493" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$_Inline_xfdsch_a3a" />
   <unitInfo fileName="ForeignParametersExpression_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignParametersExpression_Editor$_Inline_78e54r_a0a" />
+  <unitInfo fileName="ResourceTypeDeclaration_Editor.java" startLine="42" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_Editor$resourceTypeListHandler_57opql_a0" />
   <unitInfo fileName="ParametersDeclaration_Editor.java" startLine="47" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ParametersDeclaration_Editor$componentListHandler_hy8r7y_b0" />
-  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="430" startPosition="0" endLine="478" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$dependencyListHandler_xfdsch_b2b1e0" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="494" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$dependencyListHandler_xfdsch_b2b1e0" />
   <unitInfo fileName="ForeignParametersComponentExpression_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignParametersComponentExpression_Editor" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="329" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$extendedListHandler_aj8zjo_d0a" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="388" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$requiredListHandler_aj8zjo_b0b1a" />
@@ -19,9 +20,10 @@
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="506" startPosition="0" endLine="564" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$targetDeclarationListHandler_aj8zjo_b5b1a" />
   <unitInfo fileName="FacetReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetReference_Editor" />
   <unitInfo fileName="ForeignParametersExpression_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignParametersExpression_Editor" />
+  <unitInfo fileName="ResourceTypeDeclaration_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_Editor" />
   <unitInfo fileName="ParametersDeclaration_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ParametersDeclaration_Editor" />
   <unitInfo fileName="TargetDependency_Editor.java" startLine="21" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor" />
-  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="40" startPosition="0" endLine="491" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="42" startPosition="0" endLine="555" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="34" startPosition="0" endLine="565" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor" />
   <root nodeId="1675547159918502560">
     <nodeInfo nodeId="1675547159918599397" fileName="TargetDeclaration_resourcesPolicy.java" startLine="26" startPosition="105" endLine="27" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -44,16 +46,22 @@
     <scopeInfo nodeId="127305800529643707" fileName="FacetDeclaration_Editor.java" startLine="325" startPosition="114" endLine="326" endPosition="107" />
   </root>
   <root nodeId="6418371274763029567">
-    <nodeInfo nodeId="127305800529581559" fileName="TargetDeclaration_Editor.java" startLine="377" startPosition="114" endLine="378" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529598757" fileName="TargetDeclaration_Editor.java" startLine="381" startPosition="115" endLine="382" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529581576" fileName="TargetDeclaration_Editor.java" startLine="385" startPosition="114" endLine="386" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529563796" fileName="TargetDeclaration_Editor.java" startLine="389" startPosition="114" endLine="390" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529604588" fileName="TargetDeclaration_Editor.java" startLine="393" startPosition="114" endLine="394" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="127305800529581558" fileName="TargetDeclaration_Editor.java" startLine="377" startPosition="114" endLine="378" endPosition="100" />
-    <scopeInfo nodeId="127305800529598756" fileName="TargetDeclaration_Editor.java" startLine="381" startPosition="115" endLine="382" endPosition="100" />
-    <scopeInfo nodeId="127305800529581575" fileName="TargetDeclaration_Editor.java" startLine="385" startPosition="114" endLine="386" endPosition="100" />
-    <scopeInfo nodeId="127305800529552758" fileName="TargetDeclaration_Editor.java" startLine="389" startPosition="114" endLine="390" endPosition="73" />
-    <scopeInfo nodeId="127305800529604587" fileName="TargetDeclaration_Editor.java" startLine="393" startPosition="114" endLine="394" endPosition="73" />
+    <nodeInfo nodeId="119022571402106687" fileName="TargetDeclaration_Editor.java" startLine="429" startPosition="115" endLine="430" endPosition="574" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="119022571402106716" fileName="TargetDeclaration_Editor.java" startLine="433" startPosition="115" endLine="434" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="119022571402106731" fileName="TargetDeclaration_Editor.java" startLine="437" startPosition="115" endLine="438" endPosition="574" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529581559" fileName="TargetDeclaration_Editor.java" startLine="441" startPosition="114" endLine="442" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529598757" fileName="TargetDeclaration_Editor.java" startLine="445" startPosition="115" endLine="446" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529581576" fileName="TargetDeclaration_Editor.java" startLine="449" startPosition="114" endLine="450" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529563796" fileName="TargetDeclaration_Editor.java" startLine="453" startPosition="114" endLine="454" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529604588" fileName="TargetDeclaration_Editor.java" startLine="457" startPosition="114" endLine="458" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="119022571402106686" fileName="TargetDeclaration_Editor.java" startLine="429" startPosition="115" endLine="430" endPosition="574" />
+    <scopeInfo nodeId="119022571402106715" fileName="TargetDeclaration_Editor.java" startLine="433" startPosition="115" endLine="434" endPosition="292" />
+    <scopeInfo nodeId="119022571402106730" fileName="TargetDeclaration_Editor.java" startLine="437" startPosition="115" endLine="438" endPosition="574" />
+    <scopeInfo nodeId="127305800529581558" fileName="TargetDeclaration_Editor.java" startLine="441" startPosition="114" endLine="442" endPosition="100" />
+    <scopeInfo nodeId="127305800529598756" fileName="TargetDeclaration_Editor.java" startLine="445" startPosition="115" endLine="446" endPosition="100" />
+    <scopeInfo nodeId="127305800529581575" fileName="TargetDeclaration_Editor.java" startLine="449" startPosition="114" endLine="450" endPosition="100" />
+    <scopeInfo nodeId="127305800529552758" fileName="TargetDeclaration_Editor.java" startLine="453" startPosition="114" endLine="454" endPosition="73" />
+    <scopeInfo nodeId="127305800529604587" fileName="TargetDeclaration_Editor.java" startLine="457" startPosition="114" endLine="458" endPosition="73" />
   </root>
 </debugInfo>
 
