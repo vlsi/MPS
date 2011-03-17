@@ -51,7 +51,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.conceptdescriptor.ConceptRegistry</implementation-class>
+      <implementation-class>jetbrains.mps.smodel.structure.ConceptRegistry</implementation-class>
     </component>
 
     <component>

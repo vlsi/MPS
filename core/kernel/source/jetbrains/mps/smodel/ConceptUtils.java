@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import com.google.common.collect.ImmutableSet;
-import jetbrains.mps.smodel.conceptdescriptor.ConceptRegistry;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 
 import java.util.ArrayList;
 import java.util.List;

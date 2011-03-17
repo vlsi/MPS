@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel.conceptdescriptor;
+package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class NullConceptDescriptor implements ConceptDescriptor {
+public class NullConceptDescriptor extends ConceptDescriptor {
   public static ConceptDescriptor INSTANCE = new NullConceptDescriptor();
 
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
@@ -27,20 +27,17 @@ public class NullConceptDescriptor implements ConceptDescriptor {
 
   @Override
   public Set<String> getParentsNames() {
-    // todo: throw runtime error?
-    return null;
+    throw new IllegalArgumentException("getParentsNames on null node");
   }
 
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
-    // todo: throw runtime error?
-    return false;
+    throw new IllegalArgumentException("getParentsNames on null node");
   }
 
   @Override
   public Set<String> getAncestorsNames() {
-    // todo: throw runtime error?
-    return null;
+    throw new IllegalArgumentException("getParentsNames on null node");
   }
 
   @Override

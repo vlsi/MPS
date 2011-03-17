@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel.conceptdescriptor;
+package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 
@@ -26,7 +26,7 @@ public class CheckingDescriptorProvider implements ConceptDescriptorProvider {
     }
   }
 
-  private static class CheckingConceptDescriptor implements ConceptDescriptor {
+  private static class CheckingConceptDescriptor extends ConceptDescriptor {
     private final ConceptDescriptor original;
     private final ConceptDescriptor toCheck;
     private final String fqName;

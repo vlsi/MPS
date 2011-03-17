@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel.conceptdescriptor;
+package jetbrains.mps.smodel.structure;
 
 import com.google.common.collect.ImmutableList;
 

@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel.conceptdescriptor;
+package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;

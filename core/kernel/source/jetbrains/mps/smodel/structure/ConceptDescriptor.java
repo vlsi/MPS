@@ -1,15 +1,15 @@
-package jetbrains.mps.smodel.conceptdescriptor;
+package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Set;
 
-public interface ConceptDescriptor {
+public abstract class ConceptDescriptor {
   // LanguageHierarchyCache replace
   // todo: descendants here?
-  public Set<String> getParentsNames();
-  public boolean isAssignableTo(String toConceptFqName);
-  public Set<String> getAncestorsNames();
+  public abstract Set<String> getParentsNames();
+  public abstract boolean isAssignableTo(String toConceptFqName);
+  public abstract Set<String> getAncestorsNames();
 //  public Set<String> getDescendantsOfConcept(String conceptFQName);
 //  public Set<String> getAllDescendantsOfConcept(String conceptFqName);
 //  public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language language);
@@ -24,9 +24,9 @@ public interface ConceptDescriptor {
 //  public SNode getConceptPropertyByName(final String name);
 
   // BehaviorManager replace
-  public void initNode(SNode node);
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters);
+  public abstract void initNode(SNode node);
+  public abstract <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);
+  public abstract <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters);
 
   // ConstraintManager replace
   // todo: add this
