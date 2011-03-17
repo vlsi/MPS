@@ -18,6 +18,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
@@ -47,7 +48,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     IFile file = ((BaseStubModelDescriptor.FileStubSource) source).getFile();
     ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    new ProjectStubLoader(file, descriptor, model).convert();
+    new ProjectStructureBuilder(descriptor, file, model).convert();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {

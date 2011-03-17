@@ -65,6 +65,36 @@
       <property name="name" nameId="tpck.1169194664001" value="ModelRootManager" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110256909">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigRefBase" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110256911">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigRefAllGlobal" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110390996">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigRefAllLocal" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110391051">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigRefSet" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110400375">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigNormalRef" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2721285250110400481">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
+      <property name="name" nameId="tpck.1169194664001" value="MappingConfigExternalRef" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
   </roots>
   <root id="6370754048397540894">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6370754048397540907">
@@ -122,6 +152,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6370754048397725621">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2721285250110490191">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
   </root>
   <root id="6370754048397540895">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6370754048397540919">
@@ -176,6 +209,18 @@
   </root>
   <root id="6370754048397540911" />
   <root id="6370754048397540920">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2721285250110391021">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="left" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2721285250110391022">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="right" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6370754048397540925">
       <property name="name" nameId="tpck.1169194664001" value="type" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="6370754048397540921" resolveInfo="RuleType" />
@@ -248,6 +293,61 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1855399583446017066">
       <property name="name" nameId="tpck.1169194664001" value="className" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="2721285250110256909">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2721285250110256910">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="2721285250110256911">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2721285250110400478">
+      <property name="value" nameId="tpce.1105725733873" value="all global" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="2721285250110390996">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2721285250110400480">
+      <property name="value" nameId="tpce.1105725733873" value="all local" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="2721285250110391051">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2721285250110391052">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="refs" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2721285250110400374">
+      <property name="value" nameId="tpce.1105725733873" value="set" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="2721285250110400375">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2721285250110400476">
+      <property name="value" nameId="tpce.1105725733873" value="ref" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2721285250110400376">
+      <property name="name" nameId="tpck.1169194664001" value="modelUID" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2721285250110400377">
+      <property name="name" nameId="tpck.1169194664001" value="nodeID" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="2721285250110400481">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2721285250110400483">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="generator" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1855399583446016268" resolveInfo="ModuleReference" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2721285250110400482">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="innerRef" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2721285250110256909" resolveInfo="MappingConfigRefBase" />
     </node>
   </root>
 </model>
