@@ -73,7 +73,7 @@
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8304970750029196588">
                       <link role="baseMethodDeclaration:3" targetNodeId="7.6168415856807657099" resolveInfo="IFacet.Name" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8304970750029196589">
-                        <property name="value:3" value="GenerateResources" />
+                        <property name="value:3" value="Binaries" />
                       </node>
                     </node>
                   </node>

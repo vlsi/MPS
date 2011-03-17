@@ -30,7 +30,6 @@
       <languagePath path="${project}/languages/facet/facet.mpl" />
       <languagePath path="${project}/languages/script/script.mpl" folder="" />
       <languagePath path="${project}/languages/outlook/outlook.mpl" folder="" />
-      <languagePath path="${project}/languages/resources/resources.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
