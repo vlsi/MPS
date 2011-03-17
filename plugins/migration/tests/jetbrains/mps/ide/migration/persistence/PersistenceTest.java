@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.migration.persistence;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.ModelAssert;
 import jetbrains.mps.TestMain;
@@ -29,8 +30,10 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vcs.Version;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import junit.framework.AssertionFailedError;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -48,72 +51,97 @@ public class PersistenceTest extends BaseMPSTest {
   private static final String TEST_MODEL = "testlanguage.structure";
   private final static File sourceZip = new File("testbench/modules/testPersistence.zip");
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
+  private final static int START_PERSISTENCE_TEST_VERSION = 4;
 
   public void testPersistenceWriteRead() {
     boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
       new ProjectRunnable() {
         public boolean execute(final MPSProject project) {
-          final File tempFile = new File(tempDir,"testModel");
+          final File tempFile = new File(tempDir, "testModel");
           final IFile file = FileSystem.getInstance().getFileByPath(tempFile.getAbsolutePath());
+          final boolean success[] = { true };
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
-              EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-              assert testModel.getPersistenceVersion() == 3;
-              SModel model = testModel.getSModel();
-              for (int i=3; i <= PersistenceSettings.MAX_VERSION; ++i) {
-                ModelPersistence.saveModel(model, file, false, i);
-                ModelLoadResult result = ModelPersistence.readModel(i, file, ModelLoadingState.FULLY_LOADED);
-                assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                ModelAssert.assertDeepModelEquals(model, result.getModel());
-                result.getModel().dispose();
+              try {
+                EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
+                SModel model = testModel.getSModel();
+                for (int i = START_PERSISTENCE_TEST_VERSION; i <= PersistenceSettings.MAX_VERSION; ++i) {
+                  ModelPersistence.saveModel(model, file, false, i);
+                  ModelLoadResult result = ModelPersistence.readModel(i, file, ModelLoadingState.FULLY_LOADED);
+                  assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                  ModelAssert.assertDeepModelEquals(model, result.getModel());
+                  result.getModel().dispose();
+                }
+              } catch (AssertionFailedError e) {
+                e.printStackTrace();
+                success[0] = false;
               }
             }
           });
           ModelAccess.instance().flushEventQueue();
-          return true;
+          return success[0];
       }
     });
     assertTrue(result);
   }
 
   public void testPersistenceUpgrade() {
-    final int version[] = { 3, 3 };
+    final int version[] = { START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION };
     for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
     for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
       boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
         new ProjectRunnable() {
           public boolean execute(final MPSProject project) {
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
+
+            final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
+              public EditableSModelDescriptor compute() {
+                EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
+                assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
+                return modelDescr;
+              }
+            });
+
+            List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+            list.add(testModel);
+
+            if (version[0] > START_PERSISTENCE_TEST_VERSION)
+              new PersistenceUpdater().upgradePersistence(list, version[0]);
+            ModelAccess.instance().flushEventQueue();
+            assertTrue(testModel.getModelFile() != null);
+            assertTrue(testModel.getPersistenceVersion() == version[0]);
+
+            final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+              public ModelLoadResult compute() {
+                ModelLoadResult result = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                return result;
+              }
+            });
+
+            new PersistenceUpdater().upgradePersistence(list, version[1]);
+            ModelAccess.instance().flushEventQueue();
+            assertTrue(testModel.getModelFile() != null);
+            assertTrue(testModel.getPersistenceVersion() == version[1]);
+
+            final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+              public ModelLoadResult compute() {
+                ModelLoadResult result = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
+                return result;
+              }
+            });
+
+            ModelAccess.instance().runWriteAction(new Runnable() {
               public void run() {
-                EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                assert testModel.getPersistenceVersion() == 3;
-
-                PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-                List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
-                list.add(testModel);
-
-                if (version[0] > 3)
-                  persistenceUpdater.upgradePersistence(list, version[0]);
-                assertTrue(testModel.getModelFile() != null);
-                assertTrue(testModel.getPersistenceVersion() == version[0]);
-
-                ModelLoadResult resultFrom = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                assertTrue(resultFrom.getState() == ModelLoadingState.FULLY_LOADED);
-
-                persistenceUpdater.upgradePersistence(list, version[1]);
-                assertTrue(testModel.getModelFile() != null);
-                assertTrue(testModel.getPersistenceVersion() == version[1]);
-
-                ModelLoadResult resultTo = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                assertTrue(resultTo.getState() == ModelLoadingState.FULLY_LOADED);
-
-                ModelAssert.assertDeepModelEquals(resultFrom.getModel(), resultTo.getModel());
-
                 resultFrom.getModel().dispose();
                 resultTo.getModel().dispose();
               }
             });
             ModelAccess.instance().flushEventQueue();
+
             return true;
         }
       });
