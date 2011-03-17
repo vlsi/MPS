@@ -53,6 +53,7 @@ public class PackagedLanguageTest {
               checkStructureModelLoaded();
               checkEditorModelLoaded();
               checkIconsLoaded();
+              checkStubsLoaded();
               return true;
             }
           });
@@ -69,13 +70,11 @@ public class PackagedLanguageTest {
     final SModel structureModel = structureModelDescriptor.getSModel();
     Assert.assertNotNull(structureModel);
     Assert.assertEquals(1, structureModel.rootsCount());
-    final Iterable<SNode> roots = structureModel.roots();
-    for (SNode root : roots) {
-      Assert.assertEquals(PACKAGED_CONCEPT, root.getProperty("name"));
-      final SNode propertyDeclaration = root.getChild("propertyDeclaration");
-      Assert.assertNotNull(propertyDeclaration);
-      Assert.assertEquals("someProperty", propertyDeclaration.getProperty("name"));
-    }
+    SNode root = structureModel.rootsIterator().next();
+    Assert.assertEquals(PACKAGED_CONCEPT, root.getProperty("name"));
+    final SNode propertyDeclaration = root.getChild("propertyDeclaration");
+    Assert.assertNotNull(propertyDeclaration);
+    Assert.assertEquals("someProperty", propertyDeclaration.getProperty("name"));
   }
 
   private void checkEditorModelLoaded() {
@@ -100,5 +99,18 @@ public class PackagedLanguageTest {
       final Color color = new Color(buf.getRGB(i, i));
       Assert.assertTrue(i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
     }
+  }
+
+  private void checkStubsLoaded() {
+    final SModelDescriptor libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
+    Assert.assertNotNull(libraryModelDescriptor);
+    final SModel libraryModel = libraryModelDescriptor.getSModel();
+    Assert.assertNotNull(libraryModel);
+    Assert.assertEquals(1, libraryModel.rootsCount());
+    final SNode root = libraryModel.rootsIterator().next();
+    Assert.assertEquals("DummyLibraryClass", root.getProperty("name"));
+    final SNode method = root.getChild("staticMethod");
+    Assert.assertNotNull(method);
+    Assert.assertEquals("doSomething", method.getProperty("name"));
   }
 }
