@@ -20,6 +20,7 @@
   <unitInfo fileName="PreferencesComponentType_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentType_Behavior" />
   <unitInfo fileName="ToolType_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ToolType_Behavior" />
   <unitInfo fileName="TabbedEditorDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.TabbedEditorDeclaration_Behavior" />
+  <unitInfo fileName="Resource_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.Resource_Behavior" />
   <unitInfo fileName="PreferencePage_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
   <unitInfo fileName="RunConfigurationTypeDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigurationTypeDeclaration_Behavior" />
   <unitInfo fileName="MultitabbedEditorTab_Behavior.java" startLine="31" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.MultitabbedEditorTab_Behavior$QuotationClass_rydvjr_a0a0b" />
@@ -673,6 +674,9 @@
     <nodeInfo nodeId="9017024590937198554" fileName="PrepareConceptFunction_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9017024590937198546" fileName="PrepareConceptFunction_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="158" />
     <scopeInfo nodeId="9017024590937198551" fileName="PrepareConceptFunction_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="76" />
+  </root>
+  <root nodeId="9219036563477424613">
+    <scopeInfo nodeId="9219036563477424619" fileName="Resource_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
 </debugInfo>
 

@@ -25,7 +25,7 @@
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="127" startPosition="49" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="56" startPosition="0" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_2cno5k_a#()V" />
     <nodeInfo nodeId="5674250849982863004" fileName="GenerateResources_Facet.java" startLine="66" startPosition="120" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="157" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="154" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
@@ -61,7 +61,7 @@
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="127" startPosition="49" endLine="128" endPosition="18" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="56" startPosition="0" endLine="58" endPosition="5" />
     <scopeInfo nodeId="5674250849982863004" fileName="GenerateResources_Facet.java" startLine="66" startPosition="120" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="157" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="154" endLine="77" endPosition="0" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
@@ -83,7 +83,7 @@
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="60" startPosition="29" endLine="84" endPosition="8" />
     <scopeInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="59" startPosition="0" endLine="86" endPosition="0" />
     <unitInfo nodeId="5674250849982863004" fileName="GenerateResources_Facet.java" startLine="66" startPosition="75" endLine="70" endPosition="15" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$2" />
-    <unitInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="138" endLine="77" endPosition="19" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$3" />
+    <unitInfo nodeId="5674250849982863648" fileName="GenerateResources_Facet.java" startLine="73" startPosition="135" endLine="77" endPosition="19" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$3" />
     <unitInfo nodeId="5674250849982863016" fileName="GenerateResources_Facet.java" startLine="70" startPosition="30" endLine="79" endPosition="15" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$2" />
     <unitInfo nodeId="5674250849982862997" fileName="GenerateResources_Facet.java" startLine="61" startPosition="17" endLine="84" endPosition="7" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$1" />
     <unitInfo nodeId="5674250849982862993" fileName="GenerateResources_Facet.java" startLine="54" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.make.resources.plugin.GenerateResources_Facet$Target_2cno5k_a" />

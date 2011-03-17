@@ -1234,6 +1234,9 @@
       <property name="name" nameId="tpck.1169194664001" value="IconResource" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="9219036563477424612">
+      <property name="name" nameId="tpck.1169194664001" value="Resource" />
+    </node>
   </roots>
   <root id="1203071663527">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203852126300">
@@ -4847,8 +4850,9 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8976425910813622804">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7wtl.5674250849982861647" resolveInfo="Resource" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9219036563477424612" resolveInfo="Resource" />
     </node>
   </root>
+  <root id="9219036563477424612" />
 </model>
 

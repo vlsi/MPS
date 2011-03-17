@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.make.resources.behavior.Resource_Behavior;
+import jetbrains.mps.lang.plugin.behavior.Resource_Behavior;
 import jetbrains.mps.make.script.IConfig;
 
 public class GenerateResources_Facet implements IFacet {
@@ -70,9 +70,9 @@ public class GenerateResources_Facet implements IFacet {
               }).visitAll(new IVisitor<SModelDescriptor>() {
                 public void visit(SModelDescriptor it) {
                   SModel model = it.getSModel();
-                  ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.make.resources.structure.Resource")).visitAll(new IVisitor<SNode>() {
+                  ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).visitAll(new IVisitor<SNode>() {
                     public void visit(SNode res) {
-                      Resource_Behavior.call_generate_5674250849982863634(res);
+                      Resource_Behavior.call_generate_9219036563477424614(res);
                     }
                   });
                 }

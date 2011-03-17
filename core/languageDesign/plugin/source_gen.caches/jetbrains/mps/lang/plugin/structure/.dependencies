@@ -1394,11 +1394,11 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.make.resources.structure.Resource" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.Resource" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" file="IdeaInitializerDescriptor.java">
@@ -2025,6 +2025,10 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.AbstractEnhancedConceptFunction" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.Resource" file="Resource.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.RunConfigCreator" file="RunConfigCreator.java">
     <classNode dependClassName="java.lang.String" />

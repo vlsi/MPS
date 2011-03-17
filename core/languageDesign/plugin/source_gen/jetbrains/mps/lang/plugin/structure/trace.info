@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Resource.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Resource" />
   <unitInfo fileName="OrderConstraints.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderConstraints" />
   <unitInfo fileName="NodesBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.NodesBlock" />
   <unitInfo fileName="IEnhancedRunConfiguration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration" />
@@ -193,11 +194,11 @@
   <unitInfo fileName="BaseProjectOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseProjectOperation" />
   <unitInfo fileName="TabbedToolOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedToolOperation" />
   <unitInfo fileName="ProjectOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectOperation" />
+  <unitInfo fileName="IconResource.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IconResource" />
   <unitInfo fileName="OrderReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderReference" />
   <unitInfo fileName="GetUserDataExpression.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetUserDataExpression" />
   <unitInfo fileName="AddTabOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddTabOperation" />
   <unitInfo fileName="ParameterizedShortcutChange.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange" />
-  <unitInfo fileName="IconResource.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IconResource" />
   <unitInfo fileName="ActionListStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionListStatement" />
   <unitInfo fileName="ProcessHandlerStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement" />
   <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" />
