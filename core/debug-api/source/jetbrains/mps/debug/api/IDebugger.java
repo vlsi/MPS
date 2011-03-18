@@ -19,7 +19,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public interface IDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> {
   @NotNull
@@ -28,4 +31,6 @@ public interface IDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> 
   String getName();
   @NotNull
   IBreakpointsProvider<B, K> getBreakpointsProvider();
+  @Nullable
+  ILocationBreakpoint createBreakpoint(SNode node, String kind, Project project);
 }

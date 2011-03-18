@@ -25,6 +25,7 @@ import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.*;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
 import jetbrains.mps.debugger.java.ui.breakpoints.ExceptionChooserDialog;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -52,6 +53,11 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   }
 
   @Override
+  public boolean canCreateFromNode(@NotNull JavaBreakpointKind kind) {
+    return kind.equals(JavaBreakpointKind.LINE_BREAKPOINT) || kind.equals(JavaBreakpointKind.FIELD_BREAKPOINT);
+  }
+
+  @Override
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case EXCEPTION_BREAKPOINT:
@@ -62,6 +68,18 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           return null;
         }
         return new ExceptionBreakpoint(chosenException, project);
+      default:
+        throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
+    }
+  }
+
+  @Override
+  public ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull JavaBreakpointKind kind, Project project) {
+    switch (kind){
+      case LINE_BREAKPOINT:
+        return new LineBreakpoint(node, project);
+      case FIELD_BREAKPOINT:
+        return new FieldBreakpoint(node, project);
       default:
         throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
     }

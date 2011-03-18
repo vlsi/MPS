@@ -17,6 +17,7 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,8 +29,11 @@ public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpoi
   @NotNull
   List<K> getAllKinds();
   boolean canCreateFromUi(@NotNull K kind);
+  boolean canCreateFromNode(@NotNull K kind);
   @Nullable
   B createFromUi(@NotNull K kind, Project project);
+  @Nullable
+  ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull K kind, Project project);
   @Nullable
   IBreakpointPropertiesUi<B> createPropertiesEditor(@NotNull K kind);
   @Nullable
