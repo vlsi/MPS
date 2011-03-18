@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
@@ -25,12 +24,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 
 public class SModelRoot {
-  private AbstractModule myModule;
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
-  SModelRoot(AbstractModule module, ModelRoot root) throws ManagerNotFoundException {
-    myModule = module;
+  public SModelRoot(ModelRoot root) throws ManagerNotFoundException {
     myModelRoot = root;
     myManager = createManager();
   }
@@ -65,10 +62,10 @@ public class SModelRoot {
     myModelRoot.setPrefix(newPrefix);
   }
 
-  public void changePrefix(String newPrefix) {
+  public void changePrefix(String newPrefix, AbstractModule owner) {
     String oldPrefix = getPrefix();
     myModelRoot.setPrefix(newPrefix);
-    for (SModelDescriptor sm : myModule.getOwnModelDescriptors()) {
+    for (SModelDescriptor sm : owner.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldPrefix.length());

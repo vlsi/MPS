@@ -453,7 +453,7 @@ public abstract class AbstractModule implements IModule {
         List<ModelRoot> roots = descriptor.getModelRoots();
         for (ModelRoot modelRoot : roots) {
           try {
-            SModelRoot root = new SModelRoot(this, modelRoot);
+            SModelRoot root = new SModelRoot(modelRoot);
             mySModelRoots.add(root);
             IModelRootManager manager = root.getManager();
             manager.updateModels(root, this);

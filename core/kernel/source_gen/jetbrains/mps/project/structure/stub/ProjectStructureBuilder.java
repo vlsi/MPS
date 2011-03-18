@@ -28,8 +28,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class ProjectStructureBuilder {
+public abstract class ProjectStructureBuilder {
   private final ModuleDescriptor mySource;
   private final IFile myFile;
   private SModel myModel;
@@ -76,20 +78,7 @@ public class ProjectStructureBuilder {
     for (StubSolution sol : source.getStubSolutions()) {
       SLinkOperations.getTargets(result, "stubSolutions", true).add(convert(sol));
     }
-    return result;
-  }
-
-  private SNode convert(StubSolution source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.StubSolution", null);
-    SPropertyOperations.set(result, "name", source.getName());
-    SPropertyOperations.set(result, "uuid", source.getId().toString());
-    return result;
-  }
-
-  private SNode convert(SModelReference source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
-    SPropertyOperations.set(result, "uuid", source.getSModelId().toString());
-    SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().toString());
+    collectModels(result);
     return result;
   }
 
@@ -99,6 +88,7 @@ public class ProjectStructureBuilder {
     SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
     SPropertyOperations.set(result, "solutionPath", myFile.getAbsolutePath());
+    collectModels(result);
     return result;
   }
 
@@ -116,6 +106,20 @@ public class ProjectStructureBuilder {
     for (ModuleReference ref : source.getExportedSolutions()) {
       SLinkOperations.getTargets(result, "exportedSolutions", true).add(convert(ref));
     }
+    return result;
+  }
+
+  private SNode convert(StubSolution source) {
+    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.StubSolution", null);
+    SPropertyOperations.set(result, "name", source.getName());
+    SPropertyOperations.set(result, "uuid", source.getId().toString());
+    return result;
+  }
+
+  private SNode convert(SModelReference source) {
+    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
+    SPropertyOperations.set(result, "uuid", source.getSModelId().toString());
+    SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().toString());
     return result;
   }
 
@@ -225,7 +229,7 @@ public class ProjectStructureBuilder {
     return result;
   }
 
-  public SNode convert(MappingConfig_AbstractRef source) {
+  private SNode convert(MappingConfig_AbstractRef source) {
     if (source instanceof MappingConfig_RefAllGlobal) {
       return SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", null);
     } else if (source instanceof MappingConfig_RefAllLocal) {
@@ -249,4 +253,12 @@ public class ProjectStructureBuilder {
     }
     return null;
   }
+
+  protected void collectModels(SNode module) {
+    for (SModelReference ref : Sequence.fromIterable(loadReferences(module))) {
+      ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
+    }
+  }
+
+  public abstract Iterable<SModelReference> loadReferences(SNode module);
 }

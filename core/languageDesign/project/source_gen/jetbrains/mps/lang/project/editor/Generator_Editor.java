@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Generator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -76,9 +78,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cqvux8_z5a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cqvux8_ab5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cqvux8_bb5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cqvux8_cb5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_cqvux8_db5a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_cqvux8_eb5a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_cqvux8_cb5a(editorContext, node));
     return editorCell;
   }
 
@@ -326,26 +326,6 @@ public class Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_cqvux8_cb5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "priority rules");
-    editorCell.setCellId("Constant_cqvux8_cb5a");
-    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_cqvux8_db5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_cqvux8_db5a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_cqvux8_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_cqvux8_g0");
@@ -441,14 +421,13 @@ public class Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_cqvux8_eb5a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Generator_Editor.priorityRulesListHandler_cqvux8_eb5a(node, "priorityRules", editorContext);
+  private EditorCell createRefNodeList_cqvux8_cb5a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Generator_Editor.priorityRulesListHandler_cqvux8_cb5a(node, "priorityRules", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_priorityRules");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setRole(handler.getElementRole());
@@ -742,8 +721,8 @@ public class Generator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class priorityRulesListHandler_cqvux8_eb5a extends RefNodeListHandler {
-    public priorityRulesListHandler_cqvux8_eb5a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class priorityRulesListHandler_cqvux8_cb5a extends RefNodeListHandler {
+    public priorityRulesListHandler_cqvux8_cb5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -760,9 +739,13 @@ public class Generator_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_cqvux8_a82f0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -772,11 +755,37 @@ public class Generator_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " "));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+
+    @Override
+    public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
+      editorCell.setSelectable(false);
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      }
+      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      return editorCell;
+    }
+
+    private EditorCell createConstant_cqvux8_a82f0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< priority rules >>");
+      editorCell.setCellId("Constant_cqvux8_a82f0");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
 }

@@ -19,11 +19,16 @@ import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.project.SModelRoot;
+import java.util.Collections;
 
 public class ProjectStubs extends BaseStubModelRootManager {
   public ProjectStubs() {
@@ -47,8 +52,16 @@ public class ProjectStubs extends BaseStubModelRootManager {
 
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     IFile file = ((BaseStubModelDescriptor.FileStubSource) source).getFile();
-    ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    new ProjectStructureBuilder(descriptor, file, model).convert();
+    final ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
+    new ProjectStructureBuilder(descriptor, file, model) {
+      public Iterable<SModelReference> loadReferences(SNode module) {
+        return Sequence.fromIterable(((Iterable<ModelRoot>) descriptor.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
+          public Iterable<SModelReference> translate(ModelRoot it) {
+            return ProjectStubs.this.loadModels(it);
+          }
+        });
+      }
+    }.convert();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
@@ -79,5 +92,14 @@ public class ProjectStubs extends BaseStubModelRootManager {
     SModelFqName fqname = new SModelFqName(location.getModuleRef().getModuleFqName(), longName, stereotype);
     SModelId modelId = SModelId.foreign(stereotype, location.getModuleRef().getModuleId().toString(), longName);
     return new SModelReference(fqname, modelId);
+  }
+
+  private Iterable<SModelReference> loadModels(ModelRoot root) {
+    try {
+      SModelRoot sroot = new SModelRoot(root);
+      return sroot.getManager().collectModels(sroot);
+    } catch (Exception e) {
+      return Collections.emptySet();
+    }
   }
 }

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import com.intellij.openapi.fileTypes.FileTypeManager;
+import jetbrains.mps.library.ModelsMiner;
+import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ModelRefCreator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -37,6 +37,8 @@ import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -45,6 +47,17 @@ import java.util.Set;
  */
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
+
+  @Override
+  public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
+    List<ModelHandle> models = new ArrayList<ModelHandle>();
+    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
+    List<SModelReference> result = new ArrayList<SModelReference>(models.size());
+    for (ModelHandle model : models) {
+      result.add(model.getReference());
+    }
+    return result;
+  }
 
   public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
     readModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, owner);
@@ -212,42 +225,17 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {
-    if (FileTypeManager.getInstance().isFileIgnored(dir.getName())) return;
-    if (!dir.isDirectory()) return;
+    List<ModelHandle> models = new ArrayList<ModelHandle>();
+    ModelsMiner.collectModelDescriptors(dir, modelRoot, models);
 
-    List<IFile> files = dir.list();
-    for (IFile file : files) {
-      String fileName = file.getName();
-      boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
-      if (!(isMPSModel)) continue;
-
-      DescriptorLoadResult dr = ModelPersistence.loadDescriptor(file);
-
-      SModelReference modelReference = null;
-      if (dr.getUID() != null) {
-        modelReference = SModelReference.fromString(dr.getUID());
-      } else {
-        modelReference = ModelRefCreator.createModelReference(file, FileSystem.getInstance().getFileByPath(modelRoot.getPath()), modelRoot.getPrefix());
-      }
-
-
-      //this code is for migration from old models (with no IDS)
-      if (modelReference.getSModelId() == null) {
-        modelReference = new SModelReference(modelReference.getSModelFqName(), SModelId.generate());
-      }
-
+    for(ModelHandle handle : models) {
       SModelDescriptor modelDescriptor;
-      if (ModelPersistence.needsRecreating(file)) {
-        modelDescriptor = recreateFileAndGetInstance(this, file.getAbsolutePath(), modelReference, owner, modelRoot, dr);
+      if (ModelPersistence.needsRecreating(handle.getFile())) {
+        modelDescriptor = recreateFileAndGetInstance(this, handle.getFile().getAbsolutePath(), handle.getReference(), owner, modelRoot, handle.getLoadResult());
         LOG.debug("Recreated file and read model descriptor" + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
-        modelDescriptor = getInstance(this, file.getAbsolutePath(), modelReference, dr, owner, false);
+        modelDescriptor = getInstance(this, handle.getFile().getAbsolutePath(), handle.getReference(), handle.getLoadResult(), owner, false);
         LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
-      }
-    }
-    for (IFile childDir : files) {
-      if (childDir.isDirectory()) {
-        readModelDescriptors(childDir, modelRoot, owner);
       }
     }
   }

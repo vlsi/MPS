@@ -20,8 +20,11 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
@@ -54,6 +57,12 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
                                          @NotNull SModelFqName fqName,
                                          @NotNull ModelOwner owner) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
+  }
+
+  @Nullable
+  @Override
+  public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
+    return null;
   }
 
   @Override
