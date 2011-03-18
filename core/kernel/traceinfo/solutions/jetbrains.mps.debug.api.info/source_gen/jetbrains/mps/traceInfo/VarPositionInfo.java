@@ -34,6 +34,17 @@ public class VarPositionInfo extends PositionInfo {
     myVarName = varName;
   }
 
+  @Override
+  public int compareTo(PositionInfo p) {
+    int result = super.compareTo(p);
+    if (result != 0) {
+      return result;
+    }
+    assert p instanceof VarPositionInfo;
+    VarPositionInfo vpi = (VarPositionInfo) p;
+    return myVarName.compareTo(vpi.myVarName);
+  }
+
   private static String check_ygc27_a0b0b(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();

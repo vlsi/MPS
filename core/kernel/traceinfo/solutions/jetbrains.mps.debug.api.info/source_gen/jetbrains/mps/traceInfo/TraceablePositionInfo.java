@@ -53,6 +53,21 @@ public class TraceablePositionInfo extends PositionInfo {
     myPropertyString = propertyString;
   }
 
+  @Override
+  public int compareTo(PositionInfo p) {
+    int result = super.compareTo(p);
+    if (result != 0) {
+      return result;
+    }
+    assert p instanceof TraceablePositionInfo;
+    TraceablePositionInfo tpi = (TraceablePositionInfo) p;
+    result = myConceptFqName.compareTo(tpi.myConceptFqName);
+    if (result != 0) {
+      return result;
+    }
+    return myPropertyString.compareTo(tpi.myPropertyString);
+  }
+
   private static String check_cke0sr_a0a1a1(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();
