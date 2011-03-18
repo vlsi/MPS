@@ -24,9 +24,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -48,11 +49,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
 
   protected JarFileClassPathItem(String path) {
-    if (path.endsWith("!/")) {
-      path = path.substring(0, path.length() - 2);
-    }
     try {
-      myFile = transformFile(FileSystem.getInstance().getFileByPath(path));
+      myFile = new File(path);
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
       myZipFile = new ZipFile(myFile);
     } catch (IOException e) {
@@ -204,7 +202,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
         }
 
         //directry having a '.' in its name can't contain classes.
-        // See http://youtrack.jetbrains.net/issue/MPS-7012 for details
+        // See http://youtrack.jetbrains.net/issue/MPS-7012 for details 
         if (name.contains(".")) continue;
 
         String pack = name.replace('/', '.');
@@ -245,35 +243,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     int lastDot = pack.lastIndexOf(".");
     if (lastDot == -1) return "";
     return pack.substring(0, lastDot);
-  }
-
-  private static File transformFile(IFile f) throws IOException {
-    if (!FileSystem.getInstance().isPackaged(f)) {
-      return new File(f.getAbsolutePath());
-    }
-
-    File tmpFile = File.createTempFile(f.getName(), "tmp");
-    tmpFile.deleteOnExit();
-
-    OutputStream os = null;
-    InputStream is = null;
-    try {
-      is = new BufferedInputStream(f.openInputStream());
-      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
-      int result;
-      while ((result = is.read()) != -1) {
-        os.write(result);
-      }
-    } finally {
-      if (is != null) {
-        is.close();
-      }
-      if (os != null) {
-        os.close();
-      }
-    }
-
-    return tmpFile;
   }
 
   //do not touch this class if you are not sure in your changes - this can lead to excess memory consumption (see #53513)
