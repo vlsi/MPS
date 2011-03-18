@@ -178,7 +178,7 @@ public class SModelRepository implements ApplicationComponent {
       if (modelReference.getSModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getSModelId(), modelDescriptor);
       }
-      myFqNameToModelDescriptorMap.put(modelDescriptor.getSModelReference().getSModelFqName(),modelDescriptor);
+      myFqNameToModelDescriptorMap.put(modelDescriptor.getSModelReference().getSModelFqName(), modelDescriptor);
 
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
@@ -303,7 +303,9 @@ public class SModelRepository implements ApplicationComponent {
 
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
-      return new HashSet<ModelOwner>(myModelsWithOwners.get(modelDescriptor));
+      List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
+      if (modelOwners == null) return Collections.emptySet();
+      return new HashSet<ModelOwner>(modelOwners);
     }
   }
 
