@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
@@ -47,7 +48,6 @@ public class SModelRepository implements ApplicationComponent {
 
   private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
   private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
-  private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
   private final Map<SModelDescriptor, List<ModelOwner>> myModelsWithOwners = new THashMap<SModelDescriptor, List<ModelOwner>>();
@@ -206,7 +206,6 @@ public class SModelRepository implements ApplicationComponent {
       if (md.getSModelReference().getSModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
       }
-      myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
       if (md instanceof EditableSModelDescriptor) {
         boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
         LOG.assertLog(result, "model " + md + " do not have a path in file cache");
@@ -293,8 +292,8 @@ public class SModelRepository implements ApplicationComponent {
         try {
           emd.save();
           emd.setChanged(false);
-        } catch (Throwable t) {
-          LOG.error(t);
+        } catch (Exception e) {
+          LOG.error(e);
         }
       }
     }
@@ -443,8 +442,11 @@ public class SModelRepository implements ApplicationComponent {
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
     synchronized (myModelsLock) {
-      return myFqNameToModelDescriptorMap.get(fqName);
+      for (SModelDescriptor d : myModelsWithOwners.keySet()) {
+        if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+      }
     }
+    return null;
   }
 
   private class ModelChangeListener extends SModelAdapter {
@@ -467,10 +469,6 @@ public class SModelRepository implements ApplicationComponent {
     }
 
     public void modelRenamed(SModelRenamedEvent event) {
-      synchronized (myModelsLock) {
-        myFqNameToModelDescriptorMap.remove(event.getOldName());
-        myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
-      }
       SModelDescriptor md = event.getModelDescriptor();
       if (md instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) md));
