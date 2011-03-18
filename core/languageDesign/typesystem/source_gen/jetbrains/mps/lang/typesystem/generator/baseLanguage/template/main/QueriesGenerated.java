@@ -48,14 +48,15 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class QueriesGenerated {
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a3a53 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)", "~SNode");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a884 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a884 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a984 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a984 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a984 = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0a0b0b0d0jb = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0a0b0b0a0d0c0a0h0f0a0us = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0b0b0c0a0a0a0b0b0a0d0c0a0h0f0a0us = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0b0b0d0f0a0vs = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0b0b0b0b0b0c0a0a0a0b0b0d0f0a0vs = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0b0b0c0b0b0b0b0b0c0a0a0a0b0b0d0f0a0vs = new SNodePointer("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker");
 
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
@@ -2848,9 +2849,8 @@ parametersLoop:
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a3a53.getNode();
-          if (nodeToMatch_x583g4_a0a0d0jb.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0a0b0b0d0jb;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0d0jb.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2874,7 +2874,7 @@ parametersLoop:
   }
 
   public static class Pattern_x583g4_a0a1a2a3a53 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar__;
+    /*package*/ SNode patternVar__;
 
     public Pattern_x583g4_a0a1a2a3a53() {
     }
@@ -2886,7 +2886,7 @@ parametersLoop:
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a1d0jb.getConceptFqName()))) {
           return false;
         }
-        PatternVar__ = nodeToMatch_x583g4_a0a1d0jb.getReferent("concept");
+        patternVar__ = nodeToMatch_x583g4_a0a1d0jb.getReferent("concept");
       }
       return true;
     }
@@ -2897,13 +2897,13 @@ parametersLoop:
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar__ = (SNode) pattern.getFieldValue("PatternVar__");
+        patternVar__ = (SNode) pattern.getFieldValue("patternVar__");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar__".equals(fieldName)) {
-        return PatternVar__;
+      if ("patternVar__".equals(fieldName)) {
+        return patternVar__;
       }
       return null;
     }
@@ -3443,7 +3443,7 @@ parametersLoop:
   }
 
   public static class Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a884 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_p;
+    /*package*/ SNode patternVar_p;
 
     public Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a884() {
     }
@@ -3456,16 +3456,14 @@ parametersLoop:
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a884.getNode();
-          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0us.getReferent("baseMethodDeclaration") != referent) {
+          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0a0b0b0a0d0c0a0h0f0a0us;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0us.getReferent("baseMethodDeclaration")))) {
             return false;
           }
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a884.getNode();
-          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0us.getReferent("classConcept") != referent) {
+          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0b0b0c0a0a0a0b0b0a0d0c0a0h0f0a0us;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0us.getReferent("classConcept")))) {
             return false;
           }
         }
@@ -3476,7 +3474,7 @@ parametersLoop:
           }
           {
             SNode childVar_x583g4_a0a0a0a3a2a0a7a5a0a884 = nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0us.getChildren(childRole_x583g4_).get(0);
-            this.PatternVar_p = childVar_x583g4_a0a0a0a3a2a0a7a5a0a884;
+            this.patternVar_p = childVar_x583g4_a0a0a0a3a2a0a7a5a0a884;
           }
         }
       }
@@ -3489,13 +3487,13 @@ parametersLoop:
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_p".equals(fieldName)) {
-        return PatternVar_p;
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
       }
       return null;
     }
@@ -3572,9 +3570,8 @@ parametersLoop:
                 return false;
               }
               {
-                SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a984.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a984.getReferent("baseMethodDeclaration") != referent) {
+                SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0b0b0d0f0a0vs;
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a3a5a0a984.getReferent("baseMethodDeclaration")))) {
                   return false;
                 }
               }
@@ -3595,16 +3592,14 @@ parametersLoop:
                 return false;
               }
               {
-                SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a984.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a984_0.getReferent("baseMethodDeclaration") != referent) {
+                SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0b0b0b0b0b0c0a0a0a0b0b0d0f0a0vs;
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a3a5a0a984_0.getReferent("baseMethodDeclaration")))) {
                   return false;
                 }
               }
               {
-                SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a984.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a984_0.getReferent("classConcept") != referent) {
+                SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0b0b0c0b0b0b0b0b0c0a0a0a0b0b0d0f0a0vs;
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a3a5a0a984_0.getReferent("classConcept")))) {
                   return false;
                 }
               }

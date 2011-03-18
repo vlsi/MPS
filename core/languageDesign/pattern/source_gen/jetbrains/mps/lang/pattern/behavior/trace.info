@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
-  <unitInfo fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
   <unitInfo fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
+  <unitInfo fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
+  <unitInfo fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
   <unitInfo fileName="ActionStatement_Behavior.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
   <unitInfo fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
   <root nodeId="111677556049506422">

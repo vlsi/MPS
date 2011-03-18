@@ -48,8 +48,11 @@
     <nodeInfo nodeId="1220457826901" fileName="TypesystemGenUtil.java" startLine="25" startPosition="28" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="7087631766427572170" fileName="TypesystemGenUtil.java" startLine="51" startPosition="339" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="103" startPosition="32" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="103" startPosition="32" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224161565535" fileName="TypesystemGenUtil.java" startLine="39" startPosition="42" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="67" startPosition="32" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="67" startPosition="32" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="85" startPosition="32" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220457566052" fileName="TypesystemGenUtil.java" startLine="85" startPosition="32" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224161550299" fileName="TypesystemGenUtil.java" startLine="38" startPosition="144" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInCheckEquation#(Ljetbrains/mps/smodel/SNode;)Z" />

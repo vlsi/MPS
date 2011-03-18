@@ -601,12 +601,20 @@
     <nodeInfo nodeId="572632429824895279" fileName="RulesUtil.java" startLine="221" startPosition="10" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1222434465364" fileName="RulesUtil.java" startLine="388" startPosition="31" endLine="393" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="409" startPosition="32" endLine="414" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="409" startPosition="32" endLine="414" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="421" startPosition="32" endLine="426" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="421" startPosition="32" endLine="426" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="438" startPosition="32" endLine="443" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="438" startPosition="32" endLine="443" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="450" startPosition="32" endLine="455" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="450" startPosition="32" endLine="455" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="467" startPosition="32" endLine="472" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="467" startPosition="32" endLine="472" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="479" startPosition="32" endLine="484" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="479" startPosition="32" endLine="484" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="496" startPosition="32" endLine="501" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="496" startPosition="32" endLine="501" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="508" startPosition="32" endLine="513" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="508" startPosition="32" endLine="513" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207679519810" fileName="RulesUtil.java" startLine="68" startPosition="97" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205265993565" fileName="RulesUtil.java" startLine="76" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -621,12 +629,20 @@
     <nodeInfo nodeId="1226669541468" fileName="RulesUtil.java" startLine="285" startPosition="7" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1222434095443" fileName="RulesUtil.java" startLine="371" startPosition="30" endLine="377" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="530" startPosition="43" endLine="536" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="530" startPosition="43" endLine="536" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="536" startPosition="9" endLine="542" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="536" startPosition="9" endLine="542" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="556" startPosition="43" endLine="562" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="556" startPosition="43" endLine="562" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="562" startPosition="9" endLine="568" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="562" startPosition="9" endLine="568" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="582" startPosition="32" endLine="588" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="582" startPosition="32" endLine="588" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="595" startPosition="32" endLine="601" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="595" startPosition="32" endLine="601" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="613" startPosition="32" endLine="619" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="613" startPosition="32" endLine="619" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="626" startPosition="32" endLine="632" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="626" startPosition="32" endLine="632" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1222434454234" fileName="RulesUtil.java" startLine="387" startPosition="93" endLine="394" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186065663950" fileName="RulesUtil.java" startLine="84" startPosition="100" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -665,6 +681,8 @@
     <nodeInfo nodeId="1226066977703" fileName="RulesUtil.java" startLine="209" startPosition="10" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1222432932499" fileName="RulesUtil.java" startLine="321" startPosition="26" endLine="338" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="527" startPosition="32" endLine="544" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="527" startPosition="32" endLine="544" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="553" startPosition="32" endLine="570" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490257" fileName="RulesUtil.java" startLine="553" startPosition="32" endLine="570" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1178287490337" fileName="RulesUtil.java" startLine="112" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkAppliedTo_LinkAccess_aggregation#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1208202100434" fileName="RulesUtil.java" startLine="184" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equate_inputNodeConcept_internal#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
