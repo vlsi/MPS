@@ -160,7 +160,7 @@ public class Equations {
       variablesMet.remove(type);
       return result;
     } else {
-      SNode result = node;
+      SNode result = CopyUtil.copy(node);
       replaceChildren(result, variablesMet, finalExpansion);
       replaceReferences(result, variablesMet, finalExpansion);
       return result;

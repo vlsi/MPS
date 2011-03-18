@@ -26,8 +26,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 1:17:32 PM
  */
 public abstract class AbstractEquationOperation extends AbstractOperation {
-  SNode myChild;
-  SNode myParent;
+  final SNode myChild;
+  final SNode myParent;
 
   AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     myChild = child;
@@ -40,6 +40,8 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
   public String getShortPresentation() {
     return myChild + " = " + myParent;
   }
+
+
 
 
 }

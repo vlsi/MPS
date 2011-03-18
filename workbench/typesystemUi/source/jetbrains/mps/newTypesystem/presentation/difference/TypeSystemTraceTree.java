@@ -158,7 +158,7 @@ public class TypeSystemTraceTree extends MPSTree {
     if (!TraceSettings.isShowApplyRuleOperations() && operation instanceof ApplyRuleOperation)  {
       return false;
     }
-    if (!TraceSettings.isShowBlockDependencies() && operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
+    if (!TraceSettings.isShowBlockDependencies() && (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation)) {
       return false;
     }
     return true;
