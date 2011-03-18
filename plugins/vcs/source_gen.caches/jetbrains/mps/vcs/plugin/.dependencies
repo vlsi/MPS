@@ -96,6 +96,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.GoToNextChange_Action" file="GoToNextChange_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" />
@@ -114,6 +115,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" file="GoToPreviousChange_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" />
@@ -245,6 +247,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.RollbackChanges_Action" file="RollbackChanges_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" />
@@ -356,6 +359,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.awt.Frame" />
