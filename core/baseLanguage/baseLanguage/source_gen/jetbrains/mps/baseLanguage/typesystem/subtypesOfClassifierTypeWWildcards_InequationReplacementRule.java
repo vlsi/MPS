@@ -83,26 +83,11 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               }
             } else {
               SNode nodeWithError = equationInfo.getNodeWithError();
-              SNode methodCall = null;
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
-              } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-              }
-              if (methodCall != null) {
-                {
-                  BaseQuickFixProvider intentionProvider = null;
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
-                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-                }
-              } else {
-                {
-                  BaseQuickFixProvider intentionProvider = null;
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
-                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-                }
+              {
+                BaseQuickFixProvider intentionProvider = null;
+                MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
+                HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
               }
             }
           }
@@ -147,17 +132,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           }
         } else {
           SNode nodeWithError = equationInfo.getNodeWithError();
-          SNode methodCall = null;
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
-          } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-          }
-          if (methodCall != null) {
-            result_14532009 = false;
-          } else {
-            result_14532009 = false;
-          }
+          result_14532009 = false;
         }
       }
     }

@@ -286,8 +286,8 @@ __switch__:
                         {
                           SNode _nodeToCheck_1029348928467 = actual;
                           BaseQuickFixProvider intentionProvider = null;
-                          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", 0, intentionProvider);
-                          typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), (SNode) matchedType, false, _info_12389875345);
+                          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3056149436216248475", 0, intentionProvider);
+                          typeCheckingContext.createGreaterThanInequation((SNode) matchedType, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), false, _info_12389875345);
                         }
                       } else {
                         SNode _nodeToCheck_1029348928467 = actual;
