@@ -36,9 +36,6 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -56,6 +53,9 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -140,17 +140,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             // calculate parameter 
             final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
               public UnitTestExecutionController invoke() {
-                final MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
-
-                List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
-
-                if (javaRunParameters.getMake()) {
-                  RunUtil.makeBeforeRun(project_22042010, ListSequence.fromList(stuffToTest).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
-                    public SNode select(ITestNodeWrapper it) {
-                      return it.getNode();
-                    }
-                  }).toListSequence());
-                }
+                List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(project_22042010.getComponent(MPSProject.class));
 
                 return new UnitTestExecutionController(stuffToTest, javaRunParameters);
               }
@@ -288,6 +278,15 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       collect.run();
     }
     return stuffToTest;
+  }
+
+  public boolean make(Project project) {
+    List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(project.getComponent(MPSProject.class));
+    return RunUtil.makeBeforeRun(project, ListSequence.fromList(stuffToTest).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+      public SNode select(ITestNodeWrapper it) {
+        return it.getNode();
+      }
+    }).toListSequence());
   }
 
   private static boolean eq_yzqu2q_a0a2a11(Object a, Object b) {

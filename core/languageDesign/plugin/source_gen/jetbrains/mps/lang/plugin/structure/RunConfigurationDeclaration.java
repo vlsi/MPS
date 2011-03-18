@@ -32,6 +32,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String EXECUTE_BLOCK = "executeBlock";
   public static final String DEBUG_SESSION_CREATOR = "debugSessionCreator";
   public static final String PREPARE_BLOCK = "prepareBlock";
+  public static final String MAKE_BLOCK = "makeBlock";
   public static final String PROPERTY = "property";
   public static final String EXECUTION_PARAMETER = "executionParameter";
   public static final String METHOD_DECLARATION = "methodDeclaration";
@@ -159,6 +160,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void setPrepareBlock(PrepareConceptFunction node) {
     super.setChild(RunConfigurationDeclaration.PREPARE_BLOCK, node);
+  }
+
+  public MakeConfigBlock getMakeBlock() {
+    return (MakeConfigBlock) this.getChild(MakeConfigBlock.class, RunConfigurationDeclaration.MAKE_BLOCK);
+  }
+
+  public void setMakeBlock(MakeConfigBlock node) {
+    super.setChild(RunConfigurationDeclaration.MAKE_BLOCK, node);
   }
 
   public int getPropertiesCount() {
