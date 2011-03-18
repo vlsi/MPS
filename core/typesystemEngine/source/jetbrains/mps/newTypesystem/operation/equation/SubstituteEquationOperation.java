@@ -25,13 +25,13 @@ import jetbrains.mps.smodel.SNode;
  * Date: Oct 8, 2010
  * Time: 1:19:19 PM
  */
-public class EquationSubstitutedOperation extends AbstractOperation {
-  private final EquationAddedOperation myAdded;
-  private final EquationRemovedOperation myRemoved;
+public class SubstituteEquationOperation extends AbstractOperation {
+  private final AddEquationOperation myAdded;
+  private final RemoveEquationOperation myRemoved;
 
-  public EquationSubstitutedOperation(SNode key, SNode prev, SNode cur, SNode source) {
-    myAdded = new EquationAddedOperation(key, cur, source, null);
-    myRemoved = new EquationRemovedOperation(key, prev, source);
+  public SubstituteEquationOperation(SNode key, SNode prev, SNode cur, SNode source) {
+    myAdded = new AddEquationOperation(key, cur, source, null);
+    myRemoved = new RemoveEquationOperation(key, prev, source);
     mySource = source;
   }
 

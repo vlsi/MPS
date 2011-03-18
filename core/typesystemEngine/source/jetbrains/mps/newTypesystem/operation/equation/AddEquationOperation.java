@@ -26,9 +26,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Date: Sep 15, 2010
  * Time: 12:54:50 PM
  */
-public class EquationAddedOperation extends AbstractEquationOperation {
+public class AddEquationOperation extends AbstractEquationOperation {
 
-  public EquationAddedOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
+  public AddEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     super(child, parent, source, info);
   }
 

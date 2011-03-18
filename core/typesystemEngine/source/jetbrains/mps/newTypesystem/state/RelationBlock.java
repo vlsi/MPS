@@ -73,6 +73,11 @@ public abstract class RelationBlock extends Block {
   }
 
   @Override
+  public String getExpandedPresentation() {
+    return getPresentationInternal(myState.expand(myLeftNode), myState.expand(myRightNode));
+  }
+
+  @Override
   public Set<SNode> getInputs() {
     return CollectionUtil.set(myLeftNode, myRightNode);
   }

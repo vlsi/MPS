@@ -102,11 +102,19 @@ public class TypeSystemStateTree extends MPSTree {
   private TypeSystemStateTreeNode createInequalitiesNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Inequalities by groups", myOperationContext);
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
-      TypeSystemStateTreeNode current = new TypeSystemStateTreeNode(entry.getKey().toString(), myOperationContext);
+      Set<SNode> key = entry.getKey();
+      TypeSystemStateTreeNode current;
+      if (key.isEmpty()) {
+        current = result;
+      } else {
+        current = new TypeSystemStateTreeNode(key.toString(), myOperationContext);
+      }
       for (InequalityBlock block : entry.getValue()) {
         current.add(new BlockTreeNode(block, myOperationContext, myState));
       }
-      result.add(current);
+       if (!key.isEmpty()) {
+         result.add(current);
+       }
     }
     return result;
   }

@@ -50,11 +50,7 @@ public class ComparableBlock extends RelationBlock {
     SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     // if subType or superType
     boolean isWeak = myRelationKind.isWeak();
-    if (subTyping.isComparableByRules(left, right, myEquationInfo, isWeak) ||
-      subTyping.isSubTypeByReplacementRules(left, right) ||
-      subTyping.isSubTypeByReplacementRules(right, left) ||
-      subTyping.isSubType(left, right, myEquationInfo, null, isWeak) ||
-      subTyping.isSubType(right, left, myEquationInfo, null, isWeak)) {
+    if (subTyping.isComparable(left, right, isWeak)) {
       myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
       return;
     }

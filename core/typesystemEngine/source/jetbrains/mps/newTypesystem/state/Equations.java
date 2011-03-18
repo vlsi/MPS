@@ -16,15 +16,14 @@
 package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
-import jetbrains.mps.newTypesystem.operation.equation.EquationSubstitutedOperation;
+import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
+import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -102,7 +101,7 @@ public class Equations {
       return;
     }
     SNode source = myState.getNodeMaps().getNode(elem);
-    myState.executeOperation(new EquationSubstitutedOperation(elem, myRepresentatives.get(elem), current, source));
+    myState.executeOperation(new SubstituteEquationOperation(elem, myRepresentatives.get(elem), current, source));
   }
 
   public void addEquation(SNode left, SNode right, EquationInfo info) {
@@ -136,7 +135,7 @@ public class Equations {
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
-    myState.executeOperation(new EquationAddedOperation(var, type, source, info));
+    myState.executeOperation(new AddEquationOperation(var, type, source, info));
   }
 
   public SNode expandNode(final SNode node, boolean finalExpansion) {

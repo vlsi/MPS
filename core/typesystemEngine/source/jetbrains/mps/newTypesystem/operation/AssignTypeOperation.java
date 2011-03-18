@@ -13,35 +13,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.operation.equation;
+package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:49 PM
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  */
-public class EquationRemovedOperation extends AbstractEquationOperation {
+public class AssignTypeOperation extends AbstractOperation {
+  final SNode myNode;
+  final SNode myType;
 
-  public EquationRemovedOperation(SNode child, SNode parent, SNode source) {
-    super(child, parent, source, null);
+  public AssignTypeOperation(SNode node, SNode type, EquationInfo info) {
+    myNode = node;
+    myType = type;
+    mySource = node;
+    myEquationInfo = info;
   }
 
   @Override
   public void doUndo(State state) {
-    state.getEquations().add(myChild, myParent);
+    state.getNodeMaps().removeNodeType(myNode);
   }
 
   @Override
-  public void doRedo(State state) {
-    state.getEquations().remove(myChild);
+  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
+    state.getNodeMaps().assignNodeType(myNode, myType);
   }
 
   @Override
   public String getPresentation() {
-    return "Equation removed " + getShortPresentation();
+    return "Type assigned (" + myNode + " : " + myType + ")";
+  }
+
+  @Override
+  public String getPresentationKind() {
+    return PresentationKind.TYPE_ASSIGNED;
+  }
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public SNode getType() {
+    return myType;
   }
 }

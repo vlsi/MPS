@@ -126,7 +126,7 @@ public class InequalityBlock extends RelationBlock {
     } else {
       //todo create a counterpart for "solve only concrete"
       return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.SHALLOW));
+        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
     }
   }
 

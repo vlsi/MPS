@@ -20,8 +20,8 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
-import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
-import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
+import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
+import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -47,13 +47,13 @@ public class NodeMaps {
   }
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
-    myState.executeOperation(new TypeAssignedOperation(node, type, info));
+    myState.executeOperation(new AssignTypeOperation(node, type, info));
   }
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
     if (oldType != null) {
-      myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+      myState.executeOperation(new ExpandTypeOperation(node, type, info, oldType));
     }
   }
 
