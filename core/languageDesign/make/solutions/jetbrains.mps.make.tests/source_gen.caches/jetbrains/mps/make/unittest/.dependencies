@@ -9,51 +9,51 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Utils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Graph" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.Execute_Test" file="Execute_Test.java">
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.Script" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.FacetRegistry_Test" file="FacetRegistry_Test.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
+    <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
@@ -74,13 +74,13 @@
     <classNode dependClassName="java.util.HashSet" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.LogReporting_Test" file="LogReporting_Test.java">
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
+    <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
-    <classNode dependClassName="org.jmock.Expectations" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.MockTestCase" file="MockTestCase.java">
@@ -108,21 +108,20 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.RunTests" file="RunTests.java">
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.make.unittest.ScriptBuilder_Test" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
-    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.junit.runner.Result" />
     <classNode dependClassName="org.junit.runner.JUnitCore" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.ScriptBuilder_Test" file="ScriptBuilder_Test.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.ExpectLogEvent" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Utils" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="java.util.List" />
@@ -133,11 +132,12 @@
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.After" />
-    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.ExpectLogEvent" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.Script_Test" file="Script_Test.java">
@@ -146,9 +146,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
@@ -157,19 +157,19 @@
     <classNode dependClassName="junit.framework.AssertionFailedError" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.Targets_Test" file="Targets_Test.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Utils" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jmock.integration.junit4.JMock" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.junit.runner.RunWith" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
@@ -178,9 +178,9 @@
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.Utils" file="Utils.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="java.util.Iterator" />
   </dependency>
 </dependenciesRoot>
 

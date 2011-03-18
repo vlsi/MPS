@@ -9,30 +9,30 @@
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.FFFFacet_Facet" file="FFFFacet_Facet.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.FacetManifest" file="FacetManifest.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.FFFFacet_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.GGG_Facet" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.Generate_Facet" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.GGG_Facet" file="GGG_Facet.java">
@@ -44,18 +44,18 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" file="GenerateSpecial_Facet.java">
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -71,16 +71,16 @@
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.Generate_Facet" file="Generate_Facet.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
