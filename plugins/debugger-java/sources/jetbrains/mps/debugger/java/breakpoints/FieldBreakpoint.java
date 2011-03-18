@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
@@ -21,6 +21,8 @@ import com.sun.jdi.request.AccessWatchpointRequest;
 import com.sun.jdi.request.ModificationWatchpointRequest;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.RequestManager;

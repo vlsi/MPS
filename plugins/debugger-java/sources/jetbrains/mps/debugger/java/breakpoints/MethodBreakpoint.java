@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
@@ -24,13 +24,14 @@ import com.sun.jdi.request.MethodEntryRequest;
 import com.sun.jdi.request.MethodExitRequest;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.RequestManager;
 import jetbrains.mps.debug.runtime.SuspendContextCommand;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import org.jetbrains.annotations.NotNull;
 
