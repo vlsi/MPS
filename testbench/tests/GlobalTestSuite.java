@@ -182,7 +182,7 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.editorTest.SelectionByShiftArrows_Test.class,
   jetbrains.mps.editorTest.SelectionOfWrappedCell_Test.class,
   jetbrains.mps.editorTest.SettingTextToNodeAfterApplingAction_Test.class,
-  jetbrains.mps.editorTest.SideDeleteAtEndWhithBackSpace_Test.class,
+  jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test.class,
   jetbrains.mps.editorTest.SidedeleteAtEndWithOneStatement_Test.class,
   jetbrains.mps.editorTest.SidedeleteAtStartOfIf_Test.class,
   jetbrains.mps.editorTest.SidedeleteAtStart_Test.class,

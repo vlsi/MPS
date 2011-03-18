@@ -21,7 +21,7 @@ public class DeleteToWordEnd_Action extends GeneratedAction {
   public DeleteToWordEnd_Action() {
     super("Delete to Word End", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

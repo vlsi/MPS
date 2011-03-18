@@ -21,7 +21,7 @@ public class Delete_Action extends GeneratedAction {
   public Delete_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

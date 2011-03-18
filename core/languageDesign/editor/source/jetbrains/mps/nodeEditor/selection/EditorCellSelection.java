@@ -122,7 +122,11 @@ public class EditorCellSelection implements SingularSelection {
 
   @Override
   public void executeAction(CellActionType type) {
-    if (type == CellActionType.DELETE && suppressDelete()) {
+    // TODO: add separate handler for Backspace action.
+    if (type == CellActionType.BACKSPACE) {
+      type = CellActionType.DELETE;
+    }
+    if (type == CellActionType.DELETE  && suppressDelete()) {
       return;
     }
     myEditorCell.executeAction(type);

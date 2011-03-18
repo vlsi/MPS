@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class PressingBackspaseInFirstPosition_Test extends BaseTransformationTest {
@@ -25,7 +23,7 @@ public class PressingBackspaseInFirstPosition_Test extends BaseTransformationTes
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1195975797953576231", "1195975797953580249");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

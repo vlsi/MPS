@@ -150,9 +150,11 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   public void executeAction(CellActionType type) {
     if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {
       performDeleteAction(type);
+      return;
     }
     if (type == CellActionType.DELETE_TO_WORD_END) {
       super.executeAction(CellActionType.DELETE);
+      return;
     }
     super.executeAction(type);
   }
@@ -182,8 +184,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     if (getEditorCellLabel().executeTextAction(type, true)) {
       return;
     }
-    // TODO: add separate handler for Backspace action.
-    super.executeAction(CellActionType.DELETE);
+    super.executeAction(type);
   }
 
   private boolean processSideDeletes(CellActionType type) {
