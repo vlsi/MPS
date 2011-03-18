@@ -61,11 +61,19 @@ public class TraceablePositionInfo extends PositionInfo {
     }
     assert p instanceof TraceablePositionInfo;
     TraceablePositionInfo tpi = (TraceablePositionInfo) p;
-    result = myConceptFqName.compareTo(tpi.myConceptFqName);
-    if (result != 0) {
-      return result;
+    if (myConceptFqName != null) {
+      result = myConceptFqName.compareTo(tpi.myConceptFqName);
+      if (result != 0) {
+        return result;
+      }
     }
-    return myPropertyString.compareTo(tpi.myPropertyString);
+    if (myPropertyString != null) {
+      return myPropertyString.compareTo(tpi.myPropertyString);
+    }
+    if (tpi.myConceptFqName == null && tpi.myPropertyString == null) {
+      return 0;
+    }
+    return -1;
   }
 
   private static String check_cke0sr_a0a1a1(Attribute checkedDotOperand) {

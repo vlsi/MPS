@@ -42,7 +42,13 @@ public class VarPositionInfo extends PositionInfo {
     }
     assert p instanceof VarPositionInfo;
     VarPositionInfo vpi = (VarPositionInfo) p;
-    return myVarName.compareTo(vpi.myVarName);
+    if (myVarName != null) {
+      return myVarName.compareTo(vpi.myVarName);
+    }
+    return (vpi.myVarName == null ?
+      0 :
+      -1
+    );
   }
 
   private static String check_ygc27_a0b0b(Attribute checkedDotOperand) {

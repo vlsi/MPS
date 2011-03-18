@@ -44,7 +44,13 @@ public class UnitPositionInfo extends PositionInfo {
     }
     assert p instanceof UnitPositionInfo;
     UnitPositionInfo upi = (UnitPositionInfo) p;
-    return myUnitName.compareTo(upi.myUnitName);
+    if (myUnitName != null) {
+      return myUnitName.compareTo(upi.myUnitName);
+    }
+    return (upi.myUnitName == null ?
+      0 :
+      -1
+    );
   }
 
   private static String check_9jw0bh_a0b0b(Attribute checkedDotOperand) {
