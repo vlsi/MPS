@@ -596,9 +596,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public LanguageAspect getAspectForModel(@NotNull SModelDescriptor sm) {
-    String langName = getModuleFqName()+".";
     for (LanguageAspect la : LanguageAspect.values()) {
-      if ((langName+la.getName()).equals(sm.getLongName()) && sm.getStereotype().equals("")){
+      if (la.get(this) == sm) {
         return la;
       }
     }
