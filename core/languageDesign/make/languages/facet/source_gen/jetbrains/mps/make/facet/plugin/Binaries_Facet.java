@@ -8,9 +8,10 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -52,6 +53,9 @@ public class Binaries_Facet implements IFacet {
   }
 
   public static class Target_8acy7z_a implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("GenerateIcons");
 
     public Target_8acy7z_a() {
@@ -117,7 +121,7 @@ public class Binaries_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

@@ -81,6 +81,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TargetDeclaration_class"), "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_1330985609386428780(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getNode();
+  }
+
   public static Object referenceMacro_GetReferent_671853460608824185(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "FacetDeclaration_class"), "constructor", true)).first();
   }
@@ -187,6 +191,18 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_671853460608694403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "targetDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_1330985609386428769(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "input", true), "resourceType", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
+      }
+    }).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "classifier", false);
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_5189627237350267857(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -1131,6 +1131,11 @@
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="2383991756720456900">
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="2383991756720456890" resolveInfo="make" />
       </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706054753">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706054755">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876071207476" resolveInfo="IMResource" />
+        </node>
+      </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="7831273901269501179">
       <property name="name" nameId="tpck.1169194664001" value="cleanUpAfterGeneration" />
@@ -2167,6 +2172,11 @@
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="2383991756720456887">
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="2383991756720456890" resolveInfo="make" />
       </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706027073">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706027075">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876071189843" resolveInfo="IGResource" />
+        </node>
+      </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6744662691136248608">
       <property name="name" nameId="tpck.1169194664001" value="textGenToMemory" />
@@ -2470,6 +2480,11 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706027079">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706027081">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876071189843" resolveInfo="IGResource" />
         </node>
       </node>
     </node>
@@ -2833,6 +2848,11 @@
               <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="273167807853687455" />
             </node>
           </node>
+        </node>
+      </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706027085">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706027087">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876070905006" resolveInfo="ITResource" />
         </node>
       </node>
     </node>
@@ -3296,6 +3316,11 @@
               <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="273167807853742569" />
             </node>
           </node>
+        </node>
+      </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706027088">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706027090">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876070905006" resolveInfo="ITResource" />
         </node>
       </node>
     </node>
@@ -4107,6 +4132,11 @@
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="636578979438875148" resolveInfo="reconcile" />
       </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706004776">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706020739">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yo81.6168415856807657256" resolveInfo="IResource" />
+        </node>
+      </node>
     </node>
   </root>
   <root id="3105116026850769797">
@@ -4216,6 +4246,11 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="9199523812706054756">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="9199523812706054758">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876071207476" resolveInfo="IMResource" />
         </node>
       </node>
     </node>

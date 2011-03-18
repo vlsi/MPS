@@ -19,8 +19,8 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.script.IJob;
 import java.util.Collections;
 import jetbrains.mps.make.script.IParametersPool;
 import java.util.Map;
@@ -119,29 +119,40 @@ public class Script extends IScript.Stub implements IScript {
           }
         });
         monit.currentProgress().beginWork(scriptName, work, monit.currentProgress().workLeft());
-        for (ITarget trg : Sequence.fromIterable(toExecute)) {
+        for (final ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Executing " + trg.getName());
           Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
-          Iterable<IResource> input = (Iterable<IResource>) ((Sequence.fromIterable(impre).isEmpty() ?
+          Iterable<IResource> preInput = Sequence.fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
+            public IResult select(ITarget t) {
+              return results.getResult(t.getName());
+            }
+          }).<IResource>translate(new ITranslator2<IResult, IResource>() {
+            public Iterable<IResource> translate(IResult r) {
+              return r.output();
+            }
+          });
+          Iterable<IResource> rawInput = (Iterable<IResource>) Sequence.fromIterable(((Sequence.fromIterable(impre).isEmpty() ?
             scriptInput :
-            Sequence.fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
-              public IResult select(ITarget t) {
-                return results.getResult(t.getName());
-              }
-            }).<IResource>translate(new ITranslator2<IResult, IResource>() {
-              public Iterable<IResource> translate(IResult r) {
-                return r.output();
-              }
-            }).distinct().toListSequence()
-          ));
+            preInput
+          ))).distinct().toListSequence();
+          LOG.debug("Raw input: " + rawInput);
+          Iterable<IResource> input = (Iterable<IResource>) Sequence.fromIterable(rawInput).where(new IWhereFilter<IResource>() {
+            public boolean accept(final IResource res) {
+              return Sequence.fromIterable(trg.expectedInput()).any(new IWhereFilter<Class<? extends IResource>>() {
+                public boolean accept(Class<? extends IResource> ifc) {
+                  return ifc.isInstance(res);
+                }
+              });
+            }
+          }).toListSequence();
           LOG.debug("Input: " + input);
+
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.debug("No input. Stopping");
               results.addResult(trg.getName(), new IResult.FAILURE(null));
               return;
             }
-            // TODO: check for appropriate input class 
           }
           monit.currentProgress().beginWork(trg.getName().toString(), 1000, (trg.requiresInput() || trg.producesOutput() ?
             1000 :
@@ -159,8 +170,8 @@ public class Script extends IScript.Stub implements IScript {
           if (!(trg.producesOutput())) {
             // ignore the output 
             jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
-              null :
-              input
+              Sequence.fromIterable(rawInput).subtract(Sequence.fromIterable(input)) :
+              rawInput
             ));
           }
           results.addResult(trg.getName(), jr);

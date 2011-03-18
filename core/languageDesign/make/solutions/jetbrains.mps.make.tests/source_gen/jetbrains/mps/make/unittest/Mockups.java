@@ -14,6 +14,7 @@ import org.jmock.Mockery;
 import org.jmock.Expectations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.facet.ITarget;
+import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IMonitors;
 
@@ -68,10 +69,18 @@ public class Mockups {
   }
 
   public static ITarget target(Mockery context, String name) {
-    return target(context, name, new ITarget.Name(name));
+    return target(context, name, new ITarget.Name(name), null);
   }
 
-  public static ITarget target(Mockery context, String name, final ITarget.Name tname) {
+  public static ITarget target(Mockery context, String name, Class[] expIn) {
+    return target(context, name, new ITarget.Name(name), expIn);
+  }
+
+  public static ITarget target(Mockery context, String name, ITarget.Name tname) {
+    return target(context, name, tname, null);
+  }
+
+  public static ITarget target(Mockery context, String name, final ITarget.Name tname, final Class[] expIn) {
     final ITarget trg = context.mock(ITarget.class, name);
     context.checking(new Expectations() {
       {
@@ -79,6 +88,18 @@ public class Mockups {
         this.will(returnValue(tname));
       }
     });
+    if (expIn != null) {
+      context.checking(new Expectations() {
+        {
+          this.atLeast(1).of(trg).requiresInput();
+          this.will(returnValue(true));
+
+          this.atLeast(1).of(trg).expectedInput();
+          this.will(returnValue(Arrays.asList(expIn)));
+        }
+      });
+
+    }
     return trg;
   }
 

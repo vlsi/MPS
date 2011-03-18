@@ -8,9 +8,9 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
@@ -48,6 +48,9 @@ public class Generator__Facet implements IFacet {
   }
 
   public static class Target_j0fmyu_a implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("Configure");
 
     public Target_j0fmyu_a() {
@@ -100,7 +103,7 @@ public class Generator__Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -136,6 +139,9 @@ public class Generator__Facet implements IFacet {
   }
 
   public static class Target_j0fmyu_b implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("Generate");
 
     public Target_j0fmyu_b() {
@@ -197,7 +203,7 @@ public class Generator__Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

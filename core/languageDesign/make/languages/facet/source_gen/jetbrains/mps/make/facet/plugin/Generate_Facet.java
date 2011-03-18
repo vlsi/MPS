@@ -8,9 +8,9 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IFeedback;
@@ -28,6 +28,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GeneratorManager;
@@ -72,6 +73,9 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_a implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("checkParameters");
 
     public Target_fi61u2_a() {
@@ -135,7 +139,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -195,6 +199,9 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_b implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("checkDumbMode");
 
     public Target_fi61u2_b() {
@@ -250,7 +257,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -263,6 +270,9 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_c implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("configure");
 
     public Target_fi61u2_c() {
@@ -359,7 +369,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -411,6 +421,9 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_d implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("generate");
 
     public Target_fi61u2_d() {
@@ -501,7 +514,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -514,6 +527,9 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_e implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("cleanUpAfterGeneration");
 
     public Target_fi61u2_e() {
@@ -568,7 +584,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
