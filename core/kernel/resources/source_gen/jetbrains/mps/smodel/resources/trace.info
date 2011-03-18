@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
-  <unitInfo fileName="TResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
-  <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
+  <unitInfo fileName="TResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
+  <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <root nodeId="5822172888873692299">
     <nodeInfo nodeId="5822172888873692302" fileName="IFResource.java" startLine="10" startPosition="47" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="packageName#()Ljava/lang/String;" />
     <nodeInfo nodeId="5822172888873692307" fileName="IFResource.java" startLine="11" startPosition="30" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contents#()Ljava/util/Map;" />

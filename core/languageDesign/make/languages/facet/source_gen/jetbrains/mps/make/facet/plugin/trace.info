@@ -5,8 +5,8 @@
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
-  <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
   <unitInfo fileName="WontAskAgain_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
+  <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
   <unitInfo fileName="Binaries_Facet.java" startLine="26" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Binaries_Facet" />
   <unitInfo fileName="Make_Facet.java" startLine="18" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
@@ -88,8 +88,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" fileName="GenerationHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270183" varName="helper" />
+      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -99,8 +99,8 @@
     <scopeInfo nodeId="2383991756720270198" fileName="GenerationHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270205" varName="status" />
+      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" fileName="GenerationHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
@@ -493,8 +493,8 @@
     <scopeInfo nodeId="4905458225579986689" fileName="TextGen_Facet.java" startLine="105" startPosition="90" endLine="111" endPosition="21" />
     <scopeInfo nodeId="6744662691136317584" fileName="TextGen_Facet.java" startLine="201" startPosition="21" endLine="211" endPosition="73">
       <varInfo nodeId="6744662691136317634" varName="tgr" />
-      <varInfo nodeId="6913581993694952867" varName="ext" />
       <varInfo nodeId="6913581993694952878" varName="fname" />
+      <varInfo nodeId="6913581993694952867" varName="ext" />
     </scopeInfo>
     <scopeInfo nodeId="6744662691136317583" fileName="TextGen_Facet.java" startLine="196" startPosition="0" endLine="212" endPosition="17">
       <varInfo nodeId="6744662691136317585" varName="root" />
@@ -1470,10 +1470,10 @@
     <scopeInfo nodeId="4853833103870841535" fileName="Generate_Facet.java" startLine="270" startPosition="0" endLine="300" endPosition="0" />
     <scopeInfo nodeId="4853833103870841535" fileName="Generate_Facet.java" startLine="300" startPosition="0" endLine="332" endPosition="0" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="424" startPosition="19" endLine="463" endPosition="15">
-      <varInfo nodeId="2340850238541850353" varName="mvt" />
       <varInfo nodeId="127305800529677982" varName="gm" />
-      <varInfo nodeId="127305800529678029" varName="generationOk" />
+      <varInfo nodeId="2340850238541850353" varName="mvt" />
       <varInfo nodeId="2383991756720301158" varName="gh" />
+      <varInfo nodeId="127305800529678029" varName="generationOk" />
     </scopeInfo>
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="421" startPosition="120" endLine="466" endPosition="11" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="420" startPosition="25" endLine="468" endPosition="0" />

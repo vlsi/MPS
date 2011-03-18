@@ -12,8 +12,8 @@
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
   <unitInfo fileName="ShowInferredNodeType_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
-  <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action" />
   <unitInfo fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTraceIncremental_Action" />
+  <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action" />
   <unitInfo fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action" />
   <unitInfo fileName="ShowNodeType_Action.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
   <root nodeId="1205244087094">
