@@ -192,8 +192,8 @@ public class RulesUtil {
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseQuickFixProvider intentionProvider = null;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545687775", 0, intentionProvider);
-            typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(LeftType), (SNode) new RulesUtil.QuotationClass_yxkngc_a0a0a1a6().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), false, _info_12389875345);
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3056149436216256793", 0, intentionProvider);
+            typeCheckingContext.createGreaterThanInequation((SNode) new RulesUtil.QuotationClass_yxkngc_a0a0a1a6().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), (SNode) typeCheckingContext.getRepresentative(LeftType), false, _info_12389875345);
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8844001996561701137", true, false);

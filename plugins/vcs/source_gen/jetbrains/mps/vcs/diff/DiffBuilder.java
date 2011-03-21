@@ -40,6 +40,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+@Deprecated
 public class DiffBuilder {
   private static final Logger LOG = Logger.getLogger(DiffBuilder.class);
 
@@ -48,6 +49,7 @@ public class DiffBuilder {
   private Map<Change, SNode> myChangeGroups = new HashMap<Change, SNode>();
   private List<Change> myChanges = new ArrayList<Change>();
 
+  @Deprecated
   public DiffBuilder(SModel oldModel, SModel newModel) {
     myOldModel = oldModel;
     myNewModel = newModel;

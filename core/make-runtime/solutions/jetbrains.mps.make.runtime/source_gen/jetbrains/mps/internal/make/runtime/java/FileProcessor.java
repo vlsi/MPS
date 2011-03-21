@@ -17,7 +17,7 @@ import java.io.OutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 
-public class FileProcessor {
+/*package*/ class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
 
   private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();

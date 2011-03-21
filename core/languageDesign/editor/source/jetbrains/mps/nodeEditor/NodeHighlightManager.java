@@ -24,6 +24,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 
@@ -67,12 +68,18 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
-        for (EditorCell cell : getMessagesCache().keySet()) {
-          if (!myEditor.isValid(cell)) {
-            invalidateMassagesCaches();
-            repaintAndRebuildEditorMessages();
-            return;
+        boolean needRebuild = getMessagesCache().isEmpty();
+        if (!needRebuild) {
+          for (EditorCell cell : getMessagesCache().keySet()) {
+            if (!myEditor.isValid(cell)) {
+              needRebuild = true;
+              break;
+            }
           }
+        }
+        if (needRebuild) {
+          invalidateMessagesCaches();
+          repaintAndRebuildEditorMessages();
         }
       }
     });
@@ -85,7 +92,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * this method can be called from any thread
    * this method should be called inside synchronize(myMessagesLock) block only
    */
-  private void invalidateMassagesCaches() {
+  private void invalidateMessagesCaches() {
     myRebuildMessagesCache = true;
     myRebuildIconRenderersCacheFlag = true;
   }
@@ -217,7 +224,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
     synchronized (myMessagesLock) {
       addMessage(message);
-      invalidateMassagesCaches();
+      invalidateMessagesCaches();
     }
     if (message.showInGutter()) {
       myEditor.getMessagesGutter().add(message);
@@ -227,7 +234,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   public void unmark(EditorMessage message) {
     synchronized (myMessagesLock) {
       if (removeMessage(message)) {
-        invalidateMassagesCaches();
+        invalidateMessagesCaches();
       }
     }
   }
@@ -238,7 +245,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
         removeMessage(m);
       }
-      invalidateMassagesCaches();
+      invalidateMessagesCaches();
     }
     repaintAndRebuildEditorMessages();
   }
@@ -255,7 +262,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
         for (EditorMessage m : messages) {
           removeMessage(m);
         }
-        invalidateMassagesCaches();
+        invalidateMessagesCaches();
       }
     }
     if (repaintAndRebuild) {

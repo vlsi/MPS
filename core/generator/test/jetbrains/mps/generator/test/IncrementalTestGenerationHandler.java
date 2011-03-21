@@ -106,6 +106,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       for (IFile f : myFilesDir.list()) {
         try {
           if (f.isDirectory() || f.getName().equals(TraceInfoCache.TRACE_FILE_NAME))  continue;
+          if (f.getName().endsWith(".png"))  continue; // temp fix: icons are generated in another facet
           String s = FileUtil.read(new InputStreamReader(f.openInputStream(), FileUtil.DEFAULT_CHARSET));
           existingContent.put(f.getName(), s);
         } catch (IOException e) {

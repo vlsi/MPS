@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.persistence.def.v5;
 
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
 
 public class ModelUtil {
   public ModelUtil() {
@@ -18,6 +17,7 @@ public class ModelUtil {
   }
 
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
-    return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
+    String newStereo = upgradeStereotype(modelReference.getStereotype());
+    return new SModelReference(modelReference.getSModelFqName().withStereotype(newStereo), modelReference.getSModelId());
   }
 }

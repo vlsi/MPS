@@ -746,8 +746,7 @@ public class ClassifierUpdater {
       if (!(reported.contains(p))) {
         reported.add(p);
         if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
-          LOG.error("no module found for: " + packageName + " in " + myModule.getModuleFqName());
-
+          LOG.warning("no module found for: " + packageName + " in " + myModule.getModuleFqName());
         }
       }
     }

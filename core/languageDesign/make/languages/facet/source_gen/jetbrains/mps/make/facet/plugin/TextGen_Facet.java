@@ -13,11 +13,11 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -84,8 +84,6 @@ public class TextGen_Facet implements IFacet {
             case 0:
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
-                final FileProcessor fileProc = new FileProcessor();
-
                 GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
@@ -94,7 +92,8 @@ public class TextGen_Facet implements IFacet {
                 }
 
                 IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
-                JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, fileProc);
+                FilesDelta delta = new FilesDelta(targetDir);
+                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, delta);
                 boolean ok;
                 try {
                   ok = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
@@ -119,11 +118,11 @@ public class TextGen_Facet implements IFacet {
                 }
                 ModelAccess.instance().writeFilesInEDT(new Runnable() {
                   public void run() {
-                    fileProc.flushChanges();
+                    javaStreamHandler.flush();
                   }
                 });
                 monitor.currentProgress().advanceWork("Writing", 50);
-                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module()))));
+                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), delta))));
               }
               monitor.currentProgress().finishWork("Writing");
             default:
@@ -165,7 +164,11 @@ public class TextGen_Facet implements IFacet {
       return true;
     }
 
-    public Class<? extends IResource> expectedResources() {
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return null;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
 
@@ -249,7 +252,11 @@ public class TextGen_Facet implements IFacet {
       return true;
     }
 
-    public Class<? extends IResource> expectedResources() {
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return null;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
 

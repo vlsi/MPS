@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfReader" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.stubs.StubSource" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />

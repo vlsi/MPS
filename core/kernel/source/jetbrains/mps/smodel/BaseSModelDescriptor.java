@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
@@ -125,23 +124,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
-  public Set<IModule> getModules() {
-    return SModelRepository.getInstance().getModules(this);
-  }
-
   @Nullable
   public IModule getModule() {
-    Set<IModule> modules = getModules();
-    if (modules.isEmpty()) return null;
-    if (modules.size() > 1 && !SModelStereotype.isStubModelStereotype(getStereotype())) {
-      StringBuilder sb = new StringBuilder();
-      for (IModule m : modules) {
-        sb.append(m.getModuleFqName()).append(" ");
+    for (ModelOwner owner : SModelRepository.getInstance().getOwners(this)) {
+      if (owner instanceof IModule) {
+        return ((IModule) owner);
       }
-
-      LOG.error("getModule() is used on model (" + this.getLongName() + ") with multiple owning modules (" + sb.toString() + ")");
     }
-    return modules.iterator().next();
+    return null;
   }
 
   public boolean isEmpty() {

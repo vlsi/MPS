@@ -28,13 +28,11 @@ public class JavaConfigOptions extends JPanel {
   private JLabel myComponent_f0;
   private FieldWithPathChooseDialog myWorkingDir_g0;
   private JCheckBox myComponent_h0;
-  private JCheckBox myComponent_i0;
-  private FieldWithPathChooseDialog myJreHome_j0;
+  private FieldWithPathChooseDialog myJreHome_i0;
   private String myProgramParams;
   private String myVmParams;
   private String myWorkingDir;
   private String myAlternativeJRE;
-  private boolean myMakeBeforeRun;
   private boolean myUseAlternativeJRE;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
@@ -55,11 +53,9 @@ public class JavaConfigOptions extends JPanel {
     component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(3));
     component.add(this.createComponent_f0(), LayoutUtil.createLabelConstraints(4));
     component.add(this.createComponent_g0(), LayoutUtil.createPanelConstraints(5));
-    component.add(this.createComponent_h0(), LayoutUtil.createLabelConstraints(6));
-    component.add(this.createComponent_i0(), LayoutUtil.createLabelConstraints(9));
-    component.add(this.createComponent_j0(), LayoutUtil.createPanelConstraints(10));
+    component.add(this.createComponent_h0(), LayoutUtil.createLabelConstraints(9));
+    component.add(this.createComponent_i0(), LayoutUtil.createPanelConstraints(10));
     this.myEvents.initialize();
-    myThis.setMakeBeforeRun(true);
   }
 
   public Events getEvents() {
@@ -106,7 +102,7 @@ public class JavaConfigOptions extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("makeBeforeRun");
+      Property sourceProperty = BeanProperty.create("useAlternativeJRE");
       Object targetObject = this.myComponent_h0;
       Property targetProperty = BeanProperty.create("selected");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -115,17 +111,8 @@ public class JavaConfigOptions extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("useAlternativeJRE");
-      Object targetObject = this.myComponent_i0;
-      Property targetProperty = BeanProperty.create("selected");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
-    {
-      Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("alternativeJRE");
-      Object targetObject = this.myJreHome_j0;
+      Object targetObject = this.myJreHome_i0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -134,7 +121,7 @@ public class JavaConfigOptions extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("useAlternativeJRE");
-      Object targetObject = this.myJreHome_j0;
+      Object targetObject = this.myJreHome_i0;
       Property targetProperty = BeanProperty.create("editable");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -210,13 +197,6 @@ public class JavaConfigOptions extends JPanel {
   private JCheckBox createComponent_h0() {
     JCheckBox component = new JCheckBox();
     this.myComponent_h0 = component;
-    component.setText("Make Before Run");
-    return component;
-  }
-
-  private JCheckBox createComponent_i0() {
-    JCheckBox component = new JCheckBox();
-    this.myComponent_i0 = component;
     component.setText("Use alternative JRE");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -226,9 +206,9 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  private FieldWithPathChooseDialog createComponent_j0() {
+  private FieldWithPathChooseDialog createComponent_i0() {
     FieldWithPathChooseDialog component = new FieldWithPathChooseDialog();
-    this.myJreHome_j0 = component;
+    this.myJreHome_i0 = component;
     component.setTitle("Select Alternative JRE home");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -252,10 +232,6 @@ public class JavaConfigOptions extends JPanel {
 
   public String getAlternativeJRE() {
     return this.myAlternativeJRE;
-  }
-
-  public boolean getMakeBeforeRun() {
-    return this.myMakeBeforeRun;
   }
 
   public boolean getUseAlternativeJRE() {
@@ -286,12 +262,6 @@ public class JavaConfigOptions extends JPanel {
     this.firePropertyChange("alternativeJRE", oldValue, newValue);
   }
 
-  public void setMakeBeforeRun(boolean newValue) {
-    boolean oldValue = this.myMakeBeforeRun;
-    this.myMakeBeforeRun = newValue;
-    this.firePropertyChange("makeBeforeRun", oldValue, newValue);
-  }
-
   public void setUseAlternativeJRE(boolean newValue) {
     boolean oldValue = this.myUseAlternativeJRE;
     this.myUseAlternativeJRE = newValue;
@@ -303,7 +273,6 @@ public class JavaConfigOptions extends JPanel {
       myThis.setProgramParams(config.getProgramParameters());
       myThis.setVmParams(config.getVMParameters());
       myThis.setWorkingDir(config.getWorkingDirectory());
-      myThis.setMakeBeforeRun(config.getMake());
       myThis.setAlternativeJRE(config.getAlternativeJRE());
       myThis.setUseAlternativeJRE(config.getUseAlternativeJRE());
     }
@@ -314,25 +283,24 @@ public class JavaConfigOptions extends JPanel {
       config.setVMParameters(myThis.getVmParams());
       config.setProgramParameters(myThis.getProgramParams());
       config.setWorkingDirectory(myThis.getWorkingDir());
-      config.setMake(myThis.getMakeBeforeRun());
       config.setAlternativeJRE(myThis.getAlternativeJRE());
       config.setUseAlternativeJRE(myThis.getUseAlternativeJRE());
     }
   }
 
   public void dispose() {
-    myThis.myJreHome_j0.dispose();
+    myThis.myJreHome_i0.dispose();
     myThis.myWorkingDir_g0.dispose();
     myThis.myProgramParam_e0.dispose();
     myThis.myVmParam_c0.dispose();
   }
 
   public void onChangeAlternativeJRE() {
-    myThis.setAlternativeJRE(myThis.myJreHome_j0.getText());
+    myThis.setAlternativeJRE(myThis.myJreHome_i0.getText());
   }
 
   public void onCheckUseAlternativeJRE() {
-    myThis.myJreHome_j0.setEditable(myThis.getUseAlternativeJRE());
+    myThis.myJreHome_i0.setEditable(myThis.getUseAlternativeJRE());
   }
 
   public void onChangeWorkingDir() {

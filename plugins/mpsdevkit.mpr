@@ -23,7 +23,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="VcsDirectoryMappings">
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$mps_home$" vcs="Git" />
   </component>
 </project>
 

@@ -93,9 +93,9 @@ import jetbrains.mps.vcs.plugin.VcsActionsHelper;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
@@ -739,7 +739,7 @@ __switch__:
                 if (node.value == null) {
                   ModelAccess.instance().runReadInEDT(new Runnable() {
                     public void run() {
-                      final ModelDifferenceDialog dialog = new ModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
+                      final OldModelDifferenceDialog dialog = new OldModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
                       ApplicationManager.getApplication().invokeLater(new Runnable() {
                         public void run() {
                           dialog.showDialog();
@@ -751,7 +751,7 @@ __switch__:
                 } else {
                   ModelAccess.instance().runReadInEDT(new Runnable() {
                     public void run() {
-                      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, afterModel, beforeModel.value, false, false);
+                      final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(frame, afterModel, beforeModel.value, false, false);
                       dialog.init(operationContext, node.value, afterRevNumber, beforeRevNumber);
                       ApplicationManager.getApplication().invokeLater(new Runnable() {
                         public void run() {

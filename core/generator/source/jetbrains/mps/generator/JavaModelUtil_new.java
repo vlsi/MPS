@@ -36,16 +36,16 @@ public class JavaModelUtil_new {
   }
 
   public static SNode findClassifier(String packageName, String shortClassName, boolean reportErrors) {
-    SModelFqName modelUID = new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    SModelFqName fqName = new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor == null) {
-      if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");
+      if (reportErrors) LOG.error("couldn't find model '" + fqName + "'");
       return null;
     }
     SModel model = modelDescriptor.getSModel();
     SNode rootByName = SModelOperations.getRootByName(model, shortClassName);
     if (rootByName == null && reportErrors) {
-      LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
+      LOG.error("couldn't find root '" + shortClassName + "' in model '" + fqName + "'");
     }
     return rootByName;
   }

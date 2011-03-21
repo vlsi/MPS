@@ -21,6 +21,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointInfo;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +51,17 @@ public class DefaultProvider implements IBreakpointsProvider<AbstractMPSBreakpoi
   }
 
   @Override
+  public boolean canCreateFromNode(@NotNull DefaultKind kind) {
+    return false;
+  }
+
+  @Override
   public AbstractMPSBreakpoint createFromUi(@NotNull DefaultKind kind, Project project) {
+    return null;
+  }
+
+  @Override
+  public AbstractMPSBreakpoint createFromNode(@NotNull SNode node, @NotNull DefaultKind kind, Project project) {
     return null;
   }
 

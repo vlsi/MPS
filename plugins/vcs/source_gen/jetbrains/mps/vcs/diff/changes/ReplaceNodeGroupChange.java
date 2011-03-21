@@ -26,8 +26,20 @@ public class ReplaceNodeGroupChange extends NodeGroupChange {
     return myEnd;
   }
 
+  public int getResultEnd() {
+    return myResultEnd;
+  }
+
+  public int getResultBegin() {
+    return myResultBegin;
+  }
+
   @Override
   public String toString() {
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), getRole(), getParentNodeId());
+  }
+
+  public ChangeType getType() {
+    return ChangeType.CHANGE;
   }
 }

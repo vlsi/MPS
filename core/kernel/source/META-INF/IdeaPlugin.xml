@@ -112,5 +112,6 @@
 
     <programRunner id="defaultRunRunner" implementation="jetbrains.mps.runconfigurations.runner.MPSProgramRunner"/>
     <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
+    <stepsBeforeRunProvider implementation="jetbrains.mps.runconfigs.runner.LegacyBeforeTaskProvider"/>
   </extensions>
 </idea-plugin>

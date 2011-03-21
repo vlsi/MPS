@@ -60,10 +60,9 @@
     <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" file="ModelUtil.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
   </dependency>
 </dependenciesRoot>
 

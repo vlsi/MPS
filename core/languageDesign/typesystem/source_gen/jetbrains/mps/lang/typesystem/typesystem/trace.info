@@ -392,7 +392,10 @@
     <nodeInfo nodeId="1196177522172" fileName="RulesUtil.java" startLine="27" startPosition="188" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5239146621999643519" fileName="RulesUtil.java" startLine="56" startPosition="187" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="72" startPosition="32" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="72" startPosition="32" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="90" startPosition="32" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="90" startPosition="32" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="108" startPosition="32" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="108" startPosition="32" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1135966777630205022" fileName="RulesUtil.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="withinTypeManagingItem#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1186407270695" fileName="RulesUtil.java" startLine="68" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />

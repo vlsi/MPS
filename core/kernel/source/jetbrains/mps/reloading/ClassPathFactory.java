@@ -3,6 +3,8 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -29,11 +31,10 @@ public class ClassPathFactory {
   }
 
   public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    File file = new File(path);
-
-    if (!file.exists()) {
+    boolean exists = path.contains("!/") ? !FileSystem.getInstance().getFileByPath(path).exists() : !new File(path).exists();
+    if (exists) {
       String moduleString = module == null ? "" : (" in " + module.toString());
-      String message = "Can't load class path item " + path + moduleString + "." + (file.isDirectory() ? " Execute make in IDEA." : "");
+      String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
       throw new IOException(message);
     }
 

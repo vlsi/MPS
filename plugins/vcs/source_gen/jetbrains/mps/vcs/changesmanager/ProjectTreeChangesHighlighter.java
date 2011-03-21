@@ -381,6 +381,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              if (SNodeOperations.getModel(node) == null) {
+                return;
+              }
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
               for (Change c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if ((c instanceof NewNodeChange) && node.getSNodeId().equals(c.getAffectedNodeId())) {

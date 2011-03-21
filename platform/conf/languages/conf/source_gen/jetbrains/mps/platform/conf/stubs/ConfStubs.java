@@ -13,6 +13,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.stubs.StubSource;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNode;
@@ -56,7 +57,7 @@ public class ConfStubs extends BaseStubModelRootManager {
     return result;
   }
 
-  protected void updateModel(final StubLocation location, final SModel model) {
+  protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     String pkg = model.getSModelFqName().getLongName();
     List<Tuples._3<String, String, SNode>> doclst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);

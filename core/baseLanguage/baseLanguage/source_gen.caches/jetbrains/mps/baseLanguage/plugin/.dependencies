@@ -232,9 +232,8 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.debug.breakpoints.LineBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.debug.breakpoints.FieldBreakpoint" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.util.Mapper2" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />

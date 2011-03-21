@@ -37,9 +37,7 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.io.File;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
 import jetbrains.mps.vfs.FileSystem;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -54,6 +52,8 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.project.ModuleContext;
+import java.io.File;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -156,27 +156,19 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
               public DefaultProcessHandler invoke() throws ExecutionException {
                 try {
                   SNode configuration = DefaultPackagingLanguageApplication_Configuration.this.getConfiguration(node);
-
                   if (configuration == null) {
                     throw new ExecutionException("Configuration is not selected.");
                   }
 
                   final Wrappers._T<EditableSModelDescriptor> model = new Wrappers._T<EditableSModelDescriptor>();
-                  final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       model.value = ((EditableSModelDescriptor) SNodeOperations.getModel(node).getModelDescriptor());
-                      context.value = new ModuleContext(model.value.getModule(), project_22042010);
                     }
                   });
-                  File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project_22042010, true);
-
-                  if (file == null) {
-                    throw new ExecutionException("No executable file were generated.");
-                  }
 
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                  Process process = runner.run(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+                  Process process = runner.run(FileSystem.getInstance().getFileByPath(GenerateTextFromBuild.getGeneratedFile(configuration, model.value).getAbsolutePath()));
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
                 } catch (ExecutionException e) {
                   ex.value = e;
@@ -276,8 +268,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultPackagingLanguageApplication_Configuration.this.getNode();
-    return node;
+    return DefaultPackagingLanguageApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
@@ -310,6 +301,23 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }
+  }
+
+  public boolean make(final Project project) {
+    SNode configuration = DefaultPackagingLanguageApplication_Configuration.this.getConfiguration(getNode());
+    if (configuration == null) {
+      return false;
+    }
+    final Wrappers._T<EditableSModelDescriptor> model = new Wrappers._T<EditableSModelDescriptor>();
+    final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        model.value = ((EditableSModelDescriptor) SNodeOperations.getModel(getNode()).getModelDescriptor());
+        context.value = new ModuleContext(model.value.getModule(), project);
+      }
+    });
+    File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project, true);
+    return file != null && file.exists();
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultPackagingLanguageApplication_Configuration> {

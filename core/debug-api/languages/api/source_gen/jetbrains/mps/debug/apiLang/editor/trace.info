@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DebuggerType_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerType_Editor" />
   <unitInfo fileName="ConceptDeclarationReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor$_Inline_dhgas9_a0a" />
+  <unitInfo fileName="CreateBreakpointOperation_Editor.java" startLine="158" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor$CreateBreakpointOperation_generic_cellMenu_a0c0" />
   <unitInfo fileName="DebugInfoProvider_Editor.java" startLine="70" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebugInfoProvider_Editor$breakpointableConceptsListHandler_ozay25_d0" />
   <unitInfo fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a" />
   <unitInfo fileName="ConceptDeclarationReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor" />
   <unitInfo fileName="DebuggerReference_Editor.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerReference_Editor" />
+  <unitInfo fileName="DebuggerType_Editor.java" startLine="20" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerType_Editor" />
   <unitInfo fileName="DebugInfoProvider_Editor.java" startLine="22" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebugInfoProvider_Editor" />
   <unitInfo fileName="BreakpointableNodeItem_Editor.java" startLine="27" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor" />
+  <unitInfo fileName="CreateBreakpointOperation_Editor.java" startLine="37" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor" />
+  <root nodeId="2569394751387978477">
+    <nodeInfo nodeId="6899962303585736424" fileName="CreateBreakpointOperation_Editor.java" startLine="162" startPosition="105" endLine="163" endPosition="375" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6899962303585736437" fileName="CreateBreakpointOperation_Editor.java" startLine="164" startPosition="112" endLine="165" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6899962303585736450" fileName="CreateBreakpointOperation_Editor.java" startLine="166" startPosition="31" endLine="167" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6899962303585736466" fileName="CreateBreakpointOperation_Editor.java" startLine="169" startPosition="7" endLine="170" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6899962303585736497" fileName="CreateBreakpointOperation_Editor.java" startLine="177" startPosition="173" endLine="178" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6899962303585736517" fileName="CreateBreakpointOperation_Editor.java" startLine="178" startPosition="75" endLine="179" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6899962303585736486" fileName="CreateBreakpointOperation_Editor.java" startLine="190" startPosition="77" endLine="191" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6899962303585736448" fileName="CreateBreakpointOperation_Editor.java" startLine="165" startPosition="160" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6899962303585736435" fileName="CreateBreakpointOperation_Editor.java" startLine="163" startPosition="375" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="6899962303585736449" fileName="CreateBreakpointOperation_Editor.java" startLine="166" startPosition="31" endLine="167" endPosition="40" />
+    <scopeInfo nodeId="6899962303585736485" fileName="CreateBreakpointOperation_Editor.java" startLine="190" startPosition="77" endLine="191" endPosition="47" />
+    <scopeInfo nodeId="6899962303585719085" fileName="CreateBreakpointOperation_Editor.java" startLine="177" startPosition="173" endLine="179" endPosition="91" />
+    <scopeInfo nodeId="6899962303585736436" fileName="CreateBreakpointOperation_Editor.java" startLine="164" startPosition="112" endLine="168" endPosition="9">
+      <varInfo nodeId="6899962303585736438" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6899962303585719083" fileName="CreateBreakpointOperation_Editor.java" startLine="162" startPosition="105" endLine="170" endPosition="69">
+      <varInfo nodeId="6899962303585736425" varName="debuggerType" />
+    </scopeInfo>
+  </root>
 </debugInfo>
 

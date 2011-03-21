@@ -20,7 +20,7 @@ public class IconResource_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_generate_5674250849982863634(final SNode thisNode) {
+  public static void virtual_generate_9219036563477424614(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
         SModelDescriptor model = SNodeOperations.getModel(thisNode).getModelDescriptor();
@@ -38,10 +38,10 @@ public class IconResource_Behavior {
   }
 
   public static void call_generate_8976425910813640826(SNode thisNode) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_5674250849982863634", PARAMETERS_8976425910813640826);
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);
   }
 
   public static void callSuper_generate_8976425910813640826(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), callerConceptFqName, "virtual_generate_5674250849982863634", PARAMETERS_8976425910813640826);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), callerConceptFqName, "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);
   }
 }

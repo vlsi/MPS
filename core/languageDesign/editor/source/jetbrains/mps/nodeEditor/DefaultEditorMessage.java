@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -133,7 +134,20 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
-    return null;
+    if (getNode() == null) return null;
+    if (editor instanceof InspectorEditorComponent) {
+      return null;
+    }
+    SNode parent = getNode().getParent();
+    EditorCell result = null;
+    while (parent != null) {
+      result = editor.getBigValidCellForNode(parent);
+      if (result != null) {
+        return result;
+      }
+      parent = parent.getParent();
+    }
+    return result;
   }
 
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
@@ -146,8 +160,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-    Color color = getColor();
-    paintWithColor(g, cell, color);
+    paintWithColor(g, cell, getColor());
   }
 
   protected void paintWithColor(Graphics g, EditorCell cell, Color color) {

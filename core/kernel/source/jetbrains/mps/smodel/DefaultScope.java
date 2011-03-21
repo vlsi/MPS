@@ -44,7 +44,7 @@ public abstract class DefaultScope extends BaseScope {
     if (model == null) {
       //this is because we have modules (such as TransientModelsModule) not publishing their models
       //todo move this logic to corresponding scopes
-      for (SModelDescriptor md : getModelDescriptors()) {
+      for (SModelDescriptor md : getHiddenModelDescriptors()) {
         if (md.getSModelReference().equals(modelReference)) return md;
       }
       return null;
@@ -53,9 +53,7 @@ public abstract class DefaultScope extends BaseScope {
     synchronized (LOCK) {
       initialize();
 
-      for (IModule module : model.getModules()) {
-        if (myVisibleModules.contains(module)) return model;
-      }
+      if (myVisibleModules.contains(model.getModule())) return model;
 
       for (Language l : myUsedLanguages) {
         if (l.getAccessoryModels().contains(model)) return model;
@@ -87,15 +85,27 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
+  @Deprecated //todo remove
+  private List<SModelDescriptor> getHiddenModelDescriptors() {
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    synchronized (LOCK) {
+      initialize();
+      for (IModule m:myVisibleModules){
+        result.addAll(m.getHiddenModelDescriptors());
+      }
+    }
+    return result;
+  }
+
   //todo replace with iterable
   public List<SModelDescriptor> getModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {
       initialize();
-
-      for (IModule module : myVisibleModules) {
-        for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
-          result.add(sm);
+      for (SModelDescriptor d: SModelRepository.getInstance().getModelDescriptors()){
+        IModule module = d.getModule();
+        if (myVisibleModules.contains(module)){
+          result.add(d);
         }
       }
 

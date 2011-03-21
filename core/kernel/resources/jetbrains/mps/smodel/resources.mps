@@ -12,13 +12,14 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" version="-1" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="2" modelUID="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" version="-1" />
-  <import index="7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.compiler(MPS.Classpath/jetbrains.mps.compiler@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
+  <import index="12" modelUID="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7219626660275504879">
     <property name="name:3" value="ModelsToResources" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7219626660275509691">
@@ -478,9 +479,19 @@
         <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
       </node>
     </node>
+    <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="505174985642750721">
+      <property name="final:2" value="false" />
+      <property name="name:2" value="delta" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="505174985642750723">
+        <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+      </node>
+    </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2257725414731981666" />
     <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981667">
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071181381">
+      <link role="classifier:3" targetNodeId="7544464876070905006" resolveInfo="ITResource" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="2257725414731981668">
@@ -519,6 +530,9 @@
     <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981679">
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
     </node>
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189874">
+      <link role="classifier:3" targetNodeId="7544464876071189843" resolveInfo="IGResource" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="2257725414731981680">
     <property name="name:2" value="MResource" />
@@ -541,6 +555,9 @@
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2257725414731981686" />
     <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981687">
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692298">
+      <link role="classifier:3" targetNodeId="7544464876071207476" resolveInfo="IMResource" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="695262645445904871">
@@ -590,6 +607,166 @@
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="695262645445911159" />
     <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="695262645445911160">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876070881655">
+      <link role="classifier:3" targetNodeId="7544464876070881646" resolveInfo="ICResouce" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="7544464876070881646">
+    <property name="name:3" value="ICResouce" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876070881649">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="classes" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876070881653">
+        <link role="classifier:3" targetNodeId="11.~IClassesData" resolveInfo="IClassesData" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876070881651" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876070881652" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876070881647" />
+    <node role="extendedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876070881648">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="7544464876070905006">
+    <property name="name:3" value="ITResource" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876070905007" />
+    <node role="extendedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876070905008">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071181368">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="module" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071181372">
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071181370" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071181371" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071181375">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="delta" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071181379">
+        <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071181377" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071181378" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="7544464876071189843">
+    <property name="name:3" value="IGResource" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071189844" />
+    <node role="extendedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189845">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071189846">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="module" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071189848" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071189849" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189851">
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071189854">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="model" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189858">
+        <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071189856" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071189857" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071189859">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="models" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="7544464876071189863">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189865">
+          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071189861" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071189862" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071189868">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="status" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189872">
+        <link role="classifier:3" targetNodeId="9.~GenerationStatus" resolveInfo="GenerationStatus" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071189870" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7544464876071189871" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="7544464876071207476">
+    <property name="name:3" value="IMResource" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692283">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="module" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692287">
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692285" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692286" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692290">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="models" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="5822172888873692294">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692296">
+          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692292" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692293" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7544464876071207477" />
+    <node role="extendedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071207478">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="5822172888873692299">
+    <property name="name:3" value="IFResource" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692302">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="packageName" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5822172888873692306" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692304" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692305" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692307">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="contents" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.MapType:7" id="5822172888873692311">
+        <node role="valueType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692315">
+          <link role="classifier:3" targetNodeId="10.~Object" resolveInfo="Object" />
+        </node>
+        <node role="keyType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5822172888873692314" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692309" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692310" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692316">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="module" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692320">
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692318" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692319" />
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5822172888873692321">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="model" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692325">
+        <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692323" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822172888873692324" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5822172888873692300" />
+    <node role="extendedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5822172888873692301">
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
     </node>
   </node>

@@ -224,6 +224,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -236,6 +237,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -248,6 +250,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -260,6 +263,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -272,6 +276,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;

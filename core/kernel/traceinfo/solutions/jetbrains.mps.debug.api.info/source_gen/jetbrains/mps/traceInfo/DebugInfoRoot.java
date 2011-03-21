@@ -6,6 +6,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import org.jdom.Element;
+import java.util.Comparator;
 import org.jdom.DataConversionException;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
@@ -66,21 +67,33 @@ public class DebugInfoRoot {
 
   public void toXml(Element container) {
     if (myPositions != null) {
-      for (PositionInfo position : myPositions) {
+      for (PositionInfo position : SetSequence.fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
+        public int compare(TraceablePositionInfo a, TraceablePositionInfo b) {
+          return a.compareTo(b);
+        }
+      }, true)) {
         Element e = new Element(DebugInfoRoot.NODE_INFO);
         position.saveTo(e);
         container.addContent(e);
       }
     }
     if (myScopePositions != null) {
-      for (ScopePositionInfo position : myScopePositions) {
+      for (ScopePositionInfo position : SetSequence.fromSet(myScopePositions).toListSequence().sort(new Comparator<ScopePositionInfo>() {
+        public int compare(ScopePositionInfo a, ScopePositionInfo b) {
+          return a.compareTo(b);
+        }
+      }, true)) {
         Element e = new Element(DebugInfoRoot.SCOPE_INFO);
         position.saveTo(e);
         container.addContent(e);
       }
     }
     if (myUnitPositions != null) {
-      for (UnitPositionInfo position : myUnitPositions) {
+      for (UnitPositionInfo position : SetSequence.fromSet(myUnitPositions).toListSequence().sort(new Comparator<UnitPositionInfo>() {
+        public int compare(UnitPositionInfo a, UnitPositionInfo b) {
+          return a.compareTo(b);
+        }
+      }, true)) {
         Element e = new Element(DebugInfoRoot.UNIT_INFO);
         position.saveTo(e);
         container.addContent(e);

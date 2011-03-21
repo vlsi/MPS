@@ -271,15 +271,15 @@
   <unitInfo fileName="AddForStatementVar.java" startLine="25" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AddForStatementVar$AddForStatementVar_Action0" />
   <unitInfo fileName="TryStatement_Editor.java" startLine="173" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_Editor$catchClauseListHandler_cmnz0s_e0" />
   <unitInfo fileName="Annotation_Editor.java" startLine="185" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Annotation_Editor$annotationMethodListHandler_mr1gse_b4a" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="335" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$implementedInterfaceListHandler_y68cfu_g0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="340" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$implementedInterfaceListHandler_y68cfu_g0" />
   <unitInfo fileName="Interface_Editor.java" startLine="363" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$staticFieldListHandler_4hcgjd_b8a" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="388" startPosition="0" endLine="440" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$enumConstantListHandler_y68cfu_a1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="393" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$enumConstantListHandler_y68cfu_a1h0" />
   <unitInfo fileName="Interface_Editor.java" startLine="416" startPosition="0" endLine="468" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$methodListHandler_4hcgjd_d8a" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="441" startPosition="0" endLine="493" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$staticFieldListHandler_y68cfu_c1h0" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="494" startPosition="0" endLine="546" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$fieldListHandler_y68cfu_f1h0" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="547" startPosition="0" endLine="599" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$constructorListHandler_y68cfu_h1h0" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="600" startPosition="0" endLine="652" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$methodListHandler_y68cfu_i1h0" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="653" startPosition="0" endLine="705" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$staticMethodListHandler_y68cfu_j1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="446" startPosition="0" endLine="498" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$staticFieldListHandler_y68cfu_c1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="499" startPosition="0" endLine="551" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$fieldListHandler_y68cfu_f1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="552" startPosition="0" endLine="604" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$constructorListHandler_y68cfu_h1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="605" startPosition="0" endLine="657" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$methodListHandler_y68cfu_i1h0" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="658" startPosition="0" endLine="710" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$staticMethodListHandler_y68cfu_j1h0" />
   <unitInfo fileName="ClassConcept_Editor.java" startLine="857" startPosition="0" endLine="909" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticFieldListHandler_uj0cpq_b31a" />
   <unitInfo fileName="ClassConcept_Editor.java" startLine="910" startPosition="0" endLine="962" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$fieldListHandler_uj0cpq_f31a" />
   <unitInfo fileName="ClassConcept_Editor.java" startLine="963" startPosition="0" endLine="1015" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$propertyListHandler_uj0cpq_g31a" />
@@ -429,7 +429,7 @@
   <unitInfo fileName="ForStatement_Editor.java" startLine="33" startPosition="0" endLine="502" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ForStatement_Editor" />
   <unitInfo fileName="InstanceMethodDeclaration_Editor.java" startLine="36" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Editor" />
   <unitInfo fileName="Interface_Editor.java" startLine="33" startPosition="0" endLine="570" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor" />
-  <unitInfo fileName="EnumClass_Editor.java" startLine="34" startPosition="0" endLine="706" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor" />
+  <unitInfo fileName="EnumClass_Editor.java" startLine="34" startPosition="0" endLine="711" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor" />
   <unitInfo fileName="AnonymousClass_Editor.java" startLine="42" startPosition="0" endLine="751" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_Editor" />
   <unitInfo fileName="ClassConcept_Editor.java" startLine="36" startPosition="0" endLine="1276" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor" />
   <root nodeId="1073416106125">
@@ -757,12 +757,12 @@
     <scopeInfo nodeId="1188210606996" fileName="StaticFieldDeclaration_Editor.java" startLine="241" startPosition="111" endLine="242" endPosition="72" />
   </root>
   <root nodeId="1085483277582">
-    <nodeInfo nodeId="6650568951502239955" fileName="EnumClass_Editor.java" startLine="323" startPosition="111" endLine="324" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208729889036381801" fileName="EnumClass_Editor.java" startLine="327" startPosition="113" endLine="328" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7166312718652752256" fileName="EnumClass_Editor.java" startLine="331" startPosition="111" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6650568951502239954" fileName="EnumClass_Editor.java" startLine="323" startPosition="111" endLine="324" endPosition="112" />
-    <scopeInfo nodeId="1208729889036381800" fileName="EnumClass_Editor.java" startLine="327" startPosition="113" endLine="328" endPosition="205" />
-    <scopeInfo nodeId="7166312718652740230" fileName="EnumClass_Editor.java" startLine="331" startPosition="111" endLine="332" endPosition="53" />
+    <nodeInfo nodeId="6650568951502239955" fileName="EnumClass_Editor.java" startLine="328" startPosition="111" endLine="329" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208729889036381801" fileName="EnumClass_Editor.java" startLine="332" startPosition="113" endLine="333" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7166312718652752256" fileName="EnumClass_Editor.java" startLine="336" startPosition="111" endLine="337" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6650568951502239954" fileName="EnumClass_Editor.java" startLine="328" startPosition="111" endLine="329" endPosition="112" />
+    <scopeInfo nodeId="1208729889036381800" fileName="EnumClass_Editor.java" startLine="332" startPosition="113" endLine="333" endPosition="205" />
+    <scopeInfo nodeId="7166312718652740230" fileName="EnumClass_Editor.java" startLine="336" startPosition="111" endLine="337" endPosition="53" />
   </root>
   <root nodeId="1085485112422">
     <nodeInfo nodeId="492581319488129861" fileName="EnumConstantDeclaration_Editor.java" startLine="191" startPosition="111" endLine="192" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

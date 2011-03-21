@@ -357,23 +357,27 @@ public class PanelsDemo_Swing {
     final ButtonGroup buttonGroup_wgtfc_a0c0b0f = new ButtonGroup();
     final JPanel widget_wgtfc_a0a1a1a5 = new JPanel(new GridLayout(1, 1));
     final ButtonGroup buttonGroup_wgtfc_a0b0d0b0f = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a0a0b0b0f = new JPanel(new SpringLayout()) {
-      @Override
-      public void addNotify() {
-        super.addNotify();
-        final JPanel jp = this;
-        this.getParent().addComponentListener(new ComponentAdapter() {
+    final JPanel widget_wgtfc_a0a0a0b0b0f = new _FunctionTypes._return_P1_E0<JPanel, JComponent>() {
+      public JPanel invoke(JComponent context_wgtfc_a_2) {
+        return new JPanel(new SpringLayout()) {
           @Override
-          public void componentResized(ComponentEvent ce) {
-            Dimension dim = ce.getComponent().getSize();
-            ((SpringLayout) jp.getLayout()).putConstraint(SpringLayout.SOUTH, jp, Spring.constant(dim.height), SpringLayout.NORTH, jp);
-            ((SpringLayout) jp.getLayout()).putConstraint(SpringLayout.EAST, jp, Spring.constant(dim.width), SpringLayout.WEST, jp);
-            jp.invalidate();
-            jp.getParent().validate();
+          public void addNotify() {
+            super.addNotify();
+            final JPanel jp = this;
+            this.getParent().addComponentListener(new ComponentAdapter() {
+              @Override
+              public void componentResized(ComponentEvent ce) {
+                Dimension dim = ce.getComponent().getSize();
+                ((SpringLayout) jp.getLayout()).putConstraint(SpringLayout.SOUTH, jp, Spring.constant(dim.height), SpringLayout.NORTH, jp);
+                ((SpringLayout) jp.getLayout()).putConstraint(SpringLayout.EAST, jp, Spring.constant(dim.width), SpringLayout.WEST, jp);
+                jp.invalidate();
+                jp.getParent().validate();
+              }
+            });
           }
-        });
+        };
       }
-    };
+    }.invoke(widget_wgtfc_a0a1a1a5);
     final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0f = new ButtonGroup();
     final JButton widget_wgtfc_a0a0a0a0a1a1a5 = new JButton();
     widget_wgtfc_a0a0a0a0a1a1a5.setText("Button #1");

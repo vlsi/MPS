@@ -99,7 +99,7 @@ public class LanguageRenamer {
         String oldPrefix = root.getPrefix();
         if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
           String newPrefix = myNewName + oldPrefix.substring(oldFqName.length());
-          root.changePrefix(newPrefix);
+          root.changePrefix(newPrefix, g);
         }
       }
     }

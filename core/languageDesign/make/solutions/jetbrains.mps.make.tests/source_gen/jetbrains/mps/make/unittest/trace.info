@@ -337,86 +337,88 @@
     <nodeInfo nodeId="7752758284337366489" fileName="Mockups.java" startLine="100" startPosition="43" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7082294419595138127" fileName="Mockups.java" startLine="101" startPosition="38" endLine="102" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7082294419595138134" fileName="Mockups.java" startLine="102" startPosition="44" endLine="103" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7752758284337366499" fileName="Mockups.java" startLine="103" startPosition="38" endLine="104" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7752758284337366513" fileName="Mockups.java" startLine="104" startPosition="47" endLine="105" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180543240" fileName="Mockups.java" startLine="110" startPosition="56" endLine="111" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7704195384180543275" fileName="Mockups.java" startLine="111" startPosition="52" endLine="112" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4034970672266038679" fileName="Mockups.java" startLine="115" startPosition="115" endLine="116" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5039072078349934995" fileName="Mockups.java" startLine="118" startPosition="7" endLine="119" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5039072078349935026" fileName="Mockups.java" startLine="119" startPosition="161" endLine="120" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266044994" fileName="Mockups.java" startLine="122" startPosition="7" endLine="123" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7704195384180537109" fileName="Mockups.java" startLine="126" startPosition="81" endLine="127" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7704195384180543191" fileName="Mockups.java" startLine="129" startPosition="7" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180543213" fileName="Mockups.java" startLine="130" startPosition="49" endLine="131" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180537135" fileName="Mockups.java" startLine="133" startPosition="7" endLine="134" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7704195384180543297" fileName="Mockups.java" startLine="139" startPosition="7" endLine="140" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180543307" fileName="Mockups.java" startLine="140" startPosition="39" endLine="141" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266044888" fileName="Mockups.java" startLine="146" startPosition="66" endLine="147" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4034970672266045018" fileName="Mockups.java" startLine="150" startPosition="67" endLine="151" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4034970672266045043" fileName="Mockups.java" startLine="153" startPosition="7" endLine="154" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266045062" fileName="Mockups.java" startLine="154" startPosition="47" endLine="155" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266045072" fileName="Mockups.java" startLine="157" startPosition="7" endLine="158" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1977954644795691023" fileName="Mockups.java" startLine="161" startPosition="71" endLine="162" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1977954644795691054" fileName="Mockups.java" startLine="162" startPosition="77" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4648565975300722691" fileName="Mockups.java" startLine="166" startPosition="66" endLine="167" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4648565975300722716" fileName="Mockups.java" startLine="167" startPosition="63" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4648565975300729319" fileName="Mockups.java" startLine="173" startPosition="7" endLine="174" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4648565975300729328" fileName="Mockups.java" startLine="174" startPosition="137" endLine="175" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7752758284337366499" fileName="Mockups.java" startLine="103" startPosition="38" endLine="104" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7752758284337366513" fileName="Mockups.java" startLine="104" startPosition="43" endLine="105" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3947550283130603208" fileName="Mockups.java" startLine="105" startPosition="37" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3947550283130603215" fileName="Mockups.java" startLine="106" startPosition="44" endLine="107" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180543240" fileName="Mockups.java" startLine="112" startPosition="56" endLine="113" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7704195384180543275" fileName="Mockups.java" startLine="113" startPosition="52" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4034970672266038679" fileName="Mockups.java" startLine="117" startPosition="115" endLine="118" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5039072078349934995" fileName="Mockups.java" startLine="120" startPosition="7" endLine="121" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5039072078349935026" fileName="Mockups.java" startLine="121" startPosition="161" endLine="122" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266044994" fileName="Mockups.java" startLine="124" startPosition="7" endLine="125" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7704195384180537109" fileName="Mockups.java" startLine="128" startPosition="81" endLine="129" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7704195384180543191" fileName="Mockups.java" startLine="131" startPosition="7" endLine="132" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180543213" fileName="Mockups.java" startLine="132" startPosition="49" endLine="133" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180537135" fileName="Mockups.java" startLine="135" startPosition="7" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7704195384180543297" fileName="Mockups.java" startLine="141" startPosition="7" endLine="142" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180543307" fileName="Mockups.java" startLine="142" startPosition="39" endLine="143" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266044888" fileName="Mockups.java" startLine="148" startPosition="66" endLine="149" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4034970672266045018" fileName="Mockups.java" startLine="152" startPosition="67" endLine="153" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4034970672266045043" fileName="Mockups.java" startLine="155" startPosition="7" endLine="156" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266045062" fileName="Mockups.java" startLine="156" startPosition="47" endLine="157" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266045072" fileName="Mockups.java" startLine="159" startPosition="7" endLine="160" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1977954644795691023" fileName="Mockups.java" startLine="163" startPosition="71" endLine="164" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1977954644795691054" fileName="Mockups.java" startLine="164" startPosition="77" endLine="165" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4648565975300722691" fileName="Mockups.java" startLine="168" startPosition="66" endLine="169" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4648565975300722716" fileName="Mockups.java" startLine="169" startPosition="63" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4648565975300729319" fileName="Mockups.java" startLine="175" startPosition="7" endLine="176" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4648565975300729328" fileName="Mockups.java" startLine="176" startPosition="137" endLine="177" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="40" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mockups#()V" />
     <nodeInfo nodeId="1977954644795796063" fileName="Mockups.java" startLine="21" startPosition="56" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configure#(Ljetbrains/mps/make/script/IConfigMonitor;Ljetbrains/mps/make/script/IParametersPool;)Z" />
     <nodeInfo nodeId="5039072078349892128" fileName="Mockups.java" startLine="26" startPosition="47" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
     <nodeInfo nodeId="5039072078349938525" fileName="Mockups.java" startLine="31" startPosition="56" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" />
     <nodeInfo nodeId="5039072078349938531" fileName="Mockups.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1104090622246031164" fileName="Mockups.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="target#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/facet/ITarget;" />
-    <nodeInfo nodeId="4034970672266044876" fileName="Mockups.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resource#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/resources/IResource;" />
+    <nodeInfo nodeId="4034970672266044876" fileName="Mockups.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resource#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/resources/IResource;" />
     <nodeInfo nodeId="1977954644795796060" fileName="Mockups.java" startLine="20" startPosition="22" endLine="25" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DefaultConfig" />
     <nodeInfo nodeId="5039072078349881688" fileName="Mockups.java" startLine="25" startPosition="4" endLine="30" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DefaultJob" />
-    <nodeInfo nodeId="7704195384180543230" fileName="Mockups.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="job#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IJob;" />
-    <nodeInfo nodeId="1977954644795691016" fileName="Mockups.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="cmonitor#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IConfigMonitor;" />
-    <nodeInfo nodeId="4648565975300721624" fileName="Mockups.java" startLine="165" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="monitors#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IMonitors;" />
+    <nodeInfo nodeId="7704195384180543230" fileName="Mockups.java" startLine="111" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="job#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="1977954644795691016" fileName="Mockups.java" startLine="162" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="cmonitor#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IConfigMonitor;" />
+    <nodeInfo nodeId="4648565975300721624" fileName="Mockups.java" startLine="167" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="monitors#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IMonitors;" />
     <nodeInfo nodeId="3564492719942580137" fileName="Mockups.java" startLine="45" startPosition="56" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8963054271157683909" fileName="Mockups.java" startLine="75" startPosition="58" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266044752" fileName="Mockups.java" startLine="116" startPosition="52" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180537118" fileName="Mockups.java" startLine="127" startPosition="61" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704195384180543287" fileName="Mockups.java" startLine="137" startPosition="70" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4034970672266045028" fileName="Mockups.java" startLine="151" startPosition="70" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4648565975300729309" fileName="Mockups.java" startLine="171" startPosition="70" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266044752" fileName="Mockups.java" startLine="118" startPosition="52" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180537118" fileName="Mockups.java" startLine="129" startPosition="61" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704195384180543287" fileName="Mockups.java" startLine="139" startPosition="70" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4034970672266045028" fileName="Mockups.java" startLine="153" startPosition="70" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4648565975300729309" fileName="Mockups.java" startLine="173" startPosition="70" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5039072078349938515" fileName="Mockups.java" startLine="30" startPosition="4" endLine="39" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DefaultResult" />
-    <nodeInfo nodeId="7704195384180543278" fileName="Mockups.java" startLine="136" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/script/IResult;)V" />
-    <nodeInfo nodeId="4648565975300729298" fileName="Mockups.java" startLine="170" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/script/IMonitors;)V" />
+    <nodeInfo nodeId="7704195384180543278" fileName="Mockups.java" startLine="138" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/script/IResult;)V" />
+    <nodeInfo nodeId="4648565975300729298" fileName="Mockups.java" startLine="172" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/script/IMonitors;)V" />
     <nodeInfo nodeId="3564492719942580106" fileName="Mockups.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="facet#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/facet/IFacet;" />
     <nodeInfo nodeId="8963054271157683898" fileName="Mockups.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="target#(Lorg/jmock/Mockery;Ljava/lang/String;Ljetbrains/mps/make/facet/ITarget/Name;)Ljetbrains/mps/make/facet/ITarget;" />
-    <nodeInfo nodeId="4034970672266038667" fileName="Mockups.java" startLine="114" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="job#(Lorg/jmock/Mockery;Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)Ljetbrains/mps/make/script/IJob;" />
-    <nodeInfo nodeId="7704195384180537089" fileName="Mockups.java" startLine="125" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="result#(Lorg/jmock/Mockery;Ljava/lang/String;Z)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="4034970672266044996" fileName="Mockups.java" startLine="149" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="monitor#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IJobMonitor;" />
+    <nodeInfo nodeId="4034970672266038667" fileName="Mockups.java" startLine="116" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="job#(Lorg/jmock/Mockery;Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="7704195384180537089" fileName="Mockups.java" startLine="127" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="result#(Lorg/jmock/Mockery;Ljava/lang/String;Z)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="4034970672266044996" fileName="Mockups.java" startLine="151" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="monitor#(Lorg/jmock/Mockery;Ljava/lang/String;)Ljetbrains/mps/make/script/IJobMonitor;" />
     <nodeInfo nodeId="8895562589601105630" fileName="Mockups.java" startLine="55" startPosition="66" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8895562589601101840" fileName="Mockups.java" startLine="54" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/facet/IFacet;)V" />
-    <nodeInfo nodeId="5079576194953076067" fileName="Mockups.java" startLine="85" startPosition="67" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5079576194953076058" fileName="Mockups.java" startLine="84" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/facet/ITarget;)V" />
+    <nodeInfo nodeId="5079576194953076067" fileName="Mockups.java" startLine="85" startPosition="67" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5079576194953076058" fileName="Mockups.java" startLine="84" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allowing#(Lorg/jmock/Mockery;Ljetbrains/mps/make/facet/ITarget;)V" />
     <scopeInfo nodeId="3564492719942580105" fileName="Mockups.java" startLine="41" startPosition="20" endLine="41" endPosition="20" />
     <scopeInfo nodeId="1977954644795796064" fileName="Mockups.java" startLine="22" startPosition="73" endLine="23" endPosition="18" />
     <scopeInfo nodeId="5039072078349892129" fileName="Mockups.java" startLine="27" startPosition="101" endLine="28" endPosition="27" />
     <scopeInfo nodeId="5039072078349938528" fileName="Mockups.java" startLine="32" startPosition="34" endLine="33" endPosition="18" />
     <scopeInfo nodeId="5039072078349938535" fileName="Mockups.java" startLine="36" startPosition="41" endLine="37" endPosition="18" />
     <scopeInfo nodeId="1104090622246031166" fileName="Mockups.java" startLine="70" startPosition="62" endLine="71" endPosition="57" />
-    <scopeInfo nodeId="4034970672266044887" fileName="Mockups.java" startLine="146" startPosition="66" endLine="147" endPosition="47" />
+    <scopeInfo nodeId="4034970672266044887" fileName="Mockups.java" startLine="148" startPosition="66" endLine="149" endPosition="47" />
     <scopeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="40" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="3564492719942580357" fileName="Mockups.java" startLine="47" startPosition="7" endLine="49" endPosition="54" />
     <scopeInfo nodeId="8963054271157683918" fileName="Mockups.java" startLine="77" startPosition="7" endLine="79" endPosition="38" />
-    <scopeInfo nodeId="7704195384180543239" fileName="Mockups.java" startLine="110" startPosition="56" endLine="112" endPosition="15">
+    <scopeInfo nodeId="7704195384180543239" fileName="Mockups.java" startLine="112" startPosition="56" endLine="114" endPosition="15">
       <varInfo nodeId="7704195384180543241" varName="job" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266044768" fileName="Mockups.java" startLine="118" startPosition="7" endLine="120" endPosition="45" />
-    <scopeInfo nodeId="7704195384180537132" fileName="Mockups.java" startLine="129" startPosition="7" endLine="131" endPosition="36" />
-    <scopeInfo nodeId="7704195384180543296" fileName="Mockups.java" startLine="139" startPosition="7" endLine="141" endPosition="37" />
-    <scopeInfo nodeId="4034970672266045042" fileName="Mockups.java" startLine="153" startPosition="7" endLine="155" endPosition="38" />
-    <scopeInfo nodeId="1977954644795691022" fileName="Mockups.java" startLine="161" startPosition="71" endLine="163" endPosition="20">
+    <scopeInfo nodeId="4034970672266044768" fileName="Mockups.java" startLine="120" startPosition="7" endLine="122" endPosition="45" />
+    <scopeInfo nodeId="7704195384180537132" fileName="Mockups.java" startLine="131" startPosition="7" endLine="133" endPosition="36" />
+    <scopeInfo nodeId="7704195384180543296" fileName="Mockups.java" startLine="141" startPosition="7" endLine="143" endPosition="37" />
+    <scopeInfo nodeId="4034970672266045042" fileName="Mockups.java" startLine="155" startPosition="7" endLine="157" endPosition="38" />
+    <scopeInfo nodeId="1977954644795691022" fileName="Mockups.java" startLine="163" startPosition="71" endLine="165" endPosition="20">
       <varInfo nodeId="1977954644795691024" varName="cmonitor" />
     </scopeInfo>
-    <scopeInfo nodeId="4648565975300721627" fileName="Mockups.java" startLine="166" startPosition="66" endLine="168" endPosition="16">
+    <scopeInfo nodeId="4648565975300721627" fileName="Mockups.java" startLine="168" startPosition="66" endLine="170" endPosition="16">
       <varInfo nodeId="4648565975300722692" varName="mons" />
     </scopeInfo>
-    <scopeInfo nodeId="4648565975300729318" fileName="Mockups.java" startLine="173" startPosition="7" endLine="175" endPosition="131" />
+    <scopeInfo nodeId="4648565975300729318" fileName="Mockups.java" startLine="175" startPosition="7" endLine="177" endPosition="131" />
     <scopeInfo nodeId="1977954644795796063" fileName="Mockups.java" startLine="21" startPosition="56" endLine="25" endPosition="0" />
     <scopeInfo nodeId="5039072078349892128" fileName="Mockups.java" startLine="26" startPosition="47" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5039072078349938525" fileName="Mockups.java" startLine="31" startPosition="56" endLine="35" endPosition="0" />
@@ -425,24 +427,24 @@
       <varInfo nodeId="1104090622246031206" varName="name" />
       <varInfo nodeId="1104090622246031204" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266044876" fileName="Mockups.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="4034970672266044876" fileName="Mockups.java" startLine="147" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="4034970672266044884" varName="name" />
       <varInfo nodeId="4034970672266044881" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="7704195384180543230" fileName="Mockups.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="7704195384180543230" fileName="Mockups.java" startLine="111" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="7704195384180543233" varName="name" />
       <varInfo nodeId="7704195384180543231" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="1977954644795691016" fileName="Mockups.java" startLine="160" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="1977954644795691016" fileName="Mockups.java" startLine="162" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="1977954644795691019" varName="name" />
       <varInfo nodeId="1977954644795691017" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4648565975300721624" fileName="Mockups.java" startLine="165" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="4648565975300721624" fileName="Mockups.java" startLine="167" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="4648565975300722677" varName="name" />
       <varInfo nodeId="4648565975300722674" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="7704195384180543281" fileName="Mockups.java" startLine="137" startPosition="70" endLine="143" endPosition="7" />
-    <scopeInfo nodeId="4648565975300729301" fileName="Mockups.java" startLine="171" startPosition="70" endLine="177" endPosition="7" />
+    <scopeInfo nodeId="7704195384180543281" fileName="Mockups.java" startLine="139" startPosition="70" endLine="145" endPosition="7" />
+    <scopeInfo nodeId="4648565975300729301" fileName="Mockups.java" startLine="173" startPosition="70" endLine="179" endPosition="7" />
     <scopeInfo nodeId="3564492719942580109" fileName="Mockups.java" startLine="44" startPosition="66" endLine="52" endPosition="15">
       <varInfo nodeId="3564492719942580129" varName="fct" />
     </scopeInfo>
@@ -450,20 +452,20 @@
     <scopeInfo nodeId="8963054271157683900" fileName="Mockups.java" startLine="74" startPosition="88" endLine="82" endPosition="15">
       <varInfo nodeId="8963054271157683902" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266038670" fileName="Mockups.java" startLine="115" startPosition="115" endLine="123" endPosition="15">
+    <scopeInfo nodeId="4034970672266038670" fileName="Mockups.java" startLine="117" startPosition="115" endLine="125" endPosition="15">
       <varInfo nodeId="4034970672266038680" varName="job" />
     </scopeInfo>
-    <scopeInfo nodeId="7704195384180537092" fileName="Mockups.java" startLine="126" startPosition="81" endLine="134" endPosition="18">
+    <scopeInfo nodeId="7704195384180537092" fileName="Mockups.java" startLine="128" startPosition="81" endLine="136" endPosition="18">
       <varInfo nodeId="7704195384180537110" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266044999" fileName="Mockups.java" startLine="150" startPosition="67" endLine="158" endPosition="19">
+    <scopeInfo nodeId="4034970672266044999" fileName="Mockups.java" startLine="152" startPosition="67" endLine="160" endPosition="19">
       <varInfo nodeId="4034970672266045019" varName="monitor" />
     </scopeInfo>
-    <scopeInfo nodeId="7704195384180543278" fileName="Mockups.java" startLine="136" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="7704195384180543278" fileName="Mockups.java" startLine="138" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="7704195384180543282" varName="result" />
       <varInfo nodeId="7704195384180543284" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4648565975300729298" fileName="Mockups.java" startLine="170" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="4648565975300729298" fileName="Mockups.java" startLine="172" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="4648565975300729306" varName="context" />
       <varInfo nodeId="4648565975300729302" varName="mons" />
     </scopeInfo>
@@ -476,17 +478,17 @@
       <varInfo nodeId="5079576194953088409" varName="tname" />
       <varInfo nodeId="8963054271157683940" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266038667" fileName="Mockups.java" startLine="114" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="4034970672266038667" fileName="Mockups.java" startLine="116" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="4034970672266038676" varName="name" />
       <varInfo nodeId="4034970672266038673" varName="context" />
       <varInfo nodeId="4034970672266038695" varName="fun" />
     </scopeInfo>
-    <scopeInfo nodeId="7704195384180537089" fileName="Mockups.java" startLine="125" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="7704195384180537089" fileName="Mockups.java" startLine="127" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="7704195384180543316" varName="res" />
       <varInfo nodeId="7704195384180537095" varName="name" />
       <varInfo nodeId="7704195384180537093" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4034970672266044996" fileName="Mockups.java" startLine="149" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="4034970672266044996" fileName="Mockups.java" startLine="151" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="4034970672266045004" varName="name" />
       <varInfo nodeId="4034970672266045001" varName="context" />
     </scopeInfo>
@@ -495,9 +497,9 @@
       <varInfo nodeId="8895562589601105625" varName="context" />
       <varInfo nodeId="8895562589601105627" varName="fct" />
     </scopeInfo>
-    <scopeInfo nodeId="5079576194953076081" fileName="Mockups.java" startLine="87" startPosition="7" endLine="105" endPosition="37" />
-    <scopeInfo nodeId="5079576194953076061" fileName="Mockups.java" startLine="85" startPosition="67" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="5079576194953076058" fileName="Mockups.java" startLine="84" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="5079576194953076081" fileName="Mockups.java" startLine="87" startPosition="7" endLine="107" endPosition="37" />
+    <scopeInfo nodeId="5079576194953076061" fileName="Mockups.java" startLine="85" startPosition="67" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="5079576194953076058" fileName="Mockups.java" startLine="84" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="5079576194953076062" varName="context" />
       <varInfo nodeId="5079576194953076064" varName="trg" />
     </scopeInfo>
@@ -505,15 +507,15 @@
     <unitInfo nodeId="5039072078349892128" fileName="Mockups.java" startLine="26" startPosition="39" endLine="30" endPosition="3" unitName="jetbrains.mps.make.unittest.Mockups$2" />
     <unitInfo nodeId="3564492719942580354" fileName="Mockups.java" startLine="46" startPosition="25" endLine="51" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$4" />
     <unitInfo nodeId="8963054271157683915" fileName="Mockups.java" startLine="76" startPosition="25" endLine="81" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$6" />
-    <unitInfo nodeId="4034970672266044765" fileName="Mockups.java" startLine="117" startPosition="25" endLine="122" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$8" />
-    <unitInfo nodeId="7704195384180537129" fileName="Mockups.java" startLine="128" startPosition="25" endLine="133" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$9" />
-    <unitInfo nodeId="7704195384180543293" fileName="Mockups.java" startLine="138" startPosition="25" endLine="143" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$10" />
-    <unitInfo nodeId="4034970672266045039" fileName="Mockups.java" startLine="152" startPosition="25" endLine="157" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$11" />
-    <unitInfo nodeId="4648565975300729315" fileName="Mockups.java" startLine="172" startPosition="25" endLine="177" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$12" />
+    <unitInfo nodeId="4034970672266044765" fileName="Mockups.java" startLine="119" startPosition="25" endLine="124" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$8" />
+    <unitInfo nodeId="7704195384180537129" fileName="Mockups.java" startLine="130" startPosition="25" endLine="135" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$9" />
+    <unitInfo nodeId="7704195384180543293" fileName="Mockups.java" startLine="140" startPosition="25" endLine="145" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$10" />
+    <unitInfo nodeId="4034970672266045039" fileName="Mockups.java" startLine="154" startPosition="25" endLine="159" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$11" />
+    <unitInfo nodeId="4648565975300729315" fileName="Mockups.java" startLine="174" startPosition="25" endLine="179" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$12" />
     <unitInfo nodeId="5039072078349938523" fileName="Mockups.java" startLine="31" startPosition="45" endLine="39" endPosition="3" unitName="jetbrains.mps.make.unittest.Mockups$3" />
     <unitInfo nodeId="8895562589601115945" fileName="Mockups.java" startLine="56" startPosition="25" endLine="67" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$5" />
-    <unitInfo nodeId="5079576194953076078" fileName="Mockups.java" startLine="86" startPosition="25" endLine="107" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$7" />
-    <unitInfo nodeId="3564492719942580100" fileName="Mockups.java" startLine="20" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.make.unittest.Mockups" />
+    <unitInfo nodeId="5079576194953076078" fileName="Mockups.java" startLine="86" startPosition="25" endLine="109" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$7" />
+    <unitInfo nodeId="3564492719942580100" fileName="Mockups.java" startLine="20" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.make.unittest.Mockups" />
   </root>
   <root nodeId="4034970672266038508">
     <nodeInfo nodeId="4034970672266038529" fileName="Execute_Test.java" startLine="26" startPosition="46" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -51,10 +51,10 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -257,11 +257,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultJavaApplication_Configuration.this.getNode();
-    if (make) {
-      RunUtil.makeBeforeRun(project, node);
-    }
-    return node;
+    return DefaultJavaApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
@@ -294,6 +290,10 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }
+  }
+
+  public boolean make(final Project project) {
+    return RunUtil.makeBeforeRun(project, getNode());
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultJavaApplication_Configuration> {

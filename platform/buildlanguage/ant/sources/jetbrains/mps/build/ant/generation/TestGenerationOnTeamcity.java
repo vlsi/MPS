@@ -16,6 +16,7 @@
 package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.*;
+import jetbrains.mps.build.ant.generation.workers.TestGenerationWorker;
 import org.apache.tools.ant.types.resources.FileResource;
 
 import java.util.Iterator;

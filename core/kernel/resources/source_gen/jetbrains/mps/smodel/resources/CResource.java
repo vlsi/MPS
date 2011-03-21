@@ -7,7 +7,7 @@ import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class CResource extends MultiTuple._1<IClassesData> implements IResource {
+public class CResource extends MultiTuple._1<IClassesData> implements IResource, ICResouce {
   public CResource() {
     super();
   }

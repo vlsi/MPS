@@ -47,6 +47,10 @@ public abstract class Block {
     return getPresentation();
   }
 
+  public String getExpandedPresentation() {
+    return getPresentation();
+  }
+
   public abstract BlockKind getBlockKind();
 
   public abstract String getPresentation();

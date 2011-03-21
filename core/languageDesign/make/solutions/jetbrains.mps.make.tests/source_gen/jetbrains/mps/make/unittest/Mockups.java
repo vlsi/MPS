@@ -101,7 +101,9 @@ public class Mockups {
         this.will(returnValue(false));
         this.allowing(trg).producesOutput();
         this.will(returnValue(false));
-        this.allowing(trg).expectedResources();
+        this.allowing(trg).expectedInput();
+        this.will(returnValue(null));
+        this.allowing(trg).expectedOutput();
         this.will(returnValue(null));
       }
     });

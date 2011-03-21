@@ -41,7 +41,6 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (!ProjectPane.isShowGenStatus()) return;
 
     SModelDescriptor md = modelNode.getSModelDescriptor();
-    if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
     if (!(md instanceof EditableSModelDescriptor)) return;
 
     boolean wasChanged = ((EditableSModelDescriptor) md).isChanged();

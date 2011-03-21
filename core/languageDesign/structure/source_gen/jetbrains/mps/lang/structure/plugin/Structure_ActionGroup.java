@@ -18,7 +18,6 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Structure_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

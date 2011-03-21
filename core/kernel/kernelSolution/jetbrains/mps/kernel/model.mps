@@ -1799,9 +1799,6 @@
         </node>
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="507022825981353213">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~ModelOwner" resolveInfo="ModelOwner" />
-    </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="507022825981353214">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="afxk.~AbstractModule" resolveInfo="AbstractModule" />
     </node>

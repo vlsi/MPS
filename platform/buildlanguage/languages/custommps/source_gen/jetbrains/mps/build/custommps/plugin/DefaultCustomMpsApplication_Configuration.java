@@ -39,7 +39,6 @@ import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.project.ModuleContext;
 import java.io.File;
 import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
@@ -57,6 +56,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.project.ModuleContext;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -176,24 +176,21 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
                   });
 
                   final Wrappers._T<EditableSModelDescriptor> model = new Wrappers._T<EditableSModelDescriptor>();
-                  final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       model.value = ((EditableSModelDescriptor) SNodeOperations.getModel(node).getModelDescriptor());
-                      context.value = new ModuleContext(model.value.getModule(), project_22042010);
                     }
                   });
-                  File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project_22042010, true);
-
-                  if (file == null) {
-                    throw new ExecutionException("No executable file were generated.");
-                  }
-
+                  File file = GenerateTextFromBuild.getGeneratedFile(configuration, model.value);
                   // if MPSBuild was included into this configuration we should run different build file 
                   if (isMPSBuildIncluded.value) {
                     String path = file.getAbsolutePath();
                     String suffix = ".xml";
                     file = new File(path.substring(0, path.length() - suffix.length()) + DistribConfiguration_Behavior.getSuffix_1240229578757() + suffix);
+                  }
+
+                  if (file == null || !(file.exists())) {
+                    throw new ExecutionException("File " + file + " does not exist.");
                   }
 
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
@@ -297,8 +294,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultCustomMpsApplication_Configuration.this.getNode();
-    return node;
+    return DefaultCustomMpsApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
@@ -331,6 +327,25 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }
+  }
+
+  public boolean make(final Project project) {
+    SNode configuration = DefaultCustomMpsApplication_Configuration.this.getConfiguration(getNode());
+
+    if (configuration == null) {
+      return false;
+    }
+
+    final Wrappers._T<EditableSModelDescriptor> model = new Wrappers._T<EditableSModelDescriptor>();
+    final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        model.value = ((EditableSModelDescriptor) SNodeOperations.getModel(getNode()).getModelDescriptor());
+        context.value = new ModuleContext(model.value.getModule(), project);
+      }
+    });
+    File file = GenerateTextFromBuild.generate(configuration, model.value, context.value, project, true);
+    return file != null && file.exists();
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultCustomMpsApplication_Configuration> {

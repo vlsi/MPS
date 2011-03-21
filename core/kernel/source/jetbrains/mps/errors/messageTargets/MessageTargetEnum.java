@@ -16,5 +16,5 @@
 package jetbrains.mps.errors.messageTargets;
 
 public enum MessageTargetEnum {
-  NODE, REFERENCE, PROPERTY, DELETED_CHILD
+  NODE, REFERENCE, PROPERTY, @Deprecated DELETED_CHILD, CHILDREN
 }

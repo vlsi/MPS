@@ -13,6 +13,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Make_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -20,6 +21,7 @@ public class Make_Facet implements IFacet {
 
   public Make_Facet() {
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_pm9z_a());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_pm9z_b());
   }
 
   public Iterable<ITarget> targets() {
@@ -43,7 +45,7 @@ public class Make_Facet implements IFacet {
   }
 
   public static class Target_pm9z_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("make");
+    private ITarget.Name name = new ITarget.Name("reconcile");
 
     public Target_pm9z_a() {
     }
@@ -86,6 +88,70 @@ public class Make_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return null;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_pm9z_b implements ITarget {
+    private ITarget.Name name = new ITarget.Name("make");
+
+    public Target_pm9z_b() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_pm9z_a0b = null;
+          switch (0) {
+            case 0:
+            default:
+              return new IResult.SUCCESS(_output_pm9z_a0b);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("reconcile")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
       return true;
     }
 
@@ -93,7 +159,11 @@ public class Make_Facet implements IFacet {
       return false;
     }
 
-    public Class<? extends IResource> expectedResources() {
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return null;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
 

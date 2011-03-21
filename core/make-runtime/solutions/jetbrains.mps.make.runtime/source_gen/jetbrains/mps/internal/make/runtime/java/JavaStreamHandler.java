@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jdom.Element;
 import java.util.List;
@@ -18,12 +19,14 @@ public class JavaStreamHandler implements StreamHandler {
   private final IFile myCachesOutputDir;
   private final Set<IFile> mySavedFiles = new HashSet<IFile>();
   private FileProcessor myProcessor;
+  private FilesDelta myFileDelta;
 
-  public JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, FileProcessor processor) {
+  public JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, FilesDelta fd) {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
     myCachesOutputDir = FileGenerationUtil.getCachesDir(outputDir);
-    myProcessor = processor;
+    myProcessor = new FileProcessor();
+    this.myFileDelta = fd;
   }
 
   public void saveStream(String name, String content, boolean isCache) {
@@ -34,6 +37,7 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
+    myFileDelta.written(file);
   }
 
   public void saveStream(String name, Element content, boolean isCache) {
@@ -44,6 +48,7 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
+    myFileDelta.written(file);
   }
 
   public void saveStream(String name, byte[] content, boolean isCache) {
@@ -54,6 +59,7 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
+    myFileDelta.written(file);
   }
 
   public boolean touch(String name, boolean isCache) {
@@ -63,33 +69,40 @@ public class JavaStreamHandler implements StreamHandler {
     );
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     mySavedFiles.add(file);
+    myFileDelta.kept(file);
     return file.exists();
   }
 
+  public void flush() {
+    myProcessor.flushChanges();
+  }
+
   public void dispose() {
-    Set<IFile> directories = new HashSet<IFile>();
-    directories.add(myOutputDir);
-    directories.add(myCachesOutputDir);
-    for (IFile f : mySavedFiles) {
-      directories.add(f.getParent());
-    }
-    final List<IFile> filesToDelete = new ArrayList<IFile>();
-    for (IFile dir : directories) {
-      for (IFile outputDirectoryFile : dir.list()) {
-        if (outputDirectoryFile.isDirectory()) {
-          continue;
-        }
-        if (mySavedFiles.contains(outputDirectoryFile)) {
-          continue;
-        }
-        // todo temporaty hack to fix tests (icons as resources) 
-        if (outputDirectoryFile.getName().endsWith(".png")) {
-          continue;
-        }
-        filesToDelete.add(outputDirectoryFile);
+    if (false) {
+      Set<IFile> directories = new HashSet<IFile>();
+      directories.add(myOutputDir);
+      directories.add(myCachesOutputDir);
+      for (IFile f : mySavedFiles) {
+        directories.add(f.getParent());
       }
+      final List<IFile> filesToDelete = new ArrayList<IFile>();
+      for (IFile dir : directories) {
+        for (IFile outputDirectoryFile : dir.list()) {
+          if (outputDirectoryFile.isDirectory()) {
+            continue;
+          }
+          if (mySavedFiles.contains(outputDirectoryFile)) {
+            continue;
+          }
+          // todo temporaty hack to fix tests (icons as resources) 
+          if (outputDirectoryFile.getName().endsWith(".png")) {
+            continue;
+          }
+          filesToDelete.add(outputDirectoryFile);
+        }
+      }
+      myProcessor.filesToDelete(filesToDelete);
     }
-    myProcessor.filesToDelete(filesToDelete);
     myProcessor.invalidateModel(myModelDescriptor);
   }
 }

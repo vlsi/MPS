@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.ide.smodel;
 
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 
+import javax.swing.SwingUtilities;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 class EDTExecutor {
@@ -167,7 +166,7 @@ class EDTExecutor {
 
             /* start worker */
             workerStarted = true;
-            LaterInvocator.invokeLater(myWorker, ModalityState.NON_MODAL);
+            SwingUtilities.invokeLater(myWorker);
           }
         }
       } catch (Exception e) {

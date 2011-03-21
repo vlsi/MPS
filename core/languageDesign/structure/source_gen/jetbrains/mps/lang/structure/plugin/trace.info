@@ -3,10 +3,9 @@
   <unitInfo fileName="ConceptDeclaration_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_Order" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Default_KeymapChanges" />
   <unitInfo fileName="ShowHelp_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
-  <unitInfo fileName="StructureView_Tool.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.StructureView_Tool" />
-  <unitInfo fileName="Structure_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
-  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
-  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
+  <unitInfo fileName="Structure_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
+  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
   <unitInfo fileName="Actions_TabDescriptor.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Actions_TabDescriptor" />
   <unitInfo fileName="Find_Usages_TabDescriptor.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Find_Usages_TabDescriptor" />
   <unitInfo fileName="Intentions_TabDescriptor.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Intentions_TabDescriptor" />
@@ -17,36 +16,19 @@
   <unitInfo fileName="ShowDefaultHelp_Action.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
   <unitInfo fileName="ShowHelpForRoot_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
   <unitInfo fileName="ShowHelpForNode_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action" />
-  <unitInfo fileName="ShowConceptStructure_Action.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action" />
   <unitInfo fileName="Behavior_TabDescriptor.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Behavior_TabDescriptor" />
   <unitInfo fileName="Data_Flow_TabDescriptor.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Data_Flow_TabDescriptor" />
   <unitInfo fileName="Constraints_TabDescriptor.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Constraints_TabDescriptor" />
   <unitInfo fileName="ShowHelpForAspect_Action.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action" />
   <unitInfo fileName="Typesystem_TabDescriptor.java" startLine="17" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Typesystem_TabDescriptor" />
   <unitInfo fileName="Generator_TabDescriptor.java" startLine="42" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Generator_TabDescriptor" />
-  <root nodeId="1216648908320">
-    <nodeInfo nodeId="1216649120171" fileName="StructureView_Tool.java" startLine="11" startPosition="55" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="1217360996397" fileName="StructureView_Tool.java" startLine="19" startPosition="24" endLine="20" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216649387543" fileName="StructureView_Tool.java" startLine="23" startPosition="52" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216649364123" fileName="StructureView_Tool.java" startLine="27" startPosition="36" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216649373054" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStructureView#()Ljetbrains/mps/lang/structure/plugin/StructureViewComponent;" />
-    <scopeInfo nodeId="1216649373056" fileName="StructureView_Tool.java" startLine="23" startPosition="52" endLine="24" endPosition="47" />
-    <scopeInfo nodeId="1216648908322" fileName="StructureView_Tool.java" startLine="27" startPosition="36" endLine="28" endPosition="62" />
-    <scopeInfo nodeId="1216649373054" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-  </root>
-  <root nodeId="1216650700674">
-    <nodeInfo nodeId="1216651728625" fileName="ShowConceptStructure_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216650710477" fileName="ShowConceptStructure_Action.java" startLine="64" startPosition="163" endLine="65" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216651738459" fileName="ShowConceptStructure_Action.java" startLine="65" startPosition="266" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  </root>
   <root nodeId="1216651471788">
-    <nodeInfo nodeId="1216651489872" fileName="Structure_ActionGroup.java" startLine="20" startPosition="9" endLine="21" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="22" startPosition="7" endLine="23" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="23" startPosition="92" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="24" startPosition="66" endLine="25" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="25" startPosition="103" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="21" startPosition="110" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="22" startPosition="7" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="22" startPosition="92" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="24" startPosition="103" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="20" startPosition="9" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="2510134983999435171" fileName="Structure_ActionGroup.java" startLine="21" startPosition="7" endLine="25" endPosition="53" />
   </root>
   <root nodeId="2465654535473033482">
     <nodeInfo nodeId="2465654535473044241" fileName="ShowHelpForNode_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

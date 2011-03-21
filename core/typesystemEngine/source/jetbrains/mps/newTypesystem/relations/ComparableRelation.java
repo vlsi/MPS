@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.newTypesystem.relations;
 
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.state.RelationBlock;
 import jetbrains.mps.newTypesystem.state.RelationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -31,25 +34,39 @@ import java.util.Set;
  * Time: 6:44 PM
  */
 public class ComparableRelation extends  AbstractRelation{
-
-
   public boolean accept(RelationKind kind) {
     return kind.isComparable();
   }
 
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
+    EquationInfo info;
+    List<SNode> nodes = new LinkedList<SNode>();
+    nodes.addAll(leftTypes);
+    nodes.addAll(rightTypes);
+    if (nodes.isEmpty()) {
+      return false;
+    }
+    SubTypingManagerNew subTypingManager = (SubTypingManagerNew) state.getTypeCheckingContext().getTypeChecker().getSubtypingManager();
+    nodes = subTypingManager.eliminateSuperTypes(nodes);
+    List<SNode> types = new LinkedList<SNode>();
     SNode result = null;
-    EquationInfo info = null;
-    if (!leftTypes.isEmpty()) {
-      result = leftTypes.iterator().next();
-    } else if (!rightTypes.isEmpty()) {
-      result = rightTypes.iterator().next();
+    for (SNode type : nodes) {
+      for (SNode toCompare: types) {
+        if (!subTypingManager.isComparable(type, toCompare, true)) {
+          result = type;
+        }
+      }
+      types.add(type);
+    }
+    if (result == null) {
+      result = subTypingManager.createMeet(nodes);
     }
     if (result != null) {
       RelationBlock block = typesToBlocks.get(result);
-      info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(rightTypes.iterator().next()).getEquationInfo();
+      info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(nodes.iterator().next()).getEquationInfo();
       state.addEquation(node, result, info);
     }
     return result != null;
   }
+
 }

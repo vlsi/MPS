@@ -4,28 +4,37 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.make.runtime.util.IDelta;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class TResource extends MultiTuple._1<IModule> implements IResource {
+public class TResource extends MultiTuple._2<IModule, IDelta> implements IResource, ITResource {
   public TResource() {
     super();
   }
 
-  public TResource(IModule module) {
-    super(module);
+  public TResource(IModule module, IDelta delta) {
+    super(module, delta);
   }
 
   public IModule module(IModule value) {
     return super._0(value);
   }
 
+  public IDelta delta(IDelta value) {
+    return super._1(value);
+  }
+
   public IModule module() {
     return super._0();
   }
 
+  public IDelta delta() {
+    return super._1();
+  }
+
   @SuppressWarnings(value = "unchecked")
-  public TResource assignFrom(Tuples._1<IModule> from) {
+  public TResource assignFrom(Tuples._2<IModule, IDelta> from) {
     return (TResource) super.assign(from);
   }
 }

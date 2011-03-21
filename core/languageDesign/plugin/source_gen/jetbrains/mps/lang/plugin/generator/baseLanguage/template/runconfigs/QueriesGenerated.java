@@ -477,6 +477,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "isDebuggable");
   }
 
+  public static boolean ifMacro_Condition_1769265426473442613(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "makeBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_3489763018530680647(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "action", false)) == SNodeOperations.getModel(_context.getNode());
   }
@@ -687,6 +691,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5334136372060385046(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_1769265426473442572(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "makeBlock", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_3489763018530680630(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

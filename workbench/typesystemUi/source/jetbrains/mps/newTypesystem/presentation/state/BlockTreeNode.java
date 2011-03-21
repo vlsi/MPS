@@ -45,6 +45,8 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
   public BlockTreeNode(Block block, IOperationContext operationContext, State state) {
     super(block.getExpandedPresentation(state), operationContext);
     myBlock = block;
+    myRuleId = block.getNodeId();
+    myRuleModel = block.getNodeModel();
   }
 
   @Override

@@ -37,12 +37,11 @@ public class ChangeSetBuilder {
     myOldModel = oldModel;
     myNewModel = newModel;
     myChangeSet = new ChangeSet(oldModel, newModel);
-    buildChanges();
   }
 
   private void buildPropertyChanges(SNode oldNode, SNode newNode) {
-    Map<String, String> oldProperties = ((Map<String, String>) oldNode.getProperties());
-    Map<String, String> newProperties = ((Map<String, String>) newNode.getProperties());
+    Map<String, String> oldProperties = (Map<String, String>) oldNode.getProperties();
+    Map<String, String> newProperties = (Map<String, String>) newNode.getProperties();
     for (String name : SetSequence.fromSet(MapSequence.fromMap(oldProperties).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(newProperties).keySet()))) {
       PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
       SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
@@ -74,13 +73,13 @@ public class ChangeSetBuilder {
     for (String role : SetSequence.fromSet(MapSequence.fromMap(oldReferences).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(newReferences).keySet()))) {
       SReference oldReference = MapSequence.fromMap(oldReferences).get(role);
       SReference newReference = MapSequence.fromMap(newReferences).get(role);
-      if (!(ObjectUtils.equals(check_nbyrtw_a0a2a4a1(SLinkOperations.getTargetNode(oldReference)), check_nbyrtw_b0a2a4a1(SLinkOperations.getTargetNode(newReference))))) {
-        SModelReference targetModel = check_nbyrtw_a0a0c0e0b(SNodeOperations.getModel(SLinkOperations.getTargetNode(newReference)));
-        if (SNodeOperations.getModel(SLinkOperations.getTargetNode(newReference)) == SNodeOperations.getModel(newNode)) {
+      if (!(eq_nbyrtw_a0a2a4a1(oldReference.getTargetNodeId(), newReference.getTargetNodeId()))) {
+        SModelReference targetModel = newReference.getTargetSModelReference();
+        if (eq_nbyrtw_a0b0c0e0b(SNodeOperations.getModel(newNode).getSModelReference(), targetModel)) {
           // This is internal reference 
           targetModel = null;
         }
-        myChangeSet.add(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, check_nbyrtw_e0a0a2a2a4a1(SLinkOperations.getTargetNode(newReference)), SLinkOperations.getResolveInfo(newReference)));
+        myChangeSet.add(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newReference.getTargetNodeId(), newReference.getResolveInfo()));
       }
     }
   }
@@ -120,7 +119,7 @@ public class ChangeSetBuilder {
         if ((int) oldIndices._0() == (int) oldIndices._1()) {
           myChangeSet.add(new InsertNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) newIndices._0(), (int) newIndices._1()));
         } else if ((int) newIndices._0() == (int) newIndices._1()) {
-          myChangeSet.add(new DeleteNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1()));
+          myChangeSet.add(new DeleteNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0()));
         } else {
           myChangeSet.add(new ReplaceNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
         }
@@ -170,35 +169,23 @@ public class ChangeSetBuilder {
   }
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
-    return new ChangeSetBuilder(oldModel, newModel).myChangeSet;
+    ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
+    builder.buildChanges();
+    return builder.myChangeSet;
   }
 
-  private static SModelReference check_nbyrtw_a0a0c0e0b(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
-    }
-    return null;
+  private static boolean eq_nbyrtw_a0b0c0e0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
-  private static SNodeId check_nbyrtw_e0a0a2a2a4a1(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
-    }
-    return null;
-  }
-
-  private static SNodeId check_nbyrtw_a0a2a4a1(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
-    }
-    return null;
-  }
-
-  private static SNodeId check_nbyrtw_b0a2a4a1(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
-    }
-    return null;
+  private static boolean eq_nbyrtw_a0a2a4a1(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static class DefaultPropertySupport extends PropertySupport {

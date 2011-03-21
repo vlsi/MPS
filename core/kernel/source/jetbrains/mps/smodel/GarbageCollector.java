@@ -42,7 +42,6 @@ public class GarbageCollector implements ApplicationComponent {
     myCleanupManager.addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         myMPSModuleRepository.removeUnusedModules();
-        mySModelRepository.removeUnusedDescriptors();
       }
     });
   }

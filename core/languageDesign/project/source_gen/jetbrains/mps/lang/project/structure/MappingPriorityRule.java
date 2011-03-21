@@ -11,6 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 public class MappingPriorityRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.project.structure.MappingPriorityRule";
   public static final String TYPE = "type";
+  public static final String LEFT = "left";
+  public static final String RIGHT = "right";
 
   public MappingPriorityRule(SNode node) {
     super(node);
@@ -23,6 +25,22 @@ public class MappingPriorityRule extends BaseConcept {
 
   public void setType(RuleType value) {
     super.setProperty(MappingPriorityRule.TYPE, value.getValueAsString());
+  }
+
+  public MappingConfigRefBase getLeft() {
+    return (MappingConfigRefBase) this.getChild(MappingConfigRefBase.class, MappingPriorityRule.LEFT);
+  }
+
+  public void setLeft(MappingConfigRefBase node) {
+    super.setChild(MappingPriorityRule.LEFT, node);
+  }
+
+  public MappingConfigRefBase getRight() {
+    return (MappingConfigRefBase) this.getChild(MappingConfigRefBase.class, MappingPriorityRule.RIGHT);
+  }
+
+  public void setRight(MappingConfigRefBase node) {
+    super.setChild(MappingPriorityRule.RIGHT, node);
   }
 
   public static MappingPriorityRule newInstance(SModel sm, boolean init) {

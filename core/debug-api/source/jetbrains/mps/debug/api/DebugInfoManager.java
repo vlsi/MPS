@@ -109,7 +109,10 @@ public class DebugInfoManager implements ApplicationComponent {
     myTraceInfoManager.removeUnitConcept(fqName);
   }
 
-  public boolean isDebuggableNode(SNode node) {
+  public boolean isDebuggableNode(@Nullable SNode node) {
+    if (node == null) {
+      return false;
+    }
     for (String concept : myDebuggableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) return true;
     }

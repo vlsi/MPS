@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
@@ -31,8 +29,8 @@ public class ConstructorInvocationStatement_Behavior {
     return new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0d0b().createNode(typeVarRefs, concept);
   }
 
-  public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return new HashMap<TypeVariableDeclaration, Type>();
+  public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return new HashMap<SNode, SNode>();
   }
 
   public static class QuotationClass_teq92u_a0a0a0c0b {

@@ -6,15 +6,16 @@ import jetbrains.mps.logging.Logger;
 import java.io.File;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
+import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.generator.GenerationOptions;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -34,7 +36,16 @@ public class GenerateTextFromBuild {
   public GenerateTextFromBuild() {
   }
 
-  public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, Project project, boolean showWindow) {
+  public static File getGeneratedFile(final SNode configuration, SModelDescriptor descriptor) {
+    final String fileName = ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        return Layout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration)) + File.separator + Configuration_Behavior.call_getBuildFileName_1230217425313(configuration) + ".xml";
+      }
+    });
+    return new File(fileName);
+  }
+
+  public static File generate(final SNode configuration, final SModelDescriptor descriptor, final IOperationContext context, final Project project, final boolean showWindow) {
     final String basedir = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return Layout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
@@ -42,7 +53,7 @@ public class GenerateTextFromBuild {
     });
     // generate files 
     final File[] fileToRun = new File[]{null};
-    TextGenerationHandler generationHandler = new TextGenerationHandler() {
+    final TextGenerationHandler generationHandler = new TextGenerationHandler() {
       @Override
       protected void fileGenerated(String targetDir, String fileName, TextGenerationResult result) {
         File target = new File(basedir + File.separator + fileName);
@@ -58,11 +69,15 @@ public class GenerateTextFromBuild {
         }
       }
     };
-    if (showWindow) {
-      GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, false);
-    } else {
-      GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
-    }
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        if (showWindow) {
+          GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, true);
+        } else {
+          GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
+        }
+      }
+    }, ModalityState.NON_MODAL);
     return fileToRun[0];
   }
 

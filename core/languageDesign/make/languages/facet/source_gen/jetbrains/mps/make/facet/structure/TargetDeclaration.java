@@ -23,6 +23,8 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
   public static final String OVERRIDES = "overrides";
   public static final String PARAMETERS = "parameters";
   public static final String JOB = "job";
+  public static final String INPUT = "input";
+  public static final String OUTPUT = "output";
   public static final String DEPENDENCY = "dependency";
   public static final String _$ATTRIBUTE = "_$attribute";
 
@@ -93,6 +95,22 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
 
   public void setJob(JobDeclaration node) {
     super.setChild(TargetDeclaration.JOB, node);
+  }
+
+  public ResourceTypeDeclaration getInput() {
+    return (ResourceTypeDeclaration) this.getChild(ResourceTypeDeclaration.class, TargetDeclaration.INPUT);
+  }
+
+  public void setInput(ResourceTypeDeclaration node) {
+    super.setChild(TargetDeclaration.INPUT, node);
+  }
+
+  public ResourceTypeDeclaration getOutput() {
+    return (ResourceTypeDeclaration) this.getChild(ResourceTypeDeclaration.class, TargetDeclaration.OUTPUT);
+  }
+
+  public void setOutput(ResourceTypeDeclaration node) {
+    super.setChild(TargetDeclaration.OUTPUT, node);
   }
 
   public int getDependenciesCount() {

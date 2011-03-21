@@ -127,6 +127,10 @@
     <component>
       <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
     </component>
+
+    <!--<component>-->
+      <!--<implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>-->
+    <!--</component>-->
   </project-components>
 
 </components>

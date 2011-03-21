@@ -55,7 +55,7 @@ import java.util.List;
     )
   }
 )
-public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
+public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
   private Project myProject;
   private Element myProjectElement;
 
@@ -156,7 +156,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
-        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
         CleanupManager.getInstance().cleanup();
 
@@ -240,7 +239,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
 
   public void setProjectDescriptor(final @NotNull ProjectDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
     myProjectDescriptor = descriptor;
 

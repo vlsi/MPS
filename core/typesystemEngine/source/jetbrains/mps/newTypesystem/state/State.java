@@ -82,6 +82,9 @@ public class State {
     if (myThread == null) {
       myThread = Thread.currentThread();
     }
+    if (Thread.currentThread() != myThread) {
+      System.out.println(myThread.getName()+" "+Thread.currentThread().getName());
+    }
   }
 
   public State(TypeCheckingContextNew tcc, AbstractOperation operation) {

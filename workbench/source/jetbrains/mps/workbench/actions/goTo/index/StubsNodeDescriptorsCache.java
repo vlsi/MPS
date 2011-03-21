@@ -30,7 +30,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
       clearCache(modelDescriptor);
     }
 
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       clearCache(modelDescriptor);
     }
   };
@@ -80,9 +80,6 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
   private void clearCache(SModelDescriptor modelDescriptor) {
     if (!SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) return;
-
-    for (IModule m : modelDescriptor.getModules()) {
-      myCache.remove(m);
-    }
+    myCache.remove(modelDescriptor.getModule());
   }
 }

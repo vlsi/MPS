@@ -228,12 +228,19 @@ public class Inequalities {  //
   public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
     Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>();
     Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
+    Set<SNode> emptySet = new HashSet<SNode>();
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
       List<SNode> variables = TypesUtil.getVariables(myState.expand(inequality.getRightNode()));
       variables.addAll(TypesUtil.getVariables(myState.expand(inequality.getLeftNode())));
       if (variables.size() == 0) {
+        Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
+        if (emptyBlocks == null) {
+          emptyBlocks = new HashSet<InequalityBlock>();
+          groupsToInequalities.put(emptySet,emptyBlocks);
+        }
+        emptyBlocks.add(inequality);
         continue;
       }
       Set<SNode> currentResult = new HashSet<SNode>();
