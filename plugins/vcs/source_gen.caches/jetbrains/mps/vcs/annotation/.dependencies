@@ -215,7 +215,6 @@
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
-    <classNode dependClassName="java.util.Date" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.ShortVcsRevisionNumber" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
