@@ -280,7 +280,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return stuffToTest;
   }
 
-  public boolean make(Project project) {
+  public boolean make(final Project project) {
     List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(project.getComponent(MPSProject.class));
     return RunUtil.makeBeforeRun(project, ListSequence.fromList(stuffToTest).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
       public SNode select(ITestNodeWrapper it) {
