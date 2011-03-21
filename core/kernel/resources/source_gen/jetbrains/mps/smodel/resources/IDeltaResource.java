@@ -6,5 +6,5 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.make.runtime.util.IDelta;
 
 public interface IDeltaResource extends IResource {
-  public IDelta delta();
+  public Iterable<IDelta> delta();
 }

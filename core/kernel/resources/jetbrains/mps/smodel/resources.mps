@@ -482,8 +482,10 @@
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="505174985642750721">
       <property name="final:2" value="false" />
       <property name="name:2" value="delta" />
-      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="505174985642750723">
-        <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="8437684059768984865">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8437684059768984867">
+          <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+        </node>
       </node>
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2257725414731981666" />
@@ -773,11 +775,13 @@
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1390934629233975246">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="delta" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1390934629233975247">
-        <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
-      </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1390934629233975248" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1390934629233975249" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="8437684059768984868">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8437684059768984870">
+          <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

@@ -6,8 +6,8 @@
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
   <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <root nodeId="1390934629233975240">
-    <nodeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljetbrains/mps/internal/make/runtime/util/IDelta;" />
-    <scopeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="24" />
+    <nodeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="34" />
     <unitInfo nodeId="1390934629233975240" fileName="IDeltaResource.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.smodel.resources.IDeltaResource" />
   </root>
   <root nodeId="5822172888873692299">

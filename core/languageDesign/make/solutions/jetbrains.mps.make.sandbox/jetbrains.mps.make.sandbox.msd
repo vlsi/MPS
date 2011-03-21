@@ -13,6 +13,7 @@
     <usedLanguage>696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</usedLanguage>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
     <usedLanguage>dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)</usedLanguage>
+    <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
   </usedLanguages>
 </solution>
 

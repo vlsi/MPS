@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -96,8 +96,7 @@ public class TextGen_Facet implements IFacet {
                 }
 
                 IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
-                FilesDelta delta = new FilesDelta(targetDir);
-                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, delta);
+                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, FileGenerationUtil.getCachesDir(targetDir));
                 boolean ok;
                 try {
                   ok = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
@@ -126,7 +125,7 @@ public class TextGen_Facet implements IFacet {
                   }
                 });
                 monitor.currentProgress().advanceWork("Writing", 50);
-                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), delta))));
+                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), javaStreamHandler.delta()))));
               }
               monitor.currentProgress().finishWork("Writing");
             default:

@@ -8,12 +8,12 @@ import jetbrains.mps.internal.make.runtime.util.IDelta;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class TResource extends MultiTuple._2<IModule, IDelta> implements IResource, ITResource {
+public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implements IResource, ITResource {
   public TResource() {
     super();
   }
 
-  public TResource(IModule module, IDelta delta) {
+  public TResource(IModule module, Iterable<IDelta> delta) {
     super(module, delta);
   }
 
@@ -21,7 +21,7 @@ public class TResource extends MultiTuple._2<IModule, IDelta> implements IResour
     return super._0(value);
   }
 
-  public IDelta delta(IDelta value) {
+  public Iterable<IDelta> delta(Iterable<IDelta> value) {
     return super._1(value);
   }
 
@@ -29,12 +29,12 @@ public class TResource extends MultiTuple._2<IModule, IDelta> implements IResour
     return super._0();
   }
 
-  public IDelta delta() {
+  public Iterable<IDelta> delta() {
     return super._1();
   }
 
   @SuppressWarnings(value = "unchecked")
-  public TResource assignFrom(Tuples._2<IModule, IDelta> from) {
+  public TResource assignFrom(Tuples._2<IModule, Iterable<IDelta>> from) {
     return (TResource) super.assign(from);
   }
 }

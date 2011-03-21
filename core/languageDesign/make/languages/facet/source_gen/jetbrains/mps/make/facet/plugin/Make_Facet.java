@@ -13,10 +13,11 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.IDelta;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IConfig;
 
 public class Make_Facet implements IFacet {
@@ -63,11 +64,15 @@ public class Make_Facet implements IFacet {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
-              new DeltaReconciler(Sequence.fromIterable(input).<IDelta>select(new ISelector<IResource, IDelta>() {
-                public IDelta select(IResource res) {
-                  return ((IDeltaResource) res).delta();
+              ModelAccess.instance().writeFilesInEDT(new Runnable() {
+                public void run() {
+                  new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                    public Iterable<IDelta> translate(IResource res) {
+                      return ((IDeltaResource) res).delta();
+                    }
+                  })).reconcileAll();
                 }
-              })).reconcileAll();
+              });
               _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);

@@ -105,7 +105,7 @@ public class Binaries_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("compile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("reconcile"), new ITarget.Name("compile")});
     }
 
     public ITarget.Name getName() {
