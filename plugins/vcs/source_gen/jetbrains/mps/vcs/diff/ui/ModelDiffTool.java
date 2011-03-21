@@ -59,7 +59,7 @@ public class ModelDiffTool implements DiffTool {
           }
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
-          if (MergeModelsDialog.isNewMergeEnabled()) {
+          if (ModelDifferenceDialog.isNewDiffEnabled()) {
             return new ModelDifferenceDialog(request.getProject(), context, oldModel, newModel, request.getContentTitles());
           } else {
             final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());

@@ -217,7 +217,7 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   public static boolean isNewMergeEnabled() {
-    return "true".equals(System.getProperty("mps.newmerge"));
+    return !("false".equals(System.getProperty("mps.newmerge")));
   }
 
   private class MergeModelsTree extends MPSTree {

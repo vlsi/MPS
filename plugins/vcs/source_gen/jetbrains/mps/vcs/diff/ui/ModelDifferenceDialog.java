@@ -127,6 +127,10 @@ public class ModelDifferenceDialog extends BaseDialog {
     return new DialogDimensionsSettings.DialogDimensions(10, 10, 500, 700);
   }
 
+  public static boolean isNewDiffEnabled() {
+    return "true".equals(System.getProperty("mps.newdiff"));
+  }
+
   private class ModelDifferenceTree extends MPSTree {
     public ModelDifferenceTree() {
       rebuildNow();
