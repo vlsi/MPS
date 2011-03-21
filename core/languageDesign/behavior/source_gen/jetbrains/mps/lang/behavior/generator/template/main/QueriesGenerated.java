@@ -524,6 +524,8 @@ public class QueriesGenerated {
       ListSequence.fromList(methods).removeSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
     }
 
+    // <node> 
+
     for (SNode method : methods) {
       if (!(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).containsKey(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method)))) {
         MapSequence.fromMap(generatedNameToConceptMethodDeclaration).put(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method), method);
@@ -549,7 +551,7 @@ public class QueriesGenerated {
 
     return Sequence.fromIterable(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).values()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, "isAbstract")) && SPropertyOperations.getBoolean(it, "isVirtual");
+        return !(SPropertyOperations.getBoolean(it, "isAbstract")) && ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(it).startsWith("virtual_");
       }
     });
   }
@@ -657,7 +659,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
