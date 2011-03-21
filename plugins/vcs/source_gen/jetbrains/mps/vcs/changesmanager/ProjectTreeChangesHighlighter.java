@@ -376,7 +376,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         final Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage> primaryMessage = new Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage>(null);
         if (treeNode instanceof SNodeTreeNode) {
           final SNode node = ((SNodeTreeNode) treeNode).getSNode();
-          if (node == null) {
+          if (SNodeOperations.getModel(node) == null) {
             return;
           }
           ModelAccess.instance().runReadAction(new Runnable() {
