@@ -297,8 +297,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultCustomMpsApplication_Configuration.this.getNode();
-    return node;
+    return DefaultCustomMpsApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {

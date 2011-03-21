@@ -276,8 +276,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultPackagingLanguageApplication_Configuration.this.getNode();
-    return node;
+    return DefaultPackagingLanguageApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
