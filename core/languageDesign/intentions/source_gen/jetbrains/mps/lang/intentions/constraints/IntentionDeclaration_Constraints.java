@@ -5,9 +5,10 @@ package jetbrains.mps.lang.intentions.constraints;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class IntentionDeclaration_Constraints {
   public static boolean canBeARoot(final IOperationContext operationContext, final CanBeARootContext _context) {
-    return LanguageAspect.INTENTIONS.is(_context.getModel());
+    return LanguageAspect.INTENTIONS.is(_context.getModel()) || SModelStereotype.isGeneratorModel(_context.getModel());
   }
 }
