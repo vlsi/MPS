@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Resource.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Resource" />
   <unitInfo fileName="OrderConstraints.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderConstraints" />
   <unitInfo fileName="NodesBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.NodesBlock" />
   <unitInfo fileName="IEnhancedRunConfiguration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration" />
@@ -11,6 +10,7 @@
   <unitInfo fileName="IExecuteCommandStatementSync.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IExecuteCommandStatementSync" />
   <unitInfo fileName="GroupContents.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GroupContents" />
   <unitInfo fileName="ActionGroupMember.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupMember" />
+  <unitInfo fileName="Resource.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Resource" />
   <unitInfo fileName="ShortcutChange.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ShortcutChange" />
   <unitInfo fileName="ActionParameter.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameter" />
   <unitInfo fileName="IRunConfigPropertyInstance.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance" />

@@ -784,5 +784,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="1290126658903852188">
+    <property name="name:2" value="DResource" />
+    <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="1290126658903852193">
+      <property name="final:2" value="false" />
+      <property name="name:2" value="delta" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="1290126658903852195">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1290126658903852197">
+          <link role="classifier:3" targetNodeId="12.505174985642693176" resolveInfo="IDelta" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1290126658903852189" />
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1290126658903852190">
+      <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
+    </node>
+    <node role="implements:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1290126658903852192">
+      <link role="classifier:3" targetNodeId="1390934629233975240" resolveInfo="IDeltaResource" />
+    </node>
+  </node>
 </model>
 

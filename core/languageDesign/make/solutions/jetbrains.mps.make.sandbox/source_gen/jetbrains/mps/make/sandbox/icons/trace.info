@@ -3,9 +3,12 @@
   <unitInfo fileName="DummyAction_Action.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
   <root nodeId="3564595993453230683">
     <nodeInfo nodeId="3564595993453230685" fileName="Foo.java" startLine="6" startPosition="18" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
+    <nodeInfo nodeId="3489438476157002972" fileName="Foo.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#()V" />
     <scopeInfo nodeId="3564595993453230688" fileName="Foo.java" startLine="7" startPosition="16" endLine="7" endPosition="16" />
+    <scopeInfo nodeId="3489438476157002975" fileName="Foo.java" startLine="10" startPosition="21" endLine="10" endPosition="21" />
     <scopeInfo nodeId="3564595993453230685" fileName="Foo.java" startLine="6" startPosition="18" endLine="8" endPosition="3" />
-    <unitInfo nodeId="3564595993453230683" fileName="Foo.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Foo" />
+    <scopeInfo nodeId="3489438476157002972" fileName="Foo.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
+    <unitInfo nodeId="3564595993453230683" fileName="Foo.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Foo" />
   </root>
 </debugInfo>
 

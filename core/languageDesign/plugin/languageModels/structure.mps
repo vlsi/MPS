@@ -4854,15 +4854,16 @@
     </node>
   </root>
   <root id="2330114057060456691">
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8976425910813622805">
-      <property name="name" nameId="tpck.1169194664001" value="path" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8976425910813622804">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9219036563477424612" resolveInfo="Resource" />
     </node>
   </root>
-  <root id="9219036563477424612" />
+  <root id="9219036563477424612">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7855019336153226684">
+      <property name="name" nameId="tpck.1169194664001" value="path" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
   <root id="1769265426472900243">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1769265426472900244">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />

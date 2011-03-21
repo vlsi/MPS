@@ -14,14 +14,27 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.plugin.behavior.Resource_Behavior;
+import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.resources.DResource;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 
 public class Binaries_Facet implements IFacet {
@@ -67,16 +80,36 @@ public class Binaries_Facet implements IFacet {
           Iterable<IResource> _output_8acy7z_a0a = null;
           switch (0) {
             case 0:
-              Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
-                public Iterable<SModelDescriptor> translate(IResource it) {
-                  return ((MResource) it).models();
+              final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
+              final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).<Tuples._2<IFile, IFile>>translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
+                public Iterable<Tuples._2<IFile, IFile>> translate(IResource res) {
+                  final IModule module = ((MResource) res).module();
+                  return Sequence.fromIterable(((MResource) res).models()).<Tuples._2<IFile, IFile>>translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
+                    public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
+                      SModel model = smd.getSModel();
+                      IFile outputRoot = FileSystem.getInstance().getFileByPath(module.getOutputFor(smd));
+                      final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
+                      final FilesDelta fd = new FilesDelta(outputDir);
+                      ListSequence.fromList(deltaList).addElement(fd);
+                      return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).<Tuples._2<IFile, IFile>>select(new ISelector<SNode, Tuples._2<IFile, IFile>>() {
+                        public Tuples._2<IFile, IFile> select(SNode bin) {
+                          IFile fromFile = FileSystem.getInstance().getFileByPath(MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName()));
+                          IFile toFile = outputDir.child(fromFile.getName());
+                          fd.written(toFile);
+                          return MultiTuple.<IFile,IFile>from(fromFile, toFile);
+                        }
+                      });
+                    }
+                  });
                 }
-              }).visitAll(new IVisitor<SModelDescriptor>() {
-                public void visit(SModelDescriptor it) {
-                  SModel model = it.getSModel();
-                  ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).visitAll(new IVisitor<SNode>() {
-                    public void visit(SNode res) {
-                      Resource_Behavior.call_generate_9219036563477424614(res);
+              });
+              _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
+
+              ModelAccess.instance().writeFilesInEDT(new Runnable() {
+                public void run() {
+                  Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                    public void visit(Tuples._2<IFile, IFile> ftc) {
+                      IFileUtils.copyFileContent(ftc._0(), ftc._1());
                     }
                   });
                 }

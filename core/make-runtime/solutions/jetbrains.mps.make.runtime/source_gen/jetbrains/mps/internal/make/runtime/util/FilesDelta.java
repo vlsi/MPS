@@ -105,8 +105,7 @@ public class FilesDelta implements IDelta {
       }
     }
     for (IFile td : toDelete) {
-      System.out.println("Reconciled: deleting " + td);
-
+      LOG.debug("Reconciled: deleting " + td);
       td.delete();
     }
   }

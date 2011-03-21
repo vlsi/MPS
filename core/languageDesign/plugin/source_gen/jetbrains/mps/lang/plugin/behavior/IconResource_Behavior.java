@@ -29,7 +29,7 @@ public class IconResource_Behavior {
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
         // copy 
-        String source = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), model.getModule().getModuleFqName());
+        String source = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, ""), model.getModule().getModuleFqName());
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.child(sourceFile.getName()));
