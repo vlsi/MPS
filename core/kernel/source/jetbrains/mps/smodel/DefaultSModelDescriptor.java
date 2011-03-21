@@ -171,7 +171,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
     updateLastChange();
-    LOG.assertLog(!needsReloading());
   }
 
   public int getPersistenceVersion() {
@@ -391,6 +390,5 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private void updateLastChange() {
     myLastChange = myModelFile != null ? myModelFile.lastModified() : System.currentTimeMillis();
-    myDiskTimestamp = myLastChange;
   }
 }
