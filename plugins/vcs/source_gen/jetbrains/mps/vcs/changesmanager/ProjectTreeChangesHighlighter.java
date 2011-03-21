@@ -376,11 +376,14 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         final Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage> primaryMessage = new Wrappers._T<ProjectTreeChangesHighlighter.PrimaryMessage>(null);
         if (treeNode instanceof SNodeTreeNode) {
           final SNode node = ((SNodeTreeNode) treeNode).getSNode();
-          if (SNodeOperations.getModel(node) == null) {
+          if (node == null) {
             return;
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              if (SNodeOperations.getModel(node) == null) {
+                return;
+              }
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
               for (Change c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if ((c instanceof NewNodeChange) && node.getSNodeId().equals(c.getAffectedNodeId())) {
