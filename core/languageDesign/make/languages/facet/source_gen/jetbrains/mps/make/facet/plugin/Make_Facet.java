@@ -13,8 +13,11 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.make.script.IConfig;
 
 public class Make_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -60,6 +63,12 @@ public class Make_Facet implements IFacet {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
+              new DeltaReconciler(Sequence.fromIterable(input).<IDelta>select(new ISelector<IResource, IDelta>() {
+                public IDelta select(IResource res) {
+                  return ((IDeltaResource) res).delta();
+                }
+              })).reconcileAll();
+              _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);
           }
