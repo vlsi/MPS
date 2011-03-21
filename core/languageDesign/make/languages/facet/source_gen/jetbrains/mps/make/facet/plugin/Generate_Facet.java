@@ -323,7 +323,6 @@ public class Generate_Facet implements IFacet {
                     pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(false);
                     break;
                   case BUGGER_OFF_fi61u2_c0a0c:
-                    cmonitor.<rrr_Option>relayQuery(new WontAskAgain_Query());
                     pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(false);
                     settings.setSaveTransientModels(false);
                     break;

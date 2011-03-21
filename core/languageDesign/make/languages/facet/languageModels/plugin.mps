@@ -295,21 +295,6 @@
             <property name="text" nameId="q9ra.505095865854436862" value="Save transient models?" />
           </node>
         </node>
-        <node role="query" roleId="q9ra.505095865854384111" type="q9ra.QueryDefinition" typeId="q9ra.505095865854368555" id="3868725017587288810">
-          <property name="name" nameId="tpck.1169194664001" value="WontAskAgain" />
-          <node role="expected" roleId="q9ra.505095865854384068" type="q9ra.ExpectedOption" typeId="q9ra.505095865854384059" id="3868725017587288813">
-            <property name="name" nameId="tpck.1169194664001" value="rrr" />
-            <node role="option" roleId="q9ra.505095865854384069" type="q9ra.Option" typeId="q9ra.505095865854369481" id="3868725017587288814">
-              <property name="name" nameId="tpck.1169194664001" value="SURE" />
-              <node role="presentation" roleId="q9ra.505095865854369483" type="q9ra.Text" typeId="q9ra.505095865854369482" id="3868725017587288815">
-                <property name="text" nameId="q9ra.505095865854436862" value="Rrrrr!" />
-              </node>
-            </node>
-          </node>
-          <node role="presentation" roleId="q9ra.505095865854429687" type="q9ra.Text" typeId="q9ra.505095865854369482" id="3868725017587288812">
-            <property name="text" nameId="q9ra.505095865854436862" value="Oh, terribly sorry! Won't bother you again!" />
-          </node>
-        </node>
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="4853833103870841537">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4853833103870841538">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4853833103870917896">
@@ -650,11 +635,6 @@
                       <link role="option" roleId="q9ra.505095865854384051" targetNodeId="4853833103870841547" resolveInfo="BUGGER_OFF" />
                     </node>
                     <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1977954644795510025">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1977954644795510026">
-                        <node role="expression" roleId="tpee.1068580123156" type="q9ra.RelayQueryExpression" typeId="q9ra.1977954644795311519" id="1977954644795510027">
-                          <link role="query" roleId="q9ra.1977954644795311522" targetNodeId="3868725017587288810" resolveInfo="WontAskAgain" />
-                        </node>
-                      </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1977954644795510028">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1977954644795510029">
                           <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1977954644795510030">
@@ -4113,10 +4093,15 @@
   <root id="2383991756720431443">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="636578979438875148">
       <property name="name" nameId="tpck.1169194664001" value="reconcile" />
-      <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="PASSTHRU" />
+      <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="CONSUME" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="636578979438875149">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="636578979438875150">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="636578979438875151" />
+        </node>
+      </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="1390934629234010484">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="1390934629234010486">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.1390934629233975240" resolveInfo="IDeltaResource" />
         </node>
       </node>
     </node>

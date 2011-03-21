@@ -5,10 +5,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode extendsClassName="jetbrains.mps.make.script.IProgress" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.CompositeResult" file="CompositeResult.java">
@@ -23,14 +23,14 @@
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.InvalidScript" file="InvalidScript.java">
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" file="LoggingFeedbackStrategy.java">
@@ -47,7 +47,7 @@
   <dependency className="jetbrains.mps.internal.make.runtime.script.Script" file="Script.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -56,38 +56,38 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
     <classNode extendsClassName="jetbrains.mps.make.script.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
+    <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.TargetRange" file="TargetRange.java">
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.util.List" />
