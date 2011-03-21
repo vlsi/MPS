@@ -120,14 +120,14 @@ public class RequestManager implements DebugProcessListener {
 
   //------------------- requests creation
 
-  public BreakpointRequest createBreakpointRequest(LineBreakpoint requestor, Location location) {
+  public BreakpointRequest createBreakpointRequest(JavaBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
     BreakpointRequest request = myEventRequestManager.createBreakpointRequest(location);
     initRequest(requestor, request);
     return request;
   }
 
-  public MethodEntryRequest createMethodEntryRequest(MethodBreakpoint requestor, ReferenceType type) {
+  public MethodEntryRequest createMethodEntryRequest(JavaBreakpoint requestor, ReferenceType type) {
     DebuggerManagerThread.assertIsManagerThread();
     MethodEntryRequest request = myEventRequestManager.createMethodEntryRequest();
     request.addClassFilter(type);
@@ -135,7 +135,7 @@ public class RequestManager implements DebugProcessListener {
     return request;
   }
 
-  public MethodExitRequest createMethodExitRequest(MethodBreakpoint requestor, ReferenceType type) {
+  public MethodExitRequest createMethodExitRequest(JavaBreakpoint requestor, ReferenceType type) {
     DebuggerManagerThread.assertIsManagerThread();
     MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
     request.addClassFilter(type);
@@ -143,21 +143,21 @@ public class RequestManager implements DebugProcessListener {
     return request;
   }
 
-  public AccessWatchpointRequest createFieldAccessRequest(FieldBreakpoint requestor, Field field) {
+  public AccessWatchpointRequest createFieldAccessRequest(JavaBreakpoint requestor, Field field) {
     DebuggerManagerThread.assertIsManagerThread();
     AccessWatchpointRequest request = myEventRequestManager.createAccessWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
 
-  public ModificationWatchpointRequest createFieldModificationRequest(FieldBreakpoint requestor, Field field) {
+  public ModificationWatchpointRequest createFieldModificationRequest(JavaBreakpoint requestor, Field field) {
     DebuggerManagerThread.assertIsManagerThread();
     ModificationWatchpointRequest request = myEventRequestManager.createModificationWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
 
-  public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
+  public ExceptionRequest createExceptionRequest(JavaBreakpoint requestor, ReferenceType reference) {
     DebuggerManagerThread.assertIsManagerThread();
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
     initRequest(requestor, request);

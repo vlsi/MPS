@@ -17,7 +17,10 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

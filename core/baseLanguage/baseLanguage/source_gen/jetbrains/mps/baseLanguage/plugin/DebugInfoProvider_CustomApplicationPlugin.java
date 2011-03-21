@@ -9,8 +9,7 @@ import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.debug.breakpoints.LineBreakpoint;
-import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
+import jetbrains.mps.debug.api.Debuggers;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
@@ -23,7 +22,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
-          return new LineBreakpoint(debuggableNode, project);
+          return Debuggers.getInstance().getDebuggerByName("Java").createBreakpoint(debuggableNode, "JAVA_LINE_BREAKPOINT", project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", creator);
@@ -31,7 +30,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
-          return new FieldBreakpoint(debuggableNode, project);
+          return Debuggers.getInstance().getDebuggerByName("Java").createBreakpoint(debuggableNode, "JAVA_FIELD_BREAKPOINT", project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", creator);

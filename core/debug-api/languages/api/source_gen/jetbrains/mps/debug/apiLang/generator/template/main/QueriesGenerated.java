@@ -16,12 +16,24 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "debuggerName");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2526721715665281979(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "kindName");
+  }
+
   public static Object propertyMacro_GetPropertyValue_933053558709993778(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_933053558709995184(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
+  }
+
+  public static SNode sourceNodeQuery_2526721715665232360(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_2526721715665281990(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "projectExpression", true);
   }
 
   public static SNode sourceNodeQuery_933053558709993746(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

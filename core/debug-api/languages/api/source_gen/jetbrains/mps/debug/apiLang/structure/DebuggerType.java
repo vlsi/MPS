@@ -10,9 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DebuggerType extends Type {
   public static final String concept = "jetbrains.mps.debug.apiLang.structure.DebuggerType";
+  public static final String NAME = "name";
 
   public DebuggerType(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(DebuggerType.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(DebuggerType.NAME, value);
   }
 
   public static DebuggerType newInstance(SModel sm, boolean init) {

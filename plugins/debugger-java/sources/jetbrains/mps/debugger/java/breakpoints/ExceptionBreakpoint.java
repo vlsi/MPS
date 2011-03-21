@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
-import com.sun.jdi.event.ExceptionEvent;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.ExceptionRequest;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.RequestManager;
 import jetbrains.mps.debug.runtime.SuspendContextCommand;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 public class ExceptionBreakpoint extends JavaBreakpoint {
