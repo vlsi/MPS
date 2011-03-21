@@ -53,6 +53,12 @@ public class PersistenceTest extends BaseMPSTest {
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
   private final static int START_PERSISTENCE_TEST_VERSION = 4;
 
+  private TestOutputFilter filter = new TestOutputFilter() {
+    @Override protected boolean isLineOK(String line) {
+      return line.contains("attribute") && line.contains(" not found");
+    }
+  };
+
   public void testPersistenceWriteRead() {
     boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
       new ProjectRunnable() {
@@ -67,7 +73,12 @@ public class PersistenceTest extends BaseMPSTest {
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                 SModel model = testModel.getSModel();
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <= PersistenceSettings.MAX_VERSION; ++i) {
-                  ModelPersistence.saveModel(model, file, false, i);
+                  try { // errors about not found attributes are expected for old models
+                    filter.start();
+                    ModelPersistence.saveModel(model, file, false, i);
+                  } finally {
+                    filter.stop();
+                  }
                   ModelLoadResult result = ModelPersistence.readModel(i, file, ModelLoadingState.FULLY_LOADED);
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
@@ -120,7 +131,12 @@ public class PersistenceTest extends BaseMPSTest {
               }
             });
 
-            new PersistenceUpdater().upgradePersistence(list, version[1]);
+            try { // errors about not found attributes are expected for old models
+              filter.start();
+              new PersistenceUpdater().upgradePersistence(list, version[1]);
+            } finally {
+              filter.stop();
+            }
             ModelAccess.instance().flushEventQueue();
             assertTrue(testModel.getModelFile() != null);
             assertTrue(testModel.getPersistenceVersion() == version[1]);
