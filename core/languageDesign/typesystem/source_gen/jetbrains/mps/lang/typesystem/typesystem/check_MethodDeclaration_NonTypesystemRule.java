@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,9 +28,8 @@ public class check_MethodDeclaration_NonTypesystemRule extends AbstractNonTypesy
     for (SNode annotationInstance : SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new check_MethodDeclaration_NonTypesystemRule.QuotationClass_46fcoa_a0a0a0a0a().createNode(typeCheckingContext), "classifier", false)) {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1206297717786", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1206297717786", null, errorTarget);
         }
         return;
       }

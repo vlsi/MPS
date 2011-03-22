@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,14 +18,12 @@ public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode node_TypeOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "6359146168314207369", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "6359146168314207369", null, errorTarget);
     }
     if (!(!(RulesUtil.withinTypeManagingItem(node_TypeOperation)))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within such rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1135966777630207247", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within such rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1135966777630207247", null, errorTarget);
     }
   }
 

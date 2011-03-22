@@ -4,7 +4,6 @@
   <unitInfo fileName="MessageStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.MessageStatement_Constraints" />
   <unitInfo fileName="ConceptTypeClause_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptTypeClause_Constraints" />
   <unitInfo fileName="SubtypingRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints" />
-  <unitInfo fileName="SimpleRulesContainer_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRulesContainer_Constraints" />
   <unitInfo fileName="NonTypesystemRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.NonTypesystemRule_Constraints" />
   <unitInfo fileName="InequationReplacementRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReplacementRule_Constraints" />
   <unitInfo fileName="TypesystemQuickFix_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemQuickFix_Constraints" />
@@ -16,18 +15,14 @@
   <unitInfo fileName="ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint" />
   <unitInfo fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" />
   <unitInfo fileName="InequationReference_inequation_ReferentConstraint.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_inequation_ReferentConstraint" />
-  <unitInfo fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint" />
-  <unitInfo fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_VarRef_link_ReferentConstraint" />
   <unitInfo fileName="ConceptReference_concept_ReferentConstraint.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptReference_concept_ReferentConstraint" />
   <unitInfo fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_quickFixField_ReferentConstraint" />
   <unitInfo fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_quickFixArgument_ReferentConstraint" />
   <unitInfo fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_quickFixArgument_ReferentConstraint" />
   <unitInfo fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint" />
-  <unitInfo fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_parametersLink_ReferentConstraint" />
-  <unitInfo fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_linkDeclaration_ReferentConstraint" />
   <unitInfo fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_propertyDeclaration_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_patternVarDecl_ReferentConstraint" />
   <unitInfo fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_patternVarDecl_ReferentConstraint" />
   <unitInfo fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_patternVarDecl_ReferentConstraint" />
@@ -257,68 +252,6 @@
       <varInfo nodeId="1216390512075" varName="quickFix" />
     </scopeInfo>
   </root>
-  <root nodeId="1223035198112">
-    <nodeInfo nodeId="1223035281304" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223035339624" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223035325004" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223035236604" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="29" startPosition="157" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1223035236605" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
-    <scopeInfo nodeId="1223035204092" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="34">
-      <varInfo nodeId="1223035281305" varName="conceptDeclaration" />
-    </scopeInfo>
-  </root>
-  <root nodeId="1223056887745">
-    <nodeInfo nodeId="1223057289099" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057339224" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223056952791" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057366719" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057350190" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223057212211" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057387227" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057219799" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="34" startPosition="154" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057387233" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="34" startPosition="154" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223057268848" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223057387243" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223056972965" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223057387255" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223056962444" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223057387260" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223057316943" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="29" startPosition="157" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223057259017" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223057387241" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223057248484" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1223057387239" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1223056954719" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="32" startPosition="157" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223057387225" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="32" startPosition="161" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1223057316944" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
-    <scopeInfo nodeId="1223057259018" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
-    <scopeInfo nodeId="1223057387242" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
-    <scopeInfo nodeId="1223057248485" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="1223057387240" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="1223057283783" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="34">
-      <varInfo nodeId="1223057289100" varName="conceptDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223057248484" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7">
-      <varInfo nodeId="1223057248488" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223057387239" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7">
-      <varInfo nodeId="1223057387253" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223056954720" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="41" endPosition="20">
-      <varInfo nodeId="1223057219800" varName="result" />
-      <varInfo nodeId="1223057212212" varName="aggregationLinkDeclarations" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223057387226" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="41" endPosition="20">
-      <varInfo nodeId="1223057387234" varName="result" />
-      <varInfo nodeId="1223057387228" varName="aggregationLinkDeclarations" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223056910921" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="43" endPosition="34">
-      <varInfo nodeId="1223056952792" varName="conceptDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223057361865" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="43" endPosition="34">
-      <varInfo nodeId="1223057366720" varName="conceptDeclaration" />
-    </scopeInfo>
-  </root>
   <root nodeId="1227088436106">
     <nodeInfo nodeId="1227088481579" fileName="InferenceRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1227088438467" fileName="InferenceRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
@@ -338,10 +271,6 @@
   <root nodeId="1227088611953">
     <nodeInfo nodeId="1227088613441" fileName="NonTypesystemRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1227088613159" fileName="NonTypesystemRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
-  </root>
-  <root nodeId="1227088633509">
-    <nodeInfo nodeId="1227088635481" fileName="SimpleRulesContainer_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088635167" fileName="SimpleRulesContainer_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
   </root>
   <root nodeId="1227088639814">
     <nodeInfo nodeId="1227088641395" fileName="SubtypingRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

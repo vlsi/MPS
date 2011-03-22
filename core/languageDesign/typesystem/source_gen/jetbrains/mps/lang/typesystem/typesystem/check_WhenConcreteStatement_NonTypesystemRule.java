@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,9 +18,8 @@ public class check_WhenConcreteStatement_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode whenConcreteStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(RulesUtil.withinInferenceItem(whenConcreteStatement))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(whenConcreteStatement, "WHEN CONCRETE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195223608203", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(whenConcreteStatement, "WHEN CONCRETE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195223608203", null, errorTarget);
     }
   }
 

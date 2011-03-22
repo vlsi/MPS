@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,16 +27,14 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
     for (SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new check_MethodCall_NonTypesystemRule.QuotationClass_j1qutw_a0a0a0a0a().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196178341653", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196178341653", null, errorTarget);
         }
         return;
       } else if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new check_MethodCall_NonTypesystemRule.QuotationClass_j1qutw_a0a0a0a0a0().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinCheckingItem(baseMethodCall))) {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "checking method should be called only within checking methods and inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5239146621999661342", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "checking method should be called only within checking methods and inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5239146621999661342", null, errorTarget);
         }
         return;
       }

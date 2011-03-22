@@ -22,10 +22,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ApplicableNodeReference_applicableNode_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TypesystemIntentionArgument_quickFixArgument_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new QuickFixArgumentReference_quickFixArgument_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_VarRef_link_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_parametersLink_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyMessageTarget_propertyDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint());
