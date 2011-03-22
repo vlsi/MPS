@@ -2,22 +2,22 @@
 <debugInfo>
   <unitInfo fileName="typeof_PrivateMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_PrivateMethodCall_InferenceRule" />
   <unitInfo fileName="typeof_CallInnerFunctionOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_CallInnerFunctionOperation_InferenceRule" />
-  <unitInfo fileName="typeof_AbstractAppendPart_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule$QuotationClass_wpi33d_a0a0a0" />
   <unitInfo fileName="typeof_SimplestTextGenOperation_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_SimplestTextGenOperation_InferenceRule$QuotationClass_tt6f1p_a0a0a0" />
-  <unitInfo fileName="typeof_ReferenceAppendPart_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule$QuotationClass_yl1fyo_a0a0a0" />
-  <unitInfo fileName="typeof_ConceptTextGenDeclaration_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ConceptTextGenDeclaration_InferenceRule$QuotationClass_sb8fdf_a0a0a0" />
+  <unitInfo fileName="typeof_AbstractAppendPart_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule$QuotationClass_wpi33d_a0a0a0" />
   <unitInfo fileName="typeof_FoundErrorOperation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_FoundErrorOperation_InferenceRule$QuotationClass_qfrptg_a0a0a0" />
+  <unitInfo fileName="typeof_ConceptTextGenDeclaration_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ConceptTextGenDeclaration_InferenceRule$QuotationClass_sb8fdf_a0a0a0" />
+  <unitInfo fileName="typeof_ReferenceAppendPart_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule$QuotationClass_yl1fyo_a0a0a0" />
   <unitInfo fileName="typeof_AbstractTextGenParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractTextGenParameter_InferenceRule" />
   <unitInfo fileName="typeof_NodeParameter_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodeParameter_InferenceRule$QuotationClass_x08ckn_a0a1a0" />
-  <unitInfo fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallPrivateFunction_NonTypesystemRule" />
   <unitInfo fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallInnerFunctionOperation_NonTypesystemRule" />
+  <unitInfo fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallPrivateFunction_NonTypesystemRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_NodePart_InferenceRule.java" startLine="44" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodePart_InferenceRule$QuotationClass_3guvy4_a0a0a0" />
-  <unitInfo fileName="typeof_AbstractAppendPart_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule" />
   <unitInfo fileName="typeof_SimplestTextGenOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_SimplestTextGenOperation_InferenceRule" />
-  <unitInfo fileName="typeof_ReferenceAppendPart_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" />
-  <unitInfo fileName="typeof_ConceptTextGenDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ConceptTextGenDeclaration_InferenceRule" />
+  <unitInfo fileName="typeof_AbstractAppendPart_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule" />
   <unitInfo fileName="typeof_FoundErrorOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_FoundErrorOperation_InferenceRule" />
+  <unitInfo fileName="typeof_ConceptTextGenDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ConceptTextGenDeclaration_InferenceRule" />
+  <unitInfo fileName="typeof_ReferenceAppendPart_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" />
   <unitInfo fileName="typeof_NodeParameter_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodeParameter_InferenceRule" />
   <unitInfo fileName="typeof_NodePart_InferenceRule.java" startLine="17" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodePart_InferenceRule" />
   <root nodeId="1233748139235">
@@ -76,8 +76,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1234279065021" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
     <scopeInfo nodeId="1234279018940" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="23" startPosition="128" endLine="43" endPosition="5">
-      <varInfo nodeId="1234279064975" varName="parameterDeclarations" />
       <varInfo nodeId="1234279064971" varName="b" />
+      <varInfo nodeId="1234279064975" varName="parameterDeclarations" />
       <varInfo nodeId="1234279064965" varName="baseMethodDeclaration" />
       <varInfo nodeId="1234279064981" varName="actualArguments" />
     </scopeInfo>
@@ -108,8 +108,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1234529496729" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
     <scopeInfo nodeId="1234529451906" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="43" endPosition="5">
-      <varInfo nodeId="1234529496683" varName="parameterDeclarations" />
       <varInfo nodeId="1234529496679" varName="b" />
+      <varInfo nodeId="1234529496683" varName="parameterDeclarations" />
       <varInfo nodeId="1234529496673" varName="baseMethodDeclaration" />
       <varInfo nodeId="1234529496689" varName="actualArguments" />
     </scopeInfo>
