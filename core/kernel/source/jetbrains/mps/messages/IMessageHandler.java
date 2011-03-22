@@ -17,13 +17,13 @@ package jetbrains.mps.messages;
 
 public interface IMessageHandler {
   public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
-    public void handle(Message msg) {
+    public void handle(IMessage msg) {
     }
     public void clear() {
     }
   };
 
-  void handle(Message msg);
+  void handle(IMessage msg);
 
   void clear();
 }

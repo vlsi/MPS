@@ -9,7 +9,6 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,6 +36,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
@@ -78,10 +80,16 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
+    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
+    String scrName = ((cleanMake ?
+      "Rebuild" :
+      "Make"
+    ));
+
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       if (cleanMake) {
-        String msg = "Rebuild aborted";
-        context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ": nothing to do."));
+        String msg = scrName + " aborted";
+        mh.handle(new Message(MessageKind.ERROR, msg + ": nothing to do."));
         this.displayInfo(msg);
         return new IResult.FAILURE(null);
       } else {
@@ -90,15 +98,11 @@ public class WorkbenchMakeService implements IMakeService {
       }
     }
 
-    final IScript scr = this.completeScript(script);
+    final IScript scr = this.completeScript(script, scrName);
 
     if (!(scr.isValid())) {
-      String msg = ((cleanMake ?
-        "Rebuild" :
-        "Make"
-      )) + " failed";
-
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+      String msg = scrName + " failed";
+      mh.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
       this.displayInfo(msg);
       return new IResult.FAILURE(null);
     }
@@ -118,23 +122,14 @@ public class WorkbenchMakeService implements IMakeService {
     });
 
     if (res.value == null) {
-      String msg = ((cleanMake ?
-        "Rebuild" :
-        "Make"
-      )) + " aborted";
+      String msg = scrName + " aborted";
       this.displayInfo(msg);
     } else if (!(res.value.isSucessful())) {
-      String msg = ((cleanMake ?
-        "Rebuild" :
-        "Make"
-      )) + " failed";
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
+      String msg = scrName + " failed";
+      mh.handle(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
       this.displayInfo(msg);
     } else {
-      String msg = ((cleanMake ?
-        "Rebuild" :
-        "Make"
-      )) + " successful";
+      String msg = scrName + " successful";
       this.displayInfo(msg);
     }
     return res.value;
@@ -147,7 +142,7 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  private IScript completeScript(IScript scr) {
+  private IScript completeScript(IScript scr, final String scrName) {
     final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
     final IJobMonitor jmon = new IJobMonitor() {
       public boolean stopRequested() {
@@ -185,10 +180,7 @@ public class WorkbenchMakeService implements IMakeService {
             pind.value = new JobMonitorProgressIndicator(jmon);
             code.invoke(jmon);
           }
-        }, (cleanMake ?
-          "Rebuild" :
-          "Make"
-        ), true, WorkbenchMakeService.this.context.getProject());
+        }, scrName, true, WorkbenchMakeService.this.context.getProject());
       }
     };
 
@@ -222,5 +214,17 @@ public class WorkbenchMakeService implements IMakeService {
 
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).toScript();
+  }
+
+  private class MessageHandler implements IMessageHandler {
+    public MessageHandler() {
+    }
+
+    public void clear() {
+    }
+
+    public void handle(IMessage message) {
+      context.getProject().getComponent(MessagesViewTool.class).add(message);
+    }
   }
 }

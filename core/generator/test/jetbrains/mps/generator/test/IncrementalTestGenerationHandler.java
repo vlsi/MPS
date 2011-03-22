@@ -30,8 +30,8 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -227,7 +227,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   private class TestMessageHandler implements IMessageHandler {
 
     @Override
-    public void handle(Message msg) {
+    public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
         case WARNING:

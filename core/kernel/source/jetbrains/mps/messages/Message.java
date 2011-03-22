@@ -29,7 +29,7 @@ import java.util.Date;
 /**
  * @author Kostik
  */
-public class Message {
+public class Message implements IMessage {
   private static final Logger LOG = Logger.getLogger(Message.class);
 
   private String mySender;
@@ -54,6 +54,7 @@ public class Message {
     this(kind, (String) null, text);
   }
 
+  @Override
   public String getHelpUrl() {
     return myHelpUrl;
   }
@@ -66,18 +67,22 @@ public class Message {
     myException = exception;
   }
 
+  @Override
   public MessageKind getKind() {
     return myKind;
   }
 
+  @Override
   public Throwable getException() {
     return myException;
   }
 
+  @Override
   public String getText() {
     return myText;
   }
 
+  @Override
   public String getSender() {
     return mySender;
   }
@@ -85,6 +90,11 @@ public class Message {
   public String toString() {
     String prefix = ((mySender == null) ? "" : "[" + mySender + "] ");
     return prefix + getText();
+  }
+
+  @Override
+  public long getCreationTime() {
+    return myCreationTime;
   }
 
   public String getCreationTimeString() {
@@ -122,6 +132,7 @@ public class Message {
     }
   }
 
+  @Override
   public Object getHintObject() {
     return myHintObject;
   }

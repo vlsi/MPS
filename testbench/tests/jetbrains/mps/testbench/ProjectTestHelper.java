@@ -10,8 +10,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.smodel.*;
@@ -224,7 +224,7 @@ public class ProjectTestHelper {
     private final List<String> myGenerationErrors = new ArrayList<String>();
     private final List<String> myGenerationWarnings = new ArrayList<String>();
 
-    public void handle(Message msg) {
+    public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
 
