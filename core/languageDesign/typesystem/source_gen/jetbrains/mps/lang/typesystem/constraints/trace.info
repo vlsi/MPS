@@ -13,7 +13,6 @@
   <unitInfo fileName="CaretPositionOperation_Constraints.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.CaretPositionOperation_Constraints" />
   <unitInfo fileName="WasSelectedNodeOperation_Constraints.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.WasSelectedNodeOperation_Constraints" />
   <unitInfo fileName="TypeVarReference_typeVarDeclaration_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_typeVarDeclaration_ReferentConstraint" />
-  <unitInfo fileName="ListVarReference_listVarDeclaration_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ListVarReference_listVarDeclaration_ReferentConstraint" />
   <unitInfo fileName="ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint" />
   <unitInfo fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" />
   <unitInfo fileName="InequationReference_inequation_ReferentConstraint.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReference_inequation_ReferentConstraint" />
@@ -28,7 +27,7 @@
   <unitInfo fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" />
   <unitInfo fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_linkDeclaration_ReferentConstraint" />
   <unitInfo fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_propertyDeclaration_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_patternVarDecl_ReferentConstraint" />
   <unitInfo fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_patternVarDecl_ReferentConstraint" />
   <unitInfo fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.PatternVariableReference_patternVarDecl_ReferentConstraint" />
@@ -60,10 +59,6 @@
       <varInfo nodeId="1213104837480" varName="whenConcreteStatements" />
       <varInfo nodeId="1213104837487" varName="declarations" />
     </scopeInfo>
-  </root>
-  <root nodeId="1213104840529">
-    <nodeInfo nodeId="1213104840557" fileName="ListVarReference_listVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213104840556" fileName="ListVarReference_listVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" />
   </root>
   <root nodeId="1213104844579">
     <nodeInfo nodeId="1213104844583" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -68,7 +68,6 @@
   <unitInfo fileName="QuickFixArgumentReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" />
   <unitInfo fileName="ChildTypeRestrictionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference" />
   <unitInfo fileName="WhenConcreteVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" />
-  <unitInfo fileName="ListVarReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ListVarReference" />
   <unitInfo fileName="NormalTypeClause.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" />
   <unitInfo fileName="ImmediateSupertypesExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression" />
   <unitInfo fileName="AssertStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AssertStatement" />

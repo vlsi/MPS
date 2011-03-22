@@ -238,10 +238,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ListVarDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1203432734351">
-      <property name="name" nameId="tpck.1169194664001" value="ListVarReference" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1205762105978">
       <property name="name" nameId="tpck.1169194664001" value="WhenConcreteVariableDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
@@ -1294,13 +1290,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="short_description" />
     </node>
     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1970539388026990595" />
-  </root>
-  <root id="1203432734351">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203432751071">
-      <property name="role" nameId="tpce.1071599776563" value="listVarDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1203432538703" resolveInfo="ListVarDeclaration" />
-    </node>
   </root>
   <root id="1205762105978" />
   <root id="1205762656241">

@@ -5,7 +5,6 @@
   <unitInfo fileName="WhenConcreteVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_Behavior" />
   <unitInfo fileName="PatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_Behavior" />
   <unitInfo fileName="TypesystemIntentionArgument_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_Behavior" />
-  <unitInfo fileName="ListVarReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ListVarReference_Behavior" />
   <unitInfo fileName="PropertyPatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_Behavior" />
   <unitInfo fileName="ChildTypeRestrictionReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestrictionReference_Behavior" />
   <unitInfo fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_Behavior" />
@@ -62,9 +61,6 @@
   </root>
   <root nodeId="1213877357223">
     <scopeInfo nodeId="1213877357225" fileName="PropertyPatternVariableReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-  </root>
-  <root nodeId="1213877370443">
-    <scopeInfo nodeId="1213877370445" fileName="ListVarReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213877387420">
     <scopeInfo nodeId="1213877387422" fileName="TypesystemIntentionArgument_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

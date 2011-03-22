@@ -86,7 +86,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_VarRef_link_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_typeVarDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ListVarReference_listVarDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_quickFixArgument_ReferentConstraint" />
@@ -128,16 +127,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.constraints.ListVarReference_listVarDeclaration_ReferentConstraint" file="ListVarReference_listVarDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.search.ListVarScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
