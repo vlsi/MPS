@@ -10,7 +10,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jdom.Element;
-import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;

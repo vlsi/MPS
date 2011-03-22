@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 

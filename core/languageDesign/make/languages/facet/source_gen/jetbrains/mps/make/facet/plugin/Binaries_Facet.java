@@ -14,7 +14,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -69,7 +69,7 @@ public class Binaries_Facet implements IFacet {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("GenerateIcons");
+    private ITarget.Name name = new ITarget.Name("copyBinaries");
 
     public Target_8acy7z_a() {
     }

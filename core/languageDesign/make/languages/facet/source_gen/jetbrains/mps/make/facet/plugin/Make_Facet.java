@@ -16,7 +16,7 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.make.runtime.util.IDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IConfig;
 
