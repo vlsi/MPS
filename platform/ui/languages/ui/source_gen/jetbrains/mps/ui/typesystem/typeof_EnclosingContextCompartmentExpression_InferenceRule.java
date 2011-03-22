@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,14 +29,12 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
     ));
     SNode ctx = SNodeOperations.getAncestorWhereConceptInList(anchor, new String[]{"jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false);
     if (!(SNodeOperations.isInstanceOf(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(enclosingCtx, "Not expected here", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029407", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(enclosingCtx, "Not expected here", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029407", null, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = enclosingCtx;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029414", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029414", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029416", true), (SNode) new typeof_EnclosingContextCompartmentExpression_InferenceRule.QuotationClass_1zd8ev_a0a3a0().createNode(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false)), "jetbrains.mps.ui.modeling.structure.UIObject"), typeCheckingContext), _info_12389875345);
     }
   }

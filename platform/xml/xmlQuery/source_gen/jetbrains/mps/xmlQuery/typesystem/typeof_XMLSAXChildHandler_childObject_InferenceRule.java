@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,8 +26,7 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXChildRule", false, false);
     {
       SNode _nodeToCheck_1029348928467 = node;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8640335038346843251", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8640335038346843251", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8640335038346843248", true), (SNode) ((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ?
         SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) :
         new typeof_XMLSAXChildHandler_childObject_InferenceRule.QuotationClass_4xzpao_a0a0b0a().createNode(typeCheckingContext)
