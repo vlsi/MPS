@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class MPSIconProvider extends MultiTabPropertyProvider implements FileIconProvider, ApplicationComponent {
+public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
   @NonNls
   @NotNull
@@ -52,7 +52,7 @@ public class MPSIconProvider extends MultiTabPropertyProvider implements FileIco
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       return ModelAccess.instance().runReadAction(new Computable<Icon>() {
         public Icon compute() {
-          SNode node = getCurrentEditedNode(project, file);
+          SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
           if (node != null) {
             return IconManager.getIconWithoutAdditionalPart(node);
           }

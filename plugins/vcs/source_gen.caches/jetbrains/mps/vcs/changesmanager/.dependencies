@@ -110,6 +110,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorUtil" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
@@ -120,7 +121,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.FileStatusProvider" />
-    <classNode extendsClassName="jetbrains.mps.workbench.editors.MultiTabPropertyProvider" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" file="EditorChangesHighlighter.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />

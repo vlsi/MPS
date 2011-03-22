@@ -19,14 +19,23 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public abstract class MultiTabPropertyProvider {
-  protected SNode getCurrentEditedNode(Project project, VirtualFile file) {
+/**
+ * @author Evgeny Gerashchenko
+ * @since 22 March 2011
+ */
+public class MPSEditorUtil {
+  @Nullable
+  public static SNode getCurrentEditedNode(@NotNull Project project, @NotNull MPSNodeVirtualFile file) {
     FileEditor[] editors = FileEditorManager.getInstance(project).getEditors(file);
     if (editors.length <= 0) return null;
 

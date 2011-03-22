@@ -20,10 +20,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
-public class EditorTabTitleProviderImpl extends MultiTabPropertyProvider implements EditorTabTitleProvider {
+public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
   public String getEditorTabTitle(Project project, VirtualFile file) {
-    final SNode node = getCurrentEditedNode(project, file);
+    if (!(file instanceof MPSNodeVirtualFile)) return null;
+    final SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
     if (node != null) {
       final StringBuilder sb = new StringBuilder();
       ModelAccess.instance().runReadAction(new Runnable() {
