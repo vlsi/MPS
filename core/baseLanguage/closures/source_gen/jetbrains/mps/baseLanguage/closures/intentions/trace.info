@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.IntentionsDescriptor" />
   <unitInfo fileName="ToggleMultiLine_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.ToggleMultiLine_Intention" />
   <unitInfo fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="62" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention$QuotationClass_fknil1_a1a1a7" />
   <unitInfo fileName="add_throws_to_FunctionType_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.add_throws_to_FunctionType_Intention" />

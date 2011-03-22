@@ -38,7 +38,7 @@ public class MacroIntentionsUtil {
         GeneratedMatchingPattern pattern_iiuth6_a0d0b = new MacroIntentionsUtil.Pattern_iiuth6_a0a0a0a3a1();
         SNode coercedNode_iiuth6_a0d0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0d0b);
         if (coercedNode_iiuth6_a0d0b != null) {
-          return ((SNode) pattern_iiuth6_a0d0b.getFieldValue("PatternVar_concept"));
+          return ((SNode) pattern_iiuth6_a0d0b.getFieldValue("patternVar_concept"));
         } else {
           return null;
         }
@@ -48,7 +48,7 @@ public class MacroIntentionsUtil {
         GeneratedMatchingPattern pattern_iiuth6_a0a3a1 = new MacroIntentionsUtil.Pattern_iiuth6_a0a0a0a0d0b();
         SNode coercedNode_iiuth6_a0a3a1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0a3a1);
         if (coercedNode_iiuth6_a0a3a1 != null) {
-          return ((SNode) pattern_iiuth6_a0a3a1.getFieldValue("PatternVar_concept"));
+          return ((SNode) pattern_iiuth6_a0a3a1.getFieldValue("patternVar_concept"));
         } else {
           return null;
         }
@@ -89,7 +89,7 @@ public class MacroIntentionsUtil {
   }
 
   public static class Pattern_iiuth6_a0a0a0a3a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_concept;
+    /*package*/ SNode patternVar_concept;
 
     public Pattern_iiuth6_a0a0a0a3a1() {
     }
@@ -101,7 +101,7 @@ public class MacroIntentionsUtil {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a3a1.getConceptFqName()))) {
           return false;
         }
-        PatternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferent("concept");
+        patternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferent("concept");
       }
       return true;
     }
@@ -112,13 +112,13 @@ public class MacroIntentionsUtil {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_concept".equals(fieldName)) {
-        return PatternVar_concept;
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
       }
       return null;
     }
@@ -128,7 +128,7 @@ public class MacroIntentionsUtil {
   }
 
   public static class Pattern_iiuth6_a0a0a0a0d0b extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_concept;
+    /*package*/ SNode patternVar_concept;
 
     public Pattern_iiuth6_a0a0a0a0d0b() {
     }
@@ -153,7 +153,7 @@ public class MacroIntentionsUtil {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a0a3a1.getConceptFqName()))) {
                 return false;
               }
-              PatternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferent("concept");
+              patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferent("concept");
             }
           }
         }
@@ -167,13 +167,13 @@ public class MacroIntentionsUtil {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_concept".equals(fieldName)) {
-        return PatternVar_concept;
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
       }
       return null;
     }

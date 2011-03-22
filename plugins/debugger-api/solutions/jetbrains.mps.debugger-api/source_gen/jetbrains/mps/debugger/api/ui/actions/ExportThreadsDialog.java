@@ -7,7 +7,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class ExportThreadsDialog extends BaseDialog {

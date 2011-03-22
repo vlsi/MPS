@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 
 import static jetbrains.mps.TestMain.configureMPS;
 
+import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -49,13 +50,14 @@ public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();
+    IconLoader.activate();
 
     final SModel models[] = new SModel[3];
 
     String resultFile;
     if (args.length == 2) {
       try {
-        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values(), false);
+        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values());
         models[0] = zipped[0];
         models[1] = zipped[1];
         models[2] = zipped[2];
@@ -113,6 +115,11 @@ public class TestMergeDialog {
               }
 
               @Override
+              public boolean isTestMode() {
+                return true;
+              }
+
+              @Override
               public <T> T getComponent(Class<T> clazz) {
                 if (clazz == EditorManager.class) {
                   return (T) ourEditorManager;
@@ -121,7 +128,7 @@ public class TestMergeDialog {
               }
             };
 
-            return new MergeModelsDialog(context, models[0], models[1], models[2]);
+            return new MergeModelsDialog(null, context, models[0], models[1], models[2]);
           }
         });
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

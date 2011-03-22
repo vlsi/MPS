@@ -24,6 +24,8 @@ import java.util.Collection;
  */
 public interface TemplateMappingConfiguration {
 
+  boolean isTopPriority();
+
   SNodePointer getMappingNode();
 
   String getName();

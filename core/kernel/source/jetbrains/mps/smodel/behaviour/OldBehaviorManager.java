@@ -215,7 +215,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
         if (method != null) {
           method.setAccessible(true);
         }
-        mm = myMethods.putIfAbsent(mi, method != null ? method : this);
+        mm = myMethods.putIfAbsent(mi, method != null ? method : OldBehaviorManager.this);
 
         return mm instanceof Method ? (Method) mm : method;
       }

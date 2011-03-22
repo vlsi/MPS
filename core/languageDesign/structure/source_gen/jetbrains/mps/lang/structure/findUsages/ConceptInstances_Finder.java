@@ -15,6 +15,9 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
 
+  public ConceptInstances_Finder() {
+  }
+
   public String getDescription() {
     return "Concept Instances";
   }

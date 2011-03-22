@@ -10,9 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class ResourceType_comparableWith_IResource_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_v5k8je_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
+  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -63,9 +64,8 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_v5k8je_a0a1a0a1a2a0a0a0a0a0a3.getNode();
-          if (nodeToMatch_rtu2iv_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0d;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_rtu2iv_a0a.getReferent("classifier")))) {
             return false;
           }
         }

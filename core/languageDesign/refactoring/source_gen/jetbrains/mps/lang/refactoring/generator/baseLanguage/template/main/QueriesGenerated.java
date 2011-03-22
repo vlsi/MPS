@@ -124,7 +124,7 @@ public class QueriesGenerated {
       GeneratedMatchingPattern pattern_x583g4_a0s = new QueriesGenerated.Pattern_x583g4_a0a0a0a81();
       SNode coercedNode_x583g4_a0s = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_x583g4_a0s);
       if (coercedNode_x583g4_a0s != null) {
-        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_x583g4_a0s.getFieldValue("PatternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_x583g4_a0s.getFieldValue("patternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
         return SNodeOperations.getModel(abstractConceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       } else {
       }
@@ -864,7 +864,7 @@ public class QueriesGenerated {
   }
 
   public static class Pattern_x583g4_a0a0a0a81 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_concept;
+    /*package*/ SNode patternVar_concept;
 
     public Pattern_x583g4_a0a0a0a81() {
     }
@@ -876,7 +876,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a0a81.getConceptFqName()))) {
           return false;
         }
-        PatternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
+        patternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
       }
       return true;
     }
@@ -887,13 +887,13 @@ public class QueriesGenerated {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_concept".equals(fieldName)) {
-        return PatternVar_concept;
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
       }
       return null;
     }
@@ -913,8 +913,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.NODE")));
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.NODE")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
         result = quotedNode1_2;
       }
       return result;
@@ -932,8 +932,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.MODEL")));
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.MODEL")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
         result = quotedNode1_2;
       }
       return result;
@@ -951,8 +951,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.MODULE")));
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType.MODULE")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IRefactoringTarget$TargetType")));
         result = quotedNode1_2;
       }
       return result;
@@ -1021,7 +1021,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelDescriptor")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelDescriptor")));
         result = quotedNode1_2;
       }
       return result;

@@ -101,7 +101,11 @@ public class Worker__Facet implements IFacet {
       return false;
     }
 
-    public Class<? extends IResource> expectedResources() {
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return null;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.IntentionsDescriptor" />
   <unitInfo fileName="CreatePatternVariable_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
   <unitInfo fileName="CreateAsPattern_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
   <unitInfo fileName="CreateWildcardPattern_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />

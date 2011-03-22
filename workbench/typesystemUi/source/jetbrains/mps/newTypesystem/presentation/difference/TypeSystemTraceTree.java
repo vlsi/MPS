@@ -25,12 +25,12 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
-import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
-import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
+import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
+import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
-import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
+import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
@@ -107,57 +107,22 @@ public class TypeSystemTraceTree extends MPSTree {
     setGenerationMode(TraceSettings.isGenerationMode());
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode !=null) {
       getSliceVars(myOperation);
-      return createListTraceForNode();
     }
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(myStateCopy.getOperation(), myOperationContext);
     create(myOperation, result);
     return result;
   }
 
-  private TypeSystemTraceTreeNode createNode(AbstractOperation diff) {
-    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
-    if (diff.getConsequences() != null) {
-      for (AbstractOperation child : diff.getConsequences()) {
-        if (filterNodeType(child)) {
-          TypeSystemTraceTreeNode node = createNode(child);
-          result.add(node);
-        }
-      }
-    }
-    return result;
-  }
-
   private void create(AbstractOperation diff, TypeSystemTraceTreeNode result) {
     if (diff.getConsequences() != null) {
       for (AbstractOperation child : diff.getConsequences()) {
-        if (filterNodeType(child)) {
+        if (filterNodeType(child) && (!TraceSettings.isTraceForSelectedNode() || showNode(diff))) {
           TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext);
           create(child, node);
           result.add(node);
         } else {
           create(child, result);
         }
-      }
-    }
-  }
-
-  private MPSTreeNode createListTraceForNode() {
-    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myOperation, myOperationContext);
-    List<TypeSystemTraceTreeNode> result = new LinkedList<TypeSystemTraceTreeNode>();
-    createList(myOperation, result);
-    for (TypeSystemTraceTreeNode node : result) {
-      root.add(node);
-    }
-    return root;
-  }
-
-  private void createList(AbstractOperation diff, List<TypeSystemTraceTreeNode> result) {
-    if (showNode(diff) && filterNodeType(diff)) {
-      result.add(new TypeSystemTraceTreeNode(diff, myOperationContext));
-    }
-    if (diff.getConsequences() != null) {
-      for (AbstractOperation child : diff.getConsequences()) {
-        createList(child, result);
       }
     }
   }
@@ -169,8 +134,8 @@ public class TypeSystemTraceTree extends MPSTree {
     if (myNodes.contains(diff.getSource())) {
       return true;
     }
-    if (diff instanceof EquationAddedOperation) {
-      EquationAddedOperation eq = (EquationAddedOperation) diff;
+    if (diff instanceof AddEquationOperation) {
+      AddEquationOperation eq = (AddEquationOperation) diff;
       if (myNodes.contains(eq.getChild()) || myNodes.contains(eq.getParent())) {
         return true;
       }
@@ -187,13 +152,13 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private boolean filterNodeType(AbstractOperation operation) {
-    if (!TraceSettings.isShowTypesExpansion() && operation instanceof TypeExpandedOperation) {
+    if (!TraceSettings.isShowTypesExpansion() && operation instanceof ExpandTypeOperation) {
       return false;
     }
     if (!TraceSettings.isShowApplyRuleOperations() && operation instanceof ApplyRuleOperation)  {
       return false;
     }
-    if (!TraceSettings.isShowBlockDependencies() && operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
+    if (!TraceSettings.isShowBlockDependencies() && (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation)) {
       return false;
     }
     return true;
@@ -203,8 +168,8 @@ public class TypeSystemTraceTree extends MPSTree {
     if (diff == null) {
       return;
     }
-    if (diff instanceof EquationAddedOperation) {
-      EquationAddedOperation eq = (jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation) diff;
+    if (diff instanceof AddEquationOperation) {
+      AddEquationOperation eq = (AddEquationOperation) diff;
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
       if (myNodes.contains(child)) {
@@ -214,8 +179,8 @@ public class TypeSystemTraceTree extends MPSTree {
         myNodes.addAll(TypesUtil.getVariables(child));
       }
     }
-    if (diff instanceof TypeAssignedOperation) {
-      TypeAssignedOperation typeDifference = (TypeAssignedOperation) diff;
+    if (diff instanceof AssignTypeOperation) {
+      AssignTypeOperation typeDifference = (AssignTypeOperation) diff;
       if (myNodes.contains(typeDifference.getNode()) && TypesUtil.isVariable(typeDifference.getType())) {
         myNodes.add(typeDifference.getType());
       }

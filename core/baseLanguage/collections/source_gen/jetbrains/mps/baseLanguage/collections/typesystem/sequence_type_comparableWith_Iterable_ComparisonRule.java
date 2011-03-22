@@ -10,9 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class sequence_type_comparableWith_Iterable_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_sh3asd_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_sh3asd_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -52,7 +53,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
   }
 
   public static class Pattern_sh3asd_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_ELEMENT;
+    /*package*/ SNode patternVar_ELEMENT;
 
     public Pattern_sh3asd_a0a0a0a3() {
     }
@@ -65,9 +66,8 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
           return false;
         }
         {
-          SNode referent;
-          referent = SNODE_POINTER_sh3asd_a0a1a0a1a2a0a0a0a0a0a3.getNode();
-          if (nodeToMatch_wnlwmt_a0a.getReferent("classifier") != referent) {
+          SNodePointer pointer = SNODE_POINTER_sh3asd_a0a0a0a0b0c0a0a0a0a0a0d;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_wnlwmt_a0a.getReferent("classifier")))) {
             return false;
           }
         }
@@ -78,7 +78,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
           }
           {
             SNode childVar_wnlwmt_a0a0 = nodeToMatch_wnlwmt_a0a.getChildren(childRole_wnlwmt_).get(0);
-            this.PatternVar_ELEMENT = childVar_wnlwmt_a0a0;
+            this.patternVar_ELEMENT = childVar_wnlwmt_a0a0;
           }
         }
       }
@@ -91,13 +91,13 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+        patternVar_ELEMENT = (SNode) pattern.getFieldValue("patternVar_ELEMENT");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_ELEMENT".equals(fieldName)) {
-        return PatternVar_ELEMENT;
+      if ("patternVar_ELEMENT".equals(fieldName)) {
+        return patternVar_ELEMENT;
       }
       return null;
     }

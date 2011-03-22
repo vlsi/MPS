@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -57,8 +56,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     final SNode finalTypeParam = typeParam;
                     {
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                      BaseQuickFixProvider intentionProvider = null;
-                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, intentionProvider);
+                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, null);
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                       typeCheckingContext.createGreaterThanInequation((SNode) myParam, (SNode) finalTypeParam, false, _info_12389875345);
                     }
@@ -69,8 +67,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                              BaseQuickFixProvider intentionProvider = null;
-                              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
+                              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, null);
                               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                               typeCheckingContext.createEquation((SNode) finalTypeParam, (SNode) typeCheckingContext.getRepresentative(concreteParam), _info_12389875345);
                             }
@@ -83,26 +80,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               }
             } else {
               SNode nodeWithError = equationInfo.getNodeWithError();
-              SNode methodCall = null;
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
-              } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-              }
-              if (methodCall != null) {
-                {
-                  BaseQuickFixProvider intentionProvider = null;
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
-                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-                }
-              } else {
-                {
-                  BaseQuickFixProvider intentionProvider = null;
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
-                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-                }
+              {
+                MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", null, errorTarget);
+                HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
               }
             }
           }
@@ -147,17 +128,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           }
         } else {
           SNode nodeWithError = equationInfo.getNodeWithError();
-          SNode methodCall = null;
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
-          } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-          }
-          if (methodCall != null) {
-            result_14532009 = false;
-          } else {
-            result_14532009 = false;
-          }
+          result_14532009 = false;
         }
       }
     }
@@ -191,9 +162,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   }
 
   public static class Pattern_1s2zdh_a0a0a0a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static List<SNode> PatternVar_l;
-    public static SNode PatternVar_ignored;
-
+    /*package*/ List<SNode> patternVar_l;
+    /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a;
 
     public Pattern_1s2zdh_a0a0a0a0a0(Object parameter_n8ubly_a0a0a0a0a) {
@@ -216,11 +186,11 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           String childRole_n8ubly_ = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          PatternVar_ignored = null;
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a.getChildren(childRole_n8ubly_)) {
-            PatternVar_ignored = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+            patternVar_ignored = childVar;
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }
@@ -233,17 +203,17 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        PatternVar_ignored = (SNode) pattern.getFieldValue("PatternVar_ignored");
+        patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
+        patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_l".equals(fieldName)) {
-        return PatternVar_l;
+      if ("patternVar_l".equals(fieldName)) {
+        return patternVar_l;
       }
-      if ("PatternVar_ignored".equals(fieldName)) {
-        return PatternVar_ignored;
+      if ("patternVar_ignored".equals(fieldName)) {
+        return patternVar_ignored;
       }
       return null;
     }
@@ -253,9 +223,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   }
 
   public static class Pattern_1s2zdh_a0a0a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static List<SNode> PatternVar_l;
-    public static SNode PatternVar_ignored;
-
+    /*package*/ List<SNode> patternVar_l;
+    /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a_0;
 
     public Pattern_1s2zdh_a0a0a0a0a1a1(Object parameter_n8ubly_a0a0a0a0a_0) {
@@ -278,11 +247,11 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           String childRole_n8ubly__0 = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          PatternVar_ignored = null;
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a_0.getChildren(childRole_n8ubly__0)) {
-            PatternVar_ignored = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+            patternVar_ignored = childVar;
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }
@@ -295,17 +264,17 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        PatternVar_ignored = (SNode) pattern.getFieldValue("PatternVar_ignored");
+        patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
+        patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_l".equals(fieldName)) {
-        return PatternVar_l;
+      if ("patternVar_l".equals(fieldName)) {
+        return patternVar_l;
       }
-      if ("PatternVar_ignored".equals(fieldName)) {
-        return PatternVar_ignored;
+      if ("patternVar_ignored".equals(fieldName)) {
+        return patternVar_ignored;
       }
       return null;
     }

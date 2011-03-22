@@ -18,7 +18,6 @@ package jetbrains.mps.refactoring.renameLanguage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -67,7 +66,7 @@ public class LanguageRenamer {
     }
 
     EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    for (SNode concept : structure.getSModel().getFastNodeFinder().getNodes(AbstractConceptDeclaration.concept, true)) {
+    for (SNode concept : structure.getSModel().getFastNodeFinder().getNodes(SNodeUtil.concept_AbstractConceptDeclaration, true)) {
       myContext.changeFeatureName(concept, myNewName + ".structure." + concept.getName(), concept.getName());
     }
 
@@ -100,7 +99,7 @@ public class LanguageRenamer {
         String oldPrefix = root.getPrefix();
         if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
           String newPrefix = myNewName + oldPrefix.substring(oldFqName.length());
-          root.changePrefix(newPrefix);
+          root.changePrefix(newPrefix, g);
         }
       }
     }

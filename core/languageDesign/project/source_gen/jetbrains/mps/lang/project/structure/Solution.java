@@ -9,9 +9,36 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Solution extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Solution";
+  public static final String OUTPUT_PATH = "outputPath";
+  public static final String SOLUTION_PATH = "solutionPath";
+  public static final String DONT_LOAD_CLASSES = "dontLoadClasses";
 
   public Solution(SNode node) {
     super(node);
+  }
+
+  public String getOutputPath() {
+    return this.getProperty(Solution.OUTPUT_PATH);
+  }
+
+  public void setOutputPath(String value) {
+    this.setProperty(Solution.OUTPUT_PATH, value);
+  }
+
+  public String getSolutionPath() {
+    return this.getProperty(Solution.SOLUTION_PATH);
+  }
+
+  public void setSolutionPath(String value) {
+    this.setProperty(Solution.SOLUTION_PATH, value);
+  }
+
+  public boolean getDontLoadClasses() {
+    return this.getBooleanProperty(Solution.DONT_LOAD_CLASSES);
+  }
+
+  public void setDontLoadClasses(boolean value) {
+    this.setBooleanProperty(Solution.DONT_LOAD_CLASSES, value);
   }
 
   public static Solution newInstance(SModel sm, boolean init) {

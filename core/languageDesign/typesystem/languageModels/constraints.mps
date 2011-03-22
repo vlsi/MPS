@@ -31,9 +31,6 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104837475">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpd4.1205762656241" resolveInfo="WhenConcreteVariableReference" />
     </node>
-    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104840529">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpd4.1203432734351" resolveInfo="ListVarReference" />
-    </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213104844579">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpd4.1174989799417" resolveInfo="PropertyPatternVariableReference" />
     </node>
@@ -212,23 +209,6 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213104837504">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1213104837506">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213104837487" resolveInfo="declarations" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1213104840529">
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104840554">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpd4.1203432751071" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.ConstraintFunction_ReferentSearchScope_Factory" typeId="tp1t.1148684180339" id="1213104840555">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213104840556">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213104840557">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888418528">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888418530">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7nw8.~ListVarScope%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="ListVarScope" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConceptParameter_ReferentSearchScope_enclosingNode" typeId="tp1t.1148934636683" id="1213104840559" />
-              </node>
             </node>
           </node>
         </node>

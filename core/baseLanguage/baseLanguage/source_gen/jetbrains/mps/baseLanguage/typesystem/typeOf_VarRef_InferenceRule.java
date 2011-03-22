@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.Set;
 import java.util.HashSet;
@@ -35,8 +34,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         if (matches_lcu2lp_a1a) {
           {
             SNode _nodeToCheck_1029348928467 = varRef;
-            BaseQuickFixProvider intentionProvider = null;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", 0, intentionProvider);
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", 0, null);
             typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_fse81k_a0a0a0a2a1a1a0().createNode(SLinkOperations.getTarget(matchedNode_lcu2lp_b0, "componentType", true), typeCheckingContext), _info_12389875345);
           }
           break;
@@ -44,8 +42,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
       }
       {
         SNode _nodeToCheck_1029348928467 = varRef;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304964", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304964", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304969", false), (SNode) typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304966", true), _info_12389875345);
       }
     } while (false);

@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.vcs.history.ShortVcsRevisionNumber;
-import java.util.Date;
 import com.intellij.openapi.vcs.actions.CompareWithSelectedRevisionAction;
 import com.intellij.util.Consumer;
 
@@ -38,7 +37,7 @@ public class VcsRevisionRange extends BaseGroup {
     add(myBeforeAction);
     add(myAfterAction);
     add(new BaseAction("Remove Highlighting") {
-      protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
+      protected void doExecute(AnActionEvent event, Map<String, Object> map) {
         myBeforeAction.myRevision = null;
         myAfterAction.myRevision = null;
         myColumn.invalidateLayout();
@@ -64,13 +63,6 @@ public class VcsRevisionRange extends BaseGroup {
     }
   }
 
-  private static Date check_5bt2ri_a0a0a0a0c0(VcsFileRevision checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getRevisionDate();
-    }
-    return null;
-  }
-
   private class HiglightAction extends BaseAction {
     private VcsFileRevision myRevision = null;
     private boolean myBefore;
@@ -82,8 +74,7 @@ public class VcsRevisionRange extends BaseGroup {
       }
     }
 
-    @Override
-    protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
+    protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       String text = (myBefore ?
         "Show Before..." :
         "Show After..."
@@ -112,8 +103,10 @@ public class VcsRevisionRange extends BaseGroup {
     public boolean isHiglighted(VcsFileRevision revision) {
       if (myRevision == null) {
         return true;
+      } else if (revision == null) {
+        return false;
       } else {
-        int compareResult = check_5bt2ri_a0a0a0a0c0(revision).compareTo(myRevision.getRevisionDate());
+        int compareResult = revision.getRevisionDate().compareTo(myRevision.getRevisionDate());
         return (myBefore ?
           compareResult <= 0 :
           compareResult >= 0

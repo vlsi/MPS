@@ -15,11 +15,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelRepository;
@@ -100,7 +101,6 @@ public class ChangeModelProcessor {
   private List<String> generate(SModelDescriptor model, IGenerationHandler generationHandler) {
     final List<String> results = ListSequence.fromList(new ArrayList<String>());
     List<SModelDescriptor> models = Collections.singletonList(model);
-    GeneratorManager gm = this.myProject.getComponent(GeneratorManager.class);
     IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
         if (msg.getKind() == MessageKind.ERROR) {
@@ -112,7 +112,7 @@ public class ChangeModelProcessor {
       }
     };
     model.getModule().getModuleDescriptor().setCompileInMPS(false);
-    gm.generateModels(models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressIndicator(), handler);
+    GenerationFacade.generateModels(this.myProject, models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressIndicator(), handler, GenerationOptions.getDefaults().create());
     model.getModule().getModuleDescriptor().setCompileInMPS(true);
     return results;
   }

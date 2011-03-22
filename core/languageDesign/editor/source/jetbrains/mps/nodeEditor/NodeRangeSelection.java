@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;

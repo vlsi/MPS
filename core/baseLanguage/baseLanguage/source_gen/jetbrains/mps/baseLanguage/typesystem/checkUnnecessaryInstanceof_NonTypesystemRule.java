@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,9 +23,8 @@ public class checkUnnecessaryInstanceof_NonTypesystemRule extends AbstractNonTyp
     SNode expressionType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, classifierType)) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(instanceOfExpression, "unnecessary instanceof", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3545977178604772302", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(instanceOfExpression, "unnecessary instanceof", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3545977178604772302", null, errorTarget);
       }
     }
   }

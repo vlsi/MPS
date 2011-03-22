@@ -15,6 +15,7 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1202255161954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -119,7 +120,7 @@ public class QueriesGenerated {
     _context.showInformationMessage(_context.getOutputNode(), "TEST post-proc (III)");
   }
 
-  public static TemplateModel getDescriptor() {
-    return new TemplateModelImpl();
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }

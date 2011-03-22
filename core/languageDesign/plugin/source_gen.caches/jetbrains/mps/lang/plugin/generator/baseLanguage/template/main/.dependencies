@@ -6,7 +6,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
@@ -34,7 +34,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />

@@ -192,7 +192,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  private List<SNode> eliminateSubOrSuperTypes(List<SNode> types, boolean sub) {
+  //sub = true to eliminate subTypes
+  private List<SNode> eliminateSubOrSuperTypes(Collection<SNode> types, boolean sub) {
     List<SNode> result = new LinkedList<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
     for (SNode type : types) {
@@ -216,12 +217,15 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
+  public List<SNode> eliminateSuperTypes(Collection<SNode> types) {
+    return eliminateSubOrSuperTypes(types, false);
+  }
+
   public SNode createMeet(List<SNode> types) {
     if (types.size() > 1) {
        types = eliminateSubOrSuperTypes(types, true);
     }
-    return types.iterator().next();
-    // todo implement meet
+    return LatticeUtil.meetNodes(new LinkedHashSet<SNode>(types));
   }
 
   private boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
@@ -272,6 +276,14 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
+  public boolean isComparable(SNode left, SNode right, boolean isWeak) {
+    return isComparableByRules(left, right, isWeak) ||
+      isSubTypeByReplacementRules(left, right) ||
+      isSubTypeByReplacementRules(right, left) ||
+      isSubtype(left, right, isWeak) ||
+      isSubtype(right, left, isWeak);
+  }
+
   private SNode leastCommonSuperType(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 0) {
       return null;
@@ -284,6 +296,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
+    types = eliminateSubOrSuperTypes(types, true);
     return LatticeUtil.meetNodes(new HashSet<SNode>(types));
   }
 
@@ -310,7 +323,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return leastCommonSuperType(types, context);
   }
 
-  public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
+  public boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
     if (left == null || right == null) {
       return false;
     }

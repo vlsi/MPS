@@ -4,8 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,10 +21,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
+import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.ModuleContext;
@@ -36,7 +33,7 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class GoToEditorDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/editor.png", "jetbrains.mps.ide.mpsdevkit"), true);
+  private static final Icon ICON = new ImageIcon(GoToEditorDeclaration_Action.class.getResource("editor.png"));
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   public GoToEditorDeclaration_Action() {
@@ -119,10 +116,10 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-      final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
+      final Wrappers._T<SNode> conceptDeclaration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          conceptDeclaration.value = ((ConceptDeclaration) BaseAdapter.fromNode(((SNode) MapSequence.fromMap(_params).get("node")).getConceptDeclarationNode()));
+          conceptDeclaration.value = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
       SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration.value, ((IScope) MapSequence.fromMap(_params).get("scope")));

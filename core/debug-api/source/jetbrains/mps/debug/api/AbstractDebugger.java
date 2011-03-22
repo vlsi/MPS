@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.debug.api;
 
-import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> implements IDebugger<B,K> {
+public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> implements IDebugger<B, K> {
   @NotNull
   private final String myName;
   private final BreakpointProvidersManager myBreakpointsProviderManager;
   private final Debuggers myDebuggers;
-  private IBreakpointsProvider<B,K> myBreakpointsProvider;
+  private IBreakpointsProvider<B, K> myBreakpointsProvider;
 
-  public AbstractDebugger(String name, Debuggers debuggers,  BreakpointProvidersManager breakpointsProviderManager) {
+  public AbstractDebugger(String name, Debuggers debuggers, BreakpointProvidersManager breakpointsProviderManager) {
     myName = name;
     myDebuggers = debuggers;
     myBreakpointsProviderManager = breakpointsProviderManager;
@@ -49,5 +48,20 @@ public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpo
   @Override
   public String getName() {
     return myName;
+  }
+
+  @Override
+  public ILocationBreakpoint createBreakpoint(SNode node, String kindName, Project project) {
+    K kind = null;
+    for (K k : myBreakpointsProvider.getAllKinds()) {
+      if (k.getName().equals(kindName)) {
+        kind = k;
+        break;
+      }
+    }
+    if (kind != null && myBreakpointsProvider.canCreateFromNode(kind)) {
+      return myBreakpointsProvider.createFromNode(node, kind, project);
+    }
+    return null;
   }
 }

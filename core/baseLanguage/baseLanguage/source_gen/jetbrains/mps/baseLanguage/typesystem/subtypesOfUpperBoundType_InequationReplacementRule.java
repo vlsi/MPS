@@ -8,7 +8,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -22,16 +21,14 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220443995701", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220443995701", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
         typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220444030637", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220444030637", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
         typeCheckingContext.createLessThanInequation((SNode) subtype, (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }

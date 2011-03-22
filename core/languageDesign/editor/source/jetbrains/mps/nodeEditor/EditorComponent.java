@@ -230,6 +230,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
   private SearchPanel mySearchPanel = null;
+  private JPanel myUpperPanel = null;
+  private Map<String, JComponent> myUpperComponents = new HashMap<String, JComponent>();
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
@@ -240,7 +242,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
-    assert operationContext == null || operationContext.getModule() != null : "No module for operation context: " + operationContext;
+    assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode() : "No module for operation context: " + operationContext;
     myOperationContext = operationContext;
     setEditorContext(new EditorContext(this,null,operationContext));
 
@@ -557,6 +559,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myOperationContext == null) {
       LOG.warning("Trying to notify EditorComponent creation with null operation context");
     } else {
+      if (myOperationContext.getProject() == null) {
+        return;
+      }
       EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
       listener.editorComponentCreated(this);
     }
@@ -565,6 +570,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void notifyDisposal() {
     if (myOperationContext == null) {
       LOG.warning("Trying to notify disposal with empty operation context");
+      return;
+    }
+    if (myOperationContext.getProject() == null) {
       return;
     }
     if (myOperationContext.getProject().isDisposed()) {
@@ -881,9 +889,43 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public SearchPanel getSearchPanel() {
     if (mySearchPanel == null) {
       mySearchPanel = new SearchPanel(this);
-      myContainer.add(mySearchPanel, BorderLayout.NORTH);
     }
     return mySearchPanel;
+  }
+
+  public JPanel getUpperPanel() {
+    if (myUpperPanel == null) {
+      myUpperPanel = new JPanel();
+      myUpperPanel.setLayout(new GridLayout(0,1));
+      myContainer.add(myUpperPanel, BorderLayout.NORTH);
+    }
+    return myUpperPanel;
+  }
+
+  public void addUpperComponent(JComponent component) {
+    getUpperPanel().add(component);
+  }
+
+  public void addUpperComponent(JComponent component, String id) {
+    getUpperPanel().add(component);
+    myUpperComponents.put(id, component);
+  }
+
+  public void removeUpperComponent(JComponent component) {
+    if (myUpperPanel == null) return;
+    getUpperPanel().remove(component);
+    for (String key : new HashSet<String>(myUpperComponents.keySet())) {
+      if (component == myUpperComponents) {
+        myUpperComponents.remove(key);
+      }
+    }
+  }
+
+  public void removeUpperComponent(String id) {
+    JComponent component = myUpperComponents.get(id);
+    if (component != null) {
+      removeUpperComponent(component);
+    }
   }
 
   public void updateMessages() {
@@ -901,7 +943,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void setOperationContext(IOperationContext operationContext) {
-    assert operationContext == null || operationContext.getModule() != null;
+    assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode();
     myOperationContext = operationContext;
   }
 
@@ -1054,7 +1096,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myEditorContext;
   }
 
-  public abstract EditorCell createRootCell();
+  public EditorCell createRootCell() {
+    return createRootCell(null);
+  }
 
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
@@ -2505,7 +2549,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void setEditorContext(EditorContext editorContext) {
-    assert editorContext == null || editorContext.getOperationContext() == null || editorContext.getOperationContext().getModule() != null;
+    assert editorContext == null || editorContext.getOperationContext() == null
+      || editorContext.getOperationContext().getModule() != null || editorContext.getOperationContext().isTestMode();
     myEditorContext = editorContext;
   }
 

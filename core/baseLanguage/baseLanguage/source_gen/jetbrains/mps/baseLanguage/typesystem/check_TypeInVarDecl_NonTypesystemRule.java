@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,9 +23,8 @@ public class check_TypeInVarDecl_NonTypesystemRule extends AbstractNonTypesystem
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), "type", true) == nodeToCheck) {
       if (!(Type_Behavior.call_isValueType_4836112446988592019(nodeToCheck))) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "this type can't be used in variable declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2108863436754369846", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "this type can't be used in variable declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2108863436754369846", null, errorTarget);
         }
       }
     }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess_Behavior;
@@ -23,8 +22,7 @@ public class typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Infere
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = node;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405625", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405625", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405622", true), (SNode) new typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule.QuotationClass_g9upbq_a0a0a0().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.call_getPreProcessor_5948027493682405569(node), "concept", false), typeCheckingContext), _info_12389875345);
     }
   }

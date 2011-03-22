@@ -24,7 +24,7 @@
   <unitInfo fileName="GenerateFavorites_ActionGroup.java" startLine="25" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateFavorites_ActionGroup" />
   <unitInfo fileName="CheckModelsBeforeGeneration_Action.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" />
   <unitInfo fileName="RebuildProject_Action.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildProject_Action" />
-  <unitInfo fileName="MakeProject_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeProject_Action" />
+  <unitInfo fileName="MakeProject_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeProject_Action" />
   <unitInfo fileName="RebuildAllModules_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action" />
   <unitInfo fileName="MakeAllModules_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeAllModules_Action" />
   <unitInfo fileName="RecompileProject_Action.java" startLine="23" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RecompileProject_Action" />
@@ -37,9 +37,9 @@
   <unitInfo fileName="RegenerateProject_Action.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateProject_Action" />
   <unitInfo fileName="RegenerateModule_Action.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateModule_Action" />
   <unitInfo fileName="GenerateModule_Action.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModule_Action" />
-  <unitInfo fileName="RegenerateFilesFromModel_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateFilesFromModel_Action" />
-  <unitInfo fileName="GenerateTextFromModel_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateTextFromModel_Action" />
-  <unitInfo fileName="GenerateFilesFromModel_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateFilesFromModel_Action" />
+  <unitInfo fileName="RegenerateFilesFromModel_Action.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateFilesFromModel_Action" />
+  <unitInfo fileName="GenerateTextFromModel_Action.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateTextFromModel_Action" />
+  <unitInfo fileName="GenerateFilesFromModel_Action.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateFilesFromModel_Action" />
   <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelectedModels_Action" />
   <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildSelectedModels_Action" />
@@ -418,28 +418,28 @@
     <nodeInfo nodeId="5332171957773708994" fileName="SaveTransientModels_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="5882989260841437392">
-    <nodeInfo nodeId="5882989260841437393" fileName="GenerateFilesFromModel_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
-    <nodeInfo nodeId="5882989260841437412" fileName="GenerateFilesFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437402" fileName="GenerateFilesFromModel_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437398" fileName="GenerateFilesFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5882989260841437411" fileName="GenerateFilesFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="62" />
-    <scopeInfo nodeId="5882989260841437397" fileName="GenerateFilesFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" />
+    <nodeInfo nodeId="5882989260841437393" fileName="GenerateFilesFromModel_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
+    <nodeInfo nodeId="5882989260841437412" fileName="GenerateFilesFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437402" fileName="GenerateFilesFromModel_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437398" fileName="GenerateFilesFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5882989260841437411" fileName="GenerateFilesFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="62" />
+    <scopeInfo nodeId="5882989260841437397" fileName="GenerateFilesFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" />
   </root>
   <root nodeId="5882989260841437419">
-    <nodeInfo nodeId="5882989260841437420" fileName="GenerateTextFromModel_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
-    <nodeInfo nodeId="5882989260841437439" fileName="GenerateTextFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437429" fileName="GenerateTextFromModel_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437425" fileName="GenerateTextFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5882989260841437438" fileName="GenerateTextFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="61" />
-    <scopeInfo nodeId="5882989260841437424" fileName="GenerateTextFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" />
+    <nodeInfo nodeId="5882989260841437420" fileName="GenerateTextFromModel_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
+    <nodeInfo nodeId="5882989260841437439" fileName="GenerateTextFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437429" fileName="GenerateTextFromModel_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437425" fileName="GenerateTextFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5882989260841437438" fileName="GenerateTextFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="61" />
+    <scopeInfo nodeId="5882989260841437424" fileName="GenerateTextFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" />
   </root>
   <root nodeId="5882989260841437446">
-    <nodeInfo nodeId="5882989260841437447" fileName="RegenerateFilesFromModel_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
-    <nodeInfo nodeId="5882989260841437465" fileName="RegenerateFilesFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437456" fileName="RegenerateFilesFromModel_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5882989260841437452" fileName="RegenerateFilesFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5882989260841437464" fileName="RegenerateFilesFromModel_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="64" />
-    <scopeInfo nodeId="5882989260841437451" fileName="RegenerateFilesFromModel_Action.java" startLine="68" startPosition="54" endLine="69" endPosition="14" />
+    <nodeInfo nodeId="5882989260841437447" fileName="RegenerateFilesFromModel_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
+    <nodeInfo nodeId="5882989260841437465" fileName="RegenerateFilesFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437456" fileName="RegenerateFilesFromModel_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5882989260841437452" fileName="RegenerateFilesFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5882989260841437464" fileName="RegenerateFilesFromModel_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="64" />
+    <scopeInfo nodeId="5882989260841437451" fileName="RegenerateFilesFromModel_Action.java" startLine="67" startPosition="54" endLine="68" endPosition="14" />
   </root>
   <root nodeId="5882989260841437473">
     <nodeInfo nodeId="5882989260841437477" fileName="GenerateModels_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -751,7 +751,7 @@
     <scopeInfo nodeId="8610665572788515189" fileName="Make_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="48" />
   </root>
   <root nodeId="8610665572788515195">
-    <nodeInfo nodeId="8610665572788515200" fileName="MakeProject_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515200" fileName="MakeProject_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8610665572788515222">
     <nodeInfo nodeId="8610665572788515225" fileName="ProjectMake_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

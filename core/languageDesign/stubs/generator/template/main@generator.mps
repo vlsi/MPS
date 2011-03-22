@@ -1022,6 +1022,12 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SModel" resolveInfo="SModel" />
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3551442599394906376">
+        <property name="name" nameId="tpck.1169194664001" value="source" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3551442599394906378">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ltn8.~StubSource" resolveInfo="StubSource" />
+        </node>
+      </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2856649189863698986" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="2856649189863698989" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2856649189863698988">
@@ -1033,6 +1039,9 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2856649189863699002">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2856649189863698993" resolveInfo="model" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3551442599394906382">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3551442599394906376" resolveInfo="source" />
             </node>
           </node>
         </node>

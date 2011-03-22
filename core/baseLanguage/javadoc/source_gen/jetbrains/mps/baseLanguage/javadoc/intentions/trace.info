@@ -3,6 +3,7 @@
   <unitInfo fileName="AddClassifierDocComment_Intention.java" startLine="79" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$QuotationClass_nmk0m3_a2a1a5a7" />
   <unitInfo fileName="AddMethodDocComment_Intention.java" startLine="86" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a4a5" />
   <unitInfo fileName="AddMethodDocComment_Intention.java" startLine="104" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$QuotationClass_en9z97_a2a1a7a5" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" />
   <unitInfo fileName="AddStaticFieldDocComment_Intention.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
   <unitInfo fileName="AddFieldDocComment_Intention.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
   <unitInfo fileName="AddThrowBlockDocTag_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" />

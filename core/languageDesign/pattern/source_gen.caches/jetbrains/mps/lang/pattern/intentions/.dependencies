@@ -80,5 +80,17 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.pattern.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
 </dependenciesRoot>
 

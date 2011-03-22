@@ -3,8 +3,8 @@ package jetbrains.mps.testbench;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
@@ -15,19 +15,19 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.io.File;
 import java.util.*;
 
 public class GenerationCycle {
   public GenerationCycle() {
   }
 
-  List<Cycle> computeGenerationOrder(MPSProject project) {
+  List<ModuleCycle> computeGenerationOrder(MPSProject project) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
@@ -68,13 +68,13 @@ public class GenerationCycle {
     });
 
     // create cycles
-    List<Cycle> cycles = new ArrayList<Cycle>();
+    List<ModuleCycle> moduleCycles = new ArrayList<ModuleCycle>();
     for (Set<IModule> modulesSet : modulesOrder) {
       SimpleModuleCycle cycle = new SimpleModuleCycle(project, modulesSet, moduleToModels);
-      cycles.add(cycle);
+      moduleCycles.add(cycle);
     }
 
-    return cycles;
+    return moduleCycles;
   }
 
   void extractModelsForTesting(final Collection<SModelDescriptor> modelDescriptors, final MPSProject project) {
@@ -97,13 +97,11 @@ public class GenerationCycle {
     });
   }
 
-  /*package*/ static interface Cycle {
-    void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler);
-
-    List<File> getClassPath();
+  /*package*/ static interface ModuleCycle {
+    void generate(IGenerationHandler generationHandler, IMessageHandler messageHandler, boolean parallel);
   }
 
-  private static class SimpleModuleCycle implements Cycle {
+  private static class SimpleModuleCycle implements ModuleCycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
     private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
@@ -114,7 +112,7 @@ public class GenerationCycle {
       myModuleToModels = moduleToModels;
     }
 
-    public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
+    public void generate(IGenerationHandler generationHandler, IMessageHandler messageHandler, boolean parallel) {
       List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
       for (IModule module : myModules) {
         List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
@@ -122,12 +120,9 @@ public class GenerationCycle {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
-    }
 
-    @Override
-    public List<File> getClassPath() {
-      return Collections.emptyList();
+      GenerationFacade.generateModels(myProject.getProject(), inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler,
+        GenerationOptions.getDefaults().strictMode(parallel).generateInParallel(parallel, 8).create());
     }
 
     @Override

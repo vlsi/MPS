@@ -12,8 +12,6 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -102,16 +100,16 @@ public class IMethodCall_Behavior {
     return null;
   }
 
-  public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+  public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
-    HashMap<TypeVariableDeclaration, Type> result = new HashMap<TypeVariableDeclaration, Type>();
+    HashMap<SNode, SNode> result = new HashMap<SNode, SNode>();
     if ((instanceType == null)) {
       return result;
     }
     Iterator<SNode> typeParms = ListSequence.fromList(SLinkOperations.getTargets(instanceType, "parameter", true)).iterator();
     Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instanceType, "classifier", false), "typeVariableDeclaration", true)).iterator();
     while (typeParms.hasNext() && typeVars.hasNext()) {
-      result.put(((TypeVariableDeclaration) SNodeOperations.getAdapter(typeVars.next())), ((Type) SNodeOperations.getAdapter(typeParms.next())));
+      result.put(typeVars.next(), typeParms.next());
     }
     return result;
   }
@@ -124,8 +122,8 @@ public class IMethodCall_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
   }
 
-  public static Map<TypeVariableDeclaration, Type> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return (Map<TypeVariableDeclaration, Type>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
+  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return (Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
   }
 
   public static List<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
@@ -136,8 +134,8 @@ public class IMethodCall_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471);
   }
 
-  public static Map<TypeVariableDeclaration, Type> callSuper_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
-    return (Map<TypeVariableDeclaration, Type>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
+  public static Map<SNode, SNode> callSuper_getTypesByTypeVars_851115533308208851(SNode thisNode, String callerConceptFqName) {
+    return (Map<SNode, SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getTypesByTypeVars_851115533308208851", PARAMETERS_851115533308208851);
   }
 
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
@@ -145,9 +143,8 @@ public class IMethodCall_Behavior {
   }
 
   public static class Pattern_fq0410_a0a0a5a2a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static List<SNode> PatternVar_param;
-    public static SNode PatternVar_ignore;
-
+    /*package*/ List<SNode> patternVar_param;
+    /*package*/ SNode patternVar_ignore;
     /*package*/ Object AntiquotationField_fq0410_a0a0a5a2a1a1;
 
     public Pattern_fq0410_a0a0a5a2a1a2(Object parameter_fq0410_a0a0a5a2a1a1) {
@@ -170,11 +167,11 @@ public class IMethodCall_Behavior {
         }
         {
           String childRole_fq0410_ = "parameter";
-          this.PatternVar_param = ListSequence.fromList(new ArrayList<SNode>());
-          PatternVar_ignore = null;
+          this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_ignore = null;
           for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
-            PatternVar_ignore = childVar;
-            ListSequence.fromList(this.PatternVar_param).addElement(childVar);
+            patternVar_ignore = childVar;
+            ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }
         }
       }
@@ -187,17 +184,17 @@ public class IMethodCall_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_param = (List<SNode>) pattern.getFieldValue("PatternVar_param");
-        PatternVar_ignore = (SNode) pattern.getFieldValue("PatternVar_ignore");
+        patternVar_param = (List<SNode>) pattern.getFieldValue("patternVar_param");
+        patternVar_ignore = (SNode) pattern.getFieldValue("patternVar_ignore");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_param".equals(fieldName)) {
-        return PatternVar_param;
+      if ("patternVar_param".equals(fieldName)) {
+        return patternVar_param;
       }
-      if ("PatternVar_ignore".equals(fieldName)) {
-        return PatternVar_ignore;
+      if ("patternVar_ignore".equals(fieldName)) {
+        return patternVar_ignore;
       }
       return null;
     }

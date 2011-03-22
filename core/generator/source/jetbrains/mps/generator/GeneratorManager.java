@@ -57,7 +57,7 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false, true);
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, GenerationOptions.getDefaults().create());
   }
 
   /**

@@ -41,6 +41,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -70,6 +71,19 @@ public class ModelConstraintsManager implements ApplicationComponent {
     public void unRegisterSelf(ModelConstraintsManager manager) {
     }
   };
+
+  private static INodePropertyValidator NULL_VALIDATOR = new INodePropertyValidator() {
+    public void registerSelf(ModelConstraintsManager manager) {
+    }
+
+    public void unRegisterSelf(ModelConstraintsManager manager) {
+    }
+
+    public boolean checkPropertyValue(SNode node, String propertyName, String value, IScope scope) {
+      return false;
+    }
+  };
+
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clearAll();
@@ -88,11 +102,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private final Object myLock = new Object();
-  private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
+  private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new ConcurrentHashMap<String, List<IModelConstraints>>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersCache = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
   private Map<Pair<String, String>, INodePropertySetter> myNodePropertySettersCache = new ConcurrentHashMap<Pair<String, String>, INodePropertySetter>();
-  private Map<Pair<String, String>, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<Pair<String, String>, INodePropertyValidator>();
+  private Map<Pair<String, String>, INodePropertyValidator> myNodePropertyValidatorsCache = new ConcurrentHashMap<Pair<String, String>, INodePropertyValidator>();
 
   private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
   private Map<Pair<String, String>, INodePropertySetter> myNodePropertySettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertySetter>();
@@ -105,7 +119,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private final Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
   private final Map<String, Method> myCanBeAncestorMethods = new HashMap<String, Method>();
   private final Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
-  private final Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
+  private final ConcurrentMap<String, String> myDefaultConceptNames = new ConcurrentHashMap<String, String>();
 
   private final Map<String, String> myConstraintClassNames = new ConcurrentHashMap<String, String>();
 
@@ -165,17 +179,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (old != null) {
       LOG.error("property validator is already registered for key '" + key + "' : " + old);
     }
-    synchronized (myLock) {
-      myNodePropertyValidatorsCache.clear();
-    }
+    myNodePropertyValidatorsCache.clear();
   }
 
   public void unRegisterNodePropertyValidator(String conceptFqName, String propertyName) {
     Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     myNodePropertyValidatorsMap.remove(key);
-    synchronized (myLock) {
-      myNodePropertyValidatorsCache.clear();
-    }
+    myNodePropertyValidatorsCache.clear();
   }
 
   public void registerNodeReferentSetEventHandler(String conceptFqName, String referentRole, INodeReferentSetEventHandler eventHandler) {
@@ -335,34 +345,32 @@ public class ModelConstraintsManager implements ApplicationComponent {
     final String nodeConceptFqName = node.getConceptFqName();
     final Pair<String, String> originalKey = new Pair<String, String>(nodeConceptFqName, propertyName);
 
-    synchronized (myLock) {
-      INodePropertyValidator result = myNodePropertyValidatorsCache.get(originalKey);
-      if (result != null || myNodePropertyValidatorsCache.containsKey(originalKey)) {
-        return result;
-      }
-
-      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
-        public INodePropertyValidator compute() {
-          // find validator and put to cache
-          List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
-          for (SNode concept : hierarchy) {
-            Language l = SModelUtil.getDeclaringLanguage(concept);
-            ensureLanguageAdded(l);
-
-            String conceptFqName = NameUtil.nodeFQName(concept);
-            INodePropertyValidator result = myNodePropertyValidatorsMap.get(new Pair<String, String>(conceptFqName, propertyName));
-            if (result != null) {
-              myNodePropertyValidatorsCache.put(originalKey, result);
-              return result;
-            }
-          }
-
-          // no setter/getter found
-          myNodePropertyValidatorsCache.put(originalKey, null);
-          return null;
-        }
-      });
+    INodePropertyValidator result = myNodePropertyValidatorsCache.get(originalKey);
+    if (result != null) {
+      return result == NULL_VALIDATOR ? null : result;
     }
+
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
+      public INodePropertyValidator compute() {
+        // find validator and put to cache
+        List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+        for (SNode concept : hierarchy) {
+          Language l = SModelUtil.getDeclaringLanguage(concept);
+          ensureLanguageAdded(l);
+
+          String conceptFqName = NameUtil.nodeFQName(concept);
+          INodePropertyValidator result = myNodePropertyValidatorsMap.get(new Pair<String, String>(conceptFqName, propertyName));
+          if (result != null) {
+            myNodePropertyValidatorsCache.put(originalKey, result);
+            return result;
+          }
+        }
+
+        // no setter/getter found
+        myNodePropertyValidatorsCache.put(originalKey, NULL_VALIDATOR);
+        return null;
+      }
+    });
   }
 
   INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
@@ -417,14 +425,18 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private void ensureLanguageAdded(Language language) {
     String namespace = language.getModuleFqName();
+    // additional check to avoid unnecessary sync
+    if (myAddedLanguageNamespaces.containsKey(namespace)) {
+      return;
+    }
     synchronized (myLock) {
       if (myAddedLanguageNamespaces.containsKey(namespace)) {
         return;
       }
 
       LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
-      myAddedLanguageNamespaces.put(namespace, loadedConstraints);
       loadConstraints(namespace, loadedConstraints);
+      myAddedLanguageNamespaces.put(namespace, loadedConstraints);
     }
   }
 
@@ -435,11 +447,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
         return;
       }
 
-      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
+      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.remove(namespace);
       for (IModelConstraints constraints : loadedConstraints) {
         constraints.unRegisterSelf(this);
       }
-      myAddedLanguageNamespaces.remove(namespace);
     }
   }
 
@@ -456,9 +467,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     synchronized (myCanBeRootMethods) {
       myCanBeRootMethods.clear();
     }
-    synchronized (myDefaultConceptNames) {
-      myDefaultConceptNames.clear();
-    }
+    myDefaultConceptNames.clear();
 
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
@@ -475,12 +484,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
       }
       myAddedLanguageNamespaces.clear();
-
-      // should be empty, clear once again
-      myNodePropertyGettersCache.clear();
-      myNodePropertySettersCache.clear();
-      myNodePropertyValidatorsCache.clear();
     }
+
+    // should be empty, clear once again
+    myNodePropertyGettersCache.clear();
+    myNodePropertySettersCache.clear();
+    myNodePropertyValidatorsCache.clear();
   }
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
@@ -509,37 +518,37 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
-    synchronized (myDefaultConceptNames) {
-      String result = myDefaultConceptNames.get(fqName);
-      if (result != null || myDefaultConceptNames.containsKey(fqName)) {
-        return result;
-      }
+  private static final String NULL_STRING = "#null";
 
-      String behaviorClass = constraintsClassByConceptFqName(fqName);
-      String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-      Language language = scope.getLanguage(namespace);
-      if (language != null) {
-        result = fqName;
-        Class cls = language.getClass(behaviorClass);
-        if (cls != null) {
-          try {
-            Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
-            try {
-              result = (String) method.invoke(null);
-            } catch (IllegalAccessException e) {
-              LOG.error(e);
-            } catch (InvocationTargetException e) {
-              LOG.error(e);
-            }
-          } catch (NoSuchMethodException e) {
-            //it's absolutely ok
-          }
-        }
-        myDefaultConceptNames.put(fqName, result);
-      }
-      return result;
+  public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
+    String result = myDefaultConceptNames.get(fqName);
+    if (result != null) {
+      return result == NULL_STRING ? null : result;
     }
+
+    String behaviorClass = constraintsClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+    if (language != null) {
+      result = fqName;
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+          try {
+            result = (String) method.invoke(null);
+          } catch (IllegalAccessException e) {
+            LOG.error(e);
+          } catch (InvocationTargetException e) {
+            LOG.error(e);
+          }
+        } catch (NoSuchMethodException e) {
+          //it's absolutely ok
+        }
+      }
+      myDefaultConceptNames.putIfAbsent(fqName, result == null ? NULL_STRING : result);
+    }
+    return result;
   }
 
   private Method getCanBeAncestorMethod(SNode parentNode, IOperationContext context) {

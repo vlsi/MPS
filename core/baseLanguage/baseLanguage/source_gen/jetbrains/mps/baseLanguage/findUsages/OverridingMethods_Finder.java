@@ -17,6 +17,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 public class OverridingMethods_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
 
+  public OverridingMethods_Finder() {
+  }
+
   public String getDescription() {
     return "Overriding Methods";
   }

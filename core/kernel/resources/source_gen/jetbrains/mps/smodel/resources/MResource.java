@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource {
+public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource, IMResource {
   public MResource() {
     super();
   }

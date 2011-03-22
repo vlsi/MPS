@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +22,7 @@ import java.util.List;
 import javax.swing.tree.TreeNode;
 
 public class AddToNewFavoritesList_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/addFavoritesList.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(AddToNewFavoritesList_Action.class.getResource("addFavoritesList.png"));
   protected static Log log = LogFactory.getLog(AddToNewFavoritesList_Action.class);
 
   public AddToNewFavoritesList_Action() {

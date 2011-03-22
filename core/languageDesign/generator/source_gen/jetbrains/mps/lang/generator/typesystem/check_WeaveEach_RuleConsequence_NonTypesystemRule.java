@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,15 +24,13 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
     SNode template = SLinkOperations.getTarget(weaveEach, "template", false);
     if ((template == null)) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993044375", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993044375", null, errorTarget);
       }
     } else if (!(ListSequence.fromList(SLinkOperations.getTargets(template, "parameter", true)).isEmpty())) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "Cannot weave template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046864", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "Cannot weave template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046864", null, errorTarget);
       }
     } else {
       final SNode templateApplicableConcept = SLinkOperations.getTarget(template, "applicableConcept", false);
@@ -45,9 +42,8 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
       SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       if (!(SModelUtil.isAssignableConcept(nodeConcept, templateApplicableConcept))) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "template is not applicable to " + NT, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046908", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "template is not applicable to " + NT, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046908", null, errorTarget);
         }
       }
     }

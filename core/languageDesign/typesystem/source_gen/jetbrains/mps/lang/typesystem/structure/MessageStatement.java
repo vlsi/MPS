@@ -4,20 +4,25 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import java.util.List;
 
 public interface MessageStatement extends INodeAdapter {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MessageStatement";
   public static final String NODE_TO_REPORT = "nodeToReport";
-  public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
   public static final String FOREIGN_MESSAGE_SOURCE = "foreignMessageSource";
+  public static final String HELGINS_INTENTION = "helginsIntention";
 
   public Expression getNodeToReport();
   public void setNodeToReport(Expression node);
-  public TypesystemIntention getHelginsIntention();
-  public void setHelginsIntention(TypesystemIntention node);
   public MessageTarget getMessageTarget();
   public void setMessageTarget(MessageTarget node);
   public Expression getForeignMessageSource();
   public void setForeignMessageSource(Expression node);
+  public int getHelginsIntentionsCount();
+  public Iterator<TypesystemIntention> helginsIntentions();
+  public List<TypesystemIntention> getHelginsIntentions();
+  public void addHelginsIntention(TypesystemIntention node);
+  public void insertHelginsIntention(TypesystemIntention prev, TypesystemIntention node);
 }

@@ -434,7 +434,7 @@
             <property name="name" nameId="tpck.1169194664001" value="prefix" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5830155447075815611" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5830155447075815613">
-              <property name="value" nameId="tpee.1070475926801" value="PatternVar_" />
+              <property name="value" nameId="tpee.1070475926801" value="patternVar_" />
             </node>
           </node>
         </node>

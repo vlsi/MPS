@@ -59,28 +59,34 @@
     <nodeInfo nodeId="1207236230215" fileName="AssertStatement_DataFlow.java" startLine="17" startPosition="86" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207236262406" fileName="AssertStatement_DataFlow.java" startLine="18" startPosition="108" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227267854690" fileName="AssertStatement_DataFlow.java" startLine="20" startPosition="89" endLine="21" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227267854701" fileName="AssertStatement_DataFlow.java" startLine="23" startPosition="92" endLine="24" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365227504094167442" fileName="AssertStatement_DataFlow.java" startLine="23" startPosition="102" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3427990840445114500" fileName="AssertStatement_DataFlow.java" startLine="26" startPosition="96" endLine="27" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227267854688" fileName="AssertStatement_DataFlow.java" startLine="19" startPosition="109" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227267854699" fileName="AssertStatement_DataFlow.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2365227504094135855" fileName="AssertStatement_DataFlow.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3427990840445114498" fileName="AssertStatement_DataFlow.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1227267854689" fileName="AssertStatement_DataFlow.java" startLine="20" startPosition="89" endLine="21" endPosition="112" />
-    <scopeInfo nodeId="1227267854700" fileName="AssertStatement_DataFlow.java" startLine="23" startPosition="92" endLine="24" endPosition="115" />
+    <scopeInfo nodeId="2365227504094135856" fileName="AssertStatement_DataFlow.java" startLine="23" startPosition="102" endLine="24" endPosition="53" />
     <scopeInfo nodeId="3427990840445114499" fileName="AssertStatement_DataFlow.java" startLine="26" startPosition="96" endLine="27" endPosition="119" />
+    <scopeInfo nodeId="2365227504094135855" fileName="AssertStatement_DataFlow.java" startLine="22" startPosition="5" endLine="25" endPosition="5">
+      <varInfo nodeId="2365227504094135858" varName="intention" />
+    </scopeInfo>
     <scopeInfo nodeId="1207236134084" fileName="AssertStatement_DataFlow.java" startLine="15" startPosition="102" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1207236273505">
     <nodeInfo nodeId="1207236283772" fileName="ReportErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207236289544" fileName="ReportErrorStatement_DataFlow.java" startLine="16" startPosition="108" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227267168679" fileName="ReportErrorStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227267206232" fileName="ReportErrorStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365227504094167459" fileName="ReportErrorStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3427990840445114488" fileName="ReportErrorStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227267156619" fileName="ReportErrorStatement_DataFlow.java" startLine="17" startPosition="109" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227267185109" fileName="ReportErrorStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2365227504094167457" fileName="ReportErrorStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3427990840445114486" fileName="ReportErrorStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1227267156620" fileName="ReportErrorStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" />
-    <scopeInfo nodeId="1227267185110" fileName="ReportErrorStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" />
+    <scopeInfo nodeId="2365227504094167458" fileName="ReportErrorStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" />
     <scopeInfo nodeId="3427990840445114487" fileName="ReportErrorStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" />
+    <scopeInfo nodeId="2365227504094167457" fileName="ReportErrorStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
+      <varInfo nodeId="2365227504094167461" varName="intention" />
+    </scopeInfo>
     <scopeInfo nodeId="1207236273507" fileName="ReportErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1207236565081">
@@ -249,28 +255,34 @@
     <nodeInfo nodeId="1227268322973" fileName="WarningStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268322977" fileName="WarningStatement_DataFlow.java" startLine="16" startPosition="108" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268310858" fileName="WarningStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227268310869" fileName="WarningStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365227504094167469" fileName="WarningStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3427990840445114512" fileName="WarningStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268310856" fileName="WarningStatement_DataFlow.java" startLine="17" startPosition="109" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227268310867" fileName="WarningStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2365227504094167467" fileName="WarningStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3427990840445114510" fileName="WarningStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1227268310857" fileName="WarningStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" />
-    <scopeInfo nodeId="1227268310868" fileName="WarningStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" />
+    <scopeInfo nodeId="2365227504094167468" fileName="WarningStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" />
     <scopeInfo nodeId="3427990840445114511" fileName="WarningStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" />
+    <scopeInfo nodeId="2365227504094167467" fileName="WarningStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
+      <varInfo nodeId="2365227504094167471" varName="intention" />
+    </scopeInfo>
     <scopeInfo nodeId="1227268308386" fileName="WarningStatement_DataFlow.java" startLine="15" startPosition="102" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1227268382689">
     <nodeInfo nodeId="1227268391676" fileName="InfoStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268391680" fileName="InfoStatement_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268391686" fileName="InfoStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227268391697" fileName="InfoStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365227504094167449" fileName="InfoStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3427990840445114477" fileName="InfoStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227268391684" fileName="InfoStatement_DataFlow.java" startLine="17" startPosition="109" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227268391695" fileName="InfoStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2365227504094167447" fileName="InfoStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3427990840445113091" fileName="InfoStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1227268391685" fileName="InfoStatement_DataFlow.java" startLine="18" startPosition="89" endLine="19" endPosition="112" />
-    <scopeInfo nodeId="1227268391696" fileName="InfoStatement_DataFlow.java" startLine="21" startPosition="92" endLine="22" endPosition="115" />
+    <scopeInfo nodeId="2365227504094167448" fileName="InfoStatement_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="53" />
     <scopeInfo nodeId="3427990840445113092" fileName="InfoStatement_DataFlow.java" startLine="24" startPosition="96" endLine="25" endPosition="119" />
+    <scopeInfo nodeId="2365227504094167447" fileName="InfoStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
+      <varInfo nodeId="2365227504094167451" varName="intention" />
+    </scopeInfo>
     <scopeInfo nodeId="1227268382691" fileName="InfoStatement_DataFlow.java" startLine="15" startPosition="102" endLine="26" endPosition="5" />
   </root>
 </debugInfo>

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -41,21 +40,19 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
         SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, context);
         if (sss.isError()) {
           {
-            BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
             errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757728", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757728", null, errorTarget);
           }
         } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
           String name = target.getName();
           {
-            BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
             errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
               "" :
               " " + name
-            )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757760", intentionProvider, errorTarget);
+            )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757760", null, errorTarget);
             {
               SNode _foreign_34989546 = sss.getReferenceValidatorNode();
               if (_foreign_34989546 != null) {

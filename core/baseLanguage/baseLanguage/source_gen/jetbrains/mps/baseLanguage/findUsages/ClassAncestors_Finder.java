@@ -15,6 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class ClassAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
 
+  public ClassAncestors_Finder() {
+  }
+
   public boolean isVisible(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }

@@ -177,13 +177,12 @@ import jetbrains.mps.util.CollectionUtil;
         }
         Set<SModelDescriptor> skip = new HashSet<SModelDescriptor>();
         for (SModelDescriptor modelDescriptor : myChangedModels) {
-          Set<IModule> modules = modelDescriptor.getModules();
-          for (IModule module : modules) {
-            if (myChangedModules.contains(module)) {
-              ReloadSession.LOG.debug("Skip model " + modelDescriptor + " since we want to reload " + module);
-              skip.add(modelDescriptor);
-              break;
-            }
+          IModule module = modelDescriptor.getModule();
+
+          if (myChangedModules.contains(module)) {
+            ReloadSession.LOG.debug("Skip model " + modelDescriptor + " since we want to reload " + module);
+            skip.add(modelDescriptor);
+            break;
           }
         }
         Set<Generator> generators = CollectionUtil.filter(Generator.class, myChangedModules);

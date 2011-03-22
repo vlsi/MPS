@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,22 +26,19 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
       final SNode UIOT_typevar_2459884175397753215 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = oexp;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753205", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753205", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753198", true), (SNode) new typeof_IterateContentsVariable_InferenceRule.QuotationClass_dmnw7g_a0a1a1a0().createNode(typeCheckingContext.getRepresentative(UIOT_typevar_2459884175397753215), typeCheckingContext), false, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = icvar;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753220", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753220", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753227", true), (SNode) new typeof_IterateContentsVariable_InferenceRule.QuotationClass_dmnw7g_a0a2a1a0().createNode(typeCheckingContext.getRepresentative(UIOT_typevar_2459884175397753215), typeCheckingContext), _info_12389875345);
       }
     } else {
       SNode uio = SLinkOperations.getTarget(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), "allows", false);
       {
         SNode _nodeToCheck_1029348928467 = icvar;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397578629", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397578629", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397578626", true), (SNode) new typeof_IterateContentsVariable_InferenceRule.QuotationClass_dmnw7g_a0a1a0b0a().createNode(uio, typeCheckingContext), _info_12389875345);
       }
     }

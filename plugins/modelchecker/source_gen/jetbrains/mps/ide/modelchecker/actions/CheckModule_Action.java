@@ -4,8 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +19,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class CheckModule_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide.modelchecker"), true);
+  private static final Icon ICON = new ImageIcon(CheckModule_Action.class.getResource("modelChecker.png"));
   protected static Log log = LogFactory.getLog(CheckModule_Action.class);
 
   private String moduleType;

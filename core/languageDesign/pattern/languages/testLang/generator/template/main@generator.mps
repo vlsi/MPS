@@ -265,7 +265,7 @@
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1563914226484903766">
-                                <property name="value" nameId="tpee.1070475926801" value="PatternVar_" />
+                                <property name="value" nameId="tpee.1070475926801" value="patternVar_" />
                               </node>
                             </node>
                           </node>
@@ -374,7 +374,7 @@
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1563914226484925051">
-                                <property name="value" nameId="tpee.1070475926801" value="PatternVar_" />
+                                <property name="value" nameId="tpee.1070475926801" value="patternVar_" />
                               </node>
                             </node>
                           </node>
@@ -423,7 +423,7 @@
                                       </node>
                                     </node>
                                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1563914226484968055">
-                                      <property name="value" nameId="tpee.1070475926801" value="PatternVar_" />
+                                      <property name="value" nameId="tpee.1070475926801" value="patternVar_" />
                                     </node>
                                   </node>
                                 </node>

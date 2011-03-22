@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -21,16 +20,14 @@ public class typeof_SimpleBuilderDeclaration_InferenceRule extends AbstractInfer
     if (!(SPropertyOperations.getBoolean(declaration, "isAbstract"))) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(declaration, "creator", true);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "3816167865390950068", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "3816167865390950068", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "3816167865390950060", true), (SNode) SLinkOperations.getTarget(declaration, "type", true), false, _info_12389875345);
       }
     }
     if ((SLinkOperations.getTarget(declaration, "extends", false) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = declaration;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8969040284892462967", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8969040284892462967", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(declaration, "type", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(declaration, "extends", false), "type", true), false, _info_12389875345);
       }
     }

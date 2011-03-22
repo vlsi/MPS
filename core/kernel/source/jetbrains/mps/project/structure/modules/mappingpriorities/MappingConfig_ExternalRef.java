@@ -55,7 +55,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean isIncomplete() {
-    if (myGenerator == null) return false;
+    if (myGenerator == null) return true;
     return myMappingConfig.isIncomplete();
   }
 

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,7 +21,7 @@ import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class SolutionProperties_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/solutionProperties.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(SolutionProperties_Action.class.getResource("solutionProperties.png"));
   protected static Log log = LogFactory.getLog(SolutionProperties_Action.class);
 
   public SolutionProperties_Action() {

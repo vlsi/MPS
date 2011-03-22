@@ -16,7 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import java.awt.Frame;
 import com.intellij.openapi.application.ModalityState;
 
@@ -70,7 +70,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           String[] titles = new String[]{"Disk", "Memory"};
-          new ModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference", true, titles).showDialog();
+          new OldModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference", true, titles).showDialog();
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {

@@ -3,12 +3,12 @@
   <unitInfo fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" />
   <unitInfo fileName="GenerateIntentionDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints" />
   <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints" />
-  <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
+  <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="IntentionContextParamReference_parameterDeclaration_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_parameterDeclaration_ReferentConstraint" />
   <root nodeId="1227089946706">
-    <nodeInfo nodeId="1227089964162" fileName="IntentionDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227089959349" fileName="IntentionDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <nodeInfo nodeId="1227089964162" fileName="IntentionDeclaration_Constraints.java" startLine="11" startPosition="112" endLine="12" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227089959349" fileName="IntentionDeclaration_Constraints.java" startLine="11" startPosition="112" endLine="12" endPosition="119" />
   </root>
   <root nodeId="6263518417926802262">
     <nodeInfo nodeId="6263518417926802265" fileName="GenerateIntentionDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

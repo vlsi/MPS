@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,9 +27,8 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
       SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(statementList);
       if (firstStatement != constructorInvocation) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3133930811460325358", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3133930811460325358", null, errorTarget);
         }
       }
     }

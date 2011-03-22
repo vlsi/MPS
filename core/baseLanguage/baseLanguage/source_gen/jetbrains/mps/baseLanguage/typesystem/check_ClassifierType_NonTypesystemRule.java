@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -34,9 +33,8 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", null, errorTarget);
     }
     Map<SNode, SNode> typeParamsToArgs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     {
@@ -58,9 +56,8 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
     }
     for (SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new check_ClassifierType_NonTypesystemRule.QuotationClass_i2c76q_a0b0a0a0e0a().createNode(typeCheckingContext), "descriptor", false), false)))) {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", null, errorTarget);
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
@@ -84,17 +81,15 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
           if ((SLinkOperations.getTarget(typeVar, "bound", true) != null)) {
             SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(SLinkOperations.getTarget(typeVar, "bound", true), typeParamsToArgs);
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, concreteBound))) {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157450", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157450", null, errorTarget);
             }
           }
           for (SNode auxBound : SLinkOperations.getTargets(typeVar, "auxBounds", true)) {
             SNode concreteBound = RulesFunctions_BaseLanguage.concretifyType(auxBound, typeParamsToArgs);
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, concreteBound))) {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157495", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157495", null, errorTarget);
             }
           }
         }

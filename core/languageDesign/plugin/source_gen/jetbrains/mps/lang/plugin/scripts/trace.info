@@ -21,8 +21,10 @@
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="21" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$1" />
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$2" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="156" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
+  <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript$1" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="63" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$QuotationClass_ft56mw_a0a0d0e0a0a0b0a" />
+  <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$1" />
   <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="18" startPosition="28" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$1" />
@@ -205,6 +207,16 @@
     <unitInfo nodeId="3822000666564662783" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="117" startPosition="123" endLine="125" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$2" />
     <unitInfo nodeId="3822000666564662820" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="138" startPosition="121" endLine="146" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$2" />
     <unitInfo nodeId="3822000666564607326" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="72" startPosition="95" endLine="89" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$2" />
+  </root>
+  <root nodeId="4470409037200904672">
+    <nodeInfo nodeId="4470409037201191088" fileName="UpdateActionIcons_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4470409037200947794" fileName="UpdateActionIcons_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4470409037200947804" fileName="UpdateActionIcons_MigrationScript.java" startLine="34" startPosition="115" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4470409037200947825" fileName="UpdateActionIcons_MigrationScript.java" startLine="35" startPosition="95" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="4470409037201191068" fileName="UpdateActionIcons_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="146" />
+    <scopeInfo nodeId="4470409037200904675" fileName="UpdateActionIcons_MigrationScript.java" startLine="33" startPosition="52" endLine="36" endPosition="56">
+      <varInfo nodeId="4470409037200947795" varName="icon" />
+    </scopeInfo>
   </root>
   <root nodeId="4729897692521570243">
     <nodeInfo nodeId="4729897692521570249" fileName="NewKeymaps_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

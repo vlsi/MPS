@@ -6,7 +6,6 @@ import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -16,7 +15,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.testbench.GenerationCycle.Cycle;
+import jetbrains.mps.testbench.GenerationCycle.ModuleCycle;
 import jetbrains.mps.util.AbstractClassLoader;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -167,19 +166,11 @@ public class ProjectTestHelper {
   }
 
   private void generate(MPSProject project) {
-    GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
+    List<ModuleCycle> order = myGenerationCycle.computeGenerationOrder(project);
 
-    List<Cycle> order = myGenerationCycle.computeGenerationOrder(project);
-
-    if (System.getProperty("per.root.generation") != null) {
-      boolean perRootGeneration = Boolean.parseBoolean(System.getProperty("per.root.generation"));
-      GenerationSettings.getInstance().setParallelGenerator(perRootGeneration);
-      GenerationSettings.getInstance().setStrictMode(perRootGeneration);
-      Testbench.LOG.info("Per-root generation set to " + perRootGeneration);
-    }
-
-    for (Cycle cycle : order) {
-      doGenerate(gm, cycle);
+    boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
+    for (ModuleCycle moduleCycle : order) {
+      doGenerate(moduleCycle, isParallel);
     }
   }
 
@@ -222,9 +213,9 @@ public class ProjectTestHelper {
     });
   }
 
-  private boolean doGenerate(GeneratorManager gm, Cycle cycle) {
+  private boolean doGenerate(ModuleCycle moduleCycle, boolean parallel) {
     // do generate
-    cycle.generate(gm, myGenerationHandler, myMessageHandler);
+    moduleCycle.generate(myGenerationHandler, myMessageHandler, parallel);
     boolean generationOk = myMessageHandler.getGenerationErrors().isEmpty();
     return generationOk;
   }

@@ -7,9 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,39 +20,56 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     return this.createCollection_i85no5_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_i85no5_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_i85no5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a");
+    editorCell.addEditorCell(this.createProperty_i85no5_a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_i85no5_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_i85no5_a_0");
     editorCell.addEditorCell(this.createConstant_i85no5_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_i85no5_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_i85no5_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_i85no5_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_i85no5_e0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_i85no5_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_i85no5_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_i85no5_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_i85no5_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_i85no5_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_i85no5_c1a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_i85no5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Model reference:");
     editorCell.setCellId("Constant_i85no5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_i85no5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_i85no5_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+  private EditorCell createConstant_i85no5_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
+    editorCell.setCellId("Constant_i85no5_a1a");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_i85no5_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_i85no5_e0");
+  private EditorCell createConstant_i85no5_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_i85no5_b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -61,13 +78,13 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_i85no5_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_i85no5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("uuid");
-    provider.setNoTargetText("<no uuid>");
+    provider.setRole("qualifiedName");
+    provider.setNoTargetText("<no qualifiedName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_uuid");
+    editorCell.setCellId("property_qualifiedName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,13 +96,13 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_i85no5_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_i85no5_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("qualifiedName");
-    provider.setNoTargetText("<no qualifiedName>");
+    provider.setRole("uuid");
+    provider.setNoTargetText("<no uuid>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_qualifiedName");
+    editorCell.setCellId("property_uuid");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

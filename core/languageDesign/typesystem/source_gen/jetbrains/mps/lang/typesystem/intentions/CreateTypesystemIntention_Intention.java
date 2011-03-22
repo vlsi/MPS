@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -50,7 +51,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
     if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.typesystem.structure.MessageStatement", "helginsIntention")))) {
       return false;
     }
-    return SLinkOperations.getTarget(node, "helginsIntention", true) == null;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -59,7 +60,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
     SNode quickFixCall = new CreateTypesystemIntention_Intention.QuotationClass_nynfqi_a0a2a7().createNode(quickFixNode);
 
     SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
-    SLinkOperations.setTarget(node, "helginsIntention", quickFixCall, true);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
   }
 
   public String getLocationString() {

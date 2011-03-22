@@ -19,7 +19,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.build.ant.generation.GeneratorWorker;
+import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Test;

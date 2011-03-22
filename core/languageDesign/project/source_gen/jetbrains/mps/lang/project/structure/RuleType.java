@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum RuleType {
-  strictly_before("<", "strictly_before"),
-  strictly_together("=", "strictly_together"),
-  before_or_together("<=", "before_or_together");
+  strictly_before("before (<)", "strictly_before"),
+  strictly_together("together with (=)", "strictly_together"),
+  before_or_together("before or together (<=)", "before_or_together");
 
   private String myName;
   private String myValue;

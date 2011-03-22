@@ -26,7 +26,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
     <classNode dependClassName="com.intellij.openapi.ide.CopyPasteManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.AnnotationColors" />
@@ -51,7 +52,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotation.HighlightRevisionSubcolumn" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -61,6 +61,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="java.awt.Graphics2D" />
@@ -79,7 +80,6 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
@@ -204,26 +204,23 @@
     <classNode extendsClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.VcsRevisionRange" file="VcsRevisionRange.java">
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
-    <classNode dependClassName="java.util.Date" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.ShortVcsRevisionNumber" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />

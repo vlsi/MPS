@@ -13,7 +13,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,25 +23,24 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
   public check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(conceptDeclaration, GlobalScope.getInstance());
-    if (SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
+  public void applyRule(final SNode abstractConceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(abstractConceptDeclaration, GlobalScope.getInstance());
+    if (SConceptPropertyOperations.getBoolean(abstractConceptDeclaration, "abstract")) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(conceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return;
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptDeclaration, "Concept " + SPropertyOperations.getString(conceptDeclaration, "name") + " doesn't have behavior implementing " + methodDeclarations, "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "8258695653169430090", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractConceptDeclaration, "Concept " + SPropertyOperations.getString(abstractConceptDeclaration, "name") + " doesn't have behavior implementing " + methodDeclarations, "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "8258695653169430090", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+    return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

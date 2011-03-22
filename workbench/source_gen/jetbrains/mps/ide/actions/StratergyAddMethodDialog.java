@@ -18,14 +18,10 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.HashMap;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.baseLanguage.icons.Icons;
@@ -76,7 +72,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     }
   }
 
-  public List<BaseMethodDeclaration> collectImplementableMethods() {
+  public List<SNode> collectImplementableMethods() {
     return myCollectStrategy.collectImplementableMethods(myContainerStrategy.getMainContainer());
   }
 
@@ -87,46 +83,43 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     return result;
   }
 
-  protected int compareMethods(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
+  protected int compareMethods(SNode m1, SNode m2) {
     if (!(mySortByNameAction.isSelected())) {
-      SNode n1 = m1.getNode();
-      int i1 = myContainerStrategy.getContainer(n1).getIndexOfChild(n1);
-      SNode n2 = m2.getNode();
-      int i2 = myContainerStrategy.getContainer(n2).getIndexOfChild(n2);
+      int i1 = myContainerStrategy.getContainer(m1).getIndexOfChild(m1);
+      int i2 = myContainerStrategy.getContainer(m2).getIndexOfChild(m2);
       return i1 - i2;
     } else {
-      String n1 = "" + m1.getName();
-      String n2 = "" + m2.getName();
+      String n1 = "" + SPropertyOperations.getString(m1, "name");
+      String n2 = "" + SPropertyOperations.getString(m2, "name");
       return n1.compareTo(n2);
     }
   }
 
-  public List<BaseMethodDeclaration> doAddMethods(List<BaseAddMethodDialog.MethodTreeNode> methodNodes) {
-    List<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
+  public List<SNode> doAddMethods(List<BaseAddMethodDialog.MethodTreeNode> methodNodes) {
+    List<SNode> result = new ArrayList<SNode>();
     List<SNode> methods = new ArrayList<SNode>();
     for (BaseAddMethodDialog.MethodTreeNode methodNode : methodNodes) {
-      SNode method = methodNode.getMethod().getNode();
+      SNode method = methodNode.getMethod();
       methods.add(method);
     }
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = myContainerStrategy.doAddMethods(methods);
     for (StratergyAddMethodDialog.ContainerStrategy.MethodAddition added : addedMethods) {
-      BaseMethodDeclaration addedMethodAdapter = added.getResult();
-      SNode addedMethod = addedMethodAdapter.getNode();
-      SModel sourceModel = added.getSource().getNode().getModel();
-      if (SModelStereotype.isStubModelStereotype(sourceModel.getStereotype())) {
+      SNode addedMethod = added.getResult();
+      SNode sourceMethod = added.getSource();
+      if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(sourceMethod).getStereotype())) {
         setVariableNames(addedMethod, MapSequence.fromMap(new HashMap<String, Integer>()));
       }
-      result.add(added.getResult());
-      myAdditionStrategy.updateMethod(added.getSource().getNode(), added.getResult().getNode());
+      result.add(addedMethod);
+      myAdditionStrategy.updateMethod(sourceMethod, addedMethod);
     }
     return result;
   }
 
-  public INodeAdapter getContainer(BaseMethodDeclaration bm) {
-    return myContainerStrategy.getContainer(BaseAdapter.fromAdapter(bm)).getAdapter();
+  public SNode getContainer(SNode bm) {
+    return myContainerStrategy.getContainer(bm);
   }
 
-  protected int compareContainers(INodeAdapter c1, INodeAdapter c2) {
+  protected int compareContainers(SNode c1, SNode c2) {
     return myContainerStrategy.compareContainers(c1, c2);
   }
 
@@ -138,21 +131,21 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     public SNode getMainContainer();
     public SNode getContainer(SNode methodDecl);
     public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> nodes);
-    public int compareContainers(INodeAdapter c1, INodeAdapter c2);
+    public int compareContainers(SNode c1, SNode c2);
     public static class MethodAddition {
-      private BaseMethodDeclaration mySource;
-      private BaseMethodDeclaration myResult;
+      private SNode mySource;
+      private SNode myResult;
 
-      public MethodAddition(BaseMethodDeclaration source, BaseMethodDeclaration result) {
+      public MethodAddition(SNode source, SNode result) {
         mySource = source;
         myResult = result;
       }
 
-      public BaseMethodDeclaration getSource() {
+      public SNode getSource() {
         return mySource;
       }
 
-      public BaseMethodDeclaration getResult() {
+      public SNode getResult() {
         return myResult;
       }
     }
@@ -166,7 +159,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
   }
 
   public static interface CollectMethodsStrategy {
-    public List<BaseMethodDeclaration> collectImplementableMethods(SNode container);
+    public List<SNode> collectImplementableMethods(SNode container);
   }
 
   private class SortByNameAction extends ToggleAction {

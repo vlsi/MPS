@@ -102,9 +102,10 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                 TypesEditorChecker.this,
                 editorContext
               );
-              QuickFixProvider intentionProvider = errorReporter.getIntentionProvider();
+              List<QuickFixProvider> intentionProviders = errorReporter.getIntentionProviders();
               final SNode quickFixNode = errorNode.o1;
-              if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
+              if (intentionProviders.size() == 1 && intentionProviders.get(0) != null && intentionProviders.get(0).isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
+                QuickFixProvider intentionProvider = intentionProviders.get(0);
                 if (!instantIntentionApplied) {
                   final QuickFix_Runtime intention = intentionProvider.getQuickFix();
                   if (intention != null) {
@@ -159,12 +160,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                   }
                 }
               } else {
-                if (intentionProvider != null) {
-                  intentionProvider.setIsError(status == MessageStatus.ERROR);
+                for (QuickFixProvider intentionProvider : intentionProviders) {
+                  if (intentionProvider != null) {
+                    intentionProvider.setIsError(status == MessageStatus.ERROR);
+                  }
+                  message.addIntentionProvider(intentionProvider);
                 }
-                message.setIntentionProvider(intentionProvider);
+                messages.add(message);
               }
-              messages.add(message);
             }
           }
         }

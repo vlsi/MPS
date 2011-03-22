@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -37,9 +36,8 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
     if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IntegerType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ShortType"))) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Primitive argument of switch should be byte, short, char or int", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9035995549588681125", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Primitive argument of switch should be byte, short, char or int", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9035995549588681125", null, errorTarget);
         }
       }
       return;
@@ -55,9 +53,8 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Argument of switch should be enum of primitive", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3306910260423168223", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Argument of switch should be enum of primitive", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3306910260423168223", null, errorTarget);
     }
   }
 

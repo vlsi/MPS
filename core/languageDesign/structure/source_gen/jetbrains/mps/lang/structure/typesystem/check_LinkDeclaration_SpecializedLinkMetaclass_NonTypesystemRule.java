@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,9 +22,8 @@ public class check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule ex
     SNode specializedLink = SLinkOperations.getTarget(link, "specializedLink", false);
     if (specializedLink != null && SPropertyOperations.getString_def(specializedLink, "metaClass", "reference") != SPropertyOperations.getString_def(link, "metaClass", "reference")) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(link, "link '" + SPropertyOperations.getString(link, "role") + "' hase incorrect metaclass - specialized link '" + SPropertyOperations.getString(specializedLink, "role") + "' is of '" + SPropertyOperations.getString_def(specializedLink, "metaClass", "reference") + "' metaclass", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2854075155749508006", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(link, "link '" + SPropertyOperations.getString(link, "role") + "' hase incorrect metaclass - specialized link '" + SPropertyOperations.getString(specializedLink, "role") + "' is of '" + SPropertyOperations.getString_def(specializedLink, "metaClass", "reference") + "' metaclass", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2854075155749508006", null, errorTarget);
       }
     }
   }

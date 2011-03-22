@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -68,8 +67,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-              BaseQuickFixProvider intentionProvider = null;
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, intentionProvider);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
             }
@@ -90,8 +88,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               mpt = mpt_iterator.next();
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                BaseQuickFixProvider intentionProvider = null;
-                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, intentionProvider);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                 typeCheckingContext.createLessThanInequation((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, false, _info_12389875345);
               }
@@ -108,9 +105,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       errorMsg = ": not an interface or an abstract class";
     }
     {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742336483", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742336483", null, errorTarget);
       HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
     }
   }

@@ -18,8 +18,8 @@ public class WarningStatement_DataFlow extends DataFlowBuilder {
     if ((SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "messageTarget", true));
     }
-    if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
+    for (SNode intention : SLinkOperations.getTargets(_context.getNode(), "helginsIntention", true)) {
+      _context.getBuilder().build((SNode) intention);
     }
     if ((SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true));

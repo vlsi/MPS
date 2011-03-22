@@ -1283,13 +1283,8 @@
                                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="562290131853835905">
                                         <property name="value" nameId="tpee.1070475926801" value="  " />
                                       </node>
-                                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="562290131853835917">
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="562290131853835907">
-                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="562290131853835891" resolveInfo="el" />
-                                        </node>
-                                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="562290131853835921">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SModelReference%dgetSModelId()%cjetbrains%dmps%dsmodel%dSModelId" resolveInfo="getSModelId" />
-                                        </node>
+                                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="562290131853835907">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="562290131853835891" resolveInfo="el" />
                                       </node>
                                     </node>
                                   </node>

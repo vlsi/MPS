@@ -24,7 +24,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public class PathProvider {
   private static final Logger LOG = Logger.getLogger(PathProvider.class);
@@ -52,7 +55,7 @@ public class PathProvider {
     if (o instanceof SModel) {
       SModel model = (SModel) o;
       res.add(new PathItem(PathItemRole.ROLE_MODEL, model));
-      o = getModelModule(model);
+      o = model.getModelDescriptor().getModule();
     }
 
     if (o instanceof IModule) {
@@ -88,24 +91,5 @@ public class PathProvider {
     if (node.getParent() != null) {
       appendNodePathThroughNamedConcepts(path, node.getParent());
     }
-  }
-
-  public static IModule getModelModule(SModel model) {
-    Set<IModule> owningModules = model.getModelDescriptor().getModules();
-    if (owningModules.isEmpty()) {
-      return null;
-    }
-
-    if (owningModules.size() > 1) {
-      Iterator<IModule> it = owningModules.iterator();
-      while (it.hasNext()) {
-        IModule m = it.next();
-        if (m instanceof Solution && "outputModels".equals(((Solution) m).getModuleDescriptor().getNamespace())) {
-          it.remove();
-        }
-      }
-    }
-
-    return owningModules.iterator().next();
   }
 }

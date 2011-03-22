@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.AnnotationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -35,9 +34,8 @@ public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesys
     }
     boolean goodTarget = AnnotationUtil.accept(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(targetAi, "value", true)).first(), "value", true), SNodeOperations.as(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"));
     if (!(goodTarget)) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "wrong target of annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8695552310380242272", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "wrong target of annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8695552310380242272", null, errorTarget);
     }
   }
 

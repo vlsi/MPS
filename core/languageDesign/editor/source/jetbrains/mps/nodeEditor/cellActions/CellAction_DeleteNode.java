@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;

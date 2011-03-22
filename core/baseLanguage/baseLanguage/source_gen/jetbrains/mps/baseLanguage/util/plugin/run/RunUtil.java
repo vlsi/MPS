@@ -14,18 +14,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.make.script.IResult;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import com.intellij.openapi.application.ModalityState;
 
 public class RunUtil {
   public RunUtil() {
   }
 
-  public static void makeBeforeRun(Project project, SNode... nodes) {
-    makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
+  public static boolean makeBeforeRun(Project project, SNode... nodes) {
+    return makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
   }
 
-  public static void makeBeforeRun(final Project project, List<SNode> nodes) {
+  public static boolean makeBeforeRun(final Project project, List<SNode> nodes) {
     final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -41,9 +44,16 @@ public class RunUtil {
       });
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
-      ProjectOperationContext context = ProjectOperationContext.get(project);
-      new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
+      final ProjectOperationContext context = ProjectOperationContext.get(project);
+      final IResult[] result = new IResult[1];
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          result[0] = new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
+        }
+      }, ModalityState.NON_MODAL);
+      return result[0].isSucessful();
       // <node> 
     }
+    return true;
   }
 }

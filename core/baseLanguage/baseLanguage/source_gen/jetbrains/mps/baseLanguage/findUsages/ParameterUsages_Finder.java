@@ -17,6 +17,9 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 public class ParameterUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder");
 
+  public ParameterUsages_Finder() {
+  }
+
   public String getDescription() {
     return "Parameter Usages";
   }

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ModuleDependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.project.structure.ModuleDependency";
   public static final String REEXPORT = "reexport";
-  public static final String MODULE = "module";
+  public static final String MODULE_REF = "moduleRef";
 
   public ModuleDependency(SNode node) {
     super(node);
@@ -25,12 +25,12 @@ public class ModuleDependency extends BaseConcept {
     this.setBooleanProperty(ModuleDependency.REEXPORT, value);
   }
 
-  public Module getModule() {
-    return (Module) this.getReferent(Module.class, ModuleDependency.MODULE);
+  public ModuleReference getModuleRef() {
+    return (ModuleReference) this.getChild(ModuleReference.class, ModuleDependency.MODULE_REF);
   }
 
-  public void setModule(Module node) {
-    super.setReferent(ModuleDependency.MODULE, node);
+  public void setModuleRef(ModuleReference node) {
+    super.setChild(ModuleDependency.MODULE_REF, node);
   }
 
   public static ModuleDependency newInstance(SModel sm, boolean init) {

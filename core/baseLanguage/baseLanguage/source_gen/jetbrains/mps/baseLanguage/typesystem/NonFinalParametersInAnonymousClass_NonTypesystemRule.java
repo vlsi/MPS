@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,9 +23,8 @@ public class NonFinalParametersInAnonymousClass_NonTypesystemRule extends Abstra
     if ((SLinkOperations.getTarget(parameterReference, "variableDeclaration", false) != null) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(parameterReference, "variableDeclaration", false), "isFinal"))) {
       if (!(ParameterReference_Behavior.call_isParameterOfThisMethod_1240394425603(parameterReference))) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameterReference, "Parameter must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1240395578471", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameterReference, "Parameter must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1240395578471", null, errorTarget);
         }
       }
     }

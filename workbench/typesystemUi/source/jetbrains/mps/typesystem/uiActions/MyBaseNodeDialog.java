@@ -50,11 +50,9 @@ public class
     myMainComponent.setResizeWeight(0.8);
 
     myType = type;
-    final BaseAdapter[] adapter = new BaseAdapter[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModel = myType.getModel();
-        adapter[0] = myType.getAdapter();
       }
     });
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -72,7 +70,7 @@ public class
       }
     });
     myError = error;
-    supertypesView.showItemInHierarchy(adapter[0], operationContext);
+    supertypesView.showItemInHierarchy(myType, operationContext);
   }
 
   private static String getTitle(final SNode node) {

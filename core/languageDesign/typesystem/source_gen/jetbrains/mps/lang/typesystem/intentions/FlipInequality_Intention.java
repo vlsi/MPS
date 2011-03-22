@@ -57,7 +57,7 @@ public class FlipInequality_Intention extends BaseIntention implements Intention
     ListSequence.fromList(SLinkOperations.getTargets(newNode, "beforeGroups", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)));
     SPropertyOperations.set(newNode, "checkOnly", "" + SPropertyOperations.getBoolean(node, "checkOnly"));
     SLinkOperations.setTarget(newNode, "errorString", SLinkOperations.getTarget(node, "errorString", true), true);
-    SLinkOperations.setTarget(newNode, "helginsIntention", SLinkOperations.getTarget(node, "helginsIntention", true), true);
+    ListSequence.fromList(SLinkOperations.getTargets(newNode, "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)));
     SLinkOperations.setTarget(newNode, "inequationGroup", SLinkOperations.getTarget(node, "inequationGroup", true), true);
     SPropertyOperations.set(newNode, "inequationPriority", "" + SPropertyOperations.getInteger_def(node, "inequationPriority", "0"));
     SPropertyOperations.set(newNode, "label", SPropertyOperations.getString(node, "label"));

@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -55,8 +54,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     }
     {
       SNode _nodeToCheck_1029348928467 = methodCall;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1126608406759381109", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1126608406759381109", 0, null);
       typeCheckingContext.createLessThanInequation((SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0_0().createNode(currentClassifier, typeCheckingContext), (SNode) new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a41a0().createNode(methodClassifier, typeCheckingContext), false, _info_12389875345);
     }
   }

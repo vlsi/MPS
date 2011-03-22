@@ -244,6 +244,15 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public boolean tryRead(final Runnable r) {
+    if(canRead()) {
+      r.run();
+      return true;
+    }
+
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      return false;
+    }
+
     return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         if (getReadLock().tryLock()) {
@@ -261,6 +270,15 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   public boolean tryWrite(final Runnable r) {
+    if(canWrite()) {
+      r.run();
+      return true;
+    }
+
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      return false;
+    }
+
     if (!getWriteLock().tryLock()) {
       return false;
     }
@@ -290,6 +308,14 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public <T> T tryRead(final Computable<T> c) {
+    if(canRead()) {
+      return c.compute();
+    }
+
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      return null;
+    }
+
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
       public T compute() {
         if (getReadLock().tryLock()) {
@@ -306,6 +332,10 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   public boolean tryWriteInCommand(final Runnable r, Project project) {
+    if(myDistributedLocksMode) {
+      return false;
+    }
+
     final boolean[] res = new boolean[]{false};
 
     //todo this is a hack but it works

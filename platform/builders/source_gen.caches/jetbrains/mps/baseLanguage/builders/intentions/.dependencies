@@ -35,5 +35,14 @@
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.builders.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+  </dependency>
 </dependenciesRoot>
 

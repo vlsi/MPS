@@ -18,16 +18,18 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.Set;
 
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
+
+  @Nullable
+  Collection<SModelReference> collectModels(@NotNull SModelRoot root);
 
   void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
 

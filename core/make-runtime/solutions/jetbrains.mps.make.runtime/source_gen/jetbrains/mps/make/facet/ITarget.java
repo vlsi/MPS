@@ -11,7 +11,8 @@ public interface ITarget {
   public ITarget.Name getName();
   public boolean requiresInput();
   public boolean producesOutput();
-  public Class<? extends IResource> expectedResources();
+  public Iterable<Class<? extends IResource>> expectedInput();
+  public Iterable<Class<? extends IResource>> expectedOutput();
   public Iterable<ITarget.Name> before();
   public Iterable<ITarget.Name> notBefore();
   public Iterable<ITarget.Name> after();

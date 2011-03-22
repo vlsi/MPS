@@ -83,7 +83,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         repository.registerModelDescriptor(descriptor, module);
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
-        SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);
+        LOG.assertLog(oldDescr.getModule() == module, descriptor.getSModelReference().toString() + " :: " + oldDescr.getModule().getModuleFqName() + " --->> " + module.getModuleFqName());
       }
 
       descriptor.setModelRootManager(this);
@@ -155,7 +155,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   protected abstract Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location);
 
   @Deprecated
-  protected void updateModel(StubLocation location, SModel model) {}
+  protected void updateModel(StubLocation location, SModel model) {
+  }
 
   protected void updateModel(StubLocation location, SModel model, StubSource source) {
     updateModel(location, model);

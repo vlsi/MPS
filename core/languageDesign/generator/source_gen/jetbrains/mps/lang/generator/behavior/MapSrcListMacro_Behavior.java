@@ -17,7 +17,7 @@ public class MapSrcListMacro_Behavior {
       GeneratedMatchingPattern pattern_wn5chh_a0a = new MapSrcListMacro_Behavior.Pattern_wn5chh_a0a0a0a1();
       SNode coercedNode_wn5chh_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_wn5chh_a0a);
       if (coercedNode_wn5chh_a0a != null) {
-        return ((SNode) pattern_wn5chh_a0a.getFieldValue("PatternVar_concept"));
+        return ((SNode) pattern_wn5chh_a0a.getFieldValue("patternVar_concept"));
       } else {
       }
     }
@@ -25,7 +25,7 @@ public class MapSrcListMacro_Behavior {
   }
 
   public static class Pattern_wn5chh_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public static SNode PatternVar_concept;
+    /*package*/ SNode patternVar_concept;
 
     public Pattern_wn5chh_a0a0a0a1() {
     }
@@ -50,7 +50,7 @@ public class MapSrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wn5chh_a0a0a0a.getConceptFqName()))) {
                 return false;
               }
-              PatternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferent("concept");
             }
           }
         }
@@ -64,13 +64,13 @@ public class MapSrcListMacro_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_concept".equals(fieldName)) {
-        return PatternVar_concept;
+      if ("patternVar_concept".equals(fieldName)) {
+        return patternVar_concept;
       }
       return null;
     }

@@ -197,9 +197,11 @@ public class BreakpointsUiComponent implements ProjectComponent {
     EditorCell cell = foundCell;
     while (cell != null) {
       SNode node = cell.getSNode();
-      DebugInfo debugInfo = traceInfoCache.get(node.getModel().getModelDescriptor());
-      if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
-        break;
+      if (node != null) {
+        DebugInfo debugInfo = traceInfoCache.get(node.getModel().getModelDescriptor());
+        if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
+          break;
+        }
       }
       cell = cell.getParent();
     }
@@ -207,7 +209,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
   }
 
 
-  private void toggleBreakpoint(SNode node, boolean handleRemoveBreakpoint) {
+  private void toggleBreakpoint(@NotNull SNode node, boolean handleRemoveBreakpoint) {
     SNode root = node.getContainingRoot();
     if (root == null) return;
     boolean hasBreakpoint = false;

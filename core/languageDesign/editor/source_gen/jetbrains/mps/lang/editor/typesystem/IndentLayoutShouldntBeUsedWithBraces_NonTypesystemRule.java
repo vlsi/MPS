@@ -10,10 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -25,11 +25,13 @@ public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends Abst
       SNode collection = SNodeOperations.cast(editorCellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(collection, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") && SPropertyOperations.getBoolean(collection, "usesBraces")) {
         {
-          BaseQuickFixProvider intentionProvider = null;
-          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.editor.typesystem.fix_Braces_QuickFix", false);
-          intentionProvider.putArgument("collectionCell", collection);
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorCellModel, "Braces shouldn't be used with indent layout.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4575971948964608918", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorCellModel, "Braces shouldn't be used with indent layout.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4575971948964608918", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.editor.typesystem.fix_Braces_QuickFix", false);
+            intentionProvider.putArgument("collectionCell", collection);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }
@@ -37,9 +39,8 @@ public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends Abst
       SNode collection = SNodeOperations.cast(editorCellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(collection, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") && SPropertyOperations.getBoolean(collection, "usesBraces")) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorCellModel, "Braces shouldn't be used with indent layout.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4575971948964608943", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorCellModel, "Braces shouldn't be used with indent layout.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4575971948964608943", null, errorTarget);
         }
       }
     }

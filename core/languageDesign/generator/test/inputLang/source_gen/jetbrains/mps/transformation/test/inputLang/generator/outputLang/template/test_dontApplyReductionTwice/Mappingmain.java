@@ -72,6 +72,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return Collections.emptySet();
   }
 
+  public boolean isTopPriority() {
+    return false;
+  }
+
   public class RootMappingRule0 implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }

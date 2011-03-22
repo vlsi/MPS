@@ -68,7 +68,7 @@ public class ForeignReferencesConvertor {
 
   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {
     SModelDescriptor sModelDescriptor =
-      SModelRepository.getInstance().getModelDescriptor(foreingModelReference.getSModelFqName().withoutStereotype());
+      SModelRepository.getInstance().getModelDescriptor(foreingModelReference.getSModelFqName().withStereotype(""));
     return sModelDescriptor;
   }
 

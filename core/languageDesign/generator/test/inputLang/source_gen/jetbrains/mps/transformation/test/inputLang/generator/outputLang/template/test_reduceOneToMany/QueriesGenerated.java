@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_3893401255414132234(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -33,7 +34,7 @@ public class QueriesGenerated {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
 
-  public static TemplateModel getDescriptor() {
-    return new TemplateModelImpl();
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }

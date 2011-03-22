@@ -48,12 +48,9 @@ public class TypeSystemStateTreeNode extends MPSTreeNode {
   }
 
   public void goToRule() {
-    Object object = getUserObject();
-    if (!(object instanceof Block)) {
-      return;
+    if (myRuleId != null && myRuleModel != null) {
+      GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(myRuleModel, myRuleId));
     }
-    Block block = (Block) object;
-    GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(block.getNodeModel(), block.getNodeId()));
   }
 
   public void goToNode() {

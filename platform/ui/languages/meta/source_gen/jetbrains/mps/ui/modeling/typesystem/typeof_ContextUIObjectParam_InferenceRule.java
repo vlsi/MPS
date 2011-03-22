@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -28,8 +27,7 @@ public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInference
       SNode ctpl = HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(ctx, "uiObject", false), SNodeOperations.getModel(ctx), GlobalScope.getInstance());
       {
         SNode _nodeToCheck_1029348928467 = param;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739191439", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739191439", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739191436", true), (SNode) SLinkOperations.getTarget(SNodeOperations.as(ctpl, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "runtimeType", true), _info_12389875345);
       }
       if ((ctpl != null)) {
@@ -37,9 +35,8 @@ public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInference
       }
     }
     {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "No context available", "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739321115", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "No context available", "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739321115", null, errorTarget);
     }
   }
 

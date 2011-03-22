@@ -77,4 +77,9 @@ public class ScopePositionInfo extends PositionInfo {
   public void removeVarInfo(VarInfo varInfo) {
     MapSequence.fromMap(myVars).removeKey(varInfo.getVarName());
   }
+
+  @Override
+  public int compareTo(PositionInfo p) {
+    return super.compareTo(p);
+  }
 }

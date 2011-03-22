@@ -40,7 +40,6 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -53,6 +52,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -142,8 +142,8 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<DefaultProcessHandler>() {
-              public DefaultProcessHandler invoke() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E1<DefaultProcessHandler, ExecutionException>() {
+              public DefaultProcessHandler invoke() throws ExecutionException {
                 try {
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
                   final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
@@ -153,8 +153,8 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
                       file.value = file.value.child(Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });
-                  if (javaRunParameters.getMake() || !(file.value.exists())) {
-                    RunUtil.makeBeforeRun(project_22042010, node);
+                  if (!(file.value.exists())) {
+                    throw new ExecutionException("Ant file " + file.value.getAbsolutePath() + " does not exist.");
                   }
                   Process process = runner.run(file.value);
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
@@ -246,11 +246,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultBuildLanguageApplication_Configuration.this.getNode();
-    if (make) {
-      RunUtil.makeBeforeRun(project, node);
-    }
-    return node;
+    return DefaultBuildLanguageApplication_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
@@ -267,6 +263,10 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }
+  }
+
+  public boolean make(Project project) {
+    return RunUtil.makeBeforeRun(project, getNode());
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultBuildLanguageApplication_Configuration> {

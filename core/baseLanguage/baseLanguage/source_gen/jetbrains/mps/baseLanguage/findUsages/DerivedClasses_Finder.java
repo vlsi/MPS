@@ -16,6 +16,9 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 public class DerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
 
+  public DerivedClasses_Finder() {
+  }
+
   public String getDescription() {
     return "Derived Classes";
   }

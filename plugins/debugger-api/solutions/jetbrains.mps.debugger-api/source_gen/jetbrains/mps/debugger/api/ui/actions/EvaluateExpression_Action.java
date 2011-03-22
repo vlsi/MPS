@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class EvaluateExpression_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(EvaluateExpression_Action.class.getResource("icons/evaluate.png"));
+  private static final Icon ICON = new ImageIcon(EvaluateExpression_Action.class.getResource("evaluate.png"));
   protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 
   public EvaluateExpression_Action() {

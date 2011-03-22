@@ -15,11 +15,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.VcsMergeVersion;
@@ -51,7 +50,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (file == null) {
       return false;
     }
-    return manager.getVcsFor(file) != null;
+    return manager.getVcsFor(file) != null && Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params)).isNotEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -85,12 +84,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<File> backupFiles = Sequence.fromIterable(Sequence.fromArray(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))).sort(new ISelector<File, Comparable<?>>() {
-        public Comparable<?> select(File f) {
-          return f.lastModified();
-        }
-      }, false);
-      for (File backupFile : Sequence.fromIterable(backupFiles)) {
+      for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
         try {
           SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsMergeVersion.values());
           ReRunMergeFromBackup_Action.this.doMerge(models[VcsMergeVersion.MINE.ordinal()], models[VcsMergeVersion.BASE.ordinal()], models[VcsMergeVersion.REPOSITORY.ordinal()], _params);
@@ -111,16 +105,16 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     }
   }
 
+  private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
+    return ModelUtils.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
+  }
+
   private void doMerge(SModel mine, SModel base, SModel repository, final Map<String, Object> _params) {
     SModel mineModel = ReRunMergeFromBackup_Action.this.whichMineModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), mine, _params);
     if (mineModel == null) {
       return;
     }
     VcsHelper.showMergeDialog(base, mineModel, repository, ReRunMergeFromBackup_Action.this.getModelFile(_params), ((Project) MapSequence.fromMap(_params).get("project")));
-  }
-
-  private File[] getBackupFiles(final Map<String, Object> _params) {
-    return ModelUtils.findZipFileNameForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getAbsolutePath());
   }
 
   private String getHash(SModel model, final Map<String, Object> _params) {
