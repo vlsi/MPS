@@ -10,8 +10,8 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.runConfigurations.runtime.OutputRedirector;
-import java.io.File;
 import org.apache.commons.lang.StringUtils;
+import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class UnitTestExecutionController {
@@ -42,10 +42,10 @@ public class UnitTestExecutionController {
     }
 
     String workingDir = myConfigurationRunParameters.getWorkingDirectory();
-    myCurrentProcess = OutputRedirector.redirect(new Junit_Command().setJrePath(myConfigurationRunParameters.getAlternativeJRE()).setVirtualMachineParameter(myConfigurationRunParameters.getVMParameters()).setWorkingDirectory(new File((StringUtils.isEmpty(workingDir) ?
-      System.getProperty("user.home") :
-      workingDir
-    ))).setTests(myWhatToTest).createProcess(), new UnitTestProcessListener(myDispatcher));
+    myCurrentProcess = OutputRedirector.redirect(new Junit_Command().setJrePath(myConfigurationRunParameters.getAlternativeJRE()).setVirtualMachineParameter(myConfigurationRunParameters.getVMParameters()).setWorkingDirectory((StringUtils.isNotEmpty(workingDir) ?
+      new File(workingDir) :
+      null
+    )).setTests(myWhatToTest).createProcess(), new UnitTestProcessListener(myDispatcher));
 
     if (myCurrentProcess == null) {
       myState.terminate();
