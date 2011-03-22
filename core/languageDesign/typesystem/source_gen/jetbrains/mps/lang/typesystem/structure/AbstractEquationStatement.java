@@ -5,6 +5,8 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -62,12 +64,24 @@ public class AbstractEquationStatement extends Statement {
     super.setChild(AbstractEquationStatement.ERROR_STRING, node);
   }
 
-  public TypesystemIntention getHelginsIntention() {
-    return (TypesystemIntention) this.getChild(TypesystemIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
+  public int getHelginsIntentionsCount() {
+    return this.getChildCount(AbstractEquationStatement.HELGINS_INTENTION);
   }
 
-  public void setHelginsIntention(TypesystemIntention node) {
-    super.setChild(AbstractEquationStatement.HELGINS_INTENTION, node);
+  public Iterator<TypesystemIntention> helginsIntentions() {
+    return this.children(TypesystemIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
+  }
+
+  public List<TypesystemIntention> getHelginsIntentions() {
+    return this.getChildren(TypesystemIntention.class, AbstractEquationStatement.HELGINS_INTENTION);
+  }
+
+  public void addHelginsIntention(TypesystemIntention node) {
+    this.addChild(AbstractEquationStatement.HELGINS_INTENTION, node);
+  }
+
+  public void insertHelginsIntention(TypesystemIntention prev, TypesystemIntention node) {
+    this.insertChild(prev, AbstractEquationStatement.HELGINS_INTENTION, node);
   }
 
   public static AbstractEquationStatement newInstance(SModel sm, boolean init) {

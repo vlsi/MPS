@@ -40,6 +40,7 @@ public class EquationInfo {
   private Set<String> mySkippedRules = null;
 
   private QuickFixProvider myIntentionProvider;
+  private List<QuickFixProvider> myIntentionProviders;
 
   private int myInequationPriority;
   private boolean myIsStrong = false;
@@ -56,7 +57,7 @@ public class EquationInfo {
     myRuleModel = ruleModel;
     myRuleId = ruleId;
     myInequationPriority = inequationPriority;
-    myIntentionProvider = intentionProvider;
+    addIntentionProvider(intentionProvider);
   }
 
   @Deprecated
@@ -78,7 +79,12 @@ public class EquationInfo {
     myRuleModel = pattern.myRuleModel;
     myRuleId = pattern.myRuleId;
     myInequationPriority = pattern.myInequationPriority;
-    myIntentionProvider = pattern.myIntentionProvider;
+    if (pattern.myIntentionProviders != null) {
+      if (myIntentionProviders == null) {
+        myIntentionProviders = new ArrayList<QuickFixProvider>(pattern.myIntentionProviders);
+      }
+      myIntentionProviders.addAll(pattern.myIntentionProviders);
+    }
   }
 
   public String getErrorString() {
@@ -105,9 +111,31 @@ public class EquationInfo {
     return myInequationPriority;
   }
 
-  public QuickFixProvider getIntentionProvider() {
-    return myIntentionProvider;
+  public void setIntentionProvider(QuickFixProvider intentionProvider) {
+    addIntentionProvider(intentionProvider);
   }
+
+  public void addIntentionProvider(QuickFixProvider intentionProvider) {
+    if (myIntentionProviders == null) {
+      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
+    }
+    myIntentionProviders.add(intentionProvider);
+  }
+
+  public QuickFixProvider getIntentionProvider() {
+    if (myIntentionProviders == null) return null;
+    if (myIntentionProviders.isEmpty()) return null;
+    return myIntentionProviders.get(0);
+  }
+
+  public List<QuickFixProvider> getIntentionProviders() {
+    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
+    if (myIntentionProviders != null) {
+      result.addAll(myIntentionProviders);
+    }
+    return result;
+  }
+
 
   public void pushOuterRuleId(String modelId, String ruleId) {
     if (myOuterRulesIds == null) {

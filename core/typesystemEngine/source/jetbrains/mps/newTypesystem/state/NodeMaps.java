@@ -179,13 +179,13 @@ public class NodeMaps {
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
     IErrorReporter errorReporter;
     SNode nodeWithError = null;
-    QuickFixProvider intentionProvider = null;
+    List<QuickFixProvider> intentionProviders = new ArrayList<QuickFixProvider>();
     String errorString = null;
     String ruleModel = null;
     String ruleId = null;
     if (info != null) {
       nodeWithError = info.getNodeWithError();
-      intentionProvider = info.getIntentionProvider();
+      intentionProviders = info.getIntentionProviders();
       errorString = info.getErrorString();
       ruleModel = info.getRuleModel();
       ruleId = info.getRuleId();
@@ -196,7 +196,9 @@ public class NodeMaps {
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
         right, " and ", left, "", ruleModel, ruleId);
     }
-    errorReporter.setIntentionProvider(intentionProvider);
+    for (QuickFixProvider quickFixProvider : intentionProviders) {
+      errorReporter.setIntentionProvider(quickFixProvider);
+    }
     if (info != null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
@@ -217,7 +219,9 @@ public class NodeMaps {
     } else {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
-    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
+      errorReporter.setIntentionProvider(quickFixProvider);
+    }
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
@@ -235,7 +239,9 @@ public class NodeMaps {
     } else {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
-    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    for (QuickFixProvider provider : equationInfo.getIntentionProviders()) {
+      errorReporter.addIntentionProvider(provider);
+    }
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }

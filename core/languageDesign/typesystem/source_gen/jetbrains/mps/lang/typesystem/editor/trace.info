@@ -266,13 +266,13 @@
     <scopeInfo nodeId="4197825331980780995" fileName="ReplacementRuleReference_Editor.java" startLine="81" startPosition="111" endLine="82" endPosition="77" />
   </root>
   <root nodeId="6005837154535148805">
-    <nodeInfo nodeId="6005837154535148820" fileName="AbstractComparableStatement_Editor.java" startLine="291" startPosition="60" endLine="292" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6005837154535148824" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="12" endLine="294" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6005837154535148822" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="10" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6005837154535148815" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="106" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="6005837154535148819" fileName="AbstractComparableStatement_Editor.java" startLine="291" startPosition="60" endLine="292" endPosition="24" />
-    <scopeInfo nodeId="6005837154535148823" fileName="AbstractComparableStatement_Editor.java" startLine="293" startPosition="12" endLine="294" endPosition="25" />
-    <scopeInfo nodeId="6005837154535148814" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="106" endLine="295" endPosition="5" />
+    <nodeInfo nodeId="6005837154535148820" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="60" endLine="291" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005837154535148824" fileName="AbstractComparableStatement_Editor.java" startLine="292" startPosition="12" endLine="293" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005837154535148822" fileName="AbstractComparableStatement_Editor.java" startLine="292" startPosition="10" endLine="294" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6005837154535148815" fileName="AbstractComparableStatement_Editor.java" startLine="289" startPosition="106" endLine="294" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="6005837154535148819" fileName="AbstractComparableStatement_Editor.java" startLine="290" startPosition="60" endLine="291" endPosition="24" />
+    <scopeInfo nodeId="6005837154535148823" fileName="AbstractComparableStatement_Editor.java" startLine="292" startPosition="12" endLine="293" endPosition="25" />
+    <scopeInfo nodeId="6005837154535148814" fileName="AbstractComparableStatement_Editor.java" startLine="289" startPosition="106" endLine="294" endPosition="5" />
   </root>
   <root nodeId="8124453027370845380">
     <nodeInfo nodeId="2885635457272643352" fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="253" startPosition="112" endLine="254" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

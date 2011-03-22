@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -40,7 +42,7 @@ public class DefaultEditorMessage implements EditorMessage {
   private String myMessage;
   private EditorMessageOwner myOwner;
   private SNode myNode;
-  private QuickFixProvider myIntentionProvider;
+  private List<QuickFixProvider> myIntentionProviders;
   private MessageStatus myStatus = MessageStatus.OK;
 
   private Map<Object, Object> myUserObjects;
@@ -179,12 +181,29 @@ public class DefaultEditorMessage implements EditorMessage {
     return false;
   }
 
-  public QuickFixProvider getIntentionProvider() {
-    return myIntentionProvider;
+  public void setIntentionProvider(QuickFixProvider intentionProvider) {
+    addIntentionProvider(intentionProvider);
   }
 
-  public void setIntentionProvider(QuickFixProvider intentionProvider) {
-    myIntentionProvider = intentionProvider;
+  public void addIntentionProvider(QuickFixProvider intentionProvider) {
+    if (myIntentionProviders == null) {
+      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
+    }
+    myIntentionProviders.add(intentionProvider);
+  }
+
+  public QuickFixProvider getIntentionProvider() {
+    if (myIntentionProviders == null) return null;
+    if (myIntentionProviders.isEmpty()) return null;
+    return myIntentionProviders.get(0);
+  }
+
+  public List<QuickFixProvider> getIntentionProviders() {
+    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
+    if (myIntentionProviders != null) {
+      result.addAll(myIntentionProviders);
+    }
+    return result;
   }
 
   @Override

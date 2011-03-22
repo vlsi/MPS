@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-daidxun65zcru14tqf0wphqb0luynsi">
+<dependencies version="2" modelHash="-60uar1ymasbkoqor879pomimeqgi0hr">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -9,8 +9,8 @@
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-ejbdezq95krckkba7z2r05rgzof675w" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="dtoru6ul5rw8nb2upmtg5fy8p4lzbry" />
   <dep model="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" hash="8raww79da1yy6w1p48nc5vlt6ba739r" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-4mjqwmxn8jjho3kcvqhkco4winssiyi" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-daidxun65zcru14tqf0wphqb0luynsi" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-aiwtyr1ind37k1crk9wet1mdhz575o9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-60uar1ymasbkoqor879pomimeqgi0hr" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="ahta0qr7bb3tbvdg2lp7zs9s95h29wh" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8a37qw6mic9vz4k1bshlihre9cibmxp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
@@ -213,10 +213,10 @@
   <source id="1175243271669" name="TypesystemDescriptor" hash="9u39ydsi74gejsfuvftd17yt6ha58s8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1175518443988" name="Assert_to_statement" hash="5c3ya58dpqzdk75cb5ur0r0ul2ymbfs">
+  <source id="1175518443988" name="Assert_to_statement" hash="-93p8eklyad1ofssvuafcm4qvnorcjmg">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1175518627457" name="ReportError_to_Statement" hash="-77evvut811apmjmjsjqlslbz48b2gqp">
+  <source id="1175518627457" name="ReportError_to_Statement" hash="-cvem08lq2xz1757m1y37y42mnyh9idu">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1175595141160" name="TypeCheckerAccess_to_Expression" hash="-51ltojuy8cputepjuywzj9vnodu5ck0">
@@ -306,13 +306,13 @@
   <source id="1205766139542" name="WhenConcreteVariableReference_to_Expression" hash="-2fu8l6e7cv1931h96gggbeuk2qljv9l">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1207055706967" name="Warning_to_Statement" hash="8nq1ibjio7qaxf2zm14ibr1eer2s5wg">
+  <source id="1207055706967" name="Warning_to_Statement" hash="7lf4t5wasbsrb3ok4xi4xttzr9nud0c">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1212764718794" name="reduce_ChildTypeRestrictionReference" hash="-bo3m1pd1unbza806ph3nmew50ammiaa">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1214924416321" name="AbstractEquation_to_Statement" hash="-5fia4t9pq9p7hqh2tik1yh7hfl11047">
+  <source id="1214924416321" name="AbstractEquation_to_Statement" hash="9g5sum3mt5m3emy5o05bpom2m18ztju">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1215528394348" name="Inequations" hash="7zmvqup8qsp7ub9wpqgh4eutcgtemtn">
@@ -390,7 +390,7 @@
   <source id="1224237349195" name="insertTypeContextIntoCoerce" hash="-52c0ih4a7c8j2c74cbinf5srck09gf8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1224761337864" name="Info_to_statement" hash="-d9hcfgs1f4pv3qgratgnhnda9pupk7">
+  <source id="1224761337864" name="Info_to_statement" hash="djdnmuc5dcced99dvt4wsu6s2sac9q2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1225969463548" name="WarningToStatement_special" hash="dhculkrz6rivjw6j1whumxpvt9nksci">

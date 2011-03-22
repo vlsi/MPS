@@ -179,8 +179,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     List<EditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
     for (EditorMessage message : messages) {
-      QuickFixProvider intentionProvider = message.getIntentionProvider();
-      if (intentionProvider != null) {
+      List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
+      for (QuickFixProvider intentionProvider : intentionProviders) {
         Intention intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
         if (intention != null) {
           if (!childOnly || intention.isAvailableInChildNodes()) {

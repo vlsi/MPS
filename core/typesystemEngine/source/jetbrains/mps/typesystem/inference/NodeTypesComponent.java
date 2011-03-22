@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.logging.Logger;
@@ -406,7 +407,9 @@ public class NodeTypesComponent implements INodeTypesComponent {
           String errorString = iErrorReporter.reportError();
           SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
             iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
-          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+          for (QuickFixProvider provider : iErrorReporter.getIntentionProviders()) {
+            reporter.addIntentionProvider(provider);
+          }
           reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
           List<IErrorReporter> errorReporterList = toAdd.get(node);
           if (errorReporterList == null) {

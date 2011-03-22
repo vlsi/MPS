@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 public interface EditorMessage {
   int getStart(EditorComponent editorComponent);
@@ -54,6 +56,8 @@ public interface EditorMessage {
   boolean sameAs(EditorMessage message);
 
   QuickFixProvider getIntentionProvider();
+
+  List<QuickFixProvider> getIntentionProviders();
 
   public void putUserObject(Object key, Object value);
   public Object getUserObject(Object key);
