@@ -136,7 +136,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static Set<String> getParentsNames(String conceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames();
+    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getParentsNames();
   }
 
   public Set<String> _getParentsNames(final String conceptFqName) {
@@ -180,7 +180,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
+    return ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).structure().isAssignableTo(toConceptFqName);
   }
 
   public Set<String> _getAncestorsNames(final String conceptFqName) {
@@ -188,7 +188,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static Set<String> getAncestorsNames(final String conceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getAncestorsNames();
+    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getAncestorsNames();
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {

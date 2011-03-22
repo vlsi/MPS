@@ -14,7 +14,7 @@ public class ConceptUtils {
     result.add(conceptName);
     ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
     for (String parent : parents) {
-      result.addAll(conceptRegistry.getConceptDescriptor(parent).getAncestorsNames());
+      result.addAll(conceptRegistry.getConceptDescriptor(parent).structure().getAncestorsNames());
     }
 
     return ImmutableSet.copyOf(result);

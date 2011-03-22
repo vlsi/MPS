@@ -12,18 +12,15 @@ import java.util.Map;
 import static com.google.common.collect.Maps.newHashMap;
 
 public class ConceptRegistry implements ApplicationComponent {
-  private final ConceptDescriptorProvider mixedDescriptorProvided = new MixedDescriptorProvider(
-    new CompiledDescriptorProvider(),
-    new InterpretedDescriptorProvider()
-  );
-  private final ConceptDescriptorProvider checkingDescriptorProvider = new CheckingDescriptorProvider(
-    new InterpretedDescriptorProvider(),
-    new CompiledDescriptorProvider()
+  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
+  private static final DescriptorProvider<StructureDescriptor> INTERPRETED_STRUCTURE = new InterpretedStructureProvider();
+
+  private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
+    INTERPRETED_STRUCTURE,
+    INTERPRETED_BEHAVIOR
   );
 
-//  private final ConceptDescriptorProvider conceptDescriptorProvider = checkingDescriptorProvider;
-  private final ConceptDescriptorProvider conceptDescriptorProvider = mixedDescriptorProvided;
-//  private final ConceptDescriptorProvider conceptDescriptorProvider = new InterpretedDescriptorProvider();
+  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_CONCEPT_DESCRIPTOR;
 
   private final Map<String, ConceptDescriptor> descriptors = newHashMap();
 
@@ -55,14 +52,14 @@ public class ConceptRegistry implements ApplicationComponent {
     if (descriptors.containsKey(fqName)) {
       return descriptors.get(fqName);
     } else {
-      ConceptDescriptor descriptor = conceptDescriptorProvider.getConceptDescriptor(fqName);
+      ConceptDescriptor descriptor = conceptDescriptorProvider.getDescriptor(fqName);
       descriptors.put(fqName, descriptor);
       return descriptor;
     }
   }
 
   public ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
-    return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullConceptDescriptor.INSTANCE;
+    return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
   }
 
   public ConceptDescriptor getConceptDescriptor(SNode node) {

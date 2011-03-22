@@ -45,15 +45,15 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void initNode(SNode node) {
-    ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).initNode(node);
+    ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().initNode(node);
   }
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
   public static <T> T staticInvoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
   public static <T> T newStaticInvoke(Object behaviorObject, Class nodeClass, Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
@@ -70,6 +70,6 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 }

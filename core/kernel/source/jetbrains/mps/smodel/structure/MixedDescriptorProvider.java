@@ -2,17 +2,17 @@ package jetbrains.mps.smodel.structure;
 
 import com.google.common.collect.ImmutableList;
 
-public class MixedDescriptorProvider implements ConceptDescriptorProvider {
-  private final ImmutableList<ConceptDescriptorProvider> providers;
+public class MixedDescriptorProvider<T> extends DescriptorProvider<T> {
+  private final ImmutableList<DescriptorProvider<T>> providers;
 
-  public MixedDescriptorProvider(ConceptDescriptorProvider... providers) {
+  public MixedDescriptorProvider(DescriptorProvider<T>... providers) {
     this.providers = ImmutableList.copyOf(providers);
   }
 
   @Override
-  public ConceptDescriptor getConceptDescriptor(String fqName) {
-    for (ConceptDescriptorProvider provider : providers) {
-      ConceptDescriptor descriptor = provider.getConceptDescriptor(fqName);
+  public T getDescriptor(String fqName) {
+    for (DescriptorProvider<T> provider : providers) {
+      T descriptor = provider.getDescriptor(fqName);
 
       if (descriptor != null) {
         return descriptor;
