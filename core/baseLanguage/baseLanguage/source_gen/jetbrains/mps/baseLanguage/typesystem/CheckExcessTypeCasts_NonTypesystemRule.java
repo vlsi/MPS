@@ -20,7 +20,7 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(expr, "type", true), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), false)) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), SLinkOperations.getTarget(expr, "type", true), false)) {
       {
         BaseQuickFixProvider intentionProvider = null;
         intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix", false);
