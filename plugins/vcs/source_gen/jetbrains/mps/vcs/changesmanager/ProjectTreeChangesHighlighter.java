@@ -381,7 +381,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           }
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              if (SNodeOperations.getModel(node) == null) {
+              if (check_ybywwq_a0a0a2a5a0a0a0j(SNodeOperations.getModel(node)) == null) {
                 return;
               }
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
@@ -531,6 +531,13 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
       default:
         return null;
     }
+  }
+
+  private static SModelDescriptor check_ybywwq_a0a0a2a5a0a0a0j(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 
   private static FileStatus check_ybywwq_a0a0a0a2a01(ModelChangesManager checkedDotOperand) {
