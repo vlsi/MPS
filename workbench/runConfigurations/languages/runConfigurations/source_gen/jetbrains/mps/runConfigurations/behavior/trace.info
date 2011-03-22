@@ -6,6 +6,7 @@
   <unitInfo fileName="CommandType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandType_Behavior" />
   <unitInfo fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ComplexRunConfigurationExecutor_Behavior" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfiguration_Behavior" />
+  <unitInfo fileName="_Replacer_a0a0c0d.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior._Replacer_a0a0c0d" />
   <unitInfo fileName="_Replacer_a0a0b0d.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior._Replacer_a0a0b0d" />
   <unitInfo fileName="ExecuteCommandMethodDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteCommandMethodDeclaration_Behavior$QuotationClass_g8cr5j_a2a0a0" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="72" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
@@ -14,11 +15,12 @@
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="103" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0e" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="121" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0m" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="123" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior$QuotationClass_5aznw1_a1a0a4" />
-  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
-  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
-  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
-  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="CommandBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandBuilderExpression_Behavior" />
   <unitInfo fileName="ProcessBuilderExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessBuilderExpression_Behavior" />
+  <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
+  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
+  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="104" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior$QuotationClass_5aznw1_a0a0d" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
@@ -33,7 +35,7 @@
   <unitInfo fileName="CommandParameterDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandParameterDeclaration_Behavior" />
   <unitInfo fileName="ReportErrorStatement_Behavior.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ReportErrorStatement_Behavior" />
   <unitInfo fileName="ExecuteCommandMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteCommandMethodDeclaration_Behavior" />
-  <unitInfo fileName="IGeneratedToClass_Behavior.java" startLine="16" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.IGeneratedToClass_Behavior" />
+  <unitInfo fileName="IGeneratedToClass_Behavior.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.IGeneratedToClass_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="19" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior" />

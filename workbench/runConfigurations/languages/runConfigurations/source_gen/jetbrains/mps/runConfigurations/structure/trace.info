@@ -41,6 +41,7 @@
   <unitInfo fileName="ComplexRunConfigurationExecutor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor" />
   <unitInfo fileName="RunConfiguration.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
   <unitInfo fileName="CommandParameterReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandParameterReference" />
+  <unitInfo fileName="RedirectOutputExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RedirectOutputExpression" />
   <unitInfo fileName="ProcessBuilderKeyPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ProcessBuilderKeyPart" />
   <unitInfo fileName="CommandParameterAssignment.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandParameterAssignment" />
   <unitInfo fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ReportErrorStatement" />

@@ -27,6 +27,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="unitTest-runtime" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

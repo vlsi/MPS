@@ -54,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_CommandParameterReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_ReportConfigurationErrorStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_RedirectOutputExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.PersistentConfigurationIsPersistentConfiguration_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_RunConfigurationExecutor_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_CommandParameterAssignment_InferenceRule" />
@@ -335,6 +336,24 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.typesystem.typeof_RedirectOutputExpression_InferenceRule" file="typeof_RedirectOutputExpression_InferenceRule.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>

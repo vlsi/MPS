@@ -1254,6 +1254,9 @@
                         </node>
                       </node>
                     </node>
+                    <node role="workingDirectory" roleId="uhxm.6472627752525599075" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="6440565759883376990">
+                      <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="3107334613900744434" resolveInfo="workingDirectory" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1324,6 +1327,9 @@
                     <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="2339523472236168897">
                       <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="3107334613900744445" resolveInfo="programParameter" />
                     </node>
+                  </node>
+                  <node role="workingDirectory" roleId="uhxm.6472627752525599075" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="6440565759883376991">
+                    <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="3107334613900744434" resolveInfo="workingDirectory" />
                   </node>
                 </node>
               </node>
@@ -2299,6 +2305,12 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="debugger" roleId="uhxm.2064548906020947554" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6440565759883324972">
+      <node role="operand" roleId="tpee.1197027771414" type="uhxm.CommandReferenceExpression" typeId="uhxm.4371737370140112219" id="6440565759883324971">
+        <link role="command" roleId="uhxm.4371737370140112220" targetNodeId="3107334613900744127" resolveInfo="java" />
+      </node>
+      <node role="operation" roleId="tpee.1197027833540" type="uhxm.CommandDebuggerOperation" typeId="uhxm.4371737370140136071" id="6440565759883324976" />
     </node>
   </root>
 </model>

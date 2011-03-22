@@ -21,13 +21,14 @@
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.lib.JavaNode_Command" file="JavaNode_Command.java">
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.lib.Java_Command" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.lib.Java_Command" file="Java_Command.java">

@@ -79,6 +79,20 @@
     <scopeInfo nodeId="4762811064051417930" fileName="DefaultExecutionResult.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="4762811064051417884" fileName="DefaultExecutionResult.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult" />
   </root>
+  <root nodeId="6440565759883376994">
+    <nodeInfo nodeId="6440565759883377535" fileName="OutputRedirector.java" startLine="12" startPosition="91" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6440565759883377544" fileName="OutputRedirector.java" startLine="13" startPosition="41" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6440565759883376996" fileName="OutputRedirector.java" startLine="8" startPosition="31" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OutputRedirector#()V" />
+    <nodeInfo nodeId="6440565759883377000" fileName="OutputRedirector.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="redirect#(Lcom/intellij/execution/process/ProcessHandler;Lcom/intellij/execution/process/ProcessListener;)Lcom/intellij/execution/process/ProcessHandler;" />
+    <scopeInfo nodeId="6440565759883376999" fileName="OutputRedirector.java" startLine="9" startPosition="29" endLine="9" endPosition="29" />
+    <scopeInfo nodeId="6440565759883376996" fileName="OutputRedirector.java" startLine="8" startPosition="31" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="6440565759883377003" fileName="OutputRedirector.java" startLine="12" startPosition="91" endLine="14" endPosition="19" />
+    <scopeInfo nodeId="6440565759883377000" fileName="OutputRedirector.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="6440565759883377531" varName="listener" />
+      <varInfo nodeId="6440565759883377528" varName="handler" />
+    </scopeInfo>
+    <unitInfo nodeId="6440565759883376994" fileName="OutputRedirector.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.OutputRedirector" />
+  </root>
   <root nodeId="6472627752525360127">
     <nodeInfo nodeId="6472627752525360133" fileName="ProcessHandlerBuilder.java" startLine="23" startPosition="36" endLine="24" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLine" />
     <nodeInfo nodeId="6472627752525372557" fileName="ProcessHandlerBuilder.java" startLine="30" startPosition="42" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

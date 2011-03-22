@@ -7,7 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debug.apiLang.structure.DebuggerReference;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import java.util.Iterator;
 import java.util.List;
@@ -64,11 +64,11 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     this.setProperty(CommandDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public DebuggerReference getDebugger() {
-    return (DebuggerReference) this.getChild(DebuggerReference.class, CommandDeclaration.DEBUGGER);
+  public Expression getDebugger() {
+    return (Expression) this.getChild(Expression.class, CommandDeclaration.DEBUGGER);
   }
 
-  public void setDebugger(DebuggerReference node) {
+  public void setDebugger(Expression node) {
     super.setChild(CommandDeclaration.DEBUGGER, node);
   }
 

@@ -39,32 +39,44 @@ public class Java_Command {
   }
 
   public Java_Command setWorkingDirectory(File workingDirectory) {
-    myWorkingDirectory = workingDirectory;
+    if (workingDirectory != null) {
+      myWorkingDirectory = workingDirectory;
+    }
     return this;
   }
 
   public Java_Command setJrePath(String jrePath) {
-    myJrePath = jrePath;
+    if (jrePath != null) {
+      myJrePath = jrePath;
+    }
     return this;
   }
 
   public Java_Command setProgramParameter(String programParameter) {
-    myProgramParameter = programParameter;
+    if (programParameter != null) {
+      myProgramParameter = programParameter;
+    }
     return this;
   }
 
   public Java_Command setVirtualMachineParameter(String virtualMachineParameter) {
-    myVirtualMachineParameter = virtualMachineParameter;
+    if (virtualMachineParameter != null) {
+      myVirtualMachineParameter = virtualMachineParameter;
+    }
     return this;
   }
 
   public Java_Command setClassName(String className) {
-    myClassName = className;
+    if (className != null) {
+      myClassName = className;
+    }
     return this;
   }
 
   public Java_Command setClassPath(List<String> classPath) {
-    myClassPath = classPath;
+    if (classPath != null) {
+      myClassPath = classPath;
+    }
     return this;
   }
 
@@ -80,12 +92,12 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build();
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build();
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build(myWorkingDirectory);
     }
   }
 

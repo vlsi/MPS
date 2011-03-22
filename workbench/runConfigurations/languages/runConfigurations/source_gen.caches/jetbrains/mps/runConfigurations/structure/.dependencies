@@ -90,6 +90,7 @@
   <dependency className="jetbrains.mps.runConfigurations.structure.CommandDeclaration" file="CommandDeclaration.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.structure.CommandMethod" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.structure.IGeneratedToClass" />
@@ -101,7 +102,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodLike" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.structure.DebuggerReference" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.structure.CommandParameterDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
@@ -469,6 +469,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.structure.RedirectOutputExpression" file="RedirectOutputExpression.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.structure.ReportConfigurationErrorStatement" file="ReportConfigurationErrorStatement.java">

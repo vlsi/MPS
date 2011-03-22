@@ -5,6 +5,8 @@ package jetbrains.mps.runConfigurations.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -21,10 +23,20 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor");
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_6440565759883377607(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QueriesGenerated.QuotationClass_x583g4_a1a0a0b().createNode());
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ConfigurationFromExecutorReference_7806358006983765719(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -159,5 +171,46 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_6440565759883377604(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.RedirectOutputExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.runConfigurations.structure.RedirectOutputExpression", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirect);
+          SLinkOperations.setTarget(redirect, "processHandler", _context.getSourceNode(), true);
+          return redirect;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ">";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a1a0a0b {
+    public QuotationClass_x583g4_a1a0a0b() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
