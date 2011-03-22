@@ -178,6 +178,14 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration");
   }
 
+  public static boolean ifMacro_Condition_4228980283917439752(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_x583g4_a0a0a0a0a0a0a0a33(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+      }
+    }).first() != null);
+  }
+
   public static SNode sourceNodeQuery_4945049520561168371(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
   }
@@ -240,6 +248,13 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0o(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0a33(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -19,6 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseIntentionsDescriptor {
   private ModuleReference myModuleRef;
@@ -31,8 +32,8 @@ public abstract class BaseIntentionsDescriptor {
 
   public abstract void init();
 
-  protected void add(Intention intention, String nodeId) {
-    SNodePointer np = new SNodePointer(myModelRef, SNodeId.fromString(nodeId));
+  protected void add(Intention intention, @Nullable String nodeId) {
+    SNodePointer np = nodeId == null ? null : new SNodePointer(myModelRef, SNodeId.fromString(nodeId));
     IntentionsManager.getInstance().addIntention(intention, myModuleRef, np);
   }
 }
