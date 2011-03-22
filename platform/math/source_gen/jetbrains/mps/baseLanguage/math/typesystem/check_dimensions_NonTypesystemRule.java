@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,9 +38,8 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
             if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
               if (lc != 0 && rr != 0 && rr != lc) {
                 {
-                  BaseQuickFixProvider intentionProvider = null;
                   MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "These matrices cannot be multiplied with each other", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632809", intentionProvider, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "These matrices cannot be multiplied with each other", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632809", null, errorTarget);
                 }
               }
             }
@@ -60,9 +58,8 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         if (matches_n3qbw2_b0a) {
           if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
             {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632993", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632993", null, errorTarget);
             }
           }
           break;
@@ -79,9 +76,8 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         if (matches_n3qbw2_c0a) {
           if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
             {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516633003", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516633003", null, errorTarget);
             }
           }
           break;

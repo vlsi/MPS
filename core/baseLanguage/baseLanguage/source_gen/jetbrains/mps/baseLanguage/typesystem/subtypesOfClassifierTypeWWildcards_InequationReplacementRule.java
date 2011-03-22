@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -57,8 +56,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     final SNode finalTypeParam = typeParam;
                     {
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                      BaseQuickFixProvider intentionProvider = null;
-                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, intentionProvider);
+                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, null);
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                       typeCheckingContext.createGreaterThanInequation((SNode) myParam, (SNode) finalTypeParam, false, _info_12389875345);
                     }
@@ -69,8 +67,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                              BaseQuickFixProvider intentionProvider = null;
-                              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
+                              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, null);
                               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                               typeCheckingContext.createEquation((SNode) finalTypeParam, (SNode) typeCheckingContext.getRepresentative(concreteParam), _info_12389875345);
                             }
@@ -84,9 +81,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             } else {
               SNode nodeWithError = equationInfo.getNodeWithError();
               {
-                BaseQuickFixProvider intentionProvider = null;
                 MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", null, errorTarget);
                 HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
               }
             }

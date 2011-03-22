@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -29,11 +29,13 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
       if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
         if ((SNodeOperations.getAncestor(localVariableReference, "jetbrains.mps.baseLanguage.structure.IFinalWrapper", false, false) == null)) {
           {
-            BaseQuickFixProvider intentionProvider = null;
-            intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
-            intentionProvider.putArgument("varRef", localVariableReference);
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
+              intentionProvider.putArgument("varRef", localVariableReference);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
           }
         }
       }

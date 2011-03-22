@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,9 +23,8 @@ public class check_InstanceOfAbstract_NonTypesystemRule extends AbstractNonTypes
     SNode concept = SNodeOperations.getConceptDeclaration(baseConcept);
     if (SConceptPropertyOperations.getBoolean(concept, "abstract")) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseConcept, "Abstract concept instance detected. Use one of sub-concepts instead. Concept: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(baseConcept), "name"), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "7283836008113027554", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseConcept, "Abstract concept instance detected. Use one of sub-concepts instead. Concept: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(baseConcept), "name"), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "7283836008113027554", null, errorTarget);
       }
     }
   }

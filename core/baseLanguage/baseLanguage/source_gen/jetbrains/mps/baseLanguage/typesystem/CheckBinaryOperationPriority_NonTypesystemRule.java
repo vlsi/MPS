@@ -10,10 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -31,12 +31,14 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
       }
       if (ParenthesisUtil.isBadPriority(binaryOperation, parent, isRigth)) {
         {
-          BaseQuickFixProvider intentionProvider = null;
-          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.BinaryExpressionPriority_QuickFix", true);
-          intentionProvider.putArgument("child", binaryOperation);
-          intentionProvider.putArgument("parent", parent);
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Bad priority of operations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6778605776626937239", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Bad priority of operations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6778605776626937239", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.BinaryExpressionPriority_QuickFix", true);
+            intentionProvider.putArgument("child", binaryOperation);
+            intentionProvider.putArgument("parent", parent);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }

@@ -9,10 +9,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -24,18 +24,19 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
       SNode referent = constructorInvocation.getReferent("constructorDeclaration");
       if (SNodeOperations.isInstanceOf(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
         {
-          BaseQuickFixProvider intentionProvider = null;
-          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SetConstructorDeclaration_QuickFix", true);
-          intentionProvider.putArgument("constructorInvocation", constructorInvocation);
-          intentionProvider.putArgument("constructorDeclaration", SNodeOperations.cast(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "no reference to constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241543946857", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "no reference to constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241543946857", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SetConstructorDeclaration_QuickFix", true);
+            intentionProvider.putArgument("constructorInvocation", constructorInvocation);
+            intentionProvider.putArgument("constructorDeclaration", SNodeOperations.cast(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       } else {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "no reference to constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241543921898", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "no reference to constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241543921898", null, errorTarget);
         }
       }
     }

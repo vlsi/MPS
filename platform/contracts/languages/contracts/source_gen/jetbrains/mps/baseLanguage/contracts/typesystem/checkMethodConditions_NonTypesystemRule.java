@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class checkMethodConditions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,11 +21,13 @@ public class checkMethodConditions_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode methodConditions, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(methodConditions, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       {
-        BaseQuickFixProvider intentionProvider = null;
-        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix", true);
-        intentionProvider.putArgument("methodConditions", methodConditions);
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(methodConditions, "conditions outside interface", "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "8892289062514009099", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(methodConditions, "conditions outside interface", "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "8892289062514009099", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix", true);
+          intentionProvider.putArgument("methodConditions", methodConditions);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }

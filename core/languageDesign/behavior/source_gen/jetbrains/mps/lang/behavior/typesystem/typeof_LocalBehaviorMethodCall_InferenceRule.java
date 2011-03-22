@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,16 +22,14 @@ public class typeof_LocalBehaviorMethodCall_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode localCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!((SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false) != null))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "no method declaration", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593438", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "no method declaration", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593438", null, errorTarget);
     }
     int actCount = ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true)).count();
     int expCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "parameter", true)).count();
     if (!(actCount == expCount)) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593464", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593464", null, errorTarget);
     }
     {
       SNode arg;
@@ -50,16 +47,14 @@ public class typeof_LocalBehaviorMethodCall_InferenceRule extends AbstractInfere
         parameter = parameter_iterator.next();
         {
           SNode _nodeToCheck_1029348928467 = arg;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593492", 0, intentionProvider);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593492", 0, null);
           typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593497", true), (SNode) typeCheckingContext.typeOf(parameter, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593494", true), false, _info_12389875345);
         }
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = localCall;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593500", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593500", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593508", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "returnType", true), _info_12389875345);
     }
   }
