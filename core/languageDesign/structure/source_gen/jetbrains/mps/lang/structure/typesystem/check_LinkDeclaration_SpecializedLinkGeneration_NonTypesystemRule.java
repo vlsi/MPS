@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -24,10 +23,9 @@ public class check_LinkDeclaration_SpecializedLinkGeneration_NonTypesystemRule e
     SNode specialized = SLinkOperations.getTarget(linkDeclaration, "specializedLink", false);
     if ((specialized != null) && SPropertyOperations.getBoolean(specialized, "doNotGenerate")) {
       if (!(SPropertyOperations.getBoolean(linkDeclaration, "doNotGenerate"))) {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("specializedLink");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkDeclaration, "specialization of non-generatable link should be non-generatable", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "3236994869862084857", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkDeclaration, "specialization of non-generatable link should be non-generatable", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "3236994869862084857", null, errorTarget);
       }
     }
   }

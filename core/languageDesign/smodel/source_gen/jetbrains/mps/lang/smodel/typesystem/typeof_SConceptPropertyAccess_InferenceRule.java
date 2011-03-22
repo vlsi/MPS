@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -32,31 +31,27 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710663193", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710663193", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710663195", true), (SNode) new typeof_SConceptPropertyAccess_InferenceRule.QuotationClass_j96wjt_a0a0a3a0().createNode(typeCheckingContext), _info_12389875345);
       }
     } else
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710667947", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710667947", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710667949", true), (SNode) new typeof_SConceptPropertyAccess_InferenceRule.QuotationClass_j96wjt_a0a0a0d0a().createNode(typeCheckingContext), _info_12389875345);
       }
     } else
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710671342", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710671342", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710671344", true), (SNode) new typeof_SConceptPropertyAccess_InferenceRule.QuotationClass_j96wjt_a0a0a0a3a0().createNode(typeCheckingContext), _info_12389875345);
       }
     } else {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059822707", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059822707", null, errorTarget);
       }
     }
   }

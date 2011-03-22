@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -31,16 +30,14 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
 
     if ((includedTemplate == null)) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154465925404", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154465925404", null, errorTarget);
       }
     } else if ((containingTemplate == null)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true)).isEmpty())) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "Cannot include template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466064615", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "Cannot include template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466064615", null, errorTarget);
         }
       }
     } else {
@@ -51,15 +48,13 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
       for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true))) {
         if (!(MapSequence.fromMap(available).containsKey(SPropertyOperations.getString(p, "name")))) {
           {
-            BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", null, errorTarget);
           }
         } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.fromMap(available).get(SPropertyOperations.getString(p, "name")), SLinkOperations.getTarget(p, "type", true)))) {
           {
-            BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", null, errorTarget);
           }
         }
       }

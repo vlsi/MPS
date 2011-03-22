@@ -7,7 +7,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -68,8 +67,7 @@ public class QueriesUtil {
     SNode applicableConcept = QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
     {
       SNode _nodeToCheck_1029348928467 = null;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286374200", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286374200", 0, null);
       typeCheckingContext.createEquation((SNode) new QueriesUtil.QuotationClass_w9106s_a0a4a0().createNode(applicableConcept, typeCheckingContext), (SNode) InputNodeType, _info_12389875345);
     }
   }
@@ -206,8 +204,7 @@ __switch__:
     if (query == null) {
       {
         SNode _nodeToCheck_1029348928467 = null;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286245992", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286245992", 0, null);
         typeCheckingContext.createEquation((SNode) TypeToEquate, (SNode) new QueriesUtil.QuotationClass_w9106s_a0a0a0a4().createNode(typeCheckingContext), _info_12389875345);
       }
       return;
@@ -215,14 +212,12 @@ __switch__:
     final SNode Concept_typevar_1226671834537 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = query;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671793009", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671793009", 0, null);
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671782084", false), (SNode) new QueriesUtil.QuotationClass_w9106s_a0a2a4().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = null;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671862829", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671862829", 0, null);
       typeCheckingContext.createEquation((SNode) TypeToEquate, (SNode) new QueriesUtil.QuotationClass_w9106s_a0a3a4().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext), _info_12389875345);
     }
   }

@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,9 +24,8 @@ public class check_ExtractStaticMethodCall_NonTypesystemRule extends AbstractNon
     List<SNode> available = ExtractStaticMethod_CallExpression_Behavior.getMethods_5857910569715993654(callStatic);
     if (!(ListSequence.fromList(available).contains(SLinkOperations.getTarget(callStatic, "baseMethodDeclaration", false)))) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callStatic, "This method can't be called from the current context", "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "8881995820265138588", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callStatic, "This method can't be called from the current context", "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "8881995820265138588", null, errorTarget);
       }
     }
   }

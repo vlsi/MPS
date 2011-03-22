@@ -13,7 +13,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -34,9 +33,8 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractConceptDeclaration, "Concept " + SPropertyOperations.getString(abstractConceptDeclaration, "name") + " doesn't have behavior implementing " + methodDeclarations, "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "8258695653169430090", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractConceptDeclaration, "Concept " + SPropertyOperations.getString(abstractConceptDeclaration, "name") + " doesn't have behavior implementing " + methodDeclarations, "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "8258695653169430090", null, errorTarget);
       }
     }
   }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -27,14 +26,12 @@ public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule
         if (!(e == e2)) {
           if (AbstractProjectComponent_Behavior.call_equals_1213877333900(e, e2)) {
             {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e, "duplicated entry " + SPropertyOperations.getString(e, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459089369", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e, "duplicated entry " + SPropertyOperations.getString(e, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459089369", null, errorTarget);
             }
             {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e2, "duplicated entry " + SPropertyOperations.getString(e2, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459118583", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e2, "duplicated entry " + SPropertyOperations.getString(e2, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459118583", null, errorTarget);
             }
           }
         }

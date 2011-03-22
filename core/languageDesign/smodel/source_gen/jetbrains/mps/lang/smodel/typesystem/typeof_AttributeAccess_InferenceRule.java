@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -27,15 +26,13 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
     if (SConceptPropertyOperations.getBoolean(attr, "multiple") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
       {
         SNode _nodeToCheck_1029348928467 = operation;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125336", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125336", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125333", true), (SNode) new typeof_AttributeAccess_InferenceRule.QuotationClass_dktlpw_a0a0a1a0().createNode(attr, typeCheckingContext), _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = operation;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125358", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125358", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125355", true), (SNode) new typeof_AttributeAccess_InferenceRule.QuotationClass_dktlpw_a0a0a0b0a().createNode(attr, typeCheckingContext), _info_12389875345);
       }
     }

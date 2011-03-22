@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,9 +21,8 @@ public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRul
   public void applyRule(final SNode module, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (Module_Behavior.call_getModule_1213877515148(module) == null) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(module, "Can not find module " + SPropertyOperations.getString(module, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209470451391", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(module, "Can not find module " + SPropertyOperations.getString(module, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209470451391", null, errorTarget);
       }
     }
   }

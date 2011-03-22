@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,15 +28,13 @@ public class typeof_BaseMappingRule_InferenceRule extends AbstractInferenceRule_
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "sourceConcept", false) != null) {
       if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "sourceConcept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(nodeToCheck, "applicableConcept", false))))) {
         {
-          BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Label has incorrect type", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1203556587912", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Label has incorrect type", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1203556587912", null, errorTarget);
         }
       }
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200922039515", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200922039515", 0, null);
         typeCheckingContext.createLessThanInequationStrong((SNode) new typeof_BaseMappingRule_InferenceRule.QuotationClass_dxi99s_a0a1a0a0().createNode(BaseMappingRule_Behavior.call_getTemplateType_1213877498511(nodeToCheck), typeCheckingContext), (SNode) new typeof_BaseMappingRule_InferenceRule.QuotationClass_dxi99s_a0a1a0a0_0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "targetConcept", false), typeCheckingContext), false, _info_12389875345);
       }
     }

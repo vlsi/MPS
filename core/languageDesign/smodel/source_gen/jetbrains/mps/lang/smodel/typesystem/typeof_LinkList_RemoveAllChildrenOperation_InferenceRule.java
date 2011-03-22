@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -23,8 +22,7 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getRepresentative(Concept_typevar_1215104325493));
     {
       SNode _nodeToCheck_1029348928467 = op;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325500", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325500", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325502", true), (SNode) new typeof_LinkList_RemoveAllChildrenOperation_InferenceRule.QuotationClass_kyb4al_a0a2a0().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1215104325493), typeCheckingContext), _info_12389875345);
     }
   }
