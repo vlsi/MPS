@@ -18,6 +18,7 @@ package jetbrains.mps.workbench;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.tree.TreeNode;
 import java.awt.Frame;
@@ -81,6 +83,12 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<List<TreeNode>> LOGICAL_VIEW_NODES = DataKey.create("MPS_ProjetPaneNodes");
   @Description(description = "number of selected items in ProjectPane")
   public static final DataKey<Integer> LOGICAL_VIEW_SELECTION_SIZE = DataKey.create("MPS_SelectedItemsNum");
+
+  @Description(description = "rule model and id")
+  public static final DataKey<Pair<String, String>> RULE_MODEL_AND_ID = DataKey.create("MPS_RuleModelAndID");
+
+  @Description(description = "source node")
+  public static final DataKey<Pair<String, String>> SOURCE_NODE = DataKey.create("MPS_SourceNode");
 
   @Description(description = "current editor cell")
   public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");

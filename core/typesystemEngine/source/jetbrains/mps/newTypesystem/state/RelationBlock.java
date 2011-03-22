@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
@@ -73,13 +74,15 @@ public abstract class RelationBlock extends Block {
   }
 
   @Override
-  public String getExpandedPresentation() {
-    return getPresentationInternal(myState.expand(myLeftNode), myState.expand(myRightNode));
+  public Set<SNode> getInputs() {
+    return CollectionUtil.set(myLeftNode, myRightNode);
   }
 
   @Override
-  public Set<SNode> getInputs() {
-    return CollectionUtil.set(myLeftNode, myRightNode);
+  public List<SNode> getVariables() {
+    List<SNode> variables = TypesUtil.getVariables(myLeftNode);
+    variables.addAll(TypesUtil.getVariables(myRightNode));
+    return variables;
   }
 
   public abstract List<com.intellij.openapi.util.Pair<SNode,SNode>> getInputsAndOutputs();

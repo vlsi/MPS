@@ -12,8 +12,8 @@
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
   <unitInfo fileName="ShowInferredNodeType_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
-  <unitInfo fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTraceIncremental_Action" />
   <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action" />
+  <unitInfo fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTraceIncremental_Action" />
   <unitInfo fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action" />
   <unitInfo fileName="ShowNodeType_Action.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
   <root nodeId="1205244087094">
@@ -179,11 +179,11 @@
   <root nodeId="8779663014757326680">
     <nodeInfo nodeId="4213432195536169031" fileName="ShowTypeSystemTrace_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4213432195536180219" fileName="ShowTypeSystemTrace_Action.java" startLine="70" startPosition="46" endLine="71" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6867415733702648393" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="73" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4213432195536185602" fileName="ShowTypeSystemTrace_Action.java" startLine="73" startPosition="80" endLine="74" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6867415733702648393" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213432195536185602" fileName="ShowTypeSystemTrace_Action.java" startLine="73" startPosition="82" endLine="74" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4213432195536180227" fileName="ShowTypeSystemTrace_Action.java" startLine="71" startPosition="125" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4213432195536180228" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="74" endPosition="213">
-      <varInfo nodeId="6867415733702648394" varName="t" />
+    <scopeInfo nodeId="4213432195536180228" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="74" endPosition="215">
+      <varInfo nodeId="6867415733702648394" varName="tcc" />
     </scopeInfo>
   </root>
 </debugInfo>

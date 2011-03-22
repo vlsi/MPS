@@ -19,6 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,7 +37,6 @@ public class ApplyRuleOperation extends AbstractOperation {
     myRule = rule;
     myStatus = status;
     mySource = node;
-
   }
 
   @Override
@@ -57,5 +57,13 @@ public class ApplyRuleOperation extends AbstractOperation {
   @Override
   public String getPresentation() {
     return "Applying rule " + myRule.getClass().getSimpleName().replace("_InferenceRule", "") + " to node " + myNode;
+  }
+
+  @Override
+  public Pair<String, String> getRuleModelAndId() {
+    if (myEquationInfo == null) {
+      return null;
+    }
+    return new Pair<String, String>(myEquationInfo.getRuleId(), myEquationInfo.getRuleModel());
   }
 }

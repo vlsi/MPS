@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -91,6 +92,13 @@ public abstract class AbstractOperation {
 
   public EquationInfo getEquationInfo() {
     return myEquationInfo;
+  }
+
+  public Pair<String, String> getRuleModelAndId() {
+    if (myEquationInfo == null) {
+      return null;
+    }
+    return new Pair<String, String>(myEquationInfo.getRuleId(), myEquationInfo.getRuleModel());
   }
 
   public void playRecursively(State state) {

@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.List;
 import java.util.Set;
 
 public abstract class Block {
@@ -47,9 +48,19 @@ public abstract class Block {
     return getPresentation();
   }
 
-  public String getExpandedPresentation() {
-    return getPresentation();
+  public String getVariablesNodes() {
+    StringBuilder sb = new StringBuilder();
+    NodeMaps nodeMaps = myState.getNodeMaps();
+    for (SNode var : getVariables()) {
+      sb.append(var);
+      sb.append(" is a type of ");
+      sb.append(nodeMaps.getNode(var));
+      sb.append("\n");
+    }
+    return sb.toString();
   }
+
+  public abstract List<SNode> getVariables();
 
   public abstract BlockKind getBlockKind();
 

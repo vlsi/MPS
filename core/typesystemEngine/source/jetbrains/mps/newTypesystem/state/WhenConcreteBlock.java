@@ -16,9 +16,11 @@
 package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -72,6 +74,11 @@ public class WhenConcreteBlock extends Block {
   @Override
   public String getShortPresentation() {
     return myConditionKind.getPresentation() +  myArgument;
+  }
+
+  @Override
+  public List<SNode> getVariables() {
+    return TypesUtil.getVariables(myArgument);
   }
 
   @Override

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.presentation.state;
 
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.newTypesystem.operation.PresentationKind;
-import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTree;
 import jetbrains.mps.newTypesystem.state.*;
 import jetbrains.mps.smodel.IOperationContext;
 

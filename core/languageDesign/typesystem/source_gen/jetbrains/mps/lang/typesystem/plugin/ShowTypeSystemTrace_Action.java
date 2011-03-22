@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
+import jetbrains.mps.newTypesystem.presentation.trace.ShowTypeSystemTrace;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 
@@ -70,8 +70,8 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
       TypeCheckingContext typeCheckingContext;
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
-        TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), true);
+        TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
+        new ShowTypeSystemTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), true);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

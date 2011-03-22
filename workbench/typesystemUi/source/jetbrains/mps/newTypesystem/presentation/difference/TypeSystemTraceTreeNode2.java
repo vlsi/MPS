@@ -30,7 +30,7 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TypeSystemTraceTreeNode extends MPSTreeNode {
+public class TypeSystemTraceTreeNode2 extends MPSTreeNode {
 
   private static final Map<String,Color> COLOR_MAP = initColors();
 
@@ -50,7 +50,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   }
 
 
-  public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
+  public TypeSystemTraceTreeNode2(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
     AbstractOperation difference = (AbstractOperation) userObject;
     setNodeIdentifier(difference.getPresentation());

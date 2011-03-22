@@ -27,22 +27,25 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class ShowTypeSystemTrace extends JDialog {
+public class ShowTypeSystemTrace2 extends JDialog {
   private Checkbox myBlockDependencies;
   private Checkbox myTraceForNode;
   private Checkbox myGenerationMode;
   private Checkbox myShowApply;
-  private TypeSystemTraceTree myTraceTree;
+  private TypeSystemTraceTree2 myTraceTree;
   private TypeSystemStateTree myStateTree;
 
-  public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, boolean rebuild) {
+  public ShowTypeSystemTrace2(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, boolean rebuild) {
     super(frame);
+    if (true) {
+       return;
+    }
     if (rebuild) {
       t.checkRoot(true);
     }
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-    myTraceTree = new TypeSystemTraceTree(operationContext, t, frame, node, this);
+    myTraceTree = new TypeSystemTraceTree2(operationContext, t, frame, node, this);
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState());
     JSplitPane splitPane = new JSplitPane();
     this.add(splitPane);
@@ -60,13 +63,13 @@ public class ShowTypeSystemTrace extends JDialog {
     this.add(checkBoxes, BorderLayout.SOUTH);
 
     myBlockDependencies = new Checkbox("Block dependencies");
-    myBlockDependencies.setState(TraceSettings.isShowBlockDependencies());
+    myBlockDependencies.setState(TraceSettings2.isShowBlockDependencies());
     myTraceForNode = new Checkbox("Trace for selected node");
-    myTraceForNode.setState(TraceSettings.isTraceForSelectedNode());
+    myTraceForNode.setState(TraceSettings2.isTraceForSelectedNode());
     myGenerationMode = new Checkbox("Generation mode");
-    myGenerationMode.setState(TraceSettings.isGenerationMode());
+    myGenerationMode.setState(TraceSettings2.isGenerationMode());
     myShowApply = new Checkbox("Show apply rule");
-    myShowApply.setState(TraceSettings.isShowApplyRuleOperations());
+    myShowApply.setState(TraceSettings2.isShowApplyRuleOperations());
     checkBoxes.add(myBlockDependencies);
     checkBoxes.add(myTraceForNode);
     checkBoxes.add(myGenerationMode);
@@ -82,7 +85,7 @@ public class ShowTypeSystemTrace extends JDialog {
 
     this.setPreferredSize(new Dimension(800, 900));
     String title = "TypeSystem trace";
-    if (TraceSettings.isTraceForSelectedNode() && node != null) {
+    if (TraceSettings2.isTraceForSelectedNode() && node != null) {
       title = title.concat(" for selected node (" + node + ")");
     }
     setTitle(title);
@@ -105,13 +108,13 @@ public class ShowTypeSystemTrace extends JDialog {
       Object source = e.getItemSelectable();
       boolean selected = ItemEvent.SELECTED == e.getStateChange();
       if (source == myTraceForNode) {
-        TraceSettings.setTraceForSelectedNode(selected);
+        TraceSettings2.setTraceForSelectedNode(selected);
       } else if (source== myBlockDependencies) {
-        TraceSettings.setShowBlockDependencies(selected);
+        TraceSettings2.setShowBlockDependencies(selected);
       } else if (source== myGenerationMode) {
-        TraceSettings.setGenerationMode(selected);
+        TraceSettings2.setGenerationMode(selected);
       } else {
-        TraceSettings.setShowApplyRuleOperations(selected);
+        TraceSettings2.setShowApplyRuleOperations(selected);
       }
       myTraceTree.rebuildNow();
       myTraceTree.expandAll();
