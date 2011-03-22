@@ -104,7 +104,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
               );
               List<QuickFixProvider> intentionProviders = errorReporter.getIntentionProviders();
               final SNode quickFixNode = errorNode.o1;
-              if (intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
+              if (intentionProviders.size() == 1 && intentionProviders.get(0) != null && intentionProviders.get(0).isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
                 QuickFixProvider intentionProvider = intentionProviders.get(0);
                 if (!instantIntentionApplied) {
                   final QuickFix_Runtime intention = intentionProvider.getQuickFix();
