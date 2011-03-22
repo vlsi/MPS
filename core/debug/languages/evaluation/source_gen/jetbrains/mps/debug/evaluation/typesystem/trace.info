@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_LowLevelVariableReference_InferenceRule" />
-  <unitInfo fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_LowLevelVariable_InferenceRule" />
-  <unitInfo fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule" />
+  <unitInfo fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_LowLevelVariableReference_InferenceRule" />
+  <unitInfo fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_LowLevelVariable_InferenceRule" />
+  <unitInfo fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule" />
   <root nodeId="4454641827113760511">
-    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="21" startPosition="58" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="23" startPosition="220" endLine="24" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="19" startPosition="129" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="305" />
-    <scopeInfo nodeId="4454641827113760512" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="19" startPosition="129" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="20" startPosition="58" endLine="21" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="21" startPosition="207" endLine="22" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="18" startPosition="129" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="305" />
+    <scopeInfo nodeId="4454641827113760512" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="18" startPosition="129" endLine="23" endPosition="5" />
   </root>
   <root nodeId="6036237525966316003">
-    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="22" startPosition="66" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="23" startPosition="52" endLine="24" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="24" startPosition="220" endLine="25" endPosition="421" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="20" startPosition="137" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="421" />
-    <scopeInfo nodeId="6036237525966316004" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="20" startPosition="137" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="21" startPosition="66" endLine="22" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="22" startPosition="207" endLine="23" endPosition="421" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="19" startPosition="137" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="6036237525966316010" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="421" />
+    <scopeInfo nodeId="6036237525966316004" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="19" startPosition="137" endLine="24" endPosition="5" />
   </root>
   <root nodeId="8054553590745290955">
-    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="21" startPosition="67" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="23" startPosition="220" endLine="24" endPosition="476" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="138" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="476" />
-    <scopeInfo nodeId="8054553590745290956" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="138" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="20" startPosition="67" endLine="21" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="21" startPosition="207" endLine="22" endPosition="476" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="18" startPosition="138" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="476" />
+    <scopeInfo nodeId="8054553590745290956" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="18" startPosition="138" endLine="23" endPosition="5" />
   </root>
 </debugInfo>
 
