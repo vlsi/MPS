@@ -195,6 +195,7 @@
   <unitInfo fileName="checkThrowsOfMethodIsCaught_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkThrowsOfMethodIsCaught_NonTypesystemRule" />
   <unitInfo fileName="check_FinalVariableReferenceNotAssigned_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalVariableReferenceNotAssigned_NonTypesystemRule" />
   <unitInfo fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkUnnecessaryInstanceof_NonTypesystemRule" />
+  <unitInfo fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckExcessTypeCasts_NonTypesystemRule" />
   <unitInfo fileName="check_TypeInVarDecl_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_TypeInVarDecl_NonTypesystemRule" />
   <unitInfo fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassShouldHaveConstructor_NonTypesystemRule" />
   <unitInfo fileName="check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule" />
@@ -212,7 +213,6 @@
   <unitInfo fileName="typeOf_EnumConstantReference_InferenceRule.java" startLine="18" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_EnumConstantReference_InferenceRule" />
   <unitInfo fileName="check_UnusedStaticFields_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule" />
   <unitInfo fileName="check_DuplicatedConstructors_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DuplicatedConstructors_NonTypesystemRule" />
-  <unitInfo fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckExcessTypeCasts_NonTypesystemRule" />
   <unitInfo fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typevar_comparable_with_classifier_type_ComparisonRule" />
   <unitInfo fileName="any_type_comparable_to_wildcard_type_ComparisonRule.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_to_wildcard_type_ComparisonRule" />
   <unitInfo fileName="typeOf_thisExpr_InferenceRule.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_thisExpr_InferenceRule" />
@@ -4939,18 +4939,16 @@
     </scopeInfo>
   </root>
   <root nodeId="3637195266922472263">
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="27" startPosition="9" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="28" startPosition="56" endLine="29" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="29" startPosition="133" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="30" startPosition="58" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="31" startPosition="62" endLine="32" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="26" startPosition="262" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3637195266922531700" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="25" startPosition="174" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3637195266922530648" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="24" startPosition="117" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="27" startPosition="9" endLine="32" endPosition="258" />
-    <scopeInfo nodeId="3637195266922531702" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="26" startPosition="262" endLine="33" endPosition="9" />
-    <scopeInfo nodeId="3637195266922530650" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="25" startPosition="174" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="3637195266922472264" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="24" startPosition="117" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="25" startPosition="54" endLine="26" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="26" startPosition="131" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="27" startPosition="56" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="28" startPosition="60" endLine="29" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="23" startPosition="212" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8159235211454066348" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="22" startPosition="117" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="3637195266923171603" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="29" endPosition="256" />
+    <scopeInfo nodeId="8159235211454066349" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="23" startPosition="212" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="3637195266922472264" fileName="CheckExcessTypeCasts_NonTypesystemRule.java" startLine="22" startPosition="117" endLine="31" endPosition="5" />
   </root>
   <root nodeId="3637195266922531731">
     <nodeInfo nodeId="3637195266922727890" fileName="RemoveExcessTypeCast_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
