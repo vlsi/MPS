@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,9 +27,8 @@ public class check_NamedTupleDeclaration_extends_NonTypesystemRule extends Abstr
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false) != null)) {
       List<SNode> allExtends = NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false));
       if (!(!(ListSequence.fromList(allExtends).contains(ntd)))) {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(ntd, "extended", true), "circular extends relation", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473434", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(ntd, "extended", true), "circular extends relation", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473434", null, errorTarget);
       }
       for (final SNode cmp : ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true))) {
         if (cmp != null) {
@@ -43,9 +41,8 @@ public class check_NamedTupleDeclaration_extends_NonTypesystemRule extends Abstr
               return SPropertyOperations.getString(cmp, "name") == SPropertyOperations.getString(c, "name");
             }
           })))) {
-            BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmp, "duplicate component name", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473486", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmp, "duplicate component name", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473486", null, errorTarget);
           }
         }
       }

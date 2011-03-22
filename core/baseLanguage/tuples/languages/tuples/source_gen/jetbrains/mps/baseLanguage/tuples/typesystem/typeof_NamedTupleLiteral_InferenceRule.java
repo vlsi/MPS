@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -38,17 +37,15 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
         return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
       }
     }))) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", null, errorTarget);
     }
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     for (SNode cmpRef : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
       SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false), "type", true), mmap);
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cmpRef, "value", true);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830131", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830131", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830133", true), (SNode) matchedType, false, _info_12389875345);
       }
     }
@@ -59,8 +56,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       if (ListSequence.fromList(nodes).isNotEmpty()) {
         {
           SNode _nodeToCheck_1029348928467 = literal;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968096090", 0, intentionProvider);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968096090", 0, null);
           typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(PTYPE_typevar_1239968089672), (SNode) ListSequence.fromList(nodes).first(), _info_12389875345);
         }
       }
@@ -68,8 +64,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     }
     {
       SNode _nodeToCheck_1029348928467 = literal;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239901165879", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239901165879", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968222968", true), (SNode) new typeof_NamedTupleLiteral_InferenceRule.QuotationClass_bcpcms_a0a5a0().createNode(PTYPES, SLinkOperations.getTarget(literal, "tupleDeclaration", false), typeCheckingContext), _info_12389875345);
     }
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);

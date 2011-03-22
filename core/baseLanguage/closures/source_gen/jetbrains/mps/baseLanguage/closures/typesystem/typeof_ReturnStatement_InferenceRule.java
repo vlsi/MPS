@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,9 +22,8 @@ public class typeof_ReturnStatement_InferenceRule extends AbstractInferenceRule_
     // http://www.javac.info 
     if (false && (SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null)) {
       if (!(false)) {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "return is not allowed within closure literal", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1200829870877", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "return is not allowed within closure literal", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1200829870877", null, errorTarget);
       }
     }
   }

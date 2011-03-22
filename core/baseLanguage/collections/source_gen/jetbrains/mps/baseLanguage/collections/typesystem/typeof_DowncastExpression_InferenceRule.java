@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,8 +30,7 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
             if (coercedNode_y5vcz7_a0a0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = expression;
-                BaseQuickFixProvider intentionProvider = null;
-                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", 0, intentionProvider);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", 0, null);
                 typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode) ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_y5vcz7_a0a0), _info_12389875345);
               }
             } else {

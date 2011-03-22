@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,8 +21,7 @@ public class typeof_SimpleBuilderPropertyParent_InferenceRule extends AbstractIn
     SNode builder = BaseSimpleBuilderDeclaration_Behavior.call_getContextDeclaration_6254726786820551255(SNodeOperations.getAncestor(simpleBuilderPropertyParent, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false));
     {
       SNode _nodeToCheck_1029348928467 = simpleBuilderPropertyParent;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "5389689214217248386", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "5389689214217248386", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "5389689214217248388", true), (SNode) SLinkOperations.getTarget(builder, "type", true), _info_12389875345);
     }
   }

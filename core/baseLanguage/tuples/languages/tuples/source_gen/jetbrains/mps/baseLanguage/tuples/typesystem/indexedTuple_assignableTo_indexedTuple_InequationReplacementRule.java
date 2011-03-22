@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,9 +24,8 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
-      BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", null, errorTarget);
       HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
     }
     {
@@ -46,8 +44,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
         rmt = rmt_iterator.next();
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", 0, intentionProvider);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", 0, null);
           _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
           typeCheckingContext.createLessThanInequation((SNode) lmt, (SNode) rmt, false, _info_12389875345);
         }

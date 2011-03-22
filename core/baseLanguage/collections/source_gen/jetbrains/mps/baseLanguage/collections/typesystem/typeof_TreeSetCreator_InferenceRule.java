@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -25,14 +24,12 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
       final SNode ELEMENT_typevar_2261417478149018313 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = treeSetCreator;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018326", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018326", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018323", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a1a0a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(treeSetCreator, "comparator", true);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018298", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018298", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018290", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a2a0a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
       }
     }

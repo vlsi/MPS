@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -31,9 +30,8 @@ public class check_TupleComponentIsInScope_NonTypesystemRule extends AbstractNon
     for (SNode ref : SLinkOperations.getTargets(namedTupleLiteral, "componentRef", true)) {
       SNode tupleComponent = SLinkOperations.getTarget(ref, "componentDeclaration", false);
       if (!(ListSequence.fromList(tupleComponents).contains(tupleComponent))) {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ref, "tuple component is out of scope", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "8197465398807016917", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ref, "tuple component is out of scope", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "8197465398807016917", null, errorTarget);
       }
     }
   }

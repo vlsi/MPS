@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,9 +22,8 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
   public void applyRule(final SNode builder, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).count()) {
       {
-        BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Wrong number of parameters", "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340741370", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Wrong number of parameters", "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340741370", null, errorTarget);
       }
       return;
     }
@@ -33,8 +31,7 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).count(); i++) {
       {
         SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).getElement(i);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745084", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745084", 0, null);
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745046", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).getElement(i), "type", true), false, _info_12389875345);
       }
     }

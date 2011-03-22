@@ -15,7 +15,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -37,9 +36,8 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
             }
           })) {
             {
-              BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expression, "Cannot assign to final tuple component", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "4292022102258809122", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expression, "Cannot assign to final tuple component", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "4292022102258809122", null, errorTarget);
             }
           }
         } else {

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -25,8 +24,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5562883592575036766", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5562883592575036766", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
       typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(supertype, "elementType", true), "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), false, _info_12389875345);
     }

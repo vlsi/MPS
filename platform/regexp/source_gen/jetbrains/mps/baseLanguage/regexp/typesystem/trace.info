@@ -1,166 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="45" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_ReplaceRegexpOperation_InferenceRule$QuotationClass_yj3lw7_a0a0a0" />
-  <unitInfo fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule$QuotationClass_gefnly_a0a0a0" />
-  <unitInfo fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="45" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule$QuotationClass_920rku_a0a0a0" />
-  <unitInfo fileName="MatchRegexpExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule$QuotationClass_2m7u6_a0a0a0" />
-  <unitInfo fileName="MatchVariableReference_InferenceRule.java" startLine="45" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchVariableReference_InferenceRule$QuotationClass_o15xxs_a0a0a0" />
-  <unitInfo fileName="FindMatchStatement_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule$QuotationClass_187nmk_a0a0a0" />
-  <unitInfo fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ReplaceWithRegexpExpression_InferenceRule$QuotationClass_p3tdbs_a0a0a0" />
-  <unitInfo fileName="ForEachMatchStatement_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ForEachMatchStatement_InferenceRule$QuotationClass_4mgdsl_a0a0a0" />
-  <unitInfo fileName="MatchRegexpStatement_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpStatement_InferenceRule$QuotationClass_omd5rf_a0a0a0" />
-  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="55" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule$QuotationClass_l306ck_a0a0a0" />
-  <unitInfo fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.check_LiteralReplacement_NonTypesystemRule" />
-  <unitInfo fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.check_StringLiteralRegexp_NonTypesystemRule" />
-  <unitInfo fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule$QuotationClass_pxj8hb_a0a0a0" />
-  <unitInfo fileName="typeof_SplitOperation_InferenceRule.java" startLine="48" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule$QuotationClass_wjdhd4_a0a0a0" />
-  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="84" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule$QuotationClass_l306ck_a0a1a0" />
-  <unitInfo fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_ReplaceRegexpOperation_InferenceRule" />
-  <unitInfo fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule" />
-  <unitInfo fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule" />
-  <unitInfo fileName="MatchRegexpExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule" />
-  <unitInfo fileName="MatchVariableReference_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchVariableReference_InferenceRule" />
-  <unitInfo fileName="FindMatchStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule" />
-  <unitInfo fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ReplaceWithRegexpExpression_InferenceRule" />
-  <unitInfo fileName="ForEachMatchStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ForEachMatchStatement_InferenceRule" />
-  <unitInfo fileName="MatchRegexpStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpStatement_InferenceRule" />
-  <unitInfo fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule" />
+  <unitInfo fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.check_LiteralReplacement_NonTypesystemRule" />
+  <unitInfo fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.check_StringLiteralRegexp_NonTypesystemRule" />
+  <unitInfo fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_ReplaceRegexpOperation_InferenceRule$QuotationClass_yj3lw7_a0a0a0" />
+  <unitInfo fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule$QuotationClass_gefnly_a0a0a0" />
+  <unitInfo fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule$QuotationClass_920rku_a0a0a0" />
+  <unitInfo fileName="MatchRegexpExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule$QuotationClass_2m7u6_a0a0a0" />
+  <unitInfo fileName="MatchVariableReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchVariableReference_InferenceRule$QuotationClass_o15xxs_a0a0a0" />
+  <unitInfo fileName="FindMatchStatement_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule$QuotationClass_187nmk_a0a0a0" />
+  <unitInfo fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ReplaceWithRegexpExpression_InferenceRule$QuotationClass_p3tdbs_a0a0a0" />
+  <unitInfo fileName="ForEachMatchStatement_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ForEachMatchStatement_InferenceRule$QuotationClass_4mgdsl_a0a0a0" />
+  <unitInfo fileName="MatchRegexpStatement_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpStatement_InferenceRule$QuotationClass_omd5rf_a0a0a0" />
+  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="52" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule$QuotationClass_l306ck_a0a0a0" />
+  <unitInfo fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule$QuotationClass_pxj8hb_a0a0a0" />
+  <unitInfo fileName="typeof_SplitOperation_InferenceRule.java" startLine="46" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule$QuotationClass_wjdhd4_a0a0a0" />
+  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="81" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule$QuotationClass_l306ck_a0a1a0" />
+  <unitInfo fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_ReplaceRegexpOperation_InferenceRule" />
+  <unitInfo fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule" />
+  <unitInfo fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule" />
+  <unitInfo fileName="MatchRegexpExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule" />
+  <unitInfo fileName="MatchVariableReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchVariableReference_InferenceRule" />
+  <unitInfo fileName="FindMatchStatement_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule" />
+  <unitInfo fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ReplaceWithRegexpExpression_InferenceRule" />
+  <unitInfo fileName="ForEachMatchStatement_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.ForEachMatchStatement_InferenceRule" />
+  <unitInfo fileName="MatchRegexpStatement_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpStatement_InferenceRule" />
+  <unitInfo fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="typeof_SplitOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule" />
-  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule" />
+  <unitInfo fileName="typeof_SplitOperation_InferenceRule.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule" />
+  <unitInfo fileName="SplitExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule" />
   <root nodeId="1178179183607">
-    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="23" startPosition="45" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="25" startPosition="217" endLine="26" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="21" startPosition="116" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="348" />
-    <scopeInfo nodeId="1178179183608" fileName="MatchVariableReference_InferenceRule.java" startLine="21" startPosition="116" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="22" startPosition="45" endLine="23" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="23" startPosition="204" endLine="24" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1222428222362" fileName="MatchVariableReference_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="348" />
+    <scopeInfo nodeId="1178179183608" fileName="MatchVariableReference_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1178179183613">
-    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="24" startPosition="86" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="26" startPosition="217" endLine="27" endPosition="363" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="22" startPosition="116" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="363" />
-    <scopeInfo nodeId="1178179183614" fileName="MatchRegexpStatement_InferenceRule.java" startLine="22" startPosition="116" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="23" startPosition="86" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="24" startPosition="204" endLine="25" endPosition="363" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="21" startPosition="116" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1178179183615" fileName="MatchRegexpStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="363" />
+    <scopeInfo nodeId="1178179183614" fileName="MatchRegexpStatement_InferenceRule.java" startLine="21" startPosition="116" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1178179183622">
-    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="24" startPosition="85" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="26" startPosition="217" endLine="27" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="364" />
-    <scopeInfo nodeId="1178179183623" fileName="ForEachMatchStatement_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="23" startPosition="85" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="24" startPosition="204" endLine="25" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1178179183624" fileName="ForEachMatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="364" />
+    <scopeInfo nodeId="1178179183623" fileName="ForEachMatchStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1178179183631">
-    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="24" startPosition="85" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="26" startPosition="217" endLine="27" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="370" />
-    <scopeInfo nodeId="1178179183632" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="23" startPosition="85" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="24" startPosition="204" endLine="25" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1178179183633" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="370" />
+    <scopeInfo nodeId="1178179183632" fileName="ReplaceWithRegexpExpression_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1178179183640">
-    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="27" startPosition="85" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="28" startPosition="52" endLine="29" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="29" startPosition="217" endLine="30" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="33" startPosition="44" endLine="34" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="34" startPosition="52" endLine="35" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="35" startPosition="217" endLine="36" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="25" startPosition="115" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="30" endPosition="358" />
-    <scopeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="36" endPosition="341" />
-    <scopeInfo nodeId="1178179183641" fileName="SplitExpression_InferenceRule.java" startLine="25" startPosition="115" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="26" startPosition="85" endLine="27" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="27" startPosition="204" endLine="28" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="31" startPosition="44" endLine="32" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="32" startPosition="204" endLine="33" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="24" startPosition="115" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1178179183642" fileName="SplitExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="358" />
+    <scopeInfo nodeId="1223981840551" fileName="SplitExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="33" endPosition="341" />
+    <scopeInfo nodeId="1178179183641" fileName="SplitExpression_InferenceRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5" />
   </root>
   <root nodeId="1178179183654">
-    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="24" startPosition="85" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="26" startPosition="217" endLine="27" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="361" />
-    <scopeInfo nodeId="1178179183655" fileName="FindMatchStatement_InferenceRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="23" startPosition="85" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="24" startPosition="204" endLine="25" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1178179183656" fileName="FindMatchStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="361" />
+    <scopeInfo nodeId="1178179183655" fileName="FindMatchStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1179358899322">
-    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="23" startPosition="63" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="25" startPosition="217" endLine="26" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="21" startPosition="134" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="346" />
-    <scopeInfo nodeId="1179358899323" fileName="MatchRegexpExpression_InferenceRule.java" startLine="21" startPosition="134" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="22" startPosition="63" endLine="23" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="23" startPosition="204" endLine="24" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="20" startPosition="134" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1223981840542" fileName="MatchRegexpExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="346" />
+    <scopeInfo nodeId="1179358899323" fileName="MatchRegexpExpression_InferenceRule.java" startLine="20" startPosition="134" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1222260042512">
-    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="26" startPosition="44" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="27" startPosition="52" endLine="28" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="28" startPosition="217" endLine="29" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="24" startPosition="115" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="347" />
-    <scopeInfo nodeId="1222260042513" fileName="typeof_SplitOperation_InferenceRule.java" startLine="24" startPosition="115" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="25" startPosition="44" endLine="26" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="26" startPosition="204" endLine="27" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="23" startPosition="115" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1223981840517" fileName="typeof_SplitOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="347" />
+    <scopeInfo nodeId="1222260042513" fileName="typeof_SplitOperation_InferenceRule.java" startLine="23" startPosition="115" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1222262028142">
-    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="23" startPosition="51" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="25" startPosition="217" endLine="26" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="353" />
-    <scopeInfo nodeId="1222262028143" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="23" startPosition="204" endLine="24" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="20" startPosition="122" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1223981840576" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="353" />
+    <scopeInfo nodeId="1222262028143" fileName="typeof_MatchRegexpOperation_InferenceRule.java" startLine="20" startPosition="122" endLine="25" endPosition="5" />
   </root>
   <root nodeId="3796137614137203404">
-    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="23" startPosition="51" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="25" startPosition="223" endLine="26" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="361" />
-    <scopeInfo nodeId="3796137614137203405" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="20" startPosition="122" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="3796137614137203407" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="361" />
+    <scopeInfo nodeId="3796137614137203405" fileName="typeof_ReplaceRegexpOperation_InferenceRule.java" startLine="20" startPosition="122" endLine="25" endPosition="5" />
   </root>
   <root nodeId="3796137614137565921">
-    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="22" startPosition="83" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3796137614137565925" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="269" />
-    <scopeInfo nodeId="3796137614137565930" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="22" startPosition="83" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="3796137614137565922" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="21" startPosition="83" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3796137614137565925" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="20" startPosition="120" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="256" />
+    <scopeInfo nodeId="3796137614137565930" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="21" startPosition="83" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="3796137614137565922" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="20" startPosition="120" endLine="26" endPosition="5" />
   </root>
   <root nodeId="6129327962763255301">
-    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="23" startPosition="52" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="25" startPosition="223" endLine="26" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="21" startPosition="123" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="358" />
-    <scopeInfo nodeId="6129327962763255302" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="21" startPosition="123" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="20" startPosition="123" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="6129327962763257323" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="358" />
+    <scopeInfo nodeId="6129327962763255302" fileName="typeof_FindMatchExpression_InferenceRule.java" startLine="20" startPosition="123" endLine="25" endPosition="5" />
   </root>
   <root nodeId="633895403832945218">
-    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="26" startPosition="52" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="27" startPosition="52" endLine="28" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="28" startPosition="222" endLine="29" endPosition="360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="24" startPosition="123" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="29" endPosition="360" />
-    <scopeInfo nodeId="633895403832945219" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="24" startPosition="123" endLine="30" endPosition="5" />
+    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="26" startPosition="209" endLine="27" endPosition="360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="23" startPosition="123" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="633895403832947240" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="360" />
+    <scopeInfo nodeId="633895403832945219" fileName="typeof_InlineRegexpExpression_InferenceRule.java" startLine="23" startPosition="123" endLine="28" endPosition="5" />
   </root>
   <root nodeId="8330008649152995908">
-    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8330008649152998024" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="269" />
-    <scopeInfo nodeId="8330008649152998026" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="8330008649152995909" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="21" startPosition="71" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8330008649152998024" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="20" startPosition="120" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="256" />
+    <scopeInfo nodeId="8330008649152998026" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="21" startPosition="71" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="8330008649152995909" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="20" startPosition="120" endLine="26" endPosition="5" />
   </root>
 </debugInfo>
 
