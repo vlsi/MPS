@@ -12,4 +12,9 @@ public class DefaultProcessHandler extends OSProcessHandler {
     addProcessListener(processListener);
     ProcessTerminatedListener.attach(this);
   }
+
+  public DefaultProcessHandler(Process process, String parameters) {
+    super(process, parameters);
+    ProcessTerminatedListener.attach(this);
+  }
 }

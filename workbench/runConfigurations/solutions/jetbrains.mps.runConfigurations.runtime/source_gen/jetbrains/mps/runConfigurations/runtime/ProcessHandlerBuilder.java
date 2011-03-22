@@ -12,9 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import com.intellij.execution.process.ProcessAdapter;
 import java.io.File;
-import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
@@ -74,18 +72,10 @@ public class ProcessHandlerBuilder {
   }
 
   public ProcessHandler build() throws ExecutionException {
-    return build(new ProcessAdapter() {}, new File(System.getProperty("user.dir")));
-  }
-
-  public ProcessHandler build(@NotNull ProcessListener listener) throws ExecutionException {
-    return build(listener, new File(System.getProperty("user.dir")));
+    return build(new File(System.getProperty("user.dir")));
   }
 
   public ProcessHandler build(@NotNull File workingDirectory) throws ExecutionException {
-    return build(new ProcessAdapter() {}, workingDirectory);
-  }
-
-  public ProcessHandler build(@NotNull ProcessListener listener, @NotNull File workingDirectory) throws ExecutionException {
     if (!(workingDirectory.exists())) {
       throw new ExecutionException("Working directory " + workingDirectory + " does not exist.");
     }
@@ -100,7 +90,7 @@ public class ProcessHandlerBuilder {
             s + " " + it
           );
         }
-      }), listener);
+      }));
       return processHandler;
     } catch (IOException e) {
       throw new ProcessNotCreatedException("Start process failed", e, getCommandLine(workingDirectory.getAbsolutePath()));
