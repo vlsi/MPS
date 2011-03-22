@@ -64,11 +64,13 @@ public class MPSErrorDialog extends JDialog {
     setLayout(new BorderLayout());
     myField = new JTextField(error);
     myField.setEditable(false);
+    myField.addKeyListener(myEscapeListener);
     JButton button = new JButton(new AbstractAction("OK") {
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
     });
+    getRootPane().setDefaultButton(button);
     myButtons.add(button);
   }
 
