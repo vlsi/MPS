@@ -52,7 +52,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private long myDiskTimestamp = -1;
 
   private IFile myModelFile;
-  private boolean myIsChanged = false;
+  private boolean myChanged = false;
 
   private final Object myFullLoadSync = new Object();
 
@@ -123,34 +123,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public boolean isChanged() {
-    return myIsChanged;
+    return myChanged;
   }
 
   public void setChanged(boolean changed) {
-    myIsChanged = changed;
+    myChanged = changed;
   }
 
   public void reloadFromDiskSafe() {
     if (isChanged()) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
-          if (needSave) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                updateDiskTimestamp();
-                save();
-              }
-            });
-          } else {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                reloadFromDisk();
-              }
-            });
-          }
-        }
-      }, ModalityState.NON_MODAL);
+      resolveDiskConflict();
     } else {
       reloadFromDisk();
     }
@@ -171,6 +153,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
     updateLastChange();
+    LOG.assertLog(!needsReloading());
   }
 
   public int getPersistenceVersion() {
@@ -199,6 +182,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myLastChange;
   }
 
+  private void resolveDiskConflict() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
+        if (needSave) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              updateDiskTimestamp();
+              save();
+            }
+          });
+        } else {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              reloadFromDisk();
+            }
+          });
+        }
+      }
+    }, ModalityState.NON_MODAL);
+  }
+
   public void save() {
     ModelAccess.assertLegalWrite();
 
@@ -212,25 +217,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (needsReloading()) {
       LOG.warning("Model file " + mySModel.getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
-          if (needSave) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                updateDiskTimestamp();
-                save();
-              }
-            });
-          } else {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                reloadFromDisk();
-              }
-            });
-          }
-        }
-      }, ModalityState.NON_MODAL);
+      resolveDiskConflict();
       return;
     }
 
@@ -390,5 +377,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private void updateLastChange() {
     myLastChange = myModelFile != null ? myModelFile.lastModified() : System.currentTimeMillis();
+    myDiskTimestamp = myLastChange;
   }
 }

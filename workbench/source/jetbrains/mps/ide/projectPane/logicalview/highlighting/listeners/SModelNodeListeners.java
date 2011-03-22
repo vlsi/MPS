@@ -124,6 +124,11 @@ public class SModelNodeListeners implements NodeListeners {
       visitNode(myModelNode);
     }
 
+    @Override
+    public void modelReplaced(SModelDescriptor sm) {
+      visitNode(myModelNode);
+    }
+
     public boolean isValid() {
       if (!super.isValid()) return false;
       if (myModel.getLoadingState() == ModelLoadingState.NOT_LOADED) return true;

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
@@ -282,15 +283,32 @@ public class SModelRepository implements ApplicationComponent {
     return sd == modelDescriptor;
   }
 
+  private List<EditableSModelDescriptor> getModelsToSave () {
+    List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
+    for (SModelDescriptor md : myModelsWithOwners.keySet()) {
+      if (md instanceof EditableSModelDescriptor) {
+        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+        if (emd.isChanged()) {
+          modelsToSave.add(emd);
+        }
+      }
+    }
+    return modelsToSave;
+  }
+
   public void saveAll() {
     ModelAccess.assertLegalWrite();
 
+    List<EditableSModelDescriptor> modelsToRefresh;
     synchronized (myModelsLock) {
-      for (SModelDescriptor md : myModelsWithOwners.keySet()) {
-        if (!(md instanceof EditableSModelDescriptor)) continue;
-        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
-        if (!emd.isChanged()) continue;
+      modelsToRefresh = getModelsToSave();
+    }
+    for (EditableSModelDescriptor emd : modelsToRefresh) {
+      FileSystem.getInstance().refresh(emd.getModelFile());
+    }
 
+    synchronized (myModelsLock) {
+      for (EditableSModelDescriptor emd : getModelsToSave()) {
         try {
           emd.save();
           emd.setChanged(false);
