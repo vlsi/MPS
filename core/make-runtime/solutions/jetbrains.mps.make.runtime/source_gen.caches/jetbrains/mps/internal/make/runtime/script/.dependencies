@@ -52,7 +52,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode dependClassName="java.util.HashMap" />
@@ -65,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="java.lang.Integer" />
@@ -78,7 +78,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
-    <classNode extendsClassName="jetbrains.mps.make.script.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.TargetRange" file="TargetRange.java">

@@ -42,8 +42,8 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -657,7 +657,7 @@ public class TestMain {
         myWarnings = warnings;
       }
 
-      public void handle(Message msg) {
+      public void handle(IMessage msg) {
         switch (msg.getKind()) {
           case ERROR:
             System.out.println("error: " + msg.getText());

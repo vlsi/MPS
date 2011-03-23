@@ -36,7 +36,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.generator.GenerationOptions;
 import java.util.Collections;
-import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.IMessage;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -243,7 +243,7 @@ public class GeneratorWorker extends MpsWorker {
     /*package*/ MyMessageHandler() {
     }
 
-    public void handle(Message msg) {
+    public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           GeneratorWorker.this.error(msg.getText());

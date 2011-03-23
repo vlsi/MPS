@@ -42,6 +42,7 @@ import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
@@ -91,7 +92,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
   };
 
-  private Queue<Message> myMessages = new LinkedList<Message>();
+  private Queue<IMessage> myMessages = new LinkedList<IMessage>();
   private int myInfos;
   private int myWarnings;
   private int myErrors;
@@ -441,7 +442,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     });
   }
 
-  private boolean isVisible(Message m) {
+  private boolean isVisible(IMessage m) {
     switch (m.getKind()) {
       case ERROR:
         return true;
@@ -456,9 +457,9 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private void rebuildModel() {
     myModel.clear();
     myList.setFixedCellWidth(myList.getWidth());
-    List<Message> messagesToAdd = new ArrayList<Message>();
+    List<IMessage> messagesToAdd = new ArrayList<IMessage>();
     int width = 0;
-    for (Message m : myMessages) {
+    for (IMessage m : myMessages) {
       if (isVisible(m)) {
         width = Math.max(width, getMessageWidth(m));
         messagesToAdd.add(m);
@@ -466,7 +467,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
     myList.setFixedCellWidth(width);
 
-    for (Message m : messagesToAdd) {
+    for (IMessage m : messagesToAdd) {
       myModel.add(m);
     }
   }
@@ -491,7 +492,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     myList.setAutoscrolls(true);
   }
 
-  public void add(final Message message) {
+  public void add(final IMessage message) {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     myMessagesInProgress.incrementAndGet();
@@ -501,7 +502,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         int messages = myMessagesInProgress.decrementAndGet();
 
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
-          Message toRemove = myMessages.remove();
+          IMessage toRemove = myMessages.remove();
           updateMessageCounters(message, -1);
           if (isVisible(toRemove)) {
             myModel.removeFirst();
@@ -531,7 +532,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         updateActions();
       }
 
-      private void updateMessageCounters(Message m, int delta) {
+      private void updateMessageCounters(IMessage m, int delta) {
         if (m.getKind() == MessageKind.ERROR) {
           myErrors += delta;
         }
@@ -566,7 +567,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     myToolbar.updateActionsImmediately();
   }
 
-  private int getMessageWidth(Message message) {
+  private int getMessageWidth(IMessage message) {
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
     return renderer.getPreferredSize().width;
   }

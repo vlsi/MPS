@@ -10,6 +10,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jdom.Element;
+import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -19,14 +21,16 @@ public class JavaStreamHandler implements StreamHandler {
   private final IFile myCachesOutputDir;
   private final Set<IFile> mySavedFiles = new HashSet<IFile>();
   private FileProcessor myProcessor;
-  private FilesDelta myFileDelta;
+  private FilesDelta myOutputFileDelta;
+  private FilesDelta myCachesFileDelta;
 
-  public JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, FilesDelta fd) {
+  public JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, IFile cachesOutputDir) {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
-    myCachesOutputDir = FileGenerationUtil.getCachesDir(outputDir);
+    myCachesOutputDir = cachesOutputDir;
     myProcessor = new FileProcessor();
-    this.myFileDelta = fd;
+    this.myOutputFileDelta = new FilesDelta(FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir));
+    this.myCachesFileDelta = new FilesDelta(FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myCachesOutputDir));
   }
 
   public void saveStream(String name, String content, boolean isCache) {
@@ -37,7 +41,10 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    myFileDelta.written(file);
+    ((isCache ?
+      myCachesFileDelta :
+      myOutputFileDelta
+    )).written(file);
   }
 
   public void saveStream(String name, Element content, boolean isCache) {
@@ -48,7 +55,10 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    myFileDelta.written(file);
+    ((isCache ?
+      myCachesFileDelta :
+      myOutputFileDelta
+    )).written(file);
   }
 
   public void saveStream(String name, byte[] content, boolean isCache) {
@@ -59,7 +69,10 @@ public class JavaStreamHandler implements StreamHandler {
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    myFileDelta.written(file);
+    ((isCache ?
+      myCachesFileDelta :
+      myOutputFileDelta
+    )).written(file);
   }
 
   public boolean touch(String name, boolean isCache) {
@@ -69,12 +82,19 @@ public class JavaStreamHandler implements StreamHandler {
     );
     IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
     mySavedFiles.add(file);
-    myFileDelta.kept(file);
+    ((isCache ?
+      myCachesFileDelta :
+      myOutputFileDelta
+    )).kept(file);
     return file.exists();
   }
 
   public void flush() {
     myProcessor.flushChanges();
+  }
+
+  public Iterable<IDelta> delta() {
+    return Sequence.fromArray(new IDelta[]{myOutputFileDelta, myCachesFileDelta});
   }
 
   public void dispose() {

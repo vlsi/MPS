@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
 
 /**
  * Igor Alshannikov
@@ -36,7 +36,7 @@ public class DefaultMessageHandler implements IMessageHandler {
   }
 
 
-  public void handle(Message msg) {
+  public void handle(IMessage msg) {
     if (myMessagesViewTool != null) {
       //it might happen if we haven't opened IDE yet
       myMessagesViewTool.add(msg);

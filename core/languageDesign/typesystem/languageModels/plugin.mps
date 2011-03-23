@@ -739,7 +739,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7631678193867544230">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorComponent%dgetTypeCheckingContext()%cjetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext" resolveInfo="getTypeCheckingContext" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpnt.~EditorComponent%dgetTypeCheckingContext()%cjetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext" resolveInfo="getTypeCheckingContext" />
                     </node>
                   </node>
                 </node>
@@ -880,7 +880,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091405">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/icons/types.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/types.png" />
     </node>
   </root>
   <root id="4290387479601509657">

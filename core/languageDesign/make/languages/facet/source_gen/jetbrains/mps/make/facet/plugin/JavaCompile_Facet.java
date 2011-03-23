@@ -8,9 +8,10 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -77,6 +78,9 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_a implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("compile");
 
     public Target_wf1ya0_a() {
@@ -171,7 +175,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -184,6 +188,9 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_b implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("auxCompile");
 
     public Target_wf1ya0_b() {
@@ -293,7 +300,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -306,6 +313,9 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_c implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("reloadClasses");
 
     public Target_wf1ya0_c() {
@@ -364,7 +374,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -377,6 +387,9 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_d implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
     private ITarget.Name name = new ITarget.Name("compileToMemory");
 
     public Target_wf1ya0_d() {
@@ -468,7 +481,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return null;
+      return Sequence.fromArray(EXPECTED_INPUT);
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {

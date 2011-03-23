@@ -18,9 +18,6 @@
   <import index="hs7a" modelUID="r:592314bc-6729-4503-84dc-fd04330640bd(jetbrains.mps.make.sandbox.sample)" version="-1" implicit="yes" />
   <import index="z5g5" modelUID="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" version="-1" implicit="yes" />
   <roots>
-    <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="6418371274763153153">
-      <property name="name" nameId="tpck.1169194664001" value="FFFFacet" />
-    </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="8351679702044320280">
       <property name="name" nameId="tpck.1169194664001" value="Generate" />
     </node>
@@ -33,91 +30,10 @@
     <node type="z5g5.Outlook" typeId="z5g5.5608160002100057298" id="5608160002100096669">
       <property name="name" nameId="tpck.1169194664001" value="outlook1" />
     </node>
+    <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="6418371274763153153">
+      <property name="name" nameId="tpck.1169194664001" value="FFFFacet" />
+    </node>
   </roots>
-  <root id="6418371274763153153">
-    <node role="optional" roleId="vvvw.6447445394688422657" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="694641402828041917">
-      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044326367" resolveInfo="GenerateSpecial" />
-    </node>
-    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8351679702044371556">
-      <property name="name" nameId="tpck.1169194664001" value="QQQ" />
-      <link role="overrides" roleId="vvvw.6418371274763029589" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
-      <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="395692171604530851">
-        <property name="qualifier" nameId="vvvw.8351679702044326377" value="NOT_AFTER" />
-        <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-      </node>
-      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424933">
-        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424936">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424937">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6872280991287184162">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6872280991287184176">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6872280991287184179">
-                  <property name="value" nameId="tpee.1068580320021" value="42" />
-                </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="6872280991287184163">
-                  <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="6872280991287184164">
-                    <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6872280991287184165">
-                    <link role="component" roleId="cx9y.1239576542472" targetNodeId="7320828025189446641" resolveInfo="bar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424938">
-              <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="505095865854424939" />
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="505095865854424940">
-              <property name="result" nameId="q9ra.7077360340906447918" value="SUCCESS" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="3130298387011951907">
-      <property name="name" nameId="tpck.1169194664001" value="qweqwe" />
-      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424941">
-        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424942">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5898308035039018853" />
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="3297237684108626081">
-              <property name="work" value="ASDF" />
-              <property name="workName" nameId="q9ra.682890046602602769" value="Foobar" />
-              <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626085">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="5898308035038932579" />
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108626087">
-              <property name="work" value="ASDF" />
-              <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="3297237684108626081" />
-              <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626089">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
-              <property name="work" value="ASDF" />
-              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="3297237684108626081" />
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="682890046602567448" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="3130298387011990041">
-      <property name="name" nameId="tpck.1169194664001" value="Nanana" />
-      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424944">
-        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424945">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424946" />
-        </node>
-      </node>
-    </node>
-    <node role="required" roleId="vvvw.6447445394688422656" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="3130298387011791759">
-      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044320280" resolveInfo="Generate" />
-    </node>
-    <node role="extended" roleId="vvvw.6447445394688422654" type="vvvw.ExtendsFacetReference" typeId="vvvw.6447445394688555033" id="2360002718792654715">
-      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044320280" resolveInfo="Generate" />
-    </node>
-  </root>
   <root id="8351679702044320280">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8351679702044320281">
       <property name="name" nameId="tpck.1169194664001" value="GenerateTarget" />
@@ -291,6 +207,90 @@
     </node>
     <node role="facet" roleId="z5g5.5608160002100058529" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="5608160002100096673">
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="1u06.4328738523548357342" resolveInfo="JavaCompile" />
+    </node>
+  </root>
+  <root id="6418371274763153153">
+    <node role="optional" roleId="vvvw.6447445394688422657" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="694641402828041917">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044326367" resolveInfo="GenerateSpecial" />
+    </node>
+    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8351679702044371556">
+      <property name="name" nameId="tpck.1169194664001" value="QQQ" />
+      <link role="overrides" roleId="vvvw.6418371274763029589" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
+      <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="395692171604530851">
+        <property name="qualifier" nameId="vvvw.8351679702044326377" value="NOT_AFTER" />
+        <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
+      </node>
+      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424933">
+        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424936">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424937">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6872280991287184162">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6872280991287184176">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6872280991287184179">
+                  <property name="value" nameId="tpee.1068580320021" value="42" />
+                </node>
+                <node role="lValue" roleId="tpee.1068498886295" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="6872280991287184163">
+                  <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="6872280991287184164">
+                    <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6872280991287184165">
+                    <link role="component" roleId="cx9y.1239576542472" targetNodeId="7320828025189446641" resolveInfo="bar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424938">
+              <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="505095865854424939" />
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="505095865854424940">
+              <property name="result" nameId="q9ra.7077360340906447918" value="SUCCESS" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="3130298387011951907">
+      <property name="name" nameId="tpck.1169194664001" value="qweqwe" />
+      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424941">
+        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424942">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5898308035039018853" />
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="3297237684108626081">
+              <property name="work" value="ASDF" />
+              <property name="workName" nameId="q9ra.682890046602602769" value="Foobar" />
+              <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626085">
+                <property name="value" nameId="tpee.1068580320021" value="10" />
+              </node>
+              <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="5898308035038932579" />
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108626087">
+              <property name="work" value="ASDF" />
+              <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="3297237684108626081" />
+              <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626089">
+                <property name="value" nameId="tpee.1068580320021" value="10" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
+              <property name="work" value="ASDF" />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="3297237684108626081" />
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="682890046602567448" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="3130298387011990041">
+      <property name="name" nameId="tpck.1169194664001" value="Nanana" />
+      <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424944">
+        <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424945">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424946" />
+        </node>
+      </node>
+    </node>
+    <node role="required" roleId="vvvw.6447445394688422656" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="3130298387011791759">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044320280" resolveInfo="Generate" />
+    </node>
+    <node role="extended" roleId="vvvw.6447445394688422654" type="vvvw.ExtendsFacetReference" typeId="vvvw.6447445394688555033" id="2360002718792654715">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="8351679702044320280" resolveInfo="Generate" />
     </node>
   </root>
 </model>

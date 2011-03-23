@@ -34,7 +34,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute();
+    IResult res = sc.execute(null, null, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
@@ -43,7 +43,7 @@ public class Execute_Test extends MockTestCase {
 
   @Test
   public void test_resources() throws Exception {
-    final ITarget make = Mockups.target(context, "make");
+    final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
     final ITarget res = Mockups.target(context, "res");
     final IResource resA = Mockups.resource(context, "resA");
     final IResource resB = Mockups.resource(context, "resB");
@@ -63,8 +63,6 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(result).output();
         will(onConsecutiveCalls(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)), returnValue(null)));
 
-        atLeast(1).of(make).requiresInput();
-        will(returnValue(true));
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
@@ -87,7 +85,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute();
+    IResult r = sc.execute(null, null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -95,14 +93,12 @@ public class Execute_Test extends MockTestCase {
 
   @Test
   public void test_inputResources() throws Exception {
-    final ITarget make = Mockups.target(context, "make");
+    final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
     final IResource resA = Mockups.resource(context, "resA");
     final IResource resB = Mockups.resource(context, "resB");
     final IResult result = Mockups.result(context, "result", true);
     context.checking(new Expectations() {
       {
-        atLeast(1).of(make).requiresInput();
-        will(returnValue(true));
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
@@ -123,7 +119,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
+    IResult r = sc.execute(null, null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -131,7 +127,7 @@ public class Execute_Test extends MockTestCase {
 
   @Test
   public void test_transpResources() throws Exception {
-    final ITarget make = Mockups.target(context, "make");
+    final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
     final ITarget nop = Mockups.target(context, "nop");
     final ITarget res = Mockups.target(context, "res");
     final IResource resA = Mockups.resource(context, "resA");
@@ -157,8 +153,6 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(nop).after();
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
 
-        atLeast(1).of(make).requiresInput();
-        will(returnValue(true));
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
@@ -183,7 +177,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute();
+    IResult r = sc.execute(null, null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -191,7 +185,7 @@ public class Execute_Test extends MockTestCase {
 
   @Test
   public void test_noDuplicateResources() throws Exception {
-    final ITarget make = Mockups.target(context, "make");
+    final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
     final ITarget nop = Mockups.target(context, "nop");
     final ITarget nop2 = Mockups.target(context, "nop2");
     final ITarget dup = Mockups.target(context, "dup");
@@ -237,8 +231,6 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(dup).producesOutput();
         will(returnValue(true));
 
-        atLeast(1).of(make).requiresInput();
-        will(returnValue(true));
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
@@ -264,7 +256,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute();
+    IResult r = sc.execute(null, null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -307,7 +299,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute();
+    IResult r = sc.execute(null, null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(r.output())).isEmpty());
@@ -316,7 +308,7 @@ public class Execute_Test extends MockTestCase {
   @Test
   public void test_fail() throws Exception {
     final ITarget make = Mockups.target(context, "make");
-    final ITarget gen = Mockups.target(context, "gen");
+    final ITarget gen = Mockups.target(context, "gen", new Class[]{IResource.class});
     final ITarget res = Mockups.target(context, "res");
     final IResource resA = Mockups.resource(context, "resA");
     final IResource resB = Mockups.resource(context, "resB");
@@ -341,8 +333,7 @@ public class Execute_Test extends MockTestCase {
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(gen).after();
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
-        atLeast(1).of(gen).requiresInput();
-        will(returnValue(true));
+
         IJob genjob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
@@ -369,7 +360,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute();
+    IResult r = sc.execute(null, null, null);
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -420,7 +411,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute();
+    IResult res = sc.execute(null, null, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

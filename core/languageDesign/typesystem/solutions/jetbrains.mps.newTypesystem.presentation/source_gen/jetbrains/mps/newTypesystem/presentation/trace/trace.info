@@ -224,8 +224,8 @@
       <varInfo nodeId="8006689290570129774" varName="source" />
       <varInfo nodeId="8006689290570129577" varName="goToNode" />
       <varInfo nodeId="8006689290570129792" varName="stateNode" />
-      <varInfo nodeId="743535856746706308" varName="group" />
       <varInfo nodeId="8006689290570129573" varName="goToRule" />
+      <varInfo nodeId="743535856746706308" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="743535856746706253" fileName="TypeSystemStateTree.java" startLine="129" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="743535856746706256" varName="treeNode" />
@@ -400,13 +400,13 @@
       <varInfo nodeId="743535856746706899" varName="title" />
       <varInfo nodeId="743535856746706768" varName="checkBoxes" />
       <varInfo nodeId="743535856746706854" varName="listener" />
-      <varInfo nodeId="743535856746706734" varName="stateScrollPane" />
       <varInfo nodeId="743535856746706720" varName="traceScrollPane" />
+      <varInfo nodeId="743535856746706734" varName="stateScrollPane" />
     </scopeInfo>
     <scopeInfo nodeId="743535856746706651" fileName="ShowTypeSystemTrace.java" startLine="29" startPosition="0" endLine="80" endPosition="3">
       <varInfo nodeId="743535856746706660" varName="node" />
-      <varInfo nodeId="743535856746706658" varName="frame" />
       <varInfo nodeId="743535856746706654" varName="t" />
+      <varInfo nodeId="743535856746706658" varName="frame" />
       <varInfo nodeId="743535856746706656" varName="operationContext" />
       <varInfo nodeId="743535856746706662" varName="rebuild" />
     </scopeInfo>
@@ -733,8 +733,8 @@
       <varInfo nodeId="335725515708950755" varName="goToRule2" />
       <varInfo nodeId="2560871860652356247" varName="source" />
       <varInfo nodeId="2560871860652448904" varName="goToNode" />
-      <varInfo nodeId="3690709621696875888" varName="group" />
       <varInfo nodeId="2560871860652448556" varName="goToRule" />
+      <varInfo nodeId="3690709621696875888" varName="group" />
       <varInfo nodeId="1318473677291154078" varName="info" />
     </scopeInfo>
     <scopeInfo nodeId="743535856746707365" fileName="TypeSystemTraceTree.java" startLine="120" startPosition="0" endLine="144" endPosition="0">

@@ -4,9 +4,7 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.make.runtime.util.IDelta;
 
-public interface ITResource extends IResource {
+public interface ITResource extends IResource, IDeltaResource {
   public IModule module();
-  public IDelta delta();
 }

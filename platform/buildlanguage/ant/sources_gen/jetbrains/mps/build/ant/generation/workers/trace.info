@@ -157,10 +157,10 @@
     <nodeInfo nodeId="7795897115019498793" fileName="GeneratorWorker.java" startLine="75" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showStatistic#()V" />
     <nodeInfo nodeId="7795897115019499453" fileName="GeneratorWorker.java" startLine="121" startPosition="31" endLine="139" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019499107" fileName="GeneratorWorker.java" startLine="175" startPosition="5" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7795897115019499257" fileName="GeneratorWorker.java" startLine="246" startPosition="37" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="7795897115019499257" fileName="GeneratorWorker.java" startLine="246" startPosition="38" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="7795897115019498661" fileName="GeneratorWorker.java" startLine="295" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fill#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="7795897115019498979" fileName="GeneratorWorker.java" startLine="146" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeGenerationOrder#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)Ljava/util/List;" />
-    <nodeInfo nodeId="7795897115019498623" fileName="GeneratorWorker.java" startLine="245" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/Message;)V" />
+    <nodeInfo nodeId="7795897115019498623" fileName="GeneratorWorker.java" startLine="245" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
     <nodeInfo nodeId="7795897115019498845" fileName="GeneratorWorker.java" startLine="88" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)V" />
     <nodeInfo nodeId="7795897115019498976" fileName="GeneratorWorker.java" startLine="119" startPosition="58" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7795897115019498969" fileName="GeneratorWorker.java" startLine="118" startPosition="101" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -356,7 +356,7 @@
     <scopeInfo nodeId="7795897115019499107" fileName="GeneratorWorker.java" startLine="175" startPosition="5" endLine="193" endPosition="5">
       <varInfo nodeId="7795897115019499109" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7795897115019499256" fileName="GeneratorWorker.java" startLine="246" startPosition="37" endLine="264" endPosition="7" />
+    <scopeInfo nodeId="7795897115019499256" fileName="GeneratorWorker.java" startLine="246" startPosition="38" endLine="264" endPosition="7" />
     <scopeInfo nodeId="7795897115019498661" fileName="GeneratorWorker.java" startLine="295" startPosition="0" endLine="314" endPosition="0">
       <varInfo nodeId="7795897115019498664" varName="map" />
     </scopeInfo>
