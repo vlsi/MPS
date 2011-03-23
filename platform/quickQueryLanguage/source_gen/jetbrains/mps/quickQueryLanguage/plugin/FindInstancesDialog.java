@@ -129,7 +129,6 @@ public class FindInstancesDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
-    this.myEditor.disposeEditor();
     this.dispose();
   }
 
@@ -151,6 +150,11 @@ public class FindInstancesDialog extends BaseDialog {
   @Override
   public void dispose() {
     super.dispose();
-    myModelOwner.unregisterModelOwner();
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        myEditor.disposeEditor();
+        myModelOwner.unregisterModelOwner();
+      }
+    });
   }
 }
