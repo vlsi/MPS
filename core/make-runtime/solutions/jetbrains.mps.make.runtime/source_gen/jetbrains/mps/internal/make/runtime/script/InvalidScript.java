@@ -24,7 +24,7 @@ public class InvalidScript implements IScript {
     throw new IllegalStateException("Invalid script");
   }
 
-  public IResult execute(Iterable<? extends IResource> input) {
+  public IResult execute(IScript.Setup setup, IMonitors monitors, Iterable<? extends IResource> input) {
     throw new IllegalStateException("Invalid script");
   }
 

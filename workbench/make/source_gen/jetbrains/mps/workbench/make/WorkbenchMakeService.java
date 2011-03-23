@@ -13,6 +13,8 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
@@ -25,15 +27,14 @@ import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.messages.IMessageHandler;
@@ -60,7 +61,7 @@ public class WorkbenchMakeService implements IMakeService {
       public void doExecute(Runnable runnable) {
         runnable.run();
       }
-    });
+    }, null);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IScript script) {
@@ -68,18 +69,26 @@ public class WorkbenchMakeService implements IMakeService {
       public void doExecute(Runnable runnable) {
         runnable.run();
       }
-    });
+    }, null);
+  }
+
+  public IResult make(Iterable<? extends IResource> resources, IScript script, IScript.Setup setup) {
+    return doMake(resources, script, new IMakeService.Executor() {
+      public void doExecute(Runnable runnable) {
+        runnable.run();
+      }
+    }, setup);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
-    return doMake(resources, script, executor);
+    return doMake(resources, script, executor, null);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IMakeService.Executor executor) {
-    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor);
+    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor, null);
   }
 
-  private IResult doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
+  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IMakeService.Executor executor, IScript.Setup setup) {
     WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
     String scrName = ((cleanMake ?
       "Rebuild" :
@@ -98,9 +107,8 @@ public class WorkbenchMakeService implements IMakeService {
       }
     }
 
-    final IScript scr = this.completeScript(script, scrName);
 
-    if (!(scr.isValid())) {
+    if (!(script.isValid())) {
       String msg = scrName + " failed";
       mh.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
       this.displayInfo(msg);
@@ -114,10 +122,11 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
 
+    final Tuples._2<IScript.Setup, IMonitors> scrParams = this.scriptParameters(scrName, setup);
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
     executor.doExecute(new Runnable() {
       public void run() {
-        res.value = scr.execute(inputRes);
+        res.value = script.execute(scrParams._0(), scrParams._1(), inputRes);
       }
     });
 
@@ -142,7 +151,7 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  private IScript completeScript(IScript scr, final String scrName) {
+  private Tuples._2<IScript.Setup, IMonitors> scriptParameters(final String scrName, final IScript.Setup setup) {
     final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
     final IJobMonitor jmon = new IJobMonitor() {
       public boolean stopRequested() {
@@ -189,27 +198,19 @@ public class WorkbenchMakeService implements IMakeService {
         return pind.value;
       }
     };
-    final _FunctionTypes._void_P1_E0<? super IParametersPool> init = new _FunctionTypes._void_P1_E0<IParametersPool>() {
-      public void invoke(IParametersPool pool) {
+    final IScript.Setup init = new IScript.Setup() {
+      public void setup(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
         vars._0(WorkbenchMakeService.this.context.getProject());
         vars._1(WorkbenchMakeService.this.context);
         vars._2(WorkbenchMakeService.this.cleanMake);
         vars._3(pindGet);
+        if (setup != null) {
+          setup.setup(pool);
+        }
       }
     };
-    return new IScript.StubBoss(scr) {
-      @Override
-      public void init(IParametersPool ppool) {
-        init.invoke(ppool);
-        super.init(ppool);
-      }
-
-      @Override
-      public IMonitors monitors() {
-        return mons;
-      }
-    };
+    return MultiTuple.<IScript.Setup,IMonitors>from(init, mons);
   }
 
   public static IScript defaultMakeScript() {

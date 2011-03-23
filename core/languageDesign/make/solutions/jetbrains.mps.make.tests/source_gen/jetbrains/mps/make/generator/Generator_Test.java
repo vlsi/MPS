@@ -15,7 +15,6 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.script.IParametersPool;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -64,19 +63,11 @@ public class Generator_Test extends MockTestCase {
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withTarget(new ITarget.Name("Make")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      public IMonitors monitors() {
-        return mons;
-      }
-
-      public void init(IParametersPool ppool) {
-      }
-    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null);
+    IResult res = scr.execute(null, mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -134,19 +125,11 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      public IMonitors monitors() {
-        return mons;
-      }
-
-      public void init(IParametersPool ppool) {
-      }
-    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null);
+    IResult res = scr.execute(null, mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -205,20 +188,12 @@ public class Generator_Test extends MockTestCase {
     Mockups.allowing(context, mons);
 
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      public IMonitors monitors() {
-        return mons;
-      }
-
-      public void init(IParametersPool ppool) {
-      }
-    };
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null);
+    IResult res = scr.execute(null, mons, null);
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -263,20 +238,12 @@ public class Generator_Test extends MockTestCase {
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      public IMonitors monitors() {
-        return mons;
-      }
-
-      public void init(IParametersPool ppool) {
-      }
-    };
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null);
+    IResult res = scr.execute(null, mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -319,19 +286,11 @@ public class Generator_Test extends MockTestCase {
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), jmon);
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      public IMonitors monitors() {
-        return mons;
-      }
-
-      public void init(IParametersPool ppool) {
-      }
-    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null);
+    IResult res = scr.execute(null, mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

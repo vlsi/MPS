@@ -9,13 +9,14 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitors;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -26,7 +27,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 
-public class Script extends IScript.Stub implements IScript {
+public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
 
   private ITarget.Name defaultTargetName;
@@ -76,7 +77,7 @@ public class Script extends IScript.Stub implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public IResult execute(final Iterable<? extends IResource> scriptInput) {
+  public IResult execute(IScript.Setup setup, IMonitors monitors, final Iterable<? extends IResource> scriptInput) {
     validate();
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
@@ -85,10 +86,16 @@ public class Script extends IScript.Stub implements IScript {
     LOG.debug("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
     final Script.ParametersPool pool = new Script.ParametersPool();
-    LOG.debug("Initializing");
-    init(pool);
 
-    IMonitors mons = monitors();
+    LOG.debug("Initializing");
+    if (setup != null) {
+      setup.setup(pool);
+    }
+
+    IMonitors mons = (monitors != null ?
+      monitors :
+      new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub()))
+    );
     final Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {

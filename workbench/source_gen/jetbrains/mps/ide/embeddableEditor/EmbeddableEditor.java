@@ -24,8 +24,6 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -34,6 +32,8 @@ import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.resources.CResource;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -138,20 +138,19 @@ public class EmbeddableEditor {
 
   public IClassesData make(final Set<IClassPathItem> classPath) {
     IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("compileToMemory")).toScript();
-    scr = new IScript.StubBoss(scr) {
-      @Override
-      public void init(IParametersPool ppool) {
-        Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
-        params._0(classPath);
-        super.init(ppool);
-      }
-    };
+
     IConfigMonitor cmon = new IConfigMonitor() {
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         return query.defaultOption();
       }
     };
-    IResult res = new WorkbenchMakeService(myContext, cmon, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr);
+
+    IResult res = new WorkbenchMakeService(myContext, cmon, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScript.Setup() {
+      public void setup(IParametersPool ppool) {
+        Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
+        params._0(classPath);
+      }
+    });
     if (res.isSucessful()) {
       CResource out = (CResource) Sequence.fromIterable(res.output()).first();
       return out.classes();

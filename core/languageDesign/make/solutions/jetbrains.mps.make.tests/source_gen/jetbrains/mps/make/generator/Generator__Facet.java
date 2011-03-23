@@ -158,8 +158,8 @@ public class Generator__Facet implements IFacet {
               pool.parameters(new ITarget.Name("Configure"), Generator__Facet.Target_j0fmyu_a.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
-                monitor.currentProgress().advanceWork("GENERATE", 50);
               }
+              monitor.currentProgress().advanceWork("GENERATE", 50);
               monitor.currentProgress().finishWork("GENERATE");
               _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(input));
               return new IResult.SUCCESS(_output_j0fmyu_a0b);

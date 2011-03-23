@@ -6,73 +6,12 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 
 public interface IScript {
-  public void init(IParametersPool ppool);
-  public IMonitors monitors();
   public boolean isValid();
   public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
-  public IResult execute(Iterable<? extends IResource> input);
-  public static interface Init {
-    public void init(IParametersPool ppool);
-  }
-
-  public static abstract class Stub implements IScript {
-    private IScript.StubBoss boss;
-
-    public Stub() {
-    }
-
-    public IMonitors monitors() {
-      return (boss != null ?
-        boss.monitors() :
-        new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub()))
-      );
-    }
-
-    public void init(IParametersPool ppool) {
-      if (boss != null) {
-        boss.init(ppool);
-      }
-    }
-
-    public void setBoss(IScript.StubBoss boss) {
-      this.boss = boss;
-    }
-  }
-
-  public static abstract class StubBoss extends IScript.Stub implements IScript {
-    private IScript delegate;
-
-    public StubBoss(IScript delegate) {
-      if (delegate == null) {
-        throw new NullPointerException();
-      }
-      this.delegate = delegate;
-      if (delegate instanceof IScript.Stub) {
-        ((IScript.Stub) delegate).setBoss(this);
-      }
-    }
-
-    @Override
-    public void init(IParametersPool ppool) {
-      super.init(ppool);
-    }
-
-    public IResult execute(Iterable<? extends IResource> input) {
-      return delegate.execute(input);
-    }
-
-    public Iterable<ITarget> allTargets() {
-      return delegate.allTargets();
-    }
-
-    public ITarget finalTarget() {
-      return delegate.finalTarget();
-    }
-
-    public boolean isValid() {
-      return delegate.isValid();
-    }
+  public IResult execute(IScript.Setup setup, IMonitors monitors, Iterable<? extends IResource> input);
+  public static interface Setup {
+    public void setup(IParametersPool ppool);
   }
 
 }
