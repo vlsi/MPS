@@ -287,6 +287,9 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6005837154535148805">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.4315056782306262711" resolveInfo="AbstractComparableStatement" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="838715195501404653">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.838715195501404652" resolveInfo="OrPattern" />
+    </node>
   </roots>
   <root id="1174643003920">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1174643009469">
@@ -4188,6 +4191,14 @@
         <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="2365227504094346394" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6005837154535157723" />
+    </node>
+  </root>
+  <root id="838715195501404653">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="838715195501404655">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="838715195501404657" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="838715195501404658">
+        <property name="text" nameId="tpc2.1073389577007" value="or" />
+      </node>
     </node>
   </root>
 </model>

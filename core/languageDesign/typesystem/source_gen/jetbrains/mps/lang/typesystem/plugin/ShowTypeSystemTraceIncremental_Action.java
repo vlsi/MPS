@@ -70,8 +70,8 @@ public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
       TypeCheckingContext typeCheckingContext;
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
-        TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), false);
+        TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
+        new ShowTypeSystemTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), false);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTraceIncremental", t);
