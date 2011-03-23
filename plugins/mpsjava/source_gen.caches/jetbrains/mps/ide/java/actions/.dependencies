@@ -117,7 +117,6 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -126,6 +125,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

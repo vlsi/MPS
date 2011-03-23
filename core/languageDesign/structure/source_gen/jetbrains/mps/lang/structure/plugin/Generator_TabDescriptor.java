@@ -30,7 +30,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
+import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
 import javax.swing.JOptionPane;

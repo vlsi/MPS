@@ -2535,446 +2535,446 @@
     <unitInfo nodeId="5923576889075046252" fileName="MappingSelectTree.java" startLine="25" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree" />
   </root>
   <root nodeId="5923576889075046931">
-    <nodeInfo nodeId="5923576889075046934" fileName="EditOperandDialog.java" startLine="34" startPosition="51" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="5923576889075046937" fileName="EditOperandDialog.java" startLine="35" startPosition="45" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
-    <nodeInfo nodeId="5923576889075046940" fileName="EditOperandDialog.java" startLine="36" startPosition="37" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="5923576889075046955" fileName="EditOperandDialog.java" startLine="39" startPosition="156" endLine="40" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5923576889075046963" fileName="EditOperandDialog.java" startLine="40" startPosition="100" endLine="41" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047018" fileName="EditOperandDialog.java" startLine="44" startPosition="21" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075046986" fileName="EditOperandDialog.java" startLine="46" startPosition="16" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075046997" fileName="EditOperandDialog.java" startLine="48" startPosition="53" endLine="49" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047011" fileName="EditOperandDialog.java" startLine="50" startPosition="30" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047024" fileName="EditOperandDialog.java" startLine="56" startPosition="7" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047031" fileName="EditOperandDialog.java" startLine="57" startPosition="45" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047039" fileName="EditOperandDialog.java" startLine="58" startPosition="43" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047049" fileName="EditOperandDialog.java" startLine="59" startPosition="55" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047054" fileName="EditOperandDialog.java" startLine="60" startPosition="26" endLine="61" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047062" fileName="EditOperandDialog.java" startLine="61" startPosition="37" endLine="62" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047080" fileName="EditOperandDialog.java" startLine="65" startPosition="75" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047093" fileName="EditOperandDialog.java" startLine="67" startPosition="35" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047106" fileName="EditOperandDialog.java" startLine="69" startPosition="27" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047127" fileName="EditOperandDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047146" fileName="EditOperandDialog.java" startLine="78" startPosition="79" endLine="79" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047154" fileName="EditOperandDialog.java" startLine="79" startPosition="110" endLine="80" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047160" fileName="EditOperandDialog.java" startLine="80" startPosition="73" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047172" fileName="EditOperandDialog.java" startLine="82" startPosition="71" endLine="83" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047180" fileName="EditOperandDialog.java" startLine="83" startPosition="128" endLine="84" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047186" fileName="EditOperandDialog.java" startLine="84" startPosition="79" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047201" fileName="EditOperandDialog.java" startLine="86" startPosition="115" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047209" fileName="EditOperandDialog.java" startLine="87" startPosition="62" endLine="88" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047215" fileName="EditOperandDialog.java" startLine="88" startPosition="95" endLine="89" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047221" fileName="EditOperandDialog.java" startLine="89" startPosition="79" endLine="90" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047230" fileName="EditOperandDialog.java" startLine="95" startPosition="43" endLine="96" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047238" fileName="EditOperandDialog.java" startLine="100" startPosition="82" endLine="101" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047250" fileName="EditOperandDialog.java" startLine="104" startPosition="48" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047264" fileName="EditOperandDialog.java" startLine="108" startPosition="114" endLine="109" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047335" fileName="EditOperandDialog.java" startLine="112" startPosition="56" endLine="113" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047344" fileName="EditOperandDialog.java" startLine="113" startPosition="85" endLine="114" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047352" fileName="EditOperandDialog.java" startLine="114" startPosition="100" endLine="115" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047317" fileName="EditOperandDialog.java" startLine="117" startPosition="14" endLine="118" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047304" fileName="EditOperandDialog.java" startLine="121" startPosition="55" endLine="122" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047295" fileName="EditOperandDialog.java" startLine="125" startPosition="98" endLine="126" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047365" fileName="EditOperandDialog.java" startLine="131" startPosition="97" endLine="132" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047371" fileName="EditOperandDialog.java" startLine="132" startPosition="52" endLine="133" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047382" fileName="EditOperandDialog.java" startLine="134" startPosition="40" endLine="135" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047390" fileName="EditOperandDialog.java" startLine="135" startPosition="85" endLine="136" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047406" fileName="EditOperandDialog.java" startLine="137" startPosition="49" endLine="138" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047412" fileName="EditOperandDialog.java" startLine="138" startPosition="76" endLine="139" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047461" fileName="EditOperandDialog.java" startLine="140" startPosition="64" endLine="141" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047452" fileName="EditOperandDialog.java" startLine="143" startPosition="62" endLine="144" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6801780643483387272" fileName="EditOperandDialog.java" startLine="148" startPosition="57" endLine="149" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6801780643483387284" fileName="EditOperandDialog.java" startLine="150" startPosition="61" endLine="151" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6801780643483355772" fileName="EditOperandDialog.java" startLine="161" startPosition="51" endLine="162" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6801780643483355765" fileName="EditOperandDialog.java" startLine="164" startPosition="48" endLine="165" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047474" fileName="EditOperandDialog.java" startLine="170" startPosition="97" endLine="171" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047481" fileName="EditOperandDialog.java" startLine="171" startPosition="79" endLine="172" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047485" fileName="EditOperandDialog.java" startLine="172" startPosition="20" endLine="173" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047496" fileName="EditOperandDialog.java" startLine="174" startPosition="40" endLine="175" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047504" fileName="EditOperandDialog.java" startLine="175" startPosition="85" endLine="176" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047512" fileName="EditOperandDialog.java" startLine="176" startPosition="112" endLine="177" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047542" fileName="EditOperandDialog.java" startLine="179" startPosition="46" endLine="180" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047535" fileName="EditOperandDialog.java" startLine="181" startPosition="16" endLine="182" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047555" fileName="EditOperandDialog.java" startLine="188" startPosition="96" endLine="189" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047566" fileName="EditOperandDialog.java" startLine="189" startPosition="88" endLine="190" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047577" fileName="EditOperandDialog.java" startLine="191" startPosition="40" endLine="192" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047585" fileName="EditOperandDialog.java" startLine="192" startPosition="85" endLine="193" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047601" fileName="EditOperandDialog.java" startLine="194" startPosition="50" endLine="195" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047612" fileName="EditOperandDialog.java" startLine="200" startPosition="84" endLine="201" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047626" fileName="EditOperandDialog.java" startLine="202" startPosition="38" endLine="203" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047634" fileName="EditOperandDialog.java" startLine="205" startPosition="32" endLine="206" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047637" fileName="EditOperandDialog.java" startLine="207" startPosition="5" endLine="208" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047676" fileName="EditOperandDialog.java" startLine="209" startPosition="33" endLine="210" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047653" fileName="EditOperandDialog.java" startLine="211" startPosition="12" endLine="212" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047663" fileName="EditOperandDialog.java" startLine="213" startPosition="55" endLine="214" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047673" fileName="EditOperandDialog.java" startLine="215" startPosition="7" endLine="216" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047690" fileName="EditOperandDialog.java" startLine="220" startPosition="90" endLine="221" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047695" fileName="EditOperandDialog.java" startLine="221" startPosition="71" endLine="222" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047703" fileName="EditOperandDialog.java" startLine="222" startPosition="105" endLine="223" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047770" fileName="EditOperandDialog.java" startLine="224" startPosition="32" endLine="225" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047716" fileName="EditOperandDialog.java" startLine="226" startPosition="12" endLine="227" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047758" fileName="EditOperandDialog.java" startLine="228" startPosition="35" endLine="229" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047732" fileName="EditOperandDialog.java" startLine="230" startPosition="14" endLine="231" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047742" fileName="EditOperandDialog.java" startLine="232" startPosition="57" endLine="233" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047752" fileName="EditOperandDialog.java" startLine="234" startPosition="9" endLine="235" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047776" fileName="EditOperandDialog.java" startLine="237" startPosition="5" endLine="238" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047784" fileName="EditOperandDialog.java" startLine="241" startPosition="86" endLine="242" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047798" fileName="EditOperandDialog.java" startLine="243" startPosition="38" endLine="244" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047806" fileName="EditOperandDialog.java" startLine="246" startPosition="32" endLine="247" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047811" fileName="EditOperandDialog.java" startLine="247" startPosition="69" endLine="248" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047820" fileName="EditOperandDialog.java" startLine="248" startPosition="58" endLine="249" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047825" fileName="EditOperandDialog.java" startLine="249" startPosition="28" endLine="250" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047827" fileName="EditOperandDialog.java" startLine="251" startPosition="5" endLine="252" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047866" fileName="EditOperandDialog.java" startLine="253" startPosition="33" endLine="254" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047843" fileName="EditOperandDialog.java" startLine="255" startPosition="12" endLine="256" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047853" fileName="EditOperandDialog.java" startLine="257" startPosition="55" endLine="258" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047863" fileName="EditOperandDialog.java" startLine="259" startPosition="7" endLine="260" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047880" fileName="EditOperandDialog.java" startLine="264" startPosition="85" endLine="265" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047888" fileName="EditOperandDialog.java" startLine="265" startPosition="107" endLine="266" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047893" fileName="EditOperandDialog.java" startLine="266" startPosition="67" endLine="267" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047904" fileName="EditOperandDialog.java" startLine="267" startPosition="76" endLine="268" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047915" fileName="EditOperandDialog.java" startLine="268" startPosition="61" endLine="269" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047924" fileName="EditOperandDialog.java" startLine="272" startPosition="91" endLine="273" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047931" fileName="EditOperandDialog.java" startLine="273" startPosition="82" endLine="274" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047942" fileName="EditOperandDialog.java" startLine="275" startPosition="40" endLine="276" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047950" fileName="EditOperandDialog.java" startLine="276" startPosition="85" endLine="277" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047963" fileName="EditOperandDialog.java" startLine="278" startPosition="38" endLine="279" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047968" fileName="EditOperandDialog.java" startLine="281" startPosition="5" endLine="282" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075047976" fileName="EditOperandDialog.java" startLine="285" startPosition="64" endLine="286" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047980" fileName="EditOperandDialog.java" startLine="286" startPosition="32" endLine="287" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047992" fileName="EditOperandDialog.java" startLine="288" startPosition="40" endLine="289" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075047998" fileName="EditOperandDialog.java" startLine="289" startPosition="60" endLine="290" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075048007" fileName="EditOperandDialog.java" startLine="291" startPosition="5" endLine="292" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075048015" fileName="EditOperandDialog.java" startLine="292" startPosition="92" endLine="293" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075048023" fileName="EditOperandDialog.java" startLine="293" startPosition="63" endLine="294" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075048028" fileName="EditOperandDialog.java" startLine="294" startPosition="41" endLine="295" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075048034" fileName="EditOperandDialog.java" startLine="299" startPosition="26" endLine="300" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075048046" fileName="EditOperandDialog.java" startLine="300" startPosition="93" endLine="301" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075048067" fileName="EditOperandDialog.java" startLine="303" startPosition="50" endLine="304" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075048072" fileName="EditOperandDialog.java" startLine="306" startPosition="7" endLine="307" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075048089" fileName="EditOperandDialog.java" startLine="311" startPosition="30" endLine="312" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075048095" fileName="EditOperandDialog.java" startLine="312" startPosition="20" endLine="313" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047315" fileName="EditOperandDialog.java" startLine="117" startPosition="12" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047533" fileName="EditOperandDialog.java" startLine="181" startPosition="14" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047006" fileName="EditOperandDialog.java" startLine="49" startPosition="89" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047101" fileName="EditOperandDialog.java" startLine="68" startPosition="80" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047115" fileName="EditOperandDialog.java" startLine="72" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="124" startPosition="50" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6801780643483355760" fileName="EditOperandDialog.java" startLine="163" startPosition="12" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047593" fileName="EditOperandDialog.java" startLine="193" startPosition="110" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047620" fileName="EditOperandDialog.java" startLine="201" startPosition="92" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047629" fileName="EditOperandDialog.java" startLine="204" startPosition="5" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="212" startPosition="63" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047737" fileName="EditOperandDialog.java" startLine="231" startPosition="71" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047792" fileName="EditOperandDialog.java" startLine="242" startPosition="109" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047848" fileName="EditOperandDialog.java" startLine="256" startPosition="63" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047958" fileName="EditOperandDialog.java" startLine="277" startPosition="96" endLine="280" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047226" fileName="EditOperandDialog.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5923576889075047246" fileName="EditOperandDialog.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075047987" fileName="EditOperandDialog.java" startLine="287" startPosition="67" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5923576889075048063" fileName="EditOperandDialog.java" startLine="302" startPosition="97" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075047234" fileName="EditOperandDialog.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="5923576889075047323" fileName="EditOperandDialog.java" startLine="111" startPosition="19" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5923576889075047280" fileName="EditOperandDialog.java" startLine="123" startPosition="10" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6801780643483387263" fileName="EditOperandDialog.java" startLine="147" startPosition="107" endLine="152" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047526" fileName="EditOperandDialog.java" startLine="178" startPosition="49" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075048051" fileName="EditOperandDialog.java" startLine="301" startPosition="26" endLine="306" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075046992" fileName="EditOperandDialog.java" startLine="47" startPosition="47" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047088" fileName="EditOperandDialog.java" startLine="66" startPosition="92" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047191" fileName="EditOperandDialog.java" startLine="85" startPosition="29" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6801780643483355756" fileName="EditOperandDialog.java" startLine="160" startPosition="101" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047651" fileName="EditOperandDialog.java" startLine="211" startPosition="10" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047730" fileName="EditOperandDialog.java" startLine="230" startPosition="12" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047801" fileName="EditOperandDialog.java" startLine="245" startPosition="5" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047841" fileName="EditOperandDialog.java" startLine="255" startPosition="10" endLine="261" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="309" startPosition="0" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
-    <nodeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="146" startPosition="59" endLine="153" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047518" fileName="EditOperandDialog.java" startLine="177" startPosition="37" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047572" fileName="EditOperandDialog.java" startLine="190" startPosition="43" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5923576889075047937" fileName="EditOperandDialog.java" startLine="274" startPosition="43" endLine="281" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5923576889075046984" fileName="EditOperandDialog.java" startLine="46" startPosition="14" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047276" fileName="EditOperandDialog.java" startLine="120" startPosition="10" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="159" startPosition="98" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075047874" fileName="EditOperandDialog.java" startLine="263" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075047313" fileName="EditOperandDialog.java" startLine="110" startPosition="56" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047428" fileName="EditOperandDialog.java" startLine="145" startPosition="14" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047645" fileName="EditOperandDialog.java" startLine="208" startPosition="74" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047724" fileName="EditOperandDialog.java" startLine="227" startPosition="77" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047835" fileName="EditOperandDialog.java" startLine="252" startPosition="75" endLine="261" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075046982" fileName="EditOperandDialog.java" startLine="43" startPosition="25" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047165" fileName="EditOperandDialog.java" startLine="81" startPosition="22" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6801780643483355738" fileName="EditOperandDialog.java" startLine="158" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMappingRefSet#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_RefSet;)V" />
-    <nodeInfo nodeId="5923576889075047714" fileName="EditOperandDialog.java" startLine="226" startPosition="10" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5923576889075047424" fileName="EditOperandDialog.java" startLine="142" startPosition="14" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047491" fileName="EditOperandDialog.java" startLine="173" startPosition="43" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5923576889075047547" fileName="EditOperandDialog.java" startLine="187" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNodeMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_SimpleRef;)V" />
-    <nodeInfo nodeId="5923576889075048030" fileName="EditOperandDialog.java" startLine="297" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonOK#()V" />
-    <nodeInfo nodeId="5923576889075047072" fileName="EditOperandDialog.java" startLine="64" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandCheckedUnder#(Ljavax/swing/JTree;Ljavax/swing/tree/DefaultMutableTreeNode;)V" />
-    <nodeInfo nodeId="5923576889075047917" fileName="EditOperandDialog.java" startLine="271" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildrenWithChecks#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075047970" fileName="EditOperandDialog.java" startLine="284" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCheckedUnder#(Ljavax/swing/tree/DefaultMutableTreeNode;)Z" />
-    <nodeInfo nodeId="5923576889075046978" fileName="EditOperandDialog.java" startLine="42" startPosition="57" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5923576889075047710" fileName="EditOperandDialog.java" startLine="223" startPosition="46" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075046971" fileName="EditOperandDialog.java" startLine="41" startPosition="121" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075047420" fileName="EditOperandDialog.java" startLine="139" startPosition="97" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047138" fileName="EditOperandDialog.java" startLine="77" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addGeneratorModels#(Ljetbrains/mps/smodel/Generator;Ljavax/swing/tree/DefaultMutableTreeNode;)V" />
-    <nodeInfo nodeId="5923576889075047466" fileName="EditOperandDialog.java" startLine="169" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_SimpleRef;)V" />
-    <nodeInfo nodeId="5923576889075047272" fileName="EditOperandDialog.java" startLine="109" startPosition="92" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047398" fileName="EditOperandDialog.java" startLine="136" startPosition="108" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075047606" fileName="EditOperandDialog.java" startLine="199" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075047684" fileName="EditOperandDialog.java" startLine="219" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGeneratorMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075047254" fileName="EditOperandDialog.java" startLine="107" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRootMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;Z)V" />
-    <nodeInfo nodeId="5923576889075047377" fileName="EditOperandDialog.java" startLine="133" startPosition="43" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5923576889075047778" fileName="EditOperandDialog.java" startLine="240" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
-    <nodeInfo nodeId="5923576889075046943" fileName="EditOperandDialog.java" startLine="38" startPosition="0" endLine="63" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditOperandDialog#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;Z)V" />
-    <nodeInfo nodeId="5923576889075047357" fileName="EditOperandDialog.java" startLine="130" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_ExternalRef;)V" />
-    <scopeInfo nodeId="5923576889075047017" fileName="EditOperandDialog.java" startLine="44" startPosition="21" endLine="45" endPosition="47" />
-    <scopeInfo nodeId="5923576889075047010" fileName="EditOperandDialog.java" startLine="50" startPosition="30" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="5923576889075047105" fileName="EditOperandDialog.java" startLine="69" startPosition="27" endLine="70" endPosition="56" />
-    <scopeInfo nodeId="5923576889075047126" fileName="EditOperandDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="76" />
-    <scopeInfo nodeId="5923576889075047229" fileName="EditOperandDialog.java" startLine="95" startPosition="43" endLine="96" endPosition="27" />
-    <scopeInfo nodeId="5923576889075047237" fileName="EditOperandDialog.java" startLine="100" startPosition="82" endLine="101" endPosition="77" />
-    <scopeInfo nodeId="5923576889075047249" fileName="EditOperandDialog.java" startLine="104" startPosition="48" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="5923576889075047316" fileName="EditOperandDialog.java" startLine="117" startPosition="14" endLine="118" endPosition="35" />
-    <scopeInfo nodeId="5923576889075047303" fileName="EditOperandDialog.java" startLine="121" startPosition="55" endLine="122" endPosition="66" />
-    <scopeInfo nodeId="5923576889075047294" fileName="EditOperandDialog.java" startLine="125" startPosition="98" endLine="126" endPosition="64" />
-    <scopeInfo nodeId="5923576889075047460" fileName="EditOperandDialog.java" startLine="140" startPosition="64" endLine="141" endPosition="37" />
-    <scopeInfo nodeId="5923576889075047451" fileName="EditOperandDialog.java" startLine="143" startPosition="62" endLine="144" endPosition="76" />
-    <scopeInfo nodeId="6801780643483387264" fileName="EditOperandDialog.java" startLine="148" startPosition="57" endLine="149" endPosition="71" />
-    <scopeInfo nodeId="6801780643483387280" fileName="EditOperandDialog.java" startLine="150" startPosition="61" endLine="151" endPosition="66" />
-    <scopeInfo nodeId="6801780643483355771" fileName="EditOperandDialog.java" startLine="161" startPosition="51" endLine="162" endPosition="65" />
-    <scopeInfo nodeId="6801780643483355764" fileName="EditOperandDialog.java" startLine="164" startPosition="48" endLine="165" endPosition="60" />
-    <scopeInfo nodeId="5923576889075047541" fileName="EditOperandDialog.java" startLine="179" startPosition="46" endLine="180" endPosition="38" />
-    <scopeInfo nodeId="5923576889075047534" fileName="EditOperandDialog.java" startLine="181" startPosition="16" endLine="182" endPosition="44" />
-    <scopeInfo nodeId="5923576889075047600" fileName="EditOperandDialog.java" startLine="194" startPosition="50" endLine="195" endPosition="36" />
-    <scopeInfo nodeId="5923576889075047625" fileName="EditOperandDialog.java" startLine="202" startPosition="38" endLine="203" endPosition="45" />
-    <scopeInfo nodeId="5923576889075047633" fileName="EditOperandDialog.java" startLine="205" startPosition="32" endLine="206" endPosition="46" />
-    <scopeInfo nodeId="5923576889075047675" fileName="EditOperandDialog.java" startLine="209" startPosition="33" endLine="210" endPosition="55" />
-    <scopeInfo nodeId="5923576889075047662" fileName="EditOperandDialog.java" startLine="213" startPosition="55" endLine="214" endPosition="70" />
-    <scopeInfo nodeId="5923576889075047769" fileName="EditOperandDialog.java" startLine="224" startPosition="32" endLine="225" endPosition="63" />
-    <scopeInfo nodeId="5923576889075047757" fileName="EditOperandDialog.java" startLine="228" startPosition="35" endLine="229" endPosition="71" />
-    <scopeInfo nodeId="5923576889075047741" fileName="EditOperandDialog.java" startLine="232" startPosition="57" endLine="233" endPosition="74" />
-    <scopeInfo nodeId="5923576889075047797" fileName="EditOperandDialog.java" startLine="243" startPosition="38" endLine="244" endPosition="45" />
-    <scopeInfo nodeId="5923576889075047865" fileName="EditOperandDialog.java" startLine="253" startPosition="33" endLine="254" endPosition="50" />
-    <scopeInfo nodeId="5923576889075047852" fileName="EditOperandDialog.java" startLine="257" startPosition="55" endLine="258" endPosition="65" />
-    <scopeInfo nodeId="5923576889075047962" fileName="EditOperandDialog.java" startLine="278" startPosition="38" endLine="279" endPosition="26" />
-    <scopeInfo nodeId="5923576889075048066" fileName="EditOperandDialog.java" startLine="303" startPosition="50" endLine="304" endPosition="39" />
-    <scopeInfo nodeId="5923576889075047991" fileName="EditOperandDialog.java" startLine="288" startPosition="40" endLine="290" endPosition="57">
+    <nodeInfo nodeId="5923576889075046934" fileName="EditOperandDialog.java" startLine="36" startPosition="51" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="5923576889075046937" fileName="EditOperandDialog.java" startLine="37" startPosition="45" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
+    <nodeInfo nodeId="5923576889075046940" fileName="EditOperandDialog.java" startLine="38" startPosition="37" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="5923576889075046955" fileName="EditOperandDialog.java" startLine="41" startPosition="156" endLine="42" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5923576889075046963" fileName="EditOperandDialog.java" startLine="42" startPosition="100" endLine="43" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047018" fileName="EditOperandDialog.java" startLine="46" startPosition="21" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075046986" fileName="EditOperandDialog.java" startLine="48" startPosition="16" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075046997" fileName="EditOperandDialog.java" startLine="50" startPosition="53" endLine="51" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047011" fileName="EditOperandDialog.java" startLine="52" startPosition="30" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047024" fileName="EditOperandDialog.java" startLine="58" startPosition="7" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047031" fileName="EditOperandDialog.java" startLine="59" startPosition="45" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047039" fileName="EditOperandDialog.java" startLine="60" startPosition="43" endLine="61" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047049" fileName="EditOperandDialog.java" startLine="61" startPosition="55" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047054" fileName="EditOperandDialog.java" startLine="62" startPosition="26" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047062" fileName="EditOperandDialog.java" startLine="63" startPosition="37" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047080" fileName="EditOperandDialog.java" startLine="67" startPosition="75" endLine="68" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047093" fileName="EditOperandDialog.java" startLine="69" startPosition="35" endLine="70" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047106" fileName="EditOperandDialog.java" startLine="71" startPosition="27" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047127" fileName="EditOperandDialog.java" startLine="75" startPosition="52" endLine="76" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047146" fileName="EditOperandDialog.java" startLine="80" startPosition="79" endLine="81" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047154" fileName="EditOperandDialog.java" startLine="81" startPosition="110" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047160" fileName="EditOperandDialog.java" startLine="82" startPosition="73" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047172" fileName="EditOperandDialog.java" startLine="84" startPosition="71" endLine="85" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047180" fileName="EditOperandDialog.java" startLine="85" startPosition="128" endLine="86" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047186" fileName="EditOperandDialog.java" startLine="86" startPosition="79" endLine="87" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047201" fileName="EditOperandDialog.java" startLine="88" startPosition="156" endLine="89" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047209" fileName="EditOperandDialog.java" startLine="89" startPosition="52" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047215" fileName="EditOperandDialog.java" startLine="90" startPosition="95" endLine="91" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047221" fileName="EditOperandDialog.java" startLine="91" startPosition="79" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047230" fileName="EditOperandDialog.java" startLine="97" startPosition="43" endLine="98" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047238" fileName="EditOperandDialog.java" startLine="102" startPosition="82" endLine="103" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047250" fileName="EditOperandDialog.java" startLine="106" startPosition="48" endLine="107" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047264" fileName="EditOperandDialog.java" startLine="110" startPosition="114" endLine="111" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047335" fileName="EditOperandDialog.java" startLine="114" startPosition="56" endLine="115" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047344" fileName="EditOperandDialog.java" startLine="115" startPosition="85" endLine="116" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047352" fileName="EditOperandDialog.java" startLine="116" startPosition="100" endLine="117" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047317" fileName="EditOperandDialog.java" startLine="119" startPosition="14" endLine="120" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047304" fileName="EditOperandDialog.java" startLine="123" startPosition="55" endLine="124" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047295" fileName="EditOperandDialog.java" startLine="127" startPosition="98" endLine="128" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047365" fileName="EditOperandDialog.java" startLine="133" startPosition="97" endLine="134" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047371" fileName="EditOperandDialog.java" startLine="134" startPosition="52" endLine="135" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047382" fileName="EditOperandDialog.java" startLine="136" startPosition="40" endLine="137" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047390" fileName="EditOperandDialog.java" startLine="137" startPosition="85" endLine="138" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047406" fileName="EditOperandDialog.java" startLine="139" startPosition="49" endLine="140" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047412" fileName="EditOperandDialog.java" startLine="140" startPosition="76" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047461" fileName="EditOperandDialog.java" startLine="142" startPosition="64" endLine="143" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047452" fileName="EditOperandDialog.java" startLine="145" startPosition="62" endLine="146" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6801780643483387272" fileName="EditOperandDialog.java" startLine="150" startPosition="57" endLine="151" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6801780643483387284" fileName="EditOperandDialog.java" startLine="152" startPosition="61" endLine="153" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6801780643483355772" fileName="EditOperandDialog.java" startLine="163" startPosition="51" endLine="164" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6801780643483355765" fileName="EditOperandDialog.java" startLine="166" startPosition="48" endLine="167" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047474" fileName="EditOperandDialog.java" startLine="172" startPosition="97" endLine="173" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047481" fileName="EditOperandDialog.java" startLine="173" startPosition="79" endLine="174" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047485" fileName="EditOperandDialog.java" startLine="174" startPosition="20" endLine="175" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047496" fileName="EditOperandDialog.java" startLine="176" startPosition="40" endLine="177" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047504" fileName="EditOperandDialog.java" startLine="177" startPosition="85" endLine="178" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047512" fileName="EditOperandDialog.java" startLine="178" startPosition="112" endLine="179" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047542" fileName="EditOperandDialog.java" startLine="181" startPosition="46" endLine="182" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047535" fileName="EditOperandDialog.java" startLine="183" startPosition="16" endLine="184" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047555" fileName="EditOperandDialog.java" startLine="190" startPosition="96" endLine="191" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047566" fileName="EditOperandDialog.java" startLine="191" startPosition="88" endLine="192" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047577" fileName="EditOperandDialog.java" startLine="193" startPosition="40" endLine="194" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047585" fileName="EditOperandDialog.java" startLine="194" startPosition="85" endLine="195" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047601" fileName="EditOperandDialog.java" startLine="196" startPosition="50" endLine="197" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047612" fileName="EditOperandDialog.java" startLine="202" startPosition="84" endLine="203" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047626" fileName="EditOperandDialog.java" startLine="204" startPosition="38" endLine="205" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047634" fileName="EditOperandDialog.java" startLine="207" startPosition="32" endLine="208" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047637" fileName="EditOperandDialog.java" startLine="209" startPosition="5" endLine="210" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047676" fileName="EditOperandDialog.java" startLine="211" startPosition="33" endLine="212" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047653" fileName="EditOperandDialog.java" startLine="213" startPosition="12" endLine="214" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047663" fileName="EditOperandDialog.java" startLine="215" startPosition="55" endLine="216" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047673" fileName="EditOperandDialog.java" startLine="217" startPosition="7" endLine="218" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047690" fileName="EditOperandDialog.java" startLine="222" startPosition="90" endLine="223" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047695" fileName="EditOperandDialog.java" startLine="223" startPosition="71" endLine="224" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047703" fileName="EditOperandDialog.java" startLine="224" startPosition="105" endLine="225" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047770" fileName="EditOperandDialog.java" startLine="226" startPosition="32" endLine="227" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047716" fileName="EditOperandDialog.java" startLine="228" startPosition="12" endLine="229" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047758" fileName="EditOperandDialog.java" startLine="230" startPosition="35" endLine="231" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047732" fileName="EditOperandDialog.java" startLine="232" startPosition="14" endLine="233" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047742" fileName="EditOperandDialog.java" startLine="234" startPosition="57" endLine="235" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047752" fileName="EditOperandDialog.java" startLine="236" startPosition="9" endLine="237" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047776" fileName="EditOperandDialog.java" startLine="239" startPosition="5" endLine="240" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047784" fileName="EditOperandDialog.java" startLine="243" startPosition="86" endLine="244" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047798" fileName="EditOperandDialog.java" startLine="245" startPosition="38" endLine="246" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047806" fileName="EditOperandDialog.java" startLine="248" startPosition="32" endLine="249" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047811" fileName="EditOperandDialog.java" startLine="249" startPosition="69" endLine="250" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047820" fileName="EditOperandDialog.java" startLine="250" startPosition="58" endLine="251" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047825" fileName="EditOperandDialog.java" startLine="251" startPosition="28" endLine="252" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047827" fileName="EditOperandDialog.java" startLine="253" startPosition="5" endLine="254" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047866" fileName="EditOperandDialog.java" startLine="255" startPosition="33" endLine="256" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047843" fileName="EditOperandDialog.java" startLine="257" startPosition="12" endLine="258" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047853" fileName="EditOperandDialog.java" startLine="259" startPosition="55" endLine="260" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047863" fileName="EditOperandDialog.java" startLine="261" startPosition="7" endLine="262" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047880" fileName="EditOperandDialog.java" startLine="266" startPosition="85" endLine="267" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047888" fileName="EditOperandDialog.java" startLine="267" startPosition="107" endLine="268" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047893" fileName="EditOperandDialog.java" startLine="268" startPosition="67" endLine="269" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047904" fileName="EditOperandDialog.java" startLine="269" startPosition="76" endLine="270" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047915" fileName="EditOperandDialog.java" startLine="270" startPosition="61" endLine="271" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047924" fileName="EditOperandDialog.java" startLine="274" startPosition="91" endLine="275" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047931" fileName="EditOperandDialog.java" startLine="275" startPosition="82" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047942" fileName="EditOperandDialog.java" startLine="277" startPosition="40" endLine="278" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047950" fileName="EditOperandDialog.java" startLine="278" startPosition="85" endLine="279" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047963" fileName="EditOperandDialog.java" startLine="280" startPosition="38" endLine="281" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047968" fileName="EditOperandDialog.java" startLine="283" startPosition="5" endLine="284" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075047976" fileName="EditOperandDialog.java" startLine="287" startPosition="64" endLine="288" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047980" fileName="EditOperandDialog.java" startLine="288" startPosition="32" endLine="289" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047992" fileName="EditOperandDialog.java" startLine="290" startPosition="40" endLine="291" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075047998" fileName="EditOperandDialog.java" startLine="291" startPosition="60" endLine="292" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075048007" fileName="EditOperandDialog.java" startLine="293" startPosition="5" endLine="294" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075048015" fileName="EditOperandDialog.java" startLine="294" startPosition="92" endLine="295" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075048023" fileName="EditOperandDialog.java" startLine="295" startPosition="63" endLine="296" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075048028" fileName="EditOperandDialog.java" startLine="296" startPosition="41" endLine="297" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075048034" fileName="EditOperandDialog.java" startLine="301" startPosition="26" endLine="302" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075048046" fileName="EditOperandDialog.java" startLine="302" startPosition="93" endLine="303" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075048067" fileName="EditOperandDialog.java" startLine="305" startPosition="50" endLine="306" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075048072" fileName="EditOperandDialog.java" startLine="308" startPosition="7" endLine="309" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075048089" fileName="EditOperandDialog.java" startLine="313" startPosition="30" endLine="314" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075048095" fileName="EditOperandDialog.java" startLine="314" startPosition="20" endLine="315" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047315" fileName="EditOperandDialog.java" startLine="119" startPosition="12" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047533" fileName="EditOperandDialog.java" startLine="183" startPosition="14" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047006" fileName="EditOperandDialog.java" startLine="51" startPosition="89" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047101" fileName="EditOperandDialog.java" startLine="70" startPosition="80" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047115" fileName="EditOperandDialog.java" startLine="74" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6801780643483355760" fileName="EditOperandDialog.java" startLine="165" startPosition="12" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047593" fileName="EditOperandDialog.java" startLine="195" startPosition="110" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047620" fileName="EditOperandDialog.java" startLine="203" startPosition="92" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047629" fileName="EditOperandDialog.java" startLine="206" startPosition="5" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="214" startPosition="63" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047737" fileName="EditOperandDialog.java" startLine="233" startPosition="71" endLine="236" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047792" fileName="EditOperandDialog.java" startLine="244" startPosition="109" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047848" fileName="EditOperandDialog.java" startLine="258" startPosition="63" endLine="261" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047958" fileName="EditOperandDialog.java" startLine="279" startPosition="96" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047226" fileName="EditOperandDialog.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5923576889075047246" fileName="EditOperandDialog.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075047987" fileName="EditOperandDialog.java" startLine="289" startPosition="67" endLine="293" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5923576889075048063" fileName="EditOperandDialog.java" startLine="304" startPosition="97" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075047234" fileName="EditOperandDialog.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="5923576889075047323" fileName="EditOperandDialog.java" startLine="113" startPosition="19" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5923576889075047280" fileName="EditOperandDialog.java" startLine="125" startPosition="10" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6801780643483387263" fileName="EditOperandDialog.java" startLine="149" startPosition="107" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047526" fileName="EditOperandDialog.java" startLine="180" startPosition="49" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075048051" fileName="EditOperandDialog.java" startLine="303" startPosition="26" endLine="308" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075046992" fileName="EditOperandDialog.java" startLine="49" startPosition="47" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047088" fileName="EditOperandDialog.java" startLine="68" startPosition="92" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047191" fileName="EditOperandDialog.java" startLine="87" startPosition="29" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6801780643483355756" fileName="EditOperandDialog.java" startLine="162" startPosition="101" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047651" fileName="EditOperandDialog.java" startLine="213" startPosition="10" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047730" fileName="EditOperandDialog.java" startLine="232" startPosition="12" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047801" fileName="EditOperandDialog.java" startLine="247" startPosition="5" endLine="253" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047841" fileName="EditOperandDialog.java" startLine="257" startPosition="10" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="311" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
+    <nodeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047518" fileName="EditOperandDialog.java" startLine="179" startPosition="37" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047572" fileName="EditOperandDialog.java" startLine="192" startPosition="43" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5923576889075047937" fileName="EditOperandDialog.java" startLine="276" startPosition="43" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5923576889075046984" fileName="EditOperandDialog.java" startLine="48" startPosition="14" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047276" fileName="EditOperandDialog.java" startLine="122" startPosition="10" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075047874" fileName="EditOperandDialog.java" startLine="265" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075047313" fileName="EditOperandDialog.java" startLine="112" startPosition="56" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047428" fileName="EditOperandDialog.java" startLine="147" startPosition="14" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047645" fileName="EditOperandDialog.java" startLine="210" startPosition="74" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047724" fileName="EditOperandDialog.java" startLine="229" startPosition="77" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047835" fileName="EditOperandDialog.java" startLine="254" startPosition="75" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075046982" fileName="EditOperandDialog.java" startLine="45" startPosition="25" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047165" fileName="EditOperandDialog.java" startLine="83" startPosition="22" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6801780643483355738" fileName="EditOperandDialog.java" startLine="160" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMappingRefSet#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_RefSet;)V" />
+    <nodeInfo nodeId="5923576889075047714" fileName="EditOperandDialog.java" startLine="228" startPosition="10" endLine="239" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5923576889075047424" fileName="EditOperandDialog.java" startLine="144" startPosition="14" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047491" fileName="EditOperandDialog.java" startLine="175" startPosition="43" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5923576889075047547" fileName="EditOperandDialog.java" startLine="189" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNodeMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_SimpleRef;)V" />
+    <nodeInfo nodeId="5923576889075048030" fileName="EditOperandDialog.java" startLine="299" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonOK#()V" />
+    <nodeInfo nodeId="5923576889075047072" fileName="EditOperandDialog.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandCheckedUnder#(Ljavax/swing/JTree;Ljavax/swing/tree/DefaultMutableTreeNode;)V" />
+    <nodeInfo nodeId="5923576889075047917" fileName="EditOperandDialog.java" startLine="273" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildrenWithChecks#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075047970" fileName="EditOperandDialog.java" startLine="286" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCheckedUnder#(Ljavax/swing/tree/DefaultMutableTreeNode;)Z" />
+    <nodeInfo nodeId="5923576889075046978" fileName="EditOperandDialog.java" startLine="44" startPosition="57" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5923576889075047710" fileName="EditOperandDialog.java" startLine="225" startPosition="46" endLine="239" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075046971" fileName="EditOperandDialog.java" startLine="43" startPosition="121" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075047420" fileName="EditOperandDialog.java" startLine="141" startPosition="97" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047138" fileName="EditOperandDialog.java" startLine="79" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addGeneratorModels#(Ljetbrains/mps/smodel/Generator;Ljavax/swing/tree/DefaultMutableTreeNode;)V" />
+    <nodeInfo nodeId="5923576889075047466" fileName="EditOperandDialog.java" startLine="171" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_SimpleRef;)V" />
+    <nodeInfo nodeId="5923576889075047272" fileName="EditOperandDialog.java" startLine="111" startPosition="92" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047398" fileName="EditOperandDialog.java" startLine="138" startPosition="108" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075047606" fileName="EditOperandDialog.java" startLine="201" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075047684" fileName="EditOperandDialog.java" startLine="221" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGeneratorMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075047254" fileName="EditOperandDialog.java" startLine="109" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRootMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;Z)V" />
+    <nodeInfo nodeId="5923576889075047377" fileName="EditOperandDialog.java" startLine="135" startPosition="43" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5923576889075047778" fileName="EditOperandDialog.java" startLine="242" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;" />
+    <nodeInfo nodeId="5923576889075046943" fileName="EditOperandDialog.java" startLine="40" startPosition="0" endLine="65" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditOperandDialog#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;Z)V" />
+    <nodeInfo nodeId="5923576889075047357" fileName="EditOperandDialog.java" startLine="132" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenMappingRef#(Ljavax/swing/tree/DefaultMutableTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_ExternalRef;)V" />
+    <scopeInfo nodeId="5923576889075047017" fileName="EditOperandDialog.java" startLine="46" startPosition="21" endLine="47" endPosition="47" />
+    <scopeInfo nodeId="5923576889075047010" fileName="EditOperandDialog.java" startLine="52" startPosition="30" endLine="53" endPosition="44" />
+    <scopeInfo nodeId="5923576889075047105" fileName="EditOperandDialog.java" startLine="71" startPosition="27" endLine="72" endPosition="56" />
+    <scopeInfo nodeId="5923576889075047126" fileName="EditOperandDialog.java" startLine="75" startPosition="52" endLine="76" endPosition="76" />
+    <scopeInfo nodeId="5923576889075047229" fileName="EditOperandDialog.java" startLine="97" startPosition="43" endLine="98" endPosition="27" />
+    <scopeInfo nodeId="5923576889075047237" fileName="EditOperandDialog.java" startLine="102" startPosition="82" endLine="103" endPosition="77" />
+    <scopeInfo nodeId="5923576889075047249" fileName="EditOperandDialog.java" startLine="106" startPosition="48" endLine="107" endPosition="20" />
+    <scopeInfo nodeId="5923576889075047316" fileName="EditOperandDialog.java" startLine="119" startPosition="14" endLine="120" endPosition="35" />
+    <scopeInfo nodeId="5923576889075047303" fileName="EditOperandDialog.java" startLine="123" startPosition="55" endLine="124" endPosition="66" />
+    <scopeInfo nodeId="5923576889075047294" fileName="EditOperandDialog.java" startLine="127" startPosition="98" endLine="128" endPosition="64" />
+    <scopeInfo nodeId="5923576889075047460" fileName="EditOperandDialog.java" startLine="142" startPosition="64" endLine="143" endPosition="37" />
+    <scopeInfo nodeId="5923576889075047451" fileName="EditOperandDialog.java" startLine="145" startPosition="62" endLine="146" endPosition="76" />
+    <scopeInfo nodeId="6801780643483387264" fileName="EditOperandDialog.java" startLine="150" startPosition="57" endLine="151" endPosition="71" />
+    <scopeInfo nodeId="6801780643483387280" fileName="EditOperandDialog.java" startLine="152" startPosition="61" endLine="153" endPosition="66" />
+    <scopeInfo nodeId="6801780643483355771" fileName="EditOperandDialog.java" startLine="163" startPosition="51" endLine="164" endPosition="65" />
+    <scopeInfo nodeId="6801780643483355764" fileName="EditOperandDialog.java" startLine="166" startPosition="48" endLine="167" endPosition="60" />
+    <scopeInfo nodeId="5923576889075047541" fileName="EditOperandDialog.java" startLine="181" startPosition="46" endLine="182" endPosition="38" />
+    <scopeInfo nodeId="5923576889075047534" fileName="EditOperandDialog.java" startLine="183" startPosition="16" endLine="184" endPosition="44" />
+    <scopeInfo nodeId="5923576889075047600" fileName="EditOperandDialog.java" startLine="196" startPosition="50" endLine="197" endPosition="36" />
+    <scopeInfo nodeId="5923576889075047625" fileName="EditOperandDialog.java" startLine="204" startPosition="38" endLine="205" endPosition="45" />
+    <scopeInfo nodeId="5923576889075047633" fileName="EditOperandDialog.java" startLine="207" startPosition="32" endLine="208" endPosition="46" />
+    <scopeInfo nodeId="5923576889075047675" fileName="EditOperandDialog.java" startLine="211" startPosition="33" endLine="212" endPosition="55" />
+    <scopeInfo nodeId="5923576889075047662" fileName="EditOperandDialog.java" startLine="215" startPosition="55" endLine="216" endPosition="70" />
+    <scopeInfo nodeId="5923576889075047769" fileName="EditOperandDialog.java" startLine="226" startPosition="32" endLine="227" endPosition="63" />
+    <scopeInfo nodeId="5923576889075047757" fileName="EditOperandDialog.java" startLine="230" startPosition="35" endLine="231" endPosition="71" />
+    <scopeInfo nodeId="5923576889075047741" fileName="EditOperandDialog.java" startLine="234" startPosition="57" endLine="235" endPosition="74" />
+    <scopeInfo nodeId="5923576889075047797" fileName="EditOperandDialog.java" startLine="245" startPosition="38" endLine="246" endPosition="45" />
+    <scopeInfo nodeId="5923576889075047865" fileName="EditOperandDialog.java" startLine="255" startPosition="33" endLine="256" endPosition="50" />
+    <scopeInfo nodeId="5923576889075047852" fileName="EditOperandDialog.java" startLine="259" startPosition="55" endLine="260" endPosition="65" />
+    <scopeInfo nodeId="5923576889075047962" fileName="EditOperandDialog.java" startLine="280" startPosition="38" endLine="281" endPosition="26" />
+    <scopeInfo nodeId="5923576889075048066" fileName="EditOperandDialog.java" startLine="305" startPosition="50" endLine="306" endPosition="39" />
+    <scopeInfo nodeId="5923576889075047991" fileName="EditOperandDialog.java" startLine="290" startPosition="40" endLine="292" endPosition="57">
       <varInfo nodeId="5923576889075047993" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075048088" fileName="EditOperandDialog.java" startLine="311" startPosition="30" endLine="313" endPosition="14" />
-    <scopeInfo nodeId="5923576889075047115" fileName="EditOperandDialog.java" startLine="72" startPosition="5" endLine="75" endPosition="5">
+    <scopeInfo nodeId="5923576889075048088" fileName="EditOperandDialog.java" startLine="313" startPosition="30" endLine="315" endPosition="14" />
+    <scopeInfo nodeId="5923576889075047115" fileName="EditOperandDialog.java" startLine="74" startPosition="5" endLine="77" endPosition="5">
       <varInfo nodeId="5923576889075047121" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047334" fileName="EditOperandDialog.java" startLine="112" startPosition="56" endLine="115" endPosition="38">
+    <scopeInfo nodeId="5923576889075047334" fileName="EditOperandDialog.java" startLine="114" startPosition="56" endLine="117" endPosition="38">
       <varInfo nodeId="5923576889075047336" varName="child" />
       <varInfo nodeId="5923576889075047345" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047284" fileName="EditOperandDialog.java" startLine="124" startPosition="50" endLine="127" endPosition="7" />
-    <scopeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="124" startPosition="50" endLine="127" endPosition="7">
+    <scopeInfo nodeId="5923576889075047284" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7" />
+    <scopeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7">
       <varInfo nodeId="5923576889075047292" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="212" startPosition="63" endLine="215" endPosition="7">
+    <scopeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="214" startPosition="63" endLine="217" endPosition="7">
       <varInfo nodeId="5923576889075047660" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047737" fileName="EditOperandDialog.java" startLine="231" startPosition="71" endLine="234" endPosition="9">
+    <scopeInfo nodeId="5923576889075047737" fileName="EditOperandDialog.java" startLine="233" startPosition="71" endLine="236" endPosition="9">
       <varInfo nodeId="5923576889075047739" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047848" fileName="EditOperandDialog.java" startLine="256" startPosition="63" endLine="259" endPosition="7">
+    <scopeInfo nodeId="5923576889075047848" fileName="EditOperandDialog.java" startLine="258" startPosition="63" endLine="261" endPosition="7">
       <varInfo nodeId="5923576889075047850" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046996" fileName="EditOperandDialog.java" startLine="48" startPosition="53" endLine="52" endPosition="13">
+    <scopeInfo nodeId="5923576889075046996" fileName="EditOperandDialog.java" startLine="50" startPosition="53" endLine="54" endPosition="13">
       <varInfo nodeId="5923576889075046998" varName="gen" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047092" fileName="EditOperandDialog.java" startLine="67" startPosition="35" endLine="71" endPosition="7">
+    <scopeInfo nodeId="5923576889075047092" fileName="EditOperandDialog.java" startLine="69" startPosition="35" endLine="73" endPosition="7">
       <varInfo nodeId="5923576889075047094" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047200" fileName="EditOperandDialog.java" startLine="86" startPosition="115" endLine="90" endPosition="32">
+    <scopeInfo nodeId="5923576889075047200" fileName="EditOperandDialog.java" startLine="88" startPosition="156" endLine="92" endPosition="32">
       <varInfo nodeId="5923576889075047216" varName="nodeNode" />
       <varInfo nodeId="5923576889075047210" varName="nodeData" />
       <varInfo nodeId="5923576889075047202" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047226" fileName="EditOperandDialog.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047246" fileName="EditOperandDialog.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047805" fileName="EditOperandDialog.java" startLine="246" startPosition="32" endLine="250" endPosition="20">
+    <scopeInfo nodeId="5923576889075047226" fileName="EditOperandDialog.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047246" fileName="EditOperandDialog.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047805" fileName="EditOperandDialog.java" startLine="248" startPosition="32" endLine="252" endPosition="20">
       <varInfo nodeId="5923576889075047807" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075048063" fileName="EditOperandDialog.java" startLine="302" startPosition="97" endLine="306" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047234" fileName="EditOperandDialog.java" startLine="98" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047322" fileName="EditOperandDialog.java" startLine="111" startPosition="19" endLine="116" endPosition="9" />
-    <scopeInfo nodeId="5923576889075047323" fileName="EditOperandDialog.java" startLine="111" startPosition="19" endLine="116" endPosition="9">
+    <scopeInfo nodeId="5923576889075048063" fileName="EditOperandDialog.java" startLine="304" startPosition="97" endLine="308" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047234" fileName="EditOperandDialog.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047322" fileName="EditOperandDialog.java" startLine="113" startPosition="19" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="5923576889075047323" fileName="EditOperandDialog.java" startLine="113" startPosition="19" endLine="118" endPosition="9">
       <varInfo nodeId="5923576889075047329" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047442" fileName="EditOperandDialog.java" startLine="147" startPosition="107" endLine="152" endPosition="13" />
-    <scopeInfo nodeId="5923576889075047525" fileName="EditOperandDialog.java" startLine="178" startPosition="49" endLine="183" endPosition="9" />
-    <scopeInfo nodeId="5923576889075047576" fileName="EditOperandDialog.java" startLine="191" startPosition="40" endLine="196" endPosition="7">
+    <scopeInfo nodeId="5923576889075047442" fileName="EditOperandDialog.java" startLine="149" startPosition="107" endLine="154" endPosition="13" />
+    <scopeInfo nodeId="5923576889075047525" fileName="EditOperandDialog.java" startLine="180" startPosition="49" endLine="185" endPosition="9" />
+    <scopeInfo nodeId="5923576889075047576" fileName="EditOperandDialog.java" startLine="193" startPosition="40" endLine="198" endPosition="7">
       <varInfo nodeId="5923576889075047578" varName="child" />
       <varInfo nodeId="5923576889075047586" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047652" fileName="EditOperandDialog.java" startLine="211" startPosition="12" endLine="216" endPosition="20">
+    <scopeInfo nodeId="5923576889075047652" fileName="EditOperandDialog.java" startLine="213" startPosition="12" endLine="218" endPosition="20">
       <varInfo nodeId="5923576889075047654" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047731" fileName="EditOperandDialog.java" startLine="230" startPosition="14" endLine="235" endPosition="46">
+    <scopeInfo nodeId="5923576889075047731" fileName="EditOperandDialog.java" startLine="232" startPosition="14" endLine="237" endPosition="46">
       <varInfo nodeId="5923576889075047733" varName="modelsResult" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047842" fileName="EditOperandDialog.java" startLine="255" startPosition="12" endLine="260" endPosition="20">
+    <scopeInfo nodeId="5923576889075047842" fileName="EditOperandDialog.java" startLine="257" startPosition="12" endLine="262" endPosition="20">
       <varInfo nodeId="5923576889075047844" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047879" fileName="EditOperandDialog.java" startLine="264" startPosition="85" endLine="269" endPosition="18">
+    <scopeInfo nodeId="5923576889075047879" fileName="EditOperandDialog.java" startLine="266" startPosition="85" endLine="271" endPosition="18">
       <varInfo nodeId="5923576889075047889" varName="result" />
       <varInfo nodeId="5923576889075047881" varName="rootData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047941" fileName="EditOperandDialog.java" startLine="275" startPosition="40" endLine="280" endPosition="7">
+    <scopeInfo nodeId="5923576889075047941" fileName="EditOperandDialog.java" startLine="277" startPosition="40" endLine="282" endPosition="7">
       <varInfo nodeId="5923576889075047943" varName="child" />
       <varInfo nodeId="5923576889075047951" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046992" fileName="EditOperandDialog.java" startLine="47" startPosition="47" endLine="53" endPosition="11">
+    <scopeInfo nodeId="5923576889075046992" fileName="EditOperandDialog.java" startLine="49" startPosition="47" endLine="55" endPosition="11">
       <varInfo nodeId="5923576889075046994" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047191" fileName="EditOperandDialog.java" startLine="85" startPosition="29" endLine="91" endPosition="7">
+    <scopeInfo nodeId="5923576889075047191" fileName="EditOperandDialog.java" startLine="87" startPosition="29" endLine="93" endPosition="7">
       <varInfo nodeId="5923576889075047198" varName="mapping" />
     </scopeInfo>
-    <scopeInfo nodeId="6801780643483355755" fileName="EditOperandDialog.java" startLine="160" startPosition="101" endLine="166" endPosition="7" />
-    <scopeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="309" startPosition="0" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046985" fileName="EditOperandDialog.java" startLine="46" startPosition="16" endLine="53" endPosition="11" />
-    <scopeInfo nodeId="5923576889075047432" fileName="EditOperandDialog.java" startLine="146" startPosition="59" endLine="153" endPosition="11" />
-    <scopeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="146" startPosition="59" endLine="153" endPosition="11">
+    <scopeInfo nodeId="6801780643483355755" fileName="EditOperandDialog.java" startLine="162" startPosition="101" endLine="168" endPosition="7" />
+    <scopeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="311" startPosition="0" endLine="317" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046985" fileName="EditOperandDialog.java" startLine="48" startPosition="16" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="5923576889075047432" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11" />
+    <scopeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11">
       <varInfo nodeId="5923576889075047440" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="6801780643483355745" fileName="EditOperandDialog.java" startLine="159" startPosition="98" endLine="167" endPosition="5" />
-    <scopeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="159" startPosition="98" endLine="167" endPosition="5">
+    <scopeInfo nodeId="6801780643483355745" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5" />
+    <scopeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5">
       <varInfo nodeId="6801780643483355753" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047874" fileName="EditOperandDialog.java" startLine="263" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="5923576889075047874" fileName="EditOperandDialog.java" startLine="265" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="5923576889075047877" varName="nRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075048033" fileName="EditOperandDialog.java" startLine="299" startPosition="26" endLine="307" endPosition="14">
+    <scopeInfo nodeId="5923576889075048033" fileName="EditOperandDialog.java" startLine="301" startPosition="26" endLine="309" endPosition="14">
       <varInfo nodeId="5923576889075048035" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047171" fileName="EditOperandDialog.java" startLine="82" startPosition="71" endLine="91" endPosition="7">
+    <scopeInfo nodeId="5923576889075047171" fileName="EditOperandDialog.java" startLine="84" startPosition="71" endLine="93" endPosition="7">
       <varInfo nodeId="5923576889075047173" varName="modelData" />
       <varInfo nodeId="5923576889075047181" varName="modelNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047312" fileName="EditOperandDialog.java" startLine="110" startPosition="56" endLine="119" endPosition="7" />
-    <scopeInfo nodeId="5923576889075047554" fileName="EditOperandDialog.java" startLine="188" startPosition="96" endLine="197" endPosition="5">
+    <scopeInfo nodeId="5923576889075047312" fileName="EditOperandDialog.java" startLine="112" startPosition="56" endLine="121" endPosition="7" />
+    <scopeInfo nodeId="5923576889075047554" fileName="EditOperandDialog.java" startLine="190" startPosition="96" endLine="199" endPosition="5">
       <varInfo nodeId="5923576889075047567" varName="children" />
       <varInfo nodeId="5923576889075047556" varName="nodeRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047079" fileName="EditOperandDialog.java" startLine="65" startPosition="75" endLine="75" endPosition="5">
+    <scopeInfo nodeId="5923576889075047079" fileName="EditOperandDialog.java" startLine="67" startPosition="75" endLine="77" endPosition="5">
       <varInfo nodeId="5923576889075047081" varName="nodeData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047495" fileName="EditOperandDialog.java" startLine="174" startPosition="40" endLine="184" endPosition="7">
+    <scopeInfo nodeId="5923576889075047495" fileName="EditOperandDialog.java" startLine="176" startPosition="40" endLine="186" endPosition="7">
       <varInfo nodeId="5923576889075047497" varName="child" />
       <varInfo nodeId="5923576889075047505" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047715" fileName="EditOperandDialog.java" startLine="226" startPosition="12" endLine="236" endPosition="7">
+    <scopeInfo nodeId="5923576889075047715" fileName="EditOperandDialog.java" startLine="228" startPosition="12" endLine="238" endPosition="7">
       <varInfo nodeId="5923576889075047717" varName="chChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047923" fileName="EditOperandDialog.java" startLine="272" startPosition="91" endLine="282" endPosition="18">
+    <scopeInfo nodeId="5923576889075047923" fileName="EditOperandDialog.java" startLine="274" startPosition="91" endLine="284" endPosition="18">
       <varInfo nodeId="5923576889075047925" varName="result" />
       <varInfo nodeId="5923576889075047932" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047975" fileName="EditOperandDialog.java" startLine="285" startPosition="64" endLine="295" endPosition="23">
+    <scopeInfo nodeId="5923576889075047975" fileName="EditOperandDialog.java" startLine="287" startPosition="64" endLine="297" endPosition="23">
       <varInfo nodeId="5923576889075048016" varName="checksUnder" />
       <varInfo nodeId="5923576889075047977" varName="childChecks" />
       <varInfo nodeId="5923576889075048008" varName="rootData" />
       <varInfo nodeId="5923576889075047981" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046981" fileName="EditOperandDialog.java" startLine="43" startPosition="25" endLine="54" endPosition="9" />
-    <scopeInfo nodeId="5923576889075047165" fileName="EditOperandDialog.java" startLine="81" startPosition="22" endLine="92" endPosition="5">
+    <scopeInfo nodeId="5923576889075046981" fileName="EditOperandDialog.java" startLine="45" startPosition="25" endLine="56" endPosition="9" />
+    <scopeInfo nodeId="5923576889075047165" fileName="EditOperandDialog.java" startLine="83" startPosition="22" endLine="94" endPosition="5">
       <varInfo nodeId="5923576889075047169" varName="templateModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6801780643483355738" fileName="EditOperandDialog.java" startLine="158" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="6801780643483355738" fileName="EditOperandDialog.java" startLine="160" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="6801780643483355743" varName="innerOperand" />
       <varInfo nodeId="6801780643483355741" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047547" fileName="EditOperandDialog.java" startLine="187" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="5923576889075047547" fileName="EditOperandDialog.java" startLine="189" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="5923576889075047550" varName="root" />
       <varInfo nodeId="5923576889075047552" varName="operand" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075048030" fileName="EditOperandDialog.java" startLine="297" startPosition="0" endLine="309" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047072" fileName="EditOperandDialog.java" startLine="64" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="5923576889075048030" fileName="EditOperandDialog.java" startLine="299" startPosition="0" endLine="311" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047072" fileName="EditOperandDialog.java" startLine="66" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="5923576889075047077" varName="node" />
       <varInfo nodeId="5923576889075047075" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047917" fileName="EditOperandDialog.java" startLine="271" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="5923576889075047917" fileName="EditOperandDialog.java" startLine="273" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="5923576889075047921" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047970" fileName="EditOperandDialog.java" startLine="284" startPosition="0" endLine="297" endPosition="0">
+    <scopeInfo nodeId="5923576889075047970" fileName="EditOperandDialog.java" startLine="286" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="5923576889075047973" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046978" fileName="EditOperandDialog.java" startLine="42" startPosition="57" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="5923576889075047145" fileName="EditOperandDialog.java" startLine="78" startPosition="79" endLine="92" endPosition="5">
+    <scopeInfo nodeId="5923576889075046978" fileName="EditOperandDialog.java" startLine="44" startPosition="57" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="5923576889075047145" fileName="EditOperandDialog.java" startLine="80" startPosition="79" endLine="94" endPosition="5">
       <varInfo nodeId="5923576889075047155" varName="genNode" />
       <varInfo nodeId="5923576889075047147" varName="genData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047473" fileName="EditOperandDialog.java" startLine="170" startPosition="97" endLine="185" endPosition="5">
+    <scopeInfo nodeId="5923576889075047473" fileName="EditOperandDialog.java" startLine="172" startPosition="97" endLine="187" endPosition="5">
       <varInfo nodeId="5923576889075047486" varName="children" />
       <varInfo nodeId="5923576889075047475" varName="modRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047138" fileName="EditOperandDialog.java" startLine="77" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="5923576889075047138" fileName="EditOperandDialog.java" startLine="79" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="5923576889075047141" varName="gen" />
       <varInfo nodeId="5923576889075047143" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047405" fileName="EditOperandDialog.java" startLine="137" startPosition="49" endLine="154" endPosition="9">
+    <scopeInfo nodeId="5923576889075047405" fileName="EditOperandDialog.java" startLine="139" startPosition="49" endLine="156" endPosition="9">
       <varInfo nodeId="5923576889075047407" varName="innerOperand" />
       <varInfo nodeId="5923576889075047413" varName="rootData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047611" fileName="EditOperandDialog.java" startLine="200" startPosition="84" endLine="217" endPosition="5">
+    <scopeInfo nodeId="5923576889075047611" fileName="EditOperandDialog.java" startLine="202" startPosition="84" endLine="219" endPosition="5">
       <varInfo nodeId="5923576889075047613" varName="rootData" />
       <varInfo nodeId="5923576889075047638" varName="chChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047466" fileName="EditOperandDialog.java" startLine="169" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="5923576889075047466" fileName="EditOperandDialog.java" startLine="171" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="5923576889075047469" varName="root" />
       <varInfo nodeId="5923576889075047471" varName="operand" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047689" fileName="EditOperandDialog.java" startLine="220" startPosition="90" endLine="238" endPosition="18">
+    <scopeInfo nodeId="5923576889075047689" fileName="EditOperandDialog.java" startLine="222" startPosition="90" endLine="240" endPosition="18">
       <varInfo nodeId="5923576889075047691" varName="result" />
       <varInfo nodeId="5923576889075047696" varName="rootData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047263" fileName="EditOperandDialog.java" startLine="108" startPosition="114" endLine="128" endPosition="5">
+    <scopeInfo nodeId="5923576889075047263" fileName="EditOperandDialog.java" startLine="110" startPosition="114" endLine="130" endPosition="5">
       <varInfo nodeId="5923576889075047265" varName="rootData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047606" fileName="EditOperandDialog.java" startLine="199" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="5923576889075047606" fileName="EditOperandDialog.java" startLine="201" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="5923576889075047609" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047783" fileName="EditOperandDialog.java" startLine="241" startPosition="86" endLine="261" endPosition="5">
+    <scopeInfo nodeId="5923576889075047783" fileName="EditOperandDialog.java" startLine="243" startPosition="86" endLine="263" endPosition="5">
       <varInfo nodeId="5923576889075047785" varName="rootData" />
       <varInfo nodeId="5923576889075047828" varName="chChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047381" fileName="EditOperandDialog.java" startLine="134" startPosition="40" endLine="155" endPosition="7">
+    <scopeInfo nodeId="5923576889075047381" fileName="EditOperandDialog.java" startLine="136" startPosition="40" endLine="157" endPosition="7">
       <varInfo nodeId="5923576889075047383" varName="child" />
       <varInfo nodeId="5923576889075047391" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047684" fileName="EditOperandDialog.java" startLine="219" startPosition="0" endLine="240" endPosition="0">
+    <scopeInfo nodeId="5923576889075047684" fileName="EditOperandDialog.java" startLine="221" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="5923576889075047687" varName="gRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046954" fileName="EditOperandDialog.java" startLine="39" startPosition="156" endLine="62" endPosition="46">
+    <scopeInfo nodeId="5923576889075046954" fileName="EditOperandDialog.java" startLine="41" startPosition="156" endLine="64" endPosition="46">
       <varInfo nodeId="5923576889075046964" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047254" fileName="EditOperandDialog.java" startLine="107" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="5923576889075047254" fileName="EditOperandDialog.java" startLine="109" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="5923576889075047257" varName="root" />
       <varInfo nodeId="5923576889075047259" varName="operand" />
       <varInfo nodeId="5923576889075047261" varName="isLeft" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047778" fileName="EditOperandDialog.java" startLine="240" startPosition="0" endLine="263" endPosition="0">
+    <scopeInfo nodeId="5923576889075047778" fileName="EditOperandDialog.java" startLine="242" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="5923576889075047781" varName="mRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046943" fileName="EditOperandDialog.java" startLine="38" startPosition="0" endLine="63" endPosition="3">
+    <scopeInfo nodeId="5923576889075046943" fileName="EditOperandDialog.java" startLine="40" startPosition="0" endLine="65" endPosition="3">
       <varInfo nodeId="5923576889075046950" varName="operand" />
       <varInfo nodeId="5923576889075046947" varName="depGenerators" />
       <varInfo nodeId="5923576889075046952" varName="isLeft" />
       <varInfo nodeId="5923576889075046945" varName="currentGen" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047364" fileName="EditOperandDialog.java" startLine="131" startPosition="97" endLine="156" endPosition="5">
+    <scopeInfo nodeId="5923576889075047364" fileName="EditOperandDialog.java" startLine="133" startPosition="97" endLine="158" endPosition="5">
       <varInfo nodeId="5923576889075047372" varName="children" />
       <varInfo nodeId="5923576889075047366" varName="modRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047357" fileName="EditOperandDialog.java" startLine="130" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="5923576889075047357" fileName="EditOperandDialog.java" startLine="132" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="5923576889075047360" varName="root" />
       <varInfo nodeId="5923576889075047362" varName="operand" />
     </scopeInfo>
-    <unitInfo nodeId="5923576889075048061" fileName="EditOperandDialog.java" startLine="302" startPosition="56" endLine="306" endPosition="5" unitName="jetbrains.mps.ide.properties.EditOperandDialog$2" />
-    <unitInfo nodeId="5923576889075046977" fileName="EditOperandDialog.java" startLine="42" startPosition="45" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.properties.EditOperandDialog$1" />
-    <unitInfo nodeId="5923576889075046931" fileName="EditOperandDialog.java" startLine="34" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.ide.properties.EditOperandDialog" />
+    <unitInfo nodeId="5923576889075048061" fileName="EditOperandDialog.java" startLine="304" startPosition="56" endLine="308" endPosition="5" unitName="jetbrains.mps.ide.properties.EditOperandDialog$2" />
+    <unitInfo nodeId="5923576889075046977" fileName="EditOperandDialog.java" startLine="44" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.properties.EditOperandDialog$1" />
+    <unitInfo nodeId="5923576889075046931" fileName="EditOperandDialog.java" startLine="36" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.ide.properties.EditOperandDialog" />
   </root>
 </debugInfo>
 

@@ -18,7 +18,9 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -83,8 +85,8 @@ public class EditOperandDialog extends BaseDialog {
       MappingSelectTree.ModelRefNodeData modelData = new MappingSelectTree.ModelRefNodeData(templateModel.getSModelReference());
       DefaultMutableTreeNode modelNode = new DefaultMutableTreeNode(modelData);
       genNode.add(modelNode);
-      for (MappingConfiguration mapping : templateModel.getSModel().getRootsAdapters(MappingConfiguration.class)) {
-        SNodePointer np = new SNodePointer(mapping.getNode());
+      for (SNode mapping : SModelOperations.getRoots(((SModel) templateModel.getSModel()), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+        SNodePointer np = new SNodePointer(mapping);
         MappingSelectTree.NodeRefNodeData nodeData = new MappingSelectTree.NodeRefNodeData(np);
         DefaultMutableTreeNode nodeNode = new DefaultMutableTreeNode(nodeData);
         modelNode.add(nodeNode);
