@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -20,16 +19,14 @@ public class SmartClosureParameterTypeUtil {
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = vabs;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111352089", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111352089", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111346115", true), (SNode) InputType, _info_12389875345);
       }
     } else
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111366159", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111366159", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111371042", true), (SNode) InputType, _info_12389875345);
       }
     } else
@@ -40,8 +37,7 @@ public class SmartClosureParameterTypeUtil {
       if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         {
           SNode _nodeToCheck_1029348928467 = null;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111460144", 0, intentionProvider);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111460144", 0, null);
           typeCheckingContext.createEquation((SNode) InputType, (SNode) ptype, _info_12389875345);
         }
       }
@@ -49,8 +45,7 @@ public class SmartClosureParameterTypeUtil {
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111479241", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111479241", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111474860", true), (SNode) InputType, _info_12389875345);
       }
     }
@@ -62,16 +57,14 @@ public class SmartClosureParameterTypeUtil {
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       {
         SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111787726", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1206111787726", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1204110524611", true), (SNode) InputType, _info_12389875345);
       }
     } else
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
       {
         SNode _nodeToCheck_1029348928467 = bmc;
-        BaseQuickFixProvider intentionProvider = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1227649243743", 0, intentionProvider);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1227649243743", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1227649243747", true), (SNode) InputType, _info_12389875345);
       }
     }
