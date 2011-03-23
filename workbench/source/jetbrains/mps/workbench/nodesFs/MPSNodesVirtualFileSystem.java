@@ -35,6 +35,7 @@ import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,7 +48,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
-  private Map<SNodePointer, MPSNodeVirtualFile> myVirtualFiles = new HashMap<SNodePointer, MPSNodeVirtualFile>();
+  private Map<SNodePointer, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodePointer, MPSNodeVirtualFile>();
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
@@ -223,7 +224,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         deletedFiles.add(vf);
         myVirtualFiles.remove(pointer);
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, Collections.<Pair<MPSNodeVirtualFile,String>>emptyList());
+      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, Collections.<Pair<MPSNodeVirtualFile, String>>emptyList());
       if (vfsNotifier.hasPendingNotifications()) {
         ModelAccess.instance().runWriteInEDT(vfsNotifier);
       }
