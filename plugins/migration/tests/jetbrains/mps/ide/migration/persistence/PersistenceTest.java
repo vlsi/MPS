@@ -98,76 +98,73 @@ public class PersistenceTest extends BaseMPSTest {
   }
 
   public void testPersistenceUpgrade() {
-    final int version[] = { START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION };
-    for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
-    for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
-      boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
-        new ProjectRunnable() {
-          public boolean execute(final MPSProject project) {
+    try { // errors about not found attributes are expected for old models
+      filter.start();
 
-            final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
-              public EditableSModelDescriptor compute() {
-                EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
-                assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
-                return modelDescr;
-              }
-            });
+      final int version[] = { START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION };
+      for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
+      for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
+        boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
+          new ProjectRunnable() {
+            public boolean execute(final MPSProject project) {
 
-            List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
-            list.add(testModel);
+              final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
+                public EditableSModelDescriptor compute() {
+                  EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                  modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
+                  assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
+                  return modelDescr;
+                }
+              });
 
-            if (version[0] > START_PERSISTENCE_TEST_VERSION) {
-              try { // errors about not found attributes are expected for old models
-                filter.start();
+              List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+              list.add(testModel);
+
+              if (version[0] > START_PERSISTENCE_TEST_VERSION) {
                 new PersistenceUpdater().upgradePersistence(list, version[0]);
-                ModelAccess.instance().flushEventQueue();
-              } finally {
-                filter.stop();
               }
-            }
-            assertTrue(testModel.getModelFile() != null);
-            assertTrue(testModel.getPersistenceVersion() == version[0]);
+              ModelAccess.instance().flushEventQueue();
+              assertTrue(testModel.getModelFile() != null);
+              assertTrue(testModel.getPersistenceVersion() == version[0]);
 
-            final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
-              public ModelLoadResult compute() {
-                ModelLoadResult result = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                return result;
-              }
-            });
+              final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+                public ModelLoadResult compute() {
+                  ModelLoadResult result = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                  assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                  return result;
+                }
+              });
 
-            try { // errors about not found attributes are expected for old models
-              filter.start();
               new PersistenceUpdater().upgradePersistence(list, version[1]);
               ModelAccess.instance().flushEventQueue();
-            } finally {
-              filter.stop();
-            }
-            assertTrue(testModel.getModelFile() != null);
-            assertTrue(testModel.getPersistenceVersion() == version[1]);
+              assertTrue(testModel.getModelFile() != null);
+              assertTrue(testModel.getPersistenceVersion() == version[1]);
 
-            final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
-              public ModelLoadResult compute() {
-                ModelLoadResult result = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
-                assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
-                return result;
-              }
-            });
+              final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
+                public ModelLoadResult compute() {
+                  ModelLoadResult result = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                  assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
+                  ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
+                  return result;
+                }
+              });
 
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                resultFrom.getModel().dispose();
-                resultTo.getModel().dispose();
-              }
-            });
-            ModelAccess.instance().flushEventQueue();
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  resultFrom.getModel().dispose();
+                  resultTo.getModel().dispose();
+                }
+              });
+              ModelAccess.instance().flushEventQueue();
 
-            return true;
-        }
-      });
-      assertTrue(result);
+              return true;
+          }
+        });
+        assertTrue(result);
+      }
+
+    } finally {
+      filter.stop();
     }
   }
 }
