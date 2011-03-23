@@ -11,13 +11,14 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+ * limitations under the License.                              \
  */
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
@@ -39,11 +40,14 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
       public void run() {
         for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
           IFile classesGen = module.getClassesGen();
-          if (classesGen != null) {
-            VirtualFile classesGenVF = VirtualFileUtils.getVirtualFile(classesGen);
-            if (classesGenVF != null) {
-              roots.add(classesGenVF);
-            }
+          if (classesGen == null) continue;
+
+          //todo this trash should be removed after reconsidering language packaging. see MPS-11757 for details
+          if (classesGen.getName().endsWith("." + MPSExtentions.MPS_ARCH)) continue;
+
+          VirtualFile classesGenVF = VirtualFileUtils.getVirtualFile(classesGen);
+          if (classesGenVF != null) {
+            roots.add(classesGenVF);
           }
         }
       }
