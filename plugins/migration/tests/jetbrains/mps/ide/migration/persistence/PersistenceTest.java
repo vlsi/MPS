@@ -117,9 +117,15 @@ public class PersistenceTest extends BaseMPSTest {
             List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
             list.add(testModel);
 
-            if (version[0] > START_PERSISTENCE_TEST_VERSION)
-              new PersistenceUpdater().upgradePersistence(list, version[0]);
-            ModelAccess.instance().flushEventQueue();
+            if (version[0] > START_PERSISTENCE_TEST_VERSION) {
+              try { // errors about not found attributes are expected for old models
+                filter.start();
+                new PersistenceUpdater().upgradePersistence(list, version[0]);
+                ModelAccess.instance().flushEventQueue();
+              } finally {
+                filter.stop();
+              }
+            }
             assertTrue(testModel.getModelFile() != null);
             assertTrue(testModel.getPersistenceVersion() == version[0]);
 
@@ -134,10 +140,10 @@ public class PersistenceTest extends BaseMPSTest {
             try { // errors about not found attributes are expected for old models
               filter.start();
               new PersistenceUpdater().upgradePersistence(list, version[1]);
+              ModelAccess.instance().flushEventQueue();
             } finally {
               filter.stop();
             }
-            ModelAccess.instance().flushEventQueue();
             assertTrue(testModel.getModelFile() != null);
             assertTrue(testModel.getPersistenceVersion() == version[1]);
 
