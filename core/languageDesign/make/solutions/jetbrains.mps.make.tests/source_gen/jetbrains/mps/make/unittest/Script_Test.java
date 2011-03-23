@@ -7,8 +7,8 @@ import org.jmock.integration.junit4.JMock;
 import org.junit.Test;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IResult;
-import junit.framework.AssertionFailedError;
 import jetbrains.mps.make.resources.IResource;
+import junit.framework.AssertionFailedError;
 import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,10 +21,6 @@ public class Script_Test extends MockTestCase {
   @Test
   public void test_init() throws Exception {
     IScript.Stub stub = new IScript.Stub() {
-      public IResult execute() {
-        throw new AssertionFailedError();
-      }
-
       public IResult execute(Iterable<? extends IResource> input) {
         throw new AssertionFailedError();
       }
@@ -33,7 +29,7 @@ public class Script_Test extends MockTestCase {
         throw new AssertionFailedError();
       }
 
-      public ITarget defaultTarget() {
+      public ITarget finalTarget() {
         throw new AssertionFailedError();
       }
 

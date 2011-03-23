@@ -9,9 +9,8 @@ public interface IScript {
   public void init(IParametersPool ppool);
   public IMonitors monitors();
   public boolean isValid();
-  public ITarget defaultTarget();
+  public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
-  public IResult execute();
   public IResult execute(Iterable<? extends IResource> input);
   public static abstract class Stub implements IScript {
     private IScript.StubBoss boss;
@@ -59,16 +58,12 @@ public interface IScript {
       return delegate.execute(input);
     }
 
-    public IResult execute() {
-      return delegate.execute();
-    }
-
     public Iterable<ITarget> allTargets() {
       return delegate.allTargets();
     }
 
-    public ITarget defaultTarget() {
-      return delegate.defaultTarget();
+    public ITarget finalTarget() {
+      return delegate.finalTarget();
     }
 
     public boolean isValid() {

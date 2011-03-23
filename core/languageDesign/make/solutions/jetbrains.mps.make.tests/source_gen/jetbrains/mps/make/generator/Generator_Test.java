@@ -73,10 +73,10 @@ public class Generator_Test extends MockTestCase {
       }
     };
     Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
+    ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute();
+    IResult res = scr.execute(null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -143,10 +143,10 @@ public class Generator_Test extends MockTestCase {
       }
     };
     Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
+    ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute();
+    IResult res = scr.execute(null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -215,10 +215,10 @@ public class Generator_Test extends MockTestCase {
     };
 
     Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
+    ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute();
+    IResult res = scr.execute(null);
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -273,10 +273,10 @@ public class Generator_Test extends MockTestCase {
     };
 
     Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
+    ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute();
+    IResult res = scr.execute(null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -328,10 +328,10 @@ public class Generator_Test extends MockTestCase {
       }
     };
     Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
+    ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute();
+    IResult res = scr.execute(null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

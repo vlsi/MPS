@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IJob;
-import java.util.Collections;
 import jetbrains.mps.make.script.IParametersPool;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -65,7 +64,7 @@ public class Script extends IScript.Stub implements IScript {
     return targetRange.sortedTargets();
   }
 
-  public ITarget defaultTarget() {
+  public ITarget finalTarget() {
     ITarget trg = targetRange.getTarget(defaultTargetName);
     if (trg == null) {
       LOG.error("no such target: " + defaultTargetName);
@@ -189,10 +188,6 @@ public class Script extends IScript.Stub implements IScript {
     });
     LOG.debug("Finished executing script");
     return results;
-  }
-
-  public IResult execute() {
-    return execute(Sequence.fromIterable(Collections.<IResource>emptyList()));
   }
 
   public class ParametersPool implements IParametersPool {

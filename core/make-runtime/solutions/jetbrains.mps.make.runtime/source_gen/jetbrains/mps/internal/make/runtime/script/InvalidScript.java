@@ -24,15 +24,11 @@ public class InvalidScript implements IScript {
     throw new IllegalStateException("Invalid script");
   }
 
-  public IResult execute() {
-    throw new IllegalStateException("Invalid script");
-  }
-
   public IResult execute(Iterable<? extends IResource> input) {
     throw new IllegalStateException("Invalid script");
   }
 
-  public ITarget defaultTarget() {
+  public ITarget finalTarget() {
     return null;
   }
 
