@@ -9,6 +9,10 @@ public class MixedDescriptorProvider<T> extends DescriptorProvider<T> {
     this.providers = ImmutableList.copyOf(providers);
   }
 
+  public static <T> MixedDescriptorProvider<T> of(DescriptorProvider<T>... providers) {
+    return new MixedDescriptorProvider<T>(providers);
+  }
+
   @Override
   public T getDescriptor(String fqName) {
     for (DescriptorProvider<T> provider : providers) {

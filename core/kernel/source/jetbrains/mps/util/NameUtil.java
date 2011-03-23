@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -298,6 +299,7 @@ public class NameUtil {
   }
 
   public static String removeStructureFromFqName(@NotNull String fqName) {
+    // todo: replace by getAspectNodeFqName?
     String namespace = namespaceFromLongName(fqName);
     String shortName = shortNameFromLongName(fqName);
     if (namespace.endsWith("." + STRUCTURE)) {
@@ -306,6 +308,28 @@ public class NameUtil {
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
       builder.append(namespace);
+      builder.append('.');
+      builder.append(shortName);
+      return builder.toString();
+    } finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
+  }
+
+  public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
+    String namespace = namespaceFromLongName(conceptFqName);
+    String shortName = shortNameFromLongName(conceptFqName);
+    if (namespace.endsWith("." + STRUCTURE)) {
+      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE).length());
+    } else {
+      throw new IllegalArgumentException("Not a concept fq name");
+    }
+
+    StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
+      builder.append(namespace);
+      builder.append('.');
+      builder.append(languageAspect.getName());
       builder.append('.');
       builder.append(shortName);
       return builder.toString();

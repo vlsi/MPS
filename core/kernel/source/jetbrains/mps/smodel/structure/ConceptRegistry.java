@@ -12,15 +12,22 @@ import java.util.Map;
 import static com.google.common.collect.Maps.newHashMap;
 
 public class ConceptRegistry implements ApplicationComponent {
-  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
   private static final DescriptorProvider<StructureDescriptor> INTERPRETED_STRUCTURE = new InterpretedStructureProvider();
+
+  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
+  private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
 
   private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
     INTERPRETED_STRUCTURE,
     INTERPRETED_BEHAVIOR
   );
 
-  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_CONCEPT_DESCRIPTOR;
+  private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
+    INTERPRETED_STRUCTURE,
+    MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR)
+  );
+
+  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR;
 
   private final Map<String, ConceptDescriptor> descriptors = newHashMap();
 
