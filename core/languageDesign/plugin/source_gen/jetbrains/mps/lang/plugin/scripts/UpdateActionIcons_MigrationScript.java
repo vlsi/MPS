@@ -32,7 +32,7 @@ public class UpdateActionIcons_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode icon = SLinkOperations.setNewChild(node, "icon", "jetbrains.mps.lang.plugin.structure.IconResource");
-        SPropertyOperations.set(icon, "", SPropertyOperations.getString(node, "iconPath"));
+        SPropertyOperations.set(icon, "path", SPropertyOperations.getString(node, "iconPath"));
         SPropertyOperations.set(node, "iconPath", null);
       }
 
