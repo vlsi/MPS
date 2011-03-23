@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,8 +24,7 @@ public class typeof_MatrixType_InferenceRule extends AbstractInferenceRule_Runti
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210166478532", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210166478532", 0, null);
       typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(nodeToCheck, "scalarType", true), (SNode) SLinkOperations.getTarget(new typeof_MatrixType_InferenceRule.QuotationClass_fdz8xr_a0a0a0a().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
     }
   }
