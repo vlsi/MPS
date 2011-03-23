@@ -55,7 +55,7 @@ public class PersistenceTest extends BaseMPSTest {
 
   private TestOutputFilter filter = new TestOutputFilter() {
     @Override protected boolean isLineOK(String line) {
-      return line.contains("attribute") && line.contains(" not found");
+      return !(line.contains("attribute") && line.contains(" not found"));
     }
   };
 
