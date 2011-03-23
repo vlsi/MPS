@@ -160,7 +160,9 @@ public class Equations {
       variablesMet.remove(type);
       return result;
     } else {
-      SNode result = node;
+      SNode result = myState.getTypeCheckingContext().isInTraceMode() ? CopyUtil.copy(node) : node; //todo
+      // In trace mode there should be node copy (because the node will be expanded and presentation will not be correct)
+      // Copying node in generation mode leads to generation errors
       replaceChildren(result, variablesMet, finalExpansion);
       replaceReferences(result, variablesMet, finalExpansion);
       return result;

@@ -109,4 +109,8 @@ public abstract class AbstractOperation {
       }
     }
   }
+
+  public boolean hasEffect() {
+    return true;
+  }
 }

@@ -23,7 +23,6 @@
   <import index="3pw0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.newTypesystem.operation.block(MPS.Classpath/jetbrains.mps.newTypesystem.operation.block@java_stub)" version="-1" />
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" />
   <import index="lcqf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" version="-1" />
-  <import index="akch" modelUID="f:java_stub#7a5dda62-9140-4668-ab76-d5ed1746f2b2#jetbrains.mps.newTypesystem.presentation.difference(jetbrains.mps.lang.typesystem/jetbrains.mps.newTypesystem.presentation.difference@java_stub)" version="-1" />
   <import index="2qgh" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.newTypesystem.operation(MPS.Classpath/jetbrains.mps.newTypesystem.operation@java_stub)" version="-1" />
   <import index="9e9t" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.components(MPS.Classpath/com.intellij.ui.components@java_stub)" version="-1" />
   <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
@@ -2387,7 +2386,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746706654" resolveInfo="t" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746706673">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypeCheckingContextNew%dcheckRoot(boolean)%cvoid" resolveInfo="checkRoot" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypeCheckingContextNew%dcheckRootInTraceMode(boolean)%cvoid" resolveInfo="checkRootInTraceMode" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="743535856746706674">
                     <property name="value" nameId="tpee.1068580123138" value="true" />
                   </node>

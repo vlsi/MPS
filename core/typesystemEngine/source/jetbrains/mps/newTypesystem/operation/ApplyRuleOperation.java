@@ -66,4 +66,9 @@ public class ApplyRuleOperation extends AbstractOperation {
     }
     return new Pair<String, String>(myEquationInfo.getRuleId(), myEquationInfo.getRuleModel());
   }
+
+  @Override
+  public boolean hasEffect() {
+    return false;
+  }
 }

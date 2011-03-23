@@ -30,7 +30,7 @@ public class ShowTypeSystemTrace extends JDialog {
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, boolean rebuild) {
     super(frame);
     if (rebuild) {
-      t.checkRoot(true);
+      t.checkRootInTraceMode(true);
     }
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());

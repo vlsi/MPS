@@ -46,6 +46,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private INodeTypesComponent myNodeTypesComponent;
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsResolving = false;
+  private boolean myIsTraceMode = false;
   private IOperationContext myOperationContext;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
@@ -66,7 +67,17 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-      checkRoot(false);
+    checkRoot(false);
+  }
+
+  public void checkRootInTraceMode(final boolean refreshTypes) {
+    myIsTraceMode = true;
+    checkRoot(refreshTypes);
+    myIsTraceMode = false;
+  }
+
+  public boolean isInTraceMode() {
+    return myIsTraceMode;
   }
 
   @Override

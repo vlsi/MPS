@@ -62,4 +62,8 @@ public class AddRemarkOperation extends AbstractOperation {
     }
   }
 
+  @Override
+  public boolean hasEffect() {
+    return false;
+  }
 }

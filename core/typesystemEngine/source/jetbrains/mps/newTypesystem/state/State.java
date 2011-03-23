@@ -184,7 +184,7 @@ public class State {
   }
 
   public void addBlock(Block block) {
-    executeOperation(new AddBlockOperation(block));
+    executeOperation(new AddBlockOperation(block, myTypeCheckingContext.isInTraceMode()));
   }
 
   public boolean clearNode(SNode node) {
@@ -270,15 +270,19 @@ public class State {
     if (operation == null) {
       return;
     }
-    if (!myOperationStack.empty()) {
-      myOperationStack.peek().addConsequence(operation);
-    }
-    myOperationStack.push(operation);
-    operation.execute(this);
-    if (!myOperationStack.empty()) {
-      myOperationStack.pop();
+    if (myTypeCheckingContext.isInTraceMode() || operation.hasEffect()) {
+      if (!myOperationStack.empty()) {
+        myOperationStack.peek().addConsequence(operation);
+      }
+      myOperationStack.push(operation);
+      operation.execute(this);
+      if (!myOperationStack.empty()) {
+        myOperationStack.pop();
+      } else {
+        LOG.warning("Operation stack in type system state was empty");
+      }
     } else {
-      LOG.warning("Operation stack in type system state was empty");
+      operation.execute(this);   //do not store unneeded operations
     }
   }
 
