@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddConceptMethodStrategy implements StratergyAddMethodDialog.ContainerStrategy {
@@ -52,7 +52,7 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
     if ((conceptBehavior == null)) {
       return 0;
     }
-    SNode concept = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(conceptBehavior);
+    SNode concept = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(conceptBehavior, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}));
     if ((concept == null)) {
       return 0;
     }

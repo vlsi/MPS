@@ -4089,7 +4089,7 @@
     <nodeInfo nodeId="7824118464176019758" fileName="AddConceptMethodStrategy.java" startLine="46" startPosition="5" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8962463912773901983" fileName="AddConceptMethodStrategy.java" startLine="50" startPosition="55" endLine="51" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8962463912773901205" fileName="AddConceptMethodStrategy.java" startLine="52" startPosition="36" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962463912773901997" fileName="AddConceptMethodStrategy.java" startLine="54" startPosition="5" endLine="55" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962463912773901997" fileName="AddConceptMethodStrategy.java" startLine="54" startPosition="5" endLine="55" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8962463912773902041" fileName="AddConceptMethodStrategy.java" startLine="56" startPosition="28" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8962463912773902008" fileName="AddConceptMethodStrategy.java" startLine="58" startPosition="5" endLine="59" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7824118464176019781" fileName="AddConceptMethodStrategy.java" startLine="62" startPosition="52" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4097,7 +4097,7 @@
     <nodeInfo nodeId="7824118464176019799" fileName="AddConceptMethodStrategy.java" startLine="70" startPosition="47" endLine="71" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7824118464176019738" fileName="AddConceptMethodStrategy.java" startLine="43" startPosition="12" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8962463912773901195" fileName="AddConceptMethodStrategy.java" startLine="51" startPosition="110" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962463912773902023" fileName="AddConceptMethodStrategy.java" startLine="55" startPosition="101" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962463912773902023" fileName="AddConceptMethodStrategy.java" startLine="55" startPosition="249" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7824118464176019773" fileName="AddConceptMethodStrategy.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
     <nodeInfo nodeId="7824118464176019783" fileName="AddConceptMethodStrategy.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7824118464176019793" fileName="AddConceptMethodStrategy.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -4165,7 +4165,7 @@
     <nodeInfo nodeId="4514830148568045526" fileName="SetNodePackage_Action.java" startLine="104" startPosition="42" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7889360268649449961" fileName="SetNodePackage_Action.java" startLine="106" startPosition="33" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1680229125543349052" fileName="SetNodePackage_Action.java" startLine="111" startPosition="111" endLine="112" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2980148312638948262" fileName="SetNodePackage_Action.java" startLine="114" startPosition="232" endLine="115" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2980148312638948262" fileName="SetNodePackage_Action.java" startLine="114" startPosition="383" endLine="115" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7889360268649447756" fileName="SetNodePackage_Action.java" startLine="128" startPosition="104" endLine="129" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7889360268649447773" fileName="SetNodePackage_Action.java" startLine="130" startPosition="53" endLine="131" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7889360268649447801" fileName="SetNodePackage_Action.java" startLine="132" startPosition="5" endLine="133" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4191,7 +4191,7 @@
     <nodeInfo nodeId="7889360268649447747" fileName="SetNodePackage_Action.java" startLine="127" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fetchExistingPackages#(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;" />
     <scopeInfo nodeId="5625905672397425770" fileName="SetNodePackage_Action.java" startLine="43" startPosition="29" endLine="44" endPosition="21" />
     <scopeInfo nodeId="7889360268649448003" fileName="SetNodePackage_Action.java" startLine="106" startPosition="33" endLine="107" endPosition="15" />
-    <scopeInfo nodeId="2980148312638948165" fileName="SetNodePackage_Action.java" startLine="114" startPosition="232" endLine="115" endPosition="77" />
+    <scopeInfo nodeId="2980148312638948165" fileName="SetNodePackage_Action.java" startLine="114" startPosition="383" endLine="115" endPosition="77" />
     <scopeInfo nodeId="7889360268649447769" fileName="SetNodePackage_Action.java" startLine="130" startPosition="53" endLine="131" endPosition="77" />
     <scopeInfo nodeId="7889360268649447860" fileName="SetNodePackage_Action.java" startLine="137" startPosition="24" endLine="138" endPosition="54" />
     <scopeInfo nodeId="1680229125543348955" fileName="SetNodePackage_Action.java" startLine="98" startPosition="27" endLine="100" endPosition="151" />
