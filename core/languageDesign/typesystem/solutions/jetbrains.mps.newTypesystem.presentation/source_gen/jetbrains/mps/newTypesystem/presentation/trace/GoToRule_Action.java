@@ -55,6 +55,7 @@ public class GoToRule_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")));
+
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRule", t);

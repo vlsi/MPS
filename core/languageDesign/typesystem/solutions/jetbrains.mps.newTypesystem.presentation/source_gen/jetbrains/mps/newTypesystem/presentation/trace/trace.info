@@ -4,6 +4,7 @@
   <unitInfo fileName="GoToRule_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.newTypesystem.presentation.trace.GoToRule_Action" />
   <root nodeId="335725515708841107">
     <nodeInfo nodeId="1181135906349825226" fileName="GoToRule_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3500421091148562938" fileName="GoToRule_Action.java" startLine="57" startPosition="185" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
   </root>
   <root nodeId="5465709794389879045">
     <nodeInfo nodeId="5465709794389879049" fileName="TraceActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
