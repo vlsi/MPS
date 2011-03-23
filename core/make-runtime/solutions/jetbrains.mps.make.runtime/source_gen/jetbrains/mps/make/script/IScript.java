@@ -12,6 +12,10 @@ public interface IScript {
   public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
   public IResult execute(Iterable<? extends IResource> input);
+  public static interface Init {
+    public void init(IParametersPool ppool);
+  }
+
   public static abstract class Stub implements IScript {
     private IScript.StubBoss boss;
 
