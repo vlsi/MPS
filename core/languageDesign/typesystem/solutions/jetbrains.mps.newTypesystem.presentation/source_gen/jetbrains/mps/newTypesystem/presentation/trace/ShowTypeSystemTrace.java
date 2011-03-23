@@ -8,6 +8,7 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.BorderLayout;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
@@ -27,7 +28,7 @@ public class ShowTypeSystemTrace extends JDialog {
   private TypeSystemTraceTree myTraceTree;
   private TypeSystemStateTree myStateTree;
 
-  public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, boolean rebuild) {
+  public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, EditorComponent editorComponent, boolean rebuild) {
     super(frame);
     if (rebuild) {
       t.checkRootInTraceMode(true);
@@ -35,7 +36,7 @@ public class ShowTypeSystemTrace extends JDialog {
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
     myTraceTree = new TypeSystemTraceTree(operationContext, t, frame, node, this);
-    myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState());
+    myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
     JSplitPane splitPane = new JSplitPane();
     this.add(splitPane);
     JBScrollPane traceScrollPane = new JBScrollPane(myTraceTree);

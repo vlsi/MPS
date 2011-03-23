@@ -71,7 +71,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), true);
+        new ShowTypeSystemTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

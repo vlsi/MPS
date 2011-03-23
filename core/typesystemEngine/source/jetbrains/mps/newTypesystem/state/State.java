@@ -311,10 +311,6 @@ public class State {
     return result;
   }
 
-  public void revertLastOperation() {
-    getLastOperation().undo(this);
-  }
-
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
     myNodeMaps.addNodeToError(node, error, info);
   }

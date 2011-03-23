@@ -8,6 +8,7 @@ import java.awt.Color;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.InequalityBlock;
 import java.util.HashMap;
@@ -17,12 +18,12 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
 
   private Block myBlock;
 
-  public BlockTreeNode(Block block, IOperationContext operationContext, State state) {
+  public BlockTreeNode(Block block, IOperationContext operationContext, State state, EditorComponent editorComponent) {
     super(block.getExpandedPresentation(state), operationContext);
     myBlock = block;
     myRuleId = block.getNodeId();
     myRuleModel = block.getNodeModel();
-    setTooltipText(block.getVariablesNodes());
+    setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, block.getVariables(), state));
   }
 
   @Override

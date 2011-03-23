@@ -5,6 +5,7 @@ package jetbrains.mps.newTypesystem.presentation.trace;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.state.BlockKind;
 import java.awt.Color;
@@ -32,10 +33,12 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 public class TypeSystemStateTree extends MPSTree {
   private IOperationContext myOperationContext;
   private State myState;
+  private EditorComponent myEditorComponent;
 
-  public TypeSystemStateTree(IOperationContext operationContext, State state) {
+  public TypeSystemStateTree(IOperationContext operationContext, State state, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myState = state;
+    myEditorComponent = editorComponent;
     this.rebuildNow();
     expandAll();
   }
@@ -56,7 +59,9 @@ public class TypeSystemStateTree extends MPSTree {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
     result.add(createInequalitiesNode());
-    result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
+    /*
+      result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
+    */
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
@@ -82,7 +87,7 @@ public class TypeSystemStateTree extends MPSTree {
       result.setColor(color);
     }
     for (Block block : entries) {
-      result.add(new BlockTreeNode(block, myOperationContext, myState));
+      result.add(new BlockTreeNode(block, myOperationContext, myState, myEditorComponent));
     }
     return result;
   }
@@ -98,7 +103,7 @@ public class TypeSystemStateTree extends MPSTree {
         current = new TypeSystemStateTreeNode(key.toString(), myOperationContext);
       }
       for (InequalityBlock block : entry.getValue()) {
-        current.add(new BlockTreeNode(block, myOperationContext, myState));
+        current.add(new BlockTreeNode(block, myOperationContext, myState, myEditorComponent));
       }
       if (!(key.isEmpty())) {
         result.add(current);
@@ -113,7 +118,7 @@ public class TypeSystemStateTree extends MPSTree {
     NodeMaps nodeMaps = myState.getNodeMaps();
     for (SNode node : nodeMaps.getTypeKeySet()) {
       SNode type = nodeMaps.getInitialType(node);
-      list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type)));
+      list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type), myEditorComponent));
     }
     Collections.sort(list, new Comparator<TypeTreeNode>() {
       @Override
