@@ -79,7 +79,7 @@
     <nodeInfo nodeId="7294814585296232082" fileName="EmbeddableEditor.java" startLine="124" startPosition="54" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7469930712745424618" fileName="EmbeddableEditor.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3094411788089107832" fileName="EmbeddableEditor.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/ide/IEditor;" />
-    <nodeInfo nodeId="8713487063218432190" fileName="EmbeddableEditor.java" startLine="142" startPosition="48" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="8713487063218432190" fileName="EmbeddableEditor.java" startLine="142" startPosition="53" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="2778756225064345787" fileName="EmbeddableEditor.java" startLine="153" startPosition="7" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6483976992294511266" fileName="EmbeddableEditor.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModel#()Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;" />
     <nodeInfo nodeId="1227605620574" fileName="EmbeddableEditor.java" startLine="199" startPosition="58" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -173,7 +173,7 @@
       <varInfo nodeId="7469930712745424622" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3094411788089107832" fileName="EmbeddableEditor.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="8713487063218432190" fileName="EmbeddableEditor.java" startLine="142" startPosition="48" endLine="146" endPosition="0">
+    <scopeInfo nodeId="8713487063218432190" fileName="EmbeddableEditor.java" startLine="142" startPosition="53" endLine="146" endPosition="0">
       <varInfo nodeId="8713487063218432191" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="6483976992294511266" fileName="EmbeddableEditor.java" startLine="184" startPosition="0" endLine="188" endPosition="0" />

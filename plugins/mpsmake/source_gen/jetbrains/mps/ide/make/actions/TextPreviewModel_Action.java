@@ -78,7 +78,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
     try {
       SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
       IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("textGenToMemory")).toScript();
-      IConfigMonitor cmon = new IConfigMonitor() {
+      IConfigMonitor cmon = new IConfigMonitor.Stub() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return query.defaultOption();
         }

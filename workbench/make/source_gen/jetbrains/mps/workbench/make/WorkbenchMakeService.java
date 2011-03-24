@@ -171,7 +171,7 @@ public class WorkbenchMakeService implements IMakeService {
     };
     final IConfigMonitor cmon = (configMon != null ?
       configMon :
-      new IConfigMonitor() {
+      new IConfigMonitor.Stub() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context);
         }

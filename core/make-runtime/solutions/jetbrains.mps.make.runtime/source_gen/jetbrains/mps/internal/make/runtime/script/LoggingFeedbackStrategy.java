@@ -14,13 +14,13 @@ public class LoggingFeedbackStrategy {
   public void reportFeedback(IFeedback fdk) {
     switch (fdk.getSeverity()) {
       case ERROR:
-        LOG.error("[" + fdk.getPriority() + "] -- " + fdk.getMessage());
+        LOG.error(fdk.getMessage());
         break;
       case WARNING:
-        LOG.warning("[" + fdk.getPriority() + "] -- " + fdk.getMessage());
+        LOG.warning(fdk.getMessage());
         break;
       case INFO:
-        LOG.info("[" + fdk.getPriority() + "] -- " + fdk.getMessage());
+        LOG.info(fdk.getMessage());
         break;
       default:
         break;

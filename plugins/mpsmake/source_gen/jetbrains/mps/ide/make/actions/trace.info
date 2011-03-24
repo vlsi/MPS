@@ -925,7 +925,7 @@
     <nodeInfo nodeId="8610665572788515819" fileName="TextPreviewModel_Action.java" startLine="112" startPosition="46" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="114" startPosition="5" endLine="115" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8610665572788515814" fileName="TextPreviewModel_Action.java" startLine="111" startPosition="95" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8610665572788515877" fileName="TextPreviewModel_Action.java" startLine="81" startPosition="50" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="8610665572788515877" fileName="TextPreviewModel_Action.java" startLine="81" startPosition="55" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="8610665572788515870" fileName="TextPreviewModel_Action.java" startLine="80" startPosition="224" endLine="85" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8610665572788515777" fileName="TextPreviewModel_Action.java" startLine="102" startPosition="31" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8610665572788515916" fileName="TextPreviewModel_Action.java" startLine="87" startPosition="0" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -938,7 +938,7 @@
     <scopeInfo nodeId="8610665572788515978" fileName="TextPreviewModel_Action.java" startLine="45" startPosition="87" endLine="47" endPosition="87">
       <varInfo nodeId="8610665572788515980" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515877" fileName="TextPreviewModel_Action.java" startLine="81" startPosition="50" endLine="85" endPosition="0">
+    <scopeInfo nodeId="8610665572788515877" fileName="TextPreviewModel_Action.java" startLine="81" startPosition="55" endLine="85" endPosition="0">
       <varInfo nodeId="8610665572788515878" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515917" fileName="TextPreviewModel_Action.java" startLine="88" startPosition="30" endLine="92" endPosition="250">

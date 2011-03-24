@@ -139,7 +139,7 @@ public class EmbeddableEditor {
   public IClassesData make(final Set<IClassPathItem> classPath) {
     IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("compileToMemory")).toScript();
 
-    IConfigMonitor cmon = new IConfigMonitor() {
+    IConfigMonitor cmon = new IConfigMonitor.Stub() {
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         return query.defaultOption();
       }
