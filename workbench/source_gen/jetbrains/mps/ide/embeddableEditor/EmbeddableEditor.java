@@ -217,7 +217,11 @@ public class EmbeddableEditor {
 
   public void disposeEditor(boolean clearModule) {
     if (clearModule) {
-      SModelRepository.getInstance().unRegisterModelDescriptors(myOwner);
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          SModelRepository.getInstance().unRegisterModelDescriptors(myOwner);
+        }
+      });
     }
     myFileNodeEditor.dispose();
   }
