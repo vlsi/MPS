@@ -155,16 +155,14 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName;
     if (baseMethodDeclaration == null) {
-      if (SNodeOperations.isInstanceOf(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
-        if (classifier != null) {
-          methodName = SPropertyOperations.getString(classifier, "name");
-        } else {
-          return;
-        }
-      } else {
+      if (!(SNodeOperations.isInstanceOf(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
         return;
       }
+      SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(methodCallNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
+      if (classifier == null) {
+        return;
+      }
+      methodName = SPropertyOperations.getString(classifier, "name");
     } else {
       methodName = SPropertyOperations.getString(baseMethodDeclaration, "name");
     }
