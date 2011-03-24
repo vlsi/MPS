@@ -23,6 +23,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
@@ -120,7 +121,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
-          JOptionPane.showMessageDialog(getContentManager().getComponent(), notFoundMsg, "Not found", JOptionPane.INFORMATION_MESSAGE);
+          Messages.showInfoMessage(notFoundMsg, "Not found");
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
