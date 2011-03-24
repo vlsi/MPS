@@ -2,13 +2,10 @@
 <debugInfo>
   <unitInfo fileName="QuickQueryLanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin" />
   <unitInfo fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" />
-  <unitInfo fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup" />
-  <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
+  <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
   <unitInfo fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
-  <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
-  <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
-  <unitInfo fileName="ReplacementQueryActionWithNode_Action.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />
-  <unitInfo fileName="FindInstancesByConditionAndNode_Action.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" />
+  <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
+  <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
   <root nodeId="1219056224639">
     <nodeInfo nodeId="1220257798123" fileName="QueryExecutor.java" startLine="6" startPosition="28" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED_QUERY_NAME" />
     <nodeInfo nodeId="1235926499683" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExecutor#()V" />
@@ -16,23 +13,16 @@
     <scopeInfo nodeId="1235926499683" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
     <unitInfo nodeId="1219056224639" fileName="QueryExecutor.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor" />
   </root>
-  <root nodeId="1219235610174">
-    <nodeInfo nodeId="1219326492962" fileName="FindInstancesByCondition_Action.java" startLine="52" startPosition="9" endLine="53" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219673140961" fileName="FindInstancesByCondition_Action.java" startLine="53" startPosition="155" endLine="54" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219673140981" fileName="FindInstancesByCondition_Action.java" startLine="54" startPosition="142" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  </root>
-  <root nodeId="1219235830420">
-    <nodeInfo nodeId="1219235854657" fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219746852423" fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="17" startPosition="138" endLine="18" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  </root>
   <root nodeId="1219321230528">
-    <nodeInfo nodeId="1219418619748" fileName="FindInstancesByConditionAndNode_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219673014053" fileName="FindInstancesByConditionAndNode_Action.java" startLine="67" startPosition="227" endLine="68" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219418619756" fileName="FindInstancesByConditionAndNode_Action.java" startLine="68" startPosition="91" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219418619748" fileName="FindInstancesByCondition_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8944570236303925938" fileName="FindInstancesByCondition_Action.java" startLine="65" startPosition="73" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219418619756" fileName="FindInstancesByCondition_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8944570236303854255" fileName="FindInstancesByCondition_Action.java" startLine="64" startPosition="227" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8944570236303854256" fileName="FindInstancesByCondition_Action.java" startLine="65" startPosition="73" endLine="66" endPosition="93" />
   </root>
   <root nodeId="1219322457890">
-    <nodeInfo nodeId="1219322565280" fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219749680021" fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="17" startPosition="152" endLine="18" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219322565280" fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219749680021" fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="17" startPosition="145" endLine="18" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1219325618540">
     <nodeInfo nodeId="1219326319430" fileName="FindInstancesContext.java" startLine="13" startPosition="64" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -234,10 +224,6 @@
     <unitInfo nodeId="9161136784551423087" fileName="FindInstancesDialog.java" startLine="51" startPosition="55" endLine="63" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog$6" />
     <unitInfo nodeId="1219405656218" fileName="FindInstancesDialog.java" startLine="38" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog" />
   </root>
-  <root nodeId="1219746306448">
-    <nodeInfo nodeId="1219746611183" fileName="ReplacementQueryAction_Action.java" startLine="52" startPosition="9" endLine="53" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219746626710" fileName="ReplacementQueryAction_Action.java" startLine="53" startPosition="211" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  </root>
   <root nodeId="1219746404210">
     <nodeInfo nodeId="1219746458485" fileName="ReplaceDialog.java" startLine="35" startPosition="47" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
     <nodeInfo nodeId="1219748345197" fileName="ReplaceDialog.java" startLine="36" startPosition="36" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
@@ -388,9 +374,11 @@
     <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="35" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
   </root>
   <root nodeId="1219749269092">
-    <nodeInfo nodeId="1219749451844" fileName="ReplacementQueryActionWithNode_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219749481595" fileName="ReplacementQueryActionWithNode_Action.java" startLine="67" startPosition="211" endLine="68" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219749471429" fileName="ReplacementQueryActionWithNode_Action.java" startLine="68" startPosition="87" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219749451844" fileName="ReplacementQueryAction_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8944570236303927260" fileName="ReplacementQueryAction_Action.java" startLine="65" startPosition="73" endLine="66" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219749471429" fileName="ReplacementQueryAction_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8944570236303927248" fileName="ReplacementQueryAction_Action.java" startLine="64" startPosition="211" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8944570236303927249" fileName="ReplacementQueryAction_Action.java" startLine="65" startPosition="73" endLine="66" endPosition="89" />
   </root>
   <root nodeId="1219918588182">
     <nodeInfo nodeId="1219918860717" fileName="ReplacementView.java" startLine="31" startPosition="30" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsagesView" />

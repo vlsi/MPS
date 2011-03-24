@@ -4,9 +4,10 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.Search_ActionGroup;
 
 public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.quickQueryLanguage");
@@ -20,18 +21,16 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new FindInstancesByConditionAndNode_Action());
     addAction(new FindInstancesByCondition_Action());
-    addAction(new ReplacementQueryActionWithNode_Action());
     addAction(new ReplacementQueryAction_Action());
     // groups 
     addGroup(new FindInstancesByConditionAndNodeGroup_ActionGroup());
-    addGroup(new FindInstancesByConditionGroup_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(FindInstancesByConditionGroup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_instances);
     insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_instances);
     insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, Search_ActionGroup.ID, null);
   }
 }

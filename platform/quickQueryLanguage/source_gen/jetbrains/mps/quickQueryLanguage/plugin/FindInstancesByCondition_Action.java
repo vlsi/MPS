@@ -8,8 +8,10 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
@@ -19,8 +21,8 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
 
   public FindInstancesByCondition_Action() {
-    super("Find Instances By Condition", "", ICON);
-    this.setIsAlwaysVisible(true);
+    super("Find Instances by Condition", "", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
@@ -37,6 +39,15 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+          node = null;
+        }
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
     MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
@@ -50,9 +61,11 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IOperationContext newContext = new FindInstancesContext(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))));
-      FindInstancesDialog dialog = new FindInstancesDialog(newContext, (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
-      dialog.showDialog();
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
+        testDialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
+      }
+      testDialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
     }

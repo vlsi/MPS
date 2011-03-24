@@ -14,8 +14,8 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action");
-      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action");
+      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action");
+      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
