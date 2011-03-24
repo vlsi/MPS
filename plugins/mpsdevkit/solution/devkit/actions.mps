@@ -6685,7 +6685,7 @@
   <root id="2403997762364994115">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2403997762364994116">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991231476" resolveInfo="EditorPopup" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1744445256079578594" resolveInfo="gotoConceptAspects" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5384922150955313087" resolveInfo="goto" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2403997762364994117">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2403997762364994118">
