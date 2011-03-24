@@ -143,9 +143,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
-  public String getCheckBoxName() {
-    return "Include non-project models";
+  protected String doGetCheckBoxName() {
+    return "Include &non-&&project models";
   }
-
-
 }

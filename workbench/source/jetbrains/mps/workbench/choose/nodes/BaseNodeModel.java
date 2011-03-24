@@ -50,7 +50,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
     };
   }
 
-  public String getCheckBoxName() {
-    return "Include non-project models";
+  protected String doGetCheckBoxName() {
+    return "Include &non-&&project models";
   }
 }

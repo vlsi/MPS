@@ -20,7 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.SystemInfo;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectScope;
@@ -38,6 +38,7 @@ import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
+  protected static final char ESCAPE = '\u001B';
 
   private Project myProject;
 
@@ -153,8 +154,14 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   //---------------------INTERFACE STUFF------------------------
 
-  public String getCheckBoxName() {
-    return "Include non-project " + NameUtil.pluralize(myEntityName);
+  public final String getCheckBoxName() {
+    String name = doGetCheckBoxName();
+    if (name == null) return null;
+    return UIUtil.replaceMnemonicAmpersand(name);
+  }
+
+  protected String doGetCheckBoxName() {
+    return "Include &non-&&project " + NameUtil.pluralize(myEntityName);
   }
 
   public String getNotInMessage() {
@@ -175,10 +182,9 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return new String[]{"."};
   }
 
-  public char getCheckBoxMnemonic() {
-    // Some combination like Alt+N, Ant+O, etc are a dead symbols, therefore
-    // we have to change mnemonics for Mac users.
-    return SystemInfo.isMac ? 'P' : 'n';
+  //this is deprecated and not used
+  public final char getCheckBoxMnemonic() {
+    return 'n';
   }
 
   public boolean loadInitialCheckBoxState() {
