@@ -2,7 +2,8 @@ package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -31,8 +32,15 @@ public class ConceptRegistry implements ApplicationComponent {
 
   private final Map<String, ConceptDescriptor> descriptors = newHashMap();
 
-  public ConceptRegistry(MPSModuleRepository moduleRepository) {
-    // ?
+  public ConceptRegistry(ClassLoaderManager classLoaderManager) {
+    classLoaderManager.addReloadHandler(new ReloadAdapter() {
+      @Override
+      public void unload() {
+        // todo: clear only language and it descendents
+//        System.out.println("Concept in concept registry count on class reload: " + descriptors.size());
+        descriptors.clear();
+      }
+    });
   }
 
   public static ConceptRegistry getInstance() {

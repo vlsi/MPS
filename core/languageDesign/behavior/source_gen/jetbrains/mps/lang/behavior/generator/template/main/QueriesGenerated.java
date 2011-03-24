@@ -84,6 +84,10 @@ public class QueriesGenerated {
     return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_8679953248944166960(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getLongName() + "." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), "name") + "_BehaviorDescriptor";
+  }
+
   public static Object propertyMacro_GetPropertyValue_7733335381515695968(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
@@ -155,7 +159,7 @@ public class QueriesGenerated {
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false);
 
     if (SConceptOperations.isExactly(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.core.structure.BaseConcept")) {
-      return "jetbrains.mps.smodel.structure.BehaviorDescriptor";
+      return "jetbrains.mps.smodel.structure.CompiledBehaviorDescriptor";
     }
     if ((extendsNode == null)) {
       extendsNode = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
@@ -231,7 +235,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a04().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a14().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_7733335381515695960(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -254,7 +258,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a54().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a64().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1241075556924(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -677,8 +681,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  public static class QuotationClass_x583g4_a0a1a04 {
-    public QuotationClass_x583g4_a0a1a04() {
+  public static class QuotationClass_x583g4_a0a1a14 {
+    public QuotationClass_x583g4_a0a1a14() {
     }
 
     public SNode createNode() {
@@ -695,8 +699,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a1a54 {
-    public QuotationClass_x583g4_a0a1a54() {
+  public static class QuotationClass_x583g4_a0a1a64 {
+    public QuotationClass_x583g4_a0a1a64() {
     }
 
     public SNode createNode() {
