@@ -206,16 +206,16 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" file="RunReplacement_Tool.java">
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.ui.content.ContentManager" />

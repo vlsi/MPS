@@ -4,7 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.ide.icons.IconManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import javax.swing.JComponent;
 
 public class RunReplacement_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(RunReplacement_Tool.class.getResource("replace.png"));
+  private static final Icon ICON = IconManager.EMPTY_ICON;
 
   private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
 
