@@ -438,6 +438,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconResource" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.structure.IClassifier" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.DisposeBlock" />

@@ -25,6 +25,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TOOL_INIT_BLOCK = "toolInitBlock";
   public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
+  public static final String TOOL_ICON = "toolIcon";
   public static final String METHOD_DECLARATION = "methodDeclaration";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
   public static final String _$ATTRIBUTE = "_$attribute";
@@ -103,6 +104,14 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
 
   public void setToolDisposeBlock(DisposeBlock node) {
     super.setChild(BaseToolDeclaration.TOOL_DISPOSE_BLOCK, node);
+  }
+
+  public IconResource getToolIcon() {
+    return (IconResource) this.getChild(IconResource.class, BaseToolDeclaration.TOOL_ICON);
+  }
+
+  public void setToolIcon(IconResource node) {
+    super.setChild(BaseToolDeclaration.TOOL_ICON, node);
   }
 
   public int getMethodDeclarationsCount() {
