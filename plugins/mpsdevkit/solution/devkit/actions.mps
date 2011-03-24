@@ -132,12 +132,12 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1744445256079578595">
       <property name="name" nameId="tpck.1169194664001" value="GoToEditorDeclaration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Editor Declaration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Editor Declaration" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Goto" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1744445256079578766">
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Concept Declaration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Concept Declaration" />
       <property name="name" nameId="tpck.1169194664001" value="GoToConceptDeclaration" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Goto" />

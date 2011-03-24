@@ -23,7 +23,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   public GoToConceptDeclaration_Action() {
-    super("Go to Concept Declaration", "", ICON);
+    super("Concept Declaration", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }

@@ -37,7 +37,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   public GoToEditorDeclaration_Action() {
-    super("Go to Editor Declaration", "", ICON);
+    super("Editor Declaration", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
