@@ -14,6 +14,10 @@ public interface IJobMonitor {
       this.pstub = pstub;
     }
 
+    public Stub() {
+      this.pstub = new IProgress.Stub();
+    }
+
     public IProgress currentProgress() {
       return pstub;
     }

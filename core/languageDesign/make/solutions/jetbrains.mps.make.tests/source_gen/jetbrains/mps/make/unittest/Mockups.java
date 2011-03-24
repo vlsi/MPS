@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.facet.ITarget;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.script.IScriptController;
 
 public class Mockups {
   private static IConfig DefaultConfig = new IConfig() {
@@ -186,12 +186,12 @@ public class Mockups {
     return cmonitor;
   }
 
-  public static IMonitors monitors(Mockery context, String name) {
-    final IMonitors mons = context.mock(IMonitors.class, name);
+  public static IScriptController monitors(Mockery context, String name) {
+    final IScriptController mons = context.mock(IScriptController.class, name);
     return mons;
   }
 
-  public static void allowing(Mockery context, final IMonitors mons) {
+  public static void allowing(Mockery context, final IScriptController mons) {
     context.checking(new Expectations() {
       {
         this.allowing(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) this.with(aNonNull(Object.class)));

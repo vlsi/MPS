@@ -10,7 +10,7 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
 import org.jmock.Expectations;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IScript;
@@ -61,13 +61,13 @@ public class Generator_Test extends MockTestCase {
       }
     });
 
-    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
+    final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withTarget(new ITarget.Name("Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null, mons, null);
+    IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -76,7 +76,7 @@ public class Generator_Test extends MockTestCase {
   @Test
   public void test_queryOk() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    final IMonitors mons = Mockups.monitors(context, "mons");
+    final IScriptController mons = Mockups.monitors(context, "mons");
     final IConfigMonitor cmon = context.mock(IConfigMonitor.class);
     context.checking(new Expectations() {
       {
@@ -129,7 +129,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null, mons, null);
+    IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -138,7 +138,7 @@ public class Generator_Test extends MockTestCase {
   @Test
   public void test_queryStop() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    final IMonitors mons = Mockups.monitors(context, "mons");
+    final IScriptController mons = Mockups.monitors(context, "mons");
     final IConfigMonitor cmon = context.mock(IConfigMonitor.class);
     context.checking(new Expectations() {
       {
@@ -193,7 +193,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null, mons, null);
+    IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -236,14 +236,14 @@ public class Generator_Test extends MockTestCase {
       }
     });
 
-    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
+    final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null, mons, null);
+    IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -284,13 +284,13 @@ public class Generator_Test extends MockTestCase {
       }
     };
 
-    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), jmon);
+    final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), jmon);
     IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(null, mons, null);
+    IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

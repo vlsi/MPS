@@ -4,56 +4,48 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
-  private IConfigMonitor configMon;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this(context, null, cleanMake);
-  }
-
-  public WorkbenchMakeService(IOperationContext context, IConfigMonitor cmon, boolean cleanMake) {
     this.context = context;
     this.cleanMake = cleanMake;
-    this.configMon = cmon;
   }
 
   public IResult make(Iterable<? extends IResource> resources) {
@@ -72,12 +64,12 @@ public class WorkbenchMakeService implements IMakeService {
     }, null);
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script, IScript.Setup setup) {
+  public IResult make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
     return doMake(resources, script, new IMakeService.Executor() {
       public void doExecute(Runnable runnable) {
         runnable.run();
       }
-    }, setup);
+    }, ctl);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
@@ -88,7 +80,7 @@ public class WorkbenchMakeService implements IMakeService {
     return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor, null);
   }
 
-  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IMakeService.Executor executor, IScript.Setup setup) {
+  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IMakeService.Executor executor, IScriptController controller) {
     WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
     String scrName = ((cleanMake ?
       "Rebuild" :
@@ -97,8 +89,8 @@ public class WorkbenchMakeService implements IMakeService {
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       if (cleanMake) {
-        String msg = scrName + " aborted";
-        mh.handle(new Message(MessageKind.ERROR, msg + ": nothing to do."));
+        String msg = scrName + " aborted: nothing to do";
+        this.showError(mh, msg);
         this.displayInfo(msg);
         return new IResult.FAILURE(null);
       } else {
@@ -110,7 +102,7 @@ public class WorkbenchMakeService implements IMakeService {
 
     if (!(script.isValid())) {
       String msg = scrName + " failed";
-      mh.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+      showError(mh, msg + ". Invalid script.");
       this.displayInfo(msg);
       return new IResult.FAILURE(null);
     }
@@ -122,11 +114,11 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
 
-    final Tuples._2<IScript.Setup, IMonitors> scrParams = this.scriptParameters(scrName, setup);
+    final IScriptController ctl = this.completeController(scrName, mh, controller);
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
     executor.doExecute(new Runnable() {
       public void run() {
-        res.value = script.execute(scrParams._0(), scrParams._1(), inputRes);
+        res.value = script.execute(ctl, inputRes);
       }
     });
 
@@ -135,13 +127,17 @@ public class WorkbenchMakeService implements IMakeService {
       this.displayInfo(msg);
     } else if (!(res.value.isSucessful())) {
       String msg = scrName + " failed";
-      mh.handle(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
+      showError(mh, msg + ". See previous messages for details.");
       this.displayInfo(msg);
     } else {
       String msg = scrName + " successful";
       this.displayInfo(msg);
     }
     return res.value;
+  }
+
+  private void showError(WorkbenchMakeService.MessageHandler mh, String msg) {
+    mh.handle(new Message(MessageKind.ERROR, msg));
   }
 
   private void displayInfo(String info) {
@@ -151,7 +147,20 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  private Tuples._2<IScript.Setup, IMonitors> scriptParameters(final String scrName, final IScript.Setup setup) {
+  private IScriptController completeController(final String scrName, final IMessageHandler mh, final IScriptController ctl) {
+    final Wrappers._T<IConfigMonitor> cmon2delegate = new Wrappers._T<IConfigMonitor>(null);
+    final IConfigMonitor cmon = new IConfigMonitor.Stub() {
+      public <T extends IOption> T relayQuery(IQuery<T> query) {
+        T opt = null;
+        if (cmon2delegate.value != null) {
+          opt = cmon2delegate.value.relayQuery(query);
+        }
+        return (opt != null ?
+          opt :
+          new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context)
+        );
+      }
+    };
     final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
     final IJobMonitor jmon = new IJobMonitor() {
       public boolean stopRequested() {
@@ -166,21 +175,29 @@ public class WorkbenchMakeService implements IMakeService {
       }
 
       public void reportFeedback(IFeedback fdbk) {
-        new LoggingFeedbackStrategy().reportFeedback(fdbk);
+        new UIFeedbackStrategy(mh).reportFeedback(fdbk);
       }
     };
-    final IConfigMonitor cmon = (configMon != null ?
-      configMon :
-      new IConfigMonitor.Stub() {
-        public <T extends IOption> T relayQuery(IQuery<T> query) {
-          return new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context);
-        }
-      }
-    );
 
     final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
-    final IMonitors mons = new IMonitors.Stub(cmon, jmon) {
-      @Override
+    return new IScriptController() {
+      public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+        if (ctl != null) {
+          ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
+            public void invoke(IConfigMonitor c) {
+              try {
+                cmon2delegate.value = c;
+                code.invoke(cmon);
+              } finally {
+                cmon2delegate.value = null;
+              }
+            }
+          });
+        } else {
+          code.invoke(cmon);
+        }
+      }
+
       public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
         IdeEventQueue.getInstance().flushQueue();
         ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
@@ -191,26 +208,23 @@ public class WorkbenchMakeService implements IMakeService {
           }
         }, scrName, true, WorkbenchMakeService.this.context.getProject());
       }
-    };
 
-    final _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet = new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-      public ProgressIndicator invoke() {
-        return pind.value;
-      }
-    };
-    final IScript.Setup init = new IScript.Setup() {
       public void setup(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
         vars._0(WorkbenchMakeService.this.context.getProject());
         vars._1(WorkbenchMakeService.this.context);
         vars._2(WorkbenchMakeService.this.cleanMake);
-        vars._3(pindGet);
-        if (setup != null) {
-          setup.setup(pool);
+        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
+          public ProgressIndicator invoke() {
+            return pind.value;
+          }
+        });
+
+        if (ctl != null) {
+          ctl.setup(pool);
         }
       }
     };
-    return MultiTuple.<IScript.Setup,IMonitors>from(init, mons);
   }
 
   public static IScript defaultMakeScript() {

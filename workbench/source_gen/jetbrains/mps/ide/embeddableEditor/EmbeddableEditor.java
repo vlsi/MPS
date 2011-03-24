@@ -24,14 +24,16 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.resources.CResource;
@@ -139,14 +141,15 @@ public class EmbeddableEditor {
   public IClassesData make(final Set<IClassPathItem> classPath) {
     IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("compileToMemory")).toScript();
 
-    IConfigMonitor cmon = new IConfigMonitor.Stub() {
+
+    IResult res = new WorkbenchMakeService(myContext, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         return query.defaultOption();
       }
-    };
-
-    IResult res = new WorkbenchMakeService(myContext, cmon, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScript.Setup() {
+    }, new IJobMonitor.Stub()) {
+      @Override
       public void setup(IParametersPool ppool) {
+        super.setup(ppool);
         Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
         params._0(classPath);
       }

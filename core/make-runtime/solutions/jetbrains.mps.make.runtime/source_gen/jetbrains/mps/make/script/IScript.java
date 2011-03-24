@@ -9,9 +9,5 @@ public interface IScript {
   public boolean isValid();
   public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
-  public IResult execute(IScript.Setup setup, IMonitors monitors, Iterable<? extends IResource> input);
-  public static interface Setup {
-    public void setup(IParametersPool ppool);
-  }
-
+  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input);
 }

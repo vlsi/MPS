@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
@@ -65,9 +65,9 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
-    <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -4,10 +4,11 @@ package jetbrains.mps.make.script;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public interface IMonitors {
+public interface IScriptController {
   public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code);
   public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code);
-  public static class Stub implements IMonitors {
+  public void setup(IParametersPool ppool);
+  public static class Stub implements IScriptController {
     private IConfigMonitor cmon;
     private IJobMonitor jmon;
 
@@ -16,12 +17,20 @@ public interface IMonitors {
       this.jmon = jmon;
     }
 
+    public Stub() {
+      this.cmon = new IConfigMonitor.Stub();
+      this.jmon = new IJobMonitor.Stub();
+    }
+
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
       code.invoke(jmon);
     }
 
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       code.invoke(cmon);
+    }
+
+    public void setup(IParametersPool ppool) {
     }
   }
 

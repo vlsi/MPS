@@ -16,14 +16,16 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.workbench.make.TextPreviewFile;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -78,12 +80,11 @@ public class TextPreviewModel_Action extends GeneratedAction {
     try {
       SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
       IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("textGenToMemory")).toScript();
-      IConfigMonitor cmon = new IConfigMonitor.Stub() {
+      IResult res = new WorkbenchMakeService(((IOperationContext) MapSequence.fromMap(_params).get("context")), true).make(new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return query.defaultOption();
         }
-      };
-      IResult res = new WorkbenchMakeService(((IOperationContext) MapSequence.fromMap(_params).get("context")), cmon, true).make(new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr);
+      }, new IJobMonitor.Stub()));
 
       if (res.isSucessful()) {
         FResource fres = (FResource) Sequence.fromIterable(res.output()).first();

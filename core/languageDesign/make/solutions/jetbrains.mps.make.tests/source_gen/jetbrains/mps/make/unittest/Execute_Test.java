@@ -34,7 +34,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(null, null, null);
+    IResult res = sc.execute(null, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
@@ -85,7 +85,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, null);
+    IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -119,7 +119,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
+    IResult r = sc.execute(null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -177,7 +177,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, null);
+    IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -256,7 +256,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, null);
+    IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -299,7 +299,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, null);
+    IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(r.output())).isEmpty());
@@ -360,7 +360,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null, null);
+    IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
@@ -411,7 +411,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(null, null, null);
+    IResult res = sc.execute(null, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

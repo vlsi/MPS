@@ -919,6 +919,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Map" />

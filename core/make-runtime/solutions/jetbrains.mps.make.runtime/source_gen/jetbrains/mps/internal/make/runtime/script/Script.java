@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -77,7 +77,7 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public IResult execute(IScript.Setup setup, IMonitors monitors, final Iterable<? extends IResource> scriptInput) {
+  public IResult execute(IScriptController controller, final Iterable<? extends IResource> scriptInput) {
     validate();
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
@@ -88,16 +88,15 @@ public class Script implements IScript {
     final Script.ParametersPool pool = new Script.ParametersPool();
 
     LOG.debug("Initializing");
-    if (setup != null) {
-      setup.setup(pool);
-    }
-
-    IMonitors mons = (monitors != null ?
-      monitors :
-      new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub()))
+    IScriptController ctl = (controller != null ?
+      controller :
+      new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub()))
     );
+
+    ctl.setup(pool);
+
     final Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
-    mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
+    ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Configuring " + trg.getName());
@@ -113,7 +112,7 @@ public class Script implements IScript {
     if (!(results.isSucessful())) {
       return results;
     }
-    mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
+    ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         String scriptName = "Script";
         int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {

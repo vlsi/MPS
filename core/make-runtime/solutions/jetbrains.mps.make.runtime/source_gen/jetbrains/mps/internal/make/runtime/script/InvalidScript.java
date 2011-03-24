@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.runtime.script;
 
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.facet.ITarget;
@@ -20,11 +20,11 @@ public class InvalidScript implements IScript {
     throw new IllegalStateException("Invalid script");
   }
 
-  public IMonitors monitors() {
+  public IScriptController monitors() {
     throw new IllegalStateException("Invalid script");
   }
 
-  public IResult execute(IScript.Setup setup, IMonitors monitors, Iterable<? extends IResource> input) {
+  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input) {
     throw new IllegalStateException("Invalid script");
   }
 
