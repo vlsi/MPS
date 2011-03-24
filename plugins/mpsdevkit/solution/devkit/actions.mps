@@ -1353,7 +1353,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091404">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/editor.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/editor.png" />
     </node>
   </root>
   <root id="1744445256079578766">
@@ -1432,7 +1432,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091398">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/structure.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/structure.png" />
     </node>
   </root>
   <root id="1744445256079578802">
@@ -1503,8 +1503,8 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4753172061859551546">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991231476" resolveInfo="EditorPopup" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1744445256079578594" resolveInfo="gotoConceptAspects" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5384922150955313088" resolveInfo="GoToEditorPopupAddition" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7709977758674157454" resolveInfo="other" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1744445256079579879">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
@@ -2711,7 +2711,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091412">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/generatorProperties.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/generatorProperties.png" />
     </node>
   </root>
   <root id="1683977858888862610">
@@ -3486,7 +3486,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091375">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/languageProperties.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/languageProperties.png" />
     </node>
   </root>
   <root id="1936689137035777973">
@@ -5161,7 +5161,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091372">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/cellExplorer.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/cellExplorer.png" />
     </node>
   </root>
   <root id="2662234144540708741">
@@ -6054,7 +6054,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091408">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/languageProperties.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/languageProperties.png" />
     </node>
   </root>
   <root id="1784959407586169192">
@@ -7929,7 +7929,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="4zw2.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091386">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/reload.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/reload.png" />
     </node>
   </root>
   <root id="2191995028863072592">

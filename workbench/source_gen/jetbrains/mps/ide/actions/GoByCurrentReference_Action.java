@@ -37,7 +37,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoByCurrentReference_Action.class);
 
   public GoByCurrentReference_Action() {
-    super("Go by Current Reference", "", ICON);
+    super("Declaration", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

@@ -4,20 +4,19 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import com.intellij.ide.actions.SelectInAction;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.extensions.PluginId;
-import com.intellij.ide.actions.SelectInAction;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup_ActionGroup";
-  public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_showIn = ID + "showIn";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_folding = ID + "folding";
-  public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
+  public static final String LABEL_ID_goto = ID + "goto";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
   public static final String LABEL_ID_gentrace = ID + "gentrace";
@@ -29,14 +28,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        EditorPopup_ActionGroup.this.addAction(action);
-      }
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoByCurrentReference_Action");
-      EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addParameterizedAction(new SelectInActionAdapter_Action(new SelectInAction()), PluginId.getId("jetbrains.mps.ide"), new SelectInAction());
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action");
       {
@@ -71,7 +62,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       }
       EditorPopup_ActionGroup.this.addSeparator();
       {
-        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_gotoConceptAspects);
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_goto);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
