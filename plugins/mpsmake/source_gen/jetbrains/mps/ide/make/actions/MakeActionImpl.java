@@ -5,7 +5,6 @@ package jetbrains.mps.ide.make.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -26,11 +25,12 @@ public class MakeActionImpl {
   public void executeAction() {
     final Iterable<? extends IResource> inputRes = params.collectInput(!(this.cleanMake));
 
-    new WorkbenchMakeService(context, cleanMake).make(inputRes, new IMakeService.Executor() {
-      public void doExecute(Runnable runnable) {
-        dodoExecute(inputRes, runnable);
+    new WorkbenchMakeService(context, cleanMake) {
+      @Override
+      protected void doExecute(Runnable scriptRunnable) {
+        dodoExecute(inputRes, scriptRunnable);
       }
-    });
+    }.make(inputRes);
   }
 
   private void dodoExecute(Iterable<? extends IResource> inputRes, Runnable exec) {

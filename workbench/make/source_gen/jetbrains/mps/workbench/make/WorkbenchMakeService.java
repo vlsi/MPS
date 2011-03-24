@@ -49,38 +49,22 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   public IResult make(Iterable<? extends IResource> resources) {
-    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), new IMakeService.Executor() {
-      public void doExecute(Runnable runnable) {
-        runnable.run();
-      }
-    }, null);
+    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IScript script) {
-    return doMake(resources, script, new IMakeService.Executor() {
-      public void doExecute(Runnable runnable) {
-        runnable.run();
-      }
-    }, null);
+    return doMake(resources, script, null);
   }
 
   public IResult make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
-    return doMake(resources, script, new IMakeService.Executor() {
-      public void doExecute(Runnable runnable) {
-        runnable.run();
-      }
-    }, ctl);
+    return doMake(resources, script, ctl);
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
-    return doMake(resources, script, executor, null);
+  protected void doExecute(Runnable scriptRunnable) {
+    scriptRunnable.run();
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IMakeService.Executor executor) {
-    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor, null);
-  }
-
-  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IMakeService.Executor executor, IScriptController controller) {
+  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
     WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
     String scrName = ((cleanMake ?
       "Rebuild" :
@@ -116,7 +100,7 @@ public class WorkbenchMakeService implements IMakeService {
 
     final IScriptController ctl = this.completeController(scrName, mh, controller);
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
-    executor.doExecute(new Runnable() {
+    doExecute(new Runnable() {
       public void run() {
         res.value = script.execute(ctl, inputRes);
       }
