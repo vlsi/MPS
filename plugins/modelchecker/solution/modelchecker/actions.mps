@@ -226,7 +226,6 @@
     <node type="tp4k.TabbedToolDeclaration" typeId="tp4k.5896642449625981893" id="1453248744423411392">
       <property name="name" nameId="tpck.1169194664001" value="ModelCheckerTool" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="Model Checker" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${solution_descriptor}/icons/modelChecker.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tools" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5361317699454626937">
@@ -9865,7 +9864,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091399">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423276216">
@@ -9915,7 +9914,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091409">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423276236">
@@ -10153,7 +10152,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091406">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423276340">
@@ -10345,7 +10344,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091393">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${solution_descriptor}/icons/modelChecker.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423411352">
@@ -12012,6 +12011,9 @@
     </node>
     <node role="toolDisposeBlock" roleId="tp4k.8096638938275469615" type="tp4k.DisposeBlock" typeId="tp4k.1213888677711" id="1453248744423412029">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1453248744423412030" />
+    </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322070">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="5361317699454626937">

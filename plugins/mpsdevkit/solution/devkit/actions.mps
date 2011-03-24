@@ -383,7 +383,6 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="8970236339104100153">
       <property name="caption" nameId="tp4k.6547237850567462620" value="Node Explorer" />
       <property name="name" nameId="tpck.1169194664001" value="NodeExplorer" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/default.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tools" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1212767491070836940">
@@ -405,13 +404,11 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1212767491070836979">
       <property name="name" nameId="tpck.1169194664001" value="ModuleRepository" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="Module Repository Viewer" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/project.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Repositories" />
     </node>
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1212767491070837084">
       <property name="name" nameId="tpck.1169194664001" value="ModelRepository" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="Model Repository Viewer" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/model.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Repositories" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2191995028863072547">
@@ -7243,6 +7240,9 @@
         </node>
       </node>
     </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322072">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/default.png" />
+    </node>
   </root>
   <root id="1212767491070836940">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1212767491070836941">
@@ -7579,6 +7579,9 @@
     <node role="disposeBlock" roleId="tp4k.1213888923963" type="tp4k.ProjectPluginDisposeBlock" typeId="tp4k.1206110108761" id="1212767491070837082">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1212767491070837083" />
     </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322071">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/project.png" />
+    </node>
   </root>
   <root id="1212767491070837084">
     <node role="fieldDeclaration" roleId="tp4k.6547237850567462849" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="1212767491070837085">
@@ -7813,6 +7816,9 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1212767491070837186">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
+    </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322073">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/model.png" />
     </node>
   </root>
   <root id="2191995028863072547">

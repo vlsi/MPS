@@ -122,7 +122,6 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1209126436954">
       <property name="name" nameId="tpck.1169194664001" value="TodoViewer" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="TODO" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1217597602946">
       <property name="name" nameId="tpck.1169194664001" value="ShowTodoViewer" />
@@ -1270,6 +1269,9 @@
         </node>
       </node>
     </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322069">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
+    </node>
   </root>
   <root id="1217597602946">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1217597728057">
@@ -1302,7 +1304,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091381">
-      <property name="path" nameId="tp4k.8976425910813622805" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
     </node>
   </root>
   <root id="1223452095337">
@@ -12943,11 +12945,11 @@
               <node role="operand" roleId="tpee.1197027771414" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="2526721715665566281">
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type=".jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation" id="2526721715665566292">
-                <property name="kindName" value="JAVA_LINE_BREAKPOINT" />
-                <property name="kindPresentation" value="Java Line Breakpoint" />
-                <node role="nodeExpression" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2526721715665566295" />
-                <node role="projectExpression" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2526721715665566296" />
+              <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2526721715665566292">
+                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_LINE_BREAKPOINT" />
+                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Line Breakpoint" />
+                <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2526721715665566295" />
+                <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2526721715665566296" />
               </node>
             </node>
           </node>
@@ -12965,11 +12967,11 @@
               <node role="operand" roleId="tpee.1197027771414" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="2526721715665547047">
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type=".jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation" id="2526721715665563559">
-                <property name="kindName" value="JAVA_FIELD_BREAKPOINT" />
-                <property name="kindPresentation" value="Java Field Breakpoint" />
-                <node role="projectExpression" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2526721715665563564" />
-                <node role="nodeExpression" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2526721715665563563" />
+              <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2526721715665563559">
+                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_FIELD_BREAKPOINT" />
+                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Field Breakpoint" />
+                <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2526721715665563564" />
+                <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2526721715665563563" />
               </node>
             </node>
           </node>

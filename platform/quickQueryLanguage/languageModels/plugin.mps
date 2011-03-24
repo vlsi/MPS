@@ -82,7 +82,6 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1220008857613">
       <property name="name" nameId="tpck.1169194664001" value="RunReplacement" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="Replacement" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}/icons/replace.png" />
     </node>
   </roots>
   <root id="1219056224639">
@@ -3878,6 +3877,9 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1220013704697" />
         </node>
       </node>
+    </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6791676465872322068">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/replace.png" />
     </node>
   </root>
 </model>
