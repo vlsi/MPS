@@ -63,15 +63,14 @@
     <nodeInfo nodeId="1227605624919" fileName="EmbeddableEditor.java" startLine="200" startPosition="25" endLine="201" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8119021187637935511" fileName="EmbeddableEditor.java" startLine="208" startPosition="25" endLine="209" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5602187481573680136" fileName="EmbeddableEditor.java" startLine="214" startPosition="31" endLine="215" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5602187481573650801" fileName="EmbeddableEditor.java" startLine="219" startPosition="22" endLine="220" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5602187481573650806" fileName="EmbeddableEditor.java" startLine="221" startPosition="5" endLine="222" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220276500271" fileName="EmbeddableEditor.java" startLine="225" startPosition="56" endLine="226" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7501380561942086" fileName="EmbeddableEditor.java" startLine="221" startPosition="27" endLine="222" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5602187481573650806" fileName="EmbeddableEditor.java" startLine="225" startPosition="5" endLine="226" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220276500271" fileName="EmbeddableEditor.java" startLine="229" startPosition="56" endLine="230" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="199149364782662276" fileName="EmbeddableEditor.java" startLine="102" startPosition="10" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5367124414732055990" fileName="EmbeddableEditor.java" startLine="58" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmbeddableEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/ModelOwner;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1219405202225" fileName="EmbeddableEditor.java" startLine="62" startPosition="0" endLine="65" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmbeddableEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/ModelOwner;Ljetbrains/mps/smodel/SNode;Z)V" />
     <nodeInfo nodeId="7865481948248727739" fileName="EmbeddableEditor.java" startLine="162" startPosition="83" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7865481948248722478" fileName="EmbeddableEditor.java" startLine="174" startPosition="75" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5602187481573680131" fileName="EmbeddableEditor.java" startLine="218" startPosition="50" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1491544264687627817" fileName="EmbeddableEditor.java" startLine="88" startPosition="59" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="199149364782662241" fileName="EmbeddableEditor.java" startLine="95" startPosition="54" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1476208411437217394" fileName="EmbeddableEditor.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNode#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -86,7 +85,8 @@
     <nodeInfo nodeId="1227605620574" fileName="EmbeddableEditor.java" startLine="199" startPosition="58" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8119021187637935509" fileName="EmbeddableEditor.java" startLine="207" startPosition="58" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1219672383771" fileName="EmbeddableEditor.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeEditor#()V" />
-    <nodeInfo nodeId="1220276440556" fileName="EmbeddableEditor.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOperationContext#()Ljetbrains/mps/smodel/IOperationContext;" />
+    <nodeInfo nodeId="7501380561942084" fileName="EmbeddableEditor.java" startLine="220" startPosition="60" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1220276440556" fileName="EmbeddableEditor.java" startLine="228" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOperationContext#()Ljetbrains/mps/smodel/IOperationContext;" />
     <nodeInfo nodeId="1491544264687627807" fileName="EmbeddableEditor.java" startLine="87" startPosition="21" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="199149364782662259" fileName="EmbeddableEditor.java" startLine="99" startPosition="5" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8713487063218432183" fileName="EmbeddableEditor.java" startLine="141" startPosition="0" endLine="146" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -95,11 +95,12 @@
     <nodeInfo nodeId="1219418302103" fileName="EmbeddableEditor.java" startLine="190" startPosition="67" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1227605620573" fileName="EmbeddableEditor.java" startLine="198" startPosition="52" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8119021187637935508" fileName="EmbeddableEditor.java" startLine="206" startPosition="53" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7501380561942083" fileName="EmbeddableEditor.java" startLine="219" startPosition="22" endLine="224" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2778756225064336544" fileName="EmbeddableEditor.java" startLine="147" startPosition="0" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219418302102" fileName="EmbeddableEditor.java" startLine="189" startPosition="66" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="276193728322472400" fileName="EmbeddableEditor.java" startLine="75" startPosition="0" endLine="82" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmbeddableEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Z)V" />
     <nodeInfo nodeId="1491544264687627778" fileName="EmbeddableEditor.java" startLine="86" startPosition="24" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5602187481573650797" fileName="EmbeddableEditor.java" startLine="217" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeEditor#(Z)V" />
+    <nodeInfo nodeId="5602187481573680131" fileName="EmbeddableEditor.java" startLine="218" startPosition="50" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="199149364782675564" fileName="EmbeddableEditor.java" startLine="66" startPosition="0" endLine="74" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmbeddableEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/ModelOwner;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Z)V" />
     <nodeInfo nodeId="6737363541215469063" fileName="EmbeddableEditor.java" startLine="114" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBackground#(Ljava/awt/Color;)V" />
     <nodeInfo nodeId="7294814585296168382" fileName="EmbeddableEditor.java" startLine="122" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mark#(Ljava/util/List;)V" />
@@ -107,6 +108,7 @@
     <nodeInfo nodeId="8119021187637935031" fileName="EmbeddableEditor.java" startLine="205" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModel#(Ljetbrains/mps/smodel/SModelReference;)V" />
     <nodeInfo nodeId="7865481948248722466" fileName="EmbeddableEditor.java" startLine="171" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" />
     <nodeInfo nodeId="1219418281320" fileName="EmbeddableEditor.java" startLine="188" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLanguageStructureModel#(Ljetbrains/mps/smodel/Language;)V" />
+    <nodeInfo nodeId="5602187481573650797" fileName="EmbeddableEditor.java" startLine="217" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeEditor#(Z)V" />
     <nodeInfo nodeId="7865481948248722446" fileName="EmbeddableEditor.java" startLine="165" startPosition="5" endLine="180" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8713487063218322375" fileName="EmbeddableEditor.java" startLine="138" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/util/Set;)Ljetbrains/mps/compiler/IClassesData;" />
     <nodeInfo nodeId="199149364782662172" fileName="EmbeddableEditor.java" startLine="83" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Z)V" />
@@ -128,8 +130,8 @@
     <scopeInfo nodeId="1227605620575" fileName="EmbeddableEditor.java" startLine="200" startPosition="25" endLine="201" endPosition="71" />
     <scopeInfo nodeId="8119021187637935510" fileName="EmbeddableEditor.java" startLine="208" startPosition="25" endLine="209" endPosition="57" />
     <scopeInfo nodeId="1219672383774" fileName="EmbeddableEditor.java" startLine="214" startPosition="31" endLine="215" endPosition="24" />
-    <scopeInfo nodeId="5602187481573680132" fileName="EmbeddableEditor.java" startLine="219" startPosition="22" endLine="220" endPosition="73" />
-    <scopeInfo nodeId="1220276440559" fileName="EmbeddableEditor.java" startLine="225" startPosition="56" endLine="226" endPosition="21" />
+    <scopeInfo nodeId="7501380561942085" fileName="EmbeddableEditor.java" startLine="221" startPosition="27" endLine="222" endPosition="77" />
+    <scopeInfo nodeId="1220276440559" fileName="EmbeddableEditor.java" startLine="229" startPosition="56" endLine="230" endPosition="21" />
     <scopeInfo nodeId="199149364782662242" fileName="EmbeddableEditor.java" startLine="96" startPosition="39" endLine="98" endPosition="71">
       <varInfo nodeId="199149364782662244" varName="nodeEditor" />
     </scopeInfo>
@@ -178,8 +180,8 @@
     <scopeInfo nodeId="1227605620574" fileName="EmbeddableEditor.java" startLine="199" startPosition="58" endLine="203" endPosition="0" />
     <scopeInfo nodeId="8119021187637935509" fileName="EmbeddableEditor.java" startLine="207" startPosition="58" endLine="211" endPosition="0" />
     <scopeInfo nodeId="1219672383771" fileName="EmbeddableEditor.java" startLine="213" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="5602187481573650800" fileName="EmbeddableEditor.java" startLine="218" startPosition="50" endLine="222" endPosition="31" />
-    <scopeInfo nodeId="1220276440556" fileName="EmbeddableEditor.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
+    <scopeInfo nodeId="7501380561942084" fileName="EmbeddableEditor.java" startLine="220" startPosition="60" endLine="224" endPosition="0" />
+    <scopeInfo nodeId="1220276440556" fileName="EmbeddableEditor.java" startLine="228" startPosition="0" endLine="232" endPosition="0" />
     <scopeInfo nodeId="276193728322472403" fileName="EmbeddableEditor.java" startLine="76" startPosition="148" endLine="81" endPosition="41" />
     <scopeInfo nodeId="1491544264687627779" fileName="EmbeddableEditor.java" startLine="87" startPosition="21" endLine="92" endPosition="9" />
     <scopeInfo nodeId="6737363541215469066" fileName="EmbeddableEditor.java" startLine="115" startPosition="42" endLine="120" endPosition="5">
@@ -198,6 +200,7 @@
     <scopeInfo nodeId="1219418302103" fileName="EmbeddableEditor.java" startLine="190" startPosition="67" endLine="195" endPosition="0" />
     <scopeInfo nodeId="1227605579941" fileName="EmbeddableEditor.java" startLine="198" startPosition="52" endLine="203" endPosition="7" />
     <scopeInfo nodeId="8119021187637935034" fileName="EmbeddableEditor.java" startLine="206" startPosition="53" endLine="211" endPosition="7" />
+    <scopeInfo nodeId="5602187481573680132" fileName="EmbeddableEditor.java" startLine="219" startPosition="22" endLine="224" endPosition="9" />
     <scopeInfo nodeId="199149364782675567" fileName="EmbeddableEditor.java" startLine="67" startPosition="124" endLine="73" endPosition="40" />
     <scopeInfo nodeId="1219418281323" fileName="EmbeddableEditor.java" startLine="189" startPosition="66" endLine="195" endPosition="7" />
     <scopeInfo nodeId="276193728322472400" fileName="EmbeddableEditor.java" startLine="75" startPosition="0" endLine="82" endPosition="3">
@@ -206,9 +209,6 @@
       <varInfo nodeId="5720687632037736075" varName="modelDescriptor" />
       <varInfo nodeId="276193728322472432" varName="context" />
       <varInfo nodeId="276193728322472440" varName="editable" />
-    </scopeInfo>
-    <scopeInfo nodeId="5602187481573650797" fileName="EmbeddableEditor.java" startLine="217" startPosition="0" endLine="224" endPosition="0">
-      <varInfo nodeId="5602187481573680128" varName="clearModule" />
     </scopeInfo>
     <scopeInfo nodeId="199149364782675564" fileName="EmbeddableEditor.java" startLine="66" startPosition="0" endLine="74" endPosition="3">
       <varInfo nodeId="199149364782675613" varName="targetNode" />
@@ -229,11 +229,15 @@
     <scopeInfo nodeId="8119021187637935031" fileName="EmbeddableEditor.java" startLine="205" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="8119021187637938178" varName="model" />
     </scopeInfo>
+    <scopeInfo nodeId="5602187481573650800" fileName="EmbeddableEditor.java" startLine="218" startPosition="50" endLine="226" endPosition="31" />
     <scopeInfo nodeId="7865481948248722466" fileName="EmbeddableEditor.java" startLine="171" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="7865481948248722469" varName="contextModules" />
     </scopeInfo>
     <scopeInfo nodeId="1219418281320" fileName="EmbeddableEditor.java" startLine="188" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="1219418299303" varName="language" />
+    </scopeInfo>
+    <scopeInfo nodeId="5602187481573650797" fileName="EmbeddableEditor.java" startLine="217" startPosition="0" endLine="228" endPosition="0">
+      <varInfo nodeId="5602187481573680128" varName="clearModule" />
     </scopeInfo>
     <scopeInfo nodeId="8713487063218322378" fileName="EmbeddableEditor.java" startLine="139" startPosition="65" endLine="158" endPosition="16">
       <varInfo nodeId="2778756225064336545" varName="res" />
@@ -262,10 +266,11 @@
     <unitInfo nodeId="8713487063218432188" fileName="EmbeddableEditor.java" startLine="142" startPosition="30" endLine="146" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$2" />
     <unitInfo nodeId="1227605620574" fileName="EmbeddableEditor.java" startLine="199" startPosition="46" endLine="203" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$6" />
     <unitInfo nodeId="8119021187637935509" fileName="EmbeddableEditor.java" startLine="207" startPosition="46" endLine="211" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$7" />
+    <unitInfo nodeId="7501380561942084" fileName="EmbeddableEditor.java" startLine="220" startPosition="48" endLine="224" endPosition="7" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$8" />
     <unitInfo nodeId="4803868321461293131" fileName="EmbeddableEditor.java" startLine="148" startPosition="178" endLine="153" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$3" />
     <unitInfo nodeId="1219418302103" fileName="EmbeddableEditor.java" startLine="190" startPosition="55" endLine="195" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$5" />
     <unitInfo nodeId="7865481948248722451" fileName="EmbeddableEditor.java" startLine="166" startPosition="48" endLine="180" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor$4" />
-    <unitInfo nodeId="1219405202223" fileName="EmbeddableEditor.java" startLine="49" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
+    <unitInfo nodeId="1219405202223" fileName="EmbeddableEditor.java" startLine="49" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
   </root>
   <root nodeId="1219411663047">
     <nodeInfo nodeId="1219412374874" fileName="GenerationResult.java" startLine="11" startPosition="55" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
