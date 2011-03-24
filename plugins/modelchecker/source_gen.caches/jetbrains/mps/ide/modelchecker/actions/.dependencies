@@ -324,7 +324,6 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -333,6 +332,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTabbedTool" />

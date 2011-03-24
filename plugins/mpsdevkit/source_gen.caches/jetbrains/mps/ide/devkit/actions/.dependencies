@@ -688,17 +688,17 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ModelRepository_Tool" file="ModelRepository_Tool.java">
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
     <classNode dependClassName="jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
@@ -710,17 +710,17 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" file="ModuleRepository_Tool.java">
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
-    <classNode dependClassName="jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
+    <classNode dependClassName="jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
@@ -948,17 +948,17 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool" file="NodeExplorer_Tool.java">
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="jetbrains.mps.workbench.tools.CloseAction" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.NodeExplorerComponent" />

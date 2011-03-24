@@ -206,22 +206,22 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" file="RunReplacement_Tool.java">
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.ui.content.ContentManager" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="com.intellij.ui.content.Content" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
