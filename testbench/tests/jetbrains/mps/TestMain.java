@@ -18,8 +18,7 @@ package jetbrains.mps;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.*;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -55,6 +54,7 @@ import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
+import jetbrains.mps.util.PathManager;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -424,6 +424,18 @@ public class TestMain {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "false");
     System.setProperty("idea.platform.prefix", "Idea");
+
+    StringBuffer pluginPath = new StringBuffer();
+    File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
+    for (File pluginFolder : pluginDir.listFiles()) {
+      if (pluginPath.length() > 0) {
+        pluginPath.append(File.pathSeparator);
+      }
+      pluginPath.append(pluginFolder.getPath());
+    }
+    System.setProperty("plugin.path", pluginPath.toString());
+    // Value of this property is comma-separated list of plugin IDs intended to load by platform
+    System.setProperty("idea.load.plugins.id", "jetbrains.mps.ide.editor");
 
     try {
       IdeaTestApplication.getInstance(null);
