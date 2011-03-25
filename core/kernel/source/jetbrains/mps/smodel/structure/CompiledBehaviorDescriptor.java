@@ -15,5 +15,52 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.smodel.SNode;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class CompiledBehaviorDescriptor extends BehaviorDescriptor {
+  private Map<String, Method> methods;
+  private final Object lock = new Object();
+
+  private Method getMethod(String methodName, Class[] parametersTypes) {
+    if (methods != null && methods.containsKey(methodName)) {
+      return methods.get(methodName);
+    }
+
+    synchronized (lock) {
+      if (methods == null) {
+        methods = new ConcurrentHashMap<String, Method>();
+      }
+
+      Method method;
+      try {
+        method = this.getClass().getMethod(methodName, parametersTypes);
+      } catch (NoSuchMethodException e) {
+        throw new RuntimeException(e);
+      }
+
+      methods.put(methodName, method);
+
+      return method;
+    }
+  }
+
+  @Override
+  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    if (methodName.startsWith("virtual_")) {
+      try {
+        return (T) getMethod(methodName, parametersTypes).invoke(this, parameters);
+      } catch (IllegalAccessException e) {
+        throw new RuntimeException(e);
+      } catch (InvocationTargetException e) {
+        throw new RuntimeException(e);
+      }
+    } else {
+      return super.invoke(returnType, node, methodName, parametersTypes, parameters);
+    }
+  }
 }
