@@ -53,6 +53,8 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -281,8 +283,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   public boolean make(final Project project) {
-    List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(project.getComponent(MPSProject.class));
-    return RunUtil.makeBeforeRun(project, ListSequence.fromList(stuffToTest).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+    final List<ITestNodeWrapper>[] stuffToTest = new List[1];
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        stuffToTest[0] = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(project.getComponent(MPSProject.class));
+      }
+    }, ModalityState.NON_MODAL);
+    return RunUtil.makeBeforeRun(project, ListSequence.fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
       public SNode select(ITestNodeWrapper it) {
         return it.getNode();
       }
