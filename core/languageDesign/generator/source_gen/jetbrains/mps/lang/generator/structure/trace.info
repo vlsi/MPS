@@ -53,6 +53,7 @@
   <unitInfo fileName="InlineTemplate_RuleConsequence.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" />
   <unitInfo fileName="TemplateSwitchReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateSwitchReference" />
   <unitInfo fileName="RootTemplateAnnotation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" />
+  <unitInfo fileName="WeaveMacro.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.WeaveMacro" />
   <unitInfo fileName="IncludeMacro.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.IncludeMacro" />
   <unitInfo fileName="WeaveEach_RuleConsequence.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" />
   <unitInfo fileName="Weaving_MappingRule.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" />

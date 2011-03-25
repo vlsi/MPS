@@ -138,6 +138,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.1311078761699563726" resolveInfo="InsertMacro" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3462145372627957703">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.5133195082121471908" resolveInfo="LabelMacro" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3462145372628083275">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpf8.3462145372628071891" resolveInfo="WeaveMacro" />
+    </node>
   </roots>
   <root id="1213877219536">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877219537">
@@ -2745,6 +2753,16 @@
   <root id="1311078761699602468">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1311078761699602469">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1311078761699602470" />
+    </node>
+  </root>
+  <root id="3462145372627957703">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3462145372627957704">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3462145372627957705" />
+    </node>
+  </root>
+  <root id="3462145372628083275">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3462145372628083276">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3462145372628083277" />
     </node>
   </root>
 </model>

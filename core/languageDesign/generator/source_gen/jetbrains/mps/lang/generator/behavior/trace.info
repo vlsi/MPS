@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
+  <unitInfo fileName="LabelMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LabelMacro_Behavior" />
   <unitInfo fileName="InsertMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" />
   <unitInfo fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   <unitInfo fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
@@ -389,6 +391,12 @@
     <nodeInfo nodeId="2902001550282064523" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2902001550282064518" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="2902001550282064521" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="103" />
+  </root>
+  <root nodeId="3462145372627957703">
+    <scopeInfo nodeId="3462145372627957705" fileName="LabelMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="3462145372628083275">
+    <scopeInfo nodeId="3462145372628083277" fileName="WeaveMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="4035562641222622440">
     <nodeInfo nodeId="4035562641222637925" fileName="TemplateArgumentQuery_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

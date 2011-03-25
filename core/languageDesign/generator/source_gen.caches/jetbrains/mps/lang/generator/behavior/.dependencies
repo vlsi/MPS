@@ -75,6 +75,9 @@
   <dependency className="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" file="InsertMacro_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.behavior.LabelMacro_Behavior" file="LabelMacro_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" file="LoopMacro_Behavior.java">
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -256,6 +259,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.ArrayList" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" file="WeaveMacro_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
 

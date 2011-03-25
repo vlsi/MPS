@@ -9,6 +9,7 @@
   <unitInfo fileName="InsertMacro_Editor.java" startLine="309" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor$InsertMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="LoopMacro_Editor.java" startLine="309" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$LoopMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="CopySrcListMacro_Editor.java" startLine="309" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$CopySrcListMacro_component_cellMenu_a0a0" />
+  <unitInfo fileName="WeaveMacro_Editor.java" startLine="366" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor$WeaveMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="IncludeMacro_Editor.java" startLine="405" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$IncludeMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="SwitchMacro_Editor.java" startLine="405" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor$SwitchMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="MapSrcListMacro_Editor.java" startLine="411" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor$MapSrcListMacro_component_cellMenu_a0a0" />
@@ -36,6 +37,7 @@
   <unitInfo fileName="LoopMacro_Editor.java" startLine="275" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$_Inline_l06mua_a2b2a" />
   <unitInfo fileName="CopySrcListMacro_Editor.java" startLine="275" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$_Inline_vmyx7q_a2b2a" />
   <unitInfo fileName="TemplateSwitch_Editor.java" startLine="312" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor$_Inline_q42gqn_a3a0" />
+  <unitInfo fileName="WeaveMacro_Editor.java" startLine="332" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor$_Inline_1n0h5d_a2b2a" />
   <unitInfo fileName="IncludeMacro_Editor.java" startLine="337" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$_Inline_8okfes_a2b2a" />
   <unitInfo fileName="SwitchMacro_Editor.java" startLine="337" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor$_Inline_31t0mi_a2b2a" />
   <unitInfo fileName="TemplateCallMacro_Editor.java" startLine="351" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a2b2a" />
@@ -133,6 +135,7 @@
   <unitInfo fileName="TemplateFragment_Editor.java" startLine="24" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateFragment_Editor" />
   <unitInfo fileName="CreateRootRule_Editor.java" startLine="25" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
   <unitInfo fileName="Weaving_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
+  <unitInfo fileName="WeaveMacro_Editor.java" startLine="30" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor" />
   <unitInfo fileName="TemplateSwitch_Editor.java" startLine="30" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor" />
   <unitInfo fileName="PatternReduction_MappingRule_Editor.java" startLine="24" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" />
   <unitInfo fileName="IncludeMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" />
