@@ -44,7 +44,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.generator.TransientModelsComponent;
 
 public class Generate_Facet implements IFacet {
@@ -487,10 +488,12 @@ public class Generate_Facet implements IFacet {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
                 }
-              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).pindGet().invoke(), new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
-                @Override
+              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).pindGet().invoke(), new IMessageHandler() {
+                public void handle(IMessage msg) {
+                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
+                }
+
                 public void clear() {
-                  // don't clear the messages 
                 }
               }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
               monitor.currentProgress().finishWork("Generating");

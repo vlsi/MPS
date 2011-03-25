@@ -379,6 +379,10 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="ERROR" />
       <property name="externalValue" nameId="tpce.1083923523172" value="error" />
     </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6320856973181134892">
+      <property name="internalValue" nameId="tpce.1083923523171" value="MESSAGE" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="message" />
+    </node>
   </root>
   <root id="187226666892683650">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="682890046602602769">

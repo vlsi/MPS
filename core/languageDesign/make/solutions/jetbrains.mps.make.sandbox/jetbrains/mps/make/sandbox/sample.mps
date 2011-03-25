@@ -224,9 +224,9 @@
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424936">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424937">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6872280991287184162">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6872280991287184176">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6872280991287184179">
-                  <property name="value" nameId="tpee.1068580320021" value="42" />
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1068698994435325914">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1068698994435325917">
+                  <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="6872280991287184163">
                   <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="6872280991287184164">
@@ -239,7 +239,9 @@
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424938">
-              <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="505095865854424939" />
+              <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1068698994435327690">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
+              </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="505095865854424940">
               <property name="result" nameId="q9ra.7077360340906447918" value="SUCCESS" />

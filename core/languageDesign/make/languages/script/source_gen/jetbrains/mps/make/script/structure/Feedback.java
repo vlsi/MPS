@@ -9,7 +9,8 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 public enum Feedback {
   info("info", "INFO"),
   warning("warning", "WARNING"),
-  error("error", "ERROR");
+  error("error", "ERROR"),
+  message("message", "MESSAGE");
 
   private String myName;
   private String myValue;
@@ -36,6 +37,7 @@ public enum Feedback {
     ListSequence.fromList(list).addElement(Feedback.info);
     ListSequence.fromList(list).addElement(Feedback.warning);
     ListSequence.fromList(list).addElement(Feedback.error);
+    ListSequence.fromList(list).addElement(Feedback.message);
     return list;
   }
 
@@ -55,6 +57,9 @@ public enum Feedback {
     }
     if (value.equals(Feedback.error.getValueAsString())) {
       return Feedback.error;
+    }
+    if (value.equals(Feedback.message.getValueAsString())) {
+      return Feedback.message;
     }
     return Feedback.getDefault();
   }
