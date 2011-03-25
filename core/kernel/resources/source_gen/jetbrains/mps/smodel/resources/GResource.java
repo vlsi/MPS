@@ -14,8 +14,8 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
     super();
   }
 
-  public GResource(IModule module, SModelDescriptor model, Iterable<SModelDescriptor> models, GenerationStatus status) {
-    super(module, model, models, status);
+  public GResource(IModule module, SModelDescriptor model, Iterable<SModelDescriptor> retainedModels, GenerationStatus status) {
+    super(module, model, retainedModels, status);
   }
 
   public IModule module(IModule value) {
@@ -26,7 +26,7 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
     return super._1(value);
   }
 
-  public Iterable<SModelDescriptor> models(Iterable<SModelDescriptor> value) {
+  public Iterable<SModelDescriptor> retainedModels(Iterable<SModelDescriptor> value) {
     return super._2(value);
   }
 
@@ -42,7 +42,7 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
     return super._1();
   }
 
-  public Iterable<SModelDescriptor> models() {
+  public Iterable<SModelDescriptor> retainedModels() {
     return super._2();
   }
 

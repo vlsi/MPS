@@ -4,38 +4,7 @@ package jetbrains.mps.make.delta;
 
 
 public interface IDelta {
-  public IDelta.Key key();
-  public IDelta merge(IDelta previous);
+  public IDelta merge(IDelta toMerge);
+  public boolean contains(IDelta other);
   public boolean reconcile();
-  public static class Key {
-    private String key;
-
-    public Key(String key) {
-      if (key == null) {
-        throw new NullPointerException();
-      }
-      this.key = key;
-    }
-
-    public boolean contains(IDelta.Key that) {
-      return that.key.startsWith(this.key);
-    }
-
-    @Override
-    public int hashCode() {
-      return key.hashCode() * 37 + 13;
-    }
-
-    @Override
-    public boolean equals(Object that) {
-      if (that == null) {
-        return false;
-      }
-      if (that.getClass() != IDelta.Key.class) {
-        return false;
-      }
-      return this.key.equals(((IDelta.Key) that).key);
-    }
-  }
-
 }

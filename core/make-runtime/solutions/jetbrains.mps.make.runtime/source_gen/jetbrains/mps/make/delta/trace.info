@@ -1,48 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1268765481875672245">
-    <nodeInfo nodeId="1268765481875672246" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="key#()Ljetbrains/mps/make/delta/IDelta/Key;" />
-    <nodeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="7" startPosition="26" endLine="8" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
-    <nodeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="39" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcile#()Z" />
-    <nodeInfo nodeId="1268765481875672346" fileName="IDelta.java" startLine="10" startPosition="27" endLine="11" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="key" />
-    <nodeInfo nodeId="1268765481875672334" fileName="IDelta.java" startLine="14" startPosition="24" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1268765481875672340" fileName="IDelta.java" startLine="16" startPosition="7" endLine="17" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1268765481875672265" fileName="IDelta.java" startLine="20" startPosition="46" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1268765481875672281" fileName="IDelta.java" startLine="25" startPosition="27" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1268765481875672301" fileName="IDelta.java" startLine="31" startPosition="25" endLine="32" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1268765481875672305" fileName="IDelta.java" startLine="34" startPosition="48" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1268765481875672312" fileName="IDelta.java" startLine="36" startPosition="7" endLine="37" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1268765481875672332" fileName="IDelta.java" startLine="13" startPosition="28" endLine="16" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1268765481875672296" fileName="IDelta.java" startLine="30" startPosition="40" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1268765481875672303" fileName="IDelta.java" startLine="33" startPosition="7" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1268765481875672262" fileName="IDelta.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/make/delta/IDelta/Key;)Z" />
-    <nodeInfo nodeId="1268765481875672277" fileName="IDelta.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="1268765481875672326" fileName="IDelta.java" startLine="12" startPosition="0" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Key#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1268765481875672290" fileName="IDelta.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="1268765481875672246" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="26" />
-    <scopeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="7" startPosition="26" endLine="8" endPosition="39">
-      <varInfo nodeId="1268765481875672254" varName="previous" />
+    <nodeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
+    <nodeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="7" startPosition="38" endLine="8" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/make/delta/IDelta;)Z" />
+    <nodeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="40" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcile#()Z" />
+    <scopeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="38">
+      <varInfo nodeId="1268765481875672254" varName="toMerge" />
     </scopeInfo>
-    <scopeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="39" endLine="9" endPosition="29" />
-    <scopeInfo nodeId="1268765481875672333" fileName="IDelta.java" startLine="14" startPosition="24" endLine="15" endPosition="41" />
-    <scopeInfo nodeId="1268765481875672264" fileName="IDelta.java" startLine="20" startPosition="46" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="1268765481875672280" fileName="IDelta.java" startLine="25" startPosition="27" endLine="26" endPosition="38" />
-    <scopeInfo nodeId="1268765481875672300" fileName="IDelta.java" startLine="31" startPosition="25" endLine="32" endPosition="21" />
-    <scopeInfo nodeId="1268765481875672304" fileName="IDelta.java" startLine="34" startPosition="48" endLine="35" endPosition="21" />
-    <scopeInfo nodeId="1268765481875672331" fileName="IDelta.java" startLine="13" startPosition="28" endLine="17" endPosition="21" />
-    <scopeInfo nodeId="1268765481875672262" fileName="IDelta.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1268765481875672275" varName="that" />
+    <scopeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="7" startPosition="38" endLine="8" endPosition="40">
+      <varInfo nodeId="5675045708290417860" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="1268765481875672277" fileName="IDelta.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1268765481875672326" fileName="IDelta.java" startLine="12" startPosition="0" endLine="18" endPosition="5">
-      <varInfo nodeId="1268765481875672327" varName="key" />
-    </scopeInfo>
-    <scopeInfo nodeId="1268765481875672295" fileName="IDelta.java" startLine="30" startPosition="40" endLine="37" endPosition="54" />
-    <scopeInfo nodeId="1268765481875672290" fileName="IDelta.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="1268765481875672293" varName="that" />
-    </scopeInfo>
-    <unitInfo nodeId="1268765481875672261" fileName="IDelta.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.make.delta.IDelta$Key" />
-    <unitInfo nodeId="1268765481875672245" fileName="IDelta.java" startLine="6" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.delta.IDelta" />
+    <scopeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="40" endLine="9" endPosition="29" />
+    <unitInfo nodeId="1268765481875672245" fileName="IDelta.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.delta.IDelta" />
   </root>
 </debugInfo>
 

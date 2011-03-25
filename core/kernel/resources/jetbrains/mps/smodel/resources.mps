@@ -515,7 +515,7 @@
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="2257725414731981673">
       <property name="final:2" value="false" />
-      <property name="name:2" value="models" />
+      <property name="name:2" value="retainedModels" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="2257725414731981674">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981675">
           <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
@@ -677,7 +677,7 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7544464876071189859">
       <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="models" />
+      <property name="name:3" value="retainedModels" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="7544464876071189863">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7544464876071189865">
           <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />

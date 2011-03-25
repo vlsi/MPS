@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Arrays;
 import java.util.regex.Matcher;
+import java.io.File;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = Logger.getLogger(FilesDelta.class);
@@ -30,11 +31,11 @@ public class FilesDelta implements IDelta {
 
   private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
-  private IDelta.Key key;
+  private String key;
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
-    this.key = new IDelta.Key("(IFile)" + urlToPath(dir.getAbsolutePath()));
+    this.key = "(IFile)" + urlToPath(dir.getAbsolutePath());
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -89,16 +90,16 @@ public class FilesDelta implements IDelta {
         int idx = Arrays.binarySearch(pathsToKeep, fp._1());
         if (fp._0().isDirectory()) {
           idx = (idx < 0 ?
-            1 - idx :
+            -1 - idx :
             idx
           );
-          if (idx >= pathsToKeep.length || !(pathsToKeep[idx].startsWith(fp._1()))) {
+          if (idx >= pathsToKeep.length || !(startsWith(pathsToKeep[idx], fp._1()))) {
             ListSequence.fromList(toDelete).addElement(fp._0());
             if (idx >= pathsToKeep.length) {
               break;
             }
-          } else if (idx < pathsToKeep.length) {
-            QueueSequence.fromQueue(dirs).addLastElement(dir);
+          } else if (idx < pathsToKeep.length && !(startsWith(fp._1(), pathsToKeep[idx]))) {
+            QueueSequence.fromQueue(dirs).addLastElement(fp._0());
           }
         } else if (idx < 0) {
           ListSequence.fromList(toDelete).addElement(fp._0());
@@ -113,11 +114,14 @@ public class FilesDelta implements IDelta {
     return res;
   }
 
-  public IDelta merge(IDelta previous) {
-    if (!(previous instanceof FilesDelta)) {
+  public IDelta merge(IDelta toMerge) {
+    if (!(toMerge instanceof FilesDelta)) {
       throw new IllegalArgumentException();
     }
-    return new FilesDelta((FilesDelta) previous).copy(this);
+    if (!(this.contains(toMerge))) {
+      throw new IllegalArgumentException();
+    }
+    return new FilesDelta((FilesDelta) this).copy((FilesDelta) toMerge);
   }
 
   private String urlToPath(String maybeUrl) {
@@ -129,17 +133,29 @@ public class FilesDelta implements IDelta {
   }
 
   private FilesDelta copy(FilesDelta that) {
-    if (that.key.contains(this.key)) {
+    if (startsWith(this.key, that.key)) {
       this.key = that.key;
-    } else if (!(this.key.contains(that.key))) {
+      this.rootDir = that.rootDir;
+    } else if (!(startsWith(that.key, this.key))) {
       throw new IllegalArgumentException();
     }
     MapSequence.fromMap(files).putAll(that.files);
     return this;
   }
 
-  public IDelta.Key key() {
-    return key;
+  public boolean contains(IDelta other) {
+    if (!(other instanceof FilesDelta)) {
+      return false;
+    }
+    FilesDelta that = (FilesDelta) other;
+    if (that.key.equals(this.key)) {
+      return true;
+    }
+    return startsWith(that.key, this.key);
+  }
+
+  private boolean startsWith(String path, String prefix) {
+    return path.startsWith(prefix) && (path.length() == prefix.length() || path.charAt(prefix.length()) == File.separatorChar);
   }
 
   public static   enum Status {

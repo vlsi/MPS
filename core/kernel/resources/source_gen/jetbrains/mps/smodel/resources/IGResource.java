@@ -10,6 +10,6 @@ import jetbrains.mps.generator.GenerationStatus;
 public interface IGResource extends IResource {
   public IModule module();
   public SModelDescriptor model();
-  public Iterable<SModelDescriptor> models();
+  public Iterable<SModelDescriptor> retainedModels();
   public GenerationStatus status();
 }

@@ -201,12 +201,12 @@
   <root nodeId="7544464876071189843">
     <nodeInfo nodeId="7544464876071189846" fileName="IGResource.java" startLine="10" startPosition="47" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="7544464876071189854" fileName="IGResource.java" startLine="11" startPosition="26" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="7544464876071189859" fileName="IGResource.java" startLine="12" startPosition="34" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7544464876071189868" fileName="IGResource.java" startLine="13" startPosition="45" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="status#()Ljetbrains/mps/generator/GenerationStatus;" />
+    <nodeInfo nodeId="7544464876071189859" fileName="IGResource.java" startLine="12" startPosition="34" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainedModels#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7544464876071189868" fileName="IGResource.java" startLine="13" startPosition="53" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="status#()Ljetbrains/mps/generator/GenerationStatus;" />
     <scopeInfo nodeId="7544464876071189846" fileName="IGResource.java" startLine="10" startPosition="47" endLine="11" endPosition="26" />
     <scopeInfo nodeId="7544464876071189854" fileName="IGResource.java" startLine="11" startPosition="26" endLine="12" endPosition="34" />
-    <scopeInfo nodeId="7544464876071189859" fileName="IGResource.java" startLine="12" startPosition="34" endLine="13" endPosition="45" />
-    <scopeInfo nodeId="7544464876071189868" fileName="IGResource.java" startLine="13" startPosition="45" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="7544464876071189859" fileName="IGResource.java" startLine="12" startPosition="34" endLine="13" endPosition="53" />
+    <scopeInfo nodeId="7544464876071189868" fileName="IGResource.java" startLine="13" startPosition="53" endLine="14" endPosition="35" />
     <unitInfo nodeId="7544464876071189843" fileName="IGResource.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.smodel.resources.IGResource" />
   </root>
   <root nodeId="7544464876071207476">

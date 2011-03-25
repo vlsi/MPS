@@ -32,10 +32,15 @@ import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GeneratorManager;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.generator.TransientModelsComponent;
@@ -446,10 +451,18 @@ public class Generate_Facet implements IFacet {
                   tracer.discardTracing();
                 }
               }
+              final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
+              Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
+                public void visit(IResource it) {
+                  MResource mres = ((MResource) it);
+                  MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(((Iterable<SModelDescriptor>) mres.module().getEditableUserModels())).subtract(Sequence.fromIterable(mres.models())).toListSequence());
+                }
+              });
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
                   monitor.currentProgress().advanceWork("Generating", 1000);
+                  data.retainedModels(MapSequence.fromMap(retainedModels).get(data.module()));
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
