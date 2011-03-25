@@ -179,7 +179,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    checkTemplateFragmentsForWeaving(template, templateFragments, environment);
+    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getGenerator());
 
     String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
 
@@ -215,7 +215,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
-  private void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, TemplateExecutionEnvironment environment) {
+  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, TemplateGenerator generator) {
 
     // all fragments with <default context> should have the same parent
     boolean sameParent = true;
@@ -238,7 +238,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
           list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
         }
       }
-      environment.getGenerator().getLogger().error(template, "all fragments with <default context> should have the same parent",
+      generator.getLogger().error(template, "all fragments with <default context> should have the same parent",
         list.toArray(new ProblemDescription[list.size()]));
     }
   }

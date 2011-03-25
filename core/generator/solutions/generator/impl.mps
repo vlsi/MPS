@@ -1723,6 +1723,15 @@
         <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.1311078761699563726" resolveInfo="InsertMacro" />
       </node>
     </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3239620430841267194">
+      <property name="name" nameId="tpck.1169194664001" value="concept_WeaveMacro" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3239620430841267195" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3239620430841267196" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="3239620430841267197">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.3462145372628071891" resolveInfo="WeaveMacro" />
+      </node>
+    </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5133195082121477316">
       <property name="name" nameId="tpck.1169194664001" value="concept_MapSrcNodeMacro" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -3352,6 +3361,34 @@
               </node>
             </node>
           </node>
+          <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="3239620430841268020">
+            <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3239620430841268024">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3239620430841268023">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5590278813170625683" resolveInfo="conceptFqName" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3239620430841268028">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="3239620430841268029">
+                  <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.3462145372628071891" resolveInfo="WeaveMacro" />
+                </node>
+              </node>
+            </node>
+            <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="3239620430841268022">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3239620430841268030">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3239620430841268035">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3239620430841268033">
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.3462145372628071891" resolveInfo="WeaveMacro" />
+                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3239620430841268032">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5590278813170588936" resolveInfo="node" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3239620430841268039">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.3462145372628083179" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5590278813170626265">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5590278813170626267" />
@@ -3361,6 +3398,31 @@
         <property name="name" nameId="tpck.1169194664001" value="node" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5590278813170588937">
           <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3239620430841268687">
+      <property name="name" nameId="tpck.1169194664001" value="getWeaveMacro_Consequence" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3239620430841268702">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1168559333462" resolveInfo="TemplateDeclarationReference" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3239620430841268689" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3239620430841268690">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3239620430841268693">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3239620430841268695">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3239620430841268694">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3239620430841268691" resolveInfo="weaveMacro" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3239620430841268700">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.3462145372628083181" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3239620430841268691">
+        <property name="name" nameId="tpck.1169194664001" value="weaveMacro" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3239620430841268692">
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.3462145372628071891" resolveInfo="WeaveMacro" />
         </node>
       </node>
     </node>

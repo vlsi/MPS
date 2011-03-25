@@ -24,6 +24,7 @@ public class RuleUtil {
   public static final String concept_LoopMacro = "jetbrains.mps.lang.generator.structure.LoopMacro";
   public static final String concept_LabelMacro = "jetbrains.mps.lang.generator.structure.LabelMacro";
   public static final String concept_InsertMacro = "jetbrains.mps.lang.generator.structure.InsertMacro";
+  public static final String concept_WeaveMacro = "jetbrains.mps.lang.generator.structure.WeaveMacro";
   public static final String concept_MapSrcNodeMacro = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
   public static final String concept_MapSrcListMacro = "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
   public static final String concept_SwitchMacro = "jetbrains.mps.lang.generator.structure.SwitchMacro";
@@ -256,8 +257,14 @@ public class RuleUtil {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), "sourceNodesQuery", true);
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.WeaveMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.WeaveMacro"), "nodesToWeaveQuery", true);
     }
     return null;
+  }
+
+  public static SNode getWeaveMacro_Consequence(SNode weaveMacro) {
+    return SLinkOperations.getTarget(weaveMacro, "ruleConsequence", true);
   }
 
   public static SNode getSourceNodeQuery(SNode node) {
