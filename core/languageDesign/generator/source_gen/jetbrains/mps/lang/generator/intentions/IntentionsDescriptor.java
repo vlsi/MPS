@@ -12,6 +12,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    add(new AddContext_Intention(), "3462145372628250475");
     add(new AddNodeMacro_Intention(), "1207152859258");
     add(new AddNodeMacroParam_copySrcMacro_Intention(), "1240595838065");
     add(new AddNodeMacroParam_copySrclMacro_Intention(), "1240595864245");

@@ -910,7 +910,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
 
-  public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3239620430841219333(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter 
     return "_context";
   }
