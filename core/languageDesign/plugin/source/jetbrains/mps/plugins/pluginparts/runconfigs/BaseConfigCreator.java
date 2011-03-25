@@ -86,7 +86,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   }
 
   public int hashCode() {
-    return (myContext == null ? 0 : myContext.hashCode()) + 10 * mySourceElement.hashCode() + 20 * getClass().getName().hashCode();
+    return (myContext == null ? 0 : myContext.hashCode()) + 10 * (mySourceElement == null ? 0 : mySourceElement.hashCode()) + 20 * getClass().getName().hashCode();
   }
 
   public boolean equals(Object obj) {
