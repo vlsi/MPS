@@ -52,6 +52,13 @@ public class TemplateModelImpl implements TemplateModel {
     SNodeId id = template.getNodeId();
     if (id instanceof SNodeId.Regular) {
       long idValue = ((SNodeId.Regular) id).getId();
+      if (idValue == 8417539822878724212L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new Templateweave__InputRoot();
+      }
       if (idValue == 1206460153890L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 

@@ -7,6 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <import index="tpm0" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
@@ -29,6 +30,10 @@
     </node>
     <node type="tpf8.GeneratorDescriptor" typeId="tpf8.650531548511911817" id="5023471013036366740">
       <property name="generate" nameId="tpf8.5023471013035849070" value="true" />
+    </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8417539822878724212">
+      <property name="name" nameId="tpck.1169194664001" value="weave_InputRoot" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
     </node>
   </roots>
   <root id="1206459766745">
@@ -210,6 +215,31 @@
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
     </node>
     <node role="outputChild" roleId="tq1l.1195169631818" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="7612440128092282146">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.WeaveMacro" typeId="tpf8.3462145372628071891" id="8417539822878722923">
+        <node role="ruleConsequence" roleId="tpf8.3462145372628083181" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8417539822878727527">
+          <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8417539822878724212" resolveInfo="weave_InputRoot" />
+        </node>
+        <node role="nodesToWeaveQuery" roleId="tpf8.3462145372628083179" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="8417539822878722925">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8417539822878722926">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8417539822878724200">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8417539822878729230">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8417539822878724207">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8417539822878724202">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8417539822878724201" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalInputModel" typeId="tpf3.1217026863835" id="8417539822878729229" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsOperation" typeId="tp25.1171315804604" id="8417539822878724211">
+                    <link role="concept" roleId="tp25.1171315804605" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkImplicitSelect" typeId="tp25.3562215692195599741" id="8417539822878729234">
+                  <link role="link" roleId="tp25.3562215692195600259" targetNodeId="tpm0.1195169805620" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.InsertMacro" typeId="tpf8.1311078761699563726" id="7612440128092282149">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="7612440128092280837" resolveInfo="testLabel1" />
         <node role="createNodeQuery" roleId="tpf8.1311078761699602381" type="tpf8.InsertMacro_CreateNodeQuery" typeId="tpf8.1311078761699563727" id="7612440128092282150">
@@ -293,5 +323,17 @@
     </node>
   </root>
   <root id="5023471013036366740" />
+  <root id="8417539822878724212">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="8417539822878724214">
+      <node role="outputChild" roleId="tq1l.1202327114879" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="8417539822878724216">
+        <property name="text" nameId="tq1l.1195170441111" value="weaved N1" />
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8417539822878724217" />
+      </node>
+      <node role="outputChild" roleId="tq1l.1202327114879" type="tq1l.OutputNode" typeId="tq1l.1195165132070" id="8417539822878724215">
+        <property name="text" nameId="tq1l.1195170441111" value="weaved N2" />
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8417539822878724218" />
+      </node>
+    </node>
+  </root>
 </model>
 

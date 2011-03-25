@@ -7,9 +7,12 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -32,14 +35,22 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceInheritors", "none");
   }
 
+  public static Iterable sourceNodesQuery_8417539822878722925(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "inputChild", true);
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_1206460249786(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
   public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:408996b0-ebf2-476e-82c9-2fe87b3109af.GlobalParameters.list")) == null ?
+    return (((Integer) _context.getGenerationParameter("r:f57511bc-620e-4366-8faa-f3757b47368b.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:408996b0-ebf2-476e-82c9-2fe87b3109af.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:f57511bc-620e-4366-8faa-f3757b47368b.GlobalParameters.list")) < 2
     );
   }
 
