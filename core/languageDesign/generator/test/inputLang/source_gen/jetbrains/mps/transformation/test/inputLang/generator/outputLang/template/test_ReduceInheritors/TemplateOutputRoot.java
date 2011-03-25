@@ -17,8 +17,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class TemplateOutputRoot implements TemplateDeclaration {
   private static SNodePointer template_q702qm_a0a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
   private static SNodePointer templateNode_q702qm_a0a0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
-  private static SNodePointer nodeMacroRef_q702qm_a0a0a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878722923");
+  private static SNodePointer weaveMacroRef_q702qm_a0a0a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878722923");
   private static SNodePointer insertMacro_q702qm_a0a0a2a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "7612440128092282149");
+  private static SNodePointer weaveMacroConsequence_q702qm_a0a1a2a2a4a1a5a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878727527");
   private static SNodePointer copySrcListMacro_q702qm_a0a0a1a6a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460249785");
 
   public TemplateOutputRoot() {
@@ -39,7 +40,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
       {
         Collection<SNode> tlist2 = null;
         try {
-          environment.getTracer().pushMacro(nodeMacroRef_q702qm_a0a0a1a5a1a1);
+          environment.getTracer().pushMacro(weaveMacroRef_q702qm_a0a0a1a5a1a1);
           SNode tnode3 = null;
           try {
             environment.getTracer().pushMacro(insertMacro_q702qm_a0a0a2a1a5a1a1);
@@ -52,8 +53,34 @@ public class TemplateOutputRoot implements TemplateDeclaration {
             environment.getTracer().closeMacro(insertMacro_q702qm_a0a0a2a1a5a1a1);
           }
           tlist2 = TemplateUtil.singletonList(tnode3);
+          if (tlist2.size() == 1) {
+            SNode outputContextVar3 = tlist2.iterator().next();
+            final Iterable<SNode> weaveList3 = QueriesGenerated.sourceNodesQuery_8417539822878722925(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, weaveMacroRef_q702qm_a0a0a1a5a1a1, context, environment.getGenerator()));
+            for (SNode itnode3 : weaveList3) {
+              if (itnode3 == null) {
+                continue;
+              }
+              boolean inputChanged3 = context.getInput() != itnode3;
+              try {
+                if (inputChanged3) {
+                  environment.getTracer().pushInputNode(itnode3);
+                }
+                environment.getTracer().pushRuleConsequence(weaveMacroConsequence_q702qm_a0a1a2a2a4a1a5a1a1);
+                TemplateContext weaveContext3 = context.subContext(null, itnode3);
+                new Templateweave__InputRoot().weave(environment, weaveContext3, outputContextVar3);
+
+              } finally {
+                if (inputChanged3) {
+                  environment.getTracer().closeInputNode(itnode3);
+                }
+              }
+            }
+
+          } else if (tlist2.size() > 1) {
+            environment.getGenerator().getLogger().error(context.getInput(), "cannot apply $WEAVE$ to a list of nodes");
+          }
         } finally {
-          environment.getTracer().closeMacro(nodeMacroRef_q702qm_a0a0a1a5a1a1);
+          environment.getTracer().closeMacro(weaveMacroRef_q702qm_a0a0a1a5a1a1);
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("outputChild", child4);

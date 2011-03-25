@@ -48,9 +48,9 @@ public class QueriesGenerated {
   }
 
   public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:f57511bc-620e-4366-8faa-f3757b47368b.GlobalParameters.list")) == null ?
+    return (((Integer) _context.getGenerationParameter("r:4ee364e0-ec61-445c-9abc-6836866edbb7.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:f57511bc-620e-4366-8faa-f3757b47368b.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:4ee364e0-ec61-445c-9abc-6836866edbb7.GlobalParameters.list")) < 2
     );
   }
 
