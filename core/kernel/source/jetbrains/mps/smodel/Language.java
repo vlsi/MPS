@@ -511,7 +511,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public void save() {
     if (isPackaged()) {
-      LOG.warning("Trying to save packaged language " + getModuleFqName());
+      LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
