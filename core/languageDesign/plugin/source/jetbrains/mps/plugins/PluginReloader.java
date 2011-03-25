@@ -22,7 +22,7 @@ import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.runconfigurations.RunConfigurationsReloader;
+import jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -47,15 +47,11 @@ public class PluginReloader implements ApplicationComponent {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      p.getComponent(RunConfigurationsReloader.class).initRunConfigurations();
-    }
+    ApplicationRunConfigurationsReloader.getInstance().init();
   }
 
   private void disposePlugins() {
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      p.getComponent(RunConfigurationsReloader.class).disposeRunConfigurations();
-    }
+    ApplicationRunConfigurationsReloader.getInstance().dispose();
 
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
