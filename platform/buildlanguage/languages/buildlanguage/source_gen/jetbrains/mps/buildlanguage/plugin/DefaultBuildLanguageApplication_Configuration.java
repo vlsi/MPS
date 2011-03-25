@@ -265,7 +265,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
     }
   }
 
-  public boolean make(Project project) {
+  public boolean make(final Project project) {
     return RunUtil.makeBeforeRun(project, getNode());
   }
 
