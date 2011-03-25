@@ -313,7 +313,7 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_c implements ITarget {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("reloadClasses");
@@ -334,6 +334,7 @@ public class JavaCompile_Facet implements IFacet {
               })) {
                 ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
               }
+              _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0c);
           }
@@ -366,11 +367,11 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
