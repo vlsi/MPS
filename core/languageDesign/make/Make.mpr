@@ -24,6 +24,8 @@
       <solutionPath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
       <solutionPath path="${mps_home}/workbench/make/jetbrains.mps.workbench.make.msd" folder="" />
       <solutionPath path="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="" />
+      <solutionPath path="${mps_home}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="" />
+      <solutionPath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/facet/facet.mpl" />
