@@ -57,6 +57,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.PathManager;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.JDOMException;
@@ -98,8 +99,15 @@ public class TestMain {
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
                                           final String projectName, ProjectRunnable pr) {
+    return testOnProjectCopy(source, destinationDir, projectName, pr, new String[0]);
+  }
+
+
+  public static boolean testOnProjectCopy(final File source, final File destinationDir,
+                                          final String projectName, ProjectRunnable pr,
+                                          final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+    TestMain.configureMPS(plugins);
 
     if (destinationDir.exists()) {
       FileUtil.delete(destinationDir);
@@ -419,10 +427,16 @@ public class TestMain {
   }
 
   public static void configureMPS() {
+    configureMPS(new String[0]);
+  }
+
+  public static void configureMPS(String... plugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
-    System.setProperty("idea.load.plugins", "false");
+    if (plugins.length == 0) {
+      System.setProperty("idea.load.plugins", "false");
+    }
     System.setProperty("idea.platform.prefix", "Idea");
 
     StringBuffer pluginPath = new StringBuffer();
@@ -435,7 +449,7 @@ public class TestMain {
     }
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.ide.editor");
+    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins));
 
     try {
       IdeaTestApplication.getInstance(null);
