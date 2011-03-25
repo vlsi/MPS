@@ -18,6 +18,8 @@ package jetbrains.mps.util;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * User: Dmitriev.
@@ -28,7 +30,7 @@ public final class JavaNameUtil {
   private JavaNameUtil() {
   }
 
-  public static String fqClassName(SModel model, String shortClassName) {
+  public static String fqClassName(@NotNull SModel model, @NotNull String shortClassName) {
     String packageName = packageName(model);
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
@@ -36,19 +38,19 @@ public final class JavaNameUtil {
     return packageName + "." + shortClassName;
   }
 
-  public static String fqClassName(SNode node, String shortClassName) {
+  public static String fqClassName(@NotNull SNode node, @NotNull String shortClassName) {
     return fqClassName(node.getModel(), shortClassName);
   }
 
-  public static String packageNameForModelUID(SModelReference modelReference) {
+  public static String packageNameForModelUID(@NotNull SModelReference modelReference) {
     return modelReference.getLongName();
   }
 
-  public static String packageName(SModel model) {
+  public static String packageName(@NotNull SModel model) {
     return packageNameForModelUID(model.getSModelReference());
   }
 
-  public static String packageName(String fqName) {
+  public static String packageName(@Nullable String fqName) {
     if (fqName == null) {
       return fqName;
     }
@@ -59,7 +61,7 @@ public final class JavaNameUtil {
     return fqName.substring(0, offset);
   }
 
-  public static String shortName(String fqName) {
+  public static String shortName(@Nullable String fqName) {
     if (fqName == null) {
       return fqName;
     }
@@ -70,7 +72,7 @@ public final class JavaNameUtil {
     return fqName.substring(offset + 1);
   }
 
-  public static String className(SNode conceptDeclaration) {
+  public static String className(@Nullable SNode conceptDeclaration) {
     return NameUtil.nodeFQName(conceptDeclaration);
   }
 }
