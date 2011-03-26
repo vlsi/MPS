@@ -436,9 +436,8 @@ public class TestMain {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
-    if (plugins.length == 0) {
-      System.setProperty("idea.load.plugins", "false");
-    }
+    // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors()
+    System.setProperty("idea.load.plugins", "false");
     System.setProperty("idea.platform.prefix", "Idea");
 
     StringBuffer pluginPath = new StringBuffer();

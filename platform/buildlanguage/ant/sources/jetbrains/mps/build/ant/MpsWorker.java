@@ -167,7 +167,7 @@ public abstract class MpsWorker {
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
-      configureMPS("jetbrains.mps.vcs");
+      configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor");
     }
     catch (Exception ex) {
       throw new RuntimeException(ex);
