@@ -28,8 +28,6 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
       SNode mtd = ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).first();
-      FunctionType_Behavior.call_getResultType_1230475757059(ft);
-      SNode nrt = FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft);
       if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();

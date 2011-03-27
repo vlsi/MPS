@@ -4,13 +4,10 @@ package jetbrains.mps.baseLanguage.closures.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,16 +19,12 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public supertypesOf_FunctionType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> supertypes = null;
-    SNode ct = null;
+  public SNode getSubOrSuperType(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) == null)) {
-      supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft));
+      return FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft);
     } else {
-      ct = ClosureLiteralUtil.fillParams(new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a0a2a0().createNode(SLinkOperations.getTarget(ft, "runtimeIface", false), typeCheckingContext), ft);
-      supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), ct);
+      return ClosureLiteralUtil.fillParams(new supertypesOf_FunctionType_SubtypingRule.QuotationClass_8hodjs_a0a0a0a0a().createNode(SLinkOperations.getTarget(ft, "runtimeIface", false), typeCheckingContext), ft);
     }
-    return supertypes;
   }
 
   public String getApplicableConceptFQName() {
@@ -49,8 +42,8 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  public static class QuotationClass_8hodjs_a0a0a0a2a0 {
-    public QuotationClass_8hodjs_a0a0a0a2a0() {
+  public static class QuotationClass_8hodjs_a0a0a0a0a {
+    public QuotationClass_8hodjs_a0a0a0a0a() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {

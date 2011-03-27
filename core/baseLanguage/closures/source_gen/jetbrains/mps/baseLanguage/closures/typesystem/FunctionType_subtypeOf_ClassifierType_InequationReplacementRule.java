@@ -8,11 +8,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,9 +24,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.project.GlobalScope;
 
 public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
@@ -35,17 +31,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
-    String errorMsg = "";
-    if ((SLinkOperations.getTarget(subtype, "runtimeIface", false) != null)) {
-      SNode ct = null;
-      ct = new FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.QuotationClass_cb4elm_a0a1a2a0().createNode(SLinkOperations.getTarget(subtype, "runtimeIface", false), typeCheckingContext);
-      if ((FunctionType_Behavior.call_getResultType_1230475757059(subtype) != null)) {
-        ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(subtype)));
-      }
-      for (SNode pt : SLinkOperations.getTargets(subtype, "parameterType", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
-      }
-    }
+    String errorMsg;
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
@@ -67,9 +53,9 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, null);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1858552893540392470", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-              typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
+              typeCheckingContext.createGreaterThanInequation((SNode) retType, (SNode) SLinkOperations.getTarget(subtype, "resultType", true), false, _info_12389875345);
             }
           }
           {
@@ -115,17 +101,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     boolean result_14532009 = true;
     {
       SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
-      String errorMsg = "";
-      if ((SLinkOperations.getTarget(subtype, "runtimeIface", false) != null)) {
-        SNode ct = null;
-        ct = new FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.QuotationClass_cb4elm_a0a1a2a1a1().createNode(SLinkOperations.getTarget(subtype, "runtimeIface", false));
-        if ((FunctionType_Behavior.call_getResultType_1230475757059(subtype) != null)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(subtype)));
-        }
-        for (SNode pt : SLinkOperations.getTargets(subtype, "parameterType", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
-        }
-      }
+      String errorMsg;
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
         Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
@@ -203,54 +179,5 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
 
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
-  }
-
-  public static class QuotationClass_cb4elm_a0a1a2a0 {
-    public QuotationClass_cb4elm_a0a1a2a0() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_cb4elm_a0a1a2a1a1 {
-    public QuotationClass_cb4elm_a0a1a2a1a1() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }
