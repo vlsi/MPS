@@ -196,9 +196,9 @@
   <unitInfo fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="43" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sorted_set_comparableTo_SortedSet_SubtypingRule$QuotationClass_2a1jqv_a0a0a" />
   <unitInfo fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="43" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_EnumeratorType_SubtypingRule$QuotationClass_w8ob7y_a0a0a" />
   <unitInfo fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="43" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IteratorType_SubtypingRule$QuotationClass_3m2hv_a0a0a" />
-  <unitInfo fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="43" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule$QuotationClass_gxg199_a0a0a" />
-  <unitInfo fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="43" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule$QuotationClass_tkf239_a0a0a" />
   <unitInfo fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="48" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.ClassifierType_Set_weakSupertypeOf_set_SubtypingRule$QuotationClass_jipg91_a0a0a" />
+  <unitInfo fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="49" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule$QuotationClass_gxg199_a0c0a" />
+  <unitInfo fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="49" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule$QuotationClass_tkf239_a0c0a" />
   <unitInfo fileName="typeof_ToIteratorOperation_InferenceRule.java" startLine="111" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ToIteratorOperation_InferenceRule$QuotationClass_qlsgpf_a0a3a0" />
   <unitInfo fileName="typeof_ChunkOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ChunkOperation_InferenceRule" />
   <unitInfo fileName="typeof_ClearAllElementsOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ClearAllElementsOperation_InferenceRule" />
@@ -241,8 +241,6 @@
   <unitInfo fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sorted_set_comparableTo_SortedSet_SubtypingRule" />
   <unitInfo fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_EnumeratorType_SubtypingRule" />
   <unitInfo fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IteratorType_SubtypingRule" />
-  <unitInfo fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule" />
-  <unitInfo fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule" />
   <unitInfo fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="40" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sortedMap_subtypeOf_map_SubtypingRule$QuotationClass_nvaqgh_a0a0a" />
   <unitInfo fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="41" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_map_SubtypingRule$QuotationClass_cekk5b_a0a0a0" />
   <unitInfo fileName="typeof_TreeMapCreator_InferenceRule.java" startLine="45" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TreeMapCreator_InferenceRule$QuotationClass_tnqpu1_a0a0a0" />
@@ -270,6 +268,8 @@
   <unitInfo fileName="typeof_TailMapOperation_InferenceRule.java" startLine="143" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TailMapOperation_InferenceRule$QuotationClass_w0botb_a0a4a0" />
   <unitInfo fileName="typeof_HeadMapOperation_InferenceRule.java" startLine="143" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_HeadMapOperation_InferenceRule$QuotationClass_71s84n_a0a4a0" />
   <unitInfo fileName="typeof_SubMapOperation_InferenceRule.java" startLine="148" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SubMapOperation_InferenceRule$QuotationClass_85e8rt_a0a5a0" />
+  <unitInfo fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="22" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule" />
+  <unitInfo fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="22" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule" />
   <unitInfo fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="43" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IMapping_interface_supertypeOf_mappingType_SubtypingRule$QuotationClass_chrt0k_a0a0a" />
   <unitInfo fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="43" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sorted_map_comparableTo_SortedMap_SubtypingRule$QuotationClass_j8vd07_a0a0a" />
   <unitInfo fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="43" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_extends_java_util_Map_SubtypingRule$QuotationClass_ngln7_a0a0a" />
@@ -1163,8 +1163,14 @@
     <scopeInfo nodeId="1178725705700" fileName="supertypesOf_ListType_SequenceType_SubtypingRule.java" startLine="21" startPosition="114" endLine="22" endPosition="180" />
   </root>
   <root nodeId="1178725705709">
-    <nodeInfo nodeId="1178725705711" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1178725705710" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="186" />
+    <nodeInfo nodeId="1944196602935396593" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1944196602935421659" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="28" startPosition="103" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1178725705711" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="30" startPosition="5" endLine="31" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1944196602935396601" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="27" startPosition="74" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1944196602935396602" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="28" startPosition="103" endLine="29" endPosition="75" />
+    <scopeInfo nodeId="1178725705710" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="26" startPosition="114" endLine="31" endPosition="142">
+      <varInfo nodeId="1944196602935396594" varName="elemType" />
+    </scopeInfo>
   </root>
   <root nodeId="1178725705719">
     <nodeInfo nodeId="1178725705721" fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="28" startPosition="114" endLine="29" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1356,8 +1362,14 @@
     <unitInfo nodeId="1179160244196" fileName="TypeUtil_Collections.java" startLine="21" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypeUtil_Collections" />
   </root>
   <root nodeId="1179262299939">
-    <nodeInfo nodeId="1179262412845" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1179262299940" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="194" />
+    <nodeInfo nodeId="1944196602935396574" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1944196602935396582" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="28" startPosition="103" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179262412845" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="30" startPosition="5" endLine="31" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1944196602935354003" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="27" startPosition="74" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1944196602935354004" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="28" startPosition="103" endLine="29" endPosition="75" />
+    <scopeInfo nodeId="1179262299940" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="26" startPosition="114" endLine="31" endPosition="150">
+      <varInfo nodeId="1944196602935396575" varName="elemType" />
+    </scopeInfo>
   </root>
   <root nodeId="1179272327821">
     <nodeInfo nodeId="1179272408184" fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

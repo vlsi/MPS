@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,7 +24,11 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.QuotationClass_gxg199_a0a0a().createNode(SLinkOperations.getTarget(type, "elementType", true), typeCheckingContext);
+    SNode elemType = SLinkOperations.getTarget(type, "elementType", true);
+    if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      elemType = Type_Behavior.call_getUnboxedType_1213877337320(elemType);
+    }
+    return new supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.QuotationClass_gxg199_a0c0a().createNode(elemType, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -40,8 +46,8 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
     return true;
   }
 
-  public static class QuotationClass_gxg199_a0a0a {
-    public QuotationClass_gxg199_a0a0a() {
+  public static class QuotationClass_gxg199_a0c0a {
+    public QuotationClass_gxg199_a0c0a() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
