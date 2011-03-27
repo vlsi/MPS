@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,6 +21,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
     if (operationContext == null) {
+      return;
+    }
+    if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept")) != 0) {
       return;
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);

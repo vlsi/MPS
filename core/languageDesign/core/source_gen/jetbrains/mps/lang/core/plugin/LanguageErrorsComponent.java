@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
@@ -89,6 +90,9 @@ public class LanguageErrorsComponent {
   }
 
   public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget) {
+    if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(SNodeOperations.cast(errorNode, "jetbrains.mps.lang.core.structure.BaseConcept")) != 0) {
+      return;
+    }
     String id = (ruleNode == null ?
       null :
       ruleNode.getId()
