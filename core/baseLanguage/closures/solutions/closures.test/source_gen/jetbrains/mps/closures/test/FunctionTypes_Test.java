@@ -60,7 +60,7 @@ public class FunctionTypes_Test extends TestCase {
     };
     _FunctionTypes._void_P0_E2<? extends IllegalAccessException, ? extends InterruptedException> throwsTwo = new _FunctionTypes._void_P0_E2<IllegalAccessException, InterruptedException>() {
       public void invoke() throws IllegalAccessException, InterruptedException {
-        if (true) {
+        if (0 == 0) {
           throw new InterruptedException();
         } else {
           throw new IllegalAccessException();

@@ -27,13 +27,13 @@ public class YieldClosures_Test extends ClosuresBase_Test {
         if (true) {
           ListSequence.fromList(exp).addElement(2);
         }
-        if (false) {
+        if (0 == 1) {
           ListSequence.fromList(exp).addElement(3);
         } else {
           ListSequence.fromList(exp).addElement(4);
         }
         ListSequence.fromList(exp).addElement(5);
-        if (false) {
+        if (0 == 1) {
           ListSequence.fromList(exp).addElement(6);
         }
       }
@@ -53,21 +53,21 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      if (true) {
+                      if (0 == 0) {
                         this.__CP__ = 4;
                         break;
                       }
                       this.__CP__ = 5;
                       break;
                     case 5:
-                      if (false) {
+                      if (0 == 1) {
                         this.__CP__ = 7;
                         break;
                       }
                       this.__CP__ = 10;
                       break;
                     case 12:
-                      if (false) {
+                      if (0 == 1) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -987,7 +987,7 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int val = 0;
-        if (false) {
+        if (0 == 1) {
           val = 42;
         } else
         if (true) {
@@ -1016,7 +1016,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      if (false) {
+                      if (0 == 1) {
                         this.__CP__ = 5;
                         break;
                       }
@@ -1868,7 +1868,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      if (true) {
+                      if (0 == 0) {
                         this.__CP__ = 4;
                         break;
                       }

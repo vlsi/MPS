@@ -555,19 +555,10 @@
           <property name="text" nameId="tpee.6329021646629104958" value="priority should be less than priority of typeof_ClosureLiteral type-creating inequations" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="4160512568111333309">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="1858552893540404502">
+        <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333313">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4160512568111333315">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4160512568111333314">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4160512568111333321">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333312">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333312">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4160512568111332200">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.MeetType" typeId="tpd4.1188473524530" id="4160512568111332202">
               <node role="argument" roleId="tpd4.1188473537547" type="tpck.BaseConcept" typeId="tpck.1133920641626" id="4160512568111332203">
@@ -586,6 +577,16 @@
             </node>
           </node>
         </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333313">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4160512568111333315">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4160512568111333314">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1201614802826" resolveInfo="functionSuperType" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4160512568111333321">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1232130715270">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1232130715271">
@@ -593,14 +594,10 @@
             <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237814165990">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1237814209723">
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237814209724">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1237814209725">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="1858552893540404499">
+                    <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
                     <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-                    <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1237814209726">
-                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1237814352852">
-                        <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1237814165992" resolveInfo="superTerminate" />
-                      </node>
-                    </node>
-                    <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1237814209731">
+                    <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1237814209731">
                       <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237814209732">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1237814209733">
                           <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp2c.1229708828035" resolveInfo="UnrestrictedFunctionType" />
@@ -611,6 +608,11 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1237814209735">
                           <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1232020907791" />
                         </node>
+                      </node>
+                    </node>
+                    <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1237814209726">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1237814352852">
+                        <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1237814165992" resolveInfo="superTerminate" />
                       </node>
                     </node>
                   </node>
@@ -796,16 +798,17 @@
           </node>
         </node>
         <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1214834497823">
-          <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1214834519072">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="1858552893540404498">
+            <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
             <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-            <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1214834521390">
-              <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1214834521391">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1214834359719" resolveInfo="join" />
-              </node>
-            </node>
-            <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1214834519075">
+            <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1214834519075">
               <node role="normalType" roleId="tpd4.1185788644032" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1214834514292">
                 <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1214834497821" resolveInfo="subThrows" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1214834521390">
+              <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1214834521391">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1214834359719" resolveInfo="join" />
               </node>
             </node>
           </node>
