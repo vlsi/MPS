@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${mps_home}/core/languageDesign/generator/source_gen" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
   </models>
   <accessoryModels />
@@ -46,8 +45,8 @@
     <dependency reexport="false">d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
+    <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
