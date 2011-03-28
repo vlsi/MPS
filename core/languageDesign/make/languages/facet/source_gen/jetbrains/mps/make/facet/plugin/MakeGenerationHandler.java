@@ -17,10 +17,10 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelStereotype;
 
-public class GenerationHandler extends GenerationHandlerBase {
+public class MakeGenerationHandler extends GenerationHandlerBase {
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler;
 
-  public GenerationHandler(_FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler) {
+  public MakeGenerationHandler(_FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler) {
     this.resourceHandler = resourceHandler;
   }
 

@@ -206,8 +206,8 @@
     <scopeInfo nodeId="5589305777382265132" fileName="AbstractProgressStrategy.java" startLine="45" startPosition="65" endLine="49" endPosition="6" />
     <scopeInfo nodeId="5589305777382267155" fileName="AbstractProgressStrategy.java" startLine="60" startPosition="93" endLine="64" endPosition="27" />
     <scopeInfo nodeId="5589305777382267226" fileName="AbstractProgressStrategy.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="5589305777382267229" varName="done" />
       <varInfo nodeId="5589305777382267227" varName="name" />
+      <varInfo nodeId="5589305777382267229" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023606" fileName="AbstractProgressStrategy.java" startLine="81" startPosition="68" endLine="85" endPosition="52" />
     <scopeInfo nodeId="5589305777382267294" fileName="AbstractProgressStrategy.java" startLine="88" startPosition="41" endLine="92" endPosition="23">
@@ -228,12 +228,12 @@
       <varInfo nodeId="5589305777382267467" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="5589305777382267475" fileName="AbstractProgressStrategy.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
-      <varInfo nodeId="5589305777382267478" varName="done" />
       <varInfo nodeId="5589305777382267476" varName="name" />
+      <varInfo nodeId="5589305777382267478" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023581" fileName="AbstractProgressStrategy.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
-      <varInfo nodeId="8530713690800023586" varName="done" />
       <varInfo nodeId="8530713690800023582" varName="name" />
+      <varInfo nodeId="8530713690800023586" varName="done" />
       <varInfo nodeId="8530713690800023584" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="5589305777382267489" fileName="AbstractProgressStrategy.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
@@ -251,8 +251,8 @@
     <scopeInfo nodeId="5589305777382265132" fileName="AbstractProgressStrategy.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="5589305777382267198" fileName="AbstractProgressStrategy.java" startLine="67" startPosition="67" endLine="74" endPosition="55" />
     <scopeInfo nodeId="8530713690800023597" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="8530713690800023602" varName="done" />
       <varInfo nodeId="8530713690800023598" varName="name" />
+      <varInfo nodeId="8530713690800023602" varName="done" />
       <varInfo nodeId="8530713690800023600" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="5589305777382267291" fileName="AbstractProgressStrategy.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
@@ -619,10 +619,10 @@
     <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="133" startPosition="60" endLine="186" endPosition="10" />
     <scopeInfo nodeId="5599300738479603516" fileName="Script.java" startLine="132" startPosition="171" endLine="188" endPosition="0" />
     <scopeInfo nodeId="1291978361072209318" fileName="Script.java" startLine="219" startPosition="68" endLine="282" endPosition="71">
-      <varInfo nodeId="1291978361072223856" varName="input" />
       <varInfo nodeId="4805457774526132496" varName="rawInput" />
-      <varInfo nodeId="201711529985540484" varName="preInput" />
+      <varInfo nodeId="1291978361072223856" varName="input" />
       <varInfo nodeId="5700060015085058390" varName="impre" />
+      <varInfo nodeId="201711529985540484" varName="preInput" />
       <varInfo nodeId="1291978361072214372" varName="jr" />
       <varInfo nodeId="1291978361072209328" varName="job" />
     </scopeInfo>

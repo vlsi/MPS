@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />

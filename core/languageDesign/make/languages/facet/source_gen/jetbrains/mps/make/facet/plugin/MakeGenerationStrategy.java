@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestHelper;
 
-public class GenerationStrategy implements IncrementalGenerationStrategy {
+public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   private GenerationCacheContainer cache;
 
-  public GenerationStrategy(GenerationCacheContainer cache) {
+  public MakeGenerationStrategy(GenerationCacheContainer cache) {
     this.cache = cache;
   }
 

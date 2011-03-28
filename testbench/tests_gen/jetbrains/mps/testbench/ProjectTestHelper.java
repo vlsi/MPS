@@ -37,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.compiler.CompilationResultAdapter;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import java.io.StringWriter;
@@ -169,7 +170,7 @@ public class ProjectTestHelper {
     return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make"));
   }
 
-  private Iterable<IResource> collectResources(final MPSProject pro, IOperationContext context) {
+  private Iterable<IResource> collectResources(IOperationContext context, final MPSProject pro) {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -237,6 +238,12 @@ public class ProjectTestHelper {
 
     public void generate() {
       ProjectTestHelper.this.generate(project);
+      IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+
+      ProjectOperationContext context = ProjectOperationContext.get(project.getProject());
+      IResult result = new TestMakeService(context, myMessageHandler).make(collectResources(context, project), scr);
+
+
     }
   }
 

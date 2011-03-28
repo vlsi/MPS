@@ -169,7 +169,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cleanUpAfterGeneration"), new ITarget.Name("reconcile"), new ITarget.Name("make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("reconcile"), new ITarget.Name("make")});
     }
 
     public ITarget.Name getName() {
