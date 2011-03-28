@@ -26,6 +26,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -165,7 +166,16 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    return null;
+    boolean isInstance = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        SNode node = myFile.getNode();
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+      }
+    });
+    if (!isInstance) return null;
+
+    return new ConceptStructureViewBuilder();
+
   }
 
   public void dispose() {
@@ -233,7 +243,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   }
 
   private class MPSFileNodeEditorComponent extends JPanel implements DataProvider {
-
     private MPSFileNodeEditorComponent() {
       super(new BorderLayout());
     }
@@ -251,5 +260,4 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       return null;
     }
   }
-
 }

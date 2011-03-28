@@ -77,6 +77,12 @@
                         serviceInterface="com.intellij.lang.cacheBuilder.CacheBuilderRegistry"
                         serviceImplementation="com.intellij.lang.cacheBuilder.CacheBuilderRegistryImpl"/>
 
+    <projectService serviceInterface="com.intellij.ide.structureView.StructureViewFactory"
+                    serviceImplementation="com.intellij.ide.structureView.impl.StructureViewFactoryImpl"/>
+    <toolWindow id="Structure" anchor="left" icon="/general/toolWindowStructure.png" secondary="true"
+                factoryClass="com.intellij.ide.structureView.impl.StructureViewToolWindowFactory"/>
+
+
     <!--For file selection dialog-->
     <getDataRule key="context.ProjectFileDirectory"
                  implementationClass="jetbrains.mps.workbench.dataExtraction.fileChooser.ProjectFileRule"/>
