@@ -44,6 +44,11 @@ public class ApplicationRunConfigurationsReloader implements ApplicationComponen
   private final Object myConfigurationsLock = new Object();
   private final List<ConfigurationType> myConfigurationTypes = new ArrayList<ConfigurationType>();
   private final List<BaseConfigCreator> myRegisteredCreators = new ArrayList<BaseConfigCreator>();
+  private final ProjectManager myProjectManager;
+
+  public ApplicationRunConfigurationsReloader(ProjectManager projectManager) {
+    myProjectManager = projectManager;
+  }
 
   public void init() {
     if (myLoaded) return;
@@ -67,7 +72,7 @@ public class ApplicationRunConfigurationsReloader implements ApplicationComponen
       }
     }
 
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(RunConfigManager.class).initRunConfigurations();
     }
 
@@ -77,7 +82,7 @@ public class ApplicationRunConfigurationsReloader implements ApplicationComponen
   public void dispose() {
     if (!myLoaded) return;
 
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(RunConfigManager.class).disposeRunConfigurations();
     }
 

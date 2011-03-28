@@ -34,12 +34,14 @@ public class PluginReloader implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
+  private final ApplicationRunConfigurationsReloader myRunConfigurationsReloader;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager, ApplicationRunConfigurationsReloader runConfigurationsReloader) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
+    myRunConfigurationsReloader = runConfigurationsReloader;
   }
 
   private void loadPlugins() {
@@ -48,11 +50,11 @@ public class PluginReloader implements ApplicationComponent {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
-    ApplicationRunConfigurationsReloader.getInstance().init();
+    myRunConfigurationsReloader.init();
   }
 
   private void disposePlugins() {
-    ApplicationRunConfigurationsReloader.getInstance().dispose();
+    myRunConfigurationsReloader.dispose();
 
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
