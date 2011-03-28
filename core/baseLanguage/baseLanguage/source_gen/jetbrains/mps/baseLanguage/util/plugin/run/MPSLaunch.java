@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 @Retention(value = RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.METHOD ,ElementType.TYPE})
+@Target(value = {ElementType.METHOD, ElementType.TYPE})
 public @interface MPSLaunch {
 }

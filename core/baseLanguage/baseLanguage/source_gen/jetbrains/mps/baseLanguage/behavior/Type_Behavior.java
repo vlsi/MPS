@@ -34,11 +34,11 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337320 = {SNode.class};
   private static Class[] PARAMETERS_1213877337340 = {SNode.class};
   private static Class[] PARAMETERS_1226945293888 = {SNode.class};
-  private static Class[] PARAMETERS_7602110602933317830 = {SNode.class ,SModel.class};
+  private static Class[] PARAMETERS_7602110602933317830 = {SNode.class, SModel.class};
   private static Class[] PARAMETERS_1213877337345 = {SNode.class};
   private static Class[] PARAMETERS_1213877337352 = {SNode.class};
   private static Class[] PARAMETERS_1213877337357 = {SNode.class};
-  private static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1220438914705 = {SNode.class, SNode.class};
   private static Class[] PARAMETERS_3359611512358152580 = {SNode.class};
   private static Class[] PARAMETERS_3508583411997314206 = {SNode.class};
   private static Class[] PARAMETERS_5744862332972792015 = {SNode.class};

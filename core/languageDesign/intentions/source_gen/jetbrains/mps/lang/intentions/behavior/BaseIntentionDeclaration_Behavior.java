@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class BaseIntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_6263518417926802310 = {SNode.class};
   private static Class[] PARAMETERS_6263518417926802384 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979509 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979509 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

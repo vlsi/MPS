@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LinkPatternVariableReference_Behavior {
-  private static Class[] PARAMETERS_1225210740874 = {SNode.class ,Object.class};
+  private static Class[] PARAMETERS_1225210740874 = {SNode.class, Object.class};
 
   public static void init(SNode thisNode) {
   }

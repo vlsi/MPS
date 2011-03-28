@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptEditorDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384629359 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979340 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_7839831476331825169 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979340 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_7839831476331825169 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

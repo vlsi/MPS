@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
-  private static Class[] PARAMETERS_6261424444345978650 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345978650 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

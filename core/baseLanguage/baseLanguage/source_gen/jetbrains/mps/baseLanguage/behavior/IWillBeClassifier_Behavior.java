@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SNodeId;
 public class IWillBeClassifier_Behavior {
   private static Class[] PARAMETERS_4609636120081351397 = {SNode.class};
   private static Class[] PARAMETERS_4125795553993767872 = {SNode.class};
-  private static Class[] PARAMETERS_4609636120081469956 = {SNode.class ,SModel.class};
+  private static Class[] PARAMETERS_4609636120081469956 = {SNode.class, SModel.class};
 
   public static void init(SNode thisNode) {
   }

@@ -22,8 +22,8 @@ public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_4025276038182459921 = {SNode.class};
   private static Class[] PARAMETERS_8986964027630472415 = {SNode.class};
   private static Class[] PARAMETERS_8884554759541381553 = {SNode.class};
-  private static Class[] PARAMETERS_3012473318495506818 = {SNode.class ,Project.class};
-  private static Class[] PARAMETERS_3012473318495506812 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_3012473318495506818 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_3012473318495506812 = {SNode.class, Project.class};
   private static Class[] PARAMETERS_2496361171403550872 = {SNode.class};
 
   public static void init(SNode thisNode) {

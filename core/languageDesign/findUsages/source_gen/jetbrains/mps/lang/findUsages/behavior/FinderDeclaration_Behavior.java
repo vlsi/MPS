@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FinderDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384724634 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979396 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979396 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

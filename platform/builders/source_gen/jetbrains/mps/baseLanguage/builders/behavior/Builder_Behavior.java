@@ -13,9 +13,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class Builder_Behavior {
   private static Class[] PARAMETERS_7057666463730595159 = {SNode.class};
   private static Class[] PARAMETERS_7057666463730718251 = {SNode.class};
-  private static Class[] PARAMETERS_7057666463730727863 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_7288041816792215495 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_4797501453850305563 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_7057666463730727863 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_7288041816792215495 = {SNode.class, SNode.class, SNode.class, SNode.class};
+  private static Class[] PARAMETERS_4797501453850305563 = {SNode.class, SNode.class, SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

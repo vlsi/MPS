@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class EditorComponentDeclaration_Behavior {
   private static Class[] PARAMETERS_5270353093116097898 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979367 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979367 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

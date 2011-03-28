@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class ClosureLiteral_Behavior {
-  private static Class[] PARAMETERS_1229718192182 = {SNode.class ,List.class ,SNode.class ,SNode.class ,SNode.class ,List.class};
+  private static Class[] PARAMETERS_1229718192182 = {SNode.class, List.class, SNode.class, SNode.class, SNode.class, List.class};
   private static Class[] PARAMETERS_3262277503800835449 = {SNode.class};
 
   public static void init(SNode thisNode) {

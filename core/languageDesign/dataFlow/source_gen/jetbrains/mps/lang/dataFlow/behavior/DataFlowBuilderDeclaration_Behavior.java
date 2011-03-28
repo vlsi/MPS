@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DataFlowBuilderDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384725404 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978709 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345978709 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

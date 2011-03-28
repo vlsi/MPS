@@ -16,8 +16,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BeanPropertyBuilder_Behavior {
   private static Class[] PARAMETERS_2679357232284060725 = {SNode.class};
-  private static Class[] PARAMETERS_2679357232284060737 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_4797501453850342017 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_2679357232284060737 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_4797501453850342017 = {SNode.class, SNode.class, SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

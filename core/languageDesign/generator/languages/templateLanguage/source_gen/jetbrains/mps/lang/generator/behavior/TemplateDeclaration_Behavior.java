@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TemplateDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384729127 = {SNode.class};
-  private static Class[] PARAMETERS_390427525177435267 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_390427525177435267 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

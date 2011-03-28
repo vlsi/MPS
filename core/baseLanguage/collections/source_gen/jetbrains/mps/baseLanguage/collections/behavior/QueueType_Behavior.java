@@ -18,7 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueueType_Behavior {
-  private static Class[] PARAMETERS_7602110602933345818 = {SNode.class ,SModel.class};
+  private static Class[] PARAMETERS_7602110602933345818 = {SNode.class, SModel.class};
 
   public static void init(SNode thisNode) {
   }

@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class SortedMapType_Behavior {
-  private static Class[] PARAMETERS_7602110602933345941 = {SNode.class ,SModel.class};
+  private static Class[] PARAMETERS_7602110602933345941 = {SNode.class, SModel.class};
 
   public static void init(SNode thisNode) {
   }

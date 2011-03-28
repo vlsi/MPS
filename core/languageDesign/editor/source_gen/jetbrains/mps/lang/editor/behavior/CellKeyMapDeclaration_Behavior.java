@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellKeyMapDeclaration_Behavior {
   private static Class[] PARAMETERS_5270353093116096537 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979282 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979282 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

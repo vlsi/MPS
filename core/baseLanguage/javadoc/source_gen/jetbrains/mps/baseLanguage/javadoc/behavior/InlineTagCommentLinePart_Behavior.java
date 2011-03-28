@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InlineTagCommentLinePart_Behavior {
-  private static Class[] PARAMETERS_3633133276124360200 = {SNode.class ,Boolean.TYPE};
+  private static Class[] PARAMETERS_3633133276124360200 = {SNode.class, Boolean.TYPE};
 
   public static void init(SNode thisNode) {
   }

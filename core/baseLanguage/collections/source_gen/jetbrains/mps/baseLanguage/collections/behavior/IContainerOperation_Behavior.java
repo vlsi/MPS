@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IContainerOperation_Behavior {
-  private static Class[] PARAMETERS_2141797557973018589 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_2141797557973018589 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

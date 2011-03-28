@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class IMPSLiteConcept_Behavior {
   private static Class[] PARAMETERS_1239714833738 = {SNode.class};
   private static Class[] PARAMETERS_1239715026284 = {SNode.class};
-  private static Class[] PARAMETERS_1239891562930 = {SNode.class ,SNode.class ,Map.class ,Map.class};
-  private static Class[] PARAMETERS_1239890004879 = {SNode.class ,Map.class ,Map.class};
-  private static Class[] PARAMETERS_1239817368042 = {SNode.class ,Map.class ,Map.class};
-  private static Class[] PARAMETERS_1239891670850 = {SNode.class ,Map.class ,Map.class};
+  private static Class[] PARAMETERS_1239891562930 = {SNode.class, SNode.class, Map.class, Map.class};
+  private static Class[] PARAMETERS_1239890004879 = {SNode.class, Map.class, Map.class};
+  private static Class[] PARAMETERS_1239817368042 = {SNode.class, Map.class, Map.class};
+  private static Class[] PARAMETERS_1239891670850 = {SNode.class, Map.class, Map.class};
 
   public static void init(SNode thisNode) {
   }

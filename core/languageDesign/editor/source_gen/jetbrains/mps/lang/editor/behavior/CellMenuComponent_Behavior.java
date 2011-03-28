@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellMenuComponent_Behavior {
   private static Class[] PARAMETERS_5270353093116097675 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979313 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979313 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

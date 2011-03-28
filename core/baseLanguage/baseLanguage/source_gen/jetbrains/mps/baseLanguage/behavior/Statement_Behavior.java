@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Statement_Behavior {
   private static Class[] PARAMETERS_1237547327995 = {SNode.class};
-  private static Class[] PARAMETERS_5412515780383134223 = {SNode.class ,Set.class ,Boolean.TYPE};
+  private static Class[] PARAMETERS_5412515780383134223 = {SNode.class, Set.class, Boolean.TYPE};
 
   public static void init(SNode thisNode) {
   }

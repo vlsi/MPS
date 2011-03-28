@@ -13,8 +13,8 @@ import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LocalVariableDeclaration_Behavior {
-  private static Class[] PARAMETERS_3012473318495506424 = {SNode.class ,Project.class};
-  private static Class[] PARAMETERS_3012473318495506430 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_3012473318495506424 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_3012473318495506430 = {SNode.class, Project.class};
 
   public static void init(SNode thisNode) {
   }

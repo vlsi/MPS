@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SNodeId;
 public class IMethodCall_Behavior {
   private static Class[] PARAMETERS_8008512149545154471 = {SNode.class};
   private static Class[] PARAMETERS_851115533308208851 = {SNode.class};
-  private static Class[] PARAMETERS_5776618742611315379 = {SNode.class ,String.class};
+  private static Class[] PARAMETERS_5776618742611315379 = {SNode.class, String.class};
 
   public static void init(SNode thisNode) {
   }

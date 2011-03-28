@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IExtractMethodAvailable_Behavior {
-  private static Class[] PARAMETERS_1221393367929 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1221393367929 = {SNode.class, List.class};
 
   public static void init(SNode thisNode) {
   }

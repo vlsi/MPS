@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SideTransformHintSubstituteActions_Behavior {
   private static Class[] PARAMETERS_5270353093116090177 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978589 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345978589 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

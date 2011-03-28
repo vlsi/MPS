@@ -24,8 +24,8 @@ import jetbrains.mps.project.GlobalScope;
 public class FieldDeclaration_Behavior {
   private static Class[] PARAMETERS_8884554759541377970 = {SNode.class};
   private static Class[] PARAMETERS_4025276038182459890 = {SNode.class};
-  private static Class[] PARAMETERS_3012473318495506736 = {SNode.class ,Project.class};
-  private static Class[] PARAMETERS_3012473318495506730 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_3012473318495506736 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_3012473318495506730 = {SNode.class, Project.class};
   private static Class[] PARAMETERS_2496361171403550861 = {SNode.class};
 
   public static void init(SNode thisNode) {

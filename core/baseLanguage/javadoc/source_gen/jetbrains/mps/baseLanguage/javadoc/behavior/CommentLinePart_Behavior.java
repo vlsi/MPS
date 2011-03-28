@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CommentLinePart_Behavior {
-  private static Class[] PARAMETERS_9042833497008205283 = {SNode.class ,Boolean.TYPE};
+  private static Class[] PARAMETERS_9042833497008205283 = {SNode.class, Boolean.TYPE};
 
   public static void init(SNode thisNode) {
   }

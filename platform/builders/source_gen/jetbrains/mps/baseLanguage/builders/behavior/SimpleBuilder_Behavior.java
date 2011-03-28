@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class SimpleBuilder_Behavior {
   private static Class[] PARAMETERS_7288041816793071817 = {SNode.class};
   private static Class[] PARAMETERS_7288041816793416227 = {SNode.class};
-  private static Class[] PARAMETERS_7288041816793071813 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_7288041816793075493 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_7288041816793071813 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_7288041816793075493 = {SNode.class, SNode.class, SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

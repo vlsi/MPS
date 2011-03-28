@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractRule_Behavior {
   private static Class[] PARAMETERS_8952337903384866977 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979630 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979630 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

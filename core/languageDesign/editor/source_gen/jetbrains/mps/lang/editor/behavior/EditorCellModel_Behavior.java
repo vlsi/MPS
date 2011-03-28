@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
-  private static Class[] PARAMETERS_1216737839993 = {SNode.class ,TemplateQueryContext.class};
+  private static Class[] PARAMETERS_1216737839993 = {SNode.class, TemplateQueryContext.class};
   private static Class[] PARAMETERS_1220339714057 = {SNode.class};
   private static Class[] PARAMETERS_1220339738643 = {SNode.class};
   private static Class[] PARAMETERS_1221472292001 = {SNode.class};

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ExportScope_Behavior {
-  private static Class[] PARAMETERS_2565736246230026584 = {SNode.class ,String.class ,SNode.class};
+  private static Class[] PARAMETERS_2565736246230026584 = {SNode.class, String.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

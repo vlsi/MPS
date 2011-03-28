@@ -12,8 +12,8 @@ import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ParameterDeclaration_Behavior {
-  private static Class[] PARAMETERS_3012473318495506887 = {SNode.class ,Project.class};
-  private static Class[] PARAMETERS_3012473318495506881 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_3012473318495506887 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_3012473318495506881 = {SNode.class, Project.class};
 
   public static void init(SNode thisNode) {
   }

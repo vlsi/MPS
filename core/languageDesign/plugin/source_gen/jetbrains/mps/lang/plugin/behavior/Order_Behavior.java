@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Order_Behavior {
-  private static Class[] PARAMETERS_1499919975383913755 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1499919975383913755 = {SNode.class, SNode.class};
   private static Class[] PARAMETERS_3038738109029048958 = {SNode.class};
 
   public static void init(SNode thisNode) {

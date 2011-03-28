@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunction_Behavior {
-  private static Class[] PARAMETERS_1213877374432 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1213877374432 = {SNode.class, SNode.class};
   private static Class[] PARAMETERS_1213877374441 = {SNode.class};
   private static Class[] PARAMETERS_1213877374450 = {SNode.class};
   private static Class[] PARAMETERS_1216468837268 = {SNode.class};

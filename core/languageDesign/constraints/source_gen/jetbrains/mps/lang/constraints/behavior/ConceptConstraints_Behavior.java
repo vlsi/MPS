@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptConstraints_Behavior {
   private static Class[] PARAMETERS_8952337903384645670 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978682 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345978682 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

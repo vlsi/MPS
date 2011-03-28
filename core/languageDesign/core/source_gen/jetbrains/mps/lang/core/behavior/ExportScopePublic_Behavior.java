@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExportScopePublic_Behavior {
-  private static Class[] PARAMETERS_402007580867586251 = {SNode.class ,String.class ,SNode.class};
+  private static Class[] PARAMETERS_402007580867586251 = {SNode.class, String.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

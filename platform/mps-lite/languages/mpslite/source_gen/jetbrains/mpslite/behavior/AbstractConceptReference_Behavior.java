@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractConceptReference_Behavior {
-  private static Class[] PARAMETERS_1238594571574 = {SNode.class ,Map.class};
+  private static Class[] PARAMETERS_1238594571574 = {SNode.class, Map.class};
 
   public static void init(SNode thisNode) {
   }

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ExtractStaticMethod_CallExpression_Behavior {
-  private static Class[] PARAMETERS_3585982959253821899 = {SNode.class ,String.class};
+  private static Class[] PARAMETERS_3585982959253821899 = {SNode.class, String.class};
 
   public static void init(SNode thisNode) {
   }

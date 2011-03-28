@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class OrderConstraints_Behavior {
   private static Class[] PARAMETERS_3038738109029048953 = {SNode.class};
-  private static Class[] PARAMETERS_1499919975383879508 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1499919975383879508 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

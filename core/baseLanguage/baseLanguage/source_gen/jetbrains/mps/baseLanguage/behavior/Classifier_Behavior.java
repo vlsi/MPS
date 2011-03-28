@@ -29,8 +29,8 @@ public class Classifier_Behavior {
   private static Class[] PARAMETERS_5039675756633081868 = {SNode.class};
   private static Class[] PARAMETERS_1214840444586 = {SNode.class};
   private static Class[] PARAMETERS_8540045600162184125 = {SNode.class};
-  private static Class[] PARAMETERS_7165541881557222913 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_7165541881557222950 = {SNode.class ,SNode.class ,Set.class};
+  private static Class[] PARAMETERS_7165541881557222913 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_7165541881557222950 = {SNode.class, SNode.class, Set.class};
   private static Class[] PARAMETERS_1906502351318572840 = {SNode.class};
   private static Class[] PARAMETERS_5017341185733869650 = {SNode.class};
   private static Class[] PARAMETERS_3305065273710880775 = {SNode.class};

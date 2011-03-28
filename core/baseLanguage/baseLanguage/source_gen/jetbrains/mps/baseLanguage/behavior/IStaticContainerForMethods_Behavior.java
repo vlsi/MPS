@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IStaticContainerForMethods_Behavior {
-  private static Class[] PARAMETERS_1222174378300 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1222174378300 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

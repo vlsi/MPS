@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITemplateCall_Behavior {
-  private static Class[] PARAMETERS_1722980698497626491 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1722980698497626491 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

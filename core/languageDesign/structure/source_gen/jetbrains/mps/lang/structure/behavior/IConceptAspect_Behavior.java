@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class IConceptAspect_Behavior {
   private static Class[] PARAMETERS_2621449412040133768 = {SNode.class};
   private static Class[] PARAMETERS_5270353093116013036 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345963020 = {SNode.class ,SNode.class};
-  private static Class[] PARAMETERS_7839831476331657915 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345963020 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_7839831476331657915 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

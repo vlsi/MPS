@@ -20,8 +20,8 @@ public class VariableDeclaration_Behavior {
   private static Class[] PARAMETERS_1213877517482 = {SNode.class};
   private static Class[] PARAMETERS_1213877517488 = {SNode.class};
   private static Class[] PARAMETERS_4025276038182325660 = {SNode.class};
-  private static Class[] PARAMETERS_3012473318495495520 = {SNode.class ,Project.class};
-  private static Class[] PARAMETERS_3012473318495499856 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_3012473318495495520 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_3012473318495499856 = {SNode.class, Project.class};
 
   public static void init(SNode thisNode) {
   }

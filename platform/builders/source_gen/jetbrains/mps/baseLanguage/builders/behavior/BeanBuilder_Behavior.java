@@ -14,7 +14,7 @@ import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BeanBuilder_Behavior {
-  private static Class[] PARAMETERS_6666322667909649860 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6666322667909649860 = {SNode.class, SNode.class};
   private static Class[] PARAMETERS_6666322667909649864 = {SNode.class};
 
   public static void init(SNode thisNode) {

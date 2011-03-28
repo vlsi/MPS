@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Refactoring_Behavior {
   private static Class[] PARAMETERS_4205271146524200392 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979536 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979536 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

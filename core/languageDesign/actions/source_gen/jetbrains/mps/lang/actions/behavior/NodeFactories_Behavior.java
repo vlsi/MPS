@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeFactories_Behavior {
   private static Class[] PARAMETERS_5270353093116089378 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978409 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345978409 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

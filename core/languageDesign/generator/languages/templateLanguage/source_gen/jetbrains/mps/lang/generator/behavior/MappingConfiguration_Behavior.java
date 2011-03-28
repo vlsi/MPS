@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MappingConfiguration_Behavior {
   private static Class[] PARAMETERS_8360039740498071265 = {SNode.class};
-  private static Class[] PARAMETERS_390427525177434695 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_390427525177434695 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
