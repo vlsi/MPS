@@ -46,7 +46,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         SNode rootNode = a.getRoot();
         if (rootNode == null) continue;
         MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(rootNode);
-        assert file.hasValidMPSNode() : "Invalid file was returned by VFS node is not available: " + file.getNode();
+        assert file.hasValidMPSNode() : "Invalid file was returned by VFS node is not available: " + rootNode + ", deleted = " + rootNode.isDeleted();
 
         if (MPSUndoUtil.getDoc(file) == null) continue;
         affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
