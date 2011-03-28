@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -47,6 +48,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
   public SNodePointer getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738629621");
+  }
+
+  public boolean isApplicable(ITemplateGenerator generator) {
+    return true;
   }
 
   public Collection<TemplateReductionRule> getReductionRules() {

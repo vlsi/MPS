@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultTemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
+    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />

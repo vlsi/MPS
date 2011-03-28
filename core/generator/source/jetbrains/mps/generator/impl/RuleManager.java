@@ -44,8 +44,8 @@ public class RuleManager {
 
   private final FastRuleFinder myRuleFinder;
 
-  public RuleManager(GenerationPlan plan, int step) {
-    myMappings = plan.getMappingConfigurations(step);
+  public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations) {
+    myMappings = configurations;
     myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
     if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
     initialize(myMappings);

@@ -23,6 +23,8 @@ import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
@@ -35,7 +37,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -197,7 +201,8 @@ public class GenerationSession {
   private SModel executeMajorStep(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
-    if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
+    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
+    if (mappingConfigurations.isEmpty()) {
       if (inputModel.rootsCount() > 0) {
         myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       }
@@ -211,8 +216,27 @@ public class GenerationSession {
     mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
+    // -- filter mapping configurations
+    Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions, myDependenciesBuilder, ttrace);
+    while(it.hasNext()) {
+      TemplateMappingConfiguration c = it.next();
+      try {
+        if(!c.isApplicable(templateGenerator)) {
+          it.remove();
+        }
+      } catch (GenerationException e) {
+        throw (GenerationFailureException) e;
+      }
+    }
+
+    if (mappingConfigurations.isEmpty()) {
+      // no applicable configurations found
+      return inputModel;
+    }
+
     // -- prepare generator
-    RuleManager ruleManager = new RuleManager(myGenerationPlan, myMajorStep);
+    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations);
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {

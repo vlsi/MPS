@@ -47,10 +47,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:4ee364e0-ec61-445c-9abc-6836866edbb7.GlobalParameters.list")) == null ?
+  public static boolean mappingConfiguration_Condition_2507865635201605483(final TemplateQueryContext _context) {
+    return (((Integer) _context.getGenerationParameter("r:72b77186-12df-4650-a18b-c55a40e9443d.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:4ee364e0-ec61-445c-9abc-6836866edbb7.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:72b77186-12df-4650-a18b-c55a40e9443d.GlobalParameters.list")) < 2
     );
   }
 

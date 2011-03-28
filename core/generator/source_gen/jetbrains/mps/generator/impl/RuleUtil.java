@@ -331,4 +331,8 @@ public class RuleUtil {
   public static SNode getInsertMacro_Query(SNode macro) {
     return SLinkOperations.getTarget(macro, "createNodeQuery", true);
   }
+
+  public static SNode getMappingConfiguration_IsApplicable(SNode mapping) {
+    return SLinkOperations.getTarget(mapping, "condition", true);
+  }
 }

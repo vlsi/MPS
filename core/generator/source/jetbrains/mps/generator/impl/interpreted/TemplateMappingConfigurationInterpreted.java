@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,7 +41,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   private List<TemplateRootMappingRule> myRootMappingRules = new ArrayList<TemplateRootMappingRule>();
   private List<TemplateWeavingRule> myWeaving_MappingRules = new ArrayList<TemplateWeavingRule>();
   private List<TemplateDropRootRule> myDropRootRules = new ArrayList<TemplateDropRootRule>();
-  
+
   private List<TemplateMappingScript> myPreScripts = new ArrayList<TemplateMappingScript>();
   private List<TemplateMappingScript> myPostScripts = new ArrayList<TemplateMappingScript>();
   private TemplateModel myModel;
@@ -61,10 +66,10 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
         myDropRootRules.add(new TemplateDropRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_MappingScriptReference)) {
         SNode mappingScript = RuleUtil.getMappingScriptReference_Script(child);
-        if(mappingScript == null) {
+        if (mappingScript == null) {
           continue;
         }
-        if(child.getRole_().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
+        if (child.getRole_().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
           myPreScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
         } else {
           myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
@@ -82,6 +87,35 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   @Override
   public SNodePointer getMappingNode() {
     return new SNodePointer(myMappingConfiguration);
+  }
+
+  @Override
+  public boolean isApplicable(ITemplateGenerator generator) throws GenerationException {
+    SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(myMappingConfiguration);
+    if (condition == null) {
+      return true;
+    }
+
+    return checkCondition(condition, generator);
+  }
+
+  public boolean checkCondition(SNode condition, ITemplateGenerator generator) throws GenerationFailureException {
+    String methodName = TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new TemplateQueryContext(null, null, null, generator),
+        condition.getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+    } catch (NoSuchMethodException e) {
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+    } catch (Throwable t) {
+      throw new GenerationFailureException("error executing condition ", condition, t);
+    }
+    return true;
   }
 
   @Override
