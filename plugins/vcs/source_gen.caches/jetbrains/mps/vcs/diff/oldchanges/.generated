@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="40yeutv54masc0qt00n57fl6zn6adk0">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7j7f23wpy27xm5qbrp0hshvy38yttz0" />
+<dependencies version="2" modelHash="-6oq3zo5ga6ysc0ocp7xcgjy6z6smko9">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8a37qw6mic9vz4k1bshlihre9cibmxp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="8piw64nlwt97de6k6fho9w6eaml5xak" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
-  <common hash="-2is4j2zm5028zczy3i9b02jjynczo3d" />
-  <source id="4707157387247556079" name="AddLanguageAspectChange" hash="cmew7bhormi3ozxh5kevpl3y0ie3kgf">
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
+  <common hash="-92uuq367ysggex7dvb4ub5loox8lmoz" />
+  <source id="4707157387247556079" name="AddLanguageAspectChange" hash="bord12uid5han19mbjp9wy1agxuln45">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,7 +14,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AddLanguageAspectChange.java" />
   </source>
-  <source id="4707157387247556223" name="MoveNodeChange" hash="1rbhjbzm9b28077swvwo41b7405g9al">
+  <source id="4707157387247556223" name="MoveNodeChange" hash="4kitncpooqlcsr704yaaausha68pr7u">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -22,7 +22,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MoveNodeChange.java" />
   </source>
-  <source id="4707157387247556486" name="AddRootChange" hash="-amg5q8nk49muuukwct2w02m25olkp7b">
+  <source id="4707157387247556486" name="AddRootChange" hash="bgtnfs3pjejv4x3l0y2kma9z597md4c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AddRootChange.java" />
   </source>
-  <source id="4707157387247556540" name="UsedDevkitsChange" hash="8od2n44nv0g9sldq0vttprngn297s8u">
+  <source id="4707157387247556540" name="UsedDevkitsChange" hash="3e6o19bo3se8bd4bqnlhb3fkxl0bqib">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UsedDevkitsChange.java" />
   </source>
-  <source id="4707157387247556660" name="UsedLanguagesChange" hash="civ2wrb7s2q8eho3hx5rzq42uuoilo5">
+  <source id="4707157387247556660" name="UsedLanguagesChange" hash="3ny8my9k7p8iw7qr6p7w2uk96ikauta">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UsedLanguagesChange.java" />
   </source>
-  <source id="4707157387247556780" name="NewNodeChange" hash="c2pweu6suis98ko5s9o53unfeckk5o4">
+  <source id="4707157387247556780" name="NewNodeChange" hash="-dm1vr6342wm3qj6eh151o500dhm6id">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -54,13 +54,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NewNodeChange.java" />
   </source>
-  <source id="4707157387247556966" name="Change" hash="276hetb08g83hotrv24780qxg5xly17">
+  <source id="4707157387247556966" name="Change" hash="-7fuynlmlvxpv5uzt038l3uptzol0dq3">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Change.java" />
   </source>
-  <source id="4707157387247557037" name="SetPropertyChange" hash="-7z9jk4o6axlbecsb24gvrtbhhad0zur">
+  <source id="4707157387247557037" name="SetPropertyChange" hash="-4bmphcja31lfxm1sgnrp824i0mwyd8o">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -68,13 +68,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetPropertyChange.java" />
   </source>
-  <source id="4707157387247557258" name="ChangeType" hash="-75t8g4nmtepx0v3p9djuf9un70hk43d">
+  <source id="4707157387247557258" name="ChangeType" hash="-e5fucffl6gcp9k4vmf2wunifmb6ftsp">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ChangeType.java" />
   </source>
-  <source id="4707157387247557317" name="DeleteNodeChange" hash="6yjc6moe5z8so02lqgajcid5v7pwhjy">
+  <source id="4707157387247557317" name="DeleteNodeChange" hash="2tzzu8gc7jzrhr0sqqcedwr8iw6sr9f">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -82,7 +82,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DeleteNodeChange.java" />
   </source>
-  <source id="4707157387247557593" name="AddNodeChange" hash="ctfmn33dfimp4t4j0aaoyj721moe8hp">
+  <source id="4707157387247557593" name="AddNodeChange" hash="-7p2v92r93e2rrf78jktp0juxb8gfm96">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -90,7 +90,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AddNodeChange.java" />
   </source>
-  <source id="4707157387247557769" name="SetNodeChange" hash="-343gs0p0656hnceqkuesahta17uorg6">
+  <source id="4707157387247557769" name="SetNodeChange" hash="b3fikc8f2k2adgcuifod5v5dsyo0fmb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -98,7 +98,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetNodeChange.java" />
   </source>
-  <source id="4707157387247557984" name="DeleteReferenceChange" hash="-1auu0eg3at3d9jo8to1nvs48nm2xoaj">
+  <source id="4707157387247557984" name="DeleteReferenceChange" hash="-ocdz4r1i7p1tff5qgf0f4zzz93rbe6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -106,7 +106,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DeleteReferenceChange.java" />
   </source>
-  <source id="4707157387247558048" name="ModelImportChange" hash="-56t9l2k5zgx1jqpioxoebxihqrlhp8m">
+  <source id="4707157387247558048" name="ModelImportChange" hash="7g8ilphchqmrzx6giuev4g6sq6hqz2w">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -114,13 +114,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelImportChange.java" />
   </source>
-  <source id="4707157387247558163" name="SubstituteNodeChange" hash="nlykexverlzvaf9c5l91ttiutkgs8h">
+  <source id="4707157387247558163" name="SubstituteNodeChange" hash="8kqhokuw7w6e0zvtsecu033m9qs49u2">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SubstituteNodeChange.java" />
   </source>
-  <source id="4707157387247558232" name="EngagedOnGenerationLanguagesChange" hash="eiyqn2v1dm2biatouh1x6dpvnaumnt6">
+  <source id="4707157387247558232" name="EngagedOnGenerationLanguagesChange" hash="6ytkjupm66ammy745j9n9ls6y9pwknh">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -128,7 +128,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EngagedOnGenerationLanguagesChange.java" />
   </source>
-  <source id="4707157387247558333" name="ChangeConceptChange" hash="-c4vhshl0d5d82s0mmuf6ugle73zjt03">
+  <source id="4707157387247558333" name="ChangeConceptChange" hash="-dywghrux5bt336y04xtl7hqyu1oz5s5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -136,7 +136,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ChangeConceptChange.java" />
   </source>
-  <source id="4707157387247558473" name="SetReferenceChange" hash="r50qg5i9qqqli0wqdj9tmpcxxjl43r">
+  <source id="4707157387247558473" name="SetReferenceChange" hash="-b7m4kojwi2im759gbv47jkje73x7mij">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

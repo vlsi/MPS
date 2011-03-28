@@ -84,6 +84,7 @@ public class VcsHelper {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
     File zipfile = VcsHelperUtil.chooseZipFileForModelFile(modelFile.getName());
+    zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
     return zipfile;

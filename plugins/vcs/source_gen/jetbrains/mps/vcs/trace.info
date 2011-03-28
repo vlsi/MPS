@@ -1448,74 +1448,75 @@
     <nodeInfo nodeId="3613324658897714853" fileName="VcsHelper.java" startLine="81" startPosition="39" endLine="82" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897714869" fileName="VcsHelper.java" startLine="83" startPosition="29" endLine="84" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897714890" fileName="VcsHelper.java" startLine="85" startPosition="5" endLine="86" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897714897" fileName="VcsHelper.java" startLine="86" startPosition="80" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714901" fileName="VcsHelper.java" startLine="87" startPosition="31" endLine="88" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714904" fileName="VcsHelper.java" startLine="88" startPosition="25" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714926" fileName="VcsHelper.java" startLine="93" startPosition="9" endLine="94" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897714939" fileName="VcsHelper.java" startLine="94" startPosition="170" endLine="95" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714918" fileName="VcsHelper.java" startLine="96" startPosition="29" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714949" fileName="VcsHelper.java" startLine="98" startPosition="5" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714963" fileName="VcsHelper.java" startLine="102" startPosition="131" endLine="103" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897714968" fileName="VcsHelper.java" startLine="103" startPosition="72" endLine="104" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715129" fileName="VcsHelper.java" startLine="106" startPosition="49" endLine="107" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715140" fileName="VcsHelper.java" startLine="108" startPosition="38" endLine="109" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715151" fileName="VcsHelper.java" startLine="110" startPosition="40" endLine="111" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715160" fileName="VcsHelper.java" startLine="113" startPosition="9" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715179" fileName="VcsHelper.java" startLine="115" startPosition="38" endLine="116" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715169" fileName="VcsHelper.java" startLine="117" startPosition="16" endLine="118" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715184" fileName="VcsHelper.java" startLine="119" startPosition="9" endLine="120" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715191" fileName="VcsHelper.java" startLine="120" startPosition="69" endLine="121" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714988" fileName="VcsHelper.java" startLine="123" startPosition="7" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715206" fileName="VcsHelper.java" startLine="126" startPosition="25" endLine="127" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715000" fileName="VcsHelper.java" startLine="129" startPosition="7" endLine="130" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897715016" fileName="VcsHelper.java" startLine="133" startPosition="138" endLine="134" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715021" fileName="VcsHelper.java" startLine="134" startPosition="72" endLine="135" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715211" fileName="VcsHelper.java" startLine="137" startPosition="45" endLine="138" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715222" fileName="VcsHelper.java" startLine="138" startPosition="102" endLine="139" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897715041" fileName="VcsHelper.java" startLine="141" startPosition="7" endLine="142" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715230" fileName="VcsHelper.java" startLine="144" startPosition="25" endLine="145" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715060" fileName="VcsHelper.java" startLine="148" startPosition="42" endLine="149" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715066" fileName="VcsHelper.java" startLine="149" startPosition="46" endLine="150" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715072" fileName="VcsHelper.java" startLine="150" startPosition="53" endLine="151" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715076" fileName="VcsHelper.java" startLine="151" startPosition="59" endLine="152" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897715078" fileName="VcsHelper.java" startLine="153" startPosition="5" endLine="154" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897714674" fileName="VcsHelper.java" startLine="160" startPosition="0" endLine="161" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
-    <nodeInfo nodeId="3613324658897715083" fileName="VcsHelper.java" startLine="163" startPosition="41" endLine="164" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715088" fileName="VcsHelper.java" startLine="167" startPosition="31" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4793955267403006455" fileName="VcsHelper.java" startLine="86" startPosition="80" endLine="87" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714897" fileName="VcsHelper.java" startLine="87" startPosition="37" endLine="88" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714901" fileName="VcsHelper.java" startLine="88" startPosition="31" endLine="89" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714904" fileName="VcsHelper.java" startLine="89" startPosition="25" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714926" fileName="VcsHelper.java" startLine="94" startPosition="9" endLine="95" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897714939" fileName="VcsHelper.java" startLine="95" startPosition="170" endLine="96" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714918" fileName="VcsHelper.java" startLine="97" startPosition="29" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714949" fileName="VcsHelper.java" startLine="99" startPosition="5" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714963" fileName="VcsHelper.java" startLine="103" startPosition="131" endLine="104" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897714968" fileName="VcsHelper.java" startLine="104" startPosition="72" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715129" fileName="VcsHelper.java" startLine="107" startPosition="49" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715140" fileName="VcsHelper.java" startLine="109" startPosition="38" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715151" fileName="VcsHelper.java" startLine="111" startPosition="40" endLine="112" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715160" fileName="VcsHelper.java" startLine="114" startPosition="9" endLine="115" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715179" fileName="VcsHelper.java" startLine="116" startPosition="38" endLine="117" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715169" fileName="VcsHelper.java" startLine="118" startPosition="16" endLine="119" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715184" fileName="VcsHelper.java" startLine="120" startPosition="9" endLine="121" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715191" fileName="VcsHelper.java" startLine="121" startPosition="69" endLine="122" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714988" fileName="VcsHelper.java" startLine="124" startPosition="7" endLine="125" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715206" fileName="VcsHelper.java" startLine="127" startPosition="25" endLine="128" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715000" fileName="VcsHelper.java" startLine="130" startPosition="7" endLine="131" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897715016" fileName="VcsHelper.java" startLine="134" startPosition="138" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715021" fileName="VcsHelper.java" startLine="135" startPosition="72" endLine="136" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715211" fileName="VcsHelper.java" startLine="138" startPosition="45" endLine="139" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715222" fileName="VcsHelper.java" startLine="139" startPosition="102" endLine="140" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897715041" fileName="VcsHelper.java" startLine="142" startPosition="7" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715230" fileName="VcsHelper.java" startLine="145" startPosition="25" endLine="146" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715060" fileName="VcsHelper.java" startLine="149" startPosition="42" endLine="150" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715066" fileName="VcsHelper.java" startLine="150" startPosition="46" endLine="151" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715072" fileName="VcsHelper.java" startLine="151" startPosition="53" endLine="152" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715076" fileName="VcsHelper.java" startLine="152" startPosition="59" endLine="153" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897715078" fileName="VcsHelper.java" startLine="154" startPosition="5" endLine="155" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897714674" fileName="VcsHelper.java" startLine="161" startPosition="0" endLine="162" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
+    <nodeInfo nodeId="3613324658897715083" fileName="VcsHelper.java" startLine="164" startPosition="41" endLine="165" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715088" fileName="VcsHelper.java" startLine="168" startPosition="31" endLine="169" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897714690" fileName="VcsHelper.java" startLine="32" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsHelper#()V" />
     <nodeInfo nodeId="3613324658897715116" fileName="VcsHelper.java" startLine="43" startPosition="16" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3613324658897714829" fileName="VcsHelper.java" startLine="75" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3613324658897715167" fileName="VcsHelper.java" startLine="117" startPosition="14" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3613324658897715167" fileName="VcsHelper.java" startLine="118" startPosition="14" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3613324658897714805" fileName="VcsHelper.java" startLine="66" startPosition="93" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897714864" fileName="VcsHelper.java" startLine="82" startPosition="150" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897715146" fileName="VcsHelper.java" startLine="109" startPosition="61" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897714677" fileName="VcsHelper.java" startLine="162" startPosition="0" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FsMemoryMergeVersion#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3613324658897714997" fileName="VcsHelper.java" startLine="125" startPosition="47" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3613324658897715050" fileName="VcsHelper.java" startLine="143" startPosition="47" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3613324658897714682" fileName="VcsHelper.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3613324658897715146" fileName="VcsHelper.java" startLine="110" startPosition="61" endLine="113" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897714677" fileName="VcsHelper.java" startLine="163" startPosition="0" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FsMemoryMergeVersion#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3613324658897714997" fileName="VcsHelper.java" startLine="126" startPosition="47" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3613324658897715050" fileName="VcsHelper.java" startLine="144" startPosition="47" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3613324658897714682" fileName="VcsHelper.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
     <nodeInfo nodeId="3613324658897715112" fileName="VcsHelper.java" startLine="40" startPosition="68" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897714713" fileName="VcsHelper.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDeletedFromDiskQuestion#(Ljetbrains/mps/smodel/SModel;Ljava/io/File;)Z" />
     <nodeInfo nodeId="3613324658897714822" fileName="VcsHelper.java" startLine="72" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897715163" fileName="VcsHelper.java" startLine="114" startPosition="34" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897714992" fileName="VcsHelper.java" startLine="124" startPosition="24" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897715038" fileName="VcsHelper.java" startLine="136" startPosition="117" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/vcs/diff/ui/OldMergeModelsDialog;" />
-    <nodeInfo nodeId="3613324658897715045" fileName="VcsHelper.java" startLine="142" startPosition="24" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714915" fileName="VcsHelper.java" startLine="92" startPosition="81" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3613324658897715135" fileName="VcsHelper.java" startLine="107" startPosition="74" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897715028" fileName="VcsHelper.java" startLine="135" startPosition="32" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897715053" fileName="VcsHelper.java" startLine="147" startPosition="7" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897715163" fileName="VcsHelper.java" startLine="115" startPosition="34" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897714992" fileName="VcsHelper.java" startLine="125" startPosition="24" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897715038" fileName="VcsHelper.java" startLine="137" startPosition="117" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/vcs/diff/ui/OldMergeModelsDialog;" />
+    <nodeInfo nodeId="3613324658897715045" fileName="VcsHelper.java" startLine="143" startPosition="24" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714915" fileName="VcsHelper.java" startLine="93" startPosition="81" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3613324658897715135" fileName="VcsHelper.java" startLine="108" startPosition="74" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897715028" fileName="VcsHelper.java" startLine="136" startPosition="32" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897715053" fileName="VcsHelper.java" startLine="148" startPosition="7" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897714815" fileName="VcsHelper.java" startLine="69" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897714907" fileName="VcsHelper.java" startLine="91" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Z" />
+    <nodeInfo nodeId="3613324658897714907" fileName="VcsHelper.java" startLine="92" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Z" />
     <nodeInfo nodeId="3613324658897715091" fileName="VcsHelper.java" startLine="38" startPosition="32" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3613324658897714841" fileName="VcsHelper.java" startLine="79" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Ljava/io/File;" />
+    <nodeInfo nodeId="3613324658897714841" fileName="VcsHelper.java" startLine="79" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Ljava/io/File;" />
     <nodeInfo nodeId="3613324658897714710" fileName="VcsHelper.java" startLine="37" startPosition="95" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="3613324658897714702" fileName="VcsHelper.java" startLine="36" startPosition="97" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897714694" fileName="VcsHelper.java" startLine="35" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Z" />
-    <nodeInfo nodeId="3613324658897714985" fileName="VcsHelper.java" startLine="105" startPosition="125" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/vcs/diff/ui/OldModelDifferenceDialog;" />
-    <nodeInfo nodeId="3613324658897714975" fileName="VcsHelper.java" startLine="104" startPosition="32" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897714985" fileName="VcsHelper.java" startLine="106" startPosition="125" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/vcs/diff/ui/OldModelDifferenceDialog;" />
+    <nodeInfo nodeId="3613324658897714975" fileName="VcsHelper.java" startLine="105" startPosition="32" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3613324658897714744" fileName="VcsHelper.java" startLine="58" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="3613324658897715002" fileName="VcsHelper.java" startLine="132" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMergeDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vfs/IFile;Lcom/intellij/openapi/project/Project;)Z" />
-    <nodeInfo nodeId="3613324658897714951" fileName="VcsHelper.java" startLine="101" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiffDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vfs/IFile;Lcom/intellij/openapi/project/Project;)Z" />
+    <nodeInfo nodeId="3613324658897715002" fileName="VcsHelper.java" startLine="133" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMergeDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vfs/IFile;Lcom/intellij/openapi/project/Project;)Z" />
+    <nodeInfo nodeId="3613324658897714951" fileName="VcsHelper.java" startLine="102" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiffDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vfs/IFile;Lcom/intellij/openapi/project/Project;)Z" />
     <scopeInfo nodeId="3613324658897714693" fileName="VcsHelper.java" startLine="33" startPosition="22" endLine="33" endPosition="22" />
     <scopeInfo nodeId="3613324658897715122" fileName="VcsHelper.java" startLine="41" startPosition="35" endLine="42" endPosition="85" />
     <scopeInfo nodeId="3613324658897715117" fileName="VcsHelper.java" startLine="43" startPosition="18" endLine="44" endPosition="79" />
@@ -1524,17 +1525,17 @@
     <scopeInfo nodeId="3613324658897714835" fileName="VcsHelper.java" startLine="73" startPosition="48" endLine="74" endPosition="18" />
     <scopeInfo nodeId="3613324658897714830" fileName="VcsHelper.java" startLine="75" startPosition="12" endLine="76" endPosition="59" />
     <scopeInfo nodeId="3613324658897714868" fileName="VcsHelper.java" startLine="83" startPosition="29" endLine="84" endPosition="205" />
-    <scopeInfo nodeId="3613324658897714916" fileName="VcsHelper.java" startLine="96" startPosition="0" endLine="97" endPosition="19">
+    <scopeInfo nodeId="3613324658897714916" fileName="VcsHelper.java" startLine="97" startPosition="0" endLine="98" endPosition="19">
       <varInfo nodeId="3613324658897714923" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714917" fileName="VcsHelper.java" startLine="96" startPosition="29" endLine="97" endPosition="19" />
-    <scopeInfo nodeId="3613324658897715150" fileName="VcsHelper.java" startLine="110" startPosition="40" endLine="111" endPosition="109" />
-    <scopeInfo nodeId="3613324658897715178" fileName="VcsHelper.java" startLine="115" startPosition="38" endLine="116" endPosition="49" />
-    <scopeInfo nodeId="3613324658897715168" fileName="VcsHelper.java" startLine="117" startPosition="16" endLine="118" endPosition="76" />
-    <scopeInfo nodeId="3613324658897715205" fileName="VcsHelper.java" startLine="126" startPosition="25" endLine="127" endPosition="25" />
-    <scopeInfo nodeId="3613324658897715229" fileName="VcsHelper.java" startLine="144" startPosition="25" endLine="145" endPosition="25" />
-    <scopeInfo nodeId="3613324658897715082" fileName="VcsHelper.java" startLine="163" startPosition="41" endLine="164" endPosition="24" />
-    <scopeInfo nodeId="3613324658897715087" fileName="VcsHelper.java" startLine="167" startPosition="31" endLine="168" endPosition="22" />
+    <scopeInfo nodeId="3613324658897714917" fileName="VcsHelper.java" startLine="97" startPosition="29" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="3613324658897715150" fileName="VcsHelper.java" startLine="111" startPosition="40" endLine="112" endPosition="109" />
+    <scopeInfo nodeId="3613324658897715178" fileName="VcsHelper.java" startLine="116" startPosition="38" endLine="117" endPosition="49" />
+    <scopeInfo nodeId="3613324658897715168" fileName="VcsHelper.java" startLine="118" startPosition="16" endLine="119" endPosition="76" />
+    <scopeInfo nodeId="3613324658897715205" fileName="VcsHelper.java" startLine="127" startPosition="25" endLine="128" endPosition="25" />
+    <scopeInfo nodeId="3613324658897715229" fileName="VcsHelper.java" startLine="145" startPosition="25" endLine="146" endPosition="25" />
+    <scopeInfo nodeId="3613324658897715082" fileName="VcsHelper.java" startLine="164" startPosition="41" endLine="165" endPosition="24" />
+    <scopeInfo nodeId="3613324658897715087" fileName="VcsHelper.java" startLine="168" startPosition="31" endLine="169" endPosition="22" />
     <scopeInfo nodeId="3613324658897714690" fileName="VcsHelper.java" startLine="32" startPosition="0" endLine="34" endPosition="3" />
     <scopeInfo nodeId="3613324658897715092" fileName="VcsHelper.java" startLine="46" startPosition="0" endLine="48" endPosition="40">
       <varInfo nodeId="3613324658897715103" varName="e" />
@@ -1543,48 +1544,48 @@
     <scopeInfo nodeId="3613324658897714720" fileName="VcsHelper.java" startLine="54" startPosition="88" endLine="56" endPosition="23">
       <varInfo nodeId="3613324658897714722" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714925" fileName="VcsHelper.java" startLine="93" startPosition="9" endLine="95" endPosition="118">
+    <scopeInfo nodeId="3613324658897714925" fileName="VcsHelper.java" startLine="94" startPosition="9" endLine="96" endPosition="118">
       <varInfo nodeId="3613324658897714927" varName="onDisk" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897715210" fileName="VcsHelper.java" startLine="137" startPosition="45" endLine="139" endPosition="67">
+    <scopeInfo nodeId="3613324658897715210" fileName="VcsHelper.java" startLine="138" startPosition="45" endLine="140" endPosition="67">
       <varInfo nodeId="3613324658897715212" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714677" fileName="VcsHelper.java" startLine="162" startPosition="0" endLine="165" endPosition="5">
+    <scopeInfo nodeId="3613324658897714677" fileName="VcsHelper.java" startLine="163" startPosition="0" endLine="166" endPosition="5">
       <varInfo nodeId="3613324658897714680" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897715139" fileName="VcsHelper.java" startLine="108" startPosition="38" endLine="112" endPosition="11" />
-    <scopeInfo nodeId="3613324658897714997" fileName="VcsHelper.java" startLine="125" startPosition="47" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="3613324658897715050" fileName="VcsHelper.java" startLine="143" startPosition="47" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="3613324658897715059" fileName="VcsHelper.java" startLine="148" startPosition="42" endLine="152" endPosition="19">
+    <scopeInfo nodeId="3613324658897715139" fileName="VcsHelper.java" startLine="109" startPosition="38" endLine="113" endPosition="11" />
+    <scopeInfo nodeId="3613324658897714997" fileName="VcsHelper.java" startLine="126" startPosition="47" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="3613324658897715050" fileName="VcsHelper.java" startLine="144" startPosition="47" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="3613324658897715059" fileName="VcsHelper.java" startLine="149" startPosition="42" endLine="153" endPosition="19">
       <varInfo nodeId="3613324658897715061" varName="result" />
       <varInfo nodeId="3613324658897715067" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714682" fileName="VcsHelper.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="3613324658897714682" fileName="VcsHelper.java" startLine="167" startPosition="0" endLine="171" endPosition="0" />
     <scopeInfo nodeId="3613324658897714713" fileName="VcsHelper.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3613324658897714718" varName="backupFile" />
       <varInfo nodeId="3613324658897714716" varName="inMemory" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897715038" fileName="VcsHelper.java" startLine="136" startPosition="117" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="3613324658897715038" fileName="VcsHelper.java" startLine="137" startPosition="117" endLine="142" endPosition="0" />
     <scopeInfo nodeId="3613324658897715105" fileName="VcsHelper.java" startLine="39" startPosition="13" endLine="45" endPosition="11">
       <varInfo nodeId="3613324658897715107" varName="backupFile" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714914" fileName="VcsHelper.java" startLine="92" startPosition="81" endLine="99" endPosition="16" />
-    <scopeInfo nodeId="3613324658897714848" fileName="VcsHelper.java" startLine="80" startPosition="85" endLine="89" endPosition="19">
+    <scopeInfo nodeId="3613324658897714914" fileName="VcsHelper.java" startLine="93" startPosition="81" endLine="100" endPosition="16" />
+    <scopeInfo nodeId="3613324658897714848" fileName="VcsHelper.java" startLine="80" startPosition="85" endLine="90" endPosition="19">
       <varInfo nodeId="3613324658897714891" varName="zipfile" />
       <varInfo nodeId="3613324658897714850" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714907" fileName="VcsHelper.java" startLine="91" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="3613324658897714907" fileName="VcsHelper.java" startLine="92" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3613324658897714910" varName="modelFile" />
       <varInfo nodeId="3613324658897714912" varName="inMemory" />
     </scopeInfo>
     <scopeInfo nodeId="3613324658897715090" fileName="VcsHelper.java" startLine="38" startPosition="32" endLine="49" endPosition="9" />
-    <scopeInfo nodeId="3613324658897714841" fileName="VcsHelper.java" startLine="79" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="3613324658897714841" fileName="VcsHelper.java" startLine="79" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="3613324658897714844" varName="modelFile" />
       <varInfo nodeId="3613324658897714846" varName="inMemory" />
     </scopeInfo>
     <scopeInfo nodeId="3613324658897714710" fileName="VcsHelper.java" startLine="37" startPosition="95" endLine="51" endPosition="0" />
     <scopeInfo nodeId="3613324658897714701" fileName="VcsHelper.java" startLine="36" startPosition="97" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="3613324658897715128" fileName="VcsHelper.java" startLine="106" startPosition="49" endLine="121" endPosition="176">
+    <scopeInfo nodeId="3613324658897715128" fileName="VcsHelper.java" startLine="107" startPosition="49" endLine="122" endPosition="176">
       <varInfo nodeId="3613324658897715185" varName="frame" />
       <varInfo nodeId="3613324658897715130" varName="modelDescriptor" />
       <varInfo nodeId="3613324658897715161" varName="context" />
@@ -1602,40 +1603,40 @@
       <varInfo nodeId="3613324658897714785" varName="showDiffDialog" />
       <varInfo nodeId="3613324658897714789" varName="options" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714985" fileName="VcsHelper.java" startLine="105" startPosition="125" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="3613324658897714985" fileName="VcsHelper.java" startLine="106" startPosition="125" endLine="124" endPosition="0" />
     <scopeInfo nodeId="3613324658897714744" fileName="VcsHelper.java" startLine="58" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="3613324658897714751" varName="backupFile" />
       <varInfo nodeId="3613324658897714747" varName="modelFile" />
       <varInfo nodeId="3613324658897714749" varName="inMemory" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897715015" fileName="VcsHelper.java" startLine="133" startPosition="138" endLine="154" endPosition="16">
+    <scopeInfo nodeId="3613324658897715015" fileName="VcsHelper.java" startLine="134" startPosition="138" endLine="155" endPosition="16">
       <varInfo nodeId="3613324658897715017" varName="file" />
       <varInfo nodeId="3613324658897715029" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897715002" fileName="VcsHelper.java" startLine="132" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="3613324658897715002" fileName="VcsHelper.java" startLine="133" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="3613324658897715013" varName="project" />
       <varInfo nodeId="3613324658897715011" varName="modelFile" />
       <varInfo nodeId="3613324658897715009" varName="repo" />
       <varInfo nodeId="3613324658897715005" varName="base" />
       <varInfo nodeId="3613324658897715007" varName="mine" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714962" fileName="VcsHelper.java" startLine="102" startPosition="131" endLine="130" endPosition="16">
+    <scopeInfo nodeId="3613324658897714962" fileName="VcsHelper.java" startLine="103" startPosition="131" endLine="131" endPosition="16">
       <varInfo nodeId="3613324658897714964" varName="file" />
       <varInfo nodeId="3613324658897714976" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897714951" fileName="VcsHelper.java" startLine="101" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="3613324658897714951" fileName="VcsHelper.java" startLine="102" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="3613324658897714960" varName="project" />
       <varInfo nodeId="3613324658897714954" varName="diskModel" />
       <varInfo nodeId="3613324658897714958" varName="modelFile" />
       <varInfo nodeId="3613324658897714956" varName="memoryModel" />
     </scopeInfo>
-    <unitInfo nodeId="3613324658897714996" fileName="VcsHelper.java" startLine="125" startPosition="35" endLine="129" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$3" />
-    <unitInfo nodeId="3613324658897715049" fileName="VcsHelper.java" startLine="143" startPosition="35" endLine="147" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$5" />
-    <unitInfo nodeId="3613324658897715036" fileName="VcsHelper.java" startLine="136" startPosition="81" endLine="141" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$4" />
+    <unitInfo nodeId="3613324658897714996" fileName="VcsHelper.java" startLine="126" startPosition="35" endLine="130" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$3" />
+    <unitInfo nodeId="3613324658897715049" fileName="VcsHelper.java" startLine="144" startPosition="35" endLine="148" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$5" />
+    <unitInfo nodeId="3613324658897715036" fileName="VcsHelper.java" startLine="137" startPosition="81" endLine="142" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$4" />
     <unitInfo nodeId="3613324658897714708" fileName="VcsHelper.java" startLine="37" startPosition="72" endLine="51" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$1" />
-    <unitInfo nodeId="3613324658897714669" fileName="VcsHelper.java" startLine="157" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.vcs.VcsHelper$FsMemoryMergeVersion" />
-    <unitInfo nodeId="3613324658897714983" fileName="VcsHelper.java" startLine="105" startPosition="85" endLine="123" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$2" />
-    <unitInfo nodeId="3613324658897714667" fileName="VcsHelper.java" startLine="30" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.vcs.VcsHelper" />
+    <unitInfo nodeId="3613324658897714669" fileName="VcsHelper.java" startLine="158" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.vcs.VcsHelper$FsMemoryMergeVersion" />
+    <unitInfo nodeId="3613324658897714983" fileName="VcsHelper.java" startLine="106" startPosition="85" endLine="124" endPosition="5" unitName="jetbrains.mps.vcs.VcsHelper$2" />
+    <unitInfo nodeId="3613324658897714667" fileName="VcsHelper.java" startLine="30" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.vcs.VcsHelper" />
   </root>
   <root nodeId="3613324658897715234">
     <nodeInfo nodeId="3613324658897715248" fileName="OptimizeImportsCheckinHandler.java" startLine="31" startPosition="67" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
