@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.AbstractProcessBuilderPart_Constraints" file="AbstractProcessBuilderPart_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-  </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandDebuggerOperation_Constraints" file="CommandDebuggerOperation_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-  </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandParameterAssignment_Constraints" file="CommandParameterAssignment_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-  </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandParameterAssignment_parameterDeclaration_ReferentConstraint" file="CommandParameterAssignment_parameterDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
-  </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandParameterReference_Constraints" file="CommandParameterReference_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-  </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandParameterReference_parameter_ReferentConstraint" file="CommandParameterReference_parameter_ReferentConstraint.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
-  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.constraints.ComplexRunConfigurationExecutor_name_PropertyConstraint" file="ComplexRunConfigurationExecutor_name_PropertyConstraint.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -74,13 +31,11 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.EditorOperation_editorOperationDeclaration_ReferentConstraint" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.CommandParameterAssignment_parameterDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.ConfigurationFromExecutorReference_name_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.CommandParameterReference_parameter_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.ConfigurationFromExecutorReference_name_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.ComplexRunConfigurationExecutor_name_PropertyConstraint" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />

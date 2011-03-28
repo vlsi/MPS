@@ -25,6 +25,7 @@
       <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="old.usages" />
       <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
       <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
+      <languagePath path="${project}/languages/commands/commands.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

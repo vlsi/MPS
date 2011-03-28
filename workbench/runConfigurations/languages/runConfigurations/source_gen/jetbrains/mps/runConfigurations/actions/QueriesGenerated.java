@@ -68,12 +68,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_24844921359538591(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandReferenceExpression");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.run.commands.structure.CommandReferenceExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.runConfigurations.structure.CommandDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.run.commands.structure.CommandDeclaration");
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
@@ -81,7 +81,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode reference = SNodeFactoryOperations.createNewNode("jetbrains.mps.runConfigurations.structure.CommandReferenceExpression", null);
+                SNode reference = SNodeFactoryOperations.createNewNode("jetbrains.mps.run.commands.structure.CommandReferenceExpression", null);
                 SLinkOperations.setTarget(reference, "command", (item), false);
                 return reference;
               }
@@ -108,12 +108,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_2339523472236310452(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.ReportExecutionError");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.run.commands.structure.ReportExecutionError");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode("jetbrains.mps.runConfigurations.structure.ReportExecutionError", null);
+            return SConceptOperations.createNewNode("jetbrains.mps.run.commands.structure.ReportExecutionError", null);
           }
 
           public String getDescriptionText(String pattern) {
@@ -136,12 +136,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_7991611468341395793(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandBuilderExpression");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.run.commands.structure.CommandBuilderExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.runConfigurations.structure.CommandDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.run.commands.structure.CommandDeclaration");
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
@@ -149,7 +149,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.runConfigurations.structure.CommandBuilderExpression", null);
+                SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.run.commands.structure.CommandBuilderExpression", null);
                 SLinkOperations.setTarget(builder, "command", (item), false);
                 return builder;
               }
@@ -176,10 +176,10 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_6440565759883377604(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.structure.RedirectOutputExpression");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.run.commands.structure.RedirectOutputExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.runConfigurations.structure.RedirectOutputExpression", null);
+          SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.run.commands.structure.RedirectOutputExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirect);
           SLinkOperations.setTarget(redirect, "processHandler", _context.getSourceNode(), true);
           return redirect;
@@ -206,7 +206,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

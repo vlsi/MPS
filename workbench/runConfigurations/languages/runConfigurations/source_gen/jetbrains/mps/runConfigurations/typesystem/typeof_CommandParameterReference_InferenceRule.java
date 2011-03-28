@@ -26,7 +26,7 @@ public class typeof_CommandParameterReference_InferenceRule extends AbstractInfe
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.CommandParameterReference";
+    return "jetbrains.mps.run.commands.structure.CommandParameterReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

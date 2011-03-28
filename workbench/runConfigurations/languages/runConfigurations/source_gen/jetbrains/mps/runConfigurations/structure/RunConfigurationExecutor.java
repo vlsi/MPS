@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.run.commands.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;

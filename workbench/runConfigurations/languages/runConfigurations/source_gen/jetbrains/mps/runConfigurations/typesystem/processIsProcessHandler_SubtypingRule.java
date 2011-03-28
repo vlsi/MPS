@@ -24,7 +24,7 @@ public class processIsProcessHandler_SubtypingRule extends SubtypingRule_Runtime
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.ProcessType";
+    return "jetbrains.mps.run.commands.structure.ProcessType";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

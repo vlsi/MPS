@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.run.commands.behavior.IGeneratedToClass_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -24,16 +25,16 @@ public class PersistentConfiguration_Behavior {
   }
 
   @NonNls
-  public static String virtual_getSuffix_2309921853483530292(SNode thisNode) {
+  public static String virtual_getSuffix_856705193941282328(SNode thisNode) {
     return "Configuration";
   }
 
   public static String call_getGeneratedEditorName_3257967158569669322(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getGeneratedClassName_2309921853483530297(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_2309921853483568796(thisNode);
+    return IGeneratedToClass_Behavior.call_getGeneratedClassName_856705193941282333(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_2309921853483568796(thisNode);
   }
 
   public static String call_getFullEditorName_2309921853483568805(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getFullName_2309921853483530335(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_2309921853483568796(thisNode);
+    return IGeneratedToClass_Behavior.call_getFullName_856705193941282348(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_2309921853483568796(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
@@ -61,7 +62,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static String call_getSuffix_2309921853483550970(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentConfiguration"), "virtual_getSuffix_2309921853483530292", PARAMETERS_2309921853483550970);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentConfiguration"), "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483550970);
   }
 
   public static SNode call_createType_587410464426964096(SNode thisNode) {
@@ -69,7 +70,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static String callSuper_getSuffix_2309921853483550970(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentConfiguration"), callerConceptFqName, "virtual_getSuffix_2309921853483530292", PARAMETERS_2309921853483550970);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentConfiguration"), callerConceptFqName, "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483550970);
   }
 
   public static SNode callSuper_createType_587410464426964096(SNode thisNode, String callerConceptFqName) {

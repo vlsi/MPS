@@ -14,15 +14,15 @@ public class RunConfigurationKind_Behavior {
   }
 
   @NonNls
-  public static String virtual_getSuffix_2309921853483530292(SNode thisNode) {
+  public static String virtual_getSuffix_856705193941282328(SNode thisNode) {
     return "Kind";
   }
 
   public static String call_getSuffix_2309921853483609840(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), "virtual_getSuffix_2309921853483530292", PARAMETERS_2309921853483609840);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483609840);
   }
 
   public static String callSuper_getSuffix_2309921853483609840(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), callerConceptFqName, "virtual_getSuffix_2309921853483530292", PARAMETERS_2309921853483609840);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), callerConceptFqName, "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483609840);
   }
 }

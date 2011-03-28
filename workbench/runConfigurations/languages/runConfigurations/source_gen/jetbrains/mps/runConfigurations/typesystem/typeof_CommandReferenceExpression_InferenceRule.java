@@ -29,7 +29,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.CommandReferenceExpression";
+    return "jetbrains.mps.run.commands.structure.CommandReferenceExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -52,7 +52,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("classifier", (SNode) parameter_4);
         quotedNode1_2.setReferent("command", (SNode) parameter_3);
@@ -66,7 +66,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.CommandType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.CommandType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("classifier", (SNode) parameter_4);
         quotedNode1_2.setReferent("command", (SNode) parameter_3);

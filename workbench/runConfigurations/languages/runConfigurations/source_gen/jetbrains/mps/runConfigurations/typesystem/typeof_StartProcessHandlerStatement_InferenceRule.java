@@ -31,7 +31,7 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.StartProcessHandlerStatement";
+    return "jetbrains.mps.run.commands.structure.StartProcessHandlerStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -59,7 +59,7 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode_1.addChild("argument", quotedNode1_5);
         }
@@ -84,7 +84,7 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode_1.addChild("argument", quotedNode1_5);
         }

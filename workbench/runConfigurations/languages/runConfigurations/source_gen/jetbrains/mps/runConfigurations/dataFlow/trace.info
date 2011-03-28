@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ProcessBuilderPart_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.ProcessBuilderPart_DataFlow" />
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.DFABuilders" />
-  <unitInfo fileName="StartProcessHandlerStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.StartProcessHandlerStatement_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.DFABuilders" />
   <unitInfo fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.ReportConfigurationErrorStatement_DataFlow" />
-  <unitInfo fileName="CommandBuilderExpression_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.CommandBuilderExpression_DataFlow" />
-  <unitInfo fileName="ProcessBuilderExpression_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.runConfigurations.dataFlow.ProcessBuilderExpression_DataFlow" />
-  <root nodeId="2866018809101830268">
-    <nodeInfo nodeId="2866018809101830291" fileName="ProcessBuilderExpression_DataFlow.java" startLine="17" startPosition="108" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2866018809101830281" fileName="ProcessBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="2866018809101830284" fileName="ProcessBuilderExpression_DataFlow.java" startLine="17" startPosition="108" endLine="18" endPosition="48" />
-    <scopeInfo nodeId="2866018809101830270" fileName="ProcessBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="2866018809101830281" fileName="ProcessBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-  </root>
-  <root nodeId="2866018809101830294">
-    <nodeInfo nodeId="2866018809101830297" fileName="ProcessBuilderPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="2866018809101830296" fileName="ProcessBuilderPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
-  </root>
-  <root nodeId="5951219512641047519">
-    <nodeInfo nodeId="5951219512641067253" fileName="StartProcessHandlerStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5951219512641067265" fileName="StartProcessHandlerStatement_DataFlow.java" startLine="16" startPosition="104" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="5951219512641047521" fileName="StartProcessHandlerStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
-  </root>
-  <root nodeId="5951219512641107402">
-    <nodeInfo nodeId="5951219512641107416" fileName="CommandBuilderExpression_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5951219512641107405" fileName="CommandBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="5951219512641107408" fileName="CommandBuilderExpression_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="89" />
-    <scopeInfo nodeId="5951219512641107404" fileName="CommandBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="5951219512641107405" fileName="CommandBuilderExpression_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-  </root>
   <root nodeId="974940122351427328">
     <nodeInfo nodeId="974940122351428491" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="974940122351428500" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

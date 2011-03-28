@@ -38,7 +38,7 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.RedirectOutputExpression";
+    return "jetbrains.mps.run.commands.structure.RedirectOutputExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -61,7 +61,7 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -73,7 +73,7 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

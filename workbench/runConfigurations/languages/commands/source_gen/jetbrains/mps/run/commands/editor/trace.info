@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="CommandDebuggerOperation_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandDebuggerOperation_Editor" />
+  <unitInfo fileName="ProcessBuilderPart_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.run.commands.editor.ProcessBuilderPart_Editor" />
+  <unitInfo fileName="CommandReferenceExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandReferenceExpression_Editor$_Inline_nbi4wa_a0a" />
+  <unitInfo fileName="CommandParameterAssignment_Editor.java" startLine="82" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandParameterAssignment_Editor$_Inline_bofzf4_a0a" />
+  <unitInfo fileName="CommandBuilderExpression_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandBuilderExpression_Editor$_Inline_lo57cy_a0a" />
+  <unitInfo fileName="CommandType_Editor.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandType_Editor$_Inline_2uesqr_a2a" />
+  <unitInfo fileName="CommandParameterReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandParameterReference_Editor$_Inline_ri978v_a0a" />
+  <unitInfo fileName="ProcessBuilderExpression_Editor.java" startLine="138" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.run.commands.editor.ProcessBuilderExpression_Editor$partListHandler_9ousyc_a0" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="259" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandDeclaration_Editor$parameterDeclarationListHandler_y485ry_b1b3a" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="297" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandDeclaration_Editor$methodListHandler_y485ry_b5a" />
+  <unitInfo fileName="StartProcessHandlerStatement_Editor.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.run.commands.editor.StartProcessHandlerStatement_Editor" />
+  <unitInfo fileName="CommandBuilderExpression_Editor.java" startLine="119" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandBuilderExpression_Editor$argumentListHandler_lo57cy_c0" />
+  <unitInfo fileName="RedirectOutputExpression_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.run.commands.editor.RedirectOutputExpression_Editor" />
+  <unitInfo fileName="ProcessBuilderKeyPart_Editor.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.run.commands.editor.ProcessBuilderKeyPart_Editor" />
+  <unitInfo fileName="CommandReferenceExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandReferenceExpression_Editor" />
+  <unitInfo fileName="CommandParameterReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandParameterReference_Editor" />
+  <unitInfo fileName="CommandParameterAssignment_Editor.java" startLine="22" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandParameterAssignment_Editor" />
+  <unitInfo fileName="ReportErrorStatement_Editor.java" startLine="21" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.run.commands.editor.ReportErrorStatement_Editor" />
+  <unitInfo fileName="CommandType_Editor.java" startLine="21" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandType_Editor" />
+  <unitInfo fileName="CommandParameterDeclaration_Editor.java" startLine="26" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandParameterDeclaration_Editor" />
+  <unitInfo fileName="CommandBuilderExpression_Editor.java" startLine="29" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandBuilderExpression_Editor" />
+  <unitInfo fileName="ProcessBuilderExpression_Editor.java" startLine="29" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.run.commands.editor.ProcessBuilderExpression_Editor" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="29" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.run.commands.editor.CommandDeclaration_Editor" />
+  <root nodeId="856705193941281841">
+    <nodeInfo nodeId="856705193941281849" fileName="CommandParameterDeclaration_Editor.java" startLine="155" startPosition="111" endLine="156" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941281863" fileName="CommandParameterDeclaration_Editor.java" startLine="159" startPosition="111" endLine="160" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="856705193941281848" fileName="CommandParameterDeclaration_Editor.java" startLine="155" startPosition="111" endLine="156" endPosition="72" />
+    <scopeInfo nodeId="856705193941281862" fileName="CommandParameterDeclaration_Editor.java" startLine="159" startPosition="111" endLine="160" endPosition="62" />
+  </root>
+  <root nodeId="856705193941281942">
+    <nodeInfo nodeId="856705193941281950" fileName="ProcessBuilderExpression_Editor.java" startLine="134" startPosition="111" endLine="135" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="856705193941281949" fileName="ProcessBuilderExpression_Editor.java" startLine="134" startPosition="111" endLine="135" endPosition="79" />
+  </root>
+</debugInfo>
+

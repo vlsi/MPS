@@ -35,7 +35,7 @@ public class typeof_ProcessBuilderKeyPart_InferenceRule extends AbstractInferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.ProcessBuilderKeyPart";
+    return "jetbrains.mps.run.commands.structure.ProcessBuilderKeyPart";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
