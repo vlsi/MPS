@@ -37,6 +37,7 @@
   <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="core/languageDesign/editor/languages/table/runtime/classes_gen" />
   <property name="jetbrains.mps.lang.project.classes" value="core/languageDesign/project/classes_gen" />
   <property name="jetbrains.mps.quickQueryLanguage.classes" value="platform/quickQueryLanguage/classes_gen" />
+  <property name="jetbrains.mps.run.commands.classes" value="workbench/runConfigurations/languages/commands/classes_gen" />
   <property name="jetbrains.mps.runConfigurations.classes" value="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
   <property name="jetbrains.mps.ui.classes" value="platform/ui/languages/ui/classes_gen" />
   <property name="jetbrains.mps.ui.gwt.classes" value="platform/ui/languages/gwt/classes_gen" />
@@ -200,7 +201,8 @@
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.src">
     <path path="platform/quickQueryLanguage/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.runConfigurations_tjc.src">
+  <path id="cycle.jetbrains.mps.run.commands_tjc.src">
+    <path path="workbench/runConfigurations/languages/commands/source_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.ui_tjc.src">
@@ -341,8 +343,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -419,6 +419,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -507,8 +508,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -585,6 +584,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -674,8 +674,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -752,6 +750,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -841,8 +840,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -919,6 +916,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1008,8 +1006,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1087,6 +1083,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1178,8 +1175,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1260,6 +1255,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1350,8 +1346,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1430,6 +1424,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1519,8 +1514,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1597,6 +1590,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1687,8 +1681,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1767,6 +1759,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -1856,8 +1849,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -1935,6 +1926,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2024,8 +2016,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2104,6 +2094,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2192,8 +2183,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2271,6 +2260,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2360,8 +2350,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2438,6 +2426,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2529,8 +2518,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2607,6 +2594,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2695,8 +2683,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2774,6 +2760,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -2870,8 +2857,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -2948,6 +2933,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3037,8 +3023,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -3116,6 +3100,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3205,8 +3190,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -3298,6 +3281,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3390,8 +3374,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -3479,6 +3461,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3568,8 +3551,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -3659,6 +3640,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3753,8 +3735,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -3839,6 +3819,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -3928,8 +3909,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4006,6 +3985,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4095,8 +4075,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4173,6 +4151,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4262,8 +4241,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4340,6 +4317,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4429,8 +4407,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4507,6 +4483,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4596,8 +4573,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4674,6 +4649,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4773,8 +4749,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -4851,6 +4825,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -4940,8 +4915,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5018,6 +4991,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5106,8 +5080,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5184,6 +5156,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5273,8 +5246,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5351,6 +5322,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5439,8 +5411,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5517,6 +5487,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5606,8 +5577,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5684,6 +5653,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -5774,8 +5744,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -5852,11 +5820,14 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.runConfigurations_tjc.classpaths">
+  <path id="cycle.jetbrains.mps.run.commands_tjc.classpaths">
+    <path path="workbench/runConfigurations/languages/commands/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
@@ -5942,8 +5913,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6020,6 +5989,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6111,8 +6081,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6189,6 +6157,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6278,8 +6247,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6356,6 +6323,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6445,8 +6413,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6523,6 +6489,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6613,8 +6580,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6691,6 +6656,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6780,8 +6746,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -6858,6 +6822,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -6947,8 +6912,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7026,6 +6989,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7115,8 +7079,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7193,6 +7155,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7283,8 +7246,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7361,6 +7322,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7454,8 +7416,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7532,6 +7492,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7622,8 +7583,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7702,6 +7661,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7791,8 +7751,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -7869,6 +7827,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -7958,8 +7917,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -8037,6 +7994,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8128,8 +8086,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -8206,6 +8162,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8294,8 +8251,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -8373,6 +8328,7 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
@@ -8461,8 +8417,6 @@
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/facet/classes_gen" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
-    <path path="core/languageDesign/make/languages/resources/classes" />
-    <path path="core/languageDesign/make/languages/resources/classes_gen" />
     <path path="core/languageDesign/make/languages/script/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
     <path path="core/languageDesign/pattern/classes_gen" />
@@ -8541,11 +8495,12 @@
     <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/runConfigurations/classes_gen" />
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.runConfigurations_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.run.commands_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="platform/analyzers/languages/analyzers/source_gen" />
@@ -9108,15 +9063,22 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.runConfigurations_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.runConfigurations.classes}.tmp" />
+  <target name="compile.cycle.jetbrains.mps.run.commands_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.run.commands.classes}.tmp" />
+    <mkdir dir="workbench/runConfigurations/languages/commands/source_gen" />
     <mkdir dir="workbench/runConfigurations/languages/runConfigurations/source_gen" />
     <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.run.commands.classes}" />
     <mkdir dir="${jetbrains.mps.runConfigurations.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.runConfigurations_tjc.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.runConfigurations_tjc.src" />
+    <javac classpathref="cycle.jetbrains.mps.run.commands_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.run.commands_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.runConfigurations_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.runConfigurations.classes}">
+    <javac classpathref="cycle.jetbrains.mps.run.commands_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.run.commands.classes}">
+      <src>
+        <path path="workbench/runConfigurations/languages/commands/source_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.run.commands_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.runConfigurations.classes}">
       <src>
         <path path="workbench/runConfigurations/languages/runConfigurations/source_gen" />
       </src>
@@ -9160,7 +9122,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.modeling_tjc" depends="compile.cycle.jetbrains.mps.runConfigurations_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.modeling_tjc" depends="compile.cycle.jetbrains.mps.run.commands_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.modeling.classes}.tmp" />
     <mkdir dir="platform/ui/languages/meta/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -9418,6 +9380,7 @@
     <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
     <delete dir="${jetbrains.mps.lang.project.classes}" />
     <delete dir="${jetbrains.mps.quickQueryLanguage.classes}" />
+    <delete dir="${jetbrains.mps.run.commands.classes}" />
     <delete dir="${jetbrains.mps.runConfigurations.classes}" />
     <delete dir="${jetbrains.mps.ui.classes}" />
     <delete dir="${jetbrains.mps.ui.internal.classes}" />

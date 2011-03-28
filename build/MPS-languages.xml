@@ -654,18 +654,6 @@
       <fileset dir="core/languageDesign/make/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.make.resources">
-    <mkdir dir="core/languageDesign/make/languages/resources/classes" />
-    <mkdir dir="core/languageDesign/make/languages/resources/classes_gen" />
-    <mkdir dir="core/languageDesign/make/languages/resources/classes" />
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.make.resources.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/make/languages/resources/resources.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/make/languages/resources" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/make/languages/resources/classes" />
-      <zipfileset dir="core/languageDesign/make/languages/resources/classes_gen" />
-      <zipfileset dir="core/languageDesign/make/languages/resources/classes" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.devkit.general-purpose">
     <jar destfile="${deploy.dir}/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/devkits/jetbrains.mps.devkit.general-purpose.devkit" prefix="module" />
@@ -1338,12 +1326,22 @@
       <zipfileset dir="workbench/runConfigurations/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.runConfigurations.util">
+  <target name="pack.jetbrains.mps.runConfigurations.lib">
     <mkdir dir="workbench/runConfigurations/classes" />
-    <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.runConfigurations.util.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.runConfigurations.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="workbench/runConfigurations/solutions/jetbrains.mps.runConfigurations.util/jetbrains.mps.runConfigurations.util.msd" prefix="module" />
       <zipfileset dir="workbench/runConfigurations/solutions/jetbrains.mps.runConfigurations.util" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="workbench/runConfigurations/classes" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.run.commands">
+    <mkdir dir="workbench/runConfigurations/languages/commands/classes_gen" />
+    <mkdir dir="workbench/runConfigurations/languages/commands/classes" />
+    <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.run.commands.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="workbench/runConfigurations/languages/commands/commands.mpl" prefix="module" />
+      <zipfileset dir="workbench/runConfigurations/languages/commands" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="workbench/runConfigurations/languages/commands/classes_gen" />
+      <zipfileset dir="workbench/runConfigurations/languages/commands/classes" />
     </jar>
   </target>
 </project>
