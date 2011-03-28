@@ -36,7 +36,6 @@ import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -59,7 +58,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -69,13 +67,13 @@ import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -244,7 +242,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
     assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode() : "No module for operation context: " + operationContext;
     myOperationContext = operationContext;
-    setEditorContext(new EditorContext(this,null,operationContext));
+    setEditorContext(new EditorContext(this, null, operationContext));
 
     setBackground(Color.white);
 
@@ -896,7 +894,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public JPanel getUpperPanel() {
     if (myUpperPanel == null) {
       myUpperPanel = new JPanel();
-      myUpperPanel.setLayout(new GridLayout(0,1));
+      myUpperPanel.setLayout(new GridLayout(0, 1));
       myContainer.add(myUpperPanel, BorderLayout.NORTH);
     }
     return myUpperPanel;
@@ -2626,19 +2624,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (mySearchPanel == null || !mySearchPanel.isVisible()))
       return new MyPasteProvider();
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return ModelAccess.instance().runReadAction(new Computable<Object>() {
-        public Object compute() {
-          if (myNode == null) return null;
-          SModelDescriptor md = myNode.getModel().getModelDescriptor();
-          if (md == null) return null;
-          if (!(md instanceof EditableSModelDescriptor)) return null;
-          IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
-          if (ifile == null || !ifile.exists()) return null;
-          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
-          if (vfile == null) return null;
-          return new VirtualFile[]{vfile};
-        }
-      });
+      return new VirtualFile[]{MPSNodesVirtualFileSystem.getInstance().getFileFor(getEditedNodePointer())};
     }
 
     //not found

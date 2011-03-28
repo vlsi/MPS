@@ -156,7 +156,28 @@ class NullPsiManager extends PsiManagerEx {
 
   @NotNull
   public PsiModificationTracker getModificationTracker() {
-    throw new UnsupportedOperationException();
+    return new PsiModificationTracker() {
+      @Override
+      public long getModificationCount() {
+        return 0;
+      }
+
+      @Override
+      public long getOutOfCodeBlockModificationCount() {
+        return 0;
+      }
+
+      @Override
+      public long getJavaStructureModificationCount() {
+        return 0;
+      }
+
+      @Override
+      public long getAnnotationModificationCount() {
+        return 0;
+      }
+    };
+    //throw new UnsupportedOperationException();
   }
 
   @NotNull

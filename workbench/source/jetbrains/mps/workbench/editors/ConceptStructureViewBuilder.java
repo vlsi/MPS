@@ -21,10 +21,18 @@ import com.intellij.ide.util.treeView.smartTree.Grouper;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
+  private SNode myNode;
+
+  public ConceptStructureViewBuilder(SNode node) {
+    myNode = node;
+  }
+
   @NotNull
   public StructureViewModel createStructureViewModel() {
     return new StructureViewModel() {
@@ -65,7 +73,7 @@ class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
           }
 
           public ItemPresentation getPresentation() {
-            return null;
+            return new NodePresentation(myNode);
           }
 
           public void navigate(boolean b) {
