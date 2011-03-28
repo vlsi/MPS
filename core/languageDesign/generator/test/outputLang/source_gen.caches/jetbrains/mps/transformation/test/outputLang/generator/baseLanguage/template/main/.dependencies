@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.AbandonRuleInputException" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateconvertMult" />

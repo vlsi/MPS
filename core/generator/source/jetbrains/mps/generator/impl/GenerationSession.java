@@ -226,6 +226,9 @@ public class GenerationSession {
           it.remove();
         }
       } catch (GenerationException e) {
+        if(!(e instanceof GenerationFailureException)) {
+          throw new GenerationFailureException("mapping configuration's isApplicable block threw an exception", null, e);
+        }
         throw (GenerationFailureException) e;
       }
     }

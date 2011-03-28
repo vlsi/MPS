@@ -3678,7 +3678,11 @@ public class QueriesGenerated {
           _context.showErrorMessage(op, "reference on generation parameter is broken");
           continue;
         }
-        SPropertyOperations.set(op, "name_intern", IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(SLinkOperations.getTarget(paramref, "declaration", false)));
+        SNode paramDeclaration = SLinkOperations.getTarget(paramref, "declaration", false);
+        if (SNodeOperations.getModel(paramDeclaration) == _context.getInputModel()) {
+          paramDeclaration = SNodeOperations.cast(_context.getOriginalCopiedInputNode(paramDeclaration), "jetbrains.mps.lang.generator.structure.IGeneratorParameter");
+        }
+        SPropertyOperations.set(op, "name_intern", IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(paramDeclaration));
         SLinkOperations.setTarget(op, "importClause", null, false);
       }
     }
