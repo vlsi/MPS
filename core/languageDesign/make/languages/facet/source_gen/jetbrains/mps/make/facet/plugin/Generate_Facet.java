@@ -39,6 +39,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -455,7 +457,16 @@ public class Generate_Facet implements IFacet {
               Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
                 public void visit(IResource it) {
                   MResource mres = ((MResource) it);
-                  MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(((Iterable<SModelDescriptor>) mres.module().getEditableUserModels())).subtract(Sequence.fromIterable(mres.models())).toListSequence());
+                  IModule module = mres.module();
+                  Iterable<SModelDescriptor> modelsToRetain = ((Iterable<SModelDescriptor>) module.getEditableUserModels());
+                  if (module instanceof Language) {
+                    for (Generator g : ((Language) module).getGenerators()) {
+                      modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(ListSequence.fromList(g.getEditableUserModels()));
+                    }
+                  } else if (module instanceof Generator) {
+                    modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(ListSequence.fromList(((Generator) module).getSourceLanguage().getEditableUserModels()));
+                  }
+                  MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
                 }
               });
 
