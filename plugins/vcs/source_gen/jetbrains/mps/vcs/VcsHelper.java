@@ -62,7 +62,7 @@ public class VcsHelper {
     String diskVersion = "Load &File System Version";
     String memoryVersion = "Save &Memory Version";
     String showDiffDialog = "Show &Difference";
-    String[] options = {diskVersion ,memoryVersion ,showDiffDialog};
+    String[] options = {diskVersion, memoryVersion, showDiffDialog};
     int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
     if (result == -1) {
       return VcsHelper.resolveDiskMemoryConflict(modelFile, inMemory);

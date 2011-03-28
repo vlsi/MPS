@@ -3053,7 +3053,7 @@
             <property name="value" nameId="2omo.1237305576108" value="{" />
           </node>
           <node role="part" roleId="2omo.1237306115446" type="2omo.CollectionAppendPart" typeId="2omo.1237305491868" id="1237463993102">
-            <property name="separator" nameId="2omo.1237306003719" value=" ," />
+            <property name="separator" nameId="2omo.1237306003719" value=", " />
             <property name="withSeparator" nameId="2omo.1237983969951" value="true" />
             <node role="list" roleId="2omo.1237305945551" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236253050363">
               <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="1236253050018" />

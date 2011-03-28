@@ -256,8 +256,8 @@
       <varInfo nodeId="1221883262884815812" varName="paramList" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399147460" fileName="BaseRunner.java" startLine="100" startPosition="45" endLine="106" endPosition="43">
-      <varInfo nodeId="8492459591399147462" varName="model" />
       <varInfo nodeId="8492459591399147475" varName="module" />
+      <varInfo nodeId="8492459591399147462" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4875513863436232422" fileName="BaseRunner.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="4875513863436232446" varName="workingDir" />
@@ -271,8 +271,8 @@
       <varInfo nodeId="8492459591399147436" varName="classPath" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399147490" fileName="BaseRunner.java" startLine="108" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="8492459591399147491" varName="module" />
       <varInfo nodeId="8492459591399147493" varName="withDependencies" />
+      <varInfo nodeId="8492459591399147491" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="2178855608170363854" fileName="BaseRunner.java" startLine="131" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="2178855608170363857" varName="parameters" />
@@ -316,8 +316,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2178855608170365416" fileName="BaseRunner.java" startLine="210" startPosition="0" endLine="232" endPosition="0" />
     <scopeInfo nodeId="8492459591399147523" fileName="BaseRunner.java" startLine="147" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="8492459591399147526" varName="module" />
       <varInfo nodeId="8492459591399147528" varName="withDependencies" />
+      <varInfo nodeId="8492459591399147526" varName="module" />
     </scopeInfo>
     <unitInfo nodeId="6918597921035808125" fileName="BaseRunner.java" startLine="79" startPosition="111" endLine="83" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner$1" />
     <unitInfo nodeId="1040213783747903287" fileName="BaseRunner.java" startLine="172" startPosition="18" endLine="180" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner$2" />

@@ -132,7 +132,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     } else {
       String current = "Currently Loaded Model";
       String backup = "Backed Up Model";
-      String[] options = {current ,backup};
+      String[] options = {current, backup};
       int result = Messages.showDialog("Backed up \"mine\" model is different from current model.\n Which version would you like to use?", "Current model differs from backup.", options, 0, Messages.getQuestionIcon());
       if (result == -1) {
         return null;

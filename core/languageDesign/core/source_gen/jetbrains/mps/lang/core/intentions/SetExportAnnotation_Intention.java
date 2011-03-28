@@ -71,7 +71,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   }
 
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    SNode[] all = {null ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule") ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic") ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
+    SNode[] all = {null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
     return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
