@@ -449,7 +449,7 @@ public class TestMain {
     }
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
-    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins));
+    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
 
     try {
       IdeaTestApplication.getInstance(null);
