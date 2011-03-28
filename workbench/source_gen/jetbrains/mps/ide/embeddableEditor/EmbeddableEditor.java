@@ -139,7 +139,7 @@ public class EmbeddableEditor {
   }
 
   public IClassesData make(final Set<IClassPathItem> classPath) {
-    IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("compileToMemory")).toScript();
+    IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
 
 
     IResult res = new WorkbenchMakeService(myContext, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {

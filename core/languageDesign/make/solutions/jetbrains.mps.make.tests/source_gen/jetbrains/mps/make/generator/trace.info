@@ -7,7 +7,7 @@
   <unitInfo fileName="Worker__Facet.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.make.generator.Worker__Facet" />
   <unitInfo fileName="TextGen__Facet.java" startLine="19" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet" />
   <unitInfo fileName="Generator__Facet.java" startLine="21" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.make.generator.Generator__Facet" />
-  <unitInfo fileName="Generator_Test.java" startLine="35" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Test" />
+  <unitInfo fileName="Generator_Test.java" startLine="36" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Test" />
   <root nodeId="2551169102353069011">
     <nodeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="47" startPosition="58" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
     <nodeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="48" startPosition="110" endLine="49" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
@@ -341,8 +341,8 @@
     <nodeInfo nodeId="9000373783400702367" fileName="Generator_Test.java" startLine="60" startPosition="35" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9000373783400702156" fileName="Generator_Test.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8536620230643692611" fileName="Generator_Test.java" startLine="64" startPosition="0" endLine="65" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="671853460608828970" fileName="Generator_Test.java" startLine="65" startPosition="118" endLine="66" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="671853460608829006" fileName="Generator_Test.java" startLine="66" startPosition="148" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="671853460608828970" fileName="Generator_Test.java" startLine="65" startPosition="118" endLine="66" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="671853460608829006" fileName="Generator_Test.java" startLine="66" startPosition="153" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="671853460608829017" fileName="Generator_Test.java" startLine="67" startPosition="37" endLine="68" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="671853460608829028" fileName="Generator_Test.java" startLine="68" startPosition="35" endLine="69" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="671853460608829032" fileName="Generator_Test.java" startLine="69" startPosition="29" endLine="70" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -366,8 +366,8 @@
     <nodeInfo nodeId="2551169102353644922" fileName="Generator_Test.java" startLine="111" startPosition="13" endLine="112" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353646753" fileName="Generator_Test.java" startLine="119" startPosition="72" endLine="120" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5646063728432374432" fileName="Generator_Test.java" startLine="127" startPosition="7" endLine="128" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646063728432371648" fileName="Generator_Test.java" startLine="128" startPosition="36" endLine="129" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646063728432371674" fileName="Generator_Test.java" startLine="129" startPosition="187" endLine="130" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646063728432371648" fileName="Generator_Test.java" startLine="128" startPosition="36" endLine="129" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646063728432371674" fileName="Generator_Test.java" startLine="129" startPosition="192" endLine="130" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432371678" fileName="Generator_Test.java" startLine="130" startPosition="37" endLine="131" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646063728432371684" fileName="Generator_Test.java" startLine="131" startPosition="35" endLine="132" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432371686" fileName="Generator_Test.java" startLine="132" startPosition="29" endLine="133" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -392,8 +392,8 @@
     <nodeInfo nodeId="2551169102353647757" fileName="Generator_Test.java" startLine="182" startPosition="72" endLine="183" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5646063728432375841" fileName="Generator_Test.java" startLine="190" startPosition="7" endLine="191" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432375840" fileName="Generator_Test.java" startLine="191" startPosition="36" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646063728432375695" fileName="Generator_Test.java" startLine="192" startPosition="0" endLine="193" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8536620230643695560" fileName="Generator_Test.java" startLine="193" startPosition="187" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646063728432375695" fileName="Generator_Test.java" startLine="192" startPosition="0" endLine="193" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8536620230643695560" fileName="Generator_Test.java" startLine="193" startPosition="192" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5646063728432375721" fileName="Generator_Test.java" startLine="194" startPosition="0" endLine="195" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432375725" fileName="Generator_Test.java" startLine="195" startPosition="37" endLine="196" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646063728432375731" fileName="Generator_Test.java" startLine="196" startPosition="35" endLine="197" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -434,8 +434,8 @@
     <nodeInfo nodeId="9000373783400844713" fileName="Generator_Test.java" startLine="237" startPosition="35" endLine="238" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9000373783400844717" fileName="Generator_Test.java" startLine="240" startPosition="7" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8536620230643695570" fileName="Generator_Test.java" startLine="241" startPosition="0" endLine="242" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9000373783400844718" fileName="Generator_Test.java" startLine="242" startPosition="118" endLine="243" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8536620230643695595" fileName="Generator_Test.java" startLine="243" startPosition="145" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9000373783400844718" fileName="Generator_Test.java" startLine="242" startPosition="118" endLine="243" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8536620230643695595" fileName="Generator_Test.java" startLine="243" startPosition="150" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9000373783400844748" fileName="Generator_Test.java" startLine="244" startPosition="0" endLine="245" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9000373783400844752" fileName="Generator_Test.java" startLine="245" startPosition="37" endLine="246" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9000373783400844758" fileName="Generator_Test.java" startLine="246" startPosition="35" endLine="247" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -462,8 +462,8 @@
     <nodeInfo nodeId="9000373783400862084" fileName="Generator_Test.java" startLine="285" startPosition="42" endLine="286" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9000373783400861965" fileName="Generator_Test.java" startLine="288" startPosition="6" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8536620230643695607" fileName="Generator_Test.java" startLine="289" startPosition="0" endLine="290" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9000373783400861966" fileName="Generator_Test.java" startLine="290" startPosition="95" endLine="291" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9000373783400861996" fileName="Generator_Test.java" startLine="291" startPosition="145" endLine="292" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9000373783400861966" fileName="Generator_Test.java" startLine="290" startPosition="95" endLine="291" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9000373783400861996" fileName="Generator_Test.java" startLine="291" startPosition="150" endLine="292" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9000373783400862000" fileName="Generator_Test.java" startLine="292" startPosition="37" endLine="293" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9000373783400862006" fileName="Generator_Test.java" startLine="293" startPosition="35" endLine="294" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9000373783400862008" fileName="Generator_Test.java" startLine="294" startPosition="29" endLine="295" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

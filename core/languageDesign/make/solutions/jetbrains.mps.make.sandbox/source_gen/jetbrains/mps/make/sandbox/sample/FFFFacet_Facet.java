@@ -60,8 +60,7 @@ public class FFFFacet_Facet implements IFacet {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(42);
-              _output_chixuw_a0a = Sequence.fromIterable(_output_chixuw_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(null)));
+              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);

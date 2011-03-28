@@ -84,7 +84,7 @@ public class Mockups {
     final ITarget trg = context.mock(ITarget.class, name);
     context.checking(new Expectations() {
       {
-        this.atLeast(2).of(trg).getName();
+        this.atLeast(1).of(trg).getName();
         this.will(returnValue(tname));
       }
     });

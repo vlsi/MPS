@@ -7,6 +7,7 @@ import jetbrains.mps.make.resources.IResource;
 
 public interface IScript {
   public boolean isValid();
+  public ITarget startingTarget();
   public ITarget finalTarget();
   public Iterable<ITarget> allTargets();
   public IResult execute(IScriptController monitors, Iterable<? extends IResource> input);

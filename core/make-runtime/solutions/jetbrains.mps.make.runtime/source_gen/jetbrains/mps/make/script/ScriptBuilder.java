@@ -30,7 +30,8 @@ public class ScriptBuilder {
 
   private Map<IFacet.Name, IFacet> facetsView = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
-  private ITarget.Name defaultTarget;
+  private ITarget.Name finalTarget;
+  private ITarget.Name startingTarget;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
 
   public ScriptBuilder() {
@@ -67,13 +68,28 @@ public class ScriptBuilder {
   }
 
   public ScriptBuilder withAuxTarget(ITarget.Name targetName) {
+    if (targetName == null) {
+      throw new NullPointerException();
+    }
     SetSequence.fromSet(requestedTargets).addElement(targetName);
     return this;
   }
 
-  public ScriptBuilder withTarget(ITarget.Name targetName) {
+  public ScriptBuilder withStartingTarget(ITarget.Name targetName) {
+    if (targetName == null) {
+      throw new NullPointerException();
+    }
     SetSequence.fromSet(requestedTargets).addElement(targetName);
-    this.defaultTarget = targetName;
+    this.startingTarget = targetName;
+    return this;
+  }
+
+  public ScriptBuilder withFinalTarget(ITarget.Name targetName) {
+    if (targetName == null) {
+      throw new NullPointerException();
+    }
+    SetSequence.fromSet(requestedTargets).addElement(targetName);
+    this.finalTarget = targetName;
     return this;
   }
 
@@ -95,7 +111,7 @@ public class ScriptBuilder {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return new InvalidScript(errors);
     }
-    Script sc = new Script(tr, defaultTarget);
+    Script sc = new Script(tr, finalTarget);
     sc.validate();
     return sc;
   }
@@ -107,18 +123,14 @@ public class ScriptBuilder {
       }
     }).toListSequence()).reversedList();
     for (ITarget trg : ListSequence.fromList(allTargets)) {
-      if (SetSequence.fromSet(requestedTargets).contains(trg.getName()) || trg.getName().equals(defaultTarget)) {
+      if (SetSequence.fromSet(requestedTargets).contains(trg.getName())) {
         tr.addTarget(trg);
       }
-    }
-    if (defaultTarget != null && !(tr.hasTarget(defaultTarget))) {
-      LOG.error("target not found: " + defaultTarget);
-      error(defaultTarget, "target not found: " + defaultTarget);
     }
     for (ITarget.Name tn : SetSequence.fromSet(requestedTargets)) {
       if (!(tr.hasTarget(tn))) {
         LOG.error("target not found: " + tn);
-        error(defaultTarget, "target not found: " + tn);
+        error(tn, "target not found: " + tn);
       }
     }
     if (ListSequence.fromList(errors).isNotEmpty()) {

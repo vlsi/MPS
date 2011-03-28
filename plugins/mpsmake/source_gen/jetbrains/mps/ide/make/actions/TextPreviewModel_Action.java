@@ -79,7 +79,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
-      IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("textGenToMemory")).toScript();
+      IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("textGenToMemory")).toScript();
       IResult res = new WorkbenchMakeService(((IOperationContext) MapSequence.fromMap(_params).get("context")), true).make(new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return query.defaultOption();

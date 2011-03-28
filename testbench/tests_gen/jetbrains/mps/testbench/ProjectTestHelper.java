@@ -19,7 +19,22 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.messages.IMessageHandler;
@@ -129,18 +144,45 @@ public class ProjectTestHelper {
     Testbench.initLibs();
     Testbench.makeAll();
     Testbench.reloadAll();
-    GenerationSettings.getInstance().setParallelGenerator(false);
-    GenerationSettings.getInstance().setStrictMode(false);
+    boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
+    GenerationSettings.getInstance().setParallelGenerator(isParallel);
+    GenerationSettings.getInstance().setStrictMode(isParallel);
+    if (isParallel) {
+      GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+    }
   }
 
   private void generate(MPSProject project) {
+    IScript scr = this.defaultScriptBuilder().toScript();
 
+    ProjectOperationContext context = ProjectOperationContext.get(project.getProject());
+    new TestMakeService(context, myMessageHandler);
 
     List<GenerationCycle.ModuleCycle> order = myGenerationCycle.computeGenerationOrder(project);
     boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
     for (GenerationCycle.ModuleCycle moduleCycle : order) {
       doGenerate(moduleCycle, isParallel);
     }
+  }
+
+  private ScriptBuilder defaultScriptBuilder() {
+    return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make"));
+  }
+
+  private Iterable<IResource> collectResources(final MPSProject pro, IOperationContext context) {
+    final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule mod : pro.getModules()) {
+          models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
+        }
+      }
+    });
+    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor smd) {
+        return !(GeneratorManager.isDoNotGenerate(smd));
+      }
+    })).resources(false);
   }
 
   private void doTest() {

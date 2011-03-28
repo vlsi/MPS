@@ -666,7 +666,7 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8963054271157683924">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgmi.~Expectations%datLeast(int)%corg%djmock%dsyntax%dReceiverClause" resolveInfo="atLeast" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8963054271157683925">
-                                    <property name="value" nameId="tpee.1068580320021" value="2" />
+                                    <property name="value" nameId="tpee.1068580320021" value="1" />
                                   </node>
                                 </node>
                               </node>
@@ -2594,8 +2594,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ud0o.6168415856807657134" resolveInfo="ITarget" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4484244461505555163">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8963054271157683898" resolveInfo="target" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3564492719942580100" resolveInfo="Mockups" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4324147132554624515" resolveInfo="target" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2383991756720171439">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2060915483419300617" resolveInfo="context" />
               </node>
@@ -2640,8 +2640,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ud0o.6168415856807657134" resolveInfo="ITarget" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8963054271157684041">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8963054271157683898" resolveInfo="target" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3564492719942580100" resolveInfo="Mocker" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4324147132554624515" resolveInfo="target" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2383991756720171441">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2060915483419300617" resolveInfo="context" />
               </node>
@@ -2667,8 +2667,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ud0o.6168415856807657134" resolveInfo="ITarget" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8691142010581679206">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8963054271157683898" resolveInfo="target" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3564492719942580100" resolveInfo="Mockups" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4324147132554624515" resolveInfo="target" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2383991756720171442">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2060915483419300617" resolveInfo="context" />
               </node>
@@ -2713,8 +2713,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ud0o.6168415856807657134" resolveInfo="ITarget" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8963054271157684047">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8963054271157683898" resolveInfo="target" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3564492719942580100" resolveInfo="Mocker" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4324147132554624515" resolveInfo="target" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2383991756720171444">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2060915483419300617" resolveInfo="context" />
               </node>

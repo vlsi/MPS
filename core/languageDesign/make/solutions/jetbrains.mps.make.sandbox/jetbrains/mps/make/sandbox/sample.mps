@@ -238,11 +238,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424938">
-              <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1068698994435327690">
-                <property name="value" nameId="tpee.1068580320021" value="1" />
-              </node>
-            </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="505095865854424940">
               <property name="result" nameId="q9ra.7077360340906447918" value="SUCCESS" />
             </node>

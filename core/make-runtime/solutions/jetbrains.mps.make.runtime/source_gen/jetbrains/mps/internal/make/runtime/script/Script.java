@@ -8,18 +8,21 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IParametersPool;
@@ -30,25 +33,44 @@ import java.util.HashMap;
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
 
-  private ITarget.Name defaultTargetName;
+  private ITarget.Name startingTarget;
+  private ITarget.Name finalTarget;
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
-    this.defaultTargetName = defaultTargetName;
+    this.finalTarget = defaultTargetName;
+  }
+
+  public Script(TargetRange targetRange, ITarget.Name finalTarget, ITarget.Name startingTarget) {
+    this.targetRange = targetRange;
+    this.finalTarget = finalTarget;
+    this.startingTarget = startingTarget;
   }
 
   public void validate() {
     ListSequence.fromList(errors).clear();
-    if (!(targetRange.hasTarget(defaultTargetName))) {
-      LOG.error("unknown default target: " + defaultTargetName);
-      error(defaultTargetName, "unknown default target: " + defaultTargetName);
+    if (startingTarget != null && !(targetRange.hasTarget(startingTarget))) {
+      LOG.error("unknown starting target: " + startingTarget);
+      error(startingTarget, "unknown starting target: " + startingTarget);
+    }
+    if (!(targetRange.hasTarget(finalTarget))) {
+      LOG.error("unknown final target: " + finalTarget);
+      error(finalTarget, "unknown final target: " + finalTarget);
     }
     if (targetRange.hasCycles()) {
       LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
+    }
+    if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
+      public ITarget.Name select(ITarget t) {
+        return t.getName();
+      }
+    }).contains(startingTarget))) {
+      LOG.error("invalid starting target: " + startingTarget);
+      error(this, "invalid starting target: " + startingTarget);
     }
     validated = true;
   }
@@ -66,9 +88,20 @@ public class Script implements IScript {
   }
 
   public ITarget finalTarget() {
-    ITarget trg = targetRange.getTarget(defaultTargetName);
+    ITarget trg = targetRange.getTarget(finalTarget);
     if (trg == null) {
-      LOG.error("no such target: " + defaultTargetName);
+      LOG.error("no such target: " + finalTarget);
+    }
+    return trg;
+  }
+
+  public ITarget startingTarget() {
+    if (startingTarget == null) {
+      return null;
+    }
+    ITarget trg = targetRange.getTarget(startingTarget);
+    if (trg == null) {
+      LOG.error("no such target: " + startingTarget);
     }
     return trg;
   }
@@ -83,6 +116,7 @@ public class Script implements IScript {
       LOG.error("attempt to execute invalid script");
       throw new IllegalStateException("invalid script");
     }
+
     LOG.debug("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
     final Script.ParametersPool pool = new Script.ParametersPool();
@@ -92,10 +126,67 @@ public class Script implements IScript {
       controller :
       new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub()))
     );
-
     ctl.setup(pool);
 
-    final Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
+    final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
+    final Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget>translate(new ITranslator2<ITarget, ITarget>() {
+      public Iterable<ITarget> translate(final ITarget tn) {
+        return new Iterable<ITarget>() {
+          public Iterator<ITarget> iterator() {
+            return new YieldingIterator<ITarget>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (waitFor.value != null) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 7;
+                      break;
+                    case 4:
+                      if (waitFor.value.equals(tn.getName())) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 8:
+                      this.__CP__ = 1;
+                      this.yield(tn);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      waitFor.value = null;
+                      this.__CP__ = 1;
+                      break;
+                    case 7:
+                      this.__CP__ = 8;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+
     ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
@@ -112,6 +203,7 @@ public class Script implements IScript {
     if (!(results.isSucessful())) {
       return results;
     }
+
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         String scriptName = "Script";

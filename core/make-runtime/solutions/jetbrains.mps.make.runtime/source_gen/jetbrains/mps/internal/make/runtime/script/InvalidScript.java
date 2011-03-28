@@ -28,6 +28,10 @@ public class InvalidScript implements IScript {
     throw new IllegalStateException("Invalid script");
   }
 
+  public ITarget startingTarget() {
+    return null;
+  }
+
   public ITarget finalTarget() {
     return null;
   }
