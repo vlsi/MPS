@@ -35,7 +35,7 @@ public class FilesDelta implements IDelta {
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
-    this.key = "(IFile)" + urlToPath(dir.getAbsolutePath());
+    this.key = "(IFile)" + straighten(urlToPath(dir.getAbsolutePath()));
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -66,7 +66,7 @@ public class FilesDelta implements IDelta {
       }
     }).<String>select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
-        return urlToPath(f.key().getAbsolutePath());
+        return straighten(urlToPath(f.key().getAbsolutePath()));
       }
     }).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String p) {
@@ -80,7 +80,7 @@ public class FilesDelta implements IDelta {
       IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
       for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.list())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
-          return MultiTuple.<IFile,String>from(f, urlToPath(f.getAbsolutePath()));
+          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
         }
       }).sort(new ISelector<Tuples._2<IFile, String>, Comparable<?>>() {
         public Comparable<?> select(Tuples._2<IFile, String> t) {
@@ -130,6 +130,10 @@ public class FilesDelta implements IDelta {
       m.group(1) :
       maybeUrl
     );
+  }
+
+  public String straighten(String path) {
+    return path.replaceAll(File.separator, "/");
   }
 
   private FilesDelta copy(FilesDelta that) {
