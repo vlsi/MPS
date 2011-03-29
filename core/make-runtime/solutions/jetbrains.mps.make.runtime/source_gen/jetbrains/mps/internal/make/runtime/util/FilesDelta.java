@@ -132,8 +132,8 @@ public class FilesDelta implements IDelta {
     );
   }
 
-  public String straighten(String path) {
-    return path.replaceAll(File.separator, "/");
+  private String straighten(String path) {
+    return path.replaceAll("\\" + File.separatorChar, "/");
   }
 
   private FilesDelta copy(FilesDelta that) {
