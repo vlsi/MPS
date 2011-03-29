@@ -516,8 +516,8 @@
       <varInfo nodeId="3461159877638394095" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="505174985642693187" fileName="FilesDelta.java" startLine="64" startPosition="30" endLine="116" endPosition="15">
-      <varInfo nodeId="1268765481875666733" varName="res" />
       <varInfo nodeId="3461159877638387714" varName="pathsToKeep" />
+      <varInfo nodeId="1268765481875666733" varName="res" />
       <varInfo nodeId="3461159877638393924" varName="toDelete" />
       <varInfo nodeId="3461159877638394041" varName="dirs" />
     </scopeInfo>
