@@ -29,6 +29,7 @@ public class ThreadWatcher implements Output {
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
         "(Executor)|" +
+        "(ChangesManager command queue)|" +
         "(TimerQueue)|" +
         "(Change List.*)|" +
         "(Reference.*)|" +
