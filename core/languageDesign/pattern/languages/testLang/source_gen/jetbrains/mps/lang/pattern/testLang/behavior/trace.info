@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="PatternTest_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
+  <root nodeId="394224946578869061">
+    <nodeInfo nodeId="394224946578905096" fileName="PatternTest_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="394224946578869063" fileName="PatternTest_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="394224946578869067" fileName="PatternTest_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="81" />
+  </root>
+</debugInfo>
+
