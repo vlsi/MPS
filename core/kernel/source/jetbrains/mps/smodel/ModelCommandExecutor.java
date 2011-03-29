@@ -86,6 +86,10 @@ public interface ModelCommandExecutor {
   @Deprecated
   void runWriteActionInCommandAsync(Runnable r, Project project);
 
+  void runUndoTransparentCommand(Runnable r, Project project);
+
+  boolean isInsideCommand();
+
   void runIndexing(Runnable r);
 
   void addCommandListener(ModelAccessListener l);

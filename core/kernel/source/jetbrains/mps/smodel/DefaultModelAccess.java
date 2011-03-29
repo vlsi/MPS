@@ -185,6 +185,16 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runUndoTransparentCommand(Runnable r, Project project) {
+    r.run();
+  }
+
+  @Override
+  public boolean isInsideCommand() {
+    return canWrite();
+  }
+
+  @Override
   public void runIndexing(Runnable r) {
     throw new UnsupportedOperationException();
   }

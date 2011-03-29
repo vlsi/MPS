@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem.checking;
 
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
-import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -26,9 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.INodeTypesComponent;
@@ -120,6 +118,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                           int caretX = 0;
                           int caretY = 0;
 
+                          Project p = (editorContext != null && editorContext.getOperationContext() != null ?
+                            editorContext.getOperationContext().getProject() :
+                            null
+                          );
+                          if (p == null) {
+                            return;
+                          }
+
                           if (selectedCell instanceof EditorCell_Label) {
                             EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
                             restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
@@ -135,15 +141,11 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                             }
                           }
 
-                          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
                             public void run() {
-                              CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
-                                public void run() {
-                                  intention.execute(quickFixNode);
-                                }
-                              });
+                              intention.execute(quickFixNode);
                             }
-                          });
+                          }, p);
 
                           if (restoreCaretPosition) {
                             editorContext.flushEvents();

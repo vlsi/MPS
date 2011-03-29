@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -31,16 +30,13 @@ public class EventsCollector {
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
-  private CommandProcessor myCommandProcessor;
   private boolean myDisposed;
 
-  private Runnable myCurrentCommand;
+  private boolean isInCommand;
 
   public EventsCollector() {
-    myCommandProcessor = CommandProcessor.getInstance();
-
     ModelAccess.instance().addCommandListener(myModelAccessListener);
-    myCurrentCommand = myCommandProcessor.getCurrentCommand();
+    isInCommand = ModelAccess.instance().isInsideCommand();
   }
 
   private SModelListener createCommandEventsCollector() {
@@ -70,7 +66,7 @@ public class EventsCollector {
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
 
-            if (myCurrentCommand == null) {
+            if (!isInCommand) {
               throw new IllegalStateException("Event outside of a command");
             }
 
@@ -133,15 +129,12 @@ public class EventsCollector {
   private class MyModelAccessAdapter extends ModelAccessAdapter {
     public void commandStarted() {
       myEvents.clear();
-      myCurrentCommand = myCommandProcessor.getCurrentCommand();
-      if (myCurrentCommand == null) {
-        return;
-      }
+      isInCommand = true;
     }
 
     public void beforeCommandFinished() {
       flush();
-      myCurrentCommand = null;
+      isInCommand = false;
     }
   }
 }

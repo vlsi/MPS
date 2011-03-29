@@ -25,8 +25,8 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
@@ -63,7 +63,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }
@@ -124,20 +124,24 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         if (reResolvedTargets.isEmpty()) {
           return;
         }
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
+          editorContext.getOperationContext().getProject() :
+          null
+        );
+        if (p == null) {
+          return;
+        }
+
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
-            CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
-              public void run() {
-                for (SNode methodCall : reResolvedTargets.keySet()) {
-                  SNode referent = reResolvedTargets.get(methodCall);
-                  if (referent != null && !(referent.shouldHaveBeenDisposed())) {
-                    SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
-                  }
-                }
+            for (SNode methodCall : reResolvedTargets.keySet()) {
+              SNode referent = reResolvedTargets.get(methodCall);
+              if (referent != null && !(referent.shouldHaveBeenDisposed())) {
+                SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
               }
-            });
+            }
           }
-        });
+        }, p);
       }
     });
     return new HashSet<EditorMessage>();

@@ -138,6 +138,7 @@ public abstract class MigrationScriptsView {
     progress.setBorderPainted(false);
     updateControls(false, progress);
 
+    // FIXME deadlock
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {

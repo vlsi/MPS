@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,5 +28,5 @@ public interface UndoHandler {
 
   boolean isInsideUndoableCommand();
 
-  void flushCommand();
+  void flushCommand(Project p);
 }

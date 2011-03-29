@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
 public class UndoHelper {
@@ -42,8 +43,8 @@ public class UndoHelper {
     myHandler.addUndoableAction(action);
   }
 
-  public void flushCommand(){
-    myHandler.flushCommand();
+  public void flushCommand(Project p){
+    myHandler.flushCommand(p);
   }
 
   public <T> T runNonUndoableAction(Computable<T> t) {

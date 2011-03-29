@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +36,7 @@ public class DefaultUndoHandler implements UndoHandler {
     return false;
   }
 
-  public void flushCommand() {
+  public void flushCommand(Project p) {
 
   }
 }

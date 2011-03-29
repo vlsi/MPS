@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
@@ -70,14 +71,11 @@ public class WorkbenchUndoHandler implements UndoHandler {
 
   public boolean isInsideUndoableCommand() {
     return ThreadUtils.isEventDispatchThread() && !ourUndoBlocked &&
-      CommandProcessor.getInstance().getCurrentCommand() != null;
+      ModelAccess.instance().isInsideCommand();
   }
 
-  public void flushCommand() {
-    if (myActions.isEmpty()) return;
-
-    Project project = CommandProcessor.getInstance().getCurrentCommandProject();
-    if (project == null) return;
+  public void flushCommand(Project project) {
+    if (project == null || myActions.isEmpty()) return;
     UndoManager undoManager = UndoManager.getInstance(project);
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));

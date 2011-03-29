@@ -164,7 +164,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         if (ApplicationManager.getApplication().isDispatchThread()) {
           task.run();
         } else {
-          if(!myDistributedLocksMode) {
+          if (!myDistributedLocksMode) {
             LOG.error("EDT should have IDEA write lock", new Exception());
             throw new IllegalStateException();
           } else {
@@ -331,7 +331,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     });
   }
 
-  public boolean tryWriteInCommand(final Runnable r, Project project) {
+  public boolean tryWriteInCommand(final Runnable r, Project p) {
     if(myDistributedLocksMode) {
       return false;
     }
@@ -344,13 +344,15 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
     getWriteLock().unlock();
 
-    executeCommand(new Runnable() {
+    final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+
+    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
             if (getWriteLock().tryLock()) {
               try {
-                new CommandRunnable(r).run();
+                new CommandRunnable(r, project).run();
               } finally {
                 getWriteLock().unlock();
               }
@@ -359,7 +361,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           }
         });
       }
-    }, project);
+    }, "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
   }
@@ -369,7 +371,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     if(project == null) {
       project = CurrentProjectAccessUtil.getProjectFromUI();
     }
-    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r, project), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override
@@ -387,11 +389,11 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final UndoConfirmationPolicy policy, Project project) {
+  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final UndoConfirmationPolicy policy, final Project project) {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(project, new Runnable() {
       public void run() {
-        result[0] = new CommandComputable(c).compute();
+        result[0] = new CommandComputable(c, project).compute();
       }
     }, name, null, policy);
     return (T) result[0];
@@ -410,16 +412,31 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
-    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), name, groupId, policy);
+    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r, project), name, groupId, policy);
   }
 
   @Override
   public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
+    // FIXME
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         runWriteActionInCommand(r, project);
       }
     });
+  }
+
+  @Override
+  public void runUndoTransparentCommand(Runnable r, Project project) {
+    if(myCommandLevel > 0) {
+      throw new IllegalStateException("undo transparent action cannot be invoked in a command");
+    }
+
+    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
+  }
+
+  @Override
+  public boolean isInsideCommand() {
+    return canWrite() && myCommandLevel > 0;
   }
 
   @Override
@@ -451,11 +468,11 @@ public class WorkbenchModelAccess extends ModelAccess {
     myCommandLevel++;
   }
 
-  private void decCommandLevel() {
+  private void decCommandLevel(Project p) {
     assertLegalWrite();
     myCommandLevel--;
     if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand();
+      UndoHelper.getInstance().flushCommand(p);
       onCommandFinished();
     }
   }
@@ -528,9 +545,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   private class CommandRunnable implements Runnable {
     private final Runnable myRunnable;
+    private final Project myProject;
 
-    public CommandRunnable(Runnable r) {
+    public CommandRunnable(Runnable r, Project project) {
       myRunnable = r;
+      myProject = project;
     }
 
     public void run() {
@@ -540,7 +559,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           try {
             myRunnable.run();
           } finally {
-            decCommandLevel();
+            decCommandLevel(myProject);
           }
         }
       });
@@ -549,9 +568,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   private class CommandComputable<T> implements Computable<T> {
     private final Computable<T> myComputable;
+    private final Project myProject;
 
-    public CommandComputable(Computable<T> c) {
+    public CommandComputable(Computable<T> c, Project project) {
       myComputable = c;
+      myProject = project;
     }
 
     public T compute() {
@@ -562,7 +583,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           try {
             result = myComputable.compute();
           } finally {
-            decCommandLevel();
+            decCommandLevel(myProject);
           }
           return result;
         }

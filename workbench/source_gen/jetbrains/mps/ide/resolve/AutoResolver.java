@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public class AutoResolver extends EditorCheckerAdapter {
   public AutoResolver() {
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (rootNode.getModel() == null || rootNode.getModel().getModelDescriptor() == null) {
       return messages;
@@ -58,17 +58,21 @@ public class AutoResolver extends EditorCheckerAdapter {
         if (resolveResultArrayList.isEmpty()) {
           return;
         }
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
+          editorContext.getOperationContext().getProject() :
+          null
+        );
+        if (p == null) {
+          return;
+        }
+
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
-            CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
-              public void run() {
-                for (ResolveResult resolveResult : resolveResultArrayList) {
-                  resolveResult.setTarget();
-                }
-              }
-            });
+            for (ResolveResult resolveResult : resolveResultArrayList) {
+              resolveResult.setTarget();
+            }
           }
-        });
+        }, p);
       }
     });
     for (SReference ref : yetBadReferences) {
