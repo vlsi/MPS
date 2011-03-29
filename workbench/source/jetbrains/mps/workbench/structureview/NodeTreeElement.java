@@ -21,18 +21,21 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
-  protected SNode myNode;
+  protected SNodePointer myNode;
 
-  public NodeTreeElement(SNode node) {
+  public NodeTreeElement(SNodePointer node) {
     myNode = node;
   }
 
@@ -41,7 +44,12 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
   }
 
   public ItemPresentation getPresentation() {
-    return new NodePresentation(myNode);
+    //todo use SNodePointer here, get rid of read action
+    return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      public ItemPresentation compute() {
+        return new NodePresentation(myNode.getNode());
+      }
+    });
   }
 
   public boolean canNavigate() {
@@ -54,14 +62,29 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
 
   public void navigate(boolean b) {
     DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
-      public void run(DataContext dataContext) {
+      public void run(final DataContext dataContext) {
         Project p = MPSDataKeys.PROJECT.getData(dataContext);
         if (p == null) return;
-        SModel model = myNode.getModel();
-        if (model == null) return;
-        IModule module = model.getModelDescriptor().getModule();
+
+        IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+          public IModule compute() {
+            SNode node = myNode.getNode();
+            if (node == null) return null;
+            SModel model = node.getModel();
+            if (model == null) return null;
+            return model.getModelDescriptor().getModule();
+          }
+        });
+
+        //todo use SNodePointer here, get rid of read action
+        SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+          public SNode compute() {
+            return myNode.getNode();
+          }
+        });
+
         if (module == null) return;
-        new MPSEditorOpener(p).editNode(myNode, new ModuleContext(module, p));
+        new MPSEditorOpener(p).editNode(node, new ModuleContext(module, p));
       }
     });
   }

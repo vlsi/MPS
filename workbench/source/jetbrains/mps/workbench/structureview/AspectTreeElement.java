@@ -17,9 +17,10 @@ package jetbrains.mps.workbench.structureview;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 class AspectTreeElement extends NodeTreeElement {
-  public AspectTreeElement(SNode node) {
+  public AspectTreeElement(SNodePointer node) {
     super(node);
   }
 

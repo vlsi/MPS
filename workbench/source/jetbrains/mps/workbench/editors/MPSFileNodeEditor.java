@@ -177,7 +177,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
       public StructureViewBuilder compute() {
-        return new ConceptStructureViewBuilder(myProject, myFile.getNode());
+        return new ConceptStructureViewBuilder(myProject, myFile.getSNodePointer());
       }
     });
   }

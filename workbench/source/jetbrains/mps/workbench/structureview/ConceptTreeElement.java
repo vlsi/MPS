@@ -21,6 +21,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.List;
 class ConceptTreeElement extends NodeTreeElement {
   private Project myProject;
 
-  public ConceptTreeElement(Project project, SNode node) {
+  public ConceptTreeElement(Project project, SNodePointer node) {
     super(node);
     myProject = project;
   }
@@ -38,10 +39,10 @@ class ConceptTreeElement extends NodeTreeElement {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors(myNode);
+        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors(myNode.getNode());
         for (EditorTabDescriptor tab : tabs) {
-          for (SNode aspectNode : tab.getNodes(myNode)) {
-            result.add(new AspectTreeElement(aspectNode));
+          for (SNode aspectNode : tab.getNodes(myNode.getNode())) {
+            result.add(new AspectTreeElement(new SNodePointer(aspectNode)));
           }
         }
       }

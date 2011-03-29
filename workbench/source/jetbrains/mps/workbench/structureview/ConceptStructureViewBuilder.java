@@ -19,14 +19,15 @@ import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
   private Project myProject;
-  private SNode myNode;
+  private SNodePointer myNode;
 
-  public ConceptStructureViewBuilder(Project project, SNode node) {
+  public ConceptStructureViewBuilder(Project project, SNodePointer node) {
     myProject = project;
     myNode = node;
   }

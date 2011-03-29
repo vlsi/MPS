@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
@@ -71,7 +70,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     return myNode.getNode();
   }
 
-  SNodePointer getSNodePointer() {
+  public SNodePointer getSNodePointer() {
     return myNode;
   }
 
