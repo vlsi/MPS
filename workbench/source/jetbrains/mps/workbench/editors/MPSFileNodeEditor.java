@@ -31,6 +31,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.structureview.ConceptStructureViewBuilder;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -176,7 +177,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
       public StructureViewBuilder compute() {
-        return new ConceptStructureViewBuilder(myFile.getNode());
+        return new ConceptStructureViewBuilder(myProject, myFile.getNode());
       }
     });
   }
