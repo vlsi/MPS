@@ -39,7 +39,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     myNode = node;
   }
 
-  public Object getValue() {
+  public SNodePointer getValue() {
     return myNode;
   }
 

@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.structureview;
 import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -76,12 +75,12 @@ public class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public Sorter[] getSorters() {
-        return new Sorter[0];
+        return new Sorter[0];//{new AspectSorter()};
       }
 
       @NotNull
       public Grouper[] getGroupers() {
-        return new Grouper[0];
+        return new Grouper[]{new AspectGrouper(myProject)};
       }
     };
   }

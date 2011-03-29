@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.structureview;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -40,10 +39,8 @@ class ConceptTreeElement extends NodeTreeElement {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = myNode.getNode();
-        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
-        for (EditorTabDescriptor tab : tabs) {
-          if (!tab.isApplicable(node)) continue;
-          for (SNode aspectNode : tab.getNodes(myNode.getNode())) {
+        for (EditorTabDescriptor tab : StructureUtil.getApplicableTabs(myProject, node)) {
+          for (SNode aspectNode : tab.getNodes(node)) {
             result.add(new AspectTreeElement(new SNodePointer(aspectNode)));
           }
         }
