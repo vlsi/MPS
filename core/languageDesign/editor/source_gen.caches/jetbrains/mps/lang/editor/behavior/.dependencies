@@ -11,11 +11,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.AbstractPaddingStyleClassItem_Behavior" file="AbstractPaddingStyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" file="BaseEditorComponent_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -31,18 +31,18 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior" file="BooleanStyleSheetItem_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttribute" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttribute" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_Behavior" file="CellActionMapDeclaration_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -391,16 +391,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" file="QueryFunction_ParametersList_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>

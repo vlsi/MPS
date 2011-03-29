@@ -23,7 +23,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode parent = SNodeOperations.getParent(op);
-    do {
+    {
       SNode matchedNode_sezqyh_b0 = parent;
       {
         boolean matches_sezqyh_a1a = false;
@@ -39,14 +39,14 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1219443376597", 0, null);
             typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1219443376599", true), (SNode) new typeof_IsEmptyOperation_InferenceRule.QuotationClass_23wedg_a0a0a0a2a1a1a0().createNode(typeCheckingContext), _info_12389875345);
           }
-          break;
+        } else {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "not expected here", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1178725705159", null, errorTarget);
+          }
         }
       }
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "not expected here", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1178725705159", null, errorTarget);
-      }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {
