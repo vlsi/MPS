@@ -21,7 +21,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroPostProcContext" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -34,12 +33,12 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -50,8 +49,6 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
   </dependency>
 </dependenciesRoot>
 

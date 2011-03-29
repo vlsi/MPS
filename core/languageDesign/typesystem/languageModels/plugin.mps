@@ -1655,7 +1655,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1920304158212346261">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpnt.~EditorComponent%dgetTypeCheckingContext()%cjetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext" resolveInfo="getTypeCheckingContext" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorComponent%dgetTypeCheckingContext()%cjetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext" resolveInfo="getTypeCheckingContext" />
               </node>
             </node>
           </node>
