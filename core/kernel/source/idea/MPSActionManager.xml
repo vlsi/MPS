@@ -3,6 +3,7 @@
   <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
   <actions>
+    <group id="StructureViewPopupMenu"></group>
 
     <group id="RunnerLayoutActions">
       <group id="Runner.Layout" icon="/debugger/restoreLayout.png" popup="true">
