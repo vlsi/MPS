@@ -16,6 +16,10 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.SNode;
+
+import java.awt.Graphics2D;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,11 +37,14 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
+  // TODO: add canExecuteAction() method
   void executeAction(CellActionType type);
 
-  //void paintSelection();
+  Iterable<EditorCell> getSelectedCells();
 
-  //void getSelectedNode();
+  Iterable<SNode> getSelectedNodes();
 
   //void ensureSelectionVisible();
+
+  void paintSelection(Graphics2D g);
 }

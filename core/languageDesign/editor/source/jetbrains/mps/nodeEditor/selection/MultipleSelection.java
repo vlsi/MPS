@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Alexander Shatalin
@@ -25,5 +23,4 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
  * To change this template use File | Settings | File Templates.
  */
 public interface MultipleSelection extends Selection {
-  public Iterable<EditorCell> getSelectedSells();
 }

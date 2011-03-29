@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -71,6 +72,10 @@ public class SelectionManager {
       selection = null;
     }
     return selection;
+  }
+
+  public Selection createRangeSelection(SNode firstNode, SNode lastNode) {
+    return new NodeRangeSelection(myEditorComponent, firstNode, lastNode);
   }
 
   public void setSelection(EditorCell editorCell) {

@@ -20,8 +20,11 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
+import java.awt.Graphics2D;
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -126,7 +129,7 @@ public class EditorCellSelection implements SingularSelection {
     if (type == CellActionType.BACKSPACE) {
       type = CellActionType.DELETE;
     }
-    if (type == CellActionType.DELETE  && suppressDelete()) {
+    if (type == CellActionType.DELETE && suppressDelete()) {
       return;
     }
     myEditorCell.executeAction(type);
@@ -134,5 +137,21 @@ public class EditorCellSelection implements SingularSelection {
 
   protected boolean suppressDelete() {
     return !myEditorCell.isBigCell() && myEditorCell.getAction(CellActionType.DELETE) == null;
+  }
+
+  @Override
+  public Iterable<EditorCell> getSelectedCells() {
+    return Collections.singletonList(getEditorCell());
+  }
+
+  @Override
+  public Iterable<SNode> getSelectedNodes() {
+    SNode sNode = getEditorCell().getSNode();
+    return Collections.singletonList(sNode);
+  }
+
+  @Override
+  public void paintSelection(Graphics2D g) {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 }

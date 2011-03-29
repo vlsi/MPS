@@ -2284,6 +2284,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNodeRangeSelection.isActive()) {
       myNodeRangeSelection.paint(g);
     }
+    Selection selection = getSelectionManager().getSelection();
+    if (selection != null) {
+      selection.paintSelection((Graphics2D) g);
+    }
   }
 
   @NotNull
