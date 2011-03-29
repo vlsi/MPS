@@ -18,7 +18,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    do {
+    {
       SNode matchedNode_x4f43m_a0 = SNodeOperations.getParent(variableArityType);
       {
         boolean matches_x4f43m_a0a = false;
@@ -35,14 +35,12 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_x4f43m_a0, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", null, errorTarget);
             }
           }
-          break;
+        } else {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", null, errorTarget);
         }
       }
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", null, errorTarget);
-      }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {

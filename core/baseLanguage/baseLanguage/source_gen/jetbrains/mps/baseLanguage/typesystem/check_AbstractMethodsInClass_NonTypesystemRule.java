@@ -22,7 +22,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
     if (SPropertyOperations.getBoolean(method, "isAbstract")) {
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-        do {
+        {
           SNode matchedNode_qfxa59_a0b0a0 = classifier;
           {
             boolean matches_qfxa59_a0a1a0a = false;
@@ -39,10 +39,9 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract method in a non-abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "840197573389262456", null, errorTarget);
                 }
               }
-              break;
             }
           }
-        } while (false);
+        }
       }
     }
   }

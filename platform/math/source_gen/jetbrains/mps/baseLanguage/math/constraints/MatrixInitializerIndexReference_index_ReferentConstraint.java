@@ -32,7 +32,7 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
     SNode n = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", true, false);
     List<SNode> indices = new ArrayList<SNode>();
     while (n != null) {
-      do {
+      {
         SNode matchedNode_5upoaw_a0c0a0 = n;
         {
           boolean matches_5upoaw_a0a2a0a = false;
@@ -45,23 +45,20 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
           if (matches_5upoaw_a0a2a0a) {
             ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "colIndex", true));
             ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
-            break;
-          }
-        }
-        {
-          boolean matches_5upoaw_b0a2a0a = false;
-          {
-            SNode matchingNode_5upoaw_b0a2a0a = n;
-            if (matchingNode_5upoaw_b0a2a0a != null) {
-              matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+          } else {
+            boolean matches_5upoaw_b0a2a0a = false;
+            {
+              SNode matchingNode_5upoaw_b0a2a0a = n;
+              if (matchingNode_5upoaw_b0a2a0a != null) {
+                matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+              }
+            }
+            if (matches_5upoaw_b0a2a0a) {
+              ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
             }
           }
-          if (matches_5upoaw_b0a2a0a) {
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
-            break;
-          }
         }
-      } while (false);
+      }
       n = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", false, false);
     }
     return indices;

@@ -36,7 +36,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
         // ignore 
       } else {
         Set<SNode> thrown = SetSequence.fromSet(new HashSet<SNode>());
-        do {
+        {
           SNode matchedNode_13ophr_b0a1a1a = SNodeOperations.getParent(catchClause);
           {
             boolean matches_13ophr_a1a0b0b0 = false;
@@ -48,23 +48,20 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
             }
             if (matches_13ophr_a1a0b0b0) {
               thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_13ophr_b0a1a1a, "body", true), false);
-              break;
-            }
-          }
-          {
-            boolean matches_13ophr_b1a0b0b0 = false;
-            {
-              SNode matchingNode_13ophr_b1a0b0b0 = SNodeOperations.getParent(catchClause);
-              if (matchingNode_13ophr_b1a0b0b0 != null) {
-                matches_13ophr_b1a0b0b0 = SModelUtil_new.isAssignableConcept(matchingNode_13ophr_b1a0b0b0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+            } else {
+              boolean matches_13ophr_b1a0b0b0 = false;
+              {
+                SNode matchingNode_13ophr_b1a0b0b0 = SNodeOperations.getParent(catchClause);
+                if (matchingNode_13ophr_b1a0b0b0 != null) {
+                  matches_13ophr_b1a0b0b0 = SModelUtil_new.isAssignableConcept(matchingNode_13ophr_b1a0b0b0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+                }
+              }
+              if (matches_13ophr_b1a0b0b0) {
+                thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_13ophr_b0a1a1a, "body", true), false);
               }
             }
-            if (matches_13ophr_b1a0b0b0) {
-              thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_13ophr_b0a1a1a, "body", true), false);
-              break;
-            }
           }
-        } while (false);
+        }
 
         if (!(SetSequence.fromSet(thrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode t) {

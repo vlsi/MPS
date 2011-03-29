@@ -21,7 +21,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    do {
+    {
       SNode matchedNode_n3qbw2_a0 = binaryOperation;
       {
         boolean matches_n3qbw2_a0a = false;
@@ -44,46 +44,41 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
               }
             }
           }
-          break;
-        }
-      }
-      {
-        boolean matches_n3qbw2_b0a = false;
-        {
-          SNode matchingNode_n3qbw2_b0a = binaryOperation;
-          if (matchingNode_n3qbw2_b0a != null) {
-            matches_n3qbw2_b0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_b0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
-          }
-        }
-        if (matches_n3qbw2_b0a) {
-          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
-            {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632993", null, errorTarget);
+        } else {
+          boolean matches_n3qbw2_b0a = false;
+          {
+            SNode matchingNode_n3qbw2_b0a = binaryOperation;
+            if (matchingNode_n3qbw2_b0a != null) {
+              matches_n3qbw2_b0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_b0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
             }
           }
-          break;
-        }
-      }
-      {
-        boolean matches_n3qbw2_c0a = false;
-        {
-          SNode matchingNode_n3qbw2_c0a = binaryOperation;
-          if (matchingNode_n3qbw2_c0a != null) {
-            matches_n3qbw2_c0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_c0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
-          }
-        }
-        if (matches_n3qbw2_c0a) {
-          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
+          if (matches_n3qbw2_b0a) {
+            if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
+              {
+                MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632993", null, errorTarget);
+              }
+            }
+          } else {
+            boolean matches_n3qbw2_c0a = false;
             {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516633003", null, errorTarget);
+              SNode matchingNode_n3qbw2_c0a = binaryOperation;
+              if (matchingNode_n3qbw2_c0a != null) {
+                matches_n3qbw2_c0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_c0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+              }
+            }
+            if (matches_n3qbw2_c0a) {
+              if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
+                {
+                  MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516633003", null, errorTarget);
+                }
+              }
             }
           }
-          break;
         }
       }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {

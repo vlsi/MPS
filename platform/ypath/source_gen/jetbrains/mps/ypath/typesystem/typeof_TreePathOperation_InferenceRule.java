@@ -20,7 +20,7 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode parent = SNodeOperations.getParent(op);
-    do {
+    {
       SNode matchedNode_vxuw1n_b0 = parent;
       {
         boolean matches_vxuw1n_a1a = false;
@@ -36,14 +36,12 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167101", 0, null);
             typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167102", true), (SNode) typeCheckingContext.typeOf(matchedNode_vxuw1n_b0, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167104", true), _info_12389875345);
           }
-          break;
+        } else {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288908359", null, errorTarget);
         }
       }
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288908359", null, errorTarget);
-      }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {

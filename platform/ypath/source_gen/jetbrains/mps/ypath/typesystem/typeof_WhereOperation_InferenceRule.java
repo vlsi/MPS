@@ -20,7 +20,7 @@ public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_R
 
   public void applyRule(final SNode wop, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode parent = SNodeOperations.getParent(wop);
-    do {
+    {
       SNode matchedNode_55k1k7_b0 = parent;
       {
         boolean matches_55k1k7_a1a = false;
@@ -34,14 +34,12 @@ public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_R
           if ((SLinkOperations.getTarget(wop, "filter", true) != null)) {
             typeCheckingContext.typeOf(wop, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "4234084459083991231", true);
           }
-          break;
+        } else {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(wop, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "4234084459083990132", null, errorTarget);
         }
       }
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(wop, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "4234084459083990132", null, errorTarget);
-      }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {

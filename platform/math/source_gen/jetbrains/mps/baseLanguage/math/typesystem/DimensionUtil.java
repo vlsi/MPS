@@ -30,7 +30,7 @@ public class DimensionUtil {
       boolean cbd = true;
       boolean cbc = true;
       for (SNode type : ListSequence.fromList(types)) {
-        do {
+        {
           SNode matchedNode_48zlf8_a0f0a0a = type;
           {
             boolean matches_48zlf8_a0a5a0a0 = false;
@@ -83,88 +83,86 @@ public class DimensionUtil {
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652074322", 0, null);
                 typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
               }
-              break;
-            }
-          }
-          {
-            boolean matches_48zlf8_b0a5a0a0 = false;
-            {
-              SNode matchingNode_48zlf8_b0a5a0a0 = type;
-              if (matchingNode_48zlf8_b0a5a0a0 != null) {
-                matches_48zlf8_b0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a5a0a0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+            } else {
+              boolean matches_48zlf8_b0a5a0a0 = false;
+              {
+                SNode matchingNode_48zlf8_b0a5a0a0 = type;
+                if (matchingNode_48zlf8_b0a5a0a0 != null) {
+                  matches_48zlf8_b0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a5a0a0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+                }
               }
-            }
-            if (matches_48zlf8_b0a5a0a0) {
-              if (row) {
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
-                  cbd = false;
-                }
-                if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height")) {
-                  reportError(typeCheckingContext, node);
-                }
-                if (f == 0) {
-                  f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
-                }
-                if (s == 0) {
-                  s = 1;
+              if (matches_48zlf8_b0a5a0a0) {
+                if (row) {
+                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
+                    cbd = false;
+                  }
+                  if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height")) {
+                    reportError(typeCheckingContext, node);
+                  }
+                  if (f == 0) {
+                    f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                  }
+                  if (s == 0) {
+                    s = 1;
+                  } else {
+                    s += 1;
+                  }
                 } else {
-                  s += 1;
+                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
+                    cbc = false;
+                  }
+                  if (cbd && f != 0 && f != 1) {
+                    reportError(typeCheckingContext, node);
+                  }
+                  if (f == 0) {
+                    f = 1;
+                  }
+                  if (s == 0) {
+                    s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                  } else {
+                    s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                  }
+                }
+                {
+                  SNode _nodeToCheck_1029348928467 = null;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, null);
+                  typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
                 }
               } else {
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
-                  cbc = false;
+                {
+                  SNode _nodeToCheck_1029348928467 = null;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652104638", 0, null);
+                  typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
                 }
-                if (cbd && f != 0 && f != 1) {
-                  reportError(typeCheckingContext, node);
-                }
-                if (f == 0) {
-                  f = 1;
-                }
-                if (s == 0) {
-                  s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                if (row) {
+                  if (cbd && f != 0 && f != 1) {
+                    reportError(typeCheckingContext, node);
+                  }
+                  if (f == 0) {
+                    f = 1;
+                  }
+                  if (s == 0) {
+                    s = 1;
+                  } else {
+                    s += 1;
+                  }
                 } else {
-                  s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                  if (cbd && f != 0 && f != 1) {
+                    reportError(typeCheckingContext, node);
+                  }
+                  if (f == 0) {
+                    f = 1;
+                  }
+                  if (s == 0) {
+                    s = 1;
+                  } else {
+                    s += 1;
+                  }
                 }
               }
-              {
-                SNode _nodeToCheck_1029348928467 = null;
-                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, null);
-                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
-              }
-              break;
             }
           }
-          {
-            SNode _nodeToCheck_1029348928467 = null;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652104638", 0, null);
-            typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
-          }
-          if (row) {
-            if (cbd && f != 0 && f != 1) {
-              reportError(typeCheckingContext, node);
-            }
-            if (f == 0) {
-              f = 1;
-            }
-            if (s == 0) {
-              s = 1;
-            } else {
-              s += 1;
-            }
-          } else {
-            if (cbd && f != 0 && f != 1) {
-              reportError(typeCheckingContext, node);
-            }
-            if (f == 0) {
-              f = 1;
-            }
-            if (s == 0) {
-              s = 1;
-            } else {
-              s += 1;
-            }
-          }
-        } while (false);
+        }
       }
       SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getRepresentative(T_typevar_757772128652074250));
       if (row) {
@@ -219,7 +217,7 @@ public class DimensionUtil {
   }
 
   public static int dimr(SNode t) {
-    do {
+    {
       SNode matchedNode_48zlf8_a0c = t;
       {
         boolean matches_48zlf8_a0a2 = false;
@@ -231,26 +229,25 @@ public class DimensionUtil {
         }
         if (matches_48zlf8_a0a2) {
           return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, "rows");
-        }
-      }
-      {
-        boolean matches_48zlf8_b0a2 = false;
-        {
-          SNode matchingNode_48zlf8_b0a2 = t;
-          if (matchingNode_48zlf8_b0a2 != null) {
-            matches_48zlf8_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+        } else {
+          boolean matches_48zlf8_b0a2 = false;
+          {
+            SNode matchingNode_48zlf8_b0a2 = t;
+            if (matchingNode_48zlf8_b0a2 != null) {
+              matches_48zlf8_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+            }
           }
-        }
-        if (matches_48zlf8_b0a2) {
-          return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, "height");
+          if (matches_48zlf8_b0a2) {
+            return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, "height");
+          } else
+          return 0;
         }
       }
-      return 0;
-    } while (false);
+    }
   }
 
   public static int dimc(SNode t) {
-    do {
+    {
       SNode matchedNode_48zlf8_a0d = t;
       {
         boolean matches_48zlf8_a0a3 = false;
@@ -262,22 +259,21 @@ public class DimensionUtil {
         }
         if (matches_48zlf8_a0a3) {
           return SPropertyOperations.getInteger(matchedNode_48zlf8_a0d, "columns");
-        }
-      }
-      {
-        boolean matches_48zlf8_b0a3 = false;
-        {
-          SNode matchingNode_48zlf8_b0a3 = t;
-          if (matchingNode_48zlf8_b0a3 != null) {
-            matches_48zlf8_b0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+        } else {
+          boolean matches_48zlf8_b0a3 = false;
+          {
+            SNode matchingNode_48zlf8_b0a3 = t;
+            if (matchingNode_48zlf8_b0a3 != null) {
+              matches_48zlf8_b0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+            }
           }
-        }
-        if (matches_48zlf8_b0a3) {
-          return 1;
+          if (matches_48zlf8_b0a3) {
+            return 1;
+          } else
+          return 0;
         }
       }
-      return 0;
-    } while (false);
+    }
   }
 
   public static class QuotationClass_48zlf8_a0a0a8a0a0 {

@@ -23,7 +23,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
 
   public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      do {
+      {
         final SNode matchedNode_sl9v9q_a0a0 = classifierMember;
         {
           boolean matches_sl9v9q_a0a0a = false;
@@ -57,10 +57,9 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                 }
               }
             }
-            break;
           }
         }
-      } while (false);
+      }
     }
   }
 

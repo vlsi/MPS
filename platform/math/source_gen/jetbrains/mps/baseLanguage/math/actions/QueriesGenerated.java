@@ -86,7 +86,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode lso = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", null);
-          do {
+          {
             SNode matchedNode_fo7if3_b0a0a0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
             {
               boolean matches_fo7if3_a1a0a0a = false;
@@ -98,23 +98,20 @@ public class QueriesGenerated {
               }
               if (matches_fo7if3_a1a0a0a) {
                 SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), true);
-                break;
-              }
-            }
-            {
-              boolean matches_fo7if3_b1a0a0a = false;
-              {
-                SNode matchingNode_fo7if3_b1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
-                if (matchingNode_fo7if3_b1a0a0a != null) {
-                  matches_fo7if3_b1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_b1a0a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              } else {
+                boolean matches_fo7if3_b1a0a0a = false;
+                {
+                  SNode matchingNode_fo7if3_b1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+                  if (matchingNode_fo7if3_b1a0a0a != null) {
+                    matches_fo7if3_b1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_b1a0a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+                  }
+                }
+                if (matches_fo7if3_b1a0a0a) {
+                  SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.VectorType"), true);
                 }
               }
-              if (matches_fo7if3_b1a0a0a) {
-                SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.VectorType"), true);
-                break;
-              }
             }
-          } while (false);
+          }
           SPropertyOperations.set(lso, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), lso);
           return SLinkOperations.getTarget(lso, "matrix", true);

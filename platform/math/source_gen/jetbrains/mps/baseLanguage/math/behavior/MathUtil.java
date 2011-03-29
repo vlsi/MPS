@@ -29,7 +29,7 @@ public class MathUtil {
   }
 
   public static SNode convert1(SNode bmc) {
-    do {
+    {
       SNode matchedNode_30uc9x_a0b = bmc;
       {
         boolean matches_30uc9x_a0a1 = false;
@@ -41,50 +41,47 @@ public class MathUtil {
         }
         if (matches_30uc9x_a0a1) {
           return new MathUtil.QuotationClass_30uc9x_a0a0a0c0b0a0b().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
-        }
-      }
-      {
-        boolean matches_30uc9x_b0a1 = false;
-        {
-          SNode matchingNode_30uc9x_b0a1 = bmc;
-          if (matchingNode_30uc9x_b0a1 != null) {
-            matches_30uc9x_b0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
+        } else {
+          boolean matches_30uc9x_b0a1 = false;
+          {
+            SNode matchingNode_30uc9x_b0a1 = bmc;
+            if (matchingNode_30uc9x_b0a1 != null) {
+              matches_30uc9x_b0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
+            }
+          }
+          if (matches_30uc9x_b0a1) {
+            return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a1a0a1().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
+          } else {
+            boolean matches_30uc9x_c0a1 = false;
+            {
+              SNode matchingNode_30uc9x_c0a1 = bmc;
+              if (matchingNode_30uc9x_c0a1 != null) {
+                matches_30uc9x_c0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
+              }
+            }
+            if (matches_30uc9x_c0a1) {
+              return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0b().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
+            } else {
+              boolean matches_30uc9x_d0a1 = false;
+              {
+                SNode matchingNode_30uc9x_d0a1 = bmc;
+                if (matchingNode_30uc9x_d0a1 != null) {
+                  matches_30uc9x_d0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
+                }
+              }
+              if (matches_30uc9x_d0a1) {
+                return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a1().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
+              } else
+              return null;
+            }
           }
         }
-        if (matches_30uc9x_b0a1) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0c0a0b().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
-        }
       }
-      {
-        boolean matches_30uc9x_c0a1 = false;
-        {
-          SNode matchingNode_30uc9x_c0a1 = bmc;
-          if (matchingNode_30uc9x_c0a1 != null) {
-            matches_30uc9x_c0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
-          }
-        }
-        if (matches_30uc9x_c0a1) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0d0a0b().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
-        }
-      }
-      {
-        boolean matches_30uc9x_d0a1 = false;
-        {
-          SNode matchingNode_30uc9x_d0a1 = bmc;
-          if (matchingNode_30uc9x_d0a1 != null) {
-            matches_30uc9x_d0a1 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
-          }
-        }
-        if (matches_30uc9x_d0a1) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0e0a0b().createNode(SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "rightExpression", true), SLinkOperations.getTarget(matchedNode_30uc9x_a0b, "leftExpression", true));
-        }
-      }
-      return null;
-    } while (false);
+    }
   }
 
   public static SNode convert2(SNode bmc) {
-    do {
+    {
       SNode matchedNode_30uc9x_a0c = bmc;
       {
         boolean matches_30uc9x_a0a2 = false;
@@ -96,51 +93,48 @@ public class MathUtil {
         }
         if (matches_30uc9x_a0a2) {
           return new MathUtil.QuotationClass_30uc9x_a0a0a0c0b0a0c().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
-        }
-      }
-      {
-        boolean matches_30uc9x_b0a2 = false;
-        {
-          SNode matchingNode_30uc9x_b0a2 = bmc;
-          if (matchingNode_30uc9x_b0a2 != null) {
-            matches_30uc9x_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+        } else {
+          boolean matches_30uc9x_b0a2 = false;
+          {
+            SNode matchingNode_30uc9x_b0a2 = bmc;
+            if (matchingNode_30uc9x_b0a2 != null) {
+              matches_30uc9x_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+            }
+          }
+          if (matches_30uc9x_b0a2) {
+            return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a1a0a2().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
+          } else {
+            boolean matches_30uc9x_c0a2 = false;
+            {
+              SNode matchingNode_30uc9x_c0a2 = bmc;
+              if (matchingNode_30uc9x_c0a2 != null) {
+                matches_30uc9x_c0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+              }
+            }
+            if (matches_30uc9x_c0a2) {
+              return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0c().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
+            } else {
+              boolean matches_30uc9x_d0a2 = false;
+              {
+                SNode matchingNode_30uc9x_d0a2 = bmc;
+                if (matchingNode_30uc9x_d0a2 != null) {
+                  matches_30uc9x_d0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DivExpression");
+                }
+              }
+              if (matches_30uc9x_d0a2) {
+                return new MathUtil.QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a2().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
+              } else
+              return null;
+            }
           }
         }
-        if (matches_30uc9x_b0a2) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0c0a0c().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
-        }
       }
-      {
-        boolean matches_30uc9x_c0a2 = false;
-        {
-          SNode matchingNode_30uc9x_c0a2 = bmc;
-          if (matchingNode_30uc9x_c0a2 != null) {
-            matches_30uc9x_c0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
-          }
-        }
-        if (matches_30uc9x_c0a2) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0d0a0c().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
-        }
-      }
-      {
-        boolean matches_30uc9x_d0a2 = false;
-        {
-          SNode matchingNode_30uc9x_d0a2 = bmc;
-          if (matchingNode_30uc9x_d0a2 != null) {
-            matches_30uc9x_d0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DivExpression");
-          }
-        }
-        if (matches_30uc9x_d0a2) {
-          return new MathUtil.QuotationClass_30uc9x_a0a0a0c0e0a0c().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
-        }
-      }
-      return null;
-    } while (false);
+    }
   }
 
   public static SNode getMathContext(SNode node) {
     SNode mc;
-    do {
+    {
       SNode matchedNode_30uc9x_b0d = node;
       {
         boolean matches_30uc9x_a1a3 = false;
@@ -152,37 +146,32 @@ public class MathUtil {
         }
         if (matches_30uc9x_a1a3) {
           mc = SLinkOperations.getTarget(matchedNode_30uc9x_b0d, "context", true);
-          break;
-        }
-      }
-      {
-        boolean matches_30uc9x_b1a3 = false;
-        {
-          SNode matchingNode_30uc9x_b1a3 = node;
-          if (matchingNode_30uc9x_b1a3 != null) {
-            matches_30uc9x_b1a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b1a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
+        } else {
+          boolean matches_30uc9x_b1a3 = false;
+          {
+            SNode matchingNode_30uc9x_b1a3 = node;
+            if (matchingNode_30uc9x_b1a3 != null) {
+              matches_30uc9x_b1a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b1a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
+            }
+          }
+          if (matches_30uc9x_b1a3) {
+            mc = SLinkOperations.getTarget(matchedNode_30uc9x_b0d, "context", true);
+          } else {
+            boolean matches_30uc9x_c1a3 = false;
+            {
+              SNode matchingNode_30uc9x_c1a3 = node;
+              if (matchingNode_30uc9x_c1a3 != null) {
+                matches_30uc9x_c1a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c1a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation");
+              }
+            }
+            if (matches_30uc9x_c1a3) {
+              mc = SLinkOperations.getTarget(matchedNode_30uc9x_b0d, "context", true);
+            } else
+            return new MathUtil.QuotationClass_30uc9x_a0a2a0c0a2a1a1a3().createNode();
           }
         }
-        if (matches_30uc9x_b1a3) {
-          mc = SLinkOperations.getTarget(matchedNode_30uc9x_b0d, "context", true);
-          break;
-        }
       }
-      {
-        boolean matches_30uc9x_c1a3 = false;
-        {
-          SNode matchingNode_30uc9x_c1a3 = node;
-          if (matchingNode_30uc9x_c1a3 != null) {
-            matches_30uc9x_c1a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c1a3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation");
-          }
-        }
-        if (matches_30uc9x_c1a3) {
-          mc = SLinkOperations.getTarget(matchedNode_30uc9x_b0d, "context", true);
-          break;
-        }
-      }
-      return new MathUtil.QuotationClass_30uc9x_a0e0b0d().createNode();
-    } while (false);
+    }
     switch (SPropertyOperations.getInteger_def(mc, "precisionSetting", "0")) {
       case 1:
         return new MathUtil.QuotationClass_30uc9x_a0a0a2a3().createNode();
@@ -223,7 +212,7 @@ public class MathUtil {
   }
 
   public static SNode getUnboxedElementType(SNode t) {
-    do {
+    {
       SNode matchedNode_30uc9x_a0f = t;
       {
         boolean matches_30uc9x_a0a5 = false;
@@ -235,22 +224,21 @@ public class MathUtil {
         }
         if (matches_30uc9x_a0a5) {
           return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true));
-        }
-      }
-      {
-        boolean matches_30uc9x_b0a5 = false;
-        {
-          SNode matchingNode_30uc9x_b0a5 = t;
-          if (matchingNode_30uc9x_b0a5 != null) {
-            matches_30uc9x_b0a5 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a5.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+        } else {
+          boolean matches_30uc9x_b0a5 = false;
+          {
+            SNode matchingNode_30uc9x_b0a5 = t;
+            if (matchingNode_30uc9x_b0a5 != null) {
+              matches_30uc9x_b0a5 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a5.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+            }
           }
-        }
-        if (matches_30uc9x_b0a5) {
-          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true));
+          if (matches_30uc9x_b0a5) {
+            return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true));
+          } else
+          return null;
         }
       }
-      return null;
-    } while (false);
+    }
   }
 
   public static int getIndex(SNode node) {
@@ -538,8 +526,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0c0a0b {
-    public QuotationClass_30uc9x_a0a0a0c0c0a0b() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a1a0a1 {
+    public QuotationClass_30uc9x_a0a0a0c0a2a1a0a1() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -583,8 +571,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0d0a0b {
-    public QuotationClass_30uc9x_a0a0a0c0d0a0b() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0b {
+    public QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0b() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -628,8 +616,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0e0a0b {
-    public QuotationClass_30uc9x_a0a0a0c0e0a0b() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a1 {
+    public QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a1() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -719,8 +707,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0c0a0c {
-    public QuotationClass_30uc9x_a0a0a0c0c0a0c() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a1a0a2 {
+    public QuotationClass_30uc9x_a0a0a0c0a2a1a0a2() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -765,8 +753,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0d0a0c {
-    public QuotationClass_30uc9x_a0a0a0c0d0a0c() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0c {
+    public QuotationClass_30uc9x_a0a0a0c0a2a0c0b0a0c() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -811,8 +799,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0a0a0c0e0a0c {
-    public QuotationClass_30uc9x_a0a0a0c0e0a0c() {
+  public static class QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a2 {
+    public QuotationClass_30uc9x_a0a0a0c0a2a0c0a2a1a0a2() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -857,8 +845,8 @@ public class MathUtil {
     }
   }
 
-  public static class QuotationClass_30uc9x_a0e0b0d {
-    public QuotationClass_30uc9x_a0e0b0d() {
+  public static class QuotationClass_30uc9x_a0a2a0c0a2a1a1a3 {
+    public QuotationClass_30uc9x_a0a2a0c0a2a1a1a3() {
     }
 
     public SNode createNode() {

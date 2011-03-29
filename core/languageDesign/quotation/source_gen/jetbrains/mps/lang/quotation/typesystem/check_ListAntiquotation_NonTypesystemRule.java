@@ -20,7 +20,7 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode listAntiquotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode annotatedNode = SNodeOperations.getParent(listAntiquotation);
-    do {
+    {
       SNode matchedNode_5jb8fe_b0 = SNodeOperations.getParent(annotatedNode);
       {
         boolean matches_5jb8fe_a1a = false;
@@ -37,10 +37,9 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(listAntiquotation, "list antiquotation should not be used on a quoted node itself", "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1202840835255", null, errorTarget);
             }
           }
-          break;
         }
       }
-    } while (false);
+    }
   }
 
   public String getApplicableConceptFQName() {

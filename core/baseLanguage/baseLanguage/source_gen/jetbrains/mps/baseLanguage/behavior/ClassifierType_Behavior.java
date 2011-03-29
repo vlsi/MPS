@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 
   public static void init(SNode thisNode) {
   }
@@ -120,18 +120,20 @@ public class ClassifierType_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-      do {
+      {
         SNode matchedNode_hz3823_a0a0j = thisNode;
         {
           boolean matches_hz3823_a0a0a9 = false;
-          GeneratedMatchingPattern matchingPattern = new ClassifierType_Behavior.Pattern_hz3823_a0a1a1a0a0a01();
-          matches_hz3823_a0a0a9 = matchingPattern.match(matchedNode_hz3823_a0a0j);
+          {
+            GeneratedMatchingPattern matchingPattern = new ClassifierType_Behavior.Pattern_hz3823_a0a0a1a1a0a0a01();
+            matches_hz3823_a0a0a9 = matchingPattern.match(matchedNode_hz3823_a0a0j);
+          }
           if (matches_hz3823_a0a0a9) {
             return true;
-          }
+          } else
+          return false;
         }
-        return false;
-      } while (false);
+      }
     }
     {
       GeneratedMatchingPattern pattern_hz3823_b0j = new ClassifierType_Behavior.Pattern_hz3823_a0a0a1a01(SLinkOperations.getTarget(thisNode, "classifier", false));
@@ -229,8 +231,8 @@ public class ClassifierType_Behavior {
     }
   }
 
-  public static class Pattern_hz3823_a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_hz3823_a0a1a1a0a0a01() {
+  public static class Pattern_hz3823_a0a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_hz3823_a0a0a1a1a0a0a01() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -241,7 +243,7 @@ public class ClassifierType_Behavior {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
+          SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0a0b0b0a0a0k;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferent("classifier")))) {
             return false;
           }

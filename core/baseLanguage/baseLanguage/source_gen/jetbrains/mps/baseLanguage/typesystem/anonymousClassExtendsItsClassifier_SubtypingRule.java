@@ -23,7 +23,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
 
   public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
-    do {
+    {
       SNode matchedNode_q6q799_b0 = SLinkOperations.getTarget(classifierType, "classifier", false);
       {
         boolean matches_q6q799_a1a = false;
@@ -35,10 +35,9 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
         }
         if (matches_q6q799_a1a) {
           ListSequence.fromList(result).addElement(new anonymousClassExtendsItsClassifier_SubtypingRule.QuotationClass_r0kks7_a0a0a0a0c0b0b0a().createNode(SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), SLinkOperations.getTargets(matchedNode_q6q799_b0, "typeParameter", true), typeCheckingContext));
-          break;
         }
       }
-    } while (false);
+    }
     return result;
   }
 
