@@ -25,8 +25,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -167,17 +169,17 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    boolean isInstance = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        SNode node = myFile.getNode();
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-      }
-    });
-    if (!isInstance) return null;
-
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
       public StructureViewBuilder compute() {
-        return new ConceptStructureViewBuilder(myProject, myFile.getSNodePointer());
+        SNodePointer np = myFile.getSNodePointer();
+        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
+        for (EditorTabDescriptor tab : tabs) {
+          SNode baseNode = tab.getBaseNode(np.getNode());
+          if (baseNode!=null){
+            return new ConceptStructureViewBuilder(myProject, new SNodePointer(baseNode));
+          }
+        }
+        return null;
       }
     });
   }

@@ -39,8 +39,10 @@ class ConceptTreeElement extends NodeTreeElement {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors(myNode.getNode());
+        SNode node = myNode.getNode();
+        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
         for (EditorTabDescriptor tab : tabs) {
+          if (!tab.isApplicable(node)) continue;
           for (SNode aspectNode : tab.getNodes(myNode.getNode())) {
             result.add(new AspectTreeElement(new SNodePointer(aspectNode)));
           }

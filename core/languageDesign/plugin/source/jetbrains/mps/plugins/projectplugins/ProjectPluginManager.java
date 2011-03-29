@@ -105,15 +105,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
   }
 
-  public List<EditorTabDescriptor> getTabDescriptors(SNode concept){
+  public List<EditorTabDescriptor> getTabDescriptors(){
     synchronized (myPluginsLock) {
       List<EditorTabDescriptor> result = new ArrayList<EditorTabDescriptor>();
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        for (EditorTabDescriptor descriptor : plugin.getTabDescriptors()) {
-          if (descriptor.isApplicable(concept)){
-            result.add(descriptor);
-          }
-        }
+        result.addAll(plugin.getTabDescriptors());
       }
       return result;
     }
