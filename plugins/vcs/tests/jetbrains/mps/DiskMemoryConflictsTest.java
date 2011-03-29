@@ -15,23 +15,23 @@
  */
 package jetbrains.mps;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
+import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.TestMain.ProjectRunnable;
-import jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.RealVcsHandler;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -41,6 +41,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -63,39 +64,38 @@ public class DiskMemoryConflictsTest {
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
 
   @Test
-  public void testPackagedLanguageLoading() {
-    final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
-      new ProjectRunnable() {
-        public boolean execute(final MPSProject project) {
-          final boolean[] resultArr = new boolean[1];
-          try {
-            ourProject = project.getProject();
+  public void testDiskMemoryConflicts() {
+    final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new ProjectRunnable() {
+      public boolean execute(final MPSProject project) {
+        final boolean[] resultArr = new boolean[1];
+        try {
+          ourProject = project.getProject();
 
-            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
-            Assert.assertTrue(modelDescriptor instanceof EditableSModelDescriptor);
-            ourModelDescriptor = (EditableSModelDescriptor) modelDescriptor;
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
+          Assert.assertTrue(modelDescriptor instanceof EditableSModelDescriptor);
+          ourModelDescriptor = (EditableSModelDescriptor) modelDescriptor;
 
-            checkInitialState();
+          checkInitialState();
 
-            provokeAndCheckConflict(true, true);
-            restoreAndCheckOriginalState();
+          provokeAndCheckConflict(true, true);
+          restoreAndCheckOriginalState();
 
-            provokeAndCheckConflict(true, false);
-            restoreAndCheckOriginalState();
+          provokeAndCheckConflict(true, false);
+          restoreAndCheckOriginalState();
 
-            provokeAndCheckConflict(false, true);
-            restoreAndCheckOriginalState();
+          provokeAndCheckConflict(false, true);
+          restoreAndCheckOriginalState();
 
-            provokeAndCheckConflict(false, false);
-            restoreAndCheckOriginalState();
-            resultArr[0] = true;
-          } catch (Throwable e) {
-            e.printStackTrace();
-            return false;
-          }
-          return resultArr[0];
+          provokeAndCheckConflict(false, false);
+          restoreAndCheckOriginalState();
+          resultArr[0] = true;
+        } catch (Throwable e) {
+          e.printStackTrace();
+          return false;
         }
-      }, "jetbrains.mps.vcs");
+        return resultArr[0];
+      }
+    }, "jetbrains.mps.vcs");
     if (!result) {
       Assert.fail();
     }

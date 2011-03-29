@@ -599,7 +599,7 @@ __switch__:
     assert myProject.getComponent(VcsFileStatusProvider.class) != null;
 
     myBaseVersionModel = null;
-    if (myProject.getComponent(ProjectLevelVcsManager.class).getVcsFor(modelVFile) == null) {
+    if (modelVFile == null || myProject.getComponent(ProjectLevelVcsManager.class).getVcsFor(modelVFile) == null) {
       return;
     }
     FileStatus status = myProject.getComponent(VcsFileStatusProvider.class).getFileStatus(modelVFile);

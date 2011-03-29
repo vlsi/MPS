@@ -73,6 +73,8 @@ import java.lang.reflect.Modifier;
 import java.util.*;
 
 public class TestMain {
+  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs"};
+
   public static void main(String[] args) {
     if (args.length != 1) {
       System.out.println("Usage : TestMain mpsProject");
@@ -427,7 +429,7 @@ public class TestMain {
   }
 
   public static void configureMPS() {
-    configureMPS(new String[0]);
+    configureMPS(DEFAULT_ENABLED_PLUGINS);
   }
 
   public static void configureMPS(String... plugins) {
