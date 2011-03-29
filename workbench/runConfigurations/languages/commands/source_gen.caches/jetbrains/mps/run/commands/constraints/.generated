@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ymf90r76fma0uzp8f3ybl3kc5q4yut">
+<dependencies version="2" modelHash="2nduuj6s7xffvkq7a5vjsv6tg9nyobv">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.constraints(MPS.Classpath/jetbrains.mps.smodel.constraints@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
@@ -17,7 +17,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2zza588ivcb1gp7iczo4wkv2s01itc" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-c9f33xpu5lotj4sa5ggu1j2j4valm88" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-35zwqyygfjas60v7nqau8x9pfuhziaa" />
-  <dep model="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.run.commands.structure)" hash="3e4tsmbhlew8cvqahbbckcqsrccb1z3" />
+  <dep model="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.run.commands.structure)" hash="7xzmfaxvpx67v8b02oihcf9ftb5e5tp" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
   <common hash="bd4rga4cyawcmxzzxtvr55vgvaysm78">
     <dep root="856705193941282419" />
@@ -37,7 +37,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConstraintsDescriptor.java" />
   </common>
-  <source id="856705193941282419" name="CommandParameterReference_Constraints" hash="-6uuub8usfqrjkjmcr5k75r7hlxzxzv1">
+  <source id="856705193941282419" name="CommandParameterReference_Constraints" hash="8q2ganm3feeserdj15bubttqpq43vme">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -57,7 +57,7 @@
     <file name="CommandParameterReference_Constraints.java" />
     <file name="CommandParameterReference_parameter_ReferentConstraint.java" />
   </source>
-  <source id="856705193941282439" name="CommandParameterAssignment_Constraints" hash="5l0ajmf39be30k5r86cl5vw6w6w46rt">
+  <source id="856705193941282439" name="CommandParameterAssignment_Constraints" hash="14ygulkm4ptb6y738tmxhm44nqdfivu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -78,7 +78,7 @@
     <file name="CommandParameterAssignment_Constraints.java" />
     <file name="CommandParameterAssignment_parameterDeclaration_ReferentConstraint.java" />
   </source>
-  <source id="856705193941282457" name="CommandDebuggerOperation_Constraints" hash="-2no3nj5odpdcats31um9m2vp30bk1s0">
+  <source id="856705193941282457" name="CommandDebuggerOperation_Constraints" hash="epz0j6z4n6m886yfe7u3wi8c7au36q6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -97,7 +97,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandDebuggerOperation_Constraints.java" />
   </source>
-  <source id="856705193941282468" name="AbstractProcessBuilderPart_Constraints" hash="eauevy0mot7rst6yphrae9kd4n0kbim">
+  <source id="856705193941282468" name="AbstractProcessBuilderPart_Constraints" hash="cfj62tlhpipdk8hj6gncf2fgb4v5ppg">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

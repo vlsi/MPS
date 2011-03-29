@@ -13,39 +13,39 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281818">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281827">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281753" resolveInfo="CommandReferenceExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281831">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281756" resolveInfo="CommandParameterReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281835">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281759" resolveInfo="StartProcessHandlerStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281841">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281762" resolveInfo="CommandParameterDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281871">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281764" resolveInfo="CommandParameterAssignment" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281880">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281920">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281777" resolveInfo="CommandDebuggerOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281922">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281780" resolveInfo="CommandBuilderExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281932">
@@ -53,19 +53,18 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281792" resolveInfo="ReportErrorStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281942">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281799" resolveInfo="ProcessBuilderExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281966">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281803" resolveInfo="ProcessBuilderKeyPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281975">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281807" resolveInfo="ProcessBuilderPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281977">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281812" resolveInfo="RedirectOutputExpression" />
     </node>
   </roots>

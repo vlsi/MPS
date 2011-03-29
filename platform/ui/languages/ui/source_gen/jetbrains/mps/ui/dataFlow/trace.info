@@ -2,17 +2,17 @@
 <debugInfo>
   <unitInfo fileName="CreateUIObjectStatement_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CreateUIObjectStatement_DataFlow" />
   <unitInfo fileName="UIObjectReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectReference_DataFlow" />
-  <unitInfo fileName="ChildAspect_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ChildAspect_DataFlow" />
-  <unitInfo fileName="ContainerCompartment_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ContainerCompartment_DataFlow" />
-  <unitInfo fileName="InlineController_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.InlineController_DataFlow" />
-  <unitInfo fileName="ControllerBinding_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ControllerBinding_DataFlow" />
-  <unitInfo fileName="Validator_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.Validator_DataFlow" />
-  <unitInfo fileName="ExpressionView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ExpressionView_DataFlow" />
-  <unitInfo fileName="BeanPropertyView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.BeanPropertyView_DataFlow" />
   <unitInfo fileName="ViewBinding_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ViewBinding_DataFlow" />
-  <unitInfo fileName="UIObjectProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectProviderStatement_DataFlow" />
-  <unitInfo fileName="CompartmentProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CompartmentProviderStatement_DataFlow" />
+  <unitInfo fileName="BeanPropertyView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.BeanPropertyView_DataFlow" />
+  <unitInfo fileName="ExpressionView_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ExpressionView_DataFlow" />
+  <unitInfo fileName="Validator_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.Validator_DataFlow" />
+  <unitInfo fileName="ControllerBinding_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ControllerBinding_DataFlow" />
+  <unitInfo fileName="InlineController_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.InlineController_DataFlow" />
+  <unitInfo fileName="ContainerCompartment_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ContainerCompartment_DataFlow" />
+  <unitInfo fileName="ChildAspect_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ChildAspect_DataFlow" />
   <unitInfo fileName="ValidatingView_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.ValidatingView_DataFlow" />
+  <unitInfo fileName="CompartmentProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CompartmentProviderStatement_DataFlow" />
+  <unitInfo fileName="UIObjectProviderStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectProviderStatement_DataFlow" />
   <unitInfo fileName="CompartmentReferenceExpression_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.CompartmentReferenceExpression_DataFlow" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.DFABuilders" />
   <unitInfo fileName="UIObjectStatement_DataFlow.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.dataFlow.UIObjectStatement_DataFlow" />

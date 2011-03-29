@@ -567,8 +567,8 @@
       <varInfo nodeId="1235062834586" varName="descendants" />
     </scopeInfo>
     <scopeInfo nodeId="1220026621745" fileName="QueriesGenerated.java" startLine="461" startPosition="145" endLine="480" endPosition="132">
-      <varInfo nodeId="1235062834620" varName="macro" />
       <varInfo nodeId="1235062834576" varName="holder" />
+      <varInfo nodeId="1235062834620" varName="macro" />
     </scopeInfo>
     <unitInfo nodeId="1239121705948" fileName="QueriesGenerated.java" startLine="465" startPosition="69" endLine="469" endPosition="7" unitName="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.QueriesGenerated$1" />
     <unitInfo nodeId="1239124037426" fileName="QueriesGenerated.java" startLine="473" startPosition="143" endLine="477" endPosition="7" unitName="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.QueriesGenerated$2" />
@@ -608,8 +608,8 @@
       <varInfo nodeId="1235062219408" varName="descendants" />
     </scopeInfo>
     <scopeInfo nodeId="1220983242942" fileName="QueriesGenerated.java" startLine="483" startPosition="145" endLine="499" endPosition="132">
-      <varInfo nodeId="1234978694739" varName="macro" />
       <varInfo nodeId="1234978534824" varName="holder" />
+      <varInfo nodeId="1234978694739" varName="macro" />
     </scopeInfo>
     <unitInfo nodeId="1239970808718" fileName="QueriesGenerated.java" startLine="492" startPosition="143" endLine="496" endPosition="7" unitName="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.QueriesGenerated$3" />
   </root>

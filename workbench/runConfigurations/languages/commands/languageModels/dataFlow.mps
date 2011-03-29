@@ -13,19 +13,19 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282476">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281759" resolveInfo="StartProcessHandlerStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282484">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281780" resolveInfo="CommandBuilderExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282497">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281799" resolveInfo="ProcessBuilderExpression" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282508">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281807" resolveInfo="ProcessBuilderPart" />
     </node>
   </roots>

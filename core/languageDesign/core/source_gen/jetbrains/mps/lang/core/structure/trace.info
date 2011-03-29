@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IMetaLevelChanger.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IMetaLevelChanger" />
-  <unitInfo fileName="IType.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IType" />
-  <unitInfo fileName="IContainer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IContainer" />
-  <unitInfo fileName="IDeprecatable.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IDeprecatable" />
   <unitInfo fileName="IWrapper.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IWrapper" />
-  <unitInfo fileName="IResolveInfo.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IResolveInfo" />
+  <unitInfo fileName="IDeprecatable.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IDeprecatable" />
+  <unitInfo fileName="IContainer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IContainer" />
+  <unitInfo fileName="IType.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IType" />
+  <unitInfo fileName="IMetaLevelChanger.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IMetaLevelChanger" />
   <unitInfo fileName="INamedConcept.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.core.structure.INamedConcept" />
+  <unitInfo fileName="IResolveInfo.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IResolveInfo" />
   <unitInfo fileName="Core_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Core_Language" />
   <unitInfo fileName="Export_AnnotationLink.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Export_AnnotationLink" />
-  <unitInfo fileName="ExportScope.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScope" />
-  <unitInfo fileName="NodeAttribute.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.NodeAttribute" />
-  <unitInfo fileName="ExportScopeModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeModule" />
   <unitInfo fileName="ExportScopePublic.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopePublic" />
+  <unitInfo fileName="ExportScopeModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeModule" />
+  <unitInfo fileName="NodeAttribute.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.NodeAttribute" />
+  <unitInfo fileName="ExportScope.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScope" />
   <unitInfo fileName="Attribute.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Attribute" />
-  <unitInfo fileName="PropertyAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.PropertyAttribute" />
-  <unitInfo fileName="LinkAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.LinkAttribute" />
   <unitInfo fileName="ExportScopeNamespace.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeNamespace" />
+  <unitInfo fileName="LinkAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.LinkAttribute" />
+  <unitInfo fileName="PropertyAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.PropertyAttribute" />
   <unitInfo fileName="BaseConcept.java" startLine="13" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.core.structure.BaseConcept" />
 </debugInfo>
 

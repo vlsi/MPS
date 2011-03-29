@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.generator.generationContext.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_importClause_ReferentConstraint" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_propertyPatternVar_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_patternVarDecl_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_linkPatternVar_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />

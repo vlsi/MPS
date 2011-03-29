@@ -1,3 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ParenthesisActions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisActions$ParenthesisActions_DELETE" />
+  <unitInfo fileName="BinaryOperation_Right_actions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Right_actions$BinaryOperation_Right_actions_DELETE" />
+  <unitInfo fileName="Abstraction_Variable_actions.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions$Abstraction_Variable_actions_DELETE" />
+  <unitInfo fileName="StringType_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.StringType_Editor" />
+  <unitInfo fileName="NumberType_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.NumberType_Editor" />
+  <unitInfo fileName="Application_Argument_actions.java" startLine="18" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Application_Argument_actions$Application_Argument_actions_DELETE" />
+  <unitInfo fileName="ParenthesisActions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisActions" />
+  <unitInfo fileName="BinaryOperation_Right_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Right_actions" />
+  <unitInfo fileName="Abstraction_Variable_actions.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions" />
+  <unitInfo fileName="Application_Argument_actions.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Application_Argument_actions" />
+  <unitInfo fileName="Variable_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Variable_Editor" />
+  <unitInfo fileName="NumericConstant_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.NumericConstant_Editor" />
+  <unitInfo fileName="VariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor$_Inline_ge17fi_a0a" />
+  <unitInfo fileName="LambdaApplication_Editor.java" startLine="98" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor$argumentListHandler_ppbi6p_c0" />
+  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="131" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor$variableListHandler_w093uu_b0a" />
+  <unitInfo fileName="MultipleExpression_Editor.java" startLine="42" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor$expressionsListHandler_24hnc2_a0" />
+  <unitInfo fileName="StringConstant_Editor.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.StringConstant_Editor" />
+  <unitInfo fileName="FunctionType_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
+  <unitInfo fileName="ParenthesisExpression_Editor.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisExpression_Editor" />
+  <unitInfo fileName="VariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
+  <unitInfo fileName="BinaryOperation_Editor.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
+  <unitInfo fileName="Program_Editor.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Program_Editor" />
+  <unitInfo fileName="MultipleExpression_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
+  <unitInfo fileName="LetExpression_Editor.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LetExpression_Editor" />
+  <unitInfo fileName="LambdaApplication_Editor.java" startLine="26" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
+  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="26" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
+  <root nodeId="2076063674015982318">
+    <nodeInfo nodeId="2076063674015982363" fileName="Application_Argument_actions.java" startLine="33" startPosition="75" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2076063674015982374" fileName="Application_Argument_actions.java" startLine="34" startPosition="73" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="2076063674015982362" fileName="Application_Argument_actions.java" startLine="33" startPosition="75" endLine="35" endPosition="57">
+      <varInfo nodeId="2076063674015982364" varName="function" />
+    </scopeInfo>
+  </root>
+  <root nodeId="4516885200389677659">
+    <nodeInfo nodeId="4516885200389677674" fileName="Abstraction_Variable_actions.java" startLine="29" startPosition="75" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4516885200389677680" fileName="Abstraction_Variable_actions.java" startLine="30" startPosition="65" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="4516885200389677662" fileName="Abstraction_Variable_actions.java" startLine="29" startPosition="75" endLine="31" endPosition="53">
+      <varInfo nodeId="4516885200389677675" varName="body" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6213838193799310583">
+    <nodeInfo nodeId="6213838193799316940" fileName="ParenthesisActions.java" startLine="29" startPosition="75" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213838193799338282" fileName="ParenthesisActions.java" startLine="30" startPosition="71" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="6213838193799316933" fileName="ParenthesisActions.java" startLine="29" startPosition="75" endLine="31" endPosition="53">
+      <varInfo nodeId="6213838193799316941" varName="expr" />
+    </scopeInfo>
+  </root>
+  <root nodeId="7794386159928013858">
+    <nodeInfo nodeId="7794386159928020139" fileName="BinaryOperation_Right_actions.java" startLine="29" startPosition="75" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7794386159928020145" fileName="BinaryOperation_Right_actions.java" startLine="30" startPosition="65" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="7794386159928020137" fileName="BinaryOperation_Right_actions.java" startLine="29" startPosition="75" endLine="31" endPosition="53">
+      <varInfo nodeId="7794386159928020140" varName="left" />
+    </scopeInfo>
+  </root>
+</debugInfo>
 

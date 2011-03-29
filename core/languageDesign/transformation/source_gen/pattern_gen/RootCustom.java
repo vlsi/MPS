@@ -30,8 +30,8 @@ public class RootCustom {
     {
       int e = 5;
       int i = 1;
-      i *= 287;
-      e *= (i + 5);
+      ??? *= ???;
+      ??? *= ???;
       i = e * i;
 
       if (!(e != 10 || i != 43)) {
@@ -43,24 +43,24 @@ public class RootCustom {
       // Block 
 
       {
-        // extraWorktrue extraWork 
-        int var12 = 55;
+        // extraWorktrue  
+        int var12;
       }
       {
         int e;
         e = 5;
       }
       {
-        // myWork1true myWork1 
-        int var12 = 175 * (1 + e);
+        // myWork1true  
+        int var12;
       }
       {
         int e;
         e = 5;
       }
       {
-        // myWork2true myWork2 
-        int var12 = 175 * (1 + e);
+        // myWork2true  
+        int var12;
       }
       {
         int e;
@@ -68,9 +68,9 @@ public class RootCustom {
       }
       int e33 = 42;
       int e32 = (22 + "myWork1".length());
-      int e31 = 58 + ("extraWork".length());
+      int e31 = 58 + ("".length());
       int e30 = 42;
-      int e29 = (12 + 58 + ("myWork2".length()));
+      int e29 = (12 + 58 + ("".length()));
       int ya1;
       int ya2 = ya1 * 2;
     }

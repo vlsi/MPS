@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
-  <unitInfo fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
   <unitInfo fileName="EmitStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
-  <unitInfo fileName="InstructionType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
+  <unitInfo fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
+  <unitInfo fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
   <unitInfo fileName="BuilderBlock_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
+  <unitInfo fileName="InstructionType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
   <unitInfo fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
   <root nodeId="1213877268329">
     <scopeInfo nodeId="1213877268331" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

@@ -3,7 +3,6 @@
   <unitInfo fileName="BlockBodyPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.BlockBodyPart_Constraints" />
   <unitInfo fileName="TypePart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.TypePart_Constraints" />
   <unitInfo fileName="NamePropertyNamePart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.NamePropertyNamePart_Constraints" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mpslite.constraints.ConstraintsDescriptor" />
   <root nodeId="1239372651883">
     <nodeInfo nodeId="1239372669150" fileName="NamePropertyNamePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1239372656614" fileName="NamePropertyNamePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" />

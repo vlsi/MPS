@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="VariableOwner.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner" />
+  <unitInfo fileName="LambdaCalculus_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaCalculus_Language" />
+  <unitInfo fileName="DivideOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation" />
+  <unitInfo fileName="SubtractOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" />
+  <unitInfo fileName="MultiplyOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" />
+  <unitInfo fileName="StringType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StringType" />
+  <unitInfo fileName="NumberType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.NumberType" />
+  <unitInfo fileName="AddOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation" />
+  <unitInfo fileName="ConcatenateOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation" />
+  <unitInfo fileName="BinaryStringOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation" />
+  <unitInfo fileName="BinaryNumericOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation" />
+  <unitInfo fileName="LambdaType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaType" />
+  <unitInfo fileName="LambdaExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression" />
+  <unitInfo fileName="LetRef.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" />
+  <unitInfo fileName="AbstractionVarRef.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef" />
+  <unitInfo fileName="VariableReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.VariableReference" />
+  <unitInfo fileName="NumericConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant" />
+  <unitInfo fileName="StringConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StringConstant" />
+  <unitInfo fileName="ParenthesisExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" />
+  <unitInfo fileName="BinaryOperation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" />
+  <unitInfo fileName="FunctionType.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.FunctionType" />
+  <unitInfo fileName="MultipleExpression.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression" />
+  <unitInfo fileName="LambdaApplication.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication" />
+  <unitInfo fileName="LetVariable.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" />
+  <unitInfo fileName="Variable.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.Variable" />
+  <unitInfo fileName="AbstractionVariable.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable" />
+  <unitInfo fileName="Program.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.Program" />
+  <unitInfo fileName="LetExpression.java" startLine="13" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
+  <unitInfo fileName="LambdaAbstraction.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
+</debugInfo>
 

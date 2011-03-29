@@ -596,7 +596,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4f);
-      Collection<SNode> tlist1 = new TemplateconvertMult(((SNode) pattern.getFieldValue("PatternVar_yy")), ((SNode) pattern.getFieldValue("PatternVar_right"))).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplateconvertMult(((SNode) pattern.getFieldValue("patternVar_yy")), ((SNode) pattern.getFieldValue("patternVar_right"))).apply(environment, context);
       return tlist1;
     }
   }
@@ -830,7 +830,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4i);
-      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0e8, context, environment.getGenerator()))), ((String) pattern.getFieldValue("PatternVar_jobName")), ((SNode) pattern.getFieldValue("PatternVar_myExpr")), 12, true).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0e8, context, environment.getGenerator()))), ((String) pattern.getFieldValue("patternVar_jobName")), ((SNode) pattern.getFieldValue("patternVar_myExpr")), 12, true).apply(environment, context);
       return tlist1;
     }
   }
@@ -923,7 +923,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a4a1a4a1a3a2a4j);
                     environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695914046247");
-                    tnode6.addReference(SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.length():int")));
+                    tnode6.addReference(SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String.length():int")));
 
                   } finally {
                     environment.getTracer().pushOutputNode(tnode6);
@@ -994,7 +994,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4k);
-      Collection<SNode> tlist1 = new Templateprocess42(((SNode) pattern.getFieldValue("PatternVar_ref"))).apply(environment, context);
+      Collection<SNode> tlist1 = new Templateprocess42(((SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
       return tlist1;
     }
   }
@@ -1067,7 +1067,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 final SNodePointer templateNode4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030947");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode4);
-                  tlist4 = new Templateprocess42(((SNode) pattern.getFieldValue("PatternVar_ref"))).apply(environment, context);
+                  tlist4 = new Templateprocess42(((SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
                 } finally {
                   environment.getTracer().pushTemplateNode(templateNode4);
                 }

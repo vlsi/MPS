@@ -280,8 +280,8 @@
     <scopeInfo nodeId="545838410333360537" fileName="QueriesGenerated.java" startLine="970" startPosition="113" endLine="1013" endPosition="0" />
     <scopeInfo nodeId="545838410333635865" fileName="QueriesGenerated.java" startLine="872" startPosition="20" endLine="921" endPosition="19" />
     <scopeInfo nodeId="545838410333248007" fileName="QueriesGenerated.java" startLine="963" startPosition="154" endLine="1014" endPosition="47">
-      <varInfo nodeId="545838410333360531" varName="nodes" />
       <varInfo nodeId="545838410333343371" varName="names" />
+      <varInfo nodeId="545838410333360531" varName="nodes" />
       <varInfo nodeId="545838410333343364" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="545838410333635865" fileName="QueriesGenerated.java" startLine="870" startPosition="46" endLine="923" endPosition="29" />

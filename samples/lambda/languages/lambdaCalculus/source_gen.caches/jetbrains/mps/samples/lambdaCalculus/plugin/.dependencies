@@ -46,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Editor" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode dependClassName="jetbrains.mps.ide.common.JavaConsoleCreator" />

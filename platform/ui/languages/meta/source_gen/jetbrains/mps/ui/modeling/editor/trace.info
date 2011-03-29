@@ -3,20 +3,20 @@
   <unitInfo fileName="UnitType_Editor.java" startLine="30" startPosition="83" endLine="41" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.UnitType_Editor$1" />
   <unitInfo fileName="AspectParameterDecl_Editor.java" startLine="33" startPosition="83" endLine="44" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterDecl_Editor$1" />
   <unitInfo fileName="AspectParameterDecl_Editor.java" startLine="51" startPosition="83" endLine="62" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterDecl_Editor$2" />
-  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0a0a" />
   <unitInfo fileName="VerticalAlignment_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Editor$VerticalAlignment_component_cellMenu_a0a0a" />
+  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0a0a" />
   <unitInfo fileName="UIPropertyGetter_Editor.java" startLine="115" startPosition="83" endLine="126" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.UIPropertyGetter_Editor$1" />
-  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0b0a" />
   <unitInfo fileName="VerticalAlignment_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Editor$VerticalAlignment_component_cellMenu_a0b0a" />
+  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0b0a" />
   <unitInfo fileName="AuxObjectFactory_Editor.java" startLine="116" startPosition="83" endLine="127" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectFactory_Editor$1" />
-  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="128" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0c0a" />
   <unitInfo fileName="VerticalAlignment_Editor.java" startLine="128" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Editor$VerticalAlignment_component_cellMenu_a0c0a" />
-  <unitInfo fileName="ContainerItemRemover_Editor.java" startLine="131" startPosition="83" endLine="142" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemRemover_Editor$1" />
-  <unitInfo fileName="ContainerItemIterator_Editor.java" startLine="131" startPosition="83" endLine="142" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemIterator_Editor$1" />
+  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="128" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0c0a" />
   <unitInfo fileName="UIPropertySetter_Editor.java" startLine="131" startPosition="83" endLine="142" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.UIPropertySetter_Editor$1" />
+  <unitInfo fileName="ContainerItemIterator_Editor.java" startLine="131" startPosition="83" endLine="142" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemIterator_Editor$1" />
+  <unitInfo fileName="ContainerItemRemover_Editor.java" startLine="131" startPosition="83" endLine="142" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemRemover_Editor$1" />
   <unitInfo fileName="AuxObjectFactory_Editor.java" startLine="134" startPosition="83" endLine="145" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectFactory_Editor$2" />
-  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="140" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0d0a" />
   <unitInfo fileName="VerticalAlignment_Editor.java" startLine="140" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Editor$VerticalAlignment_component_cellMenu_a0d0a" />
+  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="140" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor$HorizontalAlignment_component_cellMenu_a0d0a" />
   <unitInfo fileName="EventPropertyGetter_Editor.java" startLine="140" startPosition="83" endLine="151" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.EventPropertyGetter_Editor$1" />
   <unitInfo fileName="EventHandlerSetup_Editor.java" startLine="145" startPosition="83" endLine="156" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.EventHandlerSetup_Editor$1" />
   <unitInfo fileName="ContainerItemInserter_Editor.java" startLine="148" startPosition="83" endLine="159" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemInserter_Editor$1" />
@@ -26,35 +26,35 @@
   <unitInfo fileName="ContainerItemAdder_Editor.java" startLine="168" startPosition="83" endLine="179" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemAdder_Editor$1" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="198" startPosition="85" endLine="209" endPosition="7" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$1" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="230" startPosition="85" endLine="241" endPosition="7" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$1" />
-  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="19" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_a0" />
   <unitInfo fileName="VerticalAlignment_Chooser.java" startLine="19" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser$VerticalAlignment_generic_cellMenu_a0" />
-  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="32" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_b0" />
+  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="19" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_a0" />
   <unitInfo fileName="VerticalAlignment_Chooser.java" startLine="32" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser$VerticalAlignment_generic_cellMenu_b0" />
-  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="45" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_c0" />
+  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="32" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_b0" />
   <unitInfo fileName="VerticalAlignment_Chooser.java" startLine="45" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser$VerticalAlignment_generic_cellMenu_c0" />
-  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="58" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_d0" />
+  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="45" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_c0" />
   <unitInfo fileName="VerticalAlignment_Chooser.java" startLine="58" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser$VerticalAlignment_generic_cellMenu_d0" />
+  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="58" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser$HorizontalAlignment_generic_cellMenu_d0" />
   <unitInfo fileName="PropertyChangeHandlerSetup_Editor.java" startLine="143" startPosition="83" endLine="156" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.PropertyChangeHandlerSetup_Editor$1" />
   <unitInfo fileName="EventHandlerSetup_Editor.java" startLine="163" startPosition="83" endLine="176" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.EventHandlerSetup_Editor$2" />
   <unitInfo fileName="ChildAspectDefinition_ActionMap.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ChildAspectDefinition_ActionMap$ChildAspectDefinition_ActionMap_DELETE" />
   <unitInfo fileName="ChildAspectDefinition_ActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ChildAspectDefinition_ActionMap" />
   <unitInfo fileName="UIObject_Editor.java" startLine="336" startPosition="83" endLine="359" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$1" />
   <unitInfo fileName="LayoutConstraintExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.LayoutConstraintExpression_Editor" />
-  <unitInfo fileName="UIAction_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIAction_Editor" />
-  <unitInfo fileName="BeforeUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.BeforeUIObjectParam_Editor" />
-  <unitInfo fileName="ContextUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContextUIObjectParam_Editor" />
-  <unitInfo fileName="ItemUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ItemUIObjectParam_Editor" />
-  <unitInfo fileName="PropertyValueParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.PropertyValueParam_Editor" />
   <unitInfo fileName="ThisUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ThisUIObjectParam_Editor" />
+  <unitInfo fileName="PropertyValueParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.PropertyValueParam_Editor" />
+  <unitInfo fileName="ItemUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ItemUIObjectParam_Editor" />
+  <unitInfo fileName="ContextUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContextUIObjectParam_Editor" />
+  <unitInfo fileName="BeforeUIObjectParam_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.BeforeUIObjectParam_Editor" />
+  <unitInfo fileName="UIAction_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIAction_Editor" />
   <unitInfo fileName="UnitType_Editor.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UnitType_Editor" />
   <unitInfo fileName="LayoutConstraintType_Editor.java" startLine="83" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.LayoutConstraintType_Editor$_Inline_o1ved1_a2a" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="152" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$_Inline_qot6m0_a1a" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="184" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$_Inline_qot6m0_a2a" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="216" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$_Inline_qot6m0_a3a" />
-  <unitInfo fileName="AspectParameterRef_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterRef_Editor$_Inline_awzw7p_a0a" />
-  <unitInfo fileName="AuxObjectAccessOp_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectAccessOp_Editor$_Inline_1cryq_a0a" />
-  <unitInfo fileName="Context_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Context_Editor$_Inline_d0e2am_a0a" />
   <unitInfo fileName="EventProducer_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.EventProducer_Editor$_Inline_4huzy8_a0a" />
+  <unitInfo fileName="Context_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Context_Editor$_Inline_d0e2am_a0a" />
+  <unitInfo fileName="AuxObjectAccessOp_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectAccessOp_Editor$_Inline_1cryq_a0a" />
+  <unitInfo fileName="AspectParameterRef_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterRef_Editor$_Inline_awzw7p_a0a" />
   <unitInfo fileName="IPartiallyDefinedStub_Component.java" startLine="119" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component$_Inline_qot6m0_a0a" />
   <unitInfo fileName="Container_Editor.java" startLine="137" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Container_Editor$_Inline_xjnu6t_a0a" />
   <unitInfo fileName="UIPropertyAccessCode_Editor.java" startLine="147" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIPropertyAccessCode_Editor$_Inline_ek8095_a0a0" />
@@ -84,39 +84,39 @@
   <unitInfo fileName="UIObject_Editor.java" startLine="755" startPosition="0" endLine="803" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$compartmentListHandler_c5f0a4_a2m0" />
   <unitInfo fileName="AspectParameterDecl_Editor.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterDecl_Editor" />
   <unitInfo fileName="OverrideAnnotation_Editor.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.OverrideAnnotation_Editor" />
-  <unitInfo fileName="EventProperty_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.EventProperty_Editor" />
   <unitInfo fileName="UIProperty_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIProperty_Editor" />
-  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser" />
+  <unitInfo fileName="EventProperty_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.EventProperty_Editor" />
   <unitInfo fileName="VerticalAlignment_Chooser.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser" />
+  <unitInfo fileName="HorizontalAlignment_Chooser.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser" />
   <unitInfo fileName="IAspectParameterHolder_Component.java" startLine="50" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IAspectParameterHolder_Component$aspectParameterListHandler_qkwmzt_a0" />
   <unitInfo fileName="ApplyConstraintStatement_Editor.java" startLine="118" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ApplyConstraintStatement_Editor$constraintListHandler_ogloo4_b0" />
   <unitInfo fileName="Container_Editor.java" startLine="203" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Container_Editor$requiredAspectListHandler_xjnu6t_g0" />
   <unitInfo fileName="EditableUIProperty_Editor.java" startLine="20" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.EditableUIProperty_Editor" />
-  <unitInfo fileName="AspectParameterRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterRef_Editor" />
-  <unitInfo fileName="AuxObjectAccessOp_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectAccessOp_Editor" />
-  <unitInfo fileName="Context_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Context_Editor" />
   <unitInfo fileName="EventProducer_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.EventProducer_Editor" />
+  <unitInfo fileName="Context_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Context_Editor" />
+  <unitInfo fileName="AuxObjectAccessOp_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectAccessOp_Editor" />
+  <unitInfo fileName="AspectParameterRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AspectParameterRef_Editor" />
   <unitInfo fileName="ChildAspectDefinition_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ChildAspectDefinition_Editor" />
   <unitInfo fileName="AlignmentLayoutConstraint_Editor.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AlignmentLayoutConstraint_Editor" />
-  <unitInfo fileName="RowLayoutConstraint_Editor.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.RowLayoutConstraint_Editor" />
   <unitInfo fileName="ColumnLayoutConstraint_Editor.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ColumnLayoutConstraint_Editor" />
+  <unitInfo fileName="RowLayoutConstraint_Editor.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.RowLayoutConstraint_Editor" />
   <unitInfo fileName="IAspectParameterHolder_Component.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.IAspectParameterHolder_Component" />
-  <unitInfo fileName="CellLayoutConstraint_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.CellLayoutConstraint_Editor" />
-  <unitInfo fileName="BoxLayoutConstraint_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.BoxLayoutConstraint_Editor" />
   <unitInfo fileName="AuxObjectTemplate_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectTemplate_Editor" />
+  <unitInfo fileName="BoxLayoutConstraint_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.BoxLayoutConstraint_Editor" />
+  <unitInfo fileName="CellLayoutConstraint_Editor.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.CellLayoutConstraint_Editor" />
   <unitInfo fileName="Geometry_Editor.java" startLine="19" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Geometry_Editor" />
-  <unitInfo fileName="VerticalConstraint_Editor.java" startLine="16" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalConstraint_Editor" />
   <unitInfo fileName="HorizontalConstraint_Editor.java" startLine="16" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalConstraint_Editor" />
+  <unitInfo fileName="VerticalConstraint_Editor.java" startLine="16" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalConstraint_Editor" />
   <unitInfo fileName="LayoutConstraintType_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.LayoutConstraintType_Editor" />
   <unitInfo fileName="Auxillary_Editor.java" startLine="23" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.Auxillary_Editor" />
   <unitInfo fileName="ForceLayoutCode_Editor.java" startLine="19" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ForceLayoutCode_Editor" />
   <unitInfo fileName="ContainerItemClearer_Editor.java" startLine="19" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemClearer_Editor" />
   <unitInfo fileName="UIPropertyGetter_Editor.java" startLine="27" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIPropertyGetter_Editor" />
-  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="22" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor" />
   <unitInfo fileName="VerticalAlignment_Editor.java" startLine="22" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Editor" />
-  <unitInfo fileName="ContainerItemRemover_Editor.java" startLine="27" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemRemover_Editor" />
-  <unitInfo fileName="ContainerItemIterator_Editor.java" startLine="27" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemIterator_Editor" />
+  <unitInfo fileName="HorizontalAlignment_Editor.java" startLine="22" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor" />
   <unitInfo fileName="UIPropertySetter_Editor.java" startLine="27" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIPropertySetter_Editor" />
+  <unitInfo fileName="ContainerItemIterator_Editor.java" startLine="27" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemIterator_Editor" />
+  <unitInfo fileName="ContainerItemRemover_Editor.java" startLine="27" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ContainerItemRemover_Editor" />
   <unitInfo fileName="AuxObjectFactory_Editor.java" startLine="27" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.AuxObjectFactory_Editor" />
   <unitInfo fileName="ApplyConstraintStatement_Editor.java" startLine="27" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.ApplyConstraintStatement_Editor" />
   <unitInfo fileName="UIPropertyAccessCode_Editor.java" startLine="21" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIPropertyAccessCode_Editor" />

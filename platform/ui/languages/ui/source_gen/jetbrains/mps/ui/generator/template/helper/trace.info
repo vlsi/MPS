@@ -25,8 +25,8 @@
     <scopeInfo nodeId="6379619452576053339" fileName="SessionObjects.java" startLine="24" startPosition="82" endLine="28" endPosition="96" />
     <scopeInfo nodeId="6379619452576053367" fileName="SessionObjects.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6379619452576053309" fileName="SessionObjects.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6379619452576053336" varName="value" />
       <varInfo nodeId="6379619452576053334" varName="context" />
+      <varInfo nodeId="6379619452576053336" varName="value" />
       <varInfo nodeId="6379619452576053332" varName="genContext" />
       <varInfo nodeId="6379619452576053397" varName="key" />
     </scopeInfo>

@@ -66,10 +66,10 @@
     <scopeInfo nodeId="1220977388732" fileName="QueriesGenerated.java" startLine="74" startPosition="37" endLine="105" endPosition="34">
       <varInfo nodeId="1220978550912" varName="baseDir" />
       <varInfo nodeId="1234806669828" varName="abstractProjectComponent" />
-      <varInfo nodeId="1220978735179" varName="suggestStrings" />
       <varInfo nodeId="1220978677265" varName="isFile" />
-      <varInfo nodeId="1220978647439" varName="suggestFiles" />
+      <varInfo nodeId="1220978735179" varName="suggestStrings" />
       <varInfo nodeId="1220978475073" varName="base" />
+      <varInfo nodeId="1220978647439" varName="suggestFiles" />
       <varInfo nodeId="1220978396858" varName="compositePathComponent" />
     </scopeInfo>
   </root>

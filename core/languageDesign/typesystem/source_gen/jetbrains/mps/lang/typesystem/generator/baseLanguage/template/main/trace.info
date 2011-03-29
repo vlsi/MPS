@@ -2284,8 +2284,8 @@
     <nodeInfo nodeId="3742630585877622640" fileName="QueriesGenerated.java" startLine="2791" startPosition="62" endLine="2795" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3742630585877533563" fileName="QueriesGenerated.java" startLine="2789" startPosition="185" endLine="2800" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="3742630585877533569" fileName="QueriesGenerated.java" startLine="2790" startPosition="39" endLine="2799" endPosition="62">
-      <varInfo nodeId="3742630585877622676" varName="annotation" />
       <varInfo nodeId="3742630585877622641" varName="modelId" />
+      <varInfo nodeId="3742630585877622676" varName="annotation" />
       <varInfo nodeId="3742630585877622650" varName="nodeId" />
       <varInfo nodeId="1688926966297930422" varName="originalModel" />
     </scopeInfo>

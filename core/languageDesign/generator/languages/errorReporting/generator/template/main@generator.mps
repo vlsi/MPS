@@ -65,7 +65,9 @@
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="6145560071556216090">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qq7j.7287346816896104019" resolveInfo="ErrorReportingRoot" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.RuleConsequence" typeId="tpf8.1168559098955" id="6145560071556216091" />
+      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5727998172298322349">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7287346816896226975" resolveInfo="weave_ErrorReportingRootClass1" />
+      </node>
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="6145560071556216092">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6145560071556216093">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6145560071556217187">

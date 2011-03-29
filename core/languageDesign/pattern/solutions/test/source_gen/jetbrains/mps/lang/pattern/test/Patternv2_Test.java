@@ -28,7 +28,7 @@ public class Patternv2_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/plugins/vcs/vcs.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/workbench/runConfigurations/runConfigurations.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.Patternv2_Test$TestBody", "testv2", true);
   }
 
@@ -201,22 +201,22 @@ public class Patternv2_Test extends BaseTransformationTest {
                   return false;
                 }
                 {
-                  String childRole_1fi__0 = "ifTrue";
-                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__0) != 1) {
-                    return false;
-                  }
-                  {
-                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__0).get(0);
-                    this.patternVar_ifbody = childVar_1fi_a1a0;
-                  }
-                }
-                {
-                  String childRole_1fi__1 = "condition";
+                  String childRole_1fi__1 = "ifTrue";
                   if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__1) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__1).get(0);
+                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__1).get(0);
+                    this.patternVar_ifbody = childVar_1fi_a1a0;
+                  }
+                }
+                {
+                  String childRole_1fi__2 = "condition";
+                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__2) != 1) {
+                    return false;
+                  }
+                  {
+                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__2).get(0);
                     {
                       SNode nodeToMatch_1fi_a1a0;
                       nodeToMatch_1fi_a1a0 = childVar_1fi_a1a0_0;
@@ -224,22 +224,22 @@ public class Patternv2_Test extends BaseTransformationTest {
                         return false;
                       }
                       {
-                        String childRole_1fi__2 = "leftExpression";
-                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__2) != 1) {
+                        String childRole_1fi__4 = "leftExpression";
+                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__4) != 1) {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__2).get(0);
+                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__4).get(0);
                           this.patternVar_p = childVar_1fi_a0b0a;
                         }
                       }
                       {
-                        String childRole_1fi__3 = "rightExpression";
-                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__3) != 1) {
+                        String childRole_1fi__6 = "rightExpression";
+                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__6) != 1) {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__3).get(0);
+                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__6).get(0);
                           {
                             SNode nodeToMatch_1fi_a0b0a;
                             nodeToMatch_1fi_a0b0a = childVar_1fi_a0b0a_0;

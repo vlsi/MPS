@@ -9,8 +9,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.dataFlow.AskBooleanExpression_DataFlow" file="AskBooleanExpression_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.dataFlow.AskExpression_DataFlow" file="AskExpression_DataFlow.java">
@@ -43,16 +43,16 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.dataFlow.DFABuilders" file="DFABuilders.java">
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.SetValueStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.MoveNodeToNodeExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.DeleteFeatureOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.ChangeFeatureNameOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.AbstractMoveExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.AskBooleanExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.AskExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.MoveNodeToNodeExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.DeleteFeatureOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.SetValueStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.ErrorStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.AbstractMoveExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.DeleteFeatureExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.ChangeFeatureNameOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.ChangeFeatureNameExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.dataFlow.CustomParameterChooser_DataFlow" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />

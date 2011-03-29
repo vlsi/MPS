@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EventPropertyGetter_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints" />
   <unitInfo fileName="UIPropertyAccessCode_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_Constraints" />
+  <unitInfo fileName="EventPropertyGetter_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EventPropertyGetter_Constraints" />
   <unitInfo fileName="AuxObjectAccessOp_Constraints.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_Constraints" />
   <unitInfo fileName="AspectParameterDecl_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_name_PropertyConstraint" />
-  <unitInfo fileName="AspectParameterDecl_aspectDef_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_aspectDef_ReferentConstraint" />
   <unitInfo fileName="AspectParameterRef_parameterDecl_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterRef_parameterDecl_ReferentConstraint" />
-  <unitInfo fileName="EditableUIPropertyAccessCode_property_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_property_ReferentConstraint" />
+  <unitInfo fileName="AspectParameterDecl_aspectDef_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AspectParameterDecl_aspectDef_ReferentConstraint" />
   <unitInfo fileName="UIPropertyAccessCode_property_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.UIPropertyAccessCode_property_ReferentConstraint" />
+  <unitInfo fileName="EditableUIPropertyAccessCode_property_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EditableUIPropertyAccessCode_property_ReferentConstraint" />
   <unitInfo fileName="Container_specializes_ReferentConstraint.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.Container_specializes_ReferentConstraint" />
   <unitInfo fileName="AuxObjectAccessOp_template_ReferentConstraint.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.AuxObjectAccessOp_template_ReferentConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.ConstraintsDescriptor" />

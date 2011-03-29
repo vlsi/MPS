@@ -312,15 +312,15 @@
     </scopeInfo>
     <scopeInfo nodeId="4072414341992405437" fileName="QueriesGenerated.java" startLine="408" startPosition="136" endLine="412" endPosition="205" />
     <scopeInfo nodeId="6283201779507549643" fileName="QueriesGenerated.java" startLine="464" startPosition="136" endLine="468" endPosition="303">
-      <varInfo nodeId="6283201779507549652" varName="mainNode" />
       <varInfo nodeId="6283201779507549645" varName="childRole_" />
+      <varInfo nodeId="6283201779507549652" varName="mainNode" />
       <varInfo nodeId="6283201779507549659" varName="children" />
     </scopeInfo>
     <scopeInfo nodeId="7836785066500694235" fileName="QueriesGenerated.java" startLine="476" startPosition="150" endLine="480" endPosition="0" />
     <scopeInfo nodeId="7836785066500694256" fileName="QueriesGenerated.java" startLine="485" startPosition="150" endLine="489" endPosition="0" />
     <scopeInfo nodeId="6283201779507549919" fileName="QueriesGenerated.java" startLine="493" startPosition="136" endLine="497" endPosition="300">
-      <varInfo nodeId="6283201779507549928" varName="mainNode" />
       <varInfo nodeId="6283201779507549921" varName="childRole_" />
+      <varInfo nodeId="6283201779507549928" varName="mainNode" />
       <varInfo nodeId="6283201779507549935" varName="children" />
     </scopeInfo>
     <scopeInfo nodeId="1190931377211" fileName="QueriesGenerated.java" startLine="575" startPosition="251" endLine="579" endPosition="63">

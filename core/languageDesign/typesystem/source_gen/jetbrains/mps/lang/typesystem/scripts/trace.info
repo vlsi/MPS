@@ -64,8 +64,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1759628044690734773" fileName="TypesLanguageScriptsUtil.java" startLine="17" startPosition="64" endLine="29" endPosition="16">
       <varInfo nodeId="1759628044690734793" varName="name" />
-      <varInfo nodeId="1759628044690734815" varName="registry" />
       <varInfo nodeId="1759628044690734799" varName="coreTypes" />
+      <varInfo nodeId="1759628044690734815" varName="registry" />
     </scopeInfo>
     <scopeInfo nodeId="1759628044690734770" fileName="TypesLanguageScriptsUtil.java" startLine="16" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1759628044690734775" varName="priority" />

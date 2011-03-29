@@ -8,8 +8,8 @@
   <unitInfo fileName="ContainerType_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.behavior.ContainerType_Behavior" />
   <unitInfo fileName="BeanPropertyView_Behavior.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.behavior.BeanPropertyView_Behavior" />
   <unitInfo fileName="CreateUIObjectStatement_Behavior.java" startLine="32" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.behavior.CreateUIObjectStatement_Behavior$QuotationClass_qpbyzc_a0a0b" />
-  <unitInfo fileName="InsertUIObjectStatement_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior$QuotationClass_rkt09j_a0a0c" />
   <unitInfo fileName="AppendUIObjectStatement_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_Behavior$QuotationClass_br8013_a0a0c" />
+  <unitInfo fileName="InsertUIObjectStatement_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior$QuotationClass_rkt09j_a0a0c" />
   <unitInfo fileName="UIObjectStatement_Behavior.java" startLine="60" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior$QuotationClass_55aimi_a0a0g" />
   <unitInfo fileName="AccessUIPropertyOperation_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ui.behavior.AccessUIPropertyOperation_Behavior" />
   <unitInfo fileName="UIObjectReference_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectReference_Behavior" />
@@ -19,8 +19,8 @@
   <unitInfo fileName="Validator_Behavior.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_Behavior$QuotationClass_fimzcf_a0a0b" />
   <unitInfo fileName="InlineController_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.behavior.InlineController_Behavior" />
   <unitInfo fileName="Validator_Behavior.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ui.behavior.Validator_Behavior" />
-  <unitInfo fileName="InsertUIObjectStatement_Behavior.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior" />
   <unitInfo fileName="AppendUIObjectStatement_Behavior.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.behavior.AppendUIObjectStatement_Behavior" />
+  <unitInfo fileName="InsertUIObjectStatement_Behavior.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.behavior.InsertUIObjectStatement_Behavior" />
   <unitInfo fileName="UIObjectProviderStatement_Behavior.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectProviderStatement_Behavior" />
   <unitInfo fileName="IUIObjectContextProvider_Behavior.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior" />
   <unitInfo fileName="CompartmentProviderStatement_Behavior.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentProviderStatement_Behavior" />

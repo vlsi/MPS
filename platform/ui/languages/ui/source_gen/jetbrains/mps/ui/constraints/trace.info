@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EnclosingContextCompartmentExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.constraints.EnclosingContextCompartmentExpression_Constraints" />
   <unitInfo fileName="ContainerCompartment_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.constraints.ContainerCompartment_Constraints" />
+  <unitInfo fileName="EnclosingContextCompartmentExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.constraints.EnclosingContextCompartmentExpression_Constraints" />
   <unitInfo fileName="EventPropertyAccessOp_Constraints.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.constraints.EventPropertyAccessOp_Constraints" />
   <unitInfo fileName="BeanPropertyView_canRead_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ui.constraints.BeanPropertyView_canRead_PropertyConstraint" />
   <unitInfo fileName="ChildAspect_definition_ReferentConstraint.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.constraints.ChildAspect_definition_ReferentConstraint" />
@@ -13,8 +13,8 @@
   <unitInfo fileName="EventType_event_ReferentConstraint.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.constraints.EventType_event_ReferentConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="EventPropertyAccessOp_property_ReferentConstraint.java" startLine="21" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ui.constraints.EventPropertyAccessOp_property_ReferentConstraint" />
-  <unitInfo fileName="AccessUIPropertyOperation_property_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.constraints.AccessUIPropertyOperation_property_ReferentConstraint" />
   <unitInfo fileName="CallUIActionOperation_action_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.constraints.CallUIActionOperation_action_ReferentConstraint" />
+  <unitInfo fileName="AccessUIPropertyOperation_property_ReferentConstraint.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.constraints.AccessUIPropertyOperation_property_ReferentConstraint" />
   <unitInfo fileName="ContainerType_container_ReferentConstraint.java" startLine="22" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.constraints.ContainerType_container_ReferentConstraint" />
   <unitInfo fileName="ContainerCompartment_container_ReferentConstraint.java" startLine="23" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.constraints.ContainerCompartment_container_ReferentConstraint" />
   <unitInfo fileName="BeanPropertyView_getter_ReferentConstraint.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.constraints.BeanPropertyView_getter_ReferentConstraint" />

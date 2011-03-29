@@ -41,15 +41,15 @@
     </scopeInfo>
     <scopeInfo nodeId="8351679702044331856" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="56" endLine="60" endPosition="12" />
     <scopeInfo nodeId="7854369758457864783" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="85" endLine="41" endPosition="18">
-      <varInfo nodeId="6447445394688511209" varName="queue" />
       <varInfo nodeId="6447445394688471872" varName="result" />
+      <varInfo nodeId="6447445394688511209" varName="queue" />
     </scopeInfo>
     <scopeInfo nodeId="8351679702044331848" fileName="FacetDeclaration_Behavior.java" startLine="47" startPosition="57" endLine="61" endPosition="7">
       <varInfo nodeId="8351679702044331850" varName="fd" />
     </scopeInfo>
     <scopeInfo nodeId="8351679702044331821" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="85" endLine="63" endPosition="18">
-      <varInfo nodeId="8351679702044331837" varName="queue" />
       <varInfo nodeId="8351679702044331830" varName="result" />
+      <varInfo nodeId="8351679702044331837" varName="queue" />
     </scopeInfo>
     <unitInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="34" startPosition="141" endLine="38" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$1" />
     <unitInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="141" endLine="55" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$2" />

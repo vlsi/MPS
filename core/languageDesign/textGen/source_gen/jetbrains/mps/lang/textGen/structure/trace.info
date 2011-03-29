@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
-  <unitInfo fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
-  <unitInfo fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
   <unitInfo fileName="EncodingDeclarationBase.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase" />
+  <unitInfo fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
+  <unitInfo fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+  <unitInfo fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
   <unitInfo fileName="TextGen_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TextGen_Language" />
-  <unitInfo fileName="NewLineAppendPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" />
-  <unitInfo fileName="BufferParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.BufferParameter" />
-  <unitInfo fileName="ContextParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ContextParameter" />
-  <unitInfo fileName="IndentBufferOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.IndentBufferOperation" />
-  <unitInfo fileName="DecreaseDepthOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation" />
-  <unitInfo fileName="IncreaseDepthOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation" />
   <unitInfo fileName="NodeParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NodeParameter" />
-  <unitInfo fileName="ExtensionDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" />
-  <unitInfo fileName="AbstractAppendPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractAppendPart" />
-  <unitInfo fileName="AbstractTextGenParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter" />
-  <unitInfo fileName="UtilityMethodDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration" />
-  <unitInfo fileName="SimpleTextGenOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation" />
+  <unitInfo fileName="IncreaseDepthOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation" />
+  <unitInfo fileName="DecreaseDepthOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation" />
+  <unitInfo fileName="IndentBufferOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.IndentBufferOperation" />
+  <unitInfo fileName="ContextParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ContextParameter" />
+  <unitInfo fileName="BufferParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.BufferParameter" />
+  <unitInfo fileName="NewLineAppendPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" />
   <unitInfo fileName="GenerateTextDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" />
-  <unitInfo fileName="InfoAppendPart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.InfoAppendPart" />
+  <unitInfo fileName="SimpleTextGenOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation" />
+  <unitInfo fileName="UtilityMethodDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration" />
+  <unitInfo fileName="AbstractTextGenParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter" />
+  <unitInfo fileName="AbstractAppendPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractAppendPart" />
+  <unitInfo fileName="ExtensionDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" />
   <unitInfo fileName="OperationDeclaration.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.OperationDeclaration" />
-  <unitInfo fileName="WithIndentOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.WithIndentOperation" />
+  <unitInfo fileName="InfoAppendPart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.InfoAppendPart" />
   <unitInfo fileName="FoundErrorOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.FoundErrorOperation" />
+  <unitInfo fileName="WithIndentOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.WithIndentOperation" />
   <unitInfo fileName="ConstantStringAppendPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" />
-  <unitInfo fileName="ReferenceAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart" />
   <unitInfo fileName="NodeAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NodeAppendPart" />
+  <unitInfo fileName="ReferenceAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart" />
   <unitInfo fileName="AppendOperation.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AppendOperation" />
   <unitInfo fileName="CollectionAppendPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" />
-  <unitInfo fileName="UtilityMethodCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" />
   <unitInfo fileName="OperationCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.OperationCall" />
+  <unitInfo fileName="UtilityMethodCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" />
   <unitInfo fileName="EncodingDeclaration.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.EncodingDeclaration" />
   <unitInfo fileName="LanguageTextGenDeclaration.java" startLine="12" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration" />
   <unitInfo fileName="EncodingLiteral.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.EncodingLiteral" />

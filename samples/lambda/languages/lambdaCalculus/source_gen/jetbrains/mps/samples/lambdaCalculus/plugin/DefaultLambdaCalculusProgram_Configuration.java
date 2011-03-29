@@ -51,7 +51,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import javax.swing.JLabel;
@@ -258,11 +257,7 @@ public class DefaultLambdaCalculusProgram_Configuration extends BaseRunConfig {
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = DefaultLambdaCalculusProgram_Configuration.this.getNode();
-    if (make) {
-      RunUtil.makeBeforeRun(project, node);
-    }
-    return node;
+    return DefaultLambdaCalculusProgram_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {

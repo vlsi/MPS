@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.run.DefaultOsProcessHandler" file="DefaultOsProcessHandler.java">
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />

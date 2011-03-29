@@ -11,19 +11,19 @@
   <import index="tp1t" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" implicit="yes" />
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="856705193941282419">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="rzqf.856705193941281756" resolveInfo="CommandParameterReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="856705193941282439">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="rzqf.856705193941281764" resolveInfo="CommandParameterAssignment" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="856705193941282457">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="rzqf.856705193941281777" resolveInfo="CommandDebuggerOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="856705193941282468">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="rzqf.856705193941281797" resolveInfo="AbstractProcessBuilderPart" />
     </node>
   </roots>

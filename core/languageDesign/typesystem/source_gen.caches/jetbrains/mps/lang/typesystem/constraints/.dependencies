@@ -17,10 +17,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.CaretPositionOperation_Constraints" file="CaretPositionOperation_Constraints.java">
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" file="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -69,6 +69,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.PropertyPatternVariableReference_patternVarDecl_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_linkDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.PropertyMessageTarget_propertyDeclaration_ReferentConstraint" />
@@ -77,20 +78,19 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_applicableNode_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_quickFixArgument_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.LinkPatternVariableReference_patternVarDecl_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_quickFixField_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.InequationReference_inequation_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_VarRef_link_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_typeVarDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ListVarReference_listVarDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_quickFixArgument_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_typeVarDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_parametersLink_ReferentConstraint" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
@@ -256,33 +256,33 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint" file="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.SimpleRule_ProcedureCall_parametersLink_ReferentConstraint" file="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
@@ -292,8 +292,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
@@ -305,8 +305,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
@@ -354,10 +354,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.WasSelectedNodeOperation_Constraints" file="WasSelectedNodeOperation_Constraints.java">
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint" file="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

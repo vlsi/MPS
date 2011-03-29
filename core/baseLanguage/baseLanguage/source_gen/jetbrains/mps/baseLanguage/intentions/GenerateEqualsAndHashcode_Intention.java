@@ -318,7 +318,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_59 = quotedNode_34;
-                    quotedNode1_59.addReference(SReference.create("baseMethodDeclaration", quotedNode1_59, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.getClass():java.lang.Class")));
+                    quotedNode1_59.addReference(SReference.create("baseMethodDeclaration", quotedNode1_59, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.getClass():java.lang.Class")));
                     quotedNode_29.addChild("operation", quotedNode1_59);
                   }
                   quotedNode_22.addChild("leftExpression", quotedNode1_57);
@@ -334,7 +334,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_62 = quotedNode_36;
-                    quotedNode1_62.addReference(SReference.create("baseMethodDeclaration", quotedNode1_62, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.getClass():java.lang.Class")));
+                    quotedNode1_62.addReference(SReference.create("baseMethodDeclaration", quotedNode1_62, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.getClass():java.lang.Class")));
                     quotedNode_30.addChild("operation", quotedNode1_62);
                   }
                   quotedNode_22.addChild("rightExpression", quotedNode1_60);
@@ -392,7 +392,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           {
             quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_71 = quotedNode_11;
-            quotedNode1_71.addReference(SReference.create("classifier", quotedNode1_71, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+            quotedNode1_71.addReference(SReference.create("classifier", quotedNode1_71, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
             quotedNode_5.addChild("type", quotedNode1_71);
           }
           quotedNode_1.addChild("parameter", quotedNode1_70);
@@ -400,7 +400,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
         {
           quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_72 = quotedNode_6;
-          quotedNode1_72.addReference(SReference.create("annotation", quotedNode1_72, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+          quotedNode1_72.addReference(SReference.create("annotation", quotedNode1_72, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
           quotedNode_1.addChild("annotation", quotedNode1_72);
         }
         result = quotedNode1_37;
@@ -462,8 +462,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           {
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_18 = quotedNode_6;
-            quotedNode1_18.addReference(SReference.create("baseMethodDeclaration", quotedNode1_18, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float.compare(float,float):int")));
-            quotedNode1_18.addReference(SReference.create("classConcept", quotedNode1_18, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+            quotedNode1_18.addReference(SReference.create("baseMethodDeclaration", quotedNode1_18, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Float.compare(float,float):int")));
+            quotedNode1_18.addReference(SReference.create("classConcept", quotedNode1_18, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Float")));
             {
               quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_19 = quotedNode_8;
@@ -551,8 +551,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_15 = quotedNode_5;
-            quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double.compare(double,double):int")));
-            quotedNode1_15.addReference(SReference.create("classConcept", quotedNode1_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+            quotedNode1_15.addReference(SReference.create("baseMethodDeclaration", quotedNode1_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Double.compare(double,double):int")));
+            quotedNode1_15.addReference(SReference.create("classConcept", quotedNode1_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Double")));
             {
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_7;
@@ -739,8 +739,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_13 = quotedNode_4;
-            quotedNode1_13.addReference(SReference.create("classConcept", quotedNode1_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~Arrays")));
-            quotedNode1_13.addReference(SReference.create("baseMethodDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.equals(java.lang.Object):boolean")));
+            quotedNode1_13.addReference(SReference.create("classConcept", quotedNode1_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
+            quotedNode1_13.addReference(SReference.create("baseMethodDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.equals(java.lang.Object):boolean")));
             {
               quotedNode_6 = (SNode) parameter_21;
               SNode quotedNode1_14;
@@ -869,7 +869,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               {
                 quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_28 = quotedNode_14;
-                quotedNode1_28.addReference(SReference.create("baseMethodDeclaration", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.equals(java.lang.Object):boolean")));
+                quotedNode1_28.addReference(SReference.create("baseMethodDeclaration", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String.equals(java.lang.Object):boolean")));
                 {
                   quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_29 = quotedNode_18;
@@ -1053,7 +1053,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               {
                 quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_31 = quotedNode_14;
-                quotedNode1_31.addReference(SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.equals(java.lang.Object):boolean")));
+                quotedNode1_31.addReference(SReference.create("baseMethodDeclaration", quotedNode1_31, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.equals(java.lang.Object):boolean")));
                 {
                   quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_32 = quotedNode_18;
@@ -1096,7 +1096,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_37 = quotedNode_22;
-                    quotedNode1_37.addReference(SReference.create("classifier", quotedNode1_37, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+                    quotedNode1_37.addReference(SReference.create("classifier", quotedNode1_37, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
                     quotedNode_19.addChild("type", quotedNode1_37);
                   }
                   {
@@ -1250,7 +1250,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_5;
-          quotedNode1_10.addReference(SReference.create("annotation", quotedNode1_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+          quotedNode1_10.addReference(SReference.create("annotation", quotedNode1_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
           quotedNode_1.addChild("annotation", quotedNode1_10);
         }
         result = quotedNode1_6;
@@ -1618,8 +1618,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             {
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_5;
-              quotedNode1_16.addReference(SReference.create("baseMethodDeclaration", quotedNode1_16, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double.doubleToLongBits(double):long")));
-              quotedNode1_16.addReference(SReference.create("classConcept", quotedNode1_16, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+              quotedNode1_16.addReference(SReference.create("baseMethodDeclaration", quotedNode1_16, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Double.doubleToLongBits(double):long")));
+              quotedNode1_16.addReference(SReference.create("classConcept", quotedNode1_16, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Double")));
               {
                 quotedNode_8 = (SNode) parameter_24;
                 SNode quotedNode1_17;
@@ -1943,8 +1943,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 {
                   quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_21 = quotedNode_8;
-                  quotedNode1_21.addReference(SReference.create("classConcept", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-                  quotedNode1_21.addReference(SReference.create("baseMethodDeclaration", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float.floatToIntBits(float):int")));
+                  quotedNode1_21.addReference(SReference.create("classConcept", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Float")));
+                  quotedNode1_21.addReference(SReference.create("baseMethodDeclaration", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Float.floatToIntBits(float):int")));
                   {
                     quotedNode_11 = (SNode) parameter_29;
                     SNode quotedNode1_22;
@@ -2102,8 +2102,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_28 = quotedNode_13;
-                    quotedNode1_28.addReference(SReference.create("classConcept", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String")));
-                    quotedNode1_28.addReference(SReference.create("baseMethodDeclaration", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.valueOf(java.lang.Object):java.lang.String")));
+                    quotedNode1_28.addReference(SReference.create("classConcept", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                    quotedNode1_28.addReference(SReference.create("baseMethodDeclaration", quotedNode1_28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String.valueOf(java.lang.Object):java.lang.String")));
                     {
                       quotedNode_15 = (SNode) parameter_34;
                       SNode quotedNode1_29;
@@ -2122,7 +2122,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_30 = quotedNode_14;
-                    quotedNode1_30.addReference(SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.hashCode():int")));
+                    quotedNode1_30.addReference(SReference.create("baseMethodDeclaration", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String.hashCode():int")));
                     quotedNode_10.addChild("operation", quotedNode1_30);
                   }
                   quotedNode_7.addChild("ifTrue", quotedNode1_27);
@@ -2198,8 +2198,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 {
                   quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_21 = quotedNode_9;
-                  quotedNode1_21.addReference(SReference.create("classConcept", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~Arrays")));
-                  quotedNode1_21.addReference(SReference.create("baseMethodDeclaration", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~Arrays.hashCode(double[]):int")));
+                  quotedNode1_21.addReference(SReference.create("classConcept", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
+                  quotedNode1_21.addReference(SReference.create("baseMethodDeclaration", quotedNode1_21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays.hashCode(double[]):int")));
                   {
                     quotedNode_11 = (SNode) parameter_28;
                     SNode quotedNode1_22;
@@ -2345,7 +2345,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       {
                         quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                         SNode quotedNode1_30 = quotedNode_16;
-                        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+                        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
                         quotedNode_15.addChild("type", quotedNode1_30);
                       }
                       {
@@ -2368,7 +2368,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_32 = quotedNode_14;
-                    quotedNode1_32.addReference(SReference.create("baseMethodDeclaration", quotedNode1_32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.hashCode():int")));
+                    quotedNode1_32.addReference(SReference.create("baseMethodDeclaration", quotedNode1_32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.hashCode():int")));
                     quotedNode_10.addChild("operation", quotedNode1_32);
                   }
                   quotedNode_7.addChild("ifTrue", quotedNode1_27);
@@ -2493,7 +2493,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       {
                         quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                         SNode quotedNode1_30 = quotedNode_16;
-                        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+                        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
                         quotedNode_15.addChild("type", quotedNode1_30);
                       }
                       {
@@ -2516,7 +2516,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   {
                     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_32 = quotedNode_14;
-                    quotedNode1_32.addReference(SReference.create("baseMethodDeclaration", quotedNode1_32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object.hashCode():int")));
+                    quotedNode1_32.addReference(SReference.create("baseMethodDeclaration", quotedNode1_32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.hashCode():int")));
                     quotedNode_10.addChild("operation", quotedNode1_32);
                   }
                   quotedNode_7.addChild("ifTrue", quotedNode1_27);

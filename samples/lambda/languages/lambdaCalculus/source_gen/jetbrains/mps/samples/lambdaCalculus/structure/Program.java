@@ -5,6 +5,9 @@ package jetbrains.mps.samples.lambdaCalculus.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class Program extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Program(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class Program extends BaseConcept implements INamedConcept {
 
   public void setExpression(LambdaExpression node) {
     super.setChild(Program.EXPRESSION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Program._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Program._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Program._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Program._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Program._$ATTRIBUTE, node);
   }
 
   public static Program newInstance(SModel sm, boolean init) {
