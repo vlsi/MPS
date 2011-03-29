@@ -65,7 +65,7 @@ class AspectGrouper implements Grouper {
           }
 
           if (!childElements.isEmpty()) {
-            result.add(new MyGroup(tab, childElements));
+            result.add(new AspectGroup(tab, childElements));
           }
         }
         return result;
@@ -75,53 +75,11 @@ class AspectGrouper implements Grouper {
 
   @NotNull
   public ActionPresentation getPresentation() {
-    return new ActionPresentationData("Group by Aspect", "", Icons.PROJECT_LANGUAGES_ICON);
+    return new ActionPresentationData("Group by Aspect", "", Icons.PROJECT_MODELS_ICON);
   }
 
   @NotNull
   public String getName() {
     return "AspectGrouper";
-  }
-
-  private static class TabPresentationAdapter implements ItemPresentation {
-    private final EditorTabDescriptor myTab;
-
-    public TabPresentationAdapter(EditorTabDescriptor tab) {
-      myTab = tab;
-    }
-
-    public String getPresentableText() {
-      return myTab.getTitle();
-    }
-
-    public String getLocationString() {
-      return null;
-    }
-
-    public Icon getIcon(boolean open) {
-      return null;
-    }
-
-    public TextAttributesKey getTextAttributesKey() {
-      return null;
-    }
-  }
-
-  private static class MyGroup implements Group {
-    public Collection<TreeElement> myChildren;
-    private final EditorTabDescriptor myTab;
-
-    public MyGroup(EditorTabDescriptor tab, Collection<TreeElement> children) {
-      myChildren = children;
-      myTab = tab;
-    }
-
-    public ItemPresentation getPresentation() {
-      return new TabPresentationAdapter(myTab);
-    }
-
-    public Collection<TreeElement> getChildren() {
-      return myChildren;
-    }
   }
 }

@@ -75,7 +75,7 @@ public class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public Sorter[] getSorters() {
-        return new Sorter[0];//{new AspectSorter()};
+        return new Sorter[]{new AspectSorter()};
       }
 
       @NotNull

@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editorTabs;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,5 +59,10 @@ public abstract class EditorTabDescriptor implements Comparable<EditorTabDescrip
 
   public SNode createNode(SNode baseNode, SNode concept) {
     throw new UnsupportedOperationException();
+  }
+
+  @Nullable
+  public Icon getIcon() {
+    return null;
   }
 }

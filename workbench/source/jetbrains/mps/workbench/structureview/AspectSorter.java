@@ -16,14 +16,18 @@
 package jetbrains.mps.workbench.structureview;
 
 import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
+import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabs.EditorTab;
+import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 
 class AspectSorter implements Sorter {
   public Comparator getComparator() {
-    return null;
+    return new EditorTabComparator();
   }
 
   public boolean isVisible() {
@@ -32,11 +36,45 @@ class AspectSorter implements Sorter {
 
   @NotNull
   public ActionPresentation getPresentation() {
-    return null;
+    return new ActionPresentationData("Sort Aspects", "", Icons.PROJECT_ICON);
   }
 
   @NotNull
   public String getName() {
-    return null;
+    return "AspectSorter";
   }
+
+  private static class EditorTabComparator implements Comparator{
+    public int compare(EditorTab o1, EditorTab o2) {
+      EditorTabDescriptor d1 = o1.getDescriptor();
+      EditorTabDescriptor d2 = o2.getDescriptor();
+
+      int r1 = d1.compareTo(d2);
+      int r2 = d2.compareTo(d1);
+
+      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
+
+      assert r1 * r2 <= 0 : "can't determine order";
+
+      return r1;
+    }
+
+    public int compare(Object o1, Object o2) {
+      if (!(o1 instanceof AspectGroup)) return 0;
+      if (!(o2 instanceof AspectGroup)) return 0;
+
+      EditorTabDescriptor d1 = ((AspectGroup) o1).getTab();
+      EditorTabDescriptor d2 = ((AspectGroup) o2).getTab();
+
+      int r1 = d1.compareTo(d2);
+      int r2 = d2.compareTo(d1);
+
+      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
+
+      assert r1 * r2 <= 0 : "can't determine order";
+
+      return r1;
+    }
+  }
+
 }
