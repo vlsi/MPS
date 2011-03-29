@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLanguage.index/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module" module-name="MPS" />
