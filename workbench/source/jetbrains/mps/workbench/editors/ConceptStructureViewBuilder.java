@@ -15,13 +15,21 @@
  */
 package jetbrains.mps.workbench.editors;
 
+import com.intellij.ide.DataManager;
 import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.Filter;
 import com.intellij.ide.util.treeView.smartTree.Grouper;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.AsyncResult.Handler;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -55,30 +63,7 @@ class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public StructureViewTreeElement getRoot() {
-        return new StructureViewTreeElement() {
-          public Object getValue() {
-            return "123";
-          }
-
-          public boolean canNavigateToSource() {
-            return false;
-          }
-
-          public TreeElement[] getChildren() {
-            return new TreeElement[0];
-          }
-
-          public boolean canNavigate() {
-            return false;
-          }
-
-          public ItemPresentation getPresentation() {
-            return new NodePresentation(myNode);
-          }
-
-          public void navigate(boolean b) {
-          }
-        };
+        return new MyStructureViewTreeElement();
       }
 
       public void dispose() {
@@ -103,5 +88,41 @@ class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
         return new Grouper[0];
       }
     };
+  }
+
+  private class MyStructureViewTreeElement implements StructureViewTreeElement {
+    public Object getValue() {
+      return "123";
+    }
+
+    public boolean canNavigateToSource() {
+      return false;
+    }
+
+    public TreeElement[] getChildren() {
+      return new TreeElement[0];
+    }
+
+    public boolean canNavigate() {
+      return false;
+    }
+
+    public ItemPresentation getPresentation() {
+      return new NodePresentation(myNode);
+    }
+
+    public void navigate(boolean b) {
+      DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+        public void run(DataContext dataContext) {
+          Project p = MPSDataKeys.PROJECT.getData(dataContext);
+          if (p == null) return;
+          SModel model = myNode.getModel();
+          if (model == null) return;
+          IModule module = model.getModelDescriptor().getModule();
+          if (module == null) return;
+          new MPSEditorOpener(p).editNode(myNode, new ModuleContext(module, p));
+        }
+      });
+    }
   }
 }
