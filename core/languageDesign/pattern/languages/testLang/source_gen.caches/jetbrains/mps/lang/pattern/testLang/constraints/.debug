@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeId="8707387027762047794">
-    <nodeInfo nodeId="8707387027762047798" fileName="PatternTestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
-    <scopeInfo nodeId="8707387027762047797" fileName="PatternTestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
-  </root>
-</debugInfo>
-
