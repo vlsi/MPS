@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.structureview.ConceptStructureViewBuilder;
+import jetbrains.mps.workbench.structureview.StructureViewBuilderFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -169,19 +170,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
-      public StructureViewBuilder compute() {
-        SNodePointer np = myFile.getSNodePointer();
-        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
-        for (EditorTabDescriptor tab : tabs) {
-          SNode baseNode = tab.getBaseNode(np.getNode());
-          if (baseNode!=null){
-            return new ConceptStructureViewBuilder(myProject, new SNodePointer(baseNode));
-          }
-        }
-        return null;
-      }
-    });
+    return myProject.getComponent(StructureViewBuilderFactory.class).create(myFile.getSNodePointer());
   }
 
   public void dispose() {

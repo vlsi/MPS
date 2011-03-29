@@ -258,6 +258,10 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.workbench.structureview.StructureViewBuilderFactory</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
     </component>
 
