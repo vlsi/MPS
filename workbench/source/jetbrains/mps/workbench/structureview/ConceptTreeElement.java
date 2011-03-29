@@ -15,22 +15,12 @@
  */
 package jetbrains.mps.workbench.structureview;
 
-import com.intellij.ide.DataManager;
-import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,16 +34,19 @@ class ConceptTreeElement extends NodeTreeElement {
   }
 
   public TreeElement[] getChildren() {
-    List<TreeElement> result = new ArrayList<TreeElement>();
+    final List<TreeElement> result = new ArrayList<TreeElement>();
 
-    List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors(myNode);
-    for (EditorTabDescriptor tab: tabs) {
-      for (SNode aspectNode: tab.getNodes(myNode)){
-        result.add(new AspectTreeElement(aspectNode));
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors(myNode);
+        for (EditorTabDescriptor tab : tabs) {
+          for (SNode aspectNode : tab.getNodes(myNode)) {
+            result.add(new AspectTreeElement(aspectNode));
+          }
+        }
       }
-    }
+    });
 
     return result.toArray(new TreeElement[result.size()]);
   }
-
 }
