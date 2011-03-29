@@ -51,9 +51,15 @@ public class CompiledBehaviorDescriptor extends BehaviorDescriptor {
 
   @Override
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+//    System.out.println("!" + methodName);
+
     if (methodName.startsWith("virtual_")) {
+      Object[] params = new Object[parameters.length + 1];
+      params[0] = node;
+      System.arraycopy(parameters, 0, params, 1, parameters.length);
+
       try {
-        return (T) getMethod(methodName, parametersTypes).invoke(this, parameters);
+        return (T) getMethod(methodName, parametersTypes).invoke(this, params);
       } catch (IllegalAccessException e) {
         throw new RuntimeException(e);
       } catch (InvocationTargetException e) {
