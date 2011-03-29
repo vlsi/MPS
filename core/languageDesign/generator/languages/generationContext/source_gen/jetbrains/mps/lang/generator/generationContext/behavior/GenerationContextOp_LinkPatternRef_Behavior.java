@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerationContextOp_LinkPatternRef_Behavior {
   private static Class[] PARAMETERS_1758784108620115401 = {SNode.class};
-  private static Class[] PARAMETERS_1758784108620254540 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1758784108620254540 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

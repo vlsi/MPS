@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerationContextOp_PatternRef_Behavior {
   private static Class[] PARAMETERS_1758784108620114792 = {SNode.class};
-  private static Class[] PARAMETERS_1758784108620254533 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1758784108620254533 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }

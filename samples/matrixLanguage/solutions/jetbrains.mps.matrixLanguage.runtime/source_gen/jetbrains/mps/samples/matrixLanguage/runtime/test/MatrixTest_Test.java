@@ -36,7 +36,7 @@ public class MatrixTest_Test extends TestCase {
   }
 
   public void test_matrixDeterminant2() throws Exception {
-    Matrix<Double> m = new Matrix<Double>(new Double[][]{{1.0 ,2.0}, {3.0 ,4.0}}, new DoubleFieldOperations());
+    Matrix<Double> m = new Matrix<Double>(new Double[][]{{1.0, 2.0}, {3.0, 4.0}}, new DoubleFieldOperations());
     Assert.assertTrue(m.determinant() + 2 < EPSILON);
   }
 
