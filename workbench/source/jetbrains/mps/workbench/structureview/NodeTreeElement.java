@@ -47,7 +47,11 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     //todo use SNodePointer here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
       public ItemPresentation compute() {
-        return new NodePresentation(myNode.getNode());
+        return new NodePresentation(myNode.getNode()){
+          public String doGetLocationString() {
+            return null;
+          }
+        };
       }
     });
   }
