@@ -28,9 +28,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class StructureViewBuilderFactory implements ProjectComponent{
+public class StructureViewBuilderFactory implements ProjectComponent {
   private Project myProject;
-  //private SNodePointer myLastBaseNode = null;
+  private SNodePointer myLastBaseNode = null;
 
   public StructureViewBuilderFactory(Project project) {
     myProject = project;
@@ -40,12 +40,25 @@ public class StructureViewBuilderFactory implements ProjectComponent{
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
       public StructureViewBuilder compute() {
         List<EditorTabDescriptor> tabs = myProject.getComponent(ProjectPluginManager.class).getTabDescriptors();
+        SNode node = np.getNode();
         for (EditorTabDescriptor tab : tabs) {
-          SNode baseNode = tab.getBaseNode(np.getNode());
-          if (baseNode!=null){
-            return new ConceptStructureViewBuilder(myProject, new SNodePointer(baseNode));
+          SNode baseNode = tab.getBaseNode(node);
+          if (baseNode != null) {
+            myLastBaseNode = new SNodePointer(baseNode);
+            return new ConceptStructureViewBuilder(myProject, myLastBaseNode);
           }
         }
+
+        if (myLastBaseNode != null) {
+          for (EditorTabDescriptor tab : tabs) {
+            SNode lastBaseNode = myLastBaseNode.getNode();
+            if (!tab.isApplicable(lastBaseNode)) continue;
+            if (!tab.getNodes(lastBaseNode).contains(node)) continue;
+            return new ConceptStructureViewBuilder(myProject, myLastBaseNode);
+          }
+        }
+
+        myLastBaseNode = null;
         return null;
       }
     });
