@@ -28,6 +28,8 @@ import java.io.File;
 public class FilesDelta implements IDelta {
   private static Logger LOG = Logger.getLogger(FilesDelta.class);
   private static Pattern URL = Pattern.compile("[a-zA-Z]://(.*)");
+  private static final char SLASH_CHAR = '/';
+  private static final String SLASH = "/";
 
   private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
@@ -133,7 +135,7 @@ public class FilesDelta implements IDelta {
   }
 
   private String straighten(String path) {
-    return path.replaceAll("\\" + File.separatorChar, "/");
+    return path.replaceAll("\\" + File.separatorChar, SLASH);
   }
 
   private FilesDelta copy(FilesDelta that) {
@@ -159,7 +161,8 @@ public class FilesDelta implements IDelta {
   }
 
   private boolean startsWith(String path, String prefix) {
-    return path.startsWith(prefix) && (path.length() == prefix.length() || path.charAt(prefix.length()) == File.separatorChar);
+    return path.startsWith(prefix) && (path.length() == prefix.length() || path.charAt(prefix.length()) == SLASH_CHAR);
+
   }
 
   public static   enum Status {
