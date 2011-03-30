@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.workbench.make.GeneratedTextPreviewEditor" file="GeneratedTextPreviewEditor.java">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorLocation" />
-    <classNode dependClassName="javax.swing.SwingConstants" />
+    <classNode dependClassName="javax.swing.JViewport" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="com.intellij.ui.PrevNextActionsDescriptor" />
@@ -13,12 +13,14 @@
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.beans.PropertyChangeListener" />
     <classNode dependClassName="com.intellij.ui.tabs.JBTabs" />
+    <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewFile" />
+    <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="javax.swing.border.CompoundBorder" />
+    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
@@ -28,11 +30,9 @@
     <classNode dependClassName="com.intellij.openapi.editor.colors.EditorFontType" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
-    <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.ui.tabs.UiDecorator" />
     <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.IdeActions" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="com.intellij.openapi.editor.colors.EditorColorsManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="javax.swing.JTextArea" />
-    <classNode dependClassName="javax.swing.JViewport" />
+    <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditorState" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditor" />
@@ -54,13 +54,13 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorStateLevel" />
     <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewFile" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.workbench.make.GeneratedTextPreviewEditor" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorPolicy" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorState" />
@@ -74,9 +74,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
+    <classNode dependClassName="jetbrains.mps.workbench.make.Icons" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
@@ -85,7 +86,6 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.Icons" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile" />
   </dependency>
@@ -96,14 +96,15 @@
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
@@ -111,7 +112,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="com.intellij.openapi.progress.Progressive" />
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
-    <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -123,13 +123,13 @@
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator" />

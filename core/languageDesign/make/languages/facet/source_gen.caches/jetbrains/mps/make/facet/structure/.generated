@@ -85,21 +85,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TargetDeclaration.java" />
   </source>
-  <source id="6418371274763029600" name="TargetDependency" hash="-6gy52jfgtqsi0o2q434u3icbdbmb0az" dependsOnCreated="true">
-    <dep root="119022571401949652" />
-    <dep root="119022571402207412" />
-    <dep root="1675547159918562083" />
-    <dep root="3344436107830227888" />
-    <dep root="3344436107830227889" />
-    <dep root="6418371274763029521" />
-    <dep root="6418371274763029523" />
+  <source id="6418371274763029600" name="TargetDependency" hash="-6gy52jfgtqsi0o2q434u3icbdbmb0az">
     <dep root="6418371274763029565" />
-    <dep root="6447445394688422642" />
-    <dep root="6447445394688555033" />
-    <dep root="7320828025189345662" />
-    <dep root="7320828025189375154" />
-    <dep root="7320828025189375155" />
-    <dep root="8351679702044320297" />
     <dep root="8351679702044326370" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

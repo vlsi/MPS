@@ -32,10 +32,13 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="dwqlvrpltykekrcpgnxv3x4ri89ls8c" />
   <common hash="cfv3c5t7x46aq9saf7qacdmrvwayvic">
+    <dep root="119022571402110884" />
     <dep root="119022571402207414" />
     <dep root="3344436107830239602" />
+    <dep root="5393853227999858805" />
     <dep root="6447445394688555034" />
     <dep root="7854369758457864776" />
+    <dep root="8351679702044270545" />
     <dep root="8351679702044320298" />
     <dep root="8351679702044331811" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.constraints(MPS.Classpath/jetbrains.mps.smodel.constraints@java_stub)" />
