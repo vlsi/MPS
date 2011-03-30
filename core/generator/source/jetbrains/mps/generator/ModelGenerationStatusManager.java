@@ -21,7 +21,6 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -38,7 +37,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
 
-  private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
   private CacheGenerator myCacheGenerator;
 
   public static ModelGenerationStatusManager getInstance() {

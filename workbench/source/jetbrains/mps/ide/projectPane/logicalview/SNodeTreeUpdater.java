@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.Enumeration;

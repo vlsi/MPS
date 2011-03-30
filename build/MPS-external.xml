@@ -224,6 +224,7 @@
     <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
     <antcall target="MPS-languages.pack.collections.runtime" />
+    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
     <antcall target="MPS-languages.pack.collections_trove.runtime" />
     <antcall target="MPS-languages.pack.collections_samples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
@@ -245,6 +246,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.newTypesystem.presentation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow" />
     <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
@@ -262,6 +264,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.refactoring" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
