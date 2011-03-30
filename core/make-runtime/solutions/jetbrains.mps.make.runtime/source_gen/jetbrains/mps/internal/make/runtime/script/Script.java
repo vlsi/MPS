@@ -22,6 +22,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IJob;
@@ -193,7 +194,8 @@ __switch__:
           LOG.debug("Configuring " + trg.getName());
           IConfig cfg = trg.createConfig();
           if (cfg != null && !(cfg.configure(cmon, pool))) {
-            LOG.debug("Configuration failed");
+            LOG.debug("Configuration failed for target");
+            cmon.reportFeedback(new IFeedback.ERROR("Configuration failed for target " + trg));
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;
           }
@@ -247,6 +249,7 @@ __switch__:
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.debug("No input. Stopping");
+              monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
               return;
             }
@@ -273,6 +276,10 @@ __switch__:
           }
           results.addResult(trg.getName(), jr);
           if (!(jr.isSucessful()) || monit.stopRequested()) {
+            monit.reportFeedback((jr.isSucessful() ?
+              new IFeedback.INFORMATION("Cancelled by user") :
+              new IFeedback.ERROR("Error executing target " + trg.getName())
+            ));
             LOG.debug((jr.isSucessful() ?
               "Stop requested" :
               "Execution failed"
