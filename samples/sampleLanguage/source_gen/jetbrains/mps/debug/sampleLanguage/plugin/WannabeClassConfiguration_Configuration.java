@@ -259,8 +259,7 @@ public class WannabeClassConfiguration_Configuration extends BaseRunConfig {
   }
 
   private SNode getNodeForExecution(Project project, boolean make) {
-    SNode node = WannabeClassConfiguration_Configuration.this.getNode();
-    return node;
+    return WannabeClassConfiguration_Configuration.this.getNode();
   }
 
   private Tuples._2<SNode, String> checkNode() {
