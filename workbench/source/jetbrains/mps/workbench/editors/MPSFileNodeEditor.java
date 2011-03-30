@@ -86,7 +86,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   @Nullable
   public JComponent getPreferredFocusedComponent() {
-    return myNodeEditor != null ? myNodeEditor.getCurrentEditorComponent() : null;
+    return isDisposed() ? null : myNodeEditor.getCurrentEditorComponent();
   }
 
   @NonNls
@@ -176,6 +176,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     myComponent = null;
   }
 
+  private boolean isDisposed() {
+    return myNodeEditor == null;
+  }
+
   public void recreateEditor() {
     if (myProject.isDisposed() || !isValid()) return;
     //if (myNodeEditor instanceof NodeEditor) return;
@@ -216,13 +220,15 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   public Document[] getDocuments() {
     final List<Document> result = new LinkedList<Document>();
-    ModelAccess.instance().tryRead(new Runnable() {
-      public void run() {
-        for (SNodePointer node:myNodeEditor.getAllEditedNodes()){
-          result.add(MPSUndoUtil.getDoc(node));
+    if (!isDisposed()) {
+      ModelAccess.instance().tryRead(new Runnable() {
+        public void run() {
+          for (SNodePointer node : myNodeEditor.getAllEditedNodes()) {
+            result.add(MPSUndoUtil.getDoc(node));
+          }
         }
-      }
-    });
+      });
+    }
     return result.toArray(new Document[result.size()]);
   }
 
