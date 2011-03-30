@@ -33,7 +33,7 @@ public class EditorTab {
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
 
-  public EditorTab(TabsComponent tabComponent,int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
+  public EditorTab(TabsComponent tabComponent, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
     myTabComponent = tabComponent;
     myIndex = index;
     myDescriptor = descriptor;
@@ -86,7 +86,7 @@ public class EditorTab {
 
   private class SelectTabAction extends AnAction {
     public SelectTabAction() {
-      super(myDescriptor.getTitle());
+      super(myDescriptor.getTitle(), "", myDescriptor.getIcon());
     }
 
     public boolean displayTextInToolbar() {
