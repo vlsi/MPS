@@ -13,7 +13,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -33,8 +32,7 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
       } else {
         {
           SNode _nodeToCheck_1029348928467 = letRef;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "464844656889754494", 0, intentionProvider);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "464844656889754494", 0, null);
           typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
         }
       }
@@ -42,8 +40,7 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
     }
     {
       SNode _nodeToCheck_1029348928467 = letRef;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "403206377113910078", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "403206377113910078", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "403206377113910075", true), (SNode) type, _info_12389875345);
     }
   }

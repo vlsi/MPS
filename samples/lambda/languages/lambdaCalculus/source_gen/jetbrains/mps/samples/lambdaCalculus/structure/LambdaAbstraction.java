@@ -5,6 +5,7 @@ package jetbrains.mps.samples.lambdaCalculus.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class LambdaAbstraction extends LambdaExpression implements VariableOwner
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String VARIABLE = "variable";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LambdaAbstraction(SNode node) {
     super(node);
@@ -71,6 +73,26 @@ public class LambdaAbstraction extends LambdaExpression implements VariableOwner
 
   public void insertVariable(AbstractionVariable prev, AbstractionVariable node) {
     this.insertChild(prev, LambdaAbstraction.VARIABLE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LambdaAbstraction._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LambdaAbstraction._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LambdaAbstraction._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LambdaAbstraction._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LambdaAbstraction._$ATTRIBUTE, node);
   }
 
   public static LambdaAbstraction newInstance(SModel sm, boolean init) {
