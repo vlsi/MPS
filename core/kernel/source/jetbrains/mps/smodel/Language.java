@@ -158,12 +158,16 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     updatePackagedDescriptorClasspath();
     updateClassPath();
     revalidateGenerators();
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        save();
-      }
-    });
+
+    // TODO get rid of this code! we shouldn't save model just after load, WF?
+    if(!isPackaged()) {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          save();
+        }
+      });
+    }
   }
 
   IFile newDescriptorFileByNewName(String newNamespace) {
