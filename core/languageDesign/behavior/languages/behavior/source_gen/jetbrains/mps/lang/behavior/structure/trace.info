@@ -2,11 +2,13 @@
 <debugInfo>
   <unitInfo fileName="Behavior_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.Behavior_Language" />
   <unitInfo fileName="ConceptConstructorDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" />
+  <unitInfo fileName="ConceptDeclarationReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference" />
   <unitInfo fileName="SuperNodeExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" />
   <unitInfo fileName="ThisNodeExpression.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" />
   <unitInfo fileName="StaticConceptMethodDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" />
+  <unitInfo fileName="ConceptDeclarationsHolder.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder" />
   <unitInfo fileName="LocalBehaviorMethodCall.java" startLine="16" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" />
   <unitInfo fileName="ConceptMethodDeclaration.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" />
-  <unitInfo fileName="ConceptBehavior.java" startLine="26" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" />
+  <unitInfo fileName="ConceptBehavior.java" startLine="20" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" />
 </debugInfo>
 

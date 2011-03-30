@@ -33,8 +33,6 @@ public class ConceptBehavior_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "properties", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "references", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
     return members;

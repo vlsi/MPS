@@ -17,63 +17,22 @@ package jetbrains.mps.smodel.behaviour;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public final class BehaviorManager implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
-
-  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
-
-  private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      clear();
-    }
-  };
-
-  static {
-    ourDefaultValue.put(Byte.class, (byte) 0);
-    ourDefaultValue.put(Short.class, (short) 0);
-    ourDefaultValue.put(Integer.class, (int) 0);
-    ourDefaultValue.put(Long.class, (long) 0);
-    ourDefaultValue.put(Float.class, (float) 0);
-    ourDefaultValue.put(Double.class, (double) 0);
-    ourDefaultValue.put(Boolean.class, false);
-    ourDefaultValue.put(Void.class, null);
-  }
-
+  // todo: static it!
   public static BehaviorManager getInstance() {
     return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }
 
-  private ConcurrentHashMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
-  private final Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
-
-  private ClassLoaderManager myClassLoaderManager;
-
   public BehaviorManager(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -83,253 +42,34 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
-  }
-
-  public void clear() {
-    myMethods.clear();
-    synchronized (myConstructors) {
-      myConstructors.clear();
-    }
-  }
-
-  private static List<Method> calculateConstructors(SNode concept, Language language) {
-    List<Method> methodsToCall = new ArrayList<Method>();
-    Set<SNode> processed = new HashSet<SNode>();
-
-    List<SNode> concepts = Collections.singletonList(concept);
-    while (!concepts.isEmpty()) {
-      List<SNode> newFrontier = new ArrayList<SNode>();
-      for (SNode currentConcept : concepts) {
-        assert currentConcept != null;
-        if (processed.contains(currentConcept)) {
-          continue;
-        }
-        String fqName = NameUtil.nodeFQName(currentConcept);
-        String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-        try {
-          Class cls = language.getClass(behaviorClass);
-          if (cls != null) {
-            Method method = cls.getMethod("init", SNode.class);
-            method.setAccessible(true);
-            methodsToCall.add(method);
-          }
-        } catch (NoSuchMethodException e) {
-          //ignore
-        }
-
-        if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
-          for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
-            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-            newFrontier.add(interfaceConcept);
-          }
-          SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
-          if (parentConcept != null && !processed.contains(parentConcept)) {
-            newFrontier.add(parentConcept);
-          }
-        } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
-          for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
-            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-            newFrontier.add(interfaceConcept);
-          }
-        }
-        processed.add(currentConcept);
-      }
-      concepts = newFrontier;
-    }
-
-    /*  while (concept != null) {
-      String fqName = NameUtil.nodeFQName(concept);
-      String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-      try {
-        Class cls = language.getClass(behaviorClass);
-        if (cls != null) {
-          Method method = cls.getMethod("init", SNode.class);
-          method.setAccessible(true);
-          methodsToCall.add(method);
-        }
-      } catch (NoSuchMethodException e) {
-        //ignor too
-      }
-
-      concept = ((ConceptDeclaration) concept).getExtends();
-    }*/
-    return methodsToCall;
   }
 
   public void initNode(SNode node) {
-    if (node == null) {
-      return;
-    }
-
-    SNode concept = node.getConceptDeclarationNode();
-    Language language = node.getLanguage(GlobalScope.getInstance());
-
-    String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(concept));
-
-    List<Method> methodsToCall;
-
-    synchronized (myConstructors) {
-      methodsToCall = myConstructors.get(conceptFqName);
-      if (methodsToCall == null) {
-        methodsToCall = calculateConstructors(concept, language);
-        myConstructors.put(conceptFqName, methodsToCall);
-      }
-    }
-
-    for (int i = methodsToCall.size() - 1; i >= 0; i--) {
-      try {
-        methodsToCall.get(i).invoke(null, node);
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        e.printStackTrace();
-      }
-    }
-  }
-
-  private static String behaviorClassByConceptFqName(@NotNull String fqName) {
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
-    } else {
-      throw new RuntimeException();
-    }
-  }
-
-  public void reloadAll() {
-  }
-
-  private Method getMethod(final SNode concept, final String methodName, final Class[] parameterTypes) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
-      public Method compute() {
-        Language l = SModelUtil.getDeclaringLanguage(concept);
-
-        Method method = null;
-        String fqName = InternUtil.intern(NameUtil.nodeFQName(concept));
-
-        MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
-
-        Object mm = myMethods.get(mi);
-        if (mm != null) {
-          return mm instanceof Method ? (Method) mm : null;
-        }
-
-        String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-        try {
-          Class cls = l.getClass(behaviorClass);
-          if (cls != null) {
-            method = cls.getMethod(methodName, parameterTypes);
-          }
-        } catch (NoSuchMethodException e) {
-          //ignore too
-        }
-
-        if (method != null) {
-          method.setAccessible(true);
-        }
-        mm = myMethods.putIfAbsent(mi, method != null ? method : BehaviorManager.this);
-
-        return mm instanceof Method ? (Method) mm : method;
-      }
-    });
+    ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().initNode(node);
   }
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, null, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invoke(returnType, node, methodName, parametersTypes, parameters);
+  }
+
+  public static <T> T staticInvoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invoke(returnType, node, methodName, parametersTypes, parameters);
+  }
+
+  public static <T> T newStaticInvoke(Object behaviorObject, Class nodeClass, Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    // todo: behavior object is needed ?
+    Object[] params = new Object[parameters.length + 1];
+    params[0] = node;
+    System.arraycopy(parameters, 0, params, 1, parameters.length);
+    try {
+      return (T) nodeClass.getMethod(methodName, parametersTypes).invoke(behaviorObject, params);
+    } catch (Exception e) {
+      // todo: ?
+      return null;
+    }
   }
 
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
-  }
-
-  private <T> T _invokeInternal(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    if (node == null) {
-      if (ourDefaultValue.containsKey(returnType)) {
-        return (T) ourDefaultValue.get(returnType);
-      } else {
-        return null;
-      }
-    }
-
-    List<SNode> superConcepts;
-    if (callerConceptFqName == null) {
-      SNode concept = node.getConceptDeclarationNode();
-      superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
-    } else {
-      SNode callerConcept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
-      superConcepts.remove(callerConcept);
-    }
-
-    Method method = null;
-    Class[] parameterTypeArray = parametersTypes;
-
-    for (SNode conceptDeclaration : superConcepts) {
-      method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
-      if (method != null) {
-        break;
-      }
-    }
-
-    if (method != null) {
-      Object[] params = new Object[parameters.length + 1];
-      params[0] = node;
-      System.arraycopy(parameters, 0, params, 1, parameters.length);
-      try {
-        return (T) method.invoke(null, params);
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (InvocationTargetException e) {
-        throw new RuntimeException(e);
-      }
-    }
-
-    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName());
-  }
-
-  private static class MethodInfo {
-    private String myConceptFqName;
-    private String myMethodName;
-    private Class[] myParameters;
-
-    public MethodInfo(String conceptFqName, String methodName, Class[] parameters) {
-      myConceptFqName = conceptFqName;
-      myMethodName = methodName;
-      myParameters = parameters;
-    }
-
-    public boolean equals(Object obj) {
-      if (!(obj instanceof MethodInfo)) {
-        return false;
-      }
-      MethodInfo mi = (MethodInfo) obj;
-
-      if (!myConceptFqName.equals(mi.myConceptFqName)) return false;
-      if (!myMethodName.equals(mi.myMethodName)) return false;
-
-      if (myParameters.length != mi.myParameters.length) return false;
-
-      for (int i = 0; i < myParameters.length; i++) {
-        if (myParameters[i] != mi.myParameters[i]) {
-          return false;
-        }
-      }
-
-      return true;
-    }
-
-    public int hashCode() {
-      int h = 13;
-      h += myConceptFqName.hashCode() * 17;
-      h += myMethodName.hashCode() * 23;
-      for (Class c : myParameters) {
-        h += c.hashCode() * 11;
-      }
-      return h;
-    }
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).behavior().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 }

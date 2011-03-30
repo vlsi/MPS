@@ -126,7 +126,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     List<NodeFactory> nodeFactories = new ArrayList<NodeFactory>();
-    for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(NameUtil.nodeFQName(nodeConcept))) {
+    for (String ancestor : LanguageHierarchyCache.getAncestorsNames(NameUtil.nodeFQName(nodeConcept))) {
       SNode acd = SModelUtil.findConceptDeclaration(ancestor, scope);
       Language language = SModelUtil.getDeclaringLanguage(acd);
       if (language == null) break;

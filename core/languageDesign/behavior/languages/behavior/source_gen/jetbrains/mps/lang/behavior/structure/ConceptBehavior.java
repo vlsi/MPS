@@ -10,14 +10,8 @@ import jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild;
-import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent;
 import java.util.Iterator;
-import jetbrains.mps.lang.constraints.structure.NodePropertyConstraint;
 import java.util.List;
-import jetbrains.mps.lang.constraints.structure.NodeReferentConstraint;
 import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,13 +24,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT = "concept";
-  public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static final String CONSTRUCTOR = "constructor";
-  public static final String DEFAULT_SCOPE = "defaultScope";
-  public static final String CAN_BE_A_CHILD = "canBeAChild";
-  public static final String CAN_BE_A_PARENT = "canBeAParent";
-  public static final String PROPERTIES = "properties";
-  public static final String REFERENCES = "references";
   public static final String METHOD = "method";
   public static final String STATIC_METHOD = "staticMethod";
   public static final String _$ATTRIBUTE = "_$attribute";
@@ -85,84 +73,12 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     super.setReferent(ConceptBehavior.CONCEPT, node);
   }
 
-  public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
-  }
-
-  public void setDefaultConcreteConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
-  }
-
   public ConceptConstructorDeclaration getConstructor() {
     return (ConceptConstructorDeclaration) this.getChild(ConceptConstructorDeclaration.class, ConceptBehavior.CONSTRUCTOR);
   }
 
   public void setConstructor(ConceptConstructorDeclaration node) {
     super.setChild(ConceptBehavior.CONSTRUCTOR, node);
-  }
-
-  public NodeDefaultSearchScope getDefaultScope() {
-    return (NodeDefaultSearchScope) this.getChild(NodeDefaultSearchScope.class, ConceptBehavior.DEFAULT_SCOPE);
-  }
-
-  public void setDefaultScope(NodeDefaultSearchScope node) {
-    super.setChild(ConceptBehavior.DEFAULT_SCOPE, node);
-  }
-
-  public ConstraintFunction_CanBeAChild getCanBeAChild() {
-    return (ConstraintFunction_CanBeAChild) this.getChild(ConstraintFunction_CanBeAChild.class, ConceptBehavior.CAN_BE_A_CHILD);
-  }
-
-  public void setCanBeAChild(ConstraintFunction_CanBeAChild node) {
-    super.setChild(ConceptBehavior.CAN_BE_A_CHILD, node);
-  }
-
-  public ConstraintFunction_CanBeAParent getCanBeAParent() {
-    return (ConstraintFunction_CanBeAParent) this.getChild(ConstraintFunction_CanBeAParent.class, ConceptBehavior.CAN_BE_A_PARENT);
-  }
-
-  public void setCanBeAParent(ConstraintFunction_CanBeAParent node) {
-    super.setChild(ConceptBehavior.CAN_BE_A_PARENT, node);
-  }
-
-  public int getPropertiesesCount() {
-    return this.getChildCount(ConceptBehavior.PROPERTIES);
-  }
-
-  public Iterator<NodePropertyConstraint> propertieses() {
-    return this.children(NodePropertyConstraint.class, ConceptBehavior.PROPERTIES);
-  }
-
-  public List<NodePropertyConstraint> getPropertieses() {
-    return this.getChildren(NodePropertyConstraint.class, ConceptBehavior.PROPERTIES);
-  }
-
-  public void addProperties(NodePropertyConstraint node) {
-    this.addChild(ConceptBehavior.PROPERTIES, node);
-  }
-
-  public void insertProperties(NodePropertyConstraint prev, NodePropertyConstraint node) {
-    this.insertChild(prev, ConceptBehavior.PROPERTIES, node);
-  }
-
-  public int getReferencesesCount() {
-    return this.getChildCount(ConceptBehavior.REFERENCES);
-  }
-
-  public Iterator<NodeReferentConstraint> referenceses() {
-    return this.children(NodeReferentConstraint.class, ConceptBehavior.REFERENCES);
-  }
-
-  public List<NodeReferentConstraint> getReferenceses() {
-    return this.getChildren(NodeReferentConstraint.class, ConceptBehavior.REFERENCES);
-  }
-
-  public void addReferences(NodeReferentConstraint node) {
-    this.addChild(ConceptBehavior.REFERENCES, node);
-  }
-
-  public void insertReferences(NodeReferentConstraint prev, NodeReferentConstraint node) {
-    this.insertChild(prev, ConceptBehavior.REFERENCES, node);
   }
 
   public int getMethodsCount() {

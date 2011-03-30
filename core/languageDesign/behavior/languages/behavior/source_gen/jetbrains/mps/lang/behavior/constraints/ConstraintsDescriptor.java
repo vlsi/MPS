@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ConceptBehavior_name_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ConceptBehavior_defaultConcreteConcept_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConceptMethodDeclaration_overriddenMethod_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SuperNodeExpression_superConcept_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LocalBehaviorMethodCall_declaration_ReferentConstraint());

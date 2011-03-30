@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -55,7 +56,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
   private volatile CacheReadAccessListener myCacheReadAccessListener = null;
-
 
   private MPSModuleRepository myModuleRepository;
 
@@ -135,7 +135,11 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     fireCacheChanged();
   }
 
-  public Set<String> getParentsNames(final String conceptFqName) {
+  public static Set<String> getParentsNames(String conceptFqName) {
+    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getParentsNames();
+  }
+
+  public Set<String> _getParentsNames(final String conceptFqName) {
     fireReadAccessPerformed();
     synchronized (myParentsNamesLock) {
       InternAwareStringSet result = myParentsNamesMap.get(conceptFqName);
@@ -171,12 +175,20 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     }
   }
 
-  public boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
+  public boolean _isAssignable(String fromConceptFqName, String toConceptFqName) {
     return getAncestorsNames_internal(fromConceptFqName).contains(toConceptFqName);
   }
 
-  public Set<String> getAncestorsNames(final String conceptFqName) {
+  public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
+    return ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).structure().isAssignableTo(toConceptFqName);
+  }
+
+  public Set<String> _getAncestorsNames(final String conceptFqName) {
     return Collections.unmodifiableSet(getAncestorsNames_internal(conceptFqName));
+  }
+
+  public static Set<String> getAncestorsNames(final String conceptFqName) {
+    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getAncestorsNames();
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {

@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class InterfaceConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -18,5 +22,27 @@ public class InterfaceConceptDeclaration_Behavior {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
     }
     return result;
+  }
+
+  public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386413(SNode thisNode) {
+    List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
+
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
+
+    for (SNode extendsInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extends", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "intfc", false) != null);
+      }
+    }).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "intfc", false);
+      }
+    })) {
+      // todo: equal methods in different interfaces check! 
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(extendsInterface)));
+    }
+
+    return methods;
+
   }
 }

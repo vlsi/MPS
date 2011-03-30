@@ -94,7 +94,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     if (language == null) {
       return null;
     }
-    Set<String> parentsNames = LanguageHierarchyCache.getInstance().getParentsNames(conceptFQName);
+    Set<String> parentsNames = LanguageHierarchyCache.getParentsNames(conceptFQName);
     for (String parentFQName : parentsNames) {
       String newChildRole = getNewFeatureRole_internal(parentFQName, oldRole, conceptFeatureKind);
       if (newChildRole != null) {
