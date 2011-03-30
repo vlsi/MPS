@@ -21,6 +21,8 @@ import jetbrains.mps.make.script.IFeedback;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.ide.IdeEventQueue;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
@@ -121,8 +123,13 @@ public class TestMakeService implements IMakeService {
         }
       }
 
-      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        code.invoke(jmon);
+      public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+        IdeEventQueue.getInstance().flushQueue();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            code.invoke(jmon);
+          }
+        });
       }
 
       public void setup(IParametersPool pool) {

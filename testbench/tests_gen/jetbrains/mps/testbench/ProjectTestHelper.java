@@ -19,8 +19,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.generator.GenerationSettings;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -37,6 +35,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.compiler.CompilationResultAdapter;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
@@ -154,11 +154,6 @@ public class ProjectTestHelper {
   }
 
   private void generate(MPSProject project) {
-    IScript scr = this.defaultScriptBuilder().toScript();
-
-    ProjectOperationContext context = ProjectOperationContext.get(project.getProject());
-    new TestMakeService(context, myMessageHandler);
-
     List<GenerationCycle.ModuleCycle> order = myGenerationCycle.computeGenerationOrder(project);
     boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
     for (GenerationCycle.ModuleCycle moduleCycle : order) {
@@ -237,13 +232,15 @@ public class ProjectTestHelper {
     }
 
     public void generate() {
-      ProjectTestHelper.this.generate(project);
+      if (true) {
+        ProjectTestHelper.this.generate(project);
+        return;
+      }
+
       IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make")).toScript();
 
       ProjectOperationContext context = ProjectOperationContext.get(project.getProject());
       IResult result = new TestMakeService(context, myMessageHandler).make(collectResources(context, project), scr);
-
-
     }
   }
 
