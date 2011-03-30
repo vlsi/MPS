@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class BuildTableModel implements TableModel {
-  private static String[] NAMES = {"Script Name" ,"Model" ,"Command Line"};
+  private static String[] NAMES = {"Script Name", "Model", "Command Line"};
 
   private List<SNodePointer> mySNodes = ListSequence.fromList(new ArrayList<SNodePointer>());
   private Map<SNodePointer, String> myCommandLines = MapSequence.fromMap(new HashMap<SNodePointer, String>());
