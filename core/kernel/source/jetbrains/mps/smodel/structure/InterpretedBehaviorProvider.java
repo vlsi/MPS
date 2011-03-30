@@ -1,14 +1,15 @@
 package jetbrains.mps.smodel.structure;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
-
 public class InterpretedBehaviorProvider extends DescriptorProvider<BehaviorDescriptor> {
+  private static final InterpretedBehavior INTERPRETED_BEHAVIOR = new InterpretedBehavior();
+
   @Override
   public BehaviorDescriptor getDescriptor(String fqName) {
-    return new InterpretedBehavior();
+    return INTERPRETED_BEHAVIOR;
   }
 
   public static class InterpretedBehavior extends BehaviorDescriptor {
+    private InterpretedBehavior() {
+    }
   }
 }
