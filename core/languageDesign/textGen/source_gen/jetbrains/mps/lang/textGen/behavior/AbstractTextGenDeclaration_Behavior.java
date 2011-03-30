@@ -4,8 +4,10 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractTextGenDeclaration_Behavior {
   private static Class[] PARAMETERS_1234784577703 = {SNode.class};
@@ -23,11 +25,13 @@ public class AbstractTextGenDeclaration_Behavior {
   }
 
   public static String call_getTextGenNode_1234784577703(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703);
   }
 
   public static List<SNode> call_getAvailableOperations_1234781444746(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
   }
 
   public static String callSuper_getTextGenNode_1234784577703(SNode thisNode, String callerConceptFqName) {

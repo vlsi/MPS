@@ -12,6 +12,8 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IconResource_Behavior {
@@ -38,7 +40,8 @@ public class IconResource_Behavior {
   }
 
   public static void call_generate_8976425910813640826(SNode thisNode) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);
   }
 
   public static void callSuper_generate_8976425910813640826(SNode thisNode, String callerConceptFqName) {

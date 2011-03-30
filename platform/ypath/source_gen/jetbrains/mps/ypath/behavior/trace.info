@@ -32,11 +32,11 @@
   <unitInfo fileName="GFGetterFun_Behavior.java" startLine="22" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterFun_Behavior$QuotationClass_kkk3v2_a0a0b" />
   <unitInfo fileName="GenericParamFeature_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GenericParamFeature_Behavior" />
   <unitInfo fileName="TreePathAdapterExpression_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAdapterExpression_Behavior" />
-  <unitInfo fileName="IGenericFeature_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IGenericFeature_Behavior" />
   <unitInfo fileName="GFCardinalFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFCardinalFun_Behavior" />
   <unitInfo fileName="TargetTypeFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TargetTypeFun_Behavior" />
   <unitInfo fileName="FeatureSizeFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSizeFun_Behavior" />
   <unitInfo fileName="ToStringFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ToStringFun_Behavior" />
+  <unitInfo fileName="IGenericFeature_Behavior.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IGenericFeature_Behavior" />
   <unitInfo fileName="GFGetterFun_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterFun_Behavior" />
   <unitInfo fileName="FeatureSequenceFun_Behavior.java" startLine="23" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSequenceFun_Behavior$QuotationClass_vtz3k4_a0b0b" />
   <unitInfo fileName="ParameterQueryFun_Behavior.java" startLine="26" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParameterQueryFun_Behavior$QuotationClass_rcl51k_a0c0b" />
@@ -137,7 +137,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877249146">
-    <scopeInfo nodeId="1213877249626" fileName="IGenericFeature_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877249626" fileName="IGenericFeature_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
   </root>
   <root nodeId="1213877253691">
     <nodeInfo nodeId="1213877253694" fileName="ToStringFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

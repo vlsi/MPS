@@ -6,6 +6,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -19,6 +20,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.TargetDeclaration_Behavior" file="TargetDeclaration_Behavior.java">

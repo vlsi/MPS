@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -37,15 +39,18 @@ public class EvaluatorConcept_Behavior {
   }
 
   public static List<SNode> call_getThrowableTypes_5211667636169798157(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157);
   }
 
   public static SNode call_getBody_5211667636169798161(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161);
   }
 
   public static SNode call_getExpectedRetType_5211667636169798165(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165);
   }
 
   public static List<SNode> callSuper_getThrowableTypes_5211667636169798157(SNode thisNode, String callerConceptFqName) {

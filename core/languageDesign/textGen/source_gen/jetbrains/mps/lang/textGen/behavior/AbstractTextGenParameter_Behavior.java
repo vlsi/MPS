@@ -5,6 +5,8 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractTextGenParameter_Behavior {
@@ -36,7 +38,8 @@ public class AbstractTextGenParameter_Behavior {
   }
 
   public static String call_getGetterName_1234885318469(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
   }
 
   public static String callSuper_getGetterName_1234885318469(SNode thisNode, String callerConceptFqName) {

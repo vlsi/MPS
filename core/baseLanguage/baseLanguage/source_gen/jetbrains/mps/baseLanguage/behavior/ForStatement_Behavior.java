@@ -7,8 +7,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ForStatement_Behavior {
   private static Class[] PARAMETERS_2496361171403550965 = {SNode.class};
@@ -21,7 +23,8 @@ public class ForStatement_Behavior {
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550965);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550965);
   }
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550965(SNode thisNode, String callerConceptFqName) {

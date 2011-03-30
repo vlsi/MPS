@@ -5,8 +5,10 @@ package jetbrains.mps.lang.core.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeAttribute_Behavior {
   private static Class[] PARAMETERS_6407023681583031045 = {SNode.class};
@@ -19,7 +21,12 @@ public class NodeAttribute_Behavior {
   }
 
   public static String call_getOldAttributeRole_6407023681583031045(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.NodeAttribute"), "virtual_getOldAttributeRole_6407023681583030897", PARAMETERS_6407023681583031045);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    if (descriptor instanceof NodeAttribute_BehaviorDescriptor) {
+      NodeAttribute_BehaviorDescriptor casted = (NodeAttribute_BehaviorDescriptor) descriptor;
+      return casted.virtual_getOldAttributeRole_6407023681583030897(thisNode);
+    }
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.NodeAttribute"), "virtual_getOldAttributeRole_6407023681583030897", PARAMETERS_6407023681583031045);
   }
 
   public static String callSuper_getOldAttributeRole_6407023681583031045(SNode thisNode, String callerConceptFqName) {

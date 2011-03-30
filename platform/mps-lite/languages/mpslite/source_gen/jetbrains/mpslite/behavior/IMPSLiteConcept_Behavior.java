@@ -5,8 +5,10 @@ package jetbrains.mpslite.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMPSLiteConcept_Behavior {
   private static Class[] PARAMETERS_1239714833738 = {SNode.class};
@@ -36,27 +38,33 @@ public class IMPSLiteConcept_Behavior {
   }
 
   public static boolean call_isRootable_1239714833738(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_isRootable_1239714833738", PARAMETERS_1239714833738);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_isRootable_1239714833738", PARAMETERS_1239714833738);
   }
 
   public static boolean call_isAbstract_1239715026284(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_isAbstract_1239715026284", PARAMETERS_1239715026284);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_isAbstract_1239715026284", PARAMETERS_1239715026284);
   }
 
   public static void call_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_fillConcept_1239891562930", PARAMETERS_1239891562930, concept, conceptsToTargets, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_fillConcept_1239891562930", PARAMETERS_1239891562930, concept, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createEditor_1239890004879", PARAMETERS_1239890004879, conceptsToTargets, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createEditor_1239890004879", PARAMETERS_1239890004879, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createAdditionalConcept_1239817368042(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createAdditionalConcept_1239817368042", PARAMETERS_1239817368042, conceptsToTargets, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createAdditionalConcept_1239817368042", PARAMETERS_1239817368042, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createAdditionalEditor_1239891670850(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, conceptsToTargets, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, conceptsToTargets, partsToLinks);
   }
 
   public static boolean callSuper_isRootable_1239714833738(SNode thisNode, String callerConceptFqName) {

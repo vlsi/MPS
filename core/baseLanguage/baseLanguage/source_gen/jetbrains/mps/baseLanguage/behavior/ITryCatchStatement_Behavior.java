@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITryCatchStatement_Behavior {
   private static Class[] PARAMETERS_3718132079121388582 = {SNode.class};
@@ -14,7 +16,8 @@ public class ITryCatchStatement_Behavior {
   }
 
   public static List<SNode> call_getCatchClauses_3718132079121388582(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), "virtual_getCatchClauses_3718132079121388582", PARAMETERS_3718132079121388582);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), "virtual_getCatchClauses_3718132079121388582", PARAMETERS_3718132079121388582);
   }
 
   public static List<SNode> callSuper_getCatchClauses_3718132079121388582(SNode thisNode, String callerConceptFqName) {

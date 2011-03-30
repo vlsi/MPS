@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMacroHolder_Behavior {
   private static Class[] PARAMETERS_1234976932856 = {SNode.class};
-  private static Class[] PARAMETERS_1234975567387 = {SNode.class ,Boolean.TYPE};
+  private static Class[] PARAMETERS_1234975567387 = {SNode.class, Boolean.TYPE};
 
   public static void init(SNode thisNode) {
   }
@@ -53,11 +55,13 @@ public class IMacroHolder_Behavior {
   }
 
   public static String call_getPath_1234976932856(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
   }
 
   public static List<String> call_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    return (List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<String>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
   }
 
   public static String callSuper_getPath_1234976932856(SNode thisNode, String callerConceptFqName) {

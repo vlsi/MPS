@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MappingConfigRefBase_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
-  <unitInfo fileName="MappingConfigExternalRef_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_Behavior" />
-  <unitInfo fileName="MappingConfigRefSet_Behavior.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" />
-  <unitInfo fileName="MappingConfigNormalRef_Behavior.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
-  <unitInfo fileName="Module_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
+  <unitInfo fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
+  <unitInfo fileName="MappingConfigExternalRef_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_Behavior" />
+  <unitInfo fileName="MappingConfigRefSet_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" />
+  <unitInfo fileName="MappingConfigNormalRef_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
+  <unitInfo fileName="Module_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
   <root nodeId="2721285250110256912">
-    <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2721285250110256914" fileName="MappingConfigRefBase_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="2721285250110257008" fileName="MappingConfigRefBase_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="16" />
+    <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2721285250110256914" fileName="MappingConfigRefBase_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2721285250110257008" fileName="MappingConfigRefBase_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="16" />
   </root>
   <root nodeId="2721285250110391053">
-    <nodeInfo nodeId="2721285250110400343" fileName="MappingConfigRefSet_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400348" fileName="MappingConfigRefSet_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400332" fileName="MappingConfigRefSet_Behavior.java" startLine="18" startPosition="95" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2721285250110391068" fileName="MappingConfigRefSet_Behavior.java" startLine="17" startPosition="80" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="2721285250110391055" fileName="MappingConfigRefSet_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2721285250110400334" fileName="MappingConfigRefSet_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="21" />
-    <scopeInfo nodeId="2721285250110391071" fileName="MappingConfigRefSet_Behavior.java" startLine="18" startPosition="95" endLine="21" endPosition="7" />
-    <scopeInfo nodeId="2721285250110391068" fileName="MappingConfigRefSet_Behavior.java" startLine="17" startPosition="80" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="2721285250110391058" fileName="MappingConfigRefSet_Behavior.java" startLine="17" startPosition="80" endLine="23" endPosition="16" />
+    <nodeInfo nodeId="2721285250110400343" fileName="MappingConfigRefSet_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400348" fileName="MappingConfigRefSet_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400332" fileName="MappingConfigRefSet_Behavior.java" startLine="20" startPosition="95" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2721285250110391068" fileName="MappingConfigRefSet_Behavior.java" startLine="19" startPosition="80" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="2721285250110391055" fileName="MappingConfigRefSet_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="2721285250110400334" fileName="MappingConfigRefSet_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="21" />
+    <scopeInfo nodeId="2721285250110391071" fileName="MappingConfigRefSet_Behavior.java" startLine="20" startPosition="95" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="2721285250110391068" fileName="MappingConfigRefSet_Behavior.java" startLine="19" startPosition="80" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="2721285250110391058" fileName="MappingConfigRefSet_Behavior.java" startLine="19" startPosition="80" endLine="25" endPosition="16" />
   </root>
   <root nodeId="2721285250110400380">
-    <nodeInfo nodeId="2721285250110400407" fileName="MappingConfigNormalRef_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400428" fileName="MappingConfigNormalRef_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400447" fileName="MappingConfigNormalRef_Behavior.java" startLine="24" startPosition="81" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400451" fileName="MappingConfigNormalRef_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110400392" fileName="MappingConfigNormalRef_Behavior.java" startLine="17" startPosition="80" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2721285250110400411" fileName="MappingConfigNormalRef_Behavior.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2721285250110400432" fileName="MappingConfigNormalRef_Behavior.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="2721285250110400382" fileName="MappingConfigNormalRef_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2721285250110400393" fileName="MappingConfigNormalRef_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="19" />
-    <scopeInfo nodeId="2721285250110400412" fileName="MappingConfigNormalRef_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="2721285250110400433" fileName="MappingConfigNormalRef_Behavior.java" startLine="24" startPosition="81" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="2721285250110400385" fileName="MappingConfigNormalRef_Behavior.java" startLine="17" startPosition="80" endLine="27" endPosition="16" />
+    <nodeInfo nodeId="2721285250110400407" fileName="MappingConfigNormalRef_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400428" fileName="MappingConfigNormalRef_Behavior.java" startLine="23" startPosition="74" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400447" fileName="MappingConfigNormalRef_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400451" fileName="MappingConfigNormalRef_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2721285250110400392" fileName="MappingConfigNormalRef_Behavior.java" startLine="19" startPosition="80" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2721285250110400411" fileName="MappingConfigNormalRef_Behavior.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2721285250110400432" fileName="MappingConfigNormalRef_Behavior.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="2721285250110400382" fileName="MappingConfigNormalRef_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="2721285250110400393" fileName="MappingConfigNormalRef_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="2721285250110400412" fileName="MappingConfigNormalRef_Behavior.java" startLine="23" startPosition="74" endLine="24" endPosition="18" />
+    <scopeInfo nodeId="2721285250110400433" fileName="MappingConfigNormalRef_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="19" />
+    <scopeInfo nodeId="2721285250110400385" fileName="MappingConfigNormalRef_Behavior.java" startLine="19" startPosition="80" endLine="29" endPosition="16" />
   </root>
   <root nodeId="2721285250110400486">
-    <nodeInfo nodeId="2721285250110400540" fileName="MappingConfigExternalRef_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2721285250110400488" fileName="MappingConfigExternalRef_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="2721285250110400533" fileName="MappingConfigExternalRef_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="200" />
+    <nodeInfo nodeId="2721285250110400540" fileName="MappingConfigExternalRef_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2721285250110400488" fileName="MappingConfigExternalRef_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2721285250110400533" fileName="MappingConfigExternalRef_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="200" />
   </root>
   <root nodeId="6370754048397723597">
-    <nodeInfo nodeId="6370754048397730440" fileName="Module_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6370754048397730461" fileName="Module_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6370754048397723599" fileName="Module_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="6370754048397730434" fileName="Module_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="64" />
-    <scopeInfo nodeId="6370754048397730454" fileName="Module_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="64" />
+    <nodeInfo nodeId="6370754048397730440" fileName="Module_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6370754048397730461" fileName="Module_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6370754048397723599" fileName="Module_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="6370754048397730434" fileName="Module_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="64" />
+    <scopeInfo nodeId="6370754048397730454" fileName="Module_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="64" />
   </root>
 </debugInfo>
 

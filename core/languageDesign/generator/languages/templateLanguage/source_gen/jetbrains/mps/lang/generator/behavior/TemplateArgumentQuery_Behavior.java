@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -30,7 +32,8 @@ public class TemplateArgumentQuery_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_4035562641222622443(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443);
   }
 
   public static SNode callSuper_getExpectedReturnType_4035562641222622443(SNode thisNode, String callerConceptFqName) {

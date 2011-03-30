@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ILocalDeclaration_Behavior {
@@ -64,11 +66,13 @@ public class ILocalDeclaration_Behavior {
   }
 
   public static boolean call_isReferencedInClosure_3262277503800823422(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422);
   }
 
   public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751);
   }
 
   public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {

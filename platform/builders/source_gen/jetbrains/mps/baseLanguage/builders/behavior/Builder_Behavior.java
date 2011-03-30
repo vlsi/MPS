@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -41,23 +43,28 @@ public class Builder_Behavior {
   }
 
   public static boolean call_isLeaf_7057666463730595159(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7057666463730595159);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7057666463730595159);
   }
 
   public static SNode call_getResultType_7057666463730718251(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7057666463730718251);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7057666463730718251);
   }
 
   public static SNode call_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7057666463730727863, parentRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7057666463730727863, parentRef);
   }
 
   public static SNode call_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816792215495, childBuilder, parentRef, childRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816792215495, childBuilder, parentRef, childRef);
   }
 
   public static SNode call_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850305563, parentBuilder, parentRef, childRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.Builder"), "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850305563, parentBuilder, parentRef, childRef);
   }
 
   public static boolean callSuper_isLeaf_7057666463730595159(SNode thisNode, String callerConceptFqName) {

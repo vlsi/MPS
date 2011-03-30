@@ -4,8 +4,10 @@ package jetbrains.mps.lang.dataFlow.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DataFlowBuilderDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384725404 = {SNode.class};
@@ -23,11 +25,13 @@ public class DataFlowBuilderDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384725404(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725404);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725404);
   }
 
   public static void call_setBaseConcept_6261424444345978709(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978709, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978709, baseConcept);
   }
 
   public static SNode callSuper_getBaseConcept_8952337903384725404(SNode thisNode, String callerConceptFqName) {

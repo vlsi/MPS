@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IConceptAspect_Behavior {
   private static Class[] PARAMETERS_2621449412040133768 = {SNode.class};
@@ -39,19 +41,23 @@ public class IConceptAspect_Behavior {
   }
 
   public static SNode call_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768);
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116013036);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116013036);
   }
 
   public static void call_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, baseConcept);
   }
 
   public static boolean call_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, candidate);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, candidate);
   }
 
   public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {

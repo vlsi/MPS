@@ -13,6 +13,8 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
@@ -213,23 +215,28 @@ public class EditorCellModel_Behavior {
   }
 
   public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String call_getOpeningText_1220339714057(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
   }
 
   public static String call_getClosingText_1220339738643(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
   public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    return (Integer) BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
   public static boolean call_isCellIdInitialized_1229948571177(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
   }
 
   public static String callSuper_createCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {

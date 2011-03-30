@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Property_Behavior {
@@ -61,7 +63,8 @@ public class Property_Behavior {
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {
-    return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381539);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381539);
   }
 
   public static Icon callSuper_getAdditionalIcon_8884554759541381539(SNode thisNode, String callerConceptFqName) {

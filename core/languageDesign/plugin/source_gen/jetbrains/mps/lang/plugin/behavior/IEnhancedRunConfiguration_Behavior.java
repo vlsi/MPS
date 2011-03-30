@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IEnhancedRunConfiguration_Behavior {
   private static Class[] PARAMETERS_3636700473138841189 = {SNode.class};
@@ -20,7 +22,8 @@ public class IEnhancedRunConfiguration_Behavior {
   }
 
   public static List<SNode> call_getAdditionalParameters_3636700473138841189(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration"), "virtual_getAdditionalParameters_3636700473138841189", PARAMETERS_3636700473138841189);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration"), "virtual_getAdditionalParameters_3636700473138841189", PARAMETERS_3636700473138841189);
   }
 
   public static List<SNode> callSuper_getAdditionalParameters_3636700473138841189(SNode thisNode, String callerConceptFqName) {

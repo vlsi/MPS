@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ParameterizedIntentionDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_Behavior" />
-  <unitInfo fileName="IntentionDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" />
-  <unitInfo fileName="BaseIntentionDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
+  <unitInfo fileName="IntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" />
+  <unitInfo fileName="BaseIntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
   <root nodeId="1213877237627">
-    <nodeInfo nodeId="1213877237631" fileName="IntentionDeclaration_Behavior.java" startLine="21" startPosition="76" endLine="22" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877237641" fileName="IntentionDeclaration_Behavior.java" startLine="25" startPosition="74" endLine="26" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3745452943050932755" fileName="IntentionDeclaration_Behavior.java" startLine="30" startPosition="142" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3745452943050932757" fileName="IntentionDeclaration_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5167929551696694398" fileName="IntentionDeclaration_Behavior.java" startLine="33" startPosition="201" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5167929551696694395" fileName="IntentionDeclaration_Behavior.java" startLine="35" startPosition="101" endLine="36" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5167929551696694417" fileName="IntentionDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5167929551696694412" fileName="IntentionDeclaration_Behavior.java" startLine="40" startPosition="102" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5167929551696694414" fileName="IntentionDeclaration_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8952337903384724190" fileName="IntentionDeclaration_Behavior.java" startLine="46" startPosition="82" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3745452943050932747" fileName="IntentionDeclaration_Behavior.java" startLine="29" startPosition="88" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5167929551696694405" fileName="IntentionDeclaration_Behavior.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3745452943050932769" fileName="IntentionDeclaration_Behavior.java" startLine="34" startPosition="22" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213877237648" fileName="IntentionDeclaration_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1213877237630" fileName="IntentionDeclaration_Behavior.java" startLine="21" startPosition="76" endLine="22" endPosition="102" />
-    <scopeInfo nodeId="1213877237640" fileName="IntentionDeclaration_Behavior.java" startLine="25" startPosition="74" endLine="26" endPosition="121" />
-    <scopeInfo nodeId="3745452943050932754" fileName="IntentionDeclaration_Behavior.java" startLine="30" startPosition="142" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="3745452943050932770" fileName="IntentionDeclaration_Behavior.java" startLine="35" startPosition="101" endLine="36" endPosition="143" />
-    <scopeInfo nodeId="3745452943050932782" fileName="IntentionDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="147" />
-    <scopeInfo nodeId="5167929551696694411" fileName="IntentionDeclaration_Behavior.java" startLine="40" startPosition="102" endLine="41" endPosition="18" />
-    <scopeInfo nodeId="8952337903384724186" fileName="IntentionDeclaration_Behavior.java" startLine="46" startPosition="82" endLine="47" endPosition="68" />
-    <scopeInfo nodeId="3745452943050928876" fileName="IntentionDeclaration_Behavior.java" startLine="29" startPosition="88" endLine="43" endPosition="92">
+    <nodeInfo nodeId="1213877237631" fileName="IntentionDeclaration_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877237641" fileName="IntentionDeclaration_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3745452943050932755" fileName="IntentionDeclaration_Behavior.java" startLine="32" startPosition="142" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3745452943050932757" fileName="IntentionDeclaration_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5167929551696694398" fileName="IntentionDeclaration_Behavior.java" startLine="35" startPosition="201" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5167929551696694395" fileName="IntentionDeclaration_Behavior.java" startLine="37" startPosition="101" endLine="38" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5167929551696694417" fileName="IntentionDeclaration_Behavior.java" startLine="39" startPosition="112" endLine="40" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5167929551696694412" fileName="IntentionDeclaration_Behavior.java" startLine="42" startPosition="102" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5167929551696694414" fileName="IntentionDeclaration_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8952337903384724190" fileName="IntentionDeclaration_Behavior.java" startLine="48" startPosition="82" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3745452943050932747" fileName="IntentionDeclaration_Behavior.java" startLine="31" startPosition="88" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5167929551696694405" fileName="IntentionDeclaration_Behavior.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3745452943050932769" fileName="IntentionDeclaration_Behavior.java" startLine="36" startPosition="22" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213877237648" fileName="IntentionDeclaration_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="1213877237630" fileName="IntentionDeclaration_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="102" />
+    <scopeInfo nodeId="1213877237640" fileName="IntentionDeclaration_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="121" />
+    <scopeInfo nodeId="3745452943050932754" fileName="IntentionDeclaration_Behavior.java" startLine="32" startPosition="142" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="3745452943050932770" fileName="IntentionDeclaration_Behavior.java" startLine="37" startPosition="101" endLine="38" endPosition="143" />
+    <scopeInfo nodeId="3745452943050932782" fileName="IntentionDeclaration_Behavior.java" startLine="39" startPosition="112" endLine="40" endPosition="147" />
+    <scopeInfo nodeId="5167929551696694411" fileName="IntentionDeclaration_Behavior.java" startLine="42" startPosition="102" endLine="43" endPosition="18" />
+    <scopeInfo nodeId="8952337903384724186" fileName="IntentionDeclaration_Behavior.java" startLine="48" startPosition="82" endLine="49" endPosition="68" />
+    <scopeInfo nodeId="3745452943050928876" fileName="IntentionDeclaration_Behavior.java" startLine="31" startPosition="88" endLine="45" endPosition="92">
       <varInfo nodeId="3745452943050932758" varName="stmt" />
       <varInfo nodeId="5167929551696694399" varName="expr" />
     </scopeInfo>
@@ -41,32 +41,32 @@
     </scopeInfo>
   </root>
   <root nodeId="6263518417926802282">
-    <nodeInfo nodeId="6263518417926802292" fileName="BaseIntentionDeclaration_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802303" fileName="BaseIntentionDeclaration_Behavior.java" startLine="27" startPosition="80" endLine="28" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802314" fileName="BaseIntentionDeclaration_Behavior.java" startLine="31" startPosition="85" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802326" fileName="BaseIntentionDeclaration_Behavior.java" startLine="36" startPosition="142" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802328" fileName="BaseIntentionDeclaration_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6263518417926802340" fileName="BaseIntentionDeclaration_Behavior.java" startLine="39" startPosition="201" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6263518417926802346" fileName="BaseIntentionDeclaration_Behavior.java" startLine="41" startPosition="101" endLine="42" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6263518417926802363" fileName="BaseIntentionDeclaration_Behavior.java" startLine="43" startPosition="112" endLine="44" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6263518417926802377" fileName="BaseIntentionDeclaration_Behavior.java" startLine="46" startPosition="102" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802379" fileName="BaseIntentionDeclaration_Behavior.java" startLine="48" startPosition="5" endLine="49" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6263518417926802387" fileName="BaseIntentionDeclaration_Behavior.java" startLine="52" startPosition="82" endLine="53" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6261424444345979520" fileName="BaseIntentionDeclaration_Behavior.java" startLine="56" startPosition="100" endLine="57" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6263518417926802318" fileName="BaseIntentionDeclaration_Behavior.java" startLine="35" startPosition="88" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6263518417926802370" fileName="BaseIntentionDeclaration_Behavior.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6263518417926802344" fileName="BaseIntentionDeclaration_Behavior.java" startLine="40" startPosition="22" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="6263518417926802284" fileName="BaseIntentionDeclaration_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="6263518417926802291" fileName="BaseIntentionDeclaration_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="102" />
-    <scopeInfo nodeId="6263518417926802302" fileName="BaseIntentionDeclaration_Behavior.java" startLine="27" startPosition="80" endLine="28" endPosition="121" />
-    <scopeInfo nodeId="6263518417926802313" fileName="BaseIntentionDeclaration_Behavior.java" startLine="31" startPosition="85" endLine="32" endPosition="17" />
-    <scopeInfo nodeId="6263518417926802325" fileName="BaseIntentionDeclaration_Behavior.java" startLine="36" startPosition="142" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="6263518417926802345" fileName="BaseIntentionDeclaration_Behavior.java" startLine="41" startPosition="101" endLine="42" endPosition="143" />
-    <scopeInfo nodeId="6263518417926802362" fileName="BaseIntentionDeclaration_Behavior.java" startLine="43" startPosition="112" endLine="44" endPosition="147" />
-    <scopeInfo nodeId="6263518417926802376" fileName="BaseIntentionDeclaration_Behavior.java" startLine="46" startPosition="102" endLine="47" endPosition="18" />
-    <scopeInfo nodeId="6263518417926802386" fileName="BaseIntentionDeclaration_Behavior.java" startLine="52" startPosition="82" endLine="53" endPosition="68" />
-    <scopeInfo nodeId="6261424444345979511" fileName="BaseIntentionDeclaration_Behavior.java" startLine="56" startPosition="100" endLine="57" endPosition="74" />
-    <scopeInfo nodeId="6263518417926802317" fileName="BaseIntentionDeclaration_Behavior.java" startLine="35" startPosition="88" endLine="49" endPosition="92">
+    <nodeInfo nodeId="6263518417926802292" fileName="BaseIntentionDeclaration_Behavior.java" startLine="25" startPosition="82" endLine="26" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802303" fileName="BaseIntentionDeclaration_Behavior.java" startLine="29" startPosition="80" endLine="30" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802314" fileName="BaseIntentionDeclaration_Behavior.java" startLine="33" startPosition="85" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802326" fileName="BaseIntentionDeclaration_Behavior.java" startLine="38" startPosition="142" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802328" fileName="BaseIntentionDeclaration_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6263518417926802340" fileName="BaseIntentionDeclaration_Behavior.java" startLine="41" startPosition="201" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6263518417926802346" fileName="BaseIntentionDeclaration_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6263518417926802363" fileName="BaseIntentionDeclaration_Behavior.java" startLine="45" startPosition="112" endLine="46" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6263518417926802377" fileName="BaseIntentionDeclaration_Behavior.java" startLine="48" startPosition="102" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802379" fileName="BaseIntentionDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6263518417926802387" fileName="BaseIntentionDeclaration_Behavior.java" startLine="54" startPosition="82" endLine="55" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6261424444345979520" fileName="BaseIntentionDeclaration_Behavior.java" startLine="58" startPosition="100" endLine="59" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6263518417926802318" fileName="BaseIntentionDeclaration_Behavior.java" startLine="37" startPosition="88" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6263518417926802370" fileName="BaseIntentionDeclaration_Behavior.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6263518417926802344" fileName="BaseIntentionDeclaration_Behavior.java" startLine="42" startPosition="22" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="6263518417926802284" fileName="BaseIntentionDeclaration_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
+    <scopeInfo nodeId="6263518417926802291" fileName="BaseIntentionDeclaration_Behavior.java" startLine="25" startPosition="82" endLine="26" endPosition="102" />
+    <scopeInfo nodeId="6263518417926802302" fileName="BaseIntentionDeclaration_Behavior.java" startLine="29" startPosition="80" endLine="30" endPosition="121" />
+    <scopeInfo nodeId="6263518417926802313" fileName="BaseIntentionDeclaration_Behavior.java" startLine="33" startPosition="85" endLine="34" endPosition="17" />
+    <scopeInfo nodeId="6263518417926802325" fileName="BaseIntentionDeclaration_Behavior.java" startLine="38" startPosition="142" endLine="39" endPosition="18" />
+    <scopeInfo nodeId="6263518417926802345" fileName="BaseIntentionDeclaration_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="143" />
+    <scopeInfo nodeId="6263518417926802362" fileName="BaseIntentionDeclaration_Behavior.java" startLine="45" startPosition="112" endLine="46" endPosition="147" />
+    <scopeInfo nodeId="6263518417926802376" fileName="BaseIntentionDeclaration_Behavior.java" startLine="48" startPosition="102" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="6263518417926802386" fileName="BaseIntentionDeclaration_Behavior.java" startLine="54" startPosition="82" endLine="55" endPosition="68" />
+    <scopeInfo nodeId="6261424444345979511" fileName="BaseIntentionDeclaration_Behavior.java" startLine="58" startPosition="100" endLine="59" endPosition="74" />
+    <scopeInfo nodeId="6263518417926802317" fileName="BaseIntentionDeclaration_Behavior.java" startLine="37" startPosition="88" endLine="51" endPosition="92">
       <varInfo nodeId="6263518417926802329" varName="stmt" />
       <varInfo nodeId="6263518417926802341" varName="expr" />
     </scopeInfo>

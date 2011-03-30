@@ -4,8 +4,10 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ComparisonRule_Behavior {
   private static Class[] PARAMETERS_4484478261143589913 = {SNode.class};
@@ -18,7 +20,8 @@ public class ComparisonRule_Behavior {
   }
 
   public static SNode call_getSecondNodeCondition_4484478261143589913(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913);
   }
 
   public static SNode callSuper_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {

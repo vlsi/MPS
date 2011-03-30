@@ -13,6 +13,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SimpleBuilder_Behavior {
@@ -83,19 +85,23 @@ public class SimpleBuilder_Behavior {
   }
 
   public static SNode call_getResultType_7288041816793071817(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
   }
 
   public static boolean call_isLeaf_7288041816793416227(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
   }
 
   public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode, SNode parentRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
   }
 
   public static SNode call_getAttachStatement_7288041816793075493(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
   }
 
   public static SNode callSuper_getResultType_7288041816793071817(SNode thisNode, String callerConceptFqName) {

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PatternFilter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.PatternFilter_Behavior" />
-  <unitInfo fileName="RenameTo_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.RenameTo_Behavior" />
-  <unitInfo fileName="Includes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Includes_Behavior" />
-  <unitInfo fileName="Excludes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Excludes_Behavior" />
-  <unitInfo fileName="DefaultExcludes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.DefaultExcludes_Behavior" />
-  <unitInfo fileName="CaseSensitive_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.CaseSensitive_Behavior" />
-  <unitInfo fileName="Include_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Include_Behavior" />
-  <unitInfo fileName="Exclude_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Exclude_Behavior" />
-  <unitInfo fileName="SuperSource_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.SuperSource_Behavior" />
-  <unitInfo fileName="Source_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Source_Behavior" />
   <unitInfo fileName="Public_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Public_Behavior" />
+  <unitInfo fileName="Source_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Source_Behavior" />
+  <unitInfo fileName="SuperSource_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.SuperSource_Behavior" />
+  <unitInfo fileName="Exclude_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Exclude_Behavior" />
+  <unitInfo fileName="Include_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Include_Behavior" />
+  <unitInfo fileName="CaseSensitive_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.CaseSensitive_Behavior" />
+  <unitInfo fileName="DefaultExcludes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.DefaultExcludes_Behavior" />
+  <unitInfo fileName="Excludes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Excludes_Behavior" />
+  <unitInfo fileName="Includes_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Includes_Behavior" />
+  <unitInfo fileName="RenameTo_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.RenameTo_Behavior" />
   <unitInfo fileName="GWTModule_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.GWTModule_Behavior" />
-  <unitInfo fileName="Attr_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Attr_Behavior" />
-  <unitInfo fileName="Element_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Element_Behavior" />
+  <unitInfo fileName="Element_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Element_Behavior" />
+  <unitInfo fileName="Attr_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Attr_Behavior" />
+  <unitInfo fileName="Inherits_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Inherits_Behavior" />
+  <unitInfo fileName="EntryPoint_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.EntryPoint_Behavior" />
   <root nodeId="1572321421814401055">
     <nodeInfo nodeId="1572321421814404027" fileName="GWTModule_Behavior.java" startLine="14" startPosition="80" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1572321421814401057" fileName="GWTModule_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
@@ -38,7 +40,7 @@
     <scopeInfo nodeId="3852159904898380020" fileName="SuperSource_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="26" />
   </root>
   <root nodeId="3852159904898386592">
-    <scopeInfo nodeId="3852159904898386594" fileName="Element_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3852159904898386594" fileName="Element_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
   <root nodeId="3852159904898386599">
     <nodeInfo nodeId="3852159904898386608" fileName="Exclude_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -51,7 +53,7 @@
     <scopeInfo nodeId="3852159904898386616" fileName="Include_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="21" />
   </root>
   <root nodeId="3852159904898525996">
-    <scopeInfo nodeId="3852159904898525998" fileName="Attr_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3852159904898525998" fileName="Attr_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
   <root nodeId="3852159904898526004">
     <nodeInfo nodeId="3852159904898547373" fileName="CaseSensitive_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -77,6 +79,16 @@
     <nodeInfo nodeId="3852159904898824971" fileName="RenameTo_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3852159904898824964" fileName="RenameTo_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="3852159904898824968" fileName="RenameTo_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="23" />
+  </root>
+  <root nodeId="4204903511793489013">
+    <nodeInfo nodeId="4204903511793527435" fileName="Inherits_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <scopeInfo nodeId="4204903511793489015" fileName="Inherits_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4204903511793527433" fileName="Inherits_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="46" />
+  </root>
+  <root nodeId="4204903511793527440">
+    <nodeInfo nodeId="4204903511793527447" fileName="EntryPoint_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <scopeInfo nodeId="4204903511793527442" fileName="EntryPoint_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4204903511793527445" fileName="EntryPoint_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="46" />
   </root>
 </debugInfo>
 

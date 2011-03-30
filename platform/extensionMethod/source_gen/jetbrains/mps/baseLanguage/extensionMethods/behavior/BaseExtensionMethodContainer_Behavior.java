@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseExtensionMethodContainer_Behavior {
   private static Class[] PARAMETERS_8578055449697886101 = {SNode.class};
@@ -19,7 +21,8 @@ public class BaseExtensionMethodContainer_Behavior {
   }
 
   public static List<SNode> call_getMembers_8578055449697886101(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), "virtual_getMembers_1213877531970", PARAMETERS_8578055449697886101);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), "virtual_getMembers_1213877531970", PARAMETERS_8578055449697886101);
   }
 
   public static List<SNode> callSuper_getMembers_8578055449697886101(SNode thisNode, String callerConceptFqName) {

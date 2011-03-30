@@ -5,6 +5,8 @@ package jetbrains.mps.ui.modeling.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -24,7 +26,8 @@ public class ContainerItemIterator_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_7798684637310718747(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747);
   }
 
   public static SNode callSuper_getExpectedReturnType_7798684637310718747(SNode thisNode, String callerConceptFqName) {

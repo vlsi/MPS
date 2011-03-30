@@ -4,8 +4,10 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class OrderReference_Behavior {
   private static Class[] PARAMETERS_1499919975383980893 = {SNode.class, SNode.class};
@@ -23,11 +25,13 @@ public class OrderReference_Behavior {
   }
 
   public static boolean call_presents_1499919975383980893(SNode thisNode, SNode tab) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderReference"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383980893, tab);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderReference"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383980893, tab);
   }
 
   public static SNode call_getOrder_3038738109029048964(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderReference"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048964);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderReference"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048964);
   }
 
   public static boolean callSuper_presents_1499919975383980893(SNode thisNode, String callerConceptFqName, SNode tab) {

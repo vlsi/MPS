@@ -4,8 +4,10 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.io.File;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IPath_Behavior {
   private static Class[] PARAMETERS_1233322718999 = {SNode.class};
@@ -14,7 +16,8 @@ public class IPath_Behavior {
   }
 
   public static File call_getFile_1233322718999(SNode thisNode) {
-    return (File) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
   }
 
   public static File callSuper_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {

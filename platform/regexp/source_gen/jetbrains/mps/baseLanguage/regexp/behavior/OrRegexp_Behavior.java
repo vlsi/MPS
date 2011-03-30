@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class OrRegexp_Behavior {
-  private static Class[] PARAMETERS_1222434354398 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222434354398 = {SNode.class, List.class};
   private static Class[] PARAMETERS_1353467374623956023 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -32,11 +34,13 @@ public class OrRegexp_Behavior {
   }
 
   public static String call_getString_1222434354398(SNode thisNode, List<SNode> vars) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222434354398, vars);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222434354398, vars);
   }
 
   public static boolean call_needParentheses_1353467374623956023(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623956023);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623956023);
   }
 
   public static String callSuper_getString_1222434354398(SNode thisNode, String callerConceptFqName, List<SNode> vars) {

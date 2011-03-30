@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MatchVariableReferenceReplacement_Behavior {
-  private static Class[] PARAMETERS_3796137614137539495 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_3796137614137539495 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -23,7 +25,8 @@ public class MatchVariableReferenceReplacement_Behavior {
   }
 
   public static String call_toString_3796137614137539495(SNode thisNode, SNode search) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
   }
 
   public static String callSuper_toString_3796137614137539495(SNode thisNode, String callerConceptFqName, SNode search) {

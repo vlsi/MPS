@@ -4,8 +4,10 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +24,8 @@ public class CreateUIObjectStatement_Behavior {
   }
 
   public static SNode call_getType_6410919744913642010(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010);
   }
 
   public static SNode callSuper_getType_6410919744913642010(SNode thisNode, String callerConceptFqName) {

@@ -4,22 +4,22 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="dtoru6ul5rw8nb2upmtg5fy8p4lzbry" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="2sewpj6wdnmjll2yuxv2aswyyfwavzz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="eaptv7lugj52js2y52jmez2zpd2xuco" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-3h59buuu2m6sdlf4gi1h8y0924s3dfl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8a37qw6mic9vz4k1bshlihre9cibmxp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="8piw64nlwt97de6k6fho9w6eaml5xak" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="nrlt0bqo5nt4njy8obtnkxfeaw68ee" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cgvxbcr3tc8hmi5vjxoyh4xp7znv7s6" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="bwlnlyzo9taogqjsf6poyukv63n5r4x" />
   <dep model="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)" hash="17xl6av1umedmzp4p3d5edpy9li3j7h" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-yxjbmlms4rwuanzquvdqmejhiguxx0" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-cb1ul7irourw560qhn9557vjp9bzuwp" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2zza588ivcb1gp7iczo4wkv2s01itc" />
   <dep model="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" hash="76vo1p0i8ti3z68beyryn4mnex6wvb9" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="6svoa4vie2mpd79ahh01bhtjk0btmk3" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="djgkrz7iywvgnqoszz1retkvow1aio9" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-c9f33xpu5lotj4sa5ggu1j2j4valm88" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cfaxtdlkbuy22agcqk9x6g9ooa98ti" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
   <common hash="-1p9rgn6w419mixnwz6yaqq5pxwcpaqe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -148,7 +148,6 @@
     <file name="OldRefactoring.java" />
   </source>
   <source id="1189693830529" name="RequiredAdditionalArgument" hash="6fnh9n9icuzx96l2du54j4deniny52e">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="6895093993902236229" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -300,7 +299,6 @@
   </source>
   <source id="1197386846879" name="ChangeFeatureNameOperation" hash="-1wv4lr6y5hj5a41ommda1arfckrbjmq">
     <dep root="3242588059496701743" />
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -359,7 +357,6 @@
   </source>
   <source id="1199619425400" name="AbstractMoveExpression" hash="-ca79nzsmktxxssl3ccbjrhwd85ahxew">
     <dep root="3242588059496701743" />
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -475,7 +472,6 @@
   </source>
   <source id="1204722970897" name="DeleteFeatureOperation" hash="-86j3p54639j6v9hq31b4uyg9g1qx2o5">
     <dep root="3242588059496701743" />
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -564,7 +560,6 @@
     <file name="ExecuteFindersExpression.java" />
   </source>
   <source id="1212242507771" name="FinderReference" hash="bp9c1h89gx773ib4b61spvpypu31y9w">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -816,7 +811,6 @@
     <file name="ConceptFunctionParameter_SNode.java" />
   </source>
   <source id="6895093993902311010" name="RefactoringField" hash="-znhs4d8a8u8eibf2r0d3imxp8yh92f">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="478744034994715997" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -834,7 +828,6 @@
     <file name="RefactoringField.java" />
   </source>
   <source id="6895093993902311012" name="RefactoringParameter" hash="ujqr527hvvs0imtnje5321vap3322f">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="478744034994715997" />
     <dep root="6895093993902236229" />
@@ -871,7 +864,6 @@
     <file name="AskExpression.java" />
   </source>
   <source id="6895093993902496262" name="RefactoringParameterReference" hash="1w7cbsmcb0go00wwt5ffufg1ighssxe">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="478744034994716100" />
     <dep root="6895093993902311012" />
@@ -892,7 +884,6 @@
     <file name="RefactoringParameterReference.java" />
   </source>
   <source id="5497648299878398634" name="RefactoringFieldReference" hash="-ednni22vnr9byn8yauw2f6kjwmfkxh0">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="478744034994716100" />
     <dep root="6895093993902311010" />
@@ -1002,7 +993,6 @@
     <dep root="1200932465350" />
     <dep root="1682834381185132063" />
     <dep root="2058726427123891188" />
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep root="5497648299878741970" />
     <dep root="6895093993902310761" />
@@ -1076,7 +1066,6 @@
     <file name="InitialPropertyValueClause.java" />
   </source>
   <source id="7953996722066252909" name="ContextMemberOperation" hash="-7dodpy5q9422q57m1pl7a0zuppmg86a">
-    <dep root="3302086321379400330" />
     <dep root="3302086321379403347" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -1319,7 +1308,6 @@
   </source>
   <source id="3302086321379403347" name="DeleteFeatureExpression" hash="-76v3aefrs4lp0o1nl5i6lkotk4sxqto">
     <dep root="3242588059496701743" />
-    <dep root="3302086321379400330" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

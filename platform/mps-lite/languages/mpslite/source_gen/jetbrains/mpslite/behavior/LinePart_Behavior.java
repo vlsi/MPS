@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LinePart_Behavior {
   private static Class[] PARAMETERS_1238593834306 = {SNode.class, SNode.class, Map.class, Map.class};
@@ -26,11 +28,13 @@ public class LinePart_Behavior {
   }
 
   public static void call_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, concept, conceptsToTargets, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, concept, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, partsToLinks);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, partsToLinks);
   }
 
   public static void callSuper_fillConceptStructure_1238593834306(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {

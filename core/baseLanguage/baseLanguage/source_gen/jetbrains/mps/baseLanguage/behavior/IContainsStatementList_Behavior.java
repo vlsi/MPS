@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IContainsStatementList_Behavior {
@@ -32,11 +34,13 @@ public class IContainsStatementList_Behavior {
   }
 
   public static boolean call_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856);
   }
 
   public static boolean call_isStatementListCompact_1237546693016(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
   }
 
   public static boolean callSuper_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {

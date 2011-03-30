@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="AbstractQueryFunction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.AbstractQueryFunction_Behavior" />
+  <root nodeId="2511103526757027819">
+    <scopeInfo nodeId="2511103526757027821" fileName="AbstractQueryFunction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+</debugInfo>
 

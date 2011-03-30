@@ -13,12 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractProjectComponent_Behavior {
   private static Class[] PARAMETERS_1213877333777 = {SNode.class};
   private static Class[] PARAMETERS_1213877333861 = {SNode.class};
-  private static Class[] PARAMETERS_1213877333900 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1213877333900 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -77,15 +79,18 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getPath_1213877333777(SNode thisNode) {
-    return (File) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPath_1213877333777", PARAMETERS_1213877333777);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPath_1213877333777", PARAMETERS_1213877333777);
   }
 
   public static List<SNode> call_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPostProcessingTasks_1213877333861", PARAMETERS_1213877333861);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPostProcessingTasks_1213877333861", PARAMETERS_1213877333861);
   }
 
   public static boolean call_equals_1213877333900(SNode thisNode, SNode snode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_equals_1213877333900", PARAMETERS_1213877333900, snode);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_equals_1213877333900", PARAMETERS_1213877333900, snode);
   }
 
   public static File callSuper_getPath_1213877333777(SNode thisNode, String callerConceptFqName) {

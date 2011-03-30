@@ -14,6 +14,8 @@ import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BTestCase_Behavior {
@@ -78,7 +80,8 @@ public class BTestCase_Behavior {
   }
 
   public static String call_getSimpleClassName_4520990320128651400(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), "virtual_getSimpleClassName_1229278847513", PARAMETERS_4520990320128651400);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), "virtual_getSimpleClassName_1229278847513", PARAMETERS_4520990320128651400);
   }
 
   public static String callSuper_getSimpleClassName_4520990320128651400(SNode thisNode, String callerConceptFqName) {

@@ -5,8 +5,13 @@ package jetbrains.mps.build.custommps.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MPSDistribution_Behavior {
+  private static Class[] PARAMETERS_4204903511793403791 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +21,18 @@ public class MPSDistribution_Behavior {
       return "build";
     }
     return parentScriptsFolder;
+  }
+
+  public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
+    throw new UnsupportedOperationException();
+  }
+
+  public static String call_getChildrenTargetDir_4204903511793403791(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.custommps.structure.MPSDistribution"), "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_4204903511793403791);
+  }
+
+  public static String callSuper_getChildrenTargetDir_4204903511793403791(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.custommps.structure.MPSDistribution"), callerConceptFqName, "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_4204903511793403791);
   }
 }

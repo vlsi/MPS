@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeOperation_Behavior {
@@ -34,11 +36,13 @@ public class NodeOperation_Behavior {
   }
 
   public static String call_getName_1217435265700(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
   }
 
   public static void call_perform_1215601182156(SNode thisNode, SNode node) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
   }
 
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {

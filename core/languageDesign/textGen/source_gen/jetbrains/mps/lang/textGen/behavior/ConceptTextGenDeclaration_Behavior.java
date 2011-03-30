@@ -9,11 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptTextGenDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384725606 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345979603 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_6261424444345979603 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -40,11 +42,13 @@ public class ConceptTextGenDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384725606(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
   }
 
   public static void call_setBaseConcept_6261424444345979603(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979603, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979603, baseConcept);
   }
 
   public static SNode callSuper_getBaseConcept_8952337903384725606(SNode thisNode, String callerConceptFqName) {

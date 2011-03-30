@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Refactoring_Behavior {
@@ -33,11 +35,13 @@ public class Refactoring_Behavior {
   }
 
   public static SNode call_getBaseConcept_4205271146524200392(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
   }
 
   public static void call_setBaseConcept_6261424444345979536(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979536, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979536, baseConcept);
   }
 
   public static SNode callSuper_getBaseConcept_4205271146524200392(SNode thisNode, String callerConceptFqName) {

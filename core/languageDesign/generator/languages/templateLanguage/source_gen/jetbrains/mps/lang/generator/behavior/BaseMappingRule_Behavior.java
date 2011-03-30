@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMappingRule_Behavior {
   private static Class[] PARAMETERS_1213877498511 = {SNode.class};
@@ -38,7 +40,8 @@ public class BaseMappingRule_Behavior {
   }
 
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
   }
 
   public static SNode callSuper_getTemplateType_1213877498511(SNode thisNode, String callerConceptFqName) {

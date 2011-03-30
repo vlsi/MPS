@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseDocComment_Behavior {
   private static Class[] PARAMETERS_8465538089690623795 = {SNode.class};
@@ -19,7 +21,8 @@ public class BaseDocComment_Behavior {
   }
 
   public static boolean call_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795);
   }
 
   public static boolean callSuper_isTagSectionEmpty_8465538089690623795(SNode thisNode, String callerConceptFqName) {

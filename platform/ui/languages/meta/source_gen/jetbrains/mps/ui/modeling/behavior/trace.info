@@ -11,11 +11,11 @@
   <unitInfo fileName="UIProperty_Behavior.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIProperty_Behavior" />
   <unitInfo fileName="UIObjectTemplate_Behavior.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectTemplate_Behavior" />
   <unitInfo fileName="ApplyConstraintStatement_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ApplyConstraintStatement_Behavior" />
-  <unitInfo fileName="LayoutConstraintType_Behavior.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraintType_Behavior" />
-  <unitInfo fileName="HasTemplate_Behavior.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior" />
-  <unitInfo fileName="ContainerItemIterator_Behavior.java" startLine="34" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior$QuotationClass_4yrdx3_a0b0b" />
-  <unitInfo fileName="UIObjectFactory_Behavior.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_Behavior" />
-  <unitInfo fileName="ContainerItemIterator_Behavior.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior" />
+  <unitInfo fileName="LayoutConstraintType_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraintType_Behavior" />
+  <unitInfo fileName="HasTemplate_Behavior.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior" />
+  <unitInfo fileName="ContainerItemIterator_Behavior.java" startLine="37" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior$QuotationClass_4yrdx3_a0b0b" />
+  <unitInfo fileName="UIObjectFactory_Behavior.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_Behavior" />
+  <unitInfo fileName="ContainerItemIterator_Behavior.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior" />
   <unitInfo fileName="Event_Behavior.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.Event_Behavior" />
   <unitInfo fileName="Container_Behavior.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.Container_Behavior" />
   <unitInfo fileName="UIObject_Behavior.java" startLine="19" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObject_Behavior" />
@@ -25,9 +25,9 @@
     <scopeInfo nodeId="1055897155339717887" fileName="ContainerItemAdder_Behavior.java" startLine="13" startPosition="85" endLine="14" endPosition="219" />
   </root>
   <root nodeId="3939571372331676057">
-    <nodeInfo nodeId="262873202871795839" fileName="HasTemplate_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3939571372331676059" fileName="HasTemplate_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="262873202871795836" fileName="HasTemplate_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="94" />
+    <nodeInfo nodeId="262873202871795839" fileName="HasTemplate_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3939571372331676059" fileName="HasTemplate_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="262873202871795836" fileName="HasTemplate_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="94" />
   </root>
   <root nodeId="3939571372331676256">
     <nodeInfo nodeId="3939571372331676295" fileName="UIProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -222,9 +222,9 @@
     <scopeInfo nodeId="5263857617434470671" fileName="EventPropertyGetter_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="111" />
   </root>
   <root nodeId="5572604531249685304">
-    <nodeInfo nodeId="5572604531249685437" fileName="LayoutConstraintType_Behavior.java" startLine="17" startPosition="78" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5572604531249685306" fileName="LayoutConstraintType_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="5572604531249685431" fileName="LayoutConstraintType_Behavior.java" startLine="17" startPosition="78" endLine="21" endPosition="13" />
+    <nodeInfo nodeId="5572604531249685437" fileName="LayoutConstraintType_Behavior.java" startLine="19" startPosition="78" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5572604531249685306" fileName="LayoutConstraintType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="5572604531249685431" fileName="LayoutConstraintType_Behavior.java" startLine="19" startPosition="78" endLine="23" endPosition="13" />
   </root>
   <root nodeId="6030013275785838173">
     <nodeInfo nodeId="6030013275785870852" fileName="ApplyConstraintStatement_Behavior.java" startLine="17" startPosition="38" endLine="18" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -262,31 +262,31 @@
     <scopeInfo nodeId="7650899729856274264" fileName="AuxObjectFactory_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="168" />
   </root>
   <root nodeId="7655275107718262758">
-    <nodeInfo nodeId="7655275107718262777" fileName="UIObjectFactory_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7655275107718418330" fileName="UIObjectFactory_Behavior.java" startLine="27" startPosition="86" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7655275107718418368" fileName="UIObjectFactory_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1642651187739495211" fileName="UIObjectFactory_Behavior.java" startLine="37" startPosition="81" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1642651187739512389" fileName="UIObjectFactory_Behavior.java" startLine="39" startPosition="73" endLine="40" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1642651187739512405" fileName="UIObjectFactory_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7655275107718418312" fileName="UIObjectFactory_Behavior.java" startLine="26" startPosition="78" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1642651187739512374" fileName="UIObjectFactory_Behavior.java" startLine="38" startPosition="71" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7655275107718418384" fileName="UIObjectFactory_Behavior.java" startLine="30" startPosition="271" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7655275107718262760" fileName="UIObjectFactory_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="7655275107718262772" fileName="UIObjectFactory_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="167" />
-    <scopeInfo nodeId="7655275107718418328" fileName="UIObjectFactory_Behavior.java" startLine="27" startPosition="86" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="1642651187739512375" fileName="UIObjectFactory_Behavior.java" startLine="39" startPosition="73" endLine="40" endPosition="150" />
-    <scopeInfo nodeId="1642651187739434870" fileName="UIObjectFactory_Behavior.java" startLine="37" startPosition="81" endLine="42" endPosition="18">
+    <nodeInfo nodeId="7655275107718262777" fileName="UIObjectFactory_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7655275107718418330" fileName="UIObjectFactory_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7655275107718418368" fileName="UIObjectFactory_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1642651187739495211" fileName="UIObjectFactory_Behavior.java" startLine="39" startPosition="81" endLine="40" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1642651187739512389" fileName="UIObjectFactory_Behavior.java" startLine="41" startPosition="73" endLine="42" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1642651187739512405" fileName="UIObjectFactory_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7655275107718418312" fileName="UIObjectFactory_Behavior.java" startLine="28" startPosition="78" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1642651187739512374" fileName="UIObjectFactory_Behavior.java" startLine="40" startPosition="71" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7655275107718418384" fileName="UIObjectFactory_Behavior.java" startLine="32" startPosition="271" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7655275107718262760" fileName="UIObjectFactory_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="7655275107718262772" fileName="UIObjectFactory_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="167" />
+    <scopeInfo nodeId="7655275107718418328" fileName="UIObjectFactory_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1642651187739512375" fileName="UIObjectFactory_Behavior.java" startLine="41" startPosition="73" endLine="42" endPosition="150" />
+    <scopeInfo nodeId="1642651187739434870" fileName="UIObjectFactory_Behavior.java" startLine="39" startPosition="81" endLine="44" endPosition="18">
       <varInfo nodeId="1642651187739495212" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7655275107718418310" fileName="UIObjectFactory_Behavior.java" startLine="26" startPosition="78" endLine="34" endPosition="6">
+    <scopeInfo nodeId="7655275107718418310" fileName="UIObjectFactory_Behavior.java" startLine="28" startPosition="78" endLine="36" endPosition="6">
       <varInfo nodeId="7655275107718418369" varName="exp" />
     </scopeInfo>
   </root>
   <root nodeId="7798684637310718699">
-    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719316" fileName="ContainerItemIterator_Behavior.java" startLine="22" startPosition="172" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="21" startPosition="83" endLine="23" endPosition="94">
+    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7798684637310719316" fileName="ContainerItemIterator_Behavior.java" startLine="24" startPosition="172" endLine="25" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="83" endLine="25" endPosition="94">
       <varInfo nodeId="7798684637310724161" varName="itype" />
     </scopeInfo>
   </root>

@@ -6,8 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ExpectedOption_Behavior {
   private static Class[] PARAMETERS_8853708281362145858 = {SNode.class};
@@ -21,7 +23,8 @@ public class ExpectedOption_Behavior {
   }
 
   public static String call_classifierName_8853708281362145858(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858);
   }
 
   public static String callSuper_classifierName_8853708281362145858(SNode thisNode, String callerConceptFqName) {

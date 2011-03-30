@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule$QuotationClass_57pil5_a0a0a0" />
-  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule$QuotationClass_htbc4h_a0a0a0" />
   <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule$QuotationClass_r9cjy_a0a0a0" />
+  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule$QuotationClass_htbc4h_a0a0a0" />
+  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule$QuotationClass_57pil5_a0a0a0" />
   <unitInfo fileName="typeof_Quotation_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Quotation_InferenceRule$QuotationClass_wzo52i_a0a1a0" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="44" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule$QuotationClass_6o8snu_a0a0a0" />
-  <unitInfo fileName="check_Antiquotation_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.check_Antiquotation_NonTypesystemRule" />
   <unitInfo fileName="check_ListAntiquotation_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.check_ListAntiquotation_NonTypesystemRule" />
-  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule" />
-  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule" />
+  <unitInfo fileName="check_Antiquotation_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.check_Antiquotation_NonTypesystemRule" />
   <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule" />
   <unitInfo fileName="typeof_Quotation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Quotation_InferenceRule" />
   <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule" />
   <root nodeId="1196352592946">

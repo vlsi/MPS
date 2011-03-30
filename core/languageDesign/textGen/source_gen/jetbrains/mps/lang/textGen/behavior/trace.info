@@ -7,14 +7,14 @@
   <unitInfo fileName="ConstantStringAppendPart_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_Behavior" />
   <unitInfo fileName="WithIndentOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_Behavior" />
   <unitInfo fileName="OperationDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_Behavior" />
-  <unitInfo fileName="UnitConcept_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
-  <unitInfo fileName="ScopeConcept_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-  <unitInfo fileName="AbstractAppendPart_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_Behavior" />
-  <unitInfo fileName="TraceableConcept_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
-  <unitInfo fileName="AbstractTextGenDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_Behavior" />
-  <unitInfo fileName="AbstractTextGenParameter_Behavior.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_Behavior" />
-  <unitInfo fileName="SimpleTextGenOperation_Behavior.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_Behavior" />
-  <unitInfo fileName="ConceptTextGenDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_Behavior" />
+  <unitInfo fileName="UnitConcept_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+  <unitInfo fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
+  <unitInfo fileName="AbstractAppendPart_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_Behavior" />
+  <unitInfo fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+  <unitInfo fileName="AbstractTextGenDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_Behavior" />
+  <unitInfo fileName="AbstractTextGenParameter_Behavior.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_Behavior" />
+  <unitInfo fileName="SimpleTextGenOperation_Behavior.java" startLine="12" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_Behavior" />
+  <unitInfo fileName="ConceptTextGenDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_Behavior" />
   <unitInfo fileName="LanguageTextGenDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior" />
   <root nodeId="1234257860776">
     <nodeInfo nodeId="1234257871250" fileName="OperationDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -88,86 +88,86 @@
     </scopeInfo>
   </root>
   <root nodeId="1234272591436">
-    <nodeInfo nodeId="1234781983112" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="21" startPosition="90" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234781917457" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="22" startPosition="48" endLine="23" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234782010678" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="24" startPosition="37" endLine="25" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234782049420" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234784611194" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8952337903384725612" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6261424444345979614" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="38" startPosition="100" endLine="39" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="153" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="1234272591438" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1234781956545" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="24" startPosition="37" endLine="25" endPosition="131" />
-    <scopeInfo nodeId="1234784602519" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="8952337903384725608" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="76" />
-    <scopeInfo nodeId="6261424444345979605" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="38" startPosition="100" endLine="39" endPosition="82" />
-    <scopeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="153" endLine="26" endPosition="5">
+    <nodeInfo nodeId="1234781983112" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="90" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234781917457" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="24" startPosition="48" endLine="25" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234782010678" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="26" startPosition="37" endLine="27" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234782049420" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234784611194" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="32" startPosition="77" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8952337903384725612" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="36" startPosition="82" endLine="37" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6261424444345979614" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="40" startPosition="100" endLine="41" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="25" startPosition="153" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1234272591438" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="1234781956545" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="26" startPosition="37" endLine="27" endPosition="131" />
+    <scopeInfo nodeId="1234784602519" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="32" startPosition="77" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="8952337903384725608" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="36" startPosition="82" endLine="37" endPosition="76" />
+    <scopeInfo nodeId="6261424444345979605" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="40" startPosition="100" endLine="41" endPosition="82" />
+    <scopeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="25" startPosition="153" endLine="28" endPosition="5">
       <varInfo nodeId="1234781956548" varName="langTextGen" />
     </scopeInfo>
-    <scopeInfo nodeId="1234781881487" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="21" startPosition="90" endLine="27" endPosition="18">
+    <scopeInfo nodeId="1234781881487" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="90" endLine="29" endPosition="18">
       <varInfo nodeId="1234781983113" varName="result" />
       <varInfo nodeId="1234781917458" varName="roots" />
     </scopeInfo>
   </root>
   <root nodeId="1234282173078">
-    <nodeInfo nodeId="1234784593196" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234781461974" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="21" startPosition="90" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1234282173080" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1234784577705" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1234781444748" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="21" startPosition="90" endLine="22" endPosition="16" />
+    <nodeInfo nodeId="1234784593196" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234781461974" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="23" startPosition="90" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1234282173080" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1234784577705" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="1234781444748" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="23" startPosition="90" endLine="24" endPosition="16" />
   </root>
   <root nodeId="1234789419312">
-    <nodeInfo nodeId="1234789440649" fileName="SimpleTextGenOperation_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234794805050" fileName="SimpleTextGenOperation_Behavior.java" startLine="18" startPosition="45" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234789522660" fileName="SimpleTextGenOperation_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234789915240" fileName="SimpleTextGenOperation_Behavior.java" startLine="21" startPosition="47" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238074506374" fileName="SimpleTextGenOperation_Behavior.java" startLine="26" startPosition="8" endLine="27" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234789678854" fileName="SimpleTextGenOperation_Behavior.java" startLine="28" startPosition="21" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234789863281" fileName="SimpleTextGenOperation_Behavior.java" startLine="30" startPosition="41" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234790018757" fileName="SimpleTextGenOperation_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236168716798" fileName="SimpleTextGenOperation_Behavior.java" startLine="37" startPosition="74" endLine="38" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234794789426" fileName="SimpleTextGenOperation_Behavior.java" startLine="17" startPosition="74" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234789582182" fileName="SimpleTextGenOperation_Behavior.java" startLine="27" startPosition="53" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234789558732" fileName="SimpleTextGenOperation_Behavior.java" startLine="22" startPosition="26" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <scopeInfo nodeId="1234789419314" fileName="SimpleTextGenOperation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1234794789427" fileName="SimpleTextGenOperation_Behavior.java" startLine="18" startPosition="45" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="1234789582184" fileName="SimpleTextGenOperation_Behavior.java" startLine="28" startPosition="21" endLine="29" endPosition="38" />
-    <scopeInfo nodeId="1234789863280" fileName="SimpleTextGenOperation_Behavior.java" startLine="30" startPosition="41" endLine="31" endPosition="56" />
-    <scopeInfo nodeId="1236168713985" fileName="SimpleTextGenOperation_Behavior.java" startLine="37" startPosition="74" endLine="38" endPosition="229" />
-    <scopeInfo nodeId="1234789558733" fileName="SimpleTextGenOperation_Behavior.java" startLine="26" startPosition="8" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1234789558732" fileName="SimpleTextGenOperation_Behavior.java" startLine="22" startPosition="26" endLine="33" endPosition="5">
+    <nodeInfo nodeId="1234789440649" fileName="SimpleTextGenOperation_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234794805050" fileName="SimpleTextGenOperation_Behavior.java" startLine="20" startPosition="45" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234789522660" fileName="SimpleTextGenOperation_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234789915240" fileName="SimpleTextGenOperation_Behavior.java" startLine="23" startPosition="47" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238074506374" fileName="SimpleTextGenOperation_Behavior.java" startLine="28" startPosition="8" endLine="29" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234789678854" fileName="SimpleTextGenOperation_Behavior.java" startLine="30" startPosition="21" endLine="31" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234789863281" fileName="SimpleTextGenOperation_Behavior.java" startLine="32" startPosition="41" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234790018757" fileName="SimpleTextGenOperation_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236168716798" fileName="SimpleTextGenOperation_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234794789426" fileName="SimpleTextGenOperation_Behavior.java" startLine="19" startPosition="74" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234789582182" fileName="SimpleTextGenOperation_Behavior.java" startLine="29" startPosition="53" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234789558732" fileName="SimpleTextGenOperation_Behavior.java" startLine="24" startPosition="26" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <scopeInfo nodeId="1234789419314" fileName="SimpleTextGenOperation_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1234794789427" fileName="SimpleTextGenOperation_Behavior.java" startLine="20" startPosition="45" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="1234789582184" fileName="SimpleTextGenOperation_Behavior.java" startLine="30" startPosition="21" endLine="31" endPosition="38" />
+    <scopeInfo nodeId="1234789863280" fileName="SimpleTextGenOperation_Behavior.java" startLine="32" startPosition="41" endLine="33" endPosition="56" />
+    <scopeInfo nodeId="1236168713985" fileName="SimpleTextGenOperation_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="229" />
+    <scopeInfo nodeId="1234789558733" fileName="SimpleTextGenOperation_Behavior.java" startLine="28" startPosition="8" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="1234789558732" fileName="SimpleTextGenOperation_Behavior.java" startLine="24" startPosition="26" endLine="35" endPosition="5">
       <varInfo nodeId="1234789558735" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1234789420864" fileName="SimpleTextGenOperation_Behavior.java" startLine="16" startPosition="76" endLine="34" endPosition="29">
+    <scopeInfo nodeId="1234789420864" fileName="SimpleTextGenOperation_Behavior.java" startLine="18" startPosition="76" endLine="36" endPosition="29">
       <varInfo nodeId="1234789522661" varName="result" />
       <varInfo nodeId="1234789440650" varName="name" />
       <varInfo nodeId="1234789915241" varName="space" />
     </scopeInfo>
   </root>
   <root nodeId="1234885316279">
-    <nodeInfo nodeId="1234885322191" fileName="AbstractTextGenParameter_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234885322197" fileName="AbstractTextGenParameter_Behavior.java" startLine="17" startPosition="75" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234885322205" fileName="AbstractTextGenParameter_Behavior.java" startLine="19" startPosition="46" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234885322214" fileName="AbstractTextGenParameter_Behavior.java" startLine="21" startPosition="19" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234885322226" fileName="AbstractTextGenParameter_Behavior.java" startLine="23" startPosition="14" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234885322244" fileName="AbstractTextGenParameter_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236168615935" fileName="AbstractTextGenParameter_Behavior.java" startLine="30" startPosition="74" endLine="31" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236687801734" fileName="AbstractTextGenParameter_Behavior.java" startLine="34" startPosition="83" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234885322224" fileName="AbstractTextGenParameter_Behavior.java" startLine="23" startPosition="12" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234885322212" fileName="AbstractTextGenParameter_Behavior.java" startLine="20" startPosition="32" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234885322203" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="53" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <scopeInfo nodeId="1234885316281" fileName="AbstractTextGenParameter_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1234885322213" fileName="AbstractTextGenParameter_Behavior.java" startLine="21" startPosition="19" endLine="22" endPosition="54" />
-    <scopeInfo nodeId="1234885322225" fileName="AbstractTextGenParameter_Behavior.java" startLine="23" startPosition="14" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="1236168601265" fileName="AbstractTextGenParameter_Behavior.java" startLine="30" startPosition="74" endLine="31" endPosition="229" />
-    <scopeInfo nodeId="1236687782700" fileName="AbstractTextGenParameter_Behavior.java" startLine="34" startPosition="83" endLine="35" endPosition="17" />
-    <scopeInfo nodeId="1234885322204" fileName="AbstractTextGenParameter_Behavior.java" startLine="19" startPosition="46" endLine="25" endPosition="7">
+    <nodeInfo nodeId="1234885322191" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234885322197" fileName="AbstractTextGenParameter_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234885322205" fileName="AbstractTextGenParameter_Behavior.java" startLine="21" startPosition="46" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234885322214" fileName="AbstractTextGenParameter_Behavior.java" startLine="23" startPosition="19" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234885322226" fileName="AbstractTextGenParameter_Behavior.java" startLine="25" startPosition="14" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234885322244" fileName="AbstractTextGenParameter_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236168615935" fileName="AbstractTextGenParameter_Behavior.java" startLine="32" startPosition="74" endLine="33" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236687801734" fileName="AbstractTextGenParameter_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234885322224" fileName="AbstractTextGenParameter_Behavior.java" startLine="25" startPosition="12" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234885322212" fileName="AbstractTextGenParameter_Behavior.java" startLine="22" startPosition="32" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234885322203" fileName="AbstractTextGenParameter_Behavior.java" startLine="20" startPosition="53" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <scopeInfo nodeId="1234885316281" fileName="AbstractTextGenParameter_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1234885322213" fileName="AbstractTextGenParameter_Behavior.java" startLine="23" startPosition="19" endLine="24" endPosition="54" />
+    <scopeInfo nodeId="1234885322225" fileName="AbstractTextGenParameter_Behavior.java" startLine="25" startPosition="14" endLine="26" endPosition="27" />
+    <scopeInfo nodeId="1236168601265" fileName="AbstractTextGenParameter_Behavior.java" startLine="32" startPosition="74" endLine="33" endPosition="229" />
+    <scopeInfo nodeId="1236687782700" fileName="AbstractTextGenParameter_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="17" />
+    <scopeInfo nodeId="1234885322204" fileName="AbstractTextGenParameter_Behavior.java" startLine="21" startPosition="46" endLine="27" endPosition="7">
       <varInfo nodeId="1234885322206" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="1234885322203" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="53" endLine="26" endPosition="5">
+    <scopeInfo nodeId="1234885322203" fileName="AbstractTextGenParameter_Behavior.java" startLine="20" startPosition="53" endLine="28" endPosition="5">
       <varInfo nodeId="1234885322234" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1234885318471" fileName="AbstractTextGenParameter_Behavior.java" startLine="16" startPosition="76" endLine="27" endPosition="30">
+    <scopeInfo nodeId="1234885318471" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="76" endLine="29" endPosition="30">
       <varInfo nodeId="1234885322192" varName="alias" />
       <varInfo nodeId="1234885322198" varName="builder" />
     </scopeInfo>
@@ -183,9 +183,9 @@
     <scopeInfo nodeId="1236188788771" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="229" />
   </root>
   <root nodeId="1237466285808">
-    <nodeInfo nodeId="1237466305519" fileName="AbstractAppendPart_Behavior.java" startLine="15" startPosition="74" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1237466285810" fileName="AbstractAppendPart_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="1237466287048" fileName="AbstractAppendPart_Behavior.java" startLine="15" startPosition="74" endLine="16" endPosition="17" />
+    <nodeInfo nodeId="1237466305519" fileName="AbstractAppendPart_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1237466285810" fileName="AbstractAppendPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1237466287048" fileName="AbstractAppendPart_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="17" />
   </root>
   <root nodeId="1237466317880">
     <nodeInfo nodeId="1237466323388" fileName="ConstantStringAppendPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -206,15 +206,15 @@
     <scopeInfo nodeId="1260930188116560114" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
   </root>
   <root nodeId="3822000666564591085">
-    <nodeInfo nodeId="3822000666564591093" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3822000666564591087" fileName="TraceableConcept_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3822000666564591091" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" />
+    <nodeInfo nodeId="3822000666564591093" fileName="TraceableConcept_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3822000666564591087" fileName="TraceableConcept_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="3822000666564591091" fileName="TraceableConcept_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="16" />
   </root>
   <root nodeId="3822000666564591097">
-    <scopeInfo nodeId="3822000666564591099" fileName="ScopeConcept_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3822000666564591099" fileName="ScopeConcept_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
   </root>
   <root nodeId="3822000666564591109">
-    <scopeInfo nodeId="3822000666564591111" fileName="UnitConcept_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3822000666564591111" fileName="UnitConcept_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
 </debugInfo>
 

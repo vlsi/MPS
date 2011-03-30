@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IExtractMethodAvailable_Behavior {
   private static Class[] PARAMETERS_1221393367929 = {SNode.class, List.class};
@@ -18,7 +20,8 @@ public class IExtractMethodAvailable_Behavior {
   }
 
   public static IExtractMethodRefactoringProcessor call_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
-    return (IExtractMethodRefactoringProcessor) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, nodesToExtract);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (IExtractMethodRefactoringProcessor) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, nodesToExtract);
   }
 
   public static IExtractMethodRefactoringProcessor callSuper_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, String callerConceptFqName, List<SNode> nodesToExtract) {

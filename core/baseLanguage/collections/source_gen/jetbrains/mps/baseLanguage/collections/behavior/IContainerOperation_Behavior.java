@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IContainerOperation_Behavior {
@@ -28,7 +30,8 @@ public class IContainerOperation_Behavior {
   }
 
   public static SNode call_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
   }
 
   public static SNode callSuper_expectedOperandType_2141797557973018589(SNode thisNode, String callerConceptFqName, SNode elementType) {

@@ -5,8 +5,10 @@ package jetbrains.mps.lang.project.behavior;
 import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MappingConfigNormalRef_Behavior {
   private static Class[] PARAMETERS_2721285250110400383 = {SNode.class};
@@ -28,7 +30,8 @@ public class MappingConfigNormalRef_Behavior {
   }
 
   public static boolean call_isComplete_2721285250110400383(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383);
   }
 
   public static boolean callSuper_isComplete_2721285250110400383(SNode thisNode, String callerConceptFqName) {

@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptEditorDeclaration_Behavior {
@@ -37,15 +39,18 @@ public class ConceptEditorDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384629359(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384629359);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384629359);
   }
 
   public static void call_setBaseConcept_6261424444345979340(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979340, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979340, baseConcept);
   }
 
   public static boolean call_isApplicable_7839831476331825169(SNode thisNode, SNode candidate) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331825169, candidate);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331825169, candidate);
   }
 
   public static SNode callSuper_getBaseConcept_8952337903384629359(SNode thisNode, String callerConceptFqName) {

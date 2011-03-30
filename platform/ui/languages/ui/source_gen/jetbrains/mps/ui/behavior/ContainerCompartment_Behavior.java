@@ -5,6 +5,8 @@ package jetbrains.mps.ui.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ContainerCompartment_Behavior {
@@ -23,11 +25,13 @@ public class ContainerCompartment_Behavior {
   }
 
   public static SNode call_getContext_8923564134258348484(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484);
   }
 
   public static SNode call_getContainer_8923564134258348492(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492);
   }
 
   public static SNode callSuper_getContext_8923564134258348484(SNode thisNode, String callerConceptFqName) {

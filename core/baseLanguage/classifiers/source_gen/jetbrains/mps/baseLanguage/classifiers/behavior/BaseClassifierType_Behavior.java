@@ -4,17 +4,20 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseClassifierType_Behavior {
-  private static Class[] PARAMETERS_1213877402148 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1213877402148 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> call_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, contextNode);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, contextNode);
   }
 
   public static List<SNode> callSuper_getMembers_1213877402148(SNode thisNode, String callerConceptFqName, SNode contextNode) {

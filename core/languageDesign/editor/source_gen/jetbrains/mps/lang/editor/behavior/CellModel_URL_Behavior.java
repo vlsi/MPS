@@ -5,8 +5,10 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_URL_Behavior {
   private static Class[] PARAMETERS_3696012239575646497 = {SNode.class};
@@ -28,11 +30,13 @@ public class CellModel_URL_Behavior {
   }
 
   public static String call_getOpeningText_3696012239575646497(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getOpeningText_1220339714057", PARAMETERS_3696012239575646497);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getOpeningText_1220339714057", PARAMETERS_3696012239575646497);
   }
 
   public static String call_getClosingText_3696012239575646509(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getClosingText_1220339738643", PARAMETERS_3696012239575646509);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getClosingText_1220339738643", PARAMETERS_3696012239575646509);
   }
 
   public static String callSuper_getOpeningText_3696012239575646497(SNode thisNode, String callerConceptFqName) {

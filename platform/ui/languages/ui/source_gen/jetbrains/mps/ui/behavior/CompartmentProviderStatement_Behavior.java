@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CompartmentProviderStatement_Behavior {
@@ -49,15 +51,18 @@ public class CompartmentProviderStatement_Behavior {
   }
 
   public static boolean call_shouldReturnValue_8923564134259851767(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259851767);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259851767);
   }
 
   public static SNode call_getContextExpression_8923564134258345463(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345463);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345463);
   }
 
   public static SNode call_getContainer_8923564134258348474(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474);
   }
 
   public static boolean callSuper_shouldReturnValue_8923564134259851767(SNode thisNode, String callerConceptFqName) {

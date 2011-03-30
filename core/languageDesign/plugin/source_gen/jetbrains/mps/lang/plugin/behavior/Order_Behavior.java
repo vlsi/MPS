@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Order_Behavior {
@@ -41,11 +43,13 @@ public class Order_Behavior {
   }
 
   public static boolean call_presents_1499919975383913755(SNode thisNode, SNode tab) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, tab);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, tab);
   }
 
   public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958);
   }
 
   public static boolean callSuper_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {

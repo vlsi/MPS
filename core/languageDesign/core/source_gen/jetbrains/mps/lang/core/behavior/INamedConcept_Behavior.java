@@ -5,6 +5,8 @@ package jetbrains.mps.lang.core.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class INamedConcept_Behavior {
@@ -22,7 +24,12 @@ public class INamedConcept_Behavior {
   }
 
   public static String call_getFqName_1213877404258(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    if (descriptor instanceof INamedConcept_BehaviorDescriptor) {
+      INamedConcept_BehaviorDescriptor casted = (INamedConcept_BehaviorDescriptor) descriptor;
+      return casted.virtual_getFqName_1213877404258(thisNode);
+    }
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
   }
 
   public static String callSuper_getFqName_1213877404258(SNode thisNode, String callerConceptFqName) {

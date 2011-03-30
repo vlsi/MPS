@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SideTransformHintSubstituteActions_Behavior {
   private static Class[] PARAMETERS_5270353093116090177 = {SNode.class};
@@ -33,11 +35,13 @@ public class SideTransformHintSubstituteActions_Behavior {
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116090177(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116090177);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116090177);
   }
 
   public static void call_setBaseConcept_6261424444345978589(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978589, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978589, baseConcept);
   }
 
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116090177(SNode thisNode, String callerConceptFqName) {

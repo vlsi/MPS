@@ -5,8 +5,10 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,11 +33,13 @@ public class OptionType_Behavior {
   }
 
   public static String call_classifierName_4125795553994047768(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), "virtual_classifierName_4609636120081351397", PARAMETERS_4125795553994047768);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), "virtual_classifierName_4609636120081351397", PARAMETERS_4125795553994047768);
   }
 
   public static SNode call_baseClassifier_4125795553994049045(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), "virtual_baseClassifier_4125795553993767872", PARAMETERS_4125795553994049045);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.OptionType"), "virtual_baseClassifier_4125795553993767872", PARAMETERS_4125795553994049045);
   }
 
   public static String callSuper_classifierName_4125795553994047768(SNode thisNode, String callerConceptFqName) {

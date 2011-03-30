@@ -15,6 +15,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -79,7 +81,8 @@ public class ListType_Behavior {
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345720(SNode thisNode, SModel targetModel) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ListType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345720, targetModel);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ListType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345720, targetModel);
   }
 
   public static List<SNode> callSuper_getAbstractCreators_7602110602933345720(SNode thisNode, String callerConceptFqName, SModel targetModel) {

@@ -4,8 +4,10 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellMenuComponent_Behavior {
   private static Class[] PARAMETERS_5270353093116097675 = {SNode.class};
@@ -23,11 +25,13 @@ public class CellMenuComponent_Behavior {
   }
 
   public static SNode call_getBaseConcept_5270353093116097675(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
   }
 
   public static void call_setBaseConcept_6261424444345979313(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979313, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979313, baseConcept);
   }
 
   public static SNode callSuper_getBaseConcept_5270353093116097675(SNode thisNode, String callerConceptFqName) {

@@ -4,6 +4,8 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -12,7 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UIObjectStatement_Behavior {
   private static Class[] PARAMETERS_7109250785404509292 = {SNode.class};
-  private static Class[] PARAMETERS_5197527271413889619 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_5197527271413889619 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -42,11 +44,13 @@ public class UIObjectStatement_Behavior {
   }
 
   public static boolean call_shouldReturnValue_7109250785404509292(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_7109250785404509292);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_7109250785404509292);
   }
 
   public static SNode call_expectedContextType_5197527271413889619(SNode thisNode, SNode belongsTo) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889619, belongsTo);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889619, belongsTo);
   }
 
   public static boolean callSuper_shouldReturnValue_7109250785404509292(SNode thisNode, String callerConceptFqName) {

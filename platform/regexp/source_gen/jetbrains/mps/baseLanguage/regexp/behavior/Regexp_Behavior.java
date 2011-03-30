@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Regexp_Behavior {
   private static Class[] PARAMETERS_1213877429451 = {SNode.class};
-  private static Class[] PARAMETERS_1222432436326 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222432436326 = {SNode.class, List.class};
   private static Class[] PARAMETERS_1353467374623880338 = {SNode.class};
   private static Class[] PARAMETERS_4759120547781297301 = {SNode.class};
 
@@ -76,19 +78,23 @@ public class Regexp_Behavior {
   }
 
   public static String call_toString_1213877429451(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_toString_1213877429451", PARAMETERS_1213877429451);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_toString_1213877429451", PARAMETERS_1213877429451);
   }
 
   public static String call_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_getString_1222432436326", PARAMETERS_1222432436326, vars);
   }
 
   public static boolean call_needParentheses_1353467374623880338(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623880338);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623880338);
   }
 
   public static boolean call_isValid_4759120547781297301(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297301);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297301);
   }
 
   public static String callSuper_toString_1213877429451(SNode thisNode, String callerConceptFqName) {

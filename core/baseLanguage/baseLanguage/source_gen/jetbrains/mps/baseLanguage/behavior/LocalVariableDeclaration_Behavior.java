@@ -10,11 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.codeStyle.CodeStyleSettings;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LocalVariableDeclaration_Behavior {
   private static Class[] PARAMETERS_3012473318495506424 = {SNode.class, Project.class};
   private static Class[] PARAMETERS_3012473318495506430 = {SNode.class, Project.class};
+  private static Class[] PARAMETERS_4163393263914882931 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -73,12 +76,23 @@ public class LocalVariableDeclaration_Behavior {
     );
   }
 
+  public static SNode virtual_getValue_1224857430232(SNode thisNode) {
+    throw new UnsupportedOperationException();
+  }
+
   public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, project);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, project);
   }
 
   public static String call_getSuffix_3012473318495506430(SNode thisNode, Project project) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, project);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, project);
+  }
+
+  public static SNode call_getValue_4163393263914882931(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931);
   }
 
   public static String callSuper_getPrefix_3012473318495506424(SNode thisNode, String callerConceptFqName, Project project) {
@@ -87,5 +101,9 @@ public class LocalVariableDeclaration_Behavior {
 
   public static String callSuper_getSuffix_3012473318495506430(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, project);
+  }
+
+  public static SNode callSuper_getValue_4163393263914882931(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931);
   }
 }

@@ -5,8 +5,10 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class TemplateArgumentLinkPatternRefExpression_Behavior {
   private static Class[] PARAMETERS_2902001550282064503 = {SNode.class};
@@ -19,7 +21,8 @@ public class TemplateArgumentLinkPatternRefExpression_Behavior {
   }
 
   public static String call_getVariableName_2902001550282064503(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064503);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064503);
   }
 
   public static String callSuper_getVariableName_2902001550282064503(SNode thisNode, String callerConceptFqName) {

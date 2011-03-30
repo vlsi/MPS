@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractPaddingStyleClassItem_Behavior {
@@ -21,7 +23,8 @@ public class AbstractPaddingStyleClassItem_Behavior {
   }
 
   public static boolean call_canUseSpaces_1226492824000(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000);
   }
 
   public static boolean callSuper_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {

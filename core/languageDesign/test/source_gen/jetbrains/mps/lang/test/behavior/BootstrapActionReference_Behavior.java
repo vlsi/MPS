@@ -4,8 +4,10 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BootstrapActionReference_Behavior {
   private static Class[] PARAMETERS_1101347953350127914 = {SNode.class};
@@ -18,7 +20,8 @@ public class BootstrapActionReference_Behavior {
   }
 
   public static String call_getActionId_1101347953350127914(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914);
   }
 
   public static String callSuper_getActionId_1101347953350127914(SNode thisNode, String callerConceptFqName) {

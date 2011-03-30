@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CustomContainerCreator_Behavior {
@@ -33,7 +35,8 @@ public class CustomContainerCreator_Behavior {
   }
 
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
   }
 
   public static SNode callSuper_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {

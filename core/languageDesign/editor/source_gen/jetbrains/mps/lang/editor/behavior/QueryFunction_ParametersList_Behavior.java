@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -28,7 +30,8 @@ public class QueryFunction_ParametersList_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_7806530711846755632(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632);
   }
 
   public static SNode callSuper_getExpectedReturnType_7806530711846755632(SNode thisNode, String callerConceptFqName) {

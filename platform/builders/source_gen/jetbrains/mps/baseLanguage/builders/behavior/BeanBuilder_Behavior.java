@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -29,11 +31,13 @@ public class BeanBuilder_Behavior {
   }
 
   public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode, SNode parentRef) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, parentRef);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, parentRef);
   }
 
   public static SNode call_getResultType_6666322667909649864(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864);
   }
 
   public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {

@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestable_Behavior {
   private static Class[] PARAMETERS_1216045139515 = {SNode.class};
@@ -18,7 +20,8 @@ public class ITestable_Behavior {
   }
 
   public static TestRunParameters call_getTestRunParameters_1216045139515(SNode thisNode) {
-    return (TestRunParameters) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (TestRunParameters) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
   }
 
   public static TestRunParameters callSuper_getTestRunParameters_1216045139515(SNode thisNode, String callerConceptFqName) {

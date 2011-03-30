@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class OperationParm_LinkQualifier_Behavior {
@@ -37,7 +39,8 @@ public class OperationParm_LinkQualifier_Behavior {
   }
 
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538865(SNode thisNode) {
-    return (Iterable<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865);
   }
 
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538865(SNode thisNode, String callerConceptFqName) {

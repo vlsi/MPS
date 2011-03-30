@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
-  <unitInfo fileName="MPSDistribution_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   <unitInfo fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
+  <unitInfo fileName="MPSDistribution_Behavior.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   <unitInfo fileName="MPSBuild_Behavior.java" startLine="33" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
   <root nodeId="1233155892819">
     <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="43" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,8 +86,8 @@
     <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="82" startPosition="5" endLine="98" endPosition="5" />
     <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="103" endPosition="13">
       <varInfo nodeId="1238502072985" varName="modulesList" />
-      <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
       <varInfo nodeId="1238502072965" varName="paths" />
+      <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
       <varInfo nodeId="1238502072971" varName="dir" />
     </scopeInfo>
     <unitInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="99" startPosition="49" endLine="103" endPosition="5" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$1" />
@@ -107,13 +107,15 @@
     </scopeInfo>
   </root>
   <root nodeId="8431776905956256044">
-    <nodeInfo nodeId="8431776905956256052" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="82" endLine="14" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8431776905956256064" fileName="MPSDistribution_Behavior.java" startLine="15" startPosition="38" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8431776905956256069" fileName="MPSDistribution_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8431776905956256062" fileName="MPSDistribution_Behavior.java" startLine="14" startPosition="183" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8431776905956256046" fileName="MPSDistribution_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="8431776905956256063" fileName="MPSDistribution_Behavior.java" startLine="15" startPosition="38" endLine="16" endPosition="21" />
-    <scopeInfo nodeId="8431776905956256051" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="82" endLine="18" endPosition="31">
+    <nodeInfo nodeId="8431776905956256052" fileName="MPSDistribution_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8431776905956256064" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="38" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8431776905956256069" fileName="MPSDistribution_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4204903511793489008" fileName="MPSDistribution_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8431776905956256062" fileName="MPSDistribution_Behavior.java" startLine="19" startPosition="183" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8431776905956256046" fileName="MPSDistribution_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="8431776905956256063" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="38" endLine="21" endPosition="21" />
+    <scopeInfo nodeId="4204903511793403793" fileName="MPSDistribution_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="46" />
+    <scopeInfo nodeId="8431776905956256051" fileName="MPSDistribution_Behavior.java" startLine="18" startPosition="82" endLine="23" endPosition="31">
       <varInfo nodeId="8431776905956256053" varName="parentScriptsFolder" />
     </scopeInfo>
   </root>

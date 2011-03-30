@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="VariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableReference_Behavior" />
-  <unitInfo fileName="ICommandParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ICommandParameter_Behavior" />
-  <unitInfo fileName="ExternalOptionDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_Behavior" />
+  <unitInfo fileName="AbstractCommand_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractCommand_Behavior" />
   <unitInfo fileName="HexIntegerLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.HexIntegerLiteral_Behavior" />
   <unitInfo fileName="ArgumentList_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ArgumentList_Behavior" />
-  <unitInfo fileName="AbstractCommand_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractCommand_Behavior" />
+  <unitInfo fileName="ICommandParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ICommandParameter_Behavior" />
+  <unitInfo fileName="ExternalOptionDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_Behavior" />
   <unitInfo fileName="Option_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.Option_Behavior" />
   <unitInfo fileName="Command_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.bash.behavior.Command_Behavior" />
   <unitInfo fileName="OptionSet_Behavior.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.bash.behavior.OptionSet_Behavior" />

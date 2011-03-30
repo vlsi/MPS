@@ -5,6 +5,8 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SimpleTextGenOperation_Behavior {
@@ -39,7 +41,8 @@ public class SimpleTextGenOperation_Behavior {
   }
 
   public static String call_getMethodName_1234789420862(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
   }
 
   public static String callSuper_getMethodName_1234789420862(SNode thisNode, String callerConceptFqName) {

@@ -5,8 +5,10 @@ package jetbrains.mps.ui.modeling.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LayoutConstraintType_Behavior {
   private static Class[] PARAMETERS_5572604531249685429 = {SNode.class};
@@ -22,7 +24,8 @@ public class LayoutConstraintType_Behavior {
   }
 
   public static String call_getPresentation_5572604531249685429(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429);
   }
 
   public static String callSuper_getPresentation_5572604531249685429(SNode thisNode, String callerConceptFqName) {

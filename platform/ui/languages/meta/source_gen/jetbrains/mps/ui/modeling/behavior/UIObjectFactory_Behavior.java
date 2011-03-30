@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UIObjectFactory_Behavior {
@@ -43,11 +45,13 @@ public class UIObjectFactory_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_7655275107718262770(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770);
   }
 
   public static List<SNode> call_getParameters_1642651187739434868(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868);
   }
 
   public static SNode callSuper_getExpectedReturnType_7655275107718262770(SNode thisNode, String callerConceptFqName) {

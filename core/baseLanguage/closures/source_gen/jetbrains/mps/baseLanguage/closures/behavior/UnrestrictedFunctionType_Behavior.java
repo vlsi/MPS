@@ -8,6 +8,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnrestrictedFunctionType_Behavior {
@@ -65,7 +67,8 @@ public class UnrestrictedFunctionType_Behavior {
   }
 
   public static String call_getRuntimeSignature_3841277577642912754(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754);
   }
 
   public static String callSuper_getRuntimeSignature_3841277577642912754(SNode thisNode, String callerConceptFqName) {

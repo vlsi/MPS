@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LocalVariableReference_Behavior {
@@ -31,7 +33,8 @@ public class LocalVariableReference_Behavior {
   }
 
   public static SNode call_getDeclaration_3262277503800835478(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800835478);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800835478);
   }
 
   public static SNode callSuper_getDeclaration_3262277503800835478(SNode thisNode, String callerConceptFqName) {

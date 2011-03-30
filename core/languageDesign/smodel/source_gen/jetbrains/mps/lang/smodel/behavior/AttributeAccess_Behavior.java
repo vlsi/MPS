@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -50,15 +52,18 @@ public class AttributeAccess_Behavior {
   }
 
   public static boolean call_isSingularCardinality_6960953357954063537(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537);
   }
 
   public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547);
   }
 
   public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543);
   }
 
   public static boolean callSuper_isSingularCardinality_6960953357954063537(SNode thisNode, String callerConceptFqName) {

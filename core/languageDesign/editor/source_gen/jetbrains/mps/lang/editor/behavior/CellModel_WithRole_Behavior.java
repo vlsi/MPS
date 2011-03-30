@@ -5,8 +5,10 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderNameUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_WithRole_Behavior {
   private static Class[] PARAMETERS_1216377898846 = {SNode.class};
@@ -26,11 +28,13 @@ public class CellModel_WithRole_Behavior {
   }
 
   public static String call_getRoleForCell_1216377898846(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1216377898846);
   }
 
   public static String call_getCellProviderClassName_1216378357889(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
   }
 
   public static String callSuper_getRoleForCell_1216377898846(SNode thisNode, String callerConceptFqName) {

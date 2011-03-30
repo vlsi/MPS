@@ -4,8 +4,10 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITransparentProjectComponent_Behavior {
   private static Class[] PARAMETERS_1240564451382 = {SNode.class};
@@ -14,7 +16,8 @@ public class ITransparentProjectComponent_Behavior {
   }
 
   public static List<SNode> call_getChildrenToDo_1240564451382(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
   }
 
   public static List<SNode> callSuper_getChildrenToDo_1240564451382(SNode thisNode, String callerConceptFqName) {

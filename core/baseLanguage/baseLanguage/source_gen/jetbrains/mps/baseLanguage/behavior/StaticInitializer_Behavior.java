@@ -8,8 +8,10 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.icons.Icons;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StaticInitializer_Behavior {
   private static Class[] PARAMETERS_5039675756633082351 = {SNode.class};
@@ -24,7 +26,8 @@ public class StaticInitializer_Behavior {
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082351(SNode thisNode) {
-    return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082351);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082351);
   }
 
   public static List<Icon> callSuper_getMarkIcons_5039675756633082351(SNode thisNode, String callerConceptFqName) {

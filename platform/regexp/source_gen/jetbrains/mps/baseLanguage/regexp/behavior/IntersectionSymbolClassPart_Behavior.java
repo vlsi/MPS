@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IntersectionSymbolClassPart_Behavior {
   private static Class[] PARAMETERS_8173814113624650585 = {SNode.class};
@@ -18,7 +20,8 @@ public class IntersectionSymbolClassPart_Behavior {
   }
 
   public static String call_getRepresentation_8173814113624650585(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650585);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650585);
   }
 
   public static String callSuper_getRepresentation_8173814113624650585(SNode thisNode, String callerConceptFqName) {

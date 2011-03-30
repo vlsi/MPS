@@ -5,8 +5,10 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InferenceRule_Behavior {
   private static Class[] PARAMETERS_590757823759239749 = {SNode.class, SNode.class};
@@ -20,7 +22,8 @@ public class InferenceRule_Behavior {
   }
 
   public static void call_setBaseConcept_590757823759239749(SNode thisNode, SNode baseConcept) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, baseConcept);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, baseConcept);
   }
 
   public static void callSuper_setBaseConcept_590757823759239749(SNode thisNode, String callerConceptFqName, SNode baseConcept) {

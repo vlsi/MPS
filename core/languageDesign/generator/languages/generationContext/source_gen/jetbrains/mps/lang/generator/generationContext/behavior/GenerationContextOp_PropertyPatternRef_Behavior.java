@@ -4,8 +4,10 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class GenerationContextOp_PropertyPatternRef_Behavior {
   private static Class[] PARAMETERS_1758784108620115432 = {SNode.class};
@@ -23,11 +25,13 @@ public class GenerationContextOp_PropertyPatternRef_Behavior {
   }
 
   public static SNode call_getTarget_1758784108620115432(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432);
   }
 
   public static void call_setTarget_1758784108620254578(SNode thisNode, SNode target) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, target);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, target);
   }
 
   public static SNode callSuper_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {

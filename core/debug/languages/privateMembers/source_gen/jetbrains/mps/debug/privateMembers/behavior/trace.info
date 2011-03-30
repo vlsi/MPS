@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.behavior.PrivateFieldReferenceOperation_Behavior" />
+  <root nodeId="2511103526757024637">
+    <scopeInfo nodeId="2511103526757024639" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+</debugInfo>
+

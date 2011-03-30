@@ -4,8 +4,10 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class TraceableConcept_Behavior {
   private static Class[] PARAMETERS_3822000666564591088 = {SNode.class};
@@ -19,7 +21,8 @@ public class TraceableConcept_Behavior {
   }
 
   public static String call_getTraceableProperty_3822000666564591088(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.TraceableConcept"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_3822000666564591088);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.TraceableConcept"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_3822000666564591088);
   }
 
   public static String callSuper_getTraceableProperty_3822000666564591088(SNode thisNode, String callerConceptFqName) {

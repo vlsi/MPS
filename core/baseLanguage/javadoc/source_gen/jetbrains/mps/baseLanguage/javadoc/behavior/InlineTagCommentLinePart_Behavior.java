@@ -7,6 +7,8 @@ import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InlineTagCommentLinePart_Behavior {
@@ -28,7 +30,8 @@ public class InlineTagCommentLinePart_Behavior {
   }
 
   public static NodeCaretPair call_smartDelete_3633133276124360200(SNode thisNode, boolean isBegining) {
-    return (NodeCaretPair) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, isBegining);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, isBegining);
   }
 
   public static NodeCaretPair callSuper_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {

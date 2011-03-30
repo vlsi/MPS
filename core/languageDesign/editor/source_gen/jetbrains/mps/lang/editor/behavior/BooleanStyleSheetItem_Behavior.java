@@ -9,8 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.style.StyleAttribute;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BooleanStyleSheetItem_Behavior {
   private static Class[] PARAMETERS_1223387362946 = {SNode.class};
@@ -28,7 +30,8 @@ public class BooleanStyleSheetItem_Behavior {
   }
 
   public static boolean call_useQuery_1223387362946(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
 
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {

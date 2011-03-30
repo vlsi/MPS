@@ -12,6 +12,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LinkAttributeAccessQualifier_Behavior {
@@ -43,7 +45,8 @@ public class LinkAttributeAccessQualifier_Behavior {
   }
 
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538655(SNode thisNode) {
-    return (Iterable<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538655);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538655);
   }
 
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538655(SNode thisNode, String callerConceptFqName) {

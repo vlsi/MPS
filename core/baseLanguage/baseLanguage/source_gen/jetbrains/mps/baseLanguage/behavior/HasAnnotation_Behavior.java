@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class HasAnnotation_Behavior {
   private static Class[] PARAMETERS_1233076312117 = {SNode.class};
@@ -24,11 +26,13 @@ public class HasAnnotation_Behavior {
   }
 
   public static boolean call_canBeAnnotated_1233076312117(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
   }
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319200);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319200);
   }
 
   public static boolean callSuper_canBeAnnotated_1233076312117(SNode thisNode, String callerConceptFqName) {

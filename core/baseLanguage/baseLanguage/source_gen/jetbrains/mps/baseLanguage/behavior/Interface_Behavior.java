@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Interface_Behavior {
@@ -51,7 +53,8 @@ public class Interface_Behavior {
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551004);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551004);
   }
 
   public static String callSuper_getUnitName_2496361171403551004(SNode thisNode, String callerConceptFqName) {

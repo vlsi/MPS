@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LiteralReplacement_Behavior {
-  private static Class[] PARAMETERS_3796137614137538916 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_3796137614137538916 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -86,7 +88,8 @@ public class LiteralReplacement_Behavior {
   }
 
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
   }
 
   public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {

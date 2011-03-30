@@ -11,8 +11,8 @@
   <unitInfo fileName="NodeDefaultSearchScope_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior" />
   <unitInfo fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior$QuotationClass_25x9xv_a0e0b" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="100" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0a1a2" />
-  <unitInfo fileName="ConceptConstraints_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
   <unitInfo fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
+  <unitInfo fileName="ConceptConstraints_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0c0b" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
   <root nodeId="1213877261402">
@@ -128,11 +128,11 @@
     <scopeInfo nodeId="7494912800760359237" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
   </root>
   <root nodeId="8952337903384645665">
-    <nodeInfo nodeId="8952337903384645678" fileName="ConceptConstraints_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6261424444345978693" fileName="ConceptConstraints_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="8952337903384645667" fileName="ConceptConstraints_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="8952337903384645672" fileName="ConceptConstraints_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="65" />
-    <scopeInfo nodeId="6261424444345978684" fileName="ConceptConstraints_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="71" />
+    <nodeInfo nodeId="8952337903384645678" fileName="ConceptConstraints_Behavior.java" startLine="19" startPosition="82" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6261424444345978693" fileName="ConceptConstraints_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8952337903384645667" fileName="ConceptConstraints_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="8952337903384645672" fileName="ConceptConstraints_Behavior.java" startLine="19" startPosition="82" endLine="20" endPosition="65" />
+    <scopeInfo nodeId="6261424444345978684" fileName="ConceptConstraints_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="71" />
   </root>
 </debugInfo>
 
