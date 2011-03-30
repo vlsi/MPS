@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5wqs3irvll1bxirrzil5h40is9omv1s">
+<dependencies version="2" modelHash="-43p14evqroq7jl2k9im5caixex3nmi2">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
-  <common hash="cuwnehsajb4a0heirihksyzefwico4y" />
-  <source id="5451769301631257084" name="TestGetter" hash="-a9uql2zog1vqqp5840r49zbxew5z0x7">
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
+  <common hash="5l8mzt6b9a7i75cic81jmlbqfih45w2" />
+  <source id="5451769301631257084" name="TestGetter" hash="1suct3f06o41hwwgtimsy3n32iamuyr">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestGetter.java" />
