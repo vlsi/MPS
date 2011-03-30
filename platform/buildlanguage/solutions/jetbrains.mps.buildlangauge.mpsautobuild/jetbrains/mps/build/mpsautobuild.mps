@@ -1875,6 +1875,10 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="3354509892099488452">
       <property name="id" nameId="tps4.1222447189012" value="f43135f9-b833-4685-8d26-ffb6c8215f72" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="2339938892738064183">
+      <property name="id" nameId="tps4.1222447189012" value="32d0a39c-772f-4490-8142-e50f9a9f19d4" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.platform.conf" />
+    </node>
   </root>
   <root id="8431776905956472964">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472965">

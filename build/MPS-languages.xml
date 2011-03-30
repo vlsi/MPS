@@ -1307,6 +1307,16 @@
       <zipfileset dir="platform/money/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.platform.conf">
+    <mkdir dir="platform/conf/languages/conf/classes_gen" />
+    <mkdir dir="platform/conf/languages/conf/classes" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.platform.conf.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/conf/languages/conf/conf.mpl" prefix="module" />
+      <zipfileset dir="platform/conf/languages/conf" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/conf/languages/conf/classes_gen" />
+      <zipfileset dir="platform/conf/languages/conf/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.ide">
     <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.ide.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="workbench/ideSolution/jetbrains.mps.ide.msd" prefix="module" />

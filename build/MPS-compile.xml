@@ -38,6 +38,7 @@
   <property name="jetbrains.mps.lang.generator.generationParameters.classes" value="core/languageDesign/generator/languages/generationParameters/classes_gen" />
   <property name="jetbrains.mps.lang.project.classes" value="core/languageDesign/project/classes_gen" />
   <property name="jetbrains.mps.newTypesystem.presentation.classes" value="core/languageDesign/typesystem/solutions/jetbrains.mps.newTypesystem.presentation/classes_gen" />
+  <property name="jetbrains.mps.platform.conf.classes" value="platform/conf/languages/conf/classes_gen" />
   <property name="jetbrains.mps.quickQueryLanguage.classes" value="platform/quickQueryLanguage/classes_gen" />
   <property name="jetbrains.mps.ui.classes" value="platform/ui/languages/ui/classes_gen" />
   <property name="jetbrains.mps.ui.gwt.classes" value="platform/ui/languages/gwt/classes_gen" />
@@ -203,6 +204,9 @@
   <path id="cycle.jetbrains.mps.newTypesystem.presentation_tjc.src">
     <path path="core/languageDesign/typesystem/solutions/jetbrains.mps.newTypesystem.presentation/source_gen" />
     <path path="core/languageDesign/typesystem/solutions/jetbrains.mps.newTypesystem.presentation/test_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.platform.conf_tjc.src">
+    <path path="platform/conf/languages/conf/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.src">
     <path path="platform/quickQueryLanguage/source_gen" />
@@ -382,6 +386,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -533,6 +538,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -685,6 +691,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -837,6 +844,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -989,6 +997,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1144,6 +1153,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1301,6 +1311,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1455,6 +1466,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1608,6 +1620,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1762,6 +1775,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -1915,6 +1929,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2068,6 +2083,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2221,6 +2237,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2375,6 +2392,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2526,6 +2544,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2685,6 +2704,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2837,6 +2857,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -2992,6 +3013,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3162,6 +3184,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3325,6 +3348,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3495,6 +3519,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3653,6 +3678,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3805,6 +3831,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -3957,6 +3984,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4109,6 +4137,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4261,6 +4290,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4423,6 +4453,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4575,6 +4606,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4726,6 +4758,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -4878,6 +4911,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5029,6 +5063,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5181,6 +5216,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5333,6 +5369,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5484,6 +5521,160 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
+    <path path="platform/conf/languages/conf/classes" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="core/baseLanguage" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/blTypes/classes_gen" />
+    <path path="core/baseLanguage/checkDot/classes" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/classifiers/classes_gen" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/classes_gen" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/kernel" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/actions/classes_gen" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/constraints/classes_gen" />
+    <path path="core/languageDesign/core" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/core/classes_gen" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/classes_gen" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/findUsages/classes_gen" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
+    <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/facet/classes_gen" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/make/languages/script/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/classes_gen" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/plugin/classes_gen" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/quotation/classes_gen" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/refactoring/classes_gen" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/script/classes_gen" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes_gen" />
+    <path path="core/languageDesign/smodel" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/smodel/classes_gen" />
+    <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
+    <path path="core/languageDesign/structure" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/structure/classes_gen" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/classes_gen" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/textGen/classes_gen" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/languageDesign/typesystem/classes_gen" />
+    <path path="core/languageDesign/typesystem/languages/test/classes_gen" />
+    <path path="core/languageDesign/typesystem/solutions/jetbrains.mps.newTypesystem.presentation/classes_gen" />
+    <path path="core/typesystemIntegration/classes" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5637,6 +5828,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5791,6 +5983,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -5946,6 +6139,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6105,6 +6299,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6259,6 +6454,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6421,6 +6617,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6575,6 +6772,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6738,6 +6936,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -6893,6 +7092,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7049,6 +7249,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7202,6 +7403,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7356,6 +7558,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7508,6 +7711,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7663,6 +7867,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7814,6 +8019,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7966,6 +8172,7 @@
     <path path="lib/beansbinding-1.2.1.jar" />
     <path path="lib/commons-lang-2.4.jar" />
     <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
@@ -7998,7 +8205,7 @@
     <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.generator.generationParameters_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.newTypesystem.presentation_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.generator.generationParameters_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.newTypesystem.presentation_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="platform/analyzers/languages/analyzers/source_gen" />
@@ -8578,7 +8785,22 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.newTypesystem.presentation_tjc">
+  <target name="compile.cycle.jetbrains.mps.platform.conf_tjc" depends="compile.cycle.jetbrains.mps.newTypesystem.presentation_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.platform.conf.classes}.tmp" />
+    <mkdir dir="platform/conf/languages/conf/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.platform.conf.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.platform.conf_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.platform.conf.classes}">
+      <src>
+        <path path="platform/conf/languages/conf/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.platform.conf_tjc">
     <property name="classes.dump" value="${jetbrains.mps.quickQueryLanguage.classes}.tmp" />
     <mkdir dir="platform/quickQueryLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -8889,6 +9111,7 @@
     <delete dir="${jetbrains.mps.lang.generator.generationParameters.classes}" />
     <delete dir="${jetbrains.mps.lang.project.classes}" />
     <delete dir="${jetbrains.mps.newTypesystem.presentation.classes}" />
+    <delete dir="${jetbrains.mps.platform.conf.classes}" />
     <delete dir="${jetbrains.mps.quickQueryLanguage.classes}" />
     <delete dir="${jetbrains.mps.ui.classes}" />
     <delete dir="${jetbrains.mps.ui.internal.classes}" />
