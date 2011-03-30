@@ -182,8 +182,11 @@ public class DiskMemoryConflictsTest {
       w.close();
       if (MODEL_FILE.lastModified() == lastModifiedBefore) {
         //noinspection ResultOfMethodCallIgnored
-        MODEL_FILE.setLastModified(lastModifiedBefore + 1000);
+        Assert.assertTrue(MODEL_FILE.setLastModified(lastModifiedBefore + 1000));
       }
+
+      // TODO this is a hack to avoid Windows truncation of lastModified
+      Assert.assertTrue(MODEL_FILE.setLastModified(lastModifiedBefore + 2000 + (int) (Math.random() * 100000)));
     } catch (FileNotFoundException e) {
       Assert.fail();
     }
