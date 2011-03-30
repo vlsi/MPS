@@ -25,10 +25,7 @@ public class Delete_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner()) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) {
-      return false;
-    }
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection().isActive() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) && ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -58,10 +55,6 @@ public class Delete_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection().isActive()) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection().doDeleteNodes(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext());
-        return;
-      }
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -12,7 +12,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.NodeRangeSelection;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -81,8 +82,9 @@ public class AddCellAnnotation_Intention extends BaseIntention implements Intent
       SPropertyOperations.set(newAnnotation, "caretPosition", "" + 0);
     }
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
-    NodeRangeSelection nodeRangeSelection = editorContext.getNodeEditorComponent().getNodeRangeSelection();
-    if (nodeRangeSelection.isActive()) {
+    Selection selection = editorContext.getNodeEditorComponent().getSelectionManager().getSelection();
+    if (selection instanceof NodeRangeSelection) {
+      NodeRangeSelection nodeRangeSelection = (NodeRangeSelection) selection;
       SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionStart", nodeRangeSelection.getFirstNode(), false);
       SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionEnd", nodeRangeSelection.getLastNode(), false);
     }

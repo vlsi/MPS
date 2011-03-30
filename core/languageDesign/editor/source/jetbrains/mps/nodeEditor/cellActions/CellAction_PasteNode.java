@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -114,8 +115,8 @@ public class CellAction_PasteNode extends EditorCellAction {
                 }
               }
               if (lastNodeToSelect != null) {
-                // TODO: push node range selection using selection manager here
-                editorComponent.getNodeRangeSelection().setRange(firstNodeToSelect, lastNodeToSelect);
+                SelectionManager selectionManager = editorComponent.getSelectionManager();
+                selectionManager.pushSelection(selectionManager.createRangeSelection(firstNodeToSelect, lastNodeToSelect));
               }
             }
           }

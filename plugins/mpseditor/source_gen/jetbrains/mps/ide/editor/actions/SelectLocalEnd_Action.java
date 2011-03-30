@@ -6,16 +6,18 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.smodel.SNode;
 
 public class SelectLocalEnd_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -27,9 +29,19 @@ public class SelectLocalEnd_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed()) {
+      return true;
+    }
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() instanceof SingularSelection;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SelectLocalEnd", t);
@@ -62,10 +74,9 @@ public class SelectLocalEnd_Action extends GeneratedAction {
       if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed()) {
         ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_END);
       } else {
-        NodeRangeSelection rangeSelection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection();
-        if (!(rangeSelection.isActive())) {
-          rangeSelection.activate(true);
-        }
+        SelectionManager selectionManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager();
+        SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode();
+        selectionManager.pushSelection(selectionManager.createRangeSelection(node, node));
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

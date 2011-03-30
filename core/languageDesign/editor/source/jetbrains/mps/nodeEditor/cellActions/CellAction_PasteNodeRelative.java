@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -88,8 +89,8 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     if (pasteNodes.size() == 1) {
       editorComponent.pushSelection(nodeCell);
     } else {
-      // TODO: push node range selection using selection manager here
-      editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
+      SelectionManager selectionManager = editorComponent.getSelectionManager();
+      selectionManager.pushSelection(selectionManager.createRangeSelection(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1)));
     }
   }
 }

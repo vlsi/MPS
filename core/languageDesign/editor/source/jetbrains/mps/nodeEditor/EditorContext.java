@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -186,8 +187,8 @@ public class EditorContext {
 
   public void selectRange(SNode first, SNode last) {
     flushEvents();
-
-    getNodeEditorComponent().getNodeRangeSelection().setRange(first, last);
+    SelectionManager selectionManager = getNodeEditorComponent().getSelectionManager();
+    selectionManager.setSelection(selectionManager.createRangeSelection(first, last));
   }
 
   public void select(final SNode node, String cellId) {

@@ -23,10 +23,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.smodel.SNode;
@@ -43,7 +42,7 @@ public class CellAction_CopyNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
 
   public boolean canExecute(EditorContext context) {
-    return context.getNodeEditorComponent().getSelectedCell() != null;
+    return context.getNodeEditorComponent().getSelectionManager().getSelection() != null;
   }
 
   public void execute(EditorContext context) {
@@ -53,33 +52,26 @@ public class CellAction_CopyNode extends EditorCellAction {
   }
 
   protected _3<List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
-    List<SNode> nodeList = new LinkedList<SNode>();
     EditorComponent editorComponent = context.getNodeEditorComponent();
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
 
-    NodeRangeSelection nodeRangeSelection = editorComponent.getNodeRangeSelection();
-    if (nodeRangeSelection.isActive()) {
-      nodeList.addAll(nodeRangeSelection.getNodes());
-      LOG.debug("Copy " + nodeList.size() + " nodes : ");
-      for (SNode aNodeList : nodeList) {
+    SelectionManager selectionManager = editorComponent.getSelectionManager();
+    List<SNode> selectedNodes = selectionManager.getSelection().getSelectedNodes();
+    if (selectedNodes.size() == 0) {
+      return null;
+    }
+    if (selectedNodes.size() > 1) {
+      LOG.debug("Copy " + selectedNodes.size() + " nodes : ");
+      for (SNode aNodeList : selectedNodes) {
         LOG.debug("    " + aNodeList.getDebugText());
       }
     } else {
-      EditorCell selectedCell = editorComponent.getSelectedCell();
-      if (!(selectedCell instanceof EditorCell_Label)) {
-        SNode sNode = selectedCell.getSNode();
-        if (sNode != null) {
-          nodeList.add(sNode);
-          LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
-        }
-      }
+      LOG.debug("Copy node : " + selectedNodes.get(0).getDebugText());
     }
-    if (nodeList.size() == 0) {
-      return null;
-    }
+
     List<SNode> copyNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
-    for (SNode node : nodeList) {
+    for (SNode node : selectedNodes) {
       final SNode parent = node.getParent();
       if (parent != null && AttributeOperations.isAttribute(node)) {
 

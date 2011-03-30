@@ -25,6 +25,9 @@ import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodeEditor.selection.MultipleSelection;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
@@ -322,7 +325,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   protected boolean isSelectionPainted() {
-    return isSelected() && getEditorContext().getNodeEditorComponent().getNodeRangeSelection().isActive();
+    return isSelected() && getEditorContext().getNodeEditorComponent().getSelectionManager().getSelection() instanceof MultipleSelection;
   }
 
   public void paintContent(Graphics g, ParentSettings parentSettings) {
@@ -770,9 +773,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private class CopyLabelText extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
-      return (context.getSelectedCell() instanceof EditorCell_Label) &&
-        ((EditorCell_Label) context.getSelectedCell()).getSelectedText().length() > 0;
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
+        EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
+        return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
+      }
+      return false;
     }
 
     public void execute(EditorContext context) {
@@ -832,9 +838,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private class CutLabelText extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      if (context.getNodeEditorComponent().getNodeRangeSelection().isActive()) return false;
-      return (context.getSelectedCell() instanceof EditorCell_Label) &&
-        ((EditorCell_Label) context.getSelectedCell()).getSelectedText().length() > 0;
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
+        EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
+        return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
+      }
+      return false;
     }
 
     public void execute(EditorContext context) {

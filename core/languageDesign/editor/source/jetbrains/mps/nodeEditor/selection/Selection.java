@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -40,9 +41,9 @@ public interface Selection {
   // TODO: add canExecuteAction() method
   void executeAction(CellActionType type);
 
-  Iterable<EditorCell> getSelectedCells();
+  List<EditorCell> getSelectedCells();
 
-  Iterable<SNode> getSelectedNodes();
+  List<SNode> getSelectedNodes();
 
   //void ensureSelectionVisible();
 

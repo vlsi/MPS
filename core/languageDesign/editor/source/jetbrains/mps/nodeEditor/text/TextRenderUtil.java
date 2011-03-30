@@ -15,38 +15,31 @@
  */
 package jetbrains.mps.nodeEditor.text;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.selection.Selection;
 
 import java.util.List;
 
 public class TextRenderUtil {
 
-  private static final Logger LOG = Logger.getLogger(TextRenderUtil.class);
-
-  public static TextBuilder renderText(NodeRangeSelection nodeRangeSelection) {
-    List<EditorCell> cells = nodeRangeSelection.getCells();
-    if (cells.isEmpty()) return TextBuilder.getEmptyTextBuilder();
-
-    EditorCell_Collection parentCell = cells.get(0).getParent();
-
+  public static TextBuilder renderText(Selection selection) {
+    if (selection == null || selection.getSelectedCells().size() == 0) {
+      TextBuilder.getEmptyTextBuilder();
+    }
+    List<EditorCell> selectedCells = selection.getSelectedCells();
+    EditorCell firstSelectedCell = selectedCells.get(0);
+    if (selectedCells.size() == 1) {
+      return firstSelectedCell.renderText();
+    }
+    EditorCell_Collection parentCell = firstSelectedCell.getParent();
     CellLayout layout = parentCell.getCellLayout();
-    return layout.doLayoutText(cells);
+    return layout.doLayoutText(selectedCells);
   }
 
   public static TextBuilder getTextBuilderForSelectedCellsOfEditor(EditorComponent editorComponent) {
-    TextBuilder textBuilder;
-    NodeRangeSelection nodeRangeSelection = editorComponent.getNodeRangeSelection();
-    if (nodeRangeSelection.isActive()) {
-      textBuilder = renderText(nodeRangeSelection);
-    } else {
-      EditorCell cell = editorComponent.getSelectedCell();
-      if (cell == null) return TextBuilder.getEmptyTextBuilder();
-      textBuilder = cell.renderText();
-    }
-    return textBuilder;
+    return renderText(editorComponent.getSelectionManager().getSelection());
   }
 }

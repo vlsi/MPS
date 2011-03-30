@@ -61,9 +61,7 @@ public class Escape_Action extends GeneratedAction {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
 
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection().isActive()) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection().deactivate();
-      }
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().clearSelection();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Escape", t);

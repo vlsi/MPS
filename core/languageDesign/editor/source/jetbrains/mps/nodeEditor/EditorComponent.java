@@ -188,8 +188,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftX = 15;
   private int myShiftY = 10;
 
-  @NotNull
-  private NodeRangeSelection myNodeRangeSelection;
   private SelectionManager mySelectionManager = new SelectionManager(this);
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
@@ -297,7 +295,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
-    myNodeRangeSelection = new NodeRangeSelection(this);
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<KeyboardHandler>();
@@ -583,19 +580,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public List<SNode> getSelectedNodes() {
-    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-      public List<SNode> compute() {
-        if (getNodeRangeSelection().isActive()) {
-          return getNodeRangeSelection().getNodes();
-        } else {
-          List<SNode> result = new ArrayList<SNode>();
-          if (getSelectedNode() != null) {
-            result.add(getSelectedNode());
-          }
-          return result;
-        }
-      }
-    });
+    return mySelectionManager.getSelection().getSelectedNodes();
   }
 
   public EditorMessageOwner getHighlightMessagesOwner() {
@@ -1734,9 +1719,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     EditorCell selectedCell = getSelectedCell();
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
-      if (myNodeRangeSelection.isActive()) {
-        myNodeRangeSelection.deactivate();
-      }
       resetLastCaretX();
       deactivateSubstituteChooser();
       mySelectionManager.setSelection(newSelectedCell);
@@ -1774,41 +1756,27 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void changeSelection(EditorCell newSelectedCell) {
-    if (myNodeRangeSelection.isActive()) {
-      myNodeRangeSelection.deactivate();
+    changeSelection(newSelectedCell, true);
+  }
+
+  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+    if (resetLastCaretX) {
+      resetLastCaretX();
     }
-    resetLastCaretX();
     deactivateSubstituteChooser();
     mySelectionManager.setSelection(newSelectedCell);
     showCellInViewPort(newSelectedCell);
     repaint();
   }
 
-  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    if (myNodeRangeSelection.isActive()) {
-      myNodeRangeSelection.deactivate();
-    }
-    setSelection(newSelectedCell, resetLastCaretX, true);
-  }
-
   @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    setSelection(newSelectedCell, resetLastCaretX, false);
-  }
-
-  @UseCarefully
-  private void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean clearStack) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
 
-    if (clearStack) {
+    if (getSelectedCell() != newSelectedCell) {
       deactivateSubstituteChooser();
-      myNodeRangeSelection.deactivate();
-      mySelectionManager.setSelection(newSelectedCell);
-    } else if (getSelectedCell() != newSelectedCell) {
-      deactivateSubstituteChooser();
-      myNodeRangeSelection.deactivate();
       mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
     }
 
@@ -2281,18 +2249,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void paint(Graphics g) {
     super.paint(g);
-    if (myNodeRangeSelection.isActive()) {
-      myNodeRangeSelection.paint(g);
-    }
     Selection selection = getSelectionManager().getSelection();
     if (selection != null) {
       selection.paintSelection((Graphics2D) g);
     }
-  }
-
-  @NotNull
-  public NodeRangeSelection getNodeRangeSelection() {
-    return myNodeRangeSelection;
   }
 
   // last caret X

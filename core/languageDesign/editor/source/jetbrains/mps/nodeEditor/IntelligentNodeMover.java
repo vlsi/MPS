@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -62,7 +63,8 @@ class IntelligentNodeMover {
         if (nodes.size() == 1) {
           myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));
         } else if (nodes.size() > 1) {
-          myEditorContext.getNodeEditorComponent().getNodeRangeSelection().setRange(nodes.get(0), nodes.get(nodes.size() - 1));
+          SelectionManager selectionManager = myEditorContext.getNodeEditorComponent().getSelectionManager();
+          selectionManager.setSelection(selectionManager.createRangeSelection(nodes.get(0), nodes.get(nodes.size() - 1)));
         }
       }
     });

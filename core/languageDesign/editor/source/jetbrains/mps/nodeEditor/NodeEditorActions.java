@@ -489,25 +489,28 @@ public class NodeEditorActions {
 
     @Override
     public boolean canExecute(EditorContext context) {
-      return context.getSelectedCell() != null;
+      return context.getNodeEditorComponent().getSelectionManager().getSelection() != null;
     }
 
     @Override
     public void execute(final EditorContext context) {
-      EditorCell selectedCell = context.getSelectedCell();
-      SNode selectedNode = selectedCell.getSNode();
-      SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
-      if (topMostNodeInSingularContainment != selectedNode) {
-        EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
-        if (nodeCell != null) {
-          context.getNodeEditorComponent().pushSelection(nodeCell);
-        }
-      } else {
-        NodeRangeSelection nodeRangeSelection = context.getNodeEditorComponent().getNodeRangeSelection();
-        if (nodeRangeSelection.isActive()) {
-          nodeRangeSelection.enlargeSelection(myUp);
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      Selection selection = selectionManager.getSelection();
+      if (selection instanceof SingularSelection) {
+        SNode selectedNode = ((SingularSelection) selection).getEditorCell().getSNode();
+        SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
+        if (topMostNodeInSingularContainment != selectedNode) {
+          EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
+          if (nodeCell != null) {
+            context.getNodeEditorComponent().pushSelection(nodeCell);
+          }
         } else {
-          nodeRangeSelection.activate(myUp);
+          selectionManager.pushSelection(selectionManager.createRangeSelection(selectedNode, selectedNode));
+        }
+      } else if (selection instanceof jetbrains.mps.nodeEditor.selection.NodeRangeSelection) {
+        Selection newSelection = ((jetbrains.mps.nodeEditor.selection.NodeRangeSelection) selection).enlargeSelection(myUp);
+        if (newSelection != null) {
+          selectionManager.pushSelection(newSelection);
         }
       }
     }

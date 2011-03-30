@@ -17,8 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.EqualUtil;
+import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 
 import java.util.*;
@@ -31,28 +30,17 @@ class Memento {
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
 
-  private SNode myFirstRangeSelectionNode;
-  private SNode myLastRangeSelectionNode;
-
   private Memento() {}
 
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
-    EditorCell selectedCell = nodeEditor.getSelectedCell();
-    if (selectedCell != null) {
-      mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
+    mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
-      for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
-        myFolded.add(foldedCell.getCellInfo());
-      }
-      for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
-        myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
-      }
+    for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
+      myFolded.add(foldedCell.getCellInfo());
     }
-
-    if (nodeEditor.getNodeRangeSelection().isActive()) {
-      myFirstRangeSelectionNode = nodeEditor.getNodeRangeSelection().getFirstNode();
-      myLastRangeSelectionNode = nodeEditor.getNodeRangeSelection().getLastNode();
+    for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
+      myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
     }
 
     if (full) {
@@ -96,12 +84,6 @@ class Memento {
     
     needsRelayout = restoreErrors(editor) || needsRelayout;
 
-    if (myFirstRangeSelectionNode != null &&
-        editor.findNodeCell(myFirstRangeSelectionNode) != null &&
-        editor.findNodeCell(myLastRangeSelectionNode) != null &&
-        myFirstRangeSelectionNode.getParent() == myLastRangeSelectionNode.getParent()) {
-        editor.getNodeRangeSelection().setRange(myFirstRangeSelectionNode, myLastRangeSelectionNode);
-    }
     if (needsRelayout) {
       editor.relayout();
     }
@@ -114,7 +96,7 @@ class Memento {
       if (cell != null) {
         String text = cell.getText();
         String oldText = entry.getValue();
-        if (!EqualUtil.equals(text, oldText)) {
+        if (!ObjectUtils.equals(text, oldText)) {
           cell.changeText(entry.getValue());
           needsRelayout = true;
         }
@@ -127,11 +109,9 @@ class Memento {
     if (object == this) return true;
     if (object instanceof Memento) {
       Memento m = (Memento) object;
-      if (EqualUtil.equals(myFirstRangeSelectionNode, m.myFirstRangeSelectionNode) &&
-        EqualUtil.equals(myLastRangeSelectionNode, m.myLastRangeSelectionNode) &&
-        EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
-        EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-        EqualUtil.equals(myFolded, m.myFolded)) {
+      if (ObjectUtils.equals(mySelectionStack, m.mySelectionStack) &&
+        ObjectUtils.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+        ObjectUtils.equals(myFolded, m.myFolded)) {
 
         return true;
       }
@@ -140,9 +120,7 @@ class Memento {
   }
 
   public int hashCode() {
-    return (mySelectionStack != null ? mySelectionStack.hashCode() : 0) +
-           (myFirstRangeSelectionNode != null ? myFirstRangeSelectionNode.hashCode() : 0) +
-           (myLastRangeSelectionNode != null ? myLastRangeSelectionNode.hashCode() : 0);
+    return (mySelectionStack != null ? mySelectionStack.hashCode() : 0);
   }
 
   public String toString() {

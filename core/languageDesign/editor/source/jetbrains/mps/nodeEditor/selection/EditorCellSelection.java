@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Graphics2D;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -140,12 +141,12 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   @Override
-  public Iterable<EditorCell> getSelectedCells() {
+  public List<EditorCell> getSelectedCells() {
     return Collections.singletonList(getEditorCell());
   }
 
   @Override
-  public Iterable<SNode> getSelectedNodes() {
+  public List<SNode> getSelectedNodes() {
     SNode sNode = getEditorCell().getSNode();
     return Collections.singletonList(sNode);
   }

@@ -32,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -181,7 +182,7 @@ public class NodeRangeSelection implements MultipleSelection {
   }
 
   @Override
-  public Iterable<EditorCell> getSelectedCells() {
+  public List<EditorCell> getSelectedCells() {
     return mySelectedCells;
   }
 
@@ -281,5 +282,29 @@ public class NodeRangeSelection implements MultipleSelection {
 
       cell.setSelected(wasSelected);
     }
+  }
+
+  // TODO: enlargeSelection action should be handled specifically by executeAction() method
+  public NodeRangeSelection enlargeSelection(boolean next) {
+    NodeRangeSelection result = new NodeRangeSelection(myEditorComponent, myFirstNode, myLastNode);
+
+    List<SNode> children = myParentNode.getChildren(myRole);
+
+    SNode newLastNode = null;
+    for (Iterator<SNode> it = children.iterator(); it.hasNext();) {
+      SNode semanticNode = it.next();
+      if (semanticNode == myLastNode) {
+        if (next) {
+          if (it.hasNext()) {
+            newLastNode = it.next();
+          } else {
+            newLastNode = null;
+          }
+        }
+        break;
+      }
+      newLastNode = semanticNode;
+    }
+    return newLastNode != null ? new NodeRangeSelection(myEditorComponent, myFirstNode, newLastNode): null;
   }
 }
