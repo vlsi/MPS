@@ -188,6 +188,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   private void addMessage(EditorMessage m) {
+    if (m.getNode() == null) {
+      return;
+    }
+
     EditorMessageOwner owner = m.getOwner();
     if (!myOwnerToMessages.containsKey(owner)) {
       myOwnerToMessages.put(owner, new HashSet<EditorMessage>());
