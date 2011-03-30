@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-be9liok7137vq6njftfgs3hglwiqo1g">
+<dependencies version="2" modelHash="eo2wp6drq6q1etmi8fe37nb9dzu0klg">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
   <common hash="bcgudka9bglur92fd3luyezg5m34pu6" />
   <source id="1268765481875672245" name="IDelta" hash="-1gzkd9a00p42z5yw84v2xfetuyna4l0">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IDelta.java" />
+  </source>
+  <source id="5429064975945235670" name="IInternalDelta" hash="-dsegporktbza08rhej2tkk03balqfvf">
+    <file name="IInternalDelta.java" />
   </source>
 </dependencies>
 

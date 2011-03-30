@@ -9,6 +9,9 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="1268765481875672245">
       <property name="name" nameId="tpck.1169194664001" value="IDelta" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="5429064975945235670">
+      <property name="name" nameId="tpck.1169194664001" value="IInternalDelta" />
+    </node>
   </roots>
   <root id="1268765481875672245">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1268765481875672250">
@@ -47,6 +50,12 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1268765481875672259" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1268765481875672260" />
+  </root>
+  <root id="5429064975945235670">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5429064975945235671" />
+    <node role="extendedInterface" roleId="tpee.1107797138135" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5429064975945235672">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1268765481875672245" resolveInfo="IDelta" />
+    </node>
   </root>
 </model>
 

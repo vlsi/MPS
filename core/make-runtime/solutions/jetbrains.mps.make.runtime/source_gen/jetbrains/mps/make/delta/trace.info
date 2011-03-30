@@ -13,5 +13,8 @@
     <scopeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="40" endLine="9" endPosition="29" />
     <unitInfo nodeId="1268765481875672245" fileName="IDelta.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.delta.IDelta" />
   </root>
+  <root nodeId="5429064975945235670">
+    <unitInfo nodeId="5429064975945235670" fileName="IInternalDelta.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.delta.IInternalDelta" />
+  </root>
 </debugInfo>
 

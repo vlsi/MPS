@@ -18,6 +18,8 @@ import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.make.script.IConfig;
 
 public class Make_Facet implements IFacet {
@@ -70,9 +72,23 @@ public class Make_Facet implements IFacet {
                     public Iterable<IDelta> translate(IResource res) {
                       return ((IDeltaResource) res).delta();
                     }
+                  }).where(new IWhereFilter<IDelta>() {
+                    public boolean accept(IDelta d) {
+                      return !(d instanceof IInternalDelta);
+                    }
                   })).reconcileAll();
                 }
               });
+              // "internal" delta gets reconciled in write action (enclosing) 
+              new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                public Iterable<IDelta> translate(IResource res) {
+                  return ((IDeltaResource) res).delta();
+                }
+              }).where(new IWhereFilter<IDelta>() {
+                public boolean accept(IDelta d) {
+                  return d instanceof IInternalDelta;
+                }
+              })).reconcileAll();
               _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);

@@ -41,6 +41,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.messages.IMessageHandler;
@@ -49,6 +50,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.generator.TransientModelsComponent;
 
 public class Generate_Facet implements IFacet {
@@ -457,17 +459,34 @@ public class Generate_Facet implements IFacet {
                 }
               }
               final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
+              final Iterable<SModelDescriptor> empty = ListSequence.fromList(new ArrayList<SModelDescriptor>());
               Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
                 public void visit(IResource it) {
                   MResource mres = ((MResource) it);
                   IModule module = mres.module();
+                  MapSequence.fromMap(retainedModels).put(module, empty);
                   Iterable<SModelDescriptor> modelsToRetain = ((Iterable<SModelDescriptor>) module.getEditableUserModels());
                   if (module instanceof Language) {
-                    for (Generator g : ((Language) module).getGenerators()) {
-                      modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(ListSequence.fromList(g.getEditableUserModels()));
+                    for (final Generator gen : ((Language) module).getGenerators()) {
+                      if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
+                        MapSequence.fromMap(retainedModels).put(gen, gen.getEditableUserModels());
+                      }
+                      modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+                        public Iterable<SModelDescriptor> iterable() {
+                          return MapSequence.fromMap(retainedModels).get(gen);
+                        }
+                      })));
                     }
                   } else if (module instanceof Generator) {
-                    modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(ListSequence.fromList(((Generator) module).getSourceLanguage().getEditableUserModels()));
+                    final Language slang = ((Generator) module).getSourceLanguage();
+                    if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
+                      MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getEditableUserModels())).subtract(ListSequence.fromList(module.getEditableUserModels())));
+                    }
+                    modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+                      public Iterable<SModelDescriptor> iterable() {
+                        return MapSequence.fromMap(retainedModels).get(slang);
+                      }
+                    })));
                   }
                   MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
                 }
@@ -507,7 +526,7 @@ public class Generate_Facet implements IFacet {
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
-              _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IDelta() {
+              _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
