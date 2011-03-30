@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7xt3959ufh6cihin7ti8pbtwh9l059l">
+<dependencies version="2" modelHash="-7kduwm4frwdn5uj9pe2wz945h93y1p5">
   <dep model="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins(jetbrains.mps.lang.plugin#1203080439937/jetbrains.mps.plugins@java_stub)" />
   <dep model="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins.pluginparts.custom(jetbrains.mps.lang.plugin#1203080439937/jetbrains.mps.plugins.pluginparts.custom@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -230,7 +230,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TextGen_Facet.java" />
   </source>
-  <source id="4328738523548357342" name="JavaCompile" hash="-15va20bqmyt43zi3ag70qpadcwnm80g">
+  <source id="4328738523548357342" name="JavaCompile" hash="7xgm77cpkhoh0pwju90kz6x6ogf2ynm">
     <dep root="2383991756720431443" />
     <dep root="4328738523548214510" />
     <dep root="4853833103870841534" />

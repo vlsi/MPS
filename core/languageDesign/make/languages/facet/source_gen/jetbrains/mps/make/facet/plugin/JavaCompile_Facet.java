@@ -130,9 +130,7 @@ public class JavaCompile_Facet implements IFacet {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 monitor.currentProgress().advanceWork("Compiling", 50);
-                if (tres.module().reloadClassesAfterGeneration()) {
-                  _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
-                }
+                _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling");
             default:
@@ -255,9 +253,7 @@ public class JavaCompile_Facet implements IFacet {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
                 monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 50);
-                if (tres.module().reloadClassesAfterGeneration()) {
-                  _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
-                }
+                _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling in IntelliJ IDEA");
             default:
