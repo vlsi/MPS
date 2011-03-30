@@ -150,7 +150,9 @@ class IdeaFile implements IFileEx {
     } else {
       try {
         VirtualFile directory = VfsUtil.createDirectories(truncDirPath(myPath));
-        myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, truncFileName(myPath));
+        String fileName = truncFileName(myPath);
+        directory.findChild(fileName); // This is a workaround for IDEA-67279
+        myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, fileName);
         myPath = null;
         return true;
       } catch (IOException e) {
