@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -248,7 +249,9 @@ public class SModelRepository implements ApplicationComponent {
 
         if (!myWasError) {
           myWasError = true;
-          LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
+          if(InternalFlag.isInternalMode()) {
+            LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
+          }
         }
 
         return getModelDescriptor(fqName);
