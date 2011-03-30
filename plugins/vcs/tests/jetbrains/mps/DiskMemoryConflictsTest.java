@@ -15,10 +15,6 @@
  */
 package jetbrains.mps;
 
-import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
-import com.intellij.ide.plugins.PluginManager;
-import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
@@ -41,7 +37,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -58,7 +53,7 @@ public class DiskMemoryConflictsTest {
   private static final SModelReference MODEL_REFERENCE = SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
   private static final File MODEL_FILE = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
   private static Project ourProject;
-  private static EditableSModelDescriptor ourModelDescriptor;
+  private EditableSModelDescriptor myModelDescriptor;
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
@@ -73,7 +68,7 @@ public class DiskMemoryConflictsTest {
 
           SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
           Assert.assertTrue(modelDescriptor instanceof EditableSModelDescriptor);
-          ourModelDescriptor = (EditableSModelDescriptor) modelDescriptor;
+          myModelDescriptor = (EditableSModelDescriptor) modelDescriptor;
 
           checkInitialState();
 
@@ -108,7 +103,7 @@ public class DiskMemoryConflictsTest {
       @Override
       public void run() {
         try {
-          final SModelDescriptor modelDescriptor = ourModelDescriptor;
+          final SModelDescriptor modelDescriptor = myModelDescriptor;
           Assert.assertNotNull(modelDescriptor);
           SNode node = modelDescriptor.getSModel().getNodeById("6010389230754495469");
           Assert.assertNotNull(node);
@@ -181,12 +176,11 @@ public class DiskMemoryConflictsTest {
       }
       w.close();
       if (MODEL_FILE.lastModified() == lastModifiedBefore) {
-        //noinspection ResultOfMethodCallIgnored
-        Assert.assertTrue(MODEL_FILE.setLastModified(lastModifiedBefore + 1000));
+        setLastModified(lastModifiedBefore + 1000);
       }
 
       // TODO this is a hack to avoid Windows truncation of lastModified
-      Assert.assertTrue(MODEL_FILE.setLastModified(lastModifiedBefore + 2000 + (int) (Math.random() * 100000)));
+      setLastModified(lastModifiedBefore + 2000 + (int) (Math.random() * 100000));
     } catch (FileNotFoundException e) {
       Assert.fail();
     }
@@ -208,7 +202,7 @@ public class DiskMemoryConflictsTest {
   private void checkSynchronizedState(String fieldName) {
     Assert.assertEquals(fieldName, getFieldNameFromModel());
     Assert.assertEquals(fieldName, getFieldNameFromFile());
-    Assert.assertFalse(ourModelDescriptor.isChanged());
+    Assert.assertFalse(myModelDescriptor.isChanged());
   }
 
   private void provokeAndCheckConflict(boolean save, final boolean memory) {
@@ -239,7 +233,7 @@ public class DiskMemoryConflictsTest {
       // reload conflict
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          ourModelDescriptor.reloadFromDiskSafe();
+          myModelDescriptor.reloadFromDiskSafe();
         }
       });
     }
@@ -273,11 +267,27 @@ public class DiskMemoryConflictsTest {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ourModelDescriptor.reloadFromDisk();
+        myModelDescriptor.reloadFromDisk();
       }
     });
 
     checkInitialState();
   }
 
+  private static void setLastModified(long timeStamp) {
+    // this is a workaround of JRE bug #4243868
+    // http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868
+    int count = 0;
+    while (!MODEL_FILE.setLastModified(timeStamp) && count < 10) {
+      count++;
+      System.gc();
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+        Assert.fail();
+        return;
+      }
+    }
+    Assert.assertTrue(count < 10);
+  }
 }
