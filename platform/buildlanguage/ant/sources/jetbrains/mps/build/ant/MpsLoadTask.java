@@ -237,7 +237,8 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "typesystemUi" + File.separator + "classes"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};

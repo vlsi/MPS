@@ -16,6 +16,7 @@
 package jetbrains.mps.build.ant;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.idea.IdeaTestApplication;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
@@ -49,6 +50,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -164,9 +166,7 @@ public abstract class MpsWorker {
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
-      Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-      Method meth = cls.getMethod("configureMPS");
-      meth.invoke(null);
+      configureMPS();
     }
     catch (Exception ex) {
       throw new RuntimeException(ex);
@@ -179,6 +179,35 @@ public abstract class MpsWorker {
     loadLibraries();
     make();
     reload();
+  }
+
+  public static void configureMPS(String... plugins) {
+    String mpsInternal = System.getProperty("mps.internal");
+    System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
+    System.setProperty("idea.no.jre.check", "true");
+    if (plugins.length == 0) {
+      System.setProperty("idea.load.plugins", "false");
+    }
+    System.setProperty("idea.platform.prefix", "Idea");
+
+    StringBuffer pluginPath = new StringBuffer();
+    File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
+    for (File pluginFolder : pluginDir.listFiles()) {
+      if (pluginPath.length() > 0) {
+        pluginPath.append(File.pathSeparator);
+      }
+      pluginPath.append(pluginFolder.getPath());
+    }
+    System.setProperty("plugin.path", pluginPath.toString());
+    // Value of this property is comma-separated list of plugin IDs intended to load by platform
+    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
+
+    try {
+      IdeaTestApplication.getInstance(null);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+
   }
 
   protected void make() {
