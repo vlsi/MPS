@@ -46,6 +46,7 @@ public abstract class TabsComponent extends JPanel {
 
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
+  private AddConceptTab myAddButton;
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent) {
     myBaseNode = baseNode;
@@ -74,7 +75,7 @@ public abstract class TabsComponent extends JPanel {
 
     setLayout(new BorderLayout());
 
-    AddConceptTab button = new AddConceptTab(myBaseNode, myPossibleTabs) {
+    myAddButton = new AddConceptTab(myBaseNode, myPossibleTabs) {
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
       }
@@ -83,11 +84,6 @@ public abstract class TabsComponent extends JPanel {
         onNodeChange(aspect);
       }
     };
-
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(button.getAction(this));
-    JComponent tab = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
-    add(tab, BorderLayout.EAST);
 
     addListeners();
     updateTabs();
@@ -133,6 +129,7 @@ public abstract class TabsComponent extends JPanel {
     Collections.sort(myRealTabs, new EditorTabComparator());
 
     DefaultActionGroup group = new DefaultActionGroup();
+    group.add(myAddButton.getAction(this));
     for (EditorTab tab : myRealTabs) {
       group.add(tab.getAction(myShortcutComponent));
     }

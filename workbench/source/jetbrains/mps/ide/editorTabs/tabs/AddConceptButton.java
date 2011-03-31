@@ -133,7 +133,7 @@ abstract class AddConceptTab {
 
   private class MyAddAction extends AnAction {
     public MyAddAction() {
-      super("Add", "", Icons.ADD_ICON);
+      super("", "", Icons.ADD_ICON);
     }
 
     public boolean displayTextInToolbar() {
