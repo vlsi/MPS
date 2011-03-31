@@ -26,6 +26,7 @@ import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
@@ -164,6 +165,7 @@ public class Generator_Test extends MockTestCase {
           }
         });
         exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)));
+        exactly(1).of(cmon).reportFeedback(with(aNonNull(IFeedback.class)));
 
         final IQuery[] query = new IQuery[1];
         exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
