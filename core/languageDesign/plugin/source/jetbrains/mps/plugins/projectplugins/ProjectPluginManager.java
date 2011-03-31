@@ -24,6 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -37,8 +38,13 @@ import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
+import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
@@ -56,8 +62,10 @@ import java.util.*;
     )
   }
 )
-public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
+public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState>, MPSEditorOpenHandlerOwner {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
+
+  private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
   private final Object myPluginsLock = new Object();
   private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
@@ -65,11 +73,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private FileEditorManager myManager;
+  private MPSEditorOpener myEditorOpener;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
     myProject = project;
     myManager = manager;
+    myEditorOpener = editorOpener;
   }
 
   public void projectOpened() {
@@ -105,7 +115,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
   }
 
-  public List<EditorTabDescriptor> getTabDescriptors(){
+  public List<EditorTabDescriptor> getTabDescriptors() {
     synchronized (myPluginsLock) {
       List<EditorTabDescriptor> result = new ArrayList<EditorTabDescriptor>();
       for (BaseProjectPlugin plugin : mySortedPlugins) {
@@ -189,11 +199,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void initComponent() {
-
+    myEditorOpener.registerOpenHandler(myTabsHandler, this);
   }
 
   public void disposeComponent() {
-
+    myEditorOpener.unregisterOpenHandlers(this);
   }
 
   //----------------STATE STUFF------------------------
@@ -262,5 +272,35 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
     });
+  }
+
+  private class TabsMPSEditorOpenHandler implements MPSEditorOpenHandler {
+    public SNode getBaseNode(IOperationContext context, SNode node) {
+      for (EditorTabDescriptor d : getTabDescriptors()) {
+        SNode baseNode = d.getBaseNode(node);
+        if (baseNode != null) return baseNode;
+      }
+      return null;
+    }
+
+    public boolean canOpen(IOperationContext context, SNode node) {
+      for (EditorTabDescriptor d : getTabDescriptors()) {
+        if (!d.isApplicable(node)) continue;
+        if (!d.getNodes(node).isEmpty()) return true;
+      }
+      return false;
+    }
+
+    public IEditor open(IOperationContext context, final SNode node) {
+      Set<EditorTabDescriptor> tabs = new HashSet<EditorTabDescriptor>();
+
+      for (EditorTabDescriptor d : getTabDescriptors()) {
+        if (d.isApplicable(node)) {
+          tabs.add(d);
+        }
+      }
+
+      return new TabbedEditor(new SNodePointer(node), tabs, context);
+    }
   }
 }

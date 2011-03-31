@@ -39,7 +39,7 @@ import org.jdom.Element;
 
 import java.util.*;
 
-public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, PersistentStateComponent<PluginState> {
+public abstract class BaseProjectPlugin implements PersistentStateComponent<PluginState> {
   private static final Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
@@ -50,8 +50,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private List<EditorTabDescriptor> myTabDescriptors = new ArrayList<EditorTabDescriptor>();
-  private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
-  private MPSEditorOpener myEditorOpener;
   private GeneratorManager myGenManager;
 
   public Project getProject() {
@@ -81,7 +79,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   public final void init(final Project project) {
     myProject = project;
 
-    myEditorOpener = myProject.getComponent(MPSEditorOpener.class);
     myGenManager = myProject.getComponent(GeneratorManager.class);
 
     myCustomPartsToDispose = initCustomParts(project);
@@ -90,8 +87,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     for (GenerationListener listener : myGenerationListeners) {
       myGenManager.addGenerationListener(listener);
     }
-
-    myEditorOpener.registerOpenHandler(myTabsHandler, this);
 
     for (EditorTabDescriptor d : initTabbedEditors(project)) {
       myTabDescriptors.add(d);
@@ -133,10 +128,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       tool.unregister();
     }
     myTools.clear();
-
-    if (myEditorOpener != null) {
-      myEditorOpener.unregisterOpenHandlers(BaseProjectPlugin.this);
-    }
 
     myTabDescriptors.clear();
 
@@ -210,36 +201,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     public ComponentState(String first, Element second) {
       this.first = first;
       this.second = second;
-    }
-  }
-
-  private class TabsMPSEditorOpenHandler implements MPSEditorOpenHandler {
-    public SNode getBaseNode(IOperationContext context, SNode node) {
-      for (EditorTabDescriptor d : myTabDescriptors) {
-        SNode baseNode = d.getBaseNode(node);
-        if (baseNode != null) return baseNode;
-      }
-      return null;
-    }
-
-    public boolean canOpen(IOperationContext context, SNode node) {
-      for (EditorTabDescriptor d : myTabDescriptors) {
-        if (!d.isApplicable(node)) continue;
-        if (!d.getNodes(node).isEmpty()) return true;
-      }
-      return false;
-    }
-
-    public IEditor open(IOperationContext context, final SNode node) {
-      Set<EditorTabDescriptor> tabs = new HashSet<EditorTabDescriptor>();
-
-      for (EditorTabDescriptor d : myTabDescriptors) {
-        if (d.isApplicable(node)) {
-          tabs.add(d);
-        }
-      }
-
-      return new TabbedEditor(new SNodePointer(node), tabs, context);
     }
   }
 }
