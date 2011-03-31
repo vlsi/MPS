@@ -17,6 +17,7 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IProgress;
 
 public class Mockups {
   private static IConfig DefaultConfig = new IConfig() {
@@ -196,6 +197,17 @@ public class Mockups {
       {
         this.allowing(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) this.with(aNonNull(Object.class)));
         this.allowing(mons).runJobWithMonitor((_FunctionTypes._void_P1_E0<? super IJobMonitor>) this.with(aNonNull(Object.class)));
+      }
+    });
+  }
+
+  public static void allowing(Mockery context, final IJobMonitor jmon) {
+    context.checking(new Expectations() {
+      {
+        this.allowing(jmon).currentProgress();
+        this.will(returnValue(new IProgress.Stub()));
+        this.allowing(jmon).stopRequested();
+        this.will(returnValue(false));
       }
     });
   }

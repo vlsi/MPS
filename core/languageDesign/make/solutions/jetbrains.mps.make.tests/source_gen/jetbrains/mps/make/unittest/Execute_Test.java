@@ -19,6 +19,12 @@ import java.util.ArrayList;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.script.IFeedback;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
+import org.jmock.api.Action;
+import org.jmock.api.Invocation;
 
 @RunWith(JMock.class)
 public class Execute_Test extends MockTestCase {
@@ -314,8 +320,45 @@ public class Execute_Test extends MockTestCase {
     final IResource resB = Mockups.resource(context, "resB");
     final IResult okresult = Mockups.result(context, "okresult", true);
     final IResult failresult = Mockups.result(context, "failresult", false);
+    final IScriptController mons = Mockups.monitors(context, "mons");
+    final IJobMonitor jmon = context.mock(IJobMonitor.class);
+    final IFeedback[] fbk = new IFeedback[1];
     context.checking(new Expectations() {
       {
+        final Object[] job = new Object[1];
+        exactly(1).of(mons).runJobWithMonitor((_FunctionTypes._void_P1_E0<? super IJobMonitor>) with(new BaseMatcher<Object>() {
+          public boolean matches(Object o) {
+            job[0] = o;
+            return true;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+        will(new Action() {
+          public Object invoke(Invocation invocation) throws Throwable {
+            ((_FunctionTypes._void_P1_E0<? super IJobMonitor>) job[0]).invoke(jmon);
+            return null;
+          }
+
+          public void describeTo(Description description) {
+          }
+        });
+        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)));
+
+        exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
+          public boolean matches(Object o) {
+            if (o instanceof IFeedback.ERROR) {
+              fbk[0] = (IFeedback) o;
+              return true;
+            }
+            return false;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+
         atLeast(1).of(res).before();
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(res).producesOutput();
@@ -351,6 +394,8 @@ public class Execute_Test extends MockTestCase {
     Mockups.allowing(context, make);
     Mockups.allowing(context, okresult);
     Mockups.allowing(context, failresult);
+    Mockups.allowing(context, mons);
+    Mockups.allowing(context, jmon);
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
@@ -360,10 +405,11 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, null);
+    IResult r = sc.execute(mons, null);
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(fbk[0] instanceof IFeedback.ERROR);
   }
 
   @Test
