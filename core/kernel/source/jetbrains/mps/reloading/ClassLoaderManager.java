@@ -73,7 +73,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName(), new Throwable());
         return null;
       }
 
@@ -87,7 +87,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       if (bundle == null) {
         if (reportError) {
-          LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+          LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName(), new Throwable());
         }
         return null;
       }
