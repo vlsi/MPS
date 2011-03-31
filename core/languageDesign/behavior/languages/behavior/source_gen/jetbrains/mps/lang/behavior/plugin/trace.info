@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
+  <unitInfo fileName="Behavior_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_Order" />
+  <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
   <unitInfo fileName="BehaviourPopup_ActionGroup.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup" />
   <unitInfo fileName="BehaviorCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Default_KeymapChanges" />
   <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
+  <unitInfo fileName="Behavior_TabDescriptor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_TabDescriptor" />
   <unitInfo fileName="OverrideBehaviorMethod_Action.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" />
   <unitInfo fileName="ImplementBehaviorMethod_Action.java" startLine="24" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action" />
   <root nodeId="1910641662758447420">
     <nodeInfo nodeId="1910641662758482649" fileName="BehaviourPopup_ActionGroup.java" startLine="20" startPosition="9" endLine="21" endPosition="386" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="7157723551789059564">
+    <nodeInfo nodeId="7157723551789059567" fileName="Behavior_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789059572" fileName="Behavior_TabDescriptor.java" startLine="45" startPosition="43" endLine="46" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789059588" fileName="Behavior_TabDescriptor.java" startLine="64" startPosition="36" endLine="65" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7157723551789059606" fileName="Behavior_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789059581" fileName="Behavior_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789059595" fileName="Behavior_TabDescriptor.java" startLine="65" startPosition="144" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7157723551789059578" fileName="Behavior_TabDescriptor.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
+    <scopeInfo nodeId="7157723551789059566" fileName="Behavior_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" />
+    <scopeInfo nodeId="7157723551789059571" fileName="Behavior_TabDescriptor.java" startLine="45" startPosition="43" endLine="46" endPosition="115" />
+    <scopeInfo nodeId="7157723551789059605" fileName="Behavior_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="165" />
+    <scopeInfo nodeId="7157723551789059580" fileName="Behavior_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="193" />
+    <scopeInfo nodeId="7157723551789059587" fileName="Behavior_TabDescriptor.java" startLine="64" startPosition="36" endLine="69" endPosition="6">
+      <varInfo nodeId="7157723551789059589" varName="nodes" />
+    </scopeInfo>
   </root>
   <root nodeId="7562825466847533959">
     <nodeInfo nodeId="7562825466847533968" fileName="OverrideBehaviorMethod_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

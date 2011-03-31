@@ -65,7 +65,7 @@ public class ConceptEditorHelper {
     return createNewConceptAspectInstance(applicableNode, concept, md.getSModel());
   }
 
-  /*package*/ static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
+  public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
     return ListSequence.fromList(roots).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode root) {
         int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Actions_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.actions.plugin.Actions_Order" />
+  <unitInfo fileName="Actions_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.actions.plugin.Actions_ApplicationPlugin" />
+  <unitInfo fileName="Actions_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.actions.plugin.Actions_ProjectPlugin" />
+  <unitInfo fileName="Actions_TabDescriptor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.actions.plugin.Actions_TabDescriptor" />
+  <root nodeId="7157723551789228701">
+    <nodeInfo nodeId="7157723551789228704" fileName="Actions_TabDescriptor.java" startLine="38" startPosition="40" endLine="39" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789228709" fileName="Actions_TabDescriptor.java" startLine="42" startPosition="43" endLine="43" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789228731" fileName="Actions_TabDescriptor.java" startLine="51" startPosition="43" endLine="52" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789228725" fileName="Actions_TabDescriptor.java" startLine="55" startPosition="52" endLine="56" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789228718" fileName="Actions_TabDescriptor.java" startLine="59" startPosition="66" endLine="60" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7157723551789228715" fileName="Actions_TabDescriptor.java" startLine="35" startPosition="32" endLine="35" endPosition="32" />
+    <scopeInfo nodeId="7157723551789228703" fileName="Actions_TabDescriptor.java" startLine="38" startPosition="40" endLine="39" endPosition="53" />
+    <scopeInfo nodeId="7157723551789228708" fileName="Actions_TabDescriptor.java" startLine="42" startPosition="43" endLine="43" endPosition="115" />
+    <scopeInfo nodeId="7157723551789228730" fileName="Actions_TabDescriptor.java" startLine="51" startPosition="43" endLine="52" endPosition="130" />
+    <scopeInfo nodeId="7157723551789228724" fileName="Actions_TabDescriptor.java" startLine="55" startPosition="52" endLine="56" endPosition="88" />
+    <scopeInfo nodeId="7157723551789228717" fileName="Actions_TabDescriptor.java" startLine="59" startPosition="66" endLine="60" endPosition="101" />
+  </root>
+</debugInfo>
+

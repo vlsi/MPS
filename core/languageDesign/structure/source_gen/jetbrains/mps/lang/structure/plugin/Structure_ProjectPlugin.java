@@ -14,18 +14,7 @@ public class Structure_ProjectPlugin extends BaseProjectPlugin {
 
   public List<EditorTabDescriptor> initTabbedEditors(Project project) {
     List<EditorTabDescriptor> result = new ArrayList();
-    result.add(new Actions_TabDescriptor());
-    result.add(new Behavior_TabDescriptor());
-    result.add(new Constraints_TabDescriptor());
-    result.add(new Data_Flow_TabDescriptor());
-    result.add(new Editor_TabDescriptor());
-    result.add(new Find_Usages_TabDescriptor());
-    result.add(new Generator_TabDescriptor());
-    result.add(new Intentions_TabDescriptor());
-    result.add(new Refactorings_TabDescriptor());
     result.add(new Structure_TabDescriptor());
-    result.add(new Textgen_TabDescriptor());
-    result.add(new Typesystem_TabDescriptor());
     return result;
   }
 }
