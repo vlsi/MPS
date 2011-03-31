@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,7 +28,7 @@ public class Order_Behavior {
     } else {
       n = SPropertyOperations.getString(thisNode, "name");
     }
-    return n + "_Order";
+    return NameUtil.toValidCamelIdentifier(n) + "_Order";
   }
 
   public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
