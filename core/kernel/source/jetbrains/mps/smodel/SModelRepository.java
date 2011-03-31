@@ -250,7 +250,7 @@ public class SModelRepository implements ApplicationComponent {
         if (!myWasError) {
           myWasError = true;
           if(InternalFlag.isInternalMode()) {
-            LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
+            LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.");
           }
         }
 
