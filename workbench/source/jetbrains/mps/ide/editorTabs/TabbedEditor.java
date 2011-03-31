@@ -53,7 +53,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
     myTabsComponent = new TabsComponent(baseNode, possibleTabs, getComponent()) {
       protected void changeNode(SNode newNode) {
-        showNode(newNode, false);
+        showNode(newNode, !newNode.isRoot());
       }
     };
 

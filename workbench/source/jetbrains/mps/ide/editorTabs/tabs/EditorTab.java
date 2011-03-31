@@ -68,7 +68,7 @@ public class EditorTab {
       SNode root = node.getContainingRoot();
       if (added.contains(root)) continue;
       added.add(root);
-      result.add(new NavigateNodeAction(root));
+      result.add(new NavigateNodeAction(node));
     }
     return result;
   }
@@ -77,7 +77,7 @@ public class EditorTab {
     private final SNode myNode;
 
     public NavigateNodeAction(SNode node) {
-      super(node.getName() != null ? node.getName() : "<no name>", "", IconManager.getIconFor(node));
+      super(node.getContainingRoot().getName() != null ? node.getContainingRoot().getName() : "<no name>", "", IconManager.getIconFor(node.getContainingRoot()));
       myNode = node;
     }
 
