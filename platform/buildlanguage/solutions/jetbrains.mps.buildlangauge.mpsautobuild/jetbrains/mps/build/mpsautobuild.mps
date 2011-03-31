@@ -863,6 +863,15 @@
           <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
           <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2235195415637076915">
             <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811560" resolveInfo="exclude" />
+            <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2339938892738152797">
+              <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="null" resolveInfo="exclude" />
+              <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2339938892738152798">
+                <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="null" resolveInfo="name" />
+                <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2339938892738152799">
+                  <property name="value" nameId="tpsk.1196861024475" value="classes/**" />
+                </node>
+              </node>
+            </node>
             <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2235195415637076916">
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="2235195415637076917">
@@ -875,21 +884,12 @@
               </node>
             </node>
           </node>
-          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2235195415637076920">
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2339938892738152803">
             <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811560" resolveInfo="exclude" />
-            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2235195415637076921">
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2339938892738152804">
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
-              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2235195415637076922">
-                <property name="value" nameId="tpsk.1196861024475" value="lib/sources/idea-platform-src.zip" />
-              </node>
-            </node>
-          </node>
-          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2235195415637076923">
-            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811560" resolveInfo="exclude" />
-            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2235195415637076924">
-              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
-              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2235195415637076925">
-                <property name="value" nameId="tpsk.1196861024475" value="lib/sources/idea-external-src.zip" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2339938892738152805">
+                <property name="value" nameId="tpsk.1196861024475" value="classes/**" />
               </node>
             </node>
           </node>
@@ -982,6 +982,24 @@
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8375061986520656488">
                 <property name="value" nameId="tpsk.1196861024475" value=".git/**" />
+              </node>
+            </node>
+          </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2339938892738152794">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811560" resolveInfo="exclude" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2339938892738152795">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2339938892738152796">
+                <property name="value" nameId="tpsk.1196861024475" value=".idea/workspace.xml" />
+              </node>
+            </node>
+          </node>
+          <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="2339938892738152791">
+            <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811560" resolveInfo="exclude" />
+            <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2339938892738152792">
+              <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
+              <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2339938892738152793">
+                <property name="value" nameId="tpsk.1196861024475" value="**/.idea/workspace.xml" />
               </node>
             </node>
           </node>

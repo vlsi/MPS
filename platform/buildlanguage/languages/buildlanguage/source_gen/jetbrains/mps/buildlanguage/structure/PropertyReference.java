@@ -56,11 +56,11 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     this.setProperty(PropertyReference.VIRTUAL_PACKAGE, value);
   }
 
-  public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, PropertyReference.PROPERTY_DECLARATION);
+  public AbstractPropertyDeclaration getPropertyDeclaration() {
+    return (AbstractPropertyDeclaration) this.getReferent(AbstractPropertyDeclaration.class, PropertyReference.PROPERTY_DECLARATION);
   }
 
-  public void setPropertyDeclaration(PropertyDeclaration node) {
+  public void setPropertyDeclaration(AbstractPropertyDeclaration node) {
     super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
   }
 
