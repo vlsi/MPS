@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.structureview;
+package jetbrains.mps.workbench.structureview.nodes;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.structureView.StructureViewTreeElement;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.structureview;
+package jetbrains.mps.workbench.structureview.nodes;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.openapi.project.Project;
@@ -21,11 +21,12 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.structureview.StructureUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class MainNodeTreeElement extends NodeTreeElement {
+public class MainNodeTreeElement extends NodeTreeElement {
   private Project myProject;
 
   public MainNodeTreeElement(Project project, SNodePointer node) {

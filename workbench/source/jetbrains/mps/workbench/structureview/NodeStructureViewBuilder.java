@@ -19,6 +19,9 @@ import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.structureview.adds.AspectGrouper;
+import jetbrains.mps.workbench.structureview.adds.AspectSorter;
+import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

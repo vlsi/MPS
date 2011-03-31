@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.structureview;
+package jetbrains.mps.workbench.structureview.adds;
 
 import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.tabs.EditorTab;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 
-class AspectSorter implements Sorter {
+public class AspectSorter implements Sorter {
   public Comparator getComparator() {
     return new EditorTabComparator();
   }

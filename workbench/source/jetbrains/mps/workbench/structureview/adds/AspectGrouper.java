@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.structureview;
+package jetbrains.mps.workbench.structureview.adds;
 
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.smartTree.*;
@@ -24,6 +24,9 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.structureview.StructureUtil;
+import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
+import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -31,7 +34,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-class AspectGrouper implements Grouper {
+public class AspectGrouper implements Grouper {
   private Project myProject;
 
   public AspectGrouper(Project project) {
@@ -56,7 +59,7 @@ class AspectGrouper implements Grouper {
             if (!(te instanceof AspectTreeElement)) continue;
 
             AspectTreeElement ate = (AspectTreeElement) te;
-            if (!aspectNodes.contains(ate.myNode.getNode())) continue;
+            if (!aspectNodes.contains(ate.getValue().getNode())) continue;
 
             childElements.add(ate);
           }
