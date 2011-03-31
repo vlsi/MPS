@@ -45,7 +45,7 @@ public class StructureViewBuilderFactory implements ProjectComponent {
           SNode baseNode = tab.getBaseNode(node);
           if (baseNode != null) {
             myLastBaseNode = new SNodePointer(baseNode);
-            return new ConceptStructureViewBuilder(myProject, myLastBaseNode);
+            return new NodeStructureViewBuilder(myProject, myLastBaseNode);
           }
         }
 
@@ -54,7 +54,7 @@ public class StructureViewBuilderFactory implements ProjectComponent {
             SNode lastBaseNode = myLastBaseNode.getNode();
             if (!tab.isApplicable(lastBaseNode)) continue;
             if (!tab.getNodes(lastBaseNode).contains(node)) continue;
-            return new ConceptStructureViewBuilder(myProject, myLastBaseNode);
+            return new NodeStructureViewBuilder(myProject, myLastBaseNode);
           }
         }
 

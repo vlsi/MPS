@@ -17,8 +17,6 @@ package jetbrains.mps.workbench.structureview;
 
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.smartTree.*;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -28,7 +26,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -44,11 +41,11 @@ class AspectGrouper implements Grouper {
   @NotNull
   public Collection<Group> group(AbstractTreeNode parent, final Collection<TreeElement> children) {
     final Object element = parent.getValue();
-    if (!(element instanceof ConceptTreeElement)) return Collections.emptyList();
+    if (!(element instanceof MainNodeTreeElement)) return Collections.emptyList();
 
     return ModelAccess.instance().runReadAction(new Computable<Collection<Group>>() {
       public Collection<Group> compute() {
-        SNodePointer np = ((ConceptTreeElement) element).getValue();
+        SNodePointer np = ((MainNodeTreeElement) element).getValue();
         Collection<Group> result = new ArrayList<Group>();
         for (final EditorTabDescriptor tab : StructureUtil.getApplicableTabs(myProject, np.getNode())) {
           List<SNode> aspectNodes = tab.getNodes(np.getNode());

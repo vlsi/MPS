@@ -22,11 +22,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
+public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
   private Project myProject;
   private SNodePointer myNode;
 
-  public ConceptStructureViewBuilder(Project project, SNodePointer node) {
+  public NodeStructureViewBuilder(Project project, SNodePointer node) {
     myProject = project;
     myNode = node;
   }
@@ -57,7 +57,7 @@ public class ConceptStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public StructureViewTreeElement getRoot() {
-        return new ConceptTreeElement(myProject, myNode);
+        return new MainNodeTreeElement(myProject, myNode);
       }
 
       public void dispose() {

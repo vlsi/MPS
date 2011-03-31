@@ -25,10 +25,10 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import java.util.List;
 
-class ConceptTreeElement extends NodeTreeElement {
+class MainNodeTreeElement extends NodeTreeElement {
   private Project myProject;
 
-  public ConceptTreeElement(Project project, SNodePointer node) {
+  public MainNodeTreeElement(Project project, SNodePointer node) {
     super(node);
     myProject = project;
   }
