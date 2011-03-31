@@ -45,8 +45,10 @@ public class AspectSorter implements Sorter {
 
   private static class EditorTabComparator implements Comparator{
     public int compare(Object o1, Object o2) {
-      if (!(o1 instanceof AspectGroup)) return 0;
-      if (!(o2 instanceof AspectGroup)) return 0;
+      if (!(o1 instanceof AspectGroup || o2 instanceof AspectGroup)) return 0;
+
+      if (!(o1 instanceof AspectGroup)) return -1;
+      if (!(o2 instanceof AspectGroup)) return 1;
 
       EditorTabDescriptor d1 = ((AspectGroup) o1).getTab();
       EditorTabDescriptor d2 = ((AspectGroup) o2).getTab();
@@ -61,5 +63,4 @@ public class AspectSorter implements Sorter {
       return r1;
     }
   }
-
 }

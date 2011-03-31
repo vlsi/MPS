@@ -17,60 +17,38 @@ package jetbrains.mps.workbench.structureview.adds;
 
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.smartTree.*;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.structureview.StructureUtil;
 import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
 import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class AspectGrouper implements Grouper {
-  private Project myProject;
-
-  public AspectGrouper(Project project) {
-    myProject = project;
-  }
-
   @NotNull
   public Collection<Group> group(AbstractTreeNode parent, final Collection<TreeElement> children) {
     final Object element = parent.getValue();
     if (!(element instanceof MainNodeTreeElement)) return Collections.emptyList();
 
-    return ModelAccess.instance().runReadAction(new Computable<Collection<Group>>() {
-      public Collection<Group> compute() {
-        SNodePointer np = ((MainNodeTreeElement) element).getValue();
-        Collection<Group> result = new ArrayList<Group>();
-        for (final EditorTabDescriptor tab : StructureUtil.getApplicableTabs(myProject, np.getNode())) {
-          List<SNode> aspectNodes = tab.getNodes(np.getNode());
-          if (aspectNodes.isEmpty()) continue;
+    Map<EditorTabDescriptor, List<TreeElement>> groups = new HashMap<EditorTabDescriptor, List<TreeElement>>();
+    for (TreeElement te : children) {
+      if (!(te instanceof AspectTreeElement)) continue;
 
-          Collection<TreeElement> childElements = new ArrayList<TreeElement>();
-          for (TreeElement te : children) {
-            if (!(te instanceof AspectTreeElement)) continue;
-
-            AspectTreeElement ate = (AspectTreeElement) te;
-            if (!aspectNodes.contains(ate.getValue().getNode())) continue;
-
-            childElements.add(ate);
-          }
-
-          if (!childElements.isEmpty()) {
-            result.add(new AspectGroup(tab, childElements));
-          }
-        }
-        return result;
+      AspectTreeElement ate = (AspectTreeElement) te;
+      EditorTabDescriptor d = ate.getAspectDescriptor();
+      if (!groups.containsKey(d)) {
+        groups.put(d, new ArrayList<TreeElement>());
       }
-    });
+      groups.get(d).add(ate);
+    }
+
+    Collection<Group> result = new ArrayList<Group>();
+    for (Entry<EditorTabDescriptor, List<TreeElement>> e : groups.entrySet()) {
+      result.add(new AspectGroup(e.getKey(), e.getValue()));
+    }
+    return result;
   }
 
   @NotNull

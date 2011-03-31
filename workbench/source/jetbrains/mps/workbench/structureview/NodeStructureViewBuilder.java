@@ -83,7 +83,7 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public Grouper[] getGroupers() {
-        return new Grouper[]{new AspectGrouper(myProject)};
+        return new Grouper[]{new AspectGrouper()};
       }
     };
   }
