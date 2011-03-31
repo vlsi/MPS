@@ -104,7 +104,7 @@ public abstract class TabsComponent extends JPanel {
     for (EditorTab tab : myRealTabs) {
       for (SNode node : tab.getDescriptor().getNodes(baseNode)) {
         assert node != null;
-        result.add(new SNodePointer(node));
+        result.add(new SNodePointer(node.getContainingRoot()));
       }
     }
     return result;
@@ -119,7 +119,7 @@ public abstract class TabsComponent extends JPanel {
       if (nodes.isEmpty()) continue;
 
       for (SNode node : nodes) {
-        myTabRemovalListener.aspectAdded(node);
+        myTabRemovalListener.aspectAdded(node.getContainingRoot());
       }
 
       final EditorTab tab = new EditorTab(this, myRealTabs.size(), d, myBaseNode);
@@ -156,25 +156,33 @@ public abstract class TabsComponent extends JPanel {
 
   private void nextTab() {
     for (EditorTab tab : myRealTabs) {
-      boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
-      if (thatTab) {
-        int index = myRealTabs.indexOf(tab);
-        if (index == myRealTabs.size() - 1) {
-          performTabAction(0);
-          return;
-        }
-
-        performTabAction(index + 1);
-
+      if (!isCurrent(tab)) continue;
+      int index = myRealTabs.indexOf(tab);
+      if (index == myRealTabs.size() - 1) {
+        performTabAction(0);
         return;
       }
+
+      performTabAction(index + 1);
+
+      return;
     }
+  }
+
+  private boolean isCurrent(EditorTab tab) {
+    boolean current = false;
+    for (SNode aspect: tab.getDescriptor().getNodes(myBaseNode.getNode())){
+      if (aspect.getContainingRoot().equals(myLastNode.getNode())){
+        current = true;
+        break;
+      }
+    }
+    return current;
   }
 
   private void prevTab() {
     for (EditorTab tab : myRealTabs) {
-      boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
-      if (!thatTab) continue;
+      if (!isCurrent(tab)) continue;
 
       int index = myRealTabs.indexOf(tab);
       if (index == 0) {

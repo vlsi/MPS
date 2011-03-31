@@ -63,7 +63,13 @@ abstract class AddConceptTab {
       List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
       if (concepts.isEmpty()) continue;
 
-      boolean current = d.getNodes(myBaseNode.getNode()).contains(getCurrentAspect());
+      boolean current = false;
+      for (SNode aspect:d.getNodes(myBaseNode.getNode())){
+        if (aspect.getContainingRoot().equals(getCurrentAspect())){
+          current = true;
+          break;
+        }
+      }
 
       DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), !current);
       for (final SNode concept : concepts) {

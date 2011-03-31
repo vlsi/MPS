@@ -25,7 +25,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.Component;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class EditorTab {
   private TabsComponent myTabComponent;
@@ -61,8 +63,12 @@ public class EditorTab {
     if (nodes.isEmpty()) return null;
 
     DefaultActionGroup result = new DefaultActionGroup();
+    Set<SNode> added = new HashSet<SNode>();
     for (final SNode node : nodes) {
-      result.add(new NavigateNodeAction(node));
+      SNode root = node.getContainingRoot();
+      if (added.contains(root)) continue;
+      added.add(root);
+      result.add(new NavigateNodeAction(root));
     }
     return result;
   }
@@ -98,7 +104,7 @@ public class EditorTab {
         public void run() {
           List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
           if (nodes.size() == 1) {
-            myTabComponent.onNodeChange(nodes.get(0));
+            myTabComponent.onNodeChange(nodes.get(0).getContainingRoot());
             return;
           }
 

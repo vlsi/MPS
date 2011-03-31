@@ -53,7 +53,7 @@ public class StructureViewBuilderFactory implements ProjectComponent {
           for (EditorTabDescriptor tab : tabs) {
             SNode lastBaseNode = myLastBaseNode.getNode();
             if (!tab.isApplicable(lastBaseNode)) continue;
-            if (!tab.getNodes(lastBaseNode).contains(node)) continue;
+            if (!isAspect(node, tab, lastBaseNode)) continue;
             return new NodeStructureViewBuilder(myProject, myLastBaseNode);
           }
         }
@@ -62,6 +62,15 @@ public class StructureViewBuilderFactory implements ProjectComponent {
         return null;
       }
     });
+  }
+
+  private boolean isAspect(SNode node, EditorTabDescriptor tab, SNode lastBaseNode) {
+    for (SNode aspect:tab.getNodes(lastBaseNode)){
+      if (aspect.getContainingRoot().equals(node)){
+        return true;
+      }
+    }
+    return false;
   }
 
   public void projectOpened() {
