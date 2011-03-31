@@ -45,20 +45,6 @@ class AspectSorter implements Sorter {
   }
 
   private static class EditorTabComparator implements Comparator{
-    public int compare(EditorTab o1, EditorTab o2) {
-      EditorTabDescriptor d1 = o1.getDescriptor();
-      EditorTabDescriptor d2 = o2.getDescriptor();
-
-      int r1 = d1.compareTo(d2);
-      int r2 = d2.compareTo(d1);
-
-      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
-
-      assert r1 * r2 <= 0 : "can't determine order";
-
-      return r1;
-    }
-
     public int compare(Object o1, Object o2) {
       if (!(o1 instanceof AspectGroup)) return 0;
       if (!(o2 instanceof AspectGroup)) return 0;
