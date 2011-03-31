@@ -41,7 +41,7 @@ class MainNodeTreeElement extends NodeTreeElement {
         SNode node = myNode.getNode();
         for (EditorTabDescriptor tab : StructureUtil.getApplicableTabs(myProject, node)) {
           for (SNode aspectNode : tab.getNodes(node)) {
-            result.add(new AspectTreeElement(new SNodePointer(aspectNode)));
+            result.add(new AspectTreeElement(new SNodePointer(aspectNode), tab));
           }
         }
       }

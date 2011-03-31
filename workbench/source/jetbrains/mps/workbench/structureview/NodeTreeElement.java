@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;

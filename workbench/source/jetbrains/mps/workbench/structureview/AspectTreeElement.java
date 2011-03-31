@@ -16,12 +16,20 @@
 package jetbrains.mps.workbench.structureview;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 class AspectTreeElement extends NodeTreeElement {
-  public AspectTreeElement(SNodePointer node) {
+  protected EditorTabDescriptor myAspectDescriptor;
+
+  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor) {
     super(node);
+    myAspectDescriptor = aspectDescriptor;
+  }
+
+  public EditorTabDescriptor getAspectDescriptor() {
+    return myAspectDescriptor;
   }
 
   public TreeElement[] getChildren() {
