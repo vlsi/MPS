@@ -20,6 +20,7 @@ import com.intellij.ide.util.treeView.smartTree.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.structureview.adds.AspectGrouper;
+import jetbrains.mps.workbench.structureview.adds.AspectNodeSorter;
 import jetbrains.mps.workbench.structureview.adds.AspectSorter;
 import jetbrains.mps.workbench.structureview.nodes.MainNodeTreeElement;
 import org.jetbrains.annotations.NotNull;
@@ -78,7 +79,7 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
 
       @NotNull
       public Sorter[] getSorters() {
-        return new Sorter[]{new AspectSorter()};
+        return new Sorter[]{new AspectSorter(), new AspectNodeSorter()};
       }
 
       @NotNull
