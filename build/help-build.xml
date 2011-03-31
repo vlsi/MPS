@@ -25,8 +25,7 @@
     <zip destfile="${output.dir}/MPS-${build.number}-src.zip" filesonly="true">
       <zipfileset dir="${basedir}" prefix="MPS">
         <exclude name="${deploy.dir}/**" />
-        <exclude name="lib/sources/idea-platform-src.zip" />
-        <exclude name="lib/sources/idea-external-src.zip" />
+        <exclude name="classes/**" />
         <exclude name="**/*.class" />
         <exclude name="**/*.bdp" />
         <exclude name="**/*.pvk" />
@@ -37,6 +36,8 @@
         <exclude name="**/*.hprof" />
         <exclude name="integrationBuild*" />
         <exclude name=".git/**" />
+        <exclude name=".idea/workspace.xml" />
+        <exclude name="**/.idea/workspace.xml" />
       </zipfileset>
     </zip>
     <delete dir="${tmpdir}" />
