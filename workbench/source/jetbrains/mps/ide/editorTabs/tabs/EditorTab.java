@@ -68,16 +68,22 @@ public class EditorTab {
       SNode root = node.getContainingRoot();
       if (added.contains(root)) continue;
       added.add(root);
-      result.add(new NavigateNodeAction(node));
+      result.add(new NavigateNodeAction(node, getActionName(node)));
     }
     return result;
+  }
+
+  private String getActionName(SNode node) {
+    String rootName = node.getContainingRoot().getName();
+    rootName = rootName.replaceFirst("_", "__");
+    return rootName != null ? rootName : "<no name>";
   }
 
   private class NavigateNodeAction extends AnAction {
     private final SNode myNode;
 
-    public NavigateNodeAction(SNode node) {
-      super(node.getContainingRoot().getName() != null ? node.getContainingRoot().getName() : "<no name>", "", IconManager.getIconFor(node.getContainingRoot()));
+    public NavigateNodeAction(SNode node, String name) {
+      super(name, "", IconManager.getIconFor(node.getContainingRoot()));
       myNode = node;
     }
 
