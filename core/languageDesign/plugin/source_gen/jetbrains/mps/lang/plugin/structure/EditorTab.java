@@ -22,6 +22,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMAND_ON_CREATE = "commandOnCreate";
   public static final String BASE_NODE_CONCEPT = "baseNodeConcept";
+  public static final String ICON = "icon";
   public static final String ORDER = "order";
   public static final String LISTEN_BLOCK = "listenBlock";
   public static final String BASE_NODE_BLOCK = "baseNodeBlock";
@@ -89,6 +90,14 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
 
   public void setBaseNodeConcept(AbstractConceptDeclaration node) {
     super.setReferent(EditorTab.BASE_NODE_CONCEPT, node);
+  }
+
+  public IconResource getIcon() {
+    return (IconResource) this.getChild(IconResource.class, EditorTab.ICON);
+  }
+
+  public void setIcon(IconResource node) {
+    super.setChild(EditorTab.ICON, node);
   }
 
   public OrderConstraints getOrder() {

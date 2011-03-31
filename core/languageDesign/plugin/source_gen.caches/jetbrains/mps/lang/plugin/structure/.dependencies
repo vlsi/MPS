@@ -943,6 +943,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ListenBlock" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconResource" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.NewCreateBlock" />
