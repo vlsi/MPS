@@ -4,9 +4,9 @@
   <unitInfo fileName="ThisNodeExpression_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ThisNodeExpression_Constraints" />
   <unitInfo fileName="LocalBehaviorMethodCall_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints" />
   <unitInfo fileName="ConceptBehavior_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_Constraints" />
-  <unitInfo fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_declaration_ReferentConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint" />
+  <unitInfo fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_declaration_ReferentConstraint" />
   <unitInfo fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_superConcept_ReferentConstraint" />
   <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
   <root nodeId="1225194245328">
@@ -116,11 +116,20 @@
   </root>
   <root nodeId="6496299201655529040">
     <nodeInfo nodeId="6496299201655590933" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6496299201655590262" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6496299201655529138" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="29" startPosition="192" endLine="30" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448822002454417524" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4448822002454416250" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="29" startPosition="162" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4448822002454452529" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="31" startPosition="124" endLine="32" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4448822002454452552" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="32" startPosition="194" endLine="33" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448822002454452549" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="34" startPosition="12" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448822002454452545" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="34" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4448822002454417542" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="30" startPosition="0" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="6496299201655590932" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="143" />
-    <scopeInfo nodeId="6496299201655529043" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="30" endPosition="131">
-      <varInfo nodeId="6496299201655590263" varName="concept" />
+    <scopeInfo nodeId="4448822002454452546" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="34" startPosition="12" endLine="35" endPosition="18" />
+    <scopeInfo nodeId="4448822002454417543" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="31" startPosition="124" endLine="33" endPosition="133">
+      <varInfo nodeId="4448822002454452530" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="6496299201655529043" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="36" endPosition="5">
+      <varInfo nodeId="4448822002454417525" varName="methodDeclaration" />
     </scopeInfo>
   </root>
 </debugInfo>

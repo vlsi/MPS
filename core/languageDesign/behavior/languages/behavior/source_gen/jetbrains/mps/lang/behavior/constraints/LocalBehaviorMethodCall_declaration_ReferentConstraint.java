@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -26,8 +26,14 @@ public class LocalBehaviorMethodCall_declaration_ReferentConstraint extends Base
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
-    return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode());
+    SNode methodDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
+
+    if (SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
+      SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
+      return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode());
+    } else {
+      return null;
+    }
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
