@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -50,11 +51,18 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
               }
             }
 
-            RefreshSession session = RefreshQueue.getInstance().createSession(true, false, null);
+            RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
               SModelDescriptor descriptor = model.getModelDescriptor();
               if (descriptor instanceof EditableSModelDescriptor) {
-                session.addFile(VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) descriptor).getModelFile()));
+                IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
+                if (modelFile != null) {
+                  IFile fileToRefresh = modelFile;
+                  while (!(fileToRefresh.exists())) {
+                    fileToRefresh = fileToRefresh.getParent();
+                  }
+                  session.addFile(VirtualFileUtils.getVirtualFile(modelFile));
+                }
               }
             }
             session.launch();

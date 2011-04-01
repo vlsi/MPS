@@ -314,7 +314,6 @@ public class SModelRepository implements ApplicationComponent {
       for (EditableSModelDescriptor emd : getModelsToSave()) {
         try {
           emd.save();
-          emd.setChanged(false);
         } catch (Throwable t) {
           LOG.error(t);
         }

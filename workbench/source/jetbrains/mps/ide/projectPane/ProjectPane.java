@@ -292,13 +292,23 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   //----select next queries----
 
   public void selectNextModel(SModelDescriptor modelDescriptor) {
-    MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
-    getTree().selectNode(mpsTreeNode);
+    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
+      public void run() {
+        getTree().selectNode(mpsTreeNode);
+      }
+    });
   }
 
   public void selectNextNode(SNode node) {
-    MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(node);
-    getTree().selectNode(mpsTreeNode);
+    final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(node);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
+      public void run() {
+        getTree().selectNode(mpsTreeNode);
+      }
+    });
   }
 
   //----selection queries----

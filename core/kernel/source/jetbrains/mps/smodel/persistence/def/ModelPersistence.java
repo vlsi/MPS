@@ -291,7 +291,8 @@ public class ModelPersistence {
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
     if (version == -1) {
-      sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
+      version = getCurrentPersistenceVersion();
+      sourceModel.setPersistenceVersion(version);
     }
 
     sourceModel.calculateImplicitImports();

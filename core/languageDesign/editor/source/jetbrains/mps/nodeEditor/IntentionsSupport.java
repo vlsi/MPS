@@ -175,7 +175,7 @@ public class IntentionsSupport {
   }
 
   private boolean isInconsistentEditor() {
-    return myEditor.isDisposed() || !myEditor.hasValidSelectedNode();
+    return myEditor.isDisposed() || myEditor.getEditedNode().isDisposed() || !myEditor.hasValidSelectedNode();
   }
 
   private void adjustLightBulbLocation() {

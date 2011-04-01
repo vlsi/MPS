@@ -63,9 +63,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 
   private void fileDeleted(String path, ReloadSession reloadSession) {
     IFile ifile = FileSystem.getInstance().getFileByPath(path);
-    final SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
+    final EditableSModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model != null) {
-      reloadSession.addDeletedModelFilePath(path);
+      reloadSession.addDeletedModel(model);
     }
   }
 
