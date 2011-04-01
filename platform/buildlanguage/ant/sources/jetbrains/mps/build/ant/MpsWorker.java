@@ -167,7 +167,7 @@ public abstract class MpsWorker {
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
-      configureMPS();
+      configureMPS("jetbrains.mps.vcs");
     }
     catch (Exception ex) {
       throw new RuntimeException(ex);
