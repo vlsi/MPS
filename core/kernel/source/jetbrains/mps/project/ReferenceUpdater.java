@@ -48,7 +48,7 @@ public class ReferenceUpdater {
     ModelAccess.assertLegalWrite();
 
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      AbstractModule module = (AbstractModule) m;
+      final AbstractModule module = (AbstractModule) m;
 
       boolean needSaving = false;
 
@@ -61,7 +61,12 @@ public class ReferenceUpdater {
       }
 
       if (needSaving && !module.isPackaged()) {
-        module.save();
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            module.save();
+          }
+        });
       }
     }
   }
