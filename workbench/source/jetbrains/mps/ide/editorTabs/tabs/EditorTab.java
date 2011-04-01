@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabs;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -46,8 +47,8 @@ public class EditorTab {
     return myDescriptor;
   }
 
-  public AnAction getAction(JComponent shortcutComponent) {
-    AnAction action = new SelectTabAction();
+  public ToggleAction getAction(JComponent shortcutComponent) {
+    ToggleAction action = new SelectTabAction();
 
     if (myDescriptor.getShortcutChar() != null) {
       KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
@@ -96,7 +97,7 @@ public class EditorTab {
     }
   }
 
-  private class SelectTabAction extends AnAction {
+  private class SelectTabAction extends ToggleAction {
     public SelectTabAction() {
       super(myDescriptor.getTitle(), "", myDescriptor.getIcon());
     }
@@ -105,7 +106,16 @@ public class EditorTab {
       return true;
     }
 
-    public void actionPerformed(final AnActionEvent e) {
+    public boolean isSelected(AnActionEvent e) {
+      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return myTabComponent.isCurrent(EditorTab.this);
+        }
+      });
+    }
+
+    public void setSelected(AnActionEvent e, boolean state) {
+      if (!state) return;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());

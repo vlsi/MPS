@@ -169,10 +169,11 @@ public abstract class TabsComponent extends JPanel {
     }
   }
 
-  private boolean isCurrent(EditorTab tab) {
+  public boolean isCurrent(EditorTab tab) {
     boolean current = false;
-    for (SNode aspect: tab.getDescriptor().getNodes(myBaseNode.getNode())){
-      if (aspect.getContainingRoot().equals(myLastNode.getNode())){
+    for (SNode aspect : tab.getDescriptor().getNodes(myBaseNode.getNode())) {
+      if (myLastNode == null) continue;
+      if (aspect.getContainingRoot().equals(myLastNode.getNode())) {
         current = true;
         break;
       }
