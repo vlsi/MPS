@@ -18,14 +18,18 @@ public class ConceptRegistry implements ApplicationComponent {
   private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
   private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
 
+  private static final DescriptorProvider<ConstraintsDescriptor> INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
+
   private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
     INTERPRETED_STRUCTURE,
-    INTERPRETED_BEHAVIOR
+    INTERPRETED_BEHAVIOR,
+    INTERPRETED_CONSTRAINTS
   );
 
   private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
     INTERPRETED_STRUCTURE,
-    MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR)
+    MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR),
+    INTERPRETED_CONSTRAINTS
   );
 
   private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR;

@@ -81,4 +81,10 @@ public class NullNodeConceptDescriptor extends ConceptDescriptor {
   public BehaviorDescriptor behavior() {
     return behavior;
   }
+
+  @Override
+  public ConstraintsDescriptor constraints() {
+    // todo: ?
+    return null;
+  }
 }
