@@ -26,7 +26,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="44uo" modelUID="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.remote)" version="-1" implicit="yes" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
-  <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.run.commands.structure)" version="-1" implicit="yes" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.run.settings.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="7806358006983489356">
@@ -43,6 +42,7 @@
       <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
       <property name="configurationName" nameId="uhxm.7806358006983709801" value="myRunConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="7806358006983511602" resolveInfo="RemoteNew" />
+      <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="7806358006983511602" resolveInfo="Remote" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3038368628266736631">
       <property name="name" nameId="tpck.1169194664001" value="RemoteProcessHandler" />
@@ -903,8 +903,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="rzqf.StartProcessHandlerStatement" typeId="rzqf.856705193941281759" id="4762811064051417353">
-          <node role="process" roleId="rzqf.856705193941281760" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4762811064051417752">
+        <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.946964771156870353" id="4762811064051417353">
+          <node role="process" roleId="uhxm.946964771156870354" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4762811064051417752">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8261999457268953467" resolveInfo="handler" />
           </node>
         </node>

@@ -5,12 +5,13 @@
   <unitInfo fileName="DebuggerSettings_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.DebuggerSettings_Parameter" />
   <unitInfo fileName="Project_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.Project_Parameter" />
   <unitInfo fileName="GetDebuggerSettings_Function.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.GetDebuggerSettings_Function" />
+  <unitInfo fileName="StartProcessHandlerStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartProcessHandlerStatement" />
   <unitInfo fileName="IconPath.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.IconPath" />
   <unitInfo fileName="ComplexRunConfigurationExecutor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor" />
   <unitInfo fileName="RunConfiguration.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
   <unitInfo fileName="ExecuteConfiguration_Function.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ExecuteConfiguration_Function" />
   <unitInfo fileName="ConfigurationFromExecutorReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ConfigurationFromExecutorReference" />
   <unitInfo fileName="RunConfigurationKind.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurationKind" />
-  <unitInfo fileName="RunConfigurationExecutor.java" startLine="17" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor" />
+  <unitInfo fileName="RunConfigurationExecutor.java" startLine="19" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor" />
 </debugInfo>
 

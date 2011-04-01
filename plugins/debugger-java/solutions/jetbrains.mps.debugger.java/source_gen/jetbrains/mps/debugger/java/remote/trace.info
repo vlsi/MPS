@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Remote_Configuration.java" startLine="101" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration$MyState" />
   <unitInfo fileName="Remote_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Factory" />
-  <unitInfo fileName="RunConfigurationsInitializer_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomProjectPlugin" />
+  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="Remote_Configuration_Editor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Editor" />
   <unitInfo fileName="Remote_Kind.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Kind" />
   <unitInfo fileName="Remote_Configuration_RunProfileState.java" startLine="28" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState" />

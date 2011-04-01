@@ -33,7 +33,7 @@ public class CommandDeclaration_Behavior {
   }
 
   @NonNls
-  public static String virtual_getSuffix_856705193941282328(SNode thisNode) {
+  public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return "Command";
   }
 
@@ -54,7 +54,7 @@ public class CommandDeclaration_Behavior {
   }
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.run.commands.structure.CommandDeclaration"), "virtual_getSuffix_856705193941282328", PARAMETERS_856705193941282112);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.run.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
   }
 
   public static SNode call_createType_856705193941282121(SNode thisNode) {
@@ -74,7 +74,7 @@ public class CommandDeclaration_Behavior {
   }
 
   public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.run.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_856705193941282328", PARAMETERS_856705193941282112);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.run.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
   }
 
   public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {

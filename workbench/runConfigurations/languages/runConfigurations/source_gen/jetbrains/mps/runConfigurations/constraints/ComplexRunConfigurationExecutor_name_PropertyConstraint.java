@@ -23,8 +23,8 @@ public class ComplexRunConfigurationExecutor_name_PropertyConstraint implements 
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    if (SLinkOperations.getTarget(node, "runConfiguration", false) != null) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(node, "runConfiguration", false), "name") + " Executor";
+    if (SLinkOperations.getTarget(node, "configuration", false) != null) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, "configuration", false), "name") + " Executor";
     }
     return null;
   }

@@ -4,8 +4,10 @@ package jetbrains.mps.runConfigurations.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.run.commands.structure.IGeneratedToClass;
+import jetbrains.mps.run.common.structure.IGeneratedToClass;
+import jetbrains.mps.run.settings.structure.PersistentConfigurationAssistent;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.run.settings.structure.PersistentConfiguration;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
@@ -14,14 +16,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RunConfigurationExecutor extends BaseConcept implements INamedConcept, IGeneratedToClass {
+public class RunConfigurationExecutor extends BaseConcept implements INamedConcept, IGeneratedToClass, PersistentConfigurationAssistent {
   public static final String concept = "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CAN_RUN = "canRun";
-  public static final String RUN_CONFIGURATION = "runConfiguration";
+  public static final String CONFIGURATION = "configuration";
   public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
   public static final String _$ATTRIBUTE = "_$attribute";
@@ -70,12 +72,20 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
     this.setBooleanProperty(RunConfigurationExecutor.CAN_RUN, value);
   }
 
+  public PersistentConfiguration getConfiguration() {
+    return (PersistentConfiguration) this.getReferent(PersistentConfiguration.class, RunConfigurationExecutor.CONFIGURATION);
+  }
+
+  public void setConfiguration(PersistentConfiguration node) {
+    super.setReferent(RunConfigurationExecutor.CONFIGURATION, node);
+  }
+
   public RunConfiguration getRunConfiguration() {
-    return (RunConfiguration) this.getReferent(RunConfiguration.class, RunConfigurationExecutor.RUN_CONFIGURATION);
+    return this.ensureAdapter(RunConfiguration.class, "configuration", this.getConfiguration());
   }
 
   public void setRunConfiguration(RunConfiguration node) {
-    super.setReferent(RunConfigurationExecutor.RUN_CONFIGURATION, node);
+    this.setConfiguration(node);
   }
 
   public Expression getDebugger() {

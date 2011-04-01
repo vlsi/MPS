@@ -12,10 +12,6 @@
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
-    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282476">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281759" resolveInfo="StartProcessHandlerStatement" />
-    </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="856705193941282484">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281780" resolveInfo="CommandBuilderExpression" />
@@ -29,21 +25,6 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.856705193941281807" resolveInfo="ProcessBuilderPart" />
     </node>
   </roots>
-  <root id="856705193941282476">
-    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="856705193941282477">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="856705193941282478">
-        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="856705193941282479">
-          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="856705193941282480">
-            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="856705193941282481" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="856705193941282482">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.856705193941281760" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitRetStatement" typeId="tp41.1206462858103" id="856705193941282483" />
-      </node>
-    </node>
-  </root>
   <root id="856705193941282484">
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="856705193941282485">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="856705193941282486">

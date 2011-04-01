@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.run.commands.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.run.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,7 +36,7 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static String call_getTypeFqName_946964771156066903(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
-    return IGeneratedToClass_Behavior.call_getFullName_856705193941282348(template);
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(template);
   }
 
   public static String call_getTypeEditorFqName_946964771156066917(SNode thisNode) {

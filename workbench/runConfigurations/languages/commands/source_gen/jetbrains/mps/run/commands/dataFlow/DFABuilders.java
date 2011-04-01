@@ -10,6 +10,5 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.run.commands.structure.CommandBuilderExpression", new CommandBuilderExpression_DataFlow());
     manager.register("jetbrains.mps.run.commands.structure.ProcessBuilderExpression", new ProcessBuilderExpression_DataFlow());
     manager.register("jetbrains.mps.run.commands.structure.ProcessBuilderPart", new ProcessBuilderPart_DataFlow());
-    manager.register("jetbrains.mps.run.commands.structure.StartProcessHandlerStatement", new StartProcessHandlerStatement_DataFlow());
   }
 }

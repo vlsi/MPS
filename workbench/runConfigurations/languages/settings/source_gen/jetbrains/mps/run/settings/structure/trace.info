@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PersistentConfigurationAssistent.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfigurationAssistent" />
   <unitInfo fileName="Settings_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.run.settings.structure.Settings_Language" />
   <unitInfo fileName="IPersistentPropertyHolder.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.run.settings.structure.IPersistentPropertyHolder" />
-  <unitInfo fileName="ResetFrom_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.ResetFrom_Function" />
-  <unitInfo fileName="ApplyTo_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.ApplyTo_Function" />
-  <unitInfo fileName="Dispose_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.Dispose_Function" />
   <unitInfo fileName="CreateEditor_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.CreateEditor_Function" />
-  <unitInfo fileName="Configuration_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.Configuration_Parameter" />
-  <unitInfo fileName="EditorPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorPropertyDeclaration" />
-  <unitInfo fileName="EditorOperationDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorOperationDeclaration" />
-  <unitInfo fileName="TemplateParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.TemplateParameter" />
-  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentPropertyDeclaration" />
+  <unitInfo fileName="Dispose_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.Dispose_Function" />
+  <unitInfo fileName="ApplyTo_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.ApplyTo_Function" />
+  <unitInfo fileName="ResetFrom_Function.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.run.settings.structure.ResetFrom_Function" />
   <unitInfo fileName="PersistentConfigurationMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfigurationMethod" />
-  <unitInfo fileName="EditorPropertyReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorPropertyReference" />
+  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentPropertyDeclaration" />
+  <unitInfo fileName="TemplateParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.TemplateParameter" />
+  <unitInfo fileName="EditorOperationDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorOperationDeclaration" />
+  <unitInfo fileName="EditorPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorPropertyDeclaration" />
+  <unitInfo fileName="Configuration_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.run.settings.structure.Configuration_Parameter" />
   <unitInfo fileName="TemplateParameterReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.run.settings.structure.TemplateParameterReference" />
-  <unitInfo fileName="SettingsEditorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.SettingsEditorType" />
-  <unitInfo fileName="EditorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorExpression" />
-  <unitInfo fileName="TemplatePersistentPropertyType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType" />
+  <unitInfo fileName="EditorPropertyReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorPropertyReference" />
   <unitInfo fileName="PersistentConfigurationType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfigurationType" />
+  <unitInfo fileName="TemplatePersistentPropertyType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType" />
+  <unitInfo fileName="EditorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorExpression" />
+  <unitInfo fileName="SettingsEditorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.structure.SettingsEditorType" />
   <unitInfo fileName="ReportConfigurationErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.run.settings.structure.ReportConfigurationErrorStatement" />
   <unitInfo fileName="PersistentConfigurationTemplate.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfigurationTemplate" />
   <unitInfo fileName="PersistentConfigurationTemplateInitializer.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfigurationTemplateInitializer" />
   <unitInfo fileName="SettingsEditor.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.run.settings.structure.SettingsEditor" />
-  <unitInfo fileName="CheckProperties_Function.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.run.settings.structure.CheckProperties_Function" />
   <unitInfo fileName="PersistentPropertyReferenceOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentPropertyReferenceOperation" />
+  <unitInfo fileName="CheckProperties_Function.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.run.settings.structure.CheckProperties_Function" />
   <unitInfo fileName="CheckCallOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.run.settings.structure.CheckCallOperation" />
   <unitInfo fileName="EditorOperation.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.run.settings.structure.EditorOperation" />
   <unitInfo fileName="PersistentConfiguration.java" startLine="17" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.run.settings.structure.PersistentConfiguration" />

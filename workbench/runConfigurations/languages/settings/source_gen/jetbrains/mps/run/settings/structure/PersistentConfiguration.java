@@ -5,7 +5,7 @@ package jetbrains.mps.run.settings.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
-import jetbrains.mps.run.commands.structure.IGeneratedToClass;
+import jetbrains.mps.run.common.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;

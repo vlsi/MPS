@@ -25,13 +25,13 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = startProcessHandlerStatement;
       BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4762811064051535611", 0, intentionProvider);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4762811064051535608", true), (SNode) new typeof_StartProcessHandlerStatement_InferenceRule.QuotationClass_psezx7_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "946964771156870372", 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "946964771156870375", true), (SNode) new typeof_StartProcessHandlerStatement_InferenceRule.QuotationClass_psezx7_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.run.commands.structure.StartProcessHandlerStatement";
+    return "jetbrains.mps.runConfigurations.structure.StartProcessHandlerStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -66,7 +66,7 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(MPS.Classpath/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;
@@ -91,7 +91,7 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(MPS.Classpath/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;

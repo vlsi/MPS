@@ -10,21 +10,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class RunConfigurations_StyleSheet {
-  public static Style getLessThen(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
-    return style;
-  }
-
-  public static Style getGreaterThen(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
-    return style;
-  }
-
   public static Style getOperation(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

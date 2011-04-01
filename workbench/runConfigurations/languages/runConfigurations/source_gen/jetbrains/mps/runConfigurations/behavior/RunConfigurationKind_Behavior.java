@@ -4,25 +4,13 @@ package jetbrains.mps.runConfigurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RunConfigurationKind_Behavior {
-  private static Class[] PARAMETERS_2309921853483609840 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
   @NonNls
-  public static String virtual_getSuffix_856705193941282328(SNode thisNode) {
+  public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return "Kind";
-  }
-
-  public static String call_getSuffix_2309921853483609840(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483609840);
-  }
-
-  public static String callSuper_getSuffix_2309921853483609840(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.RunConfigurationKind"), callerConceptFqName, "virtual_getSuffix_856705193941282328", PARAMETERS_2309921853483609840);
   }
 }

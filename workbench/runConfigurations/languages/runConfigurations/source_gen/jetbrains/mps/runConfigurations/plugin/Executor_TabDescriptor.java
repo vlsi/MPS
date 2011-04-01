@@ -27,7 +27,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getBaseNode(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor"), "runConfiguration", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor"), "configuration", false);
     }
     return node;
   }
@@ -50,7 +50,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "runConfiguration", false) == nodeFinal;
+        return SLinkOperations.getTarget(it, "configuration", false) == nodeFinal;
       }
     });
   }
@@ -61,7 +61,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     SNode executor = SConceptOperations.createNewNode("jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor", null);
-    SLinkOperations.setTarget(executor, "runConfiguration", node, false);
+    SLinkOperations.setTarget(executor, "configuration", node, false);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;
   }

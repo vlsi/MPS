@@ -123,13 +123,13 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomProjectPlugin" file="RunConfigurationsInitializer_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+  <dependency className="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.Remote_Kind" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
 

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.run.commands.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.run.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.run.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.run.commands.behavior.CommandParameterDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -51,7 +51,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_865001690840232874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode command = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.run.commands.structure.CommandType"), true), "classifier", false);
-    return IGeneratedToClass_Behavior.call_getFullName_856705193941282348(command);
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(command);
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840232894(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -87,7 +87,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratedToClass_Behavior.call_getGeneratedClassName_856705193941282333(_context.getNode());
+    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233227(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -96,7 +96,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_865001690840233239(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode commandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.run.commands.structure.CommandType"), true);
-    return IGeneratedToClass_Behavior.call_getFullName_856705193941282348(SLinkOperations.getTarget(commandType, "classifier", false));
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(commandType, "classifier", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233281(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -336,7 +336,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_865001690840233348(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a46().createNode(IGeneratedToClass_Behavior.call_getFullName_856705193941282348(SLinkOperations.getTarget(_context.getNode(), "command", false)));
+    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a46().createNode(IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "command", false)));
     for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(CommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SLinkOperations.getTarget(it, "parameterDeclaration", false)));
