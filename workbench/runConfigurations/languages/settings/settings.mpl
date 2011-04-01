@@ -52,9 +52,6 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
-  <runtime>
-    <dependency reexport="false">36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.runConfigurations.runtime)</dependency>
-  </runtime>
   <extendedLanguages />
 </language>
 
