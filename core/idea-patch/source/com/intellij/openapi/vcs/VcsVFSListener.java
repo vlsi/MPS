@@ -22,12 +22,16 @@ import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectFileIndex;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import com.intellij.vcsUtil.VcsUtil;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -81,8 +85,11 @@ public abstract class VcsVFSListener implements Disposable {
   public void dispose() {
   }
 
+  @Patch
   protected boolean isEventIgnored(final VirtualFileEvent event) {
-    return event.isFromRefresh() || ProjectLevelVcsManager.getInstance(myProject).getVcsFor(event.getFile()) != myVcs;
+    // MPS Patch: Added condition for ignoring excluded directories (IDEA-67402)
+    return event.isFromRefresh() || ProjectLevelVcsManager.getInstance(myProject).getVcsFor(event.getFile()) != myVcs
+      || ProjectRootManager.getInstance(myProject).getFileIndex().isIgnored(event.getFile());
   }
 
   protected void executeAdd() {
