@@ -50,6 +50,20 @@
   <component name="ProjectDetails">
     <option name="projectName" value="BuildLanguage" />
   </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="mps.testbench">
+          <value>
+            <Library>
+              <option name="name" value="mps.testbench" />
+              <option name="path" value="${mps_home}/testbench" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

@@ -11,39 +11,27 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import org.apache.tools.ant.BuildException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationListener;
-import java.util.List;
-import jetbrains.mps.generator.GenerationAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import java.io.IOException;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import java.util.Map;
-import java.util.LinkedHashMap;
-import java.util.Set;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import java.util.ArrayList;
-import java.io.File;
-import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.generator.GenerationOptions;
-import java.util.Collections;
+import jetbrains.mps.make.resources.IResource;
+import com.intellij.ide.IdeEventQueue;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.GeneratorManager;
+import java.io.File;
+import jetbrains.mps.messages.IMessageHandler;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
-import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.make.dependencies.graph.IVertex;
 
 public class GeneratorWorker extends MpsWorker {
-  protected final GeneratorWorker.MyMessageHandler myMessageHandler = new GeneratorWorker.MyMessageHandler();
+  private final GeneratorWorker.MyMessageHandler myMessageHandler = new GeneratorWorker.MyMessageHandler();
 
   public GeneratorWorker(WhatToDo whatToDo) {
     super(whatToDo);
@@ -101,96 +89,47 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    final GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
-    final GenerationListener generationListener = getGenerationListener();
-    gm.addGenerationListener(generationListener);
-    List<GeneratorWorker.Cycle> order = computeGenerationOrder(project, go);
-    for (final GeneratorWorker.Cycle cycle : order) {
-      generateModulesCycle(gm, cycle);
-    }
-    gm.removeGenerationListener(generationListener);
-  }
-
-  protected GenerationListener getGenerationListener() {
-    return new GenerationAdapter();
-  }
-
-  protected void generateModulesCycle(final GeneratorManager gm, final GeneratorWorker.Cycle cycle) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    final ProjectOperationContext ctx = ProjectOperationContext.get(project.getProject());
+    final Iterable<IResource> resources = collectResources(ctx, go);
+    IdeEventQueue.getInstance().flushQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        info("Start " + cycle);
-        cycle.generate(gm, new JavaGenerationHandler() {
-          @Override
-          public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
-            if (requiresCompilationAfterGeneration()) {
-              return super.estimateCompilationMillis(input);
-            }
-            return ModelsProgressUtil.estimateReloadAllTimeMillis();
-          }
-
-          @Override
-          protected boolean compileModuleInMPS(IModule module, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
-            return !(requiresCompilationAfterGeneration()) || super.compileModuleInMPS(module, progressHelper);
-          }
-
-          private boolean requiresCompilationAfterGeneration() {
-            return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
-          }
-        }, myMessageHandler);
-        info("Reloading classes...");
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-        info("Finished " + cycle);
+      }
+    });
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        new BuildMakeService(ctx, myMessageHandler).make(resources);
+      }
+    });
+    IdeEventQueue.getInstance().flushQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
       }
     });
   }
 
-  protected List<GeneratorWorker.Cycle> computeGenerationOrder(MPSProject project, MpsWorker.ObjectsToProcess go) {
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
-    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
-    List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
-      public List<Set<IModule>> compute() {
-        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new StronglyConnectedModules.IModuleDecoratorBuilder<IModule, StronglyConnectedModules.IModuleDecorator<IModule>>() {
-          public StronglyConnectedModules.IModuleDecorator<IModule> decorate(IModule module) {
-            return new GeneratorWorker.ModuleDecorator(module);
+  private Iterable<IResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+    final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (MPSProject p : go.getProjects()) {
+          for (IModule mod : p.getModules()) {
+            models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
           }
-        });
+        }
+        for (IModule mod : go.getModules()) {
+          models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
+        }
+        if (go.getModels() != null) {
+          models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
+        }
       }
     });
-    List<GeneratorWorker.Cycle> cycles = new ArrayList<GeneratorWorker.Cycle>();
-    for (Set<IModule> modulesSet : modulesOrder) {
-      GeneratorWorker.SimpleModuleCycle cycle = new GeneratorWorker.SimpleModuleCycle(project, modulesSet, moduleToModels);
-      cycles.add(cycle);
-    }
-    return cycles;
-  }
-
-  protected void extractModels(Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models, Map<IModule, List<SModelDescriptor>> moduleToModels) {
-    for (MPSProject mpsProject : projects) {
-      extractModels(models, mpsProject);
-    }
-    for (IModule m : modules) {
-      List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
-      moduleToModels.put(m, modelsList);
-      extractModels(modelsList, m);
-    }
-    for (final SModelDescriptor model : models) {
-      assert model != null;
-      IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-        public IModule compute() {
-          return model.getModule();
-        }
-      });
-      if (owningModule == null) {
-        warning("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
-      } else {
-        List<SModelDescriptor> modelsList = moduleToModels.get(owningModule);
-        if (modelsList == null) {
-          modelsList = new ArrayList<SModelDescriptor>();
-          moduleToModels.put(owningModule, modelsList);
-        }
-        modelsList.add(model);
+    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor smd) {
+        return !(GeneratorManager.isDoNotGenerate(smd));
       }
-    }
+    })).resources(false);
   }
 
   public static void main(String[] args) {
@@ -198,45 +137,7 @@ public class GeneratorWorker extends MpsWorker {
     mpsWorker.workFromMain();
   }
 
-  protected static interface Cycle {
-    public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler);
-    public List<File> getClassPath();
-  }
-
-  protected static class SimpleModuleCycle implements GeneratorWorker.Cycle {
-    private final Set<IModule> myModules;
-    private final MPSProject myProject;
-    private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
-
-    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
-      myModules = modules;
-      myProject = project;
-      myModuleToModels = moduleToModels;
-    }
-
-    public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
-      for (IModule module : myModules) {
-        List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
-        for (SModelDescriptor model : modelsToGenerateNow) {
-          inputModels.add(model);
-        }
-      }
-      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, GenerationOptions.getDefaults().create());
-    }
-
-    @Override
-    public List<File> getClassPath() {
-      return Collections.emptyList();
-    }
-
-    @Override
-    public String toString() {
-      return "generate " + myModules.toString();
-    }
-  }
-
-  /*package*/ class MyMessageHandler implements IMessageHandler {
+  private class MyMessageHandler implements IMessageHandler {
     private final List<String> myGenerationErrors = new ArrayList<String>();
     private final List<String> myGenerationWarnings = new ArrayList<String>();
 
@@ -278,46 +179,6 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void clear() {
-    }
-  }
-
-  private static class ModuleDecorator implements StronglyConnectedModules.IModuleDecorator<IModule> {
-    private final IModule myModule;
-    private final Set<GeneratorWorker.ModuleDecorator> myNext = new HashSet<GeneratorWorker.ModuleDecorator>();
-
-    public ModuleDecorator(IModule module) {
-      myModule = module;
-    }
-
-    public IModule getModule() {
-      return myModule;
-    }
-
-    public void fill(Map<IModule, StronglyConnectedModules.IModuleDecorator<IModule>> map) {
-      for (IModule m : new ArrayList<IModule>(myModule.getDependenciesManager().getDependOnModules())) {
-        GeneratorWorker.ModuleDecorator next = (GeneratorWorker.ModuleDecorator) map.get(m);
-        if (next != null) {
-          myNext.add(next);
-        }
-      }
-      if (myModule instanceof Language) {
-        Language language = (Language) myModule;
-        for (Generator gen : language.getGenerators()) {
-          GeneratorWorker.ModuleDecorator generatorDecorator = (GeneratorWorker.ModuleDecorator) map.get(gen);
-          if (generatorDecorator != null) {
-            generatorDecorator.myNext.add(this);
-            myNext.add(generatorDecorator);
-          }
-        }
-      }
-    }
-
-    public Set<? extends IVertex> getNexts() {
-      return Collections.unmodifiableSet(myNext);
-    }
-
-    public int compareTo(StronglyConnectedModules.IModuleDecorator<IModule> o) {
-      return myModule.getModuleFqName().compareTo(o.getModule().getModuleFqName());
     }
   }
 }
