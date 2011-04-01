@@ -12,13 +12,13 @@ import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.oldchanges.ChangeType;
@@ -78,7 +78,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            final SModel model = check_7ugudc_a0a0a1a0a0f0a(editorComponent.getEditedNode());
+            SNode editedNode = editorComponent.getEditedNode();
+            if (editedNode == null || editedNode.isDisposed()) {
+              return;
+            }
+            final SModel model = editedNode.getModel();
             if (model != null && model.getModelDescriptor() != null) {
               myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
               myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
@@ -312,13 +316,6 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     } else {
       return false;
     }
-  }
-
-  private static SModel check_7ugudc_a0a0a1a0a0f0a(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
-    }
-    return null;
   }
 
   private static NodeHighlightManager check_7ugudc_a0a41(EditorComponent checkedDotOperand) {
