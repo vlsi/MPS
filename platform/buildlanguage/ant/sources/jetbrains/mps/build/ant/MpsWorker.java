@@ -111,6 +111,7 @@ public abstract class MpsWorker {
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
+    reload();
 
     executeTask(project, go);
 
