@@ -98,6 +98,11 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runWriteAction_(Runnable r) {
+    runWriteAction(r);
+  }
+
+  @Override
   public void runWriteAction(final Runnable r) {
     if (canWrite()) {
       r.run();
