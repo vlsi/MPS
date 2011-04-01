@@ -18,8 +18,11 @@ package jetbrains.mps.workbench.structureview.adds;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
 import org.jetbrains.annotations.NotNull;
 
@@ -44,15 +47,17 @@ public class AspectNodeSorter implements Sorter {
     return "AspectNodesSorter";
   }
 
-  private static class EditorTabComparator implements Comparator{
+  private static class EditorTabComparator implements Comparator {
     public int compare(Object o1, Object o2) {
       if (!(o1 instanceof AspectTreeElement || o2 instanceof AspectTreeElement)) return 0;
 
       if (!(o1 instanceof AspectTreeElement)) return 1;
       if (!(o2 instanceof AspectTreeElement)) return -1;
 
-      EditorTabDescriptor d1 = ((AspectTreeElement) o1).getAspectDescriptor();
-      EditorTabDescriptor d2 = ((AspectTreeElement) o2).getAspectDescriptor();
+      final AspectTreeElement ate1 = (AspectTreeElement) o1;
+      EditorTabDescriptor d1 = ate1.getAspectDescriptor();
+      final AspectTreeElement ate2 = (AspectTreeElement) o2;
+      EditorTabDescriptor d2 = ate2.getAspectDescriptor();
 
       int r1 = d1.compareTo(d2);
       int r2 = d2.compareTo(d1);
@@ -61,7 +66,18 @@ public class AspectNodeSorter implements Sorter {
 
       assert r1 * r2 <= 0 : "can't determine order";
 
-      return r1;
+      if (r1 != 0) return r1;
+
+      return ModelAccess.instance().runReadAction(new Computable<Integer>() {
+        public Integer compute() {
+          SNode n1 = ate1.getValue().getNode();
+          SNode n2 = ate2.getValue().getNode();
+
+          if (n1 == null || n2 == null) return 0;
+
+          return n1.getConceptFqName().compareTo(n2.getConceptFqName());
+        }
+      });
     }
   }
 }
