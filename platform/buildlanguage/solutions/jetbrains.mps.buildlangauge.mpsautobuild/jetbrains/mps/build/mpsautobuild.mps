@@ -1571,6 +1571,14 @@
       <property name="id" nameId="tps4.1222447189012" value="f3347d8a-0e79-4f35-8ac9-1574f25c986f" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.run.commands" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="6779718351511906022">
+      <property name="id" nameId="tps4.1222447189012" value="73c1a490-99fa-4d0d-8292-b8985697c74b" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.common" />
+    </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="6779718351511906024">
+      <property name="id" nameId="tps4.1222447189012" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.settings" />
+    </node>
   </root>
   <root id="8431776905956472858">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="8431776905956472859">
