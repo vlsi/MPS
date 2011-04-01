@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:328ff5ee-9330-4068-906e-6e3bb50e6e1d(jetbrains.mps.execution.settings.editor)">
   <persistence version="7" />
-  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.run.settings)" />
+  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" />
@@ -20,63 +20,62 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentConfiguration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066627">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066641">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066645">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066563" resolveInfo="ReportConfigurationErrorStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066651">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066574" resolveInfo="PersistentPropertyReferenceOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066655">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066680">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066582" resolveInfo="PersistentConfigurationTemplateInitializer" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066693">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066713">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066586" resolveInfo="TemplateParameter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066731">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066588" resolveInfo="EditorExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066740">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066591" resolveInfo="CheckCallOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066748">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066759">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066610" resolveInfo="EditorPropertyDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066779">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066611" resolveInfo="EditorPropertyReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066783">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066618" resolveInfo="SettingsEditorType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066792">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066621" resolveInfo="SettingsEditor" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="946964771156905574">

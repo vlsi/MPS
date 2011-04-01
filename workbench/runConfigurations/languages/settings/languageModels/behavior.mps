@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
   <persistence version="7" />
-  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.run.settings)" />
+  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -30,35 +30,35 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentConfiguration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066803">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066566" resolveInfo="CreateEditor_Function" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066813">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066571" resolveInfo="Dispose_Function" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066823">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066835">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066978">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066601" resolveInfo="ApplyTo_Function" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156066990">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066605" resolveInfo="EditorOperationDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156067020">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066614" resolveInfo="ResetFrom_Function" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="946964771156067030">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="fb9u.946964771156066621" resolveInfo="SettingsEditor" />
     </node>
   </roots>

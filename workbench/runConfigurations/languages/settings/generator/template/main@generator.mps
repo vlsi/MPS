@@ -47,42 +47,41 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675810881">
       <property name="name" nameId="tpck.1169194664001" value="reduce_TemplatePersistentPropertyDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675810937">
       <property name="name" nameId="tpck.1169194664001" value="reduce_SmartPersistentPropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066574" resolveInfo="PersistentPropertyReferenceOperation" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675810953">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ReportConfigurationErrorStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066563" resolveInfo="ReportConfigurationErrorStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675810966">
       <property name="name" nameId="tpck.1169194664001" value="reduce_PersistentPropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066574" resolveInfo="PersistentPropertyReferenceOperation" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675810986">
       <property name="name" nameId="tpck.1169194664001" value="reduce_PersistentPropertyDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811022">
       <property name="name" nameId="tpck.1169194664001" value="reduce_CheckCallOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066591" resolveInfo="CheckCallOperation" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811032">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConstructorParameterReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811045">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConstructorParameterReferenceInEditor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811058">
@@ -91,52 +90,52 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811090">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationEditorTemplateFields" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811122">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationEditorTemplateConstructor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811242">
       <property name="name" nameId="tpck.1169194664001" value="reduce_SmartPersistentPropertyType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811260">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationTemplateMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811384">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationTemplateConstructor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811458">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationTemplateFields" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811490">
       <property name="name" nameId="tpck.1169194664001" value="reduce_EditorExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066588" resolveInfo="EditorExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811503">
       <property name="name" nameId="tpck.1169194664001" value="reduce_EditorPropertyDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066610" resolveInfo="EditorPropertyDeclaration" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811539">
       <property name="name" nameId="tpck.1169194664001" value="reduce_EditorOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperation" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675811566">
       <property name="name" nameId="tpck.1169194664001" value="reduce_EditorPropertyReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066611" resolveInfo="EditorPropertyReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5041115067675932661">
@@ -154,7 +153,7 @@
   </roots>
   <root id="946964771156035779">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932621">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="^" resolveInfo="PersistentPropertyToField" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932622">
@@ -176,7 +175,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932630">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="^" resolveInfo="PersistentPropertyToField" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066585" resolveInfo="PersistentPropertyDeclaration" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5041115067675932631">
@@ -245,14 +244,14 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932659">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066574" resolveInfo="PersistentPropertyReferenceOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932660">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675810966" resolveInfo="reduce_PersistentPropertyReference" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932706">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066610" resolveInfo="EditorPropertyDeclaration" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="5041115067675922959" resolveInfo="EditorPropertyToField" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932707">
@@ -260,42 +259,41 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932708">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066611" resolveInfo="EditorPropertyReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932709">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675811566" resolveInfo="reduce_EditorPropertyReference" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932710">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066588" resolveInfo="EditorExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932711">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675811490" resolveInfo="reduce_EditorExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932712">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932713">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675811539" resolveInfo="reduce_EditorOperation" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932714">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932715">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675811242" resolveInfo="reduce_SmartPersistentPropertyType" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932717">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066563" resolveInfo="ReportConfigurationErrorStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932718">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675810953" resolveInfo="reduce_ReportConfigurationErrorStatement" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932719">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066591" resolveInfo="CheckCallOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5041115067675932720">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5041115067675811022" resolveInfo="reduce_CheckCallOperation" />
@@ -328,7 +326,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932732">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5041115067675932733">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675932734">
@@ -354,7 +352,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5041115067675932744">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5041115067675932745">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675932746">
@@ -527,7 +525,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="5041115067675922983">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="5041115067675922984">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675922985">
@@ -547,7 +545,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="5041115067675922992">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="5041115067675922993">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675922994">
@@ -567,7 +565,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="5041115067675923001">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="5041115067675923002">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675923003">
@@ -587,7 +585,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="5041115067675923010">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="5041115067675923011">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675923012">
@@ -607,7 +605,7 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="5041115067675923019">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="5041115067675923020">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675923021">

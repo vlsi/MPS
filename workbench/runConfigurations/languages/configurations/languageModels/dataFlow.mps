@@ -13,7 +13,7 @@
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="946964771156870362">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
   </roots>

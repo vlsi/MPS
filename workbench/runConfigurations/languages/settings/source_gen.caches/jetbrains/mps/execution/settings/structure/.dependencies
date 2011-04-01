@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.execution.settings.structure.EditorOperationDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.structure.CheckCallOperation" file="CheckCallOperation.java">
+  <dependency className="jetbrains.mps.execution.settings.structure.CheckProperitesOperation" file="CheckProperitesOperation.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.structure.IMember" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

@@ -118,7 +118,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4762811064051417753">
       <property name="name" nameId="tpck.1169194664001" value="reduce_StartProcessHandlerStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
     <node type="tp4k.ApplicationPluginDeclaration" typeId="tp4k.1215279937187" id="693139443247210143">
@@ -362,7 +362,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="856705193942040360">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="856705193942040361">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4762811064051417753" resolveInfo="reduce_StartProcessHandlerStatement" />

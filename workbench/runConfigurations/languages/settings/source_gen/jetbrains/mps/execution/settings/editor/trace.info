@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CheckCallOperation_Editor.java" startLine="68" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.CheckCallOperation_Editor$_Inline_w0vzhx_a0a" />
+  <unitInfo fileName="CheckProperitesOperation_Editor.java" startLine="68" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.CheckProperitesOperation_Editor$_Inline_ti2jjv_a0a" />
   <unitInfo fileName="EditorOperation_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.EditorOperation_Editor$_Inline_dsxymh_a0a" />
   <unitInfo fileName="SettingsEditorType_Editor.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.SettingsEditorType_Editor$_Inline_rxc56p_a2a" />
   <unitInfo fileName="PersistentConfigurationType_Editor.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Editor$_Inline_c5arh5_a2a" />
@@ -21,7 +21,7 @@
   <unitInfo fileName="PersistentPropertyReferenceOperation_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.PersistentPropertyReferenceOperation_Editor" />
   <unitInfo fileName="TemplateParameterReference_Editor.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.TemplateParameterReference_Editor" />
   <unitInfo fileName="PersistentMethodsComponent.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.PersistentMethodsComponent" />
-  <unitInfo fileName="CheckCallOperation_Editor.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.CheckCallOperation_Editor" />
+  <unitInfo fileName="CheckProperitesOperation_Editor.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.CheckProperitesOperation_Editor" />
   <unitInfo fileName="TemplateParameter_Editor.java" startLine="24" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.TemplateParameter_Editor" />
   <unitInfo fileName="EditorComponent.java" startLine="20" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.EditorComponent" />
   <unitInfo fileName="EditorPropertyDeclaration_Editor.java" startLine="23" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.EditorPropertyDeclaration_Editor" />

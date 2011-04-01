@@ -44,7 +44,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uhxm.7806358006983738927" resolveInfo="ConfigurationReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156870356">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
   </roots>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)">
   <persistence version="7" />
-  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.run.settings)" />
+  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -19,31 +19,30 @@
   <import index="tp1t" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" implicit="yes" />
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067043">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067077">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066563" resolveInfo="ReportConfigurationErrorStatement" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067088">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066574" resolveInfo="PersistentPropertyReferenceOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067128">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066588" resolveInfo="EditorExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067148">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperation" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067190">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066611" resolveInfo="EditorPropertyReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="946964771156067201">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="fb9u.946964771156066621" resolveInfo="SettingsEditor" />
     </node>
   </roots>

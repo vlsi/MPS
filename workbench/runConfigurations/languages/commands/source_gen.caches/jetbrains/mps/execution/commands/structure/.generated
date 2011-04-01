@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bc7xtp5zvxx3jva3xge8dj8d5ou20sq">
+<dependencies version="2" modelHash="-clhrtljftxo22mxcwg2wu7y5f293a3g">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
@@ -15,7 +15,7 @@
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-2xvv9n7yz7ywhlvulxwogk5gxvnc5ev" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-35zwqyygfjas60v7nqau8x9pfuhziaa" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-crynxahc7y0ae058i98poh61t8p2c8r" />
-  <common hash="b5irg64wjyadvnyc1uzspp84yvjepw9">
+  <common hash="-3n1d3zgyyl7bbwiyrgo0nytkw3erngw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -26,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Commands_Language.java" />
   </common>
-  <source id="856705193941281750" name="CommandType" hash="-arlehu1w90obhayo8xqnmgczpw409fs">
+  <source id="856705193941281750" name="CommandType" hash="25krytk2gdn32f7lym7r5mvkckiwtjm">
     <dep root="856705193941281768" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -40,7 +40,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandType.java" />
   </source>
-  <source id="856705193941281753" name="CommandReferenceExpression" hash="-dw59jyt7f2m02dl11rilirb1s4cx3b2">
+  <source id="856705193941281753" name="CommandReferenceExpression" hash="dw2xzpdn8bpfdkv911b1kk9rh5fr84d">
     <dep root="856705193941281768" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -56,7 +56,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandReferenceExpression.java" />
   </source>
-  <source id="856705193941281756" name="CommandParameterReference" hash="bm06cnaz37l96tjiozzwltqfs4ugdg5">
+  <source id="856705193941281756" name="CommandParameterReference" hash="-3r15l3a21tmnp32vzv0244r4ao1rlmd">
     <dep root="856705193941281762" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -72,7 +72,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandParameterReference.java" />
   </source>
-  <source id="856705193941281762" name="CommandParameterDeclaration" hash="dm9yihnlhbl552yv97i9xdlk56twx9z">
+  <source id="856705193941281762" name="CommandParameterDeclaration" hash="axd3fp8yuo76yzs2d00brjbpi9ci5h9">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -84,7 +84,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandParameterDeclaration.java" />
   </source>
-  <source id="856705193941281764" name="CommandParameterAssignment" hash="cas1glt5k9ba2f0fwi2lzcqdfpmp6v2">
+  <source id="856705193941281764" name="CommandParameterAssignment" hash="-ciwc8hkvfz2pkqxfi2zlfmqm48ffvfm">
     <dep root="856705193941281762" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -100,7 +100,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandParameterAssignment.java" />
   </source>
-  <source id="856705193941281767" name="CommandMethod" hash="-btjqaqgqeva3cnqaob3e72avv830dav">
+  <source id="856705193941281767" name="CommandMethod" hash="7bp7od89x7ayzr7lafbqsx0u7iw2jlv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -112,7 +112,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandMethod.java" />
   </source>
-  <source id="856705193941281768" name="CommandDeclaration" hash="-8z5wv04bmtyqei5p6f6s91d40etjuot">
+  <source id="856705193941281768" name="CommandDeclaration" hash="ckxvpwpcikv5kcdra2j9n4tk4ikp7tc">
     <dep root="856705193941281762" />
     <dep root="856705193941281767" />
     <dep root="856705193941281777" />
@@ -133,7 +133,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandDeclaration.java" />
   </source>
-  <source id="856705193941281777" name="CommandDebuggerOperation" hash="-y3e74ntsovnzmxebji9qvwrzb4s14a">
+  <source id="856705193941281777" name="CommandDebuggerOperation" hash="-4v4buquk4ho3qemol6kbq6loby1pnb">
     <dep root="856705193941281768" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -148,7 +148,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommandDebuggerOperation.java" />
   </source>
-  <source id="856705193941281780" name="CommandBuilderExpression" hash="-8y1wpnj1n1wshct12y870xjohyzu37g">
+  <source id="856705193941281780" name="CommandBuilderExpression" hash="-4e6x2lmux0kujjrpmmwmy00rbsxbkc">
     <dep root="856705193941281764" />
     <dep root="856705193941281768" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />

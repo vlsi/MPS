@@ -345,7 +345,7 @@
                 <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="fb9u.CheckCallOperation" typeId="fb9u.946964771156066591" id="1448685625140234390">
+            <node role="operation" roleId="tpee.1197027833540" type="fb9u.CheckProperitesOperation" typeId="fb9u.946964771156066591" id="1448685625140234390">
               <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.3107334613900744087" />
             </node>
           </node>

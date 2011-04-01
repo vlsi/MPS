@@ -25,7 +25,7 @@
   <unitInfo fileName="SettingsEditor.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.SettingsEditor" />
   <unitInfo fileName="CheckProperties_Function.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.CheckProperties_Function" />
   <unitInfo fileName="PersistentPropertyReferenceOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation" />
-  <unitInfo fileName="CheckCallOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.CheckCallOperation" />
+  <unitInfo fileName="CheckProperitesOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.CheckProperitesOperation" />
   <unitInfo fileName="EditorOperation.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.EditorOperation" />
   <unitInfo fileName="PersistentConfiguration.java" startLine="17" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentConfiguration" />
 </debugInfo>

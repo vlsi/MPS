@@ -2,7 +2,7 @@
 <model modelUID="r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)">
   <persistence version="7" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.run.commands)" />
+  <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
@@ -17,39 +17,37 @@
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863700">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandBuilderExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863710">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandParameterAssignment" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863726">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandParameterReference" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863739">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CommandReferenceExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863770">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="typeof_ProcessBuilderExpression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863790">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ProcessBuilderKeyPart" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863816">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ProcessBuilderPart" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="946964771156863830">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="processIsProcessHandler" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863836">
       <property name="name" nameId="tpck.1169194664001" value="typeof_RedirectOutputExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
   </roots>
   <root id="946964771156863700">

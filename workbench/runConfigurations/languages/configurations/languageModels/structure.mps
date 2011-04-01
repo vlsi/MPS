@@ -71,7 +71,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="946964771156870353">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="StartProcessHandlerStatement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4762811064051339797" resolveInfo="StartStatement" />
     </node>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.settings.editor.CheckCallOperation_Editor" file="CheckCallOperation_Editor.java">
+  <dependency className="jetbrains.mps.execution.settings.editor.CheckProperitesOperation_Editor" file="CheckProperitesOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet" />
