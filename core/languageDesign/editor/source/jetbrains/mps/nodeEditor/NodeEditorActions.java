@@ -16,10 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.selection.MultipleSelection;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
@@ -497,7 +494,8 @@ public class NodeEditorActions {
       SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
       Selection selection = selectionManager.getSelection();
       if (selection instanceof SingularSelection) {
-        SNode selectedNode = ((SingularSelection) selection).getEditorCell().getSNode();
+        EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
+        SNode selectedNode = selectedCell.getSNode();
         SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
         if (topMostNodeInSingularContainment != selectedNode) {
           EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
@@ -505,7 +503,13 @@ public class NodeEditorActions {
             context.getNodeEditorComponent().pushSelection(nodeCell);
           }
         } else {
-          selectionManager.pushSelection(selectionManager.createRangeSelection(selectedNode, selectedNode));
+          Selection newSelection = selectionManager.createRangeSelection(selectedNode, selectedNode);
+          if (newSelection instanceof NodeRangeSelection && selectedCell.isBigCell()) {
+            newSelection = ((jetbrains.mps.nodeEditor.selection.NodeRangeSelection) newSelection).enlargeSelection(myUp);
+          }
+          if (newSelection != null) {
+            selectionManager.pushSelection(newSelection);
+          }
         }
       } else if (selection instanceof jetbrains.mps.nodeEditor.selection.NodeRangeSelection) {
         Selection newSelection = ((jetbrains.mps.nodeEditor.selection.NodeRangeSelection) selection).enlargeSelection(myUp);
