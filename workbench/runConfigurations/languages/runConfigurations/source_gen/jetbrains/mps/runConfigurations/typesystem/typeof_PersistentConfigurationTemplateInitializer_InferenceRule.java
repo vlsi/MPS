@@ -52,7 +52,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplateInitializer";
+    return "jetbrains.mps.run.settings.structure.PersistentConfigurationTemplateInitializer";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -75,7 +75,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("propertyTemplate", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -88,7 +88,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("propertyTemplate", (SNode) parameter_3);
         result = quotedNode1_2;

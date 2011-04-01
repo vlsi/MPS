@@ -21,7 +21,7 @@ public class PersistentConfigurationIsPersistentConfiguration_SubtypingRule exte
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.PersistentConfigurationType";
+    return "jetbrains.mps.run.settings.structure.PersistentConfigurationType";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -48,7 +48,7 @@ public class PersistentConfigurationIsPersistentConfiguration_SubtypingRule exte
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -60,7 +60,7 @@ public class PersistentConfigurationIsPersistentConfiguration_SubtypingRule exte
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

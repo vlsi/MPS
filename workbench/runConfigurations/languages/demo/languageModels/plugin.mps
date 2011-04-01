@@ -12,6 +12,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.run.commands)" />
+  <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.run.settings)" />
   <import index="f1er" modelUID="r:b2897562-8c8f-4b0e-a52e-5dedfbf1b862(jetbrains.mps.runConfigurations.demo.structure)" version="-1" />
   <import index="fmpm" modelUID="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" version="-1" />
   <import index="p84h" modelUID="r:6ca9e89f-d17e-40d3-aff6-7953521fc77e(jetbrains.mps.baseLanguage.runConfigurations.generator.template.main@generator)" version="-1" />
@@ -43,6 +44,7 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.run.commands.structure)" version="-1" implicit="yes" />
+  <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.run.settings.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="8750596094204760415">
       <property name="name" nameId="tpck.1169194664001" value="Demo" />
@@ -51,7 +53,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Demo Application" />
       <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="8750596094204760415" resolveInfo="Demo" />
     </node>
-    <node type="uhxm.PersistentConfigurationTemplate" typeId="uhxm.4157833584164830749" id="7684700299064222828">
+    <node type="fb9u.PersistentConfigurationTemplate" typeId="fb9u.946964771156066579" id="7684700299064222828">
       <property name="name" nameId="tpck.1169194664001" value="Make" />
     </node>
     <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="7806358006983646762">
@@ -64,14 +66,14 @@
     <node role="iconPath" roleId="uhxm.4806795137173723123" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076264" />
   </root>
   <root id="8750596094204760417">
-    <node role="editor" roleId="uhxm.3754890006475816675" type="uhxm.SettingsEditor" typeId="uhxm.3754890006475816671" id="8750596094204760418">
-      <node role="propertyDeclaration" roleId="uhxm.1529002684853821488" type="uhxm.EditorPropertyDeclaration" typeId="uhxm.4777576391478268201" id="3347833162492362904">
+    <node role="editor" roleId="uhxm.3754890006475816675" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="8750596094204760418">
+      <node role="propertyDeclaration" roleId="fb9u.946964771156066626" type="fb9u.EditorPropertyDeclaration" typeId="fb9u.946964771156066610" id="3347833162492362904">
         <property name="name" nameId="tpck.1169194664001" value="myLabel" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3347833162492362906">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JLabel" resolveInfo="JLabel" />
         </node>
       </node>
-      <node role="createEditor" roleId="uhxm.4777576391477979221" type="uhxm.CreateEditor_Function" typeId="uhxm.4777576391477887149" id="4777576391478076297">
+      <node role="createEditor" roleId="fb9u.946964771156066622" type="fb9u.CreateEditor_Function" typeId="fb9u.946964771156066566" id="4777576391478076297">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4777576391478076298">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3347833162492362908">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3347833162492362911">
@@ -83,7 +85,7 @@
                   </node>
                 </node>
               </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="3347833162492362910">
+              <node role="lValue" roleId="tpee.1068498886295" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="3347833162492362910">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3347833162492362904" resolveInfo="myLabel" />
               </node>
             </node>
@@ -95,11 +97,11 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fmpm.6937689104170748691" resolveInfo="MainNodeChooser" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7883882861861669807">
-                <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="7883882861861669808">
-                  <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+                <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="7883882861861669808">
+                  <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="7883882861861669809">
-                  <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="awpe.3107334613900744046" />
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="7883882861861669809">
+                  <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744046" />
                 </node>
               </node>
             </node>
@@ -129,7 +131,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3347833162492362940">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="3347833162492362941">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="3347833162492362941">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3347833162492362904" resolveInfo="myLabel" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3347833162492362947">
@@ -164,11 +166,11 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312809">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312832">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="7684700299064312810">
-                    <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="7684700299064312810">
+                    <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="7684700299064312840">
-                    <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064222830" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="7684700299064312840">
+                    <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064222830" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7684700299064312856">
@@ -185,19 +187,19 @@
           </node>
         </node>
       </node>
-      <node role="resetFrom" roleId="uhxm.4777576391477979229" type="uhxm.ResetFrom_Function" typeId="uhxm.4777576391477979226" id="4777576391478076299">
+      <node role="resetFrom" roleId="fb9u.946964771156066624" type="fb9u.ResetFrom_Function" typeId="fb9u.946964771156066614" id="4777576391478076299">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4777576391478076300">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1252300412034409357">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034409363">
-              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="1252300412034409358">
-                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="1252300412034409358">
+                <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="1252300412034409372">
-                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="awpe.3107334613900744065" />
-                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435537">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="1252300412034435536" />
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="1252300412034435543">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="1252300412034409372">
+                <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744065" />
+                <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435537">
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="1252300412034435536" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="1252300412034435543">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
                   </node>
                 </node>
               </node>
@@ -205,15 +207,15 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5405427851768165016">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768165022">
-              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="5405427851768165017">
-                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="5405427851768165017">
+                <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="5405427851768165029">
-                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064309952" />
-                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191403">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="5405427851768191402" />
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="5405427851768191407">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="5405427851768165029">
+                <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064309952" />
+                <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191403">
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="5405427851768191402" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="5405427851768191407">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064312799" resolveInfo="myMake" />
                   </node>
                 </node>
               </node>
@@ -221,19 +223,19 @@
           </node>
         </node>
       </node>
-      <node role="applyTo" roleId="uhxm.4777576391477979222" type="uhxm.ApplyTo_Function" typeId="uhxm.4777576391477979223" id="4777576391478076301">
+      <node role="applyTo" roleId="fb9u.946964771156066623" type="fb9u.ApplyTo_Function" typeId="fb9u.946964771156066601" id="4777576391478076301">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4777576391478076302">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1252300412034435554">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435560">
-              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="1252300412034435555">
-                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="1252300412034435555">
+                <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="1252300412034435570">
-                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="awpe.3107334613900744074" />
-                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435578">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="1252300412034435576" />
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="1252300412034435583">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="1252300412034435570">
+                <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744074" />
+                <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435578">
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="1252300412034435576" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="1252300412034435583">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
                   </node>
                 </node>
               </node>
@@ -241,15 +243,15 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5405427851768191409">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191410">
-              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="5405427851768191411">
-                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="5405427851768191411">
+                <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="5405427851768191412">
-                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064312766" />
-                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191413">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="5405427851768191414" />
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="5405427851768191415">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="5405427851768191412">
+                <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064312766" />
+                <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191413">
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="5405427851768191414" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="5405427851768191415">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064312799" resolveInfo="myMake" />
                   </node>
                 </node>
               </node>
@@ -258,15 +260,15 @@
         </node>
       </node>
     </node>
-    <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7902226081039505530">
+    <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7902226081039505530">
       <property name="name" nameId="tpck.1169194664001" value="myNode" />
-      <node role="type" roleId="tpee.5680397130376446158" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="7902226081039505532">
-        <link role="propertyTemplate" roleId="uhxm.4157833584164911569" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
+      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentPropertyType" typeId="fb9u.946964771156066557" id="7902226081039505532">
+        <link role="propertyTemplate" roleId="fb9u.946964771156066558" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1448685625140330122">
-        <node role="creator" roleId="tpee.1145553007750" type="uhxm.PersistentConfigurationTemplateInitializer" typeId="uhxm.1448685625140421524" id="1448685625140440185">
-          <link role="template" roleId="uhxm.1448685625140421525" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
-          <node role="parameter" roleId="uhxm.1448685625140421526" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140440266">
+        <node role="creator" roleId="tpee.1145553007750" type="fb9u.PersistentConfigurationTemplateInitializer" typeId="fb9u.946964771156066582" id="1448685625140440185">
+          <link role="template" roleId="fb9u.946964771156066583" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
+          <node role="parameter" roleId="fb9u.946964771156066584" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140440266">
             <node role="operand" roleId="tpee.1197027771414" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1448685625140440202">
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1448685625140440203">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1448685625140440211">
@@ -302,7 +304,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2c.InvokeFunctionOperation" typeId="tp2c.1225797177491" id="1448685625140440276" />
           </node>
-          <node role="parameter" roleId="uhxm.1448685625140421526" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1448685625140440250">
+          <node role="parameter" roleId="fb9u.946964771156066584" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1448685625140440250">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1448685625140440251">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1448685625140440252">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140440253">
@@ -326,23 +328,23 @@
         </node>
       </node>
     </node>
-    <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7684700299064312799">
+    <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7684700299064312799">
       <property name="name" nameId="tpck.1169194664001" value="myMake" />
-      <node role="type" roleId="tpee.5680397130376446158" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="7684700299064312801">
-        <link role="propertyTemplate" roleId="uhxm.4157833584164911569" targetNodeId="7684700299064222828" resolveInfo="Make" />
+      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentPropertyType" typeId="fb9u.946964771156066557" id="7684700299064312801">
+        <link role="propertyTemplate" roleId="fb9u.946964771156066558" targetNodeId="7684700299064222828" resolveInfo="Make" />
       </node>
     </node>
-    <node role="checkProperties" roleId="uhxm.974940122351326368" type="uhxm.CheckProperties_Function" typeId="uhxm.974940122351326363" id="974940122351373408">
+    <node role="checkProperties" roleId="fb9u.946964771156066338" type="fb9u.CheckProperties_Function" typeId="fb9u.946964771156066597" id="974940122351373408">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="974940122351373409">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1448685625140199409">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140200226">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140199411">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1448685625140199410" />
-              <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="1448685625140200225">
-                <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="1448685625140200225">
+                <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="uhxm.CheckCallOperation" typeId="uhxm.1448685625140183828" id="1448685625140234390">
+            <node role="operation" roleId="tpee.1197027833540" type="fb9u.CheckCallOperation" typeId="fb9u.946964771156066591" id="1448685625140234390">
               <link role="member" roleId="tp4f.1205756909548" targetNodeId="awpe.3107334613900744087" />
             </node>
           </node>
@@ -354,18 +356,18 @@
     </node>
   </root>
   <root id="7684700299064222828">
-    <node role="editor" roleId="uhxm.223733852661704509" type="uhxm.SettingsEditor" typeId="uhxm.3754890006475816671" id="7684700299064222829">
-      <node role="propertyDeclaration" roleId="uhxm.1529002684853821488" type="uhxm.EditorPropertyDeclaration" typeId="uhxm.4777576391478268201" id="7684700299064309934">
+    <node role="editor" roleId="fb9u.946964771156066337" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="7684700299064222829">
+      <node role="propertyDeclaration" roleId="fb9u.946964771156066626" type="fb9u.EditorPropertyDeclaration" typeId="fb9u.946964771156066610" id="7684700299064309934">
         <property name="name" nameId="tpck.1169194664001" value="myCheckBox" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7684700299064309936">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JCheckBox" resolveInfo="JCheckBox" />
         </node>
       </node>
-      <node role="createEditor" roleId="uhxm.4777576391477979221" type="uhxm.CreateEditor_Function" typeId="uhxm.4777576391477887149" id="7684700299064222830">
+      <node role="createEditor" roleId="fb9u.946964771156066622" type="fb9u.CreateEditor_Function" typeId="fb9u.946964771156066566" id="7684700299064222830">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064222831">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309937">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064309939">
-              <node role="lValue" roleId="tpee.1068498886295" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309938">
+              <node role="lValue" roleId="tpee.1068498886295" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309938">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
               </node>
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7684700299064309944">
@@ -379,25 +381,25 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7684700299064309949">
-            <node role="expression" roleId="tpee.1068581517676" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309951">
+            <node role="expression" roleId="tpee.1068581517676" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309951">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
             </node>
           </node>
         </node>
       </node>
-      <node role="resetFrom" roleId="uhxm.4777576391477979229" type="uhxm.ResetFrom_Function" typeId="uhxm.4777576391477979226" id="7684700299064309952">
+      <node role="resetFrom" roleId="fb9u.946964771156066624" type="fb9u.ResetFrom_Function" typeId="fb9u.946964771156066614" id="7684700299064309952">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064309953">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309954">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064309956">
-              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309955">
+              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309955">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312759">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%dsetSelected(boolean)%cvoid" resolveInfo="setSelected" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312761">
-                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="7684700299064312760" />
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="7684700299064312765">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064222832" resolveInfo="myMake" />
+                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="7684700299064312760" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="7684700299064312765">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064222832" resolveInfo="myMake" />
                   </node>
                 </node>
               </node>
@@ -405,12 +407,12 @@
           </node>
         </node>
       </node>
-      <node role="applyTo" roleId="uhxm.4777576391477979222" type="uhxm.ApplyTo_Function" typeId="uhxm.4777576391477979223" id="7684700299064312766">
+      <node role="applyTo" roleId="fb9u.946964771156066623" type="fb9u.ApplyTo_Function" typeId="fb9u.946964771156066601" id="7684700299064312766">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064312767">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064312768">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064312779">
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312783">
-                <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064312782">
+                <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064312782">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312787">
@@ -418,9 +420,9 @@
                 </node>
               </node>
               <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312770">
-                <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="7684700299064312769" />
-                <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="7684700299064312774">
-                  <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064222832" resolveInfo="myMake" />
+                <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="7684700299064312769" />
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="7684700299064312774">
+                  <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064222832" resolveInfo="myMake" />
                 </node>
               </node>
             </node>
@@ -428,7 +430,7 @@
         </node>
       </node>
     </node>
-    <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7684700299064222832">
+    <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7684700299064222832">
       <property name="name" nameId="tpck.1169194664001" value="myMake" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7684700299064222834" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8265043642382216719">
@@ -464,8 +466,8 @@
               <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.7991611468341419998" resolveInfo="node" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5951219512641119385">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5951219512641119386">
-                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="5951219512641119387">
-                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="5951219512641119387">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="5951219512641119388" />
                 </node>

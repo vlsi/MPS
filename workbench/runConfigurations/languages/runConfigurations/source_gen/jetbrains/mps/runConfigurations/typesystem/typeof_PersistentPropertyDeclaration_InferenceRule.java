@@ -34,7 +34,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration";
+    return "jetbrains.mps.run.settings.structure.PersistentPropertyDeclaration";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -127,7 +127,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }
@@ -180,7 +180,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }

@@ -26,6 +26,7 @@
       <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
       <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
       <languagePath path="${project}/languages/commands/commands.mpl" folder="" />
+      <languagePath path="${project}/languages/settings/settings.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

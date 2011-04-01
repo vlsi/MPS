@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior;
+import jetbrains.mps.run.settings.behavior.PersistentConfiguration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Configuration_Parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -21,12 +21,12 @@ public class typeof_Configuration_Parameter_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = configurationParameter;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4777576391478317712", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4777576391478317709", true), (SNode) PersistentConfiguration_Behavior.getContextPersistentConfigurationType_223733852661818464(configurationParameter), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4777576391478317709", true), (SNode) PersistentConfiguration_Behavior.getContextPersistentConfigurationType_946964771156066389(configurationParameter), _info_12389875345);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.Configuration_Parameter";
+    return "jetbrains.mps.run.settings.structure.Configuration_Parameter";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

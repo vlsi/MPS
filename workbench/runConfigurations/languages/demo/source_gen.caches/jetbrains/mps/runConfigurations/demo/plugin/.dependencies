@@ -94,7 +94,12 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" file="Demo_ApplicationPlugin.java">
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" file="Demo_Kind.java">
@@ -114,13 +119,6 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_ProjectPlugin" file="Demo_ProjectPlugin.java">
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Make_Configuration" file="Make_Configuration.java">
@@ -144,13 +142,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" file="RunConfigurationsInitializer_CustomProjectPlugin.java">
+  <dependency className="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
 

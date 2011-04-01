@@ -26,7 +26,7 @@ public class typeof_PersistentPropertyReferenceOperation_InferenceRule extends A
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.PersistentPropertyReferenceOperation";
+    return "jetbrains.mps.run.settings.structure.PersistentPropertyReferenceOperation";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

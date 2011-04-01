@@ -21,7 +21,7 @@ public class EditorIsSusbtypeOfEditor_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.SettingsEditorType";
+    return "jetbrains.mps.run.settings.structure.SettingsEditorType";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -48,7 +48,7 @@ public class EditorIsSusbtypeOfEditor_SubtypingRule extends SubtypingRule_Runtim
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -60,7 +60,7 @@ public class EditorIsSusbtypeOfEditor_SubtypingRule extends SubtypingRule_Runtim
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.run.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

@@ -29,7 +29,7 @@ public class typeof_ReportConfigurationErrorStatement_InferenceRule extends Abst
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.ReportConfigurationErrorStatement";
+    return "jetbrains.mps.run.settings.structure.ReportConfigurationErrorStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

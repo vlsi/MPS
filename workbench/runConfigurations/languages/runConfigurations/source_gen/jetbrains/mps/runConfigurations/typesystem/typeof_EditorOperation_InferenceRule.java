@@ -49,7 +49,7 @@ public class typeof_EditorOperation_InferenceRule extends AbstractInferenceRule_
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.EditorOperation";
+    return "jetbrains.mps.run.settings.structure.EditorOperation";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
