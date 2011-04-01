@@ -5,10 +5,10 @@
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="94" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0e" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="112" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0k" />
-  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.CreateEditor_Function_Behavior" />
-  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.Dispose_Function_Behavior" />
-  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.ApplyTo_Function_Behavior" />
   <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.ApplyTo_Function_Behavior" />
+  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.Dispose_Function_Behavior" />
+  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.CreateEditor_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.EditorOperationDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.run.settings.behavior.PersistentConfigurationTemplate_Behavior" />

@@ -49,7 +49,7 @@ public class Make_Configuration implements IPersistentConfiguration {
       clone.myState = (Make_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
+      Make_Configuration.LOG.error(ex);
     }
     return clone;
   }

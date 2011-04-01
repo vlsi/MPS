@@ -110,7 +110,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       clone.myMake = (Make_Configuration) myMake.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
+      DemoApplication_Configuration.LOG.error(ex);
     }
     return clone;
   }

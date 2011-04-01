@@ -60,6 +60,7 @@
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <property name="configurationName" nameId="uhxm.7806358006983709801" value="myConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
+      <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
     </node>
   </roots>
   <root id="8750596094204760415">
