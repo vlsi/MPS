@@ -15,8 +15,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
+import jetbrains.mps.execution.runtime.BaseMpsRunConfiguration;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
-import jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

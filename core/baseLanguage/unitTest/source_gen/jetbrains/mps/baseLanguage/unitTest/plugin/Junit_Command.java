@@ -8,7 +8,7 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
-import jetbrains.mps.runConfigurations.lib.Java_Command;
+import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.debug.api.IDebugger;

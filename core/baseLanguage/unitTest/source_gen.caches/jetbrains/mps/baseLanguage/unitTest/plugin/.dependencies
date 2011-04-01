@@ -484,7 +484,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command" file="Junit_Command.java">
-    <classNode dependClassName="jetbrains.mps.runConfigurations.lib.Java_Command" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -977,7 +977,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.OutputRedirector" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />

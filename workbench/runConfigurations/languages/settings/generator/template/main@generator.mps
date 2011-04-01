@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.run.settings.generator.template.main@generator)">
+<model modelUID="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)">
   <persistence version="7" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.run.settings.structure)" version="-1" />
-  <import index="rytp" modelUID="java.lang@java_stub" version="-1" />
+  <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tp48" modelUID="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" version="-1" />
-  <import index="i1mc" modelUID="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.run.common.behavior)" version="-1" />
+  <import index="i1mc" modelUID="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="8bce" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
@@ -19,23 +19,23 @@
   <import index="8a0f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="vfxe" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.configurations(MPS.Classpath/com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="klpk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.xmlb(MPS.Classpath/com.intellij.util.xmlb@java_stub)" version="-1" />
-  <import index="hilv" modelUID="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.run.settings.behavior)" version="-1" />
+  <import index="hilv" modelUID="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <import index="fvnq" modelUID="f:java_stub#756e911c-3f1f-4a48-bdf5-a2ceb91b723c#jetbrains.mps.runConfigurations.runtime(jetbrains.mps.run.settings/jetbrains.mps.runConfigurations.runtime@java_stub)" version="-1" />
+  <import index="uu7q" modelUID="f:java_stub#756e911c-3f1f-4a48-bdf5-a2ceb91b723c#jetbrains.mps.execution.runtime(jetbrains.mps.run.settings/jetbrains.mps.execution.runtime@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="mvo7" modelUID="r:37b431b5-5df4-4ede-90b5-64de64810162(jetbrains.mps.runConfigurations.runtime)" version="-1" implicit="yes" />
+  <import index="mvo7" modelUID="r:37b431b5-5df4-4ede-90b5-64de64810162(jetbrains.mps.execution.runtime)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp68" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" implicit="yes" />
-  <import index="kv8t" modelUID="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.run.settings.generator.template.main@generator)" version="-1" implicit="yes" />
-  <import index="8d73" modelUID="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.runConfigurations.generator.template.main@generator)" version="-1" implicit="yes" />
+  <import index="kv8t" modelUID="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)" version="-1" implicit="yes" />
+  <import index="8d73" modelUID="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" version="-1" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="946964771156035779">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -1924,12 +1924,12 @@
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5041115067675810599" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5210472748501870670">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216154">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5210472748501870716">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216124">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5041115067675810602">
       <property name="name" nameId="tpck.1169194664001" value="getPersistentProperty" />
@@ -2401,7 +2401,7 @@
                     </node>
                   </node>
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067675810824">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5041115067675810825">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="5041115067675810826">
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675810827">
@@ -2556,8 +2556,8 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tp68.InternalNewExpression" typeId="tp68.1173996401517" id="5041115067675810890">
         <property name="fqClassName" nameId="tp68.1173996588177" value="PersistentConfigurationTemplate" />
-        <node role="type" roleId="tp68.1179332974947" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5210472748501870455">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+        <node role="type" roleId="tp68.1179332974947" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216204">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
         </node>
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5041115067675810892">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
@@ -2639,7 +2639,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5041115067675810927" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067675810928">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5041115067675810929">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="5041115067675810930">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675810931">
@@ -2839,8 +2839,8 @@
         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675811025">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5041115067675811026">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5041115067675811027">
-              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5210472748501870454">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216203">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5041115067675811029" />
             </node>
@@ -3299,15 +3299,15 @@
           </node>
         </node>
       </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067676069224">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216212">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
       </node>
     </node>
   </root>
   <root id="5041115067675811242">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="5041115067675811243">
       <property name="fqClassName" nameId="tp68.1174914081067" value="PersistentConfiguratioTemplate" />
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5041115067675811244">
         <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="5041115067675811245">
@@ -3362,8 +3362,8 @@
       <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5041115067675811265">
         <property name="name" nameId="tpck.1169194664001" value="myConfiguration" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5041115067675811266" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067676025873">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216243">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5041115067675811268" />
@@ -3372,8 +3372,8 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5041115067675811271" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675811272" />
       </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067676025869">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216239">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5041115067675811274">
         <property name="name" nameId="tpck.1169194664001" value="createCloneTemplate" />
@@ -3418,8 +3418,8 @@
                   </node>
                 </node>
               </node>
-              <node role="type" roleId="tp68.1179332974947" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067676025877">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+              <node role="type" roleId="tp68.1179332974947" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216247">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
               </node>
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5041115067675811297">
                 <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
@@ -3526,7 +3526,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5041115067675811347">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fvnq.~IPersistentConfiguration%dgetEditor()%ccom%dintellij%dopenapi%doptions%dSettingsEditor" resolveInfo="getEditor" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uu7q.~IPersistentConfiguration%dgetEditor()%ccom%dintellij%dopenapi%doptions%dSettingsEditor" resolveInfo="getEditor" />
                   </node>
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="5041115067675811348">
                     <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="5041115067675811349">
@@ -3766,8 +3766,8 @@
           <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="PersistentConfigurationTemplateToConstructor" />
         </node>
       </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5041115067676069212">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fvnq.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1271251667905216228">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uu7q.~IPersistentConfiguration" resolveInfo="IPersistentConfiguration" />
       </node>
     </node>
   </root>

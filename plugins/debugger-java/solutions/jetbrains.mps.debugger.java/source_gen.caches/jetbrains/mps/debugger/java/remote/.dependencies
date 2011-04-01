@@ -62,8 +62,8 @@
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
-    <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
-    <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration" />
+    <classNode extendsClassName="jetbrains.mps.execution.runtime.IPersistentConfiguration" />
+    <classNode extendsClassName="jetbrains.mps.execution.runtime.BaseMpsRunConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.remote.Remote_Configuration_Editor" file="Remote_Configuration_Editor.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -94,17 +94,17 @@
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteProcessHandler" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.Remote_Configuration" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.ConsoleProcessListener" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
   </dependency>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Demo_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.structure.Demo_Language" />
-  <unitInfo fileName="SomeConcept.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.structure.SomeConcept" />
-</debugInfo>
-

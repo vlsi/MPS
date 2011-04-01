@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_Constraints" />
+  <unitInfo fileName="ConfigurationFromExecutorReference_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_name_PropertyConstraint" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ComplexRunConfigurationExecutor_name_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConstraintsDescriptor" />
+  <root nodeId="7806358006983673554">
+    <nodeInfo nodeId="7806358006983673561" fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="26" startPosition="74" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673574" fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673559" fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7806358006983673560" fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="26" startPosition="74" endLine="27" endPosition="122" />
+    <scopeInfo nodeId="7806358006983673558" fileName="ComplexRunConfigurationExecutor_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="29" endPosition="16" />
+  </root>
+  <root nodeId="7806358006983738928">
+    <nodeInfo nodeId="7806358006983738931" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983738953" fileName="ConfigurationFromExecutorReference_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7806358006983738930" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="185" />
+    <scopeInfo nodeId="7806358006983738951" fileName="ConfigurationFromExecutorReference_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="150" />
+  </root>
+</debugInfo>
+
