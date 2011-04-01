@@ -15,7 +15,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,6 +22,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.generator.GenerationOptions;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
@@ -69,7 +69,7 @@ public class GenerateTextFromBuild {
         }
       }
     };
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    Runnable generate = new Runnable() {
       public void run() {
         if (showWindow) {
           GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, true);
@@ -77,7 +77,12 @@ public class GenerateTextFromBuild {
           GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
         }
       }
-    }, ModalityState.NON_MODAL);
+    };
+    if (ApplicationManager.getApplication().isDispatchThread()) {
+      generate.run();
+    } else {
+      ApplicationManager.getApplication().invokeAndWait(generate, ModalityState.NON_MODAL);
+    }
     return fileToRun[0];
   }
 
