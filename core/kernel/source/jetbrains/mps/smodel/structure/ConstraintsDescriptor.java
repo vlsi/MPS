@@ -23,11 +23,11 @@ import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class ConstraintsDescriptor {
-  abstract boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 }

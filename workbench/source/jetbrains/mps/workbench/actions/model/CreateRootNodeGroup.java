@@ -112,7 +112,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       modelLanguages.remove(lang);
 
       for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
@@ -126,7 +126,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           languagesWithRoots.add(language);
           break;
         }
@@ -180,8 +180,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       setExecuteOutsideCommand(true);
     }
 
-    protected boolean collectActionData(AnActionEvent e,Map<String, Object> _params) {
-      if (!super.collectActionData(e,_params)) return false;
+    protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
+      if (!super.collectActionData(e, _params)) return false;
       myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
       myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
       if (myScope == null) return false;
@@ -207,7 +207,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
       EditorComponent component = editor.getCurrentEditorComponent();
-      if (component==null) return;
+      if (component == null) return;
       component.requestFocus();
     }
 

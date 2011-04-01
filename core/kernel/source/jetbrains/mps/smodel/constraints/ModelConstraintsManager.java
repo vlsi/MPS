@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -29,6 +28,9 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.structure.CheckingNodeContext;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -42,13 +44,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
-  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
   private static INodePropertyGetter NULL_GETTER = new INodePropertyGetter() {
     public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
       return null;
@@ -115,13 +114,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
 
-  private final Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
-  private final Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
-  private final Map<String, Method> myCanBeAncestorMethods = new HashMap<String, Method>();
-  private final Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private final ConcurrentMap<String, String> myDefaultConceptNames = new ConcurrentHashMap<String, String>();
-
-  private final Map<String, String> myConstraintClassNames = new ConcurrentHashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
@@ -455,18 +448,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void clearAll() {
-    synchronized (myCanBeChildMethods) {
-      myCanBeChildMethods.clear();
-    }
-    synchronized (myCanBeParentMethods) {
-      myCanBeParentMethods.clear();
-    }
-    synchronized (myCanBeAncestorMethods) {
-      myCanBeAncestorMethods.clear();
-    }
-    synchronized (myCanBeRootMethods) {
-      myCanBeRootMethods.clear();
-    }
     myDefaultConceptNames.clear();
 
     myNodePropertyGettersMap.clear();
@@ -474,7 +455,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodePropertyValidatorsMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
-    myConstraintClassNames.clear();
 
     synchronized (myLock) {
       myNodeReferentSetEventHandlersMap.clear();
@@ -551,215 +531,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return result;
   }
 
-  private Method getCanBeAncestorMethod(SNode parentNode, IOperationContext context) {
-    final String fqName = parentNode.getConceptFqName();
-    synchronized (myCanBeAncestorMethods) {
-      Method result = myCanBeAncestorMethods.get(fqName);
-      if (result != null || myCanBeAncestorMethods.containsKey(fqName)) {
-        return result;
-      }
-
-      Language language = context.getScope().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      if (language != null) {
-        Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
-        if (behaviorClass != null) {
-          try {
-            result = behaviorClass.getMethod(BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
-          } catch (NoSuchMethodException e) {
-            /* ignore */
-          }
-        }
-      }
-
-      myCanBeAncestorMethods.put(fqName, result);
-      return result;
-    }
-  }
-
-  public Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
-    final String fqName = parentNode.getConceptFqName();
-    synchronized (myCanBeParentMethods) {
-      Method result = myCanBeParentMethods.get(fqName);
-      if (result != null || myCanBeParentMethods.containsKey(fqName)) {
-        return result;
-      }
-
-      Language language = context.getScope().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      if (language != null) {
-        Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
-        if (behaviorClass != null) {
-          try {
-            result = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-          } catch (NoSuchMethodException e) {
-            /* ignore */
-          }
-        }
-      }
-
-      myCanBeParentMethods.put(fqName, result);
-      return result;
-    }
-  }
-
-  /**
-   * @return node of broken constraint block or null if constraint was not broken for all ancestors
-   */
-  public SNode canBeAncestorReturnBlock(SNode parentNode, SNode childConcept, IOperationContext context) {
-    if (parentNode == null) return null;
-    Method m = getCanBeAncestorMethod(parentNode, context);
-    if (m != null) {
-      try {
-        if (!(Boolean) m.invoke(null, context, new CanBeAnAncestorContext(parentNode, childConcept))) {
-          SNode constraints = getClassConstraints(context, m);
-          return constraints != null ? SConstraintsUtil.getConceptConstraints_CanBeAncestor(constraints) : null;
-        }
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      }
-    }
-    return canBeAncestorReturnBlock(parentNode.getParent(), childConcept, context);
-  }
-
-  public boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
-    return canBeAncestorReturnBlock(parentNode, childConcept, context) == null;
-  }
-
-  public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    Method m = getCanBeParentMethod(parentNode, context);
-    return canBeParent(m, parentNode, childConcept, link, context);
-  }
-
-  public boolean canBeParent(Method m, SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    if (m != null) {
-      try {
-        return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      }
-    }
-    return true;
-  }
-
-  public SNode getCanBeParentBlock(SNode parentNode, IOperationContext context) {
-    Method m = getCanBeParentMethod(parentNode, context);
-    return getCanBeParentBlock(context, m);
-  }
-
-  public SNode getCanBeParentBlock(IOperationContext context, Method m) {
-    SNode constraints = getClassConstraints(context, m);
-    if (constraints == null) return null;
-    return SConstraintsUtil.getConceptConstraints_CanBeParent(constraints);
-  }
-
-  public Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
-    synchronized (myCanBeChildMethods) {
-      if (myCanBeChildMethods.containsKey(conceptFqName)) {
-        return myCanBeChildMethods.get(conceptFqName);
-      }
-
-      IScope scope = context.getScope();
-      SNode topConcept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-
-      if (topConcept != null) {
-        List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
-
-        for (SNode concept : conceptAndSuperConcepts) {
-          String fqName = NameUtil.nodeFQName(concept);
-          Language language = SModelUtil.getDeclaringLanguage(concept);
-          if (language == null) {
-            continue;
-          }
-
-          Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
-          if (behaviorClass == null) {
-            continue;
-          }
-
-          try {
-            Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-            myCanBeChildMethods.put(conceptFqName, method);
-            return method;
-          } catch (NoSuchMethodException e) {
-            //it's ok
-          }
-        }
-      }
-
-      myCanBeChildMethods.put(conceptFqName, null);
-      return null;
-    }
-  }
-
-  public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
-    Method method = getCanBeChildMethod(fqName, context);
-    if (method != null) {
-      SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
-      return canBeChild(concept, method, context, parentNode, link);
-    }
-    return true;
-  }
-
-  public boolean canBeChild(SNode concept, Method method, IOperationContext context, SNode parentNode, SNode link) {
-    if (method != null) {
-      try {
-        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      }
-    }
-    return true;
-  }
-
-  public SNode getCanBeChildBlock(IOperationContext context, String conceptFqName) {
-    Method m = getCanBeChildMethod(conceptFqName, context);
-    return getCanBeChildBlock(context, m);
-  }
-
-  public SNode getCanBeChildBlock(IOperationContext context, Method m) {
-    SNode constraints = getClassConstraints(context, m);
-    if (constraints == null) return null;
-    return SConstraintsUtil.getConceptConstraints_CanBeChild(constraints);
-  }
-
-  @Nullable
-  public Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
-    synchronized (myCanBeRootMethods) {
-      if (myCanBeRootMethods.containsKey(conceptFqName)) {
-        return myCanBeRootMethods.get(conceptFqName);
-      }
-
-      IScope scope = context.getScope();
-      SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-
-      if (concept != null) {
-        String fqName = NameUtil.nodeFQName(concept);
-        Language language = scope.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        if (language != null) {
-
-          Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
-          if (behaviorClass != null) {
-            try {
-              Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
-              myCanBeRootMethods.put(conceptFqName, method);
-              return method;
-            } catch (NoSuchMethodException e) {
-              //it's ok
-            }
-          }
-        }
-      }
-
-      myCanBeRootMethods.put(conceptFqName, null);
-      return null;
-    }
-  }
-
   public Method getAlternativeIconMethod(SNode conceptDeclaration) {
     String fqName = NameUtil.nodeFQName(conceptDeclaration);
     String namespace = NameUtil.namespaceFromConceptFQName(fqName);
@@ -780,78 +551,58 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
-  public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
-    Method m = getCanBeRootMethod(conceptFqName, context);
-    return getCanBeRootBlock(context, m);
-  }
+  // canBeASomething section
+  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    SNode currentNode = parentNode;
 
-  public SNode getCanBeRootBlock(IOperationContext context, Method m) {
-    if (m == null) return null;
-    SNode constraints = getClassConstraints(context, m);
-    if (constraints == null) return null;
-    return SConstraintsUtil.getConceptConstraints_CanBeRoot(constraints);
-  }
+    ConceptRegistry registry = ConceptRegistry.getInstance();
 
-  public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, context.getScope());
-    if (concept == null) {
-      return false;
-    }
-    Method method = getCanBeRootMethod(conceptFqName, context);
-    return canBeRoot(context, method, model, concept);
-  }
+    while (currentNode != null) {
+      ConstraintsDescriptor descriptor = registry.getConceptDescriptorForInstanceNode(currentNode).constraints();
 
-  public boolean canBeRoot(IOperationContext context, Method method, SModel model, SNode concept) {
-    if (SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
-      if (method != null) {
-        try {
-          return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
-        } catch (IllegalAccessException e) {
-          LOG.error(e);
-        } catch (InvocationTargetException e) {
-          LOG.error(e);
-        }
-      } else {
-        return true;
+      if (!descriptor.canBeAnAncestor(context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
+        return false;
       }
+
+      currentNode = currentNode.getParent();
     }
 
-    return false;
+    return true;
   }
 
-  private SNode getClassConstraints(IOperationContext context, Method m) {
-    Class cls = m.getDeclaringClass();
-    String fqName = cls.getName();
-    String modelName = NameUtil.namespaceFromLongName(fqName);
-    String rootName = NameUtil.shortNameFromLongName(fqName);
-    Language language = context.getScope().getLanguage(NameUtil.namespaceFromLongName(modelName));
-    if (language == null) {
-      return null;
-    }
-    SModelDescriptor sm = language.getConstraintsModelDescriptor();
-    if (sm == null) return null;
-    SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
-    if (root == null) return null;
-    if (SNodeOperations.isInstanceOf(root, SConstraintsUtil.concept_ConceptConstraints)) {
-      return root;
-    }
-    return null;
+  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
+    return canBeAncestor(parentNode, childConcept, context, null);
   }
 
-  private String constraintsClassByConceptFqName(String fqName) {
-    String cachedValue = myConstraintClassNames.get(fqName);
-    if (cachedValue != null) {
-      return cachedValue;
-    }
+  public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parentNode.getConceptFqName()).constraints();
+    return canBeParent(descriptor, parentNode, childConcept, link, context, null);
+  }
 
-    // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-      myConstraintClassNames.put(fqName, result);
-      return result;
-    } else {
-      throw new RuntimeException();
-    }
+  public static boolean canBeParent(ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    return descriptor.canBeAParent(context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
+  }
+
+  public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(fqName).constraints();
+    return canBeChild(descriptor, fqName, context, parentNode, link, null);
+  }
+
+  public static boolean canBeChild(ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+    SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
+    return descriptor.canBeAChild(context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+  }
+
+  public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints();
+    return canBeRoot(descriptor, context, conceptFqName, model, null);
+  }
+
+  public static boolean canBeRoot(ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    return descriptor.canBeARoot(context, new CanBeARootContext(model), checkingNodeContext);
+  }
+
+  public static String constraintsClassByConceptFqName(String fqName) {
+    return NameUtil.getAspectNodeFqName(fqName, LanguageAspect.CONSTRAINTS) + "_Constraints";
   }
 }
