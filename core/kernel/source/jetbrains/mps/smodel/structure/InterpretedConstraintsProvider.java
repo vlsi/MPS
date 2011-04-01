@@ -55,22 +55,9 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       this.fqName = fqName;
 
       canBeAChildMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-      canBeAnAncestorMethod = getCanBeSomethingMethodWithoutInheritance(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
-      canBeAParentMethod = getCanBeSomethingMethodWithoutInheritance(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-      canBeARootMethod = getCanBeSomethingMethodWithoutInheritance(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
-    }
-
-    private static Method getCanBeSomethingMethodWithoutInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
-      Class constraintsClass = getClassByNameForConcept(constraintsClassByConceptFqName(conceptFqName), conceptFqName);
-      if (constraintsClass != null) {
-        try {
-          return constraintsClass.getMethod(methodName, parameterTypes);
-        } catch (NoSuchMethodException e) {
-          // nothing
-        }
-      }
-
-      return null;
+      canBeAnAncestorMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
+      canBeAParentMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+      canBeARootMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
     }
 
     private static Method getCanBeSomethingMethodWithInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
