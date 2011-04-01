@@ -14,7 +14,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
-  <import index="dnzz" modelUID="r:0721b2d0-d01b-4c4c-98df-39cdc7d62aee(jetbrains.mps.lang.quotation.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3981318653438276869">
       <property name="name" nameId="tpck.1169194664001" value="ShowMetaLevel" />

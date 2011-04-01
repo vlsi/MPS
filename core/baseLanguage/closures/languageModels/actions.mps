@@ -23,7 +23,6 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2n" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" implicit="yes" />
-  <import index="tp2m" modelUID="r:00000000-0000-4000-0000-011c89590332(jetbrains.mps.baseLanguage.closures.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1199651296107">
       <property name="name" nameId="tpck.1169194664001" value="subs_ThisExpression" />

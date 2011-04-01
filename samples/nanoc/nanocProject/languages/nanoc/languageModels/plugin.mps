@@ -30,7 +30,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
-  <import index="t5lq" modelUID="r:6e254a63-c18c-4b3f-9006-08f1db096633(jetbrains.mps.nanoc.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.RunConfigurationTypeDeclaration" typeId="tp4k.7035278950562850663" id="8325829821233548499">
       <property name="name" nameId="tpck.1169194664001" value="ExecutableFileRunConfiguration" />

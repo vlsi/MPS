@@ -14,7 +14,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="fsbp" modelUID="r:3be5b72a-7175-4830-8f2b-4d9b1e5c86a4(jetbrains.mps.baseLanguageInternal.textGen)" version="-1" implicit="yes" />
   <roots>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="1236701327640">
       <property name="name" nameId="tpck.1169194664001" value="BaseLangInternal" />

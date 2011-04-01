@@ -10,7 +10,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="iyz7" modelUID="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)" version="-1" implicit="yes" />
   <roots>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="6585869519574796033">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="i1tc.1388222368191236575" resolveInfo="File" />

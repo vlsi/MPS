@@ -9,7 +9,6 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
-  <import index="tpdf" modelUID="r:00000000-0000-4000-0000-011c895902af(jetbrains.mps.lang.typesystem.dataFlow)" version="-1" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207234025211">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1195213580585" resolveInfo="AbstractCheckingRule" />

@@ -10,7 +10,6 @@
   <import index="zdbw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.textui(MPS.Classpath/junit.textui@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="fw8r" modelUID="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6531435794299649916">
       <property name="name" nameId="tpck.1169194664001" value="NamedObject" />

@@ -20,7 +20,6 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="w1p9" modelUID="r:0f7f05d4-94b2-4dde-bafe-945d38e2adca(jetbrains.mps.debug.sampleLanguage.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="11eb.JavaNodeRunConfiguration" typeId="11eb.8456022385895583119" id="1816315258006280959">
       <property name="name" nameId="tpck.1169194664001" value="WannabeClassConfiguration" />

@@ -10,7 +10,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
-  <import index="jdw4" modelUID="r:474f3a1d-2b97-4f98-a103-24603f0d98f1(jetbrains.mps.ui.internal.testdata.templates)" version="-1" implicit="yes" />
   <roots>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="8977668887014122507">
       <property name="name" nameId="tpck.1169194664001" value="MockWidget_noCtx" />

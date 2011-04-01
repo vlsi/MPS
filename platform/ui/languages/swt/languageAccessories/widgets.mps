@@ -18,7 +18,6 @@
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="m9zq" modelUID="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" version="-1" implicit="yes" />
   <roots>
     <node type="sqp9.UIObjectTemplate" typeId="sqp9.4643695836678898389" id="7655275107718250835">
       <property name="name" nameId="tpck.1169194664001" value="Button_RADIO" />

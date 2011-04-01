@@ -19,7 +19,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="q13p" modelUID="r:56af6a83-862d-41ad-b266-fcb004725f8b(jetbrains.mps.samples.lambdaCalculus.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="11eb.JavaNodeRunConfiguration" typeId="11eb.8456022385895583119" id="6796549325584324225">
       <property name="generate" nameId="11eb.3592413331516836478" value="true" />

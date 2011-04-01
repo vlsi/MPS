@@ -14,7 +14,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tphr" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" implicit="yes" />
-  <import index="nqyx" modelUID="r:ca065d3a-020c-4870-a3eb-cf5a3b6f5659(jetbrains.mps.ide.java.getSolutionFromSource)" version="-1" implicit="yes" />
   <import index="tprh" modelUID="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6998207564469065968">

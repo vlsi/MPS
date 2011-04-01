@@ -24,7 +24,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="t8yi" modelUID="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" version="-1" implicit="yes" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" implicit="yes" />
-  <import index="wa7j" modelUID="r:7046e7e4-4791-44f9-b607-5a3c6291228e(jetbrains.mps.ui.modeling.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8381258131358158060">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358158044" resolveInfo="UIObject" />

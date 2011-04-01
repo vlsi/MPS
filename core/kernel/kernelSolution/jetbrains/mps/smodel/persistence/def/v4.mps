@@ -5,7 +5,6 @@
   <language namespace="b51b9e02-45dc-4b48-b300-cf49360a8d1f(jetbrains.mps.xmlSchema)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpj8" modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="3" implicit="yes" />
-  <import index="ljbd" modelUID="r:4f0c356c-7aaf-4781-86ec-26e5859d0c01(jetbrains.mps.smodel.persistence.def.v4)" version="-1" implicit="yes" />
   <roots>
     <node type="tpj8.Schema" typeId="tpj8.1167513239198" id="5885912106184295766">
       <property name="schemaName" nameId="tpj8.1167754958780" value="MPS model" />

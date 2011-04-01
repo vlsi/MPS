@@ -18,7 +18,6 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="gyzi" modelUID="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="2360002718792535571">
       <property name="name" nameId="tpck.1169194664001" value="ResourceType_comparableWith_IResource" />

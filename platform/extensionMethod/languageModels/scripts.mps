@@ -17,7 +17,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="c1nh" modelUID="r:6f595bf3-27c5-4410-a8f0-094e3ff4d9f0(jetbrains.mps.baseLanguage.extensionMethods.scripts)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7517860079983491720">
       <property name="category" nameId="tp33.1206123296179" value="Extension Methods" />

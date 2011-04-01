@@ -6,7 +6,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tq1l" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="0" implicit="yes" />
-  <import index="qmne" modelUID="r:6e61c12a-3c0f-4223-98e2-5c8cbc39e9af(pattern_gen)" version="-1" implicit="yes" />
   <roots>
     <node type="tq1l.CustomRoot" typeId="tq1l.4146564171992368516" id="4146564171992399879" />
   </roots>

@@ -6,7 +6,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="jvj3" modelUID="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" version="-1" implicit="yes" />
   <import index="u9e0" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" version="-1" implicit="yes" />
-  <import index="5fpq" modelUID="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)" version="-1" implicit="yes" />
   <roots>
     <node type="u9e0.ShellScript" typeId="u9e0.3321051580269925631" id="6382090206696966895">
       <property name="name" nameId="tpck.1169194664001" value="mps_shellscript" />

@@ -15,7 +15,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" implicit="yes" />
   <import index="wch2" modelUID="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debug.privateMembers.structure)" version="-1" implicit="yes" />
-  <import index="ddt4" modelUID="r:d881cf0e-8140-4fc2-a2c4-7677643f9693(jetbrains.mps.baseLanguage.tuples.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="kisg.CustomWatchablesContainer" typeId="kisg.5117350825036256317" id="4712912993948287708">
       <property name="name" nameId="tpck.1169194664001" value="TuplesWatchables" />

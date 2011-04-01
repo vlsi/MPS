@@ -7,7 +7,6 @@
   <import index="tpna" modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" implicit="yes" />
   <import index="tpnk" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpn7" modelUID="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)" version="-1" implicit="yes" />
   <roots>
     <node type="tpna.Plan" typeId="tpna.1111790951422" id="1112303557868">
       <property name="name" nameId="tpck.1169194664001" value="Regular" />

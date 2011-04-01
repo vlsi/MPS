@@ -19,7 +19,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="p0mi" modelUID="r:cfa5d762-ee64-4c5f-8809-eeacacb1b0fb(jetbrains.mps.ui.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8381258131358446228">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb0y.8381258131358446225" resolveInfo="UIObjectStatement" />

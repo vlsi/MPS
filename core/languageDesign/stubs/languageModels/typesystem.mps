@@ -15,7 +15,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="f574" modelUID="r:cfd36f38-4b85-4dbc-852c-079f3960dd0b(jetbrains.mps.lang.stubs.typesystem)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5516999836374121358">
       <property name="name" nameId="tpck.1169194664001" value="StubsCreatorType_SubtypeOf_ModelRootManager" />

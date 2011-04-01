@@ -18,7 +18,6 @@
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="mp65" modelUID="r:ab1a50d1-a1b7-413a-9996-b4d58a2cc7d3(jetbrains.mps.ui.swt.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ApplicationPluginDeclaration" typeId="tp4k.1215279937187" id="1250358102411192142">
       <property name="name" nameId="tpck.1169194664001" value="EditorExtension" />

@@ -17,7 +17,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
-  <import index="tpf4" modelUID="r:00000000-0000-4000-0000-011c895902ec(jetbrains.mps.lang.generator.generationContext.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="1216861582540">
       <property name="name" nameId="tpck.1169194664001" value="node_factories" />

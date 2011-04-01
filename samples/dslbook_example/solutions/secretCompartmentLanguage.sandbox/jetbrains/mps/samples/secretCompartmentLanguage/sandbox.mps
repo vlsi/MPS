@@ -3,7 +3,6 @@
   <persistence version="7" />
   <language namespace="6986543d-8218-4ebf-a2e9-565e5049c1ce(jetbrains.mps.samples.secretCompartmentLanguage)" />
   <import index="tpo2" modelUID="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" version="1" implicit="yes" />
-  <import index="tpnx" modelUID="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)" version="-1" implicit="yes" />
   <roots>
     <node type="tpo2.StateMachine" typeId="tpo2.1197149564476" id="1197150020790">
       <property name="stateMachineName" nameId="tpo2.1197166557152" value="MrsH" />

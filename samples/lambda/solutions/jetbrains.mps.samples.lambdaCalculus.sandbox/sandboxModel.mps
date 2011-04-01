@@ -5,7 +5,6 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="qjd" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" implicit="yes" />
-  <import index="infh" modelUID="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)" version="-1" implicit="yes" />
   <roots>
     <node type="qjd.Program" typeId="qjd.4022026349915669385" id="5277476162361142416">
       <property name="name" nameId="tpck.1169194664001" value="test2" />

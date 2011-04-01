@@ -12,7 +12,6 @@
   <import index="tpih" modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="gtag" modelUID="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" version="0" implicit="yes" />
   <roots>
     <node type="tpih.GDocument" typeId="tpih.1184639540818" id="7046856741208198535">
       <property name="documentName" nameId="tpih.1184639635512" value="gwtdemo" />

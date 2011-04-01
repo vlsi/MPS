@@ -7,7 +7,6 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="gut" modelUID="r:0ceb9890-eb1a-4fa4-8fe6-205462218c35(jetbrains.mps.samples.sampleLanguage.sandbox)" version="-1" implicit="yes" />
   <import index="agsu" modelUID="r:57521e28-7db0-46ec-92c2-8736b3aa197c(jetbrains.mps.debug.sampleLanguage.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="agsu.WannabeClass" typeId="agsu.1816315258006256015" id="6451203873426933243">

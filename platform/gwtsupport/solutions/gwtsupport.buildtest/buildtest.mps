@@ -17,7 +17,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="nbss" modelUID="r:77b60a8d-2582-4f88-b038-f330599ad949(buildtest)" version="-1" implicit="yes" />
   <roots>
     <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="3789315678729139397">
       <property name="name" nameId="tpck.1169194664001" value="buildtest" />

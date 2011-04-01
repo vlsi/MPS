@@ -13,7 +13,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
-  <import index="7rye" modelUID="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" version="-1" implicit="yes" />
   <roots>
     <node type="sqp9.EventHandlerTemplate" typeId="sqp9.8115675450774717215" id="3302932283760647102">
       <property name="name" nameId="tpck.1169194664001" value="MouseClickHandler" />

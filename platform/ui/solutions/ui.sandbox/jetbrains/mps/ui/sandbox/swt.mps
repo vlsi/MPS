@@ -11,7 +11,6 @@
   <import index="48dz" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.graphics(org.eclipse.swt.graphics@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="syy9" modelUID="r:4f857b30-414f-4703-8cf7-80455f6ad887(jetbrains.mps.ui.sandbox.swt)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1880762541167901442">
       <property name="name" nameId="tpck.1169194664001" value="SWTDemo" />

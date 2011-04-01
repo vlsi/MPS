@@ -11,7 +11,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpki" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" implicit="yes" />
-  <import index="tpkc" modelUID="r:00000000-0000-4000-0000-011c895905b0(jetbrains.mps.ypath.treepaths)" version="-1" implicit="yes" />
   <roots>
     <node type="tpki.TreePathAspect" typeId="tpki.1168879975004" id="1180688328445">
       <property name="name" nameId="tpck.1169194664001" value="FileTreePath" />

@@ -21,7 +21,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpki" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" implicit="yes" />
-  <import index="tpk7" modelUID="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)" version="-1" implicit="yes" />
   <roots>
     <node type="tpki.TreePathAspect" typeId="tpki.1168879975004" id="1183980545104">
       <property name="name" nameId="tpck.1169194664001" value="TryFeatures" />

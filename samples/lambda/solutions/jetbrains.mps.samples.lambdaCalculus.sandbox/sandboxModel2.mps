@@ -4,7 +4,6 @@
   <language namespace="7c9e2807-94ad-4afc-adf0-aaee45eb2895(jetbrains.mps.samples.lambdaCalculus)" />
   <import index="qjd" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="a3x4" modelUID="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)" version="-1" implicit="yes" />
   <roots>
     <node type="qjd.Program" typeId="qjd.4022026349915669385" id="816130369292799544">
       <property name="name" nameId="tpck.1169194664001" value="first" />
