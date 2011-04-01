@@ -338,12 +338,12 @@
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig" />

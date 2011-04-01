@@ -110,7 +110,7 @@ public class Node_Configuration implements IPersistentConfiguration {
       clone.myState = (Node_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
+      Node_Configuration.LOG.error(ex);
     }
     return clone;
   }

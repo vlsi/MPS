@@ -62,7 +62,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       clone.myState = (Remote_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
+      Remote_Configuration.LOG.error(ex);
     }
     return clone;
   }
