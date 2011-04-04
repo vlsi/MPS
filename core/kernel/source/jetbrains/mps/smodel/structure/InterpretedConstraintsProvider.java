@@ -49,18 +49,24 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
     private final Method canBeARootMethod;
     private final Method canBeAnAncestorMethod;
 
+    private final Method alternativeIconMethod;
+    private final Method defaultConcreteConceptFqNameMethod;
+
     private final String fqName;
 
     public InterpretedConstraints(String fqName) {
       this.fqName = fqName;
 
-      canBeAChildMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-      canBeAnAncestorMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
-      canBeAParentMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-      canBeARootMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+      canBeAChildMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+      canBeAnAncestorMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
+      canBeAParentMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+      canBeARootMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+
+      alternativeIconMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.GET_ALTERNATIVE_ICON_METHOD_NAME, SNode.class);
+      defaultConcreteConceptFqNameMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
     }
 
-    private static Method getCanBeSomethingMethodWithInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
+    private static Method getMethodUsingInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
       SNode topConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
 
       if (topConcept != null) {
@@ -87,11 +93,11 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       return null;
     }
 
-    private static Method getCanBeSomethingMethodWithInheritanceWithModelAccess(final String conceptFqName, final String methodName, final Class... parameterTypes) {
+    private static Method getMethodUsingInheritanceWithModelAccess(final String conceptFqName, final String methodName, final Class... parameterTypes) {
       return ModelAccess.instance().runReadAction(new Computable<Method>() {
         @Override
         public Method compute() {
-          return getCanBeSomethingMethodWithInheritance(conceptFqName, methodName, parameterTypes);
+          return getMethodUsingInheritance(conceptFqName, methodName, parameterTypes);
         }
       });
     }
@@ -188,6 +194,33 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       }
 
       return result;
+    }
+
+    @Override
+    public boolean isAlternativeIcon() {
+      return alternativeIconMethod != null;
+    }
+
+    @Override
+    public String getAlternativeIcon(SNode node) {
+      try {
+        return (String) alternativeIconMethod.invoke(null, node);
+      } catch (Exception e) {
+        throw new RuntimeException(e);
+      }
+    }
+
+    @Override
+    public String getDefaultConcreteConceptFqName() {
+      if (defaultConcreteConceptFqNameMethod == null) {
+        return fqName;
+      }
+
+      try {
+        return (String) defaultConcreteConceptFqNameMethod.invoke(null);
+      } catch (Exception e) {
+        throw new RuntimeException(e);
+      }
     }
 
     private static SNode getConceptConstraints(IOperationContext context, Method method) {

@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
-import jetbrains.mps.smodel.constraints.CanBeARootContext;
-import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.*;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class ConstraintsDescriptor {
@@ -30,4 +28,11 @@ public abstract class ConstraintsDescriptor {
   public abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
   public abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  // todo: remove/move this methods
+  public abstract boolean isAlternativeIcon();
+
+  public abstract String getAlternativeIcon(SNode node);
+
+  public abstract String getDefaultConcreteConceptFqName();
 }
