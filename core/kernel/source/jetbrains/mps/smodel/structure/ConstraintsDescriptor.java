@@ -29,6 +29,13 @@ public abstract class ConstraintsDescriptor {
 
   public abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
+  // property
+  public abstract INodePropertyGetter getNodePropertyGetter(String propertyName);
+
+  public abstract INodePropertySetter getNodePropertySetter(String propertyName);
+
+  public abstract INodePropertyValidator getNodePropertyValidator(String propertyName);
+
   // todo: remove/move this methods
   public abstract boolean isAlternativeIcon();
 

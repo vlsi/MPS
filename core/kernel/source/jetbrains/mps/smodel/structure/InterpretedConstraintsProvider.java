@@ -234,6 +234,63 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       return result;
     }
 
+    private static final Function<Pair<String, String>, INodePropertyGetter> COMPUTE_FUNCTION_FOR_PROPERTY_GETTER = new Function<Pair<String, String>, INodePropertyGetter>() {
+      @Override
+      public INodePropertyGetter fun(Pair<String, String> conceptFqNameAndPropertyName) {
+        return ModelConstraintsManager.getInstance().getDirectNodePropertyGetter(conceptFqNameAndPropertyName.first, conceptFqNameAndPropertyName.second);
+      }
+    };
+
+    private static final Function<Pair<String, String>, INodePropertySetter> COMPUTE_FUNCTION_FOR_PROPERTY_SETTER = new Function<Pair<String, String>, INodePropertySetter>() {
+      @Override
+      public INodePropertySetter fun(Pair<String, String> conceptFqNameAndPropertyName) {
+        return ModelConstraintsManager.getInstance().getDirectNodePropertySetter(conceptFqNameAndPropertyName.first, conceptFqNameAndPropertyName.second);
+      }
+    };
+
+    private static final Function<Pair<String, String>, INodePropertyValidator> COMPUTE_FUNCTION_FOR_PROPERTY_VALIDATOR = new Function<Pair<String, String>, INodePropertyValidator>() {
+      @Override
+      public INodePropertyValidator fun(Pair<String, String> conceptFqNameAndPropertyName) {
+        return ModelConstraintsManager.getInstance().getDirectNodePropertyValidator(conceptFqNameAndPropertyName.first, conceptFqNameAndPropertyName.second);
+      }
+    };
+
+    @Override
+    public INodePropertyGetter getNodePropertyGetter(String propertyName) {
+      if (propertyGetter.containsKey(propertyName)) {
+        return propertyGetter.get(propertyName);
+      }
+
+      INodePropertyGetter getter = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_GETTER);
+      propertyGetter.put(propertyName, getter);
+
+      return getter;
+    }
+
+    @Override
+    public INodePropertySetter getNodePropertySetter(String propertyName) {
+      if (propertySetter.containsKey(propertyName)) {
+        return propertySetter.get(propertyName);
+      }
+
+      INodePropertySetter setter = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_SETTER);
+      propertySetter.put(propertyName, setter);
+
+      return setter;
+    }
+
+    @Override
+    public INodePropertyValidator getNodePropertyValidator(String propertyName) {
+      if (propertyValidator.containsKey(propertyName)) {
+        return propertyValidator.get(propertyName);
+      }
+
+      INodePropertyValidator validator = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_VALIDATOR);
+      propertyValidator.put(propertyName, validator);
+
+      return validator;
+    }
+
     @Override
     public boolean isAlternativeIcon() {
       return alternativeIconMethod != null;
