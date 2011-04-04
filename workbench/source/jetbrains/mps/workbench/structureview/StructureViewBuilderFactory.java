@@ -52,15 +52,6 @@ public class StructureViewBuilderFactory implements ProjectComponent {
     });
   }
 
-  private boolean isAspect(SNode node, EditorTabDescriptor tab, SNode lastBaseNode) {
-    for (SNode aspect:tab.getNodes(lastBaseNode)){
-      if (aspect.getContainingRoot().equals(node)){
-        return true;
-      }
-    }
-    return false;
-  }
-
   public void projectOpened() {
 
   }
