@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -26,7 +27,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
 
 import java.util.*;
 
@@ -42,15 +42,15 @@ class TypeSystemComponent extends CheckingComponent {
 
   private State myState;
 
-  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_A = new WeakHashMap<SNode, WeakSet<SNode>>();
-  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_B = new WeakHashMap<SNode, WeakSet<SNode>>();
+  private Map<SNode, Set<SNode>> myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
+  private Map<SNode, Set<SNode>> myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
 
   private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
 
-  private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
+  private Map<SNode, Set<Pair<String, String>>> myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
-  private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
+  private Set<SNode> myNodesDependentOnCaches = new THashSet<SNode>();
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
@@ -101,7 +101,7 @@ class TypeSystemComponent extends CheckingComponent {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
         invalidateNodeTypeSystem(nodeToInvalidate, true);
         invalidatedNodes_A.add(nodeToInvalidate);
-        WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
+        Set<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
           newNodesToInvalidate_A.addAll(nodes);
         }
@@ -116,7 +116,7 @@ class TypeSystemComponent extends CheckingComponent {
         if (invalidatedNodes_B.contains(nodeToInvalidate)) continue;
         invalidateNodeTypeSystem(nodeToInvalidate, false);
         invalidatedNodes_B.add(nodeToInvalidate);
-        WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
+        Set<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
           newNodesToInvalidate_B.addAll(nodes);
         }
@@ -346,12 +346,12 @@ class TypeSystemComponent extends CheckingComponent {
   //"type affected" means that *type* of this node depends on this set
   // used to decide whether call "type will be recalculated" if node from set invalidated
   private void addDependentNodesTypeSystem(SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
-    WeakHashMap<SNode, WeakSet<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
+    Map<SNode, Set<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakSet<SNode> dependentNodes = dependencies.get(nodeToDependOn);
+      Set<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakSet<SNode>(1);
+        dependentNodes = new HashSet<SNode>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
         myNodeTypesComponent.track(nodeToDependOn);
       }

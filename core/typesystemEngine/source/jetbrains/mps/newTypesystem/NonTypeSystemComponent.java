@@ -28,7 +28,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypesReadListener;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
 
 import java.util.*;
 
@@ -48,23 +47,23 @@ class NonTypeSystemComponent extends CheckingComponent {
   private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
     // nodes to rules which depend on this nodes
-  private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
-    new THashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+  private Map<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>> myNodesToDependentNodesWithNTRules =
+    new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>>();
 
   // properties to rules which depend on this nodes' properties
-  private Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myPropertiesToDependentNodesWithNTRules =
-    new THashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+  private Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, Set<SNode>>> myPropertiesToDependentNodesWithNTRules =
+    new THashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, Set<SNode>>>();
 
   // typed terms to rules which depend on this nodes
-  private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myTypedTermsToDependentNodesWithNTRules =
-    new THashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+  private Map<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>> myTypedTermsToDependentNodesWithNTRules =
+    new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>>();
 
-  private WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> myNodesDependentOnCachesWithNTRules =
-    new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
+  private Map<SNode, Set<NonTypesystemRule_Runtime>> myNodesDependentOnCachesWithNTRules =
+    new THashMap<SNode, Set<NonTypesystemRule_Runtime>>();
 
   //checked node & NT rule -> set of errors
   private Map<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>> myNodesAndNTRulesToErrors =
-    new WeakHashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
+    new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
 
@@ -98,10 +97,10 @@ class NonTypeSystemComponent extends CheckingComponent {
     return Collections.unmodifiableMap(myNodesToErrorsMap);
   }
 
-  private void doInvalidate(Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
+  private void doInvalidate(Map<NonTypesystemRule_Runtime, Set<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
     if (nodesAndRules != null) {
       for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
-        WeakSet<SNode> nodes = nodesAndRules.get(ruleOfNode);
+        Set<SNode> nodes = nodesAndRules.get(ruleOfNode);
         if (nodes != null) {
           for (SNode depNode : nodes) {
             invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
@@ -218,18 +217,18 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private void addDependentProperties(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
-    Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules
+    Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, Set<SNode>>> mapToNodesWithNTRules
       = myPropertiesToDependentNodesWithNTRules;
     for (Pair<SNode, String> propertyToDependOn : propertiesToDependOn) {
       if (propertyToDependOn == null) continue;
-      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
+      Map<NonTypesystemRule_Runtime, Set<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
+        dependentNodes = new HashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
-      WeakSet<SNode> nodes = dependentNodes.get(rule);
+      Set<SNode> nodes = dependentNodes.get(rule);
       if (nodes == null) {
-        nodes = new WeakSet<SNode>(1);
+        nodes = new THashSet<SNode>(1);
         dependentNodes.put(rule, nodes);
       }
       nodes.add(sNode);
@@ -237,18 +236,18 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private void addDependentNodes(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
-    Map<SNode,Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules =
+    Map<SNode,Map<NonTypesystemRule_Runtime, Set<SNode>>> mapToNodesWithNTRules =
       isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
+      Map<NonTypesystemRule_Runtime, Set<SNode>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
+        dependentNodes = new HashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
         mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
-      WeakSet<SNode> nodes = dependentNodes.get(rule);
+      Set<SNode> nodes = dependentNodes.get(rule);
       if (nodes == null) {
-        nodes = new WeakSet<SNode>(1);
+        nodes = new THashSet<SNode>(1);
         dependentNodes.put(rule, nodes);
       }
       nodes.add(sNode);
@@ -256,7 +255,7 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private void addCacheDependentNodesNonTypesystem(SNode node, NonTypesystemRule_Runtime rule) {
-    WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
+    Map<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
     Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);
     if (rules == null) {
       rules = new HashSet<NonTypesystemRule_Runtime>(1);
