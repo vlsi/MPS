@@ -144,10 +144,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return l.getClass(className);
   }
 
+  // register/unregister stuff
   public static <T extends IModelConstraints> void registerNodeIModelConstraints(String conceptFqName, String name, T constraints,
                                                                                  Map<Pair<String, String>, T> constraintsMap,
                                                                                  Map<Pair<String, String>, T> constraintsCacheMap) {
-    Pair<String, String> key = new Pair<String, String>(conceptFqName, name);
+    Pair<String, String> key = Pair.create(conceptFqName, name);
     T old = constraintsMap.put(key, constraints);
     if (old != null) {
       LOG.error("model constraints is already registered for key '" + key + "' : " + old);
@@ -203,6 +204,48 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
+  public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
+    String key = conceptFqName + "#" + referenceRole;
+    INodeReferentSearchScopeProvider old = myNodeReferentSearchScopeProvidersMap.put(key, provider);
+    if (old != null) {
+      LOG.error("search scope provider is already registered for key '" + key + "' : " + old);
+    }
+  }
+
+  public void unRegisterNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole) {
+    myNodeReferentSearchScopeProvidersMap.remove(conceptFqName + "#" + referenceRole);
+  }
+
+  public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
+    INodeReferentSearchScopeProvider old = myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
+    if (old != null) {
+      LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + old);
+    }
+  }
+
+  public void unRegisterNodeDefaultSearchScopeProvider(String conceptFqName) {
+    myNodeDefaultSearchScopeProvidersMap.remove(conceptFqName);
+  }
+
+  // end register/unregister stuff
+
+  // api for InterpretedConstraintsProvider, this methods don't use concept hierarchy
+  @Nullable
+  public INodePropertyGetter getDirectNodePropertyGetter(String conceptFqName, String propertyName) {
+    return myNodePropertyGettersMap.get(Pair.create(conceptFqName, propertyName));
+  }
+
+  @Nullable
+  public INodePropertySetter getDirectNodePropertySetter(String conceptFqName, String propertyName) {
+    return myNodePropertySettersMap.get(Pair.create(conceptFqName, propertyName));
+  }
+
+  @Nullable
+  public INodePropertyValidator getDirectNodePropertyValidator(String conceptFqName, String propertyName) {
+    return myNodePropertyValidatorsMap.get(Pair.create(conceptFqName, propertyName));
+  }
+  // end api
+
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     String nodeConceptFqName = node.getConceptFqName();
     String originalKey = nodeConceptFqName + "#" + referentRole;
@@ -230,28 +273,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
-    String key = conceptFqName + "#" + referenceRole;
-    INodeReferentSearchScopeProvider old = myNodeReferentSearchScopeProvidersMap.put(key, provider);
-    if (old != null) {
-      LOG.error("search scope provider is already registered for key '" + key + "' : " + old);
-    }
-  }
-
-  public void unRegisterNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole) {
-    myNodeReferentSearchScopeProvidersMap.remove(conceptFqName + "#" + referenceRole);
-  }
-
-  public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
-    INodeReferentSearchScopeProvider old = myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
-    if (old != null) {
-      LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + old);
-    }
-  }
-
-  public void unRegisterNodeDefaultSearchScopeProvider(String conceptFqName) {
-    myNodeDefaultSearchScopeProvidersMap.remove(conceptFqName);
-  }
 
   public boolean isComplexNodeProperty(SNode node, String propertyName) {
     return getNodePropertyGetter(node, propertyName) != null || getNodePropertySetter(node, propertyName) != null;

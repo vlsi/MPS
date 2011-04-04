@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
+import com.intellij.util.Function;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,6 +33,8 @@ import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsManager.constraintsClassByConceptFqName;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getClassByNameForConcept;
@@ -54,6 +58,11 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
 
     private final String fqName;
 
+    // caches for property getters/setters/validators
+    private final Map<String, INodePropertyGetter> propertyGetter = new ConcurrentHashMap<String, INodePropertyGetter>();
+    private final Map<String, INodePropertySetter> propertySetter = new ConcurrentHashMap<String, INodePropertySetter>();
+    private final Map<String, INodePropertyValidator> propertyValidator = new ConcurrentHashMap<String, INodePropertyValidator>();
+
     public InterpretedConstraints(String fqName) {
       this.fqName = fqName;
 
@@ -66,8 +75,43 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       defaultConcreteConceptFqNameMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
     }
 
+    private static class MethodInfo {
+      public final String methodName;
+      public final Class[] parameterTypes;
+
+      MethodInfo(String methodName, Class... parameterTypes) {
+        this.methodName = methodName;
+        this.parameterTypes = parameterTypes;
+      }
+    }
+
+    private static final Function<Pair<String, MethodInfo>, Method> COMPUTE_FUNCTION_FOR_METHOD_INHERITANCE = new Function<Pair<String, MethodInfo>, Method>() {
+      @Override
+      public Method fun(Pair<String, MethodInfo> conceptFqNameAndContext) {
+        String conceptFqName = conceptFqNameAndContext.first;
+        Class constraintsClass = getClassByNameForConcept(constraintsClassByConceptFqName(conceptFqName), conceptFqName);
+
+        if (constraintsClass == null) {
+          return null;
+        }
+
+        try {
+          return constraintsClass.getMethod(conceptFqNameAndContext.second.methodName, conceptFqNameAndContext.second.parameterTypes);
+        } catch (NoSuchMethodException e) {
+          //it's ok
+        }
+
+        return null;
+      }
+    };
+
     private static Method getMethodUsingInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
-      SNode topConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+      return computeInConceptHierarchy(conceptFqName, new MethodInfo(methodName, parameterTypes), COMPUTE_FUNCTION_FOR_METHOD_INHERITANCE);
+    }
+
+    // compute in hierarchy while result is null. Returns first not null result. C - context. todo: javadoc
+    private static <T, C> T computeInConceptHierarchy(String topConceptFqName, C context, Function<Pair<String, C>, T> computeFunction) {
+      SNode topConcept = SModelUtil.findConceptDeclaration(topConceptFqName, GlobalScope.getInstance());
 
       if (topConcept != null) {
         // todo: using only concept descriptors!
@@ -76,16 +120,10 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
         for (SNode concept : conceptAndSuperConcepts) {
           String fqName = NameUtil.nodeFQName(concept);
 
-          Class constraintsClass = getClassByNameForConcept(constraintsClassByConceptFqName(fqName), fqName);
+          T result = computeFunction.fun(Pair.create(fqName, context));
 
-          if (constraintsClass == null) {
-            continue;
-          }
-
-          try {
-            return constraintsClass.getMethod(methodName, parameterTypes);
-          } catch (NoSuchMethodException e) {
-            //it's ok
+          if (result != null) {
+            return result;
           }
         }
       }
