@@ -606,7 +606,7 @@ public class SModel {
         SModelReference targetModelRef = ref.getTargetSModelReference();
         if (targetModelRef == null) {
           LOG.error("target model reference " + ref.getRole() + " is null for node " + node.getDebugText());
-        } else {
+        } else if (!targetModelRef.equals(model.getSModelReference())) {
           result.add(targetModelRef);
         }
         SNode decl = node.getLinkDeclaration(ref.getRole());
@@ -616,7 +616,7 @@ public class SModel {
           result.add(decl.getModel().getSModelReference());
         }
       }
-      for (SNode child : node.getChildren()) {
+      for (SNode child : node.getChildrenIterable()) {
         SNode decl = child.getRoleLink();
         if (decl == null) {
           LOG.error("child link declaration " + child.getRole_() + " not found for node " + node.getDebugText());
@@ -879,7 +879,7 @@ public class SModel {
     return myRoots.contains(node);
   }
 
-  void changeModelReference(SModelReference newModelReference) {
+  void changeModelReference(@NotNull SModelReference newModelReference) {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
