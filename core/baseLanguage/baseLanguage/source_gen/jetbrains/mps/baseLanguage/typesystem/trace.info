@@ -4894,7 +4894,7 @@
     <nodeInfo nodeId="5899025696847072467" fileName="check_NullableStates_NonTypesystemRule.java" startLine="125" startPosition="54" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5899025696847223994" fileName="check_NullableStates_NonTypesystemRule.java" startLine="136" startPosition="113" endLine="140" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4658387821817544361" fileName="check_NullableStates_NonTypesystemRule.java" startLine="143" startPosition="116" endLine="147" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3791846458263577275" fileName="check_NullableStates_NonTypesystemRule.java" startLine="54" startPosition="190" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3791846458263577275" fileName="check_NullableStates_NonTypesystemRule.java" startLine="54" startPosition="345" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3791846458263577389" fileName="check_NullableStates_NonTypesystemRule.java" startLine="76" startPosition="28" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3791846458263577402" fileName="check_NullableStates_NonTypesystemRule.java" startLine="82" startPosition="13" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3791846458263577481" fileName="check_NullableStates_NonTypesystemRule.java" startLine="108" startPosition="11" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4937,7 +4937,7 @@
     <scopeInfo nodeId="5899025696847072467" fileName="check_NullableStates_NonTypesystemRule.java" startLine="125" startPosition="54" endLine="129" endPosition="0" />
     <scopeInfo nodeId="5899025696847223965" fileName="check_NullableStates_NonTypesystemRule.java" startLine="136" startPosition="113" endLine="140" endPosition="17" />
     <scopeInfo nodeId="4658387821817512047" fileName="check_NullableStates_NonTypesystemRule.java" startLine="143" startPosition="116" endLine="147" endPosition="13" />
-    <scopeInfo nodeId="3791846458263577274" fileName="check_NullableStates_NonTypesystemRule.java" startLine="54" startPosition="190" endLine="60" endPosition="11" />
+    <scopeInfo nodeId="3791846458263577274" fileName="check_NullableStates_NonTypesystemRule.java" startLine="54" startPosition="345" endLine="60" endPosition="11" />
     <scopeInfo nodeId="5899025696847223952" fileName="check_NullableStates_NonTypesystemRule.java" startLine="135" startPosition="44" endLine="141" endPosition="15" />
     <scopeInfo nodeId="3791846458263577267" fileName="check_NullableStates_NonTypesystemRule.java" startLine="52" startPosition="266" endLine="61" endPosition="9">
       <varInfo nodeId="3791846458263577269" varName="dot" />

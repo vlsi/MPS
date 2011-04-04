@@ -51,7 +51,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       SNode parent = SNodeOperations.getParent(source);
       if (!(instruction instanceof IfJumpInstruction) && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"))) {
         SNode dot = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true)))) {
+        if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dot, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
           if (NullableState.canBeNull(varState)) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
