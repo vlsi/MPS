@@ -22,8 +22,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.Macros;
@@ -101,6 +105,14 @@ public class Module_Behavior {
       ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
     }
     SLinkOperations.setTarget(pathHolder, "module", thisNode, false);
+    SPropertyOperations.set(pathHolder, "moduleRelativePath", ModuleUtil.getRelativePath(path, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath()));
+    if (SPropertyOperations.getString(pathHolder, "moduleRelativePath").equals(path)) {
+      if (path.equals(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath())) {
+        SPropertyOperations.set(pathHolder, "moduleRelativePath", "");
+      } else {
+        SPropertyOperations.set(pathHolder, "moduleRelativePath", null);
+      }
+    }
     return pathHolder;
   }
 
@@ -127,6 +139,23 @@ public class Module_Behavior {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
+        return it.getPath();
+      }
+    }).toListSequence(), true);
+  }
+
+  public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
+    List<SModelRoot> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots();
+    if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
+      paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
+      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).<SModelRoot>translate(new ITranslator2<Generator, SModelRoot>() {
+        public Iterable<SModelRoot> translate(Generator it) {
+          return it.getSModelRoots();
+        }
+      }));
+    }
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<SModelRoot, String>() {
+      public String select(SModelRoot it) {
         return it.getPath();
       }
     }).toListSequence(), true);

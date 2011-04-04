@@ -21,9 +21,9 @@ import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.AbstractModule;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
@@ -189,8 +189,19 @@ public class QueriesGenerated {
     return AbstractModule.MODULE_DIR;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1237396085551(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1175062284955467608(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractModule.MODULE_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2739262311775160732(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String s = SPropertyOperations.getString(_context.getNode(), "moduleRelativePath");
+    if (s == null) {
+      _context.showErrorMessage(null, "language: model root folder should be placed under language root: " + SPropertyOperations.getString(_context.getNode(), "fullPath"));
+      s = "";
+    } else if (StringUtils.isNotEmpty(s)) {
+      s = "/" + s;
+    }
+    return AbstractModule.MODULE_DIR + s;
   }
 
   public static Object propertyMacro_GetPropertyValue_1210098064936(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -688,8 +699,12 @@ public class QueriesGenerated {
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), absoluteDescriptorPath);
   }
 
-  public static SNode sourceNodeQuery_1239195355939(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1175062284955467589(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), Module_Behavior.call_getBasedir_1213877514794(_context.getNode()).replace(File.separator, Util.SEPARATOR));
+  }
+
+  public static SNode sourceNodeQuery_2739262311775160699(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1237396009295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -800,6 +815,10 @@ public class QueriesGenerated {
     return Module_Behavior.call_getClassPath_1213877515083(_context.getNode());
   }
 
+  public static Iterable sourceNodesQuery_2739262311775160744(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Module_Behavior.call_getModelRootPaths_2739262311775052381(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_1237395979883(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getClassPath_1213877515083(_context.getNode());
   }
@@ -875,8 +894,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0xg;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0xg_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0ah;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0ah_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -899,13 +918,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0xg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0ah_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0xg_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0ah_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0xg = this._7__yield_x583g4_a0a0a0a0a0xg_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0ah = this._7__yield_x583g4_a0a0a0a0a0ah_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -917,7 +936,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0xg);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0ah);
                       return true;
                     case 12:
                       this.__CP__ = 3;

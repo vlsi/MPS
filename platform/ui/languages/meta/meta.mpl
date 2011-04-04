@@ -10,9 +10,7 @@
   </accessoryModels>
   <generators>
     <generator name="baseLanguage" generatorUID="jetbrains.mps.ui.modeling#1773430080753795670" uuid="f65201f1-7dc7-4cfc-9f79-ca0a316cf695">
-      <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.ui.modeling.generator.template" />
-      </models>
+      <models />
       <external-templates />
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>

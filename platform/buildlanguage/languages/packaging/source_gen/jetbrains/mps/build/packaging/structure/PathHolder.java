@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PathHolder extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.PathHolder";
   public static final String FULL_PATH = "fullPath";
+  public static final String MODULE_RELATIVE_PATH = "moduleRelativePath";
   public static final String MACRO = "macro";
   public static final String MODULE = "module";
 
@@ -24,6 +25,14 @@ public class PathHolder extends BaseConcept {
 
   public void setFullPath(String value) {
     this.setProperty(PathHolder.FULL_PATH, value);
+  }
+
+  public String getModuleRelativePath() {
+    return this.getProperty(PathHolder.MODULE_RELATIVE_PATH);
+  }
+
+  public void setModuleRelativePath(String value) {
+    this.setProperty(PathHolder.MODULE_RELATIVE_PATH, value);
   }
 
   public Macro getMacro() {

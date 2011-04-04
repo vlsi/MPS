@@ -294,9 +294,12 @@
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Module_Behavior" file="Module_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Macros" />
     <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="java.util.List" />
@@ -312,9 +315,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.generator.cache.AllCaches" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -323,7 +328,7 @@
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
