@@ -22,6 +22,10 @@ public class CheckingNodeContext {
   public SNodePointer breakingNodePointer;
 
   public SNode getBreakingNodeAndClearContext() {
+    if (breakingNodePointer == null) {
+      return null;
+    }
+
     SNode node = breakingNodePointer.getNode();
     breakingNodePointer = null;
     return node;

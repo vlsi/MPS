@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
-import jetbrains.mps.lang.typesystem.runtime.incremental.SNodeReferentReadEvent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -33,7 +34,6 @@ import java.util.List;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsManager.constraintsClassByConceptFqName;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getClassByNameForConcept;
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getLanguageForConceptFqName;
 
 public class InterpretedConstraintsProvider extends DescriptorProvider<ConstraintsDescriptor> {
   @Override
@@ -54,10 +54,10 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
     public InterpretedConstraints(String fqName) {
       this.fqName = fqName;
 
-      canBeAChildMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-      canBeAnAncestorMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
-      canBeAParentMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-      canBeARootMethod = getCanBeSomethingMethodWithInheritance(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+      canBeAChildMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+      canBeAnAncestorMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
+      canBeAParentMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+      canBeARootMethod = getCanBeSomethingMethodWithInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
     }
 
     private static Method getCanBeSomethingMethodWithInheritance(String conceptFqName, String methodName, Class... parameterTypes) {
@@ -87,6 +87,15 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       return null;
     }
 
+    private static Method getCanBeSomethingMethodWithInheritanceWithModelAccess(final String conceptFqName, final String methodName, final Class... parameterTypes) {
+      return ModelAccess.instance().runReadAction(new Computable<Method>() {
+        @Override
+        public Method compute() {
+          return getCanBeSomethingMethodWithInheritance(conceptFqName, methodName, parameterTypes);
+        }
+      });
+    }
+
     private static boolean invokeCanBeASomethingMethod(Method method, IOperationContext operationContext, Object _context) {
       if (method != null) {
         try {
@@ -100,55 +109,71 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       return true;
     }
 
+    private static SNodePointer getConceptConstraint(final Method method, final IOperationContext context, final String role) {
+      return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        @Override
+        public SNodePointer compute() {
+          return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodePointer>() {
+            @Override
+            public SNodePointer compute() {
+              SNode constraints = getConceptConstraints(context, method);
+              if (constraints == null) {
+//          throw new RuntimeException("Empty concept constraints");
+                return null;
+              } else {
+                return new SNodePointer(SLinkOperations.getTarget(constraints, role, true));
+              }
+            }
+          });
+        }
+      });
+    }
+
     @Override
     public boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
       boolean result = invokeCanBeASomethingMethod(canBeAChildMethod, operationContext, _context);
 
       if (checkingNodeContext != null && !result) {
-        SNode constraints = getConceptConstraints(canBeAChildMethod);
-        if (constraints == null) {
-          throw new RuntimeException("Empty concept constraints");
-        }
-        checkingNodeContext.breakingNodePointer = new SNodePointer(SConstraintsUtil.getConceptConstraints_CanBeChild(constraints));
+        checkingNodeContext.breakingNodePointer = getConceptConstraint(canBeAChildMethod, operationContext, "canBeChild");
       }
 
       return result;
     }
 
     @Override
-    public boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
+    public boolean canBeAParent(final IOperationContext operationContext, CanBeAParentContext _context, @Nullable final CheckingNodeContext checkingNodeContext) {
       boolean result = invokeCanBeASomethingMethod(canBeAParentMethod, operationContext, _context);
 
       if (checkingNodeContext != null && !result) {
-        SNode constraints = getConceptConstraints(canBeAParentMethod);
-        if (constraints == null) {
-          throw new RuntimeException("Empty concept constraints");
-        }
-        checkingNodeContext.breakingNodePointer = new SNodePointer(SConstraintsUtil.getConceptConstraints_CanBeParent(constraints));
+        checkingNodeContext.breakingNodePointer = getConceptConstraint(canBeAParentMethod, operationContext, "canBeParent");
       }
 
       return result;
     }
 
     @Override
-    public boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
-      SNode concept = SModelUtil.findConceptDeclaration(fqName, operationContext.getScope());
+    public boolean canBeARoot(final IOperationContext operationContext, CanBeARootContext _context, @Nullable final CheckingNodeContext checkingNodeContext) {
+      if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          SNode concept = SModelUtil.findConceptDeclaration(fqName, operationContext.getScope());
+          if (!(SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept))) {
+            if (checkingNodeContext != null) {
+              checkingNodeContext.breakingNodePointer = new SNodePointer(concept);
+            }
 
-      if (!(SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept))) {
-        if (checkingNodeContext != null) {
-          checkingNodeContext.breakingNodePointer = new SNodePointer(concept);
+            return false;
+          } else {
+            return true;
+          }
         }
-
+      })) {
         return false;
       }
 
       boolean result = invokeCanBeASomethingMethod(canBeARootMethod, operationContext, _context);
       if (checkingNodeContext != null && !result) {
-        SNode constraints = getConceptConstraints(canBeARootMethod);
-        if (constraints == null) {
-          throw new RuntimeException("Empty concept constraints");
-        }
-        checkingNodeContext.breakingNodePointer = new SNodePointer(SConstraintsUtil.getConceptConstraints_CanBeRoot(constraints));
+        checkingNodeContext.breakingNodePointer = getConceptConstraint(canBeARootMethod, operationContext, "canBeRoot");
       }
 
       return result;
@@ -159,38 +184,28 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
       boolean result = invokeCanBeASomethingMethod(canBeAnAncestorMethod, operationContext, _context);
 
       if (checkingNodeContext != null && !result) {
-        SNode constraints = getConceptConstraints(canBeAnAncestorMethod);
-        if (constraints == null) {
-          throw new RuntimeException("Empty concept constraints");
-        }
-        checkingNodeContext.breakingNodePointer = new SNodePointer(SConstraintsUtil.getConceptConstraints_CanBeAncestor(constraints));
+        checkingNodeContext.breakingNodePointer = getConceptConstraint(canBeAnAncestorMethod, operationContext, "canBeAncestor");
       }
 
       return result;
     }
 
-    private static SNode getConceptConstraints(Method method) {
-      String fqName = method.getDeclaringClass().getName();
-
-      Language language = getLanguageForConceptFqName(fqName);
+    private static SNode getConceptConstraints(IOperationContext context, Method method) {
+      Class cls = method.getDeclaringClass();
+      String fqName = cls.getName();
+      String modelName = NameUtil.namespaceFromLongName(fqName);
+      String rootName = NameUtil.shortNameFromLongName(fqName);
+      Language language = context.getScope().getLanguage(NameUtil.namespaceFromLongName(modelName));
       if (language == null) {
         return null;
       }
-
       SModelDescriptor sm = language.getConstraintsModelDescriptor();
-      if (sm == null) {
-        return null;
-      }
-
-      SNode root = SModelOperations.getRootByName(sm.getSModel(), NameUtil.shortNameFromLongName(fqName));
-      if (root == null) {
-        return null;
-      }
-
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(root, SConstraintsUtil.concept_ConceptConstraints)) {
+      if (sm == null) return null;
+      SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
+      if (root == null) return null;
+      if (SNodeOperations.isInstanceOf(root, SConstraintsUtil.concept_ConceptConstraints)) {
         return root;
       }
-
       return null;
     }
   }
