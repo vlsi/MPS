@@ -54,69 +54,8 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$mps_home$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://svn.jetbrains.org/mps/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://svn.jetbrains.org/mps/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="branchUrls">
-                <list>
-                  <option value="https://svn.jetbrains.org/mps/branches" />
-                  <option value="https://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://svn.jetbrains.org/mps/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://svn.jetbrains.org/mps/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="branchUrls">
-                <list>
-                  <option value="https://svn.jetbrains.org/mps/branches" />
-                  <option value="https://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="mySupportsUserInfoFilter" value="true" />
-  </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$mps_home$" vcs="Git" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 
