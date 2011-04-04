@@ -43,7 +43,7 @@ class Memento {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
     EditorCell selectedCell = nodeEditor.getSelectedCell();
     EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
-    if (selectedCell != null && !selectedCell.getSNode().isDisposed()) {
+    if (selectedCell != null && selectedCell.getSNode() != null && !selectedCell.getSNode().isDisposed()) {
       if (deepestSelectedCell != null) {
         myCaretX = deepestSelectedCell.getCaretX();
         if (deepestSelectedCell instanceof EditorCell_Label) {
