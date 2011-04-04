@@ -781,11 +781,10 @@ public class SModel {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
+    if (importElement == null) {
+      importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
     }
 
-    importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
