@@ -101,6 +101,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
     addAction(new ShowReferencesToMissingStuff_Action());
+    addAction(new ShowStructure_Action());
     addAction(new SolutionProperties_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
