@@ -10,4 +10,5 @@
   <update-urls check="http://www.jetbrains.com/mps/update.xml" download="http://www.jetbrains.com/mps/download/"/>
   <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png"
                   slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
+  <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
 </component>
