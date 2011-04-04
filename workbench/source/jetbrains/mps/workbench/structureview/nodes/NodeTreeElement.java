@@ -48,11 +48,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     //todo use SNodePointer here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
       public ItemPresentation compute() {
-        return new NodePresentation(myNode.getNode()){
-          public String doGetLocationString() {
-            return null;
-          }
-        };
+        return new NodeTreeElementPresentation();
       }
     });
   }
@@ -92,5 +88,15 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
         new MPSEditorOpener(p).editNode(node, new ModuleContext(module, p));
       }
     });
+  }
+
+  protected class NodeTreeElementPresentation extends NodePresentation {
+    public NodeTreeElementPresentation() {
+      super(NodeTreeElement.this.myNode.getNode());
+    }
+
+    public String doGetLocationString() {
+      return null;
+    }
   }
 }

@@ -16,15 +16,25 @@
 package jetbrains.mps.workbench.structureview.nodes;
 
 import com.intellij.ide.util.treeView.smartTree.TreeElement;
+import com.intellij.navigation.ItemPresentation;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.editor.markup.TextAttributes;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.awt.Color;
+
 public class AspectTreeElement extends NodeTreeElement {
+  private static final String NON_BIJECTIONAL_NODE_ASPECT = "non-bijectional node aspect";
+  protected boolean myIsBijection;
   protected EditorTabDescriptor myAspectDescriptor;
 
-  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor) {
+  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor, boolean isBijection) {
     super(node);
     myAspectDescriptor = aspectDescriptor;
+    myIsBijection = isBijection;
   }
 
   public EditorTabDescriptor getAspectDescriptor() {
@@ -33,5 +43,24 @@ public class AspectTreeElement extends NodeTreeElement {
 
   public TreeElement[] getChildren() {
     return new TreeElement[0];
+  }
+
+  @Override
+  public ItemPresentation getPresentation() {
+    //todo use SNodePointer here, get rid of read action
+    return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      public ItemPresentation compute() {
+        return new NodeTreeElementPresentation() {
+          @Override
+          public TextAttributesKey getTextAttributesKey() {
+            if (myIsBijection) return null;
+
+            TextAttributes att = new TextAttributes();
+            att.setForegroundColor(Color.GRAY);
+            return TextAttributesKey.createTextAttributesKey(NON_BIJECTIONAL_NODE_ASPECT, att);
+          }
+        };
+      }
+    });
   }
 }
