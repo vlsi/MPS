@@ -12,23 +12,35 @@ import org.apache.tools.ant.BuildException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.make.resources.IResource;
+import java.util.List;
+import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.make.resources.IResource;
 import java.io.File;
 import jetbrains.mps.messages.IMessageHandler;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class GeneratorWorker extends MpsWorker {
   private final GeneratorWorker.MyMessageHandler myMessageHandler = new GeneratorWorker.MyMessageHandler();
@@ -90,25 +102,78 @@ public class GeneratorWorker extends MpsWorker {
     }
     info(s.toString());
     final ProjectOperationContext ctx = ProjectOperationContext.get(project.getProject());
-    final Iterable<IResource> resources = collectResources(ctx, go);
-    IdeEventQueue.getInstance().flushQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
+
+    final List<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    final Map<IModule, IMResource> cache = MapSequence.fromMap(new HashMap<IModule, IMResource>());
+    ListSequence.fromList(resources).visitAll(new IVisitor<IMResource>() {
+      public void visit(IMResource r) {
+        MapSequence.fromMap(cache).put(r.module(), r);
       }
     });
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    final GeneratorWorker.Graph<IMResource> graph = new GeneratorWorker.Graph<IMResource>();
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        new BuildMakeService(ctx, myMessageHandler).make(resources);
+        for (IMResource res : (Iterable<IMResource>) resources) {
+          graph.addEdges(res);
+          for (IModule depOn : res.module().getDependenciesManager().getDependOnModules()) {
+            if (MapSequence.fromMap(cache).containsKey(depOn)) {
+              graph.addEdges(MapSequence.fromMap(cache).get(depOn), res);
+            }
+          }
+          if (res.module() instanceof Language) {
+            for (Generator gen : ((Language) res.module()).getGenerators()) {
+              if (MapSequence.fromMap(cache).containsKey(gen)) {
+                graph.addEdges(res, MapSequence.fromMap(cache).get(gen));
+                graph.addEdges(MapSequence.fromMap(cache).get(gen), res);
+              }
+            }
+          }
+        }
       }
     });
-    IdeEventQueue.getInstance().flushQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
+    GraphAnalyzer<IMResource> ga = graph.getCycleDetector();
+    List<List<IMResource>> cycles = ga.findCycles();
+    for (IMResource res : Sequence.fromIterable(ga.topologicalSort()).where(new IWhereFilter<IMResource>() {
+      public boolean accept(IMResource r) {
+        return MapSequence.fromMap(cache).containsKey(r.module());
       }
-    });
+    })) {
+      final List<IMResource> toMake = ListSequence.fromList(new ArrayList<IMResource>());
+      for (List<IMResource> cycle : cycles) {
+        if (ListSequence.fromList(cycle).contains(res)) {
+          ListSequence.fromList(toMake).addSequence(ListSequence.fromList(cycle));
+          ListSequence.fromList(cycle).visitAll(new IVisitor<IMResource>() {
+            public void visit(IMResource r) {
+              MapSequence.fromMap(cache).removeKey(r.module());
+            }
+          });
+          break;
+        }
+      }
+      if (ListSequence.fromList(toMake).isEmpty()) {
+        ListSequence.fromList(toMake).addElement(res);
+        MapSequence.fromMap(cache).removeKey(res.module());
+      }
+      IdeEventQueue.getInstance().flushQueue();
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+        }
+      });
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          new BuildMakeService(ctx, myMessageHandler).make(toMake);
+        }
+      });
+      IdeEventQueue.getInstance().flushQueue();
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+        }
+      });
+    }
+
   }
 
-  private Iterable<IResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+  private Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -125,11 +190,15 @@ public class GeneratorWorker extends MpsWorker {
         }
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
         return !(GeneratorManager.isDoNotGenerate(smd));
       }
-    })).resources(false);
+    })).resources(false)).<IMResource>select(new ISelector<IResource, IMResource>() {
+      public IMResource select(IResource r) {
+        return (IMResource) r;
+      }
+    });
   }
 
   public static void main(String[] args) {
@@ -179,6 +248,67 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void clear() {
+    }
+  }
+
+  public static class Graph<V> {
+    private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
+    private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
+    private Map<V, List<V>> bkEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
+    private _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter;
+    private boolean asc;
+
+    public Graph() {
+    }
+
+    public void addEdges(V from, V... to) {
+      List<V> fw = MapSequence.fromMap(fwEdges).get(from);
+      if (fw == null) {
+        fw = ListSequence.fromList(new ArrayList<V>());
+        MapSequence.fromMap(fwEdges).put(from, fw);
+      }
+      SetSequence.fromSet(vertices).addElement(from);
+      for (V next : to) {
+        ListSequence.fromList(fw).addElement(next);
+        List<V> bk = MapSequence.fromMap(bkEdges).get(next);
+        if (bk == null) {
+          bk = ListSequence.fromList(new ArrayList<V>());
+          MapSequence.fromMap(bkEdges).put(next, bk);
+        }
+        ListSequence.fromList(bk).addElement(from);
+        SetSequence.fromSet(vertices).addElement(next);
+      }
+    }
+
+    public void sort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter, boolean asc) {
+      this.sorter = sorter;
+      this.asc = asc;
+    }
+
+    public Iterable<V> getVertices() {
+      return (sorter != null ?
+        SetSequence.fromSet(vertices).sort(sorter, asc) :
+        vertices
+      );
+    }
+
+    public GraphAnalyzer<V> getCycleDetector() {
+      return new GraphAnalyzer<V>() {
+        @Override
+        public Iterable<V> forwardEdges(V v) {
+          return MapSequence.fromMap(fwEdges).get(v);
+        }
+
+        @Override
+        public Iterable<V> vertices() {
+          return getVertices();
+        }
+
+        @Override
+        public Iterable<V> backwardEdges(V v) {
+          return MapSequence.fromMap(bkEdges).get(v);
+        }
+      };
     }
   }
 }
