@@ -30,7 +30,6 @@ import java.util.List;
 
 public class StructureViewBuilderFactory implements ProjectComponent {
   private Project myProject;
-  private SNodePointer myLastBaseNode = null;
 
   public StructureViewBuilderFactory(Project project) {
     myProject = project;
@@ -44,21 +43,10 @@ public class StructureViewBuilderFactory implements ProjectComponent {
         for (EditorTabDescriptor tab : tabs) {
           SNode baseNode = tab.getBaseNode(node);
           if (baseNode != null) {
-            myLastBaseNode = new SNodePointer(baseNode);
-            return new NodeStructureViewBuilder(myProject, myLastBaseNode);
+            return new NodeStructureViewBuilder(myProject, new SNodePointer(baseNode));
           }
         }
 
-        if (myLastBaseNode != null) {
-          for (EditorTabDescriptor tab : tabs) {
-            SNode lastBaseNode = myLastBaseNode.getNode();
-            if (!tab.isApplicable(lastBaseNode)) continue;
-            if (!isAspect(node, tab, lastBaseNode)) continue;
-            return new NodeStructureViewBuilder(myProject, myLastBaseNode);
-          }
-        }
-
-        myLastBaseNode = null;
         return null;
       }
     });
