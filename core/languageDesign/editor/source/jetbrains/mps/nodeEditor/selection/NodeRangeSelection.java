@@ -59,7 +59,7 @@ public class NodeRangeSelection implements MultipleSelection {
   private EditorComponent myEditorComponent;
   private List<EditorCell> mySelectedCells = new ArrayList<EditorCell>();
 
-  NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
+  public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     myEditorComponent = editorComponent;
     if (cellInfo != null) {
       throw new SelectionStoreException("Non-null CellInfo objet passed as a parameter: " + cellInfo);
