@@ -66,13 +66,13 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
     public InterpretedConstraints(String fqName) {
       this.fqName = fqName;
 
-      canBeAChildMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-      canBeAnAncestorMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
-      canBeAParentMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-      canBeARootMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+      canBeAChildMethod = getMethodUsingInheritance(fqName, BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+      canBeAnAncestorMethod = getMethodUsingInheritance(fqName, BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
+      canBeAParentMethod = getMethodUsingInheritance(fqName, BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+      canBeARootMethod = getMethodUsingInheritance(fqName, BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
 
-      alternativeIconMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.GET_ALTERNATIVE_ICON_METHOD_NAME, SNode.class);
-      defaultConcreteConceptFqNameMethod = getMethodUsingInheritanceWithModelAccess(fqName, BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+      alternativeIconMethod = getMethodUsingInheritance(fqName, BehaviorConstants.GET_ALTERNATIVE_ICON_METHOD_NAME, SNode.class);
+      defaultConcreteConceptFqNameMethod = getMethodUsingInheritance(fqName, BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
     }
 
     private static class MethodInfo {
@@ -110,32 +110,28 @@ public class InterpretedConstraintsProvider extends DescriptorProvider<Constrain
     }
 
     // compute in hierarchy while result is null. Returns first not null result. C - context. todo: javadoc
-    private static <T, C> T computeInConceptHierarchy(String topConceptFqName, C context, Function<Pair<String, C>, T> computeFunction) {
-      SNode topConcept = SModelUtil.findConceptDeclaration(topConceptFqName, GlobalScope.getInstance());
-
-      if (topConcept != null) {
-        // todo: using only concept descriptors!
-        List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
-
-        for (SNode concept : conceptAndSuperConcepts) {
-          String fqName = NameUtil.nodeFQName(concept);
-
-          T result = computeFunction.fun(Pair.create(fqName, context));
-
-          if (result != null) {
-            return result;
-          }
-        }
-      }
-
-      return null;
-    }
-
-    private static Method getMethodUsingInheritanceWithModelAccess(final String conceptFqName, final String methodName, final Class... parameterTypes) {
-      return ModelAccess.instance().runReadAction(new Computable<Method>() {
+    private static <T, C> T computeInConceptHierarchy(final String topConceptFqName, final C context, final Function<Pair<String, C>, T> computeFunction) {
+      return ModelAccess.instance().runReadAction(new Computable<T>() {
         @Override
-        public Method compute() {
-          return getMethodUsingInheritance(conceptFqName, methodName, parameterTypes);
+        public T compute() {
+          SNode topConcept = SModelUtil.findConceptDeclaration(topConceptFqName, GlobalScope.getInstance());
+
+          if (topConcept != null) {
+            // todo: using only concept descriptors!
+            List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+
+            for (SNode concept : conceptAndSuperConcepts) {
+              String fqName = NameUtil.nodeFQName(concept);
+
+              T result = computeFunction.fun(Pair.create(fqName, context));
+
+              if (result != null) {
+                return result;
+              }
+            }
+          }
+
+          return null;
         }
       });
     }
