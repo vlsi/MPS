@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.sharedConcepts" uuid="13744753-c81f-424a-9c1b-cf8943bf4e86" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.sharedConcepts" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.sharedConcepts" />
   </models>
   <accessoryModels />

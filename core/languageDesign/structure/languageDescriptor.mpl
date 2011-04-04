@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.structure" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.structure" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.structure" />
   </models>
   <accessoryModels>

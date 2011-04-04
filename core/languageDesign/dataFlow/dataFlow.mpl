@@ -2,7 +2,6 @@
 <language namespace="jetbrains.mps.lang.dataFlow" uuid="7fa12e9c-b949-4976-b4fa-19accbc320b4" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.dataFlow" />
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.lang.dataFlow" />
   </models>
   <accessoryModels />
   <generators>
