@@ -371,7 +371,7 @@ public final class SNode {
 
     getters.add(current);
     try {
-      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this.getConceptFqName(), propertyName);
       if (getter == null) return getPersistentProperty(propertyName);
 
       Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
@@ -423,7 +423,7 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && !myModel.isLoading()) {
-        INodePropertySetter setter = CONSTRAINTS_MANAGER.getNodePropertySetter(this, propertyName);
+        INodePropertySetter setter = CONSTRAINTS_MANAGER.getNodePropertySetter(this.getConceptFqName(), propertyName);
         if (setter != null) {
           threadSet.add(pair);
           try {
@@ -1609,7 +1609,8 @@ public final class SNode {
     if (adapter != null) return adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
     if (c == null) c = QueryMethodGenerated.getAdapterConstructor(SNodeUtil.concept_BaseConcept);
-    if (c == null) return new BaseAdapter(this) {};
+    if (c == null) return new BaseAdapter(this) {
+    };
 
     synchronized (this) {
       adapter = myAdapter;
@@ -1633,7 +1634,8 @@ public final class SNode {
         LOG.error(t);
       }
     }
-    return new BaseAdapter(this) {};
+    return new BaseAdapter(this) {
+    };
   }
 
 

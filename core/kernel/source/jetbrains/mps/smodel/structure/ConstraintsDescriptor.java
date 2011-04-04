@@ -36,6 +36,14 @@ public abstract class ConstraintsDescriptor {
 
   public abstract INodePropertyValidator getNodePropertyValidator(String propertyName);
 
+  //  search scope
+  public abstract INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider();
+
+  public abstract INodeReferentSearchScopeProvider getNodeNonDefaultSearchScopeProvider(String referentRole);
+
+  // referent node set event handler
+  public abstract INodeReferentSetEventHandler getNodeReferentSetEventHandler(String referentRole);
+
   // todo: remove/move this methods
   public abstract boolean isAlternativeIcon();
 

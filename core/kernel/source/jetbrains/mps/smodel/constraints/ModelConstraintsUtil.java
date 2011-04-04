@@ -144,7 +144,7 @@ public class ModelConstraintsUtil {
   }
 
   public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
-    return ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    return ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, IOperationContext context) {
