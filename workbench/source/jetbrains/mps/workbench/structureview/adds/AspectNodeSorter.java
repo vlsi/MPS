@@ -20,7 +20,6 @@ import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
@@ -29,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 
 public class AspectNodeSorter implements Sorter {
+
   public Comparator getComparator() {
     return new EditorTabComparator();
   }
@@ -39,7 +39,7 @@ public class AspectNodeSorter implements Sorter {
 
   @NotNull
   public ActionPresentation getPresentation() {
-    return new ActionPresentationData("Sort Nodes by Aspect", "", Icons.PROJECT_ICON);
+    return new ActionPresentationData("Sort Nodes by Aspect", "", jetbrains.mps.workbench.structureview.adds.icons.Icons.SORT_NODES_BY_ASPECT_ICON);
   }
 
   @NotNull

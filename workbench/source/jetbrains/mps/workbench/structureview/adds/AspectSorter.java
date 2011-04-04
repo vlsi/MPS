@@ -35,7 +35,7 @@ public class AspectSorter implements Sorter {
 
   @NotNull
   public ActionPresentation getPresentation() {
-    return new ActionPresentationData("Sort Aspects", "", Icons.PROJECT_ICON);
+    return new ActionPresentationData("Sort Aspects", "", null);
   }
 
   @NotNull

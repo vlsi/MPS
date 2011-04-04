@@ -28,17 +28,21 @@ import java.awt.Color;
 
 public class AspectTreeElement extends NodeTreeElement {
   private static final String NON_BIJECTIONAL_NODE_ASPECT = "non-bijectional node aspect";
-  protected boolean myIsBijection;
+  protected boolean myIsBijectional;
   protected EditorTabDescriptor myAspectDescriptor;
 
-  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor, boolean isBijection) {
+  public AspectTreeElement(SNodePointer node, EditorTabDescriptor aspectDescriptor, boolean bijectional) {
     super(node);
     myAspectDescriptor = aspectDescriptor;
-    myIsBijection = isBijection;
+    myIsBijectional = bijectional;
   }
 
   public EditorTabDescriptor getAspectDescriptor() {
     return myAspectDescriptor;
+  }
+
+  public boolean isBijectional() {
+    return myIsBijectional;
   }
 
   public TreeElement[] getChildren() {
@@ -53,7 +57,7 @@ public class AspectTreeElement extends NodeTreeElement {
         return new NodeTreeElementPresentation() {
           @Override
           public TextAttributesKey getTextAttributesKey() {
-            if (myIsBijection) return null;
+            if (myIsBijectional) return null;
 
             TextAttributes att = new TextAttributes();
             att.setForegroundColor(Color.GRAY);
