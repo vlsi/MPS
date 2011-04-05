@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
-import gnu.trove.THashMap;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependencyManager;
 import jetbrains.mps.project.dependency.ModuleDepsManager;
@@ -34,7 +33,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -64,7 +62,7 @@ public abstract class AbstractModule implements IModule {
   private CompositeClassPathItem myCachedClassPathItem;
   private DependencyManager myDepsManager;
 
-  private Map<Pair<String,String>,ModuleReference> myStubModulesCache = new HashMap<Pair<String, String>, ModuleReference>();
+  private Map<Pair<String, String>, ModuleReference> myStubModulesCache = new HashMap<Pair<String, String>, ModuleReference>();
 
   //----model creation
 
@@ -202,8 +200,14 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getOwnStubPaths() {
-    if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
-      return Collections.singletonList(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
+    if (isCompileInMPS() && getClassesGen() != null) {
+      String file = getClassesGen().getAbsolutePath();
+      if (file.endsWith("!/")) {
+        file = file.substring(0, file.length() - 2);
+      }
+      if (new File(file).exists()) {
+        return Collections.singletonList(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
+      }
     }
     return Collections.emptyList();
   }
@@ -294,12 +298,12 @@ public abstract class AbstractModule implements IModule {
 
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
       String path = entry.getPath();
-      if(path.endsWith(".jar")) {
+      if (path.endsWith(".jar")) {
         IFile cp = FileSystem.getInstance().getFileByPath(path);
-        if(!cp.exists()) {
+        if (!cp.exists()) {
           remove.add(entry);
           innerJars.add(cp.getName());
-        } else if(bundleHomeFile.equals(cp)) {
+        } else if (bundleHomeFile.equals(cp)) {
           skipClasspath = true;
         }
       } else {
@@ -309,13 +313,13 @@ public abstract class AbstractModule implements IModule {
     }
     descriptor.getStubModelEntries().removeAll(remove);
 
-    if(hasClasspath && !skipClasspath) {
+    if (hasClasspath && !skipClasspath) {
       ClassPathEntry bundleHome = new ClassPathEntry();
       bundleHome.setPath(bundleHomeFile.getAbsolutePath());
       descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
     }
 
-    for(String jar : innerJars) {
+    for (String jar : innerJars) {
       ClassPathEntry innerJar = new ClassPathEntry();
       innerJar.setPath(bundleHomeFile.getAbsolutePath() + "!/" + jar);
       descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(innerJar));
@@ -567,7 +571,7 @@ public abstract class AbstractModule implements IModule {
 
     for (SModelDescriptor model : getOwnModelDescriptors()) {
       if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
-        myStubModulesCache.put(id,getModuleReference());
+        myStubModulesCache.put(id, getModuleReference());
         return getModuleReference();
       }
     }
@@ -577,13 +581,13 @@ public abstract class AbstractModule implements IModule {
     for (IModule module : deps) {
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
         if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
-          myStubModulesCache.put(id,module.getModuleReference());
+          myStubModulesCache.put(id, module.getModuleReference());
           return module.getModuleReference();
         }
       }
     }
 
-    myStubModulesCache.put(id,null);
+    myStubModulesCache.put(id, null);
     return null;
   }
 
