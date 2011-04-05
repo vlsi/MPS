@@ -176,7 +176,7 @@ public class LanguageChecker implements IEditorChecker, EditorMessageOwner {
     SNode root = node.getContainingRoot();
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (root == null) {
-      LOG.error("containing root for node " + node + " is null");
+      LOG.error("containing root for node " + node + " is null, editor component: " + editorComponent, new Throwable());
       return result;
     }
     SModelDescriptor descriptor = SNodeOperations.getModel(root).getModelDescriptor();
