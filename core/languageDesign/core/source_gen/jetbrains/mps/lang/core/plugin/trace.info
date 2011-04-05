@@ -99,22 +99,18 @@
   </root>
   <root nodeId="3382625879346929484">
     <nodeInfo nodeId="3382625879346929515" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="9" startPosition="87" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
-    <nodeInfo nodeId="703258188832022105" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="15" startPosition="42" endLine="16" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="703258188832022112" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="16" startPosition="84" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="703258188832022123" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="703258188832022137" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="23" startPosition="45" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="703258188832022148" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="30" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="703258188832022155" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="26" startPosition="89" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="703258188832022121" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="17" startPosition="83" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="703258188832022146" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="24" startPosition="83" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="703258188832022122" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="86" />
-    <scopeInfo nodeId="703258188832022147" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="30" endLine="27" endPosition="72" />
-    <scopeInfo nodeId="3382625879346929486" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="15" startPosition="42" endLine="20" endPosition="5">
-      <varInfo nodeId="703258188832022113" varName="highlighter" />
-    </scopeInfo>
-    <scopeInfo nodeId="3382625879346929967" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="23" startPosition="45" endLine="28" endPosition="5">
-      <varInfo nodeId="703258188832022138" varName="highlighter" />
-    </scopeInfo>
+    <nodeInfo nodeId="4412740316106978471" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="10" startPosition="36" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
+    <nodeInfo nodeId="703258188832022105" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4412740316107004596" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="17" startPosition="84" endLine="18" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="703258188832022123" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="19" startPosition="78" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="703258188832022148" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="78" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="703258188832022155" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="26" startPosition="137" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="703258188832022121" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="18" startPosition="119" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="703258188832022146" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="703258188832022122" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="19" startPosition="78" endLine="20" endPosition="134" />
+    <scopeInfo nodeId="703258188832022147" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="78" endLine="27" endPosition="72" />
+    <scopeInfo nodeId="3382625879346929967" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="3382625879346929486" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="21" endPosition="5" />
   </root>
   <root nodeId="525325117940919483">
     <nodeInfo nodeId="525325117940919485" fileName="AbstractConstraintsChecker.java" startLine="8" startPosition="50" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractConstraintsChecker#()V" />
