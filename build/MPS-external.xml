@@ -253,6 +253,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mpslite" />
     <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.testLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts" />

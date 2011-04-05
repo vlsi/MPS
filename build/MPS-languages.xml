@@ -496,6 +496,18 @@
       <fileset dir="core/languageDesign/pattern/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.lang.pattern.testLang">
+    <mkdir dir="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <mkdir dir="core/languageDesign/pattern/languages/testLang/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.testLang.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/pattern/languages/testLang/testLang.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/pattern/languages/testLang" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/languageDesign/pattern/languages/testLang/languageModels" includes="**/*.mps" prefix="module/languageModels" />
+      <zipfileset dir="core/languageDesign/pattern/languages/testLang/generator/template" includes="**/*.mps" prefix="module/generator/template" />
+      <zipfileset dir="core/languageDesign/pattern/languages/testLang/classes_gen" />
+      <zipfileset dir="core/languageDesign/pattern/languages/testLang/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.quotation">
     <mkdir dir="core/languageDesign/quotation/classes" />
     <mkdir dir="core/languageDesign/quotation/classes_gen" />
