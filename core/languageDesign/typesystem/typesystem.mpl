@@ -73,12 +73,6 @@
     <stubModelEntry path="${language_descriptor}/classes" include="false">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/core/typesystemIntegration/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/workbench/typesystemUi/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
   </stubModelEntries>
   <runtimeStubModels>
     <stubModelEntry path="${mps_home}/core/languageDesign/intentions/classes" include="false">
@@ -91,11 +85,11 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">d568f86b-af37-4d5b-8d74-867bd13f2ff4(jetbrains.mps.editor.runtime)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="false">13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</dependency>
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
-    <dependency reexport="false">d568f86b-af37-4d5b-8d74-867bd13f2ff4(jetbrains.mps.editor.runtime)</dependency>
     <dependency reexport="false">9fd674ba-c96d-44ef-b1a9-cdf2833c7494(jetbrains.mps.newTypesystem.presentation)</dependency>
   </dependencies>
   <usedDevKits>
