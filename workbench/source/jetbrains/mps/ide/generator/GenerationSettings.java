@@ -86,7 +86,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return null;
+    return "Generator";
   }
 
   public JComponent createComponent() {

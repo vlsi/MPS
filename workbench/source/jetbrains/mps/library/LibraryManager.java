@@ -112,4 +112,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   public String getComponentName() {
     return LibraryManager.class.getSimpleName();
   }
+
+  @Override
+  public String getHelpTopic() {
+    return "Library_Manager_(IDE)";
+  }
 }

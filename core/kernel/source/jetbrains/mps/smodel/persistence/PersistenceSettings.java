@@ -109,7 +109,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return null;
+    return "Model_Persistence";
   }
 
   public void apply() throws ConfigurationException {

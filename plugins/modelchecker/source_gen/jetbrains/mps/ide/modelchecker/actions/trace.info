@@ -904,7 +904,7 @@
     <nodeInfo nodeId="1453248744423274400" fileName="ModelCheckerSettings.java" startLine="47" startPosition="61" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423274410" fileName="ModelCheckerSettings.java" startLine="52" startPosition="34" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423274418" fileName="ModelCheckerSettings.java" startLine="57" startPosition="25" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423274424" fileName="ModelCheckerSettings.java" startLine="63" startPosition="32" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423274424" fileName="ModelCheckerSettings.java" startLine="63" startPosition="32" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423274432" fileName="ModelCheckerSettings.java" startLine="67" startPosition="39" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423274440" fileName="ModelCheckerSettings.java" startLine="71" startPosition="31" endLine="72" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423274448" fileName="ModelCheckerSettings.java" startLine="75" startPosition="53" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -999,7 +999,7 @@
     <scopeInfo nodeId="1453248744423274399" fileName="ModelCheckerSettings.java" startLine="47" startPosition="61" endLine="48" endPosition="20" />
     <scopeInfo nodeId="1453248744423274409" fileName="ModelCheckerSettings.java" startLine="52" startPosition="34" endLine="53" endPosition="27" />
     <scopeInfo nodeId="1453248744423274417" fileName="ModelCheckerSettings.java" startLine="57" startPosition="25" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="1453248744423274423" fileName="ModelCheckerSettings.java" startLine="63" startPosition="32" endLine="64" endPosition="16" />
+    <scopeInfo nodeId="1453248744423274423" fileName="ModelCheckerSettings.java" startLine="63" startPosition="32" endLine="64" endPosition="27" />
     <scopeInfo nodeId="1453248744423274431" fileName="ModelCheckerSettings.java" startLine="67" startPosition="39" endLine="68" endPosition="43" />
     <scopeInfo nodeId="1453248744423274439" fileName="ModelCheckerSettings.java" startLine="71" startPosition="31" endLine="72" endPosition="41" />
     <scopeInfo nodeId="1453248744423274447" fileName="ModelCheckerSettings.java" startLine="75" startPosition="53" endLine="76" endPosition="30" />

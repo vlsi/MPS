@@ -31,7 +31,7 @@ public final class ProjectPropertiesPerfsPage implements SearchableConfigurable,
   }
 
   public String getHelpTopic() {
-    return null;
+    return "Project_Structure";
   }
 
   public JComponent createComponent() {

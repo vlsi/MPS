@@ -72,7 +72,7 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
   }
 
   public String getHelpTopic() {
-    return null;
+    return "Performance";
   }
 
   public JComponent createComponent() {

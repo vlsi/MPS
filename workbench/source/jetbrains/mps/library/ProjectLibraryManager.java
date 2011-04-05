@@ -95,6 +95,11 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   }
 
+  @Override
+  public String getHelpTopic() {
+    return "Library_Manager";
+  }
+
   protected String addMacros(String path) {
     return MacrosFactory.projectDescriptor().shrinkPath(path, getAnchorFile());
   }

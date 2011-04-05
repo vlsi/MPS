@@ -37,7 +37,7 @@ public class VcsGeneratedFilesConfigurable extends JPanel implements Configurabl
   }
 
   public String getHelpTopic() {
-    return null;
+    return "Generated_Files";
   }
 
   public JComponent createComponent() {

@@ -8,11 +8,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.ui.NotificationPopup" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsRootsManager" />
+    <classNode dependClassName="javax.swing.event.HyperlinkListener" />
     <classNode dependClassName="javax.swing.text.html.HTMLEditorKit" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -21,13 +21,13 @@
     <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="javax.swing.event.HyperlinkListener" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.LightweightWindowEvent" />
     <classNode dependClassName="com.intellij.ui.LightColors" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
-    <classNode dependClassName="jetbrains.mps.vcs.ui.NotificationPopup" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="javax.swing.JEditorPane" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -71,14 +71,14 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.ui.VcsSettingsConfigurable" file="VcsSettingsConfigurable.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
-    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsSettingsPanel" />
+    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsIdeSettings" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsSettingsHolder" />
-    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsIdeSettings" />
-    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="org.jetbrains.annotations.Nls" />
+    <classNode dependClassName="jetbrains.mps.vcs.ui.VcsSettingsPanel" />
     <classNode extendsClassName="com.intellij.openapi.options.SearchableConfigurable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ui.VcsSettingsPanel" file="VcsSettingsPanel.java">

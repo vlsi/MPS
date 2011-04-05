@@ -61,7 +61,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return null;
+    return "Model_Checker";
   }
 
   public JComponent createComponent() {

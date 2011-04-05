@@ -27,7 +27,7 @@ public class VcsSettingsConfigurable implements SearchableConfigurable {
   }
 
   public String getHelpTopic() {
-    return null;
+    return "Version_Control_(IDE)";
   }
 
   public JComponent createComponent() {
