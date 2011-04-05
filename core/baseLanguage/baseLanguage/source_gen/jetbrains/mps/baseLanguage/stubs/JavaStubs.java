@@ -15,7 +15,7 @@ import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.stubs.StubSource;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.stubs.javastub.ASMModelLoader;
+import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.StubDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
