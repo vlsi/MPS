@@ -15,6 +15,7 @@
  */
 package jetbrains.mps;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
@@ -24,10 +25,15 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.TestMain.ProjectRunnable;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.persistence.PersistenceSettings;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -52,7 +58,9 @@ public class DiskMemoryConflictsTest {
   private static final String PROJECT_FILE = "simpleProject.mpr";
   private static final SModelReference MODEL_REFERENCE = SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
   private static final File MODEL_FILE = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
-  private static Project ourProject;
+  private Project myProject;
+  private Solution myModule;
+  private SNode myNodeBackup;
   private EditableSModelDescriptor myModelDescriptor;
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
@@ -60,29 +68,39 @@ public class DiskMemoryConflictsTest {
 
   @Test
   public void testDiskMemoryConflicts() {
+    final Action[] startedAction = new Action[1];
+    final DiskModification[] startedDiskModification = new DiskModification[1];
+    final VersionToChoose[] startedVersion = new VersionToChoose[1];
     final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new ProjectRunnable() {
       public boolean execute(final MPSProject project) {
         final boolean[] resultArr = new boolean[1];
         try {
-          ourProject = project.getProject();
-
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
-          Assert.assertTrue(modelDescriptor instanceof EditableSModelDescriptor);
-          myModelDescriptor = (EditableSModelDescriptor) modelDescriptor;
+          myProject = project.getProject();
+          ApplicationManager.getApplication().getComponent(PersistenceSettings.class).setMaxPersistenceVersion();
+          myModelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
+          myModule = (Solution) myModelDescriptor.getModule();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getSModel().rootsIterator().next());
+            }
+          });
 
           checkInitialState();
 
-          provokeAndCheckConflict(true, true);
-          restoreAndCheckOriginalState();
+          for (Action a : Action.values()) {
+            for (DiskModification dm : DiskModification.values()) {
+              for (VersionToChoose v : VersionToChoose.values()) {
+                startedAction[0] = a;
+                startedVersion[0] = v;
+                startedDiskModification[0] = dm;
 
-          provokeAndCheckConflict(true, false);
-          restoreAndCheckOriginalState();
+                provokeAndCheckConflict(a, dm, v);
+                restoreAndCheckOriginalState();
+              }
+            }
+          }
 
-          provokeAndCheckConflict(false, true);
-          restoreAndCheckOriginalState();
-
-          provokeAndCheckConflict(false, false);
-          restoreAndCheckOriginalState();
           resultArr[0] = true;
         } catch (Throwable e) {
           e.printStackTrace();
@@ -92,44 +110,35 @@ public class DiskMemoryConflictsTest {
       }
     }, "jetbrains.mps.vcs");
     if (!result) {
-      Assert.fail();
+      Assert.fail("Last started check action=" + startedAction[0] + ", disk modification=" + startedDiskModification[0]
+        + ", version=" + startedVersion[0]);
     }
   }
 
   private String processFieldNameInModel(final String nameToWrite) {
-    final Ref<String> result = new Ref<String>();
-    final boolean[] finished = {false};
+    final String[] result = new String[1];
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        try {
-          final SModelDescriptor modelDescriptor = myModelDescriptor;
-          Assert.assertNotNull(modelDescriptor);
-          SNode node = modelDescriptor.getSModel().getNodeById("6010389230754495469");
-          Assert.assertNotNull(node);
-          if (nameToWrite == null) {
-            result.set(node.getProperty("name"));
-          } else {
-            node.setProperty("name", nameToWrite);
+        if (SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference()) != null) {
+          try {
+            final SModelDescriptor modelDescriptor = myModelDescriptor;
+            Assert.assertNotNull(modelDescriptor);
+            SNode node = modelDescriptor.getSModel().getNodeById("6010389230754495469");
+            Assert.assertNotNull(node);
+            if (nameToWrite == null) {
+              result[0] = node.getProperty("name");
+            } else {
+              node.setProperty("name", nameToWrite);
+            }
+          } catch (Throwable ignored) {
           }
-        } catch (Throwable ignored) {
-        }
-        finished[0] = true;
-        synchronized (result) {
-          result.notifyAll();
         }
       }
-    }, ourProject);
+    }, myProject);
 
-    //noinspection SynchronizationOnLocalVariableOrMethodParameter
-    synchronized (result) {
-      while (!finished[0]) {
-        try {
-          result.wait();
-        } catch (InterruptedException e) { }
-      }
-    }
-    return result.get();
+    waitEDT();
+    return result[0];
   }
 
   private void setFieldNameInModel(String value) {
@@ -143,7 +152,9 @@ public class DiskMemoryConflictsTest {
 
   // File stuff
   private String processFieldNameInFile(final String nameToWrite) {
-    Assert.assertTrue(MODEL_FILE.exists());
+    if (!MODEL_FILE.exists()) {
+      return null;
+    }
     try {
       Scanner scanner = new Scanner(MODEL_FILE);
       String FIELD_PATTERN = "      <property name=\"name\" nameId=\"tpck.1169194664001\" value=\"%s\" />";
@@ -179,7 +190,6 @@ public class DiskMemoryConflictsTest {
         setLastModified(lastModifiedBefore + 1000);
       }
 
-      // TODO this is a hack to avoid Windows truncation of lastModified
       setLastModified(lastModifiedBefore + 2000 + (int) (Math.random() * 100000));
     } catch (FileNotFoundException e) {
       Assert.fail();
@@ -195,19 +205,31 @@ public class DiskMemoryConflictsTest {
     processFieldNameInFile(name);
   }
 
+  private void deleteFile() {
+    Assert.assertTrue(MODEL_FILE.delete());
+  }
+
   private void checkInitialState() {
     checkSynchronizedState(FIELD_DEFAULT_NAME);
   }
 
-  private void checkSynchronizedState(String fieldName) {
+  private void checkSynchronizedState(@Nullable String fieldName) {
     Assert.assertEquals(fieldName, getFieldNameFromModel());
     Assert.assertEquals(fieldName, getFieldNameFromFile());
-    Assert.assertFalse(myModelDescriptor.isChanged());
+    if (fieldName == null) {
+      Assert.assertNull(SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference()));
+    } else {
+      Assert.assertFalse(myModelDescriptor.isChanged());
+    }
   }
 
-  private void provokeAndCheckConflict(boolean save, final boolean memory) {
+  private void provokeAndCheckConflict(Action action, final DiskModification diskModification, final VersionToChoose versionToChoose) {
     setFieldNameInModel(FIELD_NAME_IN_MODEL);
-    setFieldNameInFile(FIELD_NAME_IN_FILE);
+    if (DiskModification.MODIFY == diskModification) {
+      setFieldNameInFile(FIELD_NAME_IN_FILE);
+    } else {
+      deleteFile();
+    }
 
     refreshVfs();
 
@@ -217,18 +239,22 @@ public class DiskMemoryConflictsTest {
       @Override
       public int show(String message) {
         dialogWasInvoked[0] = true;
-        return memory ? 1 : 0;
+        if (DiskModification.DELETE == diskModification) {
+          return VersionToChoose.MEMORY == versionToChoose ? 0 : 1;
+        } else {
+          return VersionToChoose.MEMORY == versionToChoose ? 1 : 0;
+        }
       }
     });
 
-    if (save) {
+    if (Action.SAVE == action) {
       // save conflicting model
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
           SModelRepository.getInstance().saveAll();
         }
-      }, ourProject);
+      }, myProject);
     } else {
       // reload conflict
       ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -250,27 +276,53 @@ public class DiskMemoryConflictsTest {
     }
 
     Assert.assertTrue(dialogWasInvoked[0]);
-    checkSynchronizedState(memory ? FIELD_NAME_IN_MODEL : FIELD_NAME_IN_FILE);
+    String expectedFieldName;
+    if (VersionToChoose.MEMORY == versionToChoose) {
+      expectedFieldName = FIELD_NAME_IN_MODEL;
+    } else {
+      if (DiskModification.MODIFY == diskModification) {
+        expectedFieldName = FIELD_NAME_IN_FILE;
+      } else {
+        expectedFieldName = null;
+      }
+    }
+    checkSynchronizedState(expectedFieldName);
   }
 
   private void refreshVfs() {
-    RefreshSession rs = RefreshQueue.getInstance().createSession(false, false, null);
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE);
+    if (vf == null || !vf.exists()) {
+      vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE.getParentFile());
+    }
+    RefreshSession rs = RefreshQueue.getInstance().createSession(false, true, null);
     assert vf != null;
     rs.addFile(vf);
     rs.launch();
   }
 
   private void restoreAndCheckOriginalState() {
-    setFieldNameInFile(FIELD_DEFAULT_NAME);
-    refreshVfs();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        myModelDescriptor.reloadFromDisk();
-      }
-    });
+    if (MODEL_FILE.exists()) {
+      setFieldNameInFile(FIELD_DEFAULT_NAME);
 
+      refreshVfs();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          myModelDescriptor.reloadFromDisk();
+        }
+      });
+    } else {
+      // Restore model
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
+        public void run() {
+          myModelDescriptor = myModule.createModel(MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().get(0));
+          myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
+          myModelDescriptor.save();
+        }
+      }, myProject);
+      waitEDT();
+    }
     checkInitialState();
   }
 
@@ -289,5 +341,26 @@ public class DiskMemoryConflictsTest {
       }
     }
     Assert.assertTrue(count < 10);
+  }
+
+  private static void waitEDT() {
+    ModelAccess.instance().flushEventQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
+      public void run() {
+      }
+    });
+  }
+
+  private enum Action {
+    SAVE, RELOAD
+  }
+
+  private enum VersionToChoose {
+    MEMORY, DISK
+  }
+
+  private enum DiskModification {
+    MODIFY, DELETE
   }
 }
