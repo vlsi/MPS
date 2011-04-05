@@ -722,30 +722,43 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (!isPackaged()) return;
 
     if (myLanguageDescriptor != null) {
-      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+      IFile bundleParent = getBundleHome().getParent();
+      String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
+      IFile bundleHomeFile = bundleParent.child(jarName);
+
+      if(!bundleHomeFile.exists()) return;
+
+      boolean hasClasspath = false, skipClasspath = false;
+      List<String> innerJars = new ArrayList<String>();
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+
       for (StubModelsEntry entry : myLanguageDescriptor.getRuntimeStubModels()) {
-        IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
-        if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
+        String path = entry.getPath();
+        if(path.endsWith(".jar")) {
+          IFile cp = FileSystem.getInstance().getFileByPath(path);
+          if(!cp.exists()) {
+            remove.add(entry);
+            innerJars.add(cp.getName());
+          } else if(bundleHomeFile.equals(cp)) {
+            skipClasspath = true;
+          }
+        } else {
+          hasClasspath = true;
           remove.add(entry);
         }
-        visited.add(entry);
       }
       myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
-      IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
-      IFile jarFile = bundleParent.child(jarName);
-      String path = jarFile.getAbsolutePath();
+      if(hasClasspath && !skipClasspath) {
+        ClassPathEntry bundleHome = new ClassPathEntry();
+        bundleHome.setPath(bundleHomeFile.getAbsolutePath());
+        myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+      }
 
-      StubModelsEntry tmp = new StubModelsEntry();
-      tmp.setPath(path);
-      tmp.setManager(LanguageID.JAVA_MANAGER);
-
-      if (jarFile.exists() && !visited.contains(tmp)) {
-        ClassPathEntry runtimeJar = new ClassPathEntry();
-        runtimeJar.setPath(path);
-        myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(runtimeJar));
+      for(String jar : innerJars) {
+        ClassPathEntry innerJar = new ClassPathEntry();
+        innerJar.setPath(bundleHomeFile.getAbsolutePath() + "!/" + jar);
+        myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(innerJar));
       }
     }
   }

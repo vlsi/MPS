@@ -285,32 +285,41 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
 
-    Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
-      if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
-        remove.add(entry);
-      }
-      visited.add(entry);
-    }
-    descriptor.getStubModelEntries().removeAll(remove);
-
     IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
-    String bundleHomePath = bundleHomeFile.getAbsolutePath();
-    boolean contains = false;
-    for (StubModelsEntry v : visited) {
-      if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
-        contains = true;
+    boolean hasClasspath = descriptor.getEnableJavaStubs(), skipClasspath = false;
+    List<String> innerJars = new ArrayList<String>();
+    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+
+    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+      String path = entry.getPath();
+      if(path.endsWith(".jar")) {
+        IFile cp = FileSystem.getInstance().getFileByPath(path);
+        if(!cp.exists()) {
+          remove.add(entry);
+          innerJars.add(cp.getName());
+        } else if(bundleHomeFile.equals(cp)) {
+          skipClasspath = true;
+        }
+      } else {
+        hasClasspath = true;
+        remove.add(entry);
       }
     }
-    if (contains) return;
+    descriptor.getStubModelEntries().removeAll(remove);
 
-    ClassPathEntry bundleHome = new ClassPathEntry();
-    bundleHome.setPath(bundleHomePath);
-    descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+    if(hasClasspath && !skipClasspath) {
+      ClassPathEntry bundleHome = new ClassPathEntry();
+      bundleHome.setPath(bundleHomeFile.getAbsolutePath());
+      descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+    }
+
+    for(String jar : innerJars) {
+      ClassPathEntry innerJar = new ClassPathEntry();
+      innerJar.setPath(bundleHomeFile.getAbsolutePath() + "!/" + jar);
+      descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(innerJar));
+    }
   }
 
   public IClassPathItem getClassPathItem() {
@@ -398,7 +407,7 @@ public abstract class AbstractModule implements IModule {
     if (getDescriptorFile() == null) {
       return false;
     }
-    return getDescriptorFile().isReadOnly();
+    return FileSystem.getInstance().isPackaged(getDescriptorFile());
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
