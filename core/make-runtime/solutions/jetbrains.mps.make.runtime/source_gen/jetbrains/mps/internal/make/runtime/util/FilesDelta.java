@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.io.File;
 
@@ -80,6 +80,12 @@ public class FilesDelta implements IDelta {
     Queue<IFile> dirs = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
     while (QueueSequence.fromQueue(dirs).isNotEmpty()) {
       IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
+      String dirpath = straighten(urlToPath(dir.getAbsolutePath()));
+      int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
+      diridx = (diridx < 0 ?
+        -1 - diridx :
+        diridx
+      );
       for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.list())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
@@ -89,21 +95,21 @@ public class FilesDelta implements IDelta {
           return t._1();
         }
       }, true)) {
-        int idx = Arrays.binarySearch(pathsToKeep, fp._1());
+        int fidx = Arrays.binarySearch(pathsToKeep, fp._1());
         if (fp._0().isDirectory()) {
-          idx = (idx < 0 ?
-            -1 - idx :
-            idx
+          fidx = (fidx < 0 ?
+            -1 - fidx :
+            fidx
           );
-          if (idx >= pathsToKeep.length || !(startsWith(pathsToKeep[idx], fp._1()))) {
+          if (fidx >= pathsToKeep.length || !(startsWith(pathsToKeep[fidx], fp._1()))) {
             ListSequence.fromList(toDelete).addElement(fp._0());
-            if (idx >= pathsToKeep.length) {
+            if (fidx >= pathsToKeep.length) {
               break;
             }
-          } else if (idx < pathsToKeep.length && !(startsWith(fp._1(), pathsToKeep[idx]))) {
+          } else if (fidx < pathsToKeep.length) {
             QueueSequence.fromQueue(dirs).addLastElement(fp._0());
           }
-        } else if (idx < 0) {
+        } else if (fidx < 0 && (diridx >= pathsToKeep.length || !(same(dirpath, pathsToKeep[diridx])))) {
           ListSequence.fromList(toDelete).addElement(fp._0());
         }
       }
@@ -162,7 +168,23 @@ public class FilesDelta implements IDelta {
 
   private boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || path.charAt(prefix.length()) == SLASH_CHAR);
+  }
 
+  private boolean same(String path1, String path2) {
+    if (path1.equals(path2)) {
+      return true;
+    }
+    if (path1.length() == path2.length()) {
+      return false;
+    }
+    if (path1.length() > path2.length()) {
+      {
+        Tuples._2<String, String> _tmp_32m4sw_a0c0k = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_32m4sw_a0c0k._0();
+        path2 = _tmp_32m4sw_a0c0k._1();
+      }
+    }
+    return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);
   }
 
   public static   enum Status {
