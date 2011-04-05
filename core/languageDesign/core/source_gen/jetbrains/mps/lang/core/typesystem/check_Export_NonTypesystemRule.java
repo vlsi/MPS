@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.tempoptions.InternalOptionsSettings;
 import jetbrains.mps.lang.core.behavior.ExportScope_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,6 +24,9 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(InternalOptionsSettings.getInstance().getCheckOpenAPI())) {
+      return;
+    }
     String namespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
     // getModuleNamespace() doesn't work for transient models 
     if (namespace == null) {

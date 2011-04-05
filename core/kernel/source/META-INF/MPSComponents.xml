@@ -109,6 +109,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.tempoptions.InternalOptionsSettings</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
     </component>
 
