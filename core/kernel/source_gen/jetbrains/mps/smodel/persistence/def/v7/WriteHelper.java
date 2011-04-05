@@ -57,6 +57,9 @@ public class WriteHelper {
 
   @NotNull
   private String genReferenceString(@NotNull SModelReference ref, @NotNull String text) {
+    if (ref.equals(myModelRef)) {
+      return encode(text);
+    }
     String index = MapSequence.fromMap(myModelIndex).get(ref);
     if (index == null) {
       if (log.isErrorEnabled()) {
@@ -64,11 +67,7 @@ public class WriteHelper {
       }
       return encode(text);
     }
-    StringBuilder result = new StringBuilder();
-    if (!(ref.equals(myModelRef))) {
-      result.append(index).append(MODEL_SEPARATOR_CHAR);
-    }
-    return result.append(encode(text)).toString();
+    return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(encode(text)).toString();
   }
 
   @NotNull

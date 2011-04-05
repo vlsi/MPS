@@ -631,7 +631,8 @@ public class SModel {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    for (ImportElement elem : myImports) {  // ??? explicit imports should become implicit on deletion till new recalculation
+    usedModels.remove(myReference);   // do not import self
+    for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
     }
     List<ImportElement> implicitImports = new ArrayList<ImportElement>(usedModels.size());
