@@ -28,6 +28,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -169,6 +171,10 @@ public class GeneratorWorker extends MpsWorker {
         public void run() {
         }
       });
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+        }
+      }, ModalityState.defaultModalityState());
     }
 
   }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eo2wp6drq6q1etmi8fe37nb9dzu0klg">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
-  <common hash="bcgudka9bglur92fd3luyezg5m34pu6" />
+<dependencies version="2" modelHash="oaanu348lenc7st05svcvcqmj65e8n">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="6sbx669gc01dfe6w959vkfcwgqpy8ql" />
+  <common hash="-3zbvuwxti8vs2rn3b0vm0jnxaer8f50" />
   <source id="1268765481875672245" name="IDelta" hash="-1gzkd9a00p42z5yw84v2xfetuyna4l0">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IDelta.java" />
