@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PreferencePage extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePage";
   public static final String ICON = "icon";
+  public static final String HELP_TOPIC = "helpTopic";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -36,6 +37,14 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
 
   public void setIcon(String value) {
     this.setProperty(PreferencePage.ICON, value);
+  }
+
+  public String getHelpTopic() {
+    return this.getProperty(PreferencePage.HELP_TOPIC);
+  }
+
+  public void setHelpTopic(String value) {
+    this.setProperty(PreferencePage.HELP_TOPIC, value);
   }
 
   public String getName() {

@@ -63,4 +63,9 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   private void reset(Project project, AntRunnerPreferencesPage component) {
     ((AntRunnerPreferencesPage) component).updateState(((AntRunnerPreferences_PreferencesComponent) AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
   }
+
+  @Override
+  public String getHelpTopic() {
+    return "Ant_Runner";
+  }
 }

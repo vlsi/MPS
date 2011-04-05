@@ -3,7 +3,7 @@
   <unitInfo fileName="IconResource_Editor.java" startLine="79" startPosition="75" endLine="83" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.IconResource_Editor$1" />
   <unitInfo fileName="RunConfigurationPresentation.java" startLine="151" startPosition="75" endLine="155" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationPresentation$1" />
   <unitInfo fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="222" startPosition="75" endLine="226" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationTypeDeclaration_Editor$1" />
-  <unitInfo fileName="PreferencePage_Editor.java" startLine="272" startPosition="75" endLine="276" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor$1" />
+  <unitInfo fileName="PreferencePage_Editor.java" startLine="308" startPosition="75" endLine="312" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor$1" />
   <unitInfo fileName="KeyMapKeystroke_Editor.java" startLine="160" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_Editor$KeyMapKeystroke_modifiers_cellMenu_a0b0" />
   <unitInfo fileName="KeyMapKeystroke_Editor.java" startLine="169" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_Editor$KeyMapKeystroke_keycode_cellMenu_a0f0" />
   <unitInfo fileName="ConfigurationEditorDeclaration_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConfigurationEditorDeclaration_Editor" />
@@ -215,8 +215,8 @@
   <unitInfo fileName="RunConfigurationBody.java" startLine="31" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationBody" />
   <unitInfo fileName="MultitabbedEditorTab_Editor.java" startLine="25" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.MultitabbedEditorTab_Editor" />
   <unitInfo fileName="ActionGroupDeclaration_Editor.java" startLine="24" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionGroupDeclaration_Editor" />
-  <unitInfo fileName="PreferencePage_Editor.java" startLine="35" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor" />
   <unitInfo fileName="FileGeneratorDeclaration_Editor.java" startLine="35" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.FileGeneratorDeclaration_Editor" />
+  <unitInfo fileName="PreferencePage_Editor.java" startLine="36" startPosition="0" endLine="477" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor" />
   <unitInfo fileName="EditorTab_Editor.java" startLine="33" startPosition="0" endLine="505" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTab_Editor" />
   <unitInfo fileName="TabbedToolDeclaration_Editor.java" startLine="39" startPosition="0" endLine="553" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedToolDeclaration_Editor" />
   <unitInfo fileName="ToolDeclaration_Editor.java" startLine="40" startPosition="0" endLine="628" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolDeclaration_Editor" />
@@ -352,17 +352,17 @@
     <scopeInfo nodeId="1210180446805" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="113" />
   </root>
   <root nodeId="1210687015722">
-    <nodeInfo nodeId="1210687257456" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217681682193" fileName="PreferencePage_Editor.java" startLine="405" startPosition="114" endLine="406" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217681682197" fileName="PreferencePage_Editor.java" startLine="406" startPosition="23" endLine="407" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217681682204" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217681682217" fileName="PreferencePage_Editor.java" startLine="410" startPosition="5" endLine="411" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1210687257464" fileName="PreferencePage_Editor.java" startLine="418" startPosition="110" endLine="419" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217681682202" fileName="PreferencePage_Editor.java" startLine="407" startPosition="55" endLine="410" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1210687257455" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" />
-    <scopeInfo nodeId="1217681682203" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="106" />
-    <scopeInfo nodeId="1210687257463" fileName="PreferencePage_Editor.java" startLine="418" startPosition="110" endLine="419" endPosition="74" />
-    <scopeInfo nodeId="1210687257430" fileName="PreferencePage_Editor.java" startLine="405" startPosition="114" endLine="411" endPosition="81">
+    <nodeInfo nodeId="1210687257456" fileName="PreferencePage_Editor.java" startLine="309" startPosition="30" endLine="310" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217681682193" fileName="PreferencePage_Editor.java" startLine="460" startPosition="114" endLine="461" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217681682197" fileName="PreferencePage_Editor.java" startLine="461" startPosition="23" endLine="462" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217681682204" fileName="PreferencePage_Editor.java" startLine="463" startPosition="25" endLine="464" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217681682217" fileName="PreferencePage_Editor.java" startLine="465" startPosition="5" endLine="466" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210687257464" fileName="PreferencePage_Editor.java" startLine="473" startPosition="110" endLine="474" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217681682202" fileName="PreferencePage_Editor.java" startLine="462" startPosition="55" endLine="465" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1210687257455" fileName="PreferencePage_Editor.java" startLine="309" startPosition="30" endLine="310" endPosition="59" />
+    <scopeInfo nodeId="1217681682203" fileName="PreferencePage_Editor.java" startLine="463" startPosition="25" endLine="464" endPosition="106" />
+    <scopeInfo nodeId="1210687257463" fileName="PreferencePage_Editor.java" startLine="473" startPosition="110" endLine="474" endPosition="74" />
+    <scopeInfo nodeId="1210687257430" fileName="PreferencePage_Editor.java" startLine="460" startPosition="114" endLine="466" endPosition="81">
       <varInfo nodeId="1217681682198" varName="module" />
       <varInfo nodeId="1217681682194" varName="path" />
     </scopeInfo>
