@@ -12,6 +12,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5h2r" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="x32m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.checking(MPS.Classpath/jetbrains.mps.typesystem.checking@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" implicit="yes" />
   <import index="1wur" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.event(jetbrains.mps.smodel.event@java_stub)" version="-1" implicit="yes" />
@@ -28,7 +29,6 @@
   <import index="8sbz" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" implicit="yes" />
   <import index="espb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" implicit="yes" />
   <import index="qaz0" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" implicit="yes" />
-  <import index="471w" modelUID="f:java_stub#7a5dda62-9140-4668-ab76-d5ed1746f2b2#jetbrains.mps.typesystem.checking(jetbrains.mps.typesystem.checking@java_stub)" version="-1" implicit="yes" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -3429,22 +3429,22 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2378204549815376761">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cpnt.~EditorMessage" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2378204549815376762">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="471w.~HighlightUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="471w.~HighlightUtil%dcreateHighlighterMessage(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dnodeEditor%dEditorCheckerAdapter,jetbrains%dmps%dnodeEditor%dEditorContext)%cjetbrains%dmps%dnodeEditor%dHighlighterMessage" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2378204549815376763">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2378204549815376764">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7739208407757997726">
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="x32m.~HighlightUtil" resolveInfo="HighlightUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x32m.~HighlightUtil%dcreateHighlighterMessage(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dnodeEditor%dEditorCheckerAdapter,jetbrains%dmps%dnodeEditor%dEditorContext)%cjetbrains%dmps%dnodeEditor%dHighlighterMessage" resolveInfo="createHighlighterMessage" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7739208407757997727">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7739208407757997728">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2378204549815376756" resolveInfo="ref" />
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2378204549815376765">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SReference%dgetSourceNode()%cjetbrains%dmps%dsmodel%dSNode" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7739208407757997729">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SReference%dgetSourceNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSourceNode" />
                     </node>
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2378204549815376766">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7739208407757997730">
                     <property name="value" nameId="tpee.1070475926801" value="unresolved reference" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2378204549815376767" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2378204549815376768">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7739208407757997731" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7739208407757997732">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2378204549815376638" resolveInfo="editorContext" />
                   </node>
                 </node>
@@ -3816,8 +3816,8 @@
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2378204549815376922">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2378204549815376917" resolveInfo="editorChecker" />
             </node>
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2378204549815376923">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="471w.~TypesEditorChecker" />
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7739208407757997733">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x32m.~TypesEditorChecker" resolveInfo="TypesEditorChecker" />
             </node>
           </node>
         </node>

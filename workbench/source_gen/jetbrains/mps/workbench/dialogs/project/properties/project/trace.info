@@ -542,8 +542,8 @@
     <scopeInfo nodeId="3201642974933584704" fileName="TestConfigurationDialog.java" startLine="411" startPosition="0" endLine="417" endPosition="5" />
     <scopeInfo nodeId="3201642974933585238" fileName="TestConfigurationDialog.java" startLine="169" startPosition="93" endLine="176" endPosition="17">
       <varInfo nodeId="3201642974933585255" varName="outerBorder" />
-      <varInfo nodeId="3201642974933585247" varName="innerBorder" />
       <varInfo nodeId="3201642974933585240" varName="outer" />
+      <varInfo nodeId="3201642974933585247" varName="innerBorder" />
       <varInfo nodeId="3201642974933585260" varName="border" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933584676" fileName="TestConfigurationDialog.java" startLine="381" startPosition="0" endLine="388" endPosition="0">
@@ -580,8 +580,8 @@
       <varInfo nodeId="3201642974933585532" varName="module" />
       <varInfo nodeId="1918923653324395727" varName="projectModules" />
       <varInfo nodeId="3201642974933585550" varName="moduleName" />
-      <varInfo nodeId="1918923653324395794" varName="moduleRefs" />
       <varInfo nodeId="1918923653324395776" varName="projectModuleRefs" />
+      <varInfo nodeId="1918923653324395794" varName="moduleRefs" />
       <varInfo nodeId="1918923653324395723" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="3201642974933585809" fileName="TestConfigurationDialog.java" startLine="291" startPosition="134" endLine="321" endPosition="24">
