@@ -25,11 +25,11 @@
   <import index="q66k" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.cells(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="sq3w" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.style(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="espb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.search(MPS.Classpath/jetbrains.mps.smodel.search@java_stub)" version="-1" />
-  <import index="nc3m" modelUID="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.baseLanguage.search(jetbrains.mps.dataFlow.runtime/jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="5h2r" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -7578,7 +7578,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1224579876717">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1224579876718">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nc3m.~ClassifierVisibleStaticMembersScope%d&lt;init&gt;(jetbrains%dmps%dbaseLanguage%dstructure%dClassifier,jetbrains%dmps%dsmodel%dSNode,int)" resolveInfo="ClassifierVisibleStaticMembersScope" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5h2r.3161373106581143473" resolveInfo="ClassifierVisibleStaticMembersScope" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1224579876719">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1224579888695">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224579866520" resolveInfo="classifier" />
@@ -7589,8 +7589,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224579903318" resolveInfo="contextNode" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1224579876725">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nc3m.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nc3m.~IClassifiersSearchScope%dSTATIC_MEMBER" resolveInfo="STATIC_MEMBER" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5h2r.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5h2r.3161373106581141494" resolveInfo="STATIC_MEMBER" />
                 </node>
               </node>
             </node>
@@ -16299,8 +16299,8 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="893779103613495865" resolveInfo="methodCall" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="893779103613495899">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nc3m.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nc3m.~IClassifiersSearchScope%dANYTHING" resolveInfo="ANYTHING" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5h2r.3161373106581141431" resolveInfo="IClassifiersSearchScope" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5h2r.3161373106581141510" resolveInfo="ANYTHING" />
                     </node>
                   </node>
                 </node>
