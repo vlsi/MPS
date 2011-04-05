@@ -6,18 +6,34 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Map;
 import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.ide.projectPane.Icons;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import java.util.HashMap;
 import jetbrains.mps.newTypesystem.operation.PresentationKind;
 
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
   private static final Map<String, Color> COLOR_MAP = initColors();
 
+  public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext, State state, EditorComponent editorComponent) {
+    super(userObject, operationContext);
+    AbstractOperation operation = (AbstractOperation) userObject;
+    setNodeIdentifier(operation.getPresentation());
+    this.setAutoExpandable(true);
+    this.setIcon(Icons.DEFAULT_ICON);
+    List<SNode> variables = operation.getVariables();
+    if (variables != null) {
+      setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, variables, state));
+    }
+  }
+
   public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
-    AbstractOperation difference = (AbstractOperation) userObject;
-    setNodeIdentifier(difference.getPresentation());
+    AbstractOperation operation = (AbstractOperation) userObject;
+    setNodeIdentifier(operation.getPresentation());
     this.setAutoExpandable(true);
     this.setIcon(Icons.DEFAULT_ICON);
   }

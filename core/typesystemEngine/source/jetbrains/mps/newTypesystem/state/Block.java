@@ -48,10 +48,10 @@ public abstract class Block {
     return getPresentation();
   }
 
-  public String getVariablesNodes() {
+  public String getVariablesNodes(State state) {
     StringBuilder sb = new StringBuilder();
-    NodeMaps nodeMaps = myState.getNodeMaps();
-    for (SNode var : getVariables()) {
+    NodeMaps nodeMaps = state.getNodeMaps();
+    for (SNode var : getVariables(state)) {
       sb.append(var);
       sb.append(" is a type of ");
       sb.append(nodeMaps.getNode(var));
@@ -60,7 +60,7 @@ public abstract class Block {
     return sb.toString();
   }
 
-  public abstract List<SNode> getVariables();
+  public abstract List<SNode> getVariables(State state);
 
   public abstract BlockKind getBlockKind();
 

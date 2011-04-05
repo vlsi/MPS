@@ -10,6 +10,7 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -25,19 +26,13 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
-import javax.swing.JPopupMenu;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Map;
-import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.event.TreeSelectionListener;
@@ -54,10 +49,11 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private boolean generationMode = false;
   private ShowTypeSystemTrace myParent;
   private State myStateCopy;
-  private State myGenerationStateCopy;
+  private State myCurrentState;
   private AbstractOperation myOldOperation;
+  private EditorComponent myEditorComponent;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, ShowTypeSystemTrace parent) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, ShowTypeSystemTrace parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myOperation = tcc.getOperation();
@@ -68,6 +64,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myCurrentContext = tcc;
     myParent = parent;
     myStateCopy = new State(tcc, tcc.getState().getOperation());
+    setGenerationMode(TraceSettings.isGenerationMode());
+    myEditorComponent = editorComponent;
     this.rebuildNow();
     expandAll();
     addTreeSelectionListener(new TypeSystemTraceTree.MyTreeSelectionListener());
@@ -79,12 +77,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (this.generationMode) {
       TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
       context.getTypeInGenerationMode(mySelectedNode);
-      myGenerationStateCopy = context.getState();
       myOperation = context.getOperation();
       myCurrentContext = context;
+      myCurrentState = context.getState();
     } else {
       myOperation = myTypeCheckingContextNew.getOperation();
       myCurrentContext = myTypeCheckingContextNew;
+      myCurrentState = myStateCopy;
     }
   }
 
@@ -108,7 +107,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (diff.getConsequences() != null) {
       for (AbstractOperation child : diff.getConsequences()) {
         if (filterNodeType(child) && (!(TraceSettings.isTraceForSelectedNode()) || showNode(child))) {
-          TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext);
+          TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext, myCurrentContext.getState(), myEditorComponent);
           create(child, node);
           result.add(node);
         } else {
@@ -185,57 +184,60 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
+    if (this.getSelectionPath() == null) {
       return null;
+    }
+    MPSTreeNode currentNode = (MPSTreeNode) this.getSelectionPath().getLastPathComponent();
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a2a7(currentNode);
+    if (operation == null) {
+      return null;
+    }
+    final EquationInfo info = operation.getEquationInfo();
+    final SNode source = operation.getSource();
+    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+      return myOperationContext;
+    }
+    if (info != null) {
+      if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
+        return new Pair<String, String>(info.getRuleModel(), info.getRuleId());
+      }
+    }
+    if (source != null && source.isRegistered()) {
+      if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
+        return source;
+      }
     }
     return null;
   }
 
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
-    AnAction goToRule2 = ActionManager.getInstance().getAction("jetbrains.mps.newTypesystem.presentation.trace.GoToRule_Action");
-    AbstractOperation difference = (AbstractOperation) treeNode.getUserObject();
-    final EquationInfo info = difference.getEquationInfo();
-    final SNode source = difference.getSource();
-    BaseAction goToRule = null;
-    BaseAction goToNode = null;
-    if (info != null) {
-      goToRule = new BaseAction("Go to rule") {
-        public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(info.getRuleModel(), info.getRuleId()));
-        }
-      };
-    }
-    if (source != null && source.isRegistered()) {
-      goToNode = new BaseAction("Go to node") {
-        public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          myOperationContext.getComponent(MPSEditorOpener.class).editNode(source, myOperationContext);
-        }
-      };
-    }
-    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule2, goToRule, goToNode);
+    DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.lang.typesystem.plugin.GoToNode_Action"), ActionManager.getInstance().getAction("jetbrains.mps.lang.typesystem.plugin.GoToRule_Action"));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
   private void showState(final MPSTreeNode newNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        State state = (TraceSettings.isGenerationMode() ?
-          myGenerationStateCopy :
-          myStateCopy
-        );
         AbstractOperation rootDifference = myCurrentContext.getOperation();
         Object difference = newNode.getUserObject();
         if (myOldOperation == null) {
-          state.clear(false);
-          state.executeOperationsBeforeAnchor(rootDifference, difference);
+          myCurrentState.clear(false);
+          myCurrentState.executeOperationsBeforeAnchor(rootDifference, difference);
         } else {
-          state.updateState(myOldOperation, (AbstractOperation) difference);
+          myCurrentState.updateState(myOldOperation, (AbstractOperation) difference);
         }
-        myParent.resetState(state);
+        myParent.resetState(myCurrentState);
         myOldOperation = (AbstractOperation) difference;
       }
     });
+  }
+
+  private static Object check_kyyn1p_a0a2a7(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
   }
 
   private class MyTreeSelectionListener implements TreeSelectionListener {

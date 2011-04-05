@@ -26,6 +26,7 @@ import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.
@@ -233,7 +234,7 @@ public class Equations {
     return result;
   }
 
-  public List<String> getGroupsListPresentation() {
+  public Set<Entry<SNode,Set<SNode>>> getEquationGroups() {
     Set<SNode> all = new HashSet<SNode>();
     List<String> result = new LinkedList<String>();
     Map<SNode, Set<SNode>> map = new HashMap<SNode, Set<SNode>>();
@@ -250,14 +251,7 @@ public class Equations {
         value.add(node);
       }
     }
-    for (Map.Entry<SNode, Set<SNode>> entry : map.entrySet()) {
-      String s = "";
-      for (SNode node : entry.getValue()) {
-        s = s + node + " = ";
-      }
-      if (!s.equals(""))result.add(s + entry.getKey());
-    }
-    return result;
+    return map.entrySet();
   }
 
   public Map<SNode, SNode> getRepresentatives() {

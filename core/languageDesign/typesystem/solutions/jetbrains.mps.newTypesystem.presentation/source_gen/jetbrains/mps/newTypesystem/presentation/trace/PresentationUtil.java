@@ -4,6 +4,7 @@ package jetbrains.mps.newTypesystem.presentation.trace;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
@@ -18,15 +19,17 @@ public class PresentationUtil {
     return check_6aa0xa_a0a0(check_6aa0xa_a0a0a(check_6aa0xa_a0a0a0(editorComponent, node)));
   }
 
-  public static String getVariablesTooltipPresentation(EditorComponent editorComponent, Collection<SNode> variables, State state) {
+  public static String getVariablesTooltipPresentation(EditorComponent editorComponent, @NotNull Collection<SNode> variables, State state) {
     StringBuilder sb = new StringBuilder();
     NodeMaps maps = state.getNodeMaps();
     for (SNode var : variables) {
-      sb.append(var);
-      sb.append(" is a type of ");
-      SNode node = check_6aa0xa_a0c0c0b(maps, var);
-      sb.append(getNodePresentation(editorComponent, node));
-      sb.append("\n");
+      SNode node = check_6aa0xa_a0a0c0b(maps, var);
+      if (node != null) {
+        sb.append(var);
+        sb.append(" is a type of ");
+        sb.append(getNodePresentation(editorComponent, node));
+        sb.append("\n");
+      }
     }
     return sb.toString();
   }
@@ -52,7 +55,7 @@ public class PresentationUtil {
     return null;
   }
 
-  private static SNode check_6aa0xa_a0c0c0b(NodeMaps checkedDotOperand, SNode var) {
+  private static SNode check_6aa0xa_a0a0c0b(NodeMaps checkedDotOperand, SNode var) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(var);
     }

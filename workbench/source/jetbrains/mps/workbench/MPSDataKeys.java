@@ -88,7 +88,7 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<Pair<String, String>> RULE_MODEL_AND_ID = DataKey.create("MPS_RuleModelAndID");
 
   @Description(description = "source node")
-  public static final DataKey<Pair<String, String>> SOURCE_NODE = DataKey.create("MPS_SourceNode");
+  public static final DataKey<SNode> SOURCE_NODE = DataKey.create("MPS_SourceNode");
 
   @Description(description = "current editor cell")
   public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");

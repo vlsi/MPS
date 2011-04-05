@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.operation.equation;
 
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,7 +45,16 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
     return myChild + " = " + myParent;
   }
 
-
+  public List<SNode> getVariables() {
+    LinkedList<SNode> nodes = new LinkedList<SNode>();
+    if (TypesUtil.isVariable(myChild)) {
+      nodes.add(myChild);
+    }
+    if (TypesUtil.isVariable(myParent)) {
+      nodes.add(myParent);
+    }
+    return nodes;
+  }
 
 
 }

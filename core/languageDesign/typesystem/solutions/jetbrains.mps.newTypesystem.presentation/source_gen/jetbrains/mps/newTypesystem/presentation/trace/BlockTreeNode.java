@@ -23,7 +23,7 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
     myBlock = block;
     myRuleId = block.getNodeId();
     myRuleModel = block.getNodeModel();
-    setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, block.getVariables(), state));
+    setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, block.getVariables(state), state));
   }
 
   @Override

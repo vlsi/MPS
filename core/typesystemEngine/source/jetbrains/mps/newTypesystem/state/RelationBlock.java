@@ -79,9 +79,15 @@ public abstract class RelationBlock extends Block {
   }
 
   @Override
-  public List<SNode> getVariables() {
-    List<SNode> variables = TypesUtil.getVariables(myLeftNode);
-    variables.addAll(TypesUtil.getVariables(myRightNode));
+  public List<SNode> getVariables(State state) {
+    List<SNode> variables;
+    if (state == null) {
+      variables = TypesUtil.getVariables(myLeftNode);
+      variables.addAll(TypesUtil.getVariables(myRightNode));
+    } else {
+      variables = TypesUtil.getVariables(state.expand(myLeftNode));
+      variables.addAll(TypesUtil.getVariables(state.expand(myRightNode)));
+    }
     return variables;
   }
 

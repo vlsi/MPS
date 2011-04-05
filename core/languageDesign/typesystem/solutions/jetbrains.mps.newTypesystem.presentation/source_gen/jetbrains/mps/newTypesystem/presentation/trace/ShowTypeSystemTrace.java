@@ -35,7 +35,7 @@ public class ShowTypeSystemTrace extends JDialog {
     }
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-    myTraceTree = new TypeSystemTraceTree(operationContext, t, frame, node, this);
+    myTraceTree = new TypeSystemTraceTree(operationContext, t, frame, node, this, editorComponent);
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
     JSplitPane splitPane = new JSplitPane();
     this.add(splitPane);

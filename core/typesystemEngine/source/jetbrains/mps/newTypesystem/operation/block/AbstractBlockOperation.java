@@ -17,6 +17,9 @@ package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,5 +32,10 @@ public abstract class AbstractBlockOperation extends AbstractOperation {
 
   public Block getBlock() {
     return myBlock;
+  }
+
+  @Override
+  public List<SNode> getVariables() {
+    return myBlock.getVariables(null);
   }
 }

@@ -65,8 +65,10 @@ public class TypeSystemStateTree extends MPSTree {
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
-    result.add(createTypesNode());
-    result.add(createNode("Equations", myState.getEquations().getGroupsListPresentation(), null));
+    /*
+      result.add(createTypesNode());
+    */
+    result.add(createEquationsNode());
     return result;
   }
 
@@ -128,6 +130,14 @@ public class TypeSystemStateTree extends MPSTree {
     });
     for (TypeTreeNode node : list) {
       result.add(node);
+    }
+    return result;
+  }
+
+  private TypeSystemStateTreeNode createEquationsNode() {
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Equations", myOperationContext);
+    for (Map.Entry<SNode, Set<SNode>> equationGroup : myState.getEquations().getEquationGroups()) {
+      result.add(new EquationTreeNode(myOperationContext, equationGroup.getKey(), equationGroup.getValue(), myState, myEditorComponent));
     }
     return result;
   }
