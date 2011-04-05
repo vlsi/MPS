@@ -112,7 +112,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       SNode original = oldidsToOriginal.get(id);
       if(original == null) {
         // TODO if original is null -> new root added, warning/error(strict)?
-        LOG.warning("script created a new node");
+        LOG.debug("script created a new node");
       }
       currentToOriginalMap.put(root, original);
     }
