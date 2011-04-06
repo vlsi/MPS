@@ -42,7 +42,7 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
 
   private MyPreferencesPage myPreferencesPage;
 
-  private boolean myCheckOpenAPI = true;
+  private boolean myDisableCheckOpenAPI = false;
 
   @Override
   public JComponent createComponent() {
@@ -56,8 +56,8 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
     return myPreferencesPage;
   }
 
-  public boolean getCheckOpenAPI() {
-    return myCheckOpenAPI;
+  public boolean isDisableCheckOpenAPI() {
+    return myDisableCheckOpenAPI;
   }
 
   public static InternalOptionsSettings getInstance() {
@@ -107,7 +107,7 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
   }
 
   public class MyPreferencesPage extends JPanel {
-    private JCheckBox myCheckBoxOpenAPI = new JCheckBox("check open API");
+    private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Disable nonpublic API usage check");
 
     public MyPreferencesPage() {
       super(new BorderLayout());
@@ -117,28 +117,28 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
     }
 
     public void commit() {
-      myCheckOpenAPI = myCheckBoxOpenAPI.isSelected();
+      myDisableCheckOpenAPI = myCheckBoxOpenAPI.isSelected();
     }
 
     public void reset() {
-      myCheckBoxOpenAPI.setSelected(myCheckOpenAPI);
+      myCheckBoxOpenAPI.setSelected(myDisableCheckOpenAPI);
     }
 
     public boolean isModified() {
-      return myCheckOpenAPI != myCheckBoxOpenAPI.isSelected();
+      return myDisableCheckOpenAPI != myCheckBoxOpenAPI.isSelected();
     }
   }
 
   @Override
   public MyState getState() {
     MyState result = new MyState();
-    result.myDisableCheckOpenAPI = !myCheckOpenAPI;
+    result.myDisableCheckOpenAPI = myDisableCheckOpenAPI;
     return result;
   }
 
   @Override
   public void loadState(MyState state) {
-    myCheckOpenAPI = !state.myDisableCheckOpenAPI;
+    myDisableCheckOpenAPI = state.myDisableCheckOpenAPI;
   }
 
   public static class MyState {

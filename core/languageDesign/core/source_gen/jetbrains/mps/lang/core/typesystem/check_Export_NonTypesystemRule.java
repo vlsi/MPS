@@ -24,7 +24,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(InternalOptionsSettings.getInstance().getCheckOpenAPI())) {
+    if (InternalOptionsSettings.getInstance().isDisableCheckOpenAPI()) {
       return;
     }
     String namespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);

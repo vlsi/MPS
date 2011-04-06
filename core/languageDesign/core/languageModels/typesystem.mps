@@ -1026,15 +1026,13 @@
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="526633399526719853">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="526633399526794615" />
         </node>
-        <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="526633399526794613">
-          <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="526633399526794608">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="526633399526794607">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%dgetInstance()%cjetbrains%dmps%dtempoptions%dInternalOptionsSettings" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ecih.~InternalOptionsSettings" resolveInfo="InternalOptionsSettings" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="526633399526794612">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%dgetCheckOpenAPI()%cboolean" resolveInfo="getCheckOpenAPI" />
-            </node>
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="526633399526794608">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="526633399526794607">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%dgetInstance()%cjetbrains%dmps%dtempoptions%dInternalOptionsSettings" resolveInfo="getInstance" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ecih.~InternalOptionsSettings" resolveInfo="InternalOptionsSettings" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="526633399526794612">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%disDisableCheckOpenAPI()%cboolean" resolveInfo="isDisableCheckOpenAPI" />
           </node>
         </node>
       </node>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RemoveUnknownReference_QuickFix.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix" />
-  <unitInfo fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix" />
   <unitInfo fileName="RemoveUnknownChildren_QuickFix.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix" />
-  <unitInfo fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix" />
   <unitInfo fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" />
   <unitInfo fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" />
@@ -109,7 +107,7 @@
     <scopeInfo nodeId="3618120580763130709" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="113" />
   </root>
   <root nodeId="376024488709664742">
-    <nodeInfo nodeId="526633399526794615" fileName="check_Export_NonTypesystemRule.java" startLine="27" startPosition="69" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="526633399526794615" fileName="check_Export_NonTypesystemRule.java" startLine="27" startPosition="72" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5425021671150235563" fileName="check_Export_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="402007580867616321" fileName="check_Export_NonTypesystemRule.java" startLine="30" startPosition="83" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2565736246230032421" fileName="check_Export_NonTypesystemRule.java" startLine="32" startPosition="28" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -127,7 +125,7 @@
     <nodeInfo nodeId="5425021671150237299" fileName="check_Export_NonTypesystemRule.java" startLine="35" startPosition="33" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="402007580867616253" fileName="check_Export_NonTypesystemRule.java" startLine="43" startPosition="87" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="376024488709665189" fileName="check_Export_NonTypesystemRule.java" startLine="42" startPosition="24" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="526633399526719853" fileName="check_Export_NonTypesystemRule.java" startLine="27" startPosition="69" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="526633399526719853" fileName="check_Export_NonTypesystemRule.java" startLine="27" startPosition="72" endLine="28" endPosition="13" />
     <scopeInfo nodeId="2565736246230032413" fileName="check_Export_NonTypesystemRule.java" startLine="32" startPosition="28" endLine="33" endPosition="13" />
     <scopeInfo nodeId="8935196238174954469" fileName="check_Export_NonTypesystemRule.java" startLine="37" startPosition="7" endLine="39" endPosition="232" />
     <scopeInfo nodeId="8935196238174954475" fileName="check_Export_NonTypesystemRule.java" startLine="45" startPosition="9" endLine="48" endPosition="234" />
