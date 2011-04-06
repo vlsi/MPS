@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import org.objectweb.asm.ClassReader;
-import jetbrains.mps.stubs.javastub.asm.ASMClass;
+import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.objectweb.asm.tree.InnerClassNode;
 import org.objectweb.asm.Opcodes;

@@ -9,7 +9,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
-  <import index="45y3" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.stubs.javastub.asm)" version="-1" />
+  <import index="45y3" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="8bce" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="60vs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
@@ -21,7 +21,6 @@
   <import index="rh7d" modelUID="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="q2wd" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#org.objectweb.asm.tree(org.objectweb.asm.tree@java_stub)" version="-1" />
   <import index="9p09" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.stubs.javastub.classpath(jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
-  <import index="jjox" modelUID="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.stubs.javastub.asm(jetbrains.mps.stubs.javastub.asm@java_stub)" version="-1" />
   <import index="ltn8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="ho7a" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
@@ -3435,8 +3434,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814062135">
             <property name="name" nameId="tpck.1169194664001" value="annotation" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814062136">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192829">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814062137">
@@ -3973,8 +3972,8 @@
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814062347">
                 <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814062348">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192828">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814062349">
@@ -4257,8 +4256,8 @@
                     </node>
                     <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814062460">
                       <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814062461">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192830">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814062462">
@@ -5261,8 +5260,8 @@
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814062778">
                 <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814062779">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192817">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814062780">
@@ -5899,8 +5898,8 @@
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814063024">
                 <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063025">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192831">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814063026">
@@ -6450,8 +6449,8 @@
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814063238">
                 <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063239">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192827">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814063240">
@@ -6890,8 +6889,8 @@
         <property name="name" nameId="tpck.1169194664001" value="annotations" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063410">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063411">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192813">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
           </node>
         </node>
       </node>
@@ -6902,8 +6901,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814063415">
             <property name="name" nameId="tpck.1169194664001" value="a" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063416">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192819">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814063417">
@@ -6943,8 +6942,8 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2566197375814063430">
         <property name="name" nameId="tpck.1169194664001" value="annotation" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063431">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192826">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2566197375814063432">
@@ -6972,7 +6971,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2566197375814063440">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814063441">
             <property name="name" nameId="tpck.1169194664001" value="c" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063442">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192815">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.7241381882860002170" resolveInfo="ASMClassType" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2566197375814063443">
@@ -6981,10 +6980,10 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063430" resolveInfo="annotation" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2566197375814063446">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jjox.~ASMAnnotation%dgetType()%cjetbrains%dmps%dstubs%djavastub%dasm%dASMType" resolveInfo="getType" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="45y3.6849912058625332386" resolveInfo="getType" />
                 </node>
               </node>
-              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063447">
+              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192816">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.7241381882860002170" resolveInfo="ASMClassType" />
               </node>
             </node>
@@ -7025,7 +7024,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063430" resolveInfo="annotation" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2566197375814063462">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jjox.~ASMAnnotation%dgetValues()%cjava%dutil%dMap" resolveInfo="getValues" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="45y3.6849912058625332370" resolveInfo="getValues" />
               </node>
             </node>
           </node>
@@ -7720,7 +7719,7 @@
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2566197375814063729">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
             </node>
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063730">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192821">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.7241381882860008658" resolveInfo="ASMEnumValue" />
             </node>
           </node>
@@ -7829,23 +7828,23 @@
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2566197375814063769">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
             </node>
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063770">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192820">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2566197375814063771">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2566197375814063772">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2566197375814063773">
                 <property name="name" nameId="tpck.1169194664001" value="annotation" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063774">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192825">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2566197375814063775">
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2566197375814063776">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
                   </node>
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063777">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jjox.~ASMAnnotation" resolveInfo="ASMAnnotation" />
+                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192824">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                   </node>
                 </node>
               </node>
@@ -7874,7 +7873,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rh7d.~AnnotationInstanceExpression%dsetAnnotationInstance(jetbrains%dmps%dbaseLanguage%dstructure%dAnnotationInstance)%cvoid" resolveInfo="setAnnotationInstance" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2566197375814063787">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2566197375814063427" resolveInfo="createAnnotation" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063788">
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2692292455436192823">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063773" resolveInfo="annotation" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2566197375814063789">
@@ -7896,7 +7895,7 @@
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2566197375814063794">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
             </node>
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2566197375814063795">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2692292455436192822">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.7241381882860002170" resolveInfo="ASMClassType" />
             </node>
           </node>

@@ -21,7 +21,7 @@
     <nodeInfo nodeId="6849912058625332300" fileName="ASMAnnotation.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6849912058625332344" fileName="ASMAnnotation.java" startLine="51" startPosition="31" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6849912058625332376" fileName="ASMAnnotation.java" startLine="28" startPosition="42" endLine="32" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6849912058625332386" fileName="ASMAnnotation.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="6849912058625332386" fileName="ASMAnnotation.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="6849912058625332310" fileName="ASMAnnotation.java" startLine="45" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6849912058625332233" fileName="ASMAnnotation.java" startLine="19" startPosition="75" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6849912058625332370" fileName="ASMAnnotation.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/Map;" />
@@ -61,7 +61,7 @@
     <scopeInfo nodeId="6849912058625332283" fileName="ASMAnnotation.java" startLine="38" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="6849912058625332286" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="6849912058625332189" fileName="ASMAnnotation.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMAnnotation" />
+    <unitInfo nodeId="6849912058625332189" fileName="ASMAnnotation.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation" />
   </root>
   <root nodeId="7241381882860001929">
     <nodeInfo nodeId="7241381882860007088" fileName="SignatureVisitorAdapter.java" startLine="14" startPosition="45" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -136,21 +136,21 @@
     <scopeInfo nodeId="7241381882860007160" fileName="SignatureVisitorAdapter.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="7241381882860007163" varName="wildcard" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860001929" fileName="SignatureVisitorAdapter.java" startLine="7" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.SignatureVisitorAdapter" />
+    <unitInfo nodeId="7241381882860001929" fileName="SignatureVisitorAdapter.java" startLine="7" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
   </root>
   <root nodeId="7241381882860002146">
     <nodeInfo nodeId="7241381882860002149" fileName="ASMArrayType.java" startLine="6" startPosition="43" endLine="7" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myElementType" />
     <nodeInfo nodeId="7241381882860002156" fileName="ASMArrayType.java" startLine="9" startPosition="49" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860002166" fileName="ASMArrayType.java" startLine="13" startPosition="35" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860002152" fileName="ASMArrayType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMArrayType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
-    <nodeInfo nodeId="7241381882860002162" fileName="ASMArrayType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860002152" fileName="ASMArrayType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMArrayType#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860002162" fileName="ASMArrayType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <scopeInfo nodeId="7241381882860002155" fileName="ASMArrayType.java" startLine="9" startPosition="49" endLine="10" endPosition="32" />
     <scopeInfo nodeId="7241381882860002165" fileName="ASMArrayType.java" startLine="13" startPosition="35" endLine="14" endPosition="25" />
     <scopeInfo nodeId="7241381882860002152" fileName="ASMArrayType.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
       <varInfo nodeId="7241381882860002153" varName="elementType" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002162" fileName="ASMArrayType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="7241381882860002146" fileName="ASMArrayType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMArrayType" />
+    <unitInfo nodeId="7241381882860002146" fileName="ASMArrayType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType" />
   </root>
   <root nodeId="7241381882860002170">
     <nodeInfo nodeId="7241381882860002173" fileName="ASMClassType.java" startLine="6" startPosition="43" endLine="7" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OBJECT" />
@@ -169,7 +169,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002193" fileName="ASMClassType.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="7241381882860002201" fileName="ASMClassType.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="7241381882860002170" fileName="ASMClassType.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMClassType" />
+    <unitInfo nodeId="7241381882860002170" fileName="ASMClassType.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClassType" />
   </root>
   <root nodeId="7241381882860005690">
     <nodeInfo nodeId="7241381882860005696" fileName="ASMMethod.java" startLine="14" startPosition="24" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
@@ -275,8 +275,8 @@
     <nodeInfo nodeId="7241381882860006548" fileName="ASMMethod.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConstructor#()Z" />
     <nodeInfo nodeId="7241381882860006561" fileName="ASMMethod.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCompilerGenerated#()Z" />
     <nodeInfo nodeId="7241381882860006583" fileName="ASMMethod.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReturnType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericReturnType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860006613" fileName="ASMMethod.java" startLine="217" startPosition="47" endLine="221" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860006625" fileName="ASMMethod.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterTypes#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860006635" fileName="ASMMethod.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericParameterTypes#()Ljava/util/List;" />
@@ -434,7 +434,7 @@
     <scopeInfo nodeId="7241381882860005734" fileName="ASMMethod.java" startLine="26" startPosition="0" endLine="147" endPosition="3">
       <varInfo nodeId="7241381882860005735" varName="method" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860005690" fileName="ASMMethod.java" startLine="14" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMMethod" />
+    <unitInfo nodeId="7241381882860005690" fileName="ASMMethod.java" startLine="14" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMMethod" />
   </root>
   <root nodeId="7241381882860006706">
     <nodeInfo nodeId="7241381882860006709" fileName="ASMPrimitiveType.java" startLine="6" startPosition="47" endLine="7" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VOID" />
@@ -461,7 +461,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7241381882860006777" fileName="ASMPrimitiveType.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="7241381882860006785" fileName="ASMPrimitiveType.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="7241381882860006706" fileName="ASMPrimitiveType.java" startLine="6" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMPrimitiveType" />
+    <unitInfo nodeId="7241381882860006706" fileName="ASMPrimitiveType.java" startLine="6" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType" />
   </root>
   <root nodeId="7241381882860006793">
     <nodeInfo nodeId="7241381882860006795" fileName="ASMField.java" startLine="12" startPosition="23" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />
@@ -503,8 +503,8 @@
     <nodeInfo nodeId="7241381882860007027" fileName="ASMField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCompilerGenerated#()Z" />
     <nodeInfo nodeId="1507995828870743745" fileName="ASMField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasValue#()Z" />
     <nodeInfo nodeId="1507995828870743790" fileName="ASMField.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="7241381882860007040" fileName="ASMField.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860007048" fileName="ASMField.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007040" fileName="ASMField.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007048" fileName="ASMField.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007061" fileName="ASMField.java" startLine="91" startPosition="47" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860006878" fileName="ASMField.java" startLine="27" startPosition="51" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860006818" fileName="ASMField.java" startLine="19" startPosition="20" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -553,21 +553,21 @@
     <scopeInfo nodeId="7241381882860006808" fileName="ASMField.java" startLine="17" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="7241381882860006809" varName="field" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860006793" fileName="ASMField.java" startLine="12" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMField" />
+    <unitInfo nodeId="7241381882860006793" fileName="ASMField.java" startLine="12" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMField" />
   </root>
   <root nodeId="7241381882860007172">
     <nodeInfo nodeId="7241381882860007175" fileName="ASMVarArgType.java" startLine="6" startPosition="44" endLine="7" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myElementType" />
     <nodeInfo nodeId="7241381882860007182" fileName="ASMVarArgType.java" startLine="9" startPosition="50" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860007192" fileName="ASMVarArgType.java" startLine="13" startPosition="35" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007178" fileName="ASMVarArgType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMVarArgType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
-    <nodeInfo nodeId="7241381882860007188" fileName="ASMVarArgType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007178" fileName="ASMVarArgType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMVarArgType#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860007188" fileName="ASMVarArgType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <scopeInfo nodeId="7241381882860007181" fileName="ASMVarArgType.java" startLine="9" startPosition="50" endLine="10" endPosition="32" />
     <scopeInfo nodeId="7241381882860007191" fileName="ASMVarArgType.java" startLine="13" startPosition="35" endLine="14" endPosition="25" />
     <scopeInfo nodeId="7241381882860007178" fileName="ASMVarArgType.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
       <varInfo nodeId="7241381882860007179" varName="elementType" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860007188" fileName="ASMVarArgType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="7241381882860007172" fileName="ASMVarArgType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMVarArgType" />
+    <unitInfo nodeId="7241381882860007172" fileName="ASMVarArgType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType" />
   </root>
   <root nodeId="7241381882860007196">
     <nodeInfo nodeId="7241381882860007198" fileName="NullSignatureVisitor.java" startLine="7" startPosition="68" endLine="8" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -643,13 +643,13 @@
     <scopeInfo nodeId="7241381882860007288" fileName="NullSignatureVisitor.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7241381882860007291" varName="wildcard" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860007196" fileName="NullSignatureVisitor.java" startLine="7" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.NullSignatureVisitor" />
+    <unitInfo nodeId="7241381882860007196" fileName="NullSignatureVisitor.java" startLine="7" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.NullSignatureVisitor" />
   </root>
   <root nodeId="7241381882860007300">
     <nodeInfo nodeId="7241381882860007303" fileName="ASMUnboundedType.java" startLine="6" startPosition="47" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMUnboundedType#()V" />
     <scopeInfo nodeId="7241381882860007305" fileName="ASMUnboundedType.java" startLine="7" startPosition="29" endLine="7" endPosition="29" />
     <scopeInfo nodeId="7241381882860007303" fileName="ASMUnboundedType.java" startLine="6" startPosition="47" endLine="8" endPosition="3" />
-    <unitInfo nodeId="7241381882860007300" fileName="ASMUnboundedType.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMUnboundedType" />
+    <unitInfo nodeId="7241381882860007300" fileName="ASMUnboundedType.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType" />
   </root>
   <root nodeId="7241381882860007306">
     <nodeInfo nodeId="7241381882860007380" fileName="TypeUtil.java" startLine="17" startPosition="58" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -780,9 +780,9 @@
     <nodeInfo nodeId="7241381882860007869" fileName="TypeUtil.java" startLine="223" startPosition="27" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007887" fileName="TypeUtil.java" startLine="226" startPosition="7" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860008048" fileName="TypeUtil.java" startLine="282" startPosition="7" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860007375" fileName="TypeUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromDescriptor#(Ljava/lang/String;)Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007375" fileName="TypeUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromDescriptor#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007514" fileName="TypeUtil.java" startLine="62" startPosition="49" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007324" fileName="TypeUtil.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setResult#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860007324" fileName="TypeUtil.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setResult#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
     <nodeInfo nodeId="7241381882860007754" fileName="TypeUtil.java" startLine="200" startPosition="42" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007902" fileName="TypeUtil.java" startLine="232" startPosition="40" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007919" fileName="TypeUtil.java" startLine="236" startPosition="7" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -810,17 +810,17 @@
     <nodeInfo nodeId="5944751885067649598" fileName="TypeUtil.java" startLine="138" startPosition="34" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007334" fileName="TypeUtil.java" startLine="222" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finish#()V" />
     <nodeInfo nodeId="7241381882860007368" fileName="TypeUtil.java" startLine="268" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
-    <nodeInfo nodeId="7241381882860007708" fileName="TypeUtil.java" startLine="176" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFieldType#(Ljava/lang/String;)Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007708" fileName="TypeUtil.java" startLine="176" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFieldType#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007769" fileName="TypeUtil.java" startLine="204" startPosition="7" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860007371" fileName="TypeUtil.java" startLine="277" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860007337" fileName="TypeUtil.java" startLine="231" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860007484" fileName="TypeUtil.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReturnType#(Ljava/lang/String;)Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007371" fileName="TypeUtil.java" startLine="277" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007337" fileName="TypeUtil.java" startLine="231" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007484" fileName="TypeUtil.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReturnType#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007521" fileName="TypeUtil.java" startLine="69" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParameterTypes#(Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860007647" fileName="TypeUtil.java" startLine="156" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getExceptionTypes#(Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860007642" fileName="TypeUtil.java" startLine="132" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
-    <nodeInfo nodeId="7241381882860007329" fileName="TypeUtil.java" startLine="199" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPart#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860007329" fileName="TypeUtil.java" startLine="199" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPart#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
     <nodeInfo nodeId="7241381882860007389" fileName="TypeUtil.java" startLine="21" startPosition="50" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="7241381882860007384" fileName="TypeUtil.java" startLine="20" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromType#(Lorg/objectweb/asm/Type;)Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007384" fileName="TypeUtil.java" startLine="20" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromType#(Lorg/objectweb/asm/Type;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007608" fileName="TypeUtil.java" startLine="95" startPosition="60" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860007581" fileName="TypeUtil.java" startLine="89" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFormalTypeParameters#(Ljava/lang/String;)Ljava/util/List;" />
     <scopeInfo nodeId="7241381882860007374" fileName="TypeUtil.java" startLine="14" startPosition="26" endLine="14" endPosition="26" />
@@ -1001,18 +1001,18 @@
     <scopeInfo nodeId="7241381882860007581" fileName="TypeUtil.java" startLine="89" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="7241381882860007585" varName="signature" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860007513" fileName="TypeUtil.java" startLine="62" startPosition="22" endLine="66" endPosition="5" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil$1" />
-    <unitInfo nodeId="7241381882860007553" fileName="TypeUtil.java" startLine="76" startPosition="22" endLine="82" endPosition="5" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil$2" />
-    <unitInfo nodeId="7241381882860007680" fileName="TypeUtil.java" startLine="163" startPosition="22" endLine="169" endPosition="5" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil$4" />
-    <unitInfo nodeId="7241381882860007614" fileName="TypeUtil.java" startLine="96" startPosition="22" endLine="153" endPosition="5" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil$3" />
-    <unitInfo nodeId="7241381882860007307" fileName="TypeUtil.java" startLine="187" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil$TypeBuilderVisitor" />
-    <unitInfo nodeId="7241381882860007306" fileName="TypeUtil.java" startLine="13" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.TypeUtil" />
+    <unitInfo nodeId="7241381882860007513" fileName="TypeUtil.java" startLine="62" startPosition="22" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$1" />
+    <unitInfo nodeId="7241381882860007553" fileName="TypeUtil.java" startLine="76" startPosition="22" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$2" />
+    <unitInfo nodeId="7241381882860007680" fileName="TypeUtil.java" startLine="163" startPosition="22" endLine="169" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$4" />
+    <unitInfo nodeId="7241381882860007614" fileName="TypeUtil.java" startLine="96" startPosition="22" endLine="153" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$3" />
+    <unitInfo nodeId="7241381882860007307" fileName="TypeUtil.java" startLine="187" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil$TypeBuilderVisitor" />
+    <unitInfo nodeId="7241381882860007306" fileName="TypeUtil.java" startLine="13" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
   </root>
   <root nodeId="7241381882860008653">
     <nodeInfo nodeId="7241381882860008655" fileName="ASMType.java" startLine="6" startPosition="22" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMType#()V" />
     <scopeInfo nodeId="7241381882860008657" fileName="ASMType.java" startLine="7" startPosition="20" endLine="7" endPosition="20" />
     <scopeInfo nodeId="7241381882860008655" fileName="ASMType.java" startLine="6" startPosition="22" endLine="8" endPosition="3" />
-    <unitInfo nodeId="7241381882860008653" fileName="ASMType.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMType" />
+    <unitInfo nodeId="7241381882860008653" fileName="ASMType.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </root>
   <root nodeId="7241381882860008658">
     <nodeInfo nodeId="7241381882860008660" fileName="ASMEnumValue.java" startLine="6" startPosition="27" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
@@ -1022,7 +1022,7 @@
     <nodeInfo nodeId="7241381882860008689" fileName="ASMEnumValue.java" startLine="15" startPosition="28" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860008697" fileName="ASMEnumValue.java" startLine="19" startPosition="31" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860008666" fileName="ASMEnumValue.java" startLine="9" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMEnumValue#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860008685" fileName="ASMEnumValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860008685" fileName="ASMEnumValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860008693" fileName="ASMEnumValue.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConstant#()Ljava/lang/String;" />
     <scopeInfo nodeId="7241381882860008688" fileName="ASMEnumValue.java" startLine="15" startPosition="28" endLine="16" endPosition="18" />
     <scopeInfo nodeId="7241381882860008696" fileName="ASMEnumValue.java" startLine="19" startPosition="31" endLine="20" endPosition="22" />
@@ -1033,7 +1033,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008685" fileName="ASMEnumValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="7241381882860008693" fileName="ASMEnumValue.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="7241381882860008658" fileName="ASMEnumValue.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMEnumValue" />
+    <unitInfo nodeId="7241381882860008658" fileName="ASMEnumValue.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMEnumValue" />
   </root>
   <root nodeId="7241381882860008701">
     <nodeInfo nodeId="7241381882860008704" fileName="ASMTypeVariable.java" startLine="6" startPosition="46" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -1051,21 +1051,21 @@
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008718" fileName="ASMTypeVariable.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7241381882860008726" fileName="ASMTypeVariable.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="7241381882860008701" fileName="ASMTypeVariable.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMTypeVariable" />
+    <unitInfo nodeId="7241381882860008701" fileName="ASMTypeVariable.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" />
   </root>
   <root nodeId="7241381882860008734">
     <nodeInfo nodeId="7241381882860008737" fileName="ASMSuperType.java" startLine="6" startPosition="43" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBase" />
     <nodeInfo nodeId="7241381882860008745" fileName="ASMSuperType.java" startLine="9" startPosition="37" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860008755" fileName="ASMSuperType.java" startLine="13" startPosition="28" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860008740" fileName="ASMSuperType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMSuperType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
-    <nodeInfo nodeId="7241381882860008751" fileName="ASMSuperType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBase#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860008740" fileName="ASMSuperType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMSuperType#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860008751" fileName="ASMSuperType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBase#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <scopeInfo nodeId="7241381882860008744" fileName="ASMSuperType.java" startLine="9" startPosition="37" endLine="10" endPosition="18" />
     <scopeInfo nodeId="7241381882860008754" fileName="ASMSuperType.java" startLine="13" startPosition="28" endLine="14" endPosition="18" />
     <scopeInfo nodeId="7241381882860008740" fileName="ASMSuperType.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
       <varInfo nodeId="7241381882860008742" varName="base" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008751" fileName="ASMSuperType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="7241381882860008734" fileName="ASMSuperType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMSuperType" />
+    <unitInfo nodeId="7241381882860008734" fileName="ASMSuperType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType" />
   </root>
   <root nodeId="7241381882860008759">
     <nodeInfo nodeId="7241381882860008762" fileName="ASMFormalTypeParameter.java" startLine="9" startPosition="61" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassBound" />
@@ -1075,9 +1075,9 @@
     <nodeInfo nodeId="7241381882860008805" fileName="ASMFormalTypeParameter.java" startLine="22" startPosition="34" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860008814" fileName="ASMFormalTypeParameter.java" startLine="26" startPosition="45" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860008787" fileName="ASMFormalTypeParameter.java" startLine="15" startPosition="30" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860008801" fileName="ASMFormalTypeParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassBound#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860008801" fileName="ASMFormalTypeParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassBound#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860008809" fileName="ASMFormalTypeParameter.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInterfaceBounds#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860008769" fileName="ASMFormalTypeParameter.java" startLine="12" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMFormalTypeParameter#(Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMType;Ljava/util/List;)V" />
+    <nodeInfo nodeId="7241381882860008769" fileName="ASMFormalTypeParameter.java" startLine="12" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMFormalTypeParameter#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;Ljava/util/List;)V" />
     <scopeInfo nodeId="7241381882860008804" fileName="ASMFormalTypeParameter.java" startLine="22" startPosition="34" endLine="23" endPosition="24" />
     <scopeInfo nodeId="7241381882860008813" fileName="ASMFormalTypeParameter.java" startLine="26" startPosition="45" endLine="27" endPosition="59" />
     <scopeInfo nodeId="7241381882860008801" fileName="ASMFormalTypeParameter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
@@ -1088,21 +1088,21 @@
       <varInfo nodeId="7241381882860008773" varName="classBound" />
       <varInfo nodeId="7241381882860008771" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860008759" fileName="ASMFormalTypeParameter.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMFormalTypeParameter" />
+    <unitInfo nodeId="7241381882860008759" fileName="ASMFormalTypeParameter.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMFormalTypeParameter" />
   </root>
   <root nodeId="7241381882860008819">
     <nodeInfo nodeId="7241381882860008822" fileName="ASMExtendsType.java" startLine="6" startPosition="45" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBase" />
     <nodeInfo nodeId="7241381882860008830" fileName="ASMExtendsType.java" startLine="9" startPosition="39" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860008840" fileName="ASMExtendsType.java" startLine="13" startPosition="28" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860008825" fileName="ASMExtendsType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMExtendsType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
-    <nodeInfo nodeId="7241381882860008836" fileName="ASMExtendsType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBase#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860008825" fileName="ASMExtendsType.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMExtendsType#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860008836" fileName="ASMExtendsType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBase#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <scopeInfo nodeId="7241381882860008829" fileName="ASMExtendsType.java" startLine="9" startPosition="39" endLine="10" endPosition="18" />
     <scopeInfo nodeId="7241381882860008839" fileName="ASMExtendsType.java" startLine="13" startPosition="28" endLine="14" endPosition="18" />
     <scopeInfo nodeId="7241381882860008825" fileName="ASMExtendsType.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
       <varInfo nodeId="7241381882860008827" varName="base" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008836" fileName="ASMExtendsType.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="7241381882860008819" fileName="ASMExtendsType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMExtendsType" />
+    <unitInfo nodeId="7241381882860008819" fileName="ASMExtendsType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType" />
   </root>
   <root nodeId="7241381882860009267">
     <nodeInfo nodeId="7241381882860009270" fileName="ASMParameterizedType.java" startLine="10" startPosition="51" endLine="11" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRawType" />
@@ -1114,12 +1114,12 @@
     <nodeInfo nodeId="7241381882860009343" fileName="ASMParameterizedType.java" startLine="34" startPosition="49" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860009352" fileName="ASMParameterizedType.java" startLine="38" startPosition="28" endLine="39" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860009292" fileName="ASMParameterizedType.java" startLine="15" startPosition="24" endLine="19" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860009306" fileName="ASMParameterizedType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRawType#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860009314" fileName="ASMParameterizedType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
-    <nodeInfo nodeId="7241381882860009326" fileName="ASMParameterizedType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeArgument#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860009306" fileName="ASMParameterizedType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRawType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860009314" fileName="ASMParameterizedType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
+    <nodeInfo nodeId="7241381882860009326" fileName="ASMParameterizedType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeArgument#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
     <nodeInfo nodeId="7241381882860009338" fileName="ASMParameterizedType.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActualTypeArguments#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860009348" fileName="ASMParameterizedType.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7241381882860009277" fileName="ASMParameterizedType.java" startLine="13" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMParameterizedType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;Ljava/util/List;)V" />
+    <nodeInfo nodeId="7241381882860009277" fileName="ASMParameterizedType.java" startLine="13" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMParameterizedType#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;Ljava/util/List;)V" />
     <scopeInfo nodeId="7241381882860009309" fileName="ASMParameterizedType.java" startLine="22" startPosition="31" endLine="23" endPosition="21" />
     <scopeInfo nodeId="7241381882860009318" fileName="ASMParameterizedType.java" startLine="26" startPosition="43" endLine="27" endPosition="27" />
     <scopeInfo nodeId="7241381882860009330" fileName="ASMParameterizedType.java" startLine="30" startPosition="46" endLine="31" endPosition="30" />
@@ -1139,7 +1139,7 @@
       <varInfo nodeId="7241381882860009281" varName="typeArguments" />
       <varInfo nodeId="7241381882860009279" varName="rawType" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860009267" fileName="ASMParameterizedType.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMParameterizedType" />
+    <unitInfo nodeId="7241381882860009267" fileName="ASMParameterizedType.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType" />
   </root>
   <root nodeId="7241381882860009362">
     <nodeInfo nodeId="7241381882860009409" fileName="ASMClass.java" startLine="18" startPosition="23" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -1198,7 +1198,7 @@
     <nodeInfo nodeId="7241381882860009511" fileName="ASMClass.java" startLine="55" startPosition="7" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7241381882860009560" fileName="ASMClass.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860009581" fileName="ASMClass.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7241381882860009395" fileName="ASMClass.java" startLine="164" startPosition="0" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierSignatureVisitor#(Ljetbrains/mps/stubs/javastub/asm/ASMClass/ClassifierSignatureVisitor;)V" />
+    <nodeInfo nodeId="7241381882860009395" fileName="ASMClass.java" startLine="164" startPosition="0" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierSignatureVisitor#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMClass/ClassifierSignatureVisitor;)V" />
     <nodeInfo nodeId="7241381882860010028" fileName="ASMClass.java" startLine="172" startPosition="40" endLine="175" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860010074" fileName="ASMClass.java" startLine="182" startPosition="56" endLine="185" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860009714" fileName="ASMClass.java" startLine="83" startPosition="46" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1213,7 +1213,7 @@
     <nodeInfo nodeId="7241381882860009857" fileName="ASMClass.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeParameters#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860009867" fileName="ASMClass.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericInterfaces#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860009882" fileName="ASMClass.java" startLine="134" startPosition="47" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860009894" fileName="ASMClass.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericSuperclass#()Ljetbrains/mps/stubs/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860009894" fileName="ASMClass.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericSuperclass#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860009902" fileName="ASMClass.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaredFields#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860009912" fileName="ASMClass.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaredMethods#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860009922" fileName="ASMClass.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaredConstructors#()Ljava/util/List;" />
@@ -1350,12 +1350,12 @@
     <scopeInfo nodeId="7241381882860009454" fileName="ASMClass.java" startLine="27" startPosition="0" endLine="96" endPosition="3">
       <varInfo nodeId="7241381882860009456" varName="reader" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860010111" fileName="ASMClass.java" startLine="35" startPosition="21" endLine="40" endPosition="11" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass$2" />
-    <unitInfo nodeId="7241381882860010119" fileName="ASMClass.java" startLine="44" startPosition="21" endLine="49" endPosition="11" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass$2" />
-    <unitInfo nodeId="7241381882860009553" fileName="ASMClass.java" startLine="33" startPosition="28" endLine="51" endPosition="7" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass$1" />
-    <unitInfo nodeId="7241381882860009999" fileName="ASMClass.java" startLine="170" startPosition="17" endLine="189" endPosition="7" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass$1" />
-    <unitInfo nodeId="7241381882860002145" fileName="ASMClass.java" startLine="157" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass$ClassifierSignatureVisitor" />
-    <unitInfo nodeId="7241381882860009362" fileName="ASMClass.java" startLine="18" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMClass" />
+    <unitInfo nodeId="7241381882860010111" fileName="ASMClass.java" startLine="35" startPosition="21" endLine="40" endPosition="11" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
+    <unitInfo nodeId="7241381882860010119" fileName="ASMClass.java" startLine="44" startPosition="21" endLine="49" endPosition="11" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
+    <unitInfo nodeId="7241381882860009553" fileName="ASMClass.java" startLine="33" startPosition="28" endLine="51" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
+    <unitInfo nodeId="7241381882860009999" fileName="ASMClass.java" startLine="170" startPosition="17" endLine="189" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
+    <unitInfo nodeId="7241381882860002145" fileName="ASMClass.java" startLine="157" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$ClassifierSignatureVisitor" />
+    <unitInfo nodeId="7241381882860009362" fileName="ASMClass.java" startLine="18" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
   </root>
 </debugInfo>
 
