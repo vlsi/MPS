@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.*;
-import jetbrains.mps.util.textdiff.TextDiffBuilder;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -250,11 +249,10 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   private static void addDiffReport(String[] old, String[] new_, List<String> reports, String title) {
-    TextDiffBuilder tc = new TextDiffBuilder(old, new_);
-    tc.compare();
-    if(tc.hasDifference()) {
+    String[] diff = DifflibFacade.getSimpleDiff(old, new_);
+    if (diff.length != 0) {
       reports.add(title);
-      reports.addAll(tc.getResult());
+      reports.addAll(Arrays.asList(diff));
       reports.add("");
     }
   }

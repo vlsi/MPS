@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.diff;
 
-import jetbrains.mps.util.textdiff.TextDiffBuilder;
+import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import junit.framework.TestCase;
 
 import java.io.File;
-import java.util.List;
 
 public abstract class BaseDiffTestCase extends TestCase {
   final String[] myContent = {"diff", "test", "case", "content"};
@@ -51,7 +50,7 @@ public abstract class BaseDiffTestCase extends TestCase {
 
   boolean diffIsCorrect(String[] t1, String[] t2) {
     try {
-      myResult = getResult(t1, t2);
+      myResult = DifflibFacade.getGenDiff(t1, t2);
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
@@ -80,13 +79,6 @@ public abstract class BaseDiffTestCase extends TestCase {
 
   String getMessage() {
     return "\n\tResult:\n" + asArray(myResult) + "\n\n\tCorrect result:\n" + asArray(myCorrectResult);
-  }
-
-  String[] getResult(String[] s1, String[] s2) {
-    TextDiffBuilder textDiffBuilder = new TextDiffBuilder(s1, s2);
-    textDiffBuilder.compare();
-    List<String> strings = textDiffBuilder.getResult();
-    return strings.toArray(new String[strings.size()]);
   }
 
   String[] copyOf(String[] src, int length) {

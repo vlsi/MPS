@@ -1,13 +1,7 @@
-**** old text
----- generated text
-*****************
-**** 0, 1 ****
+--- old text
++++ generated text
+@@ -1,4 +1,4 @@
 -diff
- test
- case
- content
-*****************
----- 1, 2 ----
  test
 +diff
  case

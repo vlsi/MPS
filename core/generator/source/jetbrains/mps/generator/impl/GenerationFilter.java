@@ -16,7 +16,7 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.textdiff.TextDiffBuilder;
+import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -132,19 +132,15 @@ public class GenerationFilter {
     }
 
     IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
-    if(c != null && myPlanSignature.equals(c.getSignature())) {
+    if (c != null && myPlanSignature.equals(c.getSignature())) {
       myCache = c;
     } else if(myTracer != null) {
       if(c == null) {
         myTracer.report("Caches are corrupted for " + oldHash);
       } else {
         myTracer.report("Plan differs:");
-        TextDiffBuilder tbuilder = new TextDiffBuilder(c.getSignature().split("\n|\r\n"), myPlanSignature.split("\n|\r\n"));
-        tbuilder.compare();
-        if (tbuilder.hasDifference()) {
-          for (String s : tbuilder.getResult()) {
-            myTracer.report(s);
-          }
+        for (String s : DifflibFacade.getSimpleDiff(c.getSignature(), myPlanSignature)) {
+          myTracer.report(s);
         }
       }
     }

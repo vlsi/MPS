@@ -22,7 +22,6 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -37,10 +36,10 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
+import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.util.textdiff.TextDiffBuilder;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -328,12 +327,8 @@ public class GenerationTestBase {
         continue;
       }
       if (!existing.equals(content)) {
-        TextDiffBuilder tbuilder = new TextDiffBuilder(existing.split("\n|\r\n"), content.split("\n|\r\n"));
-        tbuilder.compare();
-        if (tbuilder.hasDifference()) {
-          for (String s : tbuilder.getResult()) {
-            errors.append(s).append('\n');
-          }
+        for (String s : DifflibFacade.getSimpleDiff(existing, content)) {
+          errors.append(s).append('\n');
         }
       }
     }

@@ -94,5 +94,8 @@ XMLUnit
 http://xmlunit.sourceforge.net/
 Copyright (c) 2001-2009, Jeff Martin, Tim Bacon
 
+Java Diff Utils
+http://code.google.com/p/java-diff-utils/
+
 You can find licenses for these software
 in the %MPS_HOME%/license directory

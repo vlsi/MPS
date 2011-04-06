@@ -1,24 +1,9 @@
-**** old text
----- generated text
-*****************
-**** 1, 2 ****
+--- old text
++++ generated text
+@@ -1,4 +1,4 @@
  diff
-!test
+-test
++testestest
  case
- content
----- 1, 2 ----
- diff
-!testestest
- case
- contestentest
-*****************
-**** 3, 4 ****
- diff
- test
- case
-!content
----- 3, 4 ----
- diff
- testestest
- case
-!contestentest
+-content
++contestentest
