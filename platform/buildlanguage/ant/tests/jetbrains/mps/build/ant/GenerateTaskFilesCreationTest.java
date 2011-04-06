@@ -21,7 +21,6 @@ import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
 import junit.framework.TestCase;
-import org.apache.tools.ant.Project;
 import org.junit.After;
 import org.junit.Test;
 
@@ -94,7 +93,6 @@ public class GenerateTaskFilesCreationTest {
 
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
-    whatToDo.updateLogLevel(Project.MSG_DEBUG);
     doGenerate(whatToDo);
 
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
@@ -133,7 +131,6 @@ public class GenerateTaskFilesCreationTest {
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.putProperty(GenerateTask.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
-    whatToDo.updateLogLevel(Project.MSG_DEBUG);
     doGenerate(whatToDo);
 
     return destdir;

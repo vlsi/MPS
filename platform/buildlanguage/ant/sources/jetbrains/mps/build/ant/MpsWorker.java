@@ -52,9 +52,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.varia.NullAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
@@ -161,7 +161,7 @@ public abstract class MpsWorker {
   }
 
   protected void setupEnvironment() {
-    BasicConfigurator.configure(new ConsoleAppender());
+    BasicConfigurator.configure(new NullAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
 
