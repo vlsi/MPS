@@ -1225,14 +1225,14 @@
     </scopeInfo>
     <scopeInfo nodeId="7874190907999511609" fileName="TestGenerationWorker.java" startLine="131" startPosition="76" endLine="153" endPosition="52">
       <varInfo nodeId="7874190907999511693" varName="gm" />
-      <varInfo nodeId="7874190907999511611" varName="s" />
       <varInfo nodeId="7874190907999511711" varName="order" />
+      <varInfo nodeId="7874190907999511611" varName="s" />
       <varInfo nodeId="7874190907999511702" varName="generationListener" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499900" fileName="TestGenerationWorker.java" startLine="192" startPosition="34" endLine="214" endPosition="7">
-      <varInfo nodeId="7795897115019499902" varName="w" />
-      <varInfo nodeId="7795897115019499907" varName="f" />
       <varInfo nodeId="7795897115019499918" varName="models" />
+      <varInfo nodeId="7795897115019499907" varName="f" />
+      <varInfo nodeId="7795897115019499902" varName="w" />
       <varInfo nodeId="7795897115019499963" varName="report" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019500096" fileName="TestGenerationWorker.java" startLine="245" startPosition="54" endLine="267" endPosition="5" />
@@ -1273,8 +1273,8 @@
       <varInfo nodeId="7795897115019500438" varName="commandLine" />
       <varInfo nodeId="7795897115019500499" varName="sb" />
       <varInfo nodeId="7795897115019500560" varName="builder" />
-      <varInfo nodeId="7795897115019500451" varName="classPaths" />
       <varInfo nodeId="7795897115019500504" varName="pathSeparator" />
+      <varInfo nodeId="7795897115019500451" varName="classPaths" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499746" fileName="TestGenerationWorker.java" startLine="155" startPosition="0" endLine="189" endPosition="0" />
     <scopeInfo nodeId="7795897115019500410" fileName="TestGenerationWorker.java" startLine="341" startPosition="0" endLine="377" endPosition="0">
@@ -1307,12 +1307,12 @@
       <varInfo nodeId="7795897115019500677" varName="testClasses" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019500181" fileName="TestGenerationWorker.java" startLine="283" startPosition="92" endLine="335" endPosition="32">
-      <varInfo nodeId="7795897115019500183" varName="currentTestName" />
       <varInfo nodeId="7795897115019500255" varName="outputModels" />
-      <varInfo nodeId="7795897115019500215" varName="generationOk" />
+      <varInfo nodeId="7795897115019500183" varName="currentTestName" />
       <varInfo nodeId="7795897115019500269" varName="compilationResult" />
-      <varInfo nodeId="7795897115019500291" varName="compilatonOk" />
+      <varInfo nodeId="7795897115019500215" varName="generationOk" />
       <varInfo nodeId="7795897115019500310" varName="sb" />
+      <varInfo nodeId="7795897115019500291" varName="compilatonOk" />
       <varInfo nodeId="7795897115019500211" varName="diffReports" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019500664" fileName="TestGenerationWorker.java" startLine="392" startPosition="0" endLine="444" endPosition="0">
@@ -1321,8 +1321,8 @@
       <varInfo nodeId="7795897115019500673" varName="baseClassLoader" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019500174" fileName="TestGenerationWorker.java" startLine="282" startPosition="0" endLine="337" endPosition="0">
-      <varInfo nodeId="7795897115019500177" varName="gm" />
       <varInfo nodeId="7795897115019500179" varName="cycle" />
+      <varInfo nodeId="7795897115019500177" varName="gm" />
     </scopeInfo>
     <unitInfo nodeId="7795897115019501527" fileName="TestGenerationWorker.java" startLine="95" startPosition="17" endLine="99" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$2" />
     <unitInfo nodeId="7795897115019500247" fileName="TestGenerationWorker.java" startLine="290" startPosition="61" endLine="294" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$4" />
