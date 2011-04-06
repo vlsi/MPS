@@ -15,75 +15,75 @@
   <unitInfo fileName="GenerateEqualsAndHashcode_Intention.java" startLine="2564" startPosition="0" endLine="2594" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$QuotationClass_4qz7hx_a0a0z0h" />
   <unitInfo fileName="GenerateConstructor_Intention.java" startLine="145" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$QuotationClass_mrvrtl_a0a0a4a3a7" />
   <unitInfo fileName="RemoveArrayType_Intention.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.RemoveArrayType_Intention" />
-  <unitInfo fileName="MakeFieldTransient_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeFieldTransient_Intention" />
   <unitInfo fileName="MakeFieldVolatile_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeFieldVolatile_Intention" />
+  <unitInfo fileName="MakeFieldTransient_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeFieldTransient_Intention" />
   <unitInfo fileName="GenerateEqualsAndHashcode_Intention.java" startLine="1262" startPosition="0" endLine="1298" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$QuotationClass_4qz7hx_a0a61a7" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="123" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a3a4a7" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="314" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a0f0h" />
   <unitInfo fileName="GenerateEqualsAndHashcode_Intention.java" startLine="1329" startPosition="0" endLine="1366" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$QuotationClass_4qz7hx_a0a2a42a7" />
   <unitInfo fileName="ElsifSwapWithMain_Intention.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ElsifSwapWithMain_Intention" />
   <unitInfo fileName="SplitStringIntoConcatenation_Intention.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SplitStringIntoConcatenation_Intention" />
-  <unitInfo fileName="SurroundWithComment_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithComment_Intention" />
-  <unitInfo fileName="SurroundWithBrackets_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithBrackets_Intention" />
-  <unitInfo fileName="SurroundWithSynchronized_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithSynchronized_Intention" />
-  <unitInfo fileName="SurroundWithTryFinally_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTryFinally_Intention" />
-  <unitInfo fileName="SuroundWithTryCatch_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention" />
-  <unitInfo fileName="SurroundStatementsWithForEach_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundStatementsWithForEach_Intention" />
-  <unitInfo fileName="SurroundWithFor_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithFor_Intention" />
-  <unitInfo fileName="SurroundWithDoWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithDoWhile_Intention" />
-  <unitInfo fileName="SurroundWithWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithWhile_Intention" />
   <unitInfo fileName="SurroundWithIf_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithIf_Intention" />
-  <unitInfo fileName="TryCatchFinally_Intention.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention" />
+  <unitInfo fileName="SurroundWithWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithWhile_Intention" />
+  <unitInfo fileName="SurroundWithDoWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithDoWhile_Intention" />
+  <unitInfo fileName="SurroundWithFor_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithFor_Intention" />
+  <unitInfo fileName="SurroundStatementsWithForEach_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundStatementsWithForEach_Intention" />
+  <unitInfo fileName="SuroundWithTryCatch_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention" />
+  <unitInfo fileName="SurroundWithTryFinally_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTryFinally_Intention" />
+  <unitInfo fileName="SurroundWithSynchronized_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithSynchronized_Intention" />
+  <unitInfo fileName="SurroundWithBrackets_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithBrackets_Intention" />
+  <unitInfo fileName="SurroundWithComment_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithComment_Intention" />
   <unitInfo fileName="SurroundWithIfElse_Intention.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithIfElse_Intention" />
+  <unitInfo fileName="TryCatchFinally_Intention.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention" />
   <unitInfo fileName="DeprecatedJavaDoc_Intention.java" startLine="12" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention" />
   <unitInfo fileName="SpecifyClass_Intention.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SpecifyClass_Intention" />
   <unitInfo fileName="GenerateEqualsAndHashcode_Intention.java" startLine="1219" startPosition="0" endLine="1261" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$QuotationClass_4qz7hx_a0a0a51a7" />
-  <unitInfo fileName="AddNewLine_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddNewLine_Intention" />
-  <unitInfo fileName="ConvertElseToElseIf_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertElseToElseIf_Intention" />
   <unitInfo fileName="AddInstanceInitializer_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddInstanceInitializer_Intention" />
-  <unitInfo fileName="SurroundWithNegation_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithNegation_Intention" />
-  <unitInfo fileName="AddTypeParameters_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddTypeParameters_Intention" />
-  <unitInfo fileName="AddThrows_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddThrows_Intention" />
-  <unitInfo fileName="MakeGeneric_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeGeneric_Intention" />
+  <unitInfo fileName="ConvertElseToElseIf_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertElseToElseIf_Intention" />
+  <unitInfo fileName="AddNewLine_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddNewLine_Intention" />
   <unitInfo fileName="CreateSetAccessor_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateSetAccessor_Intention" />
+  <unitInfo fileName="MakeGeneric_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeGeneric_Intention" />
+  <unitInfo fileName="AddThrows_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddThrows_Intention" />
+  <unitInfo fileName="AddTypeParameters_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddTypeParameters_Intention" />
+  <unitInfo fileName="SurroundWithNegation_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithNegation_Intention" />
   <unitInfo fileName="ReplaceEqualityWithEquals_Intention.java" startLine="71" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualityWithEquals_Intention$QuotationClass_6thnk0_a0a0c0f0h" />
   <unitInfo fileName="CreateMethodDeclaration_Intention.java" startLine="104" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention$QuotationClass_qv3pxx_a0a6a7" />
   <unitInfo fileName="UsedefaultLayout_Intention.java" startLine="11" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UsedefaultLayout_Intention" />
-  <unitInfo fileName="MakeMultiLiner_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMultiLiner_Intention" />
   <unitInfo fileName="MakeOneLiner_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeOneLiner_Intention" />
+  <unitInfo fileName="MakeMultiLiner_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMultiLiner_Intention" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="161" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a1a3a4a7" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="206" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a0d0e0h" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="251" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a1a0d0e0h" />
   <unitInfo fileName="ConvertToReturnStatement_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToReturnStatement_Intention" />
-  <unitInfo fileName="MakeClassAbstractFromMethod_Intention.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention" />
   <unitInfo fileName="FlipBinaryOperation_Intention.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.FlipBinaryOperation_Intention" />
-  <unitInfo fileName="ChangeStaticInInner_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ChangeStaticInInner_Intention" />
-  <unitInfo fileName="ConvertToArrayType_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToArrayType_Intention" />
+  <unitInfo fileName="MakeClassAbstractFromMethod_Intention.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention" />
   <unitInfo fileName="AddElsifClause_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddElsifClause_Intention" />
+  <unitInfo fileName="ConvertToArrayType_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToArrayType_Intention" />
+  <unitInfo fileName="ChangeStaticInInner_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ChangeStaticInInner_Intention" />
   <unitInfo fileName="SurroundWithIfClause_Intention.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithIfClause_Intention" />
-  <unitInfo fileName="SurroundWithIfElseClause_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithIfElseClause_Intention" />
   <unitInfo fileName="MergeStringConcatenation_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MergeStringConcatenation_Intention" />
+  <unitInfo fileName="SurroundWithIfElseClause_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithIfElseClause_Intention" />
   <unitInfo fileName="SplitIntoDeclarationAndAssignment_Intention.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SplitIntoDeclarationAndAssignment_Intention" />
   <unitInfo fileName="MakeVariableFinal_Intention.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeVariableFinal_Intention" />
-  <unitInfo fileName="OverrideMethods_Intention.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.OverrideMethods_Intention" />
   <unitInfo fileName="ImplementMethods_Intention.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ImplementMethods_Intention" />
-  <unitInfo fileName="ConvertElsifToNewIfStatement_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertElsifToNewIfStatement_Intention" />
+  <unitInfo fileName="OverrideMethods_Intention.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.OverrideMethods_Intention" />
   <unitInfo fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertClassCreatorToAnonimous_Intention" />
+  <unitInfo fileName="ConvertElsifToNewIfStatement_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertElsifToNewIfStatement_Intention" />
   <unitInfo fileName="SurroundWithTypeCast_Intention.java" startLine="68" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention$QuotationClass_598b5x_a0a1a7" />
-  <unitInfo fileName="SurroundWithParenthesis_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithParenthesis_Intention" />
   <unitInfo fileName="MigrateString_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MigrateString_Intention" />
-  <unitInfo fileName="MakeParameterFinal_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention" />
+  <unitInfo fileName="SurroundWithParenthesis_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithParenthesis_Intention" />
   <unitInfo fileName="FilpEqualsIntention_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.FilpEqualsIntention_Intention" />
-  <unitInfo fileName="MakeSynchronized_Intention.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention" />
+  <unitInfo fileName="MakeParameterFinal_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention" />
   <unitInfo fileName="CreateInternalLabel_Intention.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateInternalLabel_Intention" />
+  <unitInfo fileName="MakeSynchronized_Intention.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention" />
   <unitInfo fileName="AddCastStatement_Intention.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddCastStatement_Intention" />
-  <unitInfo fileName="MakeClassFinal_Intention.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeClassFinal_Intention" />
   <unitInfo fileName="MakeClassAbstract_Intention.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeClassAbstract_Intention" />
+  <unitInfo fileName="MakeClassFinal_Intention.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeClassFinal_Intention" />
   <unitInfo fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertAssignmentToVariableDeclaration_Intention" />
   <unitInfo fileName="IterateOverIterable_Intention.java" startLine="80" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention$Pattern_w1n2qe_a1a0a0a0g" />
   <unitInfo fileName="IterateOverIterable_Intention.java" startLine="134" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention$Pattern_w1n2qe_a0a0a0a7" />
-  <unitInfo fileName="ExtractWhileConditionToInternalIfStatement_Intention.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ExtractWhileConditionToInternalIfStatement_Intention" />
   <unitInfo fileName="AddAnnotation_Intention.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddAnnotation_Intention" />
+  <unitInfo fileName="ExtractWhileConditionToInternalIfStatement_Intention.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ExtractWhileConditionToInternalIfStatement_Intention" />
   <unitInfo fileName="ReplaceEqualsWithEquality_Intention.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceEqualsWithEquality_Intention" />
   <unitInfo fileName="AddMainMethod_Intention.java" startLine="62" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention$QuotationClass_gghypg_a0a0a7" />
   <unitInfo fileName="GenerateMainMethod_Intention.java" startLine="73" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateMainMethod_Intention$QuotationClass_r69zem_a0a0a7" />
@@ -94,8 +94,8 @@
   <unitInfo fileName="MakeMethodFinal_Intention.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
   <unitInfo fileName="AddFinalModifierToAny_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="352" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a6a7" />
-  <unitInfo fileName="ConvertToClosure_Intention.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention" />
   <unitInfo fileName="MoveInitializerToConstructor_Intention.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MoveInitializerToConstructor_Intention" />
+  <unitInfo fileName="ConvertToClosure_Intention.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention" />
   <unitInfo fileName="GenerateGetter_Intention.java" startLine="115" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGetter_Intention$QuotationClass_wkvgdi_a0a0a6a2a7" />
   <unitInfo fileName="GenerateGettersAndSetters_Intention.java" startLine="154" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$QuotationClass_43x4b2_a0a0a6a3a7" />
   <unitInfo fileName="AddFieldForUnUsedParameter_Intention.java" startLine="18" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFieldForUnUsedParameter_Intention" />
@@ -350,8 +350,8 @@
     <scopeInfo nodeId="1199557092809" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="41" startPosition="85" endLine="42" endPosition="44" />
     <scopeInfo nodeId="1199557092811" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="52" startPosition="90" endLine="53" endPosition="16" />
     <scopeInfo nodeId="1199557092813" fileName="ReplaceEqualityWithEquals_Intention.java" startLine="56" startPosition="76" endLine="64" endPosition="63">
-      <varInfo nodeId="1205517941557" varName="operation" />
       <varInfo nodeId="1199558011898" varName="leftExpr" />
+      <varInfo nodeId="1205517941557" varName="operation" />
       <varInfo nodeId="1199558051705" varName="rightExpression" />
       <varInfo nodeId="1199558278607" varName="equalsExpression" />
     </scopeInfo>
@@ -431,10 +431,10 @@
       <varInfo nodeId="1199562466832" varName="stmtNode" />
       <varInfo nodeId="1199562829357" varName="ifNode" />
       <varInfo nodeId="1199564392364" varName="falseBlockStmt" />
-      <varInfo nodeId="1199563059769" varName="trueStmt" />
       <varInfo nodeId="1199579910506" varName="nodeIndex" />
-      <varInfo nodeId="1199563372438" varName="nodeCopy" />
+      <varInfo nodeId="1199563059769" varName="trueStmt" />
       <varInfo nodeId="1199579888215" varName="nodeParent" />
+      <varInfo nodeId="1199563372438" varName="nodeCopy" />
     </scopeInfo>
   </root>
   <root nodeId="1199621296757">
@@ -457,8 +457,8 @@
     <scopeInfo nodeId="1199621296763" fileName="ExtractWhileConditionToInternalIfStatement_Intention.java" startLine="49" startPosition="76" endLine="61" endPosition="61">
       <varInfo nodeId="1199622023888" varName="condition" />
       <varInfo nodeId="1199621885187" varName="breakStatement" />
-      <varInfo nodeId="1199622196846" varName="conditionExpr" />
       <varInfo nodeId="1199621452194" varName="ifStatement" />
+      <varInfo nodeId="1199622196846" varName="conditionExpr" />
     </scopeInfo>
   </root>
   <root nodeId="1199622460250">
@@ -481,8 +481,8 @@
     <scopeInfo nodeId="1199622460256" fileName="ReplaceAssertWithIf_Intention.java" startLine="56" startPosition="76" endLine="68" endPosition="58">
       <varInfo nodeId="1227649596076" varName="newExpr" />
       <varInfo nodeId="1199622638100" varName="throwStatement" />
-      <varInfo nodeId="1199623403296" varName="notExpr" />
       <varInfo nodeId="1199623327866" varName="ifStatement" />
+      <varInfo nodeId="1199623403296" varName="notExpr" />
     </scopeInfo>
   </root>
   <root nodeId="1199623693658">
@@ -507,8 +507,8 @@
     <scopeInfo nodeId="1199623693660" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="36" />
     <scopeInfo nodeId="1199623693662" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="16" />
     <scopeInfo nodeId="1199623693664" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="49" startPosition="76" endLine="65" endPosition="117">
-      <varInfo nodeId="1199624303362" varName="preStatement" />
       <varInfo nodeId="1199623738030" varName="whileStatement" />
+      <varInfo nodeId="1199624303362" varName="preStatement" />
       <varInfo nodeId="1199624712379" varName="iterStatement" />
     </scopeInfo>
   </root>
@@ -709,8 +709,8 @@
     <scopeInfo nodeId="1199627245938" fileName="ExpandBoolean_Intention.java" startLine="59" startPosition="76" endLine="96" endPosition="46">
       <varInfo nodeId="1201105478967" varName="ifTrue" />
       <varInfo nodeId="1201105478975" varName="ifFalse" />
-      <varInfo nodeId="1201105273760" varName="ifNode" />
       <varInfo nodeId="1201105183041" varName="statementNode" />
+      <varInfo nodeId="1201105273760" varName="ifNode" />
       <varInfo nodeId="1201107012313" varName="refs" />
       <varInfo nodeId="1201106619381" varName="fake_node" />
     </scopeInfo>
@@ -848,8 +848,8 @@
     <scopeInfo nodeId="1202130221459" fileName="MergeStringConcatenation_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="40" />
     <scopeInfo nodeId="1202130221461" fileName="MergeStringConcatenation_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="295" />
     <scopeInfo nodeId="1202130221463" fileName="MergeStringConcatenation_Intention.java" startLine="49" startPosition="76" endLine="54" endPosition="70">
-      <varInfo nodeId="1202131050790" varName="left" />
       <varInfo nodeId="1202130310989" varName="stringLiteral" />
+      <varInfo nodeId="1202131050790" varName="left" />
       <varInfo nodeId="1202131053729" varName="right" />
     </scopeInfo>
   </root>
@@ -1081,8 +1081,8 @@
       <varInfo nodeId="1221573831560" varName="assignment" />
     </scopeInfo>
     <scopeInfo nodeId="1221573777476" fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="52" startPosition="76" endLine="59" endPosition="47">
-      <varInfo nodeId="1221722787482" varName="result" />
       <varInfo nodeId="3004630219741382454" varName="suggestedName" />
+      <varInfo nodeId="1221722787482" varName="result" />
       <varInfo nodeId="1221573853849" varName="assignment" />
     </scopeInfo>
   </root>
@@ -1386,11 +1386,11 @@
       <varInfo nodeId="6233008370920075556" varName="fullName" />
     </scopeInfo>
     <scopeInfo nodeId="1941346475356562636" fileName="GenerateGettersAndSettersUtil.java" startLine="48" startPosition="79" endLine="72" endPosition="21">
-      <varInfo nodeId="6124410760185402167" varName="prefix" />
       <varInfo nodeId="1941346475356587268" varName="settings" />
+      <varInfo nodeId="6124410760185402167" varName="prefix" />
       <varInfo nodeId="1941346475356587221" varName="preparedFieldName" />
-      <varInfo nodeId="5377859299070167487" varName="paramName" />
       <varInfo nodeId="6124410760185402180" varName="suffix" />
+      <varInfo nodeId="5377859299070167487" varName="paramName" />
       <varInfo nodeId="1941346475356587235" varName="codeStyleSettings" />
     </scopeInfo>
     <scopeInfo nodeId="1941346475356562633" fileName="GenerateGettersAndSettersUtil.java" startLine="47" startPosition="0" endLine="74" endPosition="0">
@@ -1532,8 +1532,8 @@
     <scopeInfo nodeId="3366354716707720946" fileName="SurroundWithWhile_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="249" />
     <scopeInfo nodeId="3366354716707720943" fileName="SurroundWithWhile_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5" />
     <scopeInfo nodeId="3366354716707714387" fileName="SurroundWithWhile_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="87">
-      <varInfo nodeId="3366354716707720970" varName="selectedNodes" />
       <varInfo nodeId="3366354716707720931" varName="whileStatement" />
+      <varInfo nodeId="3366354716707720970" varName="selectedNodes" />
     </scopeInfo>
   </root>
   <root nodeId="3366354716707819213">
@@ -1548,8 +1548,8 @@
     <scopeInfo nodeId="3366354716707825776" fileName="SurroundWithDoWhile_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="249" />
     <scopeInfo nodeId="3366354716707825773" fileName="SurroundWithDoWhile_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5" />
     <scopeInfo nodeId="3366354716707819217" fileName="SurroundWithDoWhile_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="87">
-      <varInfo nodeId="3366354716707825799" varName="selectedNodes" />
       <varInfo nodeId="3366354716707825761" varName="whileStatement" />
+      <varInfo nodeId="3366354716707825799" varName="selectedNodes" />
     </scopeInfo>
   </root>
   <root nodeId="3366354716707825816">
@@ -1803,9 +1803,9 @@
       <varInfo nodeId="5180116501958303432" varName="classConcept" />
     </scopeInfo>
     <scopeInfo nodeId="926291610755538994" fileName="GenerateConstructor_Intention.java" startLine="95" startPosition="122" endLine="138" endPosition="5">
-      <varInfo nodeId="1352851301411313150" varName="needsShowConstructorsDialog" />
-      <varInfo nodeId="1352851301411034758" varName="superclass" />
       <varInfo nodeId="1352851301410835983" varName="frame" />
+      <varInfo nodeId="1352851301411034758" varName="superclass" />
+      <varInfo nodeId="1352851301411313150" varName="needsShowConstructorsDialog" />
       <varInfo nodeId="9075231980435675177" varName="needsShowFieldsDialog" />
     </scopeInfo>
     <unitInfo nodeId="9075231980435802463" fileName="GenerateConstructor_Intention.java" startLine="122" startPosition="45" endLine="130" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention$2" />
@@ -1951,11 +1951,11 @@
       <varInfo nodeId="2289347497785565778" varName="hasAllSetters" />
     </scopeInfo>
     <scopeInfo nodeId="2289347497784783898" fileName="GenerateGettersAndSetters_Intention.java" startLine="106" startPosition="112" endLine="136" endPosition="314">
-      <varInfo nodeId="2289347497784783909" varName="getterIsAbsent" />
       <varInfo nodeId="2289347497784783900" varName="getterName" />
-      <varInfo nodeId="2289347497784983694" varName="setterIsAbsent" />
-      <varInfo nodeId="2289347497784983685" varName="setterName" />
+      <varInfo nodeId="2289347497784783909" varName="getterIsAbsent" />
       <varInfo nodeId="5377859299070124104" varName="fieldReference" />
+      <varInfo nodeId="2289347497784983685" varName="setterName" />
+      <varInfo nodeId="2289347497784983694" varName="setterIsAbsent" />
       <varInfo nodeId="1941346475356850805" varName="parameterName" />
     </scopeInfo>
     <scopeInfo nodeId="2289347497784783897" fileName="GenerateGettersAndSetters_Intention.java" startLine="105" startPosition="75" endLine="137" endPosition="5">
@@ -2088,8 +2088,8 @@
     <scopeInfo nodeId="5742179528877834616" fileName="CreateMethodDeclaration_Intention.java" startLine="57" startPosition="76" endLine="80" endPosition="5">
       <varInfo nodeId="7134942011720341532" varName="isSameClassifier" />
       <varInfo nodeId="5742179528877869142" varName="name" />
-      <varInfo nodeId="6543954253179127975" varName="inferType" />
       <varInfo nodeId="5742179528877870481" varName="classifier" />
+      <varInfo nodeId="6543954253179127975" varName="inferType" />
       <varInfo nodeId="5742179528877869158" varName="method" />
       <varInfo nodeId="2735143657509118142" varName="type" />
     </scopeInfo>
@@ -2237,9 +2237,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2055900293178327644" fileName="GenerateSetter_Intention.java" startLine="83" startPosition="112" endLine="101" endPosition="24">
       <varInfo nodeId="6359146168315043530" varName="added" />
-      <varInfo nodeId="5377859299070121698" varName="fieldReference" />
-      <varInfo nodeId="2055900293178327655" varName="setterIsAbsent" />
       <varInfo nodeId="2055900293178327646" varName="setterName" />
+      <varInfo nodeId="2055900293178327655" varName="setterIsAbsent" />
+      <varInfo nodeId="5377859299070121698" varName="fieldReference" />
       <varInfo nodeId="1941346475356875144" varName="parameterName" />
     </scopeInfo>
     <scopeInfo nodeId="2055900293178327643" fileName="GenerateSetter_Intention.java" startLine="82" startPosition="75" endLine="102" endPosition="5">
@@ -2372,16 +2372,16 @@
     <scopeInfo nodeId="5973141109804726335" fileName="GenerateEqualsAndHashcode_Intention.java" startLine="66" startPosition="111" endLine="144" endPosition="44">
       <varInfo nodeId="7381450697982760159" varName="tempDeclaration" />
       <varInfo nodeId="7381450697982760172" varName="tempReference" />
-      <varInfo nodeId="2730331781224813539" varName="thatRef" />
       <varInfo nodeId="518066704239834375" varName="thatDeclaration" />
-      <varInfo nodeId="2228111217983206981" varName="resultReference" />
-      <varInfo nodeId="2228111217982654025" varName="resultDeclaration" />
-      <varInfo nodeId="8703532998809405111" varName="hashCodeDeclaration" />
+      <varInfo nodeId="2730331781224813539" varName="thatRef" />
       <varInfo nodeId="4184563483566785152" varName="equalsDeclaration" />
+      <varInfo nodeId="8703532998809405111" varName="hashCodeDeclaration" />
+      <varInfo nodeId="2228111217982654025" varName="resultDeclaration" />
+      <varInfo nodeId="2228111217983206981" varName="resultReference" />
       <varInfo nodeId="3132138177991031394" varName="fieldRefLocal" />
       <varInfo nodeId="2289347497785768934" varName="classConcept" />
-      <varInfo nodeId="7479908002108597958" varName="fieldRefOperation" />
       <varInfo nodeId="518066704239505873" varName="thisExp" />
+      <varInfo nodeId="7479908002108597958" varName="fieldRefOperation" />
     </scopeInfo>
     <unitInfo nodeId="2289347497785843597" fileName="GenerateEqualsAndHashcode_Intention.java" startLine="59" startPosition="101" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$1" />
     <unitInfo nodeId="7381450697982595271" fileName="GenerateEqualsAndHashcode_Intention.java" startLine="109" startPosition="95" endLine="113" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.GenerateEqualsAndHashcode_Intention$2" />
