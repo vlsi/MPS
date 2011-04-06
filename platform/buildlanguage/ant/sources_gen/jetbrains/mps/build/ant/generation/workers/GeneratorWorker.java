@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
-import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -156,21 +155,13 @@ public class GeneratorWorker extends MpsWorker {
         ListSequence.fromList(toMake).addElement(res);
         MapSequence.fromMap(cache).removeKey(res.module());
       }
-      IdeEventQueue.getInstance().flushQueue();
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-        }
-      });
+      ModelAccess.instance().flushEventQueue();
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           new BuildMakeService(ctx, myMessageHandler).make(toMake);
         }
       });
-      IdeEventQueue.getInstance().flushQueue();
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-        }
-      });
+      ModelAccess.instance().flushEventQueue();
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
         }
