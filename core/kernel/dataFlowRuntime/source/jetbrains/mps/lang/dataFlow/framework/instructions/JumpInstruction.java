@@ -18,8 +18,6 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder.Position;
 
-import java.util.Set;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 

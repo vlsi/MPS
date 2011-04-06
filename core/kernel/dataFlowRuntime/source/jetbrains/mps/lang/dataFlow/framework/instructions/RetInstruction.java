@@ -18,8 +18,6 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 
-import java.util.Set;
-import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.List;
 

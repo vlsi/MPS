@@ -21,7 +21,6 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.MayBeInitializedVariablesAnalyzer;
-import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 
 import java.util.*;
 import java.util.Map.Entry;

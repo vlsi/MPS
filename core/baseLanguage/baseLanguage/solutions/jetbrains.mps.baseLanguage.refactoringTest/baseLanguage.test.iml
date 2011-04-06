@@ -23,7 +23,6 @@
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="MPSSupport" />
-    <orderEntry type="module" module-name="dataFlow-runtime" />
     <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="pattern" />
     <orderEntry type="library" name="JUnit4" level="project" />

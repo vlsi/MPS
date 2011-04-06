@@ -15,29 +15,31 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.util.IndexableObjectSet;
+import java.util.List;
 
-import java.util.*;
+public enum AnalysisDirection {
 
-public class VarSet extends IndexableObjectSet<Object> {
-  private Program myProgram;
+  FORWARD() {
+    public List<ProgramState> dependencies(ProgramState s) {
+      return s.pred();
+    }
 
-  public VarSet(Program program) {
-    this(program, false);
-  }
+    public List<ProgramState> dependents(ProgramState s) {
+      return s.succ();
+    }
+  },
 
-  public VarSet(Program program, boolean full) {
-    super(program.getVariablesCount(), full);
-    myProgram = program;
-  }
+  BACKWARD() {
+    public List<ProgramState> dependencies(ProgramState s) {
+      return s.succ();
+    }
 
+    public List<ProgramState> dependents(ProgramState s) {
+      return s.pred();
+    }
+  };
 
-  protected int getIndex(Object o) {
-    return myProgram.getVariableIndex(o);
-  }
+  public abstract List<ProgramState> dependencies(ProgramState s);
+  public abstract List<ProgramState> dependents(ProgramState s);
 
-  protected Object getObject(int index) {
-    return myProgram.getVariable(index);
-  }
 }
-

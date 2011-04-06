@@ -17,7 +17,6 @@ package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
-import java.util.Set;
 import java.util.List;
 
 public class ProgramState {  

@@ -22,8 +22,6 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.*;
 
-import java.util.Set;
-import java.util.HashSet;
 import java.util.List;
 
 public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {

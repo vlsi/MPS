@@ -18,10 +18,8 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 
-import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class FinallyInstruction extends Instruction {
   private TryFinallyInfo myInfo;

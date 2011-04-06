@@ -20,7 +20,6 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 
-import java.util.Set;
 import java.util.List;
 
 public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {

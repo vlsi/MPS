@@ -18,7 +18,6 @@ package jetbrains.mps.lang.dataFlow.framework;
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class AnalyzerRunner<E> {
   protected Program myProgram;

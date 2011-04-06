@@ -13,6 +13,8 @@
       <sourceFolder url="file://$MODULE_DIR$/smodelRuntime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stubUtils/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
