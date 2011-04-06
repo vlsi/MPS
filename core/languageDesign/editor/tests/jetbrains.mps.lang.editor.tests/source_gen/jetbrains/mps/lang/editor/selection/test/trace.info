@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="UpDownStackTest_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownStackTest_Test$TestBody" />
+  <unitInfo fileName="UpDownDummyTest_Test.java" startLine="20" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownDummyTest_Test$TestBody" />
+  <unitInfo fileName="UpDownStackTest_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownStackTest_Test" />
+  <unitInfo fileName="UpDownDummyTest_Test.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownDummyTest_Test" />
+  <root nodeId="1550462124899260772">
+    <nodeInfo nodeId="1550462124899316438" fileName="UpDownDummyTest_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316442" fileName="UpDownDummyTest_Test.java" startLine="26" startPosition="107" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316445" fileName="UpDownDummyTest_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316447" fileName="UpDownDummyTest_Test.java" startLine="28" startPosition="107" endLine="29" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316449" fileName="UpDownDummyTest_Test.java" startLine="29" startPosition="109" endLine="30" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316452" fileName="UpDownDummyTest_Test.java" startLine="30" startPosition="109" endLine="31" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="1550462124899316455">
+    <nodeInfo nodeId="1550462124899316475" fileName="UpDownStackTest_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316479" fileName="UpDownStackTest_Test.java" startLine="26" startPosition="107" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1550462124899316483" fileName="UpDownStackTest_Test.java" startLine="27" startPosition="107" endLine="28" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+</debugInfo>
+

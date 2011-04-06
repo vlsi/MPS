@@ -80,6 +80,7 @@
     <orderEntry type="module" module-name="YPath-solutions" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="make" />
+    <orderEntry type="module" module-name="editor.tests" />
     <orderEntry type="module" module-name="editor.table.tests" />
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="migration" />

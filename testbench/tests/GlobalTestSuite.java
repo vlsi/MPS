@@ -248,6 +248,8 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.internalCollections.test.nullHacks.NullEmpty_Test.class,
   jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test.class,
   jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test.class,
+  jetbrains.mps.lang.editor.selection.test.UpDownDummyTest_Test.class,
+  jetbrains.mps.lang.editor.selection.test.UpDownStackTest_Test.class,
   jetbrains.mps.lang.editor.table.genericTable.test.CreateCellInEmptyRow_Test.class,
   jetbrains.mps.lang.editor.table.genericTable.test.CreateRowInEmptyTable_Test.class,
   jetbrains.mps.lang.editor.table.genericTable.test.Create_Test.class,
