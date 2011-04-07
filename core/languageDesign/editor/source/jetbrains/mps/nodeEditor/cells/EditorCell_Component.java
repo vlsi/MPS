@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -127,5 +128,14 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public String toString() {
     return "ComponentCell";
+  }
+
+  @Override
+  public boolean canExecuteAction(CellActionType type) {
+    switch (type) {
+      case COPY: case CUT: case PASTE: case PASTE_AFTER: case PASTE_BEFORE:
+        return false;
+    }
+    return super.canExecuteAction(type);
   }
 }
