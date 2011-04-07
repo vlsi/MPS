@@ -41,7 +41,7 @@
   <path id="core.behavior.sources">
 
     <!-- behavior -->
-    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
+    <path path="core/languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
     <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/behavior"/>
     <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/behavior"/>
     <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>

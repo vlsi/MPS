@@ -37,7 +37,7 @@ core/baseLanguage/tuples/classes
 core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/runConfigurations/classes
 core/languageDesign/actions/classes
-core/languageDesign/behavior/classes
+core/languageDesign/behavior/languages/behavior/classes
 core/languageDesign/constraints/classes
 core/languageDesign/editor/classes
 core/languageDesign/findUsages/classes
