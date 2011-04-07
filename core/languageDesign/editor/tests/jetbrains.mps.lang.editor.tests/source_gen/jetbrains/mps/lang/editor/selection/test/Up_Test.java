@@ -10,22 +10,20 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class UpDownStackTest_Test extends BaseTransformationTest {
+public class Up_Test extends BaseTransformationTest {
   @Test
-  public void test_UpDownStackTest() throws Throwable {
+  public void test_Up() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
-    this.runTest("jetbrains.mps.lang.editor.selection.test.UpDownStackTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.selection.test.Up_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1550462124899316457", "1550462124899316465");
+      final IEditor editor = TestBody.this.initEditor("789834969242091858", "789834969242110804");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectDown_Action");
     }
   }
 }

@@ -28,3 +28,5 @@
 +analyzers:**/*_Test.java
 +**/math/*Test.java
 +make:**/*_Test.java
++migration:jetbrains/mps/ide/migration/persistence/*Test.java
++vcs:jetbrains/mps/DiskMemoryConflictsTest.java
