@@ -303,14 +303,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void load() {
-    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-      String className = getDescriptorClassName(language.getModuleReference());
-      initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, className);
-    }
-
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+        List<Language> allLanguages = MPSModuleRepository.getInstance().getAllLanguages();
+        for (Language language : allLanguages) {
+          String className = getDescriptorClassName(language.getModuleReference());
+          initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, className);
+        }
+        for (Language language : allLanguages) {
           addMigrationsFromLanguage(language);
         }
       }

@@ -116,18 +116,20 @@ public class IntentionsPreferencesPage implements Configurable {
     private Intention myIntention;
     private JCheckBox myCheckBox;
 
-    private IntentionEnabledCheckBox(Intention intention) {
+    private IntentionEnabledCheckBox(final Intention intention) {
       myIntention = intention;
-      String intentionName = myIntention.getClass().getName();
-      final SNode intentionNode = myIntentionsManager.getNodeByIntention(intention);
-      if (intentionNode != null) {
-        intentionName = ModelAccess.instance().runReadAction(new Computable<String>() {
-          @Override
-          public String compute() {
+      final String intentionClassName = myIntention.getClass().getName();
+      String intentionName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
+        public String compute() {
+          final SNode intentionNode = myIntentionsManager.getNodeByIntention(intention);
+          if (intentionNode != null) {
             return intentionNode.getName();
+          } else {
+            return intentionClassName;
           }
-        });
-      }
+        }
+      });
       myCheckBox = new JCheckBox(intentionName);
       myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
     }
