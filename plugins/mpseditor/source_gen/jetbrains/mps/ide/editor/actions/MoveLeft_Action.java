@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.CellActionType;
 
 public class MoveLeft_Action extends GeneratedAction {
@@ -55,7 +56,12 @@ public class MoveLeft_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.LEFT);
+      Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
+      if (selection != null) {
+        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.LEFT);
+      } else {
+        EditorActionUtils.runEditorComponentAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), CellActionType.LEFT);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveLeft", t);

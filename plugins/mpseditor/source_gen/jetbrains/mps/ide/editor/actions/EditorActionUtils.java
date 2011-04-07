@@ -7,6 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -65,6 +68,14 @@ public class EditorActionUtils {
     }
 
     cell.executeAction(CellActionType.INSERT_BEFORE);
+  }
+
+  /*package*/ static void runEditorComponentAction(EditorComponent editorComponent, CellActionType actionType) {
+    EditorCellAction action = editorComponent.getComponentAction(CellActionType.UP);
+    EditorContext editorContext = editorComponent.getEditorContext();
+    if (action != null && action.canExecute(editorContext)) {
+      action.execute(editorContext);
+    }
   }
 
   /**
