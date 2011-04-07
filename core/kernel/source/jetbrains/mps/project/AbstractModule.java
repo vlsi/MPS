@@ -453,31 +453,30 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void readModels() {
-    if (!myModelsRead) {
-      myModelsRead = true;
+    if (myModelsRead) return;
 
-      for (SModelRoot root : mySModelRoots) {
-        root.dispose();
-      }
-      mySModelRoots.clear();
+    myModelsRead = true;
+    for (SModelRoot root : mySModelRoots) {
+      root.dispose();
+    }
+    mySModelRoots.clear();
 
-      ModuleDescriptor descriptor = getModuleDescriptor();
-      if (descriptor != null) {
-        List<ModelRoot> roots = descriptor.getModelRoots();
-        for (ModelRoot modelRoot : roots) {
-          try {
-            SModelRoot root = new SModelRoot(modelRoot);
-            mySModelRoots.add(root);
-            IModelRootManager manager = root.getManager();
-            manager.updateModels(root, this);
-          } catch (Exception e) {
-            LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
-          }
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      List<ModelRoot> roots = descriptor.getModelRoots();
+      for (ModelRoot modelRoot : roots) {
+        try {
+          SModelRoot root = new SModelRoot(modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
+          manager.updateModels(root, this);
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
       }
-
-      myInitialized = true;
     }
+
+    myInitialized = true;
   }
 
   public void dispose() {
