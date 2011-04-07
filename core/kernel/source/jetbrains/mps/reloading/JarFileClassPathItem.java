@@ -70,7 +70,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return myFile;
   }
 
-  public byte[] getClass(String name) {
+  public synchronized byte[] getClass(String name) {
     checkValidity();
     ensureInitialized();
     ZipEntry entry = myEntries.get(name);
@@ -98,7 +98,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public ClassifierKind getClassifierKind(String name) {
+  public synchronized ClassifierKind getClassifierKind(String name) {
     checkValidity();
     ensureInitialized();
     ZipEntry entry = myEntries.get(name);
@@ -130,7 +130,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public Iterable<String> getAvailableClasses(String namespace) {
+  public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     ensureInitialized();
     Set<String> start = myCache.getClassesSetFor(namespace);
@@ -142,7 +142,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return new ConditionalIterable<String>(start, cond);
   }
 
-  public Iterable<String> getSubpackages(String namespace) {
+  public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     ensureInitialized();
     return myCache.getSubpackagesSetFor(namespace);
@@ -192,7 +192,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
 
-  private void buildCaches() {
+  private synchronized void buildCaches() {
     Enumeration<? extends ZipEntry> entries = myZipFile.entries();
 
     while (entries.hasMoreElements()) {
@@ -234,7 +234,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  private void buildPackageCaches(String namespace) {
+  private synchronized void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
     myCache.addPackage(InternUtil.intern(namespace), InternUtil.intern(parent));

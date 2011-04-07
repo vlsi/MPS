@@ -47,7 +47,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return myClassPath;
   }
 
-  public byte[] getClass(String name) {
+  public synchronized byte[] getClass(String name) {
     checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortname = NameUtil.shortNameFromLongName(name);
@@ -109,7 +109,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public Iterable<String> getAvailableClasses(String namespace) {
+  public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
@@ -125,7 +125,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return new ConditionalIterable<String>(start, cond);
   }
 
-  public Iterable<String> getSubpackages(String namespace) {
+  public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
@@ -136,7 +136,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return Collections.unmodifiableSet(result);
   }
 
-  private void buildCacheFor(String namespace) {
+  private synchronized void buildCacheFor(String namespace) {
     namespace = InternUtil.intern(namespace);
     Set<String> subpacks = null;
     Set<String> classes = null;
@@ -189,7 +189,6 @@ public class FileClassPathItem extends RealClassPathItem {
     return result;
   }
 
-  @Override
   public void accept(IClassPathItemVisitor visitor) {
     checkValidity();
     visitor.visit(this);
@@ -200,7 +199,6 @@ public class FileClassPathItem extends RealClassPathItem {
     if (namespace == null) namespace = "";
     return new File(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
   }
-
 
   public String toString() {
     return "file-cp: " + myClassPath;
