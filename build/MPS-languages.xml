@@ -10,7 +10,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage">
-    <mkdir dir="core/baseLanguage/baseLanguage/classes" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes_gen" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -19,7 +18,6 @@
       <zipfileset dir="core/baseLanguage/baseLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/baseLanguage/utilModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/utilModels" />
       <zipfileset dir="core/baseLanguage/baseLanguage/generator/java/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/java/templates" />
-      <zipfileset dir="core/baseLanguage/baseLanguage/classes" />
       <zipfileset dir="core/baseLanguage/baseLanguage/classes_gen" />
       <zipfileset dir="core/baseLanguage/baseLanguage/classes" />
     </jar>
@@ -423,7 +421,6 @@
   </target>
   <target name="pack.jetbrains.mps.lang.dataFlow">
     <mkdir dir="core/languageDesign/dataFlow/classes" />
-    <mkdir dir="core/languageDesign/dataFlow/runtime/classes" />
     <mkdir dir="core/languageDesign/dataFlow/classes_gen" />
     <mkdir dir="core/languageDesign/dataFlow/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -432,24 +429,18 @@
       <zipfileset dir="core/languageDesign/dataFlow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/dataFlow/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/languageDesign/dataFlow/classes" />
-      <zipfileset dir="core/languageDesign/dataFlow/runtime/classes" />
       <zipfileset dir="core/languageDesign/dataFlow/classes_gen" />
       <zipfileset dir="core/languageDesign/dataFlow/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/dataFlow/classes" />
-      <fileset dir="core/languageDesign/dataFlow/runtime/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.dataFlow.runtime">
-    <mkdir dir="core/languageDesign/dataFlow/classes" />
-    <mkdir dir="core/languageDesign/dataFlow/runtime/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/jetbrains.mps.dataFlow.runtime.msd" prefix="module" />
       <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="core/languageDesign/dataFlow/classes" />
-      <zipfileset dir="core/languageDesign/dataFlow/runtime/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mpslite">
