@@ -90,7 +90,7 @@ public abstract class TabsComponent extends JPanel {
   }
 
   public Component getComponentForTabIndex(int index) {
-    return myToolbar.getComponent(index);
+    return myToolbar.getComponent(index + 1);
   }
 
   public void dispose() {
@@ -114,7 +114,10 @@ public abstract class TabsComponent extends JPanel {
     myRealTabs.clear();
     myTabRemovalListener.clearAspects();
 
-    for (EditorTabDescriptor d : myPossibleTabs) {
+    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new EditorTabComparator());
+
+    for (EditorTabDescriptor d : tabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.isEmpty()) continue;
 
@@ -125,8 +128,6 @@ public abstract class TabsComponent extends JPanel {
       final EditorTab tab = new EditorTab(this, myRealTabs.size(), d, myBaseNode);
       myRealTabs.add(tab);
     }
-
-    Collections.sort(myRealTabs, new EditorTabComparator());
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myAddButton.getAction(this));
@@ -217,11 +218,8 @@ public abstract class TabsComponent extends JPanel {
 
   ///-------------tab insert events----------------
 
-  private static class EditorTabComparator implements Comparator<EditorTab> {
-    public int compare(EditorTab o1, EditorTab o2) {
-      EditorTabDescriptor d1 = o1.getDescriptor();
-      EditorTabDescriptor d2 = o2.getDescriptor();
-
+  private static class EditorTabComparator implements Comparator<EditorTabDescriptor> {
+    public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
       int r1 = d1.compareTo(d2);
       int r2 = d2.compareTo(d1);
 
