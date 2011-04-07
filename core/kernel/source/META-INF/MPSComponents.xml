@@ -67,14 +67,6 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.vcs.GlobalClassPathIndex</implementation-class>
-    </component>
-
-    <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
     </component>

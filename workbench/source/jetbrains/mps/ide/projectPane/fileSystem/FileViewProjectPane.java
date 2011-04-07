@@ -61,7 +61,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ChangedListener;
-import jetbrains.mps.vcs.GlobalClassPathIndex;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -213,7 +212,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   private void installListeners() {
-    GlobalClassPathIndex.getInstance().addChangedListener(myChangedListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener = new FileStatusChangeListener());
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener = new FileChangesListener());
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
@@ -252,7 +250,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     myMessageBusConnection.disconnect();
-    GlobalClassPathIndex.getInstance().removeChangedListener(myChangedListener);
   }
 
   private boolean isInitialized() {

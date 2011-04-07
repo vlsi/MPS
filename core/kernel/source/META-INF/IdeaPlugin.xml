@@ -49,7 +49,7 @@
                     serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
-                    serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
+                    serviceImplementation="com.intellij.openapi.vcs.impl.ProjectExcludedFileIndex"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
                     serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
