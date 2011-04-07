@@ -3,13 +3,12 @@
   <persistence version="7" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <import index="uf1q" modelUID="f:java_stub#d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c#jetbrains.mps.ypath.plugin(jetbrains.mps.ypath.plugin@java_stub)" version="-1" />
   <import index="60vs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(MPS.Classpath/jetbrains.mps.reloading@java_stub)" version="-1" />
-  <import index="f5mh" modelUID="f:java_stub#d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c#jetbrains.mps.ypath.design(jetbrains.mps.ypath/jetbrains.mps.ypath.design@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="h5ia" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="8bce" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" version="-1" />
+  <import index="6rte" modelUID="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -29,11 +28,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1216918074000">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216918082050">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1216918076111">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uf1q.~DesignPartLoader%dgetInstance()%cjetbrains%dmps%dypath%dplugin%dDesignPartLoader" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uf1q.~DesignPartLoader" resolveInfo="DesignPartLoader" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6854028447099503200" resolveInfo="DesignPartLoader" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6854028447099503249" resolveInfo="getInstance" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216918084193">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uf1q.~DesignPartLoader%dregisterInClassLoadManager()%cvoid" resolveInfo="registerInClassLoadManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6854028447099503355" resolveInfo="registerInClassLoadManager" />
             </node>
           </node>
         </node>
@@ -44,11 +43,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1216918094368">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216918096809">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1216918095886">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uf1q.~DesignPartLoader%dgetInstance()%cjetbrains%dmps%dypath%dplugin%dDesignPartLoader" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uf1q.~DesignPartLoader" resolveInfo="DesignPartLoader" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6854028447099503200" resolveInfo="DesignPartLoader" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6854028447099503249" resolveInfo="getInstance" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216918097578">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uf1q.~DesignPartLoader%dunregisterFromClassLoadManager()%cvoid" resolveInfo="unregisterFromClassLoadManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6854028447099503373" resolveInfo="unregisterFromClassLoadManager" />
             </node>
           </node>
         </node>
@@ -177,7 +176,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getFeatureDesign" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6854028447099503256" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6854028447099503257">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f5mh.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469660" resolveInfo="IFeatureDesign" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6854028447099503258">
         <property name="name" nameId="tpck.1169194664001" value="fqClassName" />
@@ -236,7 +235,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getFeatureDesign" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6854028447099503280" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6854028447099503281">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f5mh.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469660" resolveInfo="IFeatureDesign" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6854028447099503282">
         <property name="name" nameId="tpck.1169194664001" value="fqClassName" />
@@ -399,7 +398,7 @@
                   </node>
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6854028447099503349">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f5mh.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469660" resolveInfo="IFeatureDesign" />
                 </node>
               </node>
             </node>

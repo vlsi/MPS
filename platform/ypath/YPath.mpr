@@ -24,6 +24,7 @@
       <solutionPath path="${project}/solutions/main/main.msd" />
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/test/test.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.ypath.runtime/jetbrains.mps.ypath.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/ypath.mpl" />

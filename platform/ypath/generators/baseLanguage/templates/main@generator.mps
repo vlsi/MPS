@@ -15,12 +15,12 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpkr" modelUID="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="frfz" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="98m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="dzbb" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.design(jetbrains.mps.ypath.design@java_stub)" version="-1" />
+  <import index="fjjo" modelUID="r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -1327,7 +1327,7 @@
   </root>
   <root id="1168438217056">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1168439492659">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~ITreeTraversal" resolveInfo="ITreeTraversal" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265510" resolveInfo="ITreeTraversal" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1168439512390">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168439522635">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172656490871">
@@ -1357,7 +1357,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1216934019845">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1216934019847" />
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216934019848">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreePath%d&lt;init&gt;()" resolveInfo="TreePath" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1168442928355">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
                 <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1172658935860">
@@ -1740,7 +1740,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1168440958926">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TreePath" resolveInfo="TreePath" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265522" resolveInfo="TreePath" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1168446683901">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168446688627">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172648172668">
@@ -1811,8 +1811,8 @@
   </root>
   <root id="1168531928548">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1168531946285">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dFrom(java%dlang%dObject,jetbrains%dmps%dypath%druntime%dTreePath)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="From" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267453" resolveInfo="From" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1168531996456">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168532045248">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172655121937">
@@ -1856,8 +1856,8 @@
   </root>
   <root id="1168532997668">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1168533014228">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dTraverse(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dTraversalAxis)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Traverse" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267469" resolveInfo="Traverse" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1168533047115">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168536497086">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172655368334">
@@ -1881,8 +1881,8 @@
         </node>
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1168536725528">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dAxis(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="Axis" />
-        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
+        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267541" resolveInfo="Axis" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1168536727422">
           <property name="value" nameId="tpee.1070475926801" value="axis" />
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1168536736389">
@@ -1947,8 +1947,8 @@
   </root>
   <root id="1168536911022">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1174932215506">
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dFilter(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dIFilter)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Filter" />
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267524" resolveInfo="Filter" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1174932215507">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1174932215508">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1174932215509">
@@ -2028,7 +2028,7 @@
           </node>
         </node>
         <node role="type" roleId="tp68.1179332974947" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4112797171562913841">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TreePath" resolveInfo="TreePath" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265522" resolveInfo="TreePath" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4112797171562913847">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4112797171562913862">
@@ -2055,7 +2055,7 @@
         </node>
       </node>
       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216933995665">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreePath%dstartTraversal(java%dlang%dIterable)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="startTraversal" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267763" resolveInfo="startTraversal" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1168970401743">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168970408150">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1168970408151">
@@ -2102,7 +2102,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1184679805725">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFeatureDescriptor" resolveInfo="IFeatureDescriptor" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265511" resolveInfo="IFeatureDescriptor" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1184679812335">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1184679920758">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1184679920759">
@@ -2248,7 +2248,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216933999696">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1184172386138" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216933999697">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreePath%dregisterFeature(jetbrains%dmps%dypath%druntime%dIFeatureDescriptor)%cvoid" resolveInfo="registerFeature" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267958" resolveInfo="registerFeature" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1216934019726">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216934019728">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1184237030730" resolveInfo="FeatureDescriptor" />
@@ -2971,7 +2971,7 @@
         </node>
       </node>
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1184237381676">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFeatureDescriptor" resolveInfo="IFeatureDescriptor" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265511" resolveInfo="IFeatureDescriptor" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1184237386388">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1184237393260">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1184237393261">
@@ -3024,7 +3024,7 @@
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198142571417">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFeatureDescriptor$Stub" resolveInfo="IFeatureDescriptor.Stub" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929267308" resolveInfo="Stub" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1198142581214">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1198142581215">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1198142581216">
@@ -3337,7 +3337,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1168969871660">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TreePath" resolveInfo="TreePath" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265522" resolveInfo="TreePath" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1168969871661">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1168969871662">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172646749760">
@@ -3377,8 +3377,8 @@
   </root>
   <root id="1172245379965">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1172245379966">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dFilter(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dIFilter)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Filter" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267524" resolveInfo="Filter" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1172245379967">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1172245379968">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1172245483666">
@@ -3416,7 +3416,7 @@
         <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
         <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
         <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739559824">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739566508">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4112797171562716599">
@@ -3467,8 +3467,8 @@
   </root>
   <root id="1175172105753">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1175172134200">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dFilter(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dIFilter)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Filter" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267524" resolveInfo="Filter" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1175172300638">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1175172300639">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1175172300640">
@@ -3504,7 +3504,7 @@
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1216934019880">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216934019882">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~CompositeFilter%d&lt;init&gt;(jetbrains%dmps%dypath%druntime%dIFilter%d%d%d)" resolveInfo="CompositeFilter" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929265720" resolveInfo="CompositeFilter" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179337226239">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179337232898">
@@ -3540,7 +3540,7 @@
             <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739767001">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739767002">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               </node>
@@ -3595,7 +3595,7 @@
               </node>
             </node>
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179398627175">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179398736425">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               </node>
@@ -3628,8 +3628,8 @@
   </root>
   <root id="1175879731328">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1175879781439">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dFilter(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dIFilter)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Filter" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267524" resolveInfo="Filter" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1175879794126" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1175879805399">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1175879812599">
@@ -3666,7 +3666,7 @@
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1216934019401">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1216934019403">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~CompositeFilter%d&lt;init&gt;(jetbrains%dmps%dypath%druntime%dIFilter%d%d%d)" resolveInfo="CompositeFilter" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929265720" resolveInfo="CompositeFilter" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179334572061">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179334580326">
@@ -3759,7 +3759,7 @@
             <property name="methodName" nameId="tp68.1173992444083" value="getInstance" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="TreePath_aspect.NodeKind" />
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739700826">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179739700827">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               </node>
@@ -3814,7 +3814,7 @@
               </node>
             </node>
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179398930389">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179398930390">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               </node>
@@ -4184,7 +4184,7 @@
         <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1179738432104">
           <property name="name" nameId="tpck.1169194664001" value="getInstance" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179738437923">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179738451219">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179738498828">
@@ -4335,7 +4335,7 @@
           </node>
         </node>
         <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179332104418">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179332110878">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179332118573">
@@ -4387,7 +4387,7 @@
         <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1179395460696">
           <property name="name" nameId="tpck.1169194664001" value="getMatcher" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179395480627">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179395484530">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179395493887">
@@ -4421,7 +4421,7 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1179396847689">
                 <property name="name" nameId="tpck.1169194664001" value="filter" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179396847690">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
                 </node>
               </node>
             </node>
@@ -4433,8 +4433,8 @@
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1182161337553">
                         <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1179397258961">
                           <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
-                          <link role="classifier" roleId="tpee.1170346070688" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                          <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
                           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1179397308442">
                             <property name="name" nameId="tpck.1169194664001" value="accept" />
                             <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1179397308443" />
@@ -4584,8 +4584,8 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1182161337655">
                           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1179397493747">
                             <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
-                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
                             <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1179397532459">
                               <property name="name" nameId="tpck.1169194664001" value="accept" />
                               <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1179397532460" />
@@ -4718,7 +4718,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1179396847689" resolveInfo="filter" />
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179397950315">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179397954710">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179397960215">
@@ -4878,7 +4878,7 @@
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1179741191968" />
       <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179741233187">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1179741239471">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1179741239472">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1179741239473">
@@ -5046,7 +5046,7 @@
                   </node>
                 </node>
                 <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180087820040">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFilter" resolveInfo="IFilter" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265512" resolveInfo="IFilter" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193265994">
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1225193265995">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1225193265996">
@@ -5080,7 +5080,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934000375">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~IFilter%daccept(java%dlang%dObject)%cboolean" resolveInfo="accept" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267441" resolveInfo="accept" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1180087576380">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1180087559121" resolveInfo="node" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1180087663596">
@@ -5346,7 +5346,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1180088650986" resolveInfo="nodes" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934002365">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~ITreeTraversal%dgetTreePath()%cjetbrains%dmps%dypath%druntime%dITreePath" resolveInfo="getTreePath" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929268283" resolveInfo="getTreePath" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1180089938717">
@@ -5383,7 +5383,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1180088650986">
         <property name="name" nameId="tpck.1169194664001" value="nodes" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180089646821">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~ITreeTraversal" resolveInfo="ITreeTraversal" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265510" resolveInfo="ITreeTraversal" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193271764" />
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1180089683857">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1180089683858">
@@ -5464,7 +5464,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1180091574647">
         <property name="name" nameId="tpck.1169194664001" value="_inheritedTreePath_" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180091578413">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~ITreePath" resolveInfo="ITreePath" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265520" resolveInfo="ITreePath" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193269559">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1225193269560">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1225193269561">
@@ -5794,7 +5794,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1180091782178">
           <property name="name" nameId="tpck.1169194664001" value="nodes" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180091782179">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~ITreeTraversal" resolveInfo="ITreeTraversal" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265510" resolveInfo="ITreeTraversal" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193272064" />
           </node>
         </node>
@@ -5810,7 +5810,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1180091782216">
           <property name="name" nameId="tpck.1169194664001" value="_inheritedTreePath_" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180091782217">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TreePath" resolveInfo="TreePath" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265522" resolveInfo="TreePath" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193270832" />
           </node>
         </node>
@@ -5833,14 +5833,14 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216933995600">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1180091782144" resolveInfo="visit" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1180096980263">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dTraverse(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dTraversalAxis)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Traverse" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267469" resolveInfo="Traverse" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216934003486">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1180097346197">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1180091782216" resolveInfo="_inheritedTreePath_" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934003487">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreePath%dstartTraversal(java%dlang%dObject)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="startTraversal" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267763" resolveInfo="startTraversal" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalVariableReference" typeId="tp68.1176743162354" id="1180097346198">
                         <property name="name" nameId="tp68.1176743296073" value="node" />
                         <node role="type" roleId="tp68.1176743202636" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193265789" />
@@ -5877,8 +5877,8 @@
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1188231744794">
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fjjo.2295870045929266874" resolveInfo="CHILDREN" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1180091899036">
@@ -7221,8 +7221,8 @@
   </root>
   <root id="1185026992992">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1185026992993">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dTraverse(jetbrains%dmps%dypath%druntime%dITreeTraversal,jetbrains%dmps%dypath%druntime%dTraversalAxis,jetbrains%dmps%dypath%druntime%dIFeatureDescriptor)%cjetbrains%dmps%dypath%druntime%dITreeTraversal" resolveInfo="Traverse" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267469" resolveInfo="Traverse" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1185026992994">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1185026992995">
           <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1185026992996">
@@ -7246,8 +7246,8 @@
         </node>
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1185026993005">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TreeTraversalFactory%dAxis(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="Axis" />
-        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TreeTraversalFactory" resolveInfo="TreeTraversalFactory" />
+        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929267447" resolveInfo="TreeTraversalFactory" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267541" resolveInfo="Axis" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1185026993006">
           <property name="value" nameId="tpee.1070475926801" value="axis" />
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1185026993007">
@@ -7403,7 +7403,7 @@
           </node>
         </node>
         <node role="returnType" roleId="tp68.1175794062018" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1185030138177">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~IFeatureDescriptor" resolveInfo="IFeatureDescriptor" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929265511" resolveInfo="IFeatureDescriptor" />
         </node>
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1185030157420">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />

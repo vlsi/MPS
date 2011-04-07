@@ -15,9 +15,9 @@
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpkr" modelUID="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)" version="-1" />
   <import index="tp2u" modelUID="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" version="-1" />
-  <import index="frfz" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.runtime(ypath#1168438160182/jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="fjjo" modelUID="r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -398,8 +398,8 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkq.7098165822328196765" resolveInfo="isAbbreviated" />
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkq.1179161788761" resolveInfo="TraversalAxisUtil" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7098165822328671505">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929266984" resolveInfo="parseValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7098165822328671506">
                         <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="7098165822328671507" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7098165822328671508">
@@ -555,8 +555,8 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5701831110355440596">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5701831110355440608">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5701831110355440597">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929266984" resolveInfo="parseValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5701831110355440603">
                         <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="5701831110355440602" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5701831110355440607">
@@ -565,7 +565,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5701831110355440612">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267089" resolveInfo="getName" />
                     </node>
                   </node>
                 </node>
@@ -4442,11 +4442,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199386476308">
                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199386476309">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199386490680">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929266984" resolveInfo="parseValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227867876">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_Abstract_editedNode" typeId="tpc2.1163613822479" id="1199386495451" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199386497377">
@@ -5122,8 +5122,8 @@
                     <property name="name" nameId="tpck.1169194664001" value="axis" />
                   </node>
                   <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1197650346704">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetConstants()%cjava%dutil%dList" resolveInfo="getConstants" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929266919" resolveInfo="getConstants" />
                   </node>
                   <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1197650335098">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1199387203462">
@@ -5187,7 +5187,7 @@
                                           </node>
                                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199387562677" />
                                           <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4737152033039187381">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                                           </node>
                                           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039054702" />
                                           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039187401" />
@@ -5231,7 +5231,7 @@
                                                   <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1199387562684" resolveInfo="pw" />
                                                 </node>
                                                 <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4737152033039187302">
-                                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                                                 </node>
                                                 <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039055590" />
                                                 <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039187421" />
@@ -5286,7 +5286,7 @@
                                               </node>
                                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199387562712" />
                                               <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4737152033039187519">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039054822" />
                                               <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4737152033039187539" />
@@ -5348,11 +5348,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199387704116">
                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387885227">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1199387704118">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387888553">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628920595">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_AbstractGroup_parameterObject" typeId="tpc2.1163613549566" id="1199387709198" />
@@ -5415,7 +5415,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199387704116" resolveInfo="axis" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628843649">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267105" resolveInfo="getValue" />
                     </node>
                   </node>
                 </node>
@@ -5462,11 +5462,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199387592196">
                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387859306">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1199387592198">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387862024">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628899644">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_AbstractGroup_parameterObject" typeId="tpc2.1163613549566" id="1199387596897" />
@@ -5636,11 +5636,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199387644405">
                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387875760">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1199387644407">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199387878311">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fjjo.2295870045929266247" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628893934">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_AbstractGroup_parameterObject" typeId="tpc2.1163613549566" id="1199387648404" />
@@ -5818,7 +5818,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199387644405" resolveInfo="axis" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628845317">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fjjo.2295870045929267089" resolveInfo="getName" />
                       </node>
                     </node>
                   </node>
