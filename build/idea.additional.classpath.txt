@@ -14,7 +14,6 @@ MPSPlugin/apiclasses
 core/baseLanguage/baseLanguage/classes
 core/baseLanguage/baseLanguageInternal/classes
 core/baseLanguage/blTypes/classes
-core/baseLanguage/checkDot/classes
 core/baseLanguage/classifiers/classes
 core/baseLanguage/closures/classes
 core/baseLanguage/closures/runtime/classes
