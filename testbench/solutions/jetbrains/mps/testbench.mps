@@ -39,8 +39,8 @@
   <import index="kq5b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.apache.log4j(MPS.Classpath/org.apache.log4j@java_stub)" version="-1" implicit="yes" />
   <import index="apgw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler(MPS.Classpath/org.eclipse.jdt.internal.compiler@java_stub)" version="-1" implicit="yes" />
   <import index="s9ox" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util(MPS.Classpath/com.intellij.util@java_stub)" version="-1" implicit="yes" />
-  <import index="x9s3" modelUID="f:java_stub#79f9d103-4ff6-4def-9c1a-27070f9ba255#jetbrains.mps(jetbrains.mps.testbench.make/jetbrains.mps@java_stub)" version="-1" implicit="yes" />
-  <import index="fv5f" modelUID="f:java_stub#79f9d103-4ff6-4def-9c1a-27070f9ba255#jetbrains.mps.testbench(jetbrains.mps.testbench.make/jetbrains.mps.testbench@java_stub)" version="-1" implicit="yes" />
+  <import index="x9s3" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" version="-1" implicit="yes" />
+  <import index="fv5f" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps.testbench(Testbench/jetbrains.mps.testbench@java_stub)" version="-1" implicit="yes" />
   <import index="22fg" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
