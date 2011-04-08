@@ -13,7 +13,6 @@
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="xmlDeprecated" />
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="Tuples-runtime" />
