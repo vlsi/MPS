@@ -48,6 +48,7 @@ public class ClasspathCollector {
       //this is needed because we can use this class before these stub solutions are loaded
       result.add(CommonPaths.getJDKClassPath());
       result.add(CommonPaths.getMPSClassPath());
+      result.add(CommonPaths.getTestbenchClassPath());
 
       for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
         if (s.isStub()) {
