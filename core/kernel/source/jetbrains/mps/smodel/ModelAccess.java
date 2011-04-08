@@ -109,7 +109,6 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     throw new IllegalStateException();
   }
 
-
   @Override
   public void checkReadAccess() {
     if (!canRead()) {
@@ -124,7 +123,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   }
 
-  public static final void assertLegalWrite() {
+  public static void assertLegalWrite() {
     if (!instance().canWrite()) {
       throw new IllegalModelAccessError("You can write model only inside write actions");
     }
