@@ -141,7 +141,7 @@ public class FilesDelta implements IDelta {
   }
 
   private String straighten(String path) {
-    return path.replaceAll("\\" + File.separatorChar, SLASH);
+    return path.replace(File.separatorChar, SLASH_CHAR);
   }
 
   private FilesDelta copy(FilesDelta that) {
