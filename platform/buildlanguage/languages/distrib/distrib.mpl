@@ -44,9 +44,7 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <sourcePath>
-    <source path="${language_descriptor}/source_gen" />
-  </sourcePath>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</dependency>
   </dependencies>
