@@ -1741,7 +1741,7 @@
     <nodeInfo nodeId="1453248744423411505" fileName="ModelCheckerTool_Tool.java" startLine="98" startPosition="56" endLine="99" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423411531" fileName="ModelCheckerTool_Tool.java" startLine="104" startPosition="127" endLine="105" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423411554" fileName="ModelCheckerTool_Tool.java" startLine="108" startPosition="135" endLine="109" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423411584" fileName="ModelCheckerTool_Tool.java" startLine="114" startPosition="56" endLine="115" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423411584" fileName="ModelCheckerTool_Tool.java" startLine="114" startPosition="56" endLine="115" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423411612" fileName="ModelCheckerTool_Tool.java" startLine="120" startPosition="110" endLine="121" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423411637" fileName="ModelCheckerTool_Tool.java" startLine="124" startPosition="118" endLine="125" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423411661" fileName="ModelCheckerTool_Tool.java" startLine="128" startPosition="112" endLine="129" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1833,7 +1833,7 @@
     <scopeInfo nodeId="1453248744423411504" fileName="ModelCheckerTool_Tool.java" startLine="98" startPosition="56" endLine="99" endPosition="77" />
     <scopeInfo nodeId="1453248744423411530" fileName="ModelCheckerTool_Tool.java" startLine="104" startPosition="127" endLine="105" endPosition="222" />
     <scopeInfo nodeId="1453248744423411553" fileName="ModelCheckerTool_Tool.java" startLine="108" startPosition="135" endLine="109" endPosition="220" />
-    <scopeInfo nodeId="1453248744423411583" fileName="ModelCheckerTool_Tool.java" startLine="114" startPosition="56" endLine="115" endPosition="166" />
+    <scopeInfo nodeId="1453248744423411583" fileName="ModelCheckerTool_Tool.java" startLine="114" startPosition="56" endLine="115" endPosition="167" />
     <scopeInfo nodeId="1453248744423411611" fileName="ModelCheckerTool_Tool.java" startLine="120" startPosition="110" endLine="121" endPosition="218" />
     <scopeInfo nodeId="1453248744423411636" fileName="ModelCheckerTool_Tool.java" startLine="124" startPosition="118" endLine="125" endPosition="213" />
     <scopeInfo nodeId="1453248744423411700" fileName="ModelCheckerTool_Tool.java" startLine="135" startPosition="25" endLine="136" endPosition="18" />
