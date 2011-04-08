@@ -112,7 +112,7 @@ class FileProcessor {
     public void saveToFile(IFile file) {
       OutputStreamWriter writer = null;
       try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()));
+        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
         writer.write(myContent);
       } catch (IOException e) {
         LOG.error(e);

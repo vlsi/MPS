@@ -266,7 +266,7 @@ public class FileUtil {
   public static void write(File file, String content) {
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new FileWriter(file));
+      writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
       writer.print(content);
       writer.flush();
     } catch (IOException e) {

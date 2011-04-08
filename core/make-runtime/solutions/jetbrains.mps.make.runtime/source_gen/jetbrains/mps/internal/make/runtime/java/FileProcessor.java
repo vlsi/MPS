@@ -97,7 +97,7 @@ import org.jdom.Document;
     public void saveToFile(IFile file) {
       OutputStreamWriter writer = null;
       try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()));
+        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
         writer.write(myContent);
       } catch (IOException e) {
         FileProcessor.LOG.error(e);
