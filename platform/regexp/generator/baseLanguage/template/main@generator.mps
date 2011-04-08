@@ -17,6 +17,7 @@
   <import index="tpfs" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" />
   <import index="4qwp" modelUID="f:java_stub#bffd1385-a29f-4b76-bb8a-cfb3227968be#jetbrains.mps.baseLanguage.regexp.runtime(jetbrains.mps.baseLanguage.regexp#1174510748147/jetbrains.mps.baseLanguage.regexp.runtime@java_stub)" version="-1" />
+  <import index="cpb3" modelUID="r:92729f14-904d-49b9-944a-e9e4aeec5f56(jetbrains.mps.baseLanguage.regexp.runtime)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -827,8 +828,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1174659136524">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1174659151731">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1174659155342">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4qwp.~RegexpOperations" resolveInfo="RegexpOperations" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4qwp.~RegexpOperations%dreplace(java%dlang%dString,java%dutil%dregex%dPattern,jetbrains%dmps%dbaseLanguage%dregexp%druntime%dReplacer)%cjava%dlang%dString" resolveInfo="replace" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpb3.8235206972880844189" resolveInfo="RegexpOperations" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpb3.8235206972880844195" resolveInfo="replace" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1174659160734">
               <property name="value" nameId="tpee.1070475926801" value="string" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1174659183902">
@@ -939,7 +940,7 @@
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpfo.1174656254036" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1223371963246">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4qwp.~Replacer" resolveInfo="Replacer" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1174658244528" resolveInfo="Replacer" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1178550080958" />
   </root>
@@ -1242,8 +1243,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1175164929274">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6717546899049826143">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1175164941760">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4qwp.~RegexpOperations" resolveInfo="RegexpOperations" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4qwp.~RegexpOperations%dsplit(java%dlang%dString,java%dutil%dregex%dPattern)%cjava%dutil%dList" resolveInfo="split" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpb3.8235206972880844189" resolveInfo="RegexpOperations" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpb3.8235206972880844266" resolveInfo="split" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1175164943594">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1175164955451">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1175164955452">
@@ -1655,8 +1656,8 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222257140544">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6717546899049826147">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1222257141468">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4qwp.~RegexpOperations" resolveInfo="RegexpOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4qwp.~RegexpOperations%dsplit(java%dlang%dString,java%dutil%dregex%dPattern)%cjava%dutil%dList" resolveInfo="split" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpb3.8235206972880844189" resolveInfo="RegexpOperations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpb3.8235206972880844266" resolveInfo="split" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1222257141469">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1222257141470">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1222257141471">
@@ -1720,8 +1721,8 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222261258855">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222261273747">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1222261273748">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4qwp.~RegexpOperations" resolveInfo="RegexpOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4qwp.~RegexpOperations%dreplace(java%dlang%dString,java%dutil%dregex%dPattern,jetbrains%dmps%dbaseLanguage%dregexp%druntime%dReplacer)%cjava%dlang%dString" resolveInfo="replace" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpb3.8235206972880844189" resolveInfo="RegexpOperations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpb3.8235206972880844195" resolveInfo="replace" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1222418933988">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1222418938522">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1222418938523">

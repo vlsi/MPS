@@ -9,6 +9,7 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/regexp.mpl" />
