@@ -5,7 +5,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="main" />
+    </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="mps-stuff" />
       <languagePath path="${project}/quickQueryLanguage.mpl" folder="main" />
