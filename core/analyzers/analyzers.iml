@@ -4,8 +4,8 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../core/analyzers">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
