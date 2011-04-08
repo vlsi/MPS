@@ -115,7 +115,6 @@ public class EditorTab {
     }
 
     public void setSelected(AnActionEvent e, boolean state) {
-      if (!state) return;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
