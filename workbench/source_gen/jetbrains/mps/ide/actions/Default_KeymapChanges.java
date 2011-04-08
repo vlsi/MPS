@@ -58,7 +58,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInInspector_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowParameters_Action", getShortcut("ctrl P"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowStructure_Action", getShortcut("ctrl F12"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ShowStructure_Action", getShortcut("ctrl F10"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SolutionProperties_Action", getShortcut("alt ENTER"));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.FileDelete_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut(" DELETE")));
