@@ -12,14 +12,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorOperationDeclaration_Behavior {
   private static Class[] PARAMETERS_946964771156066991 = {SNode.class};
+  private static Class[] PARAMETERS_203908296139519011 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getMethodbyName_946964771156066997(SNode thisNode, final String name) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.options(MPS.Classpath/com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.options(MPS.Classpath/com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).union(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.runtime(MPS.Classpath/jetbrains.mps.execution.runtime@java_stub)", "~SettingsEditorEx"), "method", true))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").startsWith(name);
+        return SPropertyOperations.getString(it, "name").equals(name);
       }
     });
   }
@@ -28,7 +29,15 @@ public class EditorOperationDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066991);
   }
 
+  public static SNode call_getPublicJavaMethod_203908296139519011(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519011);
+  }
+
   public static SNode callSuper_getJavaMethod_946964771156066991(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066991);
+  }
+
+  public static SNode callSuper_getPublicJavaMethod_203908296139519011(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519011);
   }
 }

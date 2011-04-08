@@ -5,6 +5,7 @@ package jetbrains.mps.execution.demo.plugin;
 import jetbrains.mps.execution.runtime.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.runtime.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -16,6 +17,7 @@ public class Make_Configuration implements IPersistentConfiguration {
 
   @NotNull
   private Make_Configuration.MyState myState = new Make_Configuration.MyState();
+  private SettingsEditorEx<Make_Configuration> myEditorEx;
 
   public Make_Configuration() {
   }
@@ -60,6 +62,13 @@ public class Make_Configuration implements IPersistentConfiguration {
 
   public Make_Configuration_Editor getEditor() {
     return new Make_Configuration_Editor();
+  }
+
+  public SettingsEditorEx<Make_Configuration> getEditorEx() {
+    if (myEditorEx == null) {
+      myEditorEx = getEditor();
+    }
+    return myEditorEx;
   }
 
   public class MyState {

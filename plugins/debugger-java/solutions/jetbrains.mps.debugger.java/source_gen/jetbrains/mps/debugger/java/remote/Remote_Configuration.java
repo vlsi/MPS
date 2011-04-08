@@ -22,6 +22,7 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
+import jetbrains.mps.execution.runtime.SettingsEditorEx;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(Remote_Configuration.class);
@@ -81,15 +82,15 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     return null;
   }
 
-  public SettingsEditor<Remote_Configuration> getConfigurationEditor() {
-    return (SettingsEditor<Remote_Configuration>) getEditor();
+  public SettingsEditorEx<Remote_Configuration> getConfigurationEditor() {
+    return (SettingsEditorEx<Remote_Configuration>) getEditor();
   }
 
   public Remote_Configuration createCloneTemplate() {
     return (Remote_Configuration) super.clone();
   }
 
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+  public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new Remote_Configuration_Editor();
   }
 

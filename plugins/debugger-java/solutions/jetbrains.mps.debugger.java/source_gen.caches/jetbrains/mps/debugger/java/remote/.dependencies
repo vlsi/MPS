@@ -51,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Factory" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="java.lang.String" />
@@ -70,7 +71,7 @@
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.Remote_Configuration" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteSettingsEditor" />
-    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode extendsClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.remote.Remote_Configuration_Factory" file="Remote_Configuration_Factory.java">
     <classNode dependClassName="java.lang.String" />

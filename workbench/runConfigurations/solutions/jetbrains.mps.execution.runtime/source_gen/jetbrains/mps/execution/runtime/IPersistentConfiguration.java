@@ -4,10 +4,9 @@ package jetbrains.mps.execution.runtime;
 
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import com.intellij.openapi.options.SettingsEditor;
 
 public interface IPersistentConfiguration extends JDOMExternalizable {
   public void checkConfiguration() throws RuntimeConfigurationException;
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor();
+  public SettingsEditorEx<? extends IPersistentConfiguration> getEditor();
   public IPersistentConfiguration createCloneTemplate();
 }

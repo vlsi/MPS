@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.execution.runtime.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -24,6 +25,7 @@ public class Node_Configuration implements IPersistentConfiguration {
   private Node_Configuration.MyState myState = new Node_Configuration.MyState();
   private final SNode myConcept;
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+  private SettingsEditorEx<Node_Configuration> myEditorEx;
 
   public Node_Configuration(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     myConcept = concept;
@@ -121,6 +123,13 @@ public class Node_Configuration implements IPersistentConfiguration {
 
   public Node_Configuration_Editor getEditor() {
     return new Node_Configuration_Editor(myConcept, myIsValid);
+  }
+
+  public SettingsEditorEx<Node_Configuration> getEditorEx() {
+    if (myEditorEx == null) {
+      myEditorEx = getEditor();
+    }
+    return myEditorEx;
   }
 
   public class MyState {

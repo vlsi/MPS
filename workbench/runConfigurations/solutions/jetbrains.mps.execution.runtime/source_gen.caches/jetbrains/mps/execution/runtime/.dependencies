@@ -37,7 +37,7 @@
     <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.execution.runtime.IPersistentConfiguration" file="IPersistentConfiguration.java">
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode extendsClassName="com.intellij.openapi.util.JDOMExternalizable" />
   </dependency>
@@ -68,6 +68,11 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.execution.runtime.DefaultProcessHandler" />
     <classNode dependClassName="java.lang.System" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.runtime.SettingsEditorEx" file="SettingsEditorEx.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
 </dependenciesRoot>
 

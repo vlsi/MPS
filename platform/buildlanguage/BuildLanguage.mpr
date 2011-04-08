@@ -57,7 +57,7 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$APPLICATION_HOME_DIR$">
+        <entry key="$mps_home$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchMap">
@@ -116,7 +116,7 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$mps_home$" vcs="Git" />
   </component>
 </project>
 

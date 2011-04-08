@@ -101,7 +101,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="7883882861861669808">
                   <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="7883882861861669809">
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="7883882861861669809">
                   <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744046" />
                 </node>
               </node>
@@ -170,7 +170,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="7684700299064312810">
                     <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="7684700299064312840">
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="7684700299064312840">
                     <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064222830" />
                   </node>
                 </node>
@@ -195,7 +195,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="1252300412034409358">
                 <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="1252300412034409372">
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="1252300412034409372">
                 <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744065" />
                 <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435537">
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="1252300412034435536" />
@@ -211,7 +211,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="5405427851768165017">
                 <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="5405427851768165029">
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="5405427851768165029">
                 <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064309952" />
                 <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191403">
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="5405427851768191402" />
@@ -231,7 +231,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="1252300412034435555">
                 <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7902226081039505530" resolveInfo="myNode" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="1252300412034435570">
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="1252300412034435570">
                 <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="awpe.3107334613900744074" />
                 <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1252300412034435578">
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="1252300412034435576" />
@@ -247,7 +247,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="5405427851768191411">
                 <link role="persistentPropertyDeclaration" roleId="fb9u.946964771156066589" targetNodeId="7684700299064312799" resolveInfo="myMake" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperation" typeId="fb9u.946964771156066606" id="5405427851768191412">
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.EditorOperationCall" typeId="fb9u.946964771156066606" id="5405427851768191412">
                 <link role="editorOperationDeclaration" roleId="fb9u.946964771156066609" targetNodeId="7684700299064312766" />
                 <node role="arguments" roleId="fb9u.946964771156066607" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191413">
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="5405427851768191414" />
@@ -263,8 +263,8 @@
     </node>
     <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7902226081039505530">
       <property name="name" nameId="tpck.1169194664001" value="myNode" />
-      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentPropertyType" typeId="fb9u.946964771156066557" id="7902226081039505532">
-        <link role="propertyTemplate" roleId="fb9u.946964771156066558" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
+      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="7902226081039505532">
+        <link role="persistentConfiguration" roleId="fb9u.946964771156066333" targetNodeId="awpe.3107334613900743948" resolveInfo="Node" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1448685625140330122">
         <node role="creator" roleId="tpee.1145553007750" type="fb9u.PersistentConfigurationTemplateInitializer" typeId="fb9u.946964771156066582" id="1448685625140440185">
@@ -331,8 +331,8 @@
     </node>
     <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7684700299064312799">
       <property name="name" nameId="tpck.1169194664001" value="myMake" />
-      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentPropertyType" typeId="fb9u.946964771156066557" id="7684700299064312801">
-        <link role="propertyTemplate" roleId="fb9u.946964771156066558" targetNodeId="7684700299064222828" resolveInfo="Make" />
+      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="7684700299064312801">
+        <link role="persistentConfiguration" roleId="fb9u.946964771156066333" targetNodeId="7684700299064222828" resolveInfo="Make" />
       </node>
     </node>
     <node role="checkProperties" roleId="fb9u.946964771156066338" type="fb9u.CheckProperties_Function" typeId="fb9u.946964771156066597" id="974940122351373408">

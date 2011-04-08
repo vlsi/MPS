@@ -32,6 +32,7 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
+import jetbrains.mps.execution.runtime.SettingsEditorEx;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
@@ -129,15 +130,15 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return null;
   }
 
-  public SettingsEditor<DemoApplication_Configuration> getConfigurationEditor() {
-    return (SettingsEditor<DemoApplication_Configuration>) getEditor();
+  public SettingsEditorEx<DemoApplication_Configuration> getConfigurationEditor() {
+    return (SettingsEditorEx<DemoApplication_Configuration>) getEditor();
   }
 
   public DemoApplication_Configuration createCloneTemplate() {
     return (DemoApplication_Configuration) super.clone();
   }
 
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+  public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new DemoApplication_Configuration_Editor(myNode.getEditor(), myMake.getEditor());
   }
 

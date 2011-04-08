@@ -77,7 +77,6 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("propertyTemplate", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -90,7 +89,6 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("propertyTemplate", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

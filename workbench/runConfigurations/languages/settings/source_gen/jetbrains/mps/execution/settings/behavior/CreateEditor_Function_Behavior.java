@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreateEditor_Function_Behavior {
   private static Class[] PARAMETERS_946964771156066804 = {SNode.class};
+  private static Class[] PARAMETERS_203908296139519699 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -16,11 +17,23 @@ public class CreateEditor_Function_Behavior {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "createEditor");
   }
 
+  public static SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
+    return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "getComponent");
+  }
+
   public static SNode call_getJavaMethod_946964771156066804(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804);
   }
 
+  public static SNode call_getPublicJavaMethod_203908296139519699(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699);
+  }
+
   public static SNode callSuper_getJavaMethod_946964771156066804(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804);
+  }
+
+  public static SNode callSuper_getPublicJavaMethod_203908296139519699(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699);
   }
 }

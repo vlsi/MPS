@@ -61,8 +61,8 @@ public class TemplatePersistentPropertyType_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefCell_izasee_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("propertyTemplate");
-    provider.setNoTargetText("<no propertyTemplate>");
+    provider.setRole("template");
+    provider.setNoTargetText(" ");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TemplatePersistentPropertyType_Editor._Inline_izasee_a2a());
     editorCell = provider.createEditorCell(editorContext);
