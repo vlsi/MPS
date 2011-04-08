@@ -9,11 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -31,9 +28,10 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
       }
     } else {
       {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), equationInfo.getErrorString(), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6125943271043465172", null, errorTarget);
-        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
+        SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6125943271043532195", 0, null);
+        _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), _info_12389875345);
       }
     }
   }
@@ -43,7 +41,7 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), true);
     } else {
-      result_14532009 = false;
+      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true));
     }
     return result_14532009;
   }
