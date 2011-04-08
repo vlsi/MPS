@@ -4,9 +4,6 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">920eaa0e-ecca-46bc-bee7-4e5c59213dd6(Testbench)</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
