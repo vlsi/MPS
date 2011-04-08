@@ -46,7 +46,7 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpfo.1174655989549" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1174658244528">
-      <property name="name" nameId="tpck.1169194664001" value="Replacer" />
+      <property name="name" nameId="tpck.1169194664001" value="ReplacerTemplate" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1174659580870">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatchVariableReference_ReplaceExpression" />
@@ -939,8 +939,8 @@
     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1174658315503">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpfo.1174656254036" />
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1223371963246">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1174658244528" resolveInfo="Replacer" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6036754119531313881">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cpb3.8235206972880844181" resolveInfo="Replacer" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1178550080958" />
   </root>
