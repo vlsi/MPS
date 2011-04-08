@@ -42,6 +42,7 @@
     <property name="unix.startup.file" value="build/mps.sh" />
     <property name="windows.startup.file" value="build/mps.bat" />
     <property name="vmoptions.file" value="build/mps.vmoptions" />
+    <property name="help.file" value="help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
@@ -53,6 +54,7 @@
       <zipfileset file="${windows.startup.file}" prefix="${root.folder}" />
       <zipfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
       <zipfileset file="${vmoptions.file}" fullpath="${root.folder}/bin/mps.exe.vmoptions" />
+      <zipfileset file="${help.file}" prefix="${root.folder}/help" />
     </zip>
   </target>
   <target name="unix.dist">
@@ -62,6 +64,7 @@
     <property name="tar.gz.file" value="MPS-${build.number}-linux.tar.gz" />
     <property name="unix.startup.file" value="build/mps.sh" />
     <property name="vmoptions.file" value="build/mps.vmoptions" />
+    <property name="help.file" value="help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
@@ -70,6 +73,7 @@
       </tarfileset>
       <tarfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
       <tarfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
+      <tarfileset file="${help.file}" prefix="${root.folder}/help" />
     </tar>
   </target>
   <target name="macos.dist">
@@ -85,6 +89,7 @@
     <property name="zip.file" value="MPS-${build.number}-macos.zip" />
     <property name="root.folder" value="MPS" />
     <property name="root.folder.dest" value="${root.folder}.app" />
+    <property name="help.file" value="help/mpshelp_mac.jar" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
@@ -100,6 +105,7 @@
       <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOs" filemode="755" />
       <zipfileset file="${unix.startup.script}" prefix="${root.folder.dest}" filemode="755" />
       <zipfileset file="${scripts.folder}/mps.vmoptions" prefix="${root.folder.dest}/bin" />
+      <zipfileset file="${help.file}" fullpath="${root.folder.dest}/help/mpshelp.jar" />
     </zip>
     <delete file="${info.plist.tmp}" />
   </target>
@@ -127,6 +133,8 @@
     <property name="jre.unzipped.path" value="${deploy.dir}" />
     <property name="installer.relative.path" value="${deploy.dir}/MPS-${build.number}-windows.exe" />
     <property name="mps_home" value="${basedir}" />
+    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="help.folder.tmp" value="${deploy.dir}/help" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <property name="installer" location="${installer.relative.path}" />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
@@ -139,6 +147,7 @@
     <copy file="${license.src.path}" tofile="${license.path}" />
     <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
     <copy file="${vmoptions.file}" tofile="${root.folder}/bin/${vmoptions.exe.file.name}" />
+    <copy file="${help.file}" todir="${help.folder.tmp}" />
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
       <arg file="${nsis.script.path.tmp}/../install.nsh" />
       <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
@@ -147,6 +156,7 @@
       <arg file="${application.icon}" />
       <arg file="${jre.unzipped.path}/jre" />
       <arg file="${homepage.icon}" />
+      <arg file="${help.folder.tmp}" />
       <classpath>
         <pathelement path="${mps_home}/platform/buildlanguage/languages/distrib/classes" />
         <pathelement path="${mps_home}/core/runtime/classes" />
