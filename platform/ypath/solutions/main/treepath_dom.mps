@@ -6,8 +6,8 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <import index="kvg6" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom(JDK/org.w3c.dom@java_stub)" version="-1" />
-  <import index="bgk1" modelUID="f:java_stub#d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c#jetbrains.mps.ypath.runtime.dom(jetbrains.mps.ypath/jetbrains.mps.ypath.runtime.dom@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="81z3" modelUID="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -173,7 +173,7 @@
             <property name="name" nameId="tpck.1169194664001" value="children" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888363380">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888363382">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bgk1.~NodeListIterableAdapter%d&lt;init&gt;(org%dw3c%ddom%dNodeList)" resolveInfo="NodeListIterableAdapter" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="81z3.2295870045929265784" resolveInfo="NodeListIterableAdapter" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628910834">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ClosureParameterReference" typeId="tpee.1153179560115" id="1175084694192">
                     <link role="closureParameter" roleId="tpee.1153179615652" targetNodeId="1175083364499" resolveInfo="node" />
@@ -198,10 +198,10 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1187792810192">
                 <node role="expression" roleId="tpee.1070534934092" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888349092">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888349094">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bgk1.~ChainedIterable%d&lt;init&gt;(java%dlang%dIterable%d%d%d)" resolveInfo="ChainedIterable" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="81z3.2295870045929266200" resolveInfo="ChainedIterable" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888415539">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888415560">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bgk1.~NamedNodeMapIterableAdapter%d&lt;init&gt;(org%dw3c%ddom%dNamedNodeMap)" resolveInfo="NamedNodeMapIterableAdapter" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="81z3.2295870045929268233" resolveInfo="NamedNodeMapIterableAdapter" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628918943">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ClosureParameterReference" typeId="tpee.1153179560115" id="1187792810196">
                             <link role="closureParameter" roleId="tpee.1153179615652" targetNodeId="1175083364499" />
