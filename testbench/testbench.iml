@@ -22,7 +22,6 @@
     <orderEntry type="module" module-name="collections" />
     <orderEntry type="module" module-name="generator" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="regexp" />
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples" />

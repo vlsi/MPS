@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.regexp.sandbox" uuid="b70ae433-615c-4653-a45f-2c98bb543cee" compileInMPS="false" java-stubs-enabled="true">
+<solution name="jetbrains.mps.baseLanguage.regexp.sandbox" uuid="b70ae433-615c-4653-a45f-2c98bb543cee" compileInMPS="true" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
