@@ -445,12 +445,15 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.vcs.diff.MergeSymmetricChangesTest.class,
   jetbrains.mps.vfs.VfsTest.class,
   jetbrains.mps.workbench.ProjectCreationTest.class,
-  jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
+  jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class
+/*
   tests.Escaping_Test.class,
   tests.Match_Test.class,
   tests.PerlReplace_Test.class,
   tests.Replace_Test.class,
-  tests.Statements_Test.class})
+  tests.Statements_Test.class
+*/
+  })
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
