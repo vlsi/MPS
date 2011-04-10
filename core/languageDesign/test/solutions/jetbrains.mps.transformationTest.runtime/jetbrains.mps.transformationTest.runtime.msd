@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${solution_descriptor}/tests_gen">
+<solution name="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${solution_descriptor}/tests_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

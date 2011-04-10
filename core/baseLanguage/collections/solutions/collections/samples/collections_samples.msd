@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections_samples" uuid="927a8eff-b060-4b84-9bf9-95534382f566" compileInMPS="false" java-stubs-enabled="true">
+<solution name="collections_samples" uuid="927a8eff-b060-4b84-9bf9-95534382f566" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.collections.samples" />
   </models>

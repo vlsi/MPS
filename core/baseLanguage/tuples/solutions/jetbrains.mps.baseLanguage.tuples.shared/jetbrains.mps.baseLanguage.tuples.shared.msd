@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.tuples.shared" uuid="02f6bdf3-0540-48d1-8551-1d3619454f47" compileInMPS="true" java-stubs-enabled="true">
+<solution name="jetbrains.mps.baseLanguage.tuples.shared" uuid="02f6bdf3-0540-48d1-8551-1d3619454f47" compileInMPS="true" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

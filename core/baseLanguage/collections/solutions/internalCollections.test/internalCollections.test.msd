@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="internalCollections.test" uuid="b5660d3a-8a0d-4815-881b-7c884f61c9c7" compileInMPS="false" java-stubs-enabled="true">
+<solution name="internalCollections.test" uuid="b5660d3a-8a0d-4815-881b-7c884f61c9c7" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

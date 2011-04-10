@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.transformation.test.inputModels" uuid="cdd4e8a8-17c1-4f16-b054-27e94948bd47" compileInMPS="false" java-stubs-enabled="true">
+<solution name="jetbrains.mps.transformation.test.inputModels" uuid="cdd4e8a8-17c1-4f16-b054-27e94948bd47" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.transformation.test.inputModels" />
   </models>

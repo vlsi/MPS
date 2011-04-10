@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.matrixLanguage.runtime" uuid="29b98b6d-4c16-4c58-a0bb-9645a5db33a6" compileInMPS="true" java-stubs-enabled="true">
+<solution name="jetbrains.mps.matrixLanguage.runtime" uuid="29b98b6d-4c16-4c58-a0bb-9645a5db33a6" compileInMPS="true" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
