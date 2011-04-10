@@ -9,6 +9,9 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_x5qji9_b0a1a0 = Pattern.compile("abc", 0);
   private static Pattern REGEXP_x5qji9_b0a1a1 = Pattern.compile("\\((.*?)\\)", 0);
 
+  public SimpleReplace() {
+  }
+
   /*package*/ void simplestReplace() {
     String s = "";
     s = RegexpOperations.replace(s, REGEXP_x5qji9_b0a1a0, new _Replacer_a0a0b0a(SimpleReplace.this, null));

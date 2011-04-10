@@ -5,16 +5,16 @@ package jetbrains.mps.regexp.sandbox;
 import jetbrains.mps.baseLanguage.regexp.runtime.Replacer;
 import java.util.regex.Matcher;
 
-public class _Replacer_a0a2a0 implements Replacer {
+public class _Replacer_a0a0a0 implements Replacer {
   /*package*/ YYY _enclosingClass;
-  /*package*/ zClosureContext_a _closureContext;
+  /*package*/ Object _closureContext;
 
-  public _Replacer_a0a2a0(YYY enclosingClass, Object closureContext) {
+  public _Replacer_a0a0a0(YYY enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
-    this._closureContext = (zClosureContext_a) closureContext;
+    this._closureContext = (Object) closureContext;
   }
 
   public String replace(Matcher matcher) {
-    return "" + null.i;
+    return "" + 0;
   }
 }

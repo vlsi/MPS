@@ -12,7 +12,7 @@ public class ABC {
   public void abc() {
     int tmp = 10;
     double a = 1;
-    Matrix<Double> abc = new Matrix<Double>(new Double[][]{{Double.valueOf(tmp) ,Double.valueOf(20)}, {Double.valueOf(233330) ,Double.valueOf(this.foo() * 2)}, {Double.valueOf(2) ,Double.valueOf(a) ,Double.valueOf(12)}}, new _FieldOperations.DoubleOperations());
+    Matrix<Double> abc = new Matrix<Double>(new Double[][]{{Double.valueOf(tmp), Double.valueOf(20)}, {Double.valueOf(233330), Double.valueOf(this.foo() * 2)}, {Double.valueOf(2), Double.valueOf(a), Double.valueOf(12)}}, new _FieldOperations.DoubleOperations());
     abc = abc.transpose();
     abc = abc.mult(abc.transpose());
     abc = abc.mult(new Double(10.0));

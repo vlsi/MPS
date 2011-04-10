@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_90k4hu_b0a1a1 = Pattern.compile("(?:(\\w+)@(\\w+))", 0);
 
   /*package*/ void matchWithPredefined() {
-    String s;
+    String s = "";
     {
       Pattern _pattern_0 = REGEXP_90k4hu_a0a0b0a;
       Matcher _matcher_0 = _pattern_0.matcher(s);
@@ -23,7 +23,7 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   }
 
   /*package*/ void replaceWithPredefined() {
-    String s;
+    String s = "";
     s = RegexpOperations.replace(s, REGEXP_90k4hu_b0a1a1, new _Replacer_a0a0b0b_0(PredefinedRegexps.this, null));
   }
 }

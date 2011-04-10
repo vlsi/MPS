@@ -6,12 +6,9 @@ import java.util.regex.Pattern;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
 /*package*/ class YYY {
-  private static Pattern REGEXP_y3g_b0d0a = Pattern.compile("abc", 0);
+  private static Pattern REGEXP_y3g_b0a0a = Pattern.compile("abc", 0);
 
   /*package*/ void m() {
-    final zClosureContext_a _zClosureContext_a = new zClosureContext_a();
-    int i;
-    <!TextGen not found for 'jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression'!>.matcher(3).matches();
-    RegexpOperations.replace("", REGEXP_y3g_b0d0a, new _Replacer_a0a2a0(YYY.this, _zClosureContext_a));
+    RegexpOperations.replace("", REGEXP_y3g_b0a0a, new _Replacer_a0a0a0(YYY.this, null));
   }
 }

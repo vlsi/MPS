@@ -16,20 +16,21 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class AClssssssssssssssssass {
   public static void fossso() {
     new AClssssssssssssssssass.QuotationClass_axt657_a0a0a().createNode("ererer" + 4);
-    do {
+    {
       SNode matchedNode_axt657_b0a = new AClssssssssssssssssass.QuotationClass_axt657_a0a0a1a0().createNode();
       {
         boolean matches_axt657_a1a0 = false;
-        GeneratedMatchingPattern matchingPattern = new AClssssssssssssssssass.Pattern_axt657_a0a1a1a1a0();
-        matches_axt657_a1a0 = matchingPattern.match(matchedNode_axt657_b0a);
+        {
+          GeneratedMatchingPattern matchingPattern = new AClssssssssssssssssass.Pattern_axt657_a0a0a1a1a1a0();
+          matches_axt657_a1a0 = matchingPattern.match(matchedNode_axt657_b0a);
+        }
         if (matches_axt657_a1a0) {
           {
             SNode d = ((SNode) matchingPattern.getFieldValue("patternVar_class"));
           }
-          break;
         }
       }
-    } while (false);
+    }
   }
 
   public static void bar() {
@@ -70,17 +71,17 @@ public class AClssssssssssssssssass {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
     }
   }
 
-  public static class Pattern_axt657_a0a1a1a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_axt657_a0a0a1a1a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_class;
 
-    public Pattern_axt657_a0a1a1a1a0() {
+    public Pattern_axt657_a0a0a1a1a1a0() {
     }
 
     public boolean match(SNode nodeToMatch) {
