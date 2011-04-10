@@ -1116,9 +1116,7 @@
                   </node>
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883030026">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="java-stubs-enabled" />
-                    <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883030027">
-                      <property name="defaultValue" nameId="tpj8.5496586556363449135" value="true" />
-                    </node>
+                    <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883030027" />
                   </node>
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883030028">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="generatorOutputPath" />

@@ -50,7 +50,7 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0g0c0a.setDontLoadClasses(result_8ckma3_a4a0a0g0c0a);
           final boolean result_8ckma3_a5a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
           result_8ckma3_a0a0g0c0a.setCompileInMPS(result_8ckma3_a5a0a0g0c0a);
-          final boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), true);
+          final boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), false);
           result_8ckma3_a0a0g0c0a.setEnableJavaStubs(result_8ckma3_a6a0a0g0c0a);
 
           if (StringUtils.isNotEmpty(solutionElement.getAttributeValue("generatorOutputPath"))) {
