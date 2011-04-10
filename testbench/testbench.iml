@@ -33,7 +33,6 @@
     <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntry type="module" module-name="behavior" />
     <orderEntry type="module" module-name="blTypes" />
-    <orderEntry type="module" module-name="buildLanguage" />
     <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
