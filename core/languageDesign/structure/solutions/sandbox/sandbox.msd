@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="structure.sandbox" uuid="a484d5c4-ad73-4c68-9a06-12d9b1d92437" compileInMPS="false" java-stubs-enabled="true">
+<solution name="structure.sandbox" uuid="a484d5c4-ad73-4c68-9a06-12d9b1d92437" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

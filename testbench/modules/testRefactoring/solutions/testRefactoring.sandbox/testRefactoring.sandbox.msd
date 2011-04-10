@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="testRefactoring.sandbox" uuid="24106442-1955-413a-8c2b-cc6969a4b149" compileInMPS="false" java-stubs-enabled="true">
+<solution name="testRefactoring.sandbox" uuid="24106442-1955-413a-8c2b-cc6969a4b149" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
