@@ -650,13 +650,6 @@
           <property name="name" nameId="tpck.1169194664001" value="saveTransient" />
           <node role="type" roleId="cx9y.1239462974287" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3868725017587287662" />
         </node>
-        <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="127305800529659394">
-          <property name="final" nameId="cx9y.1240400839614" value="false" />
-          <property name="name" nameId="tpck.1169194664001" value="generationStrategy" />
-          <node role="type" roleId="cx9y.1239462974287" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="127305800529659396">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2340850238541857249" resolveInfo="GenerationStrategy" />
-          </node>
-        </node>
         <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="127305800529659459">
           <property name="final" nameId="cx9y.1240400839614" value="false" />
           <property name="name" nameId="tpck.1169194664001" value="generationOptions" />

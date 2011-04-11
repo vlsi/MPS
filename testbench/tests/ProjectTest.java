@@ -1,6 +1,7 @@
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
@@ -209,28 +210,22 @@ public class ProjectTest {
 
   @Test
   @Order(1)
-  public void generateProject () throws Exception {
-    HELPER.generate(fixture.token);
-    List<String> genErrors = HELPER.getGenerationErrors(fixture.token);
-    Assert.assertTrue("Generation errors:\n"+HELPER.formatErrors(genErrors),genErrors.isEmpty());
-    List<String> genWarns = HELPER.getGenerationWarnings(fixture.token);
-    Assert.assertTrue("Generation warnings:\n"+HELPER.formatErrors(genWarns),genWarns.isEmpty());
+  public void buildProject () throws Exception {
+    if (!HELPER.build(fixture.token)){
+      List<String> errors = HELPER.buildErrors(fixture.token);
+      Assert.assertTrue("Build errors:\n"+IterableUtils.join(errors, "\n"),errors.isEmpty());
+      List<String> warns = HELPER.buildWarns(fixture.token);
+      Assert.assertTrue("Build warnings:\n"+IterableUtils.join(warns, "\n"),warns.isEmpty());
+    }
   }
 
   @Test
   @Order(2)
   public void diffProject () throws Exception {
     List<String> diffReport = HELPER.getDiffReport(fixture.token);
-    Assert.assertTrue("Difference:\n"+HELPER.formatErrors(diffReport),diffReport.isEmpty());
+    Assert.assertTrue("Difference:\n"+ IterableUtils.join(diffReport, "\n"),diffReport.isEmpty());
   }
 
-  @Test
-  @Order(3)
-  public void compileProject () throws Exception {
-    HELPER.compile(fixture.token);
-    List<String> compErrors = HELPER.getCompilationErrors(fixture.token);
-    Assert.assertTrue("Compilation errors:\n"+HELPER.formatErrors(compErrors),compErrors.isEmpty());
-  }
 
   @Test
   @Order(4)

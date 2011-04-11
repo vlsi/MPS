@@ -113,7 +113,6 @@ public class BuildMakeService implements IMakeService {
             code.invoke(jmon);
           }
         }, "Build", true, BuildMakeService.this.context.getProject());
-
       }
 
       public void setup(IParametersPool pool) {

@@ -3,10 +3,17 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/lib/java-diff-utils-1.2.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">920eaa0e-ecca-46bc-bee7-4e5c59213dd6(Testbench)</dependency>
+    <dependency reexport="false">77c9a130-703f-4530-bf21-6580757768d0(jetbrains.mps.build.antsupport)</dependency>
+    <dependency reexport="false">696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">1c0088d4-c911-46d4-ace1-4500911173b5(jetbrains.mps.workbench.make)</dependency>

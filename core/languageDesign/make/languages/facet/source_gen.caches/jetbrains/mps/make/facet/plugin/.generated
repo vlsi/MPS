@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="qy6by3ua9d556ef403acrlxdim3ln9">
+<dependencies version="2" modelHash="1e5sca9qcckkd4e048i26p5myy2yqrs">
   <dep model="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins(jetbrains.mps.lang.plugin#1203080439937/jetbrains.mps.plugins@java_stub)" />
   <dep model="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins.pluginparts.custom(jetbrains.mps.lang.plugin#1203080439937/jetbrains.mps.plugins.pluginparts.custom@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -96,8 +96,7 @@
     <file name="Facet_ApplicationPlugin.java" />
     <file name="Facet_ProjectPlugin.java" />
   </common>
-  <source id="4853833103870841534" name="Generate" hash="-bu0w7xcwdqde0847vu288id9830ugrk">
-    <dep root="2340850238541857249" />
+  <source id="4853833103870841534" name="Generate" hash="-wp7l9e9eeq9gwzi40a3iu8s1ln4yty">
     <dep root="2383991756720431443" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" />

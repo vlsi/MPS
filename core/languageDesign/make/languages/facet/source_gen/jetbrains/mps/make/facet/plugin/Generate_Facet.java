@@ -391,41 +391,33 @@ public class Generate_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
-    public static class Variables extends MultiTuple._3<Boolean, MakeGenerationStrategy, GenerationOptions.OptionsBuilder> {
+    public static class Variables extends MultiTuple._2<Boolean, GenerationOptions.OptionsBuilder> {
       public Variables() {
         super();
       }
 
-      public Variables(Boolean saveTransient, MakeGenerationStrategy generationStrategy, GenerationOptions.OptionsBuilder generationOptions) {
-        super(saveTransient, generationStrategy, generationOptions);
+      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions) {
+        super(saveTransient, generationOptions);
       }
 
       public Boolean saveTransient(Boolean value) {
         return super._0(value);
       }
 
-      public MakeGenerationStrategy generationStrategy(MakeGenerationStrategy value) {
-        return super._1(value);
-      }
-
       public GenerationOptions.OptionsBuilder generationOptions(GenerationOptions.OptionsBuilder value) {
-        return super._2(value);
+        return super._1(value);
       }
 
       public Boolean saveTransient() {
         return super._0();
       }
 
-      public MakeGenerationStrategy generationStrategy() {
+      public GenerationOptions.OptionsBuilder generationOptions() {
         return super._1();
       }
 
-      public GenerationOptions.OptionsBuilder generationOptions() {
-        return super._2();
-      }
-
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_c.Variables assignFrom(Tuples._3<Boolean, MakeGenerationStrategy, GenerationOptions.OptionsBuilder> from) {
+      public Generate_Facet.Target_fi61u2_c.Variables assignFrom(Tuples._2<Boolean, GenerationOptions.OptionsBuilder> from) {
         return (Generate_Facet.Target_fi61u2_c.Variables) super.assign(from);
       }
     }

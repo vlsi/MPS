@@ -66,6 +66,7 @@
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="migration" />
     <orderEntry type="module" module-name="mpseditor" />
+    <orderEntry type="library" name="java-diff-utils" level="project" />
   </component>
 </module>
 
