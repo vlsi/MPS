@@ -43,6 +43,14 @@ public class SearchResults<T> implements UsagesList {
     return mySearchResults;
   }
 
+  public Set<T> getResultObjects() {
+    Set<T> resultObjects = new HashSet<T>();
+    for (SearchResult<T> searchResult : mySearchResults) {
+      resultObjects.add(searchResult.getObject());
+    }
+    return resultObjects;
+  }
+
   public void addAll(SearchResults<T> sr) {
     mySearchedNodes.addAll(sr.mySearchedNodes);
     mySearchResults.addAll(sr.mySearchResults);
