@@ -15,14 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 1/28/11
- * Time: 6:53 PM
- */
-
-
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
@@ -41,7 +33,6 @@ import java.util.*;
 
 public class NodeTypesComponentNew implements INodeTypesComponent {
   private SNode myRootNode;
-  private TypeChecker myTypeChecker;
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
 
@@ -61,7 +52,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
   public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
     myRootNode = rootNode;
-    myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
     myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
@@ -70,10 +60,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
   public TypeCheckingContext getTypeCheckingContext() {
     return myTypeCheckingContext;
-  }
-
-  public TypeChecker getTypeChecker() {
-    return myTypeChecker;
   }
 
   public void clear() {
@@ -327,7 +313,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   private class MyModelListener extends SModelAdapter {
-    @Override
     public void eventFired(SModelEvent event) {
       myEvents.add(event);
     }
