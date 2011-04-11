@@ -23,6 +23,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -42,7 +43,7 @@ import javax.swing.JComponent;
     )
   }
 )
-public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
+public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IGenerationSettings {
 
 
   public static GenerationSettings getInstance() {
@@ -159,6 +160,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
   }
 
+  @Override
   public boolean isParallelGenerator() {
     return myState.myParallelGenerator;
   }
@@ -167,6 +169,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myParallelGenerator = useNewGenerator;
   }
 
+  @Override
   public boolean isStrictMode() {
     return myState.myStrictMode;
   }
@@ -175,6 +178,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myStrictMode = strictMode;
   }
 
+  @Override
   public int getNumberOfParallelThreads() {
     return myState.myNumberOfParallelThreads;
   }
@@ -183,6 +187,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myNumberOfParallelThreads = coreNumber;
   }
 
+  @Override
   public int getPerformanceTracingLevel() {
     return myState.myPerformanceTracingLevel;
   }
@@ -191,6 +196,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myPerformanceTracingLevel = performanceTracingLevel;
   }
 
+  @Override
   public int getNumberOfModelsToKeep() {
     return myState.myNumberOfModelsToKeep;
   }
@@ -199,6 +205,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myNumberOfModelsToKeep = numberOfModelsToKeep;
   }
 
+  @Override
   public boolean isShowInfo() {
     return myState.myShowInfo;
   }
@@ -207,6 +214,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myShowInfo = showInfo;
   }
 
+  @Override
   public boolean isShowWarnings() {
     return myState.myShowWarnings;
   }
@@ -215,6 +223,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myShowWarnings = showWarnings;
   }
 
+  @Override
   public boolean isKeepModelsWithWarnings() {
     return myState.myKeepModelsWithWarnings;
   }
@@ -223,6 +232,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
 
+  @Override
   public boolean isIncremental() {
     return myState.myIncremental;
   }
@@ -231,6 +241,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myIncremental = isIncremental;
   }
 
+  @Override
   public boolean isIncrementalUseCache() {
     return myState.myIncrementalUseCache;
   }

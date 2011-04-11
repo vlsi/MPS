@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Binaries_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -87,7 +88,11 @@ public class Binaries_Facet implements IFacet {
                   return Sequence.fromIterable(((MResource) res).models()).<Tuples._2<IFile, IFile>>translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
                     public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
                       SModel model = smd.getSModel();
-                      IFile outputRoot = FileSystem.getInstance().getFileByPath(module.getOutputFor(smd));
+                      String output = module.getOutputFor(smd);
+                      IFile outputRoot = (pool.parameters(Target_8acy7z_a.this.getName(), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile() != null ?
+                        pool.parameters(Target_8acy7z_a.this.getName(), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile().invoke(output) :
+                        FileSystem.getInstance().getFileByPath(output)
+                      );
                       final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                       final FilesDelta fd = new FilesDelta(outputDir);
                       ListSequence.fromList(deltaList).addElement(fd);
@@ -162,7 +167,30 @@ public class Binaries_Facet implements IFacet {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
+    }
+
+    public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile) {
+        super(pathToFile);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
+        return super._0(value);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public Binaries_Facet.Target_8acy7z_a.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
+        return (Binaries_Facet.Target_8acy7z_a.Parameters) super.assign(from);
+      }
     }
   }
 }

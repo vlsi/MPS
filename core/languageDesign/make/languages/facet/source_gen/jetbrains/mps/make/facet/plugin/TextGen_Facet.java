@@ -63,7 +63,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate"), new IFacet.Name("Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -97,8 +97,11 @@ public class TextGen_Facet implements IFacet {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-
-                final IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
+                String output = gres.module().getOutputFor(gres.model());
+                final IFile targetDir = (pool.parameters(new ITarget.Name("copyBinaries"), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile() != null ?
+                  pool.parameters(new ITarget.Name("copyBinaries"), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile().invoke(output) :
+                  FileSystem.getInstance().getFileByPath(output)
+                );
                 final IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
                 final FilesDelta targetDelta = new FilesDelta(targetDir);
                 Sequence.fromIterable(gres.retainedModels()).visitAll(new IVisitor<SModelDescriptor>() {
@@ -161,7 +164,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("copyBinaries"), new ITarget.Name("generate")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

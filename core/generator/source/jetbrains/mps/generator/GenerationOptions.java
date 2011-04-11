@@ -117,6 +117,14 @@ public class GenerationOptions {
     return new OptionsBuilder();
   }
 
+  public static OptionsBuilder fromSettings(IGenerationSettings settings) {
+    return new OptionsBuilder().
+      strictMode(settings.isStrictMode()).
+      generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
+      reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep());
+  }
+
+
   public boolean isKeepOutputModel() {
     return myKeepOutputModel;
   }
