@@ -116,10 +116,10 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
       component.dispose();
     }
 
-    final Project ideaProject = myProject;
+    assert !myProject.isDisposed();
+
     for (final BaseGeneratedTool tool : myTools) {
-      if (ideaProject.isDisposed()) return;
-      if (!myInitializedTools.contains(tool)) return;
+      if (!myInitializedTools.contains(tool)) continue;
       try {
         tool.dispose();
       } catch (Throwable t) {

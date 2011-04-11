@@ -26,6 +26,17 @@ public class ModelRepository_Tool extends GeneratedTool {
     super(project, "Model Repository Viewer", -1, ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
+  public void init(Project project) {
+    super.init(project);
+    ModelRepository_Tool.this.myComponent = new ModelRepositoryComponent();
+    ModelRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
+    ModelRepository_Tool.this.myPanel.add(ModelRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(new CloseAction(ModelRepository_Tool.this));
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+    ModelRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
+  }
+
   public void makeAvailable() {
     super.makeAvailable();
     ModelRepository_Tool.this.myComponent.install();
@@ -35,16 +46,6 @@ public class ModelRepository_Tool extends GeneratedTool {
   public void makeUnavailable() {
     super.makeUnavailable();
     ModelRepository_Tool.this.myComponent.uninstall();
-  }
-
-  public void init(Project project) {
-    ModelRepository_Tool.this.myComponent = new ModelRepositoryComponent();
-    ModelRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
-    ModelRepository_Tool.this.myPanel.add(ModelRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(ModelRepository_Tool.this));
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    ModelRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
   public JComponent getComponent() {

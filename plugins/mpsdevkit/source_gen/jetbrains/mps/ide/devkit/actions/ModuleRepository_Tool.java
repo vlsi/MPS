@@ -26,6 +26,17 @@ public class ModuleRepository_Tool extends GeneratedTool {
     super(project, "Module Repository Viewer", -1, ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
+  public void init(Project project) {
+    super.init(project);
+    ModuleRepository_Tool.this.myComponent = new ModuleRepositoryComponent();
+    ModuleRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
+    ModuleRepository_Tool.this.myPanel.add(ModuleRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(new CloseAction(ModuleRepository_Tool.this));
+    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+    ModuleRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
+  }
+
   public void makeAvailable() {
     super.makeAvailable();
     ModuleRepository_Tool.this.myComponent.install();
@@ -35,19 +46,6 @@ public class ModuleRepository_Tool extends GeneratedTool {
   public void makeUnavailable() {
     super.makeUnavailable();
     ModuleRepository_Tool.this.myComponent.uninstall();
-  }
-
-  public void dispose() {
-  }
-
-  public void init(Project project) {
-    ModuleRepository_Tool.this.myComponent = new ModuleRepositoryComponent();
-    ModuleRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
-    ModuleRepository_Tool.this.myPanel.add(ModuleRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(ModuleRepository_Tool.this));
-    JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    ModuleRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
   public JComponent getComponent() {
