@@ -444,6 +444,39 @@
     </scopeInfo>
     <unitInfo nodeId="1733398552130474119" fileName="RuleUtil.java" startLine="15" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.generator.impl.RuleUtil" />
   </root>
+  <root nodeId="263434549788570114">
+    <nodeInfo nodeId="263434549788570125" fileName="RootTemplateAnnotator.java" startLine="26" startPosition="36" endLine="27" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="263434549788570146" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="52" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="263434549788717052" fileName="RootTemplateAnnotator.java" startLine="36" startPosition="215" endLine="37" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="20" startPosition="68" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotator#()V" />
+    <nodeInfo nodeId="263434549788685425" fileName="RootTemplateAnnotator.java" startLine="35" startPosition="159" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="263434549788570158" fileName="RootTemplateAnnotator.java" startLine="34" startPosition="80" endLine="39" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570121" fileName="RootTemplateAnnotator.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="263434549788570152" fileName="RootTemplateAnnotator.java" startLine="33" startPosition="37" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="88" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
+    <nodeInfo nodeId="263434549788570133" fileName="RootTemplateAnnotator.java" startLine="30" startPosition="31" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <scopeInfo nodeId="263434549788570120" fileName="RootTemplateAnnotator.java" startLine="21" startPosition="34" endLine="21" endPosition="34" />
+    <scopeInfo nodeId="263434549788570196" fileName="RootTemplateAnnotator.java" startLine="45" startPosition="34" endLine="45" endPosition="34" />
+    <scopeInfo nodeId="263434549788570124" fileName="RootTemplateAnnotator.java" startLine="26" startPosition="36" endLine="27" endPosition="37" />
+    <scopeInfo nodeId="263434549788685426" fileName="RootTemplateAnnotator.java" startLine="36" startPosition="215" endLine="37" endPosition="336" />
+    <scopeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="20" startPosition="68" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="263434549788570170" fileName="RootTemplateAnnotator.java" startLine="35" startPosition="159" endLine="38" endPosition="13" />
+    <scopeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="263434549788570157" fileName="RootTemplateAnnotator.java" startLine="34" startPosition="80" endLine="39" endPosition="11" />
+    <scopeInfo nodeId="263434549788570121" fileName="RootTemplateAnnotator.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="263434549788570145" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="52" endLine="40" endPosition="9">
+      <varInfo nodeId="263434549788570147" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="88" endLine="42" endPosition="0">
+      <varInfo nodeId="263434549788570143" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="263434549788570132" fileName="RootTemplateAnnotator.java" startLine="30" startPosition="31" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="263434549788570139" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="71" endLine="42" endPosition="5" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
+    <unitInfo nodeId="263434549788570114" fileName="RootTemplateAnnotator.java" startLine="20" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
+  </root>
   <root nodeId="4814657600604696799">
     <nodeInfo nodeId="4814657600604696802" fileName="DismissTopMappingRuleException.java" startLine="7" startPosition="73" endLine="8" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageType" />
     <nodeInfo nodeId="4814657600604696811" fileName="DismissTopMappingRuleException.java" startLine="10" startPosition="97" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

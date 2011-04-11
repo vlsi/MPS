@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
 
 import java.lang.ref.WeakReference;

@@ -113,6 +113,10 @@
     <component>
       <implementation-class>jetbrains.mps.generator.ModelGenerationStatusManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.generator.impl.RootTemplateAnnotator</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

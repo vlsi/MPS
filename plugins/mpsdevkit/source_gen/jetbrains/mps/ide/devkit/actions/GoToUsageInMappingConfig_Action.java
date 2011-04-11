@@ -16,7 +16,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.generator.plugin.actions.MappingConfigFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
