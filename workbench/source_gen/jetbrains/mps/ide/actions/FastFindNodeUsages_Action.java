@@ -17,8 +17,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
-import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -80,8 +78,8 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
         ((SNode) MapSequence.fromMap(_params).get("node"))
       );
       IResultProvider provider = (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") ?
-        FindUtils.makeProvider(new NodeUsages_Finder(), new ConceptInstances_Finder()) :
-        FindUtils.makeProvider(new NodeUsages_Finder())
+        FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"), FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder")) :
+        FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"))
       );
       SearchQuery query = new SearchQuery(operationNode, GlobalScope.getInstance());
       FastFindNodeUsages_Action.this.getTool(_params).findUsages(provider, query, true, false, false, "No usages for that node");

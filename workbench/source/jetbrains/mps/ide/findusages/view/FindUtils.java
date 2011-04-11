@@ -43,24 +43,6 @@ import java.util.List;
 public class FindUtils {
   private static final Logger LOG = Logger.getLogger(FindUtils.class);
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final Collection<SNode> nodes, final IScope scope, final IFinder... finders) {
-    final SearchResults[] results = new SearchResults[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SearchResults result = new SearchResults();
-        for (SNode node : nodes) {
-          if (indicator != null && indicator.isCanceled()) break;
-          SearchResults singleRes = makeProvider(finders).getResults(new SearchQuery(node, scope), indicator);
-          result.getSearchedNodes().addAll(singleRes.getSearchedNodes());
-          result.getSearchResults().addAll(singleRes.getSearchResults());
-          result.removeDuplicates();
-        }
-        results[0] = result;
-      }
-    });
-    return results[0];
-  }
-
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);

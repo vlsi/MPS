@@ -123,7 +123,7 @@
   <unitInfo fileName="AddToFavorites_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavorites_Action" />
   <unitInfo fileName="SetModuleFolder_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.SetModuleFolder_Action" />
   <unitInfo fileName="CloneModel_Action.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneModel_Action" />
-  <unitInfo fileName="FastFindNodeUsages_Action.java" startLine="27" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
+  <unitInfo fileName="FastFindNodeUsages_Action.java" startLine="25" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
   <unitInfo fileName="ShowParameters_Action.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowParameters_Action" />
   <unitInfo fileName="GoToNodeById_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
   <unitInfo fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneRoot_Action" />
@@ -2481,16 +2481,16 @@
     <scopeInfo nodeId="5033107305426732540" fileName="CutNode_Action.java" startLine="88" startPosition="100" endLine="98" endPosition="7" />
   </root>
   <root nodeId="5033107305426734988">
-    <nodeInfo nodeId="5033107305426735002" fileName="FastFindNodeUsages_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426736109" fileName="FastFindNodeUsages_Action.java" startLine="85" startPosition="8" endLine="86" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426736136" fileName="FastFindNodeUsages_Action.java" startLine="86" startPosition="84" endLine="87" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426736125" fileName="FastFindNodeUsages_Action.java" startLine="95" startPosition="69" endLine="96" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426735019" fileName="FastFindNodeUsages_Action.java" startLine="77" startPosition="9" endLine="81" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426735889" fileName="FastFindNodeUsages_Action.java" startLine="81" startPosition="8" endLine="85" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#(Ljava/util/Map;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
-    <scopeInfo nodeId="5033107305426735001" fileName="FastFindNodeUsages_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="67" />
-    <scopeInfo nodeId="5033107305426736124" fileName="FastFindNodeUsages_Action.java" startLine="95" startPosition="69" endLine="96" endPosition="112" />
-    <scopeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="5033107305426735002" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426736109" fileName="FastFindNodeUsages_Action.java" startLine="83" startPosition="8" endLine="84" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426736136" fileName="FastFindNodeUsages_Action.java" startLine="84" startPosition="84" endLine="85" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426736125" fileName="FastFindNodeUsages_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426735019" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="9" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7228605397000733622" fileName="FastFindNodeUsages_Action.java" startLine="79" startPosition="8" endLine="83" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#(Ljava/util/Map;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
+    <scopeInfo nodeId="5033107305426735001" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="67" />
+    <scopeInfo nodeId="5033107305426736124" fileName="FastFindNodeUsages_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="112" />
+    <scopeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
   </root>
   <root nodeId="5033107305426766812">
     <nodeInfo nodeId="5033107305426767034" fileName="FindSpecificNodeUsages_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

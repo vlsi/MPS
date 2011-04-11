@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" file="DefaultSearchOptionsComponent.java">
+    <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="com.intellij.openapi.components.State" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.components.Storage" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
+    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+  </dependency>
+</dependenciesRoot>
+
