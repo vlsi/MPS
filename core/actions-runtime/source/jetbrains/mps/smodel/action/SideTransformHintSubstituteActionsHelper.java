@@ -24,6 +24,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.QueryMethodGenerated;
 
@@ -131,11 +132,16 @@ public class SideTransformHintSubstituteActionsHelper {
       if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
         if (conceptsToRemove.contains(((SNode) parameterObject))) {
           it.remove();
+          continue;
         }
       } else if (parameterObject instanceof AbstractConceptDeclaration) {
         if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
           it.remove();
+          continue;
         }
+      }
+      if (parameterObject instanceof SNode && !ModelConstraintsManager.getInstance().canBeAncestor(mySourceNode.getParent(), (SNode) parameterObject, myContext)) {
+        it.remove();
       }
     }
 
