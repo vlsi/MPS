@@ -325,7 +325,7 @@
     <classNode dependClassName="com.intellij.util.xmlb.annotations.Tag" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="jetbrains.mps.execution.runtime.ConsoleProcessListener" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
@@ -333,7 +333,7 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.execution.runtime.OutputRedirector" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.runtime.OutputRedirector" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.io.File" />

@@ -18,7 +18,7 @@ package jetbrains.mps.runconfigurations.runner;
 import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import jetbrains.mps.execution.runtime.BaseMpsRunConfiguration;
+import jetbrains.mps.execution.configurations.runtime.BaseMpsRunConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSProgramRunner extends DefaultProgramRunner {

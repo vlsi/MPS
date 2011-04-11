@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.settings.runtime.IPersistentConfiguration" file="IPersistentConfiguration.java">
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode extendsClassName="com.intellij.openapi.util.JDOMExternalizable" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" file="ITemplatePersistentConfiguration.java">
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
+    <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.IPersistentConfiguration" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" file="SettingsEditorEx.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
+  </dependency>
+</dependenciesRoot>
+

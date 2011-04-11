@@ -982,7 +982,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestEventsDispatcher" />
-    <classNode dependClassName="jetbrains.mps.execution.runtime.OutputRedirector" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.runtime.OutputRedirector" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener" file="UnitTestProcessListener.java">
     <classNode dependClassName="java.lang.String" />

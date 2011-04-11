@@ -4,6 +4,8 @@ package jetbrains.mps.execution.lib;
 
 import java.io.File;
 import java.util.List;
+
+import jetbrains.mps.execution.commands.runtime.ProcessHandlerBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
@@ -11,7 +13,6 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
-import jetbrains.mps.execution.runtime.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
