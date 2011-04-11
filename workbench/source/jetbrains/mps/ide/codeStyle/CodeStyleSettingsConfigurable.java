@@ -111,7 +111,7 @@ public class CodeStyleSettingsConfigurable implements PersistentStateComponent<M
   }
 
   public String getHelpTopic() {
-    return null;
+    return "reference.settingsdialog.IDE.globalcodestyle";
   }
 
   public String getId() {
