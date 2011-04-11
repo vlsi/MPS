@@ -71,7 +71,10 @@ public class WorkbenchUndoHandler implements UndoHandler {
   }
 
   public void flushCommand(Project project) {
-    if (project == null || myActions.isEmpty()) return;
+    if (project == null || myActions.isEmpty()) {
+      myActions.clear();
+      return;
+    }
     UndoManager undoManager = UndoManager.getInstance(project);
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));
