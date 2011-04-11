@@ -200,7 +200,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       NonTypesystemRule_Runtime currentRule = myRuleAndNodeBeingChecked.o2;
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesToErrorsMap = myNodesAndNTRulesToErrors.get(currentNode);
       if (rulesToErrorsMap == null) {
-        rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
+        rulesToErrorsMap = new THashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
         myNodesAndNTRulesToErrors.put(currentNode, rulesToErrorsMap);
       }
       Set<IErrorReporter> errorsSet = rulesToErrorsMap.get(currentRule);
@@ -223,7 +223,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       if (propertyToDependOn == null) continue;
       Map<NonTypesystemRule_Runtime, Set<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
+        dependentNodes = new THashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
       Set<SNode> nodes = dependentNodes.get(rule);
@@ -242,7 +242,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       if (nodeToDependOn == null) continue;
       Map<NonTypesystemRule_Runtime, Set<SNode>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
+        dependentNodes = new THashMap<NonTypesystemRule_Runtime, Set<SNode>>(1);
         mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
       Set<SNode> nodes = dependentNodes.get(rule);
