@@ -16,55 +16,63 @@
 
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.INodeTypesComponent;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.util.Pair;
 
-import java.util.Set;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.04.2010
- * Time: 16:41:04
- */
 public class AffectingRulesFinder implements IFinder {
-  @Override
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SNode term = (SNode) query.getObjectHolder().getObject();
-    List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
-    //todo get by editor
-    TypeCheckingContext typeCheckingContext =
-      TypeContextManager.getInstance().getContextForEditedRootNode(term.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
-    INodeTypesComponent component = typeCheckingContext.getBaseNodeTypesComponent();
-    if (component != null) {
-        Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(term);
-        if (rulesIds != null) {
-          for (Pair<String, String> ruleId : rulesIds) {
-            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
-            if (modelDescriptor == null) {
-              continue;
-            }
-            SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
-            if (rule != null) {
-              rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));
-            }
-          }
-        }
+    SNode root = term.getContainingRoot();
+
+    ITypeContextOwner owner = new MyTypeContextOwner();
+    TypeContextManager manager = TypeContextManager.getInstance();
+    TypeCheckingContext context = manager.getOrCreateContext(root, owner, true);
+    INodeTypesComponent component = context.getBaseNodeTypesComponent();
+
+    try{
+      List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
+      if (component == null) return createResult(term, rules);
+
+      Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(term);
+      if (rulesIds == null) return createResult(term, rules);
+
+      for (Pair<String, String> ruleId : rulesIds) {
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
+        if (modelDescriptor == null) continue;
+
+        SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
+        if (rule == null) continue;
+
+        rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));
+      }
+      return createResult(term, rules);
+    } finally {
+      manager.removeOwnerForRootNodeContext(root,owner);
     }
-    return new SearchResults<SNode>(CollectionUtil.set(term), rules);
+  }
+
+  private SearchResults<SNode> createResult(SNode node, List<SearchResult<SNode>> results) {
+    return new SearchResults<SNode>(CollectionUtil.set(node), results);
+  }
+
+
+  private static class MyTypeContextOwner implements ITypeContextOwner {
   }
 }

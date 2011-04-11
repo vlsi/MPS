@@ -213,10 +213,6 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  public IPerformanceTracer getPerformanceTracer() {
-    return myPerformanceTracer;
-  }
-
   public <T> T computeWithTrace(Computable<T> c, String taskName) {
     if (myPerformanceTracer != null) {
       try {
@@ -227,19 +223,6 @@ public class TypeChecker implements ApplicationComponent {
       }
     } else {
       return c.compute();
-    }
-  }
-
-  public void runWithTrace(Runnable r, String taskName) {
-    if (myPerformanceTracer != null) {
-      try {
-        myPerformanceTracer.push(taskName, true);
-        r.run();
-      } finally {
-        myPerformanceTracer.pop();
-      }
-    } else {
-      r.run();
     }
   }
 

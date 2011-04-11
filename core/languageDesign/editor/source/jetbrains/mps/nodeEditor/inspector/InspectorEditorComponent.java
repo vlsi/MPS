@@ -22,17 +22,17 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
-
-import javax.swing.JComponent;
-import java.util.List;
-
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JComponent;
+import java.util.List;
+
 public class InspectorEditorComponent extends EditorComponent {
+  private TypeContextManager myTypeManager = null;
+  private SNode myRoot;
 
   public InspectorEditorComponent() {
     super(null);
@@ -67,6 +67,7 @@ public class InspectorEditorComponent extends EditorComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myNode = node;
+        myRoot = myNode == null ? null : myNode.getContainingRoot();
         setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
         if (node == null) {
           setOperationContext(null);
@@ -77,7 +78,7 @@ public class InspectorEditorComponent extends EditorComponent {
         reinitEditor();
         repaint();
       }
-    });    
+    });
   }
 
   @NotNull
@@ -110,14 +111,17 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
+  //todo use super
   public TypeCheckingContext getTypeCheckingContext() {
-    if (myNode == null) return null;
-    SNode root = myNode.getContainingRoot();
-    if (root == null) return null;
-    return TypeContextManager.getInstance().getContextForEditedRootNode(root, TypeContextManager.DEFAULT_OWNER);
+    if (myRoot == null) return null;
+    myTypeManager = TypeContextManager.getInstance();
+    return myTypeManager.getOrCreateContext(myRoot, this, true);
   }
 
   @Override
+  //todo use super
   protected void disposeTypeCheckingContext() {
+    if (myTypeManager == null) return;
+    myTypeManager.removeOwnerForRootNodeContext(myRoot, this);
   }
 }
