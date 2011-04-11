@@ -306,7 +306,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return null;
+    return "preferences.editor";
   }
 
   public JComponent createComponent() {
