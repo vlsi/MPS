@@ -297,7 +297,7 @@
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.JavaNode_Command" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor" />
@@ -310,8 +310,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode dependClassName="jetbrains.mps.ide.common.JavaConsoleCreator" />
@@ -323,6 +325,7 @@
     <classNode dependClassName="com.intellij.util.xmlb.annotations.Tag" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.ConsoleProcessListener" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
@@ -330,8 +333,7 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.execution.runtime.OutputRedirector" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.io.File" />
@@ -343,7 +345,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="com.intellij.execution.Executor" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig" />

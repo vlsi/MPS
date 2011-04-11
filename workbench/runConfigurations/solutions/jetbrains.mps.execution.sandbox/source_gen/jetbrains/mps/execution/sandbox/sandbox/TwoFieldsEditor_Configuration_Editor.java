@@ -6,6 +6,8 @@ import jetbrains.mps.execution.runtime.SettingsEditorEx;
 import javax.swing.JTextField;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class TwoFieldsEditor_Configuration_Editor extends SettingsEditorEx<TwoFieldsEditor_Configuration> {
@@ -20,11 +22,11 @@ public class TwoFieldsEditor_Configuration_Editor extends SettingsEditorEx<TwoFi
 
   @NotNull
   public JPanel createEditor() {
-    JPanel panel = new JPanel();
+    JPanel panel = new JPanel(new GridBagLayout());
     field1 = new JTextField();
     field2 = new JTextField();
-    panel.add(field1);
-    panel.add(field2);
+    panel.add(field1, LayoutUtil.createFieldConstraints(0));
+    panel.add(field2, LayoutUtil.createFieldConstraints(1));
     return panel;
   }
 

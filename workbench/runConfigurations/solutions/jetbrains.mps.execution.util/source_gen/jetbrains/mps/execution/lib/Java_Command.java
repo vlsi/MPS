@@ -83,7 +83,7 @@ public class Java_Command {
   public ProcessHandler createProcess() throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), Java_Command.ps());
-    if (myProgramParameter.length() >= Java_Command.getMaxCommandLine()) {
+    if (check_yvpt_a0c0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
       tmpFile.deleteOnExit();
@@ -185,5 +185,12 @@ public class Java_Command {
       }
     }
     return ListSequence.fromList(homes).first();
+  }
+
+  private static int check_yvpt_a0c0a(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
   }
 }

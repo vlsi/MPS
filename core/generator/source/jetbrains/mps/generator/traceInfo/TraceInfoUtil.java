@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.traceInfo;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.Mapper2;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -90,6 +91,7 @@ public class TraceInfoUtil {
     });
   }
 
+  @Nullable
   public static SNode getNodes(String stacktraceLine, String position) {
     int lastDot = stacktraceLine.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
@@ -103,6 +105,7 @@ public class TraceInfoUtil {
     return null;
   }
 
+  @Nullable
   public static String getGeneratedFileName(SNode node) {
     SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
@@ -110,9 +113,26 @@ public class TraceInfoUtil {
       return null;
     }
     PositionInfo positionInfo = debugInfo.getPositionForNode(node.getId());
-    if (positionInfo == null) {
+    if (positionInfo != null) {
+      return model.getLongName() + "." + positionInfo.getFileName();
+    }
+    UnitPositionInfo unitForNode = debugInfo.getUnitForNode(node.getId());
+    if (unitForNode != null) {
+      return model.getLongName() + "." + unitForNode.getFileName();
+    }
+    return null;
+  }
+
+  public static String getUnitName(SNode node) {
+    SModel model = node.getModel();
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
+    if (debugInfo == null) {
       return null;
     }
-    return model.getLongName() + "." + positionInfo.getFileName();
+    UnitPositionInfo unitForNode = debugInfo.getUnitForNode(node.getId());
+    if (unitForNode != null) {
+      return unitForNode.getUnitName();
+    }
+    return null;
   }
 }

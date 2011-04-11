@@ -22,13 +22,16 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.JavaNode_Command" file="JavaNode_Command.java">
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
-    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.Java_Command" file="Java_Command.java">
@@ -70,7 +73,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
@@ -78,10 +80,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.execution.runtime.IPersistentConfiguration" />
   </dependency>

@@ -2,15 +2,18 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.sandbox.sandbox.Main" file="Main.java">
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.awt.FlowLayout" />
+    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode extendsClassName="javax.swing.JFrame" />
   </dependency>
   <dependency className="jetbrains.mps.execution.sandbox.sandbox.SomeInvalid" file="SomeInvalid.java">
@@ -39,10 +42,12 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration_Editor" file="TwoFieldsEditor_Configuration_Editor.java">
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
-    <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.JTextField" />
     <classNode extendsClassName="jetbrains.mps.execution.runtime.SettingsEditorEx" />
   </dependency>
 </dependenciesRoot>

@@ -6,8 +6,10 @@ import java.io.File;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 
 public class JavaNode_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
@@ -47,10 +49,20 @@ public class JavaNode_Command {
   }
 
   public ProcessHandler createProcess(SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setClassName(TraceInfoUtil.getGeneratedFileName(node)).createProcess();
+    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setClassName(JavaNode_Command.getClassName(node)).createProcess();
   }
 
   public static IDebugger getDebugger() {
     return Java_Command.getDebugger();
+  }
+
+  private static String getClassName(final SNode node) {
+    final Wrappers._T<String> className = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        className.value = TraceInfoUtil.getUnitName(node);
+      }
+    });
+    return className.value;
   }
 }

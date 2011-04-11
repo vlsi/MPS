@@ -195,6 +195,20 @@ public class DebugInfo {
   }
 
   @Nullable
+  public UnitPositionInfo getUnitForNode(String nodeId) {
+    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+      public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
+        return it.getUnitPositions();
+      }
+    })) {
+      if (eq_exfyrk_a0a0a0k(element.getNodeId(), nodeId)) {
+        return element;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
   public String getUnitNameForLine(String file, int line) {
     // TODO duplication! 
     List<UnitPositionInfo> resultList = getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
@@ -303,6 +317,13 @@ public class DebugInfo {
   }
 
   private static boolean eq_exfyrk_a0a0a0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0k(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

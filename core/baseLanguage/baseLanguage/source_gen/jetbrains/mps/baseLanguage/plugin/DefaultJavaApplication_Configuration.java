@@ -37,10 +37,10 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.execution.runtime.OutputRedirector;
+import jetbrains.mps.execution.lib.JavaNode_Command;
 import java.io.File;
+import jetbrains.mps.execution.runtime.ConsoleProcessListener;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -50,6 +50,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -158,13 +159,10 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
             handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
               public ProcessHandler invoke() {
                 try {
-                  final Wrappers._T<String> className = new Wrappers._T<String>();
-                  ModelAccess.instance().runReadAction(new Runnable() {
-                    public void run() {
-                      className.value = INamedConcept_Behavior.call_getFqName_1213877404258(node);
-                    }
-                  });
-                  return new Java_Command().setClassPath(Java_Command.getClasspath(node)).setVirtualMachineParameter(javaRunParameters.getVMParameters()).setClassName(className.value).setProgramParameter(javaRunParameters.getProgramParameters()).setWorkingDirectory(new File(javaRunParameters.getWorkingDirectory())).createProcess();
+                  return OutputRedirector.redirect(new JavaNode_Command().setVirtualMachineParameter(javaRunParameters.getVMParameters()).setProgramParameter(javaRunParameters.getProgramParameters()).setWorkingDirectory((javaRunParameters.getWorkingDirectory() == null ?
+                    null :
+                    new File(javaRunParameters.getWorkingDirectory())
+                  )).createProcess(node), new ConsoleProcessListener(consoleView_22042010));
                 } catch (ExecutionException e) {
                   ex.value = e;
                   return null;
