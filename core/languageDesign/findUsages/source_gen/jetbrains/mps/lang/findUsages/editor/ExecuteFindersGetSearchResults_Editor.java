@@ -126,7 +126,7 @@ public class ExecuteFindersGetSearchResults_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_yvubny_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("progress");
-    provider.setNoTargetText("<no progress>");
+    provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

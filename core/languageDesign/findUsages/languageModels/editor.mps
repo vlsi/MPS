@@ -305,6 +305,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="," />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6366407517031970678">
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3b.6366407517031970112" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6366407517031970673">
