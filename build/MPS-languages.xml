@@ -1025,7 +1025,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.buildlanguage">
-    <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -1033,12 +1032,8 @@
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/generator/xml/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/xml/template" />
-      <zipfileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.buildlanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.custommps">

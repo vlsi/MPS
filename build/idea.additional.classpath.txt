@@ -9,6 +9,7 @@ core/typesystemEngine/classes
 core/typesystemIntegration/classes
 core/make-runtime/classes
 core/kernel/classes
+core/actions-runtime/classes
 workbench/typesystemUi/classes
 MPSPlugin/apiclasses
 core/baseLanguage/baseLanguage/classes

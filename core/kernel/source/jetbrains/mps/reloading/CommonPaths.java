@@ -84,56 +84,16 @@ public class CommonPaths {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
 
-    IClassPathItem kernelClassPath = getMPSKernelClassPath();
-    if (kernelClassPath != null) {
-      result.add(kernelClassPath);
-    }
-
-    IClassPathItem generatorClassPath = getGeneratorEngineClasspath();
-    if (generatorClassPath != null) {
-      result.add(generatorClassPath);
-    }
-
-    IClassPathItem makeClassPath = getMakeRuntimeClasspath();
-    if (makeClassPath != null) {
-      result.add(makeClassPath);
-    }
-
-    IClassPathItem typesystemEngineClassPath = getTypesystemEngineClasspath();
-    if (typesystemEngineClassPath != null) {
-      result.add(typesystemEngineClassPath);
-    }
-
-    IClassPathItem typesystemIntegrationClassPath = getTypesystemIntegrationClasspath();
-    if (typesystemIntegrationClassPath != null) {
-      result.add(typesystemIntegrationClassPath);
-    }
-
-    IClassPathItem debugClassPath = getMPSDebugClassPath();
-    if (debugClassPath != null) {
-      result.add(debugClassPath);
-    }
-
-    IClassPathItem debugAPIClassPath = getMPSDebugAPIClassPath();
-    if (debugAPIClassPath != null) {
-      result.add(debugAPIClassPath);
-    }
-
-    IClassPathItem supportClassPath = getMPSSupportClassPath();
-    if (supportClassPath != null) {
-      result.add(supportClassPath);
-    }
-
-    IClassPathItem workbenchClassPath = getWorkbenchClassPath();
-    if (workbenchClassPath != null) {
-      result.add(getWorkbenchClassPath());
-    }
-
-    IClassPathItem javaConverterClassPath = getJavaConverterClasspath();
-    if (javaConverterClassPath != null) {
-      result.add(javaConverterClassPath);
-    }
-
+    addIfExists(result, "/core/kernel/classes");
+    addIfExists(result, "/core/generator/classes");
+    addIfExists(result, "/core/make-runtime/classes");
+    addIfExists(result, "/core/typesystemEngine/classes");
+    addIfExists(result, "/core/typesystemIntegration/classes");
+    addIfExists(result, "/core/debug/classes");
+    addIfExists(result, "/core/debug-api/classes");
+    addIfExists(result, "/MPSPlugin/apiclasses");
+    addIfExists(result, "/workbench/classes");
+    addIfExists(result, "/core/actions-runtime/classes");
     addIfExists(result, "/core/runtime/classes");
     addIfExists(result, "/workbench/typesystemUi/classes");
     addIfExists(result, "/lib/platform-api.jar");
@@ -185,111 +145,6 @@ public class CommonPaths {
     }
 
     LOG.error("Can't find mps classpath");
-    return null;
-  }
-
-  private static IClassPathItem getMPSKernelClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "kernel" + File.separator + "classes";
-    if (new File(supportClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(supportClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getMPSDebugClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "debug" + File.separator + "classes";
-    if (new File(supportClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(supportClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getMPSDebugAPIClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "debug-api" + File.separator + "classes";
-    if (new File(supportClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(supportClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getMPSSupportClassPath() {
-    String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
-      + File.separator + "apiclasses";
-    if (new File(supportClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(supportClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getWorkbenchClassPath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
-      + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getJavaConverterClasspath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
-      + File.separator + "javaParser"
-      + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getGeneratorEngineClasspath() {
-    String generatorClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "generator"
-      + File.separator + "classes";
-    if (new File(generatorClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(generatorClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getTypesystemEngineClasspath() {
-    String generatorClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "typesystemEngine"
-      + File.separator + "classes";
-    if (new File(generatorClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(generatorClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getTypesystemIntegrationClasspath() {
-    String generatorClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "typesystemIntegration"
-      + File.separator + "classes";
-    if (new File(generatorClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(generatorClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getMakeRuntimeClasspath() {
-    String makeClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "make-runtime"
-      + File.separator + "classes";
-    if (new File(makeClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(makeClasses);
-    }
-
     return null;
   }
 
