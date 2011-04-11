@@ -38,11 +38,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
   private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
 
   public void addUndoableAction(SNodeUndoableAction action) {
-    Project project = CommandProcessor.getInstance().getCurrentCommandProject();
-    if (project == null) return;
-
-    UndoManager undoManager = UndoManager.getInstance(project);
-    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
+    if (!ModelAccess.instance().isInsideCommand()) return;
 
     myActions.add(action);
   }
