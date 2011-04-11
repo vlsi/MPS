@@ -228,16 +228,9 @@ public class TypeContextManager implements ApplicationComponent {
 
   private void clearDefaultOwners() {
     synchronized (myLock) {
-      Set<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>> entries =
-        new HashSet<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>>(myTypeCheckingContexts.entrySet());
-      for (Entry<SNode,Pair<TypeCheckingContext,List<ITypeContextOwner>>> entry : entries) {
-        SNode node = entry.getKey();
-        Pair<TypeCheckingContext, List<ITypeContextOwner>> value = entry.getValue();
-        value.o2.remove(DEFAULT_OWNER);
-        if (value.o2.isEmpty()) {
-          value.o1.dispose();
-          myTypeCheckingContexts.remove(node);
-        }
+      Set<SNode> nodes = myTypeCheckingContexts.keySet();
+      for (SNode  node: nodes){
+        removeOwnerForRootNodeContext(node, DEFAULT_OWNER);
       }
     }
   }
