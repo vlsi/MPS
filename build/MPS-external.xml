@@ -320,6 +320,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlUnitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove" />
@@ -335,8 +336,10 @@
     <antcall target="MPS-languages.pack.ypath.main" />
     <antcall target="MPS-languages.pack.ypath.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ypath" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ypath.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.bash" />
     <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.quickQuery.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gwt.client" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
