@@ -37,7 +37,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1434634659123763982", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "keyType", true), (SNode) SLinkOperations.getTarget(supertype, "keyType", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "keyType", true), (SNode) SLinkOperations.getTarget(supertype, "keyType", true), true, _info_12389875345);
       }
     }
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "valueType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
@@ -45,7 +45,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1434634659123764077", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "valueType", true), (SNode) SLinkOperations.getTarget(supertype, "valueType", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "valueType", true), (SNode) SLinkOperations.getTarget(supertype, "valueType", true), true, _info_12389875345);
       }
     }
   }
