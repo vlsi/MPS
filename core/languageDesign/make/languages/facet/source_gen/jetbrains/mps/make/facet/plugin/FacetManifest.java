@@ -16,6 +16,7 @@ public class FacetManifest {
     ListSequence.fromList(facets).addElement(new Generate_Facet());
     ListSequence.fromList(facets).addElement(new JavaCompile_Facet());
     ListSequence.fromList(facets).addElement(new Make_Facet());
+    ListSequence.fromList(facets).addElement(new ReloadClasses_Facet());
     ListSequence.fromList(facets).addElement(new TextGen_Facet());
   }
 

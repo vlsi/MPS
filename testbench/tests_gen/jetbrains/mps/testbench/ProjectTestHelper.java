@@ -178,6 +178,9 @@ public class ProjectTestHelper {
 
           Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.parameters(new ITarget.Name("configure"), Object.class);
           params._1(optBuilder);
+
+          Tuples._1<Boolean> cparams = (Tuples._1<Boolean>) ppool.parameters(new ITarget.Name("auxCompile"), Object.class);
+          cparams._0(true);
         }
       };
 
@@ -249,6 +252,10 @@ public class ProjectTestHelper {
         });
       }
       for (String name : Sequence.fromIterable(onames).intersect(Sequence.fromIterable(rnames))) {
+        if ("trace.info".equals(name)) {
+          continue;
+        }
+
         File onext = new File(orig, name);
         File rnext = new File(revd, name);
         if (onext.isDirectory() == rnext.isDirectory()) {
