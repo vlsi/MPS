@@ -16,6 +16,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

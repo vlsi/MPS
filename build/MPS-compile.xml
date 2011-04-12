@@ -69,6 +69,7 @@
     <path path="core/actions-runtime/classes" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
+    <path path="core/editor-runtime/classes" />
     <path path="core/generator/classes" />
     <path path="core/kernel/classes" />
     <path path="core/make-runtime/classes" />
@@ -422,6 +423,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -561,6 +563,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -701,6 +704,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -841,6 +845,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -981,6 +986,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1122,6 +1128,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1268,6 +1275,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1410,6 +1418,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1550,6 +1559,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1693,6 +1703,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1834,6 +1845,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -1976,6 +1988,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2116,6 +2129,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2256,11 +2270,11 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths">
-    <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
@@ -2397,6 +2411,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2537,6 +2552,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2676,6 +2692,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2822,6 +2839,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2963,6 +2981,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3116,6 +3135,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3268,6 +3288,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3419,6 +3440,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3569,6 +3591,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3709,6 +3732,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3849,6 +3873,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3989,6 +4014,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4129,6 +4155,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4269,6 +4296,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4408,6 +4436,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4551,6 +4580,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4691,6 +4721,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4830,6 +4861,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -4970,6 +5002,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5109,6 +5142,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5249,6 +5283,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5389,6 +5424,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5529,6 +5565,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5668,6 +5705,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5808,6 +5846,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -5947,6 +5986,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6087,6 +6127,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6232,6 +6273,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6379,6 +6421,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6520,6 +6563,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6671,6 +6715,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6813,6 +6858,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -6964,6 +7010,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7106,6 +7153,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7246,6 +7294,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7390,6 +7439,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7531,6 +7581,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7671,6 +7722,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7812,6 +7864,7 @@
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -7952,6 +8005,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -8091,6 +8145,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -8231,6 +8286,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -8372,6 +8428,7 @@
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="platform/ypath/solutions/test/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>

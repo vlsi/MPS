@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="analyzers" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

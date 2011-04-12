@@ -29,7 +29,6 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.StatusBarEx;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
@@ -1513,7 +1512,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void rebuildEditorContent() {
-    LOG.assertLog(ThreadUtils.isEventDispatchThread(), "You should do this in EDT");
+    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
 
     clearCaches();
     clearUserData();

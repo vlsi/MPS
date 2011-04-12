@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="actions" />
     <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

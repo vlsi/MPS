@@ -94,6 +94,7 @@ public class CommonPaths {
     addIfExists(result, "/MPSPlugin/apiclasses");
     addIfExists(result, "/workbench/classes");
     addIfExists(result, "/core/actions-runtime/classes");
+    addIfExists(result, "/core/editor-runtime/classes");
     addIfExists(result, "/core/runtime/classes");
     addIfExists(result, "/workbench/typesystemUi/classes");
     addIfExists(result, "/lib/platform-api.jar");

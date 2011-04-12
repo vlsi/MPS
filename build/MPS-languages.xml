@@ -674,9 +674,9 @@
   </target>
   <target name="pack.jetbrains.mps.lang.test.runtime">
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.test.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/jetbrains.mps.transformationTest.runtime.msd" prefix="module" />
-      <zipfileset dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset file="core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" prefix="module" />
+      <zipfileset dir="core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.textGen">
@@ -1181,7 +1181,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp">
-    <mkdir dir="platform/regexp/classes" />
     <mkdir dir="platform/regexp/classes_gen" />
     <mkdir dir="platform/regexp/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.regexp.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -1190,7 +1189,6 @@
       <zipfileset dir="platform/regexp/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="platform/regexp/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/regexp/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="platform/regexp/classes" />
       <zipfileset dir="platform/regexp/classes_gen" />
       <zipfileset dir="platform/regexp/classes" />
     </jar>

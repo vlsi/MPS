@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="idea-patch" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

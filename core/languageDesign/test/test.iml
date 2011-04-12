@@ -16,6 +16,7 @@
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="unitTest-runtime" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

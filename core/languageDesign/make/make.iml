@@ -35,6 +35,7 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 
