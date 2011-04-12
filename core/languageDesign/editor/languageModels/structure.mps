@@ -14,13 +14,12 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" />
-  <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
-  <import index="sq3w" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.style(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="ven7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -2181,7 +2180,7 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1161622981232">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1161622981233">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s7ft.~EditorContext" resolveInfo="EditorContext" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~EditorContext" resolveInfo="EditorContext" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1161622981234">
@@ -2915,7 +2914,7 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1176749854668">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1176794890268">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s7ft.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
       </node>
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1176749862944">
@@ -3144,8 +3143,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1221051468077">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1221051476610">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dFONT_STYLE" resolveInfo="FONT_STYLE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dFONT_STYLE" resolveInfo="FONT_STYLE" />
       </node>
     </node>
   </root>
@@ -3153,8 +3152,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703469851">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703469852">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dTEXT_COLOR" resolveInfo="TEXT_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dTEXT_COLOR" resolveInfo="TEXT_COLOR" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1186404568646">
@@ -3170,8 +3169,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703443814">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703448660">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dBACKGROUND_COLOR" resolveInfo="BACKGROUND_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dBACKGROUND_COLOR" resolveInfo="BACKGROUND_COLOR" />
       </node>
     </node>
   </root>
@@ -3179,8 +3178,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703461771">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703461772">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dBRACKETS_COLOR" resolveInfo="BRACKETS_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dBRACKETS_COLOR" resolveInfo="BRACKETS_COLOR" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1186413814629">
@@ -3206,8 +3205,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702083875">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702083876">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dSELECTABLE" resolveInfo="SELECTABLE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dSELECTABLE" resolveInfo="SELECTABLE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1186414942927">
@@ -3219,8 +3218,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702053365">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702053366">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dAUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dAUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1186414964929">
@@ -3236,8 +3235,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702014501">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702044051">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dDRAW_BORDER" resolveInfo="DRAW_BORDER" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dDRAW_BORDER" resolveInfo="DRAW_BORDER" />
       </node>
     </node>
   </root>
@@ -3276,8 +3275,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702059789">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702059790">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dEDITABLE" resolveInfo="EDITABLE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dEDITABLE" resolveInfo="EDITABLE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1186414958479">
@@ -3289,8 +3288,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703479915">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703479916">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dNULL_TEXT_COLOR" resolveInfo="NULL_TEXT_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dNULL_TEXT_COLOR" resolveInfo="NULL_TEXT_COLOR" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1187258725566">
@@ -3466,8 +3465,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703515607">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703515608">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dTEXT_BACKGROUND_COLOR" resolveInfo="TEXT_BACKGROUND_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dTEXT_BACKGROUND_COLOR" resolveInfo="TEXT_BACKGROUND_COLOR" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1214406454887">
@@ -3479,8 +3478,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703491746">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703491747">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dSELECTED_TEXT_BACKGROUND_COLOR" resolveInfo="SELECTED_TEXT_BACKGROUND_COLOR" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dSELECTED_TEXT_BACKGROUND_COLOR" resolveInfo="SELECTED_TEXT_BACKGROUND_COLOR" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1214406466687">
@@ -3515,8 +3514,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491327426">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491332601">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPADDING_LEFT" resolveInfo="PADDING_LEFT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPADDING_LEFT" resolveInfo="PADDING_LEFT" />
       </node>
     </node>
   </root>
@@ -3528,8 +3527,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491349683">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491353889">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
       </node>
     </node>
   </root>
@@ -3537,8 +3536,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702064900">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702064901">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dFIRST_POSITION_ALLOWED" resolveInfo="FIRST_POSITION_ALLOWED" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dFIRST_POSITION_ALLOWED" resolveInfo="FIRST_POSITION_ALLOWED" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215085187379">
@@ -3550,8 +3549,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702077186">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702077187">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dLAST_POSITION_ALLOWED" resolveInfo="LAST_POSITION_ALLOWED" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dLAST_POSITION_ALLOWED" resolveInfo="LAST_POSITION_ALLOWED" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215085197272">
@@ -3670,8 +3669,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1219226236604">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1219226236605">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dDRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dDRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1219226236606">
@@ -3748,8 +3747,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1223388842734">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1223388868719">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dSTRIKE_OUT" resolveInfo="STRIKE_OUT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dSTRIKE_OUT" resolveInfo="STRIKE_OUT" />
       </node>
     </node>
   </root>
@@ -3813,8 +3812,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491363829">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491369520">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPADDING_TOP" resolveInfo="PADDING_TOP" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPADDING_TOP" resolveInfo="PADDING_TOP" />
       </node>
     </node>
   </root>
@@ -3826,8 +3825,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491309950">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491315063">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPADDING_BOTTOM" resolveInfo="PADDING_BOTTOM" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPADDING_BOTTOM" resolveInfo="PADDING_BOTTOM" />
       </node>
     </node>
   </root>
@@ -3880,8 +3879,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233759108034">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233759122712">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPUNCTUATION_LEFT" resolveInfo="PUNCTUATION_LEFT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPUNCTUATION_LEFT" resolveInfo="PUNCTUATION_LEFT" />
       </node>
     </node>
   </root>
@@ -3893,8 +3892,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233759264978">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233759270401">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dPUNCTUATION_RIGHT" resolveInfo="PUNCTUATION_RIGHT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dPUNCTUATION_RIGHT" resolveInfo="PUNCTUATION_RIGHT" />
       </node>
     </node>
   </root>
@@ -3902,8 +3901,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233823521393">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233823532331">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dHORIZONTAL_GAP" resolveInfo="HORIZONTAL_GAP" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dHORIZONTAL_GAP" resolveInfo="HORIZONTAL_GAP" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1233825610829">
@@ -3915,8 +3914,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1235728439576">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1235728439577">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dBASE_LINE_CELL" resolveInfo="BASE_LINE_CELL" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dBASE_LINE_CELL" resolveInfo="BASE_LINE_CELL" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1235728439578">
@@ -3932,8 +3931,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1235999557292">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1235999566301">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dHORIZONTAL_ALIGN" resolveInfo="HORIZONTAL_ALIGN" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dHORIZONTAL_ALIGN" resolveInfo="HORIZONTAL_ALIGN" />
       </node>
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1235999920262">
@@ -3977,8 +3976,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1236266496796">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1236266567702">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dMATCHING_LABEL" resolveInfo="MATCHING_LABEL" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dMATCHING_LABEL" resolveInfo="MATCHING_LABEL" />
       </node>
     </node>
   </root>
@@ -4012,8 +4011,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237308006695">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237308006696">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dINDENT_LAYOUT_INDENT" resolveInfo="INDENT_LAYOUT_INDENT" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dINDENT_LAYOUT_INDENT" resolveInfo="INDENT_LAYOUT_INDENT" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1237307999225">
@@ -4025,8 +4024,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237308012276">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237308012277">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dINDENT_LAYOUT_NEW_LINE" resolveInfo="INDENT_LAYOUT_NEW_LINE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dINDENT_LAYOUT_NEW_LINE" resolveInfo="INDENT_LAYOUT_NEW_LINE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1237308012278">
@@ -4038,8 +4037,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237374854247">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237374854248">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dINDENT_LAYOUT_CHILDREN_NEWLINE" resolveInfo="INDENT_LAYOUT_CHILDREN_NEWLINE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dINDENT_LAYOUT_CHILDREN_NEWLINE" resolveInfo="INDENT_LAYOUT_CHILDREN_NEWLINE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1237375109781">
@@ -4051,8 +4050,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237385578943">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237385578944">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dINDENT_LAYOUT_ON_NEW_LINE" resolveInfo="INDENT_LAYOUT_ON_NEW_LINE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dINDENT_LAYOUT_ON_NEW_LINE" resolveInfo="INDENT_LAYOUT_ON_NEW_LINE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1237385578945">
@@ -4075,8 +4074,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1240251450434">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1240251450435">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dINDENT_LAYOUT_NO_WRAP" resolveInfo="INDENT_LAYOUT_NO_WRAP" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dINDENT_LAYOUT_NO_WRAP" resolveInfo="INDENT_LAYOUT_NO_WRAP" />
       </node>
     </node>
   </root>
@@ -4213,7 +4212,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4526149749187937572">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpc2.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
+      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.editor.structure.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
     </node>
   </root>
   <root id="280151408461567367">
@@ -4282,8 +4281,8 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="7620205565664606478">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4098449021143562584">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="sq3w.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="sq3w.~StyleAttributes%dDEFAULT_BASE_LINE" resolveInfo="DEFAULT_BASE_LINE" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ven7.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ven7.~StyleAttributes%dDEFAULT_BASE_LINE" resolveInfo="DEFAULT_BASE_LINE" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7620205565664606480">

@@ -22,10 +22,10 @@
   <import index="itiy" modelUID="f:java_stub#c72da2b9-7cce-4447-8389-f407dc1158b7#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <import index="ws6q" modelUID="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
   <import index="lxea" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
-  <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="a8em" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -1638,36 +1638,36 @@
                     <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1207318325531">
                       <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192527059" />
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325533">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_NONE" resolveInfo="KEY_MODIFIERS_NONE" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_NONE" resolveInfo="KEY_MODIFIERS_NONE" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325534">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL" resolveInfo="KEY_MODIFIERS_CTRL" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL" resolveInfo="KEY_MODIFIERS_CTRL" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325535">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_ALT" resolveInfo="KEY_MODIFIERS_ALT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_ALT" resolveInfo="KEY_MODIFIERS_ALT" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325536">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_SHIFT" resolveInfo="KEY_MODIFIERS_SHIFT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_SHIFT" resolveInfo="KEY_MODIFIERS_SHIFT" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325537">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_ALT" resolveInfo="KEY_MODIFIERS_CTRL_ALT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_ALT" resolveInfo="KEY_MODIFIERS_CTRL_ALT" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325538">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_SHIFT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_SHIFT" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325539">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_ALT_SHIFT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_CTRL_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_ALT_SHIFT" />
                       </node>
                       <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325540">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_MODIFIERS_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_ALT_SHIFT" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_MODIFIERS_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_ALT_SHIFT" />
                       </node>
                     </node>
                   </node>
@@ -1733,24 +1733,24 @@
                       <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1207318325552">
                         <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192523928" />
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325554">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_CODE_DIGIT" resolveInfo="KEY_CODE_DIGIT" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_CODE_DIGIT" resolveInfo="KEY_CODE_DIGIT" />
                         </node>
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325555">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_CODE_LETTER" resolveInfo="KEY_CODE_LETTER" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_CODE_LETTER" resolveInfo="KEY_CODE_LETTER" />
                         </node>
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325556">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_CODE_LETTER_OR_DIGIT" resolveInfo="KEY_CODE_LETTER_OR_DIGIT" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_CODE_LETTER_OR_DIGIT" resolveInfo="KEY_CODE_LETTER_OR_DIGIT" />
                         </node>
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325557">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_CODE_SPACE" resolveInfo="KEY_CODE_SPACE" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_CODE_SPACE" resolveInfo="KEY_CODE_SPACE" />
                         </node>
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1207318325558">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~EditorCellKeyMap%dKEY_CODE_CHAR" resolveInfo="KEY_CODE_CHAR" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~EditorCellKeyMap%dKEY_CODE_CHAR" resolveInfo="KEY_CODE_CHAR" />
                         </node>
                       </node>
                     </node>
@@ -1763,8 +1763,8 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="1207318325561">
                       <node role="argument" roleId="tp2q.1160666822012" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1207318325562">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="s7ft.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorCellKeyMap%dgetVirtualKeycodes()%cjava%dutil%dList" resolveInfo="getVirtualKeycodes" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qxeo.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorCellKeyMap%dgetVirtualKeycodes()%cjava%dutil%dList" resolveInfo="getVirtualKeycodes" />
                       </node>
                     </node>
                   </node>

@@ -14,8 +14,8 @@
   <import index="tpep" modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -777,8 +777,8 @@
                   <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1214399678011">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1214399678012">
                       <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1214399678013">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
                       </node>
                     </node>
                   </node>
@@ -2751,8 +2751,8 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4080258521670247400">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4080258521670247437">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4080258521670247438">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
                   </node>
                 </node>
               </node>
@@ -2770,8 +2770,8 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4080258521670325241">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4080258521670325242">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4080258521670325243">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
                   </node>
                 </node>
               </node>
@@ -2803,8 +2803,8 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4080258521670247414">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4080258521670247435">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4080258521670247436">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
                   </node>
                 </node>
               </node>
@@ -2839,8 +2839,8 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4080258521670325247">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4080258521670325248">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4080258521670325249">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSColors%dDARK_BLUE" resolveInfo="DARK_BLUE" />
                   </node>
                 </node>
               </node>

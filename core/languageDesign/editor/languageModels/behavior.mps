@@ -18,14 +18,14 @@
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="pexn" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.cellProviders(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
-  <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" version="-1" />
-  <import index="zjr9" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.lang.editor.cellProviders(jetbrains.mps.lang.editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" version="-1" />
-  <import index="q66k" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.cells(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="sq3w" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor.style(jetbrains.mps.lang.editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
+  <import index="sa6q" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" version="-1" />
+  <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="ax9q" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.cellProviders(MPS.Classpath/jetbrains.mps.lang.editor.cellProviders@java_stub)" version="-1" />
+  <import index="supv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="ven7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1161,8 +1161,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1216378375095">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1216378375096">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pexn.~CellProviderNameUtil%dgetProviderClassName(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProviderClassName" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pexn.~CellProviderNameUtil" resolveInfo="CellProviderNameUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sa6q.~CellProviderNameUtil%dgetProviderClassName(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProviderClassName" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="sa6q.~CellProviderNameUtil" resolveInfo="CellProviderNameUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1216378375097">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1216378375091" resolveInfo="something" />
             </node>
@@ -1959,11 +1959,11 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225468896231">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Class" resolveInfo="Class" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225468896232">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1225468896233">
-              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="s7ft.~MPSColors" resolveInfo="MPSColors" />
+              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="qxeo.~MPSColors" resolveInfo="MPSColors" />
             </node>
           </node>
         </node>
@@ -2278,11 +2278,11 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1221218590406">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1221218565593">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1221216499741">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorSettings%dgetInstance()%cjetbrains%dmps%dnodeEditor%dEditorSettings" resolveInfo="getInstance" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="s7ft.~EditorSettings" resolveInfo="EditorSettings" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorSettings%dgetInstance()%cjetbrains%dmps%dnodeEditor%dEditorSettings" resolveInfo="getInstance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qxeo.~EditorSettings" resolveInfo="EditorSettings" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1221218589149">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s7ft.~EditorSettings%dgetDefaultEditorFont()%cjava%dawt%dFont" resolveInfo="getDefaultEditorFont" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorSettings%dgetDefaultEditorFont()%cjava%dawt%dFont" resolveInfo="getDefaultEditorFont" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1221218599027">
@@ -2392,11 +2392,11 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1221054178030">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Class" resolveInfo="Class" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1221054192574">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s7ft.~MPSFonts" resolveInfo="MPSFonts" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~MPSFonts" resolveInfo="MPSFonts" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1221054210227">
-              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="s7ft.~MPSFonts" resolveInfo="MPSFonts" />
+              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="qxeo.~MPSFonts" resolveInfo="MPSFonts" />
             </node>
           </node>
         </node>
@@ -2763,8 +2763,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221472292004">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1221648852804">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1221648856891">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="s7ft.~MPSFonts" resolveInfo="MPSFonts" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="s7ft.~MPSFonts%dPLAIN" resolveInfo="PLAIN" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qxeo.~MPSFonts" resolveInfo="MPSFonts" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qxeo.~MPSFonts%dPLAIN" resolveInfo="PLAIN" />
           </node>
         </node>
       </node>
@@ -3888,8 +3888,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1223029997869">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1223030015886">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1223032144728">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zjr9.~ConceptPropertyCellProvider" resolveInfo="ConceptPropertyCellProvider" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zjr9.~ConceptPropertyCellProvider%dDEFAULT_FONT_STYLE" resolveInfo="DEFAULT_FONT_STYLE" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ax9q.~ConceptPropertyCellProvider" resolveInfo="ConceptPropertyCellProvider" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ax9q.~ConceptPropertyCellProvider%dDEFAULT_FONT_STYLE" resolveInfo="DEFAULT_FONT_STYLE" />
           </node>
         </node>
       </node>
@@ -5004,8 +5004,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221473513350">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1221473775235">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1221473848307">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="q66k.~EditorCell_Constant" resolveInfo="EditorCell_Constant" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="q66k.~EditorCell_Constant%dDEFAULT_FONT_STYLE" resolveInfo="DEFAULT_FONT_STYLE" />
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="supv.~EditorCell_Constant" resolveInfo="EditorCell_Constant" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="supv.~EditorCell_Constant%dDEFAULT_FONT_STYLE" resolveInfo="DEFAULT_FONT_STYLE" />
           </node>
         </node>
       </node>
@@ -5125,7 +5125,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239623990895" resolveInfo="attribute" />
                         </node>
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1239623990912">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sq3w.~StyleAttribute" resolveInfo="StyleAttribute" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ven7.~StyleAttribute" resolveInfo="StyleAttribute" />
                           <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1239623990913">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
                           </node>
@@ -5133,7 +5133,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1239623990914">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sq3w.~StyleAttribute%dcombine(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="combine" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ven7.~StyleAttribute%dcombine(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="combine" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1239623990915" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1239623990916" />
                     </node>
