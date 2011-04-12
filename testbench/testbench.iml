@@ -47,7 +47,6 @@
     <orderEntry type="module" module-name="findUsages" />
     <orderEntry type="module" module-name="ideUiLanguage" />
     <orderEntry type="module" module-name="intentions" />
-    <orderEntry type="module" module-name="javadoc" />
     <orderEntry type="module" module-name="logging" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="overloadedOperators" />

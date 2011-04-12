@@ -1,42 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Javadoc_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.Javadoc_Language" />
-  <unitInfo fileName="FieldDocComment_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment_AnnotationLink" />
-  <unitInfo fileName="MethodDocComment_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment_AnnotationLink" />
-  <unitInfo fileName="StaticFieldDocComment_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocComment_AnnotationLink" />
-  <unitInfo fileName="ClassifierDocComment_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment_AnnotationLink" />
-  <unitInfo fileName="DeprecatedBlockDocTag.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" />
-  <unitInfo fileName="FieldDocComment.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" />
-  <unitInfo fileName="InheritDocInlineDocTag.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag" />
-  <unitInfo fileName="CommentLinePart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart" />
-  <unitInfo fileName="BaseInlineDocTag.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag" />
-  <unitInfo fileName="BaseBlockDocTag.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag" />
-  <unitInfo fileName="BaseDocReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference" />
-  <unitInfo fileName="DocTypeParameterReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference" />
-  <unitInfo fileName="DocMethodParameterReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" />
-  <unitInfo fileName="StaticFieldDocReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference" />
-  <unitInfo fileName="FieldDocReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference" />
-  <unitInfo fileName="InlineTagCommentLinePart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" />
-  <unitInfo fileName="TextCommentLinePart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" />
-  <unitInfo fileName="SinceBlockDocTag.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag" />
-  <unitInfo fileName="VersionBlockDocTag.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag" />
-  <unitInfo fileName="ValueInlineDocTag.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag" />
-  <unitInfo fileName="ReturnBlockDocTag.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" />
-  <unitInfo fileName="AuthorBlockDocTag.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" />
-  <unitInfo fileName="BaseVariableDocReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference" />
-  <unitInfo fileName="ClassifierDocReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" />
-  <unitInfo fileName="MethodDocReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" />
-  <unitInfo fileName="BaseParameterReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" />
-  <unitInfo fileName="ParameterBlockDocTag.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" />
-  <unitInfo fileName="SeeBlockDocTag.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" />
-  <unitInfo fileName="ThrowsBlockDocTag.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" />
-  <unitInfo fileName="CodeInlineDocTag.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" />
-  <unitInfo fileName="ClassifierDocComment.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" />
-  <unitInfo fileName="CommentLine.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />
-  <unitInfo fileName="CodeSnippet.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet" />
-  <unitInfo fileName="HTMLElement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" />
-  <unitInfo fileName="LinkInlineDocTag.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" />
-  <unitInfo fileName="MethodDocComment.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" />
-  <unitInfo fileName="BaseDocComment.java" startLine="13" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" />
 </debugInfo>
 
