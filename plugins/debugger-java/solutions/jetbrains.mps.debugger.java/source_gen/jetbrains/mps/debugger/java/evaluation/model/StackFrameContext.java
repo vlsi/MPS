@@ -23,13 +23,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import com.sun.jdi.LocalVariable;
+import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.ObjectReference;
-import com.sun.jdi.Type;
 import com.sun.jdi.PrimitiveType;
 import com.sun.jdi.BooleanType;
 import com.sun.jdi.ByteType;
@@ -107,15 +107,26 @@ public class StackFrameContext extends EvaluationContext {
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
       public Boolean invoke(LocalVariable variable) {
         String name = variable.name();
+        Type jdiType = null;
         try {
-          SNode type = getMpsTypeFromJdiType(variable.type(), createClassifierType);
+          jdiType = variable.type();
+          SNode type = getMpsTypeFromJdiType(jdiType, createClassifierType);
           if (type == null) {
             LOG.warning("Could not deduce type for a variable " + name);
           } else {
             MapSequence.fromMap(result).put(name, type);
           }
         } catch (ClassNotLoadedException cne) {
-          LOG.warning("Exception when creating variable " + name, cne);
+          if (jdiType == null) {
+            SNode classifierType = createClassifierType.invoke(variable.typeName());
+            if (classifierType == null) {
+              LOG.warning("Could not deduce type for a variable " + name);
+            } else {
+              MapSequence.fromMap(result).put(name, classifierType);
+            }
+          } else {
+            LOG.warning("Exception when creating variable " + name, cne);
+          }
         }
         return false;
       }
