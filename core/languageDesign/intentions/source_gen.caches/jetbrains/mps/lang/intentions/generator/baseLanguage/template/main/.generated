@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7307qecxk1abh065r5k8vx8bz6q21vb">
+<dependencies version="2" modelHash="90bvj6cpwgatxu0f6q2j91rr265mjli">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-94n2b8uqx5vkme4z9vd9f2k2jriyibs" />
@@ -22,7 +22,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="2w6lnaip3m9p8mgh0mnorh6wzq1ar4u" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="bf15im9aomlldsovim9vnga3g69x6h" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-4l5yu1k4bjr5xzuj7y1peihvh02dheg" />
-  <common hash="3ulwvnmuqexl8aq3k84uvrwc63ynmmc">
+  <common hash="-ai2vpqmfp2lnxv8fd2kftvh3vc80f07">
     <dep root="1192798704064" />
     <dep root="1192802719764" />
     <dep root="3618415754251192127" />
@@ -56,10 +56,10 @@
   <source id="1192798704064" name="mc_main" hash="c8fmz9tiy43x6b2u1l2qwq5lfu687eq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1192802719764" name="IntentionClass" hash="dd97lvni92e1zj4r313kev8ohkf0bi4">
+  <source id="1192802719764" name="IntentionClass" hash="-4d7ymfb17gur5iv4lb26sqexq1yhpmd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1240407734051" name="reduce_IntentionParameter" hash="ax8k37r579g3eunzktuozb5c3e4yx5f">
+  <source id="1240407734051" name="reduce_IntentionParameter" hash="-eg3z5780cox7ndnn0ud5whq56288pv3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3618415754251192127" name="reduce_ChildFilterFunction" hash="75qtfz84i5xs8f25bbxkw3cnvkqk8pe">
