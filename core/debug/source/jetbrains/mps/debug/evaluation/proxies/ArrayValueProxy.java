@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
+import jetbrains.mps.debug.evaluation.EvaluationUtils.ThreadInvocatable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -57,7 +58,7 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
 
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
 
-    return handleInvocationExceptions(new Invocatable<IValueProxy>() {
+    return handleInvocationExceptions(new ThreadInvocatable<IValueProxy>(myThreadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         Value result = getArrayValue().invokeMethod(myThreadReference, method, argValues, 0);
