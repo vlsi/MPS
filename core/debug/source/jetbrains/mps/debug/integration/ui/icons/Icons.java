@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 public class Icons {
   public static final Icon VARIABLE_PRIMITIVE = new ImageIcon(Icons.class.getResource("db_primitive.png"));
   public static final Icon VARIABLE_OBJECT = new ImageIcon(Icons.class.getResource("db_object.png"));
+  public static final Icon RUNCONFIGURATION_REMOTE = new ImageIcon(Icons.class.getResource("db_runconfig_remote.png"));
   public static final Icon EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_exception_breakpoint.png"));
   public static final Icon DISABLED_EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_disabled_exception_breakpoint.png"));
   public static final Icon METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_method_breakpoint.png"));
