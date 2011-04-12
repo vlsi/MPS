@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="6056923343037305731">
+    <nodeInfo nodeId="6056923343037305734" fileName="MappingConfigFinder.java" startLine="22" startPosition="53" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
+    <nodeInfo nodeId="6056923343037305737" fileName="MappingConfigFinder.java" startLine="23" startPosition="32" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToFindUsages" />
+    <nodeInfo nodeId="6056923343037305748" fileName="MappingConfigFinder.java" startLine="26" startPosition="75" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305752" fileName="MappingConfigFinder.java" startLine="27" startPosition="28" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305765" fileName="MappingConfigFinder.java" startLine="31" startPosition="84" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305774" fileName="MappingConfigFinder.java" startLine="32" startPosition="77" endLine="33" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305780" fileName="MappingConfigFinder.java" startLine="33" startPosition="92" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037331224" fileName="MappingConfigFinder.java" startLine="37" startPosition="41" endLine="38" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6056923343037305812" fileName="MappingConfigFinder.java" startLine="40" startPosition="11" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305819" fileName="MappingConfigFinder.java" startLine="41" startPosition="31" endLine="42" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305832" fileName="MappingConfigFinder.java" startLine="43" startPosition="7" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305843" fileName="MappingConfigFinder.java" startLine="46" startPosition="37" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305865" fileName="MappingConfigFinder.java" startLine="49" startPosition="82" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305874" fileName="MappingConfigFinder.java" startLine="50" startPosition="73" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305879" fileName="MappingConfigFinder.java" startLine="51" startPosition="30" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6056923343037305880" fileName="MappingConfigFinder.java" startLine="55" startPosition="5" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6056923343037305896" fileName="MappingConfigFinder.java" startLine="59" startPosition="96" endLine="60" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305916" fileName="MappingConfigFinder.java" startLine="62" startPosition="104" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6056923343037305917" fileName="MappingConfigFinder.java" startLine="64" startPosition="7" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305922" fileName="MappingConfigFinder.java" startLine="65" startPosition="24" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037305909" fileName="MappingConfigFinder.java" startLine="61" startPosition="34" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6056923343037305740" fileName="MappingConfigFinder.java" startLine="25" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingConfigFinder#(Ljetbrains/mps/smodel/Generator;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6056923343037305855" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6056923343037305850" fileName="MappingConfigFinder.java" startLine="47" startPosition="57" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6056923343037305904" fileName="MappingConfigFinder.java" startLine="60" startPosition="53" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6056923343037305807" fileName="MappingConfigFinder.java" startLine="35" startPosition="48" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6056923343037305838" fileName="MappingConfigFinder.java" startLine="45" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6056923343037305787" fileName="MappingConfigFinder.java" startLine="34" startPosition="54" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6056923343037305887" fileName="MappingConfigFinder.java" startLine="58" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectChildrenThatMayHaveReferenceOnTemplate#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="6056923343037305756" fileName="MappingConfigFinder.java" startLine="30" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="6056923343037331221" fileName="MappingConfigFinder.java" startLine="37" startPosition="41" endLine="38" endPosition="108" />
+    <scopeInfo nodeId="6056923343037305915" fileName="MappingConfigFinder.java" startLine="62" startPosition="104" endLine="63" endPosition="17" />
+    <scopeInfo nodeId="6056923343037305747" fileName="MappingConfigFinder.java" startLine="26" startPosition="75" endLine="28" endPosition="42" />
+    <scopeInfo nodeId="6056923343037305811" fileName="MappingConfigFinder.java" startLine="40" startPosition="11" endLine="42" endPosition="74" />
+    <scopeInfo nodeId="6056923343037305864" fileName="MappingConfigFinder.java" startLine="49" startPosition="82" endLine="52" endPosition="16">
+      <varInfo nodeId="6056923343037305866" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305740" fileName="MappingConfigFinder.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
+      <varInfo nodeId="6056923343037305745" varName="nodeToFindUsages" />
+      <varInfo nodeId="6056923343037305743" varName="generator" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6056923343037305854" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="6056923343037305908" fileName="MappingConfigFinder.java" startLine="61" startPosition="34" endLine="66" endPosition="67" />
+    <scopeInfo nodeId="6056923343037305850" fileName="MappingConfigFinder.java" startLine="47" startPosition="57" endLine="54" endPosition="7">
+      <varInfo nodeId="6056923343037305852" varName="reference" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305904" fileName="MappingConfigFinder.java" startLine="60" startPosition="53" endLine="67" endPosition="5">
+      <varInfo nodeId="6056923343037305906" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305807" fileName="MappingConfigFinder.java" startLine="35" startPosition="48" endLine="43" endPosition="7">
+      <varInfo nodeId="6056923343037305809" varName="rule" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305842" fileName="MappingConfigFinder.java" startLine="46" startPosition="37" endLine="54" endPosition="7">
+      <varInfo nodeId="6056923343037305844" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305895" fileName="MappingConfigFinder.java" startLine="59" startPosition="96" endLine="67" endPosition="5">
+      <varInfo nodeId="6056923343037305897" varName="children" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305791" fileName="MappingConfigFinder.java" startLine="35" startPosition="48" endLine="44" endPosition="93" />
+    <scopeInfo nodeId="6056923343037305838" fileName="MappingConfigFinder.java" startLine="45" startPosition="5" endLine="55" endPosition="5">
+      <varInfo nodeId="6056923343037305840" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305787" fileName="MappingConfigFinder.java" startLine="34" startPosition="54" endLine="45" endPosition="5">
+      <varInfo nodeId="6056923343037305789" varName="mappingConfig" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305887" fileName="MappingConfigFinder.java" startLine="58" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="6056923343037305892" varName="result" />
+      <varInfo nodeId="6056923343037305890" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305764" fileName="MappingConfigFinder.java" startLine="31" startPosition="84" endLine="56" endPosition="85">
+      <varInfo nodeId="6056923343037305775" varName="mappingConfigs" />
+      <varInfo nodeId="6056923343037305766" varName="results" />
+      <varInfo nodeId="6056923343037305781" varName="nodesToCheck" />
+    </scopeInfo>
+    <scopeInfo nodeId="6056923343037305756" fileName="MappingConfigFinder.java" startLine="30" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6056923343037305762" varName="indicator" />
+      <varInfo nodeId="6056923343037305760" varName="query" />
+    </scopeInfo>
+    <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="100" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
+    <unitInfo nodeId="6056923343037305731" fileName="MappingConfigFinder.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" />
+  </root>
   <root nodeId="7228605397000826641">
     <nodeInfo nodeId="7228605397000826656" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="77" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7228605397000826663" fileName="LanguageConceptsUsagesFinder.java" startLine="30" startPosition="68" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -53,10 +137,10 @@
       <varInfo nodeId="7228605397000830124" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826655" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="77" endLine="67" endPosition="25">
-      <varInfo nodeId="7228605397000826766" varName="models" />
       <varInfo nodeId="7228605397000826706" varName="sModel" />
-      <varInfo nodeId="7228605397000826674" varName="module" />
+      <varInfo nodeId="7228605397000826766" varName="models" />
       <varInfo nodeId="7228605397000826664" varName="holder" />
+      <varInfo nodeId="7228605397000826674" varName="module" />
       <varInfo nodeId="7228605397000826790" varName="scope" />
       <varInfo nodeId="7228605397000830182" varName="results" />
       <varInfo nodeId="7228605397000826657" varName="searchResults" />
@@ -159,12 +243,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826853" fileName="AspectMethodsFinder.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="7228605397000826859" fileName="AspectMethodsFinder.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="7228605397000826864" varName="project" />
       <varInfo nodeId="7228605397000826862" varName="element" />
+      <varInfo nodeId="7228605397000826864" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826866" fileName="AspectMethodsFinder.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="7228605397000826871" varName="project" />
       <varInfo nodeId="7228605397000826869" varName="element" />
+      <varInfo nodeId="7228605397000826871" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826963" fileName="AspectMethodsFinder.java" startLine="51" startPosition="83" endLine="57" endPosition="5">
       <varInfo nodeId="7228605397000826969" varName="value" />
@@ -177,8 +261,8 @@
       <varInfo nodeId="7228605397000826960" varName="methodName" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826896" fileName="AspectMethodsFinder.java" startLine="30" startPosition="84" endLine="48" endPosition="15">
-      <varInfo nodeId="7228605397000826925" varName="res" />
       <varInfo nodeId="7228605397000826908" varName="applicableModelDescriptors" />
+      <varInfo nodeId="7228605397000826925" varName="res" />
       <varInfo nodeId="7228605397000826898" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826888" fileName="AspectMethodsFinder.java" startLine="29" startPosition="0" endLine="50" endPosition="0">
@@ -246,12 +330,12 @@
     <scopeInfo nodeId="7228605397000827145" fileName="ConstantFinder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="7228605397000827152" fileName="ConstantFinder.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="7228605397000827155" fileName="ConstantFinder.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7228605397000827160" varName="project" />
       <varInfo nodeId="7228605397000827158" varName="element" />
+      <varInfo nodeId="7228605397000827160" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827162" fileName="ConstantFinder.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="7228605397000827167" varName="project" />
       <varInfo nodeId="7228605397000827165" varName="element" />
+      <varInfo nodeId="7228605397000827167" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827149" fileName="ConstantFinder.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7228605397000827216" fileName="ConstantFinder.java" startLine="48" startPosition="59" endLine="54" endPosition="0" />
@@ -291,8 +375,8 @@
       <varInfo nodeId="7228605397000827314" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827272" fileName="ModelUsagesFinder.java" startLine="24" startPosition="77" endLine="42" endPosition="25">
-      <varInfo nodeId="7228605397000827289" varName="model" />
       <varInfo nodeId="7228605397000827279" varName="holder" />
+      <varInfo nodeId="7228605397000827289" varName="model" />
       <varInfo nodeId="7228605397000827274" varName="searchResults" />
       <varInfo nodeId="7228605397000827305" varName="modelReference" />
     </scopeInfo>
@@ -400,8 +484,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827544" fileName="LanguageUsagesFinder.java" startLine="71" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7228605397000827551" varName="searchResults" />
-      <varInfo nodeId="7228605397000827549" varName="language" />
       <varInfo nodeId="7228605397000827547" varName="searchedLanguage" />
+      <varInfo nodeId="7228605397000827549" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827436" fileName="LanguageUsagesFinder.java" startLine="44" startPosition="50" endLine="58" endPosition="5">
       <varInfo nodeId="7228605397000827440" varName="module" />
