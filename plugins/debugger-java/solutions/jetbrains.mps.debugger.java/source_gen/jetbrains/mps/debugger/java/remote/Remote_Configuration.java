@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.remote;
 
 import jetbrains.mps.execution.configurations.runtime.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.settings.runtime.IPersistentConfiguration;
-import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
@@ -23,6 +22,7 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
+import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(Remote_Configuration.class);

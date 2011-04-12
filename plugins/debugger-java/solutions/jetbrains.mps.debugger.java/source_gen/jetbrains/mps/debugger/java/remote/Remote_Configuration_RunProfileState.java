@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.remote;
 
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import com.intellij.execution.configurations.RunProfileState;
-import jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.Executor;
@@ -17,6 +16,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.execution.configurations.runtime.DefaultExecutionResult;
 import jetbrains.mps.execution.configurations.runtime.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;

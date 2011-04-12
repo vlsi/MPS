@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorConfigurableTest" file="SettingsEditorConfigurableTest.java">
+  <dependency className="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorDialogTest" file="SettingsEditorDialogTest.java">
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditorConfigurable" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorDialog" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorPanelTest" file="SettingsEditorPanelTest.java">
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.ActionWrapper" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="java.awt.FlowLayout" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="javax.swing.JButton" />
+    <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode extendsClassName="javax.swing.JFrame" />
   </dependency>
   <dependency className="jetbrains.mps.execution.sandbox.sandbox.SomeInvalid" file="SomeInvalid.java">
@@ -31,15 +42,16 @@
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode extendsClassName="javax.swing.JFrame" />
   </dependency>
   <dependency className="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" file="TwoFieldsEditor_Configuration.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="java.lang.Object" />
@@ -48,9 +60,8 @@
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration_Editor" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.IPersistentConfiguration" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" />
@@ -60,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
+    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="javax.swing.JTextField" />

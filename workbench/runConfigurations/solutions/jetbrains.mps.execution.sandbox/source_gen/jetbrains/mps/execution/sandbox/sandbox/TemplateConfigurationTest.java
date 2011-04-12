@@ -4,7 +4,6 @@ package jetbrains.mps.execution.sandbox.sandbox;
 
 import javax.swing.JFrame;
 import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
-
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
