@@ -16,7 +16,7 @@ public class sequence_subtypeOf_sequence_InequationReplacementRule extends Abstr
   public sequence_subtypeOf_sequence_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if ((SLinkOperations.getTarget(supertype, "elementType", true) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -27,7 +27,7 @@ public class sequence_subtypeOf_sequence_InequationReplacementRule extends Abstr
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     if ((SLinkOperations.getTarget(supertype, "elementType", true) != null)) {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);

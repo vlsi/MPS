@@ -13,6 +13,8 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement";
   public static final String LABEL = "label";
   public static final String INEQUATION_PRIORITY = "inequationPriority";
+  public static final String STRONG = "strong";
+  public static final String ORIENTATION = "orientation";
   public static final String INEQUATION_GROUP = "inequationGroup";
   public static final String AFTER_EQUATIONS = "afterEquations";
   public static final String BEFORE_EQUATIONS = "beforeEquations";
@@ -39,6 +41,24 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
 
   public void setInequationPriority(InequationPriority value) {
     super.setProperty(AbstractInequationStatement.INEQUATION_PRIORITY, value.getValueAsString());
+  }
+
+  public InequalityProperty getStrong() {
+    String value = super.getProperty(AbstractInequationStatement.STRONG);
+    return InequalityProperty.parseValue(value);
+  }
+
+  public void setStrong(InequalityProperty value) {
+    super.setProperty(AbstractInequationStatement.STRONG, value.getValueAsString());
+  }
+
+  public InequalityProperty getOrientation() {
+    String value = super.getProperty(AbstractInequationStatement.ORIENTATION);
+    return InequalityProperty.parseValue(value);
+  }
+
+  public void setOrientation(InequalityProperty value) {
+    super.setProperty(AbstractInequationStatement.ORIENTATION, value.getValueAsString());
   }
 
   public DefaultGroupReference getInequationGroup() {

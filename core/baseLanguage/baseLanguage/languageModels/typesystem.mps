@@ -13172,6 +13172,7 @@
         <property name="skipsError" nameId="tpd4.1233571207619" value="true" />
         <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220523357850">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1220523357851">
+            <property name="strong" nameId="tpd4.4614734314076988359" value="1" />
             <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1220523357852">
               <property name="name" nameId="tpck.1169194664001" value="clt" />
               <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1220523357853">

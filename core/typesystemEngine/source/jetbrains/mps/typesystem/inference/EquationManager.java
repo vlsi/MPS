@@ -383,7 +383,7 @@ public class EquationManager {
                                                            TypeCheckingContext typeCheckingContext,
                                                            IsApplicable2Status status) {
     if (rule instanceof AbstractInequationReplacementRule_Runtime) {
-      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext, status);
+      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext, status, true);
     } else {
       rule.processInequation(node1, node2, equationInfo);
     }
@@ -456,13 +456,13 @@ public class EquationManager {
     if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode())) {
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode(),true)) {
       return;
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator2.getNode(), representator1.getNode())) {
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator2.getNode(), representator1.getNode(),true)) {
       return;
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, this, errorInfo, isWeak)) {

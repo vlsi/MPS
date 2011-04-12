@@ -24,7 +24,7 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
   public void applyRule(final SNode acc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       IMatchingPattern pattern_dxqe5i_a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType");
-      SNode coercedNode_dxqe5i_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(acc, "copyFrom", true)), pattern_dxqe5i_a0, typeCheckingContext);
+      SNode coercedNode_dxqe5i_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(acc, "copyFrom", true)), pattern_dxqe5i_a0);
       if (coercedNode_dxqe5i_a0 != null) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_dxqe5i_a0, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();

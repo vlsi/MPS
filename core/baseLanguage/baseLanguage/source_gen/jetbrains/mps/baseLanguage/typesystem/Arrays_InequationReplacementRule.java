@@ -18,7 +18,7 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
   public Arrays_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -36,7 +36,7 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), true);

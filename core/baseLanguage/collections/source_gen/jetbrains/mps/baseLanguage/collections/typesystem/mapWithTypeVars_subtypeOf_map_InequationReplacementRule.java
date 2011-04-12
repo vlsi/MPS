@@ -31,7 +31,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
     });
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "keyType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -50,7 +50,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "keyType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "keyType", true), (SNode) SLinkOperations.getTarget(supertype, "keyType", true));

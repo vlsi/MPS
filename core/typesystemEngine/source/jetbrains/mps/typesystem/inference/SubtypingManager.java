@@ -58,16 +58,16 @@ public class SubtypingManager {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
 
-    if (isSubtypeByReplacementRules(subtype, supertype)) return true;
+    if (isSubtypeByReplacementRules(subtype, supertype, isWeak)) return true;
 
     return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null, true),
       NodeWrapper.createWrapperFromNode(supertype, null, true), null, null, isWeak);
   }
 
-  boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype) {
+  boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype, boolean isWeak) {
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
-      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null), inequationReplacementRule.o2)) {
+      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null), inequationReplacementRule.o2, true)) {
         return true;
       }
     }
@@ -122,7 +122,7 @@ public class SubtypingManager {
       if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(node)) {
         for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(node)) {
           if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
-            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
+            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument,isWeak)) {
               return true;
             }
           }
@@ -142,7 +142,7 @@ public class SubtypingManager {
         boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
         for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           if (replacementAllowed) {
-            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
+            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode(),isWeak)) {
               return true;
             }
           }

@@ -39,7 +39,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     }
     {
       GeneratedMatchingPattern pattern_gn1qzs_c0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_aftnu9_a0a0a2a0();
-      SNode coercedNode_gn1qzs_c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_c0, typeCheckingContext);
+      SNode coercedNode_gn1qzs_c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_c0);
       if (coercedNode_gn1qzs_c0 != null) {
       } else {
         // not an iterable or an erasure 

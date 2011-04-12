@@ -34,17 +34,18 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" file="AbstractInequationStatement.java">
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequationReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
@@ -169,9 +170,10 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.CoerceStatement" file="CoerceStatement.java">
@@ -179,11 +181,12 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" file="CoerceStrongExpression.java">
@@ -513,6 +516,19 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.structure.InequalityProperty" file="InequalityProperty.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" file="InequalityProperty_PropertySupport.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.InequationPriority" file="InequationPriority.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

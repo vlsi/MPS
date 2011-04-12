@@ -44,7 +44,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
-  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
+  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2)) {
         return true;
@@ -61,7 +61,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (isWeak && TypesUtil.match(subType, superType, null, null)) {
       return true;
     }
-    if (isSubTypeByReplacementRules(subType, superType)) {
+    if (isSubTypeByReplacementRules(subType, superType, isWeak)) {
       return true;
     }
     return isSubType(subType, superType, null, null, isWeak);
@@ -101,7 +101,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, State state) {
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
-        if (!TypesUtil.hasVariablesInside(argument) && isSubTypeByReplacementRules(subType, argument)) {
+        if (!TypesUtil.hasVariablesInside(argument) && isSubTypeByReplacementRules(subType, argument, isWeak)) {
           return true;
         }
         if (isSubType(subType, argument, info, state, isWeak)) {
@@ -111,7 +111,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     if (LatticeUtil.isMeet(subType)) {
       for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
-       if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType)) {
+       if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType, isWeak)) {
           return true;
         }
         if (isSubType(argument, superType, info, state, isWeak)) {
@@ -278,8 +278,8 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   public boolean isComparable(SNode left, SNode right, boolean isWeak) {
     return isComparableByRules(left, right, isWeak) ||
-      isSubTypeByReplacementRules(left, right) ||
-      isSubTypeByReplacementRules(right, left) ||
+      isSubTypeByReplacementRules(left, right, isWeak) ||
+      isSubTypeByReplacementRules(right, left, isWeak) ||
       isSubtype(left, right, isWeak) ||
       isSubtype(right, left, isWeak);
   }

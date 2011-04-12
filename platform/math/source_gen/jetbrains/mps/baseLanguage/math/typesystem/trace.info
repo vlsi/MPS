@@ -1950,7 +1950,7 @@
     <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="116" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="53" startPosition="237" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7676695779583848956" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7676695779583848930" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="127" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7676695779583848958" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="121" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1968,7 +1968,7 @@
     <scopeInfo nodeId="7676695779583848929" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="127" endLine="38" endPosition="7" />
     <scopeInfo nodeId="7676695779583848957" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="121" endLine="47" endPosition="7" />
     <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="52" startPosition="35" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="48" endPosition="5" />
   </root>
   <root nodeId="6219660258344753241">
     <nodeInfo nodeId="6219660258344759842" fileName="typeof_MatrixInitializer_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2053,7 +2053,7 @@
     <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="118" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="53" startPosition="237" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6389121991275039397" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6389121991275039371" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="68" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6389121991275039399" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="123" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2071,7 +2071,7 @@
     <scopeInfo nodeId="6389121991275039370" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="68" endLine="38" endPosition="7" />
     <scopeInfo nodeId="6389121991275039398" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="123" endLine="47" endPosition="7" />
     <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="52" startPosition="35" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="48" endPosition="5" />
   </root>
   <root nodeId="6389121991275104307">
     <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2087,7 +2087,7 @@
     <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="125" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="120" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="237" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="125" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="35" endLine="44" endPosition="237" />
@@ -2098,7 +2098,7 @@
     <scopeInfo nodeId="6389121991275106419" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="120" endLine="37" endPosition="9" />
     <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="35" endLine="49" endPosition="5" />
     <scopeInfo nodeId="6389121991275106417" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="125" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="39" endPosition="5" />
   </root>
   <root nodeId="7388416617632225854">
     <nodeInfo nodeId="7388416617632227872" fileName="typeof_TransposeOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

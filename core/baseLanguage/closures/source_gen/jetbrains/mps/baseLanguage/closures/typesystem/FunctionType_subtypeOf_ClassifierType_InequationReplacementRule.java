@@ -29,7 +29,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
     String errorMsg;
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
@@ -97,7 +97,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     {
       SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);

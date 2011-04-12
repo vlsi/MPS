@@ -26,7 +26,7 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
         public void run() {
           {
             IMatchingPattern pattern_y5vcz7_a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type");
-            SNode coercedNode_y5vcz7_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(expType), pattern_y5vcz7_a0a0, typeCheckingContext);
+            SNode coercedNode_y5vcz7_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(expType), pattern_y5vcz7_a0a0);
             if (coercedNode_y5vcz7_a0a0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = expression;

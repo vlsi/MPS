@@ -10,11 +10,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CoerceExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CoerceExpression";
+  public static final String STRONG = "strong";
   public static final String PATTERN = "pattern";
   public static final String NODE_TO_COERCE = "nodeToCoerce";
 
   public CoerceExpression(SNode node) {
     super(node);
+  }
+
+  public InequalityProperty getStrong() {
+    String value = super.getProperty(CoerceExpression.STRONG);
+    return InequalityProperty.parseValue(value);
+  }
+
+  public void setStrong(InequalityProperty value) {
+    super.setProperty(CoerceExpression.STRONG, value.getValueAsString());
   }
 
   public ApplicableNodeCondition getPattern() {

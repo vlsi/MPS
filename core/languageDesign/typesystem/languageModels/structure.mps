@@ -12,7 +12,6 @@
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="s7ft" modelUID="f:java_stub#18bc6592-03a6-4e29-a83a-7ff23bde13ba#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174642743670">
       <property name="name" nameId="tpck.1169194664001" value="ApplicableNodeCondition" />
@@ -577,6 +576,10 @@
       <property name="name" nameId="tpck.1169194664001" value="OrStatement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="7739208407757103780">
+      <property name="name" nameId="tpck.1169194664001" value="InequalityProperty" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </roots>
   <root id="1174642743670">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1174642755718">
@@ -907,6 +910,10 @@
     </node>
   </root>
   <root id="1176558773329">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4614734314076988359">
+      <property name="name" nameId="tpck.1169194664001" value="strong" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7739208407757103780" resolveInfo="InequalityProperty" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176558876970">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
@@ -992,6 +999,10 @@
     </node>
   </root>
   <root id="1178870617262">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7739208407757214262">
+      <property name="name" nameId="tpck.1169194664001" value="strong" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7739208407757103780" resolveInfo="InequalityProperty" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1178870894644">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
@@ -1366,6 +1377,14 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4778346850551686273">
       <property name="name" nameId="tpck.1169194664001" value="label" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7739208407757103785">
+      <property name="name" nameId="tpck.1169194664001" value="strong" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7739208407757103780" resolveInfo="InequalityProperty" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7739208407757103786">
+      <property name="name" nameId="tpck.1169194664001" value="orientation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7739208407757103780" resolveInfo="InequalityProperty" />
     </node>
   </root>
   <root id="1212056179025">
@@ -2278,7 +2297,7 @@
   <root id="6998169140110925844">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="6998169140111047132">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpd4.SelectionType" typeId="6998169140110894792" id="1076452857759748199" />
+      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.typesystem.structure.SelectionType" typeId="6998169140110894792" id="1076452857759748199" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1076452857759826875">
       <property name="value" nameId="tpce.1105725733873" value="selectionBefore" />
@@ -2334,5 +2353,19 @@
     </node>
   </root>
   <root id="838715195501404652" />
+  <root id="7739208407757103780">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7739208407757103781">
+      <property name="internalValue" nameId="tpce.1083923523171" value="0" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="as is" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7739208407757103782">
+      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="same as inequality" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7739208407757103783">
+      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="opposite to inequality" />
+    </node>
+  </root>
 </model>
 

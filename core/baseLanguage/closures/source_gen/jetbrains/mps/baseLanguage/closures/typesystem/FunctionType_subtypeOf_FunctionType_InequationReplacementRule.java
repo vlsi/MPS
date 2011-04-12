@@ -30,7 +30,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public FunctionType_subtypeOf_FunctionType_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -108,7 +108,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     {
       if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {

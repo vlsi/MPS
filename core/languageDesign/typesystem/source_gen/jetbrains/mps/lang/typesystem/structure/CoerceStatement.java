@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CoerceStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CoerceStatement";
+  public static final String STRONG = "strong";
   public static final String PATTERN = "pattern";
   public static final String NODE_TO_COERCE = "nodeToCoerce";
   public static final String BODY = "body";
@@ -19,6 +20,15 @@ public class CoerceStatement extends Statement {
 
   public CoerceStatement(SNode node) {
     super(node);
+  }
+
+  public InequalityProperty getStrong() {
+    String value = super.getProperty(CoerceStatement.STRONG);
+    return InequalityProperty.parseValue(value);
+  }
+
+  public void setStrong(InequalityProperty value) {
+    super.setProperty(CoerceStatement.STRONG, value.getValueAsString());
   }
 
   public ApplicableNodeCondition getPattern() {

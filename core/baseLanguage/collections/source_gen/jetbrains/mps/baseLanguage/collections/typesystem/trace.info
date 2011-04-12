@@ -382,14 +382,14 @@
   <root nodeId="1115463791055875289">
     <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="185" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="217" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="21" startPosition="106" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1115463791055875299" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1115463791055875332" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
     <scopeInfo nodeId="1115463791055875307" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
-    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="185" endLine="33" endPosition="53" />
+    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="217" endLine="33" endPosition="53" />
     <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
     <scopeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="21" startPosition="106" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
@@ -1916,14 +1916,14 @@
     <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="42" startPosition="166" endLine="43" endPosition="30" />
     <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="197" />
     <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="30" endPosition="77" />
     <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="36" endPosition="192" />
     <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="45" endPosition="197" />
-    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="37" endPosition="5" />
   </root>
   <root nodeId="1226599215753">
     <nodeInfo nodeId="1226599255596" fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="27" startPosition="113" endLine="28" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2049,13 +2049,13 @@
   <root nodeId="1228229118221">
     <nodeInfo nodeId="1228231553787" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="27" startPosition="11" endLine="28" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="28" startPosition="139" endLine="29" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="28" startPosition="139" endLine="29" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228231787457" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="31" startPosition="15" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228231787457" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="32" startPosition="62" endLine="33" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228231787457" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="33" startPosition="219" endLine="34" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="36" startPosition="18" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1228231787457" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="30" startPosition="50" endLine="35" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="29" startPosition="188" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="29" startPosition="167" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1228231671615" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="26" startPosition="27" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1228231553787" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="25" startPosition="64" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1228231553787" fileName="typeof_DowncastExpression_InferenceRule.java" startLine="24" startPosition="230" endLine="40" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2143,14 +2143,14 @@
     <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="42" startPosition="166" endLine="43" endPosition="30" />
     <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="237" />
     <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="30" endPosition="77" />
     <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="36" endPosition="209" />
     <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="45" endPosition="237" />
-    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="37" endPosition="5" />
   </root>
   <root nodeId="1237470333097">
     <nodeInfo nodeId="1237470428123" fileName="typeof_GetIteratorOperation_InferenceRule.java" startLine="22" startPosition="121" endLine="23" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2280,11 +2280,11 @@
     <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="23" startPosition="62" endLine="24" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" />
     <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" />
     <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="20" startPosition="5" endLine="24" endPosition="209" />
-    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1237549316054">
     <nodeInfo nodeId="1237549347223" fileName="typeof_GetEnumeratorOperation_InferenceRule.java" startLine="22" startPosition="123" endLine="23" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2399,11 +2399,11 @@
     <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="23" startPosition="62" endLine="24" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" />
     <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="29" startPosition="35" endLine="30" endPosition="237" />
     <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="20" startPosition="5" endLine="24" endPosition="209" />
-    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1240151619985">
     <nodeInfo nodeId="1240151823485" fileName="typeof_RemoveOperation_InferenceRule.java" startLine="22" startPosition="122" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2580,12 +2580,12 @@
   </root>
   <root nodeId="1240319956157">
     <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="27" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="27" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240320024069" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="29" startPosition="176" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240320024069" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="30" startPosition="62" endLine="31" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="33" startPosition="12" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240320024069" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="28" startPosition="42" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="27" startPosition="217" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="27" startPosition="196" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="24" startPosition="116" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1240320024069" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="29" startPosition="176" endLine="31" endPosition="297" />
     <scopeInfo nodeId="1240320006909" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="28" startPosition="42" endLine="32" endPosition="9" />
@@ -2765,7 +2765,7 @@
     <nodeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="27" startPosition="102" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="157" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="43" startPosition="159" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="217" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1434634659123639366" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1434634659123639430" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="24" startPosition="38" endLine="25" endPosition="109" />
@@ -2782,7 +2782,7 @@
     <scopeInfo nodeId="1434634659123764045" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="43" startPosition="159" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="60" endPosition="5" />
     <scopeInfo nodeId="1434634659123637373" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="217" endLine="50" endPosition="5" />
     <unitInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="83" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.mapWithTypeVars_subtypeOf_map_InequationReplacementRule$1" />
     <unitInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="27" startPosition="79" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.mapWithTypeVars_subtypeOf_map_InequationReplacementRule$2" />
   </root>
@@ -2921,11 +2921,11 @@
     <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="28" startPosition="62" endLine="29" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="3031165383882167875" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" />
     <scopeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" />
     <scopeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="29" endPosition="326" />
-    <scopeInfo nodeId="3031165383882167875" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="3031165383882167875" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" />
   </root>
   <root nodeId="3055999550620863368">
     <nodeInfo nodeId="3055999550620863371" fileName="typeof_RemoveWhereOperation_InferenceRule.java" startLine="24" startPosition="116" endLine="25" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3002,14 +3002,14 @@
   <root nodeId="4498918741262504537">
     <nodeInfo nodeId="4498918741262504608" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4498918741262504730" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="28" startPosition="39" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="217" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="40" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="23" startPosition="262" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="27" startPosition="102" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4498918741262504545" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4498918741262504600" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
     <scopeInfo nodeId="4498918741262504717" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="28" startPosition="39" endLine="29" endPosition="110" />
-    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="217" endLine="35" endPosition="53" />
     <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="40" endPosition="53" />
     <scopeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="23" startPosition="262" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="27" startPosition="102" endLine="31" endPosition="0" />
@@ -3026,13 +3026,13 @@
     <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="32" startPosition="78" endLine="33" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="31" startPosition="35" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="78" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="32" startPosition="78" endLine="33" endPosition="239" />
     <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="32" startPosition="78" endLine="33" endPosition="239" />
     <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="31" startPosition="35" endLine="34" endPosition="5" />
     <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="21" startPosition="7" endLine="25" endPosition="211" />
     <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="78" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="185" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="217" endLine="27" endPosition="5" />
   </root>
   <root nodeId="5192033827214196961">
     <nodeInfo nodeId="5192033827214196968" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3187,12 +3187,12 @@
     <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="28" startPosition="62" endLine="29" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="7707298106572008027" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="21" endPosition="154" />
     <scopeInfo nodeId="7707298106572005945" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" />
     <scopeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="35" endPosition="354" />
     <scopeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="29" endPosition="326" />
-    <scopeInfo nodeId="7707298106572005945" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="7707298106572005945" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="24" startPosition="217" endLine="30" endPosition="5" />
   </root>
 </debugInfo>
 

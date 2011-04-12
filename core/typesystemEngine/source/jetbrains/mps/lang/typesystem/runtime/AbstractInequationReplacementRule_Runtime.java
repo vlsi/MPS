@@ -41,7 +41,12 @@ public abstract class AbstractInequationReplacementRule_Runtime extends Inequati
   }
 
   //todo generate this method
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext, IsApplicable2Status status, boolean weak) {
     processInequation(subtype, supertype, errorInfo, typeCheckingContext);
   }
+
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+    processInequation(subtype, supertype, errorInfo, typeCheckingContext, status, true);
+  }
+
 }

@@ -17,7 +17,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
   public subtypesOfUpperBoundType_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -35,7 +35,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode) SLinkOperations.getTarget(supertype, "bound", true), true);

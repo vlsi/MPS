@@ -29,8 +29,12 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   }
 
   //todo generate this method
-  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo, IsApplicable2Status status, boolean weak) {
     return checkInequation(subtype, supertype, equationInfo);
+  }
+  //todo generate this method
+  public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo, IsApplicable2Status status) {
+    return checkInequation(subtype, supertype, equationInfo, status, true);
   }
 
   public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {

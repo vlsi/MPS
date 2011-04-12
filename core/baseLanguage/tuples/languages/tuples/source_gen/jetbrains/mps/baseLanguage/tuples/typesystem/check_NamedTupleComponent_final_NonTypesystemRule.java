@@ -28,7 +28,7 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
     if (expression == SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(expression), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true)) {
       {
         IMatchingPattern pattern_g7ekqv_a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
-        SNode coercedNode_g7ekqv_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_g7ekqv_a0a0, typeCheckingContext);
+        SNode coercedNode_g7ekqv_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_g7ekqv_a0a0);
         if (coercedNode_g7ekqv_a0a0 != null) {
           if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(coercedNode_g7ekqv_a0a0, "classifier", false), "component", true)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode cmp) {

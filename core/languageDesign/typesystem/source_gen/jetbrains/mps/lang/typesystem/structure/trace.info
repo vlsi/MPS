@@ -84,7 +84,6 @@
   <unitInfo fileName="NodeInfo.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NodeInfo" />
   <unitInfo fileName="VariableConverterItem.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.VariableConverterItem" />
   <unitInfo fileName="AbstractCheckingRule.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" />
-  <unitInfo fileName="CoerceExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceExpression" />
   <unitInfo fileName="IsSubtypeExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" />
   <unitInfo fileName="AbstractSubtypingRule.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" />
   <unitInfo fileName="TypeOfExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" />
@@ -96,6 +95,7 @@
   <unitInfo fileName="MeetType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
   <unitInfo fileName="JoinType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinType" />
   <unitInfo fileName="MultipleForeachLoop.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" />
+  <unitInfo fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
   <unitInfo fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   <unitInfo fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
   <unitInfo fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
@@ -104,13 +104,15 @@
   <unitInfo fileName="GetOperationType.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.GetOperationType" />
   <unitInfo fileName="Dependency.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Dependency" />
   <unitInfo fileName="ConceptClauseLinkInfo.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo" />
+  <unitInfo fileName="CoerceExpression.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceExpression" />
   <unitInfo fileName="ConceptTypeClause.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ConceptTypeClause" />
   <unitInfo fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
-  <unitInfo fileName="CoerceStatement.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceStatement" />
+  <unitInfo fileName="InequalityProperty.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
   <unitInfo fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
   <unitInfo fileName="TypesystemIntention.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" />
   <unitInfo fileName="AbstractOverloadedOpsTypeRule.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule" />
   <unitInfo fileName="MatchStatement.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MatchStatement" />
+  <unitInfo fileName="CoerceStatement.java" startLine="13" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceStatement" />
   <unitInfo fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
   <unitInfo fileName="NonTypesystemRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" />
   <unitInfo fileName="SubtypingRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.SubtypingRule" />
@@ -138,6 +140,6 @@
   <unitInfo fileName="WarningStatement.java" startLine="15" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WarningStatement" />
   <unitInfo fileName="ReportErrorStatement.java" startLine="15" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" />
   <unitInfo fileName="TypesystemQuickFix.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" />
-  <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
+  <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
 </debugInfo>
 

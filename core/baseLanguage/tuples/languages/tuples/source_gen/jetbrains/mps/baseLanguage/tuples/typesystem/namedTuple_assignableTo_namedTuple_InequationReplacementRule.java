@@ -23,7 +23,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
   public namedTuple_assignableTo_namedTuple_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
     if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -61,7 +61,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
     boolean result_14532009 = true;
     if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
