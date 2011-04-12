@@ -301,7 +301,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
   //new eqs
   @Override
   public void createEquation(SNode node1,
-                             SNode node2,
+                             SNode node2, boolean checkOnly,
                              EquationInfo equationInfo) {
     getCurrentSlicer().beforeUserEquationAdded(node1, node2, equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(

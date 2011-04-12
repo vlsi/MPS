@@ -13,6 +13,7 @@
   <usedLanguages>
     <usedLanguage>145670e6-4b63-4079-b9f0-4a07fca69426(jetbrains.mps.bootstrap.helgins.test)</usedLanguage>
     <usedLanguage>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguage>
+    <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
   </usedLanguages>
 </solution>
 

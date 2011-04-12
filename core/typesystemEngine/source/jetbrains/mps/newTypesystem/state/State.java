@@ -230,6 +230,14 @@ public class State {
     myEquations.addEquation(left, right, info);
   }
 
+  public void addEquation(SNode left, SNode right, EquationInfo info, boolean checkOnly) {
+    if (!checkOnly) {
+      addEquation(left, right, info);
+    } else {
+      addBlock(new CheckEquationBlock(this, left, right, RelationKind.CHECK_EQUATION, info));
+    }
+  }
+
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }

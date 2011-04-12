@@ -123,7 +123,11 @@ public abstract class TypeCheckingContext {
                                                 QuickFixProvider intentionProvider);
 
   //new eqs
-  public abstract void createEquation(SNode node1, SNode node2, EquationInfo equationInfo);
+  public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
+    createEquation(node1, node2, false, equationInfo);
+  }
+
+  public abstract void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
   @Deprecated
   public abstract void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo);
   @Deprecated

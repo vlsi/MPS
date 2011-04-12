@@ -18,5 +18,6 @@ package jetbrains.mps.newTypesystem.state;
 public enum BlockKind {
   INEQUALITY(),
   COMPARABLE(),
-  WHEN_CONCRETE() 
+  WHEN_CONCRETE(),
+  CHECK_EQUATION()
 }

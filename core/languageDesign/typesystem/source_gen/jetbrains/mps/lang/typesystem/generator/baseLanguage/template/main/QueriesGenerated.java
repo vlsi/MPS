@@ -1724,7 +1724,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1214927805253(final IOperationContext operationContext, final IfMacroContext _context) {
     String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
-    return ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias) || ":>>=:".equals(alias);
+    return (":==:".equals(alias) && SPropertyOperations.getBoolean(_context.getNode(), "checkOnly")) || ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias) || ":>>=:".equals(alias);
   }
 
   public static boolean ifMacro_Condition_6005837154535169602(final IOperationContext operationContext, final IfMacroContext _context) {

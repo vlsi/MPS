@@ -65,7 +65,6 @@ public class EquationInfo {
     this(nodeWithError, errorString, ruleModel, ruleId, inequationPriority, null);
   }
 
-  @Deprecated
   public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;

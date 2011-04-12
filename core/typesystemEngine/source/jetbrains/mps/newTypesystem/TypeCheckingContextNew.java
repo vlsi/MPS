@@ -116,8 +116,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addEquation(node1, node2, equationInfo);
+  public void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+    myState.addEquation(node1, node2, equationInfo, checkOnly);
   }
 
   @Override
