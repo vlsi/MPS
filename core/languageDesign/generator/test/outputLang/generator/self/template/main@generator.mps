@@ -652,6 +652,9 @@
                     </node>
                   </node>
                 </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6054909491974232093">
+                  <property name="value" nameId="tpee.1068580320021" value="0" />
+                </node>
               </node>
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="6010543442198681246" />
             </node>

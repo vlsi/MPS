@@ -7,7 +7,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${mps_home}/core/generator/solutions/jetbrains.mps.generator.msd" folder="" />
-      <solutionPath path="${project}/TLBase_sandbox/sandbox.msd" />
+      <solutionPath path="${project}/test/sandbox/sandbox.msd" />
       <solutionPath path="${project}/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
       <solutionPath path="${project}/test/inputModels/inputModels.msd" />
     </projectSolutions>
