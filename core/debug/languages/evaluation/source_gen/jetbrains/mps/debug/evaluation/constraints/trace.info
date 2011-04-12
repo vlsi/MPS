@@ -4,7 +4,7 @@
   <unitInfo fileName="EvaluatorsThisExpression_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsThisExpression_Constraints" />
   <unitInfo fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.ConstraintsDescriptor" />
-  <unitInfo fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint" />
+  <unitInfo fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint" />
   <unitInfo fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.LowLevelVariableReference_variableDeclaration_ReferentConstraint" />
   <root nodeId="6036237525966315979">
     <nodeInfo nodeId="6036237525966315982" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13,12 +13,12 @@
   <root nodeId="6036237525966325224">
     <nodeInfo nodeId="6036237525966325298" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6036237525966325310" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="13" startPosition="201" endLine="14" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966325251" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6036237525966325260" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="31" startPosition="327" endLine="32" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966325251" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6036237525966325260" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="30" startPosition="327" endLine="31" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6036237525966325226" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="12" startPosition="114" endLine="14" endPosition="185">
       <varInfo nodeId="6036237525966325299" varName="classifierType" />
     </scopeInfo>
-    <scopeInfo nodeId="6036237525966325250" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="32" endPosition="199">
+    <scopeInfo nodeId="6036237525966325250" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="31" endPosition="152">
       <varInfo nodeId="6036237525966325252" varName="enclosingClass" />
     </scopeInfo>
   </root>

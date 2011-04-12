@@ -5,9 +5,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_constructor_ReferentConstraint" file="BeanBuilder_constructor_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibleClassConstructorsScope" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />

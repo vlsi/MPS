@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope;
+import jetbrains.mps.baseLanguage.search.VisibleClassConstructorsScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BeanBuilder_constructor_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
