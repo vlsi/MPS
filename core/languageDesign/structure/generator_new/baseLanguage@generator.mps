@@ -615,8 +615,14 @@
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1215479320689">
       <property name="name" nameId="tpck.1169194664001" value="outputEnumConstant" />
     </node>
-    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="1219962514247">
-      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpce.1083243159079" resolveInfo="PrimitiveDataTypeDeclaration" />
+    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="8628499287103466398">
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="8628499287103466388">
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpce.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
+    </node>
+    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="8628499287103466397">
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpce.1082978164218" resolveInfo="DataTypeDeclaration" />
     </node>
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1225099640119">
       <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1225099204495" resolveInfo="XYZ_Language" />
