@@ -56,7 +56,6 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test.class,
   jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
   jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test.class,
-  jetbrains.mps.baseLanguage.tuples.test.Tuples_Test.class,
   jetbrains.mps.build.ant.BrokenReferencesTestTest.class,
   jetbrains.mps.build.ant.GenerateTaskFilesCreationTest.class,
   jetbrains.mps.build.ant.TeamCityMesageFormatTest.class,
