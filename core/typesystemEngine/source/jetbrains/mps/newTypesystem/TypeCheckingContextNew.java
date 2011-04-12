@@ -120,8 +120,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addEquation(node1, node2, equationInfo);
   }
 
-  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
-                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
+  @Override
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly,
                                              int inequationPriority, QuickFixProvider intentionProvider) {
     myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), true);
@@ -135,9 +135,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    createComparableEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
   }
-
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
@@ -156,7 +155,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
         //todo wrap into "if (addDependency) {}" when sure that typeof works fine
       }
     }
-    //((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
     return myState.typeOf(node, info);
   }
 
@@ -199,11 +197,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
-  @Override
-  protected Runnable wrapRunnableWithIf(NodeInfo argument, Runnable oldRunnable) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
   public State getState() {
     return myState;
   }
@@ -216,10 +209,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
   }
 
-  public Stack<AbstractOperation> getOperationStack() {
-    return myState.getOperationStack();
-  }
-
   public AbstractOperation getOperation() {
     return myState.getOperation();
   }
@@ -228,12 +217,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode createNewRuntimeTypesVariable() {
     return myState.createNewRuntimeTypesVariable();
   }
-
-  @Override
-  protected String getNewVarName() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
 
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
@@ -309,11 +292,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void addDependencyForCurrent(SNode node) {
     getNodeTypesComponent().addDependencyForCurrent(node);
-  }
-
-  @Override
-  protected SNode getRepresentatorIfNecessary(SNode type) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
@@ -510,9 +488,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       //non-typesystem checks
       getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
 
-      Set<Pair<SNode, List<IErrorReporter>>> errors =
-        new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
-      return errors;
+      return new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
     }
   }
 

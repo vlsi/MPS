@@ -70,8 +70,6 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode createNewRuntimeTypesVariable();
 
-  protected abstract String getNewVarName();
-
   public abstract void registerTypeVariable(SNode variable);
 
   //for special cases
@@ -82,8 +80,6 @@ public abstract class TypeCheckingContext {
   public abstract SNode[] getRegisteredTypeVariables(String varName);
 
   public abstract void addDependencyForCurrent(SNode node);
-
-  protected abstract SNode getRepresentatorIfNecessary(SNode type);
 
   //deprecated eqs
   @Deprecated
@@ -127,31 +123,16 @@ public abstract class TypeCheckingContext {
                                                 QuickFixProvider intentionProvider);
 
   //new eqs
-  public abstract void createEquation(SNode node1,
-                                      SNode node2,
-                                      EquationInfo equationInfo);
+  public abstract void createEquation(SNode node1, SNode node2, EquationInfo equationInfo);
+  @Deprecated
+  public abstract void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo);
+  @Deprecated
+  public abstract void createEquation(IWrapper wrapper1, SNode node2, EquationInfo equationInfo);
+  @Deprecated
+  public abstract void createEquation(IWrapper wrapper1, IWrapper wrapper2, EquationInfo equationInfo);
 
-  public abstract void createEquation(SNode node1,
-                                      IWrapper wrapper2,
-                                      EquationInfo equationInfo);
-
-  public abstract void createEquation(IWrapper wrapper1,
-                                      SNode node2,
-                                      EquationInfo equationInfo);
-
-  public abstract void createEquation(IWrapper wrapper1,
-                                      IWrapper wrapper2,
-                                      EquationInfo equationInfo
-  );
-
-  public abstract void createLessThanInequation(SNode node1,
-                                                SNode node2,
-                                                boolean checkOnly,
-                                                EquationInfo equationInfo);
-  public abstract void createLessThanInequationStrong(SNode node1,
-                                                      SNode node2,
-                                                      boolean checkOnly,
-                                                      EquationInfo equationInfo);
+  public abstract void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
+  public abstract void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
   public abstract void createGreaterThanInequation(SNode node1,
                                                    SNode node2,
@@ -179,8 +160,6 @@ public abstract class TypeCheckingContext {
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow);
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
   public abstract void whenConcrete(List<NodeInfo> arguments, Runnable r);
-
-  protected abstract Runnable wrapRunnableWithIf(NodeInfo argument, Runnable oldRunnable);
 
   public abstract void dispose();
 

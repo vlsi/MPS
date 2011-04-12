@@ -32,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
+@Deprecated
 public class TypeCheckingContextOld extends TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContextOld.class);
 
@@ -160,8 +161,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
     return typeVar;
   }
 
-  @Override
-  protected String getNewVarName() {
+  private String getNewVarName() {
     return getNodeTypesComponent().getNewVarName();
   }
 
@@ -218,8 +218,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
-  @Override
-  protected SNode getRepresentatorIfNecessary(SNode type) {
+  private SNode getRepresentatorIfNecessary(SNode type) {
     if (type == null) return null;
     EquationManager equationManager = getEquationManager();
     IWrapper representatorWrapper = equationManager.getRepresentatorWrapper(NodeWrapper.fromNode(type, equationManager));
@@ -493,8 +492,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
       new WhenConcreteEntity(wrapRunnableWithIf(lastInfo, current), lastInfo.myNodeModel, lastInfo.myNodeId));
   }
 
-  @Override
-  protected Runnable wrapRunnableWithIf(final NodeInfo argument, final Runnable oldRunnable) {
+  private Runnable wrapRunnableWithIf(final NodeInfo argument, final Runnable oldRunnable) {
     return new Runnable() {
       public void run() {
         SNode nodeType = getRepresentative(argument.myNode);
