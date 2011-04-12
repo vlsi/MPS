@@ -17,7 +17,9 @@ package jetbrains.mps.newTypesystem;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
@@ -40,6 +42,7 @@ import java.util.*;
 public class TypeCheckingContextNew extends TypeCheckingContext {
   public static final String USE_OLD_TYPESYSTEM = "useOldTypeSystem";
 
+  public final Object TYPECHECKING_LOCK = new Object();
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
@@ -57,7 +60,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
-    super(rootNode, typeChecker, resolving);
     myState = new State(this);
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
@@ -131,6 +133,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       ruleId, inequationPriority, intentionProvider), false);
   }
 
+  @Override
+  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
@@ -192,6 +199,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
+  @Override
+  protected Runnable wrapRunnableWithIf(NodeInfo argument, Runnable oldRunnable) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public State getState() {
     return myState;
   }
@@ -215,6 +227,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public SNode createNewRuntimeTypesVariable() {
     return myState.createNewRuntimeTypesVariable();
+  }
+
+  @Override
+  protected String getNewVarName() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+
+  public SNode computeTypeInferenceMode(SNode node) {
+    synchronized (TYPECHECKING_LOCK) {
+      final INodeTypesComponent temporaryComponent;
+      temporaryComponent = getNodeTypesComponent();
+      return temporaryComponent.computeTypesForNodeInferenceMode(node);
+    }
   }
 
   @Override
@@ -286,6 +312,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  protected SNode getRepresentatorIfNecessary(SNode type) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
   protected SNode getTypeOf_generationMode(SNode node) {
     try {
       return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
@@ -312,7 +343,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void dispose() {
-    super.dispose();
     myState.clear(true);
   }
 
@@ -366,6 +396,30 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public ISlicer getCurrentSlicer() {
     return null;
+  }
+
+   @Override
+  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
+    reporter.setIntentionProvider(intentionProvider);
+    reportMessage(nodeWithError, reporter);
+    return reporter;
+  }
+
+  @Override
+  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
+    reporter.setIntentionProvider(intentionProvider);
+    reportMessage(nodeWithError, reporter);
+    return reporter;
+  }
+
+  @Override
+  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
+    reporter.setIntentionProvider(intentionProvider);
+    reportMessage(nodeWithInfo, reporter);
+    return reporter;
   }
 
   @Override
