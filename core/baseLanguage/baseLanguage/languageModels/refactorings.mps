@@ -11,6 +11,7 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpeg" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
   <import index="89o2" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
@@ -27,6 +28,7 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="tp3b" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" implicit="yes" />
   <roots>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="7874812549549771289">
       <property name="name" nameId="tpck.1169194664001" value="RenameMethod" />
@@ -317,19 +319,19 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4955044055727172572">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4955044055727172573">
-            <node role="ifTrue" roleId="tpee.1163668922816" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="4955044055727172574">
-              <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="4955044055727173266">
-                <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
+            <node role="ifTrue" roleId="tpee.1163668922816" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401682">
+              <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401683">
+                <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
               </node>
-              <node role="searchNode" roleId="tp1h.1212242678419" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4955044055727172576">
+              <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4955044055727172576">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4955044055727112113" resolveInfo="method" />
               </node>
             </node>
-            <node role="ifFalse" roleId="tpee.1163668934364" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="4955044055727172577">
-              <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="4955044055727173267">
-                <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1216385454403" resolveInfo="BaseMethodUsages" />
+            <node role="ifFalse" roleId="tpee.1163668934364" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401674">
+              <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401675">
+                <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1216385454403" resolveInfo="BaseMethodUsages" />
               </node>
-              <node role="searchNode" roleId="tp1h.1212242678419" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4955044055727172579">
+              <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4955044055727172579">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4955044055727112113" resolveInfo="method" />
               </node>
             </node>
@@ -436,9 +438,13 @@
     <node role="affectedNodesBlock" roleId="tp1h.1347577327951503399" type="tp1h.AffectedNodesClause" typeId="tp1h.1200932465350" id="2869783065404823031">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2869783065404823032">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2869783065404832781">
-          <node role="expression" roleId="tpee.1068580123156" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="2869783065404832782">
-            <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="2869783065404832784">
-              <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
+          <node role="expression" roleId="tpee.1068580123156" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401702">
+            <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401703">
+              <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
+            </node>
+            <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4567781422731401704">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="4567781422731401705" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp1h.NodeOperation" typeId="tp1h.7953996722066252915" id="4567781422731401706" />
             </node>
           </node>
         </node>
@@ -554,9 +560,13 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5142438244426863085">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.5142438244426403075" resolveInfo="setUssages" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="5142438244426863086">
-                          <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="5142438244426863087">
-                            <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401663">
+                          <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401664">
+                            <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
+                          </node>
+                          <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4567781422731401665">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="4567781422731401666" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp1h.NodeOperation" typeId="tp1h.7953996722066252915" id="4567781422731401667" />
                           </node>
                         </node>
                       </node>
@@ -700,9 +710,13 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="418677511065472032">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.5142438244426403075" resolveInfo="setUssages" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="418677511065472033">
-                          <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="418677511065472038">
-                            <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401729">
+                          <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401730">
+                            <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
+                          </node>
+                          <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4567781422731401731">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="4567781422731401732" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp1h.NodeOperation" typeId="tp1h.7953996722066252915" id="4567781422731401733" />
                           </node>
                         </node>
                       </node>
@@ -1221,11 +1235,11 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9118878263582108395">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="9118878263582111371">
-                  <node role="rValue" roleId="tpee.1068498886297" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="9118878263582108396">
-                    <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="9118878263582108398">
-                      <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
+                  <node role="rValue" roleId="tpee.1068498886297" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401707">
+                    <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401708">
+                      <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1200405628545" resolveInfo="FieldUsages" />
                     </node>
-                    <node role="searchNode" roleId="tp1h.1212242678419" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="9118878263582108399">
+                    <node role="queryNode" roleId="tp3b.6366407517031970110" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="9118878263582108399">
                       <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="9118878263582108236" resolveInfo="declaration" />
                     </node>
                   </node>
@@ -1486,11 +1500,11 @@
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1hff.~SearchResults" resolveInfo="SearchResults" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5161277940733431490" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tp1h.ExecuteFindersExpression" typeId="tp1h.1212242396240" id="5161277940733431492">
-                  <node role="finders" roleId="tp1h.1212242658590" type="tp1h.FinderReference" typeId="tp1h.1212242507771" id="5161277940733431493">
-                    <link role="finderDeclaration" roleId="tp1h.1212242603178" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="4567781422731401700">
+                  <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="4567781422731401701">
+                    <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
                   </node>
-                  <node role="searchNode" roleId="tp1h.1212242678419" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5161277940733431495">
+                  <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5161277940733431495">
                     <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5161277940733431494">
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5161277940733431448" resolveInfo="ref" />
                     </node>
