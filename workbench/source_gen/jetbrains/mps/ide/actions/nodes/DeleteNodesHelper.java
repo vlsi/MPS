@@ -9,9 +9,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.Iterator;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.scripts.SafeDeleteConcept;
-import jetbrains.mps.lang.structure.scripts.SafeDeleteLink;
-import jetbrains.mps.lang.core.scripts.SafeDelete;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -86,12 +84,12 @@ public class DeleteNodesHelper {
       return;
     } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      refactoringClass = SafeDeleteConcept.class.getName();
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1201019507868"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class}));
     } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      refactoringClass = SafeDeleteLink.class.getName();
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1201283571431"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class}));
     } else {
-      refactoringClass = SafeDelete.class.getName();
+      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)", "1200665013408"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class}));
     }
     final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
