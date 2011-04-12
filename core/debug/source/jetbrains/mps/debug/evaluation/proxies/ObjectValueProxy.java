@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
+import jetbrains.mps.debug.evaluation.EvaluationUtils.ThreadInvocatable;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +76,7 @@ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
     }
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
 
-    return handleInvocationExceptions(new Invocatable<IValueProxy>() {
+    return handleInvocationExceptions(new ThreadInvocatable<IValueProxy>(myThreadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         Value result = getObjectValue().invokeMethod(myThreadReference, method, argValues, options);

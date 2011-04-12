@@ -92,7 +92,7 @@ public class MirrorUtil {
   }
 
   @NotNull
-  public static IValueProxy getValueProxy(@Nullable Value value, ThreadReference threadReference) {
+  public static IValueProxy getValueProxy(@Nullable Value value, @NotNull ThreadReference threadReference) {
     if (value == null) {
       return new NullValueProxy();
     }

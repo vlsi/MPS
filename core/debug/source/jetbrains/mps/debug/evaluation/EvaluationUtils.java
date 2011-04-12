@@ -34,7 +34,7 @@ public class EvaluationUtils {
 
     final List<Value> argValues = MirrorUtil.getValues(threadReference, args);
 
-    return EvaluationUtils.handleInvocationExceptions(new Invocatable<Value>() {
+    return EvaluationUtils.handleInvocationExceptions(new ThreadInvocatable<Value>(threadReference) {
       @Override
       public Value invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         return referenceType.invokeMethod(threadReference, method, argValues, 0);
@@ -56,7 +56,7 @@ public class EvaluationUtils {
 
     final List<Value> argValues = MirrorUtil.getValues(threadReference, args);
 
-    return EvaluationUtils.handleInvocationExceptions(new Invocatable<Value>() {
+    return EvaluationUtils.handleInvocationExceptions(new ThreadInvocatable<Value>(threadReference) {
       @Override
       public Value invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
         return referenceType.newInstance(threadReference, constructor, argValues, 0);
@@ -301,7 +301,11 @@ public class EvaluationUtils {
     try {
       return invocatable.invoke();
     } catch (InvocationException e) {
-      throw new TargetVMEvaluationException(e.getCause());
+      if (invocatable instanceof ThreadInvocatable) {
+        throw new TargetVMEvaluationException(e, ((ThreadInvocatable)invocatable).getCurrentThreadReference());
+      } else {
+        throw new TargetVMEvaluationException(e);
+      }
     } catch (IllegalArgumentException e) {
       throw new InvalidEvaluatedExpressionException(e);
     } catch (InvalidTypeException e) {
@@ -313,5 +317,17 @@ public class EvaluationUtils {
 
   public static interface Invocatable<T> {
     T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
+  }
+
+  public static abstract class ThreadInvocatable<T> implements Invocatable<T> {
+    private final ThreadReference myThreadReference;
+
+    public ThreadInvocatable(ThreadReference threadReference) {
+      myThreadReference = threadReference;
+    }
+
+    public ThreadReference getCurrentThreadReference() {
+      return myThreadReference;
+    }
   }
 }
