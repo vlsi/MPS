@@ -21,7 +21,6 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.transformationTest.sandbox/jetbrains.mps.transformationTest.sandbox.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.transformationTest.test/jetbrains.mps.transformationTest.test.msd" />
     </projectSolutions>
     <projectLanguages>
