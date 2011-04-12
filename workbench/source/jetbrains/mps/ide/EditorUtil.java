@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.structure.editor;
+package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -31,7 +31,13 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.io.File;
 
-
+/**
+ * Created by IntelliJ IDEA.
+ * User: Alexander Shatalin
+ * Date: 4/12/11
+ * Time: 8:35 PM
+ * To change this template use File | Settings | File Templates.
+ */
 public class EditorUtil {
   public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context) {
     return createSelectIconButton(sourceNode, ConceptDeclaration.ICON_PATH, context);

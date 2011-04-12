@@ -7,9 +7,9 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="itiy" modelUID="f:java_stub#c72da2b9-7cce-4447-8389-f407dc1158b7#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure/jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <import index="x57m" modelUID="f:java_stub#28f9e497-3b42-4291-aeba-0a1039153ab1#jetbrains.mps.plugins(jetbrains.mps.lang.plugin/jetbrains.mps.plugins@java_stub)" version="-1" />
   <import index="lxea" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(MPS.Classpath/jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="lnp5" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(MPS.Classpath/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
@@ -179,8 +179,8 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="afxk.~IModule" resolveInfo="IModule" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5117350825036256267">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itiy.~EditorUtil%dfindAnchorModule(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dproject%dIModule" resolveInfo="findAnchorModule" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="itiy.~EditorUtil" resolveInfo="EditorUtil" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lnp5.~EditorUtil" resolveInfo="EditorUtil" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lnp5.~EditorUtil%dfindAnchorModule(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dproject%dIModule" resolveInfo="findAnchorModule" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="5117350825036256268" />
                   </node>
                 </node>
@@ -286,8 +286,8 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5117350825036256308">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5117350825036256309">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5117350825036256310">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="itiy.~EditorUtil" resolveInfo="EditorUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itiy.~EditorUtil%dcreateSelectIconButton(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dnodeEditor%dEditorContext)%cjavax%dswing%dJComponent" resolveInfo="createSelectIconButton" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lnp5.~EditorUtil" resolveInfo="EditorUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lnp5.~EditorUtil%dcreateSelectIconButton(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dnodeEditor%dEditorContext)%cjavax%dswing%dJComponent" resolveInfo="createSelectIconButton" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="5117350825036256311" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5117350825036256312">
                     <property name="value" nameId="tpee.1070475926801" value="iconPath" />

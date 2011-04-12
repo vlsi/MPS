@@ -4,7 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.structure.editor.EditorUtil;
+import jetbrains.mps.ide.EditorUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;

@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.structure.editor.EditorUtil;
+import jetbrains.mps.ide.EditorUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
 import java.util.Set;

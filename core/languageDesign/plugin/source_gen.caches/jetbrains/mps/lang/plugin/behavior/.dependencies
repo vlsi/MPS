@@ -126,7 +126,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" file="BaseToolDeclaration_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.structure.editor.EditorUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.checkedName.PropertyReference" />
@@ -144,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.ide.EditorUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.CommandClosureLiteral_Behavior" file="CommandClosureLiteral_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
