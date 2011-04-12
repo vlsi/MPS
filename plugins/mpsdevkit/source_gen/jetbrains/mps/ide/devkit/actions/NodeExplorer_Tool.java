@@ -5,7 +5,7 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import jetbrains.mps.lang.structure.plugin.NodeExplorerComponent;
+import jetbrains.mps.ide.devkit.components.NodeExplorerComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;

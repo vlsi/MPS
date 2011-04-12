@@ -961,7 +961,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.NodeExplorerComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.components.NodeExplorerComponent" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>

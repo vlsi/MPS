@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.structure.plugin;
+package jetbrains.mps.ide.devkit.components;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.typesystem.PresentationManager;
