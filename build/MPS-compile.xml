@@ -299,7 +299,6 @@
     <path path="platform/ypath/solutions/test/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.classpaths">
-    <path path="core/analyzers/languages/analyzers/classes" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -494,7 +493,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths">
-    <path path="platform/builders/classes" />
     <path path="platform/builders/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -592,7 +590,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.checkedDots_tjc.classpaths">
-    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -690,7 +687,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
-    <path path="core/baseLanguage/constructors/classes" />
     <path path="core/baseLanguage/constructors/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -788,7 +784,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
-    <path path="platform/contracts/languages/contracts/classes" />
     <path path="platform/contracts/languages/contracts/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -887,9 +882,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
-    <path path="platform/dates/classes" />
     <path path="platform/dates/classes_gen" />
-    <path path="platform/dates/internal/classes" />
     <path path="platform/dates/internal/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1091,7 +1084,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
-    <path path="platform/extensionMethod/classes" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1189,7 +1181,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.javadoc_tjc.classpaths">
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1287,7 +1278,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.logging_tjc.classpaths">
-    <path path="core/baseLanguage/logging/classes" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1385,7 +1375,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
-    <path path="platform/math/classes" />
     <path path="platform/math/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1585,7 +1574,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
-    <path path="platform/money/classes" />
     <path path="platform/money/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1783,7 +1771,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths">
-    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1881,7 +1868,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths">
-    <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2278,7 +2264,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
-    <path path="platform/bash/languages/bash/classes" />
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2377,7 +2362,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
-    <path path="platform/buildlanguage/languages/custommps/classes" />
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2459,7 +2443,6 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
-    <path path="platform/buildlanguage/languages/distrib/classes" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
@@ -2488,9 +2471,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
-    <path path="platform/buildlanguage/languages/dependency/classes" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
-    <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
@@ -2598,7 +2579,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.distrib_tjc.classpaths">
-    <path path="platform/buildlanguage/languages/distrib/classes" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2678,7 +2658,6 @@
     <path path="platform/builders/classes_gen" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
-    <path path="platform/buildlanguage/languages/distrib/classes" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
@@ -2707,11 +2686,8 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
-    <path path="platform/buildlanguage/languages/generictasks/classes" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="platform/buildlanguage/languages/property/classes" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
-    <path path="platform/buildlanguage/languages/buildlanguage/classes" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2815,7 +2791,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.apiLang_tjc.classpaths">
-    <path path="core/debug-api/languages/api/classes" />
     <path path="core/debug-api/languages/api/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2913,7 +2888,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.customViewers_tjc.classpaths">
-    <path path="core/debug/languages/customViewers/classes" />
     <path path="core/debug/languages/customViewers/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3011,7 +2985,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.evaluation_tjc.classpaths">
-    <path path="core/debug/languages/evaluation/classes" />
     <path path="core/debug/languages/evaluation/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3109,7 +3082,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths">
-    <path path="core/debug/languages/privateMembers/classes" />
     <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3207,7 +3179,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gtext_tjc.classpaths">
-    <path path="platform/gtext/classes" />
     <path path="platform/gtext/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3402,10 +3373,8 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gwt.client_tjc.classpaths">
-    <path path="platform/gwtsupport/languages/client/classes" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
-    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3503,7 +3472,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
-    <path path="workbench/ideUiLanguage/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3698,7 +3666,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
-    <path path="core/languageDesign/editor/languages/table/classes" />
     <path path="core/languageDesign/editor/languages/table/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3893,7 +3860,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.generator.generationParameters_tjc.classpaths">
-    <path path="core/languageDesign/generator/languages/generationParameters/classes" />
     <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3991,7 +3957,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths">
-    <path path="core/languageDesign/pattern/languages/testLang/classes" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4089,7 +4054,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.project_tjc.classpaths">
-    <path path="core/languageDesign/project/classes" />
     <path path="core/languageDesign/project/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4187,7 +4151,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.stubs_tjc.classpaths">
-    <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4285,7 +4248,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
-    <path path="platform/conf/languages/conf/classes" />
     <path path="platform/conf/languages/conf/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4480,7 +4442,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
-    <path path="platform/quickQueryLanguage/classes" />
     <path path="platform/quickQueryLanguage/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4578,9 +4539,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui_tjc.classpaths">
-    <path path="platform/ui/languages/ui/classes" />
     <path path="platform/ui/languages/ui/classes_gen" />
-    <path path="platform/ui/languages/internal/classes" />
     <path path="platform/ui/languages/internal/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4681,7 +4640,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.gwt_tjc.classpaths">
-    <path path="platform/ui/languages/gwt/classes" />
     <path path="platform/ui/languages/gwt/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4786,7 +4744,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.modeling_tjc.classpaths">
-    <path path="platform/ui/languages/meta/classes" />
     <path path="platform/ui/languages/meta/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4885,7 +4842,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
-    <path path="platform/ui/languages/swing/classes" />
     <path path="platform/ui/languages/swing/classes_gen" />
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
@@ -5094,7 +5050,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swt_tjc.classpaths">
-    <path path="platform/ui/languages/swt/classes" />
     <path path="platform/ui/languages/swt/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5303,7 +5258,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.uiLanguage_tjc.classpaths">
-    <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5498,11 +5452,8 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xml_tjc.classpaths">
-    <path path="platform/xml/xml/classes" />
     <path path="platform/xml/xml/classes_gen" />
-    <path path="platform/xml/xmlInternal/classes" />
     <path path="platform/xml/xmlInternal/classes_gen" />
-    <path path="platform/xml/xmlSchema/classes" />
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5600,7 +5551,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths">
-    <path path="platform/xmlDeprecated/classes" />
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5699,7 +5649,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
-    <path path="platform/xml/xmlQuery/classes" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5797,7 +5746,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths">
-    <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes" />
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -5896,7 +5844,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ypath_tjc.classpaths">
-    <path path="platform/ypath/classes" />
     <path path="platform/ypath/classes_gen" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />

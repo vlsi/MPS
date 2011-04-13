@@ -138,11 +138,12 @@ public class Module_Behavior {
 
   public static List<SNode> call_getClassPath_1213877515083(SNode thisNode) {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
+
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
         return it.getPath();
       }
-    }).toListSequence(), true);
+    }).distinct().toListSequence(), true);
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
@@ -159,7 +160,7 @@ public class Module_Behavior {
       public String select(SModelRoot it) {
         return it.getPath();
       }
-    }).toListSequence(), true);
+    }).distinct().toListSequence(), true);
   }
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions) {
@@ -170,7 +171,7 @@ public class Module_Behavior {
         public String select(StubPath it) {
           return it.getPath();
         }
-      }).toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
+      }).distinct().toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
       if (includeRuntimeSolutions) {
         for (Dependency rdep : ListSequence.fromList(((Language) module).getRuntimeDependOn())) {
           IModule rs = MPSModuleRepository.getInstance().getModule(rdep.getModuleRef());

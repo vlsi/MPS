@@ -668,10 +668,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       if (classesGen!=null){
         result.add(new StubPath(classesGen.getAbsolutePath(), LanguageID.JAVA_MANAGER));
       }
-    }
-    IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-    if (classes!=null){
-      result.add(new StubPath(classes.getAbsolutePath(), LanguageID.JAVA_MANAGER));
+    } else {
+      IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
+      if (classes!=null){
+        result.add(new StubPath(classes.getAbsolutePath(), LanguageID.JAVA_MANAGER));
+      }
     }
     return result;
   }

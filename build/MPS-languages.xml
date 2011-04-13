@@ -22,18 +22,15 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguageInternal">
     <mkdir dir="core/baseLanguage/baseLanguageInternal/classes" />
-    <mkdir dir="core/baseLanguage/baseLanguageInternal/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguageInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguageInternal" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguageInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/baseLanguageInternal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/baseLanguageInternal/classes" />
-      <zipfileset dir="core/baseLanguage/baseLanguageInternal/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.blTypes">
-    <mkdir dir="core/baseLanguage/blTypes/classes" />
     <mkdir dir="core/baseLanguage/blTypes/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/blTypes/blTypes.mpl" prefix="module" />
@@ -41,23 +38,19 @@
       <zipfileset dir="core/baseLanguage/blTypes/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/baseLanguage/blTypes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/blTypes/classes" />
-      <zipfileset dir="core/baseLanguage/blTypes/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.checkedDots">
     <mkdir dir="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <mkdir dir="core/baseLanguage/checkDot/languages/checkedDots/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/checkDot/languages/checkedDots" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/checkDot/languages/checkedDots/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/checkDot/languages/checkedDots/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-      <zipfileset dir="core/baseLanguage/checkDot/languages/checkedDots/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.classifiers">
-    <mkdir dir="core/baseLanguage/classifiers/classes" />
     <mkdir dir="core/baseLanguage/classifiers/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/classifiers/classifiers.mpl" prefix="module" />
@@ -65,13 +58,11 @@
       <zipfileset dir="core/baseLanguage/classifiers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/classifiers/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/baseLanguage/classifiers/classes" />
-      <zipfileset dir="core/baseLanguage/classifiers/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.closures">
     <mkdir dir="core/baseLanguage/closures/classes" />
     <mkdir dir="core/baseLanguage/closures/runtime/classes" />
-    <mkdir dir="core/baseLanguage/closures/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/closures/closures.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/closures" includes="icons/**, resources/**" prefix="module" />
@@ -79,7 +70,6 @@
       <zipfileset dir="core/baseLanguage/closures/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/baseLanguage/closures/classes" />
       <zipfileset dir="core/baseLanguage/closures/runtime/classes" />
-      <zipfileset dir="core/baseLanguage/closures/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/closures/runtime/classes" />
@@ -94,14 +84,12 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.collections">
     <mkdir dir="core/baseLanguage/collections/classes" />
-    <mkdir dir="core/baseLanguage/collections/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/collections/collections.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/collections" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/collections/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/baseLanguage/collections/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/collections/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
-      <zipfileset dir="core/baseLanguage/collections/classes" />
       <zipfileset dir="core/baseLanguage/collections/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar" duplicate="preserve" filesonly="true">
@@ -148,25 +136,21 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.javadoc">
     <mkdir dir="core/baseLanguage/javadoc/classes_gen" />
-    <mkdir dir="core/baseLanguage/javadoc/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.javadoc.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/javadoc/javadoc.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/javadoc" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/javadoc/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/javadoc/classes_gen" />
-      <zipfileset dir="core/baseLanguage/javadoc/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.logging">
     <mkdir dir="core/baseLanguage/logging/classes_gen" />
-    <mkdir dir="core/baseLanguage/logging/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.logging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/logging/logging.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/logging" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/logging/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/logging/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="core/baseLanguage/logging/classes_gen" />
-      <zipfileset dir="core/baseLanguage/logging/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.search">
@@ -178,13 +162,11 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest">
     <mkdir dir="core/baseLanguage/unitTest/classes" />
-    <mkdir dir="core/baseLanguage/unitTest/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/unitTest/unitTest.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/baseLanguage/unitTest/classes" />
       <zipfileset dir="core/baseLanguage/unitTest/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" duplicate="preserve" filesonly="true">
@@ -243,25 +225,21 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.runConfigurations">
     <mkdir dir="core/baseLanguage/runConfigurations/classes" />
-    <mkdir dir="core/baseLanguage/runConfigurations/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runConfigurations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/runConfigurations/runConfigurations.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/runConfigurations" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/runConfigurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/runConfigurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/runConfigurations/classes" />
-      <zipfileset dir="core/baseLanguage/runConfigurations/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.actions">
-    <mkdir dir="core/languageDesign/actions/classes" />
     <mkdir dir="core/languageDesign/actions/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.actions.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/actions/languageDescriptor.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/actions" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/actions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/actions/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
-      <zipfileset dir="core/languageDesign/actions/classes" />
       <zipfileset dir="core/languageDesign/actions/classes" />
     </jar>
   </target>
@@ -277,13 +255,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.constraints">
     <mkdir dir="core/languageDesign/constraints/classes" />
-    <mkdir dir="core/languageDesign/constraints/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.constraints.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/constraints/constraints.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/constraints" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/constraints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/constraints/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
-      <zipfileset dir="core/languageDesign/constraints/classes" />
       <zipfileset dir="core/languageDesign/constraints/classes" />
     </jar>
   </target>
@@ -315,13 +291,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.findUsages">
     <mkdir dir="core/languageDesign/findUsages/classes" />
-    <mkdir dir="core/languageDesign/findUsages/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/findUsages/findUsages.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/findUsages" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/findUsages/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/findUsages/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/findUsages/classes" />
       <zipfileset dir="core/languageDesign/findUsages/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.runtime.jar" duplicate="preserve" filesonly="true">
@@ -330,14 +304,12 @@
   </target>
   <target name="pack.jetbrains.mps.lang.typesystem">
     <mkdir dir="core/languageDesign/typesystem/classes" />
-    <mkdir dir="core/languageDesign/typesystem/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.typesystem.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/typesystem/typesystem.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/typesystem" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/typesystem/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/languageDesign/typesystem/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/typesystem/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/typesystem/classes" />
       <zipfileset dir="core/languageDesign/typesystem/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.typesystem.runtime.jar" duplicate="preserve" filesonly="true">
@@ -355,13 +327,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.intentions">
     <mkdir dir="core/languageDesign/intentions/classes" />
-    <mkdir dir="core/languageDesign/intentions/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.intentions.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/intentions/intentions.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/intentions" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/intentions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/intentions/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/intentions/classes" />
       <zipfileset dir="core/languageDesign/intentions/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.intentions.runtime.jar" duplicate="preserve" filesonly="true">
@@ -370,13 +340,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.dataFlow">
     <mkdir dir="core/languageDesign/dataFlow/classes" />
-    <mkdir dir="core/languageDesign/dataFlow/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/dataFlow/dataFlow.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/dataFlow" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/dataFlow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/dataFlow/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/dataFlow/classes" />
       <zipfileset dir="core/languageDesign/dataFlow/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.dataFlow.runtime.jar" duplicate="preserve" filesonly="true">
@@ -392,14 +360,12 @@
   </target>
   <target name="pack.jetbrains.mps.lang.pattern">
     <mkdir dir="core/languageDesign/pattern/classes" />
-    <mkdir dir="core/languageDesign/pattern/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/pattern/pattern.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/pattern" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/pattern/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/languageDesign/pattern/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/pattern/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/pattern/classes" />
       <zipfileset dir="core/languageDesign/pattern/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.runtime.jar" duplicate="preserve" filesonly="true">
@@ -408,18 +374,15 @@
   </target>
   <target name="pack.jetbrains.mps.lang.pattern.testLang">
     <mkdir dir="core/languageDesign/pattern/languages/testLang/classes_gen" />
-    <mkdir dir="core/languageDesign/pattern/languages/testLang/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.testLang.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/pattern/languages/testLang/testLang.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/pattern/languages/testLang" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/pattern/languages/testLang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/pattern/languages/testLang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/languageDesign/pattern/languages/testLang/classes_gen" />
-      <zipfileset dir="core/languageDesign/pattern/languages/testLang/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.quotation">
-    <mkdir dir="core/languageDesign/quotation/classes" />
     <mkdir dir="core/languageDesign/quotation/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.quotation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/quotation/quotation.mpl" prefix="module" />
@@ -427,11 +390,9 @@
       <zipfileset dir="core/languageDesign/quotation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/quotation/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/languageDesign/quotation/classes" />
-      <zipfileset dir="core/languageDesign/quotation/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.plugin">
-    <mkdir dir="core/languageDesign/plugin/classes" />
     <mkdir dir="core/languageDesign/plugin/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.plugin.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/plugin/plugin.mpl" prefix="module" />
@@ -440,7 +401,6 @@
       <zipfileset dir="core/languageDesign/plugin/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/plugin/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/languageDesign/plugin/classes" />
-      <zipfileset dir="core/languageDesign/plugin/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.plugin.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/languageDesign/plugin/classes" />
@@ -448,18 +408,15 @@
   </target>
   <target name="pack.jetbrains.mps.lang.sharedConcepts">
     <mkdir dir="core/languageDesign/sharedConcepts/classes" />
-    <mkdir dir="core/languageDesign/sharedConcepts/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.sharedConcepts.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/sharedConcepts/sharedConcepts.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/sharedConcepts" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/sharedConcepts/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/sharedConcepts/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="core/languageDesign/sharedConcepts/classes" />
-      <zipfileset dir="core/languageDesign/sharedConcepts/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.smodel">
-    <mkdir dir="core/languageDesign/smodel/classes" />
     <mkdir dir="core/languageDesign/smodel/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.smodel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/smodel/smodel.mpl" prefix="module" />
@@ -467,7 +424,6 @@
       <zipfileset dir="core/languageDesign/smodel/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/smodel/generator" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator" />
       <zipfileset dir="core/languageDesign/smodel/generator/baseLanguage" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage" />
-      <zipfileset dir="core/languageDesign/smodel/classes" />
       <zipfileset dir="core/languageDesign/smodel/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" duplicate="preserve" filesonly="true">
@@ -483,13 +439,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.script">
     <mkdir dir="core/languageDesign/script/classes" />
-    <mkdir dir="core/languageDesign/script/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.script.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/script/script.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/script" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/script/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/script/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/script/classes" />
       <zipfileset dir="core/languageDesign/script/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.script.runtime.jar" duplicate="preserve" filesonly="true">
@@ -508,24 +462,20 @@
   </target>
   <target name="pack.jetbrains.mps.lang.core">
     <mkdir dir="core/languageDesign/core/classes" />
-    <mkdir dir="core/languageDesign/core/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.core.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/core/languageDescriptor.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/core" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/core/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/core/classes" />
-      <zipfileset dir="core/languageDesign/core/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.refactoring">
-    <mkdir dir="core/languageDesign/refactoring/classes" />
     <mkdir dir="core/languageDesign/refactoring/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.refactoring.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/refactoring/refactoring.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/refactoring" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/refactoring/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/refactoring/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/refactoring/classes" />
       <zipfileset dir="core/languageDesign/refactoring/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.refactoring.runtime.jar" duplicate="preserve" filesonly="true">
@@ -556,25 +506,21 @@
   </target>
   <target name="pack.jetbrains.mps.lang.generator.generationParameters">
     <mkdir dir="core/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <mkdir dir="core/languageDesign/generator/languages/generationParameters/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationParameters.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/generator/languages/generationParameters/generationParameters.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/generator/languages/generationParameters" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/generator/languages/generationParameters/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/generator/languages/generationParameters/generator" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator" />
       <zipfileset dir="core/languageDesign/generator/languages/generationParameters/classes_gen" />
-      <zipfileset dir="core/languageDesign/generator/languages/generationParameters/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.test">
-    <mkdir dir="core/languageDesign/test/classes" />
     <mkdir dir="core/languageDesign/test/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/test/test.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/test" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/test/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/test/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/test/classes" />
       <zipfileset dir="core/languageDesign/test/classes" />
     </jar>
   </target>
@@ -587,14 +533,12 @@
   </target>
   <target name="pack.jetbrains.mps.lang.textGen">
     <mkdir dir="core/languageDesign/textGen/classes" />
-    <mkdir dir="core/languageDesign/textGen/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/textGen/textGen.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/textGen" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/textGen/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/languageDesign/textGen/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/textGen/generators/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/textGen/classes" />
       <zipfileset dir="core/languageDesign/textGen/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.runtime.jar" duplicate="preserve" filesonly="true">
@@ -603,14 +547,12 @@
   </target>
   <target name="pack.jetbrains.mps.lang.stubs">
     <mkdir dir="core/languageDesign/stubs/classes_gen" />
-    <mkdir dir="core/languageDesign/stubs/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.stubs.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/stubs/stubs.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/stubs" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/stubs/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/stubs/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/languageDesign/stubs/classes_gen" />
-      <zipfileset dir="core/languageDesign/stubs/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.smodelTests">
@@ -636,13 +578,11 @@
   </target>
   <target name="pack.jetbrains.mps.lang.project">
     <mkdir dir="core/languageDesign/project/classes_gen" />
-    <mkdir dir="core/languageDesign/project/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.project.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/project/project.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/project" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/project/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/project/classes_gen" />
-      <zipfileset dir="core/languageDesign/project/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.make.script">
@@ -687,14 +627,12 @@
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation">
     <mkdir dir="core/debug/languages/evaluation/classes_gen" />
-    <mkdir dir="core/debug/languages/evaluation/classes" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.evaluation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/debug/languages/evaluation/evaluation.mpl" prefix="module" />
       <zipfileset dir="core/debug/languages/evaluation" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/debug/languages/evaluation/classes_gen" />
-      <zipfileset dir="core/debug/languages/evaluation/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation.ui">
@@ -706,37 +644,31 @@
   </target>
   <target name="pack.jetbrains.mps.debug.customViewers">
     <mkdir dir="core/debug/languages/customViewers/classes_gen" />
-    <mkdir dir="core/debug/languages/customViewers/classes" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.customViewers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/debug/languages/customViewers/customViewers.mpl" prefix="module" />
       <zipfileset dir="core/debug/languages/customViewers" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/debug/languages/customViewers/classes_gen" />
-      <zipfileset dir="core/debug/languages/customViewers/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.privateMembers">
     <mkdir dir="core/debug/languages/privateMembers/classes_gen" />
-    <mkdir dir="core/debug/languages/privateMembers/classes" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.privateMembers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/debug/languages/privateMembers/privateMembers.mpl" prefix="module" />
       <zipfileset dir="core/debug/languages/privateMembers" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug/languages/privateMembers/classes_gen" />
-      <zipfileset dir="core/debug/languages/privateMembers/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.apiLang">
     <mkdir dir="core/debug-api/languages/api/classes_gen" />
-    <mkdir dir="core/debug-api/languages/api/classes" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.apiLang.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/debug-api/languages/api/api.mpl" prefix="module" />
       <zipfileset dir="core/debug-api/languages/api" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug-api/languages/api/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug-api/languages/api/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/debug-api/languages/api/classes_gen" />
-      <zipfileset dir="core/debug-api/languages/api/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.make.runtime">
@@ -778,43 +710,36 @@
   </target>
   <target name="pack.jetbrains.mps.xml.deprecated">
     <mkdir dir="platform/xmlDeprecated/classes_gen" />
-    <mkdir dir="platform/xmlDeprecated/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xml.deprecated.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xmlDeprecated/languageDescriptor.mpl" prefix="module" />
       <zipfileset dir="platform/xmlDeprecated" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xmlDeprecated/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xmlDeprecated/generator" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator" />
       <zipfileset dir="platform/xmlDeprecated/classes_gen" />
-      <zipfileset dir="platform/xmlDeprecated/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.uiLanguage">
     <mkdir dir="platform/uiLanguage/classes_gen" />
-    <mkdir dir="platform/uiLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.uiLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/uiLanguage/uiLanguage.mpl" prefix="module" />
       <zipfileset dir="platform/uiLanguage" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/uiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/uiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="platform/uiLanguage/classes_gen" />
-      <zipfileset dir="platform/uiLanguage/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <mkdir dir="workbench/ideUiLanguage/classes_gen" />
-    <mkdir dir="workbench/ideUiLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.ide.uiLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="workbench/ideUiLanguage/uiLanguage.mpl" prefix="module" />
       <zipfileset dir="workbench/ideUiLanguage" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="workbench/ideUiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="workbench/ideUiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="workbench/ideUiLanguage/classes_gen" />
-      <zipfileset dir="workbench/ideUiLanguage/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ui">
     <mkdir dir="platform/ui/languages/ui/classes_gen" />
-    <mkdir dir="platform/ui/languages/ui/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/ui/ui.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/ui" includes="icons/**, resources/**" prefix="module" />
@@ -822,37 +747,30 @@
       <zipfileset dir="platform/ui/languages/ui/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ui/languages/ui/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/ui/languages/ui/classes_gen" />
-      <zipfileset dir="platform/ui/languages/ui/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ui.modeling">
     <mkdir dir="platform/ui/languages/meta/classes_gen" />
-    <mkdir dir="platform/ui/languages/meta/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.modeling.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/meta/meta.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/meta" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/ui/languages/meta/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ui/languages/meta/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
-      <zipfileset dir="platform/ui/languages/meta/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="platform/ui/languages/meta/classes_gen" />
-      <zipfileset dir="platform/ui/languages/meta/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ui.internal">
     <mkdir dir="platform/ui/languages/internal/classes_gen" />
-    <mkdir dir="platform/ui/languages/internal/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.internal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/internal/internal.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/internal" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/ui/languages/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ui/languages/internal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/ui/languages/internal/classes_gen" />
-      <zipfileset dir="platform/ui/languages/internal/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ui.gwt">
     <mkdir dir="platform/ui/languages/gwt/classes_gen" />
-    <mkdir dir="platform/ui/languages/gwt/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.gwt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/gwt/gwt.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/gwt" includes="icons/**, resources/**" prefix="module" />
@@ -860,7 +778,6 @@
       <zipfileset dir="platform/ui/languages/gwt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ui/languages/gwt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/ui/languages/gwt/classes_gen" />
-      <zipfileset dir="platform/ui/languages/gwt/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.gwt.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset file="platform/ui/languages/gwt/lib/gwt-user.jar" />
@@ -868,7 +785,6 @@
   </target>
   <target name="pack.jetbrains.mps.ui.swing">
     <mkdir dir="platform/ui/languages/swing/classes_gen" />
-    <mkdir dir="platform/ui/languages/swing/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swing.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/swing/swing.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/swing" includes="icons/**, resources/**" prefix="module" />
@@ -877,7 +793,6 @@
       <zipfileset dir="platform/ui/languages/swing/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset file="platform/ui/languages/swing/lib/swingx-1.6.jar" />
       <zipfileset dir="platform/ui/languages/swing/classes_gen" />
-      <zipfileset dir="platform/ui/languages/swing/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swing.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset file="platform/ui/languages/swing/lib/swingx-1.6.jar" />
@@ -895,7 +810,6 @@
   </target>
   <target name="pack.jetbrains.mps.ui.swt">
     <mkdir dir="platform/ui/languages/swt/classes_gen" />
-    <mkdir dir="platform/ui/languages/swt/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ui/languages/swt/swt.mpl" prefix="module" />
       <zipfileset dir="platform/ui/languages/swt" includes="icons/**, resources/**" prefix="module" />
@@ -903,7 +817,6 @@
       <zipfileset dir="platform/ui/languages/swt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ui/languages/swt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/ui/languages/swt/classes_gen" />
-      <zipfileset dir="platform/ui/languages/swt/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/ui/jetbrains.mps.ui.swt.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset file="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
@@ -922,19 +835,16 @@
   </target>
   <target name="pack.jetbrains.mps.buildlanguage">
     <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/buildlanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.buildlanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/generator/xml/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/xml/template" />
       <zipfileset dir="platform/buildlanguage/languages/buildlanguage/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/buildlanguage/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.custommps">
     <mkdir dir="platform/buildlanguage/languages/custommps/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/custommps/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.custommps.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/custommps/custommps.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/custommps" includes="icons/**, resources/**" prefix="module" />
@@ -942,12 +852,10 @@
       <zipfileset dir="platform/buildlanguage/languages/custommps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/custommps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/buildlanguage/languages/custommps/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/custommps/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.distrib">
     <mkdir dir="platform/buildlanguage/languages/distrib/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/distrib/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.distrib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/distrib/distrib.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/distrib" includes="icons/**, resources/**" prefix="module" />
@@ -955,12 +863,10 @@
       <zipfileset dir="platform/buildlanguage/languages/distrib/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/distrib/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/buildlanguage/languages/distrib/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/distrib/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.generictasks">
     <mkdir dir="platform/buildlanguage/languages/generictasks/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/generictasks/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.generictasks.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/generictasks/generictasks.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/generictasks" includes="icons/**, resources/**" prefix="module" />
@@ -968,13 +874,11 @@
       <zipfileset dir="platform/buildlanguage/languages/generictasks/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/generictasks/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/buildlanguage/languages/generictasks/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/generictasks/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.packaging">
     <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
     <mkdir dir="platform/buildlanguage/languages/packaging/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.packaging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/packaging/packaging.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/packaging" includes="icons/**, resources/**" prefix="module" />
@@ -983,7 +887,6 @@
       <zipfileset dir="platform/buildlanguage/languages/packaging/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/buildlanguage/template" />
       <zipfileset dir="platform/buildlanguage/languages/packaging/classes" />
       <zipfileset dir="platform/buildlanguage/languages/packaging/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/packaging/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.packaging.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/buildlanguage/languages/packaging/classes" />
@@ -991,86 +894,72 @@
   </target>
   <target name="pack.jetbrains.mps.build.dependency">
     <mkdir dir="platform/buildlanguage/languages/dependency/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/dependency/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.dependency.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/dependency/dependency.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/dependency" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/dependency/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/dependency/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/buildlanguage/template" />
       <zipfileset dir="platform/buildlanguage/languages/dependency/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/dependency/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.property">
     <mkdir dir="platform/buildlanguage/languages/property/classes_gen" />
-    <mkdir dir="platform/buildlanguage/languages/property/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.property.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/property/property.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/property" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/property/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/buildlanguage/languages/property/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/buildlanguage/languages/property/classes_gen" />
-      <zipfileset dir="platform/buildlanguage/languages/property/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xml">
     <mkdir dir="platform/xml/xml/classes_gen" />
-    <mkdir dir="platform/xml/xml/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xml.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xml/xml/xml.mpl" prefix="module" />
       <zipfileset dir="platform/xml/xml" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xml/xml/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xml/xml/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="platform/xml/xml/classes_gen" />
-      <zipfileset dir="platform/xml/xml/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlQuery">
     <mkdir dir="platform/xml/xmlQuery/classes_gen" />
-    <mkdir dir="platform/xml/xmlQuery/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlQuery.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xml/xmlQuery/xmlQuery.mpl" prefix="module" />
       <zipfileset dir="platform/xml/xmlQuery" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xml/xmlQuery/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xml/xmlQuery/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/xml/xmlQuery/classes_gen" />
-      <zipfileset dir="platform/xml/xmlQuery/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlInternal">
     <mkdir dir="platform/xml/xmlInternal/classes_gen" />
-    <mkdir dir="platform/xml/xmlInternal/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xml/xmlInternal/xmlInternal.mpl" prefix="module" />
       <zipfileset dir="platform/xml/xmlInternal" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xml/xmlInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xml/xmlInternal/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="platform/xml/xmlInternal/classes_gen" />
-      <zipfileset dir="platform/xml/xmlInternal/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlSchema">
     <mkdir dir="platform/xml/xmlSchema/classes_gen" />
-    <mkdir dir="platform/xml/xmlSchema/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlSchema.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xml/xmlSchema/xmlSchema.mpl" prefix="module" />
       <zipfileset dir="platform/xml/xmlSchema" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xml/xmlSchema/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xml/xmlSchema/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/xml/xmlSchema/classes_gen" />
-      <zipfileset dir="platform/xml/xmlSchema/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlUnitTest">
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
-    <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlUnitTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" prefix="module" />
       <zipfileset dir="platform/xmlUnitTest/languages/xmlUnitTest" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/xmlUnitTest/languages/xmlUnitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/xmlUnitTest/languages/xmlUnitTest/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
-      <zipfileset dir="platform/xmlUnitTest/languages/xmlUnitTest/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlUnitTest.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset file="platform/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
@@ -1078,7 +967,6 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp">
     <mkdir dir="platform/regexp/classes_gen" />
-    <mkdir dir="platform/regexp/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.regexp.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/regexp/regexp.mpl" prefix="module" />
       <zipfileset dir="platform/regexp" includes="icons/**, resources/**" prefix="module" />
@@ -1086,7 +974,6 @@
       <zipfileset dir="platform/regexp/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/regexp/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="platform/regexp/classes_gen" />
-      <zipfileset dir="platform/regexp/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp.runtime">
@@ -1109,18 +996,15 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.extensionMethods">
     <mkdir dir="platform/extensionMethod/classes_gen" />
-    <mkdir dir="platform/extensionMethod/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.extensionMethods.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/extensionMethod/methodExtension.mpl" prefix="module" />
       <zipfileset dir="platform/extensionMethod" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/extensionMethod/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/extensionMethod/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/extensionMethod/classes_gen" />
-      <zipfileset dir="platform/extensionMethod/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.collections.trove">
-    <mkdir dir="core/baseLanguage/collections/languages/trove/classes" />
     <mkdir dir="core/baseLanguage/collections/languages/trove/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.collections.trove.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/collections/languages/trove/trove.mpl" prefix="module" />
@@ -1130,55 +1014,46 @@
       <zipfileset dir="core/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/collections/languages/trove/classes" />
       <zipfileset file="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-      <zipfileset dir="core/baseLanguage/collections/languages/trove/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.contracts">
     <mkdir dir="platform/contracts/languages/contracts/classes_gen" />
-    <mkdir dir="platform/contracts/languages/contracts/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.contracts.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/contracts/languages/contracts/contracts.mpl" prefix="module" />
       <zipfileset dir="platform/contracts/languages/contracts" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/contracts/languages/contracts/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/contracts/languages/contracts/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/contracts/languages/contracts/classes_gen" />
-      <zipfileset dir="platform/contracts/languages/contracts/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.overloadedOperators">
     <mkdir dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
-    <mkdir dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.overloadedOperators.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
-      <zipfileset dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.constructors">
     <mkdir dir="core/baseLanguage/constructors/classes_gen" />
-    <mkdir dir="core/baseLanguage/constructors/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.constructors.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/constructors/constructors.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/constructors" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/constructors/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/constructors/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/baseLanguage/constructors/classes_gen" />
-      <zipfileset dir="core/baseLanguage/constructors/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.builders">
     <mkdir dir="platform/builders/classes_gen" />
-    <mkdir dir="platform/builders/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.builders.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/builders/builders.mpl" prefix="module" />
       <zipfileset dir="platform/builders" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/builders/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/builders/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/builders/classes_gen" />
-      <zipfileset dir="platform/builders/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.math.runtime">
@@ -1201,14 +1076,12 @@
   </target>
   <target name="pack.jetbrains.mps.lang.editor.table">
     <mkdir dir="core/languageDesign/editor/languages/table/classes_gen" />
-    <mkdir dir="core/languageDesign/editor/languages/table/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/editor/jetbrains.mps.lang.editor.table.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/editor/languages/table/table.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/languages/table" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/languages/table/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/editor/languages/table/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/languageDesign/editor/languages/table/classes_gen" />
-      <zipfileset dir="core/languageDesign/editor/languages/table/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor.table.runtime">
@@ -1240,7 +1113,6 @@
   </target>
   <target name="pack.jetbrains.mps.ypath">
     <mkdir dir="platform/ypath/classes_gen" />
-    <mkdir dir="platform/ypath/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.ypath.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/ypath.mpl" prefix="module" />
       <zipfileset dir="platform/ypath" includes="icons/**, resources/**" prefix="module" />
@@ -1248,7 +1120,6 @@
       <zipfileset dir="platform/ypath/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/ypath/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="platform/ypath/classes_gen" />
-      <zipfileset dir="platform/ypath/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ypath.runtime">
@@ -1262,7 +1133,6 @@
   </target>
   <target name="pack.jetbrains.mps.bash">
     <mkdir dir="platform/bash/languages/bash/classes_gen" />
-    <mkdir dir="platform/bash/languages/bash/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.bash.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/bash/languages/bash/bash.mpl" prefix="module" />
       <zipfileset dir="platform/bash/languages/bash" includes="icons/**, resources/**" prefix="module" />
@@ -1270,12 +1140,10 @@
       <zipfileset dir="platform/bash/languages/bash/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/bash/languages/bash/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/bash/languages/bash/classes_gen" />
-      <zipfileset dir="platform/bash/languages/bash/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.quickQueryLanguage">
     <mkdir dir="platform/quickQueryLanguage/classes_gen" />
-    <mkdir dir="platform/quickQueryLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.quickQueryLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/quickQueryLanguage/quickQueryLanguage.mpl" prefix="module" />
       <zipfileset dir="platform/quickQueryLanguage" includes="icons/**, resources/**" prefix="module" />
@@ -1283,7 +1151,6 @@
       <zipfileset dir="platform/quickQueryLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/quickQueryLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/quickQueryLanguage/classes_gen" />
-      <zipfileset dir="platform/quickQueryLanguage/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.quickQuery.runtime">
@@ -1297,7 +1164,6 @@
   </target>
   <target name="pack.jetbrains.mps.gwt.client">
     <mkdir dir="platform/gwtsupport/languages/client/classes_gen" />
-    <mkdir dir="platform/gwtsupport/languages/client/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gwt.client.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/gwtsupport/languages/client/client.mpl" prefix="module" />
       <zipfileset dir="platform/gwtsupport/languages/client" includes="icons/**, resources/**" prefix="module" />
@@ -1305,21 +1171,17 @@
       <zipfileset dir="platform/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
       <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
       <zipfileset dir="platform/gwtsupport/languages/client/classes_gen" />
-      <zipfileset dir="platform/gwtsupport/languages/client/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.gtext">
     <mkdir dir="platform/gtext/classes_gen" />
-    <mkdir dir="platform/gtext/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gtext.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/gtext/gtext.mpl" prefix="module" />
       <zipfileset dir="platform/gtext" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/gtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/gtext/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
       <zipfileset dir="platform/gtext/classes_gen" />
-      <zipfileset dir="platform/gtext/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.gtext.runtime">
@@ -1333,14 +1195,12 @@
   </target>
   <target name="pack.jetbrains.mps.analyzers">
     <mkdir dir="core/analyzers/languages/analyzers/classes_gen" />
-    <mkdir dir="core/analyzers/languages/analyzers/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.analyzers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/analyzers/languages/analyzers/analyzers.mpl" prefix="module" />
       <zipfileset dir="core/analyzers/languages/analyzers" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/analyzers/languages/analyzers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/analyzers/languages/analyzers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/analyzers/languages/analyzers/classes_gen" />
-      <zipfileset dir="core/analyzers/languages/analyzers/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.analyzers.runtime">
@@ -1354,7 +1214,6 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates">
     <mkdir dir="platform/dates/classes_gen" />
-    <mkdir dir="platform/dates/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.dates.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/dates/dates.mpl" prefix="module" />
       <zipfileset dir="platform/dates" includes="icons/**, resources/**" prefix="module" />
@@ -1362,18 +1221,15 @@
       <zipfileset dir="platform/dates/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/dates/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="platform/dates/classes_gen" />
-      <zipfileset dir="platform/dates/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.datesInternal">
     <mkdir dir="platform/dates/internal/classes_gen" />
-    <mkdir dir="platform/dates/internal/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.datesInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/dates/internal/internal.mpl" prefix="module" />
       <zipfileset dir="platform/dates/internal" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/dates/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/dates/internal/classes_gen" />
-      <zipfileset dir="platform/dates/internal/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
@@ -1388,7 +1244,6 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.math">
     <mkdir dir="platform/math/classes_gen" />
-    <mkdir dir="platform/math/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.math.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/math/math.mpl" prefix="module" />
       <zipfileset dir="platform/math" includes="icons/**, resources/**" prefix="module" />
@@ -1396,30 +1251,25 @@
       <zipfileset dir="platform/math/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/math/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="platform/math/classes_gen" />
-      <zipfileset dir="platform/math/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.money">
     <mkdir dir="platform/money/classes_gen" />
-    <mkdir dir="platform/money/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.money.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/money/money.mpl" prefix="module" />
       <zipfileset dir="platform/money" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/money/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/money/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="platform/money/classes_gen" />
-      <zipfileset dir="platform/money/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.platform.conf">
     <mkdir dir="platform/conf/languages/conf/classes_gen" />
-    <mkdir dir="platform/conf/languages/conf/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.platform.conf.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/conf/languages/conf/conf.mpl" prefix="module" />
       <zipfileset dir="platform/conf/languages/conf" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/conf/languages/conf/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/conf/languages/conf/classes_gen" />
-      <zipfileset dir="platform/conf/languages/conf/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mpslite">
