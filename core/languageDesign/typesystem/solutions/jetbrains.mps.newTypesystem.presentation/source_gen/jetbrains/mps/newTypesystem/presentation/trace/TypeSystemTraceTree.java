@@ -4,7 +4,6 @@ package jetbrains.mps.newTypesystem.presentation.trace;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
@@ -18,6 +17,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.newTypesystem.presentation" uuid="9fd674ba-c96d-44ef-b1a9-cdf2833c7494" compileInMPS="true" java-stubs-enabled="false">
+<solution name="jetbrains.mps.workbench.typesystemUI" uuid="9fd674ba-c96d-44ef-b1a9-cdf2833c7494" compileInMPS="true" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

@@ -88,7 +88,7 @@
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="false">13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</dependency>
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
-    <dependency reexport="false">9fd674ba-c96d-44ef-b1a9-cdf2833c7494(jetbrains.mps.newTypesystem.presentation)</dependency>
+    <dependency reexport="false">9fd674ba-c96d-44ef-b1a9-cdf2833c7494(jetbrains.mps.workbench.typesystemUI)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>

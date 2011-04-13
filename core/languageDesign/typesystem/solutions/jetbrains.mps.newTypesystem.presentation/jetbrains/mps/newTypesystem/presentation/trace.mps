@@ -33,13 +33,13 @@
   <import index="cpnt" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor(jetbrains.mps.editor.runtime/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="qaz0" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor.cells(jetbrains.mps.editor.runtime/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="2szd" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.newTypesystem.state.blocks(MPS.Classpath/jetbrains.mps.newTypesystem.state.blocks@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="oz6a" modelUID="f:java_stub#d568f86b-af37-4d5b-8d74-867bd13f2ff4#jetbrains.mps.nodeEditor.text(jetbrains.mps.editor.runtime/jetbrains.mps.nodeEditor.text@java_stub)" version="-1" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
-  <import index="l5ny" modelUID="r:9e31fce5-110c-46a5-b09f-2878d44d34d6(jetbrains.mps.newTypesystem.presentation.trace)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="743535856746705724">
       <property name="name" nameId="tpck.1169194664001" value="BlockTreeNode" />
@@ -88,8 +88,8 @@
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="743535856746705727">
       <property name="name" nameId="tpck.1169194664001" value="myBlock" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705728">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~Block" resolveInfo="Block" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129170">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~Block" resolveInfo="Block" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="743535856746705729" />
     </node>
@@ -98,8 +98,8 @@
       <property name="name" nameId="tpck.1169194664001" value="COLOR_MAP" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705731">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705732">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129172">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
         </node>
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705733">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1t7x.~Color" resolveInfo="Color" />
@@ -115,8 +115,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="743535856746705737" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705738">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705739">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129189">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
         </node>
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705740">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1t7x.~Color" resolveInfo="Color" />
@@ -128,8 +128,8 @@
             <property name="name" nameId="tpck.1169194664001" value="result" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705744">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705745">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129180">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
               </node>
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705746">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1t7x.~Color" resolveInfo="Color" />
@@ -138,8 +138,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="743535856746705747">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="743535856746705748">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
-                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705749">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
+                <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129177">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
                 </node>
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705750">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1t7x.~Color" resolveInfo="Color" />
@@ -155,9 +155,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705754">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map%dput(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="put" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746705755">
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~RelationKind%dWEAK" resolveInfo="WEAK" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129186">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~RelationKind%dWEAK" resolveInfo="WEAK" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="743535856746705756">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="743535856746705757">
@@ -177,9 +177,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705762">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map%dput(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="put" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746705763">
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~RelationKind" resolveInfo="RelationKind" />
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~RelationKind%dSTRONG" resolveInfo="STRONG" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129185">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~RelationKind%dSTRONG" resolveInfo="STRONG" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~RelationKind" resolveInfo="RelationKind" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="743535856746705764">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="743535856746705765">
@@ -204,8 +204,8 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="743535856746705771" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="743535856746705772">
         <property name="name" nameId="tpck.1169194664001" value="block" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705773">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~Block" resolveInfo="Block" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129171">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~Block" resolveInfo="Block" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="743535856746705774">
@@ -234,7 +234,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705772" resolveInfo="block" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705782">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetExpandedPresentation(jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dlang%dString" resolveInfo="getExpandedPresentation" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetExpandedPresentation(jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dlang%dString" resolveInfo="getExpandedPresentation" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="743535856746705783">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705776" resolveInfo="state" />
               </node>
@@ -264,7 +264,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705772" resolveInfo="block" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705794">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetNodeId()%cjava%dlang%dString" resolveInfo="getNodeId" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetNodeId()%cjava%dlang%dString" resolveInfo="getNodeId" />
               </node>
             </node>
           </node>
@@ -279,7 +279,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705772" resolveInfo="block" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705800">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetNodeModel()%cjava%dlang%dString" resolveInfo="getNodeModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetNodeModel()%cjava%dlang%dString" resolveInfo="getNodeModel" />
               </node>
             </node>
           </node>
@@ -298,7 +298,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705772" resolveInfo="block" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3527987301180343309">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetVariables(jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dutil%dList" resolveInfo="getVariables" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetVariables(jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dutil%dList" resolveInfo="getVariables" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7022659252840147159">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705776" resolveInfo="state" />
                   </node>
@@ -336,14 +336,14 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705727" resolveInfo="myBlock" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705813">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetBlockKind()%cjetbrains%dmps%dnewTypesystem%dstate%dBlockKind" resolveInfo="getBlockKind" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetBlockKind()%cjetbrains%dmps%dnewTypesystem%dstate%dblocks%dBlockKind" resolveInfo="getBlockKind" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705814">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Enum%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746705815">
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~BlockKind" resolveInfo="BlockKind" />
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~BlockKind%dINEQUALITY" resolveInfo="INEQUALITY" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129175">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~BlockKind%dINEQUALITY" resolveInfo="INEQUALITY" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~BlockKind" resolveInfo="BlockKind" />
               </node>
             </node>
           </node>
@@ -366,13 +366,13 @@
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="743535856746705826">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705727" resolveInfo="myBlock" />
                           </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746705827">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~InequalityBlock" resolveInfo="InequalityBlock" />
+                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129176">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~InequalityBlock" resolveInfo="InequalityBlock" />
                           </node>
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705828">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~RelationBlock%dgetRelationKind()%cjetbrains%dmps%dnewTypesystem%dstate%dRelationKind" resolveInfo="getRelationKind" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~RelationBlock%dgetRelationKind()%cjetbrains%dmps%dnewTypesystem%dstate%dblocks%dRelationKind" resolveInfo="getRelationKind" />
                       </node>
                     </node>
                   </node>
@@ -663,10 +663,10 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705839" resolveInfo="myState" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705936">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746705937">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~BlockKind" resolveInfo="BlockKind" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~BlockKind%dCOMPARABLE" resolveInfo="COMPARABLE" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dblocks%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129384">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~BlockKind%dCOMPARABLE" resolveInfo="COMPARABLE" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~BlockKind" resolveInfo="BlockKind" />
                     </node>
                   </node>
                 </node>
@@ -692,10 +692,10 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705839" resolveInfo="myState" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746705947">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746705948">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~BlockKind" resolveInfo="BlockKind" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~BlockKind%dWHEN_CONCRETE" resolveInfo="WHEN_CONCRETE" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dblocks%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129382">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~BlockKind%dWHEN_CONCRETE" resolveInfo="WHEN_CONCRETE" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~BlockKind" resolveInfo="BlockKind" />
                     </node>
                   </node>
                 </node>
@@ -899,8 +899,8 @@
         <property name="name" nameId="tpck.1169194664001" value="entries" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706030">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706031">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~Block" resolveInfo="Block" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129398">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~Block" resolveInfo="Block" />
           </node>
         </node>
       </node>
@@ -979,8 +979,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="743535856746706062">
             <property name="name" nameId="tpck.1169194664001" value="block" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706063">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~Block" resolveInfo="Block" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129399">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~Block" resolveInfo="Block" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="743535856746706064">
@@ -1064,10 +1064,10 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746705839" resolveInfo="myState" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746706096">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="743535856746706097">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="xw2j.~BlockKind" resolveInfo="BlockKind" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="xw2j.~BlockKind%dINEQUALITY" resolveInfo="INEQUALITY" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~State%dgetBlocks(jetbrains%dmps%dnewTypesystem%dstate%dblocks%dBlockKind)%cjava%dutil%dSet" resolveInfo="getBlocks" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7962504697050129401">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="2szd.~BlockKind%dINEQUALITY" resolveInfo="INEQUALITY" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="2szd.~BlockKind" resolveInfo="BlockKind" />
                     </node>
                   </node>
                 </node>
@@ -1089,8 +1089,8 @@
               </node>
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706103">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />
-                <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706104">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~InequalityBlock" resolveInfo="InequalityBlock" />
+                <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129400">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~InequalityBlock" resolveInfo="InequalityBlock" />
                 </node>
               </node>
             </node>
@@ -1183,8 +1183,8 @@
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="743535856746706140">
                 <property name="name" nameId="tpck.1169194664001" value="block" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746706141">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~InequalityBlock" resolveInfo="InequalityBlock" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050129402">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~InequalityBlock" resolveInfo="InequalityBlock" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="743535856746706142">
@@ -4411,8 +4411,8 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="743535856746707423">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="743535856746707424">
                 <property name="name" nameId="tpck.1169194664001" value="block" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="743535856746707425">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xw2j.~Block" resolveInfo="Block" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7962504697050134918">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2szd.~Block" resolveInfo="Block" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="743535856746707426">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="743535856746707427">
@@ -4426,7 +4426,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746707431">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3pw0.~AbstractBlockOperation%dgetBlock()%cjetbrains%dmps%dnewTypesystem%dstate%dBlock" resolveInfo="getBlock" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3pw0.~AbstractBlockOperation%dgetBlock()%cjetbrains%dmps%dnewTypesystem%dstate%dblocks%dBlock" resolveInfo="getBlock" />
                   </node>
                 </node>
               </node>
@@ -4437,7 +4437,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="743535856746707424" resolveInfo="block" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="743535856746707435">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xw2j.~Block%dgetInputs()%cjava%dutil%dSet" resolveInfo="getInputs" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2szd.~Block%dgetInputs()%cjava%dutil%dSet" resolveInfo="getInputs" />
                 </node>
               </node>
               <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="743535856746707436">
