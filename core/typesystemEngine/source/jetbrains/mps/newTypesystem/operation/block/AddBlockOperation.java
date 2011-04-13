@@ -16,8 +16,8 @@
 package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.PresentationKind;
-import jetbrains.mps.newTypesystem.state.Block;
-import jetbrains.mps.newTypesystem.state.BlockKind;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
+import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 

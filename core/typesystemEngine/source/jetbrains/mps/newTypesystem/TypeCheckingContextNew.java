@@ -23,7 +23,7 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.newTypesystem.state.WhenConcreteBlock;
+import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -50,6 +50,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsResolving = false;
   private boolean myIsTraceMode = false;
+  private boolean myIsInferenceMode = false;
   private IOperationContext myOperationContext;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
@@ -220,15 +221,22 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
-      final INodeTypesComponent temporaryComponent;
-      temporaryComponent = getNodeTypesComponent();
-      return temporaryComponent.computeTypesForNodeInferenceMode(node);
+      myIsInferenceMode = true;
+      try{
+        return myNodeTypesComponent.computeTypesForNodeInferenceMode(node);
+      } finally {
+        myIsInferenceMode = false;
+      }
     }
   }
 
   @Override
   public void clear() {
     myNodeTypesComponent.clear();
+  }
+
+  public boolean isInferenceMode() {
+    return myIsInferenceMode;
   }
 
   @Override

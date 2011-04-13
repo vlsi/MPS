@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.test;
 
-import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.newTypesystem.state.State;

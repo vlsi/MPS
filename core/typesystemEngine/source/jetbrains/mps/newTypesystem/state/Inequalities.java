@@ -22,6 +22,7 @@ import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.newTypesystem.relations.AbstractRelation;
 import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
+import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ManyToManyMap;
 
@@ -84,7 +85,7 @@ public class Inequalities {  //
     for (Block block: myState.getBlocks()) {
       if (block.getBlockKind() != BlockKind.WHEN_CONCRETE) {
         RelationBlock relationBlock = (RelationBlock) block;
-        if (!relationBlock.getRelationKind().isCheckOnly()) {
+        if (!relationBlock.isCheckOnly()) {
           result.add(relationBlock);
         }
       }
@@ -113,7 +114,7 @@ public class Inequalities {  //
     myNodesToBlocks.clear();
     myNodes.clear();
     for (RelationBlock inequality : inequalities) {
-      if (inequality.getRelationKind().isCheckOnly()) {
+      if (inequality.isCheckOnly()) {
         continue;
       }
       for (Pair<SNode, SNode> pair: inequality.getInputsAndOutputs()) {
@@ -180,7 +181,7 @@ public class Inequalities {  //
 
   private void collectNodesInRelation(SNode node, Set<SNode> lefts, Set<SNode> rights, Set<RelationBlock> blocks, Map<SNode, RelationBlock> typesToBlocks) {
     for (RelationBlock block : blocks) {
-      if (block.getRelationKind().isCheckOnly()) {
+      if (block.isCheckOnly()) {
         continue;
       }
       SNode left = myState.getRepresentative(block.getLeftNode());

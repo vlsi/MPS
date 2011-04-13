@@ -28,6 +28,7 @@ import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
+import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -464,7 +465,7 @@ public class State {
     Set<Block> result = new HashSet<Block>();
     Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
     for (Block block: blocks) {
-      if (((RelationBlock)block).getRelationKind().isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
+      if (((RelationBlock)block).isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
         result.add(block);
       }
     }

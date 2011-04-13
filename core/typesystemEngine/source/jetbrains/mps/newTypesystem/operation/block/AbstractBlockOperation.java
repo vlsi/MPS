@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.List;

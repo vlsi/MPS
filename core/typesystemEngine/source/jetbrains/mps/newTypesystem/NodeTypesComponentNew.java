@@ -110,20 +110,20 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), true);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0));
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes) {
     myIsSpecial = true;
-    SNode result = myTypeSystemComponent.computeTypesForNode_special(initialNode, givenAdditionalNodes, inferenceMode);
+    SNode result = myTypeSystemComponent.computeTypesForNode_special(initialNode, givenAdditionalNodes);
     myIsSpecial = false;
     return result;
   }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.state;
+package jetbrains.mps.newTypesystem.state.blocks;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
@@ -23,6 +23,8 @@ import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.CheckSubTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ProcessReplacementRuleOperation;
+import jetbrains.mps.newTypesystem.state.ConditionKind;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -30,7 +32,6 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -51,7 +52,7 @@ public class InequalityBlock extends RelationBlock {
   }
 
   public SNode getInput() {
-    if (myRelationKind.isCheckOnly()) {
+    if (isCheckOnly()) {
       return null;
     }
     if (lessThen) {
@@ -120,7 +121,7 @@ public class InequalityBlock extends RelationBlock {
 
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    if (myRelationKind.isCheckOnly()) {
+    if (isCheckOnly()) {
       return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
         new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
     } else {

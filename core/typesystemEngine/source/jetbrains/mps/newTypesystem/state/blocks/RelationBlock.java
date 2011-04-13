@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.state;
+package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -57,6 +57,10 @@ public abstract class RelationBlock extends Block {
   @Override
   public String getPresentation() {
     return myRelationKind.getTitle() + " : " +  getShortPresentation();
+  }
+
+  public boolean isCheckOnly() {
+    return !myState.getTypeCheckingContext().isInferenceMode() && myRelationKind.isCheckOnly();
   }
 
  @Override

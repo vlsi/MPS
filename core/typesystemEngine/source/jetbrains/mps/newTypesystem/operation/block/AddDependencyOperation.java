@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.operation.block;
 
-import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;

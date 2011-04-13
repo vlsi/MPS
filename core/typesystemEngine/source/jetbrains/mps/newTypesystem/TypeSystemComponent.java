@@ -192,7 +192,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode, boolean finalExpansion) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -202,11 +202,9 @@ class TypeSystemComponent extends CheckingComponent {
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
-
       if (!loadTypesystemRules(nodeToCheck)) {
         return;
       }
-
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       solveInequalitiesAndExpandTypes(finalExpansion);
       performActionsAfterChecking();
@@ -224,7 +222,7 @@ class TypeSystemComponent extends CheckingComponent {
     myNodesToRules.clear();
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -233,11 +231,11 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, true, false, additionalNodes, inferenceMode, false);
+      computeTypes(node, true, false, additionalNodes, false);
       type = getType(initialNode);
       if (type == null || HUtil.hasVariablesInside(type)) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode, true);
+          computeTypes(node, true, true, new ArrayList<SNode>(0), true);
           type = getType(initialNode);
           return type;
         }
@@ -373,7 +371,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), false, true);
+    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), true);
   }
 
   private void performActionsAfterChecking() {
