@@ -81,55 +81,31 @@ public class BaseConcept_Behavior {
 
   public static Icon call_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_getAdditionalIcon_5017341185733863694(thisNode);
-    }
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694);
   }
 
   public static List<Icon> call_getMarkIcons_3923831204883340393(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_getMarkIcons_3923831204883340393(thisNode);
-    }
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_3923831204883340393);
   }
 
   public static boolean call_isRunnable_7941158526576616752(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_isRunnable_7941158526576616752(thisNode);
-    }
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616752);
   }
 
   public static String call_getPresentation_1213877396640(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_getPresentation_1213877396640(thisNode);
-    }
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
   }
 
   public static String call_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_getDetailedPresentation_2354269628709769373(thisNode);
-    }
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getDetailedPresentation_2354269628709769373", PARAMETERS_2354269628709769373);
   }
 
   public static int call_getMetaLevel_3981318653438234726(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof BaseConcept_BehaviorDescriptor) {
-      BaseConcept_BehaviorDescriptor casted = (BaseConcept_BehaviorDescriptor) descriptor;
-      return casted.virtual_getMetaLevel_3981318653438234726(thisNode);
-    }
     return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", PARAMETERS_3981318653438234726);
   }
 

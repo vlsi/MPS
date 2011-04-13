@@ -16,10 +16,6 @@ public class Attribute_Behavior {
 
   public static String call_getOldAttributeRole_6407023681583030897(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof Attribute_BehaviorDescriptor) {
-      Attribute_BehaviorDescriptor casted = (Attribute_BehaviorDescriptor) descriptor;
-      return casted.virtual_getOldAttributeRole_6407023681583030897(thisNode);
-    }
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.Attribute"), "virtual_getOldAttributeRole_6407023681583030897", PARAMETERS_6407023681583030897);
   }
 

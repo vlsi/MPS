@@ -25,19 +25,11 @@ public class IDeprecatable_Behavior {
 
   public static boolean call_isDeprecated_1224609060727(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof IDeprecatable_BehaviorDescriptor) {
-      IDeprecatable_BehaviorDescriptor casted = (IDeprecatable_BehaviorDescriptor) descriptor;
-      return casted.virtual_isDeprecated_1224609060727(thisNode);
-    }
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
   }
 
   public static String call_getMessage_1225207468592(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof IDeprecatable_BehaviorDescriptor) {
-      IDeprecatable_BehaviorDescriptor casted = (IDeprecatable_BehaviorDescriptor) descriptor;
-      return casted.virtual_getMessage_1225207468592(thisNode);
-    }
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
   }
 

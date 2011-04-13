@@ -27,10 +27,6 @@ public class ExportScope_Behavior {
 
   public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof ExportScope_BehaviorDescriptor) {
-      ExportScope_BehaviorDescriptor casted = (ExportScope_BehaviorDescriptor) descriptor;
-      return casted.virtual_checkExport_2565736246230026584(thisNode, sourceNamespace, targetNode);
-    }
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace, targetNode);
   }
 

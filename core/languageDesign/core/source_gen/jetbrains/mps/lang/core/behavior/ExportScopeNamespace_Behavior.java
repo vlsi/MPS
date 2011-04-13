@@ -21,10 +21,6 @@ public class ExportScopeNamespace_Behavior {
 
   public static boolean call_checkExport_402007580867615878(SNode thisNode, String sourceNamespace, SNode targetNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    if (descriptor instanceof ExportScopeNamespace_BehaviorDescriptor) {
-      ExportScopeNamespace_BehaviorDescriptor casted = (ExportScopeNamespace_BehaviorDescriptor) descriptor;
-      return casted.virtual_checkExport_2565736246230026584(thisNode, sourceNamespace, targetNode);
-    }
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867615878, sourceNamespace, targetNode);
   }
 
