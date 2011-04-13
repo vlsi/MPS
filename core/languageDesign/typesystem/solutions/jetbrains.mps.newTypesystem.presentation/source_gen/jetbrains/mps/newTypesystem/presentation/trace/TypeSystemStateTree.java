@@ -24,9 +24,10 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
@@ -65,6 +66,7 @@ public class TypeSystemStateTree extends MPSTree {
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
+    result.add(createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null));
     /*
       result.add(createTypesNode());
     */
@@ -155,16 +157,30 @@ public class TypeSystemStateTree extends MPSTree {
         }
       };
     }
-    SNode source = stateNode.getSource();
-    if (source != null && source.isRegistered()) {
-      goToNode = new BaseAction("Go to node") {
-        public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          myOperationContext.getComponent(MPSEditorOpener.class).editNode(stateNode.getSource(), myOperationContext);
-
+    final DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        NodeMaps maps = myState.getNodeMaps();
+        List<SNode> vars = stateNode.getVariables();
+        for (SNode var : vars) {
+          final SNode node = check_x8yvv7_a0a0c0a0a0a0f0i(maps, var);
+          if (node != null && node.isRegistered()) {
+            group.add(new BaseAction("Go to node with type " + var) {
+              public void doExecute(AnActionEvent e, Map<String, Object> _params) {
+                myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
+              }
+            });
+          }
         }
-      };
-    }
-    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
+      }
+    });
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+  }
+
+  private static SNode check_x8yvv7_a0a0c0a0a0a0f0i(NodeMaps checkedDotOperand, SNode var) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode(var);
+    }
+    return null;
   }
 }

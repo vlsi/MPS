@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
+import java.util.List;
+import java.util.LinkedList;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -32,6 +34,18 @@ public class PresentationUtil {
       }
     }
     return sb.toString();
+  }
+
+  public static List<SNode> getNodes(@NotNull Collection<SNode> variables, State state) {
+    NodeMaps maps = state.getNodeMaps();
+    List<SNode> result = new LinkedList<SNode>();
+    if (maps == null) {
+      return result;
+    }
+    for (SNode var : variables) {
+      result.add(maps.getNode(var));
+    }
+    return result;
   }
 
   private static String check_6aa0xa_a0a0(TextBuilder checkedDotOperand) {

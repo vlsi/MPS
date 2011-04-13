@@ -11,6 +11,8 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import java.util.HashMap;
 
 public class BlockTreeNode extends TypeSystemStateTreeNode {
@@ -23,6 +25,7 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
     myBlock = block;
     myRuleId = block.getNodeId();
     myRuleModel = block.getNodeModel();
+    myState = state;
     setTooltipText(PresentationUtil.getVariablesTooltipPresentation(editorComponent, block.getVariables(state), state));
   }
 
@@ -33,6 +36,11 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
       color = BlockTreeNode.COLOR_MAP.get(((InequalityBlock) myBlock).getRelationKind());
     }
     setColor(color);
+  }
+
+  @Override
+  public List<SNode> getVariables() {
+    return myBlock.getVariables(myState);
   }
 
   private static Map<RelationKind, Color> initColors() {

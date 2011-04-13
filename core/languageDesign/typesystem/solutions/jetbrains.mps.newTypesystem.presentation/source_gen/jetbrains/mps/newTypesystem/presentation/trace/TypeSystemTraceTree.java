@@ -47,13 +47,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final SNode mySelectedNode;
   private final Set<SNode> myNodes;
   private boolean generationMode = false;
-  private ShowTypeSystemTrace myParent;
+  private TypeSystemTraceDialog myParent;
   private State myStateCopy;
   private State myCurrentState;
   private AbstractOperation myOldOperation;
   private EditorComponent myEditorComponent;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, ShowTypeSystemTrace parent, EditorComponent editorComponent) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, TypeSystemTraceDialog parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myOperation = tcc.getOperation();

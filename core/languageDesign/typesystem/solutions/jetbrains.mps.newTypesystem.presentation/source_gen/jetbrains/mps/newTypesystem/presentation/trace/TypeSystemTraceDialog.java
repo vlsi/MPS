@@ -20,7 +20,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
-public class ShowTypeSystemTrace extends JDialog {
+public class TypeSystemTraceDialog extends JDialog {
   private Checkbox myBlockDependencies;
   private Checkbox myTraceForNode;
   private Checkbox myGenerationMode;
@@ -28,7 +28,7 @@ public class ShowTypeSystemTrace extends JDialog {
   private TypeSystemTraceTree myTraceTree;
   private TypeSystemStateTree myStateTree;
 
-  public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, EditorComponent editorComponent, boolean rebuild) {
+  public TypeSystemTraceDialog(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node, EditorComponent editorComponent, boolean rebuild) {
     super(frame);
     if (rebuild) {
       t.checkRootInTraceMode(true);
@@ -62,8 +62,8 @@ public class ShowTypeSystemTrace extends JDialog {
     checkBoxes.add(myTraceForNode);
     checkBoxes.add(myGenerationMode);
     checkBoxes.add(myShowApply);
-    this.setModal(false);
-    ShowTypeSystemTrace.CheckBoxListener listener = new ShowTypeSystemTrace.CheckBoxListener();
+    this.setModal(true);
+    TypeSystemTraceDialog.CheckBoxListener listener = new TypeSystemTraceDialog.CheckBoxListener();
     myBlockDependencies.addItemListener(listener);
     myTraceForNode.addItemListener(listener);
     myGenerationMode.addItemListener(listener);
