@@ -38,7 +38,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                 if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(left), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0b0a0a0a().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0b0a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(right), pattern_bwoj06_a0b0a0a0, typeCheckingContext);
+                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(right), pattern_bwoj06_a0b0a0a0);
                     if (coercedNode_bwoj06_a0b0a0a0 != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -59,7 +59,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                 if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(right), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0a1a0a0a0().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0a1a0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(left), pattern_bwoj06_a0a1a0a0a, typeCheckingContext);
+                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(left), pattern_bwoj06_a0a1a0a0a);
                     if (coercedNode_bwoj06_a0a1a0a0a != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
