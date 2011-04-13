@@ -963,23 +963,26 @@
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786037">
         <property name="path" nameId="60oz.1230059161515" value="lib/mpsboot.jar" />
       </node>
-      <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786086">
-        <property name="path" nameId="60oz.1230059161515" value="lib/jdom/jdom.jar" />
-      </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786088">
         <property name="path" nameId="60oz.1230059161515" value="lib/boot.jar" />
       </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786089">
         <property name="path" nameId="60oz.1230059161515" value="lib/bootstrap.jar" />
       </node>
-      <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786090">
-        <property name="path" nameId="60oz.1230059161515" value="lib/extensions.jar" />
-      </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786098">
         <property name="path" nameId="60oz.1230059161515" value="lib/util.jar" />
       </node>
+      <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786086">
+        <property name="path" nameId="60oz.1230059161515" value="lib/jdom.jar" />
+      </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786103">
-        <property name="path" nameId="60oz.1230059161515" value="lib/log4j/log4j.jar" />
+        <property name="path" nameId="60oz.1230059161515" value="lib/log4j.jar" />
+      </node>
+      <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786090">
+        <property name="path" nameId="60oz.1230059161515" value="lib/extensions.jar" />
+      </node>
+      <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="6118761843060259957">
+        <property name="path" nameId="60oz.1230059161515" value="lib/trove4j.jar" />
       </node>
     </node>
     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1234779587499">
