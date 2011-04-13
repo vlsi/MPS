@@ -28,12 +28,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.Solution;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
@@ -161,15 +162,31 @@ public class Module_Behavior {
     }).toListSequence(), true);
   }
 
-  public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode) {
+  public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
       List<StubPath> paths = ((Language) module).getRuntimeStubPaths();
-      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
+      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
         public String select(StubPath it) {
           return it.getPath();
         }
       }).toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
+      if (includeRuntimeSolutions) {
+        for (Dependency rdep : ListSequence.fromList(((Language) module).getRuntimeDependOn())) {
+          IModule rs = MPSModuleRepository.getInstance().getModule(rdep.getModuleRef());
+          if (rs instanceof Solution) {
+            Solution sol = (Solution) rs;
+            paths = sol.getAllStubPaths();
+            // TODO proper module in holder? 
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
+              public String select(StubPath it) {
+                return it.getPath();
+              }
+            }).toListSequence(), true)));
+          }
+        }
+      }
+      return result;
     }
     return new ArrayList<SNode>();
   }

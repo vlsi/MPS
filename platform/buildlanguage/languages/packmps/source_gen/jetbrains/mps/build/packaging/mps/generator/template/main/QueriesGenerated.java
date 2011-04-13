@@ -78,11 +78,16 @@ public class QueriesGenerated {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Module") && !(Module_Behavior.call_isCompiledInMPS_1213877514774(SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Module")));
+      }
     });
   }
 
   public static Iterable sourceNodesQuery_8037435193861318628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module"))).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module"))));
+    SNode module = SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module");
+    return ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(module)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true)));
   }
 
   public static void mappingScript_CodeBlock_3583849467508042413(final IOperationContext operationContext, final MappingScriptContext _context) {

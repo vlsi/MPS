@@ -621,7 +621,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1210099219016(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode())).isNotEmpty();
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1210175748472(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -824,7 +824,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1210099260514(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode());
+    return Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false);
   }
 
   public static Iterable sourceNodesQuery_7857794759871909114(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
