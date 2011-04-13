@@ -45,7 +45,7 @@ public class EditorUtil {
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context) {
 
-    IModule module = findAnchorModule(sourceNode);
+    IModule module = sourceNode.getModel().getModelDescriptor().getModule();
 
     final Macros macros = MacrosFactory.moduleDescriptor(module);
 
@@ -85,32 +85,5 @@ public class EditorUtil {
       }
     });
     return button;
-  }
-
-  public static String expandIconPath(String path, SNode sourceNode) {
-    IModule module = findAnchorModule(sourceNode);
-    final Macros macros = MacrosFactory.moduleDescriptor(module);
-    String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
-    return filename;
-  }
-
-  public static IModule findAnchorModule(SNode sourceNode) {
-    return findAnchorModule(sourceNode.getModel());
-  }
-
-  public static IModule findAnchorModule(SModel sourceModel) {
-    IModule module = null;
-    SModelDescriptor modelDescriptor = sourceModel.getModelDescriptor();
-    Language modelLang = Language.getLanguageFor(modelDescriptor);
-    if (modelLang != null) {
-      module = modelLang;
-    } else if (modelDescriptor != null) {
-      //modelDescriptor can be null if sourceModel came from VCS as prev. version in diff dialog
-      module = modelDescriptor.getModule();
-      if(!(module instanceof Solution || module instanceof Generator)) {
-        module = null;
-      }
-    }
-    return module;
   }
 }

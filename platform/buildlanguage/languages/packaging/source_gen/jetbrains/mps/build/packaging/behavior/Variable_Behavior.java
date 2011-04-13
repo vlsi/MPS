@@ -4,8 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.EditorUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -13,13 +12,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Variable_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Language getPackagingLanguage_5558646027962551669() {
-    return (Language) EditorUtil.findAnchorModule(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.Variable")));
+    return SModelUtil.getDeclaringLanguage(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.Variable"));
   }
 
   public static List<SNode> getDefaultVariables_7323449223785133410() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CustomWatchable_Editor.java" startLine="122" startPosition="75" endLine="126" endPosition="5" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor$1" />
+  <unitInfo fileName="CustomWatchable_Editor.java" startLine="123" startPosition="75" endLine="127" endPosition="5" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor$1" />
   <unitInfo fileName="WatchableListType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableListType_Editor" />
   <unitInfo fileName="StringValueOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.StringValueOperation_Editor" />
   <unitInfo fileName="StringValueType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.StringValueType_Editor" />
@@ -30,20 +30,20 @@
   <unitInfo fileName="WatchableCreator_Editor.java" startLine="20" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.WatchableCreator_Editor" />
   <unitInfo fileName="CallMethodOperation_Editor.java" startLine="27" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CallMethodOperation_Editor" />
   <unitInfo fileName="CustomViewer_Editor.java" startLine="19" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomViewer_Editor" />
-  <unitInfo fileName="CustomWatchable_Editor.java" startLine="29" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor" />
+  <unitInfo fileName="CustomWatchable_Editor.java" startLine="30" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.CustomWatchable_Editor" />
   <unitInfo fileName="HighLevelCustomViewer_Editor.java" startLine="19" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.debug.customViewers.editor.HighLevelCustomViewer_Editor" />
   <root nodeId="5117350825036235733">
-    <nodeInfo nodeId="5117350825036256299" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="30" endLine="124" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256260" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="112" endLine="175" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036256264" fileName="CustomWatchable_Editor.java" startLine="175" startPosition="23" endLine="176" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036256271" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5117350825036256284" fileName="CustomWatchable_Editor.java" startLine="179" startPosition="5" endLine="180" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256309" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="108" endLine="184" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256269" fileName="CustomWatchable_Editor.java" startLine="176" startPosition="55" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="5117350825036256298" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="30" endLine="124" endPosition="63" />
-    <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="110" />
-    <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="108" endLine="184" endPosition="78" />
-    <scopeInfo nodeId="5117350825036256259" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="112" endLine="180" endPosition="81">
+    <nodeInfo nodeId="5117350825036256299" fileName="CustomWatchable_Editor.java" startLine="124" startPosition="30" endLine="125" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5117350825036256260" fileName="CustomWatchable_Editor.java" startLine="175" startPosition="112" endLine="176" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036256264" fileName="CustomWatchable_Editor.java" startLine="176" startPosition="23" endLine="177" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036256271" fileName="CustomWatchable_Editor.java" startLine="178" startPosition="25" endLine="179" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256284" fileName="CustomWatchable_Editor.java" startLine="180" startPosition="5" endLine="181" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5117350825036256309" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="108" endLine="185" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5117350825036256269" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="85" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="5117350825036256298" fileName="CustomWatchable_Editor.java" startLine="124" startPosition="30" endLine="125" endPosition="63" />
+    <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="178" startPosition="25" endLine="179" endPosition="110" />
+    <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="108" endLine="185" endPosition="78" />
+    <scopeInfo nodeId="5117350825036256259" fileName="CustomWatchable_Editor.java" startLine="175" startPosition="112" endLine="181" endPosition="81">
       <varInfo nodeId="5117350825036256265" varName="module" />
       <varInfo nodeId="5117350825036256261" varName="path" />
     </scopeInfo>

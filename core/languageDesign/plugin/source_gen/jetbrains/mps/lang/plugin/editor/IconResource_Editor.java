@@ -21,10 +21,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.EditorUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
+import jetbrains.mps.ide.EditorUtil;
 
 public class IconResource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -111,7 +112,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    IModule module = EditorUtil.findAnchorModule(node);
+    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
     if (module == null) {
       return false;
     }

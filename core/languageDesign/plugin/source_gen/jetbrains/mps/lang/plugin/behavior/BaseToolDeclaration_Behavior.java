@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.EditorUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
 import java.util.Set;
@@ -47,7 +46,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static String call_getExpandedIconPath_6547237850567463492(SNode thisNode) {
-    IModule module = EditorUtil.findAnchorModule(thisNode);
+    IModule module = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
     if (module == null) {
       return null;
     }
