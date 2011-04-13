@@ -61,6 +61,12 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
+  @Deprecated
+  public String getAbsolutePath() {
+    return getPath();
+  }
+
+  @Override
   public String getName() {
     if (findVirtualFile()) {
       return myVirtualFile.getName();

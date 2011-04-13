@@ -86,6 +86,12 @@ public class JarEntryFile implements IFileEx {
     return myJarFile.getAbsolutePath() + "!" + myEntryPath;
   }
 
+  @Override
+  @Deprecated
+  public String getAbsolutePath() {
+    return getPath();
+  }
+
   public long lastModified() {
     return myJarFile.lastModified();
   }

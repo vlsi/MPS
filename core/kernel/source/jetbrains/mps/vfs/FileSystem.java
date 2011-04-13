@@ -36,9 +36,17 @@ public abstract class FileSystem {
 
   public abstract boolean setTimeStamp(IFile file, long time);
 
-  public abstract void refresh(IFile file); 
+  public abstract void refresh(IFile file);
 
   public static FileSystem getInstance() {
     return INSTANCE;
+  }
+
+  /**
+   * @deprecated Use FileSystem.getInstance().getFileByPath(String) instead.
+   */
+  @Deprecated()
+  public IFile getFile(String path) {
+    return FileSystem.getInstance().getFileByPath(path);
   }
 }

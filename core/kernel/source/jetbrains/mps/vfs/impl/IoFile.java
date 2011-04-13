@@ -53,6 +53,12 @@ public class IoFile implements IFileEx {
     return myFile.getAbsolutePath();
   }
 
+  @Override
+  @Deprecated
+  public String getAbsolutePath() {
+    return getPath();
+  }
+
   public long lastModified() {
     return myFile.lastModified();
   }

@@ -27,6 +27,12 @@ public interface IFile {
   String getName();
   String getPath();
 
+  /**
+   * @deprecated use getPath() instead
+   */
+  @Deprecated
+  String getAbsolutePath();
+
   IFile getParent();
 
   List<IFile> getChildren();
