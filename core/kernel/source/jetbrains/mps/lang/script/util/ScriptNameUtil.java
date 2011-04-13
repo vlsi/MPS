@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.lang.script.util;
 
-import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
@@ -29,8 +28,7 @@ public final class ScriptNameUtil {
   }
 
   public static String getMigrationScriptClassName(SNode scriptNode) {
-    MigrationScript script = (MigrationScript) scriptNode.getAdapter();
-    return script.getName() + "_MigrationScript";
+    return scriptNode.getName() + "_MigrationScript";
   }
 
   public static String getMigrationScriptFqClassName(SNode scriptNode) {
