@@ -37,7 +37,7 @@ public class FilesDelta implements IDelta {
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
-    this.key = "(IFile)" + straighten(urlToPath(dir.getPath()));
+    this.key = "(IFile)" + asDir(straighten(urlToPath(dir.getAbsolutePath())));
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -68,7 +68,11 @@ public class FilesDelta implements IDelta {
       }
     }).<String>select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
-        return straighten(urlToPath(f.key().getPath()));
+        String path = straighten(urlToPath(f.key().getAbsolutePath()));
+        return (f.key().isDirectory() ?
+          asDir(path) :
+          path
+        );
       }
     }).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String p) {
@@ -80,23 +84,23 @@ public class FilesDelta implements IDelta {
     Queue<IFile> dirs = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
     while (QueueSequence.fromQueue(dirs).isNotEmpty()) {
       IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
-      String dirpath = straighten(urlToPath(dir.getPath()));
+      String dirpath = asDir(straighten(urlToPath(dir.getAbsolutePath())));
       int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
       diridx = (diridx < 0 ?
         -1 - diridx :
         diridx
       );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.list())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
-          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getPath())));
+          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
         }
       }).sort(new ISelector<Tuples._2<IFile, String>, Comparable<?>>() {
         public Comparable<?> select(Tuples._2<IFile, String> t) {
           return t._1();
         }
       }, true)) {
-        int fidx = Arrays.binarySearch(pathsToKeep, fp._1());
         if (fp._0().isDirectory()) {
+          int fidx = Arrays.binarySearch(pathsToKeep, asDir(fp._1()));
           fidx = (fidx < 0 ?
             -1 - fidx :
             fidx
@@ -109,8 +113,11 @@ public class FilesDelta implements IDelta {
           } else if (fidx < pathsToKeep.length) {
             QueueSequence.fromQueue(dirs).addLastElement(fp._0());
           }
-        } else if (fidx < 0 && (diridx >= pathsToKeep.length || !(same(dirpath, pathsToKeep[diridx])))) {
-          ListSequence.fromList(toDelete).addElement(fp._0());
+        } else {
+          int fidx = Arrays.binarySearch(pathsToKeep, fp._1());
+          if (fidx < 0 && (diridx >= pathsToKeep.length || !(same(dirpath, pathsToKeep[diridx])))) {
+            ListSequence.fromList(toDelete).addElement(fp._0());
+          }
         }
       }
     }
@@ -144,6 +151,13 @@ public class FilesDelta implements IDelta {
     return path.replace(File.separatorChar, SLASH_CHAR);
   }
 
+  private String asDir(String path) {
+    return (path.endsWith(SLASH) ?
+      path :
+      path + SLASH
+    );
+  }
+
   private FilesDelta copy(FilesDelta that) {
     if (startsWith(this.key, that.key)) {
       this.key = that.key;
@@ -167,7 +181,7 @@ public class FilesDelta implements IDelta {
   }
 
   private boolean startsWith(String path, String prefix) {
-    return path.startsWith(prefix) && (path.length() == prefix.length() || path.charAt(prefix.length()) == SLASH_CHAR);
+    return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
   }
 
   private boolean same(String path1, String path2) {
@@ -179,9 +193,9 @@ public class FilesDelta implements IDelta {
     }
     if (path1.length() > path2.length()) {
       {
-        Tuples._2<String, String> _tmp_32m4sw_a0c0k = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_32m4sw_a0c0k._0();
-        path2 = _tmp_32m4sw_a0c0k._1();
+        Tuples._2<String, String> _tmp_32m4sw_a0c0l = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_32m4sw_a0c0l._0();
+        path2 = _tmp_32m4sw_a0c0l._1();
       }
     }
     return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);
