@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="OperationContextExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.OperationContextExpression_Constraints" />
+  <unitInfo fileName="MessageStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.MessageStatement_Constraints" />
+  <unitInfo fileName="ConceptTypeClause_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptTypeClause_Constraints" />
+  <unitInfo fileName="SubtypingRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints" />
+  <unitInfo fileName="NonTypesystemRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.NonTypesystemRule_Constraints" />
+  <unitInfo fileName="InequationReplacementRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReplacementRule_Constraints" />
+  <unitInfo fileName="TypesystemQuickFix_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemQuickFix_Constraints" />
+  <unitInfo fileName="ComparisonRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ComparisonRule_Constraints" />
+  <unitInfo fileName="InferenceRule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InferenceRule_Constraints" />
+  <unitInfo fileName="CaretPositionOperation_Constraints.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.CaretPositionOperation_Constraints" />
+  <unitInfo fileName="WasSelectedNodeOperation_Constraints.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.WasSelectedNodeOperation_Constraints" />
   <unitInfo fileName="TypeVarReference_typeVarDeclaration_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_typeVarDeclaration_ReferentConstraint" />
   <unitInfo fileName="ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint" />
   <unitInfo fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ChildTypeRestriction_childLinkDeclaration_ReferentConstraint" />
