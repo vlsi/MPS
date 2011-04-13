@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -47,7 +47,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes(context))) {
           Language language = Language.getLanguageFor(node.getModel().getModelDescriptor());
-          ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), AbstractModelCreator_Behavior.call_getGeneratedClassFQName_5553449326502826666(SNodeOperations.cast(node, "jetbrains.mps.lang.stubs.structure.AbstractModelCreator")));
+          ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "call_getGeneratedClassFQName_5553449326502826666", new Class[]{SNode.class})));
           ListSequence.fromList(result).addElement(manager);
         }
       }

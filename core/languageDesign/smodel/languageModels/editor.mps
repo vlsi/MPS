@@ -2176,7 +2176,7 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2853323645193760547">
-          <property name="text" nameId="tpc2.1073389577007" value="call directly:" />
+          <property name="text" nameId="tpc2.1073389577007" value="dispatch call:" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2853323645193760549">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.2853323645193760541" resolveInfo="directCall" />
