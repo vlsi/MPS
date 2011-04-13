@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Logging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Logging_Language" />
-  <unitInfo fileName="PrintStatement.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.PrintStatement" />
   <unitInfo fileName="Severity_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity_PropertySupport" />
-  <unitInfo fileName="LogStatement.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.LogStatement" />
   <unitInfo fileName="Severity.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity" />
 </debugInfo>
 

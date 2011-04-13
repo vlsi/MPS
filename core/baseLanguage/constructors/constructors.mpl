@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.constructors" uuid="0ae47ad3-5abd-486c-ac0f-298884f39393" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.constructors" uuid="0ae47ad3-5abd-486c-ac0f-298884f39393" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.constructors" />
   </models>
