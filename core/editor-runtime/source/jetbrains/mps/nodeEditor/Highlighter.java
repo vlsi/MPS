@@ -249,8 +249,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public void stopUpdater() {
     myStopThread = true;
     try {
-      while (myThread.isAlive()) {
+      /**
+       * This method will be called inside write action, so by a chance there can be a deadlock
+       * (Highligher is trying to call read actions from time to time), so we are limiting waiting time
+       * to some reasonable value here and adding "if (myStopThread)" checks as a first statement into
+       * all read actions executed by Highligher.
+       */
+      int attemptCounter = 10;
+      while (myThread.isAlive() && attemptCounter > 0) {
         Thread.sleep(10);
+        attemptCounter--;
       }
     } catch (InterruptedException e) {
       LOG.error(e);
@@ -381,6 +389,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           } else {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
+                if (myStopThread) {
+                  return;
+                }
                 for (IEditorChecker checker : checkers) {
                   if (checker.hasDramaticalEvent(events)) {
                     checkersToRecheck.add(checker);
@@ -453,6 +464,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final boolean[] messagesChangedContainer = {false};
       Runnable runnable = new Runnable() {
         public void run() {
+          if (myStopThread) {
+            return;
+          }
           SNode node = editor.getEditedNode();
           if (node == null || node.isDisposed()) return;
           owners[0] = checker.getOwner(node, editor);
@@ -496,12 +510,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       Runnable runnable = new Runnable() {
         public void run() {
+          if (myStopThread) {
+            return;
+          }
           SNode node = editor.getEditedNode();
           if (node == null) return;
           owners[0] = checker.getOwner(node, editor);
         }
       };
       ModelAccess.instance().runReadAction(runnable);
+      if (myStopThread) {
+        return false;
+      }
       highlightManager.clearForOwner(owners[0], false);
       anyMessageChanged = true;
     }
