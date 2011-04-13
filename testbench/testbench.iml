@@ -37,7 +37,6 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="constraints" />
-    <orderEntry type="module" module-name="constructors" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="debug" />
@@ -47,9 +46,7 @@
     <orderEntry type="module" module-name="findUsages" />
     <orderEntry type="module" module-name="ideUiLanguage" />
     <orderEntry type="module" module-name="intentions" />
-    <orderEntry type="module" module-name="logging" />
     <orderEntry type="module" module-name="MPSSupport" />
-    <orderEntry type="module" module-name="overloadedOperators" />
     <orderEntry type="module" module-name="packaging" />
     <orderEntry type="module" module-name="pattern" />
     <orderEntry type="module" module-name="plugin" />

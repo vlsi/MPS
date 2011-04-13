@@ -287,6 +287,17 @@
         <property name="moduleId:16" value="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
       </node>
     </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="7607819906769898451">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="UNITTEST" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7607819906769898452" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7607819906769898453">
+        <link role="classifier:3" targetNodeId="12.~ModuleReference" resolveInfo="ModuleReference" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.CheckedModuleReference:16" id="7607819906769898454">
+        <property name="moduleId:16" value="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
+      </node>
+    </node>
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687214082">
       <property name="isFinal:3" value="true" />
       <property name="name:3" value="concept_baseLanguage_Annotation" />
