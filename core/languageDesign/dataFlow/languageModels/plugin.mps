@@ -487,7 +487,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3911341278723471701">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icon/goRound.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/goRound.png" />
     </node>
   </root>
 </model>
