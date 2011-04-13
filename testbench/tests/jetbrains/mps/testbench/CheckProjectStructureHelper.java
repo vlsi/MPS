@@ -12,8 +12,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -282,7 +282,7 @@ public class CheckProjectStructureHelper {
 
     for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
-        if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
+        if (AttributeOperations.getLinkAttribute(node, ReferenceMacro_AnnotationLink.REFERENCE_MACRO, ref.getRole()) != null) {
           continue;
         }
 
