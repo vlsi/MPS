@@ -58,7 +58,6 @@
     <orderEntry type="module" module-name="sharedConcepts" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="structure" />
-    <orderEntry type="module" module-name="stubs" />
     <orderEntry type="module" module-name="test" />
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="Tuples-runtime" />

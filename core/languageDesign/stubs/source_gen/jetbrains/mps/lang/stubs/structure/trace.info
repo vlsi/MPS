@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Stubs_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.Stubs_Language" />
-  <unitInfo fileName="ModelManagerDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration" />
-  <unitInfo fileName="StubsCreatorDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration" />
-  <unitInfo fileName="StubSource_ConcteptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter" />
-  <unitInfo fileName="Solution_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter" />
-  <unitInfo fileName="InitModuleBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.InitModuleBlock" />
-  <unitInfo fileName="GetRootsBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.GetRootsBlock" />
-  <unitInfo fileName="Model_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" />
-  <unitInfo fileName="StubLocation_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter" />
-  <unitInfo fileName="RootNodeDescriptorsBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock" />
-  <unitInfo fileName="ModelDescriptorsBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock" />
-  <unitInfo fileName="UpdateModelBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.UpdateModelBlock" />
-  <unitInfo fileName="ModelManagerType.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.ModelManagerType" />
-  <unitInfo fileName="StubsCreatorType.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StubsCreatorType" />
-  <unitInfo fileName="Stereotype.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.Stereotype" />
-  <unitInfo fileName="BaseCreatorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.BaseCreatorType" />
-  <unitInfo fileName="LanguageRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.LanguageRef" />
-  <unitInfo fileName="ModelCreationSettings.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.ModelCreationSettings" />
-  <unitInfo fileName="AbstractModelCreator.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.AbstractModelCreator" />
-  <unitInfo fileName="LibraryStubDescriptor.java" startLine="16" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor" />
 </debugInfo>
 

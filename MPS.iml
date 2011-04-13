@@ -32,7 +32,6 @@
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="plugin" exported="" />
     <orderEntry type="module" module-name="textgen" exported="" />
-    <orderEntry type="module" module-name="stubs" exported="" />
     <orderEntry type="module" module-name="classifiers" exported="" />
     <orderEntry type="module" module-name="dataFlow" exported="" />
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
