@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="MoveConcepts.java" startLine="225" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.MoveConcepts$My_targetModel_Condition" />
+  <unitInfo fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="48" startPosition="28" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$2" />
+  <unitInfo fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="72" startPosition="28" endLine="99" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$3" />
+  <unitInfo fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="19" startPosition="28" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$1" />
   <unitInfo fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="21" startPosition="28" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.CheckRootNodesNamingInternalPolicy_MigrationScript$1" />
   <unitInfo fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="60" startPosition="28" endLine="99" endPosition="5" unitName="jetbrains.mps.lang.structure.scripts.CheckRootNodesNamingInternalPolicy_MigrationScript$2" />
   <unitInfo fileName="SafeDeleteLink.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.SafeDeleteLink" />
@@ -9,6 +12,7 @@
   <unitInfo fileName="RenameConcept.java" startLine="31" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.RenameConcept" />
   <unitInfo fileName="RenameLink.java" startLine="31" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.RenameLink" />
   <unitInfo fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.CheckRootNodesNamingInternalPolicy_MigrationScript" />
+  <unitInfo fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="16" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript" />
   <unitInfo fileName="MovePropertyUp.java" startLine="29" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.MovePropertyUp" />
   <unitInfo fileName="MoveLinkUp.java" startLine="33" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
   <unitInfo fileName="MoveConcepts.java" startLine="35" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
@@ -514,6 +518,44 @@
       <varInfo nodeId="8941943470987180102" varName="propNode" />
     </scopeInfo>
     <unitInfo nodeId="5800912818421828062" fileName="RefUtil.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.RefUtil" />
+  </root>
+  <root nodeId="6066872190921237633">
+    <nodeInfo nodeId="6066872190921323285" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="34" startPosition="62" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921323290" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="37" startPosition="9" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921391125" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="43" startPosition="62" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6066872190921323298" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="66" startPosition="59" endLine="67" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921391143" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="70" startPosition="52" endLine="71" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6066872190921396127" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="93" startPosition="48" endLine="94" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921392906" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="101" startPosition="48" endLine="102" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921392837" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="104" startPosition="46" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6066872190921323263" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="33" startPosition="84" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6066872190921391109" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="42" startPosition="84" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6066872190921396125" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="92" startPosition="112" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="6066872190921392904" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="100" startPosition="127" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="6066872190921323253" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="32" startPosition="59" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6066872190921359528" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="41" startPosition="52" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6066872190921323336" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="91" startPosition="59" endLine="96" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6066872190921392895" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="99" startPosition="52" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="6066872190921323265" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="34" startPosition="62" endLine="35" endPosition="24" />
+    <scopeInfo nodeId="6066872190921391111" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="43" startPosition="62" endLine="44" endPosition="52" />
+    <scopeInfo nodeId="6066872190921323297" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="66" startPosition="59" endLine="67" endPosition="121" />
+    <scopeInfo nodeId="6066872190921323295" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="70" startPosition="52" endLine="71" endPosition="41" />
+    <scopeInfo nodeId="6066872190921396126" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="93" startPosition="48" endLine="94" endPosition="69" />
+    <scopeInfo nodeId="6066872190921392905" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="101" startPosition="48" endLine="102" endPosition="69" />
+    <scopeInfo nodeId="6066872190921392898" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="104" startPosition="46" endLine="105" endPosition="36" />
+    <scopeInfo nodeId="6066872190921323256" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="33" startPosition="84" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="6066872190921359531" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="42" startPosition="84" endLine="45" endPosition="11" />
+    <scopeInfo nodeId="6066872190921396125" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="92" startPosition="112" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="6066872190921392904" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="100" startPosition="127" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="6066872190921323253" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="32" startPosition="59" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="6066872190921312640" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="41" startPosition="52" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="6066872190921359528" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="41" startPosition="52" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="6066872190921323335" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="91" startPosition="59" endLine="96" endPosition="24" />
+    <scopeInfo nodeId="6066872190921314915" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="32" startPosition="59" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="6066872190921323333" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="99" startPosition="52" endLine="106" endPosition="9" />
+    <scopeInfo nodeId="6066872190921392895" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="99" startPosition="52" endLine="106" endPosition="9" />
+    <unitInfo nodeId="6066872190921396125" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="92" startPosition="84" endLine="96" endPosition="9" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$4" />
+    <unitInfo nodeId="6066872190921392904" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="100" startPosition="99" endLine="104" endPosition="9" unitName="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$4" />
   </root>
 </debugInfo>
 
