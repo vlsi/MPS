@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7y84un3q295t67x3g13xr8mvvzen498">
+<dependencies version="2" modelHash="78x1e8phu9udm910lkzk37fn0sea8xj">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.traceInfo(MPS.Classpath/jetbrains.mps.generator.traceInfo@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Classpath/jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
@@ -55,7 +55,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PathField.java" />
   </source>
-  <source id="1203601659817" name="PathField_Controller" hash="-91xllub5x621y4il2tu7afksy9ovh3">
+  <source id="1203601659817" name="PathField_Controller" hash="bay6ip014pmhxjsmdpowet6xek8454o">
     <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="144575100359734006" name="JavaConsoleCreator" hash="a4ufjk6i9nuy2gpjlrspj30zrm109ds">

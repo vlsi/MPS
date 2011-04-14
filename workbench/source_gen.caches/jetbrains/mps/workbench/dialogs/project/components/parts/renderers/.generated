@@ -1,166 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5isdwwy9qnupcp68afmyewszhb3tssg">
+<dependencies version="2" modelHash="1cjp6qazir8y9ahnjdf7q0m1e2ovdoq">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="dk2da4xxv3ushhxyew6bvoas89ekh3k" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cru0oh8ob9opkb1n0y48xek1y57fg4i" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="7u0pmp4fdtvj54qqyigowu51ezn7537" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="2w6lnaip3m9p8mgh0mnorh6wzq1ar4u" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="bf15im9aomlldsovim9vnga3g69x6h" />
-  <common hash="-cu8rwnp9l4yyojhtoobzj4j41ueizfg" />
-  <source id="4282822416100096601" name="WriteBlock" hash="bz1z4s2afaklsu0gqgdlwrkq9bxsb39">
+  <common hash="dlm75wkr1zbgn99c3pwd3d7p1egwum4" />
+  <source id="1560298786499489409" name="PathRenderer" hash="67fubcbpfghs8pxh4766qnd6mxkepkk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="WriteBlock.java" />
+    <file name="PathRenderer.java" />
   </source>
-  <source id="4282822416100096467" name="InstructionWrapper" hash="-1snjsz9i2biq8qr0pm2eacciluu8838">
+  <source id="1560298786499489478" name="RuleTypeRenderer" hash="e77qcs8odw2q2u4njz0f041mtola966">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="InstructionWrapper.java" />
+    <file name="RuleTypeRenderer.java" />
   </source>
-  <source id="4282822416100096810" name="GraphCreator" hash="9rx037u6m11kjp1c249n63282jzms3i">
+  <source id="1560298786499490098" name="ProjectPathRenderer" hash="-ey62m8sbg3ti3owxgoa19dg8rund69e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="GraphCreator.java" />
+    <file name="ProjectPathRenderer.java" />
   </source>
-  <source id="4282822416100096982" name="SimpleBlock" hash="eobip962w0ifu1bcoz9jwsjc89q5j0p">
+  <source id="1560298786499492721" name="ProjectLevelRenderer" hash="-6rz3gsazxg4avrs2zsu2fk8imufk791">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="SimpleBlock.java" />
+    <file name="ProjectLevelRenderer.java" />
   </source>
-  <source id="4282822416100097099" name="AbstractBlock" hash="-be3jr7yir51r2fz4q73biobsn37hxit">
+  <source id="1560298786499492799" name="StringPathRenderer" hash="6cv0c9lx7b23k31f5fkskt36rhq5rkt">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StringPathRenderer.java" />
+  </source>
+  <source id="1560298786499492868" name="ModelRenderer" hash="d2lhxo1d8fwdogvnf8220ohws3ape56">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="AbstractBlock.java" />
+    <file name="ModelRenderer.java" />
   </source>
-  <source id="4282822416100097565" name="IInstruction" hash="-7luuz6t74p70jsfb81z69tjd24w8vsb">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="IInstruction.java" />
-  </source>
-  <source id="4282822416100097580" name="ControlFlowGraph" hash="5dqcj2ezxxcm4n9rh479lml6penmue1">
+  <source id="1560298786499493036" name="ManagerRenderer" hash="-7tb49c9qx83ji8ymab5iv8g7ef7uish">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ControlFlowGraph.java" />
+    <file name="ManagerRenderer.java" />
   </source>
-  <source id="4282822416100098546" name="IGraphCreator" hash="-dd3wm0ywg7erlou8wf8wwxa2bkp60tw">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="IGraphCreator.java" />
-  </source>
-  <source id="4282822416100098574" name="IBlock" hash="4ll8rlwu0ilmbm8dwo0zsh4cg37fk4q">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="IBlock.java" />
-  </source>
-  <source id="4282822416100096466" name="IBlockListener" hash="-9ce4he09hxs1a9py50plz8rk4ryw5o6">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="IBlockListener.java" />
-  </source>
-  <source id="4282822416100098971" name="ReturnBlock" hash="-a5s2bv8y2xmqk73d4pm9119adn61q99">
+  <source id="1560298786499493268" name="ModuleImportRenderer" hash="58sseog08o73btn6p041enwkn2yaa2g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ReturnBlock.java" />
+    <file name="ModuleImportRenderer.java" />
   </source>
-  <source id="4282822416100099297" name="ArrowHead" hash="-plgnobfo0eierrimgmry74di040vwb">
+  <source id="1560298786499494305" name="ListRendererAdapter" hash="-4bpnw7nx2ucpqlg7v78kerqbl432lmc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ArrowHead.java" />
+    <file name="ListRendererAdapter.java" />
   </source>
-  <source id="4282822416100099402" name="AltBlock" hash="-5pe516k8ufuy62c27apm2goypgn97x6">
+  <source id="1560298786499494573" name="ModuleRenderer" hash="2u4osb7fozpaejby86jw9lrnk8pvnli">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="AltBlock.java" />
+    <file name="ModuleRenderer.java" />
   </source>
-  <source id="4282822416100099480" name="ShowCFGDialog" hash="338aohx8zw0i3am26r9c6u9yohf3og8">
+  <source id="1560298786499494750" name="RuleOperandRenderer" hash="4hldjehvmwndvtrpipr8l1znwp7u0jx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ShowCFGDialog.java" />
+    <file name="RuleOperandRenderer.java" />
   </source>
-  <source id="4282822416100099790" name="ProgramWrapper" hash="em31dzieuaxqdxcz8br1k1q3g9sc7gr">
+  <source id="1560298786499495877" name="TestConfigListCellRenderer" hash="-41mpw27yy7nxhk8pqw6w9wamk36fo1c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ProgramWrapper.java" />
+    <file name="TestConfigListCellRenderer.java" />
   </source>
-  <source id="4282822416100099867" name="LineDirection" hash="772wec8t9au58blkvvm6pcipbx0di0y">
+  <source id="1560298786499498121" name="BooleanRenderer" hash="-8jcmd4dz26m3g6o7ucn66m49dmyi0g4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="LineDirection.java" />
+    <file name="BooleanRenderer.java" />
   </source>
-  <source id="4282822416100100062" name="JumpBlock" hash="9t5ik8e1vvrxk62do3nsznu7o83o786">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <source id="1560298786499498265" name="GeneratorRenderer" hash="-bkvl7a54dgupe0uvndo9lrp531c98e8">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="JumpBlock.java" />
-  </source>
-  <source id="4282822416100100136" name="FreeZone" hash="9hainngmd6x78l8nh6ykjb7cqsvycwg">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="FreeZone.java" />
-  </source>
-  <source id="4282822416100100468" name="ReadBlock" hash="-3p00z44x1kncimkqsfpd142xqdwxohj">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ReadBlock.java" />
-  </source>
-  <source id="4282822416100100546" name="IProgram" hash="2h2m5gof5s9465rgxf1k00ycyr6r1vt">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="IProgram.java" />
-  </source>
-  <source id="4282822416100100567" name="ArrowHeadDirection" hash="3zkvaxicl3q2d6r9bnzgzd8nbejmkv1">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ArrowHeadDirection.java" />
-  </source>
-  <source id="4282822416100100761" name="Line" hash="5pek4ck3fviknfco1ly5r5huxxa4nfz">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="Line.java" />
+    <file name="GeneratorRenderer.java" />
   </source>
 </dependencies>
 

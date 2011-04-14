@@ -137,10 +137,10 @@
       <varInfo nodeId="7228605397000830124" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826655" fileName="LanguageConceptsUsagesFinder.java" startLine="29" startPosition="77" endLine="67" endPosition="25">
-      <varInfo nodeId="7228605397000826706" varName="sModel" />
       <varInfo nodeId="7228605397000826766" varName="models" />
-      <varInfo nodeId="7228605397000826664" varName="holder" />
+      <varInfo nodeId="7228605397000826706" varName="sModel" />
       <varInfo nodeId="7228605397000826674" varName="module" />
+      <varInfo nodeId="7228605397000826664" varName="holder" />
       <varInfo nodeId="7228605397000826790" varName="scope" />
       <varInfo nodeId="7228605397000830182" varName="results" />
       <varInfo nodeId="7228605397000826657" varName="searchResults" />
@@ -243,12 +243,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826853" fileName="AspectMethodsFinder.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="7228605397000826859" fileName="AspectMethodsFinder.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="7228605397000826862" varName="element" />
       <varInfo nodeId="7228605397000826864" varName="project" />
+      <varInfo nodeId="7228605397000826862" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826866" fileName="AspectMethodsFinder.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="7228605397000826869" varName="element" />
       <varInfo nodeId="7228605397000826871" varName="project" />
+      <varInfo nodeId="7228605397000826869" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826963" fileName="AspectMethodsFinder.java" startLine="51" startPosition="83" endLine="57" endPosition="5">
       <varInfo nodeId="7228605397000826969" varName="value" />
@@ -261,8 +261,8 @@
       <varInfo nodeId="7228605397000826960" varName="methodName" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826896" fileName="AspectMethodsFinder.java" startLine="30" startPosition="84" endLine="48" endPosition="15">
-      <varInfo nodeId="7228605397000826908" varName="applicableModelDescriptors" />
       <varInfo nodeId="7228605397000826925" varName="res" />
+      <varInfo nodeId="7228605397000826908" varName="applicableModelDescriptors" />
       <varInfo nodeId="7228605397000826898" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826888" fileName="AspectMethodsFinder.java" startLine="29" startPosition="0" endLine="50" endPosition="0">
@@ -330,12 +330,12 @@
     <scopeInfo nodeId="7228605397000827145" fileName="ConstantFinder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="7228605397000827152" fileName="ConstantFinder.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="7228605397000827155" fileName="ConstantFinder.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7228605397000827158" varName="element" />
       <varInfo nodeId="7228605397000827160" varName="project" />
+      <varInfo nodeId="7228605397000827158" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827162" fileName="ConstantFinder.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="7228605397000827165" varName="element" />
       <varInfo nodeId="7228605397000827167" varName="project" />
+      <varInfo nodeId="7228605397000827165" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827149" fileName="ConstantFinder.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7228605397000827216" fileName="ConstantFinder.java" startLine="48" startPosition="59" endLine="54" endPosition="0" />
@@ -375,8 +375,8 @@
       <varInfo nodeId="7228605397000827314" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827272" fileName="ModelUsagesFinder.java" startLine="24" startPosition="77" endLine="42" endPosition="25">
-      <varInfo nodeId="7228605397000827279" varName="holder" />
       <varInfo nodeId="7228605397000827289" varName="model" />
+      <varInfo nodeId="7228605397000827279" varName="holder" />
       <varInfo nodeId="7228605397000827274" varName="searchResults" />
       <varInfo nodeId="7228605397000827305" varName="modelReference" />
     </scopeInfo>
@@ -484,8 +484,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827544" fileName="LanguageUsagesFinder.java" startLine="71" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7228605397000827551" varName="searchResults" />
-      <varInfo nodeId="7228605397000827547" varName="searchedLanguage" />
       <varInfo nodeId="7228605397000827549" varName="language" />
+      <varInfo nodeId="7228605397000827547" varName="searchedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000827436" fileName="LanguageUsagesFinder.java" startLine="44" startPosition="50" endLine="58" endPosition="5">
       <varInfo nodeId="7228605397000827440" varName="module" />
