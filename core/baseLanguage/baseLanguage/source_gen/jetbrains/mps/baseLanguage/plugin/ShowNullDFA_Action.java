@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
 import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
-import jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog;
+import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 

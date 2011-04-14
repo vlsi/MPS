@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4282822416100096466">
-    <nodeInfo nodeId="4282822416100098962" fileName="IBlockListener.java" startLine="7" startPosition="60" endLine="8" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;)V" />
+    <nodeInfo nodeId="4282822416100098962" fileName="IBlockListener.java" startLine="7" startPosition="60" endLine="8" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;)V" />
     <scopeInfo nodeId="4282822416100098962" fileName="IBlockListener.java" startLine="7" startPosition="60" endLine="8" endPosition="74">
       <varInfo nodeId="4282822416100098965" varName="event" />
       <varInfo nodeId="4282822416100098967" varName="instruction" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100096466" fileName="IBlockListener.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.IBlockListener" />
+    <unitInfo nodeId="4282822416100096466" fileName="IBlockListener.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
   </root>
   <root nodeId="4282822416100096467">
     <nodeInfo nodeId="4282822416100096682" fileName="InstructionWrapper.java" startLine="9" startPosition="77" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstruction" />
@@ -63,7 +63,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4282822416100096696" fileName="InstructionWrapper.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="4282822416100096726" fileName="InstructionWrapper.java" startLine="23" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="4282822416100096467" fileName="InstructionWrapper.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.InstructionWrapper" />
+    <unitInfo nodeId="4282822416100096467" fileName="InstructionWrapper.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" />
   </root>
   <root nodeId="4282822416100096601">
     <nodeInfo nodeId="4282822416100096621" fileName="WriteBlock.java" startLine="9" startPosition="68" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -85,7 +85,7 @@
     <scopeInfo nodeId="4282822416100096627" fileName="WriteBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100096630" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100096601" fileName="WriteBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.WriteBlock" />
+    <unitInfo nodeId="4282822416100096601" fileName="WriteBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.WriteBlock" />
   </root>
   <root nodeId="4282822416100096810">
     <nodeInfo nodeId="4282822416100096814" fileName="GraphCreator.java" startLine="14" startPosition="72" endLine="15" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
@@ -106,9 +106,9 @@
     <nodeInfo nodeId="4282822416100096879" fileName="GraphCreator.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100096893" fileName="GraphCreator.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100096907" fileName="GraphCreator.java" startLine="33" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100096967" fileName="GraphCreator.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findBlockWith#(Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;)Ljetbrains/mps/lang/dataFlow/presentation/IBlock;" />
-    <nodeInfo nodeId="4282822416100096930" fileName="GraphCreator.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBlock#(Ljetbrains/mps/lang/dataFlow/presentation/InstructionWrapper;IIII)Ljetbrains/mps/lang/dataFlow/presentation/IBlock;" />
-    <nodeInfo nodeId="4282822416100096830" fileName="GraphCreator.java" startLine="19" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateBlock#(Ljetbrains/mps/lang/dataFlow/presentation/InstructionWrapper;IIII)Ljetbrains/mps/lang/dataFlow/presentation/IBlock;" />
+    <nodeInfo nodeId="4282822416100096967" fileName="GraphCreator.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findBlockWith#(Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
+    <nodeInfo nodeId="4282822416100096930" fileName="GraphCreator.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBlock#(Ljetbrains/mps/ide/dataFlow/presentation/InstructionWrapper;IIII)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
+    <nodeInfo nodeId="4282822416100096830" fileName="GraphCreator.java" startLine="19" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateBlock#(Ljetbrains/mps/ide/dataFlow/presentation/InstructionWrapper;IIII)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
     <scopeInfo nodeId="4282822416100096829" fileName="GraphCreator.java" startLine="17" startPosition="25" endLine="17" endPosition="25" />
     <scopeInfo nodeId="4282822416100096855" fileName="GraphCreator.java" startLine="22" startPosition="51" endLine="23" endPosition="76" />
     <scopeInfo nodeId="4282822416100096869" fileName="GraphCreator.java" startLine="25" startPosition="49" endLine="26" endPosition="77" />
@@ -140,7 +140,7 @@
       <varInfo nodeId="4282822416100096838" varName="y" />
       <varInfo nodeId="4282822416100096836" varName="x" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100096810" fileName="GraphCreator.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.GraphCreator" />
+    <unitInfo nodeId="4282822416100096810" fileName="GraphCreator.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.GraphCreator" />
   </root>
   <root nodeId="4282822416100096982">
     <nodeInfo nodeId="4282822416100097002" fileName="SimpleBlock.java" startLine="9" startPosition="69" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -162,7 +162,7 @@
     <scopeInfo nodeId="4282822416100097008" fileName="SimpleBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100097011" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100096982" fileName="SimpleBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.SimpleBlock" />
+    <unitInfo nodeId="4282822416100096982" fileName="SimpleBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.SimpleBlock" />
   </root>
   <root nodeId="4282822416100097099">
     <nodeInfo nodeId="4282822416100097106" fileName="AbstractBlock.java" startLine="13" startPosition="85" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myX" />
@@ -219,8 +219,8 @@
     <nodeInfo nodeId="4282822416100097205" fileName="AbstractBlock.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" />
     <nodeInfo nodeId="4282822416100097213" fileName="AbstractBlock.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWidth#()I" />
     <nodeInfo nodeId="4282822416100097221" fileName="AbstractBlock.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" />
-    <nodeInfo nodeId="4282822416100097229" fileName="AbstractBlock.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
-    <nodeInfo nodeId="4282822416100097243" fileName="AbstractBlock.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100097229" fileName="AbstractBlock.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100097243" fileName="AbstractBlock.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
     <nodeInfo nodeId="4282822416100097404" fileName="AbstractBlock.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPaddingX#(Ljava/awt/FontMetrics;)I" />
     <nodeInfo nodeId="4282822416100097416" fileName="AbstractBlock.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPaddingY#(Ljava/awt/FontMetrics;)I" />
     <nodeInfo nodeId="4282822416100097482" fileName="AbstractBlock.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setX#(I)V" />
@@ -317,14 +317,14 @@
     <scopeInfo nodeId="4282822416100097257" fileName="AbstractBlock.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4282822416100097260" varName="mEvent" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100097099" fileName="AbstractBlock.java" startLine="13" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.AbstractBlock" />
+    <unitInfo nodeId="4282822416100097099" fileName="AbstractBlock.java" startLine="13" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </root>
   <root nodeId="4282822416100097565">
     <nodeInfo nodeId="4282822416100097570" fileName="IInstruction.java" startLine="7" startPosition="58" endLine="8" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="succ#()Ljava/util/Set;" />
     <nodeInfo nodeId="4282822416100097575" fileName="IInstruction.java" startLine="8" startPosition="23" endLine="9" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pred#()Ljava/util/Set;" />
     <scopeInfo nodeId="4282822416100097570" fileName="IInstruction.java" startLine="7" startPosition="58" endLine="8" endPosition="23" />
     <scopeInfo nodeId="4282822416100097575" fileName="IInstruction.java" startLine="8" startPosition="23" endLine="9" endPosition="23" />
-    <unitInfo nodeId="4282822416100097565" fileName="IInstruction.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.IInstruction" />
+    <unitInfo nodeId="4282822416100097565" fileName="IInstruction.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
   </root>
   <root nodeId="4282822416100097580">
     <nodeInfo nodeId="4282822416100097585" fileName="ControlFlowGraph.java" startLine="16" startPosition="58" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MARGIN_X" />
@@ -439,10 +439,10 @@
     <nodeInfo nodeId="4282822416100098467" fileName="ControlFlowGraph.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" />
     <nodeInfo nodeId="4282822416100097939" fileName="ControlFlowGraph.java" startLine="87" startPosition="81" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100098521" fileName="ControlFlowGraph.java" startLine="189" startPosition="53" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="32" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ControlFlowGraph#(Ljetbrains/mps/lang/dataFlow/presentation/IProgram;Ljetbrains/mps/lang/dataFlow/presentation/IGraphCreator;Ljava/awt/Component;)V" />
-    <nodeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="162" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSimpleLine#(Ljetbrains/mps/lang/dataFlow/presentation/IBlock;Ljetbrains/mps/lang/dataFlow/presentation/IBlock;)V" />
-    <nodeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="176" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
-    <nodeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="182" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="32" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ControlFlowGraph#(Ljetbrains/mps/ide/dataFlow/presentation/IProgram;Ljetbrains/mps/ide/dataFlow/presentation/IGraphCreator;Ljava/awt/Component;)V" />
+    <nodeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="162" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSimpleLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
+    <nodeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="176" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="182" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
     <nodeInfo nodeId="4282822416100097683" fileName="ControlFlowGraph.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildBlocks#()V" />
     <nodeInfo nodeId="4282822416100097865" fileName="ControlFlowGraph.java" startLine="76" startPosition="21" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4282822416100097919" fileName="ControlFlowGraph.java" startLine="85" startPosition="45" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -455,7 +455,7 @@
     <nodeInfo nodeId="4282822416100097719" fileName="ControlFlowGraph.java" startLine="46" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
     <nodeInfo nodeId="4282822416100098193" fileName="ControlFlowGraph.java" startLine="134" startPosition="67" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100097777" fileName="ControlFlowGraph.java" startLine="60" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" />
-    <nodeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="111" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalLine#(Ljetbrains/mps/lang/dataFlow/presentation/IBlock;Ljetbrains/mps/lang/dataFlow/presentation/IBlock;)V" />
+    <nodeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="111" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
     <scopeInfo nodeId="4282822416100097696" fileName="ControlFlowGraph.java" startLine="41" startPosition="74" endLine="42" endPosition="93" />
     <scopeInfo nodeId="4282822416100097731" fileName="ControlFlowGraph.java" startLine="48" startPosition="40" endLine="49" endPosition="21" />
     <scopeInfo nodeId="4282822416100097754" fileName="ControlFlowGraph.java" startLine="53" startPosition="29" endLine="54" endPosition="54" />
@@ -610,11 +610,11 @@
       <varInfo nodeId="4282822416100098061" varName="startBlock" />
       <varInfo nodeId="4282822416100098064" varName="endBlock" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100097580" fileName="ControlFlowGraph.java" startLine="16" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ControlFlowGraph" />
+    <unitInfo nodeId="4282822416100097580" fileName="ControlFlowGraph.java" startLine="16" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
   </root>
   <root nodeId="4282822416100098546">
-    <nodeInfo nodeId="4282822416100098551" fileName="IGraphCreator.java" startLine="6" startPosition="59" endLine="7" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBlock#(nullIIII)Ljetbrains/mps/lang/dataFlow/presentation/IBlock;" />
-    <nodeInfo nodeId="4282822416100098566" fileName="IGraphCreator.java" startLine="7" startPosition="83" endLine="8" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findBlockWith#(Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;)Ljetbrains/mps/lang/dataFlow/presentation/IBlock;" />
+    <nodeInfo nodeId="4282822416100098551" fileName="IGraphCreator.java" startLine="6" startPosition="59" endLine="7" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBlock#(nullIIII)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
+    <nodeInfo nodeId="4282822416100098566" fileName="IGraphCreator.java" startLine="7" startPosition="83" endLine="8" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findBlockWith#(Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
     <scopeInfo nodeId="4282822416100098551" fileName="IGraphCreator.java" startLine="6" startPosition="59" endLine="7" endPosition="83">
       <varInfo nodeId="4282822416100098563" varName="height" />
       <varInfo nodeId="4282822416100098561" varName="width" />
@@ -625,7 +625,7 @@
     <scopeInfo nodeId="4282822416100098566" fileName="IGraphCreator.java" startLine="7" startPosition="83" endLine="8" endPosition="62">
       <varInfo nodeId="4282822416100098570" varName="instruction" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100098546" fileName="IGraphCreator.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.IGraphCreator" />
+    <unitInfo nodeId="4282822416100098546" fileName="IGraphCreator.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.IGraphCreator" />
   </root>
   <root nodeId="4282822416100098574">
     <nodeInfo nodeId="4282822416100098579" fileName="IBlock.java" startLine="9" startPosition="52" endLine="10" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
@@ -639,8 +639,8 @@
     <nodeInfo nodeId="4282822416100098617" fileName="IBlock.java" startLine="17" startPosition="34" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHeight#(I)V" />
     <nodeInfo nodeId="4282822416100098623" fileName="IBlock.java" startLine="18" startPosition="36" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setX#(I)V" />
     <nodeInfo nodeId="4282822416100098629" fileName="IBlock.java" startLine="19" startPosition="26" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setY#(I)V" />
-    <nodeInfo nodeId="4282822416100098635" fileName="IBlock.java" startLine="20" startPosition="26" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
-    <nodeInfo nodeId="4282822416100098642" fileName="IBlock.java" startLine="21" startPosition="59" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/lang/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100098635" fileName="IBlock.java" startLine="20" startPosition="26" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100098642" fileName="IBlock.java" startLine="21" startPosition="59" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
     <nodeInfo nodeId="4282822416100098649" fileName="IBlock.java" startLine="22" startPosition="62" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMousePressed#(Ljava/awt/event/MouseEvent;)Z" />
     <scopeInfo nodeId="4282822416100098579" fileName="IBlock.java" startLine="9" startPosition="52" endLine="10" endPosition="32">
       <varInfo nodeId="4282822416100098582" varName="g" />
@@ -674,7 +674,7 @@
     <scopeInfo nodeId="4282822416100098649" fileName="IBlock.java" startLine="22" startPosition="62" endLine="23" endPosition="56">
       <varInfo nodeId="4282822416100098652" varName="mEvent" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100098574" fileName="IBlock.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.IBlock" />
+    <unitInfo nodeId="4282822416100098574" fileName="IBlock.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
   </root>
   <root nodeId="4282822416100098971">
     <nodeInfo nodeId="4282822416100098991" fileName="ReturnBlock.java" startLine="9" startPosition="69" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -696,7 +696,7 @@
     <scopeInfo nodeId="4282822416100098997" fileName="ReturnBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100099000" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100098971" fileName="ReturnBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ReturnBlock" />
+    <unitInfo nodeId="4282822416100098971" fileName="ReturnBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ReturnBlock" />
   </root>
   <root nodeId="4282822416100099297">
     <nodeInfo nodeId="4282822416100099299" fileName="ArrowHead.java" startLine="7" startPosition="24" endLine="8" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myX" />
@@ -715,9 +715,9 @@
     <nodeInfo nodeId="4282822416100099343" fileName="ArrowHead.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" />
     <nodeInfo nodeId="4282822416100099351" fileName="ArrowHead.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setX#(I)V" />
     <nodeInfo nodeId="4282822416100099363" fileName="ArrowHead.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setY#(I)V" />
-    <nodeInfo nodeId="4282822416100099375" fileName="ArrowHead.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirection#()Ljetbrains/mps/lang/dataFlow/presentation/ArrowHeadDirection;" />
+    <nodeInfo nodeId="4282822416100099375" fileName="ArrowHead.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirection#()Ljetbrains/mps/ide/dataFlow/presentation/ArrowHeadDirection;" />
     <nodeInfo nodeId="4282822416100099383" fileName="ArrowHead.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="4282822416100099308" fileName="ArrowHead.java" startLine="11" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArrowHead#(IILjetbrains/mps/lang/dataFlow/presentation/ArrowHeadDirection;)V" />
+    <nodeInfo nodeId="4282822416100099308" fileName="ArrowHead.java" startLine="11" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArrowHead#(IILjetbrains/mps/ide/dataFlow/presentation/ArrowHeadDirection;)V" />
     <scopeInfo nodeId="4282822416100099338" fileName="ArrowHead.java" startLine="18" startPosition="21" endLine="19" endPosition="20" />
     <scopeInfo nodeId="4282822416100099346" fileName="ArrowHead.java" startLine="22" startPosition="21" endLine="23" endPosition="20" />
     <scopeInfo nodeId="4282822416100099356" fileName="ArrowHead.java" startLine="26" startPosition="27" endLine="27" endPosition="17" />
@@ -742,7 +742,7 @@
       <varInfo nodeId="4282822416100099312" varName="y" />
       <varInfo nodeId="4282822416100099310" varName="x" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100099297" fileName="ArrowHead.java" startLine="7" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ArrowHead" />
+    <unitInfo nodeId="4282822416100099297" fileName="ArrowHead.java" startLine="7" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ArrowHead" />
   </root>
   <root nodeId="4282822416100099402">
     <nodeInfo nodeId="4282822416100099422" fileName="AltBlock.java" startLine="9" startPosition="66" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -764,7 +764,7 @@
     <scopeInfo nodeId="4282822416100099428" fileName="AltBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100099431" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100099402" fileName="AltBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.AltBlock" />
+    <unitInfo nodeId="4282822416100099402" fileName="AltBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.AltBlock" />
   </root>
   <root nodeId="4282822416100099480">
     <nodeInfo nodeId="4282822416100099527" fileName="ShowCFGDialog.java" startLine="23" startPosition="44" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
@@ -812,7 +812,7 @@
     <nodeInfo nodeId="4282822416100099666" fileName="ShowCFGDialog.java" startLine="59" startPosition="26" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
     <nodeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="58" startPosition="70" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyComponent#()V" />
-    <nodeInfo nodeId="4282822416100099637" fileName="ShowCFGDialog.java" startLine="38" startPosition="87" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;)V" />
+    <nodeInfo nodeId="4282822416100099637" fileName="ShowCFGDialog.java" startLine="38" startPosition="87" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;)V" />
     <nodeInfo nodeId="4282822416100099627" fileName="ShowCFGDialog.java" startLine="37" startPosition="132" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099537" fileName="ShowCFGDialog.java" startLine="27" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowCFGDialog#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/IOperationContext;Ljava/awt/Frame;)V" />
     <scopeInfo nodeId="4282822416100099662" fileName="ShowCFGDialog.java" startLine="54" startPosition="32" endLine="55" endPosition="28" />
@@ -867,10 +867,10 @@
       <varInfo nodeId="4282822416100099541" varName="operationContext" />
       <varInfo nodeId="4282822416100099539" varName="p" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100099672" fileName="ShowCFGDialog.java" startLine="60" startPosition="32" endLine="64" endPosition="7" unitName="jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog$1" />
-    <unitInfo nodeId="4282822416100099635" fileName="ShowCFGDialog.java" startLine="38" startPosition="49" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog$1" />
-    <unitInfo nodeId="4282822416100099483" fileName="ShowCFGDialog.java" startLine="58" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog$MyComponent" />
-    <unitInfo nodeId="4282822416100099480" fileName="ShowCFGDialog.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog" />
+    <unitInfo nodeId="4282822416100099672" fileName="ShowCFGDialog.java" startLine="60" startPosition="32" endLine="64" endPosition="7" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+    <unitInfo nodeId="4282822416100099635" fileName="ShowCFGDialog.java" startLine="38" startPosition="49" endLine="48" endPosition="5" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+    <unitInfo nodeId="4282822416100099483" fileName="ShowCFGDialog.java" startLine="58" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
+    <unitInfo nodeId="4282822416100099480" fileName="ShowCFGDialog.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />
   </root>
   <root nodeId="4282822416100099790">
     <nodeInfo nodeId="4282822416100099794" fileName="ProgramWrapper.java" startLine="10" startPosition="69" endLine="11" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgram" />
@@ -882,8 +882,8 @@
     <nodeInfo nodeId="4282822416100099865" fileName="ProgramWrapper.java" startLine="29" startPosition="5" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4282822416100099797" fileName="ProgramWrapper.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgramWrapper#(Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <nodeInfo nodeId="4282822416100099849" fileName="ProgramWrapper.java" startLine="26" startPosition="102" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100099808" fileName="ProgramWrapper.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#()Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;" />
-    <nodeInfo nodeId="4282822416100099821" fileName="ProgramWrapper.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;" />
+    <nodeInfo nodeId="4282822416100099808" fileName="ProgramWrapper.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#()Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;" />
+    <nodeInfo nodeId="4282822416100099821" fileName="ProgramWrapper.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;" />
     <nodeInfo nodeId="4282822416100099834" fileName="ProgramWrapper.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstructions#()Ljava/util/List;" />
     <scopeInfo nodeId="4282822416100099801" fileName="ProgramWrapper.java" startLine="13" startPosition="42" endLine="14" endPosition="29" />
     <scopeInfo nodeId="4282822416100099812" fileName="ProgramWrapper.java" startLine="17" startPosition="54" endLine="18" endPosition="61" />
@@ -901,7 +901,7 @@
       <varInfo nodeId="4282822416100099841" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4282822416100099834" fileName="ProgramWrapper.java" startLine="24" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="4282822416100099790" fileName="ProgramWrapper.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ProgramWrapper" />
+    <unitInfo nodeId="4282822416100099790" fileName="ProgramWrapper.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper" />
   </root>
   <root nodeId="4282822416100099867">
     <nodeInfo nodeId="4282822416100099884" fileName="LineDirection.java" startLine="11" startPosition="87" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -922,11 +922,11 @@
     <nodeInfo nodeId="4282822416100100033" fileName="LineDirection.java" startLine="45" startPosition="0" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GAP" />
     <nodeInfo nodeId="4282822416100100037" fileName="LineDirection.java" startLine="47" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LineDirection#()V" />
     <nodeInfo nodeId="4282822416100100040" fileName="LineDirection.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;IIILjava/awt/Color;)V" />
-    <nodeInfo nodeId="4282822416100100054" fileName="LineDirection.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/lang/dataFlow/presentation/Line;I)V" />
+    <nodeInfo nodeId="4282822416100100054" fileName="LineDirection.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/ide/dataFlow/presentation/Line;I)V" />
     <nodeInfo nodeId="4282822416100099955" fileName="LineDirection.java" startLine="31" startPosition="12" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4282822416100100015" fileName="LineDirection.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/lang/dataFlow/presentation/Line;I)V" />
+    <nodeInfo nodeId="4282822416100100015" fileName="LineDirection.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/ide/dataFlow/presentation/Line;I)V" />
     <nodeInfo nodeId="4282822416100099870" fileName="LineDirection.java" startLine="10" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;IIILjava/awt/Color;)V" />
-    <nodeInfo nodeId="4282822416100099897" fileName="LineDirection.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/lang/dataFlow/presentation/Line;I)V" />
+    <nodeInfo nodeId="4282822416100099897" fileName="LineDirection.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(Ljetbrains/mps/ide/dataFlow/presentation/Line;I)V" />
     <nodeInfo nodeId="4282822416100099951" fileName="LineDirection.java" startLine="27" startPosition="12" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100099926" fileName="LineDirection.java" startLine="23" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;IIILjava/awt/Color;)V" />
     <scopeInfo nodeId="4282822416100100039" fileName="LineDirection.java" startLine="48" startPosition="19" endLine="48" endPosition="19" />
@@ -973,7 +973,7 @@
       <varInfo nodeId="4282822416100099937" varName="backGround" />
       <varInfo nodeId="4282822416100099931" varName="first" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100099867" fileName="LineDirection.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.LineDirection" />
+    <unitInfo nodeId="4282822416100099867" fileName="LineDirection.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.LineDirection" />
   </root>
   <root nodeId="4282822416100100062">
     <nodeInfo nodeId="4282822416100100082" fileName="JumpBlock.java" startLine="9" startPosition="67" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -995,7 +995,7 @@
     <scopeInfo nodeId="4282822416100100088" fileName="JumpBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100100091" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100100062" fileName="JumpBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.JumpBlock" />
+    <unitInfo nodeId="4282822416100100062" fileName="JumpBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.JumpBlock" />
   </root>
   <root nodeId="4282822416100100136">
     <nodeInfo nodeId="4282822416100100138" fileName="FreeZone.java" startLine="6" startPosition="23" endLine="7" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNext" />
@@ -1096,7 +1096,7 @@
       <varInfo nodeId="4282822416100100178" varName="last" />
       <varInfo nodeId="4282822416100100176" varName="first" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100100136" fileName="FreeZone.java" startLine="6" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.FreeZone" />
+    <unitInfo nodeId="4282822416100100136" fileName="FreeZone.java" startLine="6" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.FreeZone" />
   </root>
   <root nodeId="4282822416100100468">
     <nodeInfo nodeId="4282822416100100488" fileName="ReadBlock.java" startLine="9" startPosition="67" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1118,16 +1118,16 @@
     <scopeInfo nodeId="4282822416100100494" fileName="ReadBlock.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4282822416100100497" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100100468" fileName="ReadBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ReadBlock" />
+    <unitInfo nodeId="4282822416100100468" fileName="ReadBlock.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ReadBlock" />
   </root>
   <root nodeId="4282822416100100546">
-    <nodeInfo nodeId="4282822416100100551" fileName="IProgram.java" startLine="7" startPosition="54" endLine="8" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#()Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;" />
-    <nodeInfo nodeId="4282822416100100556" fileName="IProgram.java" startLine="8" startPosition="36" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()Ljetbrains/mps/lang/dataFlow/presentation/IInstruction;" />
+    <nodeInfo nodeId="4282822416100100551" fileName="IProgram.java" startLine="7" startPosition="54" endLine="8" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStart#()Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;" />
+    <nodeInfo nodeId="4282822416100100556" fileName="IProgram.java" startLine="8" startPosition="36" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()Ljetbrains/mps/ide/dataFlow/presentation/IInstruction;" />
     <nodeInfo nodeId="4282822416100100561" fileName="IProgram.java" startLine="9" startPosition="34" endLine="10" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstructions#()Ljava/util/List;" />
     <scopeInfo nodeId="4282822416100100551" fileName="IProgram.java" startLine="7" startPosition="54" endLine="8" endPosition="36" />
     <scopeInfo nodeId="4282822416100100556" fileName="IProgram.java" startLine="8" startPosition="36" endLine="9" endPosition="34" />
     <scopeInfo nodeId="4282822416100100561" fileName="IProgram.java" startLine="9" startPosition="34" endLine="10" endPosition="49" />
-    <unitInfo nodeId="4282822416100100546" fileName="IProgram.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.IProgram" />
+    <unitInfo nodeId="4282822416100100546" fileName="IProgram.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.IProgram" />
   </root>
   <root nodeId="4282822416100100567">
     <nodeInfo nodeId="4282822416100100591" fileName="ArrowHeadDirection.java" startLine="17" startPosition="49" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1188,7 +1188,7 @@
       <varInfo nodeId="4282822416100100708" varName="y" />
       <varInfo nodeId="4282822416100100706" varName="x" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100100567" fileName="ArrowHeadDirection.java" startLine="8" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.ArrowHeadDirection" />
+    <unitInfo nodeId="4282822416100100567" fileName="ArrowHeadDirection.java" startLine="8" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ArrowHeadDirection" />
   </root>
   <root nodeId="4282822416100100761">
     <nodeInfo nodeId="4282822416100100765" fileName="Line.java" startLine="8" startPosition="47" endLine="9" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFirst" />
@@ -1209,11 +1209,11 @@
     <nodeInfo nodeId="4282822416100100809" fileName="Line.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFirst#()I" />
     <nodeInfo nodeId="4282822416100100817" fileName="Line.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSecond#()I" />
     <nodeInfo nodeId="4282822416100100825" fileName="Line.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLevel#()I" />
-    <nodeInfo nodeId="4282822416100100833" fileName="Line.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirection#()Ljetbrains/mps/lang/dataFlow/presentation/LineDirection;" />
+    <nodeInfo nodeId="4282822416100100833" fileName="Line.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirection#()Ljetbrains/mps/ide/dataFlow/presentation/LineDirection;" />
     <nodeInfo nodeId="4282822416100100841" fileName="Line.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljava/awt/Color;)V" />
-    <nodeInfo nodeId="4282822416100100866" fileName="Line.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/lang/dataFlow/presentation/Line;)I" />
+    <nodeInfo nodeId="4282822416100100866" fileName="Line.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/ide/dataFlow/presentation/Line;)I" />
     <nodeInfo nodeId="4282822416100100884" fileName="Line.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(I)V" />
-    <nodeInfo nodeId="4282822416100100774" fileName="Line.java" startLine="13" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Line#(IIILjetbrains/mps/lang/dataFlow/presentation/LineDirection;)V" />
+    <nodeInfo nodeId="4282822416100100774" fileName="Line.java" startLine="13" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Line#(IIILjetbrains/mps/ide/dataFlow/presentation/LineDirection;)V" />
     <scopeInfo nodeId="4282822416100100812" fileName="Line.java" startLine="21" startPosition="25" endLine="22" endPosition="24" />
     <scopeInfo nodeId="4282822416100100820" fileName="Line.java" startLine="25" startPosition="26" endLine="26" endPosition="25" />
     <scopeInfo nodeId="4282822416100100828" fileName="Line.java" startLine="29" startPosition="25" endLine="30" endPosition="24" />
@@ -1242,7 +1242,7 @@
       <varInfo nodeId="4282822416100100782" varName="direction" />
       <varInfo nodeId="4282822416100100776" varName="first" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100100761" fileName="Line.java" startLine="8" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.presentation.Line" />
+    <unitInfo nodeId="4282822416100100761" fileName="Line.java" startLine="8" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.Line" />
   </root>
 </debugInfo>
 
