@@ -34,6 +34,9 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -63,7 +66,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -98,8 +101,8 @@ public class TextGen_Facet implements IFacet {
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
                 String output = gres.module().getOutputFor(gres.model());
-                final IFile targetDir = (pool.parameters(new ITarget.Name("copyBinaries"), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile() != null ?
-                  pool.parameters(new ITarget.Name("copyBinaries"), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile().invoke(output) :
+                final IFile targetDir = (pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).pathToFile() != null ?
+                  pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).pathToFile().invoke(output) :
                   FileSystem.getInstance().getFileByPath(output)
                 );
                 final IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
@@ -164,7 +167,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("copyBinaries"), new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -196,7 +199,30 @@ public class TextGen_Facet implements IFacet {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
+    }
+
+    public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile) {
+        super(pathToFile);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
+        return super._0(value);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public TextGen_Facet.Target_21gswx_a.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
+        return (TextGen_Facet.Target_21gswx_a.Parameters) super.assign(from);
+      }
     }
   }
 
