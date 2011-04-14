@@ -4375,6 +4375,11 @@
           <node role="type" roleId="cx9y.1239462974287" type="tpee.BooleanType" typeId="tpee.1070534644030" id="695262645446296835" />
         </node>
       </node>
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="2087864482869543798">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="2087864482869543800">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.5822172888873692299" resolveInfo="IFResource" />
+        </node>
+      </node>
     </node>
     <node role="required" roleId="vvvw.6447445394688422656" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="2088391043728151035">
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="4853833103870841534" resolveInfo="Generate" />

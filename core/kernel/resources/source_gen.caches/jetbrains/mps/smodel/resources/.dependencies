@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode extendsClassName="jetbrains.mps.smodel.resources.IFResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.GResource" file="GResource.java">

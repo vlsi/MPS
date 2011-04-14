@@ -26,6 +26,7 @@ import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.resources.IFResource;
 import jetbrains.mps.compiler.JavaCompiler;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -332,7 +333,7 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_c implements ITarget {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("compileToMemory");

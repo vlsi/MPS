@@ -628,8 +628,8 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="695262645445904872" />
-    <node role="implements" roleId="cx9y.2423993921025641700" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="695262645445911150">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yo81.6168415856807657256" resolveInfo="IResource" />
+    <node role="implements" roleId="cx9y.2423993921025641700" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5224612278364186670">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5822172888873692299" resolveInfo="IFResource" />
     </node>
   </root>
   <root id="695262645445911158">

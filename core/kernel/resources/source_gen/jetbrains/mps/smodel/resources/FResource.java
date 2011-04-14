@@ -6,10 +6,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class FResource extends MultiTuple._4<String, Map<String, Object>, IModule, SModelDescriptor> implements IResource {
+public class FResource extends MultiTuple._4<String, Map<String, Object>, IModule, SModelDescriptor> implements IFResource {
   public FResource() {
     super();
   }

@@ -4,8 +4,8 @@
   <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
   <unitInfo fileName="TResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
+  <unitInfo fileName="FResource.java" startLine="11" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
-  <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <root nodeId="1390934629233975240">
     <nodeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1390934629233975246" fileName="IDeltaResource.java" startLine="8" startPosition="51" endLine="9" endPosition="34" />
