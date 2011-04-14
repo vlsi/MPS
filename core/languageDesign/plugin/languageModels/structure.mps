@@ -1236,6 +1236,11 @@
       <property name="name" nameId="tpck.1169194664001" value="MakeConfigBlock" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3636700473138833152" resolveInfo="AbstractEnhancedConceptFunction" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="2498620720770664567">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
+      <property name="name" nameId="tpck.1169194664001" value="ToolPosition" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
   </roots>
   <root id="1203071663527">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203852126300">
@@ -3822,6 +3827,10 @@
       <property name="name" nameId="tpck.1169194664001" value="number" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1212578595463" resolveInfo="digit" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2498620720770664572">
+      <property name="name" nameId="tpck.1169194664001" value="position" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="2498620720770664567" resolveInfo="ToolPosition" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6547237850567462766">
       <property name="name" nameId="tpck.1169194664001" value="icon" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
@@ -4889,6 +4898,24 @@
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1769265426473293192">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="8255351389869160280" resolveInfo="Project_ConceptFunctionParameter" />
+    </node>
+  </root>
+  <root id="2498620720770664567">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664568">
+      <property name="internalValue" nameId="tpce.1083923523171" value="BOTTOM" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="bottom" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664569">
+      <property name="externalValue" nameId="tpce.1083923523172" value="top" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="TOP" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664570">
+      <property name="externalValue" nameId="tpce.1083923523172" value="left" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="LEFT" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664571">
+      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="RIGHT" />
     </node>
   </root>
 </model>

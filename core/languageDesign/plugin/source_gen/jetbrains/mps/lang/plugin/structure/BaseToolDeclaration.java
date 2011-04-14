@@ -23,6 +23,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String POSITION = "position";
   public static final String TOOL_INIT_BLOCK = "toolInitBlock";
   public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
   public static final String TOOL_ICON = "toolIcon";
@@ -88,6 +89,15 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseToolDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public ToolPosition getPosition() {
+    String value = super.getProperty(BaseToolDeclaration.POSITION);
+    return ToolPosition.parseValue(value);
+  }
+
+  public void setPosition(ToolPosition value) {
+    super.setProperty(BaseToolDeclaration.POSITION, value.getValueAsString());
   }
 
   public InitBlock getToolInitBlock() {

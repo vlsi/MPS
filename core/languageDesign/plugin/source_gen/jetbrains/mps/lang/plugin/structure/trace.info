@@ -173,12 +173,14 @@
   <unitInfo fileName="ScopeNodeItem.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ScopeNodeItem" />
   <unitInfo fileName="PropertyRefExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PropertyRefExpression" />
   <unitInfo fileName="VariableNodeItem.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.VariableNodeItem" />
+  <unitInfo fileName="ToolPosition_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolPosition_PropertySupport" />
   <unitInfo fileName="Keymap_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
   <unitInfo fileName="ToolDeclaration.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolDeclaration" />
   <unitInfo fileName="DebuggableNodeItem.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem" />
   <unitInfo fileName="MultitabbedEditorTab.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab" />
   <unitInfo fileName="ToolTab.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolTab" />
   <unitInfo fileName="ConfigurationEditorDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration" />
+  <unitInfo fileName="ToolPosition.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolPosition" />
   <unitInfo fileName="Keymap.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap" />
   <unitInfo fileName="ProjectExpression.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectExpression" />
   <unitInfo fileName="ConsoleExpression.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConsoleExpression" />
@@ -237,8 +239,8 @@
   <unitInfo fileName="ActionGroupDeclaration.java" startLine="16" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
   <unitInfo fileName="FileGeneratorDeclaration.java" startLine="18" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" />
   <unitInfo fileName="AbstractEditorTab.java" startLine="16" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AbstractEditorTab" />
-  <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="EditorTab.java" startLine="16" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
+  <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="17" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
   <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
   <root nodeId="485694842829280671">
