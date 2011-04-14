@@ -7,8 +7,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.structure.Statement;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
@@ -33,11 +31,11 @@ public class DataFlow {
     for (Instruction i : unreachable) {
       if (!(DataFlow.mayBeUnreachable(i)) && i.getSource() != null) {
         SNode unreachableNode = (SNode) i.getSource();
-        if (unreachableNode.isInstanceOfConcept(Statement.concept)) {
+        if (unreachableNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Statement")) {
           unreachableNodes.add((SNode) i.getSource());
         } else {
-          if (unreachableNode.isInstanceOfConcept(StatementList.concept)) {
-            if (!(unreachableNode.getParent().isInstanceOfConcept(Statement.concept))) {
+          if (unreachableNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StatementList")) {
+            if (!(SNodeOperations.getParent(unreachableNode).isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Statement"))) {
               unreachableNodes.add((SNode) i.getSource());
             }
           } else {

@@ -8,7 +8,7 @@
     <projectSolutions>
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
       <solutionPath path="${project}/kernel/kernelSolution/jetbrains.mps.kernel.msd" />
-      <solutionPath path="${project}/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/jetbrains.mps.dataFlow.runtime.msd" />
+      <solutionPath path="${project}/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />

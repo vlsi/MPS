@@ -11,7 +11,7 @@ import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+//import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.awt.Color;
 import javax.swing.JComponent;
 import javax.swing.Scrollable;
@@ -42,7 +42,7 @@ public class ShowCFGDialog extends JDialog {
         Object source = cfgInstruction.getSource();
         if (source instanceof SNode) {
           SNode node = (SNode) source;
-          operationContext.getComponent(MPSEditorOpener.class).editNode(node, operationContext);
+          //operationContext.getComponent(MPSEditorOpener.class).editNode(node, operationContext);
         }
       }
     });
