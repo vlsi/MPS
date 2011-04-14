@@ -35,7 +35,7 @@ import java.util.List;
 
 public class CheckProjectStructureHelper {
 
-  private final ModelsExtractor myModelsExtractor = new ModelsExtractor();
+  private final ModelsExtractor myModelsExtractor = new ModelsExtractor(false);
 
   /**
    * An opaque token to represent testing state.
@@ -146,7 +146,7 @@ public class CheckProjectStructureHelper {
   }
 
   private List<String> doCheck(Iterable<File> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor();
+    ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
     // ???
@@ -156,7 +156,7 @@ public class CheckProjectStructureHelper {
   }
 
   private List<String> doCheckStructure(List<File> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor();
+    ModelsExtractor me = new ModelsExtractor(true);
     me.loadModels(files);
 
     // ???
@@ -166,7 +166,7 @@ public class CheckProjectStructureHelper {
   }
 
   private List<String> doCheckGenerationStatus(List<File> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor();
+    ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
     // ???

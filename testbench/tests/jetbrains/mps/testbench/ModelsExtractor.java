@@ -17,8 +17,10 @@ import java.util.*;
 public class ModelsExtractor {
   private Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
   boolean modelLoaded = false;
+  private final boolean myIncludeDoNotGenerate;
 
-  public ModelsExtractor() {
+  public ModelsExtractor(boolean includeDoNotGenerate) {
+    myIncludeDoNotGenerate = includeDoNotGenerate;
   }
 
   public Iterable<SModelDescriptor> getModels () {
@@ -125,6 +127,6 @@ public class ModelsExtractor {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      !(GeneratorManager.isDoNotGenerate(modelDescriptor));
+      (myIncludeDoNotGenerate || !(GeneratorManager.isDoNotGenerate(modelDescriptor)));
   }
 }
