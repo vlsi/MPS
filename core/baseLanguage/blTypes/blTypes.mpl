@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.blTypes" uuid="ed6d7656-532c-4bc2-81d1-af945aeb8280" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.blTypes" uuid="ed6d7656-532c-4bc2-81d1-af945aeb8280" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.blTypes" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.blTypes" />
@@ -8,11 +8,6 @@
     <model modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   </accessoryModels>
   <generators />
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>

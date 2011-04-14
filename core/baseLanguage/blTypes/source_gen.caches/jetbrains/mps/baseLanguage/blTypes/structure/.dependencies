@@ -1,78 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType" file="BLArrayType.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.BarConcept" file="BarConcept.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.BlTypes_Language" file="BlTypes_Language.java">
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.FooConcept" file="FooConcept.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.structure.BarConcept" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.FunctionType" file="FunctionType.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" file="PrimitiveTypeDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" file="PrimitiveTypeRef.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
 </dependenciesRoot>
 

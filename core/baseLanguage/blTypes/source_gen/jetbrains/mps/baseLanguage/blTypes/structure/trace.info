@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BlTypes_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.BlTypes_Language" />
-  <unitInfo fileName="PrimitiveTypeRef.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" />
-  <unitInfo fileName="FunctionType.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.FunctionType" />
-  <unitInfo fileName="BarConcept.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.BarConcept" />
-  <unitInfo fileName="FooConcept.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.FooConcept" />
-  <unitInfo fileName="BLArrayType.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType" />
-  <unitInfo fileName="PrimitiveTypeDescriptor.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" />
 </debugInfo>
 
