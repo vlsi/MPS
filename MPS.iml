@@ -22,7 +22,6 @@
     <orderEntry type="module" module-name="intentions" exported="" />
     <orderEntry type="module" module-name="findUsages" exported="" />
     <orderEntry type="module" module-name="refactoring" exported="" />
-    <orderEntry type="module" module-name="generator" exported="" />
     <orderEntry type="module" module-name="core" exported="" />
     <orderEntry type="module" module-name="collections" exported="" />
     <orderEntry type="module" module-name="pattern" exported="" />

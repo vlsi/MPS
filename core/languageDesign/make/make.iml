@@ -23,7 +23,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="generator" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="editor" />
     <orderEntry type="module" module-name="actions" />
