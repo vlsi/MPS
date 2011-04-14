@@ -131,6 +131,13 @@ public class CheckProjectStructure {
 
   @Test
   @Order(2)
+  public void checkStructure() {
+//    List<String> errors = HELPER.checkStructure(TOKEN, Collections.singletonList(file));
+//    Assert.assertTrue("Structure errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+  }
+
+  @Test
+  @Order(3)
   public void checkGenerationStatus() {
     List<String> errors = HELPER.checkGenerationStatus(TOKEN, Collections.singletonList(file));
     Assert.assertTrue("Try to regenerate models:\n"+HELPER.formatErrors(errors),errors.isEmpty());

@@ -26,6 +26,7 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.io.*;
@@ -67,6 +68,10 @@ public class CheckProjectStructureHelper {
 
   public List<String> check(Token token, List<File> files) {
     return ((PrivToken) token).check(files);
+  }
+
+  public List<String> checkStructure(Token token, List<File> files) {
+    return ((PrivToken) token).checkStructure(files);
   }
 
   public List<String> checkGenerationStatus(Token token, List<File> files) {
@@ -127,6 +132,10 @@ public class CheckProjectStructureHelper {
       return CheckProjectStructureHelper.this.doCheck(files, project);
     }
 
+    public List<String> checkStructure(List<File> files) {
+      return CheckProjectStructureHelper.this.doCheckStructure(files, project);
+    }
+
     public List<String> checkGenerationStatus(List<File> files) {
       return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
     }
@@ -144,6 +153,16 @@ public class CheckProjectStructureHelper {
     //Testbench.reloadAll();
 
     return checkModels(me.getModels());
+  }
+
+  private List<String> doCheckStructure(List<File> files, MPSProject project) {
+    ModelsExtractor me = new ModelsExtractor();
+    me.loadModels(files);
+
+    // ???
+    //Testbench.reloadAll();
+
+    return checkStructure(me.getModels());
   }
 
   private List<String> doCheckGenerationStatus(List<File> files, MPSProject project) {
@@ -241,13 +260,26 @@ public class CheckProjectStructureHelper {
     return false;
   }
 
+  private List<String> checkStructure(final Iterable<SModelDescriptor> models) {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelDescriptor sm : models) {
+          if (!SModelStereotype.isUserModel(sm)) continue;
+          checkModelNodes(sm.getSModel(), errors);
+        }
+      }
+    });
+    return errors;
+  }
+
   private List<String> checkModels(final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
-          StringBuffer errorMessages = checkModel(sm);
+          StringBuilder errorMessages = checkModel(sm);
 
           if (errorMessages.length() > 0) {
             errors.add("Broken References: " + errorMessages.toString());
@@ -258,9 +290,32 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private StringBuffer checkModel(final SModelDescriptor sm) {
+  private static void checkModelNodes(@NotNull SModel model, @NotNull List<String> result) {
+    for (SNode node : model.nodes()) {
+      for (String propname : node.getProperties().keySet()) {
+        SNode decl = node.getPropertyDeclaration(propname);
+        if (decl == null) {
+          result.add("unknown property: `" + propname + "' in node " + node.getDebugText());
+        }
+      }
+      for (SReference ref : node.getReferencesIterable()) {
+        SNode decl = node.getLinkDeclaration(ref.getRole());
+        if (decl == null) {
+          result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
+        }
+      }
+      for (SNode child : node.getChildren()) {
+        SNode decl = child.getRoleLink();
+        if (decl == null) {
+          result.add("unknown child role: `" + child.getRole_() + "' in node " + node.getDebugText());
+        }
+      }
+    }
+  }
+
+  private StringBuilder checkModel(final SModelDescriptor sm) {
     final IScope scope = sm.getModule().getScope();
-    StringBuffer errorMessages = new StringBuffer();
+    StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         return new ModelValidator(sm.getSModel()).validate(scope);
@@ -286,7 +341,7 @@ public class CheckProjectStructureHelper {
           continue;
         }
 
-        if (ref.getTargetNode() == null) {
+        if (ref.getTargetNodeSilently() == null) {
           errorMessages.
             append("Broken reference in model {").
             append(node.getModel().getLongName()).
