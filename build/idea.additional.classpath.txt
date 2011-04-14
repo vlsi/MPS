@@ -14,8 +14,6 @@ core/kernel/classes
 workbench/typesystemUi/classes
 MPSPlugin/apiclasses
 core/baseLanguage/baseLanguage/classes
-core/baseLanguage/baseLanguageInternal/classes
-core/baseLanguage/blTypes/classes
 core/baseLanguage/classifiers/classes
 core/baseLanguage/closures/classes
 core/baseLanguage/closures/runtime/classes
@@ -54,9 +52,6 @@ core/languageDesign/script/classes
 core/languageDesign/structure/classes
 core/languageDesign/core/classes
 core/languageDesign/refactoring/classes
-core/languageDesign/generator/classes
-core/languageDesign/generator/languages/templateLanguage/classes
-core/languageDesign/generator/languages/generationContext/classes
 core/languageDesign/test/classes
 core/languageDesign/textGen/classes
 core/languageDesign/make/classes
