@@ -130,19 +130,19 @@
   <unitInfo fileName="CustomContainers_Editor.java" startLine="28" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainers_Editor" />
   <unitInfo fileName="CustomContainerDeclaration_Editor.java" startLine="27" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainerDeclaration_Editor" />
   <unitInfo fileName="HashMapCreator_editorComponent.java" startLine="34" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent" />
-  <unitInfo fileName="ForEachStatement_Editor.java" startLine="28" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ForEachStatement_Editor" />
+  <unitInfo fileName="ForEachStatement_Editor.java" startLine="27" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ForEachStatement_Editor" />
   <unitInfo fileName="AbstractContainerCreator_Component.java" startLine="45" startPosition="0" endLine="403" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component" />
   <root nodeId="1151690931651">
     <nodeInfo nodeId="569424390635550549" fileName="SequenceType_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="569424390635550548" fileName="SequenceType_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="74" />
   </root>
   <root nodeId="1153944466559">
-    <nodeInfo nodeId="1199468199753" fileName="ForEachStatement_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="363746191845184861" fileName="ForEachStatement_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198675709163" fileName="ForEachStatement_Editor.java" startLine="301" startPosition="111" endLine="302" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1199468199752" fileName="ForEachStatement_Editor.java" startLine="293" startPosition="111" endLine="294" endPosition="64" />
-    <scopeInfo nodeId="363746191845184860" fileName="ForEachStatement_Editor.java" startLine="297" startPosition="111" endLine="298" endPosition="72" />
-    <scopeInfo nodeId="1198675698816" fileName="ForEachStatement_Editor.java" startLine="301" startPosition="111" endLine="302" endPosition="254" />
+    <nodeInfo nodeId="1199468199753" fileName="ForEachStatement_Editor.java" startLine="292" startPosition="111" endLine="293" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="363746191845184861" fileName="ForEachStatement_Editor.java" startLine="296" startPosition="111" endLine="297" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198675709163" fileName="ForEachStatement_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1199468199752" fileName="ForEachStatement_Editor.java" startLine="292" startPosition="111" endLine="293" endPosition="64" />
+    <scopeInfo nodeId="363746191845184860" fileName="ForEachStatement_Editor.java" startLine="296" startPosition="111" endLine="297" endPosition="72" />
+    <scopeInfo nodeId="1198675698816" fileName="ForEachStatement_Editor.java" startLine="300" startPosition="111" endLine="301" endPosition="254" />
   </root>
   <root nodeId="1178286388399">
     <nodeInfo nodeId="1178286405951" fileName="SortDirection_Editor.java" startLine="59" startPosition="110" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

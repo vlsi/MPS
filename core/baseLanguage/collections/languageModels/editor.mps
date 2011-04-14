@@ -17,7 +17,6 @@
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <import index="tp6e" modelUID="r:00000000-0000-4000-0000-011c895903aa(jetbrains.mps.baseLanguageInternal.editor)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
@@ -521,7 +520,7 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1199468199749">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1199465379613" resolveInfo="label" />
           <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="tpen.1199465658351" resolveInfo="AbstractLoopStatement_Label_Actions" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tp6e.1224158483340" resolveInfo="InternalName" />
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.7100672766913239362" resolveInfo="Label" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1199468199750">
           <property name="text" nameId="tpc2.1073389577007" value=":" />

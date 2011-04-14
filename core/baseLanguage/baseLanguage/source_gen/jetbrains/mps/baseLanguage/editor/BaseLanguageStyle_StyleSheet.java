@@ -249,4 +249,10 @@ public class BaseLanguageStyle_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
     return style;
   }
+
+  public static Style getLabel(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
+  }
 }
