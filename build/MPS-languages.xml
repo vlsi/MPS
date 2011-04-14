@@ -264,12 +264,12 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor.editorTest">
-    <mkdir dir="core/languageDesign/editor/languages/editorTest/classes" />
+    <mkdir dir="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.editorTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/editor/languages/editorTest/editorTest.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/languages/editorTest" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/languages/editorTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="core/languageDesign/editor/languages/editorTest/classes" />
+      <zipfileset dir="core/languageDesign/editor/languages/editorTest/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor">
@@ -283,10 +283,12 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.editor.runtime">
+    <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.editor.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/jetbrains.mps.editor.runtime.msd" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.findUsages">
@@ -556,12 +558,12 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.smodelTests">
-    <mkdir dir="core/languageDesign/smodel/languages/smodelTests/classes" />
+    <mkdir dir="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.smodelTests.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/smodel/languages/smodelTests/smodelTests.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/smodel/languages/smodelTests" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/smodel/languages/smodelTests/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="core/languageDesign/smodel/languages/smodelTests/classes" />
+      <zipfileset dir="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.make.facet">

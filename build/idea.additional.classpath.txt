@@ -40,8 +40,8 @@ core/baseLanguage/runConfigurations/classes
 core/languageDesign/actions/classes
 core/languageDesign/behavior/languages/behavior/classes
 core/languageDesign/constraints/classes
-core/languageDesign/editor/languages/editorTest/classes
 core/languageDesign/editor/classes
+core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen
 core/languageDesign/findUsages/classes
 core/languageDesign/typesystem/classes
 core/languageDesign/intentions/classes
@@ -60,7 +60,6 @@ core/languageDesign/generator/languages/templateLanguage/classes
 core/languageDesign/generator/languages/generationContext/classes
 core/languageDesign/test/classes
 core/languageDesign/textGen/classes
-core/languageDesign/smodel/languages/smodelTests/classes
 core/languageDesign/make/classes
 core/languageDesign/make/languages/facet/classes
 core/languageDesign/make/languages/script/classes
