@@ -13,6 +13,7 @@ public class BootstrapLanguages {
   public static final ModuleReference EDITOR = ModuleReference.fromString("18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)");
   public static final ModuleReference FIND_USAGES = ModuleReference.fromString("64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)");
   public static final ModuleReference GENERATOR = ModuleReference.fromString("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)");
+  public static final ModuleReference GENERATOR_CONTEXT = ModuleReference.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)");
   public static final ModuleReference GENERATOR_PARAMETERS = ModuleReference.fromString("289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)");
   public static final ModuleReference INTENTIONS = ModuleReference.fromString("d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)");
   public static final ModuleReference PLUGIN = ModuleReference.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)");
@@ -30,6 +31,9 @@ public class BootstrapLanguages {
   public static final ModuleReference CLOSURES = ModuleReference.fromString("fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)");
   public static final ModuleReference TUPLES = ModuleReference.fromString("a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)");
   public static final ModuleReference UNITTEST = ModuleReference.fromString("f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)");
+  public static final ModuleReference DEVKIT_GENERAL = ModuleReference.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
+  public static final ModuleReference DEVKIT_BOOTSTRAP = ModuleReference.fromString("e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)");
+  public static final ModuleReference DEVKIT_LANGUAGE_DESIGN = ModuleReference.fromString("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
   public static final String concept_baseLanguage_Annotation = "jetbrains.mps.baseLanguage.structure.Annotation";
   public static final String concept_baseLanguage_ClassConcept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
   public static final String concept_baseLanguage_EnumClass = "jetbrains.mps.baseLanguage.structure.EnumClass";

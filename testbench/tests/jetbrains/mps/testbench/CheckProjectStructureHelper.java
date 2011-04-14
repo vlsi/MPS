@@ -337,7 +337,7 @@ public class CheckProjectStructureHelper {
 
     for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
-        if (AttributeOperations.getLinkAttribute(node, ReferenceMacro_AnnotationLink.REFERENCE_MACRO, ref.getRole()) != null) {
+        if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }
 

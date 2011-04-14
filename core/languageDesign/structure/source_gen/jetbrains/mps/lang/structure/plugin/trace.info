@@ -189,8 +189,8 @@
     <nodeInfo nodeId="3552608880959247006" fileName="ConceptEditorOpenHelper.java" startLine="33" startPosition="5" endLine="34" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3552608880959247008" fileName="ConceptEditorOpenHelper.java" startLine="34" startPosition="78" endLine="35" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3552608880959247010" fileName="ConceptEditorOpenHelper.java" startLine="35" startPosition="98" endLine="36" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3552608880959247012" fileName="ConceptEditorOpenHelper.java" startLine="36" startPosition="68" endLine="37" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959247020" fileName="ConceptEditorOpenHelper.java" startLine="37" startPosition="85" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959247012" fileName="ConceptEditorOpenHelper.java" startLine="36" startPosition="68" endLine="37" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959247020" fileName="ConceptEditorOpenHelper.java" startLine="37" startPosition="100" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3552608880959247031" fileName="ConceptEditorOpenHelper.java" startLine="39" startPosition="38" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959247036" fileName="ConceptEditorOpenHelper.java" startLine="41" startPosition="5" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3552608880959247042" fileName="ConceptEditorOpenHelper.java" startLine="42" startPosition="58" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -199,23 +199,23 @@
     <nodeInfo nodeId="3552608880959247075" fileName="ConceptEditorOpenHelper.java" startLine="50" startPosition="31" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959247077" fileName="ConceptEditorOpenHelper.java" startLine="52" startPosition="5" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959246764" fileName="ConceptEditorOpenHelper.java" startLine="57" startPosition="23" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3552608880959246766" fileName="ConceptEditorOpenHelper.java" startLine="59" startPosition="5" endLine="60" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246800" fileName="ConceptEditorOpenHelper.java" startLine="61" startPosition="222" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3552608880959246802" fileName="ConceptEditorOpenHelper.java" startLine="63" startPosition="5" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3552608880959246766" fileName="ConceptEditorOpenHelper.java" startLine="59" startPosition="5" endLine="60" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246800" fileName="ConceptEditorOpenHelper.java" startLine="61" startPosition="244" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3552608880959246802" fileName="ConceptEditorOpenHelper.java" startLine="63" startPosition="5" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959292823" fileName="ConceptEditorOpenHelper.java" startLine="68" startPosition="117" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959292845" fileName="ConceptEditorOpenHelper.java" startLine="71" startPosition="147" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959292876" fileName="ConceptEditorOpenHelper.java" startLine="74" startPosition="95" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3552608880959292880" fileName="ConceptEditorOpenHelper.java" startLine="76" startPosition="5" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3552608880959246812" fileName="ConceptEditorOpenHelper.java" startLine="80" startPosition="78" endLine="81" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246827" fileName="ConceptEditorOpenHelper.java" startLine="82" startPosition="68" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246842" fileName="ConceptEditorOpenHelper.java" startLine="84" startPosition="88" endLine="85" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246858" fileName="ConceptEditorOpenHelper.java" startLine="86" startPosition="78" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3552608880959246869" fileName="ConceptEditorOpenHelper.java" startLine="91" startPosition="27" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3552608880959246871" fileName="ConceptEditorOpenHelper.java" startLine="93" startPosition="5" endLine="94" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246881" fileName="ConceptEditorOpenHelper.java" startLine="94" startPosition="82" endLine="95" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3552608880959246896" fileName="ConceptEditorOpenHelper.java" startLine="96" startPosition="42" endLine="97" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3552608880959246910" fileName="ConceptEditorOpenHelper.java" startLine="99" startPosition="39" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3552608880959246912" fileName="ConceptEditorOpenHelper.java" startLine="101" startPosition="5" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3552608880959246812" fileName="ConceptEditorOpenHelper.java" startLine="80" startPosition="57" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246827" fileName="ConceptEditorOpenHelper.java" startLine="82" startPosition="111" endLine="83" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246842" fileName="ConceptEditorOpenHelper.java" startLine="83" startPosition="93" endLine="84" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246858" fileName="ConceptEditorOpenHelper.java" startLine="85" startPosition="112" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3552608880959246869" fileName="ConceptEditorOpenHelper.java" startLine="89" startPosition="29" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3552608880959246871" fileName="ConceptEditorOpenHelper.java" startLine="91" startPosition="5" endLine="92" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246881" fileName="ConceptEditorOpenHelper.java" startLine="92" startPosition="97" endLine="93" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3552608880959246896" fileName="ConceptEditorOpenHelper.java" startLine="94" startPosition="42" endLine="95" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3552608880959246910" fileName="ConceptEditorOpenHelper.java" startLine="97" startPosition="39" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3552608880959246912" fileName="ConceptEditorOpenHelper.java" startLine="99" startPosition="5" endLine="100" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4926886502364016589" fileName="ConceptEditorOpenHelper.java" startLine="21" startPosition="26" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959246975" fileName="ConceptEditorOpenHelper.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959246988" fileName="ConceptEditorOpenHelper.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -225,19 +225,18 @@
     <nodeInfo nodeId="3552608880959247062" fileName="ConceptEditorOpenHelper.java" startLine="46" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959247069" fileName="ConceptEditorOpenHelper.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959246759" fileName="ConceptEditorOpenHelper.java" startLine="56" startPosition="49" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246771" fileName="ConceptEditorOpenHelper.java" startLine="60" startPosition="69" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246771" fileName="ConceptEditorOpenHelper.java" startLine="60" startPosition="48" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959292810" fileName="ConceptEditorOpenHelper.java" startLine="67" startPosition="46" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959292827" fileName="ConceptEditorOpenHelper.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959292852" fileName="ConceptEditorOpenHelper.java" startLine="73" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246847" fileName="ConceptEditorOpenHelper.java" startLine="85" startPosition="112" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246864" fileName="ConceptEditorOpenHelper.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246891" fileName="ConceptEditorOpenHelper.java" startLine="95" startPosition="74" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246905" fileName="ConceptEditorOpenHelper.java" startLine="98" startPosition="5" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246836" fileName="ConceptEditorOpenHelper.java" startLine="83" startPosition="57" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3552608880959246816" fileName="ConceptEditorOpenHelper.java" startLine="81" startPosition="47" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246847" fileName="ConceptEditorOpenHelper.java" startLine="84" startPosition="210" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246864" fileName="ConceptEditorOpenHelper.java" startLine="88" startPosition="5" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246891" fileName="ConceptEditorOpenHelper.java" startLine="93" startPosition="89" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246905" fileName="ConceptEditorOpenHelper.java" startLine="96" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3552608880959246816" fileName="ConceptEditorOpenHelper.java" startLine="81" startPosition="26" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3552608880959246955" fileName="ConceptEditorOpenHelper.java" startLine="55" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="3552608880959246959" fileName="ConceptEditorOpenHelper.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canOpen#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3552608880959246963" fileName="ConceptEditorOpenHelper.java" startLine="79" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findBaseNodeMultiTab#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/structure/structure/AbstractConceptDeclaration;" />
+    <nodeInfo nodeId="3552608880959246963" fileName="ConceptEditorOpenHelper.java" startLine="79" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findBaseNodeMultiTab#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="3552608880959246967" fileName="ConceptEditorOpenHelper.java" startLine="19" startPosition="38" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4926886502364016590" fileName="ConceptEditorOpenHelper.java" startLine="22" startPosition="114" endLine="23" endPosition="18" />
     <scopeInfo nodeId="3552608880959246976" fileName="ConceptEditorOpenHelper.java" startLine="25" startPosition="102" endLine="26" endPosition="166" />
@@ -248,21 +247,19 @@
     <scopeInfo nodeId="3552608880959247063" fileName="ConceptEditorOpenHelper.java" startLine="47" startPosition="35" endLine="48" endPosition="18" />
     <scopeInfo nodeId="3552608880959247074" fileName="ConceptEditorOpenHelper.java" startLine="50" startPosition="31" endLine="51" endPosition="18" />
     <scopeInfo nodeId="3552608880959246763" fileName="ConceptEditorOpenHelper.java" startLine="57" startPosition="23" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="3552608880959246799" fileName="ConceptEditorOpenHelper.java" startLine="61" startPosition="222" endLine="62" endPosition="18" />
+    <scopeInfo nodeId="3552608880959246799" fileName="ConceptEditorOpenHelper.java" startLine="61" startPosition="244" endLine="62" endPosition="18" />
     <scopeInfo nodeId="3552608880959292811" fileName="ConceptEditorOpenHelper.java" startLine="68" startPosition="117" endLine="69" endPosition="19" />
     <scopeInfo nodeId="3552608880959292828" fileName="ConceptEditorOpenHelper.java" startLine="71" startPosition="147" endLine="72" endPosition="19" />
     <scopeInfo nodeId="3552608880959292853" fileName="ConceptEditorOpenHelper.java" startLine="74" startPosition="95" endLine="75" endPosition="19" />
-    <scopeInfo nodeId="3552608880959246857" fileName="ConceptEditorOpenHelper.java" startLine="86" startPosition="78" endLine="87" endPosition="55" />
-    <scopeInfo nodeId="3552608880959246868" fileName="ConceptEditorOpenHelper.java" startLine="91" startPosition="27" endLine="92" endPosition="18" />
-    <scopeInfo nodeId="3552608880959246895" fileName="ConceptEditorOpenHelper.java" startLine="96" startPosition="42" endLine="97" endPosition="64" />
-    <scopeInfo nodeId="3552608880959246909" fileName="ConceptEditorOpenHelper.java" startLine="99" startPosition="39" endLine="100" endPosition="18" />
-    <scopeInfo nodeId="3552608880959246841" fileName="ConceptEditorOpenHelper.java" startLine="84" startPosition="88" endLine="88" endPosition="9">
+    <scopeInfo nodeId="3552608880959246857" fileName="ConceptEditorOpenHelper.java" startLine="85" startPosition="112" endLine="86" endPosition="85" />
+    <scopeInfo nodeId="3552608880959246868" fileName="ConceptEditorOpenHelper.java" startLine="89" startPosition="29" endLine="90" endPosition="18" />
+    <scopeInfo nodeId="3552608880959246895" fileName="ConceptEditorOpenHelper.java" startLine="94" startPosition="42" endLine="95" endPosition="64" />
+    <scopeInfo nodeId="3552608880959246909" fileName="ConceptEditorOpenHelper.java" startLine="97" startPosition="39" endLine="98" endPosition="18" />
+    <scopeInfo nodeId="3552608880959246826" fileName="ConceptEditorOpenHelper.java" startLine="82" startPosition="111" endLine="87" endPosition="7">
       <varInfo nodeId="3552608880959246843" varName="annotation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3552608880959246826" fileName="ConceptEditorOpenHelper.java" startLine="82" startPosition="68" endLine="89" endPosition="7">
       <varInfo nodeId="3552608880959246828" varName="bc" />
     </scopeInfo>
-    <scopeInfo nodeId="3552608880959246758" fileName="ConceptEditorOpenHelper.java" startLine="56" startPosition="49" endLine="64" endPosition="30">
+    <scopeInfo nodeId="3552608880959246758" fileName="ConceptEditorOpenHelper.java" startLine="56" startPosition="49" endLine="64" endPosition="20">
       <varInfo nodeId="3552608880959246767" varName="baseNode" />
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246921" fileName="ConceptEditorOpenHelper.java" startLine="67" startPosition="46" endLine="77" endPosition="16" />
@@ -272,12 +269,12 @@
     <scopeInfo nodeId="3552608880959246959" fileName="ConceptEditorOpenHelper.java" startLine="66" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="3552608880959246919" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3552608880959246811" fileName="ConceptEditorOpenHelper.java" startLine="80" startPosition="78" endLine="102" endPosition="20">
+    <scopeInfo nodeId="3552608880959246811" fileName="ConceptEditorOpenHelper.java" startLine="80" startPosition="57" endLine="100" endPosition="20">
       <varInfo nodeId="3552608880959246813" varName="baseNode" />
       <varInfo nodeId="3552608880959246882" varName="nodeModule" />
       <varInfo nodeId="3552608880959246872" varName="baseNodeModule" />
     </scopeInfo>
-    <scopeInfo nodeId="3552608880959246963" fileName="ConceptEditorOpenHelper.java" startLine="79" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="3552608880959246963" fileName="ConceptEditorOpenHelper.java" startLine="79" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3552608880959246809" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3552608880959246970" fileName="ConceptEditorOpenHelper.java" startLine="20" startPosition="47" endLine="53" endPosition="20">
@@ -290,7 +287,7 @@
     <scopeInfo nodeId="3552608880959246967" fileName="ConceptEditorOpenHelper.java" startLine="19" startPosition="38" endLine="55" endPosition="0">
       <varInfo nodeId="3552608880959247317" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3552608880959246745" fileName="ConceptEditorOpenHelper.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper" />
+    <unitInfo nodeId="3552608880959246745" fileName="ConceptEditorOpenHelper.java" startLine="19" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper" />
   </root>
   <root nodeId="6388164970935848749">
     <nodeInfo nodeId="6388164970935848769" fileName="ConceptEditorHelper.java" startLine="28" startPosition="91" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

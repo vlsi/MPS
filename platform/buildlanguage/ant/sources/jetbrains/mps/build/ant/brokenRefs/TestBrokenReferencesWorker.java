@@ -129,7 +129,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
     for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
-        if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
+        if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }
 

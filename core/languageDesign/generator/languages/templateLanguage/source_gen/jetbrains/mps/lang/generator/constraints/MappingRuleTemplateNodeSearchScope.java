@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.smodel.BootstrapLanguages;
 
 public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
   private SModel myModel;
@@ -55,7 +55,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
 
           // not instance of concepts from TLBase language (like TemplateDeclaration, MappingConfiguration etc.) 
           Language language = object.getLanguage(myScope);
-          return language != Generator_Language.get();
+          return language != BootstrapLanguages.generatorLanguage();
         }
       };
       myOwnNodes = searchScope.getNodes(condition);

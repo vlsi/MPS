@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide.project.listener;
 
-import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
-import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class GeneratorModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor model) {
@@ -28,10 +28,10 @@ public class GeneratorModelCreationListener extends ModelCreationListener {
 
   public void onCreate(SModelDescriptor model) {
     if (SModelStereotype.isGeneratorModel(model)) {
-      model.getSModel().addLanguage(Generator_Language.get().getModuleReference());
+      model.getSModel().addLanguage(BootstrapLanguages.GENERATOR);
     } else {
-      model.getSModel().addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
+      model.getSModel().addDevKit(BootstrapLanguages.DEVKIT_GENERAL);
     }
-    model.getSModel().addLanguage(GenerationContext_Language.get().getModuleReference());
+    model.getSModel().addLanguage(BootstrapLanguages.GENERATOR_CONTEXT);
   }
 }

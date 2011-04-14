@@ -8,13 +8,13 @@ import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(SNode node) {
@@ -34,7 +34,7 @@ public class ConceptEditorOpenHelper {
     // We should be sure that node and base node are inside the same module.  
     // Otherwise, tabbed editor for base node will be opened, but there will be no tab for "node" 
     // So, the user will not be able to open node by a double-click 
-    SModelDescriptor baseModelDesIcriptor = baseNode.getModel().getModelDescriptor();
+    SModelDescriptor baseModelDesIcriptor = SNodeOperations.getModel(baseNode).getModelDescriptor();
     SModelDescriptor mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
     if (mainModelDescriptor == null) {
       return null;
@@ -57,11 +57,11 @@ public class ConceptEditorOpenHelper {
     if (node == null) {
       return null;
     }
-    AbstractConceptDeclaration baseNode = findBaseNodeMultiTab(node);
-    if (baseNode == null || SModelUtil.getDeclaringLanguage(baseNode.getNode()) == null || (Language.getModelAspect(node.getModel().getModelDescriptor()) == null && !(SModelStereotype.isGeneratorModel(node.getModel())))) {
+    SNode baseNode = findBaseNodeMultiTab(node);
+    if ((baseNode == null) || SModelUtil.getDeclaringLanguage(baseNode) == null || (Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor()) == null && !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))))) {
       return null;
     }
-    return baseNode.getNode();
+    return baseNode;
   }
 
   private static boolean canOpen(SNode node) {
@@ -77,22 +77,20 @@ public class ConceptEditorOpenHelper {
     return true;
   }
 
-  private static AbstractConceptDeclaration findBaseNodeMultiTab(SNode node) {
-    AbstractConceptDeclaration baseNode = null;
-    if (node.isRoot() && node.getAdapter() instanceof BaseConcept) {
-      BaseConcept bc = ((BaseConcept) node.getAdapter());
-      if (RootTemplateAnnotation_AnnotationLink.getRootTemplateAnnotation(bc) != null) {
-        RootTemplateAnnotation annotation = RootTemplateAnnotation_AnnotationLink.getRootTemplateAnnotation(bc);
-        if (annotation != null && annotation.getApplicableConcept() != null) {
-          baseNode = annotation.getApplicableConcept();
-        }
+  private static SNode findBaseNodeMultiTab(SNode node) {
+    SNode baseNode = null;
+    if (node.isRoot() && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {
+      SNode bc = SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept");
+      SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
+      if ((annotation != null) && (SLinkOperations.getTarget(annotation, "applicableConcept", false) != null)) {
+        baseNode = SLinkOperations.getTarget(annotation, "applicableConcept", false);
       }
     }
-    if (baseNode == null) {
+    if ((baseNode == null)) {
       return null;
     }
-    IModule baseNodeModule = baseNode.getModel().getModelDescriptor().getModule();
-    IModule nodeModule = node.getModel().getModelDescriptor().getModule();
+    IModule baseNodeModule = SNodeOperations.getModel(baseNode).getModelDescriptor().getModule();
+    IModule nodeModule = SNodeOperations.getModel(node).getModelDescriptor().getModule();
     if (nodeModule instanceof Generator) {
       nodeModule = ((Generator) nodeModule).getSourceLanguage();
     }
