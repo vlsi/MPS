@@ -17,7 +17,10 @@ package jetbrains.mps.plugins.pluginparts.tool;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.ui.content.*;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.workbench.tools.BaseTool;
 import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
 import org.jetbrains.annotations.NotNull;

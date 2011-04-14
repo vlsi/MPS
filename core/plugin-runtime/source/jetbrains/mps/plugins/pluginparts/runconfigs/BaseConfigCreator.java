@@ -82,7 +82,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   protected abstract boolean isApplicable(Object element);
 
   public int compareTo(Object o) {
-    return PREFERED;
+    return RuntimeConfigurationProducer.PREFERED;
   }
 
   public int hashCode() {

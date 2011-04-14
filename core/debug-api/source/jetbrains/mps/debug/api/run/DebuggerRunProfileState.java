@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.debug.api.run;
 
-import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.runconfigs.runner.BaseMpsRunProfileState;
 
