@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguageInternal_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.BaseLanguageInternal_Language" />
-  <unitInfo fileName="ExtractStaticInnerClassCreator.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator" />
-  <unitInfo fileName="ExtractStaticInnerClassConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept" />
-  <unitInfo fileName="InternalThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression" />
-  <unitInfo fileName="ExtractStaticMethod_CallExpression.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression" />
-  <unitInfo fileName="ExtractToConstantRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression" />
-  <unitInfo fileName="InternalClassifierType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" />
-  <unitInfo fileName="InternalClassExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" />
-  <unitInfo fileName="InternalStaticFieldReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" />
-  <unitInfo fileName="TypeHintExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression" />
-  <unitInfo fileName="InternalVariableReference.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" />
-  <unitInfo fileName="ExtractToConstantExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression" />
-  <unitInfo fileName="ExtractStaticMethodExpression.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression" />
-  <unitInfo fileName="ExtractStaticInnerClassExpression.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression" />
-  <unitInfo fileName="InternalNewExpression.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" />
-  <unitInfo fileName="InternalStaticMethodCall.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" />
-  <unitInfo fileName="ExtractStatementListInnerExpression.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression" />
-  <unitInfo fileName="ExtractStatementListExpression.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression" />
-  <unitInfo fileName="InternalPartialFieldReference.java" startLine="17" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" />
-  <unitInfo fileName="InternalPartialInstanceMethodCall.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" />
 </debugInfo>
 

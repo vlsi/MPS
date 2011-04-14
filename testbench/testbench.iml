@@ -30,7 +30,6 @@
     <orderEntry type="module" module-name="debugTests" />
     <orderEntry type="module" module-name="actions" />
     <orderEntry type="module" module-name="baseLanguage" />
-    <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntry type="module" module-name="behavior" />
     <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="Closures-runtime" />
