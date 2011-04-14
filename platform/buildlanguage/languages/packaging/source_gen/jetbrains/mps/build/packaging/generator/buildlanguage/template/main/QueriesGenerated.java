@@ -1075,7 +1075,7 @@ __switch__:
           dependency.addAll(d.getAllExtendedDevkits());
         }
         for (IModule dependent : SetSequence.fromSet(dependency)) {
-          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null) {
+          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null && dependent.isCompileInMPS()) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
             System.err.println(errorText);
             _context.showErrorMessage(null, errorText);

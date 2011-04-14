@@ -259,7 +259,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.typesystemUI" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.dataFlow" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.testLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation" />

@@ -353,13 +353,6 @@
       <fileset dir="core/languageDesign/dataFlow/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.dataFlow.runtime">
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/jetbrains.mps.dataFlow.runtime.msd" prefix="module" />
-      <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.lang.pattern">
     <mkdir dir="core/languageDesign/pattern/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
