@@ -16,9 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -104,13 +102,5 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   public String getPropertyName() {
     return myPropertyName;
-  }
-
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    if (relationDeclaration instanceof PropertyDeclaration) {
-      PropertyDeclaration propertyDeclaration = (PropertyDeclaration) relationDeclaration;
-      return propertyDeclaration.getName();
-    }
-    return null;
   }
 }

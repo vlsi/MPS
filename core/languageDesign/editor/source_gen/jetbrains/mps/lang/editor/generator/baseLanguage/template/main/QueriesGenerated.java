@@ -13,13 +13,11 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
-import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
@@ -177,8 +175,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1767562947360483777(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode relationDeclaration = SLinkOperations.getTarget(_context.getNode(), "relationDeclaration", false);
-    return RefNodeListHandler.getRoleByRelationDeclaration(((BaseConcept) SNodeOperations.getAdapter(relationDeclaration)));
+    return CellModel_WithRole_Behavior.call_getRoleForCell_1216377898846(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1210365041467(final IOperationContext operationContext, final PropertyMacroContext _context) {

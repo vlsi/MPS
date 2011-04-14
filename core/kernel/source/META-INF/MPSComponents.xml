@@ -89,7 +89,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.LanguagesKeymapManager</implementation-class>
+      <implementation-class>jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager</implementation-class>
     </component>
 
     <component>

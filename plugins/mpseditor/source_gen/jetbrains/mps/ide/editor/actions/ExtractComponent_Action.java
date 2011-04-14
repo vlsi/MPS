@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.plugin.ExtractComponentUtil;
+import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ExtractComponent_Action extends GeneratedAction {

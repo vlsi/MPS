@@ -17,8 +17,9 @@
     <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="intentions" />
     <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="editor" />
     <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Trove4j" level="project" />
   </component>
 </module>

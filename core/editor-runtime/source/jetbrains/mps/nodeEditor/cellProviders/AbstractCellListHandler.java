@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.*;
 
@@ -159,11 +158,5 @@ public abstract class AbstractCellListHandler {
     if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
     }
-  }
-
-  // important: create such a method in every descendant of this class, it will be invoked via reflection
-  @SuppressWarnings({"UnusedDeclaration"})
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    return null;
   }
 }

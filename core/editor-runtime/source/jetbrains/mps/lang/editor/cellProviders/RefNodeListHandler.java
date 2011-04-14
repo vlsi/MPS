@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -124,13 +123,5 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected boolean filter(SNode childNode, IScope scope) {
     return true;
-  }
-
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    if (relationDeclaration instanceof LinkDeclaration) {
-      LinkDeclaration linkDeclaration = (LinkDeclaration) relationDeclaration;
-      return linkDeclaration.getRole();
-    }
-    return null;
   }
 }

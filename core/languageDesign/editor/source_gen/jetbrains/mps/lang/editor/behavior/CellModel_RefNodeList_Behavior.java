@@ -7,8 +7,13 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_RefNodeList_Behavior {
+  private static Class[] PARAMETERS_1182113674817411794 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -28,5 +33,18 @@ public class CellModel_RefNodeList_Behavior {
       return "-)";
     }
     return "<)";
+  }
+
+  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
+  }
+
+  public static String call_getRoleForCell_1182113674817411794(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794);
+  }
+
+  public static String callSuper_getRoleForCell_1182113674817411794(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794);
   }
 }

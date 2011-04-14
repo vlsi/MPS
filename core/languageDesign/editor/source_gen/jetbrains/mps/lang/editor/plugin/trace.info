@@ -40,42 +40,5 @@
       <varInfo nodeId="7157723551789028054" varName="nodes" />
     </scopeInfo>
   </root>
-  <root nodeId="98380422618925937">
-    <nodeInfo nodeId="98380422618935074" fileName="ExtractComponentUtil.java" startLine="21" startPosition="86" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="98380422618935084" fileName="ExtractComponentUtil.java" startLine="22" startPosition="135" endLine="23" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="98380422618935097" fileName="ExtractComponentUtil.java" startLine="24" startPosition="32" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="98380422618935104" fileName="ExtractComponentUtil.java" startLine="28" startPosition="25" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="98380422618935112" fileName="ExtractComponentUtil.java" startLine="29" startPosition="54" endLine="30" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="98380422618935118" fileName="ExtractComponentUtil.java" startLine="30" startPosition="140" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618935125" fileName="ExtractComponentUtil.java" startLine="31" startPosition="66" endLine="32" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618935134" fileName="ExtractComponentUtil.java" startLine="32" startPosition="160" endLine="33" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618935145" fileName="ExtractComponentUtil.java" startLine="33" startPosition="96" endLine="34" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="98380422618935151" fileName="ExtractComponentUtil.java" startLine="34" startPosition="124" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618935158" fileName="ExtractComponentUtil.java" startLine="35" startPosition="82" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618925939" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractComponentUtil#()V" />
-    <nodeInfo nodeId="98380422618935095" fileName="ExtractComponentUtil.java" startLine="23" startPosition="132" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="98380422618935102" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="98380422618935101" fileName="ExtractComponentUtil.java" startLine="26" startPosition="5" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="98380422618935059" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractComponent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="98380422618925942" fileName="ExtractComponentUtil.java" startLine="18" startPosition="33" endLine="18" endPosition="33" />
-    <scopeInfo nodeId="98380422618935096" fileName="ExtractComponentUtil.java" startLine="24" startPosition="32" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="98380422618925939" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="98380422618935103" fileName="ExtractComponentUtil.java" startLine="28" startPosition="25" endLine="36" endPosition="60">
-      <varInfo nodeId="98380422618935105" varName="model" />
-      <varInfo nodeId="98380422618935113" varName="component" />
-      <varInfo nodeId="98380422618935146" varName="toReplace" />
-    </scopeInfo>
-    <scopeInfo nodeId="98380422618935102" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="98380422618935062" fileName="ExtractComponentUtil.java" startLine="21" startPosition="86" endLine="38" endPosition="7">
-      <varInfo nodeId="98380422618935085" varName="componentName" />
-      <varInfo nodeId="98380422618935075" varName="container" />
-    </scopeInfo>
-    <scopeInfo nodeId="98380422618935059" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="98380422618935063" varName="node" />
-      <varInfo nodeId="98380422618935065" varName="editorContext" />
-    </scopeInfo>
-    <unitInfo nodeId="98380422618935102" fileName="ExtractComponentUtil.java" startLine="27" startPosition="55" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponentUtil$1" />
-    <unitInfo nodeId="98380422618925937" fileName="ExtractComponentUtil.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponentUtil" />
-  </root>
 </debugInfo>
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -90,11 +89,5 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public AbstractCellProvider getAuxiliaryCellProvider() {
     return myAuxiliaryCellProvider;
-  }
-
-  // important: create such a method in every descendant of this class, it will be invoked via reflection
-  @SuppressWarnings({"UnusedDeclaration"})
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    return null;
   }
 }

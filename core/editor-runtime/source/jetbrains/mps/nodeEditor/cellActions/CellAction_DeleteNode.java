@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.lang.core.structure.IWrapper;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +40,6 @@ public class CellAction_DeleteNode extends EditorCellAction {
     return mySemanticNode;
   }
 
-  protected SNode getNodeToDelete() {
-    SNode result = mySemanticNode;
-    while (BaseAdapter.fromNode(result.getParent()) instanceof IWrapper) {
-      result = result.getParent();
-    }
-    return result;
-  }
-
   public boolean canExecute(EditorContext context) {
     EditorCell cell = context.getNodeEditorComponent().findNodeCell(mySemanticNode);
     return cell != null && cell.getParent() != null;
@@ -60,7 +47,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(getNodeToDelete());    
+    nodes.add(CellUtil.getNodeToDelete(mySemanticNode));
     new DeleteNodesHelper(nodes, context.getOperationContext(), false).deleteNodes(false);
   }
 }

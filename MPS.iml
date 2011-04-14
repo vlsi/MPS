@@ -12,7 +12,6 @@
     <orderEntry type="library" exported="" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
-    <orderEntry type="module" module-name="editor" exported="" />
     <orderEntry type="module" module-name="typesystem" exported="" />
     <orderEntry type="module" module-name="script" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />

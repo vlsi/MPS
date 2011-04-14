@@ -38,7 +38,6 @@
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="distrib" />
-    <orderEntry type="module" module-name="editor" />
     <orderEntry type="module" module-name="findUsages" />
     <orderEntry type="module" module-name="ideUiLanguage" />
     <orderEntry type="module" module-name="intentions" />

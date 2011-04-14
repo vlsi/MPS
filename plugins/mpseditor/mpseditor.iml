@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="module" module-name="editor-runtime" />
   </component>
 </module>
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.lang.editor.structure._ImageAlignment_Enum;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.project.IModule;
@@ -33,7 +32,7 @@ import java.awt.image.ImageObserver;
 
 public class EditorCell_Image extends EditorCell_Basic {
 
-  private _ImageAlignment_Enum myAlignment = _ImageAlignment_Enum.alignmentJustify;
+  private ImageAlignment myAlignment = ImageAlignment.justify;
   private Image myImage;
   private ImageObserver mySizeObserver = new ImageObserver() {
     public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
@@ -78,17 +77,17 @@ public class EditorCell_Image extends EditorCell_Basic {
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (myImage == null) return;
     switch (myAlignment) {
-      case alignmentJustify: {
+      case justify: {
         g.drawImage(myImage, myX, myY, myWidth, myHeight, getEditor());
         break;
       }
-      case alignmentCenter: {
+      case center: {
         int x = myX + (myWidth - myImage.getWidth(getEditor())) / 2;
         int y = myY + (myHeight - myImage.getHeight(getEditor())) / 2;
         g.drawImage(myImage, x, y, getEditor());
         break;
       }
-      case alignmentTile: {
+      case title: {
         break;
       }
     }
@@ -96,7 +95,7 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   protected void relayoutImpl() {
     if (myImage == null) return;
-    if (myAlignment == _ImageAlignment_Enum.alignmentJustify) {
+    if (myAlignment == ImageAlignment.justify) {
       int width = myImage.getWidth(mySizeObserver);
       if (width != -1) {
         myWidth = width;
@@ -120,7 +119,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     myDescent = descent;
   }
 
-  public void setAlignment(_ImageAlignment_Enum alignment) {
+  public void setAlignment(ImageAlignment alignment) {
     myAlignment = alignment;
   }
 
@@ -157,4 +156,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     myImage = image;
   }
 
+  public static enum ImageAlignment {
+    justify, center, title;
+  }
 }

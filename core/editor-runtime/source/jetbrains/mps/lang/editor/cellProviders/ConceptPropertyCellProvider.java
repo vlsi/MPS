@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class ConceptPropertyCellProvider extends CellProviderWithRole {
   public static final int DEFAULT_FONT_STYLE = MPSFonts.BOLD;
@@ -78,14 +77,5 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
 
   public CellContext getCellContext() {
     return new ConceptPropertyCellContext(getSNode(), BaseAdapter.fromAdapter(myConceptPropertyDeclaration));
-  }
-
-  //To change body of overridden methods use File | Settings | File Templates.
-  // important: create such a method in every descendant of this class, it will be invoked via reflection
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    if (relationDeclaration instanceof ConceptPropertyDeclaration) {
-      return ((ConceptPropertyDeclaration) relationDeclaration).getName();
-    }
-    return null;
   }
 }

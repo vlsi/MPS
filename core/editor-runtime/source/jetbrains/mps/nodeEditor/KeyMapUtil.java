@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
 import jetbrains.mps.nodeEditor.cells.CellFinders;

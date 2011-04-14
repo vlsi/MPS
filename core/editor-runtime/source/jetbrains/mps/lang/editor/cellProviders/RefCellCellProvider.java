@@ -15,11 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.IDeprecatable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -32,8 +28,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 
@@ -65,19 +59,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
       editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
-      if (SNodeOperations.isInstanceOf(effectiveNode, IDeprecatable.concept)) {
-        final SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(node);
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.STRIKE_OUT,
-              IDeprecatable_Behavior.call_isDeprecated_1224609060727(effectiveNode)
-                || IDeprecatable_Behavior.call_isDeprecated_1224609060727(conceptDeclaration)
-            );
-          }
-
-        };
-        inlineStyle.apply(editorCell);
-      }
+      CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
     }
     setSemanticNodeToCells(editorCell, node);
 
@@ -115,13 +97,5 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     errorCell.setText(error);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;
-  }
-
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    if (relationDeclaration instanceof LinkDeclaration) {
-      LinkDeclaration linkDeclaration = (LinkDeclaration) relationDeclaration;
-      return linkDeclaration.getRole();
-    }
-    return null;
   }
 }

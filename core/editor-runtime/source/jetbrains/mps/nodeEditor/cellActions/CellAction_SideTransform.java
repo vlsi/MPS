@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
@@ -57,7 +57,7 @@ public class CellAction_SideTransform extends EditorCellAction {
       EditorCell nodeMainCell = selectedCell.getContainingBigCell();
       EditorCell defAnchorCell = nodeMainCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
         public boolean met(EditorCell object) {
-          return object.hasRightTransformAnchorTag(RightTransformAnchorTag.default_.getValueAsString()) && object.getSNode() == node;
+          return object.hasRightTransformAnchorTag(CellUtil.getDefaultSideTransformTag()) && object.getSNode() == node;
         }
       }, true), true);
 

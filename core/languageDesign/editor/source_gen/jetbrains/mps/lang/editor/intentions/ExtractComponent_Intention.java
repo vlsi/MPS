@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.editor.plugin.ExtractComponentUtil;
+import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 
 public class ExtractComponent_Intention extends BaseIntention implements Intention {
   public ExtractComponent_Intention() {

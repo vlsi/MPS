@@ -17,12 +17,12 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;

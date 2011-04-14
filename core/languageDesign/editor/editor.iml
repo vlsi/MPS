@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="mpseditor" />
   </component>
 </module>
 

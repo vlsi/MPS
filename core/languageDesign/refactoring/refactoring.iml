@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" exported="" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="editor" />
   </component>
 </module>
 

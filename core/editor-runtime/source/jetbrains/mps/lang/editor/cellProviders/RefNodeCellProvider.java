@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -47,14 +45,5 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
     }
     return editorCell;
-  }
-
-
-  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
-    if (relationDeclaration instanceof LinkDeclaration) {
-      LinkDeclaration linkDeclaration = (LinkDeclaration) relationDeclaration;
-      return linkDeclaration.getRole();
-    }
-    return null;
   }
 }
