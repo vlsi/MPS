@@ -31,9 +31,9 @@ public class DateRangeTester extends TestCase {
   /*package*/ DateRange myJ1_f9 = new DateRange(myJan1, myFeb9);
   /*package*/ DateRange myJ2_15 = new DateRange(myJan2, myJan15);
   /*package*/ DateRange myF3_8 = new DateRange(myFeb3, myFeb8);
-  /*package*/ DateRange[] myComplete = {myR1_15 ,myR16_2 ,myF3_9};
-  /*package*/ DateRange[] myWithGap = {myR1_15 ,myF3_9};
-  /*package*/ DateRange[] myOverlap = {myR1_15 ,myR1_10 ,myR16_2 ,myF3_9};
+  /*package*/ DateRange[] myComplete = {myR1_15, myR16_2, myF3_9};
+  /*package*/ DateRange[] myWithGap = {myR1_15, myF3_9};
+  /*package*/ DateRange[] myOverlap = {myR1_15, myR1_10, myR16_2, myF3_9};
 
   public DateRangeTester(String arg) {
     super(arg);
@@ -123,11 +123,11 @@ public class DateRangeTester extends TestCase {
     Assert.assertTrue(myJ1_f9.partitionedBy(myComplete));
     Assert.assertTrue(!(myJ1_f9.partitionedBy(myWithGap)));
     Assert.assertTrue(!(myJ1_f9.partitionedBy(myOverlap)));
-    DateRange[] off_end = {myR15_15 ,myR16_2 ,myF3_9};
+    DateRange[] off_end = {myR15_15, myR16_2, myF3_9};
     Assert.assertTrue(!(myJ1_f9.partitionedBy(off_end)));
-    DateRange[] missingStart = {myJ2_15 ,myR16_2 ,myF3_9};
+    DateRange[] missingStart = {myJ2_15, myR16_2, myF3_9};
     Assert.assertTrue(!(myJ1_f9.partitionedBy(missingStart)));
-    DateRange[] missingEnd = {myR1_15 ,myR16_2 ,myF3_8};
+    DateRange[] missingEnd = {myR1_15, myR16_2, myF3_8};
     Assert.assertTrue(!(myJ1_f9.partitionedBy(missingEnd)));
   }
 

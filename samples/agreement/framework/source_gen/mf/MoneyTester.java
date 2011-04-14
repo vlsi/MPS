@@ -17,7 +17,7 @@ public class MoneyTester extends TestCase {
 
   public void testDivide3() {
     Money[] actual = Money.dollars(100).divide(3);
-    Money[] expected = {Money.dollars(33.34) ,Money.dollars(33.33) ,Money.dollars(33.33)};
+    Money[] expected = {Money.dollars(33.34), Money.dollars(33.33), Money.dollars(33.33)};
     for (int i = 0; i < expected.length; i++) {
       Assert.assertEquals(expected[i], actual[i]);
     }
