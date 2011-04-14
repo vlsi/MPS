@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.runtime;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.util.InternUtil;
 
 import java.util.HashMap;
 import java.util.Map;
 
 abstract class BaseClassLoader extends ClassLoader {
-  private Map<String, Class> myCache = new HashMap<String, Class>();
+  private Map<String, Class> myCache = new THashMap<String, Class>();
 
   protected BaseClassLoader() {
     super(BaseClassLoader.class.getClassLoader());
@@ -49,8 +50,7 @@ abstract class BaseClassLoader extends ClassLoader {
       c = loadBeforeCurrent(name);
 
       if (c == null) {
-        byte[] bytes = null;
-        bytes = findClassBytes(name);
+        byte[] bytes = findClassBytes(name);
         if (bytes == null) {
           c = loadAfterCurrent(name);
           if (c == null) {
