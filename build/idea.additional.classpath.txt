@@ -41,7 +41,6 @@ core/languageDesign/actions/classes
 core/languageDesign/behavior/languages/behavior/classes
 core/languageDesign/constraints/classes
 core/languageDesign/editor/classes
-core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen
 core/languageDesign/findUsages/classes
 core/languageDesign/typesystem/classes
 core/languageDesign/intentions/classes

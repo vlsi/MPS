@@ -282,15 +282,6 @@
       <zipfileset dir="core/languageDesign/editor/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.editor.runtime">
-    <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.editor.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/jetbrains.mps.editor.runtime.msd" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.lang.findUsages">
     <mkdir dir="core/languageDesign/findUsages/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.findUsages.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">

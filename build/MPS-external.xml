@@ -253,7 +253,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.typesystemUI" />

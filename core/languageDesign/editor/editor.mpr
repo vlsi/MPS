@@ -23,6 +23,7 @@
       <solutionPath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
       <solutionPath path="${mps_home}/plugins/mpseditor/solution/jetbrains.mps.ide.editor.msd" folder="" />
       <solutionPath path="${project}/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="" />
+      <solutionPath path="${mps_home}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/editor.mpl" />
