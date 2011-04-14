@@ -86,8 +86,8 @@
     <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="82" startPosition="5" endLine="98" endPosition="5" />
     <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="103" endPosition="13">
       <varInfo nodeId="1238502072985" varName="modulesList" />
-      <varInfo nodeId="1238502072965" varName="paths" />
       <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
+      <varInfo nodeId="1238502072965" varName="paths" />
       <varInfo nodeId="1238502072971" varName="dir" />
     </scopeInfo>
     <unitInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="99" startPosition="49" endLine="103" endPosition="5" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$1" />

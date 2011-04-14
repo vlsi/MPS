@@ -12,6 +12,8 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 

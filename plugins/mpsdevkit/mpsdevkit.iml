@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="uiTests" scope="TEST" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 
