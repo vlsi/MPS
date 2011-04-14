@@ -254,13 +254,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.constraints">
-    <mkdir dir="core/languageDesign/constraints/classes" />
+    <mkdir dir="core/languageDesign/constraints/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.constraints.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/constraints/constraints.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/constraints" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/constraints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/constraints/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
-      <zipfileset dir="core/languageDesign/constraints/classes" />
+      <zipfileset dir="core/languageDesign/constraints/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor.editorTest">

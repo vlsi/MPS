@@ -33,7 +33,6 @@
     <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="constraints" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="debug" />

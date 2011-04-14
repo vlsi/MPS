@@ -19,7 +19,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/languages/trove/collections-trove.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/languages/trove/collections-trove.iml" group="core/baseLanguage/collections" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/debug/debug.iml" filepath="$PROJECT_DIR$/core/debug/debug.iml" group="core/debug" />
