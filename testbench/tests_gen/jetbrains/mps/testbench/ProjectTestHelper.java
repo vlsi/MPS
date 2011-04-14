@@ -227,8 +227,11 @@ public class ProjectTestHelper {
     }
 
     private IFile tmpFile(String path) {
-      int idx = path.indexOf(File.separator);
-      String tmp = tmpPath + File.separator + (idx < 0 ?
+      if (MapSequence.fromMap(path2tmp).containsKey(path)) {
+        return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
+      }
+      int idx = path.indexOf("/");
+      String tmp = tmpPath + "/" + (idx < 0 ?
         path :
         path.substring(idx + 1)
       );
