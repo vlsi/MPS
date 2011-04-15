@@ -965,18 +965,6 @@
             <property name="text" nameId="tpee.6329021646629104958" value="if there are constrints, but they are not compiled, we can rename it" />
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4706738529699924214">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4706738529699924215">
-            <property name="name" nameId="tpck.1169194664001" value="manager" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4706738529699924216">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8sbz.~ModelConstraintsManager" resolveInfo="ModelConstraintsManager" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4706738529699924217">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8sbz.~ModelConstraintsManager" resolveInfo="ModelConstraintsManager" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~ModelConstraintsManager%dgetInstance()%cjetbrains%dmps%dsmodel%dconstraints%dModelConstraintsManager" resolveInfo="getInstance" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4706738529699924218">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4706738529699924219">
             <property name="name" nameId="tpck.1169194664001" value="nameProperty" />
@@ -1002,18 +990,21 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4706738529699924228">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4706738529699924229">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4706738529699924230" />
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4706738529699924231">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4706738529699924232">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4706738529699924215" resolveInfo="manager" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5631152770879511702">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~ModelConstraintsManager%dgetNodePropertyGetter(java%dlang%dString,java%dlang%dString)%cjetbrains%dmps%dsmodel%dconstraints%dINodePropertyGetter" resolveInfo="getNodePropertyGetter" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8sbz.~ModelConstraintsManager" resolveInfo="ModelConstraintsManager" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5631152770879511711">
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="5631152770879511709">
+                  <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5631152770879511704">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4706738529699924067" resolveInfo="node" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5631152770879511715">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
+                </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4706738529699924233">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~ModelConstraintsManager%dgetNodePropertyGetter(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dsmodel%dconstraints%dINodePropertyGetter" resolveInfo="getNodePropertyGetter" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4706738529699924238">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4706738529699924067" resolveInfo="node" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4706738529699924235">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4706738529699924219" resolveInfo="nameProperty" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5631152770879511717">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4706738529699924219" resolveInfo="nameProperty" />
               </node>
             </node>
           </node>
