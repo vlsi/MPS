@@ -10,6 +10,7 @@
   <import index="tpdt" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="dtpw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.settings.runtime(MPS.Classpath/jetbrains.mps.execution.settings.runtime@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="l9j8" modelUID="r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)" version="-1" implicit="yes" />
@@ -29,42 +30,45 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477739">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ReportConfigurationErrorStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477752">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentPropertyDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477778">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentPropertyReferenceOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6981317760235477791">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <property name="name" nameId="tpck.1169194664001" value="TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration" />
-    </node>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6981317760235477801">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
-      <property name="name" nameId="tpck.1169194664001" value="SmartPropertyIsSubtypeOfSmartProperty" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477807">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentConfigurationTemplateInitializer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6981317760235477872">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <property name="name" nameId="tpck.1169194664001" value="EditorIsSusbtypeOfEditor" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477878">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EditorExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235477903">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EditorOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6981317760235497140">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Configuration_Parameter" />
+    </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6746885276348592032">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
+      <property name="name" nameId="tpck.1169194664001" value="TemplatePersistentConfigurationIsITemplatePersistentConfigurationClassifier" />
+    </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6746885276348602954">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
+      <property name="name" nameId="tpck.1169194664001" value="TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration" />
     </node>
   </roots>
   <root id="6981317760235393639">
@@ -288,19 +292,6 @@
       </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6981317760235477800">
-      <property name="name" nameId="tpck.1169194664001" value="smartPersistentPropertyType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
-    </node>
-  </root>
-  <root id="6981317760235477801">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="6981317760235477802">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6981317760235477803">
-        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6981317760235477804">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="6981317760235477805" />
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6981317760235477806">
       <property name="name" nameId="tpck.1169194664001" value="smartPersistentPropertyType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
     </node>
@@ -738,6 +729,34 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6981317760235497149">
       <property name="name" nameId="tpck.1169194664001" value="configurationParameter" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156067216" resolveInfo="Configuration_Parameter" />
+    </node>
+  </root>
+  <root id="6746885276348592032">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="6746885276348592033">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6746885276348593449">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6746885276348593451">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6746885276348593454">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dtpw.~ITemplatePersistentConfiguration" resolveInfo="ITemplatePersistentConfiguration" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6746885276348592034">
+      <property name="name" nameId="tpck.1169194664001" value="templatePersistentConfigurationType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentConfigurationType" />
+    </node>
+  </root>
+  <root id="6746885276348602954">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="6746885276348602955">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6746885276348607764">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6746885276348607766">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="6746885276348607768" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6746885276348602956">
+      <property name="name" nameId="tpck.1169194664001" value="templatePersistentConfigurationType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentConfigurationType" />
     </node>
   </root>
 </model>

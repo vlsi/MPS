@@ -24,7 +24,22 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.settings.typesystem.SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule" file="SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule.java">
+  <dependency className="jetbrains.mps.execution.settings.typesystem.TemplatePersistentConfigurationIsITemplatePersistentConfigurationClassifier_SubtypingRule" file="TemplatePersistentConfigurationIsITemplatePersistentConfigurationClassifier_SubtypingRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.typesystem.TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule" file="TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="java.util.HashSet" />
@@ -61,10 +76,11 @@
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_PersistentConfigurationTemplateInitializer_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_PersistentPropertyReferenceOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_EditorOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.TemplatePersistentConfigurationIsITemplatePersistentConfigurationClassifier_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_ReportConfigurationErrorStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_Configuration_Parameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.typesystem.TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.typesystem.typeof_Configuration_Parameter_InferenceRule" file="typeof_Configuration_Parameter_InferenceRule.java">

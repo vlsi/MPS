@@ -49,7 +49,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new TemplatePersistentConfigurationIsITemplatePersistentConfigurationClassifier_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

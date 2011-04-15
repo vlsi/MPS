@@ -162,6 +162,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3131153648913173896">
       <property name="name" nameId="tpck.1169194664001" value="weave_PersistentConfigurationTemplateImplements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066579" resolveInfo="PersistentConfigurationTemplate" />
     </node>
   </roots>
@@ -767,6 +768,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="203908296139232280">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="fb9u.946964771156066618" resolveInfo="SettingsEditorType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="203908296139232281">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="203908296139232278" resolveInfo="reduce_SettingsEditorType" />
