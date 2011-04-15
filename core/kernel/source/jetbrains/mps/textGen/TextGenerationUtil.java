@@ -18,6 +18,8 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.Collections;
+
 public class TextGenerationUtil {
 
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
@@ -25,7 +27,7 @@ public class TextGenerationUtil {
       return TextGenManager.instance().generateText(context, node);
     } else {
       String nodeText = "Can't generate text from " + node;
-      return new TextGenerationResult(nodeText, false, null, null, null, null);
+      return new TextGenerationResult(nodeText, true, Collections.singleton(nodeText), null, null, null, null);
     }
   }
 }

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * User: Dmitriev.
@@ -42,6 +42,7 @@ public final class TextGenBuffer {
   private int myIndent = 2;
   private int myDepth = 0;
   private boolean myContainsErrors = false;
+  private List<String> myErrors = new ArrayList<String>();
 
   TextGenBuffer() {
   }
@@ -60,8 +61,17 @@ public final class TextGenBuffer {
     return myContainsErrors;
   }
 
+  public Collection<String> errors () {
+    return Collections.unmodifiableList(myErrors);
+  }
+
   public void foundError() {
     myContainsErrors = true;
+  }
+
+  public void foundError(String error) {
+    myContainsErrors = true;
+    myErrors.add(error);
   }
 
   protected void increaseDepth() {

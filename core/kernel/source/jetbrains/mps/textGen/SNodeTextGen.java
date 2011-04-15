@@ -104,12 +104,11 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   public void foundError(String info) {
-    if (info != null) {
-      LOG.error("textgen error: '" + info + "' in " + getSNode().getDebugText(), getSNode());
-    } else {
-      LOG.error("textgen error in " + getSNode().getDebugText(), getSNode());
-    }
-    getBuffer().foundError();
+    String message = info != null ?
+      "textgen error: '" + info + "' in " + getSNode().getDebugText() :
+      "textgen error in " + getSNode().getDebugText();
+    LOG.error(message, getSNode());
+    getBuffer().foundError(message);
   }
 
 

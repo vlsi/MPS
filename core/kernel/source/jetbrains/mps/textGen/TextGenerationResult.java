@@ -20,6 +20,8 @@ import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +31,7 @@ import java.util.Map;
 public class TextGenerationResult {
   private Object myResult;
   private boolean myContainErrors;
+  private final Collection<String> myErrors;
   private final Map<SNode, TraceablePositionInfo> myPositions;
   private final Map<SNode, ScopePositionInfo> myScopePositions;
   private final Map<SNode, UnitPositionInfo> myUnitPositions;
@@ -36,12 +39,14 @@ public class TextGenerationResult {
 
   public TextGenerationResult(Object contents,
                               boolean containErrors,
+                              Collection<String> errors,
                               Map<SNode, TraceablePositionInfo> positions,
                               Map<SNode, ScopePositionInfo> scopePositions,
                               Map<SNode, UnitPositionInfo> unitPositions,
                               Map<String, List<String>> dependencies) {
     myResult = contents;
     myContainErrors = containErrors;
+    myErrors = errors;
     myPositions = positions;
     myScopePositions = scopePositions;
     myUnitPositions = unitPositions;
@@ -54,6 +59,10 @@ public class TextGenerationResult {
 
   public boolean hasErrors() {
     return myContainErrors;
+  }
+
+  public Collection<String> errors () {
+    return Collections.unmodifiableCollection(myErrors);
   }
 
   public Map<SNode, TraceablePositionInfo> getPositions() {

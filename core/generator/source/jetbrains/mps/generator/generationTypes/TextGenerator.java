@@ -15,38 +15,42 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.make.java.ModelDependencies;
-import jetbrains.mps.make.java.RootDependencies;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.make.java.ModelDependencies;
+import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
+import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.util.NameUtil;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TextGenerator {
   private static final Logger LOG = Logger.getLogger(TextGenerator.class);
 
   private final StreamHandler myStreamHandler;
   private CacheGenerator[] myCacheGenerators;
+  private List<String> myTextGenErrors = new ArrayList<String>();
 
   public TextGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
     myStreamHandler = streamHandler;
     myCacheGenerators = generators;
+  }
+
+  public Collection<String> errors () {
+    return Collections.unmodifiableList(myTextGenErrors);
   }
 
   public boolean handleOutput(IOperationContext context, GenerationStatus status) {
@@ -73,12 +77,17 @@ public class TextGenerator {
     for (SNode outputNode : outputModel.roots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-        String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-        fillDebugInfo(info, fileName, result);
-        fillDependencies(dependRoot, outputNode, fileName, result);
-
         hasErrors |= result.hasErrors();
-        outputNodeContents.put(outputNode, result.getResult());
+        if (result.hasErrors()) {
+          myTextGenErrors.addAll(result.errors());
+        }
+        else {
+          String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+          fillDebugInfo(info, fileName, result);
+          fillDependencies(dependRoot, outputNode, fileName, result);
+
+          outputNodeContents.put(outputNode, result.getResult());
+        }
       } finally {
         TextGenManager.reset();
       }

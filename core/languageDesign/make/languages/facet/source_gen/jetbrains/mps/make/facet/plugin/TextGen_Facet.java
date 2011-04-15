@@ -31,6 +31,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
@@ -121,8 +122,9 @@ public class TextGen_Facet implements IFacet {
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
                 boolean ok;
+                TextGenerator textgen = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
                 try {
-                  ok = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
+                  ok = textgen.handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
                 } finally {
                   javaStreamHandler.dispose();
                 }
@@ -139,7 +141,10 @@ public class TextGen_Facet implements IFacet {
                 CleanupManager.getInstance().cleanup();
 
                 if (!(ok)) {
-                  Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
+                  for (String err : textgen.errors()) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(err)));
+                  }
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
                 ModelAccess.instance().writeFilesInEDT(new Runnable() {

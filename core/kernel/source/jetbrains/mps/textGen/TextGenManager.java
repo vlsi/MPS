@@ -107,7 +107,7 @@ public class TextGenManager {
         }
       }
     }
-    return new TextGenerationResult(result, buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
+    return new TextGenerationResult(result, buffer.hasErrors(), buffer.errors(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -142,7 +142,7 @@ public class TextGenManager {
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
     } catch (Exception e) {
-      buffer.foundError();
+      buffer.foundError("failed to generate text for " + node.getDebugText());
       LOG.error("failed to generate text for " + node.getDebugText(), e, node);
     }
   }
