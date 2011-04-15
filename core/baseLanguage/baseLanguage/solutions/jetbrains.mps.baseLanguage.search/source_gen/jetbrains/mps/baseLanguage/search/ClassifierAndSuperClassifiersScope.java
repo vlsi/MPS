@@ -54,7 +54,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     if (this.myTopClassifier == null) {
       return new ArrayList<SNode>();
     }
-    return BaseAdapter.toNodes(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getClassifiers());
+    return (List<SNode>) BaseAdapter.toNodes(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getClassifiers());
   }
 
   @NotNull
@@ -73,11 +73,11 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     return new ArrayList<BaseMethodDeclaration>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getOverriddenMethods(method));
   }
 
-  public List<BaseMethodDeclaration> getMethodsByName(String methodName) {
+  public List<SNode> getMethodsByName(String methodName) {
     if (this.myTopClassifier == null) {
-      return new ArrayList<BaseMethodDeclaration>();
+      return new ArrayList<SNode>();
     }
-    return new ArrayList<BaseMethodDeclaration>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethodsByName(methodName));
+    return (List<SNode>) BaseAdapter.toNodes(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethodsByName(methodName));
   }
 
   @NotNull

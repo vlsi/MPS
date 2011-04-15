@@ -14,10 +14,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -46,10 +43,9 @@ outer:
         }
         continue;
       }
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))), ClassifierAndSuperClassifiersScope.INSTANCE_METHOD);
-      List<BaseMethodDeclaration> methodsByName = scope.getMethodsByName("dispose");
-      for (BaseMethodDeclaration bmdAdapter : methodsByName) {
-        SNode bmd = (SNode) bmdAdapter.getNode();
+      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), ClassifierAndSuperClassifiersScope.INSTANCE_METHOD);
+      List<SNode> methodsByName = scope.getMethodsByName("dispose");
+      for (SNode bmd : methodsByName) {
         if (ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true)).isEmpty()) {
           continue outer;
         }

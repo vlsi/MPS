@@ -14,14 +14,10 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassCreator;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -53,19 +49,19 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), ConstructorDeclaration.concept)) {
-      if (referenceNode.getAdapter() instanceof ClassCreator) {
-        ClassCreator classCreator = (ClassCreator) referenceNode.getAdapter();
-        return new VisibleClassConstructorsScope.ConstructorDeclarationReferenceInfoResolver(classCreator.getActualArguments(), classCreator.getTypeParameters(), getModel(), getScope());
+      if (SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
+        SNode classCreator = SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        return new VisibleClassConstructorsScope.ConstructorDeclarationReferenceInfoResolver(SLinkOperations.getTargets(classCreator, "actualArgument", true), SLinkOperations.getTargets(classCreator, "typeParameter", true), getModel(), getScope());
       }
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
 
   private static class ConstructorDeclarationReferenceInfoResolver extends ReachableClassifiersScope.ClassifierReferenceInfoResolver {
-    private List<Expression> myActualArgs;
-    private List<Type> myTypeParms;
+    private List<SNode> myActualArgs;
+    private List<SNode> myTypeParms;
 
-    /*package*/ ConstructorDeclarationReferenceInfoResolver(List<Expression> actualArgs, List<Type> typeParms, SModel model, IScope scope) {
+    /*package*/ ConstructorDeclarationReferenceInfoResolver(List<SNode> actualArgs, List<SNode> typeParms, SModel model, IScope scope) {
       super(model, scope);
       myActualArgs = actualArgs;
       myTypeParms = typeParms;
@@ -76,24 +72,24 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       if (classifier_ == null) {
         return null;
       }
-      Classifier classifier = (Classifier) classifier_.getAdapter();
-      if (classifier instanceof ClassConcept) {
-        List<ConstructorDeclaration> constructors = ((ClassConcept) classifier).getConstructors();
+      SNode classifier = SNodeOperations.cast(classifier_, "jetbrains.mps.baseLanguage.structure.Classifier");
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        List<SNode> constructors = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "constructor", true);
         if (constructors.size() == 1) {
-          return constructors.get(0).getNode();
+          return ListSequence.fromList(constructors).first();
         } else
         if (constructors.size() > 1) {
-          constructors = (List<ConstructorDeclaration>) MethodResolveUtil.selectByParmCount(constructors, myActualArgs);
+          constructors = (List<SNode>) MethodResolveUtil.selectByParmCount(constructors, myActualArgs);
           if (constructors.size() == 1) {
-            return constructors.get(0).getNode();
+            return ListSequence.fromList(constructors).first();
           } else {
-            Iterator<Type> typeParms = myTypeParms.iterator();
-            Iterator<TypeVariableDeclaration> typeVars = classifier.getTypeVariableDeclarations().iterator();
-            Map<TypeVariableDeclaration, Type> typeByTypeVar = new HashMap<TypeVariableDeclaration, Type>();
+            Iterator<SNode> typeParms = (Iterator<SNode>) myTypeParms.iterator();
+            Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true).iterator();
+            Map<SNode, SNode> typeByTypeVar = new HashMap<SNode, SNode>();
             while (typeParms.hasNext() && typeVars.hasNext()) {
               typeByTypeVar.put(typeVars.next(), typeParms.next());
             }
-            return MethodResolveUtil.chooseByParameterType(constructors, myActualArgs, typeByTypeVar).getNode();
+            return MethodResolveUtil.chooseByParameterType(constructors, myActualArgs, typeByTypeVar);
           }
         }
       }

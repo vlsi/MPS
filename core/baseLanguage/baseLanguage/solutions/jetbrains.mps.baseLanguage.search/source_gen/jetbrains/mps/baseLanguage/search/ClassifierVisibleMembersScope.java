@@ -7,9 +7,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
@@ -17,9 +16,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.baseLanguage.structure.IMethodCall;
 
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   protected static Log log = LogFactory.getLog(ClassifierVisibleMembersScope.class);
@@ -27,11 +25,6 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   private SNode myClassifierType;
   private final SNode myContextNode;
   private final ClassifierAndSuperClassifiersScope myClassifierScope;
-
-  @Deprecated
-  public ClassifierVisibleMembersScope(@Nullable ClassifierType classifierType, @Nullable SNode contextNode, int constraint) {
-    this(SNodeOperations.cast(check_y8c6cm_a0a0a(classifierType), "jetbrains.mps.baseLanguage.structure.ClassifierType"), contextNode, constraint);
-  }
 
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
     this.myClassifierType = classifierType;
@@ -64,12 +57,12 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         SNode classifier = SLinkOperations.getTarget(this.myClassifierType, "classifier", false);
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) ((Classifier) SNodeOperations.getAdapter(classifier)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
+          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTargets((SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "actualArgument", true));
         }
       } else
       if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
         if (((BaseConcept) SNodeOperations.getAdapter(referenceNode)) instanceof IMethodCall) {
-          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, ((ClassifierType) SNodeOperations.getAdapter(this.myClassifierType)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
+          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, this.myClassifierType, SLinkOperations.getTargets((SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "actualArgument", true));
         }
       }
     }
@@ -78,12 +71,5 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
 
   protected boolean isVisible(SNode member) {
     return VisibilityUtil.isVisible(myContextNode, member);
-  }
-
-  private static SNode check_y8c6cm_a0a0a(ClassifierType checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
-    }
-    return null;
   }
 }

@@ -9,12 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,14 +18,9 @@ public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonT
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> constructors = SLinkOperations.getTargets(classConcept, "constructor", true);
-    BaseAdapter.toAdapters(constructors);
     if (ListSequence.fromList(constructors).count() > 1) {
-      List<BaseMethodDeclaration> adapters = new ArrayList<BaseMethodDeclaration>();
       for (SNode constructor : constructors) {
-        adapters.add(((ConstructorDeclaration) SNodeOperations.getAdapter(constructor)));
-      }
-      for (SNode constructor : constructors) {
-        RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, constructor, classConcept, adapters);
+        RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, constructor, classConcept, constructors);
       }
     }
   }

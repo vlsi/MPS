@@ -19,9 +19,11 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.smodel.BaseAdapter;
-import java.util.HashMap;
 import jetbrains.mps.baseLanguage.structure.AnonymousClass;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
@@ -117,6 +119,14 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
   /*package*/ Map<TypeVariableDeclaration, Type> getTypeByTypeVariableMap() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getTypeByTypeVariableMap();
+  }
+
+  /*package*/ Map<SNode, SNode> getTypeByTypeVariableMapNew() {
+    Map<SNode, SNode> result = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    for (Map.Entry<TypeVariableDeclaration, Type> entry : SetSequence.fromSet(getTypeByTypeVariableMap().entrySet())) {
+      MapSequence.fromMap(result).put((SNode) entry.getValue().getNode(), (SNode) entry.getValue().getNode());
+    }
+    return result;
   }
 
   /*package*/ static ClassifierAndSuperClassifiersCache getInstance(Classifier topClassifier) {

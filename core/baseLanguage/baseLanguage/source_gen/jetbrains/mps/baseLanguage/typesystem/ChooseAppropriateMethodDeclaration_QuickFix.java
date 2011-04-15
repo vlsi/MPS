@@ -18,8 +18,6 @@ import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtime {
   public ChooseAppropriateMethodDeclaration_QuickFix() {
@@ -104,8 +102,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         return;
       }
       SNode instanceType = SNodeOperations.cast(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))));
-      List<SNode> mDecls = ((List<SNode>) BaseAdapter.toNodes(scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"))));
+      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(instanceType, "classifier", false));
+      List<SNode> mDecls = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
       for (SNode methodDecl : mDecls) {
         List<SNode> parameterTypes = ResolveUtil.parameterTypes(methodDecl, instanceType, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("classifier")[0]));
         boolean good = ResolveUtil.goodArguments(parameterTypes, SLinkOperations.getTargets(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "actualArgument", true));

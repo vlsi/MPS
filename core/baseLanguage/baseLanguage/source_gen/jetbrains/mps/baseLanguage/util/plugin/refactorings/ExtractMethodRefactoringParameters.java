@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.BaseAdapter;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -60,9 +58,9 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     String name = this.getName();
     SNode classifier = this.myAnalyzer.getClassifier();
     if (classifier != null) {
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)));
-      List<SNode> methods = BaseAdapter.toNodes(scope.getMethodsByName(name));
-      for (SNode method : (List<SNode>) methods) {
+      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(classifier);
+      List<SNode> methods = scope.getMethodsByName(name);
+      for (SNode method : methods) {
         boolean good = this.isParametersMatch(method);
         if (good) {
           return SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

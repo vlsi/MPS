@@ -11,12 +11,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InstanceMethodCallOperation_Behavior {
@@ -49,13 +46,8 @@ public class InstanceMethodCallOperation_Behavior {
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
-    List<SNode> result = new ArrayList<SNode>();
-    for (BaseMethodDeclaration bmd : methods) {
-      SNode node = bmd.getNode();
-      ListSequence.fromList(result).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
-    }
-    return result;
+    List<SNode> methods = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
+    return methods;
   }
 
   public static boolean call_canBeConvertedToLocal_5311267937735225328(SNode thisNode) {

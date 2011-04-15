@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -454,10 +453,9 @@ __switch__:
   }
 
   @CheckingMethod
-  public static void checkDuplicates(final TypeCheckingContext typeCheckingContext, SNode ownMethod, SNode classifier, List<BaseMethodDeclaration> namesakes) {
+  public static void checkDuplicates(final TypeCheckingContext typeCheckingContext, SNode ownMethod, SNode classifier, List<SNode> namesakes) {
     String erasureSignature = null;
-    for (BaseMethodDeclaration namesakeAdapter : namesakes) {
-      SNode namesake = (SNode) namesakeAdapter.getNode();
+    for (SNode namesake : namesakes) {
       if (namesake == ownMethod) {
         continue;
       }
