@@ -344,6 +344,13 @@
       <fileset dir="core/languageDesign/dataFlow/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.dataFlow.runtime">
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="module" />
+      <zipfileset dir="core/kernel/dataFlowRuntime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/kernel/dataFlowRuntime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.pattern">
     <mkdir dir="core/languageDesign/pattern/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.pattern.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
