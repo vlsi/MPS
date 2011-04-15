@@ -1,13 +1,11 @@
 core/idea-patch/classes
 classes
 workbench/classes
-platform/uiLanguage/runtime/classes
 core/debug/classes
 core/debug-api/classes
 core/runtime/classes
 core/actions-runtime/classes
 core/editor-runtime/classes
-core/plugin-runtime/classes
 core/generator/classes
 core/typesystemEngine/classes
 core/typesystemIntegration/classes
