@@ -22,6 +22,7 @@
     <orderEntry type="module" module-name="findUsages" exported="" />
     <orderEntry type="module" module-name="refactoring" exported="" />
     <orderEntry type="module" module-name="core" exported="" />
+    <orderEntry type="module" module-name="plugin-runtime" exported="" />
     <orderEntry type="module" module-name="collections" exported="" />
     <orderEntry type="module" module-name="pattern" exported="" />
     <orderEntry type="module" module-name="quotation" exported="" />
@@ -59,7 +60,6 @@
     <orderEntry type="module" module-name="make-runtime" exported="" />
     <orderEntry type="module" module-name="startup" />
     <orderEntry type="module" module-name="actions-runtime" exported="" />
-    <orderEntry type="module" module-name="plugin-runtime" exported="" />
   </component>
   <component name="copyright">
     <Base>
