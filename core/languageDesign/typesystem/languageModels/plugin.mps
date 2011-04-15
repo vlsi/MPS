@@ -111,6 +111,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ShowTypeSystemTrace" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Typesystem Trace" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="description" nameId="tp4k.1213273179528" value="Show typesystem trace" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="902116341861939948">
       <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
@@ -1678,7 +1679,7 @@
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940145">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8779663014757326680" resolveInfo="ShowTypeSystemTrace" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940146">
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_Q" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_X" />
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
       </node>
     </node>

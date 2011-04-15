@@ -23,7 +23,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
 
   public ShowTypeSystemTrace_Action() {
-    super("Show Typesystem Trace", "", ICON);
+    super("Show Typesystem Trace", "Show typesystem trace", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

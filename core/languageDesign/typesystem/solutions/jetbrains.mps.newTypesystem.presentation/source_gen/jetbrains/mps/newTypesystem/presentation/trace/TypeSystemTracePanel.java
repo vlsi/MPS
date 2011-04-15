@@ -57,8 +57,8 @@ public class TypeSystemTracePanel extends JPanel {
     traceScrollPane.setPreferredSize(new Dimension(400, 900));
     JBScrollPane stateScrollPane = new JBScrollPane(myStateTree);
     stateScrollPane.setPreferredSize(new Dimension(400, 900));
-    splitPane.setDividerLocation(0.6);
-    splitPane.setResizeWeight(0.5);
+    splitPane.setDividerLocation(0.65);
+    splitPane.setResizeWeight(0.65);
     splitPane.setLeftComponent(traceScrollPane);
     splitPane.setRightComponent(stateScrollPane);
     this.removeAll();

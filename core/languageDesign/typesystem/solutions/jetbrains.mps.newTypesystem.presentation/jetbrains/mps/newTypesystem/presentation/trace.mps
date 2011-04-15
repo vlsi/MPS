@@ -2810,7 +2810,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2498620720771019309">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JSplitPane%dsetDividerLocation(double)%cvoid" resolveInfo="setDividerLocation" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="2498620720771019310">
-                <property name="value" nameId="tpee.1113006610751" value="0.6" />
+                <property name="value" nameId="tpee.1113006610751" value="0.65" />
               </node>
             </node>
           </node>
@@ -2823,7 +2823,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2498620720771019314">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JSplitPane%dsetResizeWeight(double)%cvoid" resolveInfo="setResizeWeight" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="2498620720771019315">
-                <property name="value" nameId="tpee.1113006610751" value="0.5" />
+                <property name="value" nameId="tpee.1113006610751" value="0.65" />
               </node>
             </node>
           </node>
