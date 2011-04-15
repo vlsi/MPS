@@ -18,14 +18,17 @@
     <classNode extendsClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.newTypesystem.presentation.trace.EquationTreeNode" file="EquationTreeNode.java">
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.PresentationUtil" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.PresentationUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.newTypesystem.presentation.trace.PresentationUtil" file="PresentationUtil.java">
@@ -95,24 +98,32 @@
   </dependency>
   <dependency className="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel" file="TypeSystemTracePanel.java">
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Checkbox" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
-    <classNode dependClassName="java.awt.event.ItemEvent" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.FlowLayout" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="javax.swing.JSplitPane" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.TraceSettings" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JSplitPane" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTraceTree" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
-    <classNode extendsClassName="java.awt.event.ItemListener" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTraceTree" file="TypeSystemTraceTree.java">

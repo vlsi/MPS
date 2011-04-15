@@ -70,6 +70,12 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     addTreeSelectionListener(new TypeSystemTraceTree.MyTreeSelectionListener());
   }
 
+  public void rebuildTrace() {
+    myTypeCheckingContextNew.checkRootInTraceMode(true);
+    this.rebuildNow();
+    this.expandAll();
+  }
+
   public void setGenerationMode(boolean generationMode) {
     this.generationMode = generationMode;
     myOldOperation = null;
@@ -187,7 +193,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return null;
     }
     MPSTreeNode currentNode = (MPSTreeNode) this.getSelectionPath().getLastPathComponent();
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a2a7(currentNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a2a8(currentNode);
     if (operation == null) {
       return null;
     }
@@ -232,7 +238,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     });
   }
 
-  private static Object check_kyyn1p_a0a2a7(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a2a8(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
