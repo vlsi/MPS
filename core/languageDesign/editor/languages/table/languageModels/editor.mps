@@ -40,7 +40,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3152052307426710945">
         <property name="text" nameId="tpc2.1073389577007" value="Table cell:" />
-        <property name="name" value="headerCell" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpc5.1214478266312" resolveInfo="header" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3152052307426710946">

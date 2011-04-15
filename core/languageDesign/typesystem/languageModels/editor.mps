@@ -1560,7 +1560,6 @@
   </root>
   <root id="1177514449897">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177514452383">
-      <property name="name" value="statementBox" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177514755928">
         <property name="text" nameId="tpc2.1073389577007" value="match" />

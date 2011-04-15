@@ -20,6 +20,7 @@
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="ven7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -1143,7 +1144,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389446425">
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869892471">
         <property name="comment" nameId="tpce.1225118933224" value="Use isVertical()" />
@@ -1151,7 +1151,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389446426">
       <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869894921">
         <property name="comment" nameId="tpce.1225118933224" value="Use isVerticalGrid()" />
@@ -1177,12 +1176,10 @@
   <root id="1073389577006">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389577007">
       <property name="name" nameId="tpck.1169194664001" value="text" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1082639509531">
       <property name="name" nameId="tpck.1169194664001" value="nullText" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107223377704">
@@ -1269,7 +1266,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1082638248796">
       <property name="name" nameId="tpck.1169194664001" value="nullText" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107223377711">
@@ -1284,7 +1280,6 @@
   <root id="1075375595203">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1075375595204">
       <property name="name" nameId="tpck.1169194664001" value="text" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107223377713">
@@ -1404,12 +1399,10 @@
   </root>
   <root id="1083928804390">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083928804391">
-      <property name="name" value="yes" />
       <property name="externalValue" nameId="tpce.1083923523172" value="yes" />
       <property name="internalValue" nameId="tpce.1083923523171" value="true" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083928804392">
-      <property name="name" value="no" />
       <property name="externalValue" nameId="tpce.1083923523172" value="no" />
       <property name="internalValue" nameId="tpce.1083923523171" value="false" />
     </node>
@@ -1422,27 +1415,22 @@
       <property name="externalValue" nameId="tpce.1083923523172" value="none" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545111">
-      <property name="name" value="red" />
       <property name="externalValue" nameId="tpce.1083923523172" value="red" />
       <property name="internalValue" nameId="tpce.1083923523171" value="red" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545112">
-      <property name="name" value="pink" />
       <property name="externalValue" nameId="tpce.1083923523172" value="pink" />
       <property name="internalValue" nameId="tpce.1083923523171" value="pink" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545113">
-      <property name="name" value="orange" />
       <property name="externalValue" nameId="tpce.1083923523172" value="orange" />
       <property name="internalValue" nameId="tpce.1083923523171" value="orange" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545114">
-      <property name="name" value="yellow" />
       <property name="externalValue" nameId="tpce.1083923523172" value="yellow" />
       <property name="internalValue" nameId="tpce.1083923523171" value="yellow" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545115">
-      <property name="name" value="green" />
       <property name="externalValue" nameId="tpce.1083923523172" value="green" />
       <property name="internalValue" nameId="tpce.1083923523171" value="green" />
     </node>
@@ -1451,7 +1439,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="DARK_GREEN" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545116">
-      <property name="name" value="magenta" />
       <property name="externalValue" nameId="tpce.1083923523172" value="magenta" />
       <property name="internalValue" nameId="tpce.1083923523171" value="magenta" />
     </node>
@@ -1460,12 +1447,10 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="DARK_MAGENTA" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545117">
-      <property name="name" value="cyan" />
       <property name="externalValue" nameId="tpce.1083923523172" value="cyan" />
       <property name="internalValue" nameId="tpce.1083923523171" value="cyan" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545118">
-      <property name="name" value="blue" />
       <property name="externalValue" nameId="tpce.1083923523172" value="blue" />
       <property name="internalValue" nameId="tpce.1083923523171" value="blue" />
     </node>
@@ -1478,7 +1463,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="DARK_BLUE" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1084208529765">
-      <property name="name" value="gray" />
       <property name="externalValue" nameId="tpce.1083923523172" value="gray" />
       <property name="internalValue" nameId="tpce.1083923523171" value="gray" />
     </node>
@@ -1495,7 +1479,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="WHITE" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7151630269404055096">
-      <property name="name" value="blue" />
       <property name="externalValue" nameId="tpce.1083923523172" value="black" />
       <property name="internalValue" nameId="tpce.1083923523171" value="black" />
     </node>
@@ -1531,7 +1514,6 @@
   <root id="1088612959204">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1088613081987">
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1145918517974">
@@ -1563,12 +1545,10 @@
   </root>
   <root id="1101211480448">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101211523070">
-      <property name="name" value="bold" />
       <property name="externalValue" nameId="tpce.1083923523172" value="bold" />
       <property name="internalValue" nameId="tpce.1083923523171" value="BOLD" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101211542532">
-      <property name="name" value="italic" />
       <property name="externalValue" nameId="tpce.1083923523172" value="italic" />
       <property name="internalValue" nameId="tpce.1083923523171" value="ITALIC" />
     </node>
@@ -1577,7 +1557,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="BOLD_ITALIC" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1134577855137">
-      <property name="name" value="plain" />
       <property name="externalValue" nameId="tpce.1083923523172" value="plain" />
       <property name="internalValue" nameId="tpce.1083923523171" value="PLAIN" />
     </node>
@@ -1631,7 +1610,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="1" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130847833453">
-      <property name="name" value="underlined" />
       <property name="externalValue" nameId="tpce.1083923523172" value="underlined" />
       <property name="internalValue" nameId="tpce.1083923523171" value="2" />
     </node>
@@ -1713,12 +1691,10 @@
   <root id="1136916976737">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1136923970223">
       <property name="name" nameId="tpck.1169194664001" value="modifiers" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1136923970224">
       <property name="name" nameId="tpck.1169194664001" value="keycode" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
   </root>
@@ -1816,12 +1792,10 @@
   </root>
   <root id="1138197387103">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1138197387339">
-      <property name="name" value="punctuation" />
       <property name="externalValue" nameId="tpce.1083923523172" value="punctuation" />
       <property name="internalValue" nameId="tpce.1083923523171" value="punctuation" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1138197619454">
-      <property name="name" value="noflow" />
       <property name="externalValue" nameId="tpce.1083923523172" value="noflow" />
       <property name="internalValue" nameId="tpce.1083923523171" value="noflow" />
     </node>
@@ -1956,12 +1930,10 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140017977771">
       <property name="name" nameId="tpck.1169194664001" value="readOnly" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140114345053">
       <property name="name" nameId="tpck.1169194664001" value="allowEmptyText" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1140103550593">
@@ -2013,13 +1985,11 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450554">
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873962700" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450555">
       <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873964974" />
     </node>
@@ -2033,7 +2003,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450557">
       <property name="name" nameId="tpck.1169194664001" value="separatorText" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1156252885376">
@@ -2072,21 +2041,17 @@
   </root>
   <root id="1141091053936">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091054266">
-      <property name="name" value="ANY_POSITION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="ANY_POSITION" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091172402">
-      <property name="name" value="FIRST_POSITION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="FIRST_POSITION" />
       <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_first_position" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091209420">
-      <property name="name" value="LAST_POSITION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="LAST_POSITION" />
       <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_last_position" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143573566373">
-      <property name="name" value="INTERMEDIATE_POSITION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="INTERMEDIATE_POSITION" />
       <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_intermediate_position" />
     </node>
@@ -2132,12 +2097,10 @@
   </root>
   <root id="1143891911797">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143891911798">
-      <property name="name" value="left" />
       <property name="externalValue" nameId="tpce.1083923523172" value="left" />
       <property name="internalValue" nameId="tpce.1083923523171" value="true" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143891954220">
-      <property name="name" value="right" />
       <property name="externalValue" nameId="tpce.1083923523172" value="right" />
       <property name="internalValue" nameId="tpce.1083923523171" value="false" />
     </node>
@@ -3588,7 +3551,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8251517099537646385">
       <property name="name" nameId="tpck.1169194664001" value="allowEmptyText" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1216385453572">
@@ -3655,7 +3617,6 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1216560546489">
       <property name="value" nameId="tpce.1105725733873" value="position-children" />
-      <property name="name" value="position-children" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
@@ -4212,7 +4173,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4526149749187937572">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.editor.structure.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
+      <node role="target" roleId="tpce.1105736901241" type="tpc2.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
     </node>
   </root>
   <root id="280151408461567367">

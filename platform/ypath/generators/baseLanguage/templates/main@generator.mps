@@ -5157,7 +5157,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="tpee.Type" typeId="tpee.1068431790189" id="1180087474111" />
     <node role="treePathType" roleId="tpki.1179235945873" type="tpki.TreePathType" typeId="tpki.1168428529658" id="1180087474112">
       <node role="nodeType" roleId="tpki.1168428551640" type="tpee.StringType" typeId="tpee.1225271177708" id="1225193267065" />
     </node>

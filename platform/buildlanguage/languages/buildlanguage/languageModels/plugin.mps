@@ -2821,7 +2821,6 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240833723230" resolveInfo="NAMES" />
             </node>
             <node role="index" roleId="tpee.1173175577737" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240833723385">
-              <property name="name" value="column" />
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240833723379" resolveInfo="p0" />
             </node>
           </node>

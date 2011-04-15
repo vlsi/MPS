@@ -25,23 +25,19 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1197632773078">
       <property name="name" nameId="tpck.1169194664001" value="ConceptInstances" />
       <property name="description" nameId="tp3b.1197385993272" value="Concept Instances" />
-      <property name="isVisible" value="true" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1197636141662">
       <property name="name" nameId="tpck.1169194664001" value="NodeUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Node Usages" />
-      <property name="isVisible" value="true" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1198430852441">
       <property name="name" nameId="tpck.1169194664001" value="NodeAndDescendantsUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Node &amp; Descendants Usages" />
-      <property name="isVisible" value="true" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1201275992898">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="LinkInstances" />
       <property name="description" nameId="tp3b.1197385993272" value="Link Instances" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
@@ -49,7 +45,6 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1211301915928">
       <property name="name" nameId="tpck.1169194664001" value="ExactConceptInstances" />
       <property name="description" nameId="tp3b.1197385993272" value="Exact Concept Instances" />
-      <property name="isVisible" value="true" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="only instances of the specified concept, not including instances of it's subconcepts" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
@@ -646,22 +641,6 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="1211301915956">
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1211301915957">
             <node role="statement" roleId="tpee.1068581517665" type="tp3b.ResultStatement" typeId="tp3b.1200242336756" id="1211301915958">
-              <node role="foundResult" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888359360">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888359362">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1hff.~SearchResult%d&lt;init&gt;(java%dlang%dObject,java%dlang%dString)" resolveInfo="SearchResult" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1217888370596">
-                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1217888370598">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1211301915961">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1211301915965" resolveInfo="resNode" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1211301915962">
-                    <property name="value" nameId="tpee.1070475926801" value="Concept Instances" />
-                  </node>
-                </node>
-              </node>
               <node role="foundNode" roleId="tp3b.1200242376867" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1211301915963">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1211301915965" resolveInfo="resNode" />
               </node>

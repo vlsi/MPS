@@ -3620,7 +3620,6 @@
               </node>
             </node>
           </node>
-          <node role="propertyValue" type="tpsk.PropertyValueExpression" typeId="tpsk.1196851952934" id="1230642359529" />
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1230642404474" />
         </node>
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="6261107747136120073">

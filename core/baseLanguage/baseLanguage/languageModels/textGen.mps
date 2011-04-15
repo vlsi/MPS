@@ -123,7 +123,6 @@
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070534555686" resolveInfo="CharType" />
     </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1234891178357">
-      <property name="extention" value="java" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>

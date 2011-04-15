@@ -119,24 +119,12 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="operation" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1491544264687627828">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SModelDescriptor%dgetSModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getSModel" />
-                            </node>
-                          </node>
-                          <node role="operation" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1491544264687627829">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SModel%daddRoot(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="addRoot" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1491544264687627830">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="199149364782660330" resolveInfo="myRootNode" />
-                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="condition" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1491544264687627831">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="276193728322519106" resolveInfo="addToModel" />
               </node>
             </node>
           </node>

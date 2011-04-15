@@ -13264,7 +13264,6 @@
   </root>
   <root id="1198258144506">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198258236630">
-      <property name="name" value="nodeCellPanel" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1198258236631">
         <property name="text" nameId="tpc2.1073389577007" value="{" />
@@ -13507,7 +13506,6 @@
   </root>
   <root id="1198258380049">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198506850252">
-      <property name="name" value="nodeCellPanel" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1198506850253">
         <property name="text" nameId="tpc2.1073389577007" value="}" />
@@ -13639,7 +13637,6 @@
   <root id="1198490666793">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198490711938">
       <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <property name="name" value="nodeBox" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198490721273">
         <property name="vertical" nameId="tpc2.1073389446425" value="true" />
@@ -14154,7 +14151,6 @@
   </root>
   <root id="1204307861396">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1204307957345">
-      <property name="name" value="nodeCellPanel" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1204307986661">
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />

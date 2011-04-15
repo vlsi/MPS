@@ -510,7 +510,6 @@
   </root>
   <root id="1177585757706">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1177585776510">
-      <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpc2.1073389214265" />
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1177585776511">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.1073389214265" />

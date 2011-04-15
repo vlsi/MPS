@@ -570,7 +570,6 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1238942706480">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238942707841">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="39kg.DecimalPlusExpression" typeId="39kg.1238940230440" id="1238942711437">
-                    <property name="precision" value="7" />
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="1238942711438">
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1238942714520">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238942740414">
@@ -609,7 +608,6 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1238942054005">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238942754077">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="39kg.DecimalMinusExpression" typeId="39kg.1238940287286" id="1238942776383">
-                    <property name="precision" value="7" />
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="1238942776384">
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1238942831420">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238942836328">
@@ -648,7 +646,6 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1238942054021">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238942756449">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="39kg.DecimalMulExpression" typeId="39kg.1238940210376" id="1238942800703">
-                    <property name="precision" value="7" />
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="1238942800704">
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1238942830809">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238942837612">
@@ -687,7 +684,6 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1238942054037">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238942758900">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="39kg.DecimalDivExpression" typeId="39kg.1238940192891" id="1238942806065">
-                    <property name="precision" value="7" />
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="1238942806066">
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1238942830276">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238942838850">

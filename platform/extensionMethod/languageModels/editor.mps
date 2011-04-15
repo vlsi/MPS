@@ -485,7 +485,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1713017043371093267">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no type&gt;" />
-        <property name="nullRefText" value="&lt;no type&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.5680397130376446158" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1713017043371093268">

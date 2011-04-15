@@ -280,7 +280,6 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1239529544053">
-          <property name="name" value="fieldsList" />
           <property name="vertical" nameId="tpc2.1140524450554" value="false" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cx9y.1239529553065" />
           <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1239529544054">

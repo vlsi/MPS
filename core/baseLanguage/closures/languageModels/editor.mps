@@ -686,9 +686,7 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1229604562449">
-        <property name="writable" value="true" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
-        <property name="defaultValue" value="&lt;no name&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1229604562450">
           <property name="value" nameId="tpc2.1215007802031" value="1.0" />
@@ -767,7 +765,6 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1229605703894">
-        <property name="name" value="staticMethodList" />
         <property name="vertical" nameId="tpc2.1140524450554" value="false" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp2c.1229600801065" />
         <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1229605703895">
@@ -1274,7 +1271,6 @@
   </root>
   <root id="4816492477345855367">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4816492477345855369">
-      <property name="name" value="methodBox" />
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="4816492477345855370">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -1414,7 +1410,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4816492477345855437">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
-        <property name="name" value="returnType" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>

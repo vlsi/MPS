@@ -199,7 +199,6 @@
             <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1237821176737" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5279008335641977613">
-            <property name="name" value="fieldsList" />
             <property name="vertical" nameId="tpc2.1140524450554" value="false" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068390468199" />
             <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5279008335641977614">

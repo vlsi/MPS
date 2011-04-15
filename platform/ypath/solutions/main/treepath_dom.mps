@@ -549,7 +549,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="tpee.Type" typeId="tpee.1068431790189" id="1184239525367" />
     <node role="treePathType" roleId="tpki.1179235945873" type="tpki.TreePathType" typeId="tpki.1168428529658" id="1184239525368">
       <node role="nodeType" roleId="tpki.1168428551640" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1184239525369">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kvg6.~Node" resolveInfo="Node" />

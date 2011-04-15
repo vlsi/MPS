@@ -180,7 +180,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="tpee.Type" typeId="tpee.1068431790189" id="1180688328446" />
     <node role="treePathType" roleId="tpki.1179235945873" type="tpki.TreePathType" typeId="tpki.1168428529658" id="1180688328447">
       <node role="nodeType" roleId="tpki.1168428551640" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180688338904">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
@@ -283,7 +282,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="tpee.Type" typeId="tpee.1068431790189" id="1180689174638" />
     <node role="treePathType" roleId="tpki.1179235945873" type="tpki.TreePathType" typeId="tpki.1168428529658" id="1180689174639">
       <node role="nodeType" roleId="tpki.1168428551640" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1180689210368">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="60vs.~IClassPathItem" resolveInfo="IClassPathItem" />

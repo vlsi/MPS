@@ -40,7 +40,6 @@
           <property name="name" nameId="tpck.1169194664001" value="abc" />
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitIfJumpStatement" typeId="tp41.1206445295557" id="1206445590393">
-          <property name="left_transfrom_hint" value="true" />
           <node role="jumpTo" roleId="tp41.1206445193860" type="tp41.AfterPosition" typeId="tp41.1206445082906" id="1206445591770">
             <node role="relativeTo" roleId="tp41.1206444923842" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1206445594303" />
           </node>

@@ -26,34 +26,29 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200309609796">
       <property name="name" nameId="tpck.1169194664001" value="OverridingMethods" />
       <property name="description" nameId="tp3b.1197385993272" value="Overriding Methods" />
-      <property name="isVisible" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310248824">
       <property name="name" nameId="tpck.1169194664001" value="ImplementingClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Implementing Classes" />
-      <property name="isVisible" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310287391">
       <property name="name" nameId="tpck.1169194664001" value="DerivedInterfaces" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Interfaces" />
-      <property name="isVisible" value="true" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310473077">
       <property name="name" nameId="tpck.1169194664001" value="DerivedClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Classes" />
-      <property name="isVisible" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200317943493">
       <property name="name" nameId="tpck.1169194664001" value="AllMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="All Method Usages" />
-      <property name="isVisible" value="true" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of this method, overriding methods and implementing methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
@@ -61,68 +56,57 @@
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200405628545">
       <property name="name" nameId="tpck.1169194664001" value="FieldUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Field Usages" />
-      <property name="isVisible" value="true" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200420731716">
       <property name="name" nameId="tpck.1169194664001" value="OverridingFields" />
       <property name="description" nameId="tp3b.1197385993272" value="Overriding Fields" />
-      <property name="isVisible" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="inadequate" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200425321273">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="InterfaceMethodImplementations" />
       <property name="description" nameId="tp3b.1197385993272" value="Interface Method Implementations" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200502085335">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ClassAncestors" />
       <property name="description" nameId="tp3b.1197385993272" value="Ancestors" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1201091722183">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ParameterUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Parameter Usages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204121124763">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ConstructorUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Constructor Usages" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204122859723">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="StraightDerivedClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Straight Derivatives" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204898641595">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="BaseMethod" />
       <property name="description" nameId="tp3b.1197385993272" value="Base Methods" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204899453042">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="InterfaceAncestors" />
       <property name="description" nameId="tp3b.1197385993272" value="Interface Ancestors" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1216385454403">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="BaseMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Base Method Usages" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of all base methods" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1216392046439">
-      <property name="isVisible" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ImplementedInterfaces" />
       <property name="description" nameId="tp3b.1197385993272" value="Implemented Interfaces" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />

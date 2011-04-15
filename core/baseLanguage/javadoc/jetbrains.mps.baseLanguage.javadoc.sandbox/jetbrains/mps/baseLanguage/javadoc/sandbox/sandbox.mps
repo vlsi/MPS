@@ -138,7 +138,6 @@
           </node>
           <node role="part" roleId="m373.8970989240999019149" type="m373.InlineTagCommentLinePart" typeId="m373.8970989240999019145" id="4021391592916694611">
             <node role="tag" roleId="m373.6962838954693749192" type="m373.CodeInlineDocTag" typeId="m373.2217234381367049075" id="4021391592916694613">
-              <property name="text" value="jumps" />
               <node role="line" roleId="m373.3106559687488741665" type="m373.CommentLine" typeId="m373.8465538089690331500" id="6612597108005354622">
                 <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="6612597108005354623" />
               </node>
@@ -154,7 +153,6 @@
           </node>
           <node role="part" roleId="m373.8970989240999019149" type="m373.InlineTagCommentLinePart" typeId="m373.8970989240999019145" id="4021391592916694617">
             <node role="tag" roleId="m373.6962838954693749192" type="m373.LinkInlineDocTag" typeId="m373.2546654756694997551" id="4021391592916694619">
-              <property name="text" value="some constant" />
               <node role="line" roleId="m373.3106559687488913694" type="m373.CommentLine" typeId="m373.8465538089690331500" id="6612597108005354620">
                 <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="6612597108005354621" />
               </node>

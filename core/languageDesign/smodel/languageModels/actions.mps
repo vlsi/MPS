@@ -60,7 +60,6 @@
   <root id="1138078942005">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1138413233760">
       <property name="description" nameId="tpdg.1158952412335" value="remove operations which are not appropriate for expression before'.'" />
-      <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp25.1138411891628" />
       <node role="variable" roleId="tpdg.1178540170602" type="tpdg.SubstituteNodeBuilderVariableDeclaration" typeId="tpdg.1178539929008" id="1206377916680">
         <property name="name" nameId="tpck.1169194664001" value="appTypesInfo" />

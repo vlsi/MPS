@@ -5,6 +5,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
       <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
@@ -99,7 +100,6 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068581242863">
       <property name="name" nameId="tpck.1169194664001" value="LocalVariableDeclaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/variable.png" />
-      <property name="build" value="1" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068581242864">
@@ -273,7 +273,6 @@
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1083065718921">
       <property name="name" nameId="tpck.1169194664001" value="_Identifier_String" />
       <property name="constraint" nameId="tpce.1083066089218" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
-      <link role="extends" targetNodeId="tpck.1082983041843" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1083245097125">
       <property name="name" nameId="tpck.1169194664001" value="EnumClass" />
@@ -344,7 +343,6 @@
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1113006251687">
       <property name="name" nameId="tpck.1169194664001" value="_FPNumber_String" />
       <property name="constraint" nameId="tpce.1083066089218" value="-?[0-9]+\\.[0-9]*" />
-      <link role="extends" targetNodeId="tpck.1082983041843" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1116615150612">
       <property name="name" nameId="tpck.1169194664001" value="ClassifierClassExpression" />
@@ -1178,7 +1176,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1075300953594">
       <property name="name" nameId="tpck.1169194664001" value="abstractClass" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1221565133444">
@@ -1407,7 +1404,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1068580123138">
       <property name="name" nameId="tpck.1169194664001" value="value" />
-      <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
     </node>
   </root>
@@ -1534,7 +1530,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1068580320021">
       <property name="name" nameId="tpck.1169194664001" value="value" />
-      <property name="propertyType" value="integer" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" />
     </node>
   </root>
@@ -1710,7 +1705,6 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1070475926801">
       <property name="name" nameId="tpck.1169194664001" value="value" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
   </root>

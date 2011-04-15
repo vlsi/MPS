@@ -93,7 +93,6 @@
       <property name="name" nameId="tpck.1169194664001" value="nodes" />
       <property name="writable" nameId="tpki.1184066216986" value="false" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
-      <property name="parameterized" value="true" />
       <node role="getFunction" roleId="tpki.1183979776626" type="tpki.FeatureGetFun" typeId="tpki.1183978641483" id="1184067892216">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184067892217">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184067910293">
@@ -129,13 +128,6 @@
           </node>
         </node>
       </node>
-      <node role="parameterQueryFunction" type="tpki.ParameterQueryFun" typeId="tpki.1184593387281" id="1184606662857">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184606662858" />
-      </node>
-      <node role="targetTypeFunction" type="tpki.TargetTypeFun" typeId="tpki.1184603621091" id="1184606724591">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184606724592" />
-      </node>
-      <node role="parameterType" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196633294" />
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.SequenceFeature" typeId="tpki.1184066481897" id="1184068102100">
       <property name="writable" nameId="tpki.1184066216986" value="false" />
@@ -246,7 +238,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeType" type="tpee.Type" typeId="tpee.1068431790189" id="1183980545105" />
     <node role="treePathType" roleId="tpki.1179235945873" type="tpki.TreePathType" typeId="tpki.1168428529658" id="1183980545106">
       <node role="nodeType" roleId="tpki.1168428551640" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1183980581996">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kvg6.~Node" resolveInfo="Node" />
@@ -626,13 +617,6 @@
           </node>
         </node>
       </node>
-      <node role="nameFunction" type="tpki.ToStringFun" typeId="tpki.1184659771596" id="1184685792738">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184685792739">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184686014873">
-            <node role="expression" roleId="tpee.1068580123156" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184686014874" />
-          </node>
-        </node>
-      </node>
       <node role="parameterType" roleId="tpki.1184659264134" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196634408" />
       <node role="toStringFunction" roleId="tpki.1184659752377" type="tpki.ToStringFun" typeId="tpki.1184659771596" id="1185011302719">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1185011302720">
@@ -858,13 +842,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node role="nameFunction" type="tpki.ToStringFun" typeId="tpki.1184659771596" id="1184688224789">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184688224790">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184688593595">
-            <node role="expression" roleId="tpee.1068580123156" type="tpki.ParamFunctionParam" typeId="tpki.1184501940146" id="1184688593596" />
           </node>
         </node>
       </node>

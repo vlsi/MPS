@@ -49,22 +49,18 @@
   </roots>
   <root id="1207489199158">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1207489220050">
-      <property name="additionType" value="false" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991218714" resolveInfo="ProjectPaneModelActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.4555696683442018021" resolveInfo="scripts" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1207489220051">
-      <property name="additionType" value="false" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991224874" resolveInfo="LanguageActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.4555696683442018009" resolveInfo="scripts" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1207489220052">
-      <property name="additionType" value="false" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991229896" resolveInfo="GeneratorActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.4555696683442018017" resolveInfo="scripts" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1207489220053">
-      <property name="additionType" value="false" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991226689" resolveInfo="SolutionActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.4555696683442018013" resolveInfo="scripts" />
     </node>
@@ -605,7 +601,6 @@
   </root>
   <root id="1215715702629">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1215715702634">
-      <property name="additionType" value="false" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991238062" resolveInfo="Tools" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.UpdateGroupBlock" typeId="tp4k.1239975356883" id="1239976636976">

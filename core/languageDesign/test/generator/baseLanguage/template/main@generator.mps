@@ -1165,7 +1165,6 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1221567898735">
                   <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1221567898736" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1221567898737">
-                    <property name="name" value="methods" />
                     <link role="link" roleId="tp25.1138056546658" targetNodeId="tp5g.1216993439383" />
                   </node>
                 </node>

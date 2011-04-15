@@ -52,7 +52,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1209308509191">
       <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
-      <property name="executeInNewThread" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1209309487963">
       <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
@@ -61,7 +60,6 @@
       <property name="name" nameId="tpck.1169194664001" value="FindLanguageUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
-      <property name="executeInNewThread" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1209825453635">
       <property name="name" nameId="tpck.1169194664001" value="FindLanguageUsages" />
@@ -77,7 +75,6 @@
       <property name="name" nameId="tpck.1169194664001" value="FindLanguageConceptsUsages" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Concepts Usages" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
-      <property name="executeInNewThread" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9077133196728617147">
       <property name="name" nameId="tpck.1169194664001" value="ConstraintsChecker" />

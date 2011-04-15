@@ -3508,7 +3508,6 @@
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1177403622097">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1068580123155" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.WrapperSubstituteMenuPart" typeId="tpdg.1177402519659" id="1177403626165">
-          <property name="returnSmallPart" value="true" />
           <link role="wrappedConcept" roleId="tpdg.1177402731616" targetNodeId="tpee.1068431790191" />
           <node role="wrapperBlock" roleId="tpdg.1177402719158" type="tpdg.QueryFunction_SubstituteWrapper" typeId="tpdg.1177402571666" id="1177403626166">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1177403626167">

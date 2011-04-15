@@ -31,8 +31,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1187344542491">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1187347122162">
           <node role="creator" roleId="tpee.1145553007750" type="tp7v.MoneyCreator" typeId="tp7v.1187340310888" id="1187347127305">
-            <property name="name" value="Money" />
-            <node role="amount" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347192937">
+            <node role="amount" roleId="tp7v.1187344039345" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347192937">
               <property name="value" nameId="tpee.1068580320021" value="0" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1187347202362">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1187347202363">
@@ -81,7 +80,7 @@
                 </node>
               </node>
             </node>
-            <node role="currency" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347194657">
+            <node role="currency" roleId="tp7v.1187344093002" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347194657">
               <property name="value" nameId="tpee.1068580320021" value="0" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1187347224872">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1187347224873">

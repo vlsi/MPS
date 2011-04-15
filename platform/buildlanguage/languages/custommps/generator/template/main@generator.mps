@@ -595,8 +595,6 @@
       </node>
     </node>
     <node role="systemSpecificConfig" roleId="60oz.1230207493185" type="60oz.WindowsConfig" typeId="60oz.1230207753430" id="1234780843434">
-      <property name="uninstallNshName" value="uninstall" />
-      <property name="generateInstallUninstallLists" value="false" />
       <node role="pathToNsisZipFile" roleId="60oz.1231848713325" type="tps4.Path" typeId="tps4.1220973916698" id="1234895047549">
         <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="1234895047550">
           <property name="name" nameId="tps4.1220976068141" value="mps_home" />

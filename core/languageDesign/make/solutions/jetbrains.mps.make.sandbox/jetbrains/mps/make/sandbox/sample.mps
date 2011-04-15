@@ -251,7 +251,6 @@
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5898308035039018853" />
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="3297237684108626081">
-              <property name="work" value="ASDF" />
               <property name="workName" nameId="q9ra.682890046602602769" value="Foobar" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626085">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
@@ -259,14 +258,12 @@
               <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="5898308035038932579" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108626087">
-              <property name="work" value="ASDF" />
               <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="3297237684108626081" />
               <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626089">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
-              <property name="work" value="ASDF" />
               <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="3297237684108626081" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="682890046602567448" />

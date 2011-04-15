@@ -684,7 +684,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1234525383202">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
-        <property name="name" value="returnType" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>
