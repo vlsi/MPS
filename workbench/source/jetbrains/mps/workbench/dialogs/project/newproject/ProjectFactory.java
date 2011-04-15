@@ -163,7 +163,7 @@ public class ProjectFactory {
 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
-    modelRoot.setPath(descriptorFile.getParent().getAbsolutePath());
+    modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);

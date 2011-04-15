@@ -695,7 +695,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1239195389762(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     IModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
-    String absoluteDescriptorPath = module.getDescriptorFile().getAbsolutePath();
+    String absoluteDescriptorPath = module.getDescriptorFile().getPath();
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), absoluteDescriptorPath);
   }
 

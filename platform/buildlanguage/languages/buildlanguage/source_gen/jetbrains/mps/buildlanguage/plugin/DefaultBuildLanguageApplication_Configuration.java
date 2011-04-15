@@ -150,11 +150,11 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
                       file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()));
-                      file.value = file.value.child(Project_Behavior.call_getFileName_1213877351819(node));
+                      file.value = file.value.getDescendant(Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });
                   if (!(file.value.exists())) {
-                    throw new ExecutionException("Ant file " + file.value.getAbsolutePath() + " does not exist.");
+                    throw new ExecutionException("Ant file " + file.value.getPath() + " does not exist.");
                   }
                   Process process = runner.run(file.value);
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());

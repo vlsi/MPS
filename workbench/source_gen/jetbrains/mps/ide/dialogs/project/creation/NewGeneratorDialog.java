@@ -98,7 +98,7 @@ public class NewGeneratorDialog extends BaseDialog {
         }
         IFile result = chooser.showDialog();
         if (result != null) {
-          myTemplateModelsDir.setText(result.getAbsolutePath());
+          myTemplateModelsDir.setText(result.getPath());
         }
       }
     });
@@ -111,7 +111,7 @@ public class NewGeneratorDialog extends BaseDialog {
   private void updateTemplateModelsDir() {
     IFile descriptorFile = mySourceLanguage.getDescriptorFile();
     assert descriptorFile != null;
-    String path = descriptorFile.getParent().getAbsolutePath();
+    String path = descriptorFile.getParent().getPath();
     String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }

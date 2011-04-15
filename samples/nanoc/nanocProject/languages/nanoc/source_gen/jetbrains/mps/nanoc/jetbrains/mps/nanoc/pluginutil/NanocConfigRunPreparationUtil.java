@@ -34,7 +34,7 @@ public class NanocConfigRunPreparationUtil {
     });
     String packageName = NameUtil.pathFromNamespace(descriptor.getLongName());
     File modelSourceFolder = new File(module.getGeneratorOutputPath() + File.separator + packageName);
-    File modelClassesFolder = new File(module.getClassesGen().getAbsolutePath() + File.separator + packageName);
+    File modelClassesFolder = new File(module.getClassesGen().getPath() + File.separator + packageName);
     File f = new File(modelSourceFolder, sourceFileName.value + ".c");
     if (!((f.exists()))) {
       throw new ExecutionException("node is not generated");

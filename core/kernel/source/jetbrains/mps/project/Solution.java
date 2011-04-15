@@ -137,7 +137,7 @@ public class Solution extends AbstractModule {
       mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
     } else {
       assert myDescriptorFile != null;
-      mp = new ModuleReference(myDescriptorFile.getAbsolutePath(), mySolutionDescriptor.getUUID());
+      mp = new ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getUUID());
     }
 
     setModuleReference(mp);
@@ -177,12 +177,12 @@ public class Solution extends AbstractModule {
 
   public String getGeneratorOutputPath() {
     IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getAbsolutePath() : null;
+    return result != null ? result.getPath() : null;
   }
 
   public String getTestsGeneratorOutputPath() {
     IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getAbsolutePath() : null;
+    return result != null ? result.getPath() : null;
   }
 
   public boolean reloadClassesAfterGeneration() {

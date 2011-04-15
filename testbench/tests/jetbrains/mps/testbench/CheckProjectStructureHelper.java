@@ -233,7 +233,7 @@ public class CheckProjectStructureHelper {
     IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
     IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    File outPath = new File(sourcesDir.getAbsolutePath());
+    File outPath = new File(sourcesDir.getPath());
 
     File file = new File(outPath, ModelGenerationStatusManager.HASH_PREFIX + oldHash);
     if (file.exists() && file.delete()) {

@@ -67,7 +67,7 @@ public class OpenMPSProjectAction extends BaseAction {
       return;
     }
 
-    String filePath = file.getAbsolutePath();
+    String filePath = file.getPath();
 
     ProjectUtil.openProject(filePath, e.getData(PlatformDataKeys.PROJECT), false);
   }

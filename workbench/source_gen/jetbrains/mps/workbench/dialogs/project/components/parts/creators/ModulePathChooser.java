@@ -24,6 +24,6 @@ public class ModulePathChooser implements Computable<Path> {
     if (file == null) {
       return null;
     }
-    return new Path(file.getAbsolutePath());
+    return new Path(file.getPath());
   }
 }

@@ -23,7 +23,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +52,7 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
-  public String getAbsolutePath() {
+  public String getPath() {
     if (findVirtualFile()) {
       return myVirtualFile.getPath();
     } else {
@@ -84,12 +83,7 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
-  public List<IFile> list() {
-    return list(new MyAllFilter());
-  }
-
-  @Override
-  public List<IFile> list(IFileNameFilter filter) {
+  public List<IFile> getChildren() {
     if (findVirtualFile()) {
       VirtualFile[] children = new VirtualFile[0];
       if (myVirtualFile.isValid()) {
@@ -97,9 +91,7 @@ class IdeaFile implements IFileEx {
       }
       ArrayList<IFile> result = new ArrayList<IFile>();
       for (VirtualFile child : children) {
-        if (filter.accept(this, child.getName())) {
-          result.add(new IdeaFile(child));
-        }
+        result.add(new IdeaFile(child));
       }
       return Collections.unmodifiableList(result);
     } else {
@@ -108,8 +100,8 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
-  public IFile child(String suffix) {
-    String path = getAbsolutePath();
+  public IFile getDescendant(String suffix) {
+    String path = getPath();
     String separator = path.contains("!") ? "/" : File.separator;
     return new IdeaFile(path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
@@ -356,15 +348,15 @@ class IdeaFile implements IFileEx {
 
     IdeaFile ideaFile = (IdeaFile) o;
 
-    return ObjectUtils.equals(getAbsolutePath(), ideaFile.getAbsolutePath());
+    return ObjectUtils.equals(getPath(), ideaFile.getPath());
   }
 
   @Override
   public int hashCode() {
-    if (getAbsolutePath() == null) {
+    if (getPath() == null) {
       return 0;
     } else {
-      return getAbsolutePath().hashCode();
+      return getPath().hashCode();
     }
   }
 
@@ -377,10 +369,4 @@ class IdeaFile implements IFileEx {
     }
   }
 
-  private static class MyAllFilter implements IFileNameFilter {
-    @Override
-    public boolean accept(IFile parent, String name) {
-      return true;
-    }
-  }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.InputStream;
 import java.io.IOException;
-import jetbrains.mps.vfs.IFileNameFilter;
 import java.io.OutputStream;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -32,7 +31,7 @@ public abstract class PathItem {
           p
         ));
       } else {
-        File cf = asFile(FileSystem.getInstance().getFileByPath(container.getAbsolutePath() + p));
+        File cf = asFile(FileSystem.getInstance().getFileByPath(container.getPath() + p));
         // '!' would have been added by JarFileEntryFile 
         container = FileSystem.getInstance().getFileByPath(cf.getPath() + "!/");
         // can't simply pass a file, must be a path with a '!' at the end 
@@ -49,7 +48,7 @@ public abstract class PathItem {
     if (fld == null) {
       return PathItem.EMPTY_LIST;
     }
-    List<IFile> lst = fld.list();
+    List<IFile> lst = fld.getChildren();
     return ListSequence.fromList(lst).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
         return f.isDirectory();
@@ -61,7 +60,7 @@ public abstract class PathItem {
     }).toListSequence();
   }
 
-  public List<String> resources(String pkg) {
+  public List<String> resources(final String pkg) {
     if (!(this.file.exists())) {
       return PathItem.EMPTY_LIST;
     }
@@ -69,10 +68,13 @@ public abstract class PathItem {
     if (fld == null) {
       return PathItem.EMPTY_LIST;
     }
-    List<IFile> lst = fld.list(this.filter(pkg));
-    return ListSequence.fromList(lst).<String>select(new ISelector<IFile, String>() {
+    return ListSequence.fromList(((List<IFile>) fld.getChildren())).<String>select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (String) f.getName();
+      }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String n) {
+        return accepResource(pkg, n);
       }
     }).toListSequence();
   }
@@ -85,7 +87,7 @@ public abstract class PathItem {
     if (fld == null) {
       throw new IOException();
     }
-    List<IFile> lst = fld.list();
+    List<IFile> lst = fld.getChildren();
     IFile file = ListSequence.fromList(lst).findFirst(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
         return resName.equals(f.getName()) && !(f.isDirectory());
@@ -110,7 +112,7 @@ public abstract class PathItem {
       if (p.length() == 0) {
         continue;
       }
-      List<IFile> lst = fld.list();
+      List<IFile> lst = fld.getChildren();
       fld = ListSequence.fromList(lst).findFirst(new IWhereFilter<IFile>() {
         public boolean accept(IFile f) {
           return p.equals(f.getName()) && f.isDirectory();
@@ -134,17 +136,9 @@ public abstract class PathItem {
     return path.endsWith(".jar") || path.endsWith(".JAR");
   }
 
-  private IFileNameFilter filter(final String pkg) {
-    return new IFileNameFilter() {
-      public boolean accept(IFile parent, String name) {
-        return accepResource(pkg, name);
-      }
-    };
-  }
-
   private static File asFile(IFile ifile) {
     if (!(FileSystem.getInstance().isPackaged(ifile))) {
-      return new File(ifile.getAbsolutePath());
+      return new File(ifile.getPath());
     }
     OutputStream os = null;
     InputStream is = null;

@@ -24,7 +24,7 @@ public class ClassPathChooser implements Computable<List<ClassPathEntry>> {
     List<ClassPathEntry> result = new ArrayList<ClassPathEntry>();
     for (IFile file : files) {
       ClassPathEntry cpe = new ClassPathEntry();
-      cpe.setPath(file.getAbsolutePath());
+      cpe.setPath(file.getPath());
       result.add(cpe);
     }
     return result;

@@ -98,7 +98,7 @@ public class ModuleSources {
 
     IFile classesGen = myModule.getClassesGen();
     if (classesGen == null) return;
-    collectOutput(new File(classesGen.getAbsolutePath()), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
+    collectOutput(new File(classesGen.getPath()), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
   }
 
   private void collectOutput(File classesGen, String path, Set<JavaFile> toCompile, Set<File> toDelete, Set<ResourceFile> resourcesToCopy) {

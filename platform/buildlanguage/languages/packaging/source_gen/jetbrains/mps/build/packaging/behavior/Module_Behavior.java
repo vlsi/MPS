@@ -65,19 +65,19 @@ public class Module_Behavior {
     for (BaseModelCache cache : caches) {
       List<IFile> dirs = cache.getCachesDirs(Module_Behavior.call_getModule_1213877515148(thisNode));
       for (IFile cacheDir : dirs) {
-        SetSequence.fromSet(result).addElement(ModuleUtil.getRelativePath(cacheDir.getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
+        SetSequence.fromSet(result).addElement(ModuleUtil.getRelativePath(cacheDir.getPath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
       }
     }
     return SetSequence.fromSet(result).toListSequence();
   }
 
   public static IFile call_findMPSProjectFile_1213877514840(SNode thisNode, IFile file) {
-    if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().startsWith(file.getAbsolutePath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().equals(file.getAbsolutePath()))) {
+    if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().startsWith(file.getPath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().equals(file.getPath()))) {
       return null;
     }
-    List<IFile> children = file.list();
+    List<IFile> children = file.getChildren();
     for (IFile child : children) {
-      if (!(child.isDirectory()) && (child.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
+      if (!(child.isDirectory()) && (child.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         return child.getParent();
       }
     }
@@ -89,7 +89,7 @@ public class Module_Behavior {
     if (file == null) {
       return null;
     }
-    return file.getAbsolutePath();
+    return file.getPath();
   }
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {
@@ -106,9 +106,9 @@ public class Module_Behavior {
       ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
     }
     SLinkOperations.setTarget(pathHolder, "module", thisNode, false);
-    SPropertyOperations.set(pathHolder, "moduleRelativePath", ModuleUtil.getRelativePath(path, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath()));
+    SPropertyOperations.set(pathHolder, "moduleRelativePath", ModuleUtil.getRelativePath(path, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath()));
     if (SPropertyOperations.getString(pathHolder, "moduleRelativePath").equals(path)) {
-      if (path.equals(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath())) {
+      if (path.equals(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath())) {
         SPropertyOperations.set(pathHolder, "moduleRelativePath", "");
       } else {
         SPropertyOperations.set(pathHolder, "moduleRelativePath", null);
@@ -124,7 +124,7 @@ public class Module_Behavior {
     if (onlyUnderProjectBasedir) {
       projectBasedir = Module_Behavior.call_getProjectBasedir_1213877514893(thisNode);
       if (projectBasedir == null) {
-        projectBasedir = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath();
+        projectBasedir = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath();
       }
     }
     // process classpath 
@@ -209,11 +209,11 @@ public class Module_Behavior {
   }
 
   public static String call_getClassesGenString_1216909316753(SNode thisNode) {
-    return ModuleUtil.getRelativePath(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath());
+    return ModuleUtil.getRelativePath(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath());
   }
 
   public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
-    return Module_Behavior.call_getPathHolder_1239195000114(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath());
+    return Module_Behavior.call_getPathHolder_1239195000114(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath());
   }
 
   public static List<SNode> call_getSources_1216909568805(SNode thisNode) {

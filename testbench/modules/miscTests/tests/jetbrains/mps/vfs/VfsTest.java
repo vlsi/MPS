@@ -105,15 +105,15 @@ public class VfsTest {
     assertTrue("Temp dir does not exist", tmpDir.exists());
     assertTrue("Created temp directory is not directory", tmpDir.isDirectory());
     assertFalse("Could create file with the same name as the directory", tmpDir.createNewFile());
-    assertTrue("Created temp directory is not empty", tmpDir.list().isEmpty());
+    assertTrue("Created temp directory is not empty", tmpDir.getChildren().isEmpty());
 
-    IFile subSubDir = tmpDir.child(SUBSUBDIR);
+    IFile subSubDir = tmpDir.getDescendant(SUBSUBDIR);
     assertTrue(subSubDir.mkdirs());
 
     assertTrue(subSubDir.isDirectory());
     assertTrue(subSubDir.exists());
 
-    IFile file1 = tmpDir.child(SUBSUBDIR + File.separator + "file1");
+    IFile file1 = tmpDir.getDescendant(SUBSUBDIR + File.separator + "file1");
     assertFalse(file1.exists());
     assertTrue(file1.getParent().equals(subSubDir));
     try {
@@ -128,7 +128,7 @@ public class VfsTest {
     }
     assertTrue(file1.exists());
     assertEquals(file1.length(), FILE_SIZE);
-    assertEquals(Arrays.asList(file1), subSubDir.list());
+    assertEquals(Arrays.asList(file1), subSubDir.getChildren());
 
     try {
       InputStream os = file1.openInputStream();
@@ -148,11 +148,11 @@ public class VfsTest {
   private static void doJarVfsTest() {
     FileSystem fileSystem = FileSystem.getInstance();
     IFile jarRoot = fileSystem.getFileByPath(VfsTest.class.getResource(JAR_NAME).getFile() + JAR_SUFFIX);
-    assertEquals(jarRoot.list().size(), 3);
+    assertEquals(jarRoot.getChildren().size(), 3);
     assertTrue(jarRoot.isDirectory());
     assertTrue(jarRoot.isReadOnly());
     assertTrue(fileSystem.isPackaged(jarRoot));
-    IFile readmeFile = jarRoot.child("README");
+    IFile readmeFile = jarRoot.getDescendant("README");
     assertFalse(readmeFile.isDirectory());
     try {
       assertEquals("this is a test file\n", new String(ReadUtil.read(readmeFile.openInputStream())));
@@ -171,7 +171,7 @@ public class VfsTest {
       // ok
     }
 
-    IFile file1 = jarRoot.child("dir1").child("subdir").child("file1");
+    IFile file1 = jarRoot.getDescendant("dir1").getDescendant("subdir").getDescendant("file1");
 
     try {
       assertEquals("file1\n", new String(ReadUtil.read(file1.openInputStream())));

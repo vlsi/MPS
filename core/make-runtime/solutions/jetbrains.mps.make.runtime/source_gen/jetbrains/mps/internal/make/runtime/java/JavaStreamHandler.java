@@ -38,7 +38,7 @@ public class JavaStreamHandler implements StreamHandler {
       myCachesOutputDir :
       myOutputDir
     );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
     ((isCache ?
@@ -52,7 +52,7 @@ public class JavaStreamHandler implements StreamHandler {
       myCachesOutputDir :
       myOutputDir
     );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
     ((isCache ?
@@ -66,7 +66,7 @@ public class JavaStreamHandler implements StreamHandler {
       myCachesOutputDir :
       myOutputDir
     );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
     ((isCache ?
@@ -80,7 +80,7 @@ public class JavaStreamHandler implements StreamHandler {
       myCachesOutputDir :
       myOutputDir
     );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     mySavedFiles.add(file);
     ((isCache ?
       myCachesFileDelta :
@@ -107,7 +107,7 @@ public class JavaStreamHandler implements StreamHandler {
       }
       final List<IFile> filesToDelete = new ArrayList<IFile>();
       for (IFile dir : directories) {
-        for (IFile outputDirectoryFile : dir.list()) {
+        for (IFile outputDirectoryFile : dir.getChildren()) {
           if (outputDirectoryFile.isDirectory()) {
             continue;
           }

@@ -94,7 +94,7 @@ public class Binaries_Facet implements IFacet {
                       return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).<Tuples._2<IFile, IFile>>select(new ISelector<SNode, Tuples._2<IFile, IFile>>() {
                         public Tuples._2<IFile, IFile> select(SNode bin) {
                           IFile fromFile = FileSystem.getInstance().getFileByPath(MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName()));
-                          IFile toFile = outputDir.child(fromFile.getName());
+                          IFile toFile = outputDir.getDescendant(fromFile.getName());
                           fd.written(toFile);
                           return MultiTuple.<IFile,IFile>from(fromFile, toFile);
                         }

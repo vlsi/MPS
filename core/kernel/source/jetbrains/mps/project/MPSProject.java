@@ -210,7 +210,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(file.getAbsolutePath());
+    Path path = new Path(file.getPath());
     for (Path sp : getAllModulePaths()) {
       if (sp.isSamePath(path)) {
         return sp.getMPSFolder();
@@ -222,7 +222,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   public void setFolderFor(IModule module, String newFolder) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(file.getAbsolutePath());
+    Path path = new Path(file.getPath());
     for (Path sp : getAllModulePaths()) {
       if (sp.isSamePath(path)) {
         sp.setMPSFolder(newFolder);
@@ -257,7 +257,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.addLanguage(descriptorFile.getAbsolutePath());
+    projectDescriptor.addLanguage(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -265,7 +265,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.removeLanguage(descriptorFile.getAbsolutePath());
+    projectDescriptor.removeLanguage(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -284,13 +284,13 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   @NotNull
   public Solution addProjectSolution(@NotNull IFile solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    projectDescriptor.addSolution(solutionDescriptionFile.getAbsolutePath());
+    projectDescriptor.addSolution(solutionDescriptionFile.getPath());
     setProjectDescriptor(projectDescriptor);
 
     for (Solution s : getProjectSolutions()) {
       IFile descriptorFile = s.getDescriptorFile();
       assert descriptorFile != null;
-      if (descriptorFile.getAbsolutePath().equals(solutionDescriptionFile.getAbsolutePath())) {
+      if (descriptorFile.getPath().equals(solutionDescriptionFile.getPath())) {
         return s;
       }
     }
@@ -302,7 +302,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = solution.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.removeSolution(descriptorFile.getAbsolutePath());
+    projectDescriptor.removeSolution(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -320,13 +320,13 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
 
   public DevKit addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    projectDescriptor.addDevkit(devKitDescriptorFile.getAbsolutePath());
+    projectDescriptor.addDevkit(devKitDescriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
 
     for (DevKit dk : getProjectDevKits()) {
       IFile descriptorFile = dk.getDescriptorFile();
       assert descriptorFile != null;
-      if (descriptorFile.getAbsolutePath().equals(devKitDescriptorFile.getAbsolutePath())) {
+      if (descriptorFile.getPath().equals(devKitDescriptorFile.getPath())) {
         return dk;
       }
     }
@@ -338,7 +338,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = devkit.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.removeDevkit(descriptorFile.getAbsolutePath());
+    projectDescriptor.removeDevkit(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -398,7 +398,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
       if (descriptorFile.exists()) {
         mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
       } else {
-        error("Can't load solution from " + descriptorFile.getAbsolutePath() + " File doesn't exist.");
+        error("Can't load solution from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
 
@@ -410,7 +410,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
       if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
       } else {
-        error("Can't load language from " + descriptorFile.getAbsolutePath() + " File doesn't exist.");
+        error("Can't load language from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
 
@@ -422,7 +422,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
       if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
-        error("Can't load devkit from " + devKit.getAbsolutePath() + " File doesn't exist");
+        error("Can't load devkit from " + devKit.getPath() + " File doesn't exist");
       }
     }
   }

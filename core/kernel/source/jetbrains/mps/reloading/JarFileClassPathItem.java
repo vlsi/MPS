@@ -249,7 +249,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   private static File transformFile(IFile f) throws IOException {
     if (!FileSystem.getInstance().isPackaged(f)) {
-      return new File(f.getAbsolutePath());
+      return new File(f.getPath());
     }
 
     File tmpFile = File.createTempFile(f.getName(), "tmp");

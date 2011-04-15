@@ -40,7 +40,7 @@ public class ModelsMiner {
     if (FileTypeManager.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
-    List<IFile> files = dir.list();
+    List<IFile> files = dir.getChildren();
     for (IFile file : files) {
       String fileName = file.getName();
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);

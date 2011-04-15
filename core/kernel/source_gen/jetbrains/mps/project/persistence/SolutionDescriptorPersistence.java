@@ -90,7 +90,7 @@ public class SolutionDescriptorPersistence {
   public static void saveSolutionDescriptor(final IFile file, final SolutionDescriptor descriptor) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
-        log.error("Can't save " + file.getAbsolutePath());
+        log.error("Can't save " + file.getPath());
       }
       return;
     }

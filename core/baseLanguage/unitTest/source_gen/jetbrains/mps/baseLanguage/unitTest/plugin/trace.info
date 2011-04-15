@@ -442,8 +442,8 @@
     <nodeInfo nodeId="1208802501521" fileName="UnitTestViewComponent.java" startLine="107" startPosition="57" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1208772580906" fileName="UnitTestViewComponent.java" startLine="108" startPosition="54" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2887501847890680545" fileName="UnitTestViewComponent.java" startLine="112" startPosition="40" endLine="113" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2887501847890680555" fileName="UnitTestViewComponent.java" startLine="113" startPosition="38" endLine="114" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5928813260156612719" fileName="UnitTestViewComponent.java" startLine="114" startPosition="108" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2887501847890680555" fileName="UnitTestViewComponent.java" startLine="113" startPosition="38" endLine="114" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5928813260156612719" fileName="UnitTestViewComponent.java" startLine="114" startPosition="100" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2281887280934079612" fileName="UnitTestViewComponent.java" startLine="118" startPosition="47" endLine="119" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214211891017" fileName="UnitTestViewComponent.java" startLine="122" startPosition="25" endLine="123" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8640331875043838001" fileName="UnitTestViewComponent.java" startLine="123" startPosition="37" endLine="124" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1035,8 +1035,8 @@
   <root nodeId="1208285711556">
     <nodeInfo nodeId="1208286025046" fileName="TestState.java" startLine="21" startPosition="0" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
     <nodeInfo nodeId="1208357926509" fileName="TestState.java" startLine="24" startPosition="30" endLine="25" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208358070913" fileName="TestState.java" startLine="25" startPosition="197" endLine="26" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208357576253" fileName="TestState.java" startLine="26" startPosition="166" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208358070913" fileName="TestState.java" startLine="25" startPosition="197" endLine="26" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208357576253" fileName="TestState.java" startLine="26" startPosition="158" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="497539554675290516" fileName="TestState.java" startLine="31" startPosition="45" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1208286358042" fileName="TestState.java" startLine="33" startPosition="5" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="497539554675290504" fileName="TestState.java" startLine="30" startPosition="25" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

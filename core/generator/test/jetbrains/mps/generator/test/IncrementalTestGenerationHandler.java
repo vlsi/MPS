@@ -103,7 +103,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private void collectExistingContent(Map<String, String> existingContent) {
     if(myFilesDir != null) {
-      for (IFile f : myFilesDir.list()) {
+      for (IFile f : myFilesDir.getChildren()) {
         try {
           if (f.isDirectory() || f.getName().equals(TraceInfoCache.TRACE_FILE_NAME))  continue;
           if (f.getName().endsWith(".png"))  continue; // temp fix: icons are generated in another facet

@@ -25,7 +25,7 @@ public class StubRootChooser implements Computable<List<StubModelsEntry>> {
     List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
     for (IFile file : files) {
       StubModelsEntry sme = new StubModelsEntry();
-      sme.setPath(file.getAbsolutePath());
+      sme.setPath(file.getPath());
       sme.setManager(LanguageID.JAVA_MANAGER);
       result.add(sme);
     }

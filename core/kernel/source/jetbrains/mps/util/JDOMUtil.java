@@ -53,10 +53,10 @@ public class JDOMUtil {
     try {
       return saxBuilder.build(new InputStreamReader(file.openInputStream(), ENCODING));
     } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
     } catch (IOException e) {
-      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
     }
   }

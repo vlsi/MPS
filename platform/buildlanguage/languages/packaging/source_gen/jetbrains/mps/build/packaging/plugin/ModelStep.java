@@ -76,7 +76,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
                 return false;
               }
               for (SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
-                if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
+                if (modelFile.getPath().startsWith(root.getPath())) {
                   return true;
                 }
               }

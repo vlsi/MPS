@@ -111,7 +111,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   public Icon getIcon(String iconName) {
     Language language = getLanguage();
-    String pathToIcon = language.getDescriptorFile().getParent().getAbsolutePath() + "\\icons\\" + iconName;
+    String pathToIcon = language.getDescriptorFile().getParent().getPath() + "\\icons\\" + iconName;
     return IconManager.loadIcon(pathToIcon, true);
   }
 

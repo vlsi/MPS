@@ -43,7 +43,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     mySolution = solution;
 
     IFile descriptorFile = mySolution.getDescriptorFile();
-    String id = descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath();
+    String id = descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getPath();
     setNodeIdentifier(id);
     setIcon(Icons.SOLUTION_ICON);
   }

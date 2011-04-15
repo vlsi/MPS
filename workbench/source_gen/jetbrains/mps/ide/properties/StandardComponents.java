@@ -361,7 +361,7 @@ public class StandardComponents {
   public static JPanel createFilePanel(String label, IFile file) {
     String initText = ((file == null) ?
       "<no file>" :
-      file.getAbsolutePath()
+      file.getPath()
     );
     boolean isValid;
     try {
@@ -396,7 +396,7 @@ public class StandardComponents {
         if (result == null) {
           return;
         }
-        tfNamespace.setText(result.getAbsolutePath());
+        tfNamespace.setText(result.getPath());
       }
     });
     panel.add(tfNamespace, BorderLayout.CENTER);

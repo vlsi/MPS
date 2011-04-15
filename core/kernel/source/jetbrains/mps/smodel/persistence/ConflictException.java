@@ -20,7 +20,7 @@ import jetbrains.mps.vfs.IFile;
 
 public class ConflictException extends RuntimeException {
   public ConflictException(IFile file) {
-    super("File " + file.getAbsolutePath() + " is in conflict." +
+    super("File " + file.getPath() + " is in conflict." +
       " If merge dialog does not appear automatically, select action \"Subversion\"->\"Resolve Text Conflict\" from file popup menu.");
   }
 

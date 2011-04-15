@@ -152,7 +152,7 @@ public class LibraryManagerPreferences {
     IFile result = chooser.showDialog(myMainPanel);
 
     if (result == null) return;
-    path = result.getAbsolutePath();
+    path = result.getPath();
 
     l.setPath(path);
 
@@ -174,7 +174,7 @@ public class LibraryManagerPreferences {
     IFile result = chooser.showDialog(myMainPanel);
 
     if (result == null) return;
-    path = result.getAbsolutePath();
+    path = result.getPath();
 
     myManager.addLibrary(name).setPath(path);
     updateModel(true);

@@ -83,7 +83,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             });
             runnable.value.run();
             final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
-            project.getProjectDescriptor().addSolution(solution.getDescriptorFile().getAbsolutePath());
+            project.getProjectDescriptor().addSolution(solution.getDescriptorFile().getPath());
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
               public void run(@NotNull ProgressIndicator progressIndicator) {
                 progressIndicator.setIndeterminate(true);

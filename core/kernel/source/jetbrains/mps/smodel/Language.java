@@ -172,13 +172,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   IFile newDescriptorFileByNewName(String newNamespace) {
     IFile dir = myDescriptorFile.getParent();
-    String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
+    String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getPath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if ((dir.getAbsolutePath() + MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
+    if ((dir.getPath() + MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
       dir = dir.getParent();
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
-    return dir.child(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
+    return dir.getDescendant(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {
@@ -354,7 +354,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public String getGeneratorOutputPath() {
     IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getAbsolutePath() : null;
+    return result != null ? result.getPath() : null;
   }
 
   public String getTestsGeneratorOutputPath() {
@@ -666,12 +666,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if(isCompileInMPS()) {
       IFile classesGen = getClassesGen();
       if (classesGen!=null){
-        result.add(new StubPath(classesGen.getAbsolutePath(), LanguageID.JAVA_MANAGER));
+        result.add(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
       }
     } else {
       IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
       if (classes!=null){
-        result.add(new StubPath(classes.getAbsolutePath(), LanguageID.JAVA_MANAGER));
+        result.add(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
       }
     }
     return result;
@@ -727,7 +727,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (myLanguageDescriptor != null) {
       IFile bundleParent = getBundleHome().getParent();
       String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
-      IFile bundleHomeFile = bundleParent.child(jarName);
+      IFile bundleHomeFile = bundleParent.getDescendant(jarName);
 
       if(!bundleHomeFile.exists()) return;
 
@@ -754,13 +754,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       if(hasClasspath && !skipClasspath) {
         ClassPathEntry bundleHome = new ClassPathEntry();
-        bundleHome.setPath(bundleHomeFile.getAbsolutePath());
+        bundleHome.setPath(bundleHomeFile.getPath());
         myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(bundleHome));
       }
 
       for(String jar : innerJars) {
         ClassPathEntry innerJar = new ClassPathEntry();
-        innerJar.setPath(bundleHomeFile.getAbsolutePath() + "!/" + jar);
+        innerJar.setPath(bundleHomeFile.getPath() + "!/" + jar);
         myLanguageDescriptor.getRuntimeStubModels().add(StubModelsEntry.fromClassPathEntry(innerJar));
       }
     }
@@ -783,14 +783,14 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setUUID(UUID.randomUUID().toString());
 
-    IFile languageModels = descriptorFile.getParent().child(LANGUAGE_MODELS);
+    IFile languageModels = descriptorFile.getParent().getDescendant(LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }
 
     // default descriptorModel roots
     ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(languageModels.getAbsolutePath());
+    modelRoot.setPath(languageModels.getPath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;

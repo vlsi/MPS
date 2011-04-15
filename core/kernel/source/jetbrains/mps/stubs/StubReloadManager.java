@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
@@ -407,7 +406,7 @@ public class StubReloadManager implements ApplicationComponent {
     private static long getTimestampRecursive(IFile path) {
       long max = path.lastModified();
       if (path.isDirectory()) {
-        for (IFile child : path.list()) {
+        for (IFile child : path.getChildren()) {
           long timestamp = getTimestampRecursive(child);
           if (timestamp > max) {
             max = timestamp;

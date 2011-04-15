@@ -140,12 +140,12 @@ public class ProjectCreationTest {
   }
 
   private static void collectFilePathList(List<String> list, IFile rootDir, String prefix) {
-    for (IFile file : rootDir.list()) {
+    for (IFile file : rootDir.getChildren()) {
       String path = file.getName();
       if (prefix != null) {
         path = prefix + "/" + file.getName();
       }
-      if (file.isDirectory() && !file.list().isEmpty()) {
+      if (file.isDirectory() && !file.getChildren().isEmpty()) {
         collectFilePathList(list, file, path);
       } else {
         list.add(path);
@@ -163,7 +163,7 @@ public class ProjectCreationTest {
       ProjectOptions options = new ProjectOptions();
 
       options.setProjectName(PROJECT_NAME);
-      options.setProjectPath(containingDir.child(PROJECT_NAME).getAbsolutePath());
+      options.setProjectPath(containingDir.getDescendant(PROJECT_NAME).getPath());
 
       options.setCreateNewLanguage(false);
       options.setCreateNewSolution(false);
@@ -176,19 +176,19 @@ public class ProjectCreationTest {
   private static class ProjectWithModulesProvider implements ProjectOptionsProvider {
     @Override
     public ProjectOptions getProjectOptions(IFile containingFile) {
-      IFile projectDir = containingFile.child(PROJECT_NAME);
+      IFile projectDir = containingFile.getDescendant(PROJECT_NAME);
 
       ProjectOptions options = new ProjectOptions();
       options.setProjectName(PROJECT_NAME);
-      options.setProjectPath(projectDir.getAbsolutePath());
+      options.setProjectPath(projectDir.getPath());
 
       options.setCreateNewLanguage(true);
       options.setLanguageNamespace(LANGUAGE_NAMESPACE);
-      options.setLanguagePath(projectDir.child("languages").child(LANGUAGE_NAMESPACE).getAbsolutePath());
+      options.setLanguagePath(projectDir.getDescendant("languages").getDescendant(LANGUAGE_NAMESPACE).getPath());
 
       options.setCreateNewSolution(true);
       options.setSolutionNamespace(SOLUTION_NAMESPACE);
-      options.setSolutionPath(projectDir.child("solutions").child(SOLUTION_NAMESPACE).getAbsolutePath());
+      options.setSolutionPath(projectDir.getDescendant("solutions").getDescendant(SOLUTION_NAMESPACE).getPath());
       options.setCreateModel(true);
 
       return options;

@@ -45,13 +45,13 @@ public class AntScriptRunner extends BaseRunner {
     } else {
       workingDir = file.getParent();
     }
-    this.myBuilder.directory(new File(workingDir.getAbsolutePath()));
+    this.myBuilder.directory(new File(workingDir.getPath()));
 
     try {
       return this.myBuilder.start();
     } catch (IOException e) {
       LOG.error("Can't run script " + file + ": " + e.getMessage(), e);
-      throw new ProcessNotCreatedException(e.getMessage(), e, this.getCommandLine(workingDir.getAbsolutePath()));
+      throw new ProcessNotCreatedException(e.getMessage(), e, this.getCommandLine(workingDir.getPath()));
     }
   }
 
@@ -70,7 +70,7 @@ public class AntScriptRunner extends BaseRunner {
     ListSequence.fromList(parameters).addElement(classpath);
     ListSequence.fromList(parameters).addElement("org.apache.tools.ant.launch.Launcher");
     ListSequence.fromList(parameters).addElement("-f");
-    ListSequence.fromList(parameters).addElement(file.getAbsolutePath());
+    ListSequence.fromList(parameters).addElement(file.getPath());
   }
 
   public String getCommandString() {

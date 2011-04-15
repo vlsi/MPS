@@ -16,7 +16,6 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +49,7 @@ public class IoFile implements IFileEx {
     return myFile.isDirectory();
   }
 
-  public String getAbsolutePath() {
+  public String getPath() {
     return myFile.getAbsolutePath();
   }
 
@@ -88,13 +87,13 @@ public class IoFile implements IFileEx {
   }
 
   public boolean delete() {
-    for (IFile child : list()) {
+    for (IFile child : getChildren()) {
       child.delete();
     }
     return myFile.delete();
   }
 
-  public List<IFile> list() {
+  public List<IFile> getChildren() {
     File[] files = myFile.listFiles();
     if (files == null) {
       return Collections.emptyList();
@@ -107,30 +106,8 @@ public class IoFile implements IFileEx {
     return result;
   }
 
-  public IFile child(String suffix) {
+  public IFile getDescendant(String suffix) {
     return new IoFile(new File(myFile, suffix));
-  }
-
-  public List<IFile> list(IFileNameFilter filter) {
-    List<IFile> result = new ArrayList<IFile>();
-
-    File[] files = myFile.listFiles();
-
-    if (files == null) {
-      return null;
-    }
-
-    for (File f : files) {
-      if (filter.accept(this, f.getName())) {
-        result.add(new IoFile(f));
-      }
-    }
-
-    return result;
-  }
-
-  public File getFile() {
-    return myFile;
   }
 
   public InputStream openInputStream() throws IOException {

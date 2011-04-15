@@ -21,6 +21,6 @@ public class SourcePathChooser implements Computable {
     if (result == null) {
       return null;
     }
-    return result.getAbsolutePath();
+    return result.getPath();
   }
 }

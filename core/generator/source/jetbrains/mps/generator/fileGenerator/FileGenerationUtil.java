@@ -32,7 +32,7 @@ public class FileGenerationUtil {
   }
 
   public static IFile getCachesDir(IFile outputDir) {
-    return FileSystem.getInstance().getFileByPath(outputDir.getAbsolutePath() + CACHES_SUFFIX);
+    return FileSystem.getInstance().getFileByPath(outputDir.getPath() + CACHES_SUFFIX);
   }
 
   public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, IFile outputRootDir) {
@@ -52,6 +52,6 @@ public class FileGenerationUtil {
     } else {
       packagePath = packageName.replace('.', File.separatorChar);
     }
-    return outputRootDir.child(packagePath);
+    return outputRootDir.getDescendant(packagePath);
   }
 }

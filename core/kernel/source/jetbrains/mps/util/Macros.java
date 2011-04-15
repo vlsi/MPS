@@ -70,7 +70,7 @@ public abstract class Macros {
       String prefix = "${" + macro + "}";
       if (path.startsWith(prefix)) {
         String relativePath = removePrefix(path, prefix);
-        result = FileSystem.getInstance().getFileByPath(PathMacros.getInstance().getValue(macro)).child(relativePath);
+        result = FileSystem.getInstance().getFileByPath(PathMacros.getInstance().getValue(macro)).getDescendant(relativePath);
         break;
       }
     }
@@ -78,7 +78,7 @@ public abstract class Macros {
 
     if (path.startsWith(MPS_HOME)) {
       String relativePath = removePrefix(path, MPS_HOME);
-      result = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).child(relativePath);
+      result = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant(relativePath);
     }
     if (result != null) return IFileUtils.getCanonicalPath(result);
 

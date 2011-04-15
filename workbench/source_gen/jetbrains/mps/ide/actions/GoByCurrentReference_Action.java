@@ -112,7 +112,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         } else if (module.getDescriptorFile() == null) {
           assert false;
         }
-        final String modulePath = module.getDescriptorFile().getAbsolutePath();
+        final String modulePath = module.getDescriptorFile().getPath();
 
         new Thread() {
           public void run() {

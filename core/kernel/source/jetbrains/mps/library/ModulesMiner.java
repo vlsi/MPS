@@ -74,7 +74,7 @@ public class ModulesMiner {
       if (moduleRoot.exists()) {
         readModuleDescriptors(moduleRoot, owner);
       } else {
-        String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
+        String error = "Couldn't load modules from " + moduleRoot.getPath() + " for owner " + owner +
           "\nDirectory doesn't exist: ";
         LOG.error(error);
       }
@@ -122,7 +122,7 @@ public class ModulesMiner {
 
     if (FileTypeManager.getInstance().isFileIgnored(dirName)) return;
 
-    List<IFile> files = dir.list();
+    List<IFile> files = dir.getChildren();
     if (files == null) {
       return;
     }
@@ -142,7 +142,7 @@ public class ModulesMiner {
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
-        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
+        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getPath() + "!/" + AbstractModule.MODULE_DIR);
         readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
       }
 
@@ -162,7 +162,7 @@ public class ModulesMiner {
         return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
       }
     } catch (Exception t) {
-      LOG.error("Fail to load module from descriptor " + file.getAbsolutePath(), t);
+      LOG.error("Fail to load module from descriptor " + file.getPath(), t);
       return null;
     }
   }
@@ -175,7 +175,7 @@ public class ModulesMiner {
       }
       return descriptor;
     } catch (Exception t) {
-      LOG.error("Fail to load module from descriptor " + descriptorFile.getAbsolutePath(), t);
+      LOG.error("Fail to load module from descriptor " + descriptorFile.getPath(), t);
     }
     return null;
   }
@@ -188,7 +188,7 @@ public class ModulesMiner {
       processExcludes(descriptorFile, module.getModuleDescriptor(), excludes);
 
     } catch (Exception t) {
-      LOG.error("Fail to load module from descriptor " + descriptorFile.getAbsolutePath(), t);
+      LOG.error("Fail to load module from descriptor " + descriptorFile.getPath(), t);
     }
 
     return module;
@@ -207,7 +207,7 @@ public class ModulesMiner {
     if (genPath != null) {
       excludes.add(genPath);
       if (!descriptorFile.isReadOnly()) {
-        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(genPath.getAbsolutePath()));
+        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(genPath.getPath()));
       }
     }
 
@@ -215,7 +215,7 @@ public class ModulesMiner {
     if (testsGenPath != null) {
       excludes.add(genPath);
       if (!descriptorFile.isReadOnly()) {
-        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(testsGenPath.getAbsolutePath()));
+        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(testsGenPath.getPath()));
       }
     }
 

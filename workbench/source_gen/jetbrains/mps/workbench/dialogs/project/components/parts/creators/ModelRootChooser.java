@@ -23,7 +23,7 @@ public class ModelRootChooser implements Computable<ModelRoot> {
       return null;
     }
     ModelRoot result = new ModelRoot();
-    result.setPath(dir.getAbsolutePath());
+    result.setPath(dir.getPath());
     return result;
   }
 }

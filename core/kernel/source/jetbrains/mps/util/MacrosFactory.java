@@ -66,7 +66,7 @@ public class MacrosFactory {
     protected String expandPath_internal(String path, IFile descriptor) {
       if (path.startsWith(myMacroString)) {
         String modelRelativePath = removePrefix(path, myMacroString);
-        return IFileUtils.getCanonicalPath(descriptor.getParent().child(modelRelativePath));
+        return IFileUtils.getCanonicalPath(descriptor.getParent().getDescendant(modelRelativePath));
       }
       return super.expandPath_internal(path, descriptor);
     }

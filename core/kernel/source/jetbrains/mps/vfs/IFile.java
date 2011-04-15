@@ -25,13 +25,12 @@ import java.util.List;
  */
 public interface IFile {
   String getName();
-  String getAbsolutePath(); // TODO rename to getPath()
+  String getPath();
 
   IFile getParent();
 
-  List<IFile> list(); // TODO rename to getChildren()
-  List<IFile> list(IFileNameFilter filter); // TODO rename to getChildren()
-  IFile child(String suffix); // TODO rename to getDescendant()
+  List<IFile> getChildren();
+  IFile getDescendant(String suffix);
 
   boolean isDirectory();
   boolean isReadOnly();

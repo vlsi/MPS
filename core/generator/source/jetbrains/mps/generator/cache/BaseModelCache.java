@@ -122,7 +122,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       } else {
         descriptorFile = module.getDescriptorFile();
       }
-      return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
+      return descriptorFile.getParent().getParent().getDescendant(FileGenerationUtil.getCachesPath(suffix));
     } else {
       return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(outputPath));
     }

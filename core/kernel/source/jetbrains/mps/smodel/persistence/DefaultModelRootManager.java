@@ -231,10 +231,10 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     for(ModelHandle handle : models) {
       SModelDescriptor modelDescriptor;
       if (ModelPersistence.needsRecreating(handle.getFile())) {
-        modelDescriptor = recreateFileAndGetInstance(this, handle.getFile().getAbsolutePath(), handle.getReference(), owner, modelRoot, handle.getLoadResult());
+        modelDescriptor = recreateFileAndGetInstance(this, handle.getFile().getPath(), handle.getReference(), owner, modelRoot, handle.getLoadResult());
         LOG.debug("Recreated file and read model descriptor" + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
-        modelDescriptor = getInstance(this, handle.getFile().getAbsolutePath(), handle.getReference(), handle.getLoadResult(), owner, false);
+        modelDescriptor = getInstance(this, handle.getFile().getPath(), handle.getReference(), handle.getLoadResult(), owner, false);
         LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       }
     }
@@ -249,7 +249,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
 
     IFile modelFile = createFileForModelUID(root, fqName);
-    return DefaultModelRootManager.createModel(this, modelFile.getAbsolutePath(), fqName, new DescriptorLoadResult(), owner);
+    return DefaultModelRootManager.createModel(this, modelFile.getPath(), fqName, new DescriptorLoadResult(), owner);
   }
 
   private IFile createFileForModelUID(SModelRoot root, SModelFqName fqName) {
@@ -283,7 +283,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFileUtils.copyFileContent(modelFile, newFile);
     modelFile.delete();
 
-    return getInstance(manager, newFile.getAbsolutePath(), newModelReference, d, owner, true);
+    return getInstance(manager, newFile.getPath(), newModelReference, d, owner, true);
   }
 
   private static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelReference modelReference, DescriptorLoadResult d, ModelOwner owner, boolean fireModelCreated) {

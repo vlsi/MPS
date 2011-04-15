@@ -72,7 +72,7 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
       });
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(result.getAbsolutePath()), true);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(result.getPath()), true);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

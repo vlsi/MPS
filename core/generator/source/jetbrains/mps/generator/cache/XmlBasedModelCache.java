@@ -88,6 +88,6 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     if (cachesModuleDir == null) return null;
     IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, cachesModuleDir);
 
-    return cachesDir.child(getCacheFileName());
+    return cachesDir.getDescendant(getCacheFileName());
   }
 }

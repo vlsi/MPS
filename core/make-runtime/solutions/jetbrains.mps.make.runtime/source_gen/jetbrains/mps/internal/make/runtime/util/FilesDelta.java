@@ -37,7 +37,7 @@ public class FilesDelta implements IDelta {
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
-    this.key = "(IFile)" + straighten(urlToPath(dir.getAbsolutePath()));
+    this.key = "(IFile)" + straighten(urlToPath(dir.getPath()));
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -68,7 +68,7 @@ public class FilesDelta implements IDelta {
       }
     }).<String>select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
-        return straighten(urlToPath(f.key().getAbsolutePath()));
+        return straighten(urlToPath(f.key().getPath()));
       }
     }).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String p) {
@@ -80,15 +80,15 @@ public class FilesDelta implements IDelta {
     Queue<IFile> dirs = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
     while (QueueSequence.fromQueue(dirs).isNotEmpty()) {
       IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
-      String dirpath = straighten(urlToPath(dir.getAbsolutePath()));
+      String dirpath = straighten(urlToPath(dir.getPath()));
       int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
       diridx = (diridx < 0 ?
         -1 - diridx :
         diridx
       );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.list())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
-          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
+          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getPath())));
         }
       }).sort(new ISelector<Tuples._2<IFile, String>, Comparable<?>>() {
         public Comparable<?> select(Tuples._2<IFile, String> t) {

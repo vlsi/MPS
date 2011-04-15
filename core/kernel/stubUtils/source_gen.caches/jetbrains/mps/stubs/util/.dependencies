@@ -17,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFileNameFilter" />
   </dependency>
   <dependency className="jetbrains.mps.stubs.util.PathItemsReloadableCache" file="PathItemsReloadableCache.java">
     <classNode dependClassName="java.lang.String" />

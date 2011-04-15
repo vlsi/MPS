@@ -20,11 +20,11 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 
 import javax.swing.Icon;
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -41,7 +41,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
     boolean isDisk = isDiskNode();
 
     if (isDisk) {
-      filename = file.getAbsolutePath();
+      filename = file.getPath();
     }
 
     setNodeIdentifier(filename);
@@ -62,13 +62,13 @@ public abstract class FileTreeNode extends MPSTreeNode {
     } else if (extension.equals(MPSExtentions.MODEL)) {
       icon = Icons.MODEL_ICON;
     } else {
-      icon = fsView.getSystemIcon(new File(file.getAbsolutePath()));
+      icon = fsView.getSystemIcon(new File(file.getPath()));
     }
 
 
     String caption = filename;
     if (!isDisk) {
-      if (new File(file.getAbsolutePath()).isHidden()) {
+      if (new File(file.getPath()).isHidden()) {
         caption = "<html><font color='gray'>" + caption + "</font></html>";
         //todo: set new icon
       }
@@ -104,11 +104,12 @@ public abstract class FileTreeNode extends MPSTreeNode {
 
   protected void doInit() {
     if (getAssociatedFile().isDirectory()) {
-      List<IFile> sortedFiles = getAssociatedFile().list(new IFileNameFilter() {
-        public boolean accept(IFile parent, String name) {
-          return getFileFilter().accept(parent.child(name));
+      List<IFile> sortedFiles = new ArrayList<IFile>();
+      for (IFile f : getAssociatedFile().getChildren()) {
+        if (getFileFilter().accept(f)) {
+          sortedFiles.add(f);
         }
-      });
+      }
       Collections.sort(sortedFiles, new Comparator<IFile>() {
         public int compare(IFile f1, IFile f2) {
           if (f1.isDirectory() && !f2.isDirectory()) {

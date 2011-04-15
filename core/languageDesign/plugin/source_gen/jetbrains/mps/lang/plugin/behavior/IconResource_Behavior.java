@@ -34,7 +34,7 @@ public class IconResource_Behavior {
         String source = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), model.getModule().getModuleFqName());
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
-        IFileUtils.copyFileContent(sourceFile, output.child(sourceFile.getName()));
+        IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
       }
     });
   }

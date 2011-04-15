@@ -187,7 +187,7 @@ public class ModelPersistence {
     try {
       source = JDOMUtil.loadSource(file);
     } catch (Throwable t) {
-      LOG.error("Error while loading model from file: " + file.getAbsolutePath(), t);
+      LOG.error("Error while loading model from file: " + file.getPath(), t);
       StubModel model = new StubModel(new SModelReference(modelName, modelStereotype));
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
@@ -251,10 +251,10 @@ public class ModelPersistence {
 
   // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
   public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade, int modelVersion) {
-    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
+    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
 
     if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file.getAbsolutePath());
+      LOG.error("Can't write to " + file.getPath());
       return null;
     }
 
@@ -485,7 +485,7 @@ public class ModelPersistence {
 
   @Deprecated
   private static IFile getMetadataFile(IFile modelFile) {
-    String modelPath = modelFile.getAbsolutePath();
+    String modelPath = modelFile.getPath();
     String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
     return FileSystem.getInstance().getFileByPath(versionPath);
   }

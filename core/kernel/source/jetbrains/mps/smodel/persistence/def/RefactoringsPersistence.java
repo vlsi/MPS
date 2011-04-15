@@ -23,7 +23,7 @@ public class RefactoringsPersistence {
   private static final Logger LOG = Logger.getLogger(RefactoringsPersistence.class);
 
   private static IFile getRefactoringsFile(IFile modelFile) {
-    String modelPath = modelFile.getAbsolutePath();
+    String modelPath = modelFile.getPath();
     String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length())
       + MPSExtentions.DOT_REFACTORINGS;
     return FileSystem.getInstance().getFileByPath(refactoringsPath);
@@ -35,7 +35,7 @@ public class RefactoringsPersistence {
 
     Document document = new HistoryWriter().saveHistory(log);
     if (refactoringsFile.isReadOnly()) {
-      LOG.error("Can't write to " + refactoringsFile.getAbsolutePath());
+      LOG.error("Can't write to " + refactoringsFile.getPath());
       return;
     }
 
@@ -54,7 +54,7 @@ public class RefactoringsPersistence {
       JDOMUtil.createSAXParser().parse(JDOMUtil.loadSource(refactoringsFile), handler);
       return handler.getResult();
     } catch (SAXParseException e) {
-      LOG.warning(refactoringsFile.getAbsolutePath() + " line " + e.getLineNumber());
+      LOG.warning(refactoringsFile.getPath() + " line " + e.getLineNumber());
     } catch (IOException e) {
       LOG.error(e);
     } catch (SAXException e) {

@@ -25,7 +25,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -155,14 +154,23 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
     IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    List<IFile> files = sourcesDir.list(new IFileNameFilter() {
-      public boolean accept(IFile parent, String name) {
-        return name.startsWith(HASH_PREFIX);
-      }
-    });
-    if (files.size() != 1) return null;
+    IFile hashFile = null;
 
-    return files.get(0).getName().substring(HASH_PREFIX.length());
+    for (IFile f : sourcesDir.getChildren()) {
+      if (f.getName().startsWith(HASH_PREFIX)) {
+        if (hashFile == null) {
+          hashFile = f;
+        } else {
+          // More than one hash file
+          return null;
+        }
+      }
+    }
+
+    if (hashFile == null) {
+      return null;
+    }
+    return hashFile.getName().substring(HASH_PREFIX.length());
   }
 
   public static String getContentHash(SModelDescriptor sm) {

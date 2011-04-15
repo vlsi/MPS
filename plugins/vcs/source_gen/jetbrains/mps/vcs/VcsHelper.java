@@ -81,7 +81,7 @@ public class VcsHelper {
     File tmp = FileUtil.createTmpDir();
     VcsHelperUtil.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, VcsHelper.FsMemoryMergeVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
-      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
+      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + VcsHelper.FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
     File zipfile = VcsHelperUtil.chooseZipFileForModelFile(modelFile.getName());
     zipfile.getParentFile().mkdirs();
@@ -92,7 +92,7 @@ public class VcsHelper {
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
-      final SModel onDisk = ModelUtils.readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(new File(modelFile.getAbsolutePath())), modelFile.getAbsolutePath());
+      final SModel onDisk = ModelUtils.readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(new File(modelFile.getPath())), modelFile.getPath());
       return VcsHelper.showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);

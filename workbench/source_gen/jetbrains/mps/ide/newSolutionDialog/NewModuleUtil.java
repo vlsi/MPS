@@ -22,7 +22,7 @@ public class NewModuleUtil {
     solutionDescriptor.setUUID(UUID.randomUUID().toString());
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
-    modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
+    modelRoot.setPath(solutionFile.getParent().getPath());
     solutionDescriptor.getModelRoots().add(modelRoot);
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {

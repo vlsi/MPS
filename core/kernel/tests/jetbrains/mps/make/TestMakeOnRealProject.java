@@ -158,7 +158,7 @@ public class TestMakeOnRealProject {
           @Override
           public void run() {
             IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
-            IFile javaFile = outputPath.child(TEST_JAVA_FILE);
+            IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
             long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
             if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
               Assert.fail("Can't touch the file " + javaFile);
@@ -185,7 +185,7 @@ public class TestMakeOnRealProject {
           @Override
           public void run() {
             IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
-            outputPath.child(TEST_JAVA_FILE).delete();
+            outputPath.getDescendant(TEST_JAVA_FILE).delete();
           }
         });
       }
@@ -199,7 +199,7 @@ public class TestMakeOnRealProject {
 
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "class");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "class");
     List<File> sources = new ArrayList<File>();
     for (String path : module.getSourcePaths()) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
@@ -209,7 +209,7 @@ public class TestMakeOnRealProject {
 
   private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "txt");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "txt");
 
     Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }
@@ -247,8 +247,8 @@ public class TestMakeOnRealProject {
             createJavaFiles(myCreatedSolution);
 
             String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
-            IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().child("resources");
-            myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getAbsolutePath());
+            IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
+            myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
             createFile(resourceDir, "res.0.1/test.txt", "test");
           }
         });
@@ -263,7 +263,7 @@ public class TestMakeOnRealProject {
   private void createFile(IFile dir, String fileName, String text) {
     // should be invoked in write action
     FileSystem fileSystem = FileSystem.getInstance();
-    IFile ifile = dir.child(fileName);
+    IFile ifile = dir.getDescendant(fileName);
     ifile.createNewFile();
     Writer writer = null;
     try {
@@ -288,7 +288,7 @@ public class TestMakeOnRealProject {
 
   private Language createNewLanguage() {
     String languageNamespace = "TestLanguage";
-    IFile descriptorFile = myTmpDir.child(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
+    IFile descriptorFile = myTmpDir.getDescendant(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
     Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
     descriptorFile.createNewFile();
     language.save();
@@ -297,7 +297,7 @@ public class TestMakeOnRealProject {
   }
 
   private Solution createNewSolution() {
-    IFile descriptorFile = myTmpDir.child("TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION);
+    IFile descriptorFile = myTmpDir.getDescendant("TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION);
 
     String fileName = descriptorFile.getName();
 
@@ -308,7 +308,7 @@ public class TestMakeOnRealProject {
 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
-    modelRoot.setPath(descriptorFile.getParent().getAbsolutePath());
+    modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
     

@@ -60,18 +60,18 @@ public class IFileUtils {
     IFile tmpHome = FileSystem.getInstance().getFileByPath(System.getProperty("java.io.tmpdir"));
     int i = 1;
     String prefix = "mps-" + new SimpleDateFormat("yyyy-MM-dd-").format(new Date());
-    while (tmpHome.child(prefix + i).exists()) {
+    while (tmpHome.getDescendant(prefix + i).exists()) {
       i++;
     }
 
-    IFile result = tmpHome.child(prefix + i);
+    IFile result = tmpHome.getDescendant(prefix + i);
     result.mkdirs();
     return result;
   }
 
   public static String getCanonicalPath(IFile file) {
     if (file == null) return null;
-    final String absolutePath = file.getAbsolutePath();
+    final String absolutePath = file.getPath();
     final int index = absolutePath.indexOf('!');
     if (index == -1) {
       return FileUtil.getCanonicalPath(absolutePath);

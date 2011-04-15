@@ -67,7 +67,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   public String calculateNodeIdentifier() {
     IFile descriptorFile = myDevKit.getDescriptorFile();
     assert descriptorFile != null;
-    return descriptorFile.getAbsolutePath();
+    return descriptorFile.getPath();
   }
 
   public ActionGroup getActionGroup() {

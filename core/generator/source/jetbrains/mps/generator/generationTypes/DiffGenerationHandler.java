@@ -104,7 +104,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     }
     IFile outputRootDir = FileSystem.getInstance().getFileByPath(myOutputModelRefToPath.get(outputModelRef));
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputRootDir);
-    return new File(outputDir.getAbsolutePath());
+    return new File(outputDir.getPath());
   }
 
   @Override

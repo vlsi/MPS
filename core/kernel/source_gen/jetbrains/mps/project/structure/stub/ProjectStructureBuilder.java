@@ -59,7 +59,7 @@ public abstract class ProjectStructureBuilder {
     fill(result, source);
     SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
     SPropertyOperations.set(result, "genPath", source.getGenPath());
-    SPropertyOperations.set(result, "languagePath", myFile.getAbsolutePath());
+    SPropertyOperations.set(result, "languagePath", myFile.getPath());
     for (SModelReference ref : source.getAccessoryModels()) {
       SLinkOperations.getTargets(result, "accessoryModels", true).add(convert(ref));
     }
@@ -87,7 +87,7 @@ public abstract class ProjectStructureBuilder {
     fill(result, source);
     SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
-    SPropertyOperations.set(result, "solutionPath", myFile.getAbsolutePath());
+    SPropertyOperations.set(result, "solutionPath", myFile.getPath());
     collectModels(result);
     return result;
   }
@@ -95,7 +95,7 @@ public abstract class ProjectStructureBuilder {
   private SNode convertDevkit(DevkitDescriptor source) {
     SNode result = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.lang.project.structure.DevKit", null);
     fill(result, source);
-    SPropertyOperations.set(result, "devkitPath", myFile.getAbsolutePath());
+    SPropertyOperations.set(result, "devkitPath", myFile.getPath());
     SPropertyOperations.set(result, "plugin", source.getPlugin());
     for (ModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));

@@ -46,7 +46,7 @@ class JavaStreamHandler implements StreamHandler {
   @Override
   public void saveStream(String name, String content, boolean isCache) {
     IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
@@ -54,7 +54,7 @@ class JavaStreamHandler implements StreamHandler {
   @Override
   public void saveStream(String name, Element content, boolean isCache) {
     IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
@@ -62,7 +62,7 @@ class JavaStreamHandler implements StreamHandler {
   @Override
   public void saveStream(String name, byte[] content, boolean isCache) {
     IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
   }
@@ -70,7 +70,7 @@ class JavaStreamHandler implements StreamHandler {
   @Override
   public boolean touch(String name, boolean isCache) {
     IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
     mySavedFiles.add(file);
     return file.exists();
   }
@@ -87,7 +87,7 @@ class JavaStreamHandler implements StreamHandler {
     // clear garbage
     final List<IFile> filesToDelete = new ArrayList<IFile>();
     for (IFile dir : directories) {
-      for (IFile outputDirectoryFile : dir.list()) {
+      for (IFile outputDirectoryFile : dir.getChildren()) {
         if (outputDirectoryFile.isDirectory()) continue;
         if (mySavedFiles.contains(outputDirectoryFile)) continue;
         filesToDelete.add(outputDirectoryFile);

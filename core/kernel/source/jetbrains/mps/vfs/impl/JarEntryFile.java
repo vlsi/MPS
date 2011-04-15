@@ -16,7 +16,6 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
 
 import java.io.File;
@@ -24,7 +23,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class JarEntryFile implements IFileEx {
@@ -59,7 +57,7 @@ public class JarEntryFile implements IFileEx {
     }
   }
 
-  public List<IFile> list() {
+  public List<IFile> getChildren() {
     if (!isDirectory()) {
       return null;
     }
@@ -75,23 +73,7 @@ public class JarEntryFile implements IFileEx {
     return result;
   }
 
-  public List<IFile> list(IFileNameFilter filter) {
-    List<IFile> files = list();
-
-    Iterator<IFile> result = files.iterator();
-
-    while (result.hasNext()) {
-      IFile file = result.next();
-
-      if (!filter.accept(this, file.getName())) {
-        result.remove();
-      }
-    }
-
-    return files;
-  }
-
-  public IFile child(String suffix) {
+  public IFile getDescendant(String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path);
   }
@@ -100,7 +82,7 @@ public class JarEntryFile implements IFileEx {
     return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }
 
-  public String getAbsolutePath() {
+  public String getPath() {
     return myJarFile.getAbsolutePath() + "!" + myEntryPath;
   }
 
@@ -126,7 +108,7 @@ public class JarEntryFile implements IFileEx {
 
   public InputStream openInputStream() throws IOException {
     if (myJarFileData == null) {
-      throw new IOException("File is not found " + getAbsolutePath());
+      throw new IOException("File is not found " + getPath());
     }
     return myJarFileData.openStream(myEntryPath);
   }

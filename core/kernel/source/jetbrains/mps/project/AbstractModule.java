@@ -201,12 +201,12 @@ public abstract class AbstractModule implements IModule {
 
   public List<StubPath> getOwnStubPaths() {
     if (isCompileInMPS() && getClassesGen() != null) {
-      String file = getClassesGen().getAbsolutePath();
+      String file = getClassesGen().getPath();
       if (file.endsWith("!/")) {
         file = file.substring(0, file.length() - 2);
       }
       if (new File(file).exists()) {
-        return Collections.singletonList(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
+        return Collections.singletonList(new StubPath(getClassesGen().getPath(), LanguageID.JAVA_MANAGER));
       }
     }
     return Collections.emptyList();
@@ -315,13 +315,13 @@ public abstract class AbstractModule implements IModule {
 
     if (hasClasspath && !skipClasspath) {
       ClassPathEntry bundleHome = new ClassPathEntry();
-      bundleHome.setPath(bundleHomeFile.getAbsolutePath());
+      bundleHome.setPath(bundleHomeFile.getPath());
       descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
     }
 
     for (String jar : innerJars) {
       ClassPathEntry innerJar = new ClassPathEntry();
-      innerJar.setPath(bundleHomeFile.getAbsolutePath() + "!/" + jar);
+      innerJar.setPath(bundleHomeFile.getPath() + "!/" + jar);
       descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(innerJar));
     }
   }

@@ -32,11 +32,11 @@ public class ProjectPathUtil {
     }
     if (moduleDescriptor.isReadOnly()) {
       // packaged
-      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getAbsolutePath() + "!";
+      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getPath() + "!";
       return FileSystem.getInstance().getFileByPath(filename);
     }
     IFile parent = moduleDescriptor.getParent();
-    return parent != null ? parent.child("classes_gen") : null;
+    return parent != null ? parent.getDescendant("classes_gen") : null;
   }
 
   public static IFile getClassesFolder(IFile moduleDescriptor) {
@@ -45,11 +45,11 @@ public class ProjectPathUtil {
     }
     if (moduleDescriptor.isReadOnly()) {
       // packaged
-      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getAbsolutePath() + "!";
+      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getPath() + "!";
       return FileSystem.getInstance().getFileByPath(filename);
     }
     IFile parent = moduleDescriptor.getParent();
-    return parent != null ? parent.child("classes") : null;
+    return parent != null ? parent.getDescendant("classes") : null;
   }
 
   public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
@@ -65,14 +65,14 @@ public class ProjectPathUtil {
       return FileSystem.getInstance().getFileByPath(generatorOutputPath);
     }
     if (file != null) {
-      return file.getParent().child("source_gen");
+      return file.getParent().getDescendant("source_gen");
     }
     return null;
   }
 
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
     if (file != null && descriptor instanceof SolutionDescriptor) {
-      return file.getParent().child("test_gen");
+      return file.getParent().getDescendant("test_gen");
     }
     return null;
   }

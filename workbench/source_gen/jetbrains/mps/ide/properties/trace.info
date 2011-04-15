@@ -605,7 +605,7 @@
     <nodeInfo nodeId="4060390951635973530" fileName="StandardComponents.java" startLine="393" startPosition="56" endLine="394" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4060390951635973535" fileName="StandardComponents.java" startLine="394" startPosition="58" endLine="395" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4060390951635973549" fileName="StandardComponents.java" startLine="396" startPosition="29" endLine="397" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4060390951635973550" fileName="StandardComponents.java" startLine="398" startPosition="9" endLine="399" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4060390951635973550" fileName="StandardComponents.java" startLine="398" startPosition="9" endLine="399" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4060390951635973557" fileName="StandardComponents.java" startLine="401" startPosition="7" endLine="402" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4060390951635973563" fileName="StandardComponents.java" startLine="402" startPosition="48" endLine="403" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4060390951635973568" fileName="StandardComponents.java" startLine="403" startPosition="52" endLine="404" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -864,7 +864,7 @@
       <varInfo nodeId="4060390951635972913" varName="propName" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="193" startPosition="38" endLine="200" endPosition="36" />
-    <scopeInfo nodeId="4060390951635973524" fileName="StandardComponents.java" startLine="392" startPosition="50" endLine="399" endPosition="54">
+    <scopeInfo nodeId="4060390951635973524" fileName="StandardComponents.java" startLine="392" startPosition="50" endLine="399" endPosition="46">
       <varInfo nodeId="4060390951635973536" varName="result" />
       <varInfo nodeId="4060390951635973526" varName="chooser" />
     </scopeInfo>
