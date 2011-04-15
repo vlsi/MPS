@@ -109,8 +109,8 @@
       <varInfo nodeId="1199555206076" varName="targetModel" />
     </scopeInfo>
     <scopeInfo nodeId="1198077782189" fileName="MoveNodes.java" startLine="58" startPosition="80" endLine="86" endPosition="18">
-      <varInfo nodeId="1199553244201" varName="superConceptsScope" />
       <varInfo nodeId="1198078072589" varName="targetNode" />
+      <varInfo nodeId="1199553244201" varName="superConceptsScope" />
       <varInfo nodeId="1198077941206" varName="concept" />
       <varInfo nodeId="1198080415517" varName="childLinkDeclarations" />
       <varInfo nodeId="1199553331595" varName="linkDeclarations" />
