@@ -6,15 +6,16 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private IScope myScope;
@@ -35,11 +36,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   }
 
   @NotNull
-  public List<Classifier> getClassifiers() {
+  public List<SNode> getClassifiers() {
     List<SModelDescriptor> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
-    List<Classifier> result = new ArrayList<Classifier>();
+    List<SNode> result = new ArrayList<SNode>();
     for (SModelDescriptor model : models) {
-      List<Classifier> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
+      List<SNode> classifiers = BaseAdapter.toNodes(ClassifiersCache.getInstance(model).getClassifiers());
       result.addAll(classifiers);
     }
     return result;

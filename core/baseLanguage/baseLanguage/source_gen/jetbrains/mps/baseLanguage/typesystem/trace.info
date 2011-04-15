@@ -237,7 +237,7 @@
   <unitInfo fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BaseVariableDeclaration_InferenceRule" />
   <unitInfo fileName="check_AntiquotationContents_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AntiquotationContents_NonTypesystemRule" />
   <unitInfo fileName="check_ClassifierOverridingFinalMethods_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassifierOverridingFinalMethods_NonTypesystemRule" />
-  <unitInfo fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_LocalStaticMethodCall_NonTypesystemRule" />
+  <unitInfo fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_LocalStaticMethodCall_NonTypesystemRule" />
   <unitInfo fileName="any_type_comparable_with_nulltype_ComparisonRule.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_with_nulltype_ComparisonRule" />
   <unitInfo fileName="check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule" />
   <unitInfo fileName="check_InnerClassesCantHaveStaticFields_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_InnerClassesCantHaveStaticFields_NonTypesystemRule" />
@@ -3869,29 +3869,29 @@
     <scopeInfo nodeId="1228406942094" fileName="check_AbstractMethodsInClass_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="46" endPosition="5" />
   </root>
   <root nodeId="1228992488875">
-    <nodeInfo nodeId="1228992644008" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="29" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240921912012" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="29" startPosition="124" endLine="30" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240922376322" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="31" startPosition="43" endLine="32" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240922446157" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="33" startPosition="44" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="39" startPosition="60" endLine="40" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240922428078" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="32" startPosition="184" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="37" startPosition="162" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240922339963" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="30" startPosition="86" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1228992667565" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1240922428079" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="33" startPosition="44" endLine="34" endPosition="79" />
-    <scopeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="38" startPosition="7" endLine="40" endPosition="261" />
-    <scopeInfo nodeId="1240922428078" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="32" startPosition="184" endLine="35" endPosition="7">
+    <nodeInfo nodeId="1228992644008" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240921912012" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="28" startPosition="124" endLine="29" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240922376322" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="30" startPosition="43" endLine="31" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240922446157" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="32" startPosition="44" endLine="33" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="38" startPosition="60" endLine="39" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240922428078" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="31" startPosition="147" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="36" startPosition="162" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240922339963" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="29" startPosition="86" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1228992667565" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1240922428079" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="32" startPosition="44" endLine="33" endPosition="79" />
+    <scopeInfo nodeId="1228992682236" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="37" startPosition="7" endLine="39" endPosition="261" />
+    <scopeInfo nodeId="1240922428078" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="31" startPosition="147" endLine="34" endPosition="7">
       <varInfo nodeId="1240922428080" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="1240922339964" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="31" startPosition="43" endLine="35" endPosition="7">
+    <scopeInfo nodeId="1240922339964" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="30" startPosition="43" endLine="34" endPosition="7">
       <varInfo nodeId="1240922376323" varName="classifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="1228992667566" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="37" startPosition="162" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1240922339963" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="30" startPosition="86" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1228992667566" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="36" startPosition="162" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1240922339963" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="29" startPosition="86" endLine="35" endPosition="5">
       <varInfo nodeId="1240922339967" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1228992488876" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="42" endPosition="5">
+    <scopeInfo nodeId="1228992488876" fileName="check_LocalStaticMethodCall_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="41" endPosition="5">
       <varInfo nodeId="1228992644009" varName="containers" />
       <varInfo nodeId="1240921912013" varName="containersAndParentClasses" />
     </scopeInfo>

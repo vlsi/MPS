@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,7 +28,7 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
-      List<SNode> classifiers = ((List<SNode>) BaseAdapter.toNodes(new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(classConcept))).getClassifiers()));
+      List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(classConcept))).getClassifiers();
       for (SNode classifier : classifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }

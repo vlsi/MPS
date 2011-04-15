@@ -7,10 +7,9 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.NameUtil;
@@ -19,6 +18,8 @@ import jetbrains.mps.baseLanguage.structure.ClassCreator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import java.util.Map;
@@ -35,14 +36,14 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
   }
 
   @NotNull
-  public List<Classifier> getClassifiers() {
-    List<Classifier> list = super.getClassifiers();
-    List<Classifier> result = new ArrayList<Classifier>(list.size());
-    for (Classifier classifier : list) {
-      if (classifier instanceof Interface) {
+  public List<SNode> getClassifiers() {
+    List<SNode> list = super.getClassifiers();
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode classifier : list) {
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
         continue;
       }
-      if (classifier instanceof ClassConcept && ((ClassConcept) classifier).getAbstractClass()) {
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "abstractClass")) {
         continue;
       }
       result.add(classifier);

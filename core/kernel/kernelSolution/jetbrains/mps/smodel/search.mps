@@ -1284,7 +1284,7 @@
   </root>
   <root id="4642948870877886891">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4642948870877886892" />
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4642948870877886893">
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2434295018755156148">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4642948870877889221" resolveInfo="ISearchScope" />
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="4642948870877886894">

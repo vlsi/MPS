@@ -6,11 +6,11 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class VisibleThrowablesScope extends VisibleClassifiersScope {
   public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint, IScope scope) {
@@ -18,11 +18,11 @@ public class VisibleThrowablesScope extends VisibleClassifiersScope {
   }
 
   @NotNull
-  public List<Classifier> getClassifiers() {
-    List<Classifier> result = new ArrayList<Classifier>();
-    ClassConcept throwable = SModelUtil_new.findNodeByFQName("java.lang.Throwable", ClassConcept.class, GlobalScope.getInstance());
-    for (Classifier cls : super.getClassifiers()) {
-      if (ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers().contains(throwable)) {
+  public List<SNode> getClassifiers() {
+    List<SNode> result = new ArrayList<SNode>();
+    SNode throwable = SModelUtil.findNodeByFQName("java.lang.Throwable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), GlobalScope.getInstance());
+    for (SNode cls : super.getClassifiers()) {
+      if (ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers().contains(BaseAdapter.fromNode(throwable))) {
         result.add(cls);
       }
     }

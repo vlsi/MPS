@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class BaseLanguageUtil {
@@ -33,12 +36,17 @@ public class BaseLanguageUtil {
     return scope.getClassifiers().contains(toClassifier);
   }
 
+  @Deprecated
   public static ClassConcept getSuperclass(ClassConcept subClass) {
     ClassifierType superclass = subClass.getSuperclass();
     if (superclass != null) {
       return (ClassConcept) superclass.getClassifier();
     }
     return null;
+  }
+
+  public static SNode getSuperclass(SNode subClass) {
+    return SNodeOperations.cast(check_b9g70l_a0a0d(SLinkOperations.getTarget(subClass, "superclass", true)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
   public static ClassifierType createObjectClassType(SModel model, IScope scope) {
@@ -53,5 +61,12 @@ public class BaseLanguageUtil {
     ClassifierType objectType = ClassifierType.newInstance(model);
     objectType.setClassifier(objectClass);
     return objectType;
+  }
+
+  private static SNode check_b9g70l_a0a0d(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
+    }
+    return null;
   }
 }

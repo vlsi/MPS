@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.SNode;
 
 public interface IClassifiersSearchScope extends ISearchScope {
@@ -27,6 +26,6 @@ public interface IClassifiersSearchScope extends ISearchScope {
   public static final int ANYTHING = 65535;
 
   @NotNull
-  public List<Classifier> getClassifiers();
+  public List<SNode> getClassifiers();
   public List<SNode> getClassifierNodes();
 }

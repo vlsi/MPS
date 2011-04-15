@@ -11,15 +11,14 @@ import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import java.util.Set;
 import jetbrains.mps.smodel.SNode;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.AnonymousClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -42,19 +41,19 @@ public class StaticFieldReference_classifier_ReferentConstraint extends BaseNode
     ), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope()) {
       @NotNull
       @Override
-      public List<Classifier> getClassifiers() {
+      public List<SNode> getClassifiers() {
         Set<SNode> enclosingClassifierAncestors = SetSequence.fromSet(new HashSet<SNode>());
         SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)));
 
-        List<Classifier> result = new ArrayList();
-        for (Classifier classifier : ListSequence.fromList(super.getClassifiers())) {
-          if (classifier.getNonStatic()) {
+        List<SNode> result = new ArrayList<SNode>();
+        for (SNode classifier : ListSequence.fromList(super.getClassifiers())) {
+          if (SPropertyOperations.getBoolean(classifier, "nonStatic")) {
             continue;
           }
-          if (classifier instanceof AnonymousClass) {
+          if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
             continue;
           }
-          List<SNode> ancestors = classifier.getNode().getAncestors(true);
+          List<SNode> ancestors = SNodeOperations.getAncestors(classifier, null, true);
           // Filtering out Classifiers located in third-party containers (not Classifiers) 
           // and having no common Classifier container with enclosing node. 
           // Useful for Classifiers contained in EditorTestCases 

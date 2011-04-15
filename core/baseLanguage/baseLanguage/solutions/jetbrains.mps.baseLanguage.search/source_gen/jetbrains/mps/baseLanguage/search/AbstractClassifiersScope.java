@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.BaseAdapter;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +27,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    return this.getNodesFormClassifiersList(BaseAdapter.toNodes(getClassifiers()), this.myConstraint, condition);
+    return this.getNodesFormClassifiersList(getClassifiers(), this.myConstraint, condition);
   }
 
   protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
@@ -107,6 +106,6 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
   }
 
   public List<SNode> getClassifierNodes() {
-    return BaseAdapter.toNodes(getClassifiers());
+    return getClassifiers();
   }
 }

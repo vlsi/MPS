@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
@@ -25,7 +26,6 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope {
   private Classifier myTopClassifier;
@@ -50,11 +50,11 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
 
   @NotNull
-  public List<Classifier> getClassifiers() {
+  public List<SNode> getClassifiers() {
     if (this.myTopClassifier == null) {
-      return new ArrayList<Classifier>();
+      return new ArrayList<SNode>();
     }
-    return new ArrayList<Classifier>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getClassifiers());
+    return BaseAdapter.toNodes(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getClassifiers());
   }
 
   @NotNull

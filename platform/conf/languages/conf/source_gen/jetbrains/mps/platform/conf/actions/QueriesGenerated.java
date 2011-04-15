@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -114,13 +113,13 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return Sequence.fromIterable(((Iterable<Classifier>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<Classifier, SNode>() {
-              public SNode select(Classifier cls) {
-                return (SNode) cls.getNode();
+            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode cls) {
+                return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode node) {
-                return BeanUtil.isBean(SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+                return BeanUtil.isBean(node);
               }
             }).toListSequence();
           }
@@ -158,9 +157,9 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return Sequence.fromIterable(((Iterable<Classifier>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<Classifier, SNode>() {
-              public SNode select(Classifier cls) {
-                return (SNode) cls.getNode();
+            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode cls) {
+                return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface");
               }
             }).toListSequence();
           }
@@ -275,12 +274,12 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            List<Classifier> classifiers = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers();
+            List<SNode> classifiers = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers();
             List<Tuples._2<SNode, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<SNode, SNode>>());
             for (final SNode iep : SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint")) {
-              for (SNode cc : Sequence.fromIterable(((Iterable<Classifier>) classifiers)).<SNode>select(new ISelector<Classifier, SNode>() {
-                public SNode select(Classifier cls) {
-                  return (SNode) cls.getNode();
+              for (SNode cc : ListSequence.fromList(classifiers).<SNode>select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode cls) {
+                  return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cls) {

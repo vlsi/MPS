@@ -5,37 +5,38 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class AllSubclassifiersScope extends AbstractClassifiersScope {
   private final SModel model;
   private final IScope scope;
-  private Map<Classifier, Boolean> visitedClassifiersMap = null;
-  private final Classifier rootClassifier;
-  private List<Classifier> foundClassifiers;
+  private Map<SNode, Boolean> visitedClassifiersMap = null;
+  private final SNode rootClassifier;
+  private List<SNode> foundClassifiers;
 
   public AllSubclassifiersScope(Classifier classifier, SModel model, int constraint, IScope scope) {
     super(constraint);
-    this.rootClassifier = classifier;
+    this.rootClassifier = classifier.getNode();
     this.model = model;
     this.scope = scope;
   }
 
   @Override
   @NotNull
-  public List<Classifier> getClassifiers() {
+  public List<SNode> getClassifiers() {
     this.init();
     return this.foundClassifiers;
   }
@@ -43,40 +44,56 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
   @SuppressWarnings(value = {"unchecked"})
   private void init() {
     if (this.foundClassifiers == null) {
-      this.visitedClassifiersMap = new HashMap<Classifier, Boolean>();
+      this.visitedClassifiersMap = new HashMap<SNode, Boolean>();
       this.visitedClassifiersMap.put(this.rootClassifier, true);
       ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(this.model, false, this.scope);
-      this.foundClassifiers = new ArrayList<Classifier>((List) searchScope.getAdapters(new Condition<INodeAdapter>() {
-        public boolean met(INodeAdapter adapter) {
-          return adapter instanceof Classifier && AllSubclassifiersScope.this.checkSubclassifier((Classifier) adapter);
+      this.foundClassifiers = new ArrayList<SNode>((List) searchScope.getNodes(new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && AllSubclassifiersScope.this.checkSubclassifier(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       }));
       this.visitedClassifiersMap.clear();
     }
   }
 
-  private boolean checkSubclassifier(Classifier cls) {
+  private boolean checkSubclassifier(SNode cls) {
     if (this.visitedClassifiersMap.containsKey(cls)) {
       return this.visitedClassifiersMap.get(cls);
     }
     boolean result = false;
-    if (cls instanceof ClassConcept) {
-      ClassConcept extendedClass = BaseLanguageUtil.getSuperclass((ClassConcept) cls);
+    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      SNode extendedClass = BaseLanguageUtil.getSuperclass(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       if (extendedClass != null && this.checkSubclassifier(extendedClass)) {
         result = true;
       }
       if (!(result)) {
-        for (Iterator<ClassifierType> it = ((ClassConcept) cls).implementedInterfaces(); it.hasNext();) {
-          if (this.checkSubclassifier(it.next().getClassifier())) {
+        for (SNode iface : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "classifier", false) != null);
+          }
+        }).<SNode>select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classifier", false);
+          }
+        })) {
+          if (this.checkSubclassifier(iface)) {
             result = true;
             break;
           }
         }
       }
     } else
-    if (cls instanceof Interface) {
-      for (Iterator<ClassifierType> it = ((Interface) cls).extendedInterfaces(); it.hasNext();) {
-        if (this.checkSubclassifier(it.next().getClassifier())) {
+    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      for (SNode iface : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface")), "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "classifier", false) != null);
+        }
+      }).<SNode>select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "classifier", false);
+        }
+      })) {
+        if (this.checkSubclassifier(iface)) {
           result = true;
           break;
         }

@@ -10,9 +10,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VisibleClassifiersScope extends ReachableClassifiersScope {
@@ -31,11 +29,10 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
   }
 
   @NotNull
-  public List<Classifier> getClassifiers() {
-    List<Classifier> list = super.getClassifiers();
-    List<Classifier> result = new ArrayList<Classifier>();
-    for (Classifier classifier : list) {
-      if (VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(BaseAdapter.fromAdapter(classifier), "jetbrains.mps.baseLanguage.structure.IVisible"))) {
+  public List<SNode> getClassifiers() {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode classifier : super.getClassifiers()) {
+      if (VisibilityUtil.isVisible(myContextNode, classifier)) {
         result.add(classifier);
       }
     }
