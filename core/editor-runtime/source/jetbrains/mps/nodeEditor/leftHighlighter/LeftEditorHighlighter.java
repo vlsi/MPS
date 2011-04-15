@@ -82,6 +82,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private EditorComponent myEditorComponent;
   private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
+  private FoldingButtonsPainter myFoldingButtonsPainter;
 
   private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
 
@@ -103,7 +104,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private int myRightFoldingAreaWidth;
   private int myWidth;
   private int myHeight;
-  
+
   public LeftEditorHighlighter(@NotNull EditorComponent editorComponent) {
     setBackground(BACKGROUND_COLOR);
     myEditorComponent = editorComponent;
@@ -176,8 +177,11 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         }
       }
     });
-    myFoldingAreaPainters.add(myBracketsPainter = new BracketsPainter(this));
-    myFoldingAreaPainters.add(new FoldingButtonsPainter(this));
+    myBracketsPainter = new BracketsPainter(this);
+    myFoldingButtonsPainter = new FoldingButtonsPainter(this);
+
+    myFoldingAreaPainters.add(myBracketsPainter);
+    myFoldingAreaPainters.add(myFoldingButtonsPainter);
   }
 
   @NotNull
@@ -207,13 +211,29 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     MPSToolTipManager.getInstance().unregisterComponent(this);
   }
 
+  public void setDefaultFoldingAreaPaintersEnabled(boolean enabled) {
+    if (enabled) {
+      addFoldingAreaPainter(myBracketsPainter);
+      addFoldingAreaPainter(myFoldingButtonsPainter);
+    } else {
+      removeFoldingAreaPainter(myBracketsPainter);
+      removeFoldingAreaPainter(myFoldingButtonsPainter);
+    }
+  }
+
   public void addFoldingAreaPainter(AbstractFoldingAreaPainter painter) {
+    if (myFoldingAreaPainters.contains(painter)) {
+      return;
+    }
     myFoldingAreaPainters.add(painter);
     relayout(true);
     repaint();
   }
 
   public void removeFoldingAreaPainter(AbstractFoldingAreaPainter painter) {
+    if (!myFoldingAreaPainters.contains(painter)) {
+      return;
+    }
     myFoldingAreaPainters.remove(painter);
     relayout(true);
     repaint();

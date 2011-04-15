@@ -12,12 +12,12 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Dimension;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
 import javax.swing.JComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.List;
@@ -36,6 +36,12 @@ public class DiffEditor implements EditorMessageOwner {
     myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
     myInspector = new InspectorEditorComponent();
     myInspector.getExternalComponent().setPreferredSize(new Dimension());
+
+    Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
+      public void visit(EditorComponent ec) {
+        ec.getLeftEditorHighlighter().setDefaultFoldingAreaPaintersEnabled(false);
+      }
+    });
 
     if (SNodeOperations.getModel(node) != null) {
       setReadOnly(SNodeOperations.getModel(node).isNotEditable());

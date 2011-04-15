@@ -37,7 +37,9 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -211,8 +213,10 @@ public class ModelDifferenceDialog extends BaseDialog {
     protected void doUpdatePresentation() {
       List<ModelChange> changes = MapSequence.fromMap(myRootToChange).get(myRootId);
 
-      if (ListSequence.fromList(changes).count() == 1) {
-        setColor(ListSequence.fromList(changes).first().getType().getTreeColor());
+      if (ListSequence.fromList(changes).first() instanceof AddRootChange) {
+        setColor(ChangeType.ADD.getTreeColor());
+      } else if (ListSequence.fromList(changes).first() instanceof DeleteRootChange) {
+        setColor(ChangeType.DELETE.getTreeColor());
       } else {
         setColor(ChangeType.CHANGE.getTreeColor());
       }
