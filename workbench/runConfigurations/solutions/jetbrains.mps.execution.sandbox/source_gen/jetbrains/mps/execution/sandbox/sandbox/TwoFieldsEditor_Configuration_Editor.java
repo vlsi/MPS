@@ -4,6 +4,7 @@ package jetbrains.mps.execution.sandbox.sandbox;
 
 import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
 import javax.swing.JTextField;
+import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -16,6 +17,11 @@ public class TwoFieldsEditor_Configuration_Editor extends SettingsEditorEx<TwoFi
   private JTextField field2;
 
   public TwoFieldsEditor_Configuration_Editor() {
+    super(new Factory<TwoFieldsEditor_Configuration>() {
+      public TwoFieldsEditor_Configuration create() {
+        return new TwoFieldsEditor_Configuration();
+      }
+    });
   }
 
   public void disposeEditor() {

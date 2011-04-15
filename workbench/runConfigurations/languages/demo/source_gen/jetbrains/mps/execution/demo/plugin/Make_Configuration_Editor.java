@@ -4,6 +4,7 @@ package jetbrains.mps.execution.demo.plugin;
 
 import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
 import javax.swing.JCheckBox;
+import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 
@@ -11,6 +12,11 @@ public class Make_Configuration_Editor extends SettingsEditorEx<Make_Configurati
   private JCheckBox myCheckBox;
 
   public Make_Configuration_Editor() {
+    super(new Factory<Make_Configuration>() {
+      public Make_Configuration create() {
+        return new Make_Configuration();
+      }
+    });
   }
 
   public void disposeEditor() {

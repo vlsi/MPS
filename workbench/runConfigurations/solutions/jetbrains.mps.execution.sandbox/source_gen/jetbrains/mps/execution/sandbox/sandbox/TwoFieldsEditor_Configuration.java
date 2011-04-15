@@ -24,6 +24,12 @@ public class TwoFieldsEditor_Configuration implements IPersistentConfiguration, 
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    if (check_t4knop_a0a0(this.getProperty1())) {
+      throw new RuntimeConfigurationException("Field1 should not contain spaces");
+    }
+    if (check_t4knop_a1a0(this.getProperty2())) {
+      throw new RuntimeConfigurationException("Field2 should not contain dots");
+    }
   }
 
   @Override
@@ -78,6 +84,20 @@ public class TwoFieldsEditor_Configuration implements IPersistentConfiguration, 
       myEditorEx = getEditor();
     }
     return myEditorEx;
+  }
+
+  private static boolean check_t4knop_a0a0(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains(" ");
+    }
+    return false;
+  }
+
+  private static boolean check_t4knop_a1a0(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains(".");
+    }
+    return false;
   }
 
   public class MyState {

@@ -139,10 +139,11 @@
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.plugin.Make_Configuration_Editor" file="Make_Configuration_Editor.java">
-    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Make_Configuration" />
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="com.intellij.openapi.util.Factory" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Make_Configuration" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">

@@ -37,18 +37,25 @@
   <dependency className="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" file="SettingsEditorEx.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.runtime.SettingsEditorPanel" file="SettingsEditorPanel.java">
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditorListener" />
-    <classNode dependClassName="javax.swing.Action" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.ITemplatePersistentConfiguration" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditorListener" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="javax.swing.Action" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
 </dependenciesRoot>
 

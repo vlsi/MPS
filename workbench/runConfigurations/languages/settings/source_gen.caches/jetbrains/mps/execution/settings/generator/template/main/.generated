@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9hj1ur2p853rrggaqzfodixy6qypoar">
+<dependencies version="2" modelHash="-6fh5o59istdm1148uohuyf8uv67a8du">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
@@ -111,13 +111,13 @@
   <source id="5041115067675811045" name="reduce_ConstructorParameterReferenceInEditor" hash="6kjav2ddgoshwclyfpknaagfpk0gaqj">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5041115067675811058" name="reduce_PersistentConfigurationTemplateInitializer" hash="-36uo7t8cidn06wgq50svyvjl75mpw0q">
+  <source id="5041115067675811058" name="reduce_PersistentConfigurationTemplateInitializer" hash="-8el0azk4zifwa32b720320daoo9mtl4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5041115067675811090" name="weave_PersistentConfigurationEditorTemplateFields" hash="-8jfpfs2cpjint2y20l1sya693z8jmfd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5041115067675811122" name="weave_PersistentConfigurationEditorTemplateConstructor" hash="7xso8wf7663b4c6uwiijf6dv35p2jwo">
+  <source id="5041115067675811122" name="weave_PersistentConfigurationEditorTemplateConstructor" hash="-4y10wqmg5m4jgx4rix28lasxy3o7hhs">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5041115067675811242" name="reduce_TemplatePersistentconfiguration" hash="-a2n5sdrue9lurcskxer26f2larbcjc1">
