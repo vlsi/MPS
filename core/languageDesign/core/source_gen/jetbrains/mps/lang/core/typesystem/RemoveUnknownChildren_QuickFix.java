@@ -12,7 +12,7 @@ public class RemoveUnknownChildren_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription() {
-    return "Child of undeclared role \"" + ((String) RemoveUnknownChildren_QuickFix.this.getField("role")[0]) + "\"";
+    return "Child in undeclared role \"" + ((String) RemoveUnknownChildren_QuickFix.this.getField("role")[0]) + "\"";
   }
 
   public void execute(SNode node) {

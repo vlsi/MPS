@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RemoveUnknownReference_QuickFix.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix" />
+  <unitInfo fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix" />
   <unitInfo fileName="RemoveUnknownChildren_QuickFix.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix" />
+  <unitInfo fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix" />
   <unitInfo fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" />
   <unitInfo fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_DeprecatedReference_NonTypesystemRule" />
   <unitInfo fileName="check_Export_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_Export_NonTypesystemRule" />
   <unitInfo fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_TargetConcepts_NonTypesystemRule" />
-  <unitInfo fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule" />
   <unitInfo fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_ReferencesScope_NonTypesystemRule" />
+  <unitInfo fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule" />
   <root nodeId="1225206150541">
     <nodeInfo nodeId="1225207309557" fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="24" startPosition="56" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225207423729" fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="27" startPosition="9" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -29,48 +31,63 @@
     </scopeInfo>
   </root>
   <root nodeId="1556973682253867610">
-    <nodeInfo nodeId="1556973682253868839" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1556973682253868747" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="39" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1556973682253868867" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="9" endLine="37" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="37" startPosition="62" endLine="38" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="39" startPosition="11" endLine="40" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="40" startPosition="154" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="41" startPosition="96" endLine="42" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1556973682253868799" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1556973682253870153" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="48" startPosition="93" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="52" startPosition="62" endLine="53" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="54" startPosition="11" endLine="55" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="55" startPosition="155" endLine="56" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="56" startPosition="86" endLine="57" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="38" startPosition="295" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="53" startPosition="289" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="50" startPosition="105" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1556973682253868874" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="34" startPosition="71" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1556973682253868806" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="49" startPosition="66" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1556973682253868800" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1556973682253868738" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="1556973682253868746" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="39" endLine="31" endPosition="50" />
-    <scopeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="39" startPosition="11" endLine="42" endPosition="73" />
-    <scopeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="54" startPosition="11" endLine="57" endPosition="73" />
-    <scopeInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="9" endLine="43" endPosition="11" />
-    <scopeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="1556973682253868907" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="1556973682253868807" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="50" startPosition="105" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="1556973682253868754" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="45" endPosition="7">
+    <nodeInfo nodeId="1556973682253868839" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1556973682253868747" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="31" startPosition="39" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1556973682253868867" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="37" startPosition="9" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="38" startPosition="62" endLine="39" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="40" startPosition="11" endLine="41" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="41" startPosition="154" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="42" startPosition="96" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1556973682253868799" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1556973682253870153" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="49" startPosition="93" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="52" startPosition="9" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="53" startPosition="62" endLine="54" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="55" startPosition="11" endLine="56" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="56" startPosition="155" endLine="57" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="57" startPosition="86" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2889243336884177734" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="66" startPosition="9" endLine="67" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="67" startPosition="62" endLine="68" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="69" startPosition="11" endLine="70" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="70" startPosition="157" endLine="71" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="71" startPosition="68" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="113" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="39" startPosition="295" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="54" startPosition="289" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="68" startPosition="254" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="107" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="51" startPosition="105" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="65" startPosition="58" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1556973682253868874" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="71" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1556973682253868806" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="50" startPosition="66" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2889243336884177757" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="64" startPosition="80" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2889243336884177736" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1556973682253868800" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1556973682253868738" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1556973682253868746" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="31" startPosition="39" endLine="32" endPosition="50" />
+    <scopeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="40" startPosition="11" endLine="43" endPosition="73" />
+    <scopeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="55" startPosition="11" endLine="58" endPosition="73" />
+    <scopeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="69" startPosition="11" endLine="72" endPosition="73" />
+    <scopeInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="113" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="37" startPosition="9" endLine="44" endPosition="11" />
+    <scopeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="52" startPosition="9" endLine="59" endPosition="11" />
+    <scopeInfo nodeId="2889243336884177777" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="66" startPosition="9" endLine="73" endPosition="11" />
+    <scopeInfo nodeId="1556973682253868907" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="107" endLine="45" endPosition="9" />
+    <scopeInfo nodeId="1556973682253868807" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="51" startPosition="105" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="2889243336884177759" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="65" startPosition="58" endLine="74" endPosition="9" />
+    <scopeInfo nodeId="2889243336884177739" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="64" startPosition="80" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="1556973682253868754" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="46" endPosition="7">
       <varInfo nodeId="1556973682253868868" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="1556973682253868805" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="48" startPosition="93" endLine="60" endPosition="7">
+    <scopeInfo nodeId="1556973682253868805" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="49" startPosition="93" endLine="61" endPosition="7">
       <varInfo nodeId="1556973682253870154" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="1556973682253868800" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1556973682253868738" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="1556973682253867611" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="61" endPosition="5" />
-    <unitInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="90" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule$1" />
+    <scopeInfo nodeId="2889243336884177736" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="1556973682253868800" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="1556973682253868738" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1556973682253867611" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="76" endPosition="5" />
+    <unitInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="90" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule$1" />
   </root>
   <root nodeId="1556973682253870204">
     <nodeInfo nodeId="1556973682253870214" fileName="RemoveUnknownChildren_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

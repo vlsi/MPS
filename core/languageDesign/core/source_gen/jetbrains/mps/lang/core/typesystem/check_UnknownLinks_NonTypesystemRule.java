@@ -18,6 +18,7 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -35,7 +36,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Child of undeclared role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253868925", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Child in undeclared role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253868925", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix", false);
             intentionProvider.putArgument("role", SNodeOperations.getContainingLinkRole(child));
@@ -50,10 +51,24 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "reference", "reference"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Reference of undeclared role \"" + SLinkOperations.getRole(reference) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253870183", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Reference in undeclared role \"" + SLinkOperations.getRole(reference) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253870183", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix", false);
             intentionProvider.putArgument("role", SLinkOperations.getRole(reference));
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
+        }
+      }
+    }
+
+    for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
+      if (node.getPropertyDeclaration(propname) == null) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Undeclared property \"" + propname + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "2889243336884177777", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);
+            intentionProvider.putArgument("propertyName", propname);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
