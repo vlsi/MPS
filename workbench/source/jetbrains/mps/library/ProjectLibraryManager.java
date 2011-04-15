@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectScope;
@@ -44,7 +45,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSModuleRepository repo, ProjectScope projectScope) {
+  public ProjectLibraryManager(Project project, MPSModuleRepository repo, ProjectScope projectScope, DumbService dumbService) {
     super(repo);
     myProject = project;
   }
