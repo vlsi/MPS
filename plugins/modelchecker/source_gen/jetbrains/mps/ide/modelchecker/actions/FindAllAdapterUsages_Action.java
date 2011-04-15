@@ -21,12 +21,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 
-public class FindlAllBrokenReferences_Action extends GeneratedAction {
+public class FindAllAdapterUsages_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindlAllBrokenReferences_Action.class);
+  protected static Log log = LogFactory.getLog(FindAllAdapterUsages_Action.class);
 
-  public FindlAllBrokenReferences_Action() {
-    super("Find All Broken References", "Finds broken references in all available models", ICON);
+  public FindAllAdapterUsages_Action() {
+    super("Find All Adapter Usages", "Finds Usages in all available models", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -36,7 +36,7 @@ public class FindlAllBrokenReferences_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindlAllBrokenReferences", t);
+        log.error("User's action doUpdate method failed. Action:" + "FindAllAdapterUsages", t);
       }
       this.disable(event.getPresentation());
     }
@@ -65,10 +65,10 @@ public class FindlAllBrokenReferences_Action extends GeneratedAction {
           return SModelStereotype.isUserModel(md);
         }
       }).toListSequence();
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new BrokenReferencesFinder());
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new AdapterUsagesFinder());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindlAllBrokenReferences", t);
+        log.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);
       }
     }
   }

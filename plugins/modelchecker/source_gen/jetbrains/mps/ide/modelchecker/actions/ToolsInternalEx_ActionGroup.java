@@ -15,6 +15,7 @@ public class ToolsInternalEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action");
+      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

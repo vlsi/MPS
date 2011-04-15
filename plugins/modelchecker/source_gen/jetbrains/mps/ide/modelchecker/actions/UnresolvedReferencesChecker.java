@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,8 +23,9 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
+    String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for unresolved references..."))) {
+      if (!(progressContext.checkAndUpdateIndicator(title))) {
         break;
       }
       // Check for unresolved references 

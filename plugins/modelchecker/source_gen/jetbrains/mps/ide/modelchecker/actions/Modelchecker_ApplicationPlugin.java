@@ -30,6 +30,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new CheckModel_Action());
     addAction(new CheckProject_Action());
+    addAction(new FindAllAdapterUsages_Action());
     addAction(new FindlAllBrokenReferences_Action());
     addAction(new ShowModelChecker_Action());
     // groups 

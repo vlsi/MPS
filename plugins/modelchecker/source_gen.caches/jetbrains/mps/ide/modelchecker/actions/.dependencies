@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.AdapterUsagesFinder" file="AdapterUsagesFinder.java">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ProgressContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
+    <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" file="BrokenReferencesFinder.java">
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
     <classNode dependClassName="java.util.List" />
@@ -157,6 +182,31 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action" file="FindAllAdapterUsages_Action.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.AdapterUsagesFinder" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" file="FindlAllBrokenReferences_Action.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
@@ -177,6 +227,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
@@ -314,6 +365,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.UsagesViewTracker" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -322,7 +374,6 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
@@ -437,7 +488,7 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModuleGenerator_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModuleSolution_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModel_Action" />
@@ -452,6 +503,7 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModuleLanguage_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
@@ -613,6 +665,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.ide.resolve.Resolver" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="java.util.List" />
