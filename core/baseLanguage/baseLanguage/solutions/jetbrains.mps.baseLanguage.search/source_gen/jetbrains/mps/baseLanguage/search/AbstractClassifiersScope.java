@@ -8,20 +8,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
-import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public abstract class AbstractClassifiersScope extends AbstractSearchScope implements IClassifiersSearchScope {
   private int myConstraint;
@@ -36,84 +28,74 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    return BaseAdapter.toNodes(this.getNodesFormClassifiersList(getClassifiers(), this.myConstraint, BaseAdapter.adapterCondition(condition)));
+    return this.getNodesFormClassifiersList(BaseAdapter.toNodes(getClassifiers()), this.myConstraint, condition);
   }
 
-  protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
-    List<INodeAdapter> result = new ArrayList<INodeAdapter>();
+  protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
+    List<SNode> result = new ArrayList<SNode>();
     if (constraint == 0) {
       return result;
     }
     if ((constraint ^ IClassifiersSearchScope.ANYTHING) == 0) {
-      for (Classifier classifier : classifiers) {
+      for (SNode classifier : classifiers) {
         if (condition.met(classifier)) {
           result.add(classifier);
         }
         result.addAll(classifier.getDescendants(condition));
       }
     } else {
-      for (Classifier classifier : classifiers) {
-        if ((constraint & IClassifiersSearchScope.NON_FINAL) == IClassifiersSearchScope.NON_FINAL && classifier instanceof ClassConcept && ((ClassConcept) classifier).getIsFinal()) {
+      for (SNode classifier : classifiers) {
+        boolean isClassConcept = SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+
+        if ((constraint & IClassifiersSearchScope.NON_FINAL) == IClassifiersSearchScope.NON_FINAL && isClassConcept && SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal")) {
           continue;
         }
-        if ((constraint & IClassifiersSearchScope.INTERFACE) == IClassifiersSearchScope.INTERFACE && classifier instanceof Interface && !(classifier instanceof Annotation) && condition.met(classifier)) {
+        if ((constraint & IClassifiersSearchScope.INTERFACE) == IClassifiersSearchScope.INTERFACE && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && !(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Annotation")) && condition.met(classifier)) {
           result.add(classifier);
         }
-        if ((constraint & IClassifiersSearchScope.ANNOTATION) == IClassifiersSearchScope.ANNOTATION && classifier.getClass() == Annotation.class && condition.met(classifier)) {
+        if ((constraint & IClassifiersSearchScope.ANNOTATION) == IClassifiersSearchScope.ANNOTATION && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(classifier), "jetbrains.mps.baseLanguage.structure.Annotation") && condition.met(classifier)) {
           result.add(classifier);
         }
-        if ((constraint & IClassifiersSearchScope.CLASS) == IClassifiersSearchScope.CLASS && classifier instanceof ClassConcept && condition.met(classifier)) {
+        if ((constraint & IClassifiersSearchScope.CLASS) == IClassifiersSearchScope.CLASS && isClassConcept && condition.met(classifier)) {
           result.add(classifier);
         }
-        if ((constraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR && classifier instanceof ClassConcept) {
-          Iterator<ConstructorDeclaration> iterator = ((ClassConcept) classifier).constructors();
-          while (iterator.hasNext()) {
-            ConstructorDeclaration constructorDeclaration = iterator.next();
+        if ((constraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR && isClassConcept) {
+          for (SNode constructorDeclaration : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "constructor", true))) {
             if (condition.met(constructorDeclaration)) {
               result.add(constructorDeclaration);
             }
           }
         }
-        if ((constraint & IClassifiersSearchScope.INSTANCE_FIELD) == IClassifiersSearchScope.INSTANCE_FIELD && classifier instanceof ClassConcept) {
-          Iterator<FieldDeclaration> iterator = ((ClassConcept) classifier).fields();
-          while (iterator.hasNext()) {
-            FieldDeclaration member = iterator.next();
+        if ((constraint & IClassifiersSearchScope.INSTANCE_FIELD) == IClassifiersSearchScope.INSTANCE_FIELD && isClassConcept) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
-        if ((constraint & IClassifiersSearchScope.INSTANCE_METHOD) == IClassifiersSearchScope.INSTANCE_METHOD) {
-          Iterator<InstanceMethodDeclaration> iterator = classifier.methods();
-          while (iterator.hasNext()) {
-            InstanceMethodDeclaration member = iterator.next();
+        if ((constraint & IClassifiersSearchScope.INSTANCE_METHOD) == IClassifiersSearchScope.INSTANCE_METHOD && isClassConcept) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "method", true))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
-        if ((constraint & IClassifiersSearchScope.STATIC_FIELD) == IClassifiersSearchScope.STATIC_FIELD) {
-          Iterator<StaticFieldDeclaration> iterator = classifier.staticFields();
-          while (iterator.hasNext()) {
-            StaticFieldDeclaration member = iterator.next();
+        if ((constraint & IClassifiersSearchScope.STATIC_FIELD) == IClassifiersSearchScope.STATIC_FIELD && isClassConcept) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticField", true))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
-        if ((constraint & IClassifiersSearchScope.STATIC_METHOD) == IClassifiersSearchScope.STATIC_METHOD && classifier instanceof ClassConcept) {
-          Iterator<StaticMethodDeclaration> iterator = ((ClassConcept) classifier).staticMethods();
-          while (iterator.hasNext()) {
-            StaticMethodDeclaration member = iterator.next();
+        if ((constraint & IClassifiersSearchScope.STATIC_METHOD) == IClassifiersSearchScope.STATIC_METHOD && isClassConcept) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
-        if ((constraint & IClassifiersSearchScope.ENUM_CONSTANT) == IClassifiersSearchScope.ENUM_CONSTANT && classifier instanceof EnumClass) {
-          Iterator<EnumConstantDeclaration> iterator = ((EnumClass) classifier).enumConstants();
-          while (iterator.hasNext()) {
-            EnumConstantDeclaration member = iterator.next();
+        if ((constraint & IClassifiersSearchScope.ENUM_CONSTANT) == IClassifiersSearchScope.ENUM_CONSTANT && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")), "enumConstant", true))) {
             if (condition.met(member)) {
               result.add(member);
             }

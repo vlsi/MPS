@@ -5,7 +5,7 @@
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_componentDeclaration_ReferentConstraint" />
   <unitInfo fileName="NamedTupleComponentAccessOperation_component_ReferentConstraint.java" startLine="19" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_component_ReferentConstraint" />
-  <unitInfo fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint" />
+  <unitInfo fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint" />
   <root nodeId="1239575916907">
     <nodeInfo nodeId="2912004279740772208" fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="32" startPosition="51" endLine="33" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2912004279740772204" fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="31" startPosition="335" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
@@ -139,28 +139,28 @@
     <unitInfo nodeId="1240488415103" fileName="TupleIntefaceUtils.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils" />
   </root>
   <root nodeId="1652220223504359701">
-    <nodeInfo nodeId="1652220223504375560" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="145" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1652220223504375592" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="40" startPosition="60" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1652220223504376199" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="43" startPosition="9" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1652220223504375590" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="51" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="66" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="71" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesFormClassifiersList#(Ljava/util/List;ILjetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="1652220223504359859" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="46" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1652220223504375591" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="40" startPosition="60" endLine="41" endPosition="35" />
-    <scopeInfo nodeId="1652220223504375575" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="51" endLine="42" endPosition="11" />
-    <scopeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="66" endLine="43" endPosition="9">
+    <nodeInfo nodeId="1652220223504375560" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="126" endLine="37" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1652220223504375592" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="126" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1652220223504376199" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="42" startPosition="9" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1652220223504375590" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="46" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="52" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="35" startPosition="71" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesFormClassifiersList#(Ljava/util/List;ILjetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="1652220223504359859" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1652220223504375591" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="39" startPosition="126" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="1652220223504375575" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="38" startPosition="46" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="1652220223504375574" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="52" endLine="42" endPosition="9">
       <varInfo nodeId="1652220223504375579" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="1652220223504375461" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="37" startPosition="145" endLine="44" endPosition="22">
+    <scopeInfo nodeId="1652220223504375461" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="126" endLine="43" endPosition="22">
       <varInfo nodeId="1652220223504375561" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="36" startPosition="71" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1652220223504375449" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="35" startPosition="71" endLine="45" endPosition="0">
       <varInfo nodeId="1652220223504375453" varName="classifiers" />
       <varInfo nodeId="1652220223504375458" varName="condition" />
       <varInfo nodeId="1652220223504375456" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="1652220223504359704" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="46" endPosition="6" />
-    <unitInfo nodeId="1652220223504374047" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="33" startPosition="15" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint$1" />
+    <scopeInfo nodeId="1652220223504359704" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="45" endPosition="6" />
+    <unitInfo nodeId="1652220223504374047" fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="32" startPosition="15" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint$1" />
   </root>
 </debugInfo>
 

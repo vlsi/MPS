@@ -10,11 +10,10 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -34,10 +33,10 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
       _context.getEnclosingNode() :
       _context.getReferenceNode()
     ), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
-      protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
-        List<INodeAdapter> result = new ArrayList<INodeAdapter>();
-        for (Classifier classifier : classifiers) {
-          if (classifier instanceof NamedTupleDeclaration) {
+      protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
+        List<SNode> result = new ArrayList<SNode>();
+        for (SNode classifier : classifiers) {
+          if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) {
             result.add(classifier);
           }
         }
