@@ -10,7 +10,7 @@
   </root>
   <root nodeId="4642948870877886449">
     <nodeInfo nodeId="4642948870877886452" fileName="SimpleSearchScope.java" startLine="14" startPosition="60" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
-    <nodeInfo nodeId="7451562887563390746" fileName="SimpleSearchScope.java" startLine="17" startPosition="40" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="7451562887563390746" fileName="SimpleSearchScope.java" startLine="17" startPosition="47" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4642948870877886462" fileName="SimpleSearchScope.java" startLine="21" startPosition="46" endLine="22" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4642948870877886490" fileName="SimpleSearchScope.java" startLine="24" startPosition="34" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4642948870877886479" fileName="SimpleSearchScope.java" startLine="26" startPosition="14" endLine="27" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -29,7 +29,7 @@
     <nodeInfo nodeId="4642948870877886468" fileName="SimpleSearchScope.java" startLine="22" startPosition="41" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4642948870877886456" fileName="SimpleSearchScope.java" startLine="20" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleSearchScope#(Ljava/util/Collection;)V" />
     <nodeInfo nodeId="4642948870877886520" fileName="SimpleSearchScope.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <scopeInfo nodeId="7451562887563385710" fileName="SimpleSearchScope.java" startLine="17" startPosition="40" endLine="18" endPosition="31" />
+    <scopeInfo nodeId="7451562887563385710" fileName="SimpleSearchScope.java" startLine="17" startPosition="47" endLine="18" endPosition="31" />
     <scopeInfo nodeId="4642948870877886489" fileName="SimpleSearchScope.java" startLine="24" startPosition="34" endLine="25" endPosition="34" />
     <scopeInfo nodeId="4642948870877886478" fileName="SimpleSearchScope.java" startLine="26" startPosition="14" endLine="27" endPosition="53" />
     <scopeInfo nodeId="4642948870877886514" fileName="SimpleSearchScope.java" startLine="34" startPosition="23" endLine="35" endPosition="24" />
@@ -424,7 +424,7 @@
   </root>
   <root nodeId="4642948870877889272">
     <nodeInfo nodeId="4642948870877889276" fileName="IsInstanceCondition.java" startLine="9" startPosition="62" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConceptFqName" />
-    <nodeInfo nodeId="5253134957342020816" fileName="IsInstanceCondition.java" startLine="12" startPosition="42" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="5253134957342020816" fileName="IsInstanceCondition.java" startLine="12" startPosition="45" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4642948870877889306" fileName="IsInstanceCondition.java" startLine="16" startPosition="45" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4642948870877889314" fileName="IsInstanceCondition.java" startLine="20" startPosition="36" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4642948870877889322" fileName="IsInstanceCondition.java" startLine="24" startPosition="34" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -432,12 +432,12 @@
     <nodeInfo nodeId="4642948870877889300" fileName="IsInstanceCondition.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IsInstanceCondition#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="4642948870877889310" fileName="IsInstanceCondition.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptFqName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4642948870877889316" fileName="IsInstanceCondition.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="4642948870877889284" fileName="IsInstanceCondition.java" startLine="12" startPosition="42" endLine="13" endPosition="36" />
+    <scopeInfo nodeId="4642948870877889284" fileName="IsInstanceCondition.java" startLine="12" startPosition="45" endLine="13" endPosition="39" />
     <scopeInfo nodeId="4642948870877889305" fileName="IsInstanceCondition.java" startLine="16" startPosition="45" endLine="17" endPosition="29" />
     <scopeInfo nodeId="4642948870877889313" fileName="IsInstanceCondition.java" startLine="20" startPosition="36" endLine="21" endPosition="27" />
     <scopeInfo nodeId="4642948870877889321" fileName="IsInstanceCondition.java" startLine="24" startPosition="34" endLine="25" endPosition="53" />
     <scopeInfo nodeId="4642948870877889279" fileName="IsInstanceCondition.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
-      <varInfo nodeId="4642948870877889282" varName="node" />
+      <varInfo nodeId="4642948870877889282" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="4642948870877889300" fileName="IsInstanceCondition.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="4642948870877889303" varName="fqName" />

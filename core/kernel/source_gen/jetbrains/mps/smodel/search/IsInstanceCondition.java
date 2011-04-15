@@ -9,8 +9,8 @@ import jetbrains.mps.util.NameUtil;
 public class IsInstanceCondition implements Condition<SNode> {
   private String myConceptFqName;
 
-  public IsInstanceCondition(SNode node) {
-    this(NameUtil.nodeFQName(node));
+  public IsInstanceCondition(SNode concept) {
+    this(NameUtil.nodeFQName(concept));
   }
 
   public IsInstanceCondition(String fqName) {

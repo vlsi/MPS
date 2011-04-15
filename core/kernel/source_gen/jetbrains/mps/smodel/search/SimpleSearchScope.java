@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class SimpleSearchScope extends AbstractSearchScope {
   private LinkedHashSet<SNode> myNodes;
 
-  public SimpleSearchScope(List nodes) {
+  public SimpleSearchScope(List<SNode> nodes) {
     this(((Collection) nodes));
   }
 

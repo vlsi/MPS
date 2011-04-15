@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,7 +46,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
     if (this.foundClassifiers == null) {
       this.visitedClassifiersMap = new HashMap<SNode, Boolean>();
       this.visitedClassifiersMap.put(this.rootClassifier, true);
-      ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(this.model, false, this.scope);
+      ISearchScope searchScope = new ModelAndImportedModelsScope(this.model, false, this.scope);
       this.foundClassifiers = new ArrayList<SNode>((List) searchScope.getNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
           return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && AllSubclassifiersScope.this.checkSubclassifier(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));

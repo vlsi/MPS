@@ -910,8 +910,8 @@
       <varInfo nodeId="3161373106581137613" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581138731" fileName="ClassifierAndSuperClassifiersCache.java" startLine="334" startPosition="27" endLine="401" endPosition="7">
-      <varInfo nodeId="3161373106581138740" varName="classifiers" />
       <varInfo nodeId="3161373106581138733" varName="allMethods" />
+      <varInfo nodeId="3161373106581138740" varName="classifiers" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581137686" fileName="ClassifierAndSuperClassifiersCache.java" startLine="333" startPosition="0" endLine="403" endPosition="0" />
     <unitInfo nodeId="3161373106581137787" fileName="ClassifierAndSuperClassifiersCache.java" startLine="44" startPosition="120" endLine="48" endPosition="3" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache$1" />
@@ -1479,8 +1479,8 @@
       <varInfo nodeId="2706803607794599364" varName="typeCopy" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581139988" fileName="GenericTypesUtil.java" startLine="88" startPosition="145" endLine="97" endPosition="20">
-      <varInfo nodeId="3161373106581139995" varName="list" />
       <varInfo nodeId="3161373106581139990" varName="typeCopy" />
+      <varInfo nodeId="3161373106581139995" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2706803607794599073" fileName="GenericTypesUtil.java" startLine="31" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="2706803607794599078" varName="typeByTypeVar" />
@@ -1505,12 +1505,12 @@
       <varInfo nodeId="2706803607794599260" varName="typeVarValue" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581139917" fileName="GenericTypesUtil.java" startLine="43" startPosition="134" endLine="62" endPosition="18">
-      <varInfo nodeId="3161373106581139923" varName="typeVar" />
       <varInfo nodeId="3161373106581139919" varName="result" />
+      <varInfo nodeId="3161373106581139923" varName="typeVar" />
     </scopeInfo>
     <scopeInfo nodeId="2706803607794599243" fileName="GenericTypesUtil.java" startLine="65" startPosition="102" endLine="84" endPosition="18">
-      <varInfo nodeId="2706803607794599249" varName="typeVar" />
       <varInfo nodeId="2706803607794599245" varName="result" />
+      <varInfo nodeId="2706803607794599249" varName="typeVar" />
     </scopeInfo>
     <scopeInfo nodeId="2706803607794599234" fileName="GenericTypesUtil.java" startLine="64" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="2706803607794599237" varName="typeVariableRef" />
@@ -2069,7 +2069,7 @@
     <nodeInfo nodeId="3161373106581141587" fileName="AllSubclassifiersScope.java" startLine="40" startPosition="16" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581141604" fileName="AllSubclassifiersScope.java" startLine="46" startPosition="40" endLine="47" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581141613" fileName="AllSubclassifiersScope.java" startLine="47" startPosition="65" endLine="48" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581141623" fileName="AllSubclassifiersScope.java" startLine="48" startPosition="64" endLine="49" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581141623" fileName="AllSubclassifiersScope.java" startLine="48" startPosition="64" endLine="49" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581141794" fileName="AllSubclassifiersScope.java" startLine="51" startPosition="40" endLine="52" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581141656" fileName="AllSubclassifiersScope.java" startLine="54" startPosition="10" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581141679" fileName="AllSubclassifiersScope.java" startLine="60" startPosition="54" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2095,7 +2095,7 @@
     <nodeInfo nodeId="2434295018755137900" fileName="AllSubclassifiersScope.java" startLine="87" startPosition="214" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2434295018755137900" fileName="AllSubclassifiersScope.java" startLine="91" startPosition="54" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2434295018755137905" fileName="AllSubclassifiersScope.java" startLine="95" startPosition="11" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581141634" fileName="AllSubclassifiersScope.java" startLine="49" startPosition="115" endLine="54" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581141634" fileName="AllSubclassifiersScope.java" startLine="49" startPosition="96" endLine="54" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581141547" fileName="AllSubclassifiersScope.java" startLine="29" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AllSubclassifiersScope#(Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/smodel/SModel;ILjetbrains/mps/smodel/IScope;)V" />
     <nodeInfo nodeId="3161373106581141578" fileName="AllSubclassifiersScope.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" />
     <nodeInfo nodeId="3161373106581141597" fileName="AllSubclassifiersScope.java" startLine="45" startPosition="23" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2784,8 +2784,8 @@
     <scopeInfo nodeId="2706803607794581216" fileName="MethodResolveUtil.java" startLine="104" startPosition="34" endLine="117" endPosition="67">
       <varInfo nodeId="2706803607794581227" varName="actualArgsCount" />
       <varInfo nodeId="2706803607794581218" varName="parmCountDiff" />
-      <varInfo nodeId="2706803607794581233" varName="vararg" />
       <varInfo nodeId="2706803607794581221" varName="count" />
+      <varInfo nodeId="2706803607794581233" varName="vararg" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581142540" fileName="MethodResolveUtil.java" startLine="81" startPosition="94" endLine="95" endPosition="5">
       <varInfo nodeId="3161373106581142546" varName="i" />
@@ -2803,13 +2803,13 @@
     <scopeInfo nodeId="3161373106581142434" fileName="MethodResolveUtil.java" startLine="61" startPosition="50" endLine="78" endPosition="67">
       <varInfo nodeId="3161373106581142445" varName="actualArgsCount" />
       <varInfo nodeId="3161373106581142436" varName="parmCountDiff" />
-      <varInfo nodeId="3161373106581142451" varName="vararg" />
       <varInfo nodeId="3161373106581142439" varName="count" />
+      <varInfo nodeId="3161373106581142451" varName="vararg" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581143089" fileName="MethodResolveUtil.java" startLine="420" startPosition="139" endLine="438" endPosition="25">
       <varInfo nodeId="3161373106581143117" varName="typeByTypeVar" />
-      <varInfo nodeId="3161373106581143099" varName="typeVars" />
       <varInfo nodeId="3161373106581143091" varName="typeParms" />
+      <varInfo nodeId="3161373106581143099" varName="typeVars" />
       <varInfo nodeId="3161373106581143108" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581142430" fileName="MethodResolveUtil.java" startLine="60" startPosition="18" endLine="79" endPosition="5">
@@ -2951,13 +2951,13 @@
       <varInfo nodeId="2455828994472346944" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2706803607794599781" fileName="MethodResolveUtil.java" startLine="363" startPosition="184" endLine="416" endPosition="18">
-      <varInfo nodeId="2706803607794599802" varName="subtypingManager" />
       <varInfo nodeId="2706803607794599783" varName="result" />
+      <varInfo nodeId="2706803607794599802" varName="subtypingManager" />
       <varInfo nodeId="2706803607794599793" varName="typesOfParamToMethods" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581142822" fileName="MethodResolveUtil.java" startLine="305" startPosition="243" endLine="360" endPosition="18">
-      <varInfo nodeId="3161373106581142843" varName="subtypingManager" />
       <varInfo nodeId="3161373106581142824" varName="result" />
+      <varInfo nodeId="3161373106581142843" varName="subtypingManager" />
       <varInfo nodeId="3161373106581142834" varName="typesOfParamToMethods" />
     </scopeInfo>
     <scopeInfo nodeId="2706803607794599761" fileName="MethodResolveUtil.java" startLine="362" startPosition="0" endLine="418" endPosition="0">
