@@ -205,10 +205,6 @@ public class DiskMemoryConflictsTest {
     processFieldNameInFile(name);
   }
 
-  private void deleteFile() {
-    Assert.assertTrue(MODEL_FILE.delete());
-  }
-
   private void checkInitialState() {
     checkSynchronizedState(FIELD_DEFAULT_NAME);
   }
@@ -228,7 +224,7 @@ public class DiskMemoryConflictsTest {
     if (DiskModification.MODIFY == diskModification) {
       setFieldNameInFile(FIELD_NAME_IN_FILE);
     } else {
-      deleteFile();
+      delete();
     }
 
     refreshVfs();
@@ -331,6 +327,23 @@ public class DiskMemoryConflictsTest {
     // http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868
     int count = 0;
     while (!MODEL_FILE.setLastModified(timeStamp) && count < 10) {
+      count++;
+      System.gc();
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+        Assert.fail();
+        return;
+      }
+    }
+    Assert.assertTrue(count < 10);
+  }
+
+  private static void delete() {
+    // this is a workaround of JRE bug similar to #4243868
+    // http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868
+    int count = 0;
+    while (!MODEL_FILE.delete() && count < 10) {
       count++;
       System.gc();
       try {
