@@ -5,12 +5,12 @@ package jetbrains.mps.lang.core.plugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.structure.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
@@ -28,8 +28,6 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
-    ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
-
     final ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).constraints();
     final CheckingNodeContext checkingNodeContext = new CheckingNodeContext();
 
