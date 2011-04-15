@@ -90,7 +90,7 @@ public class FilesDelta implements IDelta {
         -1 - diridx :
         diridx
       );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.list())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
         }
