@@ -50,7 +50,7 @@ public class GoToNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(MPSEditorOpener.class).editNode(((SNode) MapSequence.fromMap(_params).get("source")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(MPSEditorOpener.class).openNode(((SNode) MapSequence.fromMap(_params).get("source")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), false, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToNode", t);
     }

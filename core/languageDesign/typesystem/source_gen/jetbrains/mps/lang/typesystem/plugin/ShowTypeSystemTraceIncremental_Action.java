@@ -14,9 +14,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTraceDialog;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
 
 public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -62,6 +62,10 @@ public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -71,7 +75,9 @@ public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
-        new TypeSystemTraceDialog(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false);
+        TraceTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
+        tool.buildTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false);
+        tool.openToolLater(true);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTraceIncremental", t);

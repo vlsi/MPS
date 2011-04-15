@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import java.awt.Frame;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -47,13 +46,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final SNode mySelectedNode;
   private final Set<SNode> myNodes;
   private boolean generationMode = false;
-  private TypeSystemTraceDialog myParent;
+  private TypeSystemTracePanel myParent;
   private State myStateCopy;
   private State myCurrentState;
   private AbstractOperation myOldOperation;
   private EditorComponent myEditorComponent;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, TypeSystemTraceDialog parent, EditorComponent editorComponent) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myOperation = tcc.getOperation();
