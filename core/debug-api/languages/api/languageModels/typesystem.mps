@@ -20,6 +20,9 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_CreateBreakpointOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
     </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3570824963050586846">
+      <property name="name" nameId="tpck.1169194664001" value="DebuggerTypeIsDebuggerType" />
+    </node>
   </roots>
   <root id="2526721715665547048">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2526721715665547049">
@@ -126,6 +129,19 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5365453833390544928">
       <property name="name" nameId="tpck.1169194664001" value="createBreakpointOperation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="86gq.2569394751387978473" resolveInfo="CreateBreakpointOperation" />
+    </node>
+  </root>
+  <root id="3570824963050586846">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="3570824963050586847">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3570824963050586849">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3570824963050586851">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="86gq.DebuggerType" typeId="86gq.1104094430779063683" id="3570824963050586853" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3570824963050586848">
+      <property name="name" nameId="tpck.1169194664001" value="debuggerType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="86gq.1104094430779063683" resolveInfo="DebuggerType" />
     </node>
   </root>
 </model>
