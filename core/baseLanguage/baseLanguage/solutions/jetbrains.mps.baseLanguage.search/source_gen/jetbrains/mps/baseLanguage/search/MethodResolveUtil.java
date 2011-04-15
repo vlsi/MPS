@@ -9,13 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.IMethodCall;
-import jetbrains.mps.baseLanguage.structure.IVisible;
-import jetbrains.mps.baseLanguage.structure.Visibility;
-import jetbrains.mps.baseLanguage.structure.PublicVisibility;
-import jetbrains.mps.baseLanguage.structure.PrivateVisibility;
-import jetbrains.mps.baseLanguage.structure.ProtectedVisibility;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.Map;
 import com.intellij.util.containers.HashMap;
@@ -23,25 +16,19 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-import jetbrains.mps.baseLanguage.structure.VariableArityType;
-import jetbrains.mps.baseLanguage.structure.WildCardType;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.INodeAdapter;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.TypeVariableReference;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
+import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
 
 public class MethodResolveUtil {
   public MethodResolveUtil() {
@@ -88,55 +75,6 @@ public class MethodResolveUtil {
       }
     }
     return new Pair<List<SNode>, Boolean>(result, good);
-  }
-
-  @Deprecated
-  public static Pair<List<? extends BaseMethodDeclaration>, Boolean> selectByVisibilityReportNoGoodMethod(List<? extends BaseMethodDeclaration> methods, IMethodCall methodCall) {
-    int index = 0;
-    SNode methodCallNode = (SNode) methodCall.getNode();
-    List<BaseMethodDeclaration> goodMethods = new ArrayList<BaseMethodDeclaration>();
-    List<BaseMethodDeclaration> badMethods = new ArrayList<BaseMethodDeclaration>();
-    for (BaseMethodDeclaration method : methods) {
-      SNode methodNode = (SNode) method.getNode();
-      if (method instanceof IVisible) {
-        IVisible visible = (IVisible) method;
-        Visibility visibility = visible.getVisibility();
-        if (visibility instanceof PublicVisibility) {
-          goodMethods.add(method);
-        } else if (visibility instanceof PrivateVisibility) {
-          if (SNodeOperations.getContainingRoot(methodCallNode) == SNodeOperations.getContainingRoot(methodNode)) {
-            goodMethods.add(method);
-          } else {
-            badMethods.add(method);
-          }
-        } else if (visibility instanceof ProtectedVisibility) {
-          if (SNodeOperations.getModel(methodCallNode) == SNodeOperations.getModel(methodNode)) {
-            goodMethods.add(method);
-          } else {
-            SNode desc = SNodeOperations.getAncestor(methodCallNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            SNode anc = SNodeOperations.getAncestor(methodNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            if (Classifier_Behavior.call_isDescendant_7165541881557222913(desc, anc)) {
-              goodMethods.add(method);
-            } else {
-              badMethods.add(method);
-            }
-          }
-        } else {
-          if (SNodeOperations.getModel(methodCallNode) == SNodeOperations.getModel(methodNode)) {
-            goodMethods.add(method);
-          } else {
-            badMethods.add(method);
-          }
-        }
-      } else {
-        goodMethods.add(method);
-      }
-    }
-    if (!(goodMethods.isEmpty())) {
-      return new Pair<List<? extends BaseMethodDeclaration>, Boolean>(goodMethods, true);
-    } else {
-      return new Pair<List<? extends BaseMethodDeclaration>, Boolean>(badMethods, false);
-    }
   }
 
   public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
@@ -221,65 +159,6 @@ public class MethodResolveUtil {
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
 
-  @Deprecated
-  private static List<? extends BaseMethodDeclaration> selectByParameterType(@Nullable SNode typeOfArg, int indexOfArg, List<? extends BaseMethodDeclaration> candidates, Map<TypeVariableDeclaration, Type> typeByTypeVar, boolean mostSpecific) {
-    List<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>(candidates.size());
-    StructuralNodeMap<Set<BaseMethodDeclaration>> typesOfParamToMethods = new StructuralNodeMap<Set<BaseMethodDeclaration>>();
-    SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
-    for (BaseMethodDeclaration candidate : candidates) {
-      boolean varArg = false;
-      List<ParameterDeclaration> params = candidate.getParameters();
-      Type type = params.get(params.size() - 1).getType();
-      if (type instanceof VariableArityType) {
-        if (params.size() - 1 <= indexOfArg) {
-          varArg = true;
-        }
-      } else {
-        if (params.size() <= indexOfArg) {
-          continue;
-        }
-      }
-      List<TypeVariableDeclaration> methodTypeVariableDecls = candidate.getTypeVariableDeclarations();
-      for (TypeVariableDeclaration tvd : methodTypeVariableDecls) {
-        typeByTypeVar.put(tvd, WildCardType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel()));
-      }
-      Type typeOfParam;
-      if (varArg) {
-        VariableArityType variableArityType = (VariableArityType) type;
-        typeOfParam = variableArityType.getComponentType();
-      } else {
-        ParameterDeclaration parameter = params.get(indexOfArg);
-        typeOfParam = parameter.getType();
-      }
-      if (typeOfParam == null) {
-        continue;
-      }
-      typeOfParam = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam, typeByTypeVar);
-      for (TypeVariableDeclaration tvd : methodTypeVariableDecls) {
-        typeByTypeVar.remove(tvd);
-      }
-      if (subtypingManager.isSubtype(typeOfArg, typeOfParam.getNode())) {
-        Set<BaseMethodDeclaration> methods = typesOfParamToMethods.get(typeOfParam.getNode());
-        if (methods == null) {
-          methods = new HashSet<BaseMethodDeclaration>();
-          typesOfParamToMethods.put(typeOfParam.getNode(), methods);
-        }
-        methods.add(candidate);
-        result.add(candidate);
-      }
-    }
-    if (mostSpecific) {
-      Set<SNode> goodParamTypes = typesOfParamToMethods.keySet();
-      Set<SNode> mostSpecificTypes = subtypingManager.mostSpecificTypes(goodParamTypes);
-      if (!((mostSpecificTypes.isEmpty()))) {
-        SNode mostSpecificType = mostSpecificTypes.iterator().next();
-        result = new ArrayList<BaseMethodDeclaration>();
-        result.addAll(typesOfParamToMethods.get(mostSpecificType));
-      }
-    }
-    return result;
-  }
-
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
@@ -334,28 +213,6 @@ public class MethodResolveUtil {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  public static Map<TypeVariableDeclaration, Type> getTypesByTypeVars(Classifier classifier, List<? extends INodeAdapter> typeParameters) {
-    Iterator<? extends INodeAdapter> typeParms = typeParameters.iterator();
-    Iterator<TypeVariableDeclaration> typeVars = classifier.getTypeVariableDeclarations().iterator();
-    Map<TypeVariableDeclaration, Type> m = ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap();
-    Map<TypeVariableDeclaration, Type> typeByTypeVar = new java.util.HashMap<TypeVariableDeclaration, Type>(m);
-    while (typeParms.hasNext() && typeVars.hasNext()) {
-      TypeVariableDeclaration typeVar = typeVars.next();
-      INodeAdapter typeParm = typeParms.next();
-      if (typeParm instanceof TypeVariableReference) {
-        if (((TypeVariableReference) typeParm).getTypeVariableDeclaration() != typeVar) {
-          typeByTypeVar.put(typeVar, (Type) typeParm);
-        }
-      } else {
-        if (typeParm instanceof Type) {
-          typeByTypeVar.put(typeVar, (Type) typeParm);
-        }
-      }
-    }
-    return typeByTypeVar;
   }
 
   public static Map<SNode, SNode> getTypesByTypeVars(SNode classifier, List<SNode> typeParameters) {
