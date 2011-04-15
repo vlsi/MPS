@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -37,9 +35,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode((SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION));
+    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final AbstractConceptDeclaration defaultConceptOfChild = linkDeclaration.getTarget();
+    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
@@ -54,14 +52,15 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
       }
 
       public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
+        SNode parameterNode = (SNode) parameterConcept;
         if (isCustomCreateChildNode()) {
-          SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild.getNode(), parentNode.getModel(), getScope(), context);
+          SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild, parentNode.getModel(), getScope(), context);
           if (newChild != null) {
-            NodeFactoryManager.setupNode((ConceptDeclaration) parameterConcept, newChild, currentChild, parentNode, model, getScope());
+            NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model, getScope());
           }
           return newChild;
         }
-        return NodeFactoryManager.createNode((ConceptDeclaration) BaseAdapter.fromNode((SNode) parameterConcept), currentChild, parentNode, parentNode.getModel(), getScope());
+        return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel(), getScope());
       }
     });
     return actions;

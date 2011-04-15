@@ -18,40 +18,40 @@
   <unitInfo fileName="MPSActionReference_Editor.java" startLine="63" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.editor.MPSActionReference_Editor$_Inline_5z7arn_a1a" />
   <unitInfo fileName="TestNodeReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestNodeReference_Editor$_Inline_tf79mi_a0a" />
   <unitInfo fileName="MockAnnotation_Editor.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.editor.MockAnnotation_Editor" />
-  <unitInfo fileName="NodesTestCase_Editor.java" startLine="223" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$nodesToCheckListHandler_58c6e4_b2a" />
-  <unitInfo fileName="NodesTestCase_Editor.java" startLine="261" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$testMethodsListHandler_58c6e4_b5a" />
+  <unitInfo fileName="NodesTestCase_Editor.java" startLine="223" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$nodesToCheckListHandler_58c6e4_b2a" />
+  <unitInfo fileName="NodesTestCase_Editor.java" startLine="259" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$testMethodsListHandler_58c6e4_b5a" />
   <unitInfo fileName="TestInfo_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestInfo_Editor" />
   <unitInfo fileName="VariableLive_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.test.editor.VariableLive_Editor" />
   <unitInfo fileName="VariableInialized_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.test.editor.VariableInialized_Editor" />
   <unitInfo fileName="NodeTypeProperty_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeProperty_Editor" />
   <unitInfo fileName="ExpressionContainer_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.test.editor.ExpressionContainer_Editor" />
-  <unitInfo fileName="PressKeyStatement_Editor.java" startLine="61" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.test.editor.PressKeyStatement_Editor$keyStrokesListHandler_pkvqak_b0" />
-  <unitInfo fileName="NodeTypeSetProperty_Editor.java" startLine="67" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor$typeListHandler_aow2dk_b0" />
-  <unitInfo fileName="AssertMatch_Editor.java" startLine="115" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor$beforeListHandler_nev4di_c0" />
-  <unitInfo fileName="AssertMatch_Editor.java" startLine="163" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor$afterListHandler_nev4di_g0" />
-  <unitInfo fileName="NodesTestCase_Editor.java" startLine="299" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$methodsListHandler_58c6e4_b8a" />
+  <unitInfo fileName="PressKeyStatement_Editor.java" startLine="61" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.test.editor.PressKeyStatement_Editor$keyStrokesListHandler_pkvqak_b0" />
+  <unitInfo fileName="NodeTypeSetProperty_Editor.java" startLine="67" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor$typeListHandler_aow2dk_b0" />
+  <unitInfo fileName="AssertMatch_Editor.java" startLine="115" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor$beforeListHandler_nev4di_c0" />
+  <unitInfo fileName="AssertMatch_Editor.java" startLine="161" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor$afterListHandler_nev4di_g0" />
+  <unitInfo fileName="NodesTestCase_Editor.java" startLine="295" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$methodsListHandler_58c6e4_b8a" />
   <unitInfo fileName="InvokeActionStatement_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.test.editor.InvokeActionStatement_Editor" />
   <unitInfo fileName="TestNode_Editor.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestNode_Editor" />
   <unitInfo fileName="CheckNodeForErrors_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.test.editor.CheckNodeForErrors_Editor" />
+  <unitInfo fileName="NodePropertiesContainer_Editor.java" startLine="79" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodePropertiesContainer_Editor$propertiesListHandler_ow7a4w_c0" />
   <unitInfo fileName="BootstrapActionReference_Editor.java" startLine="27" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.test.editor.BootstrapActionReference_Editor" />
   <unitInfo fileName="CheckNodeDataflow_Editor.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.editor.CheckNodeDataflow_Editor" />
-  <unitInfo fileName="NodePropertiesContainer_Editor.java" startLine="79" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodePropertiesContainer_Editor$propertiesListHandler_ow7a4w_c0" />
   <unitInfo fileName="TestNodeAnnotation_Editor.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestNodeAnnotation_Editor" />
+  <unitInfo fileName="NodeOperationsContainer_Editor.java" startLine="87" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor$operationsListHandler_62u4bw_b0" />
   <unitInfo fileName="TestNodeReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestNodeReference_Editor" />
-  <unitInfo fileName="NodeOperationsContainer_Editor.java" startLine="87" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor$operationsListHandler_62u4bw_b0" />
   <unitInfo fileName="InvokeIntentionStatement_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.test.editor.InvokeIntentionStatement_Editor" />
   <unitInfo fileName="SimpleNodeTest_Editor.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.test.editor.SimpleNodeTest_Editor" />
   <unitInfo fileName="MPSActionReference_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.editor.MPSActionReference_Editor" />
   <unitInfo fileName="TypeKeyStatement_Editor.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TypeKeyStatement_Editor" />
-  <unitInfo fileName="PressKeyStatement_Editor.java" startLine="23" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.test.editor.PressKeyStatement_Editor" />
-  <unitInfo fileName="NodeTypeSetProperty_Editor.java" startLine="27" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor" />
-  <unitInfo fileName="NodePropertiesContainer_Editor.java" startLine="26" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodePropertiesContainer_Editor" />
-  <unitInfo fileName="NodeOperationsContainer_Editor.java" startLine="27" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor" />
+  <unitInfo fileName="PressKeyStatement_Editor.java" startLine="23" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.test.editor.PressKeyStatement_Editor" />
+  <unitInfo fileName="NodeTypeSetProperty_Editor.java" startLine="27" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor" />
+  <unitInfo fileName="NodePropertiesContainer_Editor.java" startLine="26" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodePropertiesContainer_Editor" />
+  <unitInfo fileName="NodeOperationsContainer_Editor.java" startLine="27" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor" />
   <unitInfo fileName="TypesCheckOperation_Editor.java" startLine="19" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" />
   <unitInfo fileName="EditorTestCase_Editor.java" startLine="19" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.lang.test.editor.EditorTestCase_Editor" />
-  <unitInfo fileName="AssertMatch_Editor.java" startLine="23" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor" />
+  <unitInfo fileName="AssertMatch_Editor.java" startLine="23" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor" />
   <unitInfo fileName="AnonymousCellAnnotation_Editor.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AnonymousCellAnnotation_Editor" />
-  <unitInfo fileName="NodesTestCase_Editor.java" startLine="28" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor" />
+  <unitInfo fileName="NodesTestCase_Editor.java" startLine="28" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor" />
   <root nodeId="1101347953350138824">
     <nodeInfo nodeId="1101347953350241948" fileName="BootstrapActionReference_Editor.java" startLine="78" startPosition="105" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1101347953350240463" fileName="BootstrapActionReference_Editor.java" startLine="79" startPosition="16" endLine="80" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

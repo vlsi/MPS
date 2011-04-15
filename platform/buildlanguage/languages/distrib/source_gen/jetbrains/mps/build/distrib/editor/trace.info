@@ -11,19 +11,19 @@
   <unitInfo fileName="DistribConfiguration_Editor.java" startLine="865" startPosition="0" endLine="897" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$_Inline_pkpw5p_a1d0" />
   <unitInfo fileName="ExternalVariableReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ExternalVariableReference_Editor$_Inline_w9zsr8_a0a" />
   <unitInfo fileName="DistribConfiguration_Editor.java" startLine="831" startPosition="0" endLine="864" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$_Inline_pkpw5p_a1c0" />
-  <unitInfo fileName="ClassPath_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor$classPathItemListHandler_pegylz_a0" />
-  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="145" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor$commandLineListHandler_rvqdrg_b1b1a" />
-  <unitInfo fileName="MacConfig_Editor.java" startLine="209" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor$associationListHandler_14tw65_b3e0" />
-  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="898" startPosition="0" endLine="935" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$systemSpecificConfigListHandler_pkpw5p_b3f0" />
+  <unitInfo fileName="ClassPath_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor$classPathItemListHandler_pegylz_a0" />
+  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="145" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor$commandLineListHandler_rvqdrg_b1b1a" />
+  <unitInfo fileName="MacConfig_Editor.java" startLine="209" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor$associationListHandler_14tw65_b3e0" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="898" startPosition="0" endLine="933" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$systemSpecificConfigListHandler_pkpw5p_b3f0" />
   <unitInfo fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet" />
-  <unitInfo fileName="ClassPath_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor" />
+  <unitInfo fileName="ClassPath_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor" />
   <unitInfo fileName="ExternalVariableReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ExternalVariableReference_Editor" />
   <unitInfo fileName="FileAssociation_Editor.java" startLine="17" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.FileAssociation_Editor" />
   <unitInfo fileName="MacOsFileAssociation_Editor.java" startLine="17" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacOsFileAssociation_Editor" />
-  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="27" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor" />
-  <unitInfo fileName="MacConfig_Editor.java" startLine="28" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor" />
+  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="27" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor" />
+  <unitInfo fileName="MacConfig_Editor.java" startLine="28" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor" />
   <unitInfo fileName="WindowsConfig_Editor.java" startLine="29" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor" />
-  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="34" startPosition="0" endLine="936" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="34" startPosition="0" endLine="934" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor" />
   <root nodeId="1230056321889">
     <nodeInfo nodeId="1231768853802" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1231768824493" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" />

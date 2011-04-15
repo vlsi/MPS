@@ -16,8 +16,6 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -57,12 +55,12 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     myIsReverseOrder = isReverseOrder;
   }
 
-  public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
+  public SNode getLinkDeclaration() {
+    return myLinkDeclaration;
   }
 
-  public AbstractConceptDeclaration getChildConcept() {
-    return (AbstractConceptDeclaration) BaseAdapter.fromNode(myChildConcept);
+  public SNode getChildConcept() {
+    return myChildConcept;
   }
 
 

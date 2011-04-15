@@ -12,7 +12,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 public class XYCTableModel implements TableModel {
   private SNode node;
@@ -77,12 +76,12 @@ public class XYCTableModel implements TableModel {
       return null;
     }
     if (row == 0 && column > 0) {
-      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ((LinkDeclaration) SNodeOperations.getAdapter(xlink)), editorCtx);
+      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), xlink, editorCtx);
     }
     if (row > 0 && column == 0) {
-      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ((LinkDeclaration) SNodeOperations.getAdapter(ylink)), editorCtx);
+      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ylink, editorCtx);
     }
-    return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ((LinkDeclaration) SNodeOperations.getAdapter(clink)), editorCtx);
+    return new DefaultChildSubstituteInfo(node, getValueAt(row, column), clink, editorCtx);
   }
 
   public void createElement(int row, int column) {

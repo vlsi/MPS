@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1182113674817158574">
-    <nodeInfo nodeId="1182113674817343479" fileName="CellUtil.java" startLine="16" startPosition="53" endLine="17" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817443094" fileName="CellUtil.java" startLine="20" startPosition="76" endLine="21" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817443208" fileName="CellUtil.java" startLine="22" startPosition="508" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817443376" fileName="CellUtil.java" startLine="28" startPosition="121" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817443390" fileName="CellUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="12" startPosition="23" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellUtil#()V" />
-    <nodeInfo nodeId="1182113674817443072" fileName="CellUtil.java" startLine="21" startPosition="101" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817443366" fileName="CellUtil.java" startLine="27" startPosition="51" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1182113674817158666" fileName="CellUtil.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultSideTransformTag#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setupIDeprecatableStyles#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeToDelete#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1182113674817158579" fileName="CellUtil.java" startLine="13" startPosition="21" endLine="13" endPosition="21" />
-    <scopeInfo nodeId="1182113674817158669" fileName="CellUtil.java" startLine="16" startPosition="53" endLine="17" endPosition="220" />
-    <scopeInfo nodeId="1182113674817443074" fileName="CellUtil.java" startLine="22" startPosition="508" endLine="23" endPosition="60" />
-    <scopeInfo nodeId="1182113674817443368" fileName="CellUtil.java" startLine="28" startPosition="121" endLine="29" endPosition="45" />
-    <scopeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="12" startPosition="23" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="1182113674817158666" fileName="CellUtil.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1182113674817443066" fileName="CellUtil.java" startLine="20" startPosition="76" endLine="24" endPosition="5">
+    <nodeInfo nodeId="1182113674817343479" fileName="CellUtil.java" startLine="21" startPosition="53" endLine="22" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817443094" fileName="CellUtil.java" startLine="25" startPosition="76" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1182113674817443208" fileName="CellUtil.java" startLine="27" startPosition="508" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817443376" fileName="CellUtil.java" startLine="33" startPosition="121" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817443390" fileName="CellUtil.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736625272" fileName="CellUtil.java" startLine="41" startPosition="39" endLine="42" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3425632322555590179" fileName="CellUtil.java" startLine="50" startPosition="71" endLine="51" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3425632322555626907" fileName="CellUtil.java" startLine="54" startPosition="70" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="17" startPosition="23" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellUtil#()V" />
+    <nodeInfo nodeId="1182113674817443072" fileName="CellUtil.java" startLine="26" startPosition="101" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1182113674817443366" fileName="CellUtil.java" startLine="32" startPosition="51" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1182113674817158666" fileName="CellUtil.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultSideTransformTag#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="353" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclarationRole#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5031719587736625224" fileName="CellUtil.java" startLine="39" startPosition="99" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setupIDeprecatableStyles#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeToDelete#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3425632322555590171" fileName="CellUtil.java" startLine="46" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclarationTarget#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5031719587736609117" fileName="CellUtil.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptPropertyDeclaration#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1182113674817158579" fileName="CellUtil.java" startLine="18" startPosition="21" endLine="18" endPosition="21" />
+    <scopeInfo nodeId="1182113674817158669" fileName="CellUtil.java" startLine="21" startPosition="53" endLine="22" endPosition="220" />
+    <scopeInfo nodeId="1182113674817443074" fileName="CellUtil.java" startLine="27" startPosition="508" endLine="28" endPosition="60" />
+    <scopeInfo nodeId="1182113674817443368" fileName="CellUtil.java" startLine="33" startPosition="121" endLine="34" endPosition="45" />
+    <scopeInfo nodeId="5031719587736625269" fileName="CellUtil.java" startLine="41" startPosition="39" endLine="42" endPosition="85" />
+    <scopeInfo nodeId="3425632322555590174" fileName="CellUtil.java" startLine="50" startPosition="71" endLine="51" endPosition="71" />
+    <scopeInfo nodeId="3425632322555626902" fileName="CellUtil.java" startLine="54" startPosition="70" endLine="55" endPosition="66" />
+    <scopeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="17" startPosition="23" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1182113674817158666" fileName="CellUtil.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1182113674817443066" fileName="CellUtil.java" startLine="25" startPosition="76" endLine="29" endPosition="5">
       <varInfo nodeId="1182113674817443095" varName="deprecatable" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817443336" fileName="CellUtil.java" startLine="27" startPosition="51" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1182113674817443336" fileName="CellUtil.java" startLine="32" startPosition="51" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="353" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="3425632322555626904" varName="linkDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5031719587736609120" fileName="CellUtil.java" startLine="39" startPosition="99" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1182113674817443067" varName="node" />
       <varInfo nodeId="1182113674817443069" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1182113674817443338" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
+    <scopeInfo nodeId="3425632322555590171" fileName="CellUtil.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="3425632322555590176" varName="linkDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5031719587736609117" fileName="CellUtil.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="5031719587736625220" varName="conceptPropertyName" />
+      <varInfo nodeId="5031719587736609121" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="330" endLine="44" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
+    <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
   </root>
   <root nodeId="1182113674817458489">
     <nodeInfo nodeId="1182113674817458500" fileName="LayoutConstraints.java" startLine="10" startPosition="0" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -180,6 +204,75 @@
     <unitInfo nodeId="1182113674817469606" fileName="LanguagesKeymapManager.java" startLine="36" startPosition="46" endLine="40" endPosition="3" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$1" />
     <unitInfo nodeId="1182113674817469567" fileName="LanguagesKeymapManager.java" startLine="126" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
     <unitInfo nodeId="1182113674817469564" fileName="LanguagesKeymapManager.java" startLine="33" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
+  </root>
+  <root nodeId="444720911773080383">
+    <nodeInfo nodeId="5031719587736552250" fileName="NodeSubstituteActionsComparator.java" startLine="11" startPosition="91" endLine="12" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainingRoot" />
+    <nodeInfo nodeId="5031719587736552261" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="64" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5031719587736519862" fileName="NodeSubstituteActionsComparator.java" startLine="18" startPosition="84" endLine="19" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031719587736519868" fileName="NodeSubstituteActionsComparator.java" startLine="19" startPosition="53" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031719587736552174" fileName="NodeSubstituteActionsComparator.java" startLine="20" startPosition="53" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5031719587736552034" fileName="NodeSubstituteActionsComparator.java" startLine="41" startPosition="122" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552040" fileName="NodeSubstituteActionsComparator.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5031719587736560464" fileName="NodeSubstituteActionsComparator.java" startLine="44" startPosition="0" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031719587736552303" fileName="NodeSubstituteActionsComparator.java" startLine="51" startPosition="67" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552293" fileName="NodeSubstituteActionsComparator.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5031719587736552361" fileName="NodeSubstituteActionsComparator.java" startLine="60" startPosition="78" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552385" fileName="NodeSubstituteActionsComparator.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5031719587736552403" fileName="NodeSubstituteActionsComparator.java" startLine="63" startPosition="0" endLine="64" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031719587736552413" fileName="NodeSubstituteActionsComparator.java" startLine="64" startPosition="119" endLine="65" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5031719587736552146" fileName="NodeSubstituteActionsComparator.java" startLine="66" startPosition="35" endLine="67" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552438" fileName="NodeSubstituteActionsComparator.java" startLine="69" startPosition="32" endLine="70" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5031719587736552167" fileName="NodeSubstituteActionsComparator.java" startLine="71" startPosition="37" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552170" fileName="NodeSubstituteActionsComparator.java" startLine="74" startPosition="5" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="444720911773080385" fileName="NodeSubstituteActionsComparator.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeSubstituteActionsComparator#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5031719587736552141" fileName="NodeSubstituteActionsComparator.java" startLine="65" startPosition="119" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5031719587736552162" fileName="NodeSubstituteActionsComparator.java" startLine="70" startPosition="121" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5031719587736552197" fileName="NodeSubstituteActionsComparator.java" startLine="22" startPosition="38" endLine="26" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552194" fileName="NodeSubstituteActionsComparator.java" startLine="27" startPosition="12" endLine="31" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552020" fileName="NodeSubstituteActionsComparator.java" startLine="36" startPosition="115" endLine="40" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552272" fileName="NodeSubstituteActionsComparator.java" startLine="46" startPosition="60" endLine="50" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552333" fileName="NodeSubstituteActionsComparator.java" startLine="55" startPosition="71" endLine="59" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5031719587736552234" fileName="NodeSubstituteActionsComparator.java" startLine="27" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5031719587736552148" fileName="NodeSubstituteActionsComparator.java" startLine="68" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5031719587736552018" fileName="NodeSubstituteActionsComparator.java" startLine="35" startPosition="49" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5031719587736552055" fileName="NodeSubstituteActionsComparator.java" startLine="45" startPosition="71" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5031719587736552087" fileName="NodeSubstituteActionsComparator.java" startLine="54" startPosition="0" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5031719587736552178" fileName="NodeSubstituteActionsComparator.java" startLine="21" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="444720911773120548" fileName="NodeSubstituteActionsComparator.java" startLine="17" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/action/INodeSubstituteAction;Ljetbrains/mps/smodel/action/INodeSubstituteAction;)I" />
+    <nodeInfo nodeId="5031719587736552002" fileName="NodeSubstituteActionsComparator.java" startLine="34" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <scopeInfo nodeId="444720911773080388" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="64" endLine="15" endPosition="38" />
+    <scopeInfo nodeId="5031719587736552033" fileName="NodeSubstituteActionsComparator.java" startLine="41" startPosition="122" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="5031719587736552295" fileName="NodeSubstituteActionsComparator.java" startLine="51" startPosition="67" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="5031719587736552353" fileName="NodeSubstituteActionsComparator.java" startLine="60" startPosition="78" endLine="61" endPosition="16" />
+    <scopeInfo nodeId="5031719587736552145" fileName="NodeSubstituteActionsComparator.java" startLine="66" startPosition="35" endLine="67" endPosition="15" />
+    <scopeInfo nodeId="5031719587736552166" fileName="NodeSubstituteActionsComparator.java" startLine="71" startPosition="37" endLine="72" endPosition="18" />
+    <scopeInfo nodeId="444720911773080385" fileName="NodeSubstituteActionsComparator.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5031719587736552243" varName="containingRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5031719587736552179" fileName="NodeSubstituteActionsComparator.java" startLine="22" startPosition="38" endLine="26" endPosition="8" />
+    <scopeInfo nodeId="5031719587736552235" fileName="NodeSubstituteActionsComparator.java" startLine="27" startPosition="12" endLine="31" endPosition="8" />
+    <scopeInfo nodeId="5031719587736552019" fileName="NodeSubstituteActionsComparator.java" startLine="36" startPosition="115" endLine="40" endPosition="8" />
+    <scopeInfo nodeId="5031719587736552073" fileName="NodeSubstituteActionsComparator.java" startLine="46" startPosition="60" endLine="50" endPosition="8" />
+    <scopeInfo nodeId="5031719587736552105" fileName="NodeSubstituteActionsComparator.java" startLine="55" startPosition="71" endLine="59" endPosition="8" />
+    <scopeInfo nodeId="5031719587736552152" fileName="NodeSubstituteActionsComparator.java" startLine="69" startPosition="32" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="444720911773120555" fileName="NodeSubstituteActionsComparator.java" startLine="18" startPosition="84" endLine="32" endPosition="5">
+      <varInfo nodeId="5031719587736519869" varName="parameter2" />
+      <varInfo nodeId="5031719587736519863" varName="parameter1" />
+    </scopeInfo>
+    <scopeInfo nodeId="444720911773120548" fileName="NodeSubstituteActionsComparator.java" startLine="17" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="444720911773120553" varName="action2" />
+      <varInfo nodeId="444720911773120551" varName="action1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5031719587736552005" fileName="NodeSubstituteActionsComparator.java" startLine="35" startPosition="49" endLine="75" endPosition="13">
+      <varInfo nodeId="5031719587736552404" varName="container1" />
+      <varInfo nodeId="5031719587736552414" varName="container2" />
+      <varInfo nodeId="5031719587736560465" varName="containigModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="5031719587736552002" fileName="NodeSubstituteActionsComparator.java" startLine="34" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5031719587736552008" varName="node1" />
+      <varInfo nodeId="5031719587736552010" varName="node2" />
+    </scopeInfo>
+    <unitInfo nodeId="444720911773080383" fileName="NodeSubstituteActionsComparator.java" startLine="11" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator" />
   </root>
 </debugInfo>
 

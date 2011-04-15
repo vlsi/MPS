@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="HTMLElement_Editor.java" startLine="272" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a" />
-  <unitInfo fileName="HTMLElement_Editor.java" startLine="281" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a_0" />
+  <unitInfo fileName="HTMLElement_Editor.java" startLine="270" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a" />
+  <unitInfo fileName="HTMLElement_Editor.java" startLine="279" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$HTMLElement_name_cellMenu_a0b0a_0" />
   <unitInfo fileName="BaseVariableDocReference_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.BaseVariableDocReference_Editor" />
   <unitInfo fileName="BaseDocReference_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.BaseDocReference_Editor" />
   <unitInfo fileName="BaseInlineDocTag_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.BaseInlineDocTag_Editor" />
@@ -20,35 +20,35 @@
   <unitInfo fileName="DocMethodParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocMethodParameterReference_Editor$_Inline_q8vom0_a0a" />
   <unitInfo fileName="DocTypeParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocTypeParameterReference_Editor$_Inline_9ukojg_a0a" />
   <unitInfo fileName="IntlineTagCommentLinePart_Actions.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.IntlineTagCommentLinePart_Actions" />
-  <unitInfo fileName="CodeInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
-  <unitInfo fileName="CommentLine_Editor.java" startLine="64" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor$partListHandler_dzsxo_b0" />
-  <unitInfo fileName="CodeSnippet_Editor.java" startLine="71" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor$statementListHandler_jmxmb2_b0" />
-  <unitInfo fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
-  <unitInfo fileName="HTMLElement_Editor.java" startLine="234" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$lineListHandler_h096ql_d0a" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="256" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$authorListHandler_c4imx1_b2a" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="277" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$authorListHandler_q2jz9e_b2a" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="294" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$sinceListHandler_c4imx1_c2a" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="315" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$sinceListHandler_q2jz9e_c2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="329" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$authorListHandler_ls0i5e_b2a" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="332" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$versionListHandler_c4imx1_d2a" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="353" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$versionListHandler_q2jz9e_d2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="367" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$sinceListHandler_ls0i5e_c2a" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="370" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$seeListHandler_c4imx1_e2a" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="391" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$seeListHandler_q2jz9e_e2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="405" startPosition="0" endLine="442" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$versionListHandler_ls0i5e_d2a" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="429" startPosition="0" endLine="466" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$paramListHandler_q2jz9e_f2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="443" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$seeListHandler_ls0i5e_e2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="481" startPosition="0" endLine="518" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$paramListHandler_ls0i5e_f2a" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="519" startPosition="0" endLine="556" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$throwsTagListHandler_ls0i5e_g2a" />
+  <unitInfo fileName="CodeInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
+  <unitInfo fileName="CommentLine_Editor.java" startLine="64" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor$partListHandler_dzsxo_b0" />
+  <unitInfo fileName="CodeSnippet_Editor.java" startLine="71" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor$statementListHandler_jmxmb2_b0" />
+  <unitInfo fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
+  <unitInfo fileName="HTMLElement_Editor.java" startLine="234" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor$lineListHandler_h096ql_d0a" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="254" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$authorListHandler_c4imx1_b2a" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="275" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$authorListHandler_q2jz9e_b2a" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="290" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$sinceListHandler_c4imx1_c2a" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="311" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$sinceListHandler_q2jz9e_c2a" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="326" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$versionListHandler_c4imx1_d2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="327" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$authorListHandler_ls0i5e_b2a" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="347" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$versionListHandler_q2jz9e_d2a" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="362" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$seeListHandler_c4imx1_e2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="363" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$sinceListHandler_ls0i5e_c2a" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="383" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$seeListHandler_q2jz9e_e2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="399" startPosition="0" endLine="434" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$versionListHandler_ls0i5e_d2a" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="419" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$paramListHandler_q2jz9e_f2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="435" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$seeListHandler_ls0i5e_e2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="471" startPosition="0" endLine="506" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$paramListHandler_ls0i5e_f2a" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="507" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$throwsTagListHandler_ls0i5e_g2a" />
   <unitInfo fileName="SinceBlockDocTag_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.SinceBlockDocTag_Editor" />
   <unitInfo fileName="VersionBlockDocTag_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.VersionBlockDocTag_Editor" />
   <unitInfo fileName="AuthorBlockDocTag_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.AuthorBlockDocTag_Editor" />
   <unitInfo fileName="ReturnBlockDocTag_Editor.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ReturnBlockDocTag_Editor" />
   <unitInfo fileName="TextCommentLinePart_Editor.java" startLine="18" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor" />
   <unitInfo fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action0" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="203" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$bodyListHandler_c4imx1_b0" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="224" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$bodyListHandler_q2jz9e_b0" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="276" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$bodyListHandler_ls0i5e_b0" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="203" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor$bodyListHandler_c4imx1_b0" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="224" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor$bodyListHandler_q2jz9e_b0" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="276" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor$bodyListHandler_ls0i5e_b0" />
   <unitInfo fileName="ValueInlineDocTag_Editor.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
   <unitInfo fileName="ThrowsBlockDocTag_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ThrowsBlockDocTag_Editor" />
   <unitInfo fileName="ParameterBlockDocTag_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ParameterBlockDocTag_Editor" />
@@ -59,18 +59,18 @@
   <unitInfo fileName="FieldDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocReference_Editor" />
   <unitInfo fileName="DocMethodParameterReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocMethodParameterReference_Editor" />
   <unitInfo fileName="DocTypeParameterReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocTypeParameterReference_Editor" />
+  <unitInfo fileName="CodeInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor" />
+  <unitInfo fileName="CommentLine_Editor.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor" />
   <unitInfo fileName="InlineTagCommentLinePart_Editor.java" startLine="18" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.InlineTagCommentLinePart_Editor" />
-  <unitInfo fileName="CodeInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor" />
-  <unitInfo fileName="CommentLine_Editor.java" startLine="24" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLine_Editor" />
-  <unitInfo fileName="CodeSnippet_Editor.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor" />
+  <unitInfo fileName="CodeSnippet_Editor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor" />
   <unitInfo fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action1" />
-  <unitInfo fileName="LinkInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor" />
+  <unitInfo fileName="LinkInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor" />
   <unitInfo fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action2" />
-  <unitInfo fileName="HTMLElement_Editor.java" startLine="35" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor" />
+  <unitInfo fileName="HTMLElement_Editor.java" startLine="35" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HTMLElement_Editor" />
   <unitInfo fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
-  <unitInfo fileName="FieldDocComment_Editor.java" startLine="28" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" />
-  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="28" startPosition="0" endLine="467" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor" />
-  <unitInfo fileName="MethodDocComment_Editor.java" startLine="30" startPosition="0" endLine="557" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor" />
+  <unitInfo fileName="FieldDocComment_Editor.java" startLine="28" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" />
+  <unitInfo fileName="ClassifierDocComment_Editor.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor" />
+  <unitInfo fileName="MethodDocComment_Editor.java" startLine="30" startPosition="0" endLine="543" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.MethodDocComment_Editor" />
   <root nodeId="2068944020170241615">
     <nodeInfo nodeId="2068944020170241637" fileName="ClassifierDocComment_Editor.java" startLine="200" startPosition="112" endLine="201" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2068944020170241649" fileName="ClassifierDocComment_Editor.java" startLine="204" startPosition="112" endLine="205" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -446,11 +446,11 @@
   </root>
   <root nodeId="6612597108003615645">
     <nodeInfo nodeId="6612597108004706973" fileName="HTMLElement_Editor.java" startLine="230" startPosition="110" endLine="231" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6612597108005074121" fileName="HTMLElement_Editor.java" startLine="276" startPosition="105" endLine="277" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6612597108004969380" fileName="HTMLElement_Editor.java" startLine="285" startPosition="105" endLine="286" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6612597108005074121" fileName="HTMLElement_Editor.java" startLine="274" startPosition="105" endLine="275" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6612597108004969380" fileName="HTMLElement_Editor.java" startLine="283" startPosition="105" endLine="284" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6612597108004705761" fileName="HTMLElement_Editor.java" startLine="230" startPosition="110" endLine="231" endPosition="91" />
-    <scopeInfo nodeId="6612597108005074120" fileName="HTMLElement_Editor.java" startLine="276" startPosition="105" endLine="277" endPosition="113" />
-    <scopeInfo nodeId="6612597108004967784" fileName="HTMLElement_Editor.java" startLine="285" startPosition="105" endLine="286" endPosition="113" />
+    <scopeInfo nodeId="6612597108005074120" fileName="HTMLElement_Editor.java" startLine="274" startPosition="105" endLine="275" endPosition="113" />
+    <scopeInfo nodeId="6612597108004967784" fileName="HTMLElement_Editor.java" startLine="283" startPosition="105" endLine="284" endPosition="113" />
   </root>
   <root nodeId="6832197706140896245">
     <nodeInfo nodeId="6832197706140896270" fileName="FieldDocComment_Editor.java" startLine="183" startPosition="112" endLine="184" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

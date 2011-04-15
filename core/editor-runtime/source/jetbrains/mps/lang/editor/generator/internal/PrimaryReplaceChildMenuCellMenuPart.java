@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -38,13 +37,13 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart {
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    LinkDeclaration linkDeclaration = (LinkDeclaration) ((SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION)).getAdapter();
-    final String role = linkDeclaration.getRole();
+    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
+    final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
     return ModelActions.createChildSubstituteActions(
             parentNode,
             currentChild,
-            linkDeclaration.getTarget(),
+            CellUtil.getLinkDeclarationTarget(linkDeclaration),
             new AbstractChildNodeSetter() {
               public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
                 if (oldChild == null) {

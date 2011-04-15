@@ -17,8 +17,8 @@
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="129" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$BooleanStyleSheetItem_flag_cellMenu_a0c0" />
   <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="131" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_3" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="138" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_1" />
-  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="168" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_5" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="693" startPosition="0" endLine="701" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_usesFolding_cellMenu_a0a1c3a" />
+  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="166" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_5" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="687" startPosition="0" endLine="695" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_usesFolding_cellMenu_a0a1c3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1111" startPosition="0" endLine="1119" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="19" startPosition="56" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$1" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="30" startPosition="58" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$2" />
@@ -87,19 +87,19 @@
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="189" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0c0" />
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="202" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_b0d0" />
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="215" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0d0" />
-  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="262" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$CellActionMapDeclaration_name_cellMenu_a0b0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="702" startPosition="0" endLine="714" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_generic_cellMenu_b0a1c3a" />
+  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="260" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$CellActionMapDeclaration_name_cellMenu_a0b0a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="696" startPosition="0" endLine="708" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_generic_cellMenu_b0a1c3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1190" startPosition="0" endLine="1202" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_b0a1e3a" />
-  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="312" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$CellKeyMapDeclaration_name_postfixCellMenu_a0b0a" />
+  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="310" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$CellKeyMapDeclaration_name_postfixCellMenu_a0b0a" />
   <unitInfo fileName="CellMenuPart_Abstract_Editor.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_Abstract_Editor" />
   <unitInfo fileName="StyleSheetClass_RT.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_RT$StyleSheetClass_RT_RIGHT_TRANSFORM" />
-  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="199" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0" />
+  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="197" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0" />
   <unitInfo fileName="CellModel_Indent_Editor.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Indent_Editor" />
   <unitInfo fileName="StyleSheetClass_RT.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_RT" />
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="132" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0c0" />
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="154" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0d0" />
   <unitInfo fileName="FontStyleStyleClassItem_Editor.java" startLine="166" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor$FontStyleStyleClassItem_generic_cellMenu_a0d0" />
-  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="177" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0" />
+  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="175" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0" />
   <unitInfo fileName="RightTransformAnchorTagWrapper_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.RightTransformAnchorTagWrapper_Editor" />
   <unitInfo fileName="CellLayout_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellLayout_Editor" />
   <unitInfo fileName="ReadOnlyModelAccessor_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ReadOnlyModelAccessor_Editor" />
@@ -116,6 +116,16 @@
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="481" startPosition="0" endLine="513" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a0a0b1d0" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1078" startPosition="0" endLine="1110" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1l3a" />
   <unitInfo fileName="EditorComponentDeclaration_Editor.java" startLine="246" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorComponentDeclaration_Editor$_Inline_qbcy69_a1b1b0" />
+  <unitInfo fileName="StyleSheet_Editor.java" startLine="126" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheet_Editor$styleClassListHandler_9d9hlb_b1a" />
+  <unitInfo fileName="InlineStyleDeclaration_Editor.java" startLine="148" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineStyleDeclaration_Editor$styleItemListHandler_tl5ft1_b1a" />
+  <unitInfo fileName="Style_Component.java" startLine="172" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component$styleItemListHandler_zdjsuv_b1b0" />
+  <unitInfo fileName="StyleSheetClass_Editor.java" startLine="178" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_Editor$styleItemListHandler_bi932p_b1a" />
+  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="224" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$itemListHandler_dnk0aj_g0" />
+  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="274" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$itemListHandler_zabbeg_i0" />
+  <unitInfo fileName="CellKeyMapItem_Editor.java" startLine="470" startPosition="0" endLine="505" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapItem_Editor$keystrokeListHandler_4y23v1_c1b0a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="579" startPosition="0" endLine="614" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="615" startPosition="0" endLine="650" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="651" startPosition="0" endLine="686" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b0a" />
   <unitInfo fileName="CellModel_Collection_Actions.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Actions" />
   <unitInfo fileName="CellMenuComponentFeature_Link_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_Editor$_Inline_5mhiie_a0a" />
   <unitInfo fileName="CellMenuComponentFeature_Property_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_Editor$_Inline_4l3rbt_a0a" />
@@ -139,20 +149,10 @@
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1004" startPosition="0" endLine="1040" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a1c0" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1041" startPosition="0" endLine="1077" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a3a" />
   <unitInfo fileName="CellModel_Component_KeyMap.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Component_KeyMap$CellModel_Component_KeyMap_Action0" />
-  <unitInfo fileName="StyleSheet_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheet_Editor$styleClassListHandler_9d9hlb_b1a" />
-  <unitInfo fileName="InlineStyleDeclaration_Editor.java" startLine="148" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineStyleDeclaration_Editor$styleItemListHandler_tl5ft1_b1a" />
-  <unitInfo fileName="Style_Component.java" startLine="172" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component$styleItemListHandler_zdjsuv_b1b0" />
-  <unitInfo fileName="StyleSheetClass_Editor.java" startLine="178" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_Editor$styleItemListHandler_bi932p_b1a" />
   <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="186" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$_Inline_dnk0aj_a1c0" />
   <unitInfo fileName="CellMenuComponent_Editor.java" startLine="199" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponent_Editor$_Inline_iz7kpk_a1a1b0" />
-  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="224" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$itemListHandler_dnk0aj_g0" />
   <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="236" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$_Inline_zabbeg_a1e0" />
   <unitInfo fileName="ConceptEditorDeclaration_Editor.java" startLine="246" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ConceptEditorDeclaration_Editor$_Inline_cth9w3_a1a0" />
-  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="274" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$itemListHandler_zabbeg_i0" />
-  <unitInfo fileName="CellKeyMapItem_Editor.java" startLine="470" startPosition="0" endLine="507" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapItem_Editor$keystrokeListHandler_4y23v1_c1b0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="579" startPosition="0" endLine="616" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="617" startPosition="0" endLine="654" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="655" startPosition="0" endLine="692" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b0a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="366" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a2a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="442" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a1b3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1151" startPosition="0" endLine="1189" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0c6d0" />
@@ -163,19 +163,19 @@
   <unitInfo fileName="RGBColor_Editor.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.RGBColor_Editor" />
   <unitInfo fileName="EditorCellModel_KeyMap.java" startLine="24" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorCellModel_KeyMap$EditorCellModel_KeyMap_Action0" />
   <unitInfo fileName="EditorCellModel_KeyMap.java" startLine="70" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorCellModel_KeyMap$EditorCellModel_KeyMap_Action1" />
+  <unitInfo fileName="SelectOperation_Editor.java" startLine="111" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectOperation_Editor$selectLaterParameterListHandler_v1t174_b3a" />
+  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="120" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$tagsListHandler_2l0gvl_d0" />
   <unitInfo fileName="CellModel_Component_KeyMap.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Component_KeyMap" />
   <unitInfo fileName="SelectPositionParameter_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectPositionParameter_Editor" />
-  <unitInfo fileName="SelectOperation_Editor.java" startLine="111" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectOperation_Editor$selectLaterParameterListHandler_v1t174_b3a" />
-  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="120" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$tagsListHandler_2l0gvl_d0" />
   <unitInfo fileName="CellModelListWithRole_FoldedCellComponent.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent" />
   <unitInfo fileName="CellModelCollection_FoldedCellComponent.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent" />
   <unitInfo fileName="CellModel_BlockEnd_Editor.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_BlockEnd_Editor" />
   <unitInfo fileName="_CloseTag.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._CloseTag" />
   <unitInfo fileName="_OpenTag.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._OpenTag" />
+  <unitInfo fileName="ParametersInformationQuery_Editor.java" startLine="377" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor$methodDeclarationListHandler_p9c0o3_p3a" />
   <unitInfo fileName="CellModel_BlockStart_Editor.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_BlockStart_Editor" />
-  <unitInfo fileName="ParametersInformationQuery_Editor.java" startLine="377" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor$methodDeclarationListHandler_p9c0o3_p3a" />
+  <unitInfo fileName="CellMenuDescriptor_Editor.java" startLine="52" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuDescriptor_Editor$cellMenuPartListHandler_g1wmr2_b0" />
   <unitInfo fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="26" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._SplitConctantCellIntoWordsKeyMap$_SplitConctantCellIntoWordsKeyMap_Action0" />
-  <unitInfo fileName="CellMenuDescriptor_Editor.java" startLine="52" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuDescriptor_Editor$cellMenuPartListHandler_g1wmr2_b0" />
   <unitInfo fileName="CellModel_Empty_Editor.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Empty_Editor" />
   <unitInfo fileName="CellModel_JComponent_Editor.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_JComponent_Editor" />
   <unitInfo fileName="NavigatableNodeStyleClassItem_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.NavigatableNodeStyleClassItem_Editor" />
@@ -185,7 +185,7 @@
   <unitInfo fileName="HorizontalAlign_Editor.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.HorizontalAlign_Editor" />
   <unitInfo fileName="PositionStyleClassItem_Editor.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.PositionStyleClassItem_Editor" />
   <unitInfo fileName="CellModel_ReferencePresentation_Editor.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_ReferencePresentation_Editor" />
-  <unitInfo fileName="AbstractStyledTextOperation_Editor.java" startLine="89" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor$actualArgumentListHandler_4shs3_c0" />
+  <unitInfo fileName="AbstractStyledTextOperation_Editor.java" startLine="89" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor$actualArgumentListHandler_4shs3_c0" />
   <unitInfo fileName="StyleSheetClassReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClassReference_Editor" />
   <unitInfo fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._SplitConctantCellIntoWordsKeyMap" />
   <unitInfo fileName="PositionChildrenStyleClassItem_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.PositionChildrenStyleClassItem_Editor" />
@@ -200,8 +200,8 @@
   <unitInfo fileName="CellMenuPart_ReferentPrimary_Editor.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReferentPrimary_Editor" />
   <unitInfo fileName="_FocusPolicy_Applicable.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable" />
   <unitInfo fileName="_CellKeyMapLnk_Component.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._CellKeyMapLnk_Component" />
+  <unitInfo fileName="CellMenuDescriptor_Editor.java" startLine="24" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuDescriptor_Editor" />
   <unitInfo fileName="CellModel_AttributedLinkCell_Editor.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_AttributedLinkCell_Editor" />
-  <unitInfo fileName="CellMenuDescriptor_Editor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuDescriptor_Editor" />
   <unitInfo fileName="AbstractPaddingStyleClassItem_Editor.java" startLine="20" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractPaddingStyleClassItem_Editor" />
   <unitInfo fileName="ParametersInformationStyleClassItem_Editor.java" startLine="19" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationStyleClassItem_Editor" />
   <unitInfo fileName="NavigatableReferenceStyleClassItem_Editor.java" startLine="19" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.NavigatableReferenceStyleClassItem_Editor" />
@@ -212,35 +212,35 @@
   <unitInfo fileName="CellModel_Component_Editor.java" startLine="20" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Component_Editor" />
   <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="28" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor" />
   <unitInfo fileName="CellKeyMapKeystroke_Editor.java" startLine="27" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapKeystroke_Editor" />
+  <unitInfo fileName="AbstractStyledTextOperation_Editor.java" startLine="29" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor" />
   <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="31" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor" />
-  <unitInfo fileName="AbstractStyledTextOperation_Editor.java" startLine="29" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor" />
   <unitInfo fileName="CellModel_Custom_Editor.java" startLine="19" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Custom_Editor" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="34" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor" />
-  <unitInfo fileName="SelectOperation_Editor.java" startLine="28" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectOperation_Editor" />
+  <unitInfo fileName="SelectOperation_Editor.java" startLine="28" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SelectOperation_Editor" />
   <unitInfo fileName="MatchingLabelStyleClassItem_Editor.java" startLine="28" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.MatchingLabelStyleClassItem_Editor" />
+  <unitInfo fileName="StyleSheet_Editor.java" startLine="29" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheet_Editor" />
   <unitInfo fileName="CellMenuPart_CellMenuComponent_Editor.java" startLine="21" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_CellMenuComponent_Editor" />
-  <unitInfo fileName="StyleSheet_Editor.java" startLine="29" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheet_Editor" />
   <unitInfo fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.java" startLine="21" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReplaceNode_CustomNodeConcept_Editor" />
   <unitInfo fileName="CellModel_Block_Editor.java" startLine="21" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Block_Editor" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="16" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
-  <unitInfo fileName="InlineStyleDeclaration_Editor.java" startLine="30" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineStyleDeclaration_Editor" />
+  <unitInfo fileName="InlineStyleDeclaration_Editor.java" startLine="30" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineStyleDeclaration_Editor" />
   <unitInfo fileName="FontStyleStyleClassItem_Editor.java" startLine="31" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor" />
   <unitInfo fileName="CellActionMapItem_Editor.java" startLine="21" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapItem_Editor" />
   <unitInfo fileName="CellModel_Error_Editor.java" startLine="22" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Error_Editor" />
+  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" />
   <unitInfo fileName="CellMenuPart_Generic_Item_Editor.java" startLine="20" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_Generic_Item_Editor" />
-  <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" />
   <unitInfo fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="22" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_ReadOnlyModelAccessor_Editor" />
-  <unitInfo fileName="Style_Component.java" startLine="30" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component" />
-  <unitInfo fileName="StyleSheetClass_Editor.java" startLine="31" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_Editor" />
+  <unitInfo fileName="Style_Component.java" startLine="30" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component" />
+  <unitInfo fileName="StyleSheetClass_Editor.java" startLine="31" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_Editor" />
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="32" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor" />
   <unitInfo fileName="CellMenuComponent_Editor.java" startLine="22" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponent_Editor" />
   <unitInfo fileName="CellModel_Image_Editor.java" startLine="22" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Image_Editor" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Item_Editor.java" startLine="20" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReplaceChild_Item_Editor" />
-  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="38" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor" />
+  <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="38" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor" />
   <unitInfo fileName="EditorComponentDeclaration_Editor.java" startLine="25" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorComponentDeclaration_Editor" />
   <unitInfo fileName="CellModel_ModelAccess_Editor.java" startLine="25" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_ModelAccess_Editor" />
   <unitInfo fileName="ConceptEditorDeclaration_Editor.java" startLine="25" startPosition="0" endLine="284" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ConceptEditorDeclaration_Editor" />
-  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="38" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor" />
+  <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="38" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor" />
   <unitInfo fileName="CellModel_RefNode_Editor.java" startLine="24" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNode_Editor" />
   <unitInfo fileName="CellModel_Constant_Editor.java" startLine="25" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Constant_Editor" />
   <unitInfo fileName="ModelAccessor_Editor.java" startLine="22" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ModelAccessor_Editor" />
@@ -248,15 +248,15 @@
   <unitInfo fileName="CellMenuPart_Generic_Group_Editor.java" startLine="22" startPosition="0" endLine="400" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_Generic_Group_Editor" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Editor.java" startLine="22" startPosition="0" endLine="400" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReplaceChild_Group_Editor" />
   <unitInfo fileName="CellMenuPart_ReplaceNode_Group_Editor.java" startLine="22" startPosition="0" endLine="400" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReplaceNode_Group_Editor" />
-  <unitInfo fileName="ParametersInformationQuery_Editor.java" startLine="31" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor" />
+  <unitInfo fileName="ParametersInformationQuery_Editor.java" startLine="31" startPosition="0" endLine="429" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor" />
   <unitInfo fileName="CellModel_Alternation_Editor.java" startLine="24" startPosition="0" endLine="432" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Alternation_Editor" />
   <unitInfo fileName="CellModel_ConceptProperty_Editor.java" startLine="28" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_ConceptProperty_Editor" />
   <unitInfo fileName="CellModel_TransactionalProperty_Editor.java" startLine="26" startPosition="0" endLine="482" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_TransactionalProperty_Editor" />
-  <unitInfo fileName="CellKeyMapItem_Editor.java" startLine="29" startPosition="0" endLine="508" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapItem_Editor" />
+  <unitInfo fileName="CellKeyMapItem_Editor.java" startLine="29" startPosition="0" endLine="506" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapItem_Editor" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="28" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor" />
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="29" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="29" startPosition="0" endLine="561" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="46" startPosition="0" endLine="715" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="46" startPosition="0" endLine="709" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="39" startPosition="0" endLine="1203" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor" />
   <root nodeId="1078250851485">
     <nodeInfo nodeId="1214396913644" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -274,8 +274,8 @@
     <nodeInfo nodeId="1237474002646" fileName="CellModel_Collection_Editor.java" startLine="567" startPosition="110" endLine="568" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237474002653" fileName="CellModel_Collection_Editor.java" startLine="571" startPosition="110" endLine="572" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237473996307" fileName="CellModel_Collection_Editor.java" startLine="575" startPosition="109" endLine="576" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4172501465791167623" fileName="CellModel_Collection_Editor.java" startLine="697" startPosition="105" endLine="698" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4172501465791167632" fileName="CellModel_Collection_Editor.java" startLine="706" startPosition="106" endLine="707" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4172501465791167623" fileName="CellModel_Collection_Editor.java" startLine="691" startPosition="105" endLine="692" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4172501465791167632" fileName="CellModel_Collection_Editor.java" startLine="700" startPosition="106" endLine="701" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="7723470090030238507" fileName="CellModel_Collection_Editor.java" startLine="535" startPosition="113" endLine="536" endPosition="89" />
     <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="539" startPosition="112" endLine="540" endPosition="77" />
     <scopeInfo nodeId="7723470090030872884" fileName="CellModel_Collection_Editor.java" startLine="543" startPosition="113" endLine="544" endPosition="89" />
@@ -287,8 +287,8 @@
     <scopeInfo nodeId="1237474002645" fileName="CellModel_Collection_Editor.java" startLine="567" startPosition="110" endLine="568" endPosition="83" />
     <scopeInfo nodeId="1237474002652" fileName="CellModel_Collection_Editor.java" startLine="571" startPosition="110" endLine="572" endPosition="83" />
     <scopeInfo nodeId="1237473996306" fileName="CellModel_Collection_Editor.java" startLine="575" startPosition="109" endLine="576" endPosition="49" />
-    <scopeInfo nodeId="4172501465791167622" fileName="CellModel_Collection_Editor.java" startLine="697" startPosition="105" endLine="698" endPosition="85" />
-    <scopeInfo nodeId="4172501465791167631" fileName="CellModel_Collection_Editor.java" startLine="706" startPosition="106" endLine="707" endPosition="138" />
+    <scopeInfo nodeId="4172501465791167622" fileName="CellModel_Collection_Editor.java" startLine="691" startPosition="105" endLine="692" endPosition="85" />
+    <scopeInfo nodeId="4172501465791167631" fileName="CellModel_Collection_Editor.java" startLine="700" startPosition="106" endLine="701" endPosition="138" />
   </root>
   <root nodeId="1080742754453">
     <nodeInfo nodeId="1176717082035" fileName="CellModel_Constant_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -347,13 +347,13 @@
     <scopeInfo nodeId="1214560571669" fileName="CellModel_RefNode_Editor.java" startLine="260" startPosition="112" endLine="261" endPosition="71" />
   </root>
   <root nodeId="1081293221911">
-    <nodeInfo nodeId="1200683745842" fileName="CellKeyMapDeclaration_Editor.java" startLine="316" startPosition="100" endLine="317" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200683831259" fileName="CellKeyMapDeclaration_Editor.java" startLine="317" startPosition="77" endLine="318" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200683791319" fileName="CellKeyMapDeclaration_Editor.java" startLine="319" startPosition="80" endLine="320" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200683827002" fileName="CellKeyMapDeclaration_Editor.java" startLine="321" startPosition="7" endLine="322" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200683740839" fileName="CellKeyMapDeclaration_Editor.java" startLine="318" startPosition="60" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1200683740841" fileName="CellKeyMapDeclaration_Editor.java" startLine="319" startPosition="80" endLine="320" endPosition="163" />
-    <scopeInfo nodeId="1200683680838" fileName="CellKeyMapDeclaration_Editor.java" startLine="316" startPosition="100" endLine="322" endPosition="22">
+    <nodeInfo nodeId="1200683745842" fileName="CellKeyMapDeclaration_Editor.java" startLine="314" startPosition="100" endLine="315" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200683831259" fileName="CellKeyMapDeclaration_Editor.java" startLine="315" startPosition="77" endLine="316" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200683791319" fileName="CellKeyMapDeclaration_Editor.java" startLine="317" startPosition="80" endLine="318" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200683827002" fileName="CellKeyMapDeclaration_Editor.java" startLine="319" startPosition="7" endLine="320" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200683740839" fileName="CellKeyMapDeclaration_Editor.java" startLine="316" startPosition="60" endLine="319" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1200683740841" fileName="CellKeyMapDeclaration_Editor.java" startLine="317" startPosition="80" endLine="318" endPosition="163" />
+    <scopeInfo nodeId="1200683680838" fileName="CellKeyMapDeclaration_Editor.java" startLine="314" startPosition="100" endLine="320" endPosition="22">
       <varInfo nodeId="1200683745843" varName="prefixes" />
     </scopeInfo>
   </root>
@@ -418,12 +418,12 @@
     <scopeInfo nodeId="1221239216368" fileName="CellModel_ConceptProperty_Editor.java" startLine="367" startPosition="107" endLine="368" endPosition="80" />
   </root>
   <root nodeId="1139532930462">
-    <nodeInfo nodeId="1185873764232" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="105" endLine="267" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1185873798360" fileName="CellActionMapDeclaration_Editor.java" startLine="268" startPosition="82" endLine="269" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1185873825227" fileName="CellActionMapDeclaration_Editor.java" startLine="270" startPosition="7" endLine="271" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185873787458" fileName="CellActionMapDeclaration_Editor.java" startLine="267" startPosition="74" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1185873787459" fileName="CellActionMapDeclaration_Editor.java" startLine="268" startPosition="82" endLine="269" endPosition="161" />
-    <scopeInfo nodeId="1185873717407" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="105" endLine="271" endPosition="19">
+    <nodeInfo nodeId="1185873764232" fileName="CellActionMapDeclaration_Editor.java" startLine="264" startPosition="105" endLine="265" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1185873798360" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="82" endLine="267" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1185873825227" fileName="CellActionMapDeclaration_Editor.java" startLine="268" startPosition="7" endLine="269" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185873787458" fileName="CellActionMapDeclaration_Editor.java" startLine="265" startPosition="74" endLine="268" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1185873787459" fileName="CellActionMapDeclaration_Editor.java" startLine="266" startPosition="82" endLine="267" endPosition="161" />
+    <scopeInfo nodeId="1185873717407" fileName="CellActionMapDeclaration_Editor.java" startLine="264" startPosition="105" endLine="269" endPosition="19">
       <varInfo nodeId="1185873764233" varName="names" />
     </scopeInfo>
   </root>
@@ -679,18 +679,18 @@
   <root nodeId="1214320151708">
     <nodeInfo nodeId="3608226089192003318" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3608226089192003335" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="116" startPosition="111" endLine="117" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608226089192003356" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="181" startPosition="105" endLine="182" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608226089192004234" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="189" startPosition="163" endLine="190" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608226089192036676" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="190" startPosition="84" endLine="191" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608226089192056555" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="106" endLine="204" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3608226089192056563" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="204" startPosition="138" endLine="205" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608226089192037066" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="205" startPosition="103" endLine="206" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608226089192056584" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="206" startPosition="99" endLine="207" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608226089192003356" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="179" startPosition="105" endLine="180" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608226089192004234" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="187" startPosition="163" endLine="188" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608226089192036676" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="188" startPosition="84" endLine="189" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608226089192056555" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="201" startPosition="106" endLine="202" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3608226089192056563" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="202" startPosition="138" endLine="203" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608226089192037066" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="103" endLine="204" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608226089192056584" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="204" startPosition="99" endLine="205" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="3608226089191997422" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="91" />
     <scopeInfo nodeId="3608226089192003334" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="116" startPosition="111" endLine="117" endPosition="94" />
-    <scopeInfo nodeId="3608226089192003351" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="181" startPosition="105" endLine="182" endPosition="175" />
-    <scopeInfo nodeId="3608226089192003353" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="189" startPosition="163" endLine="191" endPosition="96" />
-    <scopeInfo nodeId="3608226089192037063" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="106" endLine="207" endPosition="49">
+    <scopeInfo nodeId="3608226089192003351" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="179" startPosition="105" endLine="180" endPosition="175" />
+    <scopeInfo nodeId="3608226089192003353" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="187" startPosition="163" endLine="189" endPosition="96" />
+    <scopeInfo nodeId="3608226089192037063" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="201" startPosition="106" endLine="205" endPosition="49">
       <varInfo nodeId="3608226089192056556" varName="tagWrapper" />
     </scopeInfo>
   </root>

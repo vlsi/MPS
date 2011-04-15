@@ -13,19 +13,19 @@
   <unitInfo fileName="Variable_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Variable_Editor" />
   <unitInfo fileName="NumericConstant_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.NumericConstant_Editor" />
   <unitInfo fileName="VariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor$_Inline_ge17fi_a0a" />
-  <unitInfo fileName="LambdaApplication_Editor.java" startLine="98" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor$argumentListHandler_ppbi6p_c0" />
-  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="131" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor$variableListHandler_w093uu_b0a" />
-  <unitInfo fileName="MultipleExpression_Editor.java" startLine="42" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor$expressionsListHandler_24hnc2_a0" />
+  <unitInfo fileName="LambdaApplication_Editor.java" startLine="98" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor$argumentListHandler_ppbi6p_c0" />
+  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="131" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor$variableListHandler_w093uu_b0a" />
+  <unitInfo fileName="MultipleExpression_Editor.java" startLine="42" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor$expressionsListHandler_24hnc2_a0" />
   <unitInfo fileName="StringConstant_Editor.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.StringConstant_Editor" />
   <unitInfo fileName="FunctionType_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
   <unitInfo fileName="ParenthesisExpression_Editor.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisExpression_Editor" />
   <unitInfo fileName="VariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
+  <unitInfo fileName="MultipleExpression_Editor.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
   <unitInfo fileName="BinaryOperation_Editor.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
   <unitInfo fileName="Program_Editor.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.Program_Editor" />
-  <unitInfo fileName="MultipleExpression_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
   <unitInfo fileName="LetExpression_Editor.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LetExpression_Editor" />
-  <unitInfo fileName="LambdaApplication_Editor.java" startLine="26" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
-  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="26" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
+  <unitInfo fileName="LambdaApplication_Editor.java" startLine="26" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
+  <unitInfo fileName="LambdaAbstraction_Editor.java" startLine="26" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
   <root nodeId="2076063674015982318">
     <nodeInfo nodeId="2076063674015982363" fileName="Application_Argument_actions.java" startLine="33" startPosition="75" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2076063674015982374" fileName="Application_Argument_actions.java" startLine="34" startPosition="73" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

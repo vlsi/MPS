@@ -16,7 +16,7 @@
   <unitInfo fileName="MapSrcNodeMacro_Editor.java" startLine="415" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor$MapSrcNodeMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="TemplateCallMacro_Editor.java" startLine="419" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$TemplateCallMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="IfMacro_Editor.java" startLine="443" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor$IfMacro_component_cellMenu_a0a0a" />
-  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="296" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$TemplateDeclaration_name_cellMenu_a0b0a0" />
+  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="294" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$TemplateDeclaration_name_cellMenu_a0b0a0" />
   <unitInfo fileName="AbandonInput_RuleConsequence_Editor.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.AbandonInput_RuleConsequence_Editor" />
   <unitInfo fileName="MacroSymbol_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions$MacroSymbol_Actions_DELETE" />
   <unitInfo fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
@@ -47,6 +47,19 @@
   <unitInfo fileName="MapSrcNodeMacro_Editor.java" startLine="381" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor$_Inline_dms3bp_a2b2a" />
   <unitInfo fileName="TemplateCallMacro_Editor.java" startLine="385" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor$_Inline_nnob7w_a0c4c0" />
   <unitInfo fileName="IfMacro_Editor.java" startLine="409" startPosition="0" endLine="442" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor$_Inline_t4g6n2_a2b2a" />
+  <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="106" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor$caseListHandler_yn898b_a0" />
+  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="258" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$parameterListHandler_pyph5i_e0a" />
+  <unitInfo fileName="TemplateSwitch_Editor.java" startLine="346" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor$reductionMappingRuleListHandler_q42gqn_b4b2a" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="871" startPosition="0" endLine="906" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$mappingLabelListHandler_g6pxeq_b1c0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="907" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$generationParametersListHandler_g6pxeq_b1e0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="943" startPosition="0" endLine="978" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$createRootRuleListHandler_g6pxeq_b1i0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="979" startPosition="0" endLine="1014" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$rootMappingRuleListHandler_g6pxeq_b1k0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1015" startPosition="0" endLine="1050" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$weavingMappingRuleListHandler_g6pxeq_b1m0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1051" startPosition="0" endLine="1086" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$reductionMappingRuleListHandler_g6pxeq_b1o0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1087" startPosition="0" endLine="1122" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$patternReductionRuleListHandler_g6pxeq_b1q0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1123" startPosition="0" endLine="1158" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$dropRootRuleListHandler_g6pxeq_b1s0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1159" startPosition="0" endLine="1194" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$preMappingScriptListHandler_g6pxeq_b1u0" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1195" startPosition="0" endLine="1230" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$postMappingScriptListHandler_g6pxeq_b1w0" />
   <unitInfo fileName="MappingLabelDeclaration_Editor.java" startLine="118" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor$_Inline_sexq64_a3a" />
   <unitInfo fileName="RootTemplateAnnotation_Editor.java" startLine="126" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor$_Inline_1qmre8_a1b0a" />
   <unitInfo fileName="MappingLabelDeclaration_Editor.java" startLine="155" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor$_Inline_sexq64_a5a" />
@@ -69,21 +82,8 @@
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor$_Inline_z0z5f6_a0a" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor$_Inline_f8ef2o_a0a" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor$_Inline_a5awwn_a0a" />
-  <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="106" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor$caseListHandler_yn898b_a0" />
-  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="258" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$parameterListHandler_pyph5i_e0a" />
   <unitInfo fileName="CreateRootRule_Editor.java" startLine="282" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor$_Inline_7t32xl_a4a" />
-  <unitInfo fileName="TemplateSwitch_Editor.java" startLine="346" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor$reductionMappingRuleListHandler_q42gqn_b4b2a" />
   <unitInfo fileName="Root_MappingRule_Editor.java" startLine="465" startPosition="0" endLine="502" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a3a" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="871" startPosition="0" endLine="908" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$mappingLabelListHandler_g6pxeq_b1c0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="909" startPosition="0" endLine="946" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$generationParametersListHandler_g6pxeq_b1e0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="947" startPosition="0" endLine="984" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$createRootRuleListHandler_g6pxeq_b1i0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="985" startPosition="0" endLine="1022" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$rootMappingRuleListHandler_g6pxeq_b1k0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1023" startPosition="0" endLine="1060" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$weavingMappingRuleListHandler_g6pxeq_b1m0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1061" startPosition="0" endLine="1098" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$reductionMappingRuleListHandler_g6pxeq_b1o0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1099" startPosition="0" endLine="1136" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$patternReductionRuleListHandler_g6pxeq_b1q0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1137" startPosition="0" endLine="1174" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$dropRootRuleListHandler_g6pxeq_b1s0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1175" startPosition="0" endLine="1212" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$preMappingScriptListHandler_g6pxeq_b1u0" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="1213" startPosition="0" endLine="1250" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor$postMappingScriptListHandler_g6pxeq_b1w0" />
   <unitInfo fileName="GeneratorDescriptor_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor" />
   <unitInfo fileName="DismissTopMappingRule_Editor.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DismissTopMappingRule_Editor" />
   <unitInfo fileName="InlineTemplateWithContext_RuleConsequence_Editor.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineTemplateWithContext_RuleConsequence_Editor" />
@@ -100,11 +100,11 @@
   <unitInfo fileName="RootTemplateAnnotation_KeyMap.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap" />
   <unitInfo fileName="TemplateDeclarationParameterInformationQuery.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" />
   <unitInfo fileName="TemplateParameterDeclaration_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateParameterDeclaration_Editor" />
+  <unitInfo fileName="ITemplateCall_actualArguments.java" startLine="120" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
   <unitInfo fileName="TemplateArgumentParameterExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor" />
   <unitInfo fileName="TemplateSwitchReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor" />
   <unitInfo fileName="MappingScriptReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor" />
   <unitInfo fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0" />
-  <unitInfo fileName="ITemplateCall_actualArguments.java" startLine="120" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor" />
@@ -112,9 +112,9 @@
   <unitInfo fileName="TemplateDeclarationReference_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor" />
   <unitInfo fileName="InlineSwitch_Case_Editor.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_Case_Editor" />
   <unitInfo fileName="DropRootRule_Editor.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor" />
-  <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="27" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor" />
+  <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="27" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor" />
   <unitInfo fileName="RootTemplateAnnotation_Editor.java" startLine="21" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor" />
-  <unitInfo fileName="ITemplateCall_actualArguments.java" startLine="29" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
+  <unitInfo fileName="ITemplateCall_actualArguments.java" startLine="29" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
   <unitInfo fileName="WeaveEach_RuleConsequence_Editor.java" startLine="21" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor" />
   <unitInfo fileName="NodeMacro_postfix.java" startLine="31" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix" />
   <unitInfo fileName="MappingLabelDeclaration_Editor.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingLabelDeclaration_Editor" />
@@ -126,7 +126,7 @@
   <unitInfo fileName="MappingScript_Editor.java" startLine="21" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScript_Editor" />
   <unitInfo fileName="LabelMacro_Editor.java" startLine="29" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor" />
   <unitInfo fileName="CopyScrNodeMacro_inspector.java" startLine="23" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" />
-  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="39" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor" />
+  <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="39" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor" />
   <unitInfo fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />
   <unitInfo fileName="Reduction_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
   <unitInfo fileName="InsertMacro_Editor.java" startLine="30" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InsertMacro_Editor" />
@@ -136,7 +136,7 @@
   <unitInfo fileName="CreateRootRule_Editor.java" startLine="25" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
   <unitInfo fileName="Weaving_MappingRule_Editor.java" startLine="25" startPosition="0" endLine="358" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
   <unitInfo fileName="WeaveMacro_Editor.java" startLine="30" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveMacro_Editor" />
-  <unitInfo fileName="TemplateSwitch_Editor.java" startLine="30" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor" />
+  <unitInfo fileName="TemplateSwitch_Editor.java" startLine="30" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitch_Editor" />
   <unitInfo fileName="PatternReduction_MappingRule_Editor.java" startLine="24" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" />
   <unitInfo fileName="IncludeMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" />
   <unitInfo fileName="SwitchMacro_Editor.java" startLine="30" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.SwitchMacro_Editor" />
@@ -145,7 +145,7 @@
   <unitInfo fileName="TemplateCallMacro_Editor.java" startLine="30" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateCallMacro_Editor" />
   <unitInfo fileName="IfMacro_Editor.java" startLine="32" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IfMacro_Editor" />
   <unitInfo fileName="Root_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor" />
-  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="30" startPosition="0" endLine="1251" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor" />
+  <unitInfo fileName="MappingConfiguration_Editor.java" startLine="30" startPosition="0" endLine="1231" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor" />
   <root nodeId="1087903454703">
     <nodeInfo nodeId="8696125237882288496" fileName="PropertyMacro_Editor.java" startLine="211" startPosition="111" endLine="212" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8696125237882288495" fileName="PropertyMacro_Editor.java" startLine="211" startPosition="111" endLine="212" endPosition="66" />
@@ -159,13 +159,13 @@
     <scopeInfo nodeId="8696125237882288505" fileName="ReferenceMacro_Editor.java" startLine="215" startPosition="111" endLine="216" endPosition="66" />
   </root>
   <root nodeId="1092060948911">
-    <nodeInfo nodeId="1183548097936" fileName="TemplateDeclaration_Editor.java" startLine="300" startPosition="105" endLine="301" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1183548125363" fileName="TemplateDeclaration_Editor.java" startLine="302" startPosition="82" endLine="303" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1183548193884" fileName="TemplateDeclaration_Editor.java" startLine="303" startPosition="161" endLine="304" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1183548186113" fileName="TemplateDeclaration_Editor.java" startLine="305" startPosition="7" endLine="306" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183548125361" fileName="TemplateDeclaration_Editor.java" startLine="301" startPosition="75" endLine="305" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1183548125362" fileName="TemplateDeclaration_Editor.java" startLine="302" startPosition="82" endLine="304" endPosition="160" />
-    <scopeInfo nodeId="1183548083859" fileName="TemplateDeclaration_Editor.java" startLine="300" startPosition="105" endLine="306" endPosition="20">
+    <nodeInfo nodeId="1183548097936" fileName="TemplateDeclaration_Editor.java" startLine="298" startPosition="105" endLine="299" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1183548125363" fileName="TemplateDeclaration_Editor.java" startLine="300" startPosition="82" endLine="301" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1183548193884" fileName="TemplateDeclaration_Editor.java" startLine="301" startPosition="161" endLine="302" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1183548186113" fileName="TemplateDeclaration_Editor.java" startLine="303" startPosition="7" endLine="304" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183548125361" fileName="TemplateDeclaration_Editor.java" startLine="299" startPosition="75" endLine="303" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1183548125362" fileName="TemplateDeclaration_Editor.java" startLine="300" startPosition="82" endLine="302" endPosition="160" />
+    <scopeInfo nodeId="1183548083859" fileName="TemplateDeclaration_Editor.java" startLine="298" startPosition="105" endLine="304" endPosition="20">
       <varInfo nodeId="1183548097937" varName="values" />
     </scopeInfo>
   </root>

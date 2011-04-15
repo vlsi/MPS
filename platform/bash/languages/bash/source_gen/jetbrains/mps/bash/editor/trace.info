@@ -19,47 +19,47 @@
   <unitInfo fileName="VariableReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.bash.editor.VariableReference_Editor$_Inline_ge17fi_a0a" />
   <unitInfo fileName="ExternalCommandCall_Editor.java" startLine="64" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor$_Inline_kvlfwn_a0a" />
   <unitInfo fileName="BasicParameterExpansion_Editor.java" startLine="88" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.bash.editor.BasicParameterExpansion_Editor$_Inline_yzb0ok_a2a" />
+  <unitInfo fileName="FreeCommand_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.bash.editor.FreeCommand_Editor$translatedWordListHandler_9xjwpi_a0" />
+  <unitInfo fileName="ArgumentListReference_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.bash.editor.ArgumentListReference_Editor$wordsListHandler_8ydzq6_a0" />
+  <unitInfo fileName="WordList_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.bash.editor.WordList_Editor$wordsListHandler_v3gbj6_a0" />
+  <unitInfo fileName="GeneralizedWord_Editor.java" startLine="40" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.bash.editor.GeneralizedWord_Editor$unitsListHandler_1ribud_a0" />
+  <unitInfo fileName="OptionSetReference_Editor.java" startLine="54" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSetReference_Editor$refToOptionsListHandler_yyez4n_b0" />
+  <unitInfo fileName="OptionSet_Editor.java" startLine="60" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSet_Editor$optionsListHandler_aaw9q7_b0" />
+  <unitInfo fileName="RedirectedCommand_Editor.java" startLine="61" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.bash.editor.RedirectedCommand_Editor$redirectionListHandler_t9ej7i_b0" />
+  <unitInfo fileName="ExternalCommandDeclaration_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandDeclaration_Editor$optionDeclarationListHandler_tf8515_c0" />
+  <unitInfo fileName="ExternalCommandCall_Editor.java" startLine="98" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor$refToOptionsListHandler_kvlfwn_b0" />
+  <unitInfo fileName="FunctionDeclaration_Editor.java" startLine="111" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionDeclaration_Editor$redirectionsListHandler_en7q4l_e0" />
+  <unitInfo fileName="ForeachCommand_Editor.java" startLine="135" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.bash.editor.ForeachCommand_Editor$wordListListHandler_h3ozxh_d0" />
+  <unitInfo fileName="ShellScript_Editor.java" startLine="149" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.bash.editor.ShellScript_Editor$usedVarsListHandler_jf4pm0_d0" />
   <unitInfo fileName="CommentedFollowingCommandList_Editor.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.editor.CommentedFollowingCommandList_Editor" />
   <unitInfo fileName="OptionReference_Editor.java" startLine="49" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionReference_Editor$_Inline_l8ia57_a0a" />
   <unitInfo fileName="FunctionCallCommand_Editor.java" startLine="69" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionCallCommand_Editor$_Inline_2g6d8r_a0a" />
   <unitInfo fileName="NotCommand_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.editor.NotCommand_Editor" />
   <unitInfo fileName="CommentedCommandList_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.editor.CommentedCommandList_Editor" />
   <unitInfo fileName="HereStringRedirection_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.editor.HereStringRedirection_Editor" />
-  <unitInfo fileName="FreeCommand_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bash.editor.FreeCommand_Editor$translatedWordListHandler_9xjwpi_a0" />
-  <unitInfo fileName="ArgumentListReference_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bash.editor.ArgumentListReference_Editor$wordsListHandler_8ydzq6_a0" />
-  <unitInfo fileName="WordList_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bash.editor.WordList_Editor$wordsListHandler_v3gbj6_a0" />
-  <unitInfo fileName="GeneralizedWord_Editor.java" startLine="40" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.bash.editor.GeneralizedWord_Editor$unitsListHandler_1ribud_a0" />
-  <unitInfo fileName="OptionSetReference_Editor.java" startLine="54" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSetReference_Editor$refToOptionsListHandler_yyez4n_b0" />
-  <unitInfo fileName="OptionSet_Editor.java" startLine="60" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSet_Editor$optionsListHandler_aaw9q7_b0" />
-  <unitInfo fileName="RedirectedCommand_Editor.java" startLine="61" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.bash.editor.RedirectedCommand_Editor$redirectionListHandler_t9ej7i_b0" />
-  <unitInfo fileName="ExternalCommandDeclaration_Editor.java" startLine="82" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandDeclaration_Editor$optionDeclarationListHandler_tf8515_c0" />
-  <unitInfo fileName="ExternalCommandCall_Editor.java" startLine="98" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor$refToOptionsListHandler_kvlfwn_b0" />
-  <unitInfo fileName="FunctionDeclaration_Editor.java" startLine="111" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionDeclaration_Editor$redirectionsListHandler_en7q4l_e0" />
-  <unitInfo fileName="ForeachCommand_Editor.java" startLine="135" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.bash.editor.ForeachCommand_Editor$wordListListHandler_h3ozxh_d0" />
-  <unitInfo fileName="ShellScript_Editor.java" startLine="149" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.bash.editor.ShellScript_Editor$usedVarsListHandler_jf4pm0_d0" />
   <unitInfo fileName="CommentedText_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.bash.editor.CommentedText_Editor" />
   <unitInfo fileName="AppendingOutputErrorRedirection_Editor.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.editor.AppendingOutputErrorRedirection_Editor" />
   <unitInfo fileName="OutputErrorRedirection_Editor.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.editor.OutputErrorRedirection_Editor" />
+  <unitInfo fileName="CaseClause_Editor.java" startLine="101" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseClause_Editor$patternsListHandler_hfuf06_a0a" />
   <unitInfo fileName="BracketConditionalExpression_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.bash.editor.BracketConditionalExpression_Editor" />
   <unitInfo fileName="BracketExpression_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.bash.editor.BracketExpression_Editor" />
   <unitInfo fileName="ArithmeticCommand_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.bash.editor.ArithmeticCommand_Editor" />
-  <unitInfo fileName="CaseClause_Editor.java" startLine="101" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseClause_Editor$patternsListHandler_hfuf06_a0a" />
+  <unitInfo fileName="InputLines_Editor.java" startLine="47" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.bash.editor.InputLines_Editor$linesListHandler_4uo53f_a0" />
+  <unitInfo fileName="CaseCommand_Editor.java" startLine="105" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseCommand_Editor$clausesListHandler_xxihx4_a3a" />
+  <unitInfo fileName="IfCommand_Editor.java" startLine="191" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.bash.editor.IfCommand_Editor$elseIfListHandler_a9dubz_f0" />
   <unitInfo fileName="HexIntegerLiteral_Editor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.bash.editor.HexIntegerLiteral_Editor" />
-  <unitInfo fileName="InputLines_Editor.java" startLine="47" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.bash.editor.InputLines_Editor$linesListHandler_4uo53f_a0" />
   <unitInfo fileName="SimpleCommand_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.bash.editor.SimpleCommand_Editor" />
   <unitInfo fileName="Option_Editor.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.bash.editor.Option_Editor" />
-  <unitInfo fileName="CaseCommand_Editor.java" startLine="105" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseCommand_Editor$clausesListHandler_xxihx4_a3a" />
-  <unitInfo fileName="IfCommand_Editor.java" startLine="191" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.bash.editor.IfCommand_Editor$elseIfListHandler_a9dubz_f0" />
   <unitInfo fileName="UnaryArithmeticExpression_Editor.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.bash.editor.UnaryArithmeticExpression_Editor" />
   <unitInfo fileName="PreVariableExpression_Editor.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.bash.editor.PreVariableExpression_Editor" />
   <unitInfo fileName="PostVariableExpression_Editor.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.bash.editor.PostVariableExpression_Editor" />
   <unitInfo fileName="FollowingCommandList_Editor.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.bash.editor.FollowingCommandList_Editor" />
   <unitInfo fileName="ConditionalCommand_Editor.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.bash.editor.ConditionalCommand_Editor" />
   <unitInfo fileName="FollowingPipeline_Editor.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.bash.editor.FollowingPipeline_Editor" />
-  <unitInfo fileName="FreeCommand_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.bash.editor.FreeCommand_Editor" />
-  <unitInfo fileName="ArgumentListReference_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.bash.editor.ArgumentListReference_Editor" />
-  <unitInfo fileName="WordList_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.bash.editor.WordList_Editor" />
-  <unitInfo fileName="GeneralizedWord_Editor.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.bash.editor.GeneralizedWord_Editor" />
+  <unitInfo fileName="FreeCommand_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.bash.editor.FreeCommand_Editor" />
+  <unitInfo fileName="ArgumentListReference_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.bash.editor.ArgumentListReference_Editor" />
+  <unitInfo fileName="WordList_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.bash.editor.WordList_Editor" />
+  <unitInfo fileName="GeneralizedWord_Editor.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bash.editor.GeneralizedWord_Editor" />
   <unitInfo fileName="ExternalCommandDescription_EditorComponent.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" />
   <unitInfo fileName="Argument_Editor.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.bash.editor.Argument_Editor" />
   <unitInfo fileName="UnaryConditionalExpression_Editor.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.bash.editor.UnaryConditionalExpression_Editor" />
@@ -77,13 +77,13 @@
   <unitInfo fileName="CombiningConditionalExpression_Editor.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.bash.editor.CombiningConditionalExpression_Editor" />
   <unitInfo fileName="BinaryArithmeticExpression_Editor.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.bash.editor.BinaryArithmeticExpression_Editor" />
   <unitInfo fileName="OptionReference_Editor.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionReference_Editor" />
-  <unitInfo fileName="OptionSetReference_Editor.java" startLine="22" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSetReference_Editor" />
+  <unitInfo fileName="OptionSetReference_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSetReference_Editor" />
   <unitInfo fileName="BaseVariableAssingment_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.bash.editor.BaseVariableAssingment_Editor" />
   <unitInfo fileName="BaseAssingmentExpression_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.bash.editor.BaseAssingmentExpression_Editor" />
-  <unitInfo fileName="InputLines_Editor.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.bash.editor.InputLines_Editor" />
+  <unitInfo fileName="InputLines_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.bash.editor.InputLines_Editor" />
+  <unitInfo fileName="OptionSet_Editor.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSet_Editor" />
+  <unitInfo fileName="RedirectedCommand_Editor.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.bash.editor.RedirectedCommand_Editor" />
   <unitInfo fileName="BaseCommandSubstitution_Editor.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.bash.editor.BaseCommandSubstitution_Editor" />
-  <unitInfo fileName="OptionSet_Editor.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionSet_Editor" />
-  <unitInfo fileName="RedirectedCommand_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.bash.editor.RedirectedCommand_Editor" />
   <unitInfo fileName="BasedIntegerLiteral_Editor.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.bash.editor.BasedIntegerLiteral_Editor" />
   <unitInfo fileName="QuotesCommandSubstitution_Editor.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.bash.editor.QuotesCommandSubstitution_Editor" />
   <unitInfo fileName="ConditionalOperation_Editor.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.bash.editor.ConditionalOperation_Editor" />
@@ -92,25 +92,25 @@
   <unitInfo fileName="QuotedWord_Editor.java" startLine="19" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.bash.editor.QuotedWord_Editor" />
   <unitInfo fileName="FunctionCallCommand_Editor.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionCallCommand_Editor" />
   <unitInfo fileName="ArgumentReference_Editor.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.bash.editor.ArgumentReference_Editor" />
+  <unitInfo fileName="ExternalCommandDeclaration_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandDeclaration_Editor" />
   <unitInfo fileName="OptionWithParamReference_Editor.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionWithParamReference_Editor" />
-  <unitInfo fileName="ExternalCommandDeclaration_Editor.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandDeclaration_Editor" />
   <unitInfo fileName="WhileLoopCommand_Editor.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.bash.editor.WhileLoopCommand_Editor" />
   <unitInfo fileName="UntilLoopCommand_Editor.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.bash.editor.UntilLoopCommand_Editor" />
   <unitInfo fileName="OptionWithParam_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.bash.editor.OptionWithParam_Editor" />
   <unitInfo fileName="BasicParameterExpansion_Editor.java" startLine="20" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.bash.editor.BasicParameterExpansion_Editor" />
   <unitInfo fileName="CommandList_Editor.java" startLine="22" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.bash.editor.CommandList_Editor" />
-  <unitInfo fileName="ExternalCommandCall_Editor.java" startLine="25" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor" />
+  <unitInfo fileName="ExternalCommandCall_Editor.java" startLine="25" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor" />
   <unitInfo fileName="OutputRedirection_Editor.java" startLine="21" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.bash.editor.OutputRedirection_Editor" />
   <unitInfo fileName="BashLanguageStyle_StyleSheet.java" startLine="12" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.bash.editor.BashLanguageStyle_StyleSheet" />
-  <unitInfo fileName="CaseClause_Editor.java" startLine="26" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseClause_Editor" />
-  <unitInfo fileName="FunctionDeclaration_Editor.java" startLine="27" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionDeclaration_Editor" />
+  <unitInfo fileName="CaseClause_Editor.java" startLine="26" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseClause_Editor" />
+  <unitInfo fileName="FunctionDeclaration_Editor.java" startLine="27" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.bash.editor.FunctionDeclaration_Editor" />
   <unitInfo fileName="SelectCommand_Editor.java" startLine="20" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.bash.editor.SelectCommand_Editor" />
-  <unitInfo fileName="CaseCommand_Editor.java" startLine="26" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseCommand_Editor" />
+  <unitInfo fileName="CaseCommand_Editor.java" startLine="26" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.bash.editor.CaseCommand_Editor" />
   <unitInfo fileName="HereDocumentRedirection_Editor.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.bash.editor.HereDocumentRedirection_Editor" />
-  <unitInfo fileName="ForeachCommand_Editor.java" startLine="26" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.bash.editor.ForeachCommand_Editor" />
-  <unitInfo fileName="ShellScript_Editor.java" startLine="28" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.bash.editor.ShellScript_Editor" />
+  <unitInfo fileName="ForeachCommand_Editor.java" startLine="26" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.bash.editor.ForeachCommand_Editor" />
+  <unitInfo fileName="ShellScript_Editor.java" startLine="28" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.bash.editor.ShellScript_Editor" />
   <unitInfo fileName="ForCommand_Editor.java" startLine="18" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.bash.editor.ForCommand_Editor" />
-  <unitInfo fileName="IfCommand_Editor.java" startLine="26" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.bash.editor.IfCommand_Editor" />
+  <unitInfo fileName="IfCommand_Editor.java" startLine="26" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.bash.editor.IfCommand_Editor" />
   <root nodeId="3147078024757582231">
     <nodeInfo nodeId="3147078024757674243" fileName="ExternalCommandDescription_EditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3147078024757674242" fileName="ExternalCommandDescription_EditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="86" />

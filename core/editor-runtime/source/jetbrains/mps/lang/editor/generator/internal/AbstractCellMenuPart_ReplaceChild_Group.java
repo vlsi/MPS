@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
-import javax.swing.Icon;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -40,9 +39,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode((SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION));
+    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
-    final SNode defaultConceptOfChild = BaseAdapter.fromAdapter(linkDeclaration.getTarget());
+    final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
     if (defaultConceptOfChild == null) return new LinkedList<INodeSubstituteAction>();
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 

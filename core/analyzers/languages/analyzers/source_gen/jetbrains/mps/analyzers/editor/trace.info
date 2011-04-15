@@ -14,21 +14,21 @@
   <unitInfo fileName="ConceptCondition_Editor.java" startLine="113" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.analyzers.editor.ConceptCondition_Editor$_Inline_hrb2do_a2a" />
   <unitInfo fileName="Rule_Editor.java" startLine="163" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Rule_Editor$_Inline_z0m96w_a3a" />
   <unitInfo fileName="AnalyzerRunnerAnalyzeOperation_Editor.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.analyzers.editor.AnalyzerRunnerAnalyzeOperation_Editor" />
+  <unitInfo fileName="Analyzer_Editor.java" startLine="439" startPosition="0" endLine="474" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Analyzer_Editor$instructionListHandler_590xoz_r0" />
   <unitInfo fileName="InstructionReference_Editor.java" startLine="92" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionReference_Editor$_Inline_o0r2rr_a0a" />
-  <unitInfo fileName="Analyzer_Editor.java" startLine="439" startPosition="0" endLine="476" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Analyzer_Editor$instructionListHandler_590xoz_r0" />
-  <unitInfo fileName="Instruction_Editor.java" startLine="90" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Instruction_Editor$parameterListHandler_tof27_c0" />
-  <unitInfo fileName="InstructionReference_Editor.java" startLine="129" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionReference_Editor$argumentListHandler_o0r2rr_c0" />
+  <unitInfo fileName="Instruction_Editor.java" startLine="90" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Instruction_Editor$parameterListHandler_tof27_c0" />
+  <unitInfo fileName="InstructionReference_Editor.java" startLine="129" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionReference_Editor$argumentListHandler_o0r2rr_c0" />
   <unitInfo fileName="InstructionParameter_Editor.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionParameter_Editor" />
   <unitInfo fileName="ApplicableNodeReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.analyzers.editor.ApplicableNodeReference_Editor" />
   <unitInfo fileName="RuleReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.analyzers.editor.RuleReference_Editor" />
   <unitInfo fileName="IsOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.analyzers.editor.IsOperation_Editor" />
   <unitInfo fileName="EmitInstruction_Editor.java" startLine="20" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.analyzers.editor.EmitInstruction_Editor" />
-  <unitInfo fileName="Instruction_Editor.java" startLine="27" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Instruction_Editor" />
+  <unitInfo fileName="Instruction_Editor.java" startLine="27" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Instruction_Editor" />
   <unitInfo fileName="AnalyzerRunnerCreator_Editor.java" startLine="21" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.analyzers.editor.AnalyzerRunnerCreator_Editor" />
   <unitInfo fileName="ConceptCondition_Editor.java" startLine="33" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.analyzers.editor.ConceptCondition_Editor" />
-  <unitInfo fileName="InstructionReference_Editor.java" startLine="29" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionReference_Editor" />
+  <unitInfo fileName="InstructionReference_Editor.java" startLine="29" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.analyzers.editor.InstructionReference_Editor" />
   <unitInfo fileName="Rule_Editor.java" startLine="24" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Rule_Editor" />
-  <unitInfo fileName="Analyzer_Editor.java" startLine="30" startPosition="0" endLine="477" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Analyzer_Editor" />
+  <unitInfo fileName="Analyzer_Editor.java" startLine="30" startPosition="0" endLine="475" endPosition="0" unitName="jetbrains.mps.analyzers.editor.Analyzer_Editor" />
   <root nodeId="4217760266503579997">
     <nodeInfo nodeId="24089196731087408" fileName="EmitInstruction_Editor.java" startLine="106" startPosition="111" endLine="107" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="24089196731087407" fileName="EmitInstruction_Editor.java" startLine="106" startPosition="111" endLine="107" endPosition="115" />

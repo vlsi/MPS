@@ -6,12 +6,12 @@
   <unitInfo fileName="NamePropertyNamePart_Editor.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mpslite.editor.NamePropertyNamePart_Editor" />
   <unitInfo fileName="ConstantLinePart_Editor.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.editor.ConstantLinePart_Editor" />
   <unitInfo fileName="AbstractConceptReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mpslite.editor.AbstractConceptReference_Editor$_Inline_kfynw3_a0a" />
+  <unitInfo fileName="LineList_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mpslite.editor.LineList_Editor$lineListHandler_us9n1_a0" />
+  <unitInfo fileName="Line_Editor.java" startLine="40" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mpslite.editor.Line_Editor$linePartListHandler_78ent8_a0" />
+  <unitInfo fileName="OptionalPart_Editor.java" startLine="58" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mpslite.editor.OptionalPart_Editor$partListHandler_gmvlcs_b0" />
+  <unitInfo fileName="ConceptContainer_Editor.java" startLine="126" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mpslite.editor.ConceptContainer_Editor$mpsLiteConceptListHandler_d6y0ft_f0a" />
+  <unitInfo fileName="VariableConcept_Editor.java" startLine="312" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mpslite.editor.VariableConcept_Editor$scopeBlockListHandler_a82r9c_b2b1a" />
   <unitInfo fileName="ChildPart_Actions.java" startLine="24" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mpslite.editor.ChildPart_Actions$ChildPart_Actions_Action0" />
-  <unitInfo fileName="LineList_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mpslite.editor.LineList_Editor$lineListHandler_us9n1_a0" />
-  <unitInfo fileName="Line_Editor.java" startLine="40" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mpslite.editor.Line_Editor$linePartListHandler_78ent8_a0" />
-  <unitInfo fileName="OptionalPart_Editor.java" startLine="58" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mpslite.editor.OptionalPart_Editor$partListHandler_gmvlcs_b0" />
-  <unitInfo fileName="ConceptContainer_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mpslite.editor.ConceptContainer_Editor$mpsLiteConceptListHandler_d6y0ft_f0a" />
-  <unitInfo fileName="VariableConcept_Editor.java" startLine="312" startPosition="0" endLine="349" endPosition="0" unitName="jetbrains.mpslite.editor.VariableConcept_Editor$scopeBlockListHandler_a82r9c_b2b1a" />
   <unitInfo fileName="_Line_Actions.java" startLine="29" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mpslite.editor._Line_Actions$_Line_Actions_Action0" />
   <unitInfo fileName="_Line_Actions.java" startLine="68" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mpslite.editor._Line_Actions$_Line_Actions_Action1" />
   <unitInfo fileName="ExpressionConcept_Editor.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mpslite.editor.ExpressionConcept_Editor" />
@@ -22,21 +22,21 @@
   <unitInfo fileName="MPSLite_Style_StyleSheet.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mpslite.editor.MPSLite_Style_StyleSheet" />
   <unitInfo fileName="LinePart_Actions.java" startLine="29" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mpslite.editor.LinePart_Actions$LinePart_Actions_Action0" />
   <unitInfo fileName="_Line_Actions.java" startLine="107" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mpslite.editor._Line_Actions$_Line_Actions_Action2" />
-  <unitInfo fileName="LineList_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mpslite.editor.LineList_Editor" />
-  <unitInfo fileName="Line_Editor.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mpslite.editor.Line_Editor" />
+  <unitInfo fileName="LineList_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mpslite.editor.LineList_Editor" />
+  <unitInfo fileName="Line_Editor.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mpslite.editor.Line_Editor" />
   <unitInfo fileName="AbstractConceptReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mpslite.editor.AbstractConceptReference_Editor" />
-  <unitInfo fileName="OptionalPart_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mpslite.editor.OptionalPart_Editor" />
+  <unitInfo fileName="OptionalPart_Editor.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mpslite.editor.OptionalPart_Editor" />
   <unitInfo fileName="ConcretePropertyPart_Editor.java" startLine="17" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mpslite.editor.ConcretePropertyPart_Editor" />
   <unitInfo fileName="ChildPart_Actions.java" startLine="14" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mpslite.editor.ChildPart_Actions" />
   <unitInfo fileName="ConcreteChildPart_Editor.java" startLine="19" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mpslite.editor.ConcreteChildPart_Editor" />
   <unitInfo fileName="ConcreteReferencePart_Editor.java" startLine="20" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mpslite.editor.ConcreteReferencePart_Editor" />
   <unitInfo fileName="BlockConcept_Editor.java" startLine="21" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mpslite.editor.BlockConcept_Editor" />
-  <unitInfo fileName="ConceptContainer_Editor.java" startLine="26" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mpslite.editor.ConceptContainer_Editor" />
+  <unitInfo fileName="ConceptContainer_Editor.java" startLine="26" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mpslite.editor.ConceptContainer_Editor" />
   <unitInfo fileName="LinePart_Actions.java" startLine="17" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mpslite.editor.LinePart_Actions" />
   <unitInfo fileName="_Line_Actions.java" startLine="17" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mpslite.editor._Line_Actions" />
   <unitInfo fileName="MPSLiteConceptDeclaration_Editor.java" startLine="23" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mpslite.editor.MPSLiteConceptDeclaration_Editor" />
   <unitInfo fileName="BinaryOperationConcept_Editor.java" startLine="21" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mpslite.editor.BinaryOperationConcept_Editor" />
-  <unitInfo fileName="VariableConcept_Editor.java" startLine="30" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mpslite.editor.VariableConcept_Editor" />
+  <unitInfo fileName="VariableConcept_Editor.java" startLine="30" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mpslite.editor.VariableConcept_Editor" />
   <root nodeId="1182510959005">
     <nodeInfo nodeId="1182956130639" fileName="MPSLiteConceptDeclaration_Editor.java" startLine="254" startPosition="112" endLine="255" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1183028139642" fileName="MPSLiteConceptDeclaration_Editor.java" startLine="258" startPosition="112" endLine="259" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

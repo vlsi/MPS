@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -60,11 +59,6 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         myCurrentChild = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
       }
     });
-  }
-
-  @Deprecated
-  public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
-    this(parentNode, currChildNode, BaseAdapter.fromAdapter(linkDeclaration), editorContext);
   }
 
   public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SNode linkDeclaration, final EditorContext editorContext) {

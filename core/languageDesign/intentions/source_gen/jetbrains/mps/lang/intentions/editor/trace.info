@@ -6,13 +6,13 @@
   <unitInfo fileName="BaseIntentionDeclaration_Editor.java" startLine="391" startPosition="0" endLine="424" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor$_Inline_2ji0fa_a3a0a" />
   <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="445" startPosition="0" endLine="478" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$_Inline_l6fw9g_a3a0a" />
   <unitInfo fileName="IntentionParameter_Editor.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" />
-  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="479" startPosition="0" endLine="516" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$parameterListHandler_l6fw9g_b5b1a" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="479" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$parameterListHandler_l6fw9g_b5b1a" />
   <unitInfo fileName="IntentionContextParameterDeclaration_Editor.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParameterDeclaration_Editor" />
   <unitInfo fileName="IntentionContextParamReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor" />
   <unitInfo fileName="QueryBlock_Editor.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
   <unitInfo fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="28" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor" />
   <unitInfo fileName="BaseIntentionDeclaration_Editor.java" startLine="29" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor" />
-  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="37" startPosition="0" endLine="517" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="37" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor" />
   <root nodeId="1240319625734">
     <nodeInfo nodeId="1240319640319" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="98" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240319640325" fileName="QueryBlock_Editor.java" startLine="98" startPosition="105" endLine="99" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

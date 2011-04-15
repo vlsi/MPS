@@ -4,13 +4,13 @@
   <unitInfo fileName="ConceptConstraints_Editor.java" startLine="804" startPosition="0" endLine="836" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$_Inline_g00aa7_a1a3a" />
   <unitInfo fileName="NodePropertyConstraint_Editor.java" startLine="266" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor$_Inline_vrfi3w_a2a" />
   <unitInfo fileName="NodeReferentConstraint_Editor.java" startLine="408" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor$_Inline_y1wtxd_a2a" />
-  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="837" startPosition="0" endLine="889" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$propertyListHandler_g00aa7_o3a" />
-  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="890" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$referentListHandler_g00aa7_q3a" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="837" startPosition="0" endLine="887" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$propertyListHandler_g00aa7_o3a" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="888" startPosition="0" endLine="938" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$referentListHandler_g00aa7_q3a" />
   <unitInfo fileName="NodeDefaultSearchScope_Editor.java" startLine="20" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeDefaultSearchScope_Editor" />
   <unitInfo fileName="NodePropertyConstraint_Editor.java" startLine="25" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Editor.java" startLine="18" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_Factory_Editor" />
   <unitInfo fileName="NodeReferentConstraint_Editor.java" startLine="28" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor" />
-  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="37" startPosition="0" endLine="943" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="37" startPosition="0" endLine="939" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor" />
   <root nodeId="1148687645603">
     <nodeInfo nodeId="8830318409774614256" fileName="NodeReferentConstraint_Editor.java" startLine="396" startPosition="112" endLine="397" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3624215205573897276" fileName="NodeReferentConstraint_Editor.java" startLine="400" startPosition="112" endLine="401" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

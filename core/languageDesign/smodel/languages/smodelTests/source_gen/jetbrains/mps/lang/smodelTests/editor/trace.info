@@ -7,16 +7,16 @@
   <unitInfo fileName="ReferenceContainer_Editor.java" startLine="259" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor$_Inline_jpb8dn_a1b1b0" />
   <unitInfo fileName="ReferenceContainerSubConcept_Editor.java" startLine="292" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor$_Inline_j13i3b_a1c1b0" />
   <unitInfo fileName="ReferenceContainer_Editor.java" startLine="292" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor$_Inline_jpb8dn_a1c1b0" />
-  <unitInfo fileName="Root_Editor.java" startLine="370" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$childSubConcept_0_nListHandler_30aiet_b5b1a" />
-  <unitInfo fileName="ChildSubConcept_Editor.java" startLine="222" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor$grandChild_0_nListHandler_d4chl0_b2b1a" />
-  <unitInfo fileName="Root_Editor.java" startLine="264" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_0_nListHandler_30aiet_b1b1a" />
-  <unitInfo fileName="Child_Editor.java" startLine="305" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_0_nListHandler_xbt7a0_b3b1a" />
-  <unitInfo fileName="Root_Editor.java" startLine="317" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_1_nListHandler_30aiet_b3b1a" />
-  <unitInfo fileName="Child_Editor.java" startLine="358" startPosition="0" endLine="410" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_1_nListHandler_xbt7a0_b5b1a" />
-  <unitInfo fileName="ChildSubConcept_Editor.java" startLine="33" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor" />
+  <unitInfo fileName="Root_Editor.java" startLine="366" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$childSubConcept_0_nListHandler_30aiet_b5b1a" />
+  <unitInfo fileName="ChildSubConcept_Editor.java" startLine="222" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor$grandChild_0_nListHandler_d4chl0_b2b1a" />
+  <unitInfo fileName="Root_Editor.java" startLine="264" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_0_nListHandler_30aiet_b1b1a" />
+  <unitInfo fileName="Child_Editor.java" startLine="305" startPosition="0" endLine="355" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_0_nListHandler_xbt7a0_b3b1a" />
+  <unitInfo fileName="Root_Editor.java" startLine="315" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor$child_1_nListHandler_30aiet_b3b1a" />
+  <unitInfo fileName="Child_Editor.java" startLine="356" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor$grandChild_1_nListHandler_xbt7a0_b5b1a" />
+  <unitInfo fileName="ChildSubConcept_Editor.java" startLine="33" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ChildSubConcept_Editor" />
   <unitInfo fileName="ReferenceContainerSubConcept_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor" />
   <unitInfo fileName="ReferenceContainer_Editor.java" startLine="24" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor" />
-  <unitInfo fileName="Root_Editor.java" startLine="32" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor" />
-  <unitInfo fileName="Child_Editor.java" startLine="33" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor" />
+  <unitInfo fileName="Root_Editor.java" startLine="32" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Root_Editor" />
+  <unitInfo fileName="Child_Editor.java" startLine="33" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.editor.Child_Editor" />
 </debugInfo>
 

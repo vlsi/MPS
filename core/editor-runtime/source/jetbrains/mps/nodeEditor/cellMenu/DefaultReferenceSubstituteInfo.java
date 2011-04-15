@@ -16,57 +16,32 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfo.class);
-
   private SNode mySourceNode;
   private SNode myLinkDeclaration;
-  private SNode myCurrentReferent;
+  private DefaultReferenceSubstituteInfoActionsFactory myActionFactory;
 
   public DefaultReferenceSubstituteInfo(final SNode sourceNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
+    mySourceNode = sourceNode;
+    myLinkDeclaration = linkDeclaration;
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        LinkDeclaration genuineLink = (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
-        myLinkDeclaration = linkDeclaration;
-
-        if (genuineLink == null) {
-          return;
-        }
-
-        if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
-          LOG.error("only reference links are allowed here", linkDeclaration);
-        }
-        Cardinality sourceCardinality = genuineLink.getSourceCardinality();
-        if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration);
-        }
-
-        mySourceNode = sourceNode;
-        myCurrentReferent = sourceNode.getReferent(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        myActionFactory = new DefaultReferenceSubstituteInfoActionsFactory(sourceNode, linkDeclaration, DefaultReferenceSubstituteInfo.this);
       }
     });
   }
@@ -81,8 +56,6 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
       if (!nodeCopyRoot.isRoot()) {
         auxModel.addRoot(nodeCopyRoot);
       }
-      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-      SNode sourceNode = mapping.get(mySourceNode);
       SNode nodeToEquatePeer = mySourceNode;
       TypeChecker typeChecker = TypeChecker.getInstance();
       while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
@@ -107,24 +80,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteAction> createActions() {
-    if (myLinkDeclaration == null) {
-      return Collections.emptyList();
-    }
-
-    EditorComponent editor = getEditorContext().getNodeEditorComponent();
-    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil.getGenuineLinkRole(myLinkDeclaration));
-
-    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&
-      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationNode()) == myLinkDeclaration &&
-      mySourceNode.getParent() != null && mySourceNode.getChildren().isEmpty()) {
-
-      SNode parent = mySourceNode.getParent();
-      String role = mySourceNode.getRole_();
-      LinkDeclaration roleLink = (LinkDeclaration) BaseAdapter.fromNode(parent.getLinkDeclaration(role));
-      return ModelActions.createChildSubstituteActions(parent, mySourceNode, roleLink.getTarget().getNode(), new DefaultChildNodeSetter(roleLink), getOperationContext());
-    }
-
-    return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, getOperationContext());
+    return myActionFactory.createActions();
   }
 
   protected SNode getLinkDeclaration() {

@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
@@ -168,7 +167,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (linkDeclaration == null) {
               return null;
             }
-            return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ((LinkDeclaration) SNodeOperations.getAdapter(linkDeclaration)), editorContext) {
+            return new DefaultChildSubstituteInfo(node, getValueAt(row, column), linkDeclaration, editorContext) {
               @Override
               protected DefaultChildNodeSetter createDefaultNodeSetter() {
                 return new DefaultChildNodeSetter(getLinkDeclaration()) {

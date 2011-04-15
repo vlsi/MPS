@@ -2,13 +2,13 @@
 <debugInfo>
   <unitInfo fileName="MatrixIndexVariableDeclaration_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixIndexVariableDeclaration_Editor" />
   <unitInfo fileName="MatrixElementVariableDeclaration_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixElementVariableDeclaration_Editor" />
+  <unitInfo fileName="MatrixLiteral_Editor.java" startLine="88" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixLiteral_Editor$rowListHandler_8j210v_d0" />
   <unitInfo fileName="DeterminantExpression_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.DeterminantExpression_Editor" />
-  <unitInfo fileName="MatrixLiteral_Editor.java" startLine="88" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixLiteral_Editor$rowListHandler_8j210v_d0" />
   <unitInfo fileName="TransposeExpression_Editor.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.TransposeExpression_Editor" />
-  <unitInfo fileName="MatrixRow_Editor.java" startLine="42" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixRow_Editor$itemsListHandler_c0uqeh_a0" />
+  <unitInfo fileName="MatrixRow_Editor.java" startLine="42" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixRow_Editor$itemsListHandler_c0uqeh_a0" />
   <unitInfo fileName="MatrixType_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixType_Editor" />
-  <unitInfo fileName="MatrixRow_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixRow_Editor" />
-  <unitInfo fileName="MatrixLiteral_Editor.java" startLine="27" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixLiteral_Editor" />
+  <unitInfo fileName="MatrixRow_Editor.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixRow_Editor" />
+  <unitInfo fileName="MatrixLiteral_Editor.java" startLine="27" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.MatrixLiteral_Editor" />
   <unitInfo fileName="ForEachMatrixElement_Editor.java" startLine="20" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.editor.ForEachMatrixElement_Editor" />
 </debugInfo>
 

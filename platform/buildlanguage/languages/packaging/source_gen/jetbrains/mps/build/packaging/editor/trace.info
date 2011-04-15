@@ -25,58 +25,58 @@
   <unitInfo fileName="MPSLayoutConfigurationReferencePropertyValueExpression_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MPSLayoutConfigurationReferencePropertyValueExpression_Editor$_Inline_71sslv_a0a" />
   <unitInfo fileName="ConfigurationReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor$_Inline_cyt33v_a0a" />
   <unitInfo fileName="VariableReference_Editor.java" startLine="57" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.VariableReference_Editor$_Inline_ge17fi_a0a" />
-  <unitInfo fileName="ComponentsList_Editor.java" startLine="47" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor$entryListHandler_exgfj0_a0" />
-  <unitInfo fileName="Manifest_Editor.java" startLine="74" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Manifest_Editor$manifestAttributeListHandler_qcnn3y_b1a" />
-  <unitInfo fileName="ManifestAttribute_Editor.java" startLine="77" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor$valueListHandler_s985tr_c0" />
-  <unitInfo fileName="Block_Editor.java" startLine="182" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor$entryListHandler_kw2rpr_a2a" />
-  <unitInfo fileName="Layout_Editor.java" startLine="503" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$variableListHandler_ybaf4h_b1i0" />
+  <unitInfo fileName="ComponentsList_Editor.java" startLine="47" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor$entryListHandler_exgfj0_a0" />
+  <unitInfo fileName="Manifest_Editor.java" startLine="74" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Manifest_Editor$manifestAttributeListHandler_qcnn3y_b1a" />
+  <unitInfo fileName="ManifestAttribute_Editor.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor$valueListHandler_s985tr_c0" />
+  <unitInfo fileName="Block_Editor.java" startLine="182" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor$entryListHandler_kw2rpr_a2a" />
+  <unitInfo fileName="Layout_Editor.java" startLine="501" startPosition="0" endLine="536" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$variableListHandler_ybaf4h_b1i0" />
   <unitInfo fileName="Macro_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Macro_Editor" />
   <unitInfo fileName="Module_KeyMap.java" startLine="25" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap$Module_KeyMap_Action0" />
-  <unitInfo fileName="Layout_Editor.java" startLine="455" startPosition="0" endLine="502" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$configurationListHandler_ybaf4h_b6a" />
-  <unitInfo fileName="CompositePathComponent_Editor.java" startLine="42" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor$pathComponentListHandler_ke0l65_a0" />
+  <unitInfo fileName="Layout_Editor.java" startLine="455" startPosition="0" endLine="500" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$configurationListHandler_ybaf4h_b6a" />
+  <unitInfo fileName="CompositePathComponent_Editor.java" startLine="42" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor$pathComponentListHandler_ke0l65_a0" />
+  <unitInfo fileName="CompositecomponentEntriesEditorComponent.java" startLine="66" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent$entryListHandler_odw917_b0" />
+  <unitInfo fileName="Replace_Editor.java" startLine="166" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor$replacingPairListHandler_m6tzv0_b1a" />
+  <unitInfo fileName="Folder_Editor.java" startLine="185" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Folder_Editor$entryListHandler_ngx833_b1a" />
+  <unitInfo fileName="Antcall_Editor.java" startLine="315" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor$entryListHandler_xq8xtf_b1a" />
+  <unitInfo fileName="Layout_Editor.java" startLine="537" startPosition="0" endLine="584" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$componentListHandler_ybaf4h_k0" />
   <unitInfo fileName="PropertyFileImport_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PropertyFileImport_Editor" />
   <unitInfo fileName="FileExistsCondition_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.FileExistsCondition_Editor" />
   <unitInfo fileName="Module_KeyMap.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap" />
-  <unitInfo fileName="CompositecomponentEntriesEditorComponent.java" startLine="66" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent$entryListHandler_odw917_b0" />
-  <unitInfo fileName="Replace_Editor.java" startLine="166" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor$replacingPairListHandler_m6tzv0_b1a" />
-  <unitInfo fileName="Folder_Editor.java" startLine="185" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Folder_Editor$entryListHandler_ngx833_b1a" />
-  <unitInfo fileName="Antcall_Editor.java" startLine="315" startPosition="0" endLine="364" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor$entryListHandler_xq8xtf_b1a" />
-  <unitInfo fileName="Layout_Editor.java" startLine="541" startPosition="0" endLine="590" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$componentListHandler_ybaf4h_k0" />
   <unitInfo fileName="PackagingStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
   <unitInfo fileName="CompositeString_Editor.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositeString_Editor" />
-  <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="80" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent$configurationListHandler_qws93t_b0a" />
+  <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="80" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent$configurationListHandler_qws93t_b0a" />
+  <unitInfo fileName="ComponentsList_Editor.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor" />
   <unitInfo fileName="BuildLanguageTargetReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.BuildLanguageTargetReference_Editor" />
-  <unitInfo fileName="ComponentsList_Editor.java" startLine="22" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor" />
   <unitInfo fileName="MPSLayoutConfigurationReferencePropertyValueExpression_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MPSLayoutConfigurationReferencePropertyValueExpression_Editor" />
   <unitInfo fileName="ConfigurationReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor" />
   <unitInfo fileName="NotCondition_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.NotCondition_Editor" />
+  <unitInfo fileName="CompositePathComponent_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor" />
   <unitInfo fileName="Path_Editor.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Path_Editor" />
   <unitInfo fileName="NonExistingPath_Editor.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.NonExistingPath_Editor" />
-  <unitInfo fileName="CompositePathComponent_Editor.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor" />
   <unitInfo fileName="VariableReference_Editor.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.VariableReference_Editor" />
   <unitInfo fileName="Pair_Editor.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Pair_Editor" />
   <unitInfo fileName="BlockReference_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.BlockReference_Editor" />
   <unitInfo fileName="PropertyNodeImport_Editor.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PropertyNodeImport_Editor" />
-  <unitInfo fileName="Manifest_Editor.java" startLine="23" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Manifest_Editor" />
-  <unitInfo fileName="ManifestAttribute_Editor.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor" />
+  <unitInfo fileName="Manifest_Editor.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Manifest_Editor" />
+  <unitInfo fileName="ManifestAttribute_Editor.java" startLine="26" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor" />
   <unitInfo fileName="IncludeExcludeInInspector.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector" />
+  <unitInfo fileName="CompositecomponentEntriesEditorComponent.java" startLine="23" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent" />
   <unitInfo fileName="Plugin_Editor.java" startLine="18" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Plugin_Editor" />
-  <unitInfo fileName="CompositecomponentEntriesEditorComponent.java" startLine="23" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent" />
   <unitInfo fileName="Variable_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Variable_Editor" />
   <unitInfo fileName="MacroReference_Editor.java" startLine="29" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MacroReference_Editor" />
   <unitInfo fileName="Module_Editor.java" startLine="26" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_Editor" />
   <unitInfo fileName="File_Editor.java" startLine="22" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.File_Editor" />
   <unitInfo fileName="IncludeExcludeEditorComponent.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent" />
-  <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="26" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent" />
+  <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="26" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent" />
   <unitInfo fileName="Jar_Editor.java" startLine="22" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
   <unitInfo fileName="Echo_Editor.java" startLine="25" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
-  <unitInfo fileName="Replace_Editor.java" startLine="29" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
+  <unitInfo fileName="Replace_Editor.java" startLine="29" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
   <unitInfo fileName="Zip_Editor.java" startLine="23" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Zip_Editor" />
-  <unitInfo fileName="Block_Editor.java" startLine="29" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor" />
-  <unitInfo fileName="Folder_Editor.java" startLine="29" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Folder_Editor" />
+  <unitInfo fileName="Block_Editor.java" startLine="29" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor" />
+  <unitInfo fileName="Folder_Editor.java" startLine="29" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Folder_Editor" />
   <unitInfo fileName="Copy_Editor.java" startLine="25" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Copy_Editor" />
-  <unitInfo fileName="Antcall_Editor.java" startLine="31" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor" />
-  <unitInfo fileName="Layout_Editor.java" startLine="33" startPosition="0" endLine="591" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor" />
+  <unitInfo fileName="Antcall_Editor.java" startLine="31" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor" />
+  <unitInfo fileName="Layout_Editor.java" startLine="33" startPosition="0" endLine="585" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor" />
   <root nodeId="1203599720833">
     <nodeInfo nodeId="1222444952574" fileName="Module_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222447273027" fileName="Module_Editor.java" startLine="107" startPosition="165" endLine="108" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

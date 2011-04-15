@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.smodel.SNode;
 
 public class RefNodeCellProvider extends AbstractReferentCellProvider {

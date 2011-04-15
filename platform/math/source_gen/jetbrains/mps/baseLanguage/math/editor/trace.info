@@ -29,11 +29,11 @@
   <unitInfo fileName="MatrixInitializerIndex_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndex_Editor" />
   <unitInfo fileName="MatrixInitializerIndexReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor$_Inline_sfo61_a0a" />
   <unitInfo fileName="MathSymbolIndexReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor$_Inline_ez8int_a0a" />
-  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="176" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a" />
-  <unitInfo fileName="LinearSolveOperation_Editor.java" startLine="247" startPosition="0" endLine="284" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$annotationListHandler_kydwvz_a0a" />
+  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="176" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a" />
+  <unitInfo fileName="LinearSolveOperation_Editor.java" startLine="247" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$annotationListHandler_kydwvz_a0a" />
   <unitInfo fileName="MatrixUnit_Editor.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixUnit_Editor" />
   <unitInfo fileName="ExponentOperation_Component.java" startLine="106" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component$ExponentialOperation_generic_cellMenu_a0b0" />
-  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="214" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a_0" />
+  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="212" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor$componentsListHandler_lhhqxl_b0a_0" />
   <unitInfo fileName="ComplexLiteral_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.ComplexLiteral_Editor" />
   <unitInfo fileName="AbsExpression_Editor.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.AbsExpression_Editor" />
   <unitInfo fileName="MathSymbolIndex_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndex_Editor" />
@@ -57,9 +57,9 @@
   <unitInfo fileName="VectorType_Editor.java" startLine="22" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.VectorType_Editor" />
   <unitInfo fileName="MatrixZero_Editor.java" startLine="23" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixZero_Editor" />
   <unitInfo fileName="MatrixInitializer_Editor.java" startLine="19" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializer_Editor" />
-  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="32" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor" />
+  <unitInfo fileName="MatrixConstructor_Editor.java" startLine="32" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor" />
   <unitInfo fileName="IntervalLiteral_Editor.java" startLine="32" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
-  <unitInfo fileName="LinearSolveOperation_Editor.java" startLine="37" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
+  <unitInfo fileName="LinearSolveOperation_Editor.java" startLine="37" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
   <unitInfo fileName="MatrixType_Editor.java" startLine="22" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixType_Editor" />
   <unitInfo fileName="MathSymbol_Editor.java" startLine="24" startPosition="0" endLine="284" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbol_Editor" />
   <root nodeId="1235747377653">

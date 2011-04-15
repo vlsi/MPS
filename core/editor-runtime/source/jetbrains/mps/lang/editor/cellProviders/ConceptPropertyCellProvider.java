@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptProperty;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -32,14 +30,11 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
 
 
   private String myConceptPropertyName;
-  private ConceptPropertyDeclaration myConceptPropertyDeclaration;
+  private SNode myConceptPropertyDeclaration;
 
   public void setRole(Object role) {
     myConceptPropertyName = role.toString();
-    ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(getSNode().findConceptProperty(myConceptPropertyName));
-    if (conceptProperty != null) {
-      myConceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
-    }
+    myConceptPropertyDeclaration = CellUtil.getConceptPropertyDeclaration(getSNode(), myConceptPropertyName);
   }
 
   public ConceptPropertyCellProvider(SNode node, EditorContext context) {
@@ -55,7 +50,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
       errorText = " <no  " + myConceptPropertyName + "  value> ";
     }
     editorCell = EditorCell_Property.create(myEditorContext, new ConstantModelAccessor(text), getSNode());
-    ((EditorCell_Property) editorCell).setDefaultText(errorText);
+    editorCell.setDefaultText(errorText);
     editorCell.setEditable(true);
     editorCell.getStyle().set(StyleAttributes.FONT_STYLE, DEFAULT_FONT_STYLE);
     return editorCell;
@@ -74,8 +69,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     return AttributeKind.Nothing.class;
   }
 
-
   public CellContext getCellContext() {
-    return new ConceptPropertyCellContext(getSNode(), BaseAdapter.fromAdapter(myConceptPropertyDeclaration));
+    return new ConceptPropertyCellContext(getSNode(), myConceptPropertyDeclaration);
   }
 }

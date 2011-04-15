@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="103" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor$ReplaceWith_SymbolClassRegexp_cellMenu_a0a0" />
+  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="101" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor$ReplaceWith_SymbolClassRegexp_cellMenu_a0a0" />
   <unitInfo fileName="ParensRegexp_Editor.java" startLine="107" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Editor$ReplaceWith_ParensRegexp_cellMenu_a0a0" />
   <unitInfo fileName="UnaryRegexp_Editor.java" startLine="116" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Editor$ReplaceWith_UnaryRegexp_cellMenu_a0d0" />
-  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="120" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor$ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0" />
+  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="118" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor$ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0" />
   <unitInfo fileName="LookRegexp_Editor.java" startLine="124" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Editor$ReplaceWith_LookRegexp_cellMenu_a0a0" />
   <unitInfo fileName="MatchParensRegexp_Editor.java" startLine="148" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_Editor$ReplaceWith_MatchParensRegexp_cellMenu_a0a0" />
   <unitInfo fileName="Regexp_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.Regexp_Editor" />
@@ -59,23 +59,23 @@
   <unitInfo fileName="ReplaceBlock_Editor.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_Editor" />
   <unitInfo fileName="LiteralReplacement_Editor.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_Editor" />
   <unitInfo fileName="CharacterSymbolClassPart_Editor.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_Editor" />
+  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="65" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor$partListHandler_4p4aum_b0" />
+  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor$partListHandler_wznzt8_c0" />
+  <unitInfo fileName="PredefinedSymbolClasses_Editor.java" startLine="86" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor$symbolClassListHandler_ry768y_c0" />
+  <unitInfo fileName="Regexps_Editor.java" startLine="113" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor$regexpListHandler_fnjk3l_d0" />
   <unitInfo fileName="StringLiteralRegexp_Editor.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_Editor" />
   <unitInfo fileName="RegexpDeclarationReferenceRegexp_Editor.java" startLine="52" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_Editor$_Inline_99sp2s_a0a" />
   <unitInfo fileName="MatchVariableReferenceReplacement_Editor.java" startLine="65" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_Editor$_Inline_u4bs76_a1a" />
-  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="65" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor$partListHandler_4p4aum_b0" />
   <unitInfo fileName="MatchVariableReferenceRegexp_Editor.java" startLine="66" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_Editor$_Inline_7j6yq4_a1a" />
-  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="82" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor$partListHandler_wznzt8_c0" />
-  <unitInfo fileName="PredefinedSymbolClasses_Editor.java" startLine="86" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor$symbolClassListHandler_ry768y_c0" />
   <unitInfo fileName="PredefinedSymbolClassSymbolClassPart_Editor.java" startLine="100" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_Editor$_Inline_u0vlk9_a0a" />
   <unitInfo fileName="PredefinedSymbolClassRegexp_Editor.java" startLine="101" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_Editor$_Inline_5lunhw_a0a" />
-  <unitInfo fileName="Regexps_Editor.java" startLine="113" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor$regexpListHandler_fnjk3l_d0" />
   <unitInfo fileName="MatchRegexpOperation_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_Editor" />
   <unitInfo fileName="SplitOperation_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_Editor" />
   <unitInfo fileName="MatchVariableReference_Editor.java" startLine="53" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_Editor$_Inline_ik3m7l_a0a" />
   <unitInfo fileName="RegexpSequenceByEnter.java" startLine="26" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter$RegexpSequenceByEnter_Action0" />
   <unitInfo fileName="RegexpSequenceByEnter.java" startLine="72" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter$RegexpSequenceByEnter_Action1" />
+  <unitInfo fileName="ReplaceRegexpOperation_Editor.java" startLine="547" startPosition="0" endLine="593" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor$replacementListHandler_ldr481_d0" />
   <unitInfo fileName="UnicodeCharacterRegexp_Editor.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_Editor" />
-  <unitInfo fileName="ReplaceRegexpOperation_Editor.java" startLine="547" startPosition="0" endLine="595" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor$replacementListHandler_ldr481_d0" />
   <unitInfo fileName="SeqRegexp_Editor.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_Editor" />
   <unitInfo fileName="FindMatchExpression_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_Editor" />
   <unitInfo fileName="MatchRegexpExpression_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_Editor" />
@@ -87,19 +87,19 @@
   <unitInfo fileName="IntervalSymbolClassPart_Editor.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_Editor" />
   <unitInfo fileName="MatchVariableReferenceReplacement_Editor.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_Editor" />
   <unitInfo fileName="MatchVariableReferenceRegexp_Editor.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_Editor" />
+  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor" />
   <unitInfo fileName="ParensRegexp_Editor.java" startLine="29" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Editor" />
-  <unitInfo fileName="PositiveSymbolClassRegexp_Editor.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor" />
   <unitInfo fileName="ReplaceWithRegexpOperation_Editor.java" startLine="19" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_Editor" />
+  <unitInfo fileName="PredefinedSymbolClasses_Editor.java" startLine="24" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor" />
   <unitInfo fileName="UnaryRegexp_Editor.java" startLine="26" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Editor" />
-  <unitInfo fileName="PredefinedSymbolClasses_Editor.java" startLine="24" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor" />
+  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="27" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor" />
   <unitInfo fileName="LookRegexp_Editor.java" startLine="32" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Editor" />
   <unitInfo fileName="RegexpSequenceByEnter.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
-  <unitInfo fileName="NegativeSymbolClassRegexp_Editor.java" startLine="27" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor" />
   <unitInfo fileName="PredefinedSymbolClassDeclaration_Editor.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_Editor" />
   <unitInfo fileName="OrRegexp_Editor.java" startLine="21" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_Editor" />
   <unitInfo fileName="NTimesRegexp_Editor.java" startLine="24" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_Editor" />
+  <unitInfo fileName="Regexps_Editor.java" startLine="30" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor" />
   <unitInfo fileName="ReplaceWithRegexpExpression_Editor.java" startLine="19" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_Editor" />
-  <unitInfo fileName="Regexps_Editor.java" startLine="30" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor" />
   <unitInfo fileName="MatchParensRegexp_Editor.java" startLine="34" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_Editor" />
   <unitInfo fileName="AtLeastNTimesRegexp_Editor.java" startLine="24" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_Editor" />
   <unitInfo fileName="FindMatchStatement_Editor.java" startLine="19" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_Editor" />
@@ -110,7 +110,7 @@
   <unitInfo fileName="PredefinedSymbolClassRegexp_Editor.java" startLine="22" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_Editor" />
   <unitInfo fileName="RegexpDeclaration_Editor.java" startLine="30" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_Editor" />
   <unitInfo fileName="InlineRegexpExpression_Editor.java" startLine="30" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_Editor" />
-  <unitInfo fileName="ReplaceRegexpOperation_Editor.java" startLine="38" startPosition="0" endLine="596" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor" />
+  <unitInfo fileName="ReplaceRegexpOperation_Editor.java" startLine="38" startPosition="0" endLine="594" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor" />
   <root nodeId="1174483140444">
     <nodeInfo nodeId="4759120547781170167" fileName="RegexpDeclaration_Editor.java" startLine="151" startPosition="31" endLine="155" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4759120547781170138" fileName="RegexpDeclaration_Editor.java" startLine="151" startPosition="31" endLine="155" endPosition="10" />

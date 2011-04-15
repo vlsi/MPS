@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
@@ -269,82 +270,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void sortSmartActions(List<INodeSubstituteAction> matchingActions) {
-    Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>(){
-      public int compare(INodeSubstituteAction o1, INodeSubstituteAction o2) {
-        Object parameter1 = o1.getParameterObject();
-        Object parameter2 = o2.getParameterObject();
-        if (parameter1 instanceof SNode) {
-          if (parameter2 instanceof SNode) {
-            //both parameter objects are nodes
-            SNode node1 = (SNode) parameter1;
-            SNode node2 = (SNode) parameter2;
-
-            String conceptConcept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-
-            if (node1.isInstanceOfConcept(conceptConcept)) {
-              if (node2.isInstanceOfConcept(conceptConcept)) {
-                return 0;
-              } else {
-                return 1;
-              }
-            } else {
-              if (node2.isInstanceOfConcept(conceptConcept)) {
-                return -1;
-              }
-            }
-
-            SNode thisRoot = myContextCell.getSNode().getContainingRoot();
-            SModel thisModel = thisRoot.getModel();
-
-            //other models
-            if (node1.getModel() != thisModel) {
-              if (node2.getModel() != thisModel) {
-                return 0;
-              } else {
-                return 1;
-              }
-            } else {
-              if (node2.getModel() != thisModel) {
-                return -1;
-              }
-            }
-
-            //other roots
-            if (node1.getContainingRoot() != thisRoot) {
-              if (node2.getContainingRoot() != thisRoot) {
-                return 0;
-              } else {
-                return 1;
-              }
-            } else {
-              if (node2.getContainingRoot() != thisRoot) {
-                return -1;
-              }
-            }
-
-            String conceptFqName = "jetbrains.mps.lang.core.structure.IContainer";
-            SNode container1 = SNodeOperations.getAncestor(node1, conceptFqName, true, false);
-            SNode container2 = SNodeOperations.getAncestor(node2, conceptFqName, true, false);
-
-            if (container1 == container2) return 0;
-
-            while (container1 != null) {
-              container1 = SNodeOperations.getAncestor(container1, conceptFqName, false, false);
-              if (container1 == container2) return -1;
-            }
-            return 1;
-          } else {
-            return -1;
-          }
-        } else {
-          if (parameter2 instanceof SNode) {
-            return 1;
-          } else {
-            return 0;
-          }
-        }
-      }
-    });
+    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {

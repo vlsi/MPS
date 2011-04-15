@@ -27,17 +27,17 @@
   <unitInfo fileName="InsertUIObjectStatement_Editor.java" startLine="133" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.ui.editor.InsertUIObjectStatement_Editor$_Inline_g3syp0_a3a0a" />
   <unitInfo fileName="ContainerType_Editor.java" startLine="155" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ui.editor.ContainerType_Editor$_Inline_zgvqtk_a4a" />
   <unitInfo fileName="InlineController_Editor.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.editor.InlineController_Editor" />
-  <unitInfo fileName="ValidateBlock_Editor.java" startLine="142" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ui.editor.ValidateBlock_Editor$parameterListHandler_xpt42y_b0" />
+  <unitInfo fileName="ValidateBlock_Editor.java" startLine="142" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.ui.editor.ValidateBlock_Editor$parameterListHandler_xpt42y_b0" />
   <unitInfo fileName="ForceLayoutStatement_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.editor.ForceLayoutStatement_Editor" />
   <unitInfo fileName="ClearCompartmentStatement_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.editor.ClearCompartmentStatement_Editor" />
   <unitInfo fileName="UI_StyleSheet.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.editor.UI_StyleSheet" />
+  <unitInfo fileName="common_UIObjectStatement.java" startLine="316" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$compartmentListHandler_cz3bck_a3a" />
   <unitInfo fileName="IterateContentsVariable_Editor.java" startLine="27" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.editor.IterateContentsVariable_Editor" />
-  <unitInfo fileName="common_UIObjectStatement.java" startLine="322" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$compartmentListHandler_cz3bck_a3a" />
-  <unitInfo fileName="common_UIObjectStatement.java" startLine="269" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$controllerBindingListHandler_cz3bck_a2a" />
+  <unitInfo fileName="common_UIObjectStatement.java" startLine="265" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$controllerBindingListHandler_cz3bck_a2a" />
   <unitInfo fileName="ValidatingView_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ui.editor.ValidatingView_Editor" />
   <unitInfo fileName="RemoveUIObjectStatement_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.editor.RemoveUIObjectStatement_Editor" />
-  <unitInfo fileName="common_UIObjectStatement.java" startLine="147" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$aspectListHandler_cz3bck_a0a" />
-  <unitInfo fileName="common_UIObjectStatement.java" startLine="206" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$viewBindingListHandler_cz3bck_a1a" />
+  <unitInfo fileName="common_UIObjectStatement.java" startLine="147" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$aspectListHandler_cz3bck_a0a" />
+  <unitInfo fileName="common_UIObjectStatement.java" startLine="204" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$viewBindingListHandler_cz3bck_a1a" />
   <unitInfo fileName="UIObjectReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.editor.UIObjectReference_Editor" />
   <unitInfo fileName="AccessUIPropertyOperation_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.editor.AccessUIPropertyOperation_Editor" />
   <unitInfo fileName="IterateContentsVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.editor.IterateContentsVariableReference_Editor" />
@@ -57,10 +57,10 @@
   <unitInfo fileName="ContainerCompartment_Editor.java" startLine="22" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ui.editor.ContainerCompartment_Editor" />
   <unitInfo fileName="CreateUIObjectStatement_Editor.java" startLine="20" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.ui.editor.CreateUIObjectStatement_Editor" />
   <unitInfo fileName="InsertUIObjectStatement_Editor.java" startLine="24" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ui.editor.InsertUIObjectStatement_Editor" />
-  <unitInfo fileName="ValidateBlock_Editor.java" startLine="27" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ui.editor.ValidateBlock_Editor" />
+  <unitInfo fileName="ValidateBlock_Editor.java" startLine="27" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ui.editor.ValidateBlock_Editor" />
   <unitInfo fileName="IterateContentsStatement_Editor.java" startLine="21" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.ui.editor.IterateContentsStatement_Editor" />
   <unitInfo fileName="ContainerType_Editor.java" startLine="22" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ui.editor.ContainerType_Editor" />
-  <unitInfo fileName="common_UIObjectStatement.java" startLine="29" startPosition="0" endLine="371" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement" />
+  <unitInfo fileName="common_UIObjectStatement.java" startLine="29" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement" />
   <root nodeId="4981225789808358127">
     <nodeInfo nodeId="4981225789808358170" fileName="IterateContentsStatement_Editor.java" startLine="173" startPosition="111" endLine="174" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4981225789808358169" fileName="IterateContentsStatement_Editor.java" startLine="173" startPosition="111" endLine="174" endPosition="72" />

@@ -8,6 +8,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellUtil {
   public CellUtil() {
@@ -29,5 +34,24 @@ public class CellUtil {
       node = SNodeOperations.getParent(node);
     }
     return node;
+  }
+
+  public static SNode getConceptPropertyDeclaration(SNode node, final String conceptPropertyName) {
+    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return conceptPropertyName.equals(SPropertyOperations.getString(it, "name"));
+      }
+    });
+  }
+
+  /**
+   * TODO: think of moving jetbrains.mps.lang.editor.generator.internal into MPS
+   */
+  public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
+    return SLinkOperations.getTarget(linkDeclaration, "target", false);
+  }
+
+  public static String getLinkDeclarationRole(SNode linkDeclaration) {
+    return SPropertyOperations.getString(linkDeclaration, "role");
   }
 }
