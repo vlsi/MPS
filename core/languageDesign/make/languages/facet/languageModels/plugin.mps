@@ -2697,7 +2697,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="991879058877140351" resolveInfo="textgen" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="462208167430366142">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pi7p.~TextGenerator%derrors()%cjava%dutil%dList" resolveInfo="errors" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pi7p.~TextGenerator%derrors()%cjava%dutil%dCollection" resolveInfo="errors" />
                         </node>
                       </node>
                     </node>

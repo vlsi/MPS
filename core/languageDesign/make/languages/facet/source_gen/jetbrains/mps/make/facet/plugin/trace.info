@@ -1,43 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Facet_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" />
-  <unitInfo fileName="Make_Facet.java" startLine="71" startPosition="89" endLine="75" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="75" startPosition="31" endLine="79" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="83" startPosition="85" endLine="87" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$2" />
-  <unitInfo fileName="Make_Facet.java" startLine="87" startPosition="27" endLine="91" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$2" />
-  <unitInfo fileName="Generate_Facet.java" startLine="466" startPosition="131" endLine="470" endPosition="23" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$3" />
-  <unitInfo fileName="Generate_Facet.java" startLine="477" startPosition="129" endLine="481" endPosition="21" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$3" />
-  <unitInfo fileName="Generate_Facet.java" startLine="504" startPosition="109" endLine="508" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
-  <unitInfo fileName="Generate_Facet.java" startLine="509" startPosition="107" endLine="513" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
-  <unitInfo fileName="Generate_Facet.java" startLine="487" startPosition="68" endLine="494" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
-  <unitInfo fileName="Generate_Facet.java" startLine="495" startPosition="39" endLine="502" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
-  <unitInfo fileName="Make_Facet.java" startLine="155" startPosition="17" endLine="164" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
-  <unitInfo fileName="Make_Facet.java" startLine="69" startPosition="57" endLine="81" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$2" />
-  <unitInfo fileName="Generate_Facet.java" startLine="223" startPosition="17" endLine="236" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
-  <unitInfo fileName="Generate_Facet.java" startLine="521" startPosition="193" endLine="536" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
-  <unitInfo fileName="Generate_Facet.java" startLine="97" startPosition="17" endLine="118" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
-  <unitInfo fileName="MakeGenerationHandler.java" startLine="20" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
-  <unitInfo fileName="Generate_Facet.java" startLine="294" startPosition="17" endLine="320" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
-  <unitInfo fileName="Generate_Facet.java" startLine="324" startPosition="17" endLine="351" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
   <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
-  <unitInfo fileName="Generate_Facet.java" startLine="394" startPosition="0" endLine="424" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet.Target_fi61u2_c$Variables" />
-  <unitInfo fileName="Generate_Facet.java" startLine="455" startPosition="56" endLine="485" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
-  <unitInfo fileName="Make_Facet.java" startLine="64" startPosition="17" endLine="97" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
-  <unitInfo fileName="MakeGenerationStrategy.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
-  <unitInfo fileName="Generate_Facet.java" startLine="165" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet.Target_fi61u2_a$Variables" />
-  <unitInfo fileName="Make_Facet.java" startLine="145" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_b" />
-  <unitInfo fileName="Generate_Facet.java" startLine="213" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_b" />
-  <unitInfo fileName="Make_Facet.java" startLine="54" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_a" />
   <unitInfo fileName="ReloadClasses_Facet.java" startLine="23" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet" />
-  <unitInfo fileName="Generate_Facet.java" startLine="436" startPosition="17" endLine="541" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
-  <unitInfo fileName="Generate_Facet.java" startLine="87" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_a" />
-  <unitInfo fileName="Generate_Facet.java" startLine="284" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_c" />
   <unitInfo fileName="Binaries_Facet.java" startLine="41" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Binaries_Facet" />
-  <unitInfo fileName="Generate_Facet.java" startLine="426" startPosition="0" endLine="588" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_d" />
   <unitInfo fileName="Make_Facet.java" startLine="25" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="52" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
   <unitInfo fileName="JavaCompile_Facet.java" startLine="48" startPosition="0" endLine="473" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
@@ -192,8 +162,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" fileName="MakeGenerationHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270183" varName="helper" />
+      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -203,8 +173,8 @@
     <scopeInfo nodeId="2383991756720270198" fileName="MakeGenerationHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270205" varName="status" />
+      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" fileName="MakeGenerationHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
@@ -1678,13 +1648,13 @@
     <scopeInfo nodeId="4853833103870841535" fileName="Generate_Facet.java" startLine="322" startPosition="0" endLine="353" endPosition="0" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="440" startPosition="19" endLine="536" endPosition="21">
       <varInfo nodeId="8591529878792419841" varName="models" />
-      <varInfo nodeId="2340850238541850353" varName="mvt" />
       <varInfo nodeId="127305800529677982" varName="gm" />
-      <varInfo nodeId="127305800529678029" varName="generationOk" />
+      <varInfo nodeId="2340850238541850353" varName="mvt" />
       <varInfo nodeId="2383991756720301158" varName="gh" />
+      <varInfo nodeId="127305800529678029" varName="generationOk" />
       <varInfo nodeId="3611010348546293965" varName="empty" />
-      <varInfo nodeId="4384328772279967468" varName="retainedModels" />
       <varInfo nodeId="8591529878792419862" varName="mh" />
+      <varInfo nodeId="4384328772279967468" varName="retainedModels" />
     </scopeInfo>
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="437" startPosition="120" endLine="539" endPosition="11" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="436" startPosition="25" endLine="541" endPosition="0" />
