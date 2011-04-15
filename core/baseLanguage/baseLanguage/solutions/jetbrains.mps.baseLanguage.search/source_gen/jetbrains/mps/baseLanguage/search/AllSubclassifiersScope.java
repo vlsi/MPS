@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -27,9 +26,9 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
   private final SNode rootClassifier;
   private List<SNode> foundClassifiers;
 
-  public AllSubclassifiersScope(Classifier classifier, SModel model, int constraint, IScope scope) {
+  public AllSubclassifiersScope(SNode classifier, SModel model, int constraint, IScope scope) {
     super(constraint);
-    this.rootClassifier = classifier.getNode();
+    this.rootClassifier = classifier;
     this.model = model;
     this.scope = scope;
   }

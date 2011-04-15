@@ -35,7 +35,7 @@ import java.util.Map;
     if (methods.size() == 1) {
       return ListSequence.fromList(methods).first();
     }
-    Map<SNode, SNode> typeByTypeVar = ClassifierAndSuperClassifiersCache.getInstance(this.myClass).getTypeByTypeVariableMapNew();
+    Map<SNode, SNode> typeByTypeVar = ClassifierAndSuperClassifiersCache.getInstance(this.myClass).getTypeByTypeVariableMap();
     return MethodResolveUtil.chooseByParameterType(methods, this.myActualArguments, typeByTypeVar);
   }
 }

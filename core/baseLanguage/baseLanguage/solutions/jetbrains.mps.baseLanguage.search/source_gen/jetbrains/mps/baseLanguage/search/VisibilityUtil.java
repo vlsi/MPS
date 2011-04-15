@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
@@ -39,7 +39,7 @@ public final class VisibilityUtil {
       //  check special cases of protected access 
       SNode classifier = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
-        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(classifier)))) {
+        if (BaseLanguageUtil.isAssignable(cls, classifier)) {
           if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
@@ -85,7 +85,7 @@ public final class VisibilityUtil {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
       // parent cannot be null here 
       for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
-        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(cls)), ((Classifier) SNodeOperations.getAdapter(parent))) && isClassifierAccessible(context, parent)) {
+        if (BaseLanguageUtil.isAssignable(cls, parent) && isClassifierAccessible(context, parent)) {
           return true;
         }
       }

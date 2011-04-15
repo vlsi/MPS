@@ -26,8 +26,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 
 public class MethodResolveUtil {
@@ -217,8 +215,8 @@ public class MethodResolveUtil {
 
   public static Map<SNode, SNode> getTypesByTypeVars(SNode classifier, List<SNode> typeParameters) {
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new java.util.HashMap<SNode, SNode>());
-    for (IMapping<TypeVariableDeclaration, Type> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
-      typeByTypeVar.put(elem.key().getNode(), elem.value().getNode());
+    for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
+      typeByTypeVar.put(elem.key(), elem.value());
     }
     Iterator<SNode> typeParms = ListSequence.fromList(typeParameters).iterator();
     for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true))) {
