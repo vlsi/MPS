@@ -134,6 +134,12 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.rebuildTrace();
       }
     };
-    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showBlockDependencies, refreshAction);
+    BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", Icons.CELL_ERROR_ICON) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        myTraceTree.goToNextError();
+      }
+    };
+
+    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showBlockDependencies, refreshAction, nextErrorAction);
   }
 }

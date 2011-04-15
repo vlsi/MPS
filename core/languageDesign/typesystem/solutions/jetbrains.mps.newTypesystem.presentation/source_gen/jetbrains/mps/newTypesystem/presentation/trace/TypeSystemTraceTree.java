@@ -11,9 +11,12 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import java.util.List;
+import java.util.LinkedList;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
@@ -21,6 +24,7 @@ import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
+import javax.swing.tree.TreePath;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import org.jetbrains.annotations.Nullable;
@@ -36,7 +40,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-import javax.swing.tree.TreePath;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final IOperationContext myOperationContext;
@@ -51,11 +54,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private State myCurrentState;
   private AbstractOperation myOldOperation;
   private EditorComponent myEditorComponent;
+  private List<TypeSystemTraceTreeNode> myErrorNodes;
 
   public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myOperation = tcc.getOperation();
+    myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
     myNodes.addAll(node.getDescendants());
@@ -108,13 +113,16 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     return result;
   }
 
-  private void create(AbstractOperation diff, TypeSystemTraceTreeNode result) {
-    if (diff.getConsequences() != null) {
-      for (AbstractOperation child : diff.getConsequences()) {
+  private void create(AbstractOperation operation, TypeSystemTraceTreeNode result) {
+    if (operation.getConsequences() != null) {
+      for (AbstractOperation child : operation.getConsequences()) {
         if (filterNodeType(child) && (!(TraceSettings.isTraceForSelectedNode()) || showNode(child))) {
           TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext, myCurrentContext.getState(), myEditorComponent);
           create(child, node);
           result.add(node);
+          if (child instanceof AddErrorOperation) {
+            myErrorNodes.add(node);
+          }
         } else {
           create(child, result);
         }
@@ -159,6 +167,35 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     return true;
   }
 
+  public void goToNextError() {
+    int currentRow = -1;
+    MPSTreeNode currentNode = this.getCurrentNode();
+    if (null != currentNode) {
+      currentRow = this.getRowForPath(new TreePath(currentNode.getPath()));
+    }
+    MPSTreeNode errorNode = getNextErrorNode(currentRow);
+    if (null != errorNode) {
+      this.scrollPathToVisible(new TreePath(errorNode.getPath()));
+      this.selectNode(errorNode);
+    }
+  }
+
+  private MPSTreeNode getNextErrorNode(int row) {
+    TreePath errorPath;
+    int errorRow;
+    for (TypeSystemTraceTreeNode errorNode : myErrorNodes) {
+      errorPath = new TreePath(errorNode.getPath());
+      errorRow = this.getRowForPath(errorPath);
+      if (errorRow > row) {
+        return errorNode;
+      }
+    }
+    if (!(myErrorNodes.isEmpty())) {
+      return myErrorNodes.get(0);
+    }
+    return null;
+  }
+
   private void getSliceVars(AbstractOperation diff) {
     if (diff == null) {
       return;
@@ -189,11 +226,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    if (this.getSelectionPath() == null) {
-      return null;
-    }
-    MPSTreeNode currentNode = (MPSTreeNode) this.getSelectionPath().getLastPathComponent();
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a2a8(currentNode);
+    MPSTreeNode currentNode = this.getCurrentNode();
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a01(currentNode);
     if (operation == null) {
       return null;
     }
@@ -238,7 +272,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     });
   }
 
-  private static Object check_kyyn1p_a0a2a8(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a1a01(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
