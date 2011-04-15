@@ -2621,7 +2621,7 @@
                                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.KeyAccessOperation" typeId="tp2q.1240825616499" id="3682749675718165848" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3682749675718165849">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetAbsolutePath()%cjava%dlang%dString" resolveInfo="getAbsolutePath" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
                                   </node>
                                 </node>
                               </node>
@@ -2736,7 +2736,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3461159877638394095" resolveInfo="dir" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6070771304587786398">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetAbsolutePath()%cjava%dlang%dString" resolveInfo="getAbsolutePath" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
                       </node>
                     </node>
                   </node>
@@ -3039,7 +3039,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3461159877638394095" resolveInfo="dir" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3461159877638393769">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dlist()%cjava%dutil%dList" resolveInfo="list" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetChildren()%cjava%dutil%dList" resolveInfo="getChildren" />
                         </node>
                       </node>
                       <node role="type" roleId="tpee.1070534934091" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="3461159877638393770">
@@ -3066,7 +3066,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3461159877638393782" resolveInfo="f" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3682749675718165855">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetAbsolutePath()%cjava%dlang%dString" resolveInfo="getAbsolutePath" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
                                   </node>
                                 </node>
                               </node>
@@ -3841,7 +3841,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="505174985642735425" resolveInfo="dir" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3682749675718165842">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetAbsolutePath()%cjava%dlang%dString" resolveInfo="getAbsolutePath" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lxea.~IFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
                     </node>
                   </node>
                 </node>
@@ -3959,15 +3959,15 @@
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1268765481875666727">
         <property name="name" nameId="tpck.1169194664001" value="WRITTEN" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="FilesDelta.Status" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="Status" />
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1268765481875666728">
         <property name="name" nameId="tpck.1169194664001" value="KEPT" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="FilesDelta.Status" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="Status" />
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1268765481875666729">
         <property name="name" nameId="tpck.1169194664001" value="DELETED" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="FilesDelta.Status" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1268765481875666723" resolveInfo="Status" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1268765481875666730" />
     </node>
