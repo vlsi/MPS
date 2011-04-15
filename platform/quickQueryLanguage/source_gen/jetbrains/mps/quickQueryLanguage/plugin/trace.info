@@ -477,43 +477,45 @@
     <unitInfo nodeId="1219918588182" fileName="ReplacementView.java" startLine="31" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementView" />
   </root>
   <root nodeId="1219922562111">
-    <nodeInfo nodeId="1219923186802" fileName="QueryFinder.java" startLine="18" startPosition="45" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuery" />
-    <nodeInfo nodeId="1219923307583" fileName="QueryFinder.java" startLine="21" startPosition="35" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219922952071" fileName="QueryFinder.java" startLine="25" startPosition="83" endLine="26" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219923125635" fileName="QueryFinder.java" startLine="26" startPosition="112" endLine="27" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219923106398" fileName="QueryFinder.java" startLine="27" startPosition="44" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219923106404" fileName="QueryFinder.java" startLine="28" startPosition="49" endLine="29" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219923186802" fileName="QueryFinder.java" startLine="17" startPosition="45" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuery" />
+    <nodeInfo nodeId="1219923307583" fileName="QueryFinder.java" startLine="20" startPosition="35" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2215757419096004043" fileName="QueryFinder.java" startLine="24" startPosition="83" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2215757419096004053" fileName="QueryFinder.java" startLine="25" startPosition="67" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1219922952071" fileName="QueryFinder.java" startLine="26" startPosition="40" endLine="27" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219923125635" fileName="QueryFinder.java" startLine="27" startPosition="182" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219923106404" fileName="QueryFinder.java" startLine="28" startPosition="75" endLine="29" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219923106417" fileName="QueryFinder.java" startLine="30" startPosition="26" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219923106435" fileName="QueryFinder.java" startLine="33" startPosition="63" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1219923264451" fileName="QueryFinder.java" startLine="38" startPosition="5" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219922562113" fileName="QueryFinder.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryFinder#(Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
+    <nodeInfo nodeId="1219922562113" fileName="QueryFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryFinder#(Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
     <nodeInfo nodeId="1219923106424" fileName="QueryFinder.java" startLine="32" startPosition="11" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1220269822120" fileName="QueryFinder.java" startLine="31" startPosition="46" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1219923106412" fileName="QueryFinder.java" startLine="29" startPosition="87" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="24" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="23" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <scopeInfo nodeId="1220269822123" fileName="QueryFinder.java" startLine="36" startPosition="0" endLine="36" endPosition="29">
       <varInfo nodeId="1220269822124" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1220269822126" fileName="QueryFinder.java" startLine="36" startPosition="29" endLine="36" endPosition="29" />
-    <scopeInfo nodeId="1219922562116" fileName="QueryFinder.java" startLine="21" startPosition="35" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1219922562116" fileName="QueryFinder.java" startLine="20" startPosition="35" endLine="21" endPosition="25" />
     <scopeInfo nodeId="1219923106434" fileName="QueryFinder.java" startLine="33" startPosition="63" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="1219922562113" fileName="QueryFinder.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+    <scopeInfo nodeId="1219922562113" fileName="QueryFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
       <varInfo nodeId="1219923297470" varName="query" />
     </scopeInfo>
     <scopeInfo nodeId="1220269822121" fileName="QueryFinder.java" startLine="32" startPosition="11" endLine="35" endPosition="9" />
     <scopeInfo nodeId="1219923106416" fileName="QueryFinder.java" startLine="30" startPosition="26" endLine="37" endPosition="7">
       <varInfo nodeId="1219923106418" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="1219922585250" fileName="QueryFinder.java" startLine="25" startPosition="83" endLine="39" endPosition="74">
+    <scopeInfo nodeId="1219922585250" fileName="QueryFinder.java" startLine="24" startPosition="83" endLine="39" endPosition="74">
       <varInfo nodeId="1219923106405" varName="it" />
+      <varInfo nodeId="2215757419096004044" varName="queryObject" />
       <varInfo nodeId="1219923125636" varName="instancesList" />
       <varInfo nodeId="1219922952072" varName="instances" />
     </scopeInfo>
-    <scopeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="24" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1219922585248" varName="indicator" />
       <varInfo nodeId="1219922585246" varName="searchQuery" />
     </scopeInfo>
-    <unitInfo nodeId="1219922562111" fileName="QueryFinder.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
+    <unitInfo nodeId="1219922562111" fileName="QueryFinder.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QueryFinder" />
   </root>
   <root nodeId="1220008857613">
     <nodeInfo nodeId="1220011405626" fileName="RunReplacement_Tool.java" startLine="23" startPosition="0" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViews" />

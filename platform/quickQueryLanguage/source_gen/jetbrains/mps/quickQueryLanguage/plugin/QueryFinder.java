@@ -7,11 +7,10 @@ import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -23,9 +22,10 @@ public class QueryFinder implements IFinder {
   }
 
   public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
-    SearchResults instances = FindUtils.getSearchResults(indicator, searchQuery, new ConceptInstances_Finder());
-    List<SearchResult<SNode>> instancesList;
-    instancesList = instances.getSearchResults();
+    Object queryObject = searchQuery.getObjectHolder().getObject();
+    assert queryObject instanceof SNode;
+    SearchResults instances = FindUtils.getSearchResults(indicator, ((SNode) queryObject), searchQuery.getScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+    List<SearchResult<SNode>> instancesList = instances.getSearchResults();
     Iterator<SearchResult<SNode>> it = ListSequence.fromList(instancesList).iterator();
     while (it.hasNext()) {
       SearchResult<SNode> current = it.next();
