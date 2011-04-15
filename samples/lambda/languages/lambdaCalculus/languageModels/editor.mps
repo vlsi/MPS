@@ -31,15 +31,15 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.1934341835352312155" resolveInfo="BinaryOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4530871765544139483">
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4530871765544139482" resolveInfo="NumberType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4530871765544139490">
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4530871765544139489" resolveInfo="StringType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4530871765544139499">
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4530871765544139496" resolveInfo="FunctionType" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="2076063674015982318">

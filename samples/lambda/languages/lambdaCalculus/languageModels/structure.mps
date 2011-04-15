@@ -5,6 +5,7 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="qjd" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4022026349914659049">
       <property name="name" nameId="tpck.1169194664001" value="LambdaExpression" />
@@ -45,42 +46,42 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1934341835352312169">
       <property name="name" nameId="tpck.1169194664001" value="AddOperation" />
-      <property name="package" value="operations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1888188276221754548" resolveInfo="BinaryNumericOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6645816968628162282">
       <property name="name" nameId="tpck.1169194664001" value="MultiplyOperation" />
-      <property name="package" value="operations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1888188276221754548" resolveInfo="BinaryNumericOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6645816968628162284">
       <property name="name" nameId="tpck.1169194664001" value="SubtractOperation" />
-      <property name="package" value="operations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1888188276221754548" resolveInfo="BinaryNumericOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6645816968628162286">
       <property name="name" nameId="tpck.1169194664001" value="DivideOperation" />
-      <property name="package" value="operations" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1888188276221754548" resolveInfo="BinaryNumericOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4530871765544139480">
       <property name="name" nameId="tpck.1169194664001" value="LambdaType" />
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4530871765544139482">
       <property name="name" nameId="tpck.1169194664001" value="NumberType" />
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4530871765544139480" resolveInfo="LambdaType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4530871765544139489">
       <property name="name" nameId="tpck.1169194664001" value="StringType" />
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4530871765544139480" resolveInfo="LambdaType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4530871765544139496">
       <property name="name" nameId="tpck.1169194664001" value="FunctionType" />
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3978364766705449817">

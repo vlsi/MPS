@@ -38,7 +38,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="qjd.5249919352014727759" resolveInfo="VariableOwner" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2985097847315904384">
-      <property name="package" value="types" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="qjd.4530871765544139496" resolveInfo="FunctionType" />
     </node>
   </roots>
