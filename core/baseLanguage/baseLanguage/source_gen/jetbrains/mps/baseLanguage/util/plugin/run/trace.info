@@ -174,8 +174,8 @@
     <scopeInfo nodeId="8492459591399147278" fileName="BaseRunner.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="8492459591399147285" fileName="BaseRunner.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="8492459591399147523" fileName="BaseRunner.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="8492459591399147526" varName="module" />
       <varInfo nodeId="8492459591399147528" varName="withDependencies" />
+      <varInfo nodeId="8492459591399147526" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="2178855608170364043" fileName="BaseRunner.java" startLine="151" startPosition="0" endLine="155" endPosition="0" />
     <scopeInfo nodeId="2178855608170365416" fileName="BaseRunner.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
@@ -197,8 +197,8 @@
       <varInfo nodeId="1221883262884815812" varName="paramList" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399147460" fileName="BaseRunner.java" startLine="95" startPosition="45" endLine="101" endPosition="43">
-      <varInfo nodeId="8492459591399147462" varName="model" />
       <varInfo nodeId="8492459591399147475" varName="module" />
+      <varInfo nodeId="8492459591399147462" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4875513863436232422" fileName="BaseRunner.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="4875513863436232446" varName="workingDir" />
@@ -212,8 +212,8 @@
       <varInfo nodeId="8492459591399147436" varName="classPath" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399147490" fileName="BaseRunner.java" startLine="103" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="8492459591399147491" varName="module" />
       <varInfo nodeId="8492459591399147493" varName="withDependencies" />
+      <varInfo nodeId="8492459591399147491" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="2178855608170363854" fileName="BaseRunner.java" startLine="126" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="2178855608170363857" varName="parameters" />
