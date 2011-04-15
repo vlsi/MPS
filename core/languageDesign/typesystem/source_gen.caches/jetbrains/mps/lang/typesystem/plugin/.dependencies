@@ -228,12 +228,12 @@
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>

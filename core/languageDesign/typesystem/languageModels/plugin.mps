@@ -2363,6 +2363,9 @@
         </node>
       </node>
     </node>
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3187488586045166290">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/types.png" />
+    </node>
   </root>
 </model>
 

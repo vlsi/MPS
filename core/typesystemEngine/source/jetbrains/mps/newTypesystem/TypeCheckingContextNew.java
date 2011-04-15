@@ -473,7 +473,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode getTypeInGenerationMode(SNode node) {
-    return getTypeOf_generationMode(node);
+    myIsTraceMode = true;
+    SNode type = getTypeOf_generationMode(node);
+    myIsTraceMode = false;
+    return type;
   }
 
   @Override
