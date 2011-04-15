@@ -12,7 +12,8 @@ public class Example {
     ListSequence.fromList(list).addElement(1);
     SModel model = null;
     ((SModel) model).getLongName();
-    if (1 == 2 || 2 == 3) {
+    if (1 == 2 || "" == 3) {
+      model = "";
 
     }
   }

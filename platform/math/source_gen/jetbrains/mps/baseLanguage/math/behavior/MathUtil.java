@@ -674,7 +674,6 @@ public class MathUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("precision", "7");
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
@@ -720,7 +719,6 @@ public class MathUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("precision", "7");
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
@@ -766,7 +764,6 @@ public class MathUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("precision", "7");
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
@@ -812,7 +809,6 @@ public class MathUtil {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("precision", "7");
         {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
