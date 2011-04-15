@@ -56,3 +56,5 @@ core/languageDesign/textGen/classes
 core/languageDesign/make/classes
 core/languageDesign/make/languages/facet/classes
 core/languageDesign/make/languages/script/classes
+platform/uiLanguage/runtime/classes
+core/plugin-runtime/classes
