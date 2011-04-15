@@ -32,7 +32,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1187347122162">
           <node role="creator" roleId="tpee.1145553007750" type="tp7v.MoneyCreator" typeId="tp7v.1187340310888" id="1187347127305">
             <property name="name" value="Money" />
-            <node role="myAmount" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347192937">
+            <node role="amount" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347192937">
               <property name="value" nameId="tpee.1068580320021" value="0" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1187347202362">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1187347202363">
@@ -41,12 +41,12 @@
                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1187351371758">
                         <property name="name" nameId="tpck.1169194664001" value="new_node" />
                         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1187351371759">
-                          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" />
+                          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
                         </node>
                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1187351385073">
                           <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1187351385074">
                             <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1187351385075">
-                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" />
+                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
                             </node>
                           </node>
                         </node>
@@ -59,14 +59,14 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1187351371758" resolveInfo="new_node" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1187351678882">
-                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1070475926801" />
+                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1070475926801" resolveInfo="value" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1187351681808">
                           <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227943436">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187351684263" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1187351688611">
-                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tp7v.1186667962877" />
+                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tp7v.1186667962877" resolveInfo="amount" />
                             </node>
                           </node>
                         </node>
@@ -81,7 +81,7 @@
                 </node>
               </node>
             </node>
-            <node role="myCurrency" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347194657">
+            <node role="currency" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1187347194657">
               <property name="value" nameId="tpee.1068580320021" value="0" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1187347224872">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1187347224873">
@@ -90,12 +90,12 @@
                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1187351704364">
                         <property name="name" nameId="tpck.1169194664001" value="new_node" />
                         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1187351704365">
-                          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" />
+                          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
                         </node>
                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1187351704366">
                           <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1187351704367">
                             <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1187351704368">
-                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" />
+                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
                             </node>
                           </node>
                         </node>
@@ -108,14 +108,14 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1187351704364" resolveInfo="new_node" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1187351722115">
-                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1070475926801" />
+                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1070475926801" resolveInfo="value" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1187351704371">
                           <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227850335">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1187351704374" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1187351717692">
-                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tp7v.1186667945792" />
+                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tp7v.1186667945792" resolveInfo="currency" />
                             </node>
                           </node>
                         </node>
