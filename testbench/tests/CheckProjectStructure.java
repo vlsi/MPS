@@ -132,8 +132,8 @@ public class CheckProjectStructure {
   @Test
   @Order(2)
   public void checkStructure() {
-//    List<String> errors = HELPER.checkStructure(TOKEN, Collections.singletonList(file));
-//    Assert.assertTrue("Structure errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+    List<String> errors = HELPER.checkStructure(TOKEN, Collections.singletonList(file));
+    Assert.assertTrue("Structure errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
   }
 
   @Test
