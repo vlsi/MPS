@@ -413,6 +413,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -514,6 +515,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -615,6 +617,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -716,6 +719,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -817,6 +821,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -918,6 +923,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1020,6 +1026,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1126,6 +1133,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1230,6 +1238,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1331,6 +1340,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1432,6 +1442,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1533,6 +1544,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1637,6 +1649,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1740,6 +1753,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1843,6 +1857,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -1945,6 +1960,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2046,6 +2062,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2147,6 +2164,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2249,6 +2267,7 @@
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2350,6 +2369,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2458,6 +2478,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2559,6 +2580,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2661,6 +2683,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2773,6 +2796,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2885,6 +2909,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -2996,6 +3021,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3105,6 +3131,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3207,6 +3234,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3308,6 +3336,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3409,6 +3438,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3510,6 +3540,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3611,6 +3642,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3712,6 +3744,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3815,6 +3848,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -3916,6 +3950,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4017,6 +4052,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4118,6 +4154,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4219,6 +4256,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4320,6 +4358,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4421,6 +4460,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4524,6 +4564,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4625,6 +4666,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4726,6 +4768,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4827,6 +4870,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -4928,6 +4972,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5029,6 +5074,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5131,6 +5177,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5234,6 +5281,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5339,6 +5387,7 @@
     <path path="platform/ui/languages/meta/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5447,6 +5496,7 @@
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5549,6 +5599,7 @@
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/meta/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5661,6 +5712,7 @@
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5765,6 +5817,7 @@
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="platform/ui/languages/swing/runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5877,6 +5930,7 @@
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -5981,6 +6035,7 @@
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6082,6 +6137,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6183,6 +6239,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6286,6 +6343,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6387,6 +6445,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6489,6 +6548,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6590,6 +6650,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6692,6 +6753,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6793,6 +6855,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6894,6 +6957,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
@@ -6996,6 +7060,7 @@
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />

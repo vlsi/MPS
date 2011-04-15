@@ -714,6 +714,9 @@
       <zipfileset dir="platform/uiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="platform/uiLanguage/classes_gen" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.uiLanguage.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="platform/uiLanguage/runtime/classes" />
+    </jar>
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <mkdir dir="workbench/ideUiLanguage/classes_gen" />

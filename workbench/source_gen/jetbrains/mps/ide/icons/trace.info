@@ -404,8 +404,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2434140849679605145" fileName="IconManager.java" startLine="86" startPosition="29" endLine="138" endPosition="22">
       <varInfo nodeId="2434140849679605279" varName="result" />
-      <varInfo nodeId="2434140849679605254" varName="model" />
       <varInfo nodeId="2434140849679605163" varName="concept" />
+      <varInfo nodeId="2434140849679605254" varName="model" />
       <varInfo nodeId="2434140849679605302" varName="markIcons" />
       <varInfo nodeId="2434140849679605147" varName="mainIcon" />
     </scopeInfo>
