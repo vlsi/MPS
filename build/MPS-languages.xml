@@ -445,6 +445,9 @@
       <zipfileset dir="core/languageDesign/structure/generator_new" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator_new" />
       <zipfileset dir="core/languageDesign/structure/classes" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.structure.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="core/languageDesign/structure/classes" />
+    </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.core">
     <mkdir dir="core/languageDesign/core/classes" />

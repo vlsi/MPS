@@ -6,12 +6,14 @@ core/debug-api/classes
 core/runtime/classes
 core/actions-runtime/classes
 core/editor-runtime/classes
+core/plugin-runtime/classes
 core/generator/classes
 core/typesystemEngine/classes
 core/typesystemIntegration/classes
 core/make-runtime/classes
 core/kernel/classes
 workbench/typesystemUi/classes
+platform/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
 core/baseLanguage/baseLanguage/classes
 core/baseLanguage/classifiers/classes
@@ -56,5 +58,3 @@ core/languageDesign/textGen/classes
 core/languageDesign/make/classes
 core/languageDesign/make/languages/facet/classes
 core/languageDesign/make/languages/script/classes
-platform/uiLanguage/runtime/classes
-core/plugin-runtime/classes
