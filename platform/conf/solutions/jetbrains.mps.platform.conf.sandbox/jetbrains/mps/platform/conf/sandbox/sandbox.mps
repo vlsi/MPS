@@ -15,7 +15,7 @@
     <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.Plugin" typeId="cs0q.6536266708345244486" id="7208030699524859782">
       <property name="name" nameId="tpck.1169194664001" value="NNNNN" />
       <node role="depends" roleId="cs0q.6536266708345244499" type="cs0q.PluginDependency" typeId="cs0q.6536266708345244487" id="6191093908411707946">
-        <link role="plugin" roleId="cs0q.6536266708345244489" targetNodeId="2wu3.3908032508224199895" resolveInfo="IDEA CORE" />
+        <link role="plugin" roleId="cs0q.6536266708345244489" targetNodeId="2wu3.285525369940287404" resolveInfo="IDEA CORE" />
       </node>
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Actions" typeId="cs0q.4383174161801812099" id="5246455451713223851" />
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ExtensionPoints" typeId="cs0q.7130790807395857422" id="5246455451713223852" />

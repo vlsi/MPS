@@ -966,7 +966,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestExecutionController" file="UnitTestExecutionController.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.runtime.OutputRedirector" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -977,12 +977,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestEventsDispatcher" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.runtime.OutputRedirector" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener" file="UnitTestProcessListener.java">
     <classNode dependClassName="java.lang.String" />
