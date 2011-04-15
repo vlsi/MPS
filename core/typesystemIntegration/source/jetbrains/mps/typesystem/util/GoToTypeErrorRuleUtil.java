@@ -68,6 +68,6 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    context.getComponent(MPSEditorOpener.class).openNode(rule);
+    context.getComponent(MPSEditorOpener.class).openNode(rule, context, false, true);
   }
 }

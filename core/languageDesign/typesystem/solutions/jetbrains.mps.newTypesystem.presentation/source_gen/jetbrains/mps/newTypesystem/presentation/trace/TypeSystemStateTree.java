@@ -162,8 +162,11 @@ public class TypeSystemStateTree extends MPSTree {
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
         List<SNode> vars = stateNode.getVariables();
+        if (null == vars) {
+          return;
+        }
         for (SNode var : vars) {
-          final SNode node = check_x8yvv7_a0a0c0a0a0a0f0i(maps, var);
+          final SNode node = check_x8yvv7_a0a0d0a0a0a0f0i(maps, var);
           if (node != null && node.isRegistered()) {
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
@@ -177,7 +180,7 @@ public class TypeSystemStateTree extends MPSTree {
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
-  private static SNode check_x8yvv7_a0a0c0a0a0a0f0i(NodeMaps checkedDotOperand, SNode var) {
+  private static SNode check_x8yvv7_a0a0d0a0a0a0f0i(NodeMaps checkedDotOperand, SNode var) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(var);
     }

@@ -219,11 +219,12 @@
     <nodeInfo nodeId="8026082379719285313" fileName="TypeSystemStateTree.java" startLine="159" startPosition="5" endLine="160" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8026082379719285225" fileName="TypeSystemStateTree.java" startLine="162" startPosition="25" endLine="163" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8026082379719285237" fileName="TypeSystemStateTree.java" startLine="163" startPosition="46" endLine="164" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8026082379719285246" fileName="TypeSystemStateTree.java" startLine="165" startPosition="32" endLine="166" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8026082379719285279" fileName="TypeSystemStateTree.java" startLine="169" startPosition="83" endLine="170" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8026082379719285304" fileName="TypeSystemStateTree.java" startLine="176" startPosition="7" endLine="177" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="181" startPosition="36" endLine="182" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="183" startPosition="5" endLine="184" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5517373768882888402" fileName="TypeSystemStateTree.java" startLine="165" startPosition="27" endLine="166" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8026082379719285246" fileName="TypeSystemStateTree.java" startLine="168" startPosition="32" endLine="169" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8026082379719285279" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8026082379719285304" fileName="TypeSystemStateTree.java" startLine="179" startPosition="7" endLine="180" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="184" startPosition="36" endLine="185" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="186" startPosition="5" endLine="187" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="743535856746706120" fileName="TypeSystemStateTree.java" startLine="106" startPosition="12" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7963175946124426240" fileName="TypeSystemStateTree.java" startLine="62" startPosition="41" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
     <nodeInfo nodeId="3867334372981197190" fileName="TypeSystemStateTree.java" startLine="69" startPosition="102" endLine="72" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
@@ -235,32 +236,33 @@
     <nodeInfo nodeId="743535856746706152" fileName="TypeSystemStateTree.java" startLine="111" startPosition="7" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="743535856746706241" fileName="TypeSystemStateTree.java" startLine="132" startPosition="7" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2562119319477053136" fileName="TypeSystemStateTree.java" startLine="140" startPosition="98" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="180" startPosition="92" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5517373768882888393" fileName="TypeSystemStateTree.java" startLine="164" startPosition="52" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="183" startPosition="92" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="743535856746706189" fileName="TypeSystemStateTree.java" startLine="122" startPosition="46" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8026082379719285269" fileName="TypeSystemStateTree.java" startLine="168" startPosition="69" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8026082379719285269" fileName="TypeSystemStateTree.java" startLine="171" startPosition="69" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="743535856746706116" fileName="TypeSystemStateTree.java" startLine="103" startPosition="38" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="743535856746706223" fileName="TypeSystemStateTree.java" startLine="127" startPosition="59" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/newTypesystem/presentation/trace/TypeTreeNode;Ljetbrains/mps/newTypesystem/presentation/trace/TypeTreeNode;)I" />
     <nodeInfo nodeId="8026082379719285355" fileName="TypeSystemStateTree.java" startLine="153" startPosition="47" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8026082379719285262" fileName="TypeSystemStateTree.java" startLine="167" startPosition="52" endLine="172" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8026082379719285262" fileName="TypeSystemStateTree.java" startLine="170" startPosition="52" endLine="175" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="743535856746705864" fileName="TypeSystemStateTree.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetState#(Ljetbrains/mps/newTypesystem/state/State;)V" />
     <nodeInfo nodeId="743535856746705878" fileName="TypeSystemStateTree.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
     <nodeInfo nodeId="743535856746706216" fileName="TypeSystemStateTree.java" startLine="126" startPosition="5" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8026082379719285349" fileName="TypeSystemStateTree.java" startLine="152" startPosition="76" endLine="158" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="743535856746705842" fileName="TypeSystemStateTree.java" startLine="38" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemStateTree#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/newTypesystem/state/State;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="8026082379719285253" fileName="TypeSystemStateTree.java" startLine="166" startPosition="69" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="179" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x8yvv7_a0a0c0a0a0a0f0i#(Ljetbrains/mps/newTypesystem/state/NodeMaps;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8026082379719285253" fileName="TypeSystemStateTree.java" startLine="169" startPosition="69" endLine="176" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="182" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x8yvv7_a0a0d0a0a0a0f0i#(Ljetbrains/mps/newTypesystem/state/NodeMaps;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2562119319477053116" fileName="TypeSystemStateTree.java" startLine="138" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEquationsNode#()Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
     <nodeInfo nodeId="8026082379719285336" fileName="TypeSystemStateTree.java" startLine="151" startPosition="81" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8026082379719285244" fileName="TypeSystemStateTree.java" startLine="164" startPosition="52" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8026082379719285244" fileName="TypeSystemStateTree.java" startLine="167" startPosition="9" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="743535856746705981" fileName="TypeSystemStateTree.java" startLine="76" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/String;Ljava/util/List;Ljava/awt/Color;)Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
     <nodeInfo nodeId="743535856746706024" fileName="TypeSystemStateTree.java" startLine="87" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/String;Ljava/util/Set;Ljava/awt/Color;)Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
     <nodeInfo nodeId="743535856746706087" fileName="TypeSystemStateTree.java" startLine="100" startPosition="111" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8026082379719285155" fileName="TypeSystemStateTree.java" startLine="161" startPosition="57" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8026082379719285147" fileName="TypeSystemStateTree.java" startLine="160" startPosition="86" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="743535856746705888" fileName="TypeSystemStateTree.java" startLine="58" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
+    <nodeInfo nodeId="8026082379719285155" fileName="TypeSystemStateTree.java" startLine="161" startPosition="57" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8026082379719285147" fileName="TypeSystemStateTree.java" startLine="160" startPosition="86" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="743535856746706076" fileName="TypeSystemStateTree.java" startLine="98" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInequalitiesNode#()Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
     <nodeInfo nodeId="743535856746706165" fileName="TypeSystemStateTree.java" startLine="118" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTypesNode#()Ljetbrains/mps/newTypesystem/presentation/trace/TypeSystemStateTreeNode;" />
-    <nodeInfo nodeId="743535856746706253" fileName="TypeSystemStateTree.java" startLine="146" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
+    <nodeInfo nodeId="743535856746706253" fileName="TypeSystemStateTree.java" startLine="146" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
     <scopeInfo nodeId="743535856746706003" fileName="TypeSystemStateTree.java" startLine="79" startPosition="24" endLine="80" endPosition="29" />
     <scopeInfo nodeId="743535856746706013" fileName="TypeSystemStateTree.java" startLine="82" startPosition="35" endLine="83" endPosition="74" />
     <scopeInfo nodeId="743535856746706054" fileName="TypeSystemStateTree.java" startLine="90" startPosition="24" endLine="91" endPosition="29" />
@@ -272,8 +274,9 @@
     <scopeInfo nodeId="743535856746706230" fileName="TypeSystemStateTree.java" startLine="129" startPosition="60" endLine="130" endPosition="54" />
     <scopeInfo nodeId="743535856746706245" fileName="TypeSystemStateTree.java" startLine="133" startPosition="36" endLine="134" endPosition="23" />
     <scopeInfo nodeId="2562119319477053137" fileName="TypeSystemStateTree.java" startLine="141" startPosition="99" endLine="142" endPosition="137" />
-    <scopeInfo nodeId="8026082379719285278" fileName="TypeSystemStateTree.java" startLine="169" startPosition="83" endLine="170" endPosition="106" />
-    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="181" startPosition="36" endLine="182" endPosition="44" />
+    <scopeInfo nodeId="5517373768882888394" fileName="TypeSystemStateTree.java" startLine="165" startPosition="27" endLine="166" endPosition="17" />
+    <scopeInfo nodeId="8026082379719285278" fileName="TypeSystemStateTree.java" startLine="172" startPosition="83" endLine="173" endPosition="106" />
+    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="184" startPosition="36" endLine="185" endPosition="44" />
     <scopeInfo nodeId="743535856746705881" fileName="TypeSystemStateTree.java" startLine="54" startPosition="35" endLine="56" endPosition="24" />
     <scopeInfo nodeId="743535856746706195" fileName="TypeSystemStateTree.java" startLine="123" startPosition="49" endLine="125" endPosition="106">
       <varInfo nodeId="743535856746706197" varName="type" />
@@ -298,11 +301,11 @@
     <scopeInfo nodeId="743535856746706189" fileName="TypeSystemStateTree.java" startLine="122" startPosition="46" endLine="126" endPosition="5">
       <varInfo nodeId="743535856746706193" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8026082379719285269" fileName="TypeSystemStateTree.java" startLine="168" startPosition="69" endLine="172" endPosition="0">
+    <scopeInfo nodeId="8026082379719285269" fileName="TypeSystemStateTree.java" startLine="171" startPosition="69" endLine="175" endPosition="0">
       <varInfo nodeId="8026082379719285272" varName="e" />
       <varInfo nodeId="8026082379719285274" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="180" startPosition="92" endLine="184" endPosition="16" />
+    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="183" startPosition="92" endLine="187" endPosition="16" />
     <scopeInfo nodeId="743535856746705849" fileName="TypeSystemStateTree.java" startLine="39" startPosition="112" endLine="44" endPosition="16" />
     <scopeInfo nodeId="743535856746706223" fileName="TypeSystemStateTree.java" startLine="127" startPosition="59" endLine="132" endPosition="0">
       <varInfo nodeId="743535856746706228" varName="o2" />
@@ -315,7 +318,7 @@
       <varInfo nodeId="8026082379719285358" varName="e" />
       <varInfo nodeId="8026082379719285360" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="8026082379719285261" fileName="TypeSystemStateTree.java" startLine="167" startPosition="52" endLine="172" endPosition="15" />
+    <scopeInfo nodeId="8026082379719285261" fileName="TypeSystemStateTree.java" startLine="170" startPosition="52" endLine="175" endPosition="15" />
     <scopeInfo nodeId="743535856746705864" fileName="TypeSystemStateTree.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="743535856746705867" varName="state" />
     </scopeInfo>
@@ -326,7 +329,7 @@
       <varInfo nodeId="743535856746705847" varName="state" />
       <varInfo nodeId="3527987301180343285" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="179" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="182" startPosition="0" endLine="189" endPosition="0" />
     <scopeInfo nodeId="743535856746705991" fileName="TypeSystemStateTree.java" startLine="77" startPosition="98" endLine="85" endPosition="18">
       <varInfo nodeId="743535856746705993" varName="result" />
     </scopeInfo>
@@ -334,10 +337,10 @@
       <varInfo nodeId="743535856746706036" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2562119319477053116" fileName="TypeSystemStateTree.java" startLine="138" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="8026082379719285245" fileName="TypeSystemStateTree.java" startLine="165" startPosition="32" endLine="173" endPosition="11">
+    <scopeInfo nodeId="8026082379719285245" fileName="TypeSystemStateTree.java" startLine="168" startPosition="32" endLine="176" endPosition="11">
       <varInfo nodeId="8026082379719285247" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8026082379719285244" fileName="TypeSystemStateTree.java" startLine="164" startPosition="52" endLine="174" endPosition="9">
+    <scopeInfo nodeId="8026082379719285244" fileName="TypeSystemStateTree.java" startLine="167" startPosition="9" endLine="177" endPosition="9">
       <varInfo nodeId="8026082379719285293" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="743535856746705981" fileName="TypeSystemStateTree.java" startLine="76" startPosition="0" endLine="87" endPosition="0">
@@ -350,10 +353,6 @@
       <varInfo nodeId="743535856746706032" varName="color" />
       <varInfo nodeId="743535856746706029" varName="entries" />
     </scopeInfo>
-    <scopeInfo nodeId="8026082379719285158" fileName="TypeSystemStateTree.java" startLine="162" startPosition="25" endLine="174" endPosition="9">
-      <varInfo nodeId="8026082379719285238" varName="vars" />
-      <varInfo nodeId="8026082379719285226" varName="maps" />
-    </scopeInfo>
     <scopeInfo nodeId="743535856746706105" fileName="TypeSystemStateTree.java" startLine="101" startPosition="161" endLine="114" endPosition="7">
       <varInfo nodeId="743535856746706114" varName="current" />
       <varInfo nodeId="743535856746706107" varName="key" />
@@ -364,7 +363,10 @@
     <scopeInfo nodeId="743535856746706087" fileName="TypeSystemStateTree.java" startLine="100" startPosition="111" endLine="115" endPosition="5">
       <varInfo nodeId="743535856746706099" varName="entry" />
     </scopeInfo>
-    <scopeInfo nodeId="8026082379719285155" fileName="TypeSystemStateTree.java" startLine="161" startPosition="57" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="8026082379719285158" fileName="TypeSystemStateTree.java" startLine="162" startPosition="25" endLine="177" endPosition="9">
+      <varInfo nodeId="8026082379719285238" varName="vars" />
+      <varInfo nodeId="8026082379719285226" varName="maps" />
+    </scopeInfo>
     <scopeInfo nodeId="743535856746706079" fileName="TypeSystemStateTree.java" startLine="99" startPosition="60" endLine="116" endPosition="18">
       <varInfo nodeId="743535856746706081" varName="result" />
     </scopeInfo>
@@ -374,22 +376,23 @@
       <varInfo nodeId="743535856746706184" varName="nodeMaps" />
     </scopeInfo>
     <scopeInfo nodeId="743535856746705888" fileName="TypeSystemStateTree.java" startLine="58" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="8026082379719285155" fileName="TypeSystemStateTree.java" startLine="161" startPosition="57" endLine="179" endPosition="0" />
     <scopeInfo nodeId="743535856746706076" fileName="TypeSystemStateTree.java" startLine="98" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="743535856746706165" fileName="TypeSystemStateTree.java" startLine="118" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="743535856746706258" fileName="TypeSystemStateTree.java" startLine="148" startPosition="68" endLine="177" endPosition="105">
+    <scopeInfo nodeId="743535856746706258" fileName="TypeSystemStateTree.java" startLine="148" startPosition="68" endLine="180" endPosition="105">
       <varInfo nodeId="8026082379719285325" varName="goToNode" />
       <varInfo nodeId="8026082379719285331" varName="stateNode" />
       <varInfo nodeId="8026082379719285314" varName="group" />
       <varInfo nodeId="8026082379719285321" varName="goToRule" />
     </scopeInfo>
-    <scopeInfo nodeId="743535856746706253" fileName="TypeSystemStateTree.java" startLine="146" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="743535856746706253" fileName="TypeSystemStateTree.java" startLine="146" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="743535856746706256" varName="treeNode" />
     </scopeInfo>
-    <unitInfo nodeId="8026082379719285268" fileName="TypeSystemStateTree.java" startLine="168" startPosition="26" endLine="172" endPosition="13" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$4" />
+    <unitInfo nodeId="8026082379719285268" fileName="TypeSystemStateTree.java" startLine="171" startPosition="26" endLine="175" endPosition="13" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$4" />
     <unitInfo nodeId="743535856746706221" fileName="TypeSystemStateTree.java" startLine="127" startPosition="31" endLine="132" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$1" />
     <unitInfo nodeId="8026082379719285354" fileName="TypeSystemStateTree.java" startLine="153" startPosition="21" endLine="158" endPosition="7" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$2" />
-    <unitInfo nodeId="8026082379719285153" fileName="TypeSystemStateTree.java" startLine="161" startPosition="45" endLine="176" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$3" />
-    <unitInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="34" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree" />
+    <unitInfo nodeId="8026082379719285153" fileName="TypeSystemStateTree.java" startLine="161" startPosition="45" endLine="179" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree$3" />
+    <unitInfo nodeId="743535856746705833" fileName="TypeSystemStateTree.java" startLine="34" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemStateTree" />
   </root>
   <root nodeId="743535856746706322">
     <nodeInfo nodeId="743535856746706325" fileName="TypeSystemStateTreeNode.java" startLine="15" startPosition="58" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
