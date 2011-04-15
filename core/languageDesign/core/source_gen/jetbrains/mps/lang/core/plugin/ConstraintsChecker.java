@@ -14,11 +14,11 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
@@ -95,12 +95,16 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     for (SNode parentConcept : chs.getConcepts()) {
       component.addDependency(parentConcept);
     }
-    List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
-    for (PropertyDeclaration p : ListSequence.fromList(props)) {
-      final PropertySupport ps = PropertySupport.getPropertySupport(p.getNode());
-      final String propertyName = p.getName();
+    List<SNode> props = ((List<SNode>) chs.getNodes(new Condition<SNode>() {
+      public boolean met(SNode n) {
+        return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+      }
+    }));
+    for (SNode p : ListSequence.fromList(props)) {
+      final PropertySupport ps = PropertySupport.getPropertySupport(p);
+      final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());
+        LOG.error("Property declaration has a null name, declaration id: " + p.getSNodeId() + ", model: " + SNodeOperations.getModel(p).getSModelFqName());
         continue;
       }
       final String value = ps.fromInternalValue(node.getProperty(propertyName));
@@ -112,11 +116,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
-        if ("name".equals(p.getName()) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
+        if ("name".equals(SPropertyOperations.getString(p, "name")) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
           continue;
         }
         // todo find a rule 
-        component.addError(node, "Property constraint violation for property \"" + p.getName() + "\"", null, new PropertyMessageTarget(p.getName()));
+        component.addError(node, "Property constraint violation for property \"" + SPropertyOperations.getString(p, "name") + "\"", null, new PropertyMessageTarget(SPropertyOperations.getString(p, "name")));
       }
     }
   }
