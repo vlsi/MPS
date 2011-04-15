@@ -16,18 +16,38 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
-import jetbrains.mps.smodel.constraints.CanBeARootContext;
-import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.*;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class ConstraintsDescriptor {
-  abstract boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  // property
+  public abstract INodePropertyGetter getNodePropertyGetter(String propertyName);
+
+  public abstract INodePropertySetter getNodePropertySetter(String propertyName);
+
+  public abstract INodePropertyValidator getNodePropertyValidator(String propertyName);
+
+  //  search scope
+  public abstract INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider();
+
+  public abstract INodeReferentSearchScopeProvider getNodeNonDefaultSearchScopeProvider(String referentRole);
+
+  // referent node set event handler
+  public abstract INodeReferentSetEventHandler getNodeReferentSetEventHandler(String referentRole);
+
+  // todo: remove/move this methods
+  public abstract boolean isAlternativeIcon();
+
+  public abstract String getAlternativeIcon(SNode node);
+
+  public abstract String getDefaultConcreteConceptFqName();
 }

@@ -18,6 +18,6 @@ package jetbrains.mps.smodel.structure;
 public class InterpretedConstraintsProvider extends DescriptorProvider<ConstraintsDescriptor> {
   @Override
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new InterpretedConstraints(fqName);
   }
 }

@@ -22,7 +22,7 @@ public class RenameUtil {
     // if there are constrints, but they are not compiled, we can rename it 
     ModelConstraintsManager manager = ModelConstraintsManager.getInstance();
     String nameProperty = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), "name");
-    return manager.getNodePropertyGetter(node, nameProperty) == null;
+    return manager.getNodePropertyGetter(node.getConceptFqName(), nameProperty) == null;
   }
 
   public static class NameComponent extends JPanel {
