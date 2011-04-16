@@ -20,6 +20,30 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeModelsDialog" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.ButtonsPainter" file="ButtonsPainter.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.awt.Cursor" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.FoldingAreaButton" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <classNode dependClassName="java.awt.Point" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" file="ChangeEditorMessage.java">
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -180,6 +204,12 @@
     <classNode extendsClassName="javax.swing.event.ChangeListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.FoldingAreaButton" file="FoldingAreaButton.java">
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.GoToNeighbourMergeRoot" file="GoToNeighbourMergeRoot.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -195,40 +225,27 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.MergeButtonsPainter" file="MergeButtonsPainter.java">
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="java.awt.image.BufferedImage" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeRootsDialog" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.awt.Point" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="java.awt.Cursor" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.geom.AffineTransform" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="java.awt.Graphics2D" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter" />
+    <classNode dependClassName="java.awt.Graphics2D" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeRootsDialog" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
+    <classNode dependClassName="java.awt.image.BufferedImage" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.ButtonsPainter" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.FoldingAreaButton" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.MergeConfirmation" file="MergeConfirmation.java">
     <classNode dependClassName="java.lang.Iterable" />
