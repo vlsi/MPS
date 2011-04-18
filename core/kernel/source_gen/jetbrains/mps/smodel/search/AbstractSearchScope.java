@@ -7,8 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public abstract class AbstractSearchScope implements ISearchScope {
   protected static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
@@ -39,24 +37,6 @@ public abstract class AbstractSearchScope implements ISearchScope {
   @NotNull
   public final List<SNode> getNodes() {
     return getNodes(TRUE_CONDITION);
-  }
-
-  @NotNull
-  public List<INodeAdapter> getAdapters(final Condition<INodeAdapter> condition) {
-    return BaseAdapter.toAdapters(getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return condition.met(BaseAdapter.fromNode(object));
-      }
-    }));
-  }
-
-  @NotNull
-  public <T extends INodeAdapter> List<T> getAdapters(final Class<T> adapterClass) {
-    return (List<T>) getAdapters(new Condition<INodeAdapter>() {
-      public boolean met(INodeAdapter node) {
-        return adapterClass.isAssignableFrom(node.getClass());
-      }
-    });
   }
 
   public boolean isInScope(final SNode node) {
