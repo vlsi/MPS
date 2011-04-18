@@ -2146,7 +2146,9 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
     </node>
   </root>
-  <root id="1204762015203" />
+  <root id="1204762015203">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906816823" />
+  </root>
   <root id="1204763358057">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1204763443606">
       <property name="role" nameId="tpce.1071599776563" value="annotationLink" />
@@ -2159,6 +2161,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4024382256428849248">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906816842" />
   </root>
   <root id="1204832665472">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1204834178790">
@@ -2178,6 +2181,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4024382256428849251">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906816843" />
   </root>
   <root id="1204834061007" />
   <root id="1204834851141">
@@ -2243,6 +2247,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3542758363529077388">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906816841" />
   </root>
   <root id="1204851882688">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1204851882689">
@@ -2289,6 +2294,7 @@
       <property name="value" nameId="tpce.1105725733873" value="all attributes" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="short_description" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906814123" />
   </root>
   <root id="1204761823073">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1204762310079">
@@ -2320,6 +2326,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8765008720200392214">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1172326539502" resolveInfo="applicableToConcept" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3050731179906814124" />
   </root>
   <root id="1205861725686">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1205861725689">

@@ -552,6 +552,7 @@
       <property name="value" nameId="1105725733873" value="Annotation Link" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="1224240836180" id="6740862279712728259" />
   </root>
   <root id="1149608316235">
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1149608364144">
