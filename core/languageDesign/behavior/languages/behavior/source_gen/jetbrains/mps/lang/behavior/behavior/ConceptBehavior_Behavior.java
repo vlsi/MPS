@@ -122,6 +122,9 @@ public class ConceptBehavior_Behavior {
       if (SPropertyOperations.getBoolean(method, "isAbstract")) {
         continue;
       }
+      if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
+        continue;
+      }
       SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
       if (container == thisNode || container == null) {
         continue;

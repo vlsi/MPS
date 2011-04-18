@@ -38,6 +38,8 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myBehavior), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       SLinkOperations.setTarget(method, "overriddenMethod", SNodeOperations.cast(methodNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
+      SPropertyOperations.set(method, "isVirtual", "" + false);
+
       if (insertion) {
         ListSequence.fromList(SLinkOperations.getTargets(myBehavior, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myBehavior, "method", true)).indexOf(myContextMethod) + 1, method);
       } else {
