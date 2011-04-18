@@ -8,7 +8,7 @@
   <unitInfo fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint" />
   <unitInfo fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_declaration_ReferentConstraint" />
   <unitInfo fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_superConcept_ReferentConstraint" />
-  <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
+  <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
   <root nodeId="1225194245328">
     <nodeInfo nodeId="1227088888256" fileName="ConceptBehavior_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225194245332" fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -25,30 +25,35 @@
     </scopeInfo>
   </root>
   <root nodeId="1225194475678">
-    <nodeInfo nodeId="1225194475718" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="37" startPosition="84" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225194475729" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="40" startPosition="86" endLine="41" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225194475738" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="42" startPosition="7" endLine="43" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225194475747" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="43" startPosition="109" endLine="44" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225194475682" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="52" startPosition="132" endLine="53" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225194475691" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="53" startPosition="192" endLine="54" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225194475698" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="54" startPosition="144" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225194475711" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="59" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="39" startPosition="7" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225194475702" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="35" startPosition="138" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1225194475717" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="37" startPosition="84" endLine="38" endPosition="38" />
-    <scopeInfo nodeId="1225194475728" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="40" startPosition="86" endLine="41" endPosition="132" />
-    <scopeInfo nodeId="1225194475711" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="59" endLine="39" endPosition="7">
+    <nodeInfo nodeId="1225194475718" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="38" startPosition="84" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225194475729" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="41" startPosition="86" endLine="42" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225194475738" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="43" startPosition="7" endLine="44" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225194475747" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="44" startPosition="109" endLine="45" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225194475682" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="53" startPosition="132" endLine="54" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225194475691" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="54" startPosition="192" endLine="55" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448639082793552063" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="57" startPosition="39" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225194475711" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="37" startPosition="59" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="40" startPosition="7" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7448639082793552059" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="56" startPosition="75" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225194475698" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="55" startPosition="144" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225194475702" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="138" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1225194475717" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="38" startPosition="84" endLine="39" endPosition="38" />
+    <scopeInfo nodeId="1225194475728" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="41" startPosition="86" endLine="42" endPosition="132" />
+    <scopeInfo nodeId="7448639082793552060" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="57" startPosition="39" endLine="58" endPosition="80" />
+    <scopeInfo nodeId="1225194475711" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="37" startPosition="59" endLine="40" endPosition="7">
       <varInfo nodeId="1225194475715" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="39" startPosition="7" endLine="42" endPosition="7">
+    <scopeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="40" startPosition="7" endLine="43" endPosition="7">
       <varInfo nodeId="1225194475726" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225194475681" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="52" startPosition="132" endLine="55" endPosition="19">
+    <scopeInfo nodeId="7448639082793552059" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="56" startPosition="75" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1225194475681" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="53" startPosition="132" endLine="60" endPosition="7">
       <varInfo nodeId="1225194475692" varName="methods" />
       <varInfo nodeId="1225194475683" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1225194475710" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="59" endLine="44" endPosition="157" />
-    <scopeInfo nodeId="1225194475701" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="35" startPosition="138" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1225194475710" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="37" startPosition="59" endLine="45" endPosition="157" />
+    <scopeInfo nodeId="1225194475701" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="138" endLine="46" endPosition="5" />
+    <unitInfo nodeId="7448639082793552059" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="56" startPosition="52" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint$1" />
   </root>
   <root nodeId="2043122710974690677">
     <nodeInfo nodeId="2043122710974690753" fileName="ThisNodeExpression_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
