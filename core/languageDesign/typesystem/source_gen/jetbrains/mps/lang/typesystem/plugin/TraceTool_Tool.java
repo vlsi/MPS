@@ -29,7 +29,7 @@ public class TraceTool_Tool extends GeneratedTool {
   }
 
   public void buildTrace(TypeCheckingContextNew t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
-    TraceTool_Tool.this.myPanel.showTraceForNode(t, operationContext, node, editorComponent, true);
+    TraceTool_Tool.this.myPanel.showTraceForNode(t, operationContext, node, editorComponent, rebuild);
   }
 
   public JComponent getComponent() {

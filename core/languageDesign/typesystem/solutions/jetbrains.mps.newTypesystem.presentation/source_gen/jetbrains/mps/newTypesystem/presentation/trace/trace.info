@@ -476,154 +476,170 @@
     <nodeInfo nodeId="743535856746706645" fileName="TypeSystemTracePanel.java" startLine="28" startPosition="50" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTraceTree" />
     <nodeInfo nodeId="743535856746706648" fileName="TypeSystemTracePanel.java" startLine="29" startPosition="42" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStateTree" />
     <nodeInfo nodeId="1437069675822885851" fileName="TypeSystemTracePanel.java" startLine="30" startPosition="42" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtons" />
-    <nodeInfo nodeId="743535856746706675" fileName="TypeSystemTracePanel.java" startLine="33" startPosition="33" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822885856" fileName="TypeSystemTracePanel.java" startLine="34" startPosition="39" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822889924" fileName="TypeSystemTracePanel.java" startLine="37" startPosition="25" endLine="38" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1437069675822889935" fileName="TypeSystemTracePanel.java" startLine="38" startPosition="167" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822885829" fileName="TypeSystemTracePanel.java" startLine="41" startPosition="7" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="743535856746706936" fileName="TypeSystemTracePanel.java" startLine="45" startPosition="32" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2498620720771019371" fileName="TypeSystemTracePanel.java" startLine="50" startPosition="18" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019247" fileName="TypeSystemTracePanel.java" startLine="52" startPosition="5" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019258" fileName="TypeSystemTracePanel.java" startLine="53" startPosition="92" endLine="54" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019268" fileName="TypeSystemTracePanel.java" startLine="54" startPosition="101" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2498620720771019278" fileName="TypeSystemTracePanel.java" startLine="55" startPosition="44" endLine="56" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2498620720771019284" fileName="TypeSystemTracePanel.java" startLine="56" startPosition="65" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019292" fileName="TypeSystemTracePanel.java" startLine="57" startPosition="62" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2498620720771019298" fileName="TypeSystemTracePanel.java" startLine="58" startPosition="65" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019306" fileName="TypeSystemTracePanel.java" startLine="59" startPosition="62" endLine="60" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019311" fileName="TypeSystemTracePanel.java" startLine="60" startPosition="39" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019316" fileName="TypeSystemTracePanel.java" startLine="61" startPosition="36" endLine="62" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019321" fileName="TypeSystemTracePanel.java" startLine="62" startPosition="48" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019327" fileName="TypeSystemTracePanel.java" startLine="63" startPosition="49" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019335" fileName="TypeSystemTracePanel.java" startLine="64" startPosition="21" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822885844" fileName="TypeSystemTracePanel.java" startLine="65" startPosition="24" endLine="66" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2498620720771019352" fileName="TypeSystemTracePanel.java" startLine="66" startPosition="44" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="743535856746706944" fileName="TypeSystemTracePanel.java" startLine="70" startPosition="39" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822884850" fileName="TypeSystemTracePanel.java" startLine="75" startPosition="128" endLine="76" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="1437069675822884860" fileName="TypeSystemTracePanel.java" startLine="78" startPosition="50" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1437069675822884870" fileName="TypeSystemTracePanel.java" startLine="82" startPosition="63" endLine="83" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718167" fileName="TypeSystemTracePanel.java" startLine="83" startPosition="27" endLine="84" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796564005284630485" fileName="TypeSystemTracePanel.java" startLine="84" startPosition="56" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8326504742838949780" fileName="TypeSystemTracePanel.java" startLine="85" startPosition="33" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822884888" fileName="TypeSystemTracePanel.java" startLine="89" startPosition="136" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="1437069675822884898" fileName="TypeSystemTracePanel.java" startLine="92" startPosition="50" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1437069675822884908" fileName="TypeSystemTracePanel.java" startLine="96" startPosition="63" endLine="97" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718160" fileName="TypeSystemTracePanel.java" startLine="97" startPosition="27" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796564005284630480" fileName="TypeSystemTracePanel.java" startLine="98" startPosition="47" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8326504742838949776" fileName="TypeSystemTracePanel.java" startLine="99" startPosition="33" endLine="100" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718181" fileName="TypeSystemTracePanel.java" startLine="103" startPosition="145" endLine="104" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="7641580382616718191" fileName="TypeSystemTracePanel.java" startLine="106" startPosition="50" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7641580382616718201" fileName="TypeSystemTracePanel.java" startLine="110" startPosition="63" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718205" fileName="TypeSystemTracePanel.java" startLine="111" startPosition="27" endLine="112" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796564005284630475" fileName="TypeSystemTracePanel.java" startLine="112" startPosition="53" endLine="113" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8326504742838949772" fileName="TypeSystemTracePanel.java" startLine="113" startPosition="33" endLine="114" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718217" fileName="TypeSystemTracePanel.java" startLine="117" startPosition="143" endLine="118" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="7641580382616718227" fileName="TypeSystemTracePanel.java" startLine="120" startPosition="50" endLine="121" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7641580382616718237" fileName="TypeSystemTracePanel.java" startLine="124" startPosition="63" endLine="125" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718241" fileName="TypeSystemTracePanel.java" startLine="125" startPosition="27" endLine="126" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796564005284630466" fileName="TypeSystemTracePanel.java" startLine="126" startPosition="54" endLine="127" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8326504742838949768" fileName="TypeSystemTracePanel.java" startLine="127" startPosition="33" endLine="128" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641580382616718172" fileName="TypeSystemTracePanel.java" startLine="130" startPosition="6" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1193820605866586502" fileName="TypeSystemTracePanel.java" startLine="133" startPosition="78" endLine="134" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3187488586045191909" fileName="TypeSystemTracePanel.java" startLine="138" startPosition="78" endLine="139" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3187488586045191892" fileName="TypeSystemTracePanel.java" startLine="141" startPosition="6" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1437069675822884989" fileName="TypeSystemTracePanel.java" startLine="142" startPosition="0" endLine="143" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2498620720771019368" fileName="TypeSystemTracePanel.java" startLine="49" startPosition="162" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="743535856746706932" fileName="TypeSystemTracePanel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="743535856746706938" fileName="TypeSystemTracePanel.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetState#(Ljetbrains/mps/newTypesystem/state/State;)V" />
-    <nodeInfo nodeId="1437069675822884854" fileName="TypeSystemTracePanel.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="1437069675822884892" fileName="TypeSystemTracePanel.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="7641580382616718185" fileName="TypeSystemTracePanel.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="7641580382616718221" fileName="TypeSystemTracePanel.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="1437069675822884972" fileName="TypeSystemTracePanel.java" startLine="132" startPosition="123" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3187488586045191899" fileName="TypeSystemTracePanel.java" startLine="137" startPosition="121" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1437069675822889920" fileName="TypeSystemTracePanel.java" startLine="36" startPosition="47" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1437069675822884966" fileName="TypeSystemTracePanel.java" startLine="131" startPosition="0" endLine="136" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3187488586045191893" fileName="TypeSystemTracePanel.java" startLine="136" startPosition="6" endLine="141" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1437069675822889915" fileName="TypeSystemTracePanel.java" startLine="35" startPosition="47" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1437069675822884862" fileName="TypeSystemTracePanel.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="1437069675822884900" fileName="TypeSystemTracePanel.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="7641580382616718193" fileName="TypeSystemTracePanel.java" startLine="109" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="7641580382616718229" fileName="TypeSystemTracePanel.java" startLine="123" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="743535856746706651" fileName="TypeSystemTracePanel.java" startLine="32" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemTracePanel#()V" />
-    <nodeInfo nodeId="1437069675822884844" fileName="TypeSystemTracePanel.java" startLine="74" startPosition="53" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1437069675822884882" fileName="TypeSystemTracePanel.java" startLine="88" startPosition="6" endLine="102" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7641580382616718175" fileName="TypeSystemTracePanel.java" startLine="102" startPosition="6" endLine="116" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7641580382616718211" fileName="TypeSystemTracePanel.java" startLine="116" startPosition="6" endLine="130" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2498620720771019227" fileName="TypeSystemTracePanel.java" startLine="48" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showTraceForNode#(Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Z)V" />
-    <nodeInfo nodeId="1437069675822884779" fileName="TypeSystemTracePanel.java" startLine="73" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButtonsGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
-    <scopeInfo nodeId="743535856746706935" fileName="TypeSystemTracePanel.java" startLine="45" startPosition="32" endLine="46" endPosition="23" />
-    <scopeInfo nodeId="2498620720771019370" fileName="TypeSystemTracePanel.java" startLine="50" startPosition="18" endLine="51" endPosition="35" />
-    <scopeInfo nodeId="743535856746706943" fileName="TypeSystemTracePanel.java" startLine="70" startPosition="39" endLine="71" endPosition="34" />
-    <scopeInfo nodeId="1437069675822884859" fileName="TypeSystemTracePanel.java" startLine="78" startPosition="50" endLine="79" endPosition="26" />
-    <scopeInfo nodeId="1437069675822884897" fileName="TypeSystemTracePanel.java" startLine="92" startPosition="50" endLine="93" endPosition="26" />
-    <scopeInfo nodeId="7641580382616718190" fileName="TypeSystemTracePanel.java" startLine="106" startPosition="50" endLine="107" endPosition="26" />
-    <scopeInfo nodeId="7641580382616718226" fileName="TypeSystemTracePanel.java" startLine="120" startPosition="50" endLine="121" endPosition="26" />
-    <scopeInfo nodeId="1437069675822884981" fileName="TypeSystemTracePanel.java" startLine="133" startPosition="78" endLine="134" endPosition="35" />
-    <scopeInfo nodeId="3187488586045191908" fileName="TypeSystemTracePanel.java" startLine="138" startPosition="78" endLine="139" endPosition="36" />
-    <scopeInfo nodeId="1437069675822889923" fileName="TypeSystemTracePanel.java" startLine="37" startPosition="25" endLine="39" endPosition="55">
+    <nodeInfo nodeId="7951519206120062527" fileName="TypeSystemTracePanel.java" startLine="31" startPosition="27" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
+    <nodeInfo nodeId="743535856746706675" fileName="TypeSystemTracePanel.java" startLine="34" startPosition="33" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822885856" fileName="TypeSystemTracePanel.java" startLine="35" startPosition="39" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822889924" fileName="TypeSystemTracePanel.java" startLine="38" startPosition="25" endLine="39" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1437069675822889935" fileName="TypeSystemTracePanel.java" startLine="39" startPosition="167" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822885829" fileName="TypeSystemTracePanel.java" startLine="42" startPosition="7" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="743535856746706936" fileName="TypeSystemTracePanel.java" startLine="46" startPosition="32" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2498620720771019371" fileName="TypeSystemTracePanel.java" startLine="51" startPosition="18" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7951519206120062753" fileName="TypeSystemTracePanel.java" startLine="53" startPosition="5" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019247" fileName="TypeSystemTracePanel.java" startLine="54" startPosition="40" endLine="55" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019258" fileName="TypeSystemTracePanel.java" startLine="55" startPosition="92" endLine="56" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019268" fileName="TypeSystemTracePanel.java" startLine="56" startPosition="101" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2498620720771019278" fileName="TypeSystemTracePanel.java" startLine="57" startPosition="44" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2498620720771019284" fileName="TypeSystemTracePanel.java" startLine="58" startPosition="65" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019292" fileName="TypeSystemTracePanel.java" startLine="59" startPosition="62" endLine="60" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2498620720771019298" fileName="TypeSystemTracePanel.java" startLine="60" startPosition="65" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019306" fileName="TypeSystemTracePanel.java" startLine="61" startPosition="62" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019311" fileName="TypeSystemTracePanel.java" startLine="62" startPosition="39" endLine="63" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019316" fileName="TypeSystemTracePanel.java" startLine="63" startPosition="36" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019321" fileName="TypeSystemTracePanel.java" startLine="64" startPosition="48" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019327" fileName="TypeSystemTracePanel.java" startLine="65" startPosition="49" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019335" fileName="TypeSystemTracePanel.java" startLine="66" startPosition="21" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822885844" fileName="TypeSystemTracePanel.java" startLine="67" startPosition="24" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019352" fileName="TypeSystemTracePanel.java" startLine="68" startPosition="44" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="743535856746706944" fileName="TypeSystemTracePanel.java" startLine="72" startPosition="39" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822884850" fileName="TypeSystemTracePanel.java" startLine="77" startPosition="128" endLine="78" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="1437069675822884860" fileName="TypeSystemTracePanel.java" startLine="80" startPosition="50" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1437069675822884870" fileName="TypeSystemTracePanel.java" startLine="84" startPosition="63" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718167" fileName="TypeSystemTracePanel.java" startLine="85" startPosition="27" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796564005284630485" fileName="TypeSystemTracePanel.java" startLine="86" startPosition="56" endLine="87" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8326504742838949780" fileName="TypeSystemTracePanel.java" startLine="87" startPosition="33" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822884888" fileName="TypeSystemTracePanel.java" startLine="91" startPosition="136" endLine="92" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="1437069675822884898" fileName="TypeSystemTracePanel.java" startLine="94" startPosition="50" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1437069675822884908" fileName="TypeSystemTracePanel.java" startLine="98" startPosition="63" endLine="99" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718160" fileName="TypeSystemTracePanel.java" startLine="99" startPosition="27" endLine="100" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796564005284630480" fileName="TypeSystemTracePanel.java" startLine="100" startPosition="47" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8326504742838949776" fileName="TypeSystemTracePanel.java" startLine="101" startPosition="33" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718181" fileName="TypeSystemTracePanel.java" startLine="105" startPosition="145" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="7641580382616718191" fileName="TypeSystemTracePanel.java" startLine="108" startPosition="50" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7641580382616718201" fileName="TypeSystemTracePanel.java" startLine="112" startPosition="63" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718205" fileName="TypeSystemTracePanel.java" startLine="113" startPosition="27" endLine="114" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796564005284630475" fileName="TypeSystemTracePanel.java" startLine="114" startPosition="53" endLine="115" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8326504742838949772" fileName="TypeSystemTracePanel.java" startLine="115" startPosition="33" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718217" fileName="TypeSystemTracePanel.java" startLine="119" startPosition="143" endLine="120" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="7641580382616718227" fileName="TypeSystemTracePanel.java" startLine="122" startPosition="50" endLine="123" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7641580382616718237" fileName="TypeSystemTracePanel.java" startLine="126" startPosition="63" endLine="127" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718241" fileName="TypeSystemTracePanel.java" startLine="127" startPosition="27" endLine="128" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796564005284630466" fileName="TypeSystemTracePanel.java" startLine="128" startPosition="54" endLine="129" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8326504742838949768" fileName="TypeSystemTracePanel.java" startLine="129" startPosition="33" endLine="130" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7641580382616718172" fileName="TypeSystemTracePanel.java" startLine="132" startPosition="6" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7951519206120062525" fileName="TypeSystemTracePanel.java" startLine="135" startPosition="78" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3187488586045191909" fileName="TypeSystemTracePanel.java" startLine="140" startPosition="78" endLine="141" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3187488586045191892" fileName="TypeSystemTracePanel.java" startLine="143" startPosition="6" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1437069675822884989" fileName="TypeSystemTracePanel.java" startLine="144" startPosition="0" endLine="145" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7951519206120063519" fileName="TypeSystemTracePanel.java" startLine="149" startPosition="36" endLine="150" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7951519206120068025" fileName="TypeSystemTracePanel.java" startLine="151" startPosition="5" endLine="152" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4238912295304542042" fileName="TypeSystemTracePanel.java" startLine="153" startPosition="31" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7951519206120068032" fileName="TypeSystemTracePanel.java" startLine="155" startPosition="5" endLine="156" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4238912295304542044" fileName="TypeSystemTracePanel.java" startLine="156" startPosition="170" endLine="157" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2498620720771019368" fileName="TypeSystemTracePanel.java" startLine="50" startPosition="162" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7951519206120063511" fileName="TypeSystemTracePanel.java" startLine="148" startPosition="25" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4238912295304542033" fileName="TypeSystemTracePanel.java" startLine="152" startPosition="61" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="743535856746706932" fileName="TypeSystemTracePanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="743535856746706938" fileName="TypeSystemTracePanel.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetState#(Ljetbrains/mps/newTypesystem/state/State;)V" />
+    <nodeInfo nodeId="1437069675822884854" fileName="TypeSystemTracePanel.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="1437069675822884892" fileName="TypeSystemTracePanel.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="7641580382616718185" fileName="TypeSystemTracePanel.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="7641580382616718221" fileName="TypeSystemTracePanel.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="1437069675822884972" fileName="TypeSystemTracePanel.java" startLine="134" startPosition="123" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3187488586045191899" fileName="TypeSystemTracePanel.java" startLine="139" startPosition="121" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1437069675822889920" fileName="TypeSystemTracePanel.java" startLine="37" startPosition="47" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1437069675822884966" fileName="TypeSystemTracePanel.java" startLine="133" startPosition="0" endLine="138" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3187488586045191893" fileName="TypeSystemTracePanel.java" startLine="138" startPosition="6" endLine="143" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1437069675822889915" fileName="TypeSystemTracePanel.java" startLine="36" startPosition="47" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1437069675822884862" fileName="TypeSystemTracePanel.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="1437069675822884900" fileName="TypeSystemTracePanel.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="7641580382616718193" fileName="TypeSystemTracePanel.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="7641580382616718229" fileName="TypeSystemTracePanel.java" startLine="125" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="743535856746706651" fileName="TypeSystemTracePanel.java" startLine="33" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemTracePanel#()V" />
+    <nodeInfo nodeId="7951519206120047402" fileName="TypeSystemTracePanel.java" startLine="147" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()V" />
+    <nodeInfo nodeId="1437069675822884844" fileName="TypeSystemTracePanel.java" startLine="76" startPosition="53" endLine="90" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1437069675822884882" fileName="TypeSystemTracePanel.java" startLine="90" startPosition="6" endLine="104" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7641580382616718175" fileName="TypeSystemTracePanel.java" startLine="104" startPosition="6" endLine="118" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7641580382616718211" fileName="TypeSystemTracePanel.java" startLine="118" startPosition="6" endLine="132" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2498620720771019227" fileName="TypeSystemTracePanel.java" startLine="49" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showTraceForNode#(Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Z)V" />
+    <nodeInfo nodeId="1437069675822884779" fileName="TypeSystemTracePanel.java" startLine="75" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButtonsGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
+    <scopeInfo nodeId="743535856746706935" fileName="TypeSystemTracePanel.java" startLine="46" startPosition="32" endLine="47" endPosition="23" />
+    <scopeInfo nodeId="2498620720771019370" fileName="TypeSystemTracePanel.java" startLine="51" startPosition="18" endLine="52" endPosition="35" />
+    <scopeInfo nodeId="743535856746706943" fileName="TypeSystemTracePanel.java" startLine="72" startPosition="39" endLine="73" endPosition="34" />
+    <scopeInfo nodeId="1437069675822884859" fileName="TypeSystemTracePanel.java" startLine="80" startPosition="50" endLine="81" endPosition="26" />
+    <scopeInfo nodeId="1437069675822884897" fileName="TypeSystemTracePanel.java" startLine="94" startPosition="50" endLine="95" endPosition="26" />
+    <scopeInfo nodeId="7641580382616718190" fileName="TypeSystemTracePanel.java" startLine="108" startPosition="50" endLine="109" endPosition="26" />
+    <scopeInfo nodeId="7641580382616718226" fileName="TypeSystemTracePanel.java" startLine="122" startPosition="50" endLine="123" endPosition="26" />
+    <scopeInfo nodeId="1437069675822884981" fileName="TypeSystemTracePanel.java" startLine="135" startPosition="78" endLine="136" endPosition="18" />
+    <scopeInfo nodeId="3187488586045191908" fileName="TypeSystemTracePanel.java" startLine="140" startPosition="78" endLine="141" endPosition="36" />
+    <scopeInfo nodeId="7951519206120063513" fileName="TypeSystemTracePanel.java" startLine="149" startPosition="36" endLine="150" endPosition="13" />
+    <scopeInfo nodeId="4238912295304542034" fileName="TypeSystemTracePanel.java" startLine="153" startPosition="31" endLine="154" endPosition="13" />
+    <scopeInfo nodeId="1437069675822889923" fileName="TypeSystemTracePanel.java" startLine="38" startPosition="25" endLine="40" endPosition="55">
       <varInfo nodeId="1437069675822889925" varName="buttonsPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="743535856746706932" fileName="TypeSystemTracePanel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="743535856746706938" fileName="TypeSystemTracePanel.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="743535856746706932" fileName="TypeSystemTracePanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="743535856746706938" fileName="TypeSystemTracePanel.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="743535856746706941" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884854" fileName="TypeSystemTracePanel.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1437069675822884854" fileName="TypeSystemTracePanel.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1437069675822884857" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884869" fileName="TypeSystemTracePanel.java" startLine="82" startPosition="63" endLine="86" endPosition="32" />
-    <scopeInfo nodeId="1437069675822884892" fileName="TypeSystemTracePanel.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1437069675822884869" fileName="TypeSystemTracePanel.java" startLine="84" startPosition="63" endLine="88" endPosition="32" />
+    <scopeInfo nodeId="1437069675822884892" fileName="TypeSystemTracePanel.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1437069675822884895" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884907" fileName="TypeSystemTracePanel.java" startLine="96" startPosition="63" endLine="100" endPosition="32" />
-    <scopeInfo nodeId="7641580382616718185" fileName="TypeSystemTracePanel.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="1437069675822884907" fileName="TypeSystemTracePanel.java" startLine="98" startPosition="63" endLine="102" endPosition="32" />
+    <scopeInfo nodeId="7641580382616718185" fileName="TypeSystemTracePanel.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="7641580382616718188" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7641580382616718200" fileName="TypeSystemTracePanel.java" startLine="110" startPosition="63" endLine="114" endPosition="32" />
-    <scopeInfo nodeId="7641580382616718221" fileName="TypeSystemTracePanel.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="7641580382616718200" fileName="TypeSystemTracePanel.java" startLine="112" startPosition="63" endLine="116" endPosition="32" />
+    <scopeInfo nodeId="7641580382616718221" fileName="TypeSystemTracePanel.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="7641580382616718224" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7641580382616718236" fileName="TypeSystemTracePanel.java" startLine="124" startPosition="63" endLine="128" endPosition="32" />
-    <scopeInfo nodeId="1437069675822884972" fileName="TypeSystemTracePanel.java" startLine="132" startPosition="123" endLine="136" endPosition="0">
+    <scopeInfo nodeId="7641580382616718236" fileName="TypeSystemTracePanel.java" startLine="126" startPosition="63" endLine="130" endPosition="32" />
+    <scopeInfo nodeId="1437069675822884972" fileName="TypeSystemTracePanel.java" startLine="134" startPosition="123" endLine="138" endPosition="0">
       <varInfo nodeId="1437069675822884975" varName="e" />
       <varInfo nodeId="1437069675822884977" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="3187488586045191899" fileName="TypeSystemTracePanel.java" startLine="137" startPosition="121" endLine="141" endPosition="0">
+    <scopeInfo nodeId="3187488586045191899" fileName="TypeSystemTracePanel.java" startLine="139" startPosition="121" endLine="143" endPosition="0">
       <varInfo nodeId="3187488586045191902" varName="e" />
       <varInfo nodeId="3187488586045191904" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822889920" fileName="TypeSystemTracePanel.java" startLine="36" startPosition="47" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1437069675822884862" fileName="TypeSystemTracePanel.java" startLine="81" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1437069675822889920" fileName="TypeSystemTracePanel.java" startLine="37" startPosition="47" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1437069675822884862" fileName="TypeSystemTracePanel.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1437069675822884865" varName="e" />
       <varInfo nodeId="1437069675822884867" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884900" fileName="TypeSystemTracePanel.java" startLine="95" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1437069675822884900" fileName="TypeSystemTracePanel.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="1437069675822884903" varName="e" />
       <varInfo nodeId="1437069675822884905" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7641580382616718193" fileName="TypeSystemTracePanel.java" startLine="109" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="7641580382616718193" fileName="TypeSystemTracePanel.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="7641580382616718196" varName="e" />
       <varInfo nodeId="7641580382616718198" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7641580382616718229" fileName="TypeSystemTracePanel.java" startLine="123" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="7641580382616718229" fileName="TypeSystemTracePanel.java" startLine="125" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="7641580382616718232" varName="e" />
       <varInfo nodeId="7641580382616718234" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="743535856746706664" fileName="TypeSystemTracePanel.java" startLine="33" startPosition="33" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="743535856746706651" fileName="TypeSystemTracePanel.java" startLine="32" startPosition="0" endLine="43" endPosition="3" />
-    <scopeInfo nodeId="2498620720771019229" fileName="TypeSystemTracePanel.java" startLine="49" startPosition="162" endLine="67" endPosition="26">
+    <scopeInfo nodeId="743535856746706664" fileName="TypeSystemTracePanel.java" startLine="34" startPosition="33" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7951519206120047405" fileName="TypeSystemTracePanel.java" startLine="148" startPosition="25" endLine="157" endPosition="20">
+      <varInfo nodeId="7951519206120068026" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="743535856746706651" fileName="TypeSystemTracePanel.java" startLine="33" startPosition="0" endLine="44" endPosition="3" />
+    <scopeInfo nodeId="7951519206120047402" fileName="TypeSystemTracePanel.java" startLine="147" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="2498620720771019229" fileName="TypeSystemTracePanel.java" startLine="50" startPosition="162" endLine="69" endPosition="26">
       <varInfo nodeId="2498620720771019269" varName="splitPane" />
       <varInfo nodeId="2498620720771019293" varName="stateScrollPane" />
       <varInfo nodeId="2498620720771019279" varName="traceScrollPane" />
     </scopeInfo>
-    <scopeInfo nodeId="2498620720771019227" fileName="TypeSystemTracePanel.java" startLine="48" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="2498620720771019227" fileName="TypeSystemTracePanel.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2498620720771019238" varName="node" />
       <varInfo nodeId="2498620720771019232" varName="t" />
       <varInfo nodeId="2498620720771019234" varName="operationContext" />
       <varInfo nodeId="2498620720771019242" varName="rebuild" />
       <varInfo nodeId="2498620720771019240" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884782" fileName="TypeSystemTracePanel.java" startLine="74" startPosition="53" endLine="143" endPosition="168">
+    <scopeInfo nodeId="1437069675822884782" fileName="TypeSystemTracePanel.java" startLine="76" startPosition="53" endLine="145" endPosition="168">
       <varInfo nodeId="1437069675822884967" varName="refreshAction" />
       <varInfo nodeId="1437069675822884845" varName="showApplyRuleAction" />
       <varInfo nodeId="7641580382616718176" varName="showTraceForSelectedNode" />
@@ -631,15 +647,15 @@
       <varInfo nodeId="1437069675822884883" varName="showGenerationModeAction" />
       <varInfo nodeId="3187488586045191894" varName="nextErrorAction" />
     </scopeInfo>
-    <scopeInfo nodeId="1437069675822884779" fileName="TypeSystemTracePanel.java" startLine="73" startPosition="0" endLine="145" endPosition="0" />
-    <unitInfo nodeId="1437069675822884971" fileName="TypeSystemTracePanel.java" startLine="132" startPosition="35" endLine="136" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$6" />
-    <unitInfo nodeId="3187488586045191898" fileName="TypeSystemTracePanel.java" startLine="137" startPosition="37" endLine="141" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$7" />
-    <unitInfo nodeId="1437069675822889919" fileName="TypeSystemTracePanel.java" startLine="36" startPosition="35" endLine="41" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$1" />
-    <unitInfo nodeId="1437069675822884849" fileName="TypeSystemTracePanel.java" startLine="75" startPosition="43" endLine="88" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$2" />
-    <unitInfo nodeId="1437069675822884887" fileName="TypeSystemTracePanel.java" startLine="89" startPosition="48" endLine="102" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$3" />
-    <unitInfo nodeId="7641580382616718180" fileName="TypeSystemTracePanel.java" startLine="103" startPosition="48" endLine="116" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$4" />
-    <unitInfo nodeId="7641580382616718216" fileName="TypeSystemTracePanel.java" startLine="117" startPosition="45" endLine="130" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$5" />
-    <unitInfo nodeId="743535856746706565" fileName="TypeSystemTracePanel.java" startLine="28" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel" />
+    <scopeInfo nodeId="1437069675822884779" fileName="TypeSystemTracePanel.java" startLine="75" startPosition="0" endLine="147" endPosition="0" />
+    <unitInfo nodeId="1437069675822884971" fileName="TypeSystemTracePanel.java" startLine="134" startPosition="35" endLine="138" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$6" />
+    <unitInfo nodeId="3187488586045191898" fileName="TypeSystemTracePanel.java" startLine="139" startPosition="37" endLine="143" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$7" />
+    <unitInfo nodeId="1437069675822889919" fileName="TypeSystemTracePanel.java" startLine="37" startPosition="35" endLine="42" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$1" />
+    <unitInfo nodeId="1437069675822884849" fileName="TypeSystemTracePanel.java" startLine="77" startPosition="43" endLine="90" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$2" />
+    <unitInfo nodeId="1437069675822884887" fileName="TypeSystemTracePanel.java" startLine="91" startPosition="48" endLine="104" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$3" />
+    <unitInfo nodeId="7641580382616718180" fileName="TypeSystemTracePanel.java" startLine="105" startPosition="48" endLine="118" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$4" />
+    <unitInfo nodeId="7641580382616718216" fileName="TypeSystemTracePanel.java" startLine="119" startPosition="45" endLine="132" endPosition="5" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel$5" />
+    <unitInfo nodeId="743535856746706565" fileName="TypeSystemTracePanel.java" startLine="28" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.newTypesystem.presentation.trace.TypeSystemTracePanel" />
   </root>
   <root nodeId="743535856746706949">
     <nodeInfo nodeId="743535856746706951" fileName="TraceSettings.java" startLine="6" startPosition="28" endLine="7" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="generationMode" />
