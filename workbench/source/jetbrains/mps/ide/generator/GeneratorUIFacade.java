@@ -149,7 +149,7 @@ public class GeneratorUIFacade {
         if (!requirements.isEmpty()) {
           int result = 2;
 
-          if (settings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
+          if (false && settings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
             final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
               "but aren't generated. Do you want to generate them?\n");
             for (SModelDescriptor sm : requirements) {
@@ -259,7 +259,7 @@ public class GeneratorUIFacade {
   }
 
   private boolean generateRequirements(GenerationSettings settings) {
-    return settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
+    return false && settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
   private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {

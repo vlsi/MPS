@@ -106,7 +106,6 @@ class GenerationSettingsPreferencesPage {
     c.ipady = 2;
     c.fill = GridBagConstraints.BOTH;
     optionsPanel.add(mySaveTransientModelsCheckBox, c);
-    optionsPanel.add(createGenerateRequirementsPolicyGroup(), c);
     optionsPanel.add(myCheckModelsBeforeGenerationCheckBox, c);
     optionsPanel.add(myStrictMode, c);
     c.ipady = 0;
