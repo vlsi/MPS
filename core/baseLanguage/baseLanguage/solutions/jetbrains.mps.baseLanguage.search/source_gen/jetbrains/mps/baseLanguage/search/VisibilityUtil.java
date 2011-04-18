@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
@@ -95,7 +94,7 @@ public final class VisibilityUtil {
 
   public static boolean isMember(SNode classifier, @NotNull SNode member) {
     // hiding is not checked here 
-    return new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier))).getClassifierNodes().contains(SNodeOperations.getAncestor(member, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    return new ClassifierAndSuperClassifiersScope(classifier).getClassifierNodes().contains(SNodeOperations.getAncestor(member, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
   }
 
   public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {

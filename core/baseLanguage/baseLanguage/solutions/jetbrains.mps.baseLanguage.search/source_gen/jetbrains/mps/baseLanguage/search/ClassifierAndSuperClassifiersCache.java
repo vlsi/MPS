@@ -7,25 +7,20 @@ import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.smodel.BaseAdapter;
 import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.baseLanguage.structure.GenericDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.AnonymousClass;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import java.util.LinkedHashSet;
 import jetbrains.mps.generator.JavaModelUtil_new;
@@ -33,9 +28,7 @@ import java.util.Iterator;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
@@ -57,29 +50,23 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
   private final Classifier myTopClassifier;
 
-  private ClassifierAndSuperClassifiersCache(Object key, Classifier topClassifier) {
+  private ClassifierAndSuperClassifiersCache(Object key, SNode topClassifier) {
     super(key);
-    this.myTopClassifier = topClassifier;
+    this.myTopClassifier = ((Classifier) SNodeOperations.getAdapter(topClassifier));
   }
 
   @Override
   public Set<SModelDescriptor> getDependsOnModels(Object element) {
     Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
-    for (Classifier classifier : this.getClassifiers()) {
-      SModelDescriptor descriptor = classifier.getModel().getModelDescriptor();
+    for (SNode classifier : this.getClassifiers()) {
+      SModelDescriptor descriptor = SNodeOperations.getModel(classifier).getModelDescriptor();
       assert descriptor != null : "Model descriptor is null for classifier: " + classifier;
       dependsOnModel.add(descriptor);
     }
     return dependsOnModel;
   }
 
-  @Deprecated
-  /*package*/ List<Classifier> getClassifiers() {
-    ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
-    return BaseAdapter.toAdapters(dataSet.getClassifiers());
-  }
-
-  /*package*/ List<SNode> getClassifierNodes() {
+  /*package*/ List<SNode> getClassifiers() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getClassifiers();
   }
@@ -123,18 +110,14 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     return dataSet.getTypeByTypeVariableMap();
   }
 
-  /*package*/ static ClassifierAndSuperClassifiersCache getInstance(Classifier topClassifier) {
-    SNode node = topClassifier.getNode();
-    Object key = keyProducer.createKey(node);
-    return (ClassifierAndSuperClassifiersCache) CachesManager.getInstance().getCache(key, topClassifier, new CachesManager.CacheCreator<Classifier>() {
-      public AbstractCache create(Object key, Classifier element) {
+  public static ClassifierAndSuperClassifiersCache getInstance(SNode topClassifierNode) {
+    Object key = keyProducer.createKey(topClassifierNode);
+    return (ClassifierAndSuperClassifiersCache) CachesManager.getInstance().getCache(key, topClassifierNode, new CachesManager.CacheCreator<SNode>() {
+      public AbstractCache create(Object key, SNode element) {
         return new ClassifierAndSuperClassifiersCache(key, element);
       }
     });
-  }
 
-  public static ClassifierAndSuperClassifiersCache getInstance(SNode topClassifierNode) {
-    return ClassifierAndSuperClassifiersCache.getInstance((Classifier) BaseAdapter.fromNode(topClassifierNode));
   }
 
   private static final class ClassifiersDataSet extends DataSet {
@@ -199,9 +182,9 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
-        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role) || AnonymousClass.TYPE_PARAMETER.equals(role)))) {
+        if (!(("typeVariableDeclaration".equals(role) || "superclass".equals(role) || "implementedInterface".equals(role) || "extendedInterface".equals(role) || "typeParameter".equals(role)))) {
           return;
         }
       }
@@ -209,9 +192,9 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
-        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role) || AnonymousClass.TYPE_PARAMETER.equals(role)))) {
+        if (!(("typeVariableDeclaration".equals(role) || "superclass".equals(role) || "implementedInterface".equals(role) || "extendedInterface".equals(role) || "typeParameter".equals(role)))) {
           return;
         }
       }
@@ -305,14 +288,14 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
     public List<SNode> getMethods() {
       List<SNode> result = new ArrayList<SNode>();
-      for (List<SNode> list : this.myMethodsByName.values()) {
+      for (List<SNode> list : MapSequence.fromMap(this.myMethodsByName).values()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(list));
       }
       return result;
     }
 
     public List<SNode> getOverriddenMethods(SNode method) {
-      List<SNode> list = this.myOverriddenMethods.get(method);
+      List<SNode> list = MapSequence.fromMap(this.myOverriddenMethods).get(method);
       if (list != null) {
         return list;
       }
@@ -321,10 +304,10 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
     @Nullable
     public List<SNode> getMethodsByName(String methodName) {
-      if (methodName == null) {
-        return this.myMethodsByName.get("");
-      }
-      return this.myMethodsByName.get(methodName);
+      return MapSequence.fromMap(myMethodsByName).get((methodName == null ?
+        "" :
+        methodName
+      ));
     }
 
     public Set<SNode> getDependsOnNodes() {
@@ -333,7 +316,7 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
     protected void init() {
       List<SNode> allMethods = new ArrayList<SNode>();
-      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifierNodes();
+      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
         allMethods.addAll(SLinkOperations.getTargets(classifier, "method", true));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -359,7 +342,7 @@ forEachInAllMethods:
         } else {
           int currMethodParmCount = ListSequence.fromList(SLinkOperations.getTargets(currMethod, "parameter", true)).count();
           List<SNode> equalParmCountMethods = new ArrayList<SNode>();
-          List<SNode> methods = this.myMethodsByName.get(name);
+          List<SNode> methods = MapSequence.fromMap(this.myMethodsByName).get(name);
           for (SNode method : methods) {
             if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
               equalParmCountMethods.add(method);
@@ -375,7 +358,7 @@ forEachInAllMethods:
             for (SNode otherMethod : equalParmCountMethods) {
               String otherParms = this.createMethodParameterTypesString(otherMethod, typeByTypeVar);
               if (otherParms.equals(currentParms)) {
-                this.myOverriddenMethods.get(otherMethod).add(currMethod);
+                MapSequence.fromMap(this.myOverriddenMethods).get(otherMethod).add(currMethod);
                 continue forEachInAllMethods;
               }
             }
@@ -426,7 +409,8 @@ forEachInAllMethods:
       }
       if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
-        if (!(BaseMethodDeclaration.PARAMETER.equals(role))) {
+
+        if (!("parameter".equals(role))) {
           return;
         }
       }
@@ -441,7 +425,7 @@ forEachInAllMethods:
       }
       if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
-        if (!(BaseMethodDeclaration.PARAMETER.equals(role))) {
+        if (!("parameter".equals(role))) {
           return;
         }
       }
@@ -449,7 +433,7 @@ forEachInAllMethods:
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
-      if (BaseMethodDeclaration.NAME.equals(event.getPropertyName()) && event.getNode().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if ("name".equals(event.getPropertyName()) && event.getNode().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         super.propertyChanged(event);
       }
     }
@@ -495,7 +479,7 @@ forEachInAllMethods:
       this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       List<SNode> allFields = new ArrayList<SNode>();
-      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifierNodes();
+      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
         List<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
         allFields.addAll(staticFields);
@@ -555,7 +539,7 @@ forEachInAllMethods:
 
     public void propertyChanged(SModelPropertyEvent event) {
       SNode node = event.getNode();
-      if (BaseVariableDeclaration.NAME.equals(event.getPropertyName()) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+      if ("name".equals(event.getPropertyName()) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
         super.propertyChanged(event);
       }
     }

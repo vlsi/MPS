@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
@@ -40,7 +39,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
       return null;
     }
     List<SNode> resultProperties = new ArrayList<SNode>();
-    List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(opClassifier))).getClassifierNodes();
+    List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(opClassifier).getClassifiers();
     for (SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         for (SNode property : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "property", true))) {

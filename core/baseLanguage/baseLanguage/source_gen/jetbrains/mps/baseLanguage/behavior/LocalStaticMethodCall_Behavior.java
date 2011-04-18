@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
@@ -14,7 +13,7 @@ public class LocalStaticMethodCall_Behavior {
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<SNode> methods = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
+    List<SNode> methods = new ClassifierAndSuperClassifiersScope(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
     return methods;
   }
 }

@@ -8,9 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -27,7 +26,7 @@ public class StubCellRendererInfo_cellRendererSetter_ReferentConstraint extends 
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), "mapTo", false))), IClassifiersSearchScope.INSTANCE_METHOD);
+    return new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), "mapTo", false), IClassifiersSearchScope.INSTANCE_METHOD);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

@@ -7,12 +7,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -29,7 +28,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
     this.myClassifierType = classifierType;
     this.myContextNode = contextNode;
-    this.myClassifierScope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))), constraint);
+    this.myClassifierScope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), constraint);
   }
 
   @NotNull
