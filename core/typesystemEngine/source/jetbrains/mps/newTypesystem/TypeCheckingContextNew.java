@@ -33,12 +33,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 4:32:55 PM
- */
 public class TypeCheckingContextNew extends TypeCheckingContext {
   public static final String USE_OLD_TYPESYSTEM = "useOldTypeSystem";
 
@@ -329,6 +323,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void dispose() {
+    myRootNode = null;
+    myNodeTypesComponent.dispose();
     myState.clear(true);
   }
 
