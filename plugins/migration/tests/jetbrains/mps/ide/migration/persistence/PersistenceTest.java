@@ -39,13 +39,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 12, 2010
- * Time: 5:28:27 PM
- * To change this template use File | Settings | File Templates.
- */
 public class PersistenceTest extends BaseMPSTest {
   private static final String TEST_PERSISTENCE_PROJECT = "testPersistence" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String TEST_MODEL = "testlanguage.structure";
@@ -55,7 +48,7 @@ public class PersistenceTest extends BaseMPSTest {
 
   private TestOutputFilter filter = new TestOutputFilter() {
     @Override protected boolean isLineOK(String line) {
-      return !(line.contains("attribute") && line.contains(" not found"));
+      return !(line.contains("attribute") && line.contains("undeclared child role:"));
     }
   };
 

@@ -597,7 +597,7 @@ public class SModel {
       for (String propname : node.getProperties().keySet()) {
         SNode decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
-          LOG.error("undeclared property: `" + propname + "' in node " + node.getDebugText());
+          LOG.error("undeclared property: '" + propname + "' in node " + node.getDebugText());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
@@ -611,15 +611,15 @@ public class SModel {
         }
         SNode decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
-          LOG.error("undeclared link role: `" + ref.getRole() + "' in node " + node.getDebugText());
+          LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + node.getDebugText());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
       }
-      for (SNode child : node.getChildren()) {
+      for (SNode child : node.getChildrenIterable()) {
         SNode decl = child.getRoleLink();
         if (decl == null) {
-          LOG.error("undeclared child role: `" + child.getRole_() + "' in node " + node.getDebugText());
+          LOG.error("undeclared child role: '" + child.getRole_() + "' in node " + node.getDebugText());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
@@ -631,7 +631,7 @@ public class SModel {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    if (!LanguageAspect.STRUCTURE.is(this))
+    if (myModelDescriptor != null && !LanguageAspect.STRUCTURE.is(myModelDescriptor))
       usedModels.remove(myReference);   // do not import self if not structure
     for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
