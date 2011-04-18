@@ -6,6 +6,7 @@ core/debug-api/classes
 core/runtime/classes
 core/actions-runtime/classes
 core/editor-runtime/classes
+core/findUsages-runtime/classes
 core/plugin-runtime/classes
 core/generator/classes
 core/typesystemEngine/classes
