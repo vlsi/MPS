@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
@@ -20,8 +19,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -58,26 +55,26 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
 
   @NotNull
-  public List<BaseMethodDeclaration> getMethods() {
+  public List<SNode> getMethods() {
     if (this.myTopClassifier == null) {
-      return new ArrayList<BaseMethodDeclaration>();
+      return new ArrayList<SNode>();
     }
-    return new ArrayList<BaseMethodDeclaration>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethods());
+    return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethods());
   }
 
   @NotNull
-  public List<BaseMethodDeclaration> getOverriddenMethods(BaseMethodDeclaration method) {
+  public List<SNode> getOverriddenMethods(SNode method) {
     if (this.myTopClassifier == null) {
-      return new ArrayList<BaseMethodDeclaration>();
+      return new ArrayList<SNode>();
     }
-    return new ArrayList<BaseMethodDeclaration>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getOverriddenMethods(method));
+    return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getOverriddenMethods(method));
   }
 
   public List<SNode> getMethodsByName(String methodName) {
     if (this.myTopClassifier == null) {
       return new ArrayList<SNode>();
     }
-    return (List<SNode>) BaseAdapter.toNodes(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethodsByName(methodName));
+    return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethodsByName(methodName));
   }
 
   @NotNull
@@ -129,19 +126,19 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
       }
     }
     if ((this.myOriginalConstraint & (IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD)) != 0) {
-      List<BaseMethodDeclaration> methods = this.getMethods();
-      for (BaseMethodDeclaration method : methods) {
-        if (method instanceof InstanceMethodDeclaration) {
+      List<SNode> methods = this.getMethods();
+      for (SNode method : methods) {
+        if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.INSTANCE_METHOD) == IClassifiersSearchScope.INSTANCE_METHOD) {
-            if (condition.met(method.getNode())) {
-              list.add(method.getNode());
+            if (condition.met(method)) {
+              list.add(method);
             }
           }
         } else
-        if (method instanceof StaticMethodDeclaration) {
+        if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.STATIC_METHOD) == IClassifiersSearchScope.STATIC_METHOD) {
-            if (condition.met(method.getNode())) {
-              list.add(method.getNode());
+            if (condition.met(method)) {
+              list.add(method);
             }
           }
         }

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
@@ -35,10 +34,9 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import java.util.Iterator;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
@@ -77,26 +75,32 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     return dependsOnModel;
   }
 
+  @Deprecated
   /*package*/ List<Classifier> getClassifiers() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return BaseAdapter.toAdapters(dataSet.getClassifiers());
   }
 
-  /*package*/ List<BaseMethodDeclaration> getMethods() {
+  /*package*/ List<SNode> getClassifierNodes() {
+    ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
+    return dataSet.getClassifiers();
+  }
+
+  /*package*/ List<SNode> getMethods() {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getMethods();
   }
 
-  /*package*/ List<BaseMethodDeclaration> getOverriddenMethods(BaseMethodDeclaration method) {
+  /*package*/ List<SNode> getOverriddenMethods(SNode method) {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getOverriddenMethods(method);
   }
 
-  /*package*/ List<BaseMethodDeclaration> getMethodsByName(String methodName) {
+  /*package*/ List<SNode> getMethodsByName(String methodName) {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
-    List<BaseMethodDeclaration> methods = dataSet.getMethodsByName(methodName);
+    List<SNode> methods = dataSet.getMethodsByName(methodName);
     if (methods == null) {
-      return new ArrayList<BaseMethodDeclaration>();
+      return new ArrayList<SNode>();
     }
     return methods;
   }
@@ -293,32 +297,32 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
   private static final class MethodsDataSet extends DataSet {
     public static final String ID = "METHODS_DATASET";
 
-    private Map<String, List<BaseMethodDeclaration>> myMethodsByName;
-    private Map<BaseMethodDeclaration, List<BaseMethodDeclaration>> myOverriddenMethods;
+    private Map<String, List<SNode>> myMethodsByName;
+    private Map<SNode, List<SNode>> myOverriddenMethods;
     private Set<SNode> myDependsOnNodes;
 
     public MethodsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
 
-    public List<BaseMethodDeclaration> getMethods() {
-      List<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
-      for (List<BaseMethodDeclaration> list : this.myMethodsByName.values()) {
-        result.addAll(list);
+    public List<SNode> getMethods() {
+      List<SNode> result = new ArrayList<SNode>();
+      for (List<SNode> list : this.myMethodsByName.values()) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(list));
       }
       return result;
     }
 
-    public List<BaseMethodDeclaration> getOverriddenMethods(BaseMethodDeclaration method) {
-      List<BaseMethodDeclaration> list = this.myOverriddenMethods.get(method);
+    public List<SNode> getOverriddenMethods(SNode method) {
+      List<SNode> list = this.myOverriddenMethods.get(method);
       if (list != null) {
         return list;
       }
-      return new ArrayList<BaseMethodDeclaration>();
+      return new ArrayList<SNode>();
     }
 
     @Nullable
-    public List<BaseMethodDeclaration> getMethodsByName(String methodName) {
+    public List<SNode> getMethodsByName(String methodName) {
       if (methodName == null) {
         return this.myMethodsByName.get("");
       }
@@ -330,71 +334,71 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     }
 
     protected void init() {
-      List<BaseMethodDeclaration> allMethods = new ArrayList<BaseMethodDeclaration>();
-      List<Classifier> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
-      for (Classifier classifier : classifiers) {
-        allMethods.addAll(classifier.getMethods());
-        if (classifier instanceof ClassConcept) {
-          allMethods.addAll(((ClassConcept) classifier).getStaticMethods());
+      List<SNode> allMethods = new ArrayList<SNode>();
+      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifierNodes();
+      for (SNode classifier : classifiers) {
+        allMethods.addAll(SLinkOperations.getTargets(classifier, "method", true));
+        if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          allMethods.addAll(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true));
         }
       }
-      this.myMethodsByName = new HashMap<String, List<BaseMethodDeclaration>>();
-      this.myOverriddenMethods = new HashMap<BaseMethodDeclaration, List<BaseMethodDeclaration>>();
+      this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+      this.myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
 forEachInAllMethods:
-      for (BaseMethodDeclaration currMethod : allMethods) {
-        if (currMethod instanceof PlaceholderMethodDeclaration) {
+      for (SNode currMethod : allMethods) {
+        if (SNodeOperations.isInstanceOf(currMethod, "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration")) {
           continue;
         }
-        String name = currMethod.getName();
+        String name = SPropertyOperations.getString(currMethod, "name");
         if (name == null) {
           name = "";
         }
         if (!(this.myMethodsByName.containsKey(name))) {
-          List<BaseMethodDeclaration> methods = new ArrayList<BaseMethodDeclaration>(3);
+          List<SNode> methods = new ArrayList<SNode>();
           methods.add(currMethod);
-          this.myMethodsByName.put(name, methods);
-          this.myOverriddenMethods.put(currMethod, new ArrayList<BaseMethodDeclaration>(3));
+          MapSequence.fromMap(myMethodsByName).put(name, methods);
+          MapSequence.fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
         } else {
-          int currMethodParmCount = currMethod.getParametersCount();
-          List<BaseMethodDeclaration> equalParmCountMethods = new ArrayList<BaseMethodDeclaration>(3);
-          List<BaseMethodDeclaration> methods = this.myMethodsByName.get(name);
-          for (BaseMethodDeclaration method : methods) {
-            if ((currMethod.getParent().getNode() != method.getParent().getNode()) && method.getParametersCount() == currMethodParmCount) {
+          int currMethodParmCount = ListSequence.fromList(SLinkOperations.getTargets(currMethod, "parameter", true)).count();
+          List<SNode> equalParmCountMethods = new ArrayList<SNode>();
+          List<SNode> methods = this.myMethodsByName.get(name);
+          for (SNode method : methods) {
+            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
               equalParmCountMethods.add(method);
             }
           }
           if (equalParmCountMethods.size() > 0) {
             if (currMethodParmCount == 0) {
-              this.myOverriddenMethods.get(equalParmCountMethods.get(0)).add(currMethod);
+              ListSequence.fromList(MapSequence.fromMap(myOverriddenMethods).get(ListSequence.fromList(equalParmCountMethods).first())).addElement(currMethod);
               continue forEachInAllMethods;
             }
             Map<SNode, SNode> typeByTypeVar = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getTypeByTypeVariableMap();
-            String currentParms = this.createMethodParameterTypesString((SNode) currMethod.getNode(), typeByTypeVar);
-            for (BaseMethodDeclaration otherMethod : equalParmCountMethods) {
-              String otherParms = this.createMethodParameterTypesString(((SNode) otherMethod.getNode()), typeByTypeVar);
+            String currentParms = this.createMethodParameterTypesString(currMethod, typeByTypeVar);
+            for (SNode otherMethod : equalParmCountMethods) {
+              String otherParms = this.createMethodParameterTypesString(otherMethod, typeByTypeVar);
               if (otherParms.equals(currentParms)) {
                 this.myOverriddenMethods.get(otherMethod).add(currMethod);
                 continue forEachInAllMethods;
               }
             }
           }
-          this.myMethodsByName.get(name).add(currMethod);
-          this.myOverriddenMethods.put(currMethod, new ArrayList<BaseMethodDeclaration>(3));
+          ListSequence.fromList(MapSequence.fromMap(myMethodsByName).get(name)).addElement(currMethod);
+          MapSequence.fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
         }
       }
-      this.myDependsOnNodes = new HashSet<SNode>();
-      for (Classifier classifier : classifiers) {
-        this.myDependsOnNodes.add(classifier.getNode());
+      this.myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
+      for (SNode classifier : classifiers) {
+        SetSequence.fromSet(this.myDependsOnNodes).addElement(classifier);
       }
-      for (BaseMethodDeclaration method : allMethods) {
-        this.myDependsOnNodes.add(method.getNode());
-        for (ParameterDeclaration parm : method.getParameters()) {
-          Type type = parm.getType();
+      for (SNode method : allMethods) {
+        SetSequence.fromSet(this.myDependsOnNodes).addElement(method);
+        for (SNode parm : SLinkOperations.getTargets(method, "parameter", true)) {
+          SNode type = SLinkOperations.getTarget(parm, "type", true);
           if (type == null) {
             continue;
           }
-          this.myDependsOnNodes.add(type.getNode());
-          this.myDependsOnNodes.addAll(type.getNode().getDescendants());
+          SetSequence.fromSet(myDependsOnNodes).addElement(type);
+          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(type.getDescendants()));
         }
       }
     }

@@ -12,10 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 
 public class ContractsUtils {
   private static final String IMPL_SUFFIX = "Impl";
@@ -61,8 +58,8 @@ public class ContractsUtils {
       return resultList;
     }
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(parent)), IClassifiersSearchScope.INSTANCE_METHOD);
-    List<SNode> overridenMethods = BaseAdapter.toNodes(scope.getOverriddenMethods(((InstanceMethodDeclaration) SNodeOperations.getAdapter(method))));
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(parent, IClassifiersSearchScope.INSTANCE_METHOD);
+    List<SNode> overridenMethods = scope.getOverriddenMethods(method);
     for (SNode node : ListSequence.fromList(overridenMethods)) {
       SNode baseMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       if (SNodeOperations.isInstanceOf(baseMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
