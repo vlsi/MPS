@@ -4,24 +4,17 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
-import jetbrains.mps.baseLanguage.structure.VariableReference;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
-import java.util.LinkedList;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
+import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.structure.Closure;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.LocalVariableReference;
-import jetbrains.mps.baseLanguage.structure.NullLiteral;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class _QueriesUtil {
   public _QueriesUtil() {
@@ -35,7 +28,7 @@ public class _QueriesUtil {
         return generatedClass;
       }
     }
-    return BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope()));
+    return SModelUtil.findNodeByFQName("java.lang.Object", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), generator.getScope());
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
@@ -43,47 +36,46 @@ public class _QueriesUtil {
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
-    SNode generatedClass = find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
+    SNode generatedClass = (SNode) find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
     if (generatedClass != null) {
-      return ((ClassConcept) generatedClass.getAdapter()).constructors().next().getNode();
+      return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
     }
     return null;
   }
 
   public static SNode find_Closure_generatedClosureAdapter_constructor(SNode closure, ITemplateGenerator generator) {
-    SNode closureAdapterClass = generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-    return ((ClassConcept) closureAdapterClass.getAdapter()).constructors().next().getNode();
+    SNode closureAdapterClass = (SNode) generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+    return ListSequence.fromList(SLinkOperations.getTargets(closureAdapterClass, "constructor", true)).first();
   }
 
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
-    VariableDeclaration variableAdapter = ((LocalVariableDeclarationStatement) localVarDeclStmt.getAdapter()).getLocalVariableDeclaration();
-    if (variableAdapter != null) {
-      return generator.findOutputNodeByInputNodeAndMappingName(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
+    SNode var = SLinkOperations.getTarget(localVarDeclStmt, "localVariableDeclaration", true);
+    if ((var != null)) {
+      return (SNode) generator.findOutputNodeByInputNodeAndMappingName(var, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
 
   public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode varRef, ITemplateGenerator generator) {
-    VariableDeclaration variableAdapter = ((VariableReference) varRef.getAdapter()).getVariableDeclaration();
-    if (variableAdapter != null) {
-      return generator.findOutputNodeByInputNodeAndMappingName(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
+    SNode variableAdapter = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
+    if ((variableAdapter != null)) {
+      return (SNode) generator.findOutputNodeByInputNodeAndMappingName(variableAdapter, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
 
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
-    INodeAdapter inputNodeAdapter = inputNode.getAdapter();
-    if (!((inputNodeAdapter instanceof BaseMethodDeclaration))) {
+    if (!((SNodeOperations.isInstanceOf(inputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
       return Collections.emptyList();
     }
-    List<VariableDeclaration> variablesUsedInClosure = BaseAdapter.toAdapters(ClosuresUtil.getVariablesUsedInClosure(inputNode, generator));
-    List<INodeAdapter> parms = new LinkedList<INodeAdapter>();
-    for (VariableDeclaration var : variablesUsedInClosure) {
-      if (var instanceof ParameterDeclaration) {
+    List<SNode> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
+    List<SNode> parms = new ArrayList<SNode>();
+    for (SNode var : variablesUsedInClosure) {
+      if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
         parms.add(var);
       }
     }
-    return BaseAdapter.toNodes(parms);
+    return parms;
   }
 
   public static List<SNode> getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
@@ -100,26 +92,25 @@ public class _QueriesUtil {
    */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner 
-    INodeAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<INodeAdapter>() {
-      public boolean met(INodeAdapter object) {
-        if (object instanceof Closure) {
+    SNode enclosingClosureOrContextOwner = nodeInsideClosure.findParent(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
           return true;
         }
-        return ClosuresUtil.isClosureContextOwner(object.getNode());
+        return ClosuresUtil.isClosureContextOwner(object);
       }
     });
     SModel model = generator.getOutputModel();
-    if (enclosingClosureOrContextOwner != null && ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
-      SNode varDeclStmt_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner.getNode(), ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
-      if (varDeclStmt_output != null) {
-        LocalVariableDeclarationStatement varDeclStmt_output_ = (LocalVariableDeclarationStatement) varDeclStmt_output.getAdapter();
-        LocalVariableDeclaration varible = varDeclStmt_output_.getLocalVariableDeclaration();
-        LocalVariableReference variableRef = LocalVariableReference.newInstance(model);
-        variableRef.setLocalVariableDeclaration(varible);
-        return BaseAdapter.fromAdapter(variableRef);
+    if (enclosingClosureOrContextOwner != null && ClosuresUtil.isClosureContextOwner(enclosingClosureOrContextOwner)) {
+      SNode varDeclStmt_output = (SNode) generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
+      if ((varDeclStmt_output != null)) {
+        SNode variable = SLinkOperations.getTarget(varDeclStmt_output, "localVariableDeclaration", true);
+        SNode variableRef = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SLinkOperations.setTarget(variableRef, "variableDeclaration", variable, false);
+        return variableRef;
       }
     }
     // no variable found - return 'null' 
-    return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
+    return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
 }
