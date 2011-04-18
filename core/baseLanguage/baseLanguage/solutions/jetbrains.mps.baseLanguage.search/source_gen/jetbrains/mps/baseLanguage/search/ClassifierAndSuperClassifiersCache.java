@@ -13,9 +13,6 @@ import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.smodel.BaseAdapter;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
 import java.util.Map;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -37,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
 
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
@@ -105,17 +103,17 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     return methods;
   }
 
-  /*package*/ List<VariableDeclaration> getFields() {
+  /*package*/ List<SNode> getFields() {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getFields();
   }
 
-  /*package*/ FieldDeclaration getFieldByName(String name) {
+  /*package*/ SNode getFieldByName(String name) {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getFieldByName(name);
   }
 
-  /*package*/ StaticFieldDeclaration getStaticFieldByName(String name) {
+  /*package*/ SNode getStaticFieldByName(String name) {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getStaticFieldByName(name);
   }
@@ -353,7 +351,7 @@ forEachInAllMethods:
         if (name == null) {
           name = "";
         }
-        if (!(this.myMethodsByName.containsKey(name))) {
+        if (!(MapSequence.fromMap(this.myMethodsByName).containsKey(name))) {
           List<SNode> methods = new ArrayList<SNode>();
           methods.add(currMethod);
           MapSequence.fromMap(myMethodsByName).put(name, methods);
@@ -460,32 +458,33 @@ forEachInAllMethods:
   private static class FieldsDataSet extends DataSet {
     public static final String ID = "FIELDS_DATASET";
 
-    private Map<String, FieldDeclaration> myFieldsByName;
-    private Map<String, StaticFieldDeclaration> myStaticFieldsByName;
+    private Map<String, SNode> myFieldsByName;
+    private Map<String, SNode> myStaticFieldsByName;
     private Set<SNode> myDependsOnNodes;
 
     public FieldsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
 
-    public List<VariableDeclaration> getFields() {
-      ArrayList<VariableDeclaration> result = new ArrayList<VariableDeclaration>(this.myFieldsByName.values());
-      result.addAll(this.myStaticFieldsByName.values());
+    public List<SNode> getFields() {
+      List<SNode> result = new ArrayList<SNode>();
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myFieldsByName).values()));
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myStaticFieldsByName).values()));
       return result;
     }
 
-    public FieldDeclaration getFieldByName(String name) {
-      if (name == null) {
-        return this.myFieldsByName.get("");
-      }
-      return this.myFieldsByName.get(name);
+    public SNode getFieldByName(String name) {
+      return MapSequence.fromMap(myFieldsByName).get((name == null ?
+        "" :
+        name
+      ));
     }
 
-    public StaticFieldDeclaration getStaticFieldByName(String name) {
-      if (name == null) {
-        return this.myStaticFieldsByName.get("");
-      }
-      return this.myStaticFieldsByName.get(name);
+    public SNode getStaticFieldByName(String name) {
+      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ?
+        "" :
+        name
+      ));
     }
 
     public Set<SNode> getDependsOnNodes() {
@@ -493,43 +492,39 @@ forEachInAllMethods:
     }
 
     protected void init() {
-      this.myFieldsByName = new HashMap<String, FieldDeclaration>();
-      this.myStaticFieldsByName = new HashMap<String, StaticFieldDeclaration>();
-      List<VariableDeclaration> allFields = new ArrayList<VariableDeclaration>();
-      List<Classifier> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
-      for (Classifier classifier : classifiers) {
-        List<StaticFieldDeclaration> staticFields = classifier.getStaticFields();
+      this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
+      this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
+      List<SNode> allFields = new ArrayList<SNode>();
+      List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifierNodes();
+      for (SNode classifier : classifiers) {
+        List<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
         allFields.addAll(staticFields);
-        for (StaticFieldDeclaration staticField : staticFields) {
-          String name = staticField.getName();
+        for (SNode staticField : staticFields) {
+          String name = SPropertyOperations.getString(staticField, "name");
           if (name == null) {
             name = "";
           }
-          if (!(this.myStaticFieldsByName.containsKey(name))) {
-            this.myStaticFieldsByName.put(name, staticField);
+          if (!(MapSequence.fromMap(myStaticFieldsByName).containsKey(name))) {
+            MapSequence.fromMap(myStaticFieldsByName).put(name, staticField);
           }
         }
-        if (classifier instanceof ClassConcept) {
-          List<FieldDeclaration> fields = ((ClassConcept) classifier).getFields();
-          allFields.addAll(fields);
-          for (FieldDeclaration field : fields) {
-            String name = field.getName();
+        if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          List<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
+          ListSequence.fromList(allFields).addSequence(ListSequence.fromList(fields));
+          for (SNode field : fields) {
+            String name = SPropertyOperations.getString(field, "name");
             if (name == null) {
               name = "";
             }
-            if (!(this.myFieldsByName.containsKey(name))) {
-              this.myFieldsByName.put(name, field);
+            if (!(MapSequence.fromMap(myFieldsByName).containsKey(name))) {
+              MapSequence.fromMap(myFieldsByName).put(name, field);
             }
           }
         }
       }
-      this.myDependsOnNodes = new HashSet<SNode>();
-      for (Classifier classifier : classifiers) {
-        this.myDependsOnNodes.add(classifier.getNode());
-      }
-      for (VariableDeclaration field : allFields) {
-        this.myDependsOnNodes.add(field.getNode());
-      }
+      myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(classifiers));
+      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(allFields));
     }
 
     public void childAdded(SModelChildEvent event) {

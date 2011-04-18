@@ -10,9 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.util.EqualUtil;
@@ -78,21 +75,21 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
 
   @NotNull
-  public List<VariableDeclaration> getFields() {
+  public List<SNode> getFields() {
     if (this.myTopClassifier == null) {
-      return new ArrayList<VariableDeclaration>();
+      return new ArrayList<SNode>();
     }
-    return new ArrayList<VariableDeclaration>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFields());
+    return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFields());
   }
 
-  public FieldDeclaration getFieldByName(String name) {
+  public SNode getFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
     return ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFieldByName(name);
   }
 
-  public StaticFieldDeclaration getStaticFieldByName(String name) {
+  public SNode getStaticFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
@@ -145,19 +142,19 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
       }
     }
     if ((this.myOriginalConstraint & (IClassifiersSearchScope.INSTANCE_FIELD | IClassifiersSearchScope.STATIC_FIELD)) != 0) {
-      List<VariableDeclaration> fields = this.getFields();
-      for (VariableDeclaration field : fields) {
-        if (field instanceof FieldDeclaration) {
+      List<SNode> fields = this.getFields();
+      for (SNode field : fields) {
+        if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.INSTANCE_FIELD) == IClassifiersSearchScope.INSTANCE_FIELD) {
-            if (condition.met(field.getNode())) {
-              list.add(field.getNode());
+            if (condition.met(field)) {
+              list.add(field);
             }
           }
         } else
-        if (field instanceof StaticFieldDeclaration) {
+        if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.STATIC_FIELD) == IClassifiersSearchScope.STATIC_FIELD) {
-            if (condition.met(field.getNode())) {
-              list.add(field.getNode());
+            if (condition.met(field)) {
+              list.add(field);
             }
           }
         }
@@ -174,7 +171,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
           if (referenceInfo == null) {
             return null;
           }
-          return BaseAdapter.fromAdapter(ClassifierAndSuperClassifiersScope.this.getFieldByName(referenceInfo));
+          return ClassifierAndSuperClassifiersScope.this.getFieldByName(referenceInfo);
         }
       };
     }
@@ -184,7 +181,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
           if (referenceInfo == null) {
             return null;
           }
-          return BaseAdapter.fromAdapter(ClassifierAndSuperClassifiersScope.this.getStaticFieldByName(referenceInfo));
+          return ClassifierAndSuperClassifiersScope.this.getStaticFieldByName(referenceInfo);
         }
       };
     }
