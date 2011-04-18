@@ -32,7 +32,11 @@ public class ConceptMethodDeclaration_Behavior {
 
   public static SNode call_getOverridenMethod_1225196403956(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "overriddenMethod", false) != null) {
-      return SLinkOperations.getTarget(thisNode, "overriddenMethod", false);
+      if (SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == thisNode) {
+        return thisNode;
+      } else {
+        return ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(SLinkOperations.getTarget(thisNode, "overriddenMethod", false));
+      }
     }
     if (SPropertyOperations.getBoolean(thisNode, "isVirtual")) {
       return thisNode;
