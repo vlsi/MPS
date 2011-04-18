@@ -6,11 +6,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -19,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
-    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier) SNodeOperations.getAdapter(classifier)), contextNode, IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(classifier, contextNode, IClassifiersSearchScope.STATIC_MEMBER);
     List<SNode> members = (List<SNode>) searchScope.getNodes();
     List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

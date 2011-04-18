@@ -10,12 +10,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private IScope myScope;
@@ -40,8 +39,8 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     List<SModelDescriptor> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
     List<SNode> result = new ArrayList<SNode>();
     for (SModelDescriptor model : models) {
-      List<SNode> classifiers = BaseAdapter.toNodes(ClassifiersCache.getInstance(model).getClassifiers());
-      result.addAll(classifiers);
+      List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(classifiers));
     }
     return result;
   }
@@ -68,9 +67,9 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       if (targetModel == null) {
         return null;
       }
-      List<Classifier> classifiers = ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo);
-      if (classifiers.size() > 0) {
-        return classifiers.get(0).getNode();
+      List<SNode> classifiers = ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo);
+      if (ListSequence.fromList(classifiers).isNotEmpty()) {
+        return ListSequence.fromList(classifiers).first();
       }
       return null;
     }

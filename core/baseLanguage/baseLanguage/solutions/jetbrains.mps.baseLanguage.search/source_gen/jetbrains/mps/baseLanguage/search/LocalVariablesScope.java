@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
-import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -85,7 +84,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
 
   private void _populateLocalVariables(SNode loopStatement, List<SNode> result) {
     for (SNode child : SNodeOperations.getChildren(loopStatement)) {
-      if (child.getRole_().equals(AbstractLoopStatement.BODY)) {
+      if (child.getRole_().equals("body")) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {

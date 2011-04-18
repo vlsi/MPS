@@ -7,15 +7,16 @@ import jetbrains.mps.cache.KeyProducer;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -24,8 +25,8 @@ import jetbrains.mps.cache.CachesManager;
 /*package*/ class ClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
-  private Map<String, List<SNode>> myClassifiersByName = new HashMap<String, List<SNode>>();
-  private Map<SNode, String> myNameByClassifier = new HashMap<SNode, String>();
+  private Map<String, List<SNode>> myClassifiersByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+  private Map<SNode, String> myNameByClassifier = MapSequence.fromMap(new HashMap<SNode, String>());
 
   protected ClassifiersCache(Object key, SModelDescriptor model) {
     super(key);
@@ -39,73 +40,72 @@ import jetbrains.mps.cache.CachesManager;
     return Collections.singleton((SModelDescriptor) element);
   }
 
-  private void processNode(SNode adapter, boolean put) {
-    if (SNodeOperations.isInstanceOf(adapter, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      Classifier classifier = ((Classifier) SNodeOperations.getAdapter(SNodeOperations.cast(adapter, "jetbrains.mps.baseLanguage.structure.Classifier")));
+  private void processNode(SNode node, boolean put) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
       if (put) {
         this.putClassifier(classifier);
       } else {
         this.removeClassifier(classifier);
       }
     } else {
-      for (SNode child : SNodeOperations.getChildren(adapter)) {
+      for (SNode child : SNodeOperations.getChildren(node)) {
         this.processNode(child, put);
       }
     }
   }
 
-  private void putClassifier(Classifier classifier) {
+  private void putClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
-    if (!(this.myClassifiersByName.containsKey(name))) {
-      this.myClassifiersByName.put(name, new ArrayList<SNode>(1));
+    if (!(MapSequence.fromMap(myClassifiersByName).containsKey(name))) {
+      MapSequence.fromMap(myClassifiersByName).put(name, new ArrayList<SNode>());
     }
-    this.myClassifiersByName.get(name).add(classifier.getNode());
-    this.myNameByClassifier.put(classifier.getNode(), name);
-    List<Classifier> list = classifier.getStaticInnerClassifierses();
-    for (Classifier innerClassifier : list) {
+    ListSequence.fromList(MapSequence.fromMap(myClassifiersByName).get(name)).addElement(classifier);
+    MapSequence.fromMap(myNameByClassifier).put(classifier, name);
+    List<SNode> list = SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true);
+    for (SNode innerClassifier : list) {
       this.putClassifier(innerClassifier);
     }
   }
 
-  private void removeClassifier(Classifier classifier) {
+  private void removeClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
-    if (this.myClassifiersByName.containsKey(name)) {
-      List<SNode> nodes = this.myClassifiersByName.get(name);
-      nodes.remove(classifier.getNode());
-      if (nodes.isEmpty()) {
-        this.myClassifiersByName.remove(name);
+    if (MapSequence.fromMap(myClassifiersByName).containsKey(name)) {
+      List<SNode> nodes = MapSequence.fromMap(myClassifiersByName).get(name);
+      nodes.remove(classifier);
+      if (ListSequence.fromList(nodes).isEmpty()) {
+        MapSequence.fromMap(myClassifiersByName).removeKey(name);
       }
     }
-    this.myNameByClassifier.remove(classifier.getNode());
-    List<Classifier> list = classifier.getStaticInnerClassifierses();
-    for (Classifier innerClassifier : list) {
+    MapSequence.fromMap(myNameByClassifier).removeKey(classifier);
+    List<SNode> list = SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true);
+    for (SNode innerClassifier : list) {
       this.removeClassifier(innerClassifier);
     }
   }
 
-  private String getRefName(Classifier classifier) {
-    String name = classifier.getName();
+  private String getRefName(SNode classifier) {
+    String name = SPropertyOperations.getString(classifier, "name");
     if (name == null) {
       name = "";
     }
-    INodeAdapter parent = classifier.getParent();
-    if (parent instanceof Classifier) {
-      return this.getRefName(((Classifier) parent)) + "." + name;
+    SNode parent = SNodeOperations.getParent(classifier);
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return this.getRefName(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) + "." + name;
     }
     return name;
   }
 
-  public List<Classifier> getClassifiers() {
-    List<SNode> result = new ArrayList<SNode>(this.myNameByClassifier.keySet());
-    return BaseAdapter.toAdapters(result);
+  public List<SNode> getClassifiers() {
+    return new ArrayList<SNode>(MapSequence.fromMap(this.myNameByClassifier).keySet());
   }
 
-  public List<Classifier> getClassifiersByRefName(String refName) {
-    List<SNode> result = this.myClassifiersByName.get(refName);
+  public List<SNode> getClassifiersByRefName(String refName) {
+    List<SNode> result = MapSequence.fromMap(myClassifiersByName).get(refName);
     if (result != null) {
-      return BaseAdapter.toAdapters(result);
+      return result;
     }
-    return new ArrayList<Classifier>();
+    return new ArrayList<SNode>();
   }
 
   public void rootAdded(SModelRootEvent event) {
@@ -137,30 +137,31 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   public void propertyChanged(SModelPropertyEvent event) {
-    BaseAdapter adapter = event.getNode().getAdapter();
-    if (adapter instanceof Classifier && Classifier.NAME.equals(event.getPropertyName())) {
-      List<Classifier> classifiersToUpdate = new ArrayList<Classifier>();
-      classifiersToUpdate.add(((Classifier) adapter));
-      this.collectInnerClasses((Classifier) adapter, classifiersToUpdate);
-      for (Classifier classifier : classifiersToUpdate) {
-        String oldRefName = this.myNameByClassifier.get(classifier.getNode());
-        List<SNode> nodes = this.myClassifiersByName.get(oldRefName);
+    SNode node = event.getNode();
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && "name".equals(event.getPropertyName())) {
+      SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
+      List<SNode> classifiersToUpdate = new ArrayList<SNode>();
+      ListSequence.fromList(classifiersToUpdate).addElement(classifier);
+      collectInnerClasses(classifier, classifiersToUpdate);
+      for (SNode cl : classifiersToUpdate) {
+        String oldRefName = MapSequence.fromMap(myNameByClassifier).get(cl);
+        List<SNode> nodes = MapSequence.fromMap(myClassifiersByName).get(oldRefName);
         if (nodes != null) {
-          nodes.remove(classifier.getNode());
+          nodes.remove(cl);
         }
         if (nodes == null || nodes.isEmpty()) {
-          this.myClassifiersByName.remove(oldRefName);
+          MapSequence.fromMap(myClassifiersByName).removeKey(oldRefName);
         }
-        this.myNameByClassifier.remove(classifier.getNode());
+        MapSequence.fromMap(myNameByClassifier).removeKey(cl);
       }
-      this.putClassifier(((Classifier) adapter));
+      this.putClassifier(classifier);
     }
   }
 
-  private void collectInnerClasses(Classifier classConcept, List<Classifier> list) {
-    List<Classifier> inners = classConcept.getStaticInnerClassifierses();
+  private void collectInnerClasses(SNode classConcept, List<SNode> list) {
+    List<SNode> inners = SLinkOperations.getTargets(classConcept, "staticInnerClassifiers", true);
     list.addAll(inners);
-    for (Classifier inner : inners) {
+    for (SNode inner : inners) {
       this.collectInnerClasses(inner, list);
     }
   }

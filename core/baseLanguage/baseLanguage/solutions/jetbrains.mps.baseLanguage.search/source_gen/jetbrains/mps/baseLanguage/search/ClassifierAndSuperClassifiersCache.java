@@ -6,11 +6,10 @@ import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -34,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> CLASSIFIERS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
     public DataSet create(ClassifierAndSuperClassifiersCache ownerCache) {
-      return new ClassifierAndSuperClassifiersCache.ClassifiersDataSet((SNode) ownerCache.myTopClassifier.getNode(), ownerCache);
+      return new ClassifierAndSuperClassifiersCache.ClassifiersDataSet(ownerCache.myTopClassifier, ownerCache);
     }
   };
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> METHODS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
@@ -48,11 +47,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
   };
 
-  private final Classifier myTopClassifier;
+  private final SNode myTopClassifier;
 
   private ClassifierAndSuperClassifiersCache(Object key, SNode topClassifier) {
     super(key);
-    this.myTopClassifier = ((Classifier) SNodeOperations.getAdapter(topClassifier));
+    this.myTopClassifier = topClassifier;
   }
 
   @Override

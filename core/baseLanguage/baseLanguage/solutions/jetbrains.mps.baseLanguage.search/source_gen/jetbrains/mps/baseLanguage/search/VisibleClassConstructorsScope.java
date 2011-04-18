@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +47,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), ConstructorDeclaration.concept)) {
+    if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       if (SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
         SNode classCreator = SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator");
         return new VisibleClassConstructorsScope.ConstructorDeclarationReferenceInfoResolver(SLinkOperations.getTargets(classCreator, "actualArgument", true), SLinkOperations.getTargets(classCreator, "typeParameter", true), getModel(), getScope());

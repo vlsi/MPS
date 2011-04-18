@@ -2814,7 +2814,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.RemarkStatement_Editor" file="RemarkStatement_Editor.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
