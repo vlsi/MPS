@@ -421,12 +421,12 @@ forEachInAllMethods:
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
-        if (!((event.getChild().getAdapter() instanceof BaseMethodDeclaration))) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (!(event.getChild().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
           return;
         }
       }
-      if (event.getParent().getAdapter() instanceof BaseMethodDeclaration) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
         if (!(BaseMethodDeclaration.PARAMETER.equals(role))) {
           return;
@@ -436,12 +436,12 @@ forEachInAllMethods:
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
-        if (!((event.getChild().getAdapter() instanceof BaseMethodDeclaration))) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (!(event.getChild().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
           return;
         }
       }
-      if (event.getParent().getAdapter() instanceof BaseMethodDeclaration) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
         if (!(BaseMethodDeclaration.PARAMETER.equals(role))) {
           return;
@@ -451,7 +451,7 @@ forEachInAllMethods:
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
-      if (BaseMethodDeclaration.NAME.equals(event.getPropertyName()) && event.getNode().getAdapter() instanceof BaseMethodDeclaration) {
+      if (BaseMethodDeclaration.NAME.equals(event.getPropertyName()) && event.getNode().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         super.propertyChanged(event);
       }
     }
@@ -533,34 +533,34 @@ forEachInAllMethods:
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
-        BaseAdapter child = event.getChild().getAdapter();
-        if (!((child instanceof FieldDeclaration || child instanceof StaticFieldDeclaration))) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+        SNode child = event.getChild();
+        if (!((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
           return;
         }
       }
-      if (event.getParent().getAdapter() instanceof VariableDeclaration) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         return;
       }
       super.childAdded(event);
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof Classifier) {
-        BaseAdapter child = event.getChild().getAdapter();
-        if (!((child instanceof FieldDeclaration || child instanceof StaticFieldDeclaration))) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+        SNode child = event.getChild();
+        if (!((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
           return;
         }
       }
-      if (event.getParent().getAdapter() instanceof VariableDeclaration) {
+      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         return;
       }
       super.childRemoved(event);
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
-      BaseAdapter node = event.getNode().getAdapter();
-      if (BaseVariableDeclaration.NAME.equals(event.getPropertyName()) && (node instanceof FieldDeclaration || node instanceof StaticFieldDeclaration)) {
+      SNode node = event.getNode();
+      if (BaseVariableDeclaration.NAME.equals(event.getPropertyName()) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
         super.propertyChanged(event);
       }
     }
