@@ -72,15 +72,11 @@ public class ChangesManager extends AbstractProjectComponent {
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
-    myCommandQueue.addTask(new Runnable() {
-      public void run() {
-        for (ModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
-          modelChangesManager.dispose();
-        }
-        MapSequence.fromMap(myModelChanges).clear();
-        myCommandQueue.dispose();
-      }
-    });
+    for (ModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
+      modelChangesManager.dispose();
+    }
+    MapSequence.fromMap(myModelChanges).clear();
+    myCommandQueue.dispose();
   }
 
   private void updateModelStatus(@NotNull final SModelDescriptor modelDescriptor, @Nullable final FileStatus fileStatus) {

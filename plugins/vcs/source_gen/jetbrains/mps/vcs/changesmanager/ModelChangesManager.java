@@ -350,10 +350,13 @@ public class ModelChangesManager {
   }
 
   public void dispose() {
-    myCommandQueue.assertSoftlyIsCommandThread();
-    for (Change change : ListSequence.fromList(getChangeList())) {
-      fireChangeRemoved(change);
-    }
+    myCommandQueue.runTask(new Runnable() {
+      public void run() {
+        for (Change change : ListSequence.fromList(getChangeList())) {
+          fireChangeRemoved(change);
+        }
+      }
+    });
     if (myModelListener != null) {
       myModelDescriptor.removeModelListener(myModelListener);
       myModelListener = null;
