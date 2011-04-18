@@ -43,10 +43,15 @@ public class TextGenerator {
   private final StreamHandler myStreamHandler;
   private CacheGenerator[] myCacheGenerators;
   private List<String> myTextGenErrors = new ArrayList<String>();
+  private boolean myFailIfNoTextgen = false;
 
   public TextGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
     myStreamHandler = streamHandler;
     myCacheGenerators = generators;
+  }
+
+  public void setFailIfNoTextgen(boolean failIfNoTextgen) {
+    myFailIfNoTextgen = failIfNoTextgen;
   }
 
   public Collection<String> errors () {
@@ -76,17 +81,21 @@ public class TextGenerator {
 
     for (SNode outputNode : outputModel.roots()) {
       try {
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen);
         hasErrors |= result.hasErrors();
         if (result.hasErrors()) {
           myTextGenErrors.addAll(result.errors());
         }
         else {
-          String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-          fillDebugInfo(info, fileName, result);
-          fillDependencies(dependRoot, outputNode, fileName, result);
-
-          outputNodeContents.put(outputNode, result.getResult());
+          Object contents = result.getResult();
+          if (TextGenerationUtil.NO_TEXTGEN != contents) {
+            String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+            fillDebugInfo(info, fileName, result);
+            fillDependencies(dependRoot, outputNode, fileName, result);
+            outputNodeContents.put(outputNode, contents);
+          } else {
+            // ignore this node
+          }
         }
       } finally {
         TextGenManager.reset();

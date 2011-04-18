@@ -176,12 +176,13 @@ public class ProjectTestHelper {
             }
           });
 
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> tparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
+          Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
           tparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);
             }
           });
+          tparams._1(false);
 
           Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.parameters(new ITarget.Name("configure"), Object.class);
           params._1(optBuilder);

@@ -51,6 +51,8 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myLimitNumberOfModels = new JCheckBox("Maximum number of transient models to keep:");
   private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0, 1000));
 
+  private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
+
   private GenerationSettings myGenerationSettings;
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
@@ -88,6 +90,9 @@ class GenerationSettingsPreferencesPage {
     myMainPanel.add(createTracingPanel(), c);
 
     c.gridy = 3;
+    myMainPanel.add(createTextGenPanel(), c);
+
+    c.gridy = 4;
     c.weighty = 1;
     myMainPanel.add(new JPanel(), c);
     return myMainPanel;
@@ -215,6 +220,13 @@ class GenerationSettingsPreferencesPage {
     return gotoPanel;
   }
 
+  private JPanel createTextGenPanel() {
+    JPanel textgenPanel = new JPanel();
+    textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
+    textgenPanel.add(myFailOnMissingTextgen);
+    textgenPanel.setBorder(BorderFactory.createTitledBorder("TextGen options"));
+    return textgenPanel;
+  }
 
   public boolean validate() {
     return true;
@@ -234,6 +246,7 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setNumberOfModelsToKeep(getNumberOfModelsToKeep());
     myGenerationSettings.setIncremental(myIncremental.isSelected());
     myGenerationSettings.setIncrementalUseCache(myIncrementalCache.isSelected());
+    myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
   }
 
   private int getTracingLevel() {
@@ -261,7 +274,8 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.getPerformanceTracingLevel() == getTracingLevel() &&
       myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
       myGenerationSettings.isIncremental() == myIncremental.isSelected() &&
-      myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected());
+      myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected() &&
+      myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected());
   }
 
   public void update() {
@@ -286,6 +300,8 @@ class GenerationSettingsPreferencesPage {
     myNumberOfModelsToKeep.setEditable(myGenerationSettings.getNumberOfModelsToKeep() != -1);
     myNumberOfModelsToKeep.setValue(myGenerationSettings.getNumberOfModelsToKeep() == -1 ? 16 : myGenerationSettings.getNumberOfModelsToKeep());
     myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != -1);
+
+    myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);

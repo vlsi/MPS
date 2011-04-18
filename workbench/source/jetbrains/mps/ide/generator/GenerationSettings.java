@@ -45,7 +45,6 @@ import javax.swing.JComponent;
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IGenerationSettings {
 
-
   public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
   }
@@ -250,6 +249,15 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myIncrementalUseCache = incrementalUseCache;
   }
 
+  @Override
+  public boolean isFailOnMissingTextGen() {
+    return myState.myFailOnMissingTextGen;
+  }
+
+  public void setFailOnMissingTextGen(boolean fail) {
+    myState.myFailOnMissingTextGen = fail;
+  }
+
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
 
@@ -282,6 +290,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myKeepModelsWithWarnings = true;
     private boolean myIncremental = true;
     private boolean myIncrementalUseCache = false;
+    private boolean myFailOnMissingTextGen = false;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -393,6 +402,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setIncrementalUseCache(boolean incrementalUseCache) {
       myIncrementalUseCache = incrementalUseCache;
+    }
+
+    public boolean isFailOnMissingTextGen() {
+      return myFailOnMissingTextGen;
+    }
+
+    public void setFailOnMissingTextGen(boolean failOnMissingTextGen) {
+      myFailOnMissingTextGen = failOnMissingTextGen;
     }
   }
 }

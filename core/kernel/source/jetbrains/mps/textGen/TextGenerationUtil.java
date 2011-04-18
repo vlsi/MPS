@@ -22,12 +22,21 @@ import java.util.Collections;
 
 public class TextGenerationUtil {
 
+  public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
+
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
+    return TextGenerationUtil.generateText(context, node, false);
+  }
+
+  public static TextGenerationResult generateText(IOperationContext context, SNode node, boolean failIfNoTextgen) {
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       return TextGenManager.instance().generateText(context, node);
-    } else {
-      String nodeText = "Can't generate text from " + node;
-      return new TextGenerationResult(nodeText, true, Collections.singleton(nodeText), null, null, null, null);
+    } else if (failIfNoTextgen) {
+      String error = "Can't generate text from " + node;
+      return new TextGenerationResult(NO_TEXTGEN, true, Collections.singleton(error), null, null, null, null);
+    }
+    else {
+      return new TextGenerationResult(NO_TEXTGEN, false, null, null, null, null, null);
     }
   }
 }

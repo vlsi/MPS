@@ -27,4 +27,6 @@ public interface IGenerationSettings {
   boolean isIncremental();
 
   boolean isIncrementalUseCache();
+
+  boolean isFailOnMissingTextGen();
 }

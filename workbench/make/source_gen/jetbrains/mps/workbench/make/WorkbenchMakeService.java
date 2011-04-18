@@ -34,6 +34,8 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.messages.IMessage;
@@ -203,6 +205,9 @@ public class WorkbenchMakeService implements IMakeService {
             return pind.value;
           }
         });
+
+        Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) pool.parameters(new ITarget.Name("textGen"), Object.class);
+        tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
 
         if (ctl != null) {
           ctl.setup(pool);

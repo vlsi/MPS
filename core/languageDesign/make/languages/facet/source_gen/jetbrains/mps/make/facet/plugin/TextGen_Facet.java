@@ -123,6 +123,7 @@ public class TextGen_Facet implements IFacet {
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
                 boolean ok;
                 TextGenerator textgen = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
+                textgen.setFailIfNoTextgen(pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen() != null && pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen());
                 try {
                   ok = textgen.handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
                 } finally {
@@ -207,25 +208,33 @@ public class TextGen_Facet implements IFacet {
       return cls.cast(new Parameters());
     }
 
-    public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
+    public static class Parameters extends MultiTuple._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> {
       public Parameters() {
         super();
       }
 
-      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile) {
-        super(pathToFile);
+      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile, Boolean failIfNoTextgen) {
+        super(pathToFile, failIfNoTextgen);
       }
 
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
         return super._0(value);
       }
 
+      public Boolean failIfNoTextgen(Boolean value) {
+        return super._1(value);
+      }
+
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
         return super._0();
       }
 
+      public Boolean failIfNoTextgen() {
+        return super._1();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_21gswx_a.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
+      public TextGen_Facet.Target_21gswx_a.Parameters assignFrom(Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> from) {
         return (TextGen_Facet.Target_21gswx_a.Parameters) super.assign(from);
       }
     }
