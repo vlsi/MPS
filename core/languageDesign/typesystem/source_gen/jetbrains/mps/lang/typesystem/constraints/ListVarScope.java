@@ -8,10 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.Statement;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.lang.typesystem.structure.ListVarDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ListVarScope extends SearchScopeWithNode {
   public ListVarScope(SNode enclosingNode) {
@@ -21,21 +20,27 @@ public class ListVarScope extends SearchScopeWithNode {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
-    Statement statement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
-    while (statement != null) {
-      StatementList statementList = statement.getParent(StatementList.class);
-      if (statementList == null) {
+    SNode enclosingNode = getEnclosingNode();
+    SNode statement;
+    if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      statement = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement");
+    } else {
+      statement = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+    }
+    while ((statement != null)) {
+      SNode statementList = (SNode) statement.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      if ((statementList == null)) {
         return result;
       }
-      for (Statement aStatement : statementList.getStatements()) {
+      for (SNode aStatement : SLinkOperations.getTargets(statementList, "statement", true)) {
         if (aStatement == statement) {
           break;
         }
-        if (aStatement instanceof ListVarDeclaration) {
-          result.add(aStatement.getNode());
+        if (SNodeOperations.isInstanceOf(aStatement, "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration")) {
+          result.add(aStatement);
         }
       }
-      statement = statementList.getParent(Statement.class);
+      statement = (SNode) statementList.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
     }
     return result;
   }

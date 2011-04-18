@@ -34,13 +34,11 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />

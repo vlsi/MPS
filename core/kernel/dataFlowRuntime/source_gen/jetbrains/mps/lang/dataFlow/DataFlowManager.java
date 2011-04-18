@@ -11,8 +11,6 @@ import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -52,11 +50,6 @@ public class DataFlowManager implements ApplicationComponent {
 
   public void register(String conceptFqName, DataFlowBuilder builder) {
     this.myBuilders.put(conceptFqName, builder);
-  }
-
-  public Program buildProgramFor(INodeAdapter adapter) {
-    checkLoaded();
-    return this.buildProgramFor(BaseAdapter.fromAdapter(adapter));
   }
 
   public Program buildProgramFor(SNode node) {

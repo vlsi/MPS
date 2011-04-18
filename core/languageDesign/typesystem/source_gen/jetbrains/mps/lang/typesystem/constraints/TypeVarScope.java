@@ -8,12 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
-import jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVarScope extends SearchScopeWithNode {
   private SNode myCurrentNode = null;
@@ -30,13 +28,22 @@ public class TypeVarScope extends SearchScopeWithNode {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> vars = new ArrayList<SNode>();
-    StatementList statementList = BaseAdapter.fromNode(getEnclosingNode()).getParent(StatementList.class);
-    if (statementList != null) {
-      Statement currentStatement;
-      if (SNodeOperations.isInstanceOf(myCurrentNode, Statement.concept)) {
-        currentStatement = (Statement) BaseAdapter.fromNode(myCurrentNode);
+
+    SNode enclosingNode = getEnclosingNode();
+    SNode statementList;
+    if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      statementList = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.StatementList");
+    } else {
+      statementList = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+    }
+    if ((statementList != null)) {
+      SNode currentStatement;
+      if (SNodeOperations.isInstanceOf(myCurrentNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+        currentStatement = SNodeOperations.cast(myCurrentNode, "jetbrains.mps.baseLanguage.structure.Statement");
+      } else if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+        currentStatement = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement");
       } else {
-        currentStatement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
+        currentStatement = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
       }
       populateLocalVariables(statementList, currentStatement, vars);
     }
@@ -52,18 +59,18 @@ public class TypeVarScope extends SearchScopeWithNode {
     return result;
   }
 
-  private void populateLocalVariables(@NotNull StatementList statementList, Statement beforeStatement, List<SNode> result) {
-    for (Statement statement : statementList.getStatements()) {
+  private void populateLocalVariables(@NotNull SNode statementList, SNode beforeStatement, List<SNode> result) {
+    for (SNode statement : SLinkOperations.getTargets(statementList, "statement", true)) {
       if (statement == beforeStatement) {
         break;
       }
-      if (statement instanceof TypeVarDeclaration) {
-        result.add(statement.getNode());
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration")) {
+        result.add(statement);
       }
     }
-    Statement containingStatement = statementList.getParent(Statement.class);
-    if (containingStatement != null) {
-      statementList = containingStatement.getParent(StatementList.class);
+    SNode containingStatement = (SNode) statementList.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+    if ((containingStatement != null)) {
+      statementList = (SNode) containingStatement.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
       if (statementList != null) {
         populateLocalVariables(statementList, containingStatement, result);
       }

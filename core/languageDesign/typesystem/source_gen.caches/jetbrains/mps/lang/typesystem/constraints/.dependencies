@@ -127,14 +127,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.ListVarScope" file="ListVarScope.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ListVarDeclaration" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StatementList" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.SearchScopeWithNode" />
   </dependency>
@@ -269,14 +268,12 @@
   <dependency className="jetbrains.mps.lang.typesystem.constraints.TypeVarScope" file="TypeVarScope.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.SearchScopeWithNode" />
   </dependency>
