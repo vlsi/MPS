@@ -772,11 +772,11 @@
   </root>
   <root nodeId="3005430634737882358">
     <nodeInfo nodeId="3005430634737938191" fileName="QueriesGenerated.java" startLine="490" startPosition="154" endLine="491" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3005430634737954733" fileName="QueriesGenerated.java" startLine="730" startPosition="151" endLine="731" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3005430634737954745" fileName="QueriesGenerated.java" startLine="734" startPosition="151" endLine="735" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1041290419776368488" fileName="QueriesGenerated.java" startLine="730" startPosition="151" endLine="731" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1041290419776368499" fileName="QueriesGenerated.java" startLine="734" startPosition="151" endLine="735" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3005430634737893006" fileName="QueriesGenerated.java" startLine="490" startPosition="154" endLine="491" endPosition="97" />
-    <scopeInfo nodeId="3005430634737882375" fileName="QueriesGenerated.java" startLine="730" startPosition="151" endLine="731" endPosition="72" />
-    <scopeInfo nodeId="3005430634737954744" fileName="QueriesGenerated.java" startLine="734" startPosition="151" endLine="735" endPosition="73" />
+    <scopeInfo nodeId="1041290419776368487" fileName="QueriesGenerated.java" startLine="730" startPosition="151" endLine="731" endPosition="72" />
+    <scopeInfo nodeId="1041290419776368498" fileName="QueriesGenerated.java" startLine="734" startPosition="151" endLine="735" endPosition="73" />
   </root>
   <root nodeId="3038738109028888981">
     <nodeInfo nodeId="3038738109029045563" fileName="QueriesGenerated.java" startLine="515" startPosition="154" endLine="516" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
