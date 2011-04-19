@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.vcs.diff.changes.InsertNodeGroupChange;
+import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.ide.projectPane.Icons;
 import java.util.Arrays;
 import javax.swing.Icon;
@@ -23,7 +23,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     FoldingAreaButton button = null;
     boolean allInsert = ListSequence.fromList(changeGroup.getChanges()).all(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
-        return c instanceof InsertNodeGroupChange;
+        return c.getType() == ChangeType.ADD;
       }
     });
     if (isHighlightLeft()) {

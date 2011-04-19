@@ -116,13 +116,7 @@ public class ChangeSetBuilder {
       for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
         Tuples._2<Integer, Integer> oldIndices = indices._0();
         Tuples._2<Integer, Integer> newIndices = indices._1();
-        if ((int) oldIndices._0() == (int) oldIndices._1()) {
-          myChangeSet.add(new InsertNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) newIndices._0(), (int) newIndices._1()));
-        } else if ((int) newIndices._0() == (int) newIndices._1()) {
-          myChangeSet.add(new DeleteNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0()));
-        } else {
-          myChangeSet.add(new ReplaceNodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
-        }
+        myChangeSet.add(new NodeGroupChange(myChangeSet, nodeId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
       }
 
       // Finding changes for children 

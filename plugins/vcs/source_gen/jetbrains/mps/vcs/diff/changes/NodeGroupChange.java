@@ -12,14 +12,22 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public abstract class NodeGroupChange extends ModelChange {
+public class NodeGroupChange extends ModelChange {
   private SNodeId myParentNodeId;
   private String myRole;
+  private int myBegin;
+  private int myEnd;
+  private int myResultBegin;
+  private int myResultEnd;
 
-  public NodeGroupChange(@NotNull ChangeSet changeSet, @NotNull SNodeId parentNodeId, @NotNull String role) {
+  public NodeGroupChange(@NotNull ChangeSet changeSet, @NotNull SNodeId parentNodeId, @NotNull String role, int begin, int end, int resultBegin, int resultEnd) {
     super(changeSet);
     myParentNodeId = parentNodeId;
     myRole = role;
+    myBegin = begin;
+    myEnd = end;
+    myResultBegin = resultBegin;
+    myResultEnd = resultEnd;
   }
 
   @NotNull
@@ -32,13 +40,21 @@ public abstract class NodeGroupChange extends ModelChange {
     return myRole;
   }
 
-  public abstract int getBegin();
+  public int getBegin() {
+    return myBegin;
+  }
 
-  public abstract int getEnd();
+  public int getEnd() {
+    return myEnd;
+  }
 
-  public abstract int getResultBegin();
+  public int getResultEnd() {
+    return myResultEnd;
+  }
 
-  public abstract int getResultEnd();
+  public int getResultBegin() {
+    return myResultBegin;
+  }
 
   @Nullable
   private SNode deleteOldNodesAndReturnAnchor(@NotNull final SModel model) {
@@ -46,12 +62,12 @@ public abstract class NodeGroupChange extends ModelChange {
     assert parent != null;
 
     List<SNode> children = parent.getChildren(myRole);
-    SNode anchor = (getBegin() == 0 ?
+    SNode anchor = (myBegin == 0 ?
       null :
-      model.getNodeById(children.get(getBegin() - 1).getSNodeId())
+      model.getNodeById(children.get(myBegin - 1).getSNodeId())
     );
     List<SNodeId> idsToDelete = ListSequence.fromList(new ArrayList<SNodeId>());
-    for (int i = getBegin(); i < getEnd(); i++) {
+    for (int i = myBegin; i < myEnd; i++) {
       ListSequence.fromList(idsToDelete).addElement(children.get(i).getSNodeId());
     }
     ListSequence.fromList(idsToDelete).visitAll(new IVisitor<SNodeId>() {
@@ -67,7 +83,7 @@ public abstract class NodeGroupChange extends ModelChange {
     SNode anchor = deleteOldNodesAndReturnAnchor(model);
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
-    for (int i = getResultBegin(); i < getResultEnd(); i++) {
+    for (int i = myResultBegin; i < myResultEnd; i++) {
       ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
@@ -81,7 +97,32 @@ public abstract class NodeGroupChange extends ModelChange {
     return getChangeSet().getOldModel().getNodeById(myParentNodeId).getContainingRoot().getSNodeId();
   }
 
-  protected static String nodeRange(int begin, int end) {
+  public ChangeType getType() {
+    if (myBegin == myEnd) {
+      return ChangeType.ADD;
+    }
+    if (myResultBegin == myResultEnd) {
+      return ChangeType.DELETE;
+    }
+    return ChangeType.CHANGE;
+  }
+
+  @Override
+  public String toString() {
+    if (myEnd == myBegin) {
+      return String.format("Insert %s into position #%d in role %s of node %s", nodeRange(myResultBegin, myResultEnd), myBegin, myRole, myParentNodeId);
+    }
+    if (myResultEnd == myResultBegin) {
+      return String.format("Delete %s in role %s of node %s", nodeRange(myBegin, myEnd), myRole, myParentNodeId);
+    }
+    return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), myRole, myParentNodeId);
+  }
+
+  protected ModelChange createOppositeChange() {
+    return new NodeGroupChange(getChangeSet().getOppositeChangeSet(), myParentNodeId, myRole, myResultBegin, myResultEnd, myBegin, myEnd);
+  }
+
+  private static String nodeRange(int begin, int end) {
     return (begin + 1 == end ?
       String.format("node #%d", begin) :
       String.format("nodes #%d-%d", begin, end - 1)

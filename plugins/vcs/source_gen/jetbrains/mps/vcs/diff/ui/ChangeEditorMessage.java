@@ -38,9 +38,6 @@ import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
-import jetbrains.mps.vcs.diff.changes.InsertNodeGroupChange;
-import jetbrains.mps.vcs.diff.changes.DeleteNodeGroupChange;
-import jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
@@ -255,27 +252,15 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       SNodeId parentId = nodeGroupChange.getParentNodeId();
       String role = nodeGroupChange.getRole();
       List<SNode> changeChildren = changeModel.getNodeById(parentId).getChildren(role);
-      int changeBegin = -1;
-      int changeEnd = -1;
+      int changeBegin;
+      int changeEnd;
 
       if (reversed) {
         changeBegin = nodeGroupChange.getBegin();
         changeEnd = nodeGroupChange.getEnd();
       } else {
-        if (change instanceof InsertNodeGroupChange) {
-          InsertNodeGroupChange insertChange = (InsertNodeGroupChange) change;
-          changeBegin = insertChange.getResultBegin();
-          changeEnd = insertChange.getResultEnd();
-        } else if (change instanceof DeleteNodeGroupChange) {
-          changeBegin = ((DeleteNodeGroupChange) change).getResultPosition();
-          changeEnd = changeBegin;
-        } else if (change instanceof ReplaceNodeGroupChange) {
-          ReplaceNodeGroupChange replaceChange = (ReplaceNodeGroupChange) change;
-          changeBegin = replaceChange.getResultBegin();
-          changeEnd = replaceChange.getResultEnd();
-        } else {
-          assert false;
-        }
+        changeBegin = nodeGroupChange.getResultBegin();
+        changeEnd = nodeGroupChange.getResultEnd();
       }
 
       SNodeId beginId = (changeBegin < changeChildren.size() ?
