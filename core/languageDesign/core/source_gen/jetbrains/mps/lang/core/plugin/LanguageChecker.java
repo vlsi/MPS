@@ -131,10 +131,6 @@ public class LanguageChecker implements IEditorChecker, EditorMessageOwner {
     return false;
   }
 
-  public boolean isEarlierThan(IEditorChecker checker) {
-    return false;
-  }
-
   public boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }

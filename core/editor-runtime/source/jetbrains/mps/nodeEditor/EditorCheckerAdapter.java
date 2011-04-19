@@ -43,10 +43,6 @@ public abstract class EditorCheckerAdapter extends DisposableEditorChecker imple
     return false;
   }
 
-  public boolean isEarlierThan(IEditorChecker editorChecker) {
-    return false;
-  }
-
   public boolean messagesChanged() {
     return true;
   }
