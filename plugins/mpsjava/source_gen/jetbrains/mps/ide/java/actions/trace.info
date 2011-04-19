@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Java_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" />
+  <unitInfo fileName="Java_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer$1" />
   <unitInfo fileName="ModelNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup" />
   <unitInfo fileName="SolutionActionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup" />
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup" />
   <unitInfo fileName="ModelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" />
-  <unitInfo fileName="Java_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer" />
+  <unitInfo fileName="Java_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer" />
   <unitInfo fileName="Java_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
   <unitInfo fileName="PasteAsJavaClass_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
   <unitInfo fileName="PasteAsJavaStatements_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />

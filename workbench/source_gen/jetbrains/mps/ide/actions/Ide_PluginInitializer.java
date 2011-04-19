@@ -4,13 +4,23 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Ide_PluginInitializer implements ApplicationComponent {
   public Ide_PluginInitializer() {
-    PluginUtil.addStandaloneAppPlugin(new Ide_ApplicationPlugin());
-    PluginUtil.addStandaloneProjPlugin(new Ide_ProjectPlugin());
+    PluginUtil.addPluginContributor(new PluginContributor() {
+      public BaseApplicationPlugin createApplicationPlugin() {
+        return new Ide_ApplicationPlugin();
+      }
+
+      public BaseProjectPlugin createProjectPlugin() {
+        return new Ide_ProjectPlugin();
+      }
+    });
   }
 
   @NonNls

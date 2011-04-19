@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Editor_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_ProjectPlugin" />
+  <unitInfo fileName="Editor_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.editor.actions.Editor_PluginInitializer$1" />
   <unitInfo fileName="EditMenuActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup" />
-  <unitInfo fileName="Editor_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_PluginInitializer" />
+  <unitInfo fileName="Editor_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_PluginInitializer" />
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Mac_KeymapChanges" />
   <unitInfo fileName="EditorActions_ActionGroup.java" startLine="8" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Default_KeymapChanges" />

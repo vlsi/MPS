@@ -4,13 +4,23 @@ package jetbrains.mps.ide.migration.actions;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Migration_PluginInitializer implements ApplicationComponent {
   public Migration_PluginInitializer() {
-    PluginUtil.addStandaloneAppPlugin(new Migration_ApplicationPlugin());
-    PluginUtil.addStandaloneProjPlugin(new Migration_ProjectPlugin());
+    PluginUtil.addPluginContributor(new PluginContributor() {
+      public BaseApplicationPlugin createApplicationPlugin() {
+        return new Migration_ApplicationPlugin();
+      }
+
+      public BaseProjectPlugin createProjectPlugin() {
+        return new Migration_ProjectPlugin();
+      }
+    });
   }
 
   @NonNls

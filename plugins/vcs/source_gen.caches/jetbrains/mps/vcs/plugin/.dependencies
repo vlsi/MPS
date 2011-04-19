@@ -470,8 +470,11 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" file="Vcs_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

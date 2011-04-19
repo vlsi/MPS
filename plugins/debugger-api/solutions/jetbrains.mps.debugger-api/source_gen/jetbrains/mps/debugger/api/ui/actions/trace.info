@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Api_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Api_ProjectPlugin" />
+  <unitInfo fileName="Api_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.actions.Api_PluginInitializer$1" />
   <unitInfo fileName="Breakpoints_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Breakpoints_ActionGroup" />
-  <unitInfo fileName="Api_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Api_PluginInitializer" />
   <unitInfo fileName="Debugger_KeymapChanges.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" />
   <unitInfo fileName="DebugRunMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" />
+  <unitInfo fileName="Api_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Api_PluginInitializer" />
   <unitInfo fileName="DebugTool_ActionGroup.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
   <unitInfo fileName="Api_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Api_ApplicationPlugin" />
   <unitInfo fileName="StepOver_Action.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.StepOver_Action" />

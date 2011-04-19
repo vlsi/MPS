@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Make_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" />
-  <unitInfo fileName="RebuildAllModules_Action.java" startLine="58" startPosition="47" endLine="62" endPosition="7" unitName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action$1" />
-  <unitInfo fileName="MakeAllModules_Action.java" startLine="58" startPosition="47" endLine="62" endPosition="7" unitName="jetbrains.mps.ide.make.actions.MakeAllModules_Action$1" />
-  <unitInfo fileName="TextPreviewModel_Action.java" startLine="83" startPosition="308" endLine="87" endPosition="7" unitName="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$1" />
-  <unitInfo fileName="GenerateModel_Action.java" startLine="86" startPosition="257" endLine="90" endPosition="7" unitName="jetbrains.mps.ide.make.actions.GenerateModel_Action$1" />
-  <unitInfo fileName="CleanModule_Action.java" startLine="73" startPosition="51" endLine="78" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$2" />
-  <unitInfo fileName="CleanProject_Action.java" startLine="75" startPosition="51" endLine="80" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$2" />
-  <unitInfo fileName="CleanAllModules_Action.java" startLine="62" startPosition="51" endLine="68" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanAllModules_Action$2" />
-  <unitInfo fileName="CleanModule_Action.java" startLine="71" startPosition="44" endLine="80" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$1" />
-  <unitInfo fileName="CleanProject_Action.java" startLine="73" startPosition="44" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$1" />
-  <unitInfo fileName="CleanAllModules_Action.java" startLine="60" startPosition="44" endLine="70" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanAllModules_Action$1" />
-  <unitInfo fileName="DefaultMakeTask.java" startLine="29" startPosition="45" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$1" />
-  <unitInfo fileName="GenerateTextFromSolution_Action.java" startLine="83" startPosition="47" endLine="94" endPosition="7" unitName="jetbrains.mps.ide.make.actions.GenerateTextFromSolution_Action$1" />
-  <unitInfo fileName="NamespaceGenerateFiles_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.make.actions.NamespaceGenerateFiles_ActionGroup" />
+  <unitInfo fileName="Make_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$1" />
   <unitInfo fileName="ToolbarMake_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" />
   <unitInfo fileName="TextPreviewGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
+  <unitInfo fileName="NamespaceGenerateFiles_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.make.actions.NamespaceGenerateFiles_ActionGroup" />
   <unitInfo fileName="SaveTransientModels_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" />
   <unitInfo fileName="ProjectMake_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" />
   <unitInfo fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" />
@@ -25,14 +14,13 @@
   <unitInfo fileName="ProjectCompileActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup" />
   <unitInfo fileName="Compile_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Compile_ActionGroup" />
   <unitInfo fileName="GenerateModels_ActionGroup.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModels_ActionGroup" />
-  <unitInfo fileName="Make_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Default_KeymapChanges" />
   <unitInfo fileName="GenerateModelPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModelPopup_ActionGroup" />
   <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
   <unitInfo fileName="GenerateModulePopup_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModulePopup_ActionGroup" />
-  <unitInfo fileName="GenerateOptions_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
   <unitInfo fileName="Make_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ActionGroup" />
-  <unitInfo fileName="DefaultMakeTask.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask" />
+  <unitInfo fileName="GenerateOptions_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
+  <unitInfo fileName="Make_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
   <unitInfo fileName="Options_Action.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Options_Action" />
   <unitInfo fileName="GenerateFavorites_ActionGroup.java" startLine="25" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateFavorites_ActionGroup" />
   <unitInfo fileName="CheckModelsBeforeGeneration_Action.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" />

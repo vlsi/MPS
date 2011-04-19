@@ -76,10 +76,13 @@
   <dependency className="jetbrains.mps.ide.java.actions.Java_PluginInitializer" file="Java_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" file="Java_ProjectPlugin.java">

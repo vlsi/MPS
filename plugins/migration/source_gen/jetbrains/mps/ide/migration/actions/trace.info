@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Migration_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
+  <unitInfo fileName="Migration_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer$1" />
   <unitInfo fileName="MigrateModel_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.MigrateModel_ActionGroup" />
   <unitInfo fileName="MigrateProject_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.MigrateProject_ActionGroup" />
   <unitInfo fileName="MigrateModule_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.MigrateModule_ActionGroup" />
   <unitInfo fileName="Upgrade_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Upgrade_ActionGroup" />
-  <unitInfo fileName="Migration_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" />
+  <unitInfo fileName="Migration_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" />
   <unitInfo fileName="Migration_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
   <unitInfo fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action" />
   <unitInfo fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action" />

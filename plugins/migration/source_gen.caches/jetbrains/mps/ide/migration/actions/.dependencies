@@ -65,7 +65,10 @@
   <dependency className="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" file="Migration_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

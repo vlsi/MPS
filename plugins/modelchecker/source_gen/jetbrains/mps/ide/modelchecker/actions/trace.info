@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Modelchecker_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer$1" />
   <unitInfo fileName="Modelchecker_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ProjectPlugin" />
   <unitInfo fileName="CheckModel_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" />
   <unitInfo fileName="CheckProject_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" />
@@ -9,7 +10,7 @@
   <unitInfo fileName="CheckModuleSolution_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckModuleSolution_ActionGroup" />
   <unitInfo fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" />
-  <unitInfo fileName="Modelchecker_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer" />
+  <unitInfo fileName="Modelchecker_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer" />
   <unitInfo fileName="Modelchecker_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
   <unitInfo fileName="CheckProject_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action" />
   <unitInfo fileName="FindAllAdapterUsages_Action.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action" />

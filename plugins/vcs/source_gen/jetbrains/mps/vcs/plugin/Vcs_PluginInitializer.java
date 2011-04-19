@@ -4,13 +4,23 @@ package jetbrains.mps.vcs.plugin;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Vcs_PluginInitializer implements ApplicationComponent {
   public Vcs_PluginInitializer() {
-    PluginUtil.addStandaloneAppPlugin(new Vcs_ApplicationPlugin());
-    PluginUtil.addStandaloneProjPlugin(new Vcs_ProjectPlugin());
+    PluginUtil.addPluginContributor(new PluginContributor() {
+      public BaseApplicationPlugin createApplicationPlugin() {
+        return new Vcs_ApplicationPlugin();
+      }
+
+      public BaseProjectPlugin createProjectPlugin() {
+        return new Vcs_ProjectPlugin();
+      }
+    });
   }
 
   @NonNls

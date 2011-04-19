@@ -857,9 +857,12 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" file="Mpsdevkit_PluginInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
