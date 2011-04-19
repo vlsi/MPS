@@ -23,12 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
-
-  public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent) {
-    return this;
-  }
-
+public abstract class EditorCheckerAdapter extends DisposableEditorChecker implements IEditorChecker, EditorMessageOwner {
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     for (SModelEvent event : events) {
       if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {
@@ -45,10 +40,6 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     return false;
-  }
-
-  public void checkingIterationFinished() {
-    
   }
 
   public boolean isLaterThan(IEditorChecker editorChecker) {

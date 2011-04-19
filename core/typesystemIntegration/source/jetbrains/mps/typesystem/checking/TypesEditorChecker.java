@@ -44,142 +44,145 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
+  private HighlighterListener myHighlighterListener = new HighlighterListener() {
+    public void checkingIterationFinished() {
+      myMessagesChanged = false;
+    }
+  };
+  private Highlighter myHighlighter;
 
   public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext,
-                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, Highlighter highlighter) {
+    myHighlighter = highlighter;
     myMessagesChanged = false;
+    myHighlighter.addHighlighterListener(myHighlighterListener);
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     final TypeCheckingContext context = editorContext.getNodeEditorComponent().getTypeCheckingContext();
-    if (context != null) {
-      context.runTypeCheckingAction(new Runnable() {
-        @Override
-        public void run() {
-          INodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
-          if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
-            try {
-              myMessagesChanged = true;
-              context.checkRoot();
-            } catch (Throwable t) {
-              LOG.error(t);
-              typesComponent.setCheckedTypesystem();
-              return;
-            }
+    if (context == null) return messages;
+    context.runTypeCheckingAction(new Runnable() {
+      @Override
+      public void run() {
+        INodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
+        if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
+          try {
+            myMessagesChanged = true;
+            context.checkRoot();
+          } catch (Throwable t) {
+            LOG.error(t);
+            typesComponent.setCheckedTypesystem();
+            return;
           }
+        }
 
-          //non-typesystem checks
-          if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
-            try {
-              myMessagesChanged = true;
-              context.setIsNonTypesystemComputation();
-              typesComponent.applyNonTypesystemRulesToRoot(operationContext);
-              typesComponent.setCheckedNonTypesystem();
-            } catch (Throwable t) {
-              LOG.error(t);
-              typesComponent.setCheckedNonTypesystem();
-            } finally {
-              context.resetIsNonTypesystemComputation();
-            }
+        //non-typesystem checks
+        if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
+          try {
+            myMessagesChanged = true;
+            context.setIsNonTypesystemComputation();
+            typesComponent.applyNonTypesystemRulesToRoot(operationContext);
+            typesComponent.setCheckedNonTypesystem();
+          } catch (Throwable t) {
+            LOG.error(t);
+            typesComponent.setCheckedNonTypesystem();
+          } finally {
+            context.resetIsNonTypesystemComputation();
           }
+        }
 
-          // highlight nodes with errors
-          for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors()) {
-            List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
-            Collections.sort(errors, new Comparator<IErrorReporter>() {
-              public int compare(IErrorReporter o1, IErrorReporter o2) {
-                return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-              }
-            });
-            boolean instantIntentionApplied = false;
-            for (IErrorReporter errorReporter : errors) {
-              MessageStatus status = errorReporter.getMessageStatus();
-              String errorString = errorReporter.reportError();
-              HighlighterMessage message = HighlightUtil.createHighlighterMessage(
-                errorNode.o1,
-                NameUtil.capitalize(status.getPresentation()) + ": " + errorString,
-                errorReporter,
-                TypesEditorChecker.this,
-                editorContext
-              );
-              List<QuickFixProvider> intentionProviders = errorReporter.getIntentionProviders();
-              final SNode quickFixNode = errorNode.o1;
-              if (intentionProviders.size() == 1 && intentionProviders.get(0) != null && intentionProviders.get(0).isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
-                QuickFixProvider intentionProvider = intentionProviders.get(0);
-                if (!instantIntentionApplied) {
-                  final QuickFix_Runtime intention = intentionProvider.getQuickFix();
-                  if (intention != null) {
-                    instantIntentionApplied = true;
-                    if (!myOnceExecutedQuickFixes.contains(intention)) {
-                      myOnceExecutedQuickFixes.add(intention);
-                      LaterInvocator.invokeLater(new Runnable() {
-                        public void run() {
-                          EditorCell selectedCell = editorContext.getSelectedCell();
-                          if (selectedCell == null) return;
-                          boolean restoreCaretPosition = false;
-                          int caretX = 0;
-                          int caretY = 0;
+        // highlight nodes with errors
+        for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors()) {
+          List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
+          Collections.sort(errors, new Comparator<IErrorReporter>() {
+            public int compare(IErrorReporter o1, IErrorReporter o2) {
+              return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+            }
+          });
+          boolean instantIntentionApplied = false;
+          for (IErrorReporter errorReporter : errors) {
+            MessageStatus status = errorReporter.getMessageStatus();
+            String errorString = errorReporter.reportError();
+            HighlighterMessage message = HighlightUtil.createHighlighterMessage(
+              errorNode.o1,
+              NameUtil.capitalize(status.getPresentation()) + ": " + errorString,
+              errorReporter,
+              TypesEditorChecker.this,
+              editorContext
+            );
+            List<QuickFixProvider> intentionProviders = errorReporter.getIntentionProviders();
+            final SNode quickFixNode = errorNode.o1;
+            if (intentionProviders.size() == 1 && intentionProviders.get(0) != null && intentionProviders.get(0).isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
+              QuickFixProvider intentionProvider = intentionProviders.get(0);
+              if (!instantIntentionApplied) {
+                final QuickFix_Runtime intention = intentionProvider.getQuickFix();
+                if (intention != null) {
+                  instantIntentionApplied = true;
+                  if (!myOnceExecutedQuickFixes.contains(intention)) {
+                    myOnceExecutedQuickFixes.add(intention);
+                    LaterInvocator.invokeLater(new Runnable() {
+                      public void run() {
+                        EditorCell selectedCell = editorContext.getSelectedCell();
+                        if (selectedCell == null) return;
+                        boolean restoreCaretPosition = false;
+                        int caretX = 0;
+                        int caretY = 0;
 
-                          Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-                            editorContext.getOperationContext().getProject() :
-                            null
-                          );
-                          if (p == null) {
-                            return;
+                        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
+                          editorContext.getOperationContext().getProject() :
+                          null
+                        );
+                        if (p == null) {
+                          return;
+                        }
+
+                        if (selectedCell instanceof EditorCell_Label) {
+                          EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
+                          restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
+                          caretX = cell_label.getCaretX();
+                          caretY = cell_label.getBaseline();
+                          boolean last = cell_label.getCaretPosition() == cell_label.getText().length();
+                          boolean first = cell_label.getCaretPosition() == 0;
+                          if (last) {
+                            caretX = caretX - 1;
                           }
-
-                          if (selectedCell instanceof EditorCell_Label) {
-                            EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
-                            restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
-                            caretX = cell_label.getCaretX();
-                            caretY = cell_label.getBaseline();
-                            boolean last = cell_label.getCaretPosition() == cell_label.getText().length();
-                            boolean first = cell_label.getCaretPosition() == 0;
-                            if (last) {
-                              caretX = caretX - 1;
-                            }
-                            if (first) {
-                              caretY = caretY + 1;
-                            }
-                          }
-
-                          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-                            public void run() {
-                              intention.execute(quickFixNode);
-                            }
-                          }, p);
-
-                          if (restoreCaretPosition) {
-                            editorContext.flushEvents();
-                            EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
-                            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-                            if (leaf != null) {
-                              editorContext.getNodeEditorComponent().changeSelection(leaf);
-                              leaf.setCaretX(caretX);
-                            }
+                          if (first) {
+                            caretY = caretY + 1;
                           }
                         }
-                      }, ModalityState.NON_MODAL);
-                    }
+
+                        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+                          public void run() {
+                            intention.execute(quickFixNode);
+                          }
+                        }, p);
+
+                        if (restoreCaretPosition) {
+                          editorContext.flushEvents();
+                          EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
+                          EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+                          if (leaf != null) {
+                            editorContext.getNodeEditorComponent().changeSelection(leaf);
+                            leaf.setCaretX(caretX);
+                          }
+                        }
+                      }
+                    }, ModalityState.NON_MODAL);
                   }
                 }
-              } else {
-                for (QuickFixProvider intentionProvider : intentionProviders) {
-                  if (intentionProvider != null) {
-                    intentionProvider.setIsError(status == MessageStatus.ERROR);
-                  }
-                  message.addIntentionProvider(intentionProvider);
-                }
-                messages.add(message);
               }
+            } else {
+              for (QuickFixProvider intentionProvider : intentionProviders) {
+                if (intentionProvider != null) {
+                  intentionProvider.setIsError(status == MessageStatus.ERROR);
+                }
+                message.addIntentionProvider(intentionProvider);
+              }
+              messages.add(message);
             }
           }
         }
-      });
-    }
+      }
+    });
     return messages;
-  }
-
-  public boolean executeInUndoableCommand() {
-    return false;
   }
 
   public EditorMessageOwner getOwner(SNode node, EditorComponent editorComponent) {
@@ -196,22 +199,18 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   }
 
   public void dispose() {
+    myHighlighter.removeHighlighterListener(myHighlighterListener);
+    super.dispose();
   }
 
   public boolean messagesChanged() {
     return myMessagesChanged;
   }
 
-  public void checkingIterationFinished() {
-    myMessagesChanged = false;
-  }
-
-  @Override
   public void clear(SNode node, EditorComponent editorComponent) {
     if (node == null) return;
     TypeCheckingContext context = editorComponent.getTypeCheckingContext();
     if (context == null) return;
     context.clear();
   }
-
 }

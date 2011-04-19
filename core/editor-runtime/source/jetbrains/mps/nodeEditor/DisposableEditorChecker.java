@@ -15,22 +15,25 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import java.util.Comparator;
+import jetbrains.mps.smodel.SNode;
 
-public class PriorityComparator implements Comparator<IEditorChecker> {
-  public int compare(IEditorChecker o1, IEditorChecker o2) {
-    if (o1.isEarlierThan(o2)) {
-      return -1;
+public abstract class DisposableEditorChecker implements IEditorChecker, EditorMessageOwner {
+  private final Object LOCK = new Object();
+  private boolean myDisposed = false;
+
+  public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent) {
+    return this;
+  }
+
+  public void dispose() {
+    synchronized (LOCK) {
+      myDisposed = true;
     }
-    if (o1.isLaterThan(o2)) {
-      return 1;
+  }
+
+  protected void checkDisposed() {
+    synchronized (LOCK) {
+      if (myDisposed) throw new IllegalStateException();
     }
-    if (o2.isEarlierThan(o1)) {
-      return 1;
-    }
-    if (o2.isLaterThan(o1)) {
-      return -1;
-    }
-    return 0;
   }
 }

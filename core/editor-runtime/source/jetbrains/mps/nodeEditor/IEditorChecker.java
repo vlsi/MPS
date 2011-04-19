@@ -15,28 +15,23 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 
 public interface IEditorChecker {
-
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
-                                           List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
+  Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
+                                    List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
   // IMPORTANT: there should be no equal owners for messages from different checkers
   // for instance, make owners change when checker is reloaded
   // otherwise old checkers may remove new checker's messages
-  public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent);
+  EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent);
 
-  public boolean hasDramaticalEvent(List<SModelEvent> events);
-
-  public void checkingIterationFinished();
+  boolean hasDramaticalEvent(List<SModelEvent> events);
 
   boolean isLaterThan(IEditorChecker editorChecker);
 

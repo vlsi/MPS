@@ -21,6 +21,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.*;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vcs.checkout.CheckoutListener;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.IEditor;
@@ -49,7 +50,6 @@ import java.util.*;
 
 public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
-  public static final int CHECK_DELAY = 1000;
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
 
@@ -70,6 +70,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private boolean myInspectorMessagesCreated = false;
   private InspectorTool myInspectorTool;
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
+  private List<HighlighterListener> myListeners = new ArrayList();
 
   private volatile long myLastCommandTime = 0;
 
@@ -182,10 +183,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   }
 
-  public Thread getThread() {
-    return myThread;
-  }
-
   private void addPendingAction(Runnable r) {
     synchronized (PENDING_LOCK) {
       myPendingActions.add(r);
@@ -198,6 +195,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         r.run();
       }
       myPendingActions.clear();
+    }
+  }
+
+  public void addHighlighterListener(HighlighterListener l){
+    synchronized (CHECKERS_LOCK){
+      myListeners.add(l);
+    }
+  }
+
+  public void removeHighlighterListener(HighlighterListener l){
+    synchronized (CHECKERS_LOCK){
+      myListeners.remove(l);
     }
   }
 
@@ -332,8 +341,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       inspector.getMessagesGutter().repaint();
     }
 
-    for (IEditorChecker checker : checkers) {
-      checker.checkingIterationFinished();
+    for (HighlighterListener listener : myListeners) {
+      listener.checkingIterationFinished();
     }
   }
 

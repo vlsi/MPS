@@ -30,19 +30,36 @@ import java.awt.Color;
 public class BookmarksHighlighter extends EditorCheckerAdapter implements EditorMessageOwner {
 
   private BookmarkManager myBookmarkManager;
+  private Highlighter myHighlighter;
   private boolean myChanged = true;
+  private BookmarkListener myListener = new BookmarkListener() {
+    public void bookmarkAdded(int number, SNode node) {
+      myChanged = true;
+    }
 
-  public BookmarksHighlighter(BookmarkManager bookmarkManager) {
+    public void bookmarkRemoved(int number, SNode node) {
+      myChanged = true;
+    }
+  };
+  private HighlighterListener myHighlightListener = new HighlighterListener() {
+    public void checkingIterationFinished() {
+      myChanged = false;
+    }
+  };
+
+  public BookmarksHighlighter(BookmarkManager bookmarkManager, Highlighter highlighter) {
     myBookmarkManager = bookmarkManager;
-    myBookmarkManager.addBookmarkListener(new BookmarkListener() {
-      public void bookmarkAdded(int number, SNode node) {
-        myChanged = true;
-      }
+    myHighlighter = highlighter;
 
-      public void bookmarkRemoved(int number, SNode node) {
-        myChanged = true;
-      }
-    });
+    myBookmarkManager.addBookmarkListener(myListener);
+    myHighlighter.addHighlighterListener(myHighlightListener);
+  }
+
+  public void dispose() {
+    myHighlighter.removeHighlighterListener(myHighlightListener);
+    myBookmarkManager.removeBookmarkListener(myListener);
+
+    super.dispose();
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
@@ -59,13 +76,6 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     return myChanged;
   }
 
-
-
-  public void checkingIterationFinished() {
-    myChanged = false;
-  }
-
-  @Override
   public void clear(SNode node, EditorComponent editor) {
     myChanged = true;
   }
