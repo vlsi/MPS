@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="IconPath_Editor.java" startLine="111" startPosition="75" endLine="115" endPosition="5" unitName="jetbrains.mps.execution.configurations.editor.IconPath_Editor$1" />
+  <unitInfo fileName="ExecuteConfiguration_Function_Editor.java" startLine="66" startPosition="83" endLine="77" endPosition="5" unitName="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor$1" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="499" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor$ComplexRunConfigurationExecutor_generic_cellMenu_a0b1b2a" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="512" startPosition="0" endLine="524" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor$ComplexRunConfigurationExecutor_generic_cellMenu_a0c1b2a" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="525" startPosition="0" endLine="537" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor$ComplexRunConfigurationExecutor_generic_cellMenu_a0a1c1c0" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="538" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor$ComplexRunConfigurationExecutor_generic_cellMenu_a0c2b2a" />
+  <unitInfo fileName="ConfigurationFromExecutorReference_Editor.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ConfigurationFromExecutorReference_Editor" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="193" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfiguration_Editor$_Inline_ryg3k0_a3a0" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="466" startPosition="0" endLine="498" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor$_Inline_7no64v_a2b0" />
+  <unitInfo fileName="StartProcessHandlerStatement_Editor.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.StartProcessHandlerStatement_Editor" />
+  <unitInfo fileName="RunConfigurationKind_Editor.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationKind_Editor" />
+  <unitInfo fileName="ExecuteConfiguration_Function_Editor.java" startLine="26" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" />
+  <unitInfo fileName="IconPath_Editor.java" startLine="32" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.IconPath_Editor" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="27" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfiguration_Editor" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="34" startPosition="0" endLine="551" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ComplexRunConfigurationExecutor_Editor" />
+  <root nodeId="2866018809101862244">
+    <nodeInfo nodeId="2866018809101988583" fileName="ExecuteConfiguration_Function_Editor.java" startLine="67" startPosition="31" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2866018809101988582" fileName="ExecuteConfiguration_Function_Editor.java" startLine="67" startPosition="31" endLine="68" endPosition="81" />
+  </root>
+  <root nodeId="4806795137173575896">
+    <nodeInfo nodeId="4806795137173720482" fileName="IconPath_Editor.java" startLine="112" startPosition="30" endLine="113" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4806795137173720441" fileName="IconPath_Editor.java" startLine="150" startPosition="112" endLine="151" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4806795137173720445" fileName="IconPath_Editor.java" startLine="151" startPosition="23" endLine="152" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4806795137173720452" fileName="IconPath_Editor.java" startLine="153" startPosition="25" endLine="154" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4806795137173720465" fileName="IconPath_Editor.java" startLine="155" startPosition="5" endLine="156" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4806795137173720492" fileName="IconPath_Editor.java" startLine="159" startPosition="108" endLine="160" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4806795137173720450" fileName="IconPath_Editor.java" startLine="152" startPosition="85" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="4806795137173720481" fileName="IconPath_Editor.java" startLine="112" startPosition="30" endLine="113" endPosition="59" />
+    <scopeInfo nodeId="4806795137173720451" fileName="IconPath_Editor.java" startLine="153" startPosition="25" endLine="154" endPosition="106" />
+    <scopeInfo nodeId="4806795137173720491" fileName="IconPath_Editor.java" startLine="159" startPosition="108" endLine="160" endPosition="74" />
+    <scopeInfo nodeId="4806795137173720440" fileName="IconPath_Editor.java" startLine="150" startPosition="112" endLine="156" endPosition="81">
+      <varInfo nodeId="4806795137173720446" varName="module" />
+      <varInfo nodeId="4806795137173720442" varName="path" />
+    </scopeInfo>
+  </root>
+  <root nodeId="7806358006983673433">
+    <nodeInfo nodeId="7806358006983673456" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="446" startPosition="114" endLine="447" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673475" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="450" startPosition="114" endLine="451" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673512" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="454" startPosition="114" endLine="455" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673522" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="458" startPosition="114" endLine="459" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983776841" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="462" startPosition="111" endLine="463" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983673464" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="503" startPosition="106" endLine="504" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983673484" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="516" startPosition="106" endLine="517" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983673502" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="529" startPosition="106" endLine="530" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983673532" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="542" startPosition="106" endLine="543" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="7806358006983673455" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="446" startPosition="114" endLine="447" endPosition="58" />
+    <scopeInfo nodeId="7806358006983673474" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="450" startPosition="114" endLine="451" endPosition="61" />
+    <scopeInfo nodeId="7806358006983673511" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="454" startPosition="114" endLine="455" endPosition="71" />
+    <scopeInfo nodeId="7806358006983673521" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="458" startPosition="114" endLine="459" endPosition="71" />
+    <scopeInfo nodeId="7806358006983776840" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="462" startPosition="111" endLine="463" endPosition="71" />
+    <scopeInfo nodeId="7806358006983673463" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="503" startPosition="106" endLine="504" endPosition="60" />
+    <scopeInfo nodeId="7806358006983673483" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="516" startPosition="106" endLine="517" endPosition="59" />
+    <scopeInfo nodeId="7806358006983673501" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="529" startPosition="106" endLine="530" endPosition="84" />
+    <scopeInfo nodeId="7806358006983673531" fileName="ComplexRunConfigurationExecutor_Editor.java" startLine="542" startPosition="106" endLine="543" endPosition="103" />
+  </root>
+</debugInfo>
+

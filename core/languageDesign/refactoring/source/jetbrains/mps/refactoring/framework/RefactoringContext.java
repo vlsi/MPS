@@ -275,12 +275,12 @@ public class RefactoringContext {
       if (!newFeatureName.equals(oldFeatureName)) {
         myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
       } else if (kind == ConceptFeatureKind.CONCEPT && !oldConceptFQName.equals(newConceptFQName)) {  // model renamed
-//        String oldModelName = NameUtil.namespaceFromLongName(oldConceptFQName);
-//        String newModelName = NameUtil.namespaceFromLongName(newConceptFQName);
-//        SModelReference modelRef = feature.getModel().getSModelReference();
-//        SModelReference oldModelRef = new SModelReference(new SModelFqName(oldModelName, modelRef.getStereotype()), modelRef.getSModelId());
-//        SModelReference newModelRef = new SModelReference(newModelName, modelRef.getStereotype());
-//        myLoggedData.getData().add(new MoveNode(new SNodePointer(oldModelRef, feature.getSNodeId()), new SNodePointer(newModelRef, feature.getSNodeId())));
+        String oldModelName = NameUtil.namespaceFromLongName(oldConceptFQName);
+        String newModelName = NameUtil.namespaceFromLongName(newConceptFQName);
+        SModelReference modelRef = feature.getModel().getSModelReference();
+        SModelReference oldModelRef = new SModelReference(new SModelFqName(oldModelName, modelRef.getStereotype()), modelRef.getSModelId());
+        SModelReference newModelRef = new SModelReference(newModelName, modelRef.getStereotype());
+        myLoggedData.getData().add(new MoveNode(new SNodePointer(oldModelRef, feature.getSNodeId()), new SNodePointer(newModelRef, feature.getSNodeId())));
       }
     }
   }

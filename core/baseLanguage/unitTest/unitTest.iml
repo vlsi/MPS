@@ -14,7 +14,7 @@
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module-library" exported="">
       <library name="JMock">
@@ -27,7 +27,9 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="unitTest-runtime" />
+    <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 

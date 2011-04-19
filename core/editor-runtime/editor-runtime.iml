@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Trove4j" level="project" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
   </component>
 </module>
 

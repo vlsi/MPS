@@ -45,7 +45,7 @@ public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      if (VcsMigrationUtil.getHandler().isInConflict(VirtualFileUtils.toIFile(f), true)) {
+      if (VcsMigrationUtil.getHandler().isInConflict(VirtualFileUtils.toIFile(f), false)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);

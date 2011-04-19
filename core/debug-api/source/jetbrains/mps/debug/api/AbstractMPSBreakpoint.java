@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 @Deprecated

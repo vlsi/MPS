@@ -16,7 +16,7 @@
 package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.ToRemove;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;

@@ -16,7 +16,7 @@
 package jetbrains.mps.debug.api.breakpoints;
 
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
-import jetbrains.mps.debug.api.ToRemove;
+import jetbrains.mps.util.annotation.ToRemove;
 
 @Deprecated
 @ToRemove(version = 2.0)

@@ -79,6 +79,15 @@ public class Debuggers implements ApplicationComponent {
     return null;
   }
 
+  @NotNull
+  public IDebugger getDebuggerByNameSafe(@NotNull String name) throws DebuggerNotPresentException {
+    IDebugger debugger = getDebuggerByName(name);
+    if (debugger != null) {
+      return debugger;
+    }
+    throw new DebuggerNotPresentException("Cannot find debugger " + name);
+  }
+
   public static Debuggers getInstance() {
     return ApplicationManager.getApplication().getComponent(Debuggers.class);
   }

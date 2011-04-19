@@ -23,6 +23,8 @@
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 

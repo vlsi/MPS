@@ -5,12 +5,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.evaluation.DummyEvaluationProvider;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 

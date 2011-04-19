@@ -48,7 +48,7 @@
     <orderEntry type="module" module-name="quotation" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="resources" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="module" module-name="script" />
     <orderEntry type="module" module-name="sharedConcepts" />
     <orderEntry type="module" module-name="smodel" />

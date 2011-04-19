@@ -111,6 +111,9 @@
       <fileset dir="${mps_home}/workbench/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/workbench/runConfigurations/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/debug/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
@@ -149,7 +152,7 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/platform/uiLanguage/runtime/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <antcall target="replace_a51e1a" />
+    <antcall target="replace_a61e1a" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
@@ -374,6 +377,12 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">
@@ -415,7 +424,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
-  <target name="replace_a51e1a">
+  <target name="replace_a61e1a">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/IdeaApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />

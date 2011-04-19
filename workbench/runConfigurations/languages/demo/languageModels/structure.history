@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="f1er" modelUID="r:b2897562-8c8f-4b0e-a52e-5dedfbf1b862(jetbrains.mps.runConfigurations.demo.structure)" version="-1" />
+      <model index="9xt0" modelUID="jetbrains.mps.execution.demo.structure" version="-1" />
+    </dependencies>
+    <move id="f1er.4928971978190304900" to="9xt0.4928971978190304900" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="f1er" modelUID="r:b2897562-8c8f-4b0e-a52e-5dedfbf1b862(jetbrains.mps.runConfigurations.demo.structure)" version="-1" />
+      <model index="9xt0" modelUID="jetbrains.mps.execution.demo.structure" version="-1" />
+    </dependencies>
+    <move id="f1er.4928971978190304900" to="9xt0.4928971978190304900" />
+  </StructureModification>
+</history>
+
