@@ -24,15 +24,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new GoToNode_Action());
-    addAction(new GoToRule_Action());
     addAction(new GoToTypeErrorRule_Action());
     addAction(new ShowInequationsForCell_Action());
     addAction(new ShowInferredNodeType_Action());
     addAction(new ShowNodeType_Action());
     addAction(new ShowRulesWhichAffectNodeType_Action());
-    addAction(new ShowTypeSystemTraceIncremental_Action());
-    addAction(new ShowTypeSystemTrace_Action());
     // groups 
     addGroup(new GoToTypeErrorGroup_ActionGroup());
     addGroup(new TypesystemActions_ActionGroup());
@@ -51,7 +47,6 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
-    ListSequence.fromList(res).addElement(new Trace_KeymapChanges());
     return res;
   }
 }

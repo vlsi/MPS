@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Mpsdevkit_ProjectPlugin.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
+  <unitInfo fileName="Mpsdevkit_ProjectPlugin.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
+  <unitInfo fileName="TraceActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.TraceActions_ActionGroup" />
   <unitInfo fileName="ShowNodeIn_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
   <unitInfo fileName="GenerateEditorPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerateEditorPopup_ActionGroup" />
   <unitInfo fileName="LanguageNewActionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
@@ -22,7 +23,9 @@
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
   <unitInfo fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
   <unitInfo fileName="Mpsdevkit_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" />
+  <unitInfo fileName="Trace_KeymapChanges.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Trace_KeymapChanges" />
   <unitInfo fileName="DevKitTools_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
+  <unitInfo fileName="TraceTool_Tool.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
   <unitInfo fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ToolsInternalEx_ActionGroup" />
   <unitInfo fileName="EditorInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.EditorInternalEx_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
@@ -36,6 +39,8 @@
   <unitInfo fileName="ShowModelRepository_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowModelRepository_Action" />
   <unitInfo fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.RemoveLanguageDesignDevKitFromModels_Action" />
   <unitInfo fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.AddGeneralPurposeDevKitToLanguageModels_Action" />
+  <unitInfo fileName="GoToNode_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToNode_Action" />
+  <unitInfo fileName="GoToRule_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToRule_Action" />
   <unitInfo fileName="CellProperties_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.CellProperties_Action" />
   <unitInfo fileName="ShowCellInExplorer_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action" />
   <unitInfo fileName="RemoveBootstrapLanguagesDevKitFromLanguageModels_Action.java" startLine="21" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.RemoveBootstrapLanguagesDevKitFromLanguageModels_Action" />
@@ -62,6 +67,8 @@
   <unitInfo fileName="HighlightCellDependencies_Action.java" startLine="24" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action" />
   <unitInfo fileName="SurroundWithIntentions_Action.java" startLine="28" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.SurroundWithIntentions_Action" />
   <unitInfo fileName="GenerationIntentions_Action.java" startLine="28" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerationIntentions_Action" />
+  <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTrace_Action" />
+  <unitInfo fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTraceIncremental_Action" />
   <unitInfo fileName="SurroundIntentionAction_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.SurroundIntentionAction_Action" />
   <unitInfo fileName="NewGenerator_Action.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewGenerator_Action" />
   <unitInfo fileName="DeleteGenerator_Action.java" startLine="23" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
@@ -75,9 +82,9 @@
   <unitInfo fileName="ShowGenerationTraceback_Action.java" startLine="25" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action" />
   <unitInfo fileName="GenerateTemplateQueries_Action.java" startLine="30" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerateTemplateQueries_Action" />
   <unitInfo fileName="AddAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action" />
-  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="26" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <unitInfo fileName="InstallIDEAPlugin_Action.java" startLine="31" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.InstallIDEAPlugin_Action" />
   <unitInfo fileName="GoToEditorDeclaration_Action.java" startLine="35" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action" />
+  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="27" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <root nodeId="1212767491070836940">
     <nodeInfo nodeId="1212767491070836942" fileName="RepositoryToolsGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1212767491070836943" fileName="RepositoryToolsGroup_ActionGroup.java" startLine="17" startPosition="118" endLine="18" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1064,6 +1071,57 @@
     <nodeInfo nodeId="5883033498657845997" fileName="NewLanguage_Action.java" startLine="69" startPosition="38" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5883033498657845998" fileName="NewLanguage_Action.java" startLine="70" startPosition="22" endLine="71" endPosition="15" />
     <scopeInfo nodeId="5883033498657846034" fileName="NewLanguage_Action.java" startLine="94" startPosition="52" endLine="95" endPosition="18" />
+  </root>
+  <root nodeId="8513716958726547015">
+    <nodeInfo nodeId="8513716958726547018" fileName="GoToRule_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="8513716958726547028">
+    <nodeInfo nodeId="8513716958726547033" fileName="GoToNode_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="8513716958726547050">
+    <nodeInfo nodeId="8513716958726547076" fileName="TraceTool_Tool.java" startLine="19" startPosition="0" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="8513716958726547087" fileName="TraceTool_Tool.java" startLine="27" startPosition="24" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547064" fileName="TraceTool_Tool.java" startLine="31" startPosition="156" endLine="32" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547081" fileName="TraceTool_Tool.java" startLine="35" startPosition="36" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildTrace#(Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Z)V" />
+    <scopeInfo nodeId="8513716958726547063" fileName="TraceTool_Tool.java" startLine="31" startPosition="156" endLine="32" endPosition="102" />
+    <scopeInfo nodeId="8513716958726547080" fileName="TraceTool_Tool.java" startLine="35" startPosition="36" endLine="36" endPosition="39" />
+    <scopeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8513716958726547056" varName="node" />
+      <varInfo nodeId="8513716958726547052" varName="t" />
+      <varInfo nodeId="8513716958726547054" varName="operationContext" />
+      <varInfo nodeId="8513716958726547060" varName="rebuild" />
+      <varInfo nodeId="8513716958726547058" varName="editorComponent" />
+    </scopeInfo>
+  </root>
+  <root nodeId="8513716958726547095">
+    <nodeInfo nodeId="8513716958726547104" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547107" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="73" startPosition="46" endLine="74" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547117" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="75" startPosition="66" endLine="76" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547123" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="76" startPosition="82" endLine="77" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547131" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="77" startPosition="157" endLine="78" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547146" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="78" startPosition="228" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547115" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="74" startPosition="125" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8513716958726547116" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="75" startPosition="66" endLine="79" endPosition="33">
+      <varInfo nodeId="8513716958726547124" varName="tool" />
+      <varInfo nodeId="8513716958726547118" varName="tcc" />
+    </scopeInfo>
+  </root>
+  <root nodeId="8513716958726547154">
+    <nodeInfo nodeId="8513716958726547163" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547166" fileName="ShowTypeSystemTrace_Action.java" startLine="73" startPosition="46" endLine="74" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547176" fileName="ShowTypeSystemTrace_Action.java" startLine="75" startPosition="66" endLine="76" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547182" fileName="ShowTypeSystemTrace_Action.java" startLine="76" startPosition="82" endLine="77" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8513716958726547190" fileName="ShowTypeSystemTrace_Action.java" startLine="77" startPosition="157" endLine="78" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547205" fileName="ShowTypeSystemTrace_Action.java" startLine="78" startPosition="227" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547174" fileName="ShowTypeSystemTrace_Action.java" startLine="74" startPosition="125" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8513716958726547175" fileName="ShowTypeSystemTrace_Action.java" startLine="75" startPosition="66" endLine="79" endPosition="33">
+      <varInfo nodeId="8513716958726547183" varName="tool" />
+      <varInfo nodeId="8513716958726547177" varName="tcc" />
+    </scopeInfo>
+  </root>
+  <root nodeId="8513716958726604212">
+    <nodeInfo nodeId="8513716958726604216" fileName="TraceActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8586967776370449177">
     <nodeInfo nodeId="8586967776370449202" fileName="RenameLanguage_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

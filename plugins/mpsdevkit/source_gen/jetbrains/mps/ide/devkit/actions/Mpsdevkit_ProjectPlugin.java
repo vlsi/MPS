@@ -18,6 +18,7 @@ public class Mpsdevkit_ProjectPlugin extends BaseProjectPlugin {
     ListSequence.fromList(tools).addElement(new ModelRepository_Tool(project));
     ListSequence.fromList(tools).addElement(new ModuleRepository_Tool(project));
     ListSequence.fromList(tools).addElement(new NodeExplorer_Tool(project));
+    ListSequence.fromList(tools).addElement(new TraceTool_Tool(project));
     return tools;
   }
 }
