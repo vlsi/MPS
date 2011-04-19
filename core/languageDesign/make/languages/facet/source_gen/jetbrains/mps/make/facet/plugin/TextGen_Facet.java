@@ -20,8 +20,10 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -43,7 +45,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.textGen.TextGenManager;
@@ -108,13 +109,21 @@ public class TextGen_Facet implements IFacet {
                 );
                 final IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
                 final FilesDelta targetDelta = new FilesDelta(targetDir);
-                Sequence.fromIterable(gres.retainedModels()).visitAll(new IVisitor<SModelDescriptor>() {
+                Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                  public boolean accept(SModelDescriptor smd) {
+                    return !(GeneratorManager.isDoNotGenerate(smd));
+                  }
+                }).visitAll(new IVisitor<SModelDescriptor>() {
                   public void visit(SModelDescriptor smd) {
                     targetDelta.kept(FileGenerationUtil.getDefaultOutputDir(smd, targetDir));
                   }
                 });
                 final FilesDelta cachesDelta = new FilesDelta(cachesDir);
-                Sequence.fromIterable(gres.retainedModels()).visitAll(new IVisitor<SModelDescriptor>() {
+                Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                  public boolean accept(SModelDescriptor smd) {
+                    return !(GeneratorManager.isDoNotGenerate(smd));
+                  }
+                }).visitAll(new IVisitor<SModelDescriptor>() {
                   public void visit(SModelDescriptor smd) {
                     cachesDelta.kept(FileGenerationUtil.getDefaultOutputDir(smd, cachesDir));
                   }
