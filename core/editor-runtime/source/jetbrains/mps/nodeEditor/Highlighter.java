@@ -555,7 +555,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               if (myStopThread) {
                 return;
               }
-              Thread.sleep(500);
+              Thread.sleep(200);
             }
             while (dumbService.isDumb()) {
               if (myStopThread) {
@@ -566,8 +566,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             long current = System.currentTimeMillis();
             long commandTime = myLastCommandTime;
             long millisSinceLastCommand = current - commandTime;
-            if (millisSinceLastCommand < 500) {
-              long millis = 500 - millisSinceLastCommand;
+            if (millisSinceLastCommand < 200) {
+              long millis = 200 - millisSinceLastCommand;
               Thread.sleep(millis);
             } else {
               break;
@@ -587,7 +587,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) {
             return;
           }
-          Thread.sleep(500);
+          Thread.sleep(300);
         } catch (Throwable t) {
           LOG.error(t);
         }
