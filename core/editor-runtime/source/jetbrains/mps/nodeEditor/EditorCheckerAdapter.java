@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public abstract class EditorCheckerAdapter extends DisposableEditorChecker implements IEditorChecker, EditorMessageOwner {
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
@@ -54,18 +51,6 @@ public abstract class EditorCheckerAdapter extends DisposableEditorChecker imple
     return true;
   }
 
-  //for back compatibility
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
-                                           List<SModelEvent> events, boolean wasCheckedOnce) {
-    return new HashSet<EditorMessage>(0);
-  }
-
-  @Override
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    return createMessages(rootNode, operationContext, events, wasCheckedOnce);
-  }
-
-  @Override
   public void clear(SNode node, EditorComponent editor) {
 
   }
