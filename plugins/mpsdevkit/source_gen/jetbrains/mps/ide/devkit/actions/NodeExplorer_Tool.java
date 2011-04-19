@@ -45,6 +45,14 @@ public class NodeExplorer_Tool extends GeneratedTool {
     NodeExplorer_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
+  public void dispose() {
+    NodeExplorer_Tool.this.myPanel.getParent().remove(NodeExplorer_Tool.this.myPanel);
+    NodeExplorer_Tool.this.myPanel = null;
+    NodeExplorer_Tool.this.myNodeExplorer.clear();
+    NodeExplorer_Tool.this.myNodeExplorer = null;
+    super.dispose();
+  }
+
   public NodeExplorerComponent getNodeExplorer() {
     return NodeExplorer_Tool.this.myNodeExplorer;
   }

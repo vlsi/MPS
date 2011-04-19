@@ -24,8 +24,8 @@
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="158" startPosition="52" endLine="178" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
-  <unitInfo fileName="TodoViewer_Tool.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="365" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="TodoViewer_Tool.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="389" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
@@ -302,9 +302,11 @@
   <root nodeId="1209126436954">
     <nodeInfo nodeId="1216657110747" fileName="TodoViewer_Tool.java" startLine="14" startPosition="0" endLine="15" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1217598419950" fileName="TodoViewer_Tool.java" startLine="22" startPosition="24" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3344292066845077736" fileName="TodoViewer_Tool.java" startLine="26" startPosition="25" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216657147577" fileName="TodoViewer_Tool.java" startLine="31" startPosition="36" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="31" startPosition="36" endLine="32" endPosition="44" />
+    <nodeInfo nodeId="6982149494251279318" fileName="TodoViewer_Tool.java" startLine="26" startPosition="25" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3344292066845077736" fileName="TodoViewer_Tool.java" startLine="27" startPosition="90" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6982149494251360426" fileName="TodoViewer_Tool.java" startLine="28" startPosition="47" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216657147577" fileName="TodoViewer_Tool.java" startLine="33" startPosition="36" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="33" startPosition="36" endLine="34" endPosition="44" />
   </root>
   <root nodeId="1217597602946">
     <nodeInfo nodeId="1217598015336" fileName="ShowTodoViewer_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -664,8 +666,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="16" startPosition="30" endLine="21" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773202" varName="opening" />
       <varInfo nodeId="155142699038773204" varName="context" />
+      <varInfo nodeId="155142699038773202" varName="opening" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="25" startPosition="129" endLine="30" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="161" startPosition="105" endLine="166" endPosition="7">
@@ -681,8 +683,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="220" startPosition="93" endLine="230" endPosition="5">
-      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773953" varName="nodeCell" />
+      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="103" startPosition="30" endLine="114" endPosition="7">
@@ -743,8 +745,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="22" startPosition="85" endLine="65" endPosition="19">
-      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773367" varName="parExpr" />
+      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -758,8 +760,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="68" startPosition="106" endLine="121" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773575" varName="binOpCheck" />
+      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>

@@ -24,7 +24,9 @@ public class TodoViewer_Tool extends GeneratedTool {
   }
 
   public void dispose() {
+    TodoViewer_Tool.this.myComponent.getParent().remove(TodoViewer_Tool.this.myComponent);
     TodoViewer_Tool.this.myComponent.dispose();
+    TodoViewer_Tool.this.myComponent = null;
     super.dispose();
   }
 
