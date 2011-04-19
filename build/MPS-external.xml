@@ -377,12 +377,6 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">
