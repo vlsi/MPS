@@ -23,16 +23,16 @@
   <unitInfo fileName="Antiquotation_Editor.java" startLine="168" startPosition="83" endLine="184" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor$4" />
   <unitInfo fileName="_Quotation_createModel.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._Quotation_createModel$_Quotation_createModel_Action0" />
   <unitInfo fileName="_Quotation_createModel.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._Quotation_createModel" />
-  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="37" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action0" />
-  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="95" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action1" />
-  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="228" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action3" />
-  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="155" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action2" />
+  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="36" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action0" />
+  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="94" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action1" />
+  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="227" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action3" />
+  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="154" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action2" />
   <unitInfo fileName="Quotation_Editor.java" startLine="24" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor" />
   <unitInfo fileName="PropertyAntiquotation_Editor.java" startLine="29" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor" />
   <unitInfo fileName="ReferenceAntiquotation_Editor.java" startLine="29" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor" />
   <unitInfo fileName="ListAntiquotation_Editor.java" startLine="28" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor" />
   <unitInfo fileName="Antiquotation_Editor.java" startLine="28" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor" />
-  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="23" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap" />
+  <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="22" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap" />
   <root nodeId="1196350915488">
     <nodeInfo nodeId="1226062536564" fileName="Antiquotation_Editor.java" startLine="142" startPosition="31" endLine="143" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062536572" fileName="Antiquotation_Editor.java" startLine="144" startPosition="56" endLine="145" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -114,121 +114,121 @@
     </scopeInfo>
   </root>
   <root nodeId="1196350915740">
-    <nodeInfo nodeId="1196350915745" fileName="_CreateAntiquotationKeyMap.java" startLine="70" startPosition="152" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915749" fileName="_CreateAntiquotationKeyMap.java" startLine="74" startPosition="146" endLine="75" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915760" fileName="_CreateAntiquotationKeyMap.java" startLine="76" startPosition="32" endLine="77" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8843103228116876445" fileName="_CreateAntiquotationKeyMap.java" startLine="79" startPosition="110" endLine="80" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915775" fileName="_CreateAntiquotationKeyMap.java" startLine="80" startPosition="226" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237749513046" fileName="_CreateAntiquotationKeyMap.java" startLine="82" startPosition="7" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915788" fileName="_CreateAntiquotationKeyMap.java" startLine="84" startPosition="205" endLine="85" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915792" fileName="_CreateAntiquotationKeyMap.java" startLine="86" startPosition="12" endLine="87" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915810" fileName="_CreateAntiquotationKeyMap.java" startLine="128" startPosition="152" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915814" fileName="_CreateAntiquotationKeyMap.java" startLine="132" startPosition="146" endLine="133" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915825" fileName="_CreateAntiquotationKeyMap.java" startLine="134" startPosition="32" endLine="135" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915828" fileName="_CreateAntiquotationKeyMap.java" startLine="137" startPosition="114" endLine="138" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915834" fileName="_CreateAntiquotationKeyMap.java" startLine="138" startPosition="70" endLine="139" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1196350915838" fileName="_CreateAntiquotationKeyMap.java" startLine="139" startPosition="38" endLine="140" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915843" fileName="_CreateAntiquotationKeyMap.java" startLine="140" startPosition="206" endLine="141" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915848" fileName="_CreateAntiquotationKeyMap.java" startLine="142" startPosition="7" endLine="143" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915856" fileName="_CreateAntiquotationKeyMap.java" startLine="144" startPosition="211" endLine="145" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915860" fileName="_CreateAntiquotationKeyMap.java" startLine="146" startPosition="12" endLine="147" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915875" fileName="_CreateAntiquotationKeyMap.java" startLine="188" startPosition="152" endLine="189" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915879" fileName="_CreateAntiquotationKeyMap.java" startLine="192" startPosition="146" endLine="193" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915884" fileName="_CreateAntiquotationKeyMap.java" startLine="193" startPosition="64" endLine="194" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915889" fileName="_CreateAntiquotationKeyMap.java" startLine="194" startPosition="121" endLine="195" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915899" fileName="_CreateAntiquotationKeyMap.java" startLine="196" startPosition="112" endLine="197" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915909" fileName="_CreateAntiquotationKeyMap.java" startLine="199" startPosition="32" endLine="200" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915910" fileName="_CreateAntiquotationKeyMap.java" startLine="201" startPosition="7" endLine="202" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915922" fileName="_CreateAntiquotationKeyMap.java" startLine="203" startPosition="88" endLine="204" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350915923" fileName="_CreateAntiquotationKeyMap.java" startLine="205" startPosition="7" endLine="206" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915931" fileName="_CreateAntiquotationKeyMap.java" startLine="207" startPosition="119" endLine="208" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196350915938" fileName="_CreateAntiquotationKeyMap.java" startLine="208" startPosition="141" endLine="209" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1237749579965" fileName="_CreateAntiquotationKeyMap.java" startLine="209" startPosition="38" endLine="210" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915954" fileName="_CreateAntiquotationKeyMap.java" startLine="210" startPosition="217" endLine="211" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237749295022" fileName="_CreateAntiquotationKeyMap.java" startLine="213" startPosition="220" endLine="214" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6489343236075024243" fileName="_CreateAntiquotationKeyMap.java" startLine="215" startPosition="14" endLine="216" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6489343236075024258" fileName="_CreateAntiquotationKeyMap.java" startLine="217" startPosition="46" endLine="218" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196866967521" fileName="_CreateAntiquotationKeyMap.java" startLine="261" startPosition="152" endLine="262" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196866967525" fileName="_CreateAntiquotationKeyMap.java" startLine="265" startPosition="146" endLine="266" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866967530" fileName="_CreateAntiquotationKeyMap.java" startLine="266" startPosition="64" endLine="267" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866967555" fileName="_CreateAntiquotationKeyMap.java" startLine="268" startPosition="32" endLine="269" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196867106818" fileName="_CreateAntiquotationKeyMap.java" startLine="271" startPosition="59" endLine="272" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196867115039" fileName="_CreateAntiquotationKeyMap.java" startLine="273" startPosition="7" endLine="274" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866967569" fileName="_CreateAntiquotationKeyMap.java" startLine="274" startPosition="83" endLine="275" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866967577" fileName="_CreateAntiquotationKeyMap.java" startLine="276" startPosition="118" endLine="277" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866967584" fileName="_CreateAntiquotationKeyMap.java" startLine="277" startPosition="141" endLine="278" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1237749165625" fileName="_CreateAntiquotationKeyMap.java" startLine="278" startPosition="38" endLine="279" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196866967600" fileName="_CreateAntiquotationKeyMap.java" startLine="279" startPosition="228" endLine="280" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237749112675" fileName="_CreateAntiquotationKeyMap.java" startLine="282" startPosition="231" endLine="283" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6489343236075024313" fileName="_CreateAntiquotationKeyMap.java" startLine="284" startPosition="14" endLine="285" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6489343236075024328" fileName="_CreateAntiquotationKeyMap.java" startLine="286" startPosition="46" endLine="287" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350915755" fileName="_CreateAntiquotationKeyMap.java" startLine="75" startPosition="69" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915820" fileName="_CreateAntiquotationKeyMap.java" startLine="133" startPosition="69" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915897" fileName="_CreateAntiquotationKeyMap.java" startLine="195" startPosition="82" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915904" fileName="_CreateAntiquotationKeyMap.java" startLine="198" startPosition="7" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915914" fileName="_CreateAntiquotationKeyMap.java" startLine="202" startPosition="108" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6489343236075024256" fileName="_CreateAntiquotationKeyMap.java" startLine="216" startPosition="310" endLine="219" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196866967550" fileName="_CreateAntiquotationKeyMap.java" startLine="267" startPosition="121" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196867024477" fileName="_CreateAntiquotationKeyMap.java" startLine="270" startPosition="7" endLine="273" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6489343236075024326" fileName="_CreateAntiquotationKeyMap.java" startLine="285" startPosition="319" endLine="288" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915761" fileName="_CreateAntiquotationKeyMap.java" startLine="78" startPosition="7" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915786" fileName="_CreateAntiquotationKeyMap.java" startLine="83" startPosition="59" endLine="87" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915854" fileName="_CreateAntiquotationKeyMap.java" startLine="143" startPosition="59" endLine="147" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915981" fileName="_CreateAntiquotationKeyMap.java" startLine="215" startPosition="12" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196866967627" fileName="_CreateAntiquotationKeyMap.java" startLine="284" startPosition="12" endLine="289" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196350915826" fileName="_CreateAntiquotationKeyMap.java" startLine="136" startPosition="7" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915929" fileName="_CreateAntiquotationKeyMap.java" startLine="206" startPosition="64" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196866967575" fileName="_CreateAntiquotationKeyMap.java" startLine="275" startPosition="106" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196350915965" fileName="_CreateAntiquotationKeyMap.java" startLine="212" startPosition="7" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196866967611" fileName="_CreateAntiquotationKeyMap.java" startLine="281" startPosition="7" endLine="289" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1196350915744" fileName="_CreateAntiquotationKeyMap.java" startLine="70" startPosition="152" endLine="71" endPosition="18" />
-    <scopeInfo nodeId="1196350915759" fileName="_CreateAntiquotationKeyMap.java" startLine="76" startPosition="32" endLine="77" endPosition="15" />
-    <scopeInfo nodeId="1196350915787" fileName="_CreateAntiquotationKeyMap.java" startLine="84" startPosition="205" endLine="85" endPosition="199" />
-    <scopeInfo nodeId="1196350915809" fileName="_CreateAntiquotationKeyMap.java" startLine="128" startPosition="152" endLine="129" endPosition="18" />
-    <scopeInfo nodeId="1196350915824" fileName="_CreateAntiquotationKeyMap.java" startLine="134" startPosition="32" endLine="135" endPosition="15" />
-    <scopeInfo nodeId="1196350915855" fileName="_CreateAntiquotationKeyMap.java" startLine="144" startPosition="211" endLine="145" endPosition="203" />
-    <scopeInfo nodeId="1196350915874" fileName="_CreateAntiquotationKeyMap.java" startLine="188" startPosition="152" endLine="189" endPosition="18" />
-    <scopeInfo nodeId="1196350915898" fileName="_CreateAntiquotationKeyMap.java" startLine="196" startPosition="112" endLine="197" endPosition="15" />
-    <scopeInfo nodeId="1196350915908" fileName="_CreateAntiquotationKeyMap.java" startLine="199" startPosition="32" endLine="200" endPosition="15" />
-    <scopeInfo nodeId="1196350915921" fileName="_CreateAntiquotationKeyMap.java" startLine="203" startPosition="88" endLine="204" endPosition="15" />
-    <scopeInfo nodeId="1196350915973" fileName="_CreateAntiquotationKeyMap.java" startLine="213" startPosition="220" endLine="214" endPosition="214" />
-    <scopeInfo nodeId="6489343236075024257" fileName="_CreateAntiquotationKeyMap.java" startLine="217" startPosition="46" endLine="218" endPosition="158" />
-    <scopeInfo nodeId="1196866967520" fileName="_CreateAntiquotationKeyMap.java" startLine="261" startPosition="152" endLine="262" endPosition="18" />
-    <scopeInfo nodeId="1196866967554" fileName="_CreateAntiquotationKeyMap.java" startLine="268" startPosition="32" endLine="269" endPosition="15" />
-    <scopeInfo nodeId="1196867024478" fileName="_CreateAntiquotationKeyMap.java" startLine="271" startPosition="59" endLine="272" endPosition="15" />
-    <scopeInfo nodeId="1196866967619" fileName="_CreateAntiquotationKeyMap.java" startLine="282" startPosition="231" endLine="283" endPosition="225" />
-    <scopeInfo nodeId="6489343236075024327" fileName="_CreateAntiquotationKeyMap.java" startLine="286" startPosition="46" endLine="287" endPosition="157" />
-    <scopeInfo nodeId="1196350915762" fileName="_CreateAntiquotationKeyMap.java" startLine="79" startPosition="110" endLine="81" endPosition="15" />
-    <scopeInfo nodeId="1196350915827" fileName="_CreateAntiquotationKeyMap.java" startLine="137" startPosition="114" endLine="141" endPosition="15">
+    <nodeInfo nodeId="1196350915745" fileName="_CreateAntiquotationKeyMap.java" startLine="69" startPosition="152" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915749" fileName="_CreateAntiquotationKeyMap.java" startLine="73" startPosition="146" endLine="74" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915760" fileName="_CreateAntiquotationKeyMap.java" startLine="75" startPosition="32" endLine="76" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8843103228116876445" fileName="_CreateAntiquotationKeyMap.java" startLine="78" startPosition="110" endLine="79" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915775" fileName="_CreateAntiquotationKeyMap.java" startLine="79" startPosition="226" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237749513046" fileName="_CreateAntiquotationKeyMap.java" startLine="81" startPosition="7" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915788" fileName="_CreateAntiquotationKeyMap.java" startLine="83" startPosition="205" endLine="84" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915792" fileName="_CreateAntiquotationKeyMap.java" startLine="85" startPosition="12" endLine="86" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915810" fileName="_CreateAntiquotationKeyMap.java" startLine="127" startPosition="152" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915814" fileName="_CreateAntiquotationKeyMap.java" startLine="131" startPosition="146" endLine="132" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915825" fileName="_CreateAntiquotationKeyMap.java" startLine="133" startPosition="32" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915828" fileName="_CreateAntiquotationKeyMap.java" startLine="136" startPosition="114" endLine="137" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915834" fileName="_CreateAntiquotationKeyMap.java" startLine="137" startPosition="70" endLine="138" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1196350915838" fileName="_CreateAntiquotationKeyMap.java" startLine="138" startPosition="38" endLine="139" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915843" fileName="_CreateAntiquotationKeyMap.java" startLine="139" startPosition="206" endLine="140" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915848" fileName="_CreateAntiquotationKeyMap.java" startLine="141" startPosition="7" endLine="142" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915856" fileName="_CreateAntiquotationKeyMap.java" startLine="143" startPosition="211" endLine="144" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915860" fileName="_CreateAntiquotationKeyMap.java" startLine="145" startPosition="12" endLine="146" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915875" fileName="_CreateAntiquotationKeyMap.java" startLine="187" startPosition="152" endLine="188" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915879" fileName="_CreateAntiquotationKeyMap.java" startLine="191" startPosition="146" endLine="192" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915884" fileName="_CreateAntiquotationKeyMap.java" startLine="192" startPosition="64" endLine="193" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915889" fileName="_CreateAntiquotationKeyMap.java" startLine="193" startPosition="121" endLine="194" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915899" fileName="_CreateAntiquotationKeyMap.java" startLine="195" startPosition="112" endLine="196" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915909" fileName="_CreateAntiquotationKeyMap.java" startLine="198" startPosition="32" endLine="199" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915910" fileName="_CreateAntiquotationKeyMap.java" startLine="200" startPosition="7" endLine="201" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915922" fileName="_CreateAntiquotationKeyMap.java" startLine="202" startPosition="88" endLine="203" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196350915923" fileName="_CreateAntiquotationKeyMap.java" startLine="204" startPosition="7" endLine="205" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915931" fileName="_CreateAntiquotationKeyMap.java" startLine="206" startPosition="119" endLine="207" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196350915938" fileName="_CreateAntiquotationKeyMap.java" startLine="207" startPosition="141" endLine="208" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1237749579965" fileName="_CreateAntiquotationKeyMap.java" startLine="208" startPosition="38" endLine="209" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915954" fileName="_CreateAntiquotationKeyMap.java" startLine="209" startPosition="217" endLine="210" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237749295022" fileName="_CreateAntiquotationKeyMap.java" startLine="212" startPosition="220" endLine="213" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6489343236075024243" fileName="_CreateAntiquotationKeyMap.java" startLine="214" startPosition="14" endLine="215" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6489343236075024258" fileName="_CreateAntiquotationKeyMap.java" startLine="216" startPosition="46" endLine="217" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196866967521" fileName="_CreateAntiquotationKeyMap.java" startLine="260" startPosition="152" endLine="261" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196866967525" fileName="_CreateAntiquotationKeyMap.java" startLine="264" startPosition="146" endLine="265" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196866967530" fileName="_CreateAntiquotationKeyMap.java" startLine="265" startPosition="64" endLine="266" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196866967555" fileName="_CreateAntiquotationKeyMap.java" startLine="267" startPosition="32" endLine="268" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196867106818" fileName="_CreateAntiquotationKeyMap.java" startLine="270" startPosition="59" endLine="271" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196867115039" fileName="_CreateAntiquotationKeyMap.java" startLine="272" startPosition="7" endLine="273" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196866967569" fileName="_CreateAntiquotationKeyMap.java" startLine="273" startPosition="83" endLine="274" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196866967577" fileName="_CreateAntiquotationKeyMap.java" startLine="275" startPosition="118" endLine="276" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196866967584" fileName="_CreateAntiquotationKeyMap.java" startLine="276" startPosition="141" endLine="277" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1237749165625" fileName="_CreateAntiquotationKeyMap.java" startLine="277" startPosition="38" endLine="278" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196866967600" fileName="_CreateAntiquotationKeyMap.java" startLine="278" startPosition="228" endLine="279" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237749112675" fileName="_CreateAntiquotationKeyMap.java" startLine="281" startPosition="231" endLine="282" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6489343236075024313" fileName="_CreateAntiquotationKeyMap.java" startLine="283" startPosition="14" endLine="284" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6489343236075024328" fileName="_CreateAntiquotationKeyMap.java" startLine="285" startPosition="46" endLine="286" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196350915755" fileName="_CreateAntiquotationKeyMap.java" startLine="74" startPosition="69" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915820" fileName="_CreateAntiquotationKeyMap.java" startLine="132" startPosition="69" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915897" fileName="_CreateAntiquotationKeyMap.java" startLine="194" startPosition="57" endLine="197" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915904" fileName="_CreateAntiquotationKeyMap.java" startLine="197" startPosition="7" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915914" fileName="_CreateAntiquotationKeyMap.java" startLine="201" startPosition="108" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6489343236075024256" fileName="_CreateAntiquotationKeyMap.java" startLine="215" startPosition="310" endLine="218" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196866967550" fileName="_CreateAntiquotationKeyMap.java" startLine="266" startPosition="121" endLine="269" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196867024477" fileName="_CreateAntiquotationKeyMap.java" startLine="269" startPosition="7" endLine="272" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6489343236075024326" fileName="_CreateAntiquotationKeyMap.java" startLine="284" startPosition="319" endLine="287" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915761" fileName="_CreateAntiquotationKeyMap.java" startLine="77" startPosition="7" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915786" fileName="_CreateAntiquotationKeyMap.java" startLine="82" startPosition="59" endLine="86" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915854" fileName="_CreateAntiquotationKeyMap.java" startLine="142" startPosition="59" endLine="146" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915981" fileName="_CreateAntiquotationKeyMap.java" startLine="214" startPosition="12" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196866967627" fileName="_CreateAntiquotationKeyMap.java" startLine="283" startPosition="12" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196350915826" fileName="_CreateAntiquotationKeyMap.java" startLine="135" startPosition="7" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915929" fileName="_CreateAntiquotationKeyMap.java" startLine="205" startPosition="64" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196866967575" fileName="_CreateAntiquotationKeyMap.java" startLine="274" startPosition="106" endLine="280" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196350915965" fileName="_CreateAntiquotationKeyMap.java" startLine="211" startPosition="7" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196866967611" fileName="_CreateAntiquotationKeyMap.java" startLine="280" startPosition="7" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1196350915744" fileName="_CreateAntiquotationKeyMap.java" startLine="69" startPosition="152" endLine="70" endPosition="18" />
+    <scopeInfo nodeId="1196350915759" fileName="_CreateAntiquotationKeyMap.java" startLine="75" startPosition="32" endLine="76" endPosition="15" />
+    <scopeInfo nodeId="1196350915787" fileName="_CreateAntiquotationKeyMap.java" startLine="83" startPosition="205" endLine="84" endPosition="199" />
+    <scopeInfo nodeId="1196350915809" fileName="_CreateAntiquotationKeyMap.java" startLine="127" startPosition="152" endLine="128" endPosition="18" />
+    <scopeInfo nodeId="1196350915824" fileName="_CreateAntiquotationKeyMap.java" startLine="133" startPosition="32" endLine="134" endPosition="15" />
+    <scopeInfo nodeId="1196350915855" fileName="_CreateAntiquotationKeyMap.java" startLine="143" startPosition="211" endLine="144" endPosition="203" />
+    <scopeInfo nodeId="1196350915874" fileName="_CreateAntiquotationKeyMap.java" startLine="187" startPosition="152" endLine="188" endPosition="18" />
+    <scopeInfo nodeId="1196350915898" fileName="_CreateAntiquotationKeyMap.java" startLine="195" startPosition="112" endLine="196" endPosition="15" />
+    <scopeInfo nodeId="1196350915908" fileName="_CreateAntiquotationKeyMap.java" startLine="198" startPosition="32" endLine="199" endPosition="15" />
+    <scopeInfo nodeId="1196350915921" fileName="_CreateAntiquotationKeyMap.java" startLine="202" startPosition="88" endLine="203" endPosition="15" />
+    <scopeInfo nodeId="1196350915973" fileName="_CreateAntiquotationKeyMap.java" startLine="212" startPosition="220" endLine="213" endPosition="214" />
+    <scopeInfo nodeId="6489343236075024257" fileName="_CreateAntiquotationKeyMap.java" startLine="216" startPosition="46" endLine="217" endPosition="158" />
+    <scopeInfo nodeId="1196866967520" fileName="_CreateAntiquotationKeyMap.java" startLine="260" startPosition="152" endLine="261" endPosition="18" />
+    <scopeInfo nodeId="1196866967554" fileName="_CreateAntiquotationKeyMap.java" startLine="267" startPosition="32" endLine="268" endPosition="15" />
+    <scopeInfo nodeId="1196867024478" fileName="_CreateAntiquotationKeyMap.java" startLine="270" startPosition="59" endLine="271" endPosition="15" />
+    <scopeInfo nodeId="1196866967619" fileName="_CreateAntiquotationKeyMap.java" startLine="281" startPosition="231" endLine="282" endPosition="225" />
+    <scopeInfo nodeId="6489343236075024327" fileName="_CreateAntiquotationKeyMap.java" startLine="285" startPosition="46" endLine="286" endPosition="157" />
+    <scopeInfo nodeId="1196350915762" fileName="_CreateAntiquotationKeyMap.java" startLine="78" startPosition="110" endLine="80" endPosition="15" />
+    <scopeInfo nodeId="1196350915827" fileName="_CreateAntiquotationKeyMap.java" startLine="136" startPosition="114" endLine="140" endPosition="15">
       <varInfo nodeId="1196350915829" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350915930" fileName="_CreateAntiquotationKeyMap.java" startLine="207" startPosition="119" endLine="211" endPosition="15">
+    <scopeInfo nodeId="1196350915930" fileName="_CreateAntiquotationKeyMap.java" startLine="206" startPosition="119" endLine="210" endPosition="15">
       <varInfo nodeId="1196350915932" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350915982" fileName="_CreateAntiquotationKeyMap.java" startLine="215" startPosition="14" endLine="219" endPosition="9">
+    <scopeInfo nodeId="1196350915982" fileName="_CreateAntiquotationKeyMap.java" startLine="214" startPosition="14" endLine="218" endPosition="9">
       <varInfo nodeId="6489343236075024244" varName="referenceAntiquotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1196866967576" fileName="_CreateAntiquotationKeyMap.java" startLine="276" startPosition="118" endLine="280" endPosition="15">
+    <scopeInfo nodeId="1196866967576" fileName="_CreateAntiquotationKeyMap.java" startLine="275" startPosition="118" endLine="279" endPosition="15">
       <varInfo nodeId="1196866967578" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1196866967628" fileName="_CreateAntiquotationKeyMap.java" startLine="284" startPosition="14" endLine="288" endPosition="9">
+    <scopeInfo nodeId="1196866967628" fileName="_CreateAntiquotationKeyMap.java" startLine="283" startPosition="14" endLine="287" endPosition="9">
       <varInfo nodeId="6489343236075024314" varName="propertyAntiquotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350915748" fileName="_CreateAntiquotationKeyMap.java" startLine="74" startPosition="146" endLine="87" endPosition="253">
+    <scopeInfo nodeId="1196350915748" fileName="_CreateAntiquotationKeyMap.java" startLine="73" startPosition="146" endLine="86" endPosition="253">
       <varInfo nodeId="1196350915750" varName="contextNode" />
       <varInfo nodeId="1237749513047" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350915813" fileName="_CreateAntiquotationKeyMap.java" startLine="132" startPosition="146" endLine="147" endPosition="261">
+    <scopeInfo nodeId="1196350915813" fileName="_CreateAntiquotationKeyMap.java" startLine="131" startPosition="146" endLine="146" endPosition="261">
       <varInfo nodeId="1196350915815" varName="contextNode" />
       <varInfo nodeId="1196350915849" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1196866967524" fileName="_CreateAntiquotationKeyMap.java" startLine="265" startPosition="146" endLine="289" endPosition="7">
+    <scopeInfo nodeId="1196866967524" fileName="_CreateAntiquotationKeyMap.java" startLine="264" startPosition="146" endLine="288" endPosition="7">
       <varInfo nodeId="1196866967570" varName="propertyName" />
       <varInfo nodeId="1196867115040" varName="editorCell_Property" />
       <varInfo nodeId="1196866967531" varName="contextNode" />
       <varInfo nodeId="1196866967526" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350915878" fileName="_CreateAntiquotationKeyMap.java" startLine="192" startPosition="146" endLine="220" endPosition="7">
+    <scopeInfo nodeId="1196350915878" fileName="_CreateAntiquotationKeyMap.java" startLine="191" startPosition="146" endLine="219" endPosition="7">
       <varInfo nodeId="1196350915890" varName="linkNode" />
       <varInfo nodeId="1196350915885" varName="contextNode" />
       <varInfo nodeId="1196350915911" varName="link" />

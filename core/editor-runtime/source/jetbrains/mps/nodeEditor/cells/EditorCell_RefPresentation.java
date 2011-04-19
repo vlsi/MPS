@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -43,8 +41,8 @@ public class EditorCell_RefPresentation {
     return result;
   }
 
-  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, LinkDeclaration linkDeclaration) {
-    MyAccessor accessor = new MyAccessor(context, node, refNode, BaseAdapter.fromAdapter(linkDeclaration));
+  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
+    MyAccessor accessor = new MyAccessor(context, node, refNode, linkDeclaration);
     EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
     return result;
   }
@@ -100,7 +98,7 @@ public class EditorCell_RefPresentation {
         node.getParent(),
         node,
         node.getConceptDeclarationNode(),
-        BaseAdapter.fromAdapter(refNodeCell.getLinkDeclaration()),
+        refNodeCell.getLinkDeclaration(),
         myContextCell.getEditorContext().getOperationContext()
       );
 

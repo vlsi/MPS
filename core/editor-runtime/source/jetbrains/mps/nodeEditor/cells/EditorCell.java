@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -86,7 +85,7 @@ public interface EditorCell extends Cloneable {
 
   // FIXME
   void setLinkDeclaration(SNode link);
-  LinkDeclaration getLinkDeclaration();
+  SNode getLinkDeclaration();
 
   boolean isReferenceCell();
 

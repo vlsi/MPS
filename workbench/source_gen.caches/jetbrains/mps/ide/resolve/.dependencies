@@ -71,7 +71,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
   </dependency>
   <dependency className="jetbrains.mps.ide.resolve.Resolver" file="Resolver.java">
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -96,7 +96,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.ide.resolve.ResolveResult" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="java.util.HashSet" />

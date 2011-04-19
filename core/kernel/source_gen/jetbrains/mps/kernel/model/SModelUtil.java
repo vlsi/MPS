@@ -235,6 +235,10 @@ public class SModelUtil {
     return SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "1..n", "0..1");
   }
 
+  public static boolean isAggregation(@NotNull SNode linkDeclaration) {
+    return SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference");
+  }
+
   public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
     return SLinkOperations.getTarget(linkDeclaration, "target", false);
   }

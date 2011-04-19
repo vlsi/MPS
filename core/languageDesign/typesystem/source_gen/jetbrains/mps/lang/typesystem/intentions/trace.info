@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor" />
-  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="108" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a2a7" />
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="107" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a2a7" />
   <unitInfo fileName="MakeInequalityCheckOnly_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
-  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="70" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
   <unitInfo fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
   <unitInfo fileName="FlipInequality_Intention.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
-  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="19" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
   <root nodeId="1195490883262">
     <nodeInfo nodeId="1195491061285" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195491639092" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="438" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -37,20 +37,20 @@
     </scopeInfo>
   </root>
   <root nodeId="3302086321380606109">
-    <nodeInfo nodeId="3302086321380616699" fileName="CreateTypesystemIntention_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3302086321380616666" fileName="CreateTypesystemIntention_Intention.java" startLine="51" startPosition="230" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3302086321380616677" fileName="CreateTypesystemIntention_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3302086321380616754" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3302086321380616796" fileName="CreateTypesystemIntention_Intention.java" startLine="58" startPosition="109" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3302086321380616787" fileName="CreateTypesystemIntention_Intention.java" startLine="59" startPosition="0" endLine="60" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3302086321380616795" fileName="CreateTypesystemIntention_Intention.java" startLine="60" startPosition="121" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3302086321380616744" fileName="CreateTypesystemIntention_Intention.java" startLine="61" startPosition="0" endLine="62" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3302086321380616722" fileName="CreateTypesystemIntention_Intention.java" startLine="62" startPosition="79" endLine="63" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3302086321380616664" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="90" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="3302086321380606111" fileName="CreateTypesystemIntention_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="33" />
-    <scopeInfo nodeId="3302086321380616665" fileName="CreateTypesystemIntention_Intention.java" startLine="51" startPosition="230" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="3302086321380616650" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="90" endLine="54" endPosition="103" />
-    <scopeInfo nodeId="3302086321380606113" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="76" endLine="63" endPosition="111">
+    <nodeInfo nodeId="3302086321380616699" fileName="CreateTypesystemIntention_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3302086321380616666" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="182" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3302086321380616677" fileName="CreateTypesystemIntention_Intention.java" startLine="52" startPosition="5" endLine="53" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3302086321380616754" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3302086321380616796" fileName="CreateTypesystemIntention_Intention.java" startLine="57" startPosition="109" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3302086321380616787" fileName="CreateTypesystemIntention_Intention.java" startLine="58" startPosition="0" endLine="59" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3302086321380616795" fileName="CreateTypesystemIntention_Intention.java" startLine="59" startPosition="121" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3302086321380616744" fileName="CreateTypesystemIntention_Intention.java" startLine="60" startPosition="0" endLine="61" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3302086321380616722" fileName="CreateTypesystemIntention_Intention.java" startLine="61" startPosition="79" endLine="62" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3302086321380616664" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="90" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="3302086321380606111" fileName="CreateTypesystemIntention_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="33" />
+    <scopeInfo nodeId="3302086321380616665" fileName="CreateTypesystemIntention_Intention.java" startLine="50" startPosition="182" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="3302086321380616650" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="90" endLine="53" endPosition="103" />
+    <scopeInfo nodeId="3302086321380606113" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="76" endLine="62" endPosition="111">
       <varInfo nodeId="3302086321380616788" varName="quickFixCall" />
       <varInfo nodeId="3302086321380616755" varName="quickFixNode" />
     </scopeInfo>

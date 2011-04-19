@@ -149,7 +149,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.nodeEditor.EditorsFinderManager</implementation-class>
+      <implementation-class>jetbrains.mps.editor.runtime.impl.EditorsFinderManager</implementation-class>
     </component>
 
     <component>

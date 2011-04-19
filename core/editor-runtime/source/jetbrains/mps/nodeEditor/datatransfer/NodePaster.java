@@ -19,10 +19,8 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
+import jetbrains.mps.editor.runtime.impl.DataTransferUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SModel;
@@ -154,7 +152,7 @@ public class NodePaster {
 
   private boolean canPasteToTarget(SNode pasteTarget, String role, boolean allowOneCardinality) {
     SNode link = findSuitableLink(pasteTarget.getConceptDeclarationNode(), role);
-    if (link != null && ((LinkDeclaration) link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {
+    if (link != null && SModelUtil.isAggregation(link)) {
       if (!allowOneCardinality) {
         return SModelUtil.isMultipleLinkDeclaration(link);
       } else {
@@ -185,7 +183,7 @@ public class NodePaster {
     }
 
     // delete original anchor if it was abstract concept
-    if (anchorNode != null && anchorNode.getConceptDeclarationNode().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
+    if (anchorNode != null && DataTransferUtil.isAbstract(anchorNode.getConceptDeclarationNode())) {
       anchorNode.delete();
     }
   }

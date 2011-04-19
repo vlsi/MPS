@@ -8,126 +8,126 @@
   <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="71" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor$_Inline_souhyd_a1a" />
   <unitInfo fileName="OrPattern_Editor.java" startLine="148" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$variableListHandler_oeflkv_b0" />
   <unitInfo fileName="OrPatternClause_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternClause_Editor" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="44" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action0" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="87" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action1" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="130" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action2" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="173" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action3" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="43" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action0" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="86" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action1" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="129" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action2" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="172" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action3" />
   <unitInfo fileName="OrPattern_Editor.java" startLine="102" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$clauseListHandler_oeflkv_b0" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="218" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action4" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="217" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action4" />
   <unitInfo fileName="LinkPatternVariableDeclaration_Editor.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.LinkPatternVariableDeclaration_Editor" />
   <unitInfo fileName="PropertyPatternVariableDeclaration_Editor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PropertyPatternVariableDeclaration_Editor" />
   <unitInfo fileName="PatternVariableDeclaration_Editor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableDeclaration_Editor" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="265" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action5" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="315" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action6" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="264" startPosition="0" endLine="313" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action5" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="314" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action6" />
   <unitInfo fileName="ListPattern_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.ListPattern_Editor" />
   <unitInfo fileName="AsPattern_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.AsPattern_Editor" />
   <unitInfo fileName="PatternExpression_Editor.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternExpression_Editor" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="371" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action7" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="370" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action7" />
   <unitInfo fileName="PatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor" />
   <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor" />
   <unitInfo fileName="OrPattern_Editor.java" startLine="23" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor" />
   <unitInfo fileName="ActionAsPattern_Editor.java" startLine="21" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.ActionAsPattern_Editor" />
-  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="22" startPosition="0" endLine="438" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap" />
+  <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="21" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap" />
   <root nodeId="1136721133135">
-    <nodeInfo nodeId="1163601043079" fileName="_PatternExpression_KeyMap.java" startLine="74" startPosition="152" endLine="75" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8843103228116876165" fileName="_PatternExpression_KeyMap.java" startLine="78" startPosition="146" endLine="79" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1163601484194" fileName="_PatternExpression_KeyMap.java" startLine="117" startPosition="152" endLine="118" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237750176894" fileName="_PatternExpression_KeyMap.java" startLine="121" startPosition="146" endLine="122" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1163602205428" fileName="_PatternExpression_KeyMap.java" startLine="160" startPosition="152" endLine="161" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1163602232887" fileName="_PatternExpression_KeyMap.java" startLine="164" startPosition="146" endLine="165" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1163602977578" fileName="_PatternExpression_KeyMap.java" startLine="203" startPosition="152" endLine="204" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1163603121640" fileName="_PatternExpression_KeyMap.java" startLine="207" startPosition="146" endLine="208" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1163603188409" fileName="_PatternExpression_KeyMap.java" startLine="208" startPosition="87" endLine="209" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8843103228116876359" fileName="_PatternExpression_KeyMap.java" startLine="209" startPosition="91" endLine="210" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1163603527179" fileName="_PatternExpression_KeyMap.java" startLine="248" startPosition="152" endLine="249" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1163603670564" fileName="_PatternExpression_KeyMap.java" startLine="252" startPosition="146" endLine="253" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237750121385" fileName="_PatternExpression_KeyMap.java" startLine="253" startPosition="73" endLine="254" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1163603950652" fileName="_PatternExpression_KeyMap.java" startLine="255" startPosition="38" endLine="256" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750296" fileName="_PatternExpression_KeyMap.java" startLine="295" startPosition="152" endLine="296" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750300" fileName="_PatternExpression_KeyMap.java" startLine="299" startPosition="146" endLine="300" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750311" fileName="_PatternExpression_KeyMap.java" startLine="301" startPosition="32" endLine="302" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750338" fileName="_PatternExpression_KeyMap.java" startLine="304" startPosition="205" endLine="305" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750342" fileName="_PatternExpression_KeyMap.java" startLine="306" startPosition="12" endLine="307" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750358" fileName="_PatternExpression_KeyMap.java" startLine="345" startPosition="152" endLine="346" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750362" fileName="_PatternExpression_KeyMap.java" startLine="349" startPosition="146" endLine="350" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750373" fileName="_PatternExpression_KeyMap.java" startLine="351" startPosition="32" endLine="352" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750376" fileName="_PatternExpression_KeyMap.java" startLine="354" startPosition="114" endLine="355" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750382" fileName="_PatternExpression_KeyMap.java" startLine="355" startPosition="70" endLine="356" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1176736750386" fileName="_PatternExpression_KeyMap.java" startLine="356" startPosition="38" endLine="357" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750391" fileName="_PatternExpression_KeyMap.java" startLine="357" startPosition="206" endLine="358" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750403" fileName="_PatternExpression_KeyMap.java" startLine="360" startPosition="211" endLine="361" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750407" fileName="_PatternExpression_KeyMap.java" startLine="362" startPosition="12" endLine="363" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750422" fileName="_PatternExpression_KeyMap.java" startLine="401" startPosition="152" endLine="402" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750426" fileName="_PatternExpression_KeyMap.java" startLine="405" startPosition="146" endLine="406" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750431" fileName="_PatternExpression_KeyMap.java" startLine="406" startPosition="64" endLine="407" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750436" fileName="_PatternExpression_KeyMap.java" startLine="407" startPosition="50" endLine="408" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750446" fileName="_PatternExpression_KeyMap.java" startLine="409" startPosition="112" endLine="410" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750456" fileName="_PatternExpression_KeyMap.java" startLine="412" startPosition="32" endLine="413" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750457" fileName="_PatternExpression_KeyMap.java" startLine="414" startPosition="7" endLine="415" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750469" fileName="_PatternExpression_KeyMap.java" startLine="416" startPosition="88" endLine="417" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176736750470" fileName="_PatternExpression_KeyMap.java" startLine="418" startPosition="7" endLine="419" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750478" fileName="_PatternExpression_KeyMap.java" startLine="420" startPosition="119" endLine="421" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176736750485" fileName="_PatternExpression_KeyMap.java" startLine="421" startPosition="141" endLine="422" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1237750363711" fileName="_PatternExpression_KeyMap.java" startLine="422" startPosition="38" endLine="423" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750501" fileName="_PatternExpression_KeyMap.java" startLine="423" startPosition="217" endLine="424" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237750256177" fileName="_PatternExpression_KeyMap.java" startLine="426" startPosition="220" endLine="427" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237750203873" fileName="_PatternExpression_KeyMap.java" startLine="428" startPosition="14" endLine="429" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176736750527" fileName="_PatternExpression_KeyMap.java" startLine="428" startPosition="12" endLine="430" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1163603926363" fileName="_PatternExpression_KeyMap.java" startLine="254" startPosition="236" endLine="257" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1176736750306" fileName="_PatternExpression_KeyMap.java" startLine="300" startPosition="69" endLine="303" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750368" fileName="_PatternExpression_KeyMap.java" startLine="350" startPosition="69" endLine="353" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750444" fileName="_PatternExpression_KeyMap.java" startLine="408" startPosition="82" endLine="411" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750451" fileName="_PatternExpression_KeyMap.java" startLine="411" startPosition="7" endLine="414" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750461" fileName="_PatternExpression_KeyMap.java" startLine="415" startPosition="108" endLine="418" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750336" fileName="_PatternExpression_KeyMap.java" startLine="303" startPosition="7" endLine="307" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750401" fileName="_PatternExpression_KeyMap.java" startLine="359" startPosition="7" endLine="363" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750511" fileName="_PatternExpression_KeyMap.java" startLine="425" startPosition="7" endLine="430" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750374" fileName="_PatternExpression_KeyMap.java" startLine="353" startPosition="7" endLine="359" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1176736750476" fileName="_PatternExpression_KeyMap.java" startLine="419" startPosition="64" endLine="425" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1163601040239" fileName="_PatternExpression_KeyMap.java" startLine="74" startPosition="152" endLine="75" endPosition="66" />
-    <scopeInfo nodeId="1163600715326" fileName="_PatternExpression_KeyMap.java" startLine="78" startPosition="146" endLine="79" endPosition="238" />
-    <scopeInfo nodeId="1163601481958" fileName="_PatternExpression_KeyMap.java" startLine="117" startPosition="152" endLine="118" endPosition="66" />
-    <scopeInfo nodeId="1163600736768" fileName="_PatternExpression_KeyMap.java" startLine="121" startPosition="146" endLine="122" endPosition="234" />
-    <scopeInfo nodeId="1163602203411" fileName="_PatternExpression_KeyMap.java" startLine="160" startPosition="152" endLine="161" endPosition="66" />
-    <scopeInfo nodeId="1163600763507" fileName="_PatternExpression_KeyMap.java" startLine="164" startPosition="146" endLine="165" endPosition="58" />
-    <scopeInfo nodeId="1163602964327" fileName="_PatternExpression_KeyMap.java" startLine="203" startPosition="152" endLine="204" endPosition="134" />
-    <scopeInfo nodeId="1163603524506" fileName="_PatternExpression_KeyMap.java" startLine="248" startPosition="152" endLine="249" endPosition="109" />
-    <scopeInfo nodeId="1163603926367" fileName="_PatternExpression_KeyMap.java" startLine="255" startPosition="38" endLine="256" endPosition="44" />
-    <scopeInfo nodeId="1176736750295" fileName="_PatternExpression_KeyMap.java" startLine="295" startPosition="152" endLine="296" endPosition="18" />
-    <scopeInfo nodeId="1176736750310" fileName="_PatternExpression_KeyMap.java" startLine="301" startPosition="32" endLine="302" endPosition="15" />
-    <scopeInfo nodeId="1176736750337" fileName="_PatternExpression_KeyMap.java" startLine="304" startPosition="205" endLine="305" endPosition="199" />
-    <scopeInfo nodeId="1176736750357" fileName="_PatternExpression_KeyMap.java" startLine="345" startPosition="152" endLine="346" endPosition="18" />
-    <scopeInfo nodeId="1176736750372" fileName="_PatternExpression_KeyMap.java" startLine="351" startPosition="32" endLine="352" endPosition="15" />
-    <scopeInfo nodeId="1176736750402" fileName="_PatternExpression_KeyMap.java" startLine="360" startPosition="211" endLine="361" endPosition="203" />
-    <scopeInfo nodeId="1176736750421" fileName="_PatternExpression_KeyMap.java" startLine="401" startPosition="152" endLine="402" endPosition="18" />
-    <scopeInfo nodeId="1176736750445" fileName="_PatternExpression_KeyMap.java" startLine="409" startPosition="112" endLine="410" endPosition="15" />
-    <scopeInfo nodeId="1176736750455" fileName="_PatternExpression_KeyMap.java" startLine="412" startPosition="32" endLine="413" endPosition="15" />
-    <scopeInfo nodeId="1176736750468" fileName="_PatternExpression_KeyMap.java" startLine="416" startPosition="88" endLine="417" endPosition="15" />
-    <scopeInfo nodeId="1176736750519" fileName="_PatternExpression_KeyMap.java" startLine="426" startPosition="220" endLine="427" endPosition="214" />
-    <scopeInfo nodeId="1176736750528" fileName="_PatternExpression_KeyMap.java" startLine="428" startPosition="14" endLine="429" endPosition="279" />
-    <scopeInfo nodeId="1163600789152" fileName="_PatternExpression_KeyMap.java" startLine="207" startPosition="146" endLine="210" endPosition="302">
+    <nodeInfo nodeId="1163601043079" fileName="_PatternExpression_KeyMap.java" startLine="73" startPosition="152" endLine="74" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8843103228116876165" fileName="_PatternExpression_KeyMap.java" startLine="77" startPosition="146" endLine="78" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1163601484194" fileName="_PatternExpression_KeyMap.java" startLine="116" startPosition="152" endLine="117" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237750176894" fileName="_PatternExpression_KeyMap.java" startLine="120" startPosition="146" endLine="121" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1163602205428" fileName="_PatternExpression_KeyMap.java" startLine="159" startPosition="152" endLine="160" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1163602232887" fileName="_PatternExpression_KeyMap.java" startLine="163" startPosition="146" endLine="164" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1163602977578" fileName="_PatternExpression_KeyMap.java" startLine="202" startPosition="152" endLine="203" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1163603121640" fileName="_PatternExpression_KeyMap.java" startLine="206" startPosition="146" endLine="207" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1163603188409" fileName="_PatternExpression_KeyMap.java" startLine="207" startPosition="87" endLine="208" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116876359" fileName="_PatternExpression_KeyMap.java" startLine="208" startPosition="91" endLine="209" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1163603527179" fileName="_PatternExpression_KeyMap.java" startLine="247" startPosition="152" endLine="248" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1163603670564" fileName="_PatternExpression_KeyMap.java" startLine="251" startPosition="146" endLine="252" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237750121385" fileName="_PatternExpression_KeyMap.java" startLine="252" startPosition="73" endLine="253" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1163603950652" fileName="_PatternExpression_KeyMap.java" startLine="254" startPosition="38" endLine="255" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750296" fileName="_PatternExpression_KeyMap.java" startLine="294" startPosition="152" endLine="295" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750300" fileName="_PatternExpression_KeyMap.java" startLine="298" startPosition="146" endLine="299" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750311" fileName="_PatternExpression_KeyMap.java" startLine="300" startPosition="32" endLine="301" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750338" fileName="_PatternExpression_KeyMap.java" startLine="303" startPosition="205" endLine="304" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750342" fileName="_PatternExpression_KeyMap.java" startLine="305" startPosition="12" endLine="306" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750358" fileName="_PatternExpression_KeyMap.java" startLine="344" startPosition="152" endLine="345" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750362" fileName="_PatternExpression_KeyMap.java" startLine="348" startPosition="146" endLine="349" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750373" fileName="_PatternExpression_KeyMap.java" startLine="350" startPosition="32" endLine="351" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750376" fileName="_PatternExpression_KeyMap.java" startLine="353" startPosition="114" endLine="354" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750382" fileName="_PatternExpression_KeyMap.java" startLine="354" startPosition="70" endLine="355" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1176736750386" fileName="_PatternExpression_KeyMap.java" startLine="355" startPosition="38" endLine="356" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750391" fileName="_PatternExpression_KeyMap.java" startLine="356" startPosition="206" endLine="357" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750403" fileName="_PatternExpression_KeyMap.java" startLine="359" startPosition="211" endLine="360" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750407" fileName="_PatternExpression_KeyMap.java" startLine="361" startPosition="12" endLine="362" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750422" fileName="_PatternExpression_KeyMap.java" startLine="400" startPosition="152" endLine="401" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750426" fileName="_PatternExpression_KeyMap.java" startLine="404" startPosition="146" endLine="405" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750431" fileName="_PatternExpression_KeyMap.java" startLine="405" startPosition="64" endLine="406" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750436" fileName="_PatternExpression_KeyMap.java" startLine="406" startPosition="50" endLine="407" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750446" fileName="_PatternExpression_KeyMap.java" startLine="408" startPosition="112" endLine="409" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750456" fileName="_PatternExpression_KeyMap.java" startLine="411" startPosition="32" endLine="412" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750457" fileName="_PatternExpression_KeyMap.java" startLine="413" startPosition="7" endLine="414" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750469" fileName="_PatternExpression_KeyMap.java" startLine="415" startPosition="88" endLine="416" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176736750470" fileName="_PatternExpression_KeyMap.java" startLine="417" startPosition="7" endLine="418" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750478" fileName="_PatternExpression_KeyMap.java" startLine="419" startPosition="119" endLine="420" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176736750485" fileName="_PatternExpression_KeyMap.java" startLine="420" startPosition="141" endLine="421" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1237750363711" fileName="_PatternExpression_KeyMap.java" startLine="421" startPosition="38" endLine="422" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750501" fileName="_PatternExpression_KeyMap.java" startLine="422" startPosition="217" endLine="423" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237750256177" fileName="_PatternExpression_KeyMap.java" startLine="425" startPosition="220" endLine="426" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237750203873" fileName="_PatternExpression_KeyMap.java" startLine="427" startPosition="14" endLine="428" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176736750527" fileName="_PatternExpression_KeyMap.java" startLine="427" startPosition="12" endLine="429" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1163603926363" fileName="_PatternExpression_KeyMap.java" startLine="253" startPosition="236" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1176736750306" fileName="_PatternExpression_KeyMap.java" startLine="299" startPosition="69" endLine="302" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750368" fileName="_PatternExpression_KeyMap.java" startLine="349" startPosition="69" endLine="352" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750444" fileName="_PatternExpression_KeyMap.java" startLine="407" startPosition="57" endLine="410" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750451" fileName="_PatternExpression_KeyMap.java" startLine="410" startPosition="7" endLine="413" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750461" fileName="_PatternExpression_KeyMap.java" startLine="414" startPosition="108" endLine="417" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750336" fileName="_PatternExpression_KeyMap.java" startLine="302" startPosition="7" endLine="306" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750401" fileName="_PatternExpression_KeyMap.java" startLine="358" startPosition="7" endLine="362" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750511" fileName="_PatternExpression_KeyMap.java" startLine="424" startPosition="7" endLine="429" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750374" fileName="_PatternExpression_KeyMap.java" startLine="352" startPosition="7" endLine="358" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1176736750476" fileName="_PatternExpression_KeyMap.java" startLine="418" startPosition="64" endLine="424" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1163601040239" fileName="_PatternExpression_KeyMap.java" startLine="73" startPosition="152" endLine="74" endPosition="66" />
+    <scopeInfo nodeId="1163600715326" fileName="_PatternExpression_KeyMap.java" startLine="77" startPosition="146" endLine="78" endPosition="238" />
+    <scopeInfo nodeId="1163601481958" fileName="_PatternExpression_KeyMap.java" startLine="116" startPosition="152" endLine="117" endPosition="66" />
+    <scopeInfo nodeId="1163600736768" fileName="_PatternExpression_KeyMap.java" startLine="120" startPosition="146" endLine="121" endPosition="234" />
+    <scopeInfo nodeId="1163602203411" fileName="_PatternExpression_KeyMap.java" startLine="159" startPosition="152" endLine="160" endPosition="66" />
+    <scopeInfo nodeId="1163600763507" fileName="_PatternExpression_KeyMap.java" startLine="163" startPosition="146" endLine="164" endPosition="58" />
+    <scopeInfo nodeId="1163602964327" fileName="_PatternExpression_KeyMap.java" startLine="202" startPosition="152" endLine="203" endPosition="134" />
+    <scopeInfo nodeId="1163603524506" fileName="_PatternExpression_KeyMap.java" startLine="247" startPosition="152" endLine="248" endPosition="109" />
+    <scopeInfo nodeId="1163603926367" fileName="_PatternExpression_KeyMap.java" startLine="254" startPosition="38" endLine="255" endPosition="44" />
+    <scopeInfo nodeId="1176736750295" fileName="_PatternExpression_KeyMap.java" startLine="294" startPosition="152" endLine="295" endPosition="18" />
+    <scopeInfo nodeId="1176736750310" fileName="_PatternExpression_KeyMap.java" startLine="300" startPosition="32" endLine="301" endPosition="15" />
+    <scopeInfo nodeId="1176736750337" fileName="_PatternExpression_KeyMap.java" startLine="303" startPosition="205" endLine="304" endPosition="199" />
+    <scopeInfo nodeId="1176736750357" fileName="_PatternExpression_KeyMap.java" startLine="344" startPosition="152" endLine="345" endPosition="18" />
+    <scopeInfo nodeId="1176736750372" fileName="_PatternExpression_KeyMap.java" startLine="350" startPosition="32" endLine="351" endPosition="15" />
+    <scopeInfo nodeId="1176736750402" fileName="_PatternExpression_KeyMap.java" startLine="359" startPosition="211" endLine="360" endPosition="203" />
+    <scopeInfo nodeId="1176736750421" fileName="_PatternExpression_KeyMap.java" startLine="400" startPosition="152" endLine="401" endPosition="18" />
+    <scopeInfo nodeId="1176736750445" fileName="_PatternExpression_KeyMap.java" startLine="408" startPosition="112" endLine="409" endPosition="15" />
+    <scopeInfo nodeId="1176736750455" fileName="_PatternExpression_KeyMap.java" startLine="411" startPosition="32" endLine="412" endPosition="15" />
+    <scopeInfo nodeId="1176736750468" fileName="_PatternExpression_KeyMap.java" startLine="415" startPosition="88" endLine="416" endPosition="15" />
+    <scopeInfo nodeId="1176736750519" fileName="_PatternExpression_KeyMap.java" startLine="425" startPosition="220" endLine="426" endPosition="214" />
+    <scopeInfo nodeId="1176736750528" fileName="_PatternExpression_KeyMap.java" startLine="427" startPosition="14" endLine="428" endPosition="279" />
+    <scopeInfo nodeId="1163600789152" fileName="_PatternExpression_KeyMap.java" startLine="206" startPosition="146" endLine="209" endPosition="302">
       <varInfo nodeId="1163603188410" varName="propertyName" />
       <varInfo nodeId="1163603121641" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1163603926363" fileName="_PatternExpression_KeyMap.java" startLine="254" startPosition="236" endLine="257" endPosition="7">
+    <scopeInfo nodeId="1163603926363" fileName="_PatternExpression_KeyMap.java" startLine="253" startPosition="236" endLine="256" endPosition="7">
       <varInfo nodeId="1163603926365" varName="sibling" />
     </scopeInfo>
-    <scopeInfo nodeId="1176736750375" fileName="_PatternExpression_KeyMap.java" startLine="354" startPosition="114" endLine="358" endPosition="15">
+    <scopeInfo nodeId="1176736750375" fileName="_PatternExpression_KeyMap.java" startLine="353" startPosition="114" endLine="357" endPosition="15">
       <varInfo nodeId="1176736750377" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1176736750477" fileName="_PatternExpression_KeyMap.java" startLine="420" startPosition="119" endLine="424" endPosition="15">
+    <scopeInfo nodeId="1176736750477" fileName="_PatternExpression_KeyMap.java" startLine="419" startPosition="119" endLine="423" endPosition="15">
       <varInfo nodeId="1176736750479" varName="attributedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1163600809312" fileName="_PatternExpression_KeyMap.java" startLine="252" startPosition="146" endLine="257" endPosition="7">
+    <scopeInfo nodeId="1163600809312" fileName="_PatternExpression_KeyMap.java" startLine="251" startPosition="146" endLine="256" endPosition="7">
       <varInfo nodeId="1163603670565" varName="siblings" />
     </scopeInfo>
-    <scopeInfo nodeId="1176736750299" fileName="_PatternExpression_KeyMap.java" startLine="299" startPosition="146" endLine="307" endPosition="253">
+    <scopeInfo nodeId="1176736750299" fileName="_PatternExpression_KeyMap.java" startLine="298" startPosition="146" endLine="306" endPosition="253">
       <varInfo nodeId="1176736750301" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1176736750361" fileName="_PatternExpression_KeyMap.java" startLine="349" startPosition="146" endLine="363" endPosition="261">
+    <scopeInfo nodeId="1176736750361" fileName="_PatternExpression_KeyMap.java" startLine="348" startPosition="146" endLine="362" endPosition="261">
       <varInfo nodeId="1176736750363" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1176736750425" fileName="_PatternExpression_KeyMap.java" startLine="405" startPosition="146" endLine="430" endPosition="7">
+    <scopeInfo nodeId="1176736750425" fileName="_PatternExpression_KeyMap.java" startLine="404" startPosition="146" endLine="429" endPosition="7">
       <varInfo nodeId="1176736750437" varName="linkNode" />
       <varInfo nodeId="1176736750432" varName="contextNode" />
       <varInfo nodeId="1176736750458" varName="link" />
@@ -142,50 +142,50 @@
     <scopeInfo nodeId="8990057180226003212" fileName="ActionAsPattern_Editor.java" startLine="187" startPosition="111" endLine="188" endPosition="151" />
   </root>
   <root nodeId="5121729553547267722">
-    <nodeInfo nodeId="5121729553547267734" fileName="PatternAddingUtil.java" startLine="21" startPosition="68" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267745" fileName="PatternAddingUtil.java" startLine="23" startPosition="30" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267747" fileName="PatternAddingUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267759" fileName="PatternAddingUtil.java" startLine="27" startPosition="23" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267761" fileName="PatternAddingUtil.java" startLine="29" startPosition="5" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267774" fileName="PatternAddingUtil.java" startLine="33" startPosition="64" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267780" fileName="PatternAddingUtil.java" startLine="34" startPosition="55" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267792" fileName="PatternAddingUtil.java" startLine="35" startPosition="40" endLine="36" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="42695640867183255" fileName="PatternAddingUtil.java" startLine="36" startPosition="94" endLine="37" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267827" fileName="PatternAddingUtil.java" startLine="38" startPosition="129" endLine="39" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8843103228116876136" fileName="PatternAddingUtil.java" startLine="39" startPosition="82" endLine="40" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8843103228116875985" fileName="PatternAddingUtil.java" startLine="41" startPosition="12" endLine="42" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="17" startPosition="32" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternAddingUtil#()V" />
-    <nodeInfo nodeId="5121729553547267807" fileName="PatternAddingUtil.java" startLine="41" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5121729553547267740" fileName="PatternAddingUtil.java" startLine="22" startPosition="55" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267754" fileName="PatternAddingUtil.java" startLine="26" startPosition="69" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267798" fileName="PatternAddingUtil.java" startLine="37" startPosition="89" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPatternApplicable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="32" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addVariablePattern#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="5121729553547267727" fileName="PatternAddingUtil.java" startLine="18" startPosition="30" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="5121729553547267744" fileName="PatternAddingUtil.java" startLine="23" startPosition="30" endLine="24" endPosition="19" />
-    <scopeInfo nodeId="5121729553547267758" fileName="PatternAddingUtil.java" startLine="27" startPosition="23" endLine="28" endPosition="19" />
-    <scopeInfo nodeId="5121729553547267808" fileName="PatternAddingUtil.java" startLine="41" startPosition="12" endLine="42" endPosition="252" />
-    <scopeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="17" startPosition="32" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5121729553547267821" fileName="PatternAddingUtil.java" startLine="38" startPosition="129" endLine="40" endPosition="285">
+    <nodeInfo nodeId="5121729553547267734" fileName="PatternAddingUtil.java" startLine="22" startPosition="68" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267745" fileName="PatternAddingUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5121729553547267747" fileName="PatternAddingUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267759" fileName="PatternAddingUtil.java" startLine="28" startPosition="23" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5121729553547267761" fileName="PatternAddingUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5121729553547267774" fileName="PatternAddingUtil.java" startLine="34" startPosition="64" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267780" fileName="PatternAddingUtil.java" startLine="35" startPosition="55" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267792" fileName="PatternAddingUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="42695640867183255" fileName="PatternAddingUtil.java" startLine="37" startPosition="141" endLine="38" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267827" fileName="PatternAddingUtil.java" startLine="39" startPosition="129" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116876136" fileName="PatternAddingUtil.java" startLine="40" startPosition="82" endLine="41" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8843103228116875985" fileName="PatternAddingUtil.java" startLine="42" startPosition="12" endLine="43" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="18" startPosition="32" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternAddingUtil#()V" />
+    <nodeInfo nodeId="5121729553547267807" fileName="PatternAddingUtil.java" startLine="42" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5121729553547267740" fileName="PatternAddingUtil.java" startLine="23" startPosition="55" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267754" fileName="PatternAddingUtil.java" startLine="27" startPosition="69" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267798" fileName="PatternAddingUtil.java" startLine="38" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPatternApplicable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addVariablePattern#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="5121729553547267727" fileName="PatternAddingUtil.java" startLine="19" startPosition="30" endLine="19" endPosition="30" />
+    <scopeInfo nodeId="5121729553547267744" fileName="PatternAddingUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="5121729553547267758" fileName="PatternAddingUtil.java" startLine="28" startPosition="23" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="5121729553547267808" fileName="PatternAddingUtil.java" startLine="42" startPosition="12" endLine="43" endPosition="252" />
+    <scopeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="18" startPosition="32" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="5121729553547267821" fileName="PatternAddingUtil.java" startLine="39" startPosition="129" endLine="41" endPosition="285">
       <varInfo nodeId="5121729553547267828" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267733" fileName="PatternAddingUtil.java" startLine="21" startPosition="68" endLine="30" endPosition="60">
+    <scopeInfo nodeId="5121729553547267733" fileName="PatternAddingUtil.java" startLine="22" startPosition="68" endLine="31" endPosition="60">
       <varInfo nodeId="5121729553547267748" varName="node" />
       <varInfo nodeId="5121729553547267735" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267773" fileName="PatternAddingUtil.java" startLine="33" startPosition="64" endLine="43" endPosition="5">
+    <scopeInfo nodeId="5121729553547267773" fileName="PatternAddingUtil.java" startLine="34" startPosition="64" endLine="44" endPosition="5">
       <varInfo nodeId="42695640867183256" varName="genuineLinkDeclaration" />
       <varInfo nodeId="5121729553547267793" varName="linkDeclaration" />
       <varInfo nodeId="5121729553547267781" varName="node" />
       <varInfo nodeId="5121729553547267775" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="5121729553547267731" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="32" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="33" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="5121729553547267771" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="5121729553547267722" fileName="PatternAddingUtil.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternAddingUtil" />
+    <unitInfo nodeId="5121729553547267722" fileName="PatternAddingUtil.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternAddingUtil" />
   </root>
 </debugInfo>
 

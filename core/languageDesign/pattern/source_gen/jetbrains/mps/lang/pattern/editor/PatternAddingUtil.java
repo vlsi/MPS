@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.structure.PatternExpression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -33,7 +34,7 @@ public class PatternAddingUtil {
   public static void addVariablePattern(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();
-    SNode linkDeclaration = (SNode) BaseAdapter.fromAdapter(contextCell.getLinkDeclaration());
+    SNode linkDeclaration = SNodeOperations.cast(contextCell.getLinkDeclaration(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     if (linkDeclaration != null && SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "reference", "reference")) {
       String role = SPropertyOperations.getString(genuineLinkDeclaration, "role");

@@ -10,13 +10,13 @@
   <unitInfo fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention" />
   <unitInfo fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention" />
   <unitInfo fileName="ConvertClassConceptToExtract_Intention.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertClassConceptToExtract_Intention" />
-  <unitInfo fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" />
+  <unitInfo fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" />
   <unitInfo fileName="NewTemplateFragment_Intention.java" startLine="14" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
-  <unitInfo fileName="NewTemplateInSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
-  <unitInfo fileName="NewTemplateInReductionRule_Intention.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" />
+  <unitInfo fileName="NewTemplateInSwitchCase_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
+  <unitInfo fileName="NewTemplateInReductionRule_Intention.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" />
   <unitInfo fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertTemplateDeclRefToInlineTemplate_Intention" />
   <unitInfo fileName="NewTemplateInWeaveEach_Intention.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" />
-  <unitInfo fileName="NewTemplateInWeavingRule_Intention.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
+  <unitInfo fileName="NewTemplateInWeavingRule_Intention.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
   <unitInfo fileName="AddNodeMacroParam_switch_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention" />
   <unitInfo fileName="NewTemplateInCreateRootRule_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" />
   <unitInfo fileName="NewTemplateInRootMappingRule_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" />
@@ -221,32 +221,32 @@
     </scopeInfo>
   </root>
   <root nodeId="1216320260188">
-    <nodeInfo nodeId="1216320260191" fileName="NewTemplateInReductionRule_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029428934" fileName="NewTemplateInReductionRule_Intention.java" startLine="50" startPosition="168" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322471863" fileName="NewTemplateInReductionRule_Intention.java" startLine="53" startPosition="233" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322471876" fileName="NewTemplateInReductionRule_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216320260195" fileName="NewTemplateInReductionRule_Intention.java" startLine="59" startPosition="76" endLine="60" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216320260204" fileName="NewTemplateInReductionRule_Intention.java" startLine="60" startPosition="90" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029428938" fileName="NewTemplateInReductionRule_Intention.java" startLine="62" startPosition="45" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216320260217" fileName="NewTemplateInReductionRule_Intention.java" startLine="64" startPosition="38" endLine="65" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216320260235" fileName="NewTemplateInReductionRule_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216320260243" fileName="NewTemplateInReductionRule_Intention.java" startLine="68" startPosition="155" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216320260249" fileName="NewTemplateInReductionRule_Intention.java" startLine="69" startPosition="45" endLine="70" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="320659223196754047" fileName="NewTemplateInReductionRule_Intention.java" startLine="70" startPosition="80" endLine="71" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453635" fileName="NewTemplateInReductionRule_Intention.java" startLine="71" startPosition="200" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1216320260256" fileName="NewTemplateInReductionRule_Intention.java" startLine="72" startPosition="22" endLine="73" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216320260262" fileName="NewTemplateInReductionRule_Intention.java" startLine="73" startPosition="146" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029428905" fileName="NewTemplateInReductionRule_Intention.java" startLine="49" startPosition="90" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322471861" fileName="NewTemplateInReductionRule_Intention.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216320260215" fileName="NewTemplateInReductionRule_Intention.java" startLine="63" startPosition="23" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216320260209" fileName="NewTemplateInReductionRule_Intention.java" startLine="61" startPosition="61" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1216320260190" fileName="NewTemplateInReductionRule_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" />
-    <scopeInfo nodeId="8004199436029428906" fileName="NewTemplateInReductionRule_Intention.java" startLine="50" startPosition="168" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="8699312839322471862" fileName="NewTemplateInReductionRule_Intention.java" startLine="53" startPosition="233" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="1216320260216" fileName="NewTemplateInReductionRule_Intention.java" startLine="64" startPosition="38" endLine="65" endPosition="73" />
-    <scopeInfo nodeId="1216320260210" fileName="NewTemplateInReductionRule_Intention.java" startLine="62" startPosition="45" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1216320260269" fileName="NewTemplateInReductionRule_Intention.java" startLine="49" startPosition="90" endLine="56" endPosition="263" />
-    <scopeInfo nodeId="1216320260194" fileName="NewTemplateInReductionRule_Intention.java" startLine="59" startPosition="76" endLine="74" endPosition="56">
+    <nodeInfo nodeId="1216320260191" fileName="NewTemplateInReductionRule_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029428934" fileName="NewTemplateInReductionRule_Intention.java" startLine="49" startPosition="168" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322471863" fileName="NewTemplateInReductionRule_Intention.java" startLine="52" startPosition="185" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322471876" fileName="NewTemplateInReductionRule_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216320260195" fileName="NewTemplateInReductionRule_Intention.java" startLine="58" startPosition="76" endLine="59" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216320260204" fileName="NewTemplateInReductionRule_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029428938" fileName="NewTemplateInReductionRule_Intention.java" startLine="61" startPosition="45" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216320260217" fileName="NewTemplateInReductionRule_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216320260235" fileName="NewTemplateInReductionRule_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216320260243" fileName="NewTemplateInReductionRule_Intention.java" startLine="67" startPosition="155" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216320260249" fileName="NewTemplateInReductionRule_Intention.java" startLine="68" startPosition="45" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="320659223196754047" fileName="NewTemplateInReductionRule_Intention.java" startLine="69" startPosition="80" endLine="70" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453635" fileName="NewTemplateInReductionRule_Intention.java" startLine="70" startPosition="200" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1216320260256" fileName="NewTemplateInReductionRule_Intention.java" startLine="71" startPosition="22" endLine="72" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216320260262" fileName="NewTemplateInReductionRule_Intention.java" startLine="72" startPosition="146" endLine="73" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029428905" fileName="NewTemplateInReductionRule_Intention.java" startLine="48" startPosition="90" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322471861" fileName="NewTemplateInReductionRule_Intention.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216320260215" fileName="NewTemplateInReductionRule_Intention.java" startLine="62" startPosition="23" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216320260209" fileName="NewTemplateInReductionRule_Intention.java" startLine="60" startPosition="61" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1216320260190" fileName="NewTemplateInReductionRule_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" />
+    <scopeInfo nodeId="8004199436029428906" fileName="NewTemplateInReductionRule_Intention.java" startLine="49" startPosition="168" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8699312839322471862" fileName="NewTemplateInReductionRule_Intention.java" startLine="52" startPosition="185" endLine="53" endPosition="19" />
+    <scopeInfo nodeId="1216320260216" fileName="NewTemplateInReductionRule_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" />
+    <scopeInfo nodeId="1216320260210" fileName="NewTemplateInReductionRule_Intention.java" startLine="61" startPosition="45" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="1216320260269" fileName="NewTemplateInReductionRule_Intention.java" startLine="48" startPosition="90" endLine="55" endPosition="263" />
+    <scopeInfo nodeId="1216320260194" fileName="NewTemplateInReductionRule_Intention.java" startLine="58" startPosition="76" endLine="73" endPosition="56">
       <varInfo nodeId="1216320260236" varName="t" />
       <varInfo nodeId="1216320260257" varName="tr" />
       <varInfo nodeId="1216320260205" varName="name" />
@@ -1363,32 +1363,32 @@
     </scopeInfo>
   </root>
   <root nodeId="8004199436029426156">
-    <nodeInfo nodeId="8004199436029426159" fileName="NewTemplateInSwitchCase_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029428954" fileName="NewTemplateInSwitchCase_Intention.java" startLine="50" startPosition="171" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029426276" fileName="NewTemplateInSwitchCase_Intention.java" startLine="53" startPosition="233" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029426287" fileName="NewTemplateInSwitchCase_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029426163" fileName="NewTemplateInSwitchCase_Intention.java" startLine="59" startPosition="76" endLine="60" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029426169" fileName="NewTemplateInSwitchCase_Intention.java" startLine="60" startPosition="90" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029428958" fileName="NewTemplateInSwitchCase_Intention.java" startLine="62" startPosition="45" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029426204" fileName="NewTemplateInSwitchCase_Intention.java" startLine="64" startPosition="38" endLine="65" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029426222" fileName="NewTemplateInSwitchCase_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029426230" fileName="NewTemplateInSwitchCase_Intention.java" startLine="68" startPosition="155" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029426237" fileName="NewTemplateInSwitchCase_Intention.java" startLine="69" startPosition="45" endLine="70" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029426244" fileName="NewTemplateInSwitchCase_Intention.java" startLine="70" startPosition="80" endLine="71" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453933" fileName="NewTemplateInSwitchCase_Intention.java" startLine="71" startPosition="200" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8004199436029426257" fileName="NewTemplateInSwitchCase_Intention.java" startLine="72" startPosition="22" endLine="73" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029426265" fileName="NewTemplateInSwitchCase_Intention.java" startLine="73" startPosition="146" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029428861" fileName="NewTemplateInSwitchCase_Intention.java" startLine="49" startPosition="90" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004199436029426274" fileName="NewTemplateInSwitchCase_Intention.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004199436029426202" fileName="NewTemplateInSwitchCase_Intention.java" startLine="63" startPosition="21" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004199436029426174" fileName="NewTemplateInSwitchCase_Intention.java" startLine="61" startPosition="61" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8004199436029426158" fileName="NewTemplateInSwitchCase_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" />
-    <scopeInfo nodeId="8004199436029428862" fileName="NewTemplateInSwitchCase_Intention.java" startLine="50" startPosition="171" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="8004199436029426275" fileName="NewTemplateInSwitchCase_Intention.java" startLine="53" startPosition="233" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="8004199436029426203" fileName="NewTemplateInSwitchCase_Intention.java" startLine="64" startPosition="38" endLine="65" endPosition="73" />
-    <scopeInfo nodeId="8004199436029426175" fileName="NewTemplateInSwitchCase_Intention.java" startLine="62" startPosition="45" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="8004199436029426273" fileName="NewTemplateInSwitchCase_Intention.java" startLine="49" startPosition="90" endLine="56" endPosition="263" />
-    <scopeInfo nodeId="8004199436029426162" fileName="NewTemplateInSwitchCase_Intention.java" startLine="59" startPosition="76" endLine="74" endPosition="56">
+    <nodeInfo nodeId="8004199436029426159" fileName="NewTemplateInSwitchCase_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029428954" fileName="NewTemplateInSwitchCase_Intention.java" startLine="49" startPosition="171" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029426276" fileName="NewTemplateInSwitchCase_Intention.java" startLine="52" startPosition="185" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029426287" fileName="NewTemplateInSwitchCase_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029426163" fileName="NewTemplateInSwitchCase_Intention.java" startLine="58" startPosition="76" endLine="59" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029426169" fileName="NewTemplateInSwitchCase_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029428958" fileName="NewTemplateInSwitchCase_Intention.java" startLine="61" startPosition="45" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029426204" fileName="NewTemplateInSwitchCase_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029426222" fileName="NewTemplateInSwitchCase_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029426230" fileName="NewTemplateInSwitchCase_Intention.java" startLine="67" startPosition="155" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029426237" fileName="NewTemplateInSwitchCase_Intention.java" startLine="68" startPosition="45" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029426244" fileName="NewTemplateInSwitchCase_Intention.java" startLine="69" startPosition="80" endLine="70" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453933" fileName="NewTemplateInSwitchCase_Intention.java" startLine="70" startPosition="200" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8004199436029426257" fileName="NewTemplateInSwitchCase_Intention.java" startLine="71" startPosition="22" endLine="72" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029426265" fileName="NewTemplateInSwitchCase_Intention.java" startLine="72" startPosition="146" endLine="73" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029428861" fileName="NewTemplateInSwitchCase_Intention.java" startLine="48" startPosition="90" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004199436029426274" fileName="NewTemplateInSwitchCase_Intention.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004199436029426202" fileName="NewTemplateInSwitchCase_Intention.java" startLine="62" startPosition="21" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004199436029426174" fileName="NewTemplateInSwitchCase_Intention.java" startLine="60" startPosition="61" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8004199436029426158" fileName="NewTemplateInSwitchCase_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" />
+    <scopeInfo nodeId="8004199436029428862" fileName="NewTemplateInSwitchCase_Intention.java" startLine="49" startPosition="171" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8004199436029426275" fileName="NewTemplateInSwitchCase_Intention.java" startLine="52" startPosition="185" endLine="53" endPosition="19" />
+    <scopeInfo nodeId="8004199436029426203" fileName="NewTemplateInSwitchCase_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" />
+    <scopeInfo nodeId="8004199436029426175" fileName="NewTemplateInSwitchCase_Intention.java" startLine="61" startPosition="45" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="8004199436029426273" fileName="NewTemplateInSwitchCase_Intention.java" startLine="48" startPosition="90" endLine="55" endPosition="263" />
+    <scopeInfo nodeId="8004199436029426162" fileName="NewTemplateInSwitchCase_Intention.java" startLine="58" startPosition="76" endLine="73" endPosition="56">
       <varInfo nodeId="8004199436029426223" varName="t" />
       <varInfo nodeId="8004199436029426258" varName="tr" />
       <varInfo nodeId="8004199436029426170" varName="name" />
@@ -1424,29 +1424,29 @@
     </scopeInfo>
   </root>
   <root nodeId="8004199436029429362">
-    <nodeInfo nodeId="8004199436029429365" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029429473" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="50" startPosition="229" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029429484" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="52" startPosition="5" endLine="53" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004199436029429804" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="56" startPosition="76" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029429375" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="57" startPosition="78" endLine="58" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029429382" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="59" startPosition="45" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029429388" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="61" startPosition="38" endLine="62" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029429406" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029429414" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="65" startPosition="155" endLine="66" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029429421" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="66" startPosition="45" endLine="67" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029429428" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="67" startPosition="80" endLine="68" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454049" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="68" startPosition="200" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8004199436029429441" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="69" startPosition="22" endLine="70" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004199436029429449" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="70" startPosition="146" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004199436029429471" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="49" startPosition="90" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004199436029429386" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="60" startPosition="21" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004199436029429380" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="58" startPosition="61" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8004199436029429364" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" />
-    <scopeInfo nodeId="8004199436029429472" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="50" startPosition="229" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="8004199436029429387" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="61" startPosition="38" endLine="62" endPosition="73" />
-    <scopeInfo nodeId="8004199436029429457" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="49" startPosition="90" endLine="53" endPosition="263" />
-    <scopeInfo nodeId="8004199436029429381" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="59" startPosition="45" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="8004199436029429368" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="56" startPosition="76" endLine="71" endPosition="56">
+    <nodeInfo nodeId="8004199436029429365" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029429473" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="49" startPosition="181" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029429484" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004199436029429804" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="55" startPosition="76" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029429375" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="56" startPosition="78" endLine="57" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029429382" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="58" startPosition="45" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029429388" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="60" startPosition="38" endLine="61" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029429406" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="63" startPosition="5" endLine="64" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029429414" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="64" startPosition="155" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029429421" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="65" startPosition="45" endLine="66" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029429428" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="66" startPosition="80" endLine="67" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454049" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="67" startPosition="200" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8004199436029429441" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="68" startPosition="22" endLine="69" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004199436029429449" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="69" startPosition="146" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004199436029429471" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="48" startPosition="90" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004199436029429386" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="59" startPosition="21" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004199436029429380" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="57" startPosition="61" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8004199436029429364" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="26" />
+    <scopeInfo nodeId="8004199436029429472" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="49" startPosition="181" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8004199436029429387" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="60" startPosition="38" endLine="61" endPosition="73" />
+    <scopeInfo nodeId="8004199436029429457" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="48" startPosition="90" endLine="52" endPosition="263" />
+    <scopeInfo nodeId="8004199436029429381" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="58" startPosition="45" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="8004199436029429368" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="55" startPosition="76" endLine="70" endPosition="56">
       <varInfo nodeId="8004199436029429407" varName="t" />
       <varInfo nodeId="8004199436029429442" varName="tr" />
       <varInfo nodeId="8004199436029429376" varName="name" />
@@ -1454,41 +1454,41 @@
     </scopeInfo>
   </root>
   <root nodeId="8699312839322230162">
-    <nodeInfo nodeId="8699312839322230165" fileName="NewTemplateInWeavingRule_Intention.java" startLine="40" startPosition="85" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322426946" fileName="NewTemplateInWeavingRule_Intention.java" startLine="52" startPosition="231" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322471843" fileName="NewTemplateInWeavingRule_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230177" fileName="NewTemplateInWeavingRule_Intention.java" startLine="58" startPosition="76" endLine="59" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230183" fileName="NewTemplateInWeavingRule_Intention.java" startLine="59" startPosition="90" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230365" fileName="NewTemplateInWeavingRule_Intention.java" startLine="61" startPosition="45" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230219" fileName="NewTemplateInWeavingRule_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230237" fileName="NewTemplateInWeavingRule_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230245" fileName="NewTemplateInWeavingRule_Intention.java" startLine="67" startPosition="155" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230251" fileName="NewTemplateInWeavingRule_Intention.java" startLine="68" startPosition="45" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="320659223196754128" fileName="NewTemplateInWeavingRule_Intention.java" startLine="69" startPosition="80" endLine="70" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453077" fileName="NewTemplateInWeavingRule_Intention.java" startLine="70" startPosition="200" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8699312839322230394" fileName="NewTemplateInWeavingRule_Intention.java" startLine="71" startPosition="47" endLine="72" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230405" fileName="NewTemplateInWeavingRule_Intention.java" startLine="73" startPosition="105" endLine="74" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230416" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="136" endLine="77" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454271" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="5" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8699312839322230307" fileName="NewTemplateInWeavingRule_Intention.java" startLine="81" startPosition="22" endLine="82" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230313" fileName="NewTemplateInWeavingRule_Intention.java" startLine="82" startPosition="146" endLine="83" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322423515" fileName="NewTemplateInWeavingRule_Intention.java" startLine="51" startPosition="90" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230217" fileName="NewTemplateInWeavingRule_Intention.java" startLine="62" startPosition="22" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230414" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="125" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230412" fileName="NewTemplateInWeavingRule_Intention.java" startLine="74" startPosition="165" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230188" fileName="NewTemplateInWeavingRule_Intention.java" startLine="60" startPosition="61" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230403" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="207" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8699312839322230164" fileName="NewTemplateInWeavingRule_Intention.java" startLine="40" startPosition="85" endLine="41" endPosition="26" />
-    <scopeInfo nodeId="8699312839322423516" fileName="NewTemplateInWeavingRule_Intention.java" startLine="52" startPosition="231" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="8699312839322230218" fileName="NewTemplateInWeavingRule_Intention.java" startLine="63" startPosition="38" endLine="64" endPosition="73" />
-    <scopeInfo nodeId="8699312839322230415" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="136" endLine="77" endPosition="145" />
-    <scopeInfo nodeId="8699312839322230413" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="125" endLine="78" endPosition="9" />
-    <scopeInfo nodeId="8699312839322230320" fileName="NewTemplateInWeavingRule_Intention.java" startLine="51" startPosition="90" endLine="55" endPosition="263" />
-    <scopeInfo nodeId="8699312839322230189" fileName="NewTemplateInWeavingRule_Intention.java" startLine="61" startPosition="45" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="8699312839322230404" fileName="NewTemplateInWeavingRule_Intention.java" startLine="73" startPosition="105" endLine="79" endPosition="7">
+    <nodeInfo nodeId="8699312839322230165" fileName="NewTemplateInWeavingRule_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322426946" fileName="NewTemplateInWeavingRule_Intention.java" startLine="51" startPosition="183" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322471843" fileName="NewTemplateInWeavingRule_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230177" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230183" fileName="NewTemplateInWeavingRule_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230365" fileName="NewTemplateInWeavingRule_Intention.java" startLine="60" startPosition="45" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230219" fileName="NewTemplateInWeavingRule_Intention.java" startLine="62" startPosition="38" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230237" fileName="NewTemplateInWeavingRule_Intention.java" startLine="65" startPosition="5" endLine="66" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230245" fileName="NewTemplateInWeavingRule_Intention.java" startLine="66" startPosition="155" endLine="67" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230251" fileName="NewTemplateInWeavingRule_Intention.java" startLine="67" startPosition="45" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="320659223196754128" fileName="NewTemplateInWeavingRule_Intention.java" startLine="68" startPosition="80" endLine="69" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453077" fileName="NewTemplateInWeavingRule_Intention.java" startLine="69" startPosition="200" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8699312839322230394" fileName="NewTemplateInWeavingRule_Intention.java" startLine="70" startPosition="47" endLine="71" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230405" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="105" endLine="73" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230416" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="136" endLine="76" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454271" fileName="NewTemplateInWeavingRule_Intention.java" startLine="79" startPosition="5" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8699312839322230307" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="22" endLine="81" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230313" fileName="NewTemplateInWeavingRule_Intention.java" startLine="81" startPosition="146" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322423515" fileName="NewTemplateInWeavingRule_Intention.java" startLine="50" startPosition="90" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230217" fileName="NewTemplateInWeavingRule_Intention.java" startLine="61" startPosition="22" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230414" fileName="NewTemplateInWeavingRule_Intention.java" startLine="74" startPosition="125" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230412" fileName="NewTemplateInWeavingRule_Intention.java" startLine="73" startPosition="165" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230188" fileName="NewTemplateInWeavingRule_Intention.java" startLine="59" startPosition="61" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230403" fileName="NewTemplateInWeavingRule_Intention.java" startLine="71" startPosition="207" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8699312839322230164" fileName="NewTemplateInWeavingRule_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="26" />
+    <scopeInfo nodeId="8699312839322423516" fileName="NewTemplateInWeavingRule_Intention.java" startLine="51" startPosition="183" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="8699312839322230218" fileName="NewTemplateInWeavingRule_Intention.java" startLine="62" startPosition="38" endLine="63" endPosition="73" />
+    <scopeInfo nodeId="8699312839322230415" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="136" endLine="76" endPosition="145" />
+    <scopeInfo nodeId="8699312839322230413" fileName="NewTemplateInWeavingRule_Intention.java" startLine="74" startPosition="125" endLine="77" endPosition="9" />
+    <scopeInfo nodeId="8699312839322230320" fileName="NewTemplateInWeavingRule_Intention.java" startLine="50" startPosition="90" endLine="54" endPosition="263" />
+    <scopeInfo nodeId="8699312839322230189" fileName="NewTemplateInWeavingRule_Intention.java" startLine="60" startPosition="45" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="8699312839322230404" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="105" endLine="78" endPosition="7">
       <varInfo nodeId="8699312839322230406" varName="contextNodeConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230168" fileName="NewTemplateInWeavingRule_Intention.java" startLine="58" startPosition="76" endLine="83" endPosition="56">
+    <scopeInfo nodeId="8699312839322230168" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="76" endLine="82" endPosition="56">
       <varInfo nodeId="8699312839322230238" varName="t" />
       <varInfo nodeId="8699312839322230308" varName="tr" />
       <varInfo nodeId="8699312839322230395" varName="contextNodeType" />

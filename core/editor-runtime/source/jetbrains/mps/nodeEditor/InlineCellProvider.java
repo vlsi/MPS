@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 
 
@@ -36,7 +34,7 @@ public abstract class InlineCellProvider extends AbstractCellProvider {
     myLinkDeclaration = linkDeclaration;
   }
 
-  public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
+  public SNode getLinkDeclaration() {
+    return myLinkDeclaration;
   }
 }

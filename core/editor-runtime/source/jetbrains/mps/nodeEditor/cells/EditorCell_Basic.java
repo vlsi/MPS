@@ -17,12 +17,11 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -260,7 +259,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode node = getSNode();
     SNode operationNode = null;
-    SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(getLinkDeclaration()));
+    SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
       SNode referentNode = node.getReferent(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
@@ -273,9 +272,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public String getCellRole() {
-    LinkDeclaration linkDeclaration = getLinkDeclaration();
+    SNode linkDeclaration = getLinkDeclaration();
     if (linkDeclaration != null) {
-      return SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(linkDeclaration));
+      return SModelUtil.getGenuineLinkRole(linkDeclaration);
     } else {//try legacy technique
       return getRole();
     }
@@ -386,12 +385,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     });
   }
 
-  public LinkDeclaration getLinkDeclaration() {
+  public SNode getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
-      return (LinkDeclaration) BaseAdapter.fromNode(getSNode().getLinkDeclaration(role));
+      return getSNode().getLinkDeclaration(role);
     }
-    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
+    return myLinkDeclaration;
   }
 
   public boolean isReferenceCell() {
@@ -503,8 +502,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(node.getParent().getLinkDeclaration(node.getRole_()));
-    AbstractConceptDeclaration concept = link.getTarget();
+    SNode link = node.getParent().getLinkDeclaration(node.getRole_());
+    SNode concept = CellUtil.getLinkDeclarationTarget(link);
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
     if (node.getConceptFqName().equals(concreteConceptFqName)) {
       return null;

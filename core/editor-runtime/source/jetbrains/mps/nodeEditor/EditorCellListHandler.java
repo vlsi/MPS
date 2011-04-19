@@ -16,12 +16,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
@@ -51,8 +49,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     return myLinkDeclaration;
   }
 
-  public ConceptDeclaration getChildConcept() {
-    return (ConceptDeclaration) BaseAdapter.fromNode(myChildConcept);
+  public SNode getChildConcept() {
+    return myChildConcept;
   }
 
 
