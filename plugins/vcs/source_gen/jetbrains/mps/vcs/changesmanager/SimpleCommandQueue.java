@@ -12,10 +12,11 @@ public class SimpleCommandQueue {
   protected static Log log = LogFactory.getLog(SimpleCommandQueue.class);
 
   private Thread myThread;
+  private boolean myDisposed = false;
   private final Queue<Runnable> myQueue = new LinkedList<Runnable>();
 
   public SimpleCommandQueue(@NotNull String threadName) {
-    myThread = new SimpleCommandQueue.MyExecutorThread(myQueue, threadName);
+    myThread = new SimpleCommandQueue.MyExecutorThread(threadName);
     myThread.start();
   }
 
@@ -35,6 +36,7 @@ public class SimpleCommandQueue {
   }
 
   public void dispose() {
+    myDisposed = true;
     myThread.interrupt();
   }
 
@@ -50,18 +52,15 @@ public class SimpleCommandQueue {
     }
   }
 
-  private static class MyExecutorThread extends Thread {
-    private final Queue<Runnable> myQueue;
-
-    public MyExecutorThread(@NotNull Queue<Runnable> queue, @NotNull String name) {
+  private class MyExecutorThread extends Thread {
+    public MyExecutorThread(@NotNull String name) {
       super(name);
-      myQueue = queue;
     }
 
     @Override
     public void run() {
       while (true) {
-        if (isInterrupted()) {
+        if (myDisposed) {
           return;
         }
         Runnable task;

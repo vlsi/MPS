@@ -1189,99 +1189,98 @@
   <root nodeId="3722815385094205361">
     <nodeInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="33" endLine="12" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="3722815385094206094" fileName="SimpleCommandQueue.java" startLine="13" startPosition="0" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
-    <nodeInfo nodeId="3722815385094208596" fileName="SimpleCommandQueue.java" startLine="14" startPosition="26" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
-    <nodeInfo nodeId="3722815385094244352" fileName="SimpleCommandQueue.java" startLine="17" startPosition="57" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094288748" fileName="SimpleCommandQueue.java" startLine="18" startPosition="76" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7334109670959042089" fileName="SimpleCommandQueue.java" startLine="23" startPosition="45" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094377525" fileName="SimpleCommandQueue.java" startLine="25" startPosition="12" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094288788" fileName="SimpleCommandQueue.java" startLine="31" startPosition="28" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094288800" fileName="SimpleCommandQueue.java" startLine="32" startPosition="24" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6669546492594083149" fileName="SimpleCommandQueue.java" startLine="37" startPosition="25" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094288855" fileName="SimpleCommandQueue.java" startLine="41" startPosition="39" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="47" startPosition="33" endLine="48" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094306261" fileName="SimpleCommandQueue.java" startLine="53" startPosition="56" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
-    <nodeInfo nodeId="3722815385094244342" fileName="SimpleCommandQueue.java" startLine="56" startPosition="83" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3722815385094306286" fileName="SimpleCommandQueue.java" startLine="57" startPosition="18" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6669546492594119026" fileName="SimpleCommandQueue.java" startLine="64" startPosition="30" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3722815385094360871" fileName="SimpleCommandQueue.java" startLine="66" startPosition="9" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3722815385094360884" fileName="SimpleCommandQueue.java" startLine="70" startPosition="17" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094360894" fileName="SimpleCommandQueue.java" startLine="72" startPosition="46" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3722815385094360900" fileName="SimpleCommandQueue.java" startLine="75" startPosition="11" endLine="76" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094360910" fileName="SimpleCommandQueue.java" startLine="78" startPosition="13" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="81" startPosition="37" endLine="82" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3722815385094377523" fileName="SimpleCommandQueue.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6669546492594083167" fileName="SimpleCommandQueue.java" startLine="63" startPosition="20" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3722815385094205363" fileName="SimpleCommandQueue.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleCommandQueue#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3722815385094288782" fileName="SimpleCommandQueue.java" startLine="30" startPosition="47" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6669546492594067000" fileName="SimpleCommandQueue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3722815385094288809" fileName="SimpleCommandQueue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertIsCommandThread#()V" />
-    <nodeInfo nodeId="3722815385094244337" fileName="SimpleCommandQueue.java" startLine="55" startPosition="0" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyExecutorThread#(Ljava/util/Queue;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3722815385094377504" fileName="SimpleCommandQueue.java" startLine="22" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3722815385094288874" fileName="SimpleCommandQueue.java" startLine="45" startPosition="45" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3722815385094360882" fileName="SimpleCommandQueue.java" startLine="69" startPosition="37" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3722815385094288757" fileName="SimpleCommandQueue.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTask#(Ljava/lang/Runnable;)V" />
-    <nodeInfo nodeId="3722815385094360880" fileName="SimpleCommandQueue.java" startLine="68" startPosition="32" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3722815385094360908" fileName="SimpleCommandQueue.java" startLine="77" startPosition="9" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3722815385094377489" fileName="SimpleCommandQueue.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTask#(Ljava/lang/Runnable;)V" />
-    <nodeInfo nodeId="3722815385094288862" fileName="SimpleCommandQueue.java" startLine="44" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertSoftlyIsCommandThread#()V" />
-    <nodeInfo nodeId="3722815385094360875" fileName="SimpleCommandQueue.java" startLine="67" startPosition="22" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3722815385094360868" fileName="SimpleCommandQueue.java" startLine="62" startPosition="23" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3722815385094360858" fileName="SimpleCommandQueue.java" startLine="60" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <scopeInfo nodeId="3722815385094377506" fileName="SimpleCommandQueue.java" startLine="23" startPosition="45" endLine="24" endPosition="17" />
-    <scopeInfo nodeId="3722815385094377524" fileName="SimpleCommandQueue.java" startLine="25" startPosition="12" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="6669546492594067003" fileName="SimpleCommandQueue.java" startLine="37" startPosition="25" endLine="38" endPosition="25" />
-    <scopeInfo nodeId="3722815385094288812" fileName="SimpleCommandQueue.java" startLine="41" startPosition="39" endLine="42" endPosition="46" />
-    <scopeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="47" startPosition="33" endLine="48" endPosition="121" />
-    <scopeInfo nodeId="6669546492594083168" fileName="SimpleCommandQueue.java" startLine="64" startPosition="30" endLine="65" endPosition="17" />
-    <scopeInfo nodeId="3722815385094360883" fileName="SimpleCommandQueue.java" startLine="70" startPosition="17" endLine="71" endPosition="29" />
-    <scopeInfo nodeId="3722815385094360890" fileName="SimpleCommandQueue.java" startLine="72" startPosition="0" endLine="73" endPosition="21">
+    <nodeInfo nodeId="2324506610466057419" fileName="SimpleCommandQueue.java" startLine="14" startPosition="26" endLine="15" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
+    <nodeInfo nodeId="3722815385094208596" fileName="SimpleCommandQueue.java" startLine="15" startPosition="37" endLine="16" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
+    <nodeInfo nodeId="3722815385094244352" fileName="SimpleCommandQueue.java" startLine="18" startPosition="57" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094288748" fileName="SimpleCommandQueue.java" startLine="19" startPosition="67" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7334109670959042089" fileName="SimpleCommandQueue.java" startLine="24" startPosition="45" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094377525" fileName="SimpleCommandQueue.java" startLine="26" startPosition="12" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094288788" fileName="SimpleCommandQueue.java" startLine="32" startPosition="28" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094288800" fileName="SimpleCommandQueue.java" startLine="33" startPosition="24" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2324506610466065738" fileName="SimpleCommandQueue.java" startLine="38" startPosition="25" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6669546492594083149" fileName="SimpleCommandQueue.java" startLine="39" startPosition="22" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094288855" fileName="SimpleCommandQueue.java" startLine="43" startPosition="39" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="49" startPosition="33" endLine="50" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094244342" fileName="SimpleCommandQueue.java" startLine="56" startPosition="51" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6669546492594119026" fileName="SimpleCommandQueue.java" startLine="63" startPosition="25" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3722815385094360871" fileName="SimpleCommandQueue.java" startLine="65" startPosition="9" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3722815385094360884" fileName="SimpleCommandQueue.java" startLine="69" startPosition="17" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094360894" fileName="SimpleCommandQueue.java" startLine="71" startPosition="46" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3722815385094360900" fileName="SimpleCommandQueue.java" startLine="74" startPosition="11" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094360910" fileName="SimpleCommandQueue.java" startLine="77" startPosition="13" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="80" startPosition="37" endLine="81" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3722815385094377523" fileName="SimpleCommandQueue.java" startLine="26" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="48" startPosition="45" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="48" startPosition="45" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3722815385094244337" fileName="SimpleCommandQueue.java" startLine="55" startPosition="49" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyExecutorThread#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6669546492594083167" fileName="SimpleCommandQueue.java" startLine="62" startPosition="20" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="79" startPosition="31" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="79" startPosition="31" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3722815385094205363" fileName="SimpleCommandQueue.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleCommandQueue#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3722815385094288782" fileName="SimpleCommandQueue.java" startLine="31" startPosition="47" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="3722815385094288809" fileName="SimpleCommandQueue.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertIsCommandThread#()V" />
+    <nodeInfo nodeId="3722815385094377504" fileName="SimpleCommandQueue.java" startLine="23" startPosition="47" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6669546492594067000" fileName="SimpleCommandQueue.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3722815385094288874" fileName="SimpleCommandQueue.java" startLine="47" startPosition="45" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3722815385094360882" fileName="SimpleCommandQueue.java" startLine="68" startPosition="37" endLine="73" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3722815385094288757" fileName="SimpleCommandQueue.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTask#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="3722815385094360880" fileName="SimpleCommandQueue.java" startLine="67" startPosition="32" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3722815385094360908" fileName="SimpleCommandQueue.java" startLine="76" startPosition="9" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3722815385094377489" fileName="SimpleCommandQueue.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTask#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="3722815385094288862" fileName="SimpleCommandQueue.java" startLine="46" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertSoftlyIsCommandThread#()V" />
+    <nodeInfo nodeId="3722815385094360875" fileName="SimpleCommandQueue.java" startLine="66" startPosition="22" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="3722815385094360868" fileName="SimpleCommandQueue.java" startLine="61" startPosition="23" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3722815385094360858" fileName="SimpleCommandQueue.java" startLine="59" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <scopeInfo nodeId="3722815385094377506" fileName="SimpleCommandQueue.java" startLine="24" startPosition="45" endLine="25" endPosition="17" />
+    <scopeInfo nodeId="3722815385094377524" fileName="SimpleCommandQueue.java" startLine="26" startPosition="12" endLine="27" endPosition="20" />
+    <scopeInfo nodeId="3722815385094288812" fileName="SimpleCommandQueue.java" startLine="43" startPosition="39" endLine="44" endPosition="46" />
+    <scopeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="49" startPosition="33" endLine="50" endPosition="121" />
+    <scopeInfo nodeId="3722815385094244340" fileName="SimpleCommandQueue.java" startLine="56" startPosition="51" endLine="57" endPosition="18" />
+    <scopeInfo nodeId="6669546492594083168" fileName="SimpleCommandQueue.java" startLine="63" startPosition="25" endLine="64" endPosition="17" />
+    <scopeInfo nodeId="3722815385094360883" fileName="SimpleCommandQueue.java" startLine="69" startPosition="17" endLine="70" endPosition="29" />
+    <scopeInfo nodeId="3722815385094360890" fileName="SimpleCommandQueue.java" startLine="71" startPosition="0" endLine="72" endPosition="21">
       <varInfo nodeId="3722815385094360891" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094360893" fileName="SimpleCommandQueue.java" startLine="72" startPosition="46" endLine="73" endPosition="21" />
-    <scopeInfo nodeId="3722815385094360909" fileName="SimpleCommandQueue.java" startLine="78" startPosition="13" endLine="79" endPosition="21" />
-    <scopeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="81" startPosition="37" endLine="82" endPosition="80" />
-    <scopeInfo nodeId="3722815385094205366" fileName="SimpleCommandQueue.java" startLine="17" startPosition="57" endLine="19" endPosition="21" />
-    <scopeInfo nodeId="3722815385094288784" fileName="SimpleCommandQueue.java" startLine="31" startPosition="28" endLine="33" endPosition="23" />
-    <scopeInfo nodeId="3722815385094244340" fileName="SimpleCommandQueue.java" startLine="56" startPosition="83" endLine="58" endPosition="22" />
-    <scopeInfo nodeId="3722815385094288876" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="3722815385094360914" fileName="SimpleCommandQueue.java" startLine="80" startPosition="0" endLine="83" endPosition="11">
-      <varInfo nodeId="3722815385094360915" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3722815385094360917" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
-    <scopeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
-    <scopeInfo nodeId="3722815385094205363" fileName="SimpleCommandQueue.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="3722815385094244350" varName="threadName" />
-    </scopeInfo>
-    <scopeInfo nodeId="3722815385094288760" fileName="SimpleCommandQueue.java" startLine="30" startPosition="47" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="6669546492594067000" fileName="SimpleCommandQueue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3722815385094288809" fileName="SimpleCommandQueue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3722815385094244337" fileName="SimpleCommandQueue.java" startLine="55" startPosition="0" endLine="59" endPosition="5">
-      <varInfo nodeId="3722815385094306280" varName="queue" />
+    <scopeInfo nodeId="3722815385094360893" fileName="SimpleCommandQueue.java" startLine="71" startPosition="46" endLine="72" endPosition="21" />
+    <scopeInfo nodeId="3722815385094360909" fileName="SimpleCommandQueue.java" startLine="77" startPosition="13" endLine="78" endPosition="21" />
+    <scopeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="80" startPosition="37" endLine="81" endPosition="80" />
+    <scopeInfo nodeId="3722815385094205366" fileName="SimpleCommandQueue.java" startLine="18" startPosition="57" endLine="20" endPosition="21" />
+    <scopeInfo nodeId="3722815385094288784" fileName="SimpleCommandQueue.java" startLine="32" startPosition="28" endLine="34" endPosition="23" />
+    <scopeInfo nodeId="6669546492594067003" fileName="SimpleCommandQueue.java" startLine="38" startPosition="25" endLine="40" endPosition="25" />
+    <scopeInfo nodeId="3722815385094288876" fileName="SimpleCommandQueue.java" startLine="48" startPosition="45" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="48" startPosition="45" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="3722815385094244337" fileName="SimpleCommandQueue.java" startLine="55" startPosition="49" endLine="58" endPosition="5">
       <varInfo nodeId="3722815385094244343" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094377492" fileName="SimpleCommandQueue.java" startLine="22" startPosition="47" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="3722815385094288865" fileName="SimpleCommandQueue.java" startLine="45" startPosition="45" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3722815385094360881" fileName="SimpleCommandQueue.java" startLine="69" startPosition="37" endLine="74" endPosition="13" />
-    <scopeInfo nodeId="3722815385094288757" fileName="SimpleCommandQueue.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3722815385094360914" fileName="SimpleCommandQueue.java" startLine="79" startPosition="0" endLine="82" endPosition="11">
+      <varInfo nodeId="3722815385094360915" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3722815385094360917" fileName="SimpleCommandQueue.java" startLine="79" startPosition="31" endLine="82" endPosition="11" />
+    <scopeInfo nodeId="3722815385094360918" fileName="SimpleCommandQueue.java" startLine="79" startPosition="31" endLine="82" endPosition="11" />
+    <scopeInfo nodeId="3722815385094205363" fileName="SimpleCommandQueue.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="3722815385094244350" varName="threadName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3722815385094288760" fileName="SimpleCommandQueue.java" startLine="31" startPosition="47" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="3722815385094288809" fileName="SimpleCommandQueue.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3722815385094377492" fileName="SimpleCommandQueue.java" startLine="23" startPosition="47" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="6669546492594067000" fileName="SimpleCommandQueue.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="3722815385094288865" fileName="SimpleCommandQueue.java" startLine="47" startPosition="45" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="3722815385094360881" fileName="SimpleCommandQueue.java" startLine="68" startPosition="37" endLine="73" endPosition="13" />
+    <scopeInfo nodeId="3722815385094288757" fileName="SimpleCommandQueue.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="3722815385094288768" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094377489" fileName="SimpleCommandQueue.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3722815385094377489" fileName="SimpleCommandQueue.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3722815385094377494" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094288862" fileName="SimpleCommandQueue.java" startLine="44" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="3722815385094360879" fileName="SimpleCommandQueue.java" startLine="68" startPosition="32" endLine="76" endPosition="32" />
-    <scopeInfo nodeId="3722815385094360870" fileName="SimpleCommandQueue.java" startLine="63" startPosition="20" endLine="84" endPosition="9">
+    <scopeInfo nodeId="3722815385094288862" fileName="SimpleCommandQueue.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3722815385094360879" fileName="SimpleCommandQueue.java" startLine="67" startPosition="32" endLine="75" endPosition="32" />
+    <scopeInfo nodeId="3722815385094360870" fileName="SimpleCommandQueue.java" startLine="62" startPosition="20" endLine="83" endPosition="9">
       <varInfo nodeId="3722815385094360872" varName="task" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094360861" fileName="SimpleCommandQueue.java" startLine="62" startPosition="23" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="3722815385094360858" fileName="SimpleCommandQueue.java" startLine="60" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="3722815385094244335" fileName="SimpleCommandQueue.java" startLine="53" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue$MyExecutorThread" />
-    <unitInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
+    <scopeInfo nodeId="3722815385094360861" fileName="SimpleCommandQueue.java" startLine="61" startPosition="23" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="3722815385094360858" fileName="SimpleCommandQueue.java" startLine="59" startPosition="0" endLine="86" endPosition="0" />
+    <unitInfo nodeId="3722815385094244335" fileName="SimpleCommandQueue.java" startLine="55" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue$MyExecutorThread" />
+    <unitInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
   </root>
   <root nodeId="4056424511791981358">
     <nodeInfo nodeId="4056424511791981376" fileName="SModelUtils.java" startLine="29" startPosition="41" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
