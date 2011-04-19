@@ -17,10 +17,8 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -64,8 +62,10 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
-      for (Solution s : CollectionUtil.filter(Solution.class, modules)) {
-        builder.addNode(new ProjectSolutionTreeNode(s, myProject, true));
+      for (IModule s : modules) {
+        if(s instanceof Solution || s instanceof ProjectStructureModule) {
+          builder.addNode(new ProjectSolutionTreeNode((AbstractModule) s, myProject, true));
+        }
       }
       builder.fillNode(solutions);
       add(solutions);
@@ -111,7 +111,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
         return NameUtil.namespaceFromLongName(node.getModule().toString());
       }
 
-      if (node.getModule() instanceof Language) {
+      if (node.getModule() instanceof Language || node.getModule() instanceof ProjectStructureModule) {
         return NameUtil.namespaceFromLongName(node.getModule().getModuleFqName());
       }
 

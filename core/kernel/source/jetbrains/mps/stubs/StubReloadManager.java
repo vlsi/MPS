@@ -141,8 +141,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void markOldStubs() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-
+      if (!(sm instanceof BaseStubModelDescriptor)) continue;
       BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
       if (modelPathsAffected(baseDescriptor)) {
         baseDescriptor.markReload();

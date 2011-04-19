@@ -140,7 +140,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void moduleFqNameChanged(IModule module, String oldName) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
       throw new IllegalStateException();
@@ -156,8 +156,11 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myFqNameToModulesMap.get(ref.getModuleFqName());
   }
 
+  /*
+   *   TODO merge with addModule
+   */
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
     String canonicalPath = IFileUtils.getCanonicalPath(file);
@@ -189,7 +192,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void addModule(IModule module, MPSModuleOwner owner) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
@@ -225,7 +228,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void removeModule(IModule module) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     if (!myModules.contains(module)) {
       return;
@@ -248,7 +251,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
     Set<IModule> modules = new HashSet<IModule>(myModuleToOwners.getBySecond(owner));
@@ -262,7 +265,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void unRegisterModules(MPSModuleOwner owner) {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
     myModuleToOwners.clearSecond(owner);
@@ -271,7 +274,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void removeUnusedModules() {
-    assertCanWrite();
+    ModelAccess.assertLegalWrite();
 
     if (!myDirtyFlag) return;
 
@@ -454,10 +457,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (!ModelAccess.instance().canRead()) {
       throw new IllegalStateException("Can't read");
     }
-  }
-
-  private void assertCanWrite() {
-    ModelAccess.assertLegalWrite();
   }
 
   public void addModuleRepositoryListener(ModuleRepositoryListener listener) {

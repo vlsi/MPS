@@ -24,7 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
+import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -76,12 +76,12 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     ModelAccess.assertLegalWrite();
 
     SModelFqName fq = getModelFqName(module);
-    if(isDeleted) {
+    if (isDeleted) {
       ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
-      if(descriptor != null) {
+      if (descriptor != null) {
         removeModel(descriptor);
       }
-    } else if(myModels.containsKey(fq)) {
+    } else if (myModels.containsKey(fq)) {
       ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
       descriptor.dropModel();
     } else {
@@ -105,9 +105,9 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
       }
     }
 
-    for(SModelFqName mm : old) {
+    for (SModelFqName mm : old) {
       ProjectStructureSModelDescriptor model = myModels.get(mm);
-      if(model != null) {
+      if (model != null) {
         removeModel(model);
       }
     }
@@ -180,6 +180,11 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     // nothing
   }
 
+  @Override
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    return Collections.singletonList(BootstrapLanguages.PROJECT);
+  }
+
   private void removeModel(SModelDescriptor md) {
     if (myModels.remove(md.getSModelReference().getSModelFqName()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
@@ -200,7 +205,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   private SModelFqName getModelFqName(IModule module) {
-    return new SModelFqName("module." + module.getModuleFqName(), "project");   //TODO stereotype
+    return new SModelFqName(MODULE_REFERENCE.getModuleFqName(), "module." + module.getModuleFqName(), SModelStereotype.getStubStereotypeForId("project"));
   }
 
   public String toString() {
@@ -227,10 +232,6 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
       result.add(ProjectStructureModule.this);
       return result;
     }
-
-    protected Set<Language> getInitialUsedLanguages() {
-      return Collections.emptySet();
-    }
   }
 
   public class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
@@ -251,6 +252,8 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
         new ProjectStructureBuilder(moduleDescriptor, file, model) {
           @Override
           public Iterable<SModelReference> loadReferences(SNode module) {
+//            SModelRepository.getInstance().getModelDescriptors(myModule);
+
             // TODO collect models
             return Collections.emptySet();
           }
@@ -260,10 +263,22 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     }
 
     private void dropModel() {
-      if (mySModel != null) {
-        this.mySModel = null;
-        fireModelReplaced();
-        setLoadingState(ModelLoadingState.NOT_LOADED);
+      if (mySModel == null) return;
+      final SModel oldSModel = mySModel;
+      oldSModel.setModelDescriptor(null);
+      mySModel = null;
+      setLoadingState(ModelLoadingState.NOT_LOADED);
+
+      Runnable modelReplacedNotifier = new Runnable() {
+        public void run() {
+          fireModelReplaced();
+          oldSModel.dispose();
+        }
+      };
+      if (ModelAccess.instance().isInEDT()) {
+        modelReplacedNotifier.run();
+      } else {
+        ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
       }
     }
 
@@ -281,7 +296,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
   public class ProjectStructureSModel extends SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
-      super(modelReference, new RegularNodeIdMap());
+      super(modelReference, new ForeignNodeIdMap());
     }
 
     @Override

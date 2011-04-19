@@ -19,6 +19,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
@@ -34,6 +35,8 @@ public class ModuleValidatorFactory {
       return new SolutionValidator((Solution) m);
     } else if (m instanceof DevKit) {
       return new DevkitValidator((DevKit) m);
+    } else if (m instanceof ProjectStructureModule) {
+      return new EmptyValidator();
     } else {
       throw new IllegalArgumentException("Unknown module for validation: " + m.getClass());
     }

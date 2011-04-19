@@ -19,25 +19,22 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode {
-  private Solution mySolution;
+  private AbstractModule mySolution;
   private boolean myShortNameOnly;
 
   private boolean myInitialized;
 
-  public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
+  public ProjectSolutionTreeNode(AbstractModule solution, MPSProject project) {
     this(solution, project, false);
   }
 
-  public ProjectSolutionTreeNode(Solution solution, MPSProject project, boolean shortNameOnly) {
+  public ProjectSolutionTreeNode(AbstractModule solution, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
@@ -56,10 +53,6 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     return mySolution;
   }
 
-  public Solution getSolution() {
-    return mySolution;
-  }
-
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS);
   }
@@ -69,7 +62,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
   }
 
   protected String getModulePresentation() {
-    String name = mySolution.getModuleDescriptor().getNamespace();
+    String name = mySolution.getModuleFqName();
 
     if (myShortNameOnly) {
       name = NameUtil.shortNameFromLongName(name);

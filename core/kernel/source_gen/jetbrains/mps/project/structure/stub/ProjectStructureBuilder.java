@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelReference;
@@ -55,7 +57,9 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertLanguage(LanguageDescriptor source) {
-    SNode result = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.lang.project.structure.Language", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
+    result.setId(SNodeId.fromString("~root"));
+    SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
     SPropertyOperations.set(result, "genPath", source.getGenPath());
@@ -83,7 +87,9 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertSolution(SolutionDescriptor source) {
-    SNode result = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.lang.project.structure.Solution", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
+    result.setId(SNodeId.fromString("~root"));
+    SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
@@ -93,7 +99,9 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertDevkit(DevkitDescriptor source) {
-    SNode result = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.lang.project.structure.DevKit", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
+    result.setId(SNodeId.fromString("~root"));
+    SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "devkitPath", myFile.getPath());
     SPropertyOperations.set(result, "plugin", source.getPlugin());
