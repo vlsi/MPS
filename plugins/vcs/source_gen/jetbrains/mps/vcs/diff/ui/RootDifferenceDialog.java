@@ -93,6 +93,8 @@ public class RootDifferenceDialog extends BaseDialog {
       myBottomPanel :
       myTopPanel
     )).add(strip, gbc);
+    DiffButtonsPainter.addTo(this, myOldEditor, changeGroupBuilder, inspector);
+    DiffButtonsPainter.addTo(this, myNewEditor, changeGroupBuilder, inspector);
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
