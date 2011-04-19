@@ -24,8 +24,6 @@
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="4zw2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="k1li" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
-  <import index="b43c" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.newTypesystem(jetbrains.mps.newTypesystem@java_stub)" version="-1" />
-  <import index="l5ny" modelUID="r:9e31fce5-110c-46a5-b09f-2878d44d34d6(jetbrains.mps.newTypesystem.presentation.trace)" version="-1" />
   <import index="8vv9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.uiActions(MPS.Classpath/jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="av73" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellMenu(MPS.Classpath/jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
