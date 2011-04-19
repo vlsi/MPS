@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
+import java.util.Set;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -19,7 +23,12 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SModel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.CopyUtil;
 import javax.swing.JComponent;
 
 public class RootDifferenceDialog extends BaseDialog {
@@ -32,6 +41,7 @@ public class RootDifferenceDialog extends BaseDialog {
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private JPanel myContainer = new JPanel(new BorderLayout());
+  private Set<ModelChange> myRevertedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
 
   public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName) {
     super(modelDialog, "Difference for " + rootName);
@@ -75,6 +85,10 @@ public class RootDifferenceDialog extends BaseDialog {
 
   private void highlightAllChanges() {
     for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
+      if (SetSequence.fromSet(myRevertedChanges).contains(change)) {
+        continue;
+      }
+
       higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
       higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
     }
@@ -93,12 +107,48 @@ public class RootDifferenceDialog extends BaseDialog {
       myBottomPanel :
       myTopPanel
     )).add(strip, gbc);
-    DiffButtonsPainter.addTo(this, myOldEditor, changeGroupBuilder, inspector);
-    DiffButtonsPainter.addTo(this, myNewEditor, changeGroupBuilder, inspector);
+    if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
+      DiffButtonsPainter.addTo(this, myOldEditor, changeGroupBuilder, inspector);
+      DiffButtonsPainter.addTo(this, myNewEditor, changeGroupBuilder, inspector);
+    }
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
     diffEditor.highlightChange(new ChangeEditorMessage(model, change, diffEditor));
+  }
+
+  public void rehighlight() {
+    myNewEditor.unhighlightAllChanges();
+    myOldEditor.unhighlightAllChanges();
+
+    myNewEditor.getMainEditor().rebuildEditorContent();
+    myOldEditor.getMainEditor().rebuildEditorContent();
+
+    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
+      public void visit(ChangeGroupBuilder b) {
+        b.invalidate();
+      }
+    });
+
+    highlightAllChanges();
+  }
+
+  /*package*/ void rollbackChanges(final Iterable<ModelChange> changes) {
+    SetSequence.fromSet(myRevertedChanges).addSequence(Sequence.fromIterable(changes));
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        assert Sequence.fromIterable(changes).isNotEmpty();
+        SModel modelToApply = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
+        for (ModelChange c : Sequence.fromIterable(changes)) {
+          c.getOppositeChange().apply(modelToApply, new NodeCopier() {
+            public SNode copyNode(SNode node) {
+              return CopyUtil.copyAndPreserveId(node);
+            }
+          });
+        }
+        rehighlight();
+      }
+    });
   }
 
   protected JComponent getMainComponent() {

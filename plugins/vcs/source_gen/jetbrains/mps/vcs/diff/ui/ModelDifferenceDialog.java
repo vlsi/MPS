@@ -61,7 +61,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     myContentTitles = contentTitles;
     myProject = project;
     myOperationContext = operationContext;
-    myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel);
+    myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       if (!(MapSequence.fromMap(myRootToChange).containsKey(c.getRootId()))) {
         MapSequence.fromMap(myRootToChange).put(c.getRootId(), ListSequence.fromList(new ArrayList<ModelChange>()));

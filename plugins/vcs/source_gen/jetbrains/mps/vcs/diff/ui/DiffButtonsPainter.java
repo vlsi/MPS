@@ -10,8 +10,6 @@ import jetbrains.mps.vcs.diff.changes.InsertNodeGroupChange;
 import jetbrains.mps.ide.projectPane.Icons;
 import java.util.Arrays;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.ModelAccess;
-import java.util.List;
 
 public class DiffButtonsPainter extends ButtonsPainter {
   private RootDifferenceDialog myDialog;
@@ -57,15 +55,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     }
 
     public void performAction() {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          List<ModelChange> changes = getChangeGroup().getChanges();
-          assert ListSequence.fromList(changes).isNotEmpty();
-          ListSequence.fromList(changes).first().getChangeSet().getNewModel();
-          // TODO apply reversed change 
-          // TODO rehighlight 
-        }
-      });
+      myDialog.rollbackChanges(getChangeGroup().getChanges());
     }
   }
 }

@@ -104,8 +104,9 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void mousePressed(MouseEvent event) {
-    if (event.getButton() == MouseEvent.BUTTON1) {
+    if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_CLICKED) {
       check_of7u5x_a0a0a9(myCurrentButton);
+      event.consume();
     }
   }
 
