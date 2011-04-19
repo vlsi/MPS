@@ -15,7 +15,7 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_Editor" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
