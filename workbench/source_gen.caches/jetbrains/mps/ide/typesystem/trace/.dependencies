@@ -71,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTreeNode" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
@@ -78,11 +79,14 @@
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.blocks.InequalityBlock" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
   </dependency>
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTreeNode" file="TypeSystemStateTreeNode.java">
     <classNode dependClassName="java.lang.String" />

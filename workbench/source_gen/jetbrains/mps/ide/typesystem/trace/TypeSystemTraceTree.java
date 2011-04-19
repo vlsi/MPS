@@ -110,6 +110,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(myStateCopy.getOperation(), myOperationContext);
     create(myOperation, result);
+    setRootVisible(true);
     return result;
   }
 

@@ -504,7 +504,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8513716958726547028">
       <property name="name" nameId="tpck.1169194664001" value="GoToNode" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Node" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Go to Source Node" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="description" nameId="tp4k.1213273179528" value="go to source node" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="typesystem" />

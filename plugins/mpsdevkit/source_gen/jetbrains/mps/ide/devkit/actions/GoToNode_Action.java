@@ -21,7 +21,7 @@ public class GoToNode_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoToNode_Action.class);
 
   public GoToNode_Action() {
-    super("Go to Node", "go to source node", ICON);
+    super("Go to Source Node", "go to source node", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
