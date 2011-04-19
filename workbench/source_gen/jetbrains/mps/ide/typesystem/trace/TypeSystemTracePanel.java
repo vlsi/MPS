@@ -19,7 +19,7 @@ import java.awt.Dimension;
 import jetbrains.mps.newTypesystem.state.State;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.typesystem.trace.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
@@ -74,7 +74,7 @@ public class TypeSystemTracePanel extends JPanel {
   }
 
   protected DefaultActionGroup createButtonsGroup() {
-    ToggleAction showApplyRuleAction = new ToggleAction("Show Apply Rule", "Show apply rule operations in trace", Icons.APPLY) {
+    ToggleAction showApplyRuleAction = new ToggleAction("Show Apply Rule", "Show apply rule operations in trace", Icons.RULE) {
       private boolean mySelected = TraceSettings.isShowApplyRuleOperations();
 
       public boolean isSelected(AnActionEvent e) {
@@ -88,7 +88,7 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.expandAll();
       }
     };
-    ToggleAction showGenerationModeAction = new ToggleAction("Generation Mode", "Show trace in generation mode", Icons.GENERATOR_ICON) {
+    ToggleAction showGenerationModeAction = new ToggleAction("Generation Mode", "Show trace in generation mode", Icons.GENERATOR) {
       private boolean mySelected = TraceSettings.isGenerationMode();
 
       public boolean isSelected(AnActionEvent e) {
@@ -102,7 +102,7 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.expandAll();
       }
     };
-    ToggleAction showTraceForSelectedNode = new ToggleAction("Trace for Selected Node", "Show trace for selected node", Icons.CREATE_NODE_ICON) {
+    ToggleAction showTraceForSelectedNode = new ToggleAction("Trace for Selected Node", "Show trace for selected node", Icons.NODE) {
       private boolean mySelected = TraceSettings.isTraceForSelectedNode();
 
       public boolean isSelected(AnActionEvent e) {
@@ -116,7 +116,7 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.expandAll();
       }
     };
-    ToggleAction showBlockDependencies = new ToggleAction("Show block dependencies", "Show block dependencies in trace", Icons.PROPERTY_ICON) {
+    ToggleAction showBlockDependencies = new ToggleAction("Show block dependencies", "Show block dependencies in trace", Icons.BLOCK) {
       private boolean mySelected = TraceSettings.isShowBlockDependencies();
 
       public boolean isSelected(AnActionEvent e) {
@@ -131,12 +131,12 @@ public class TypeSystemTracePanel extends JPanel {
       }
     };
 
-    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REVERT) {
+    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REFRESH) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         refresh();
       }
     };
-    BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", Icons.CELL_ERROR_ICON) {
+    BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", Icons.ERROR) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myTraceTree.goToNextError();
       }

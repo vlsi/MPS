@@ -4,6 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 
 public class GoToRule_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = new ImageIcon(GoToRule_Action.class.getResource("rule.png"));
   protected static Log log = LogFactory.getLog(GoToRule_Action.class);
 
   public GoToRule_Action() {

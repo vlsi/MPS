@@ -33,6 +33,7 @@
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="w88" modelUID="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)" version="-1" />
+  <import index="zpq9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.typesystem.trace.icons(MPS.Classpath/jetbrains.mps.ide.typesystem.trace.icons@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
@@ -3682,8 +3683,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Show apply rule operations in trace" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576612">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dAPPLY" resolveInfo="APPLY" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dRULE" resolveInfo="RULE" />
                   </node>
                 </node>
               </node>
@@ -3792,8 +3793,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Show trace in generation mode" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576656">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dGENERATOR_ICON" resolveInfo="GENERATOR_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dGENERATOR" resolveInfo="GENERATOR" />
                   </node>
                 </node>
               </node>
@@ -3902,8 +3903,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Show trace for selected node" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576700">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dCREATE_NODE_ICON" resolveInfo="CREATE_NODE_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dNODE" resolveInfo="NODE" />
                   </node>
                 </node>
               </node>
@@ -4012,8 +4013,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Show block dependencies in trace" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576744">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dPROPERTY_ICON" resolveInfo="PROPERTY_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dBLOCK" resolveInfo="BLOCK" />
                   </node>
                 </node>
               </node>
@@ -4070,8 +4071,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Refresh" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576766">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dREVERT" resolveInfo="REVERT" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dREFRESH" resolveInfo="REFRESH" />
                   </node>
                 </node>
               </node>
@@ -4132,8 +4133,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Navigate to next error in trace" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="866755926374576789">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dCELL_ERROR_ICON" resolveInfo="CELL_ERROR_ICON" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zpq9.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="zpq9.~Icons%dERROR" resolveInfo="ERROR" />
                   </node>
                 </node>
               </node>
