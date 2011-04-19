@@ -60,6 +60,7 @@
     <orderEntry type="module" module-name="startup" />
     <orderEntry type="module" module-name="actions-runtime" exported="" />
     <orderEntry type="module" module-name="findUsages-runtime" exported="" />
+    <orderEntry type="module" module-name="refactoring-runtime" exported="" />
   </component>
   <component name="copyright">
     <Base>

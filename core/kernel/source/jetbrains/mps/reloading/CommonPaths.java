@@ -97,6 +97,7 @@ public class CommonPaths {
     addIfExists(result, "/core/editor-runtime/classes");
     addIfExists(result, "/core/plugin-runtime/classes");
     addIfExists(result, "/core/findUsages-runtime/classes");
+    addIfExists(result, "/core/refactoring-runtime/classes");
     addIfExists(result, "/core/runtime/classes");
     addIfExists(result, "/workbench/typesystemUi/classes");
     addIfExists(result, "/lib/platform-api.jar");
