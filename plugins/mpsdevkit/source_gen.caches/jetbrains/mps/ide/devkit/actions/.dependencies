@@ -995,6 +995,7 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool" file="NodeExplorer_Tool.java">
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Container" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

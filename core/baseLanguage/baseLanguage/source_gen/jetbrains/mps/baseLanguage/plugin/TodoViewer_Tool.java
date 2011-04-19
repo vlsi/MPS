@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import java.awt.Container;
 import javax.swing.JComponent;
 
 public class TodoViewer_Tool extends GeneratedTool {
@@ -24,7 +25,10 @@ public class TodoViewer_Tool extends GeneratedTool {
   }
 
   public void dispose() {
-    TodoViewer_Tool.this.myComponent.getParent().remove(TodoViewer_Tool.this.myComponent);
+    Container container = TodoViewer_Tool.this.myComponent.getParent();
+    if (container != null) {
+      container.remove(TodoViewer_Tool.this.myComponent);
+    }
     TodoViewer_Tool.this.myComponent.dispose();
     TodoViewer_Tool.this.myComponent = null;
     super.dispose();

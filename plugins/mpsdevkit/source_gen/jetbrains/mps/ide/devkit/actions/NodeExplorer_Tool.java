@@ -17,6 +17,7 @@ import java.util.Map;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import java.awt.Container;
 
 public class NodeExplorer_Tool extends GeneratedTool {
   private static final Icon ICON = new ImageIcon(NodeExplorer_Tool.class.getResource("default.png"));
@@ -46,7 +47,10 @@ public class NodeExplorer_Tool extends GeneratedTool {
   }
 
   public void dispose() {
-    NodeExplorer_Tool.this.myPanel.getParent().remove(NodeExplorer_Tool.this.myPanel);
+    Container container = NodeExplorer_Tool.this.myPanel.getParent();
+    if (container != null) {
+      container.remove(NodeExplorer_Tool.this.myPanel);
+    }
     NodeExplorer_Tool.this.myPanel = null;
     NodeExplorer_Tool.this.myNodeExplorer.clear();
     NodeExplorer_Tool.this.myNodeExplorer = null;

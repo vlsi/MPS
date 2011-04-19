@@ -1073,8 +1073,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.TodoViewer" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="java.awt.Container" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" file="UncommentStatements_Action.java">
