@@ -51,9 +51,12 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   };
   private Highlighter myHighlighter;
 
-  public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext,
-                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, Highlighter highlighter) {
+  public TypesEditorChecker(Highlighter highlighter) {
     myHighlighter = highlighter;
+  }
+
+  public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext,
+                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     myHighlighter.addHighlighterListener(myHighlighterListener);
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();

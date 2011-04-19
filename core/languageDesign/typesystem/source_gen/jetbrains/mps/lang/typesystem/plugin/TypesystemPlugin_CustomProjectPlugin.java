@@ -4,27 +4,27 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.project.MPSProject;
 
 public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private TypesEditorChecker myChecker;
+  private Highlighter myHighlighter;
 
   public TypesystemPlugin_CustomProjectPlugin() {
   }
 
   public void doInit(MPSProject project) {
-    TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker();
-    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-    if (highlighter != null) {
-      highlighter.addChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
+    TypesystemPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
+    if (TypesystemPlugin_CustomProjectPlugin.this.myHighlighter != null) {
+      TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker(TypesystemPlugin_CustomProjectPlugin.this.myHighlighter);
+      TypesystemPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
     }
   }
 
   public void doDispose(MPSProject project) {
-    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-    if (highlighter != null) {
-      highlighter.removeChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
+    if (TypesystemPlugin_CustomProjectPlugin.this.myHighlighter != null) {
+      TypesystemPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
       TypesystemPlugin_CustomProjectPlugin.this.myChecker.dispose();
     }
   }

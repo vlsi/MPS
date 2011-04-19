@@ -51,22 +51,18 @@
   </root>
   <root nodeId="1206189513856">
     <nodeInfo nodeId="1215438799718" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="10" startPosition="83" endLine="11" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
-    <nodeInfo nodeId="1211475061618" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1211475061624" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="17" startPosition="83" endLine="18" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211475061633" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1211475120401" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211475120410" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="26" startPosition="30" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219142075783" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="27" startPosition="85" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1211475061631" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="18" startPosition="83" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1211475120408" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="25" startPosition="83" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1211475061632" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="82" />
-    <scopeInfo nodeId="1211475120409" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="26" startPosition="30" endLine="28" endPosition="68" />
-    <scopeInfo nodeId="1206190084323" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="21" endPosition="5">
-      <varInfo nodeId="1211475061625" varName="highlighter" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206190085403" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="29" endPosition="5">
-      <varInfo nodeId="1211475120402" varName="highlighter" />
-    </scopeInfo>
+    <nodeInfo nodeId="1493771845191585519" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="11" startPosition="39" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
+    <nodeInfo nodeId="1493771845191589913" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="17" startPosition="42" endLine="18" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1493771845191590938" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="19" startPosition="74" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211475061633" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="20" startPosition="140" endLine="21" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211475120410" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="26" startPosition="74" endLine="27" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219142075783" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="27" startPosition="129" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211475061631" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="18" startPosition="115" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1211475120408" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="25" startPosition="45" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1211475061632" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="19" startPosition="74" endLine="21" endPosition="126" />
+    <scopeInfo nodeId="1211475120409" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="26" startPosition="74" endLine="28" endPosition="68" />
+    <scopeInfo nodeId="1206190085403" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="25" startPosition="45" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1206190084323" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="17" startPosition="42" endLine="22" endPosition="5" />
   </root>
   <root nodeId="1230214426481">
     <nodeInfo nodeId="1230214614445" fileName="ShowInequationsForCell_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
