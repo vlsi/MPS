@@ -117,6 +117,10 @@
     <component>
       <implementation-class>jetbrains.mps.generator.impl.RootTemplateAnnotator</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -138,10 +142,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>
     </component>
   </project-components>
 

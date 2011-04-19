@@ -17,6 +17,8 @@ package jetbrains.mps.project.structure;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.generator.TransientModelNodeFinder;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -196,7 +198,8 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
   public ProjectStructureSModelDescriptor createModel(IModule module) {
     SModelFqName fqName = getModelFqName(module);
-    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(fqName, module);
+    SModelId id = SModelId.foreign("project", module.getModuleReference().getModuleId().toString());
+    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(new SModelReference(fqName, id), module);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
@@ -237,8 +240,8 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
     private final IModule myModule;
 
-    private ProjectStructureSModelDescriptor(SModelFqName fqName, IModule module) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
+    private ProjectStructureSModelDescriptor(SModelReference ref, IModule module) {
+      super(IModelRootManager.NULL_MANAGER, ref, false);
       myModule = module;
     }
 
@@ -252,10 +255,12 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
         new ProjectStructureBuilder(moduleDescriptor, file, model) {
           @Override
           public Iterable<SModelReference> loadReferences(SNode module) {
-//            SModelRepository.getInstance().getModelDescriptors(myModule);
-
-            // TODO collect models
-            return Collections.emptySet();
+            return Sequence.<SModelDescriptor>fromIterable(SModelRepository.getInstance().getModelDescriptors(myModule)).select(new ISelector<SModelDescriptor, SModelReference>() {
+              @Override
+              public SModelReference select(SModelDescriptor o) {
+                return o.getSModelReference();
+              }
+            });
           }
         }.convert();
       }
