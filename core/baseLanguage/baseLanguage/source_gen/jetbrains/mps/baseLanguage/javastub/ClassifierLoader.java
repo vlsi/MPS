@@ -10,17 +10,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.objectweb.asm.tree.InnerClassNode;
 import org.objectweb.asm.Opcodes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class ClassifierLoader {
@@ -59,13 +56,13 @@ public class ClassifierLoader {
     }
     ClassReader reader = new ClassReader(code);
     ASMClass ac = new ASMClass(reader);
-    Classifier res = createClassifierForClass(name, myModel, reader);
-    adder.invoke(res.getNode());
+    SNode res = createClassifierForClass(name, reader);
+    adder.invoke(res);
     myUpdater.updateClassifier(myLocation.getModule(), res, ac);
     updateInnerClassifiers(ac, res);
   }
 
-  public void updateInnerClassifiers(ASMClass ac, final Classifier cls) {
+  public void updateInnerClassifiers(ASMClass ac, final SNode cls) {
     for (InnerClassNode cn : ac.getInnerClasses()) {
       if ((cn.access & Opcodes.ACC_SYNTHETIC) != 0) {
         continue;
@@ -93,31 +90,31 @@ public class ClassifierLoader {
       getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode n) {
           SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + !(isStatic));
-          cls.addStaticInnerClassifiers(((Classifier) ((BaseConcept) SNodeOperations.getAdapter(n))));
+          ListSequence.fromList(SLinkOperations.getTargets(cls, "staticInnerClassifiers", true)).addElement(n);
         }
       });
     }
   }
 
-  private Classifier createClassifierForClass(String fqName, SModel model, ClassReader reader) {
-    Classifier result = null;
+  private SNode createClassifierForClass(String fqName, ClassReader reader) {
+    SNode result = null;
     ClassifierKind kind = ClassifierKind.getClassifierKind(reader);
     if (kind == null) {
       return null;
     }
     if (kind == ClassifierKind.CLASS) {
-      result = ClassConcept.newInstance(model);
+      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     } else if (kind == ClassifierKind.INTERFACE) {
-      result = Interface.newInstance(model);
+      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Interface", null);
     } else if (kind == ClassifierKind.ANNOTATIONS) {
-      result = Annotation.newInstance(model);
+      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Annotation", null);
     } else if (kind == ClassifierKind.ENUM) {
-      result = EnumClass.newInstance(model);
+      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumClass", null);
     } else if (kind == ClassifierKind.UNKNOWN) {
       return null;
     }
-    result.setName(NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
-    result.getNode().setId(ASMNodeId.createId(fqName));
+    SPropertyOperations.set(result, "name", NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
+    result.setId(ASMNodeId.createId(fqName));
     return result;
   }
 }
