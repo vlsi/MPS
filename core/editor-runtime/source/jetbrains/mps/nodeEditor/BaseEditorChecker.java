@@ -17,12 +17,16 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 
-public abstract class DisposableEditorChecker implements IEditorChecker, EditorMessageOwner {
+public abstract class BaseEditorChecker implements IEditorChecker, EditorMessageOwner {
   private final Object LOCK = new Object();
   private boolean myDisposed = false;
 
   public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent) {
     return this;
+  }
+
+  public boolean isLaterThan(IEditorChecker editorChecker) {
+    return false;
   }
 
   public void dispose() {

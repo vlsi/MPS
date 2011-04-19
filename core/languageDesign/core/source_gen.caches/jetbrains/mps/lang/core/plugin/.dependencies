@@ -203,7 +203,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.IEditorChecker" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -214,8 +216,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageErrorsComponent" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.IEditorChecker" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.BaseEditorChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" file="LanguageChecksPlugin_CustomProjectPlugin.java">
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

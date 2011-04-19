@@ -5716,12 +5716,6 @@
         </node>
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8171810505597038090">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~IEditorChecker" resolveInfo="IEditorChecker" />
-    </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2128801472616605436">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~EditorMessageOwner" resolveInfo="EditorMessageOwner" />
-    </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="806231529270480546">
       <property name="name" nameId="tpck.1169194664001" value="dispose" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="806231529270480547" />
@@ -7001,6 +6995,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="128052438904942928">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~BaseEditorChecker" resolveInfo="BaseEditorChecker" />
     </node>
   </root>
   <root id="3382625879346929484">

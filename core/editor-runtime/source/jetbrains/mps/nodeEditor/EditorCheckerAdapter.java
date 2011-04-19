@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.event.*;
 
 import java.util.List;
 
-public abstract class EditorCheckerAdapter extends DisposableEditorChecker implements IEditorChecker, EditorMessageOwner {
+public abstract class EditorCheckerAdapter extends BaseEditorChecker implements IEditorChecker, EditorMessageOwner {
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     for (SModelEvent event : events) {
       if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {
@@ -39,9 +39,6 @@ public abstract class EditorCheckerAdapter extends DisposableEditorChecker imple
     return false;
   }
 
-  public boolean isLaterThan(IEditorChecker editorChecker) {
-    return false;
-  }
 
   public boolean messagesChanged() {
     return true;
