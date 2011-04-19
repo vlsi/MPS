@@ -100,6 +100,10 @@ public class PluginUtil {
   private static Collection<BaseApplicationPlugin> myStandaloneAppPlugins = new ArrayList<BaseApplicationPlugin>();
   private static Collection<BaseProjectPlugin> myStandaloneProjPlugins = new ArrayList<BaseProjectPlugin>();
 
+  public static void addPluginContributor(PluginContributor contributor){
+
+  }
+
   public static void addStandaloneAppPlugin(BaseApplicationPlugin plugin) {
     myStandaloneAppPlugins.add(plugin);
   }
