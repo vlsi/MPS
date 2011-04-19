@@ -22,7 +22,6 @@
   <import index="tp3f" modelUID="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)" version="-1" />
   <import index="iwwu" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
-  <import index="sh94" modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
@@ -31,9 +30,9 @@
   <import index="udof" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.refactoring.framework(MPS.Classpath/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="rpxv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view(MPS.Classpath/jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
   <import index="i82i" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" version="-1" />
-  <import index="brja" modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
-  <import index="sfs4" modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework.paramchooser(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework.paramchooser@java_stub)" version="-1" />
+  <import index="cgd9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.refactoring.framework.paramchooser(MPS.Classpath/jetbrains.mps.refactoring.framework.paramchooser@java_stub)" version="-1" />
+  <import index="f1r3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.refactoring.framework.paramchooser.mps(MPS.Classpath/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -42,6 +41,7 @@
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="brja" modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1189697446192">
       <property name="name" nameId="tpck.1169194664001" value="OldRefactoringClass" />
@@ -327,7 +327,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1213086572748">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1201177805222" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6528618226609204814">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~BaseGeneratedRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~BaseGeneratedRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6528618226609204854">
                 <property name="value" nameId="tpee.1070475926801" value="parameterName" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="6528618226609204855">
@@ -644,7 +644,7 @@
         <property name="name" nameId="tpck.1169194664001" value="myRefactoringContext" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1198674897639" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198674901141">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1198674086655">
@@ -680,7 +680,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198674914596">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215095886709">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
@@ -903,7 +903,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198674769573">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198674773247">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
@@ -1154,14 +1154,14 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1789893890062507278">
       <property name="name" nameId="tpck.1169194664001" value="getRefactoringTarget" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1789893890062507279">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1789893890062507280" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1789893890062507281">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062507282">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1789893890062507283">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~RefactoringTarget%dNODE" resolveInfo="NODE" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~RefactoringTarget%dNODE" resolveInfo="NODE" />
           </node>
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062507284">
             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1789893890062507285">
@@ -1187,8 +1187,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062507294">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1789893890062507295">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~RefactoringTarget%dMODEL" resolveInfo="MODEL" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~RefactoringTarget%dMODEL" resolveInfo="MODEL" />
           </node>
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062507296">
             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1789893890062507297">
@@ -1214,8 +1214,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062507306">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1789893890062507307">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~RefactoringTarget%dLANGUAGE" resolveInfo="LANGUAGE" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~RefactoringTarget%dLANGUAGE" resolveInfo="LANGUAGE" />
           </node>
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062507308">
             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1789893890062507309">
@@ -1241,8 +1241,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062507318">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1789893890062507319">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~RefactoringTarget%dSOLUTION" resolveInfo="SOLUTION" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~RefactoringTarget%dSOLUTION" resolveInfo="SOLUTION" />
           </node>
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062507320">
             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1789893890062507321">
@@ -1268,8 +1268,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062507330">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1789893890062507331">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~RefactoringTarget%dDEVKIT" resolveInfo="DEVKIT" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~RefactoringTarget" resolveInfo="RefactoringTarget" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~RefactoringTarget%dDEVKIT" resolveInfo="DEVKIT" />
           </node>
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062507332">
             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1789893890062507333">
@@ -1302,7 +1302,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1789893890062505210">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1789893890062505211">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062505212">
@@ -1539,7 +1539,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1200934149706">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062301482">
@@ -1593,7 +1593,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197372896758">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062301595">
@@ -1651,7 +1651,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197372920371">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062301667">
@@ -1716,7 +1716,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210942134157">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062321106">
@@ -1778,7 +1778,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197372949360">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062321130">
@@ -1829,7 +1829,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1213094532651">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1789893890062321165">
@@ -2083,7 +2083,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215002919414">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2213,7 +2213,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215003148924">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1198600574128">
@@ -2243,7 +2243,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7110754463748604440">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="7110754463748604030">
@@ -2401,7 +2401,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7110754463748604439" resolveInfo="refactoringContext" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7110754463748604109">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7110754463748604110">
@@ -2532,7 +2532,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7110754463748604439" resolveInfo="refactoringContext" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7110754463748604167">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
                       </node>
                     </node>
                   </node>
@@ -2579,7 +2579,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7110754463748604439" resolveInfo="refactoringContext" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7110754463748604190">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
                       </node>
                     </node>
                   </node>
@@ -2863,8 +2863,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6528618226609204128">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseGeneratedRefactoring" resolveInfo="BaseGeneratedRefactoring" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757738">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseGeneratedRefactoring" resolveInfo="BaseGeneratedRefactoring" />
     </node>
   </root>
   <root id="1189763875182">
@@ -2881,7 +2881,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1189764218296" resolveInfo="args" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743409">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1190733620565">
                   <property name="value" nameId="tpee.1070475926801" value="" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1190733623862">
@@ -2937,7 +2937,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1189764218296">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197373551913">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
@@ -3011,7 +3011,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1189764645553" resolveInfo="refactoringContext" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217265935024">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetParameter(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getParameter" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetParameter(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getParameter" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217265953057">
                       <property name="value" nameId="tpee.1070475926801" value="" />
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1217265953058">
@@ -3045,7 +3045,7 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1189764645553">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197373443917">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
@@ -3064,7 +3064,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1197382763121" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743160">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dupdateByDefault(jetbrains%dmps%dsmodel%dSModel)%cvoid" resolveInfo="updateByDefault" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dupdateByDefault(jetbrains%dmps%dsmodel%dSModel)%cvoid" resolveInfo="updateByDefault" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4109347764213104003">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1197382761104" resolveInfo="model" />
               </node>
@@ -3080,7 +3080,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1197382763121">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104001">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3097,7 +3097,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1197387189940" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216209770726">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dchangeFeatureName(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="changeFeatureName" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dchangeFeatureName(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="changeFeatureName" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1197387253916">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1197387263077">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1197387263078">
@@ -3154,7 +3154,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1197387189940">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1197387189941">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3173,7 +3173,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1198577784560" resolveInfo="refactoringContext" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743530">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dupdateByDefault(jetbrains%dmps%dsmodel%dSModel)%cvoid" resolveInfo="updateByDefault" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dupdateByDefault(jetbrains%dmps%dsmodel%dSModel)%cvoid" resolveInfo="updateByDefault" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1198577823847">
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1198577826554">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1198577826555">
@@ -3200,7 +3200,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198577784560">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104004">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3217,7 +3217,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199623458908" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743716">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dmoveNodeToModel(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSModel)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="moveNodeToModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dmoveNodeToModel(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSModel)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="moveNodeToModel" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199623476885">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1199623494550">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1199623494551">
@@ -3258,7 +3258,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1199623458908">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104014">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3275,7 +3275,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199623584638" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743309">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dmoveNodeToNode(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="moveNodeToNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dmoveNodeToNode(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="moveNodeToNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199623602208">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1199623613816">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1199623613817">
@@ -3332,7 +3332,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1199623584638">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104367">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3349,7 +3349,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199623713551" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743495">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dmoveNodesToModel(java%dutil%dList,jetbrains%dmps%dsmodel%dSModel)%cjava%dutil%dList" resolveInfo="moveNodesToModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dmoveNodesToModel(java%dutil%dList,jetbrains%dmps%dsmodel%dSModel)%cjava%dutil%dList" resolveInfo="moveNodesToModel" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199623728310">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1199623733860">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1199623733861">
@@ -3390,7 +3390,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1199623713551">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104369">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3407,7 +3407,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199623848297" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216934743426">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dmoveNodesToNode(java%dutil%dList,java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="moveNodesToNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dmoveNodesToNode(java%dutil%dList,java%dlang%dString,jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="moveNodesToNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1199623862945">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1199623873329">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1199623873330">
@@ -3464,7 +3464,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1199623848297">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104371">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3481,7 +3481,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1204723894492" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1204723962922">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%ddeleteFeature(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="deleteFeature" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%ddeleteFeature(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="deleteFeature" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1204723894465">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1204723894466">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1204723894467">
@@ -3506,7 +3506,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1204723894492">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1204723894493">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3540,7 +3540,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1212243607007" resolveInfo="data" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1212243783723">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
               </node>
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1212243788663">
                 <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1212243788664">
@@ -3660,7 +3660,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1212243607007">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1212243607008">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3677,7 +3677,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215000443892" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215000461826">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215000443889" />
           </node>
@@ -3686,7 +3686,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215000443892">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215000443893">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3703,7 +3703,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215000489607" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215000489603">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215000489604" />
           </node>
@@ -3712,7 +3712,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215000489607">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215000489608">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3729,7 +3729,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215000631395" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215000631391">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215000631392" />
           </node>
@@ -3738,7 +3738,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215000631395">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215000631396">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3755,7 +3755,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215084894641" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215084894637">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSelectedModule" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSelectedModule" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278783" />
             </node>
           </node>
@@ -3764,7 +3764,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215084894641">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215084894642">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3781,7 +3781,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215084972903" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215084972899">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedMPSProject()%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getSelectedMPSProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedMPSProject()%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getSelectedMPSProject" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215084972900" />
           </node>
@@ -3790,7 +3790,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215084972903">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215084972904">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3807,7 +3807,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215085031324" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215085031320">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getCurrentScope" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getCurrentScope" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215085031321" />
           </node>
@@ -3816,7 +3816,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215085031324">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215085031325">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3833,7 +3833,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215085289701" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215085289697">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1215085289698" />
           </node>
@@ -3842,7 +3842,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1215085289701">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215085289702">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -3859,7 +3859,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3242588059496756756" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3242588059496756730">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dreplaceRefsToNodeWithNode(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="replaceRefsToNodeWithNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dreplaceRefsToNodeWithNode(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="replaceRefsToNodeWithNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3242588059496756731">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3242588059496756732">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3242588059496756733">
@@ -3900,7 +3900,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3242588059496756756">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104012">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -4139,7 +4139,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="478744034994714488">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="478744034994714489" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="478744034994714490">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~BaseRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~BaseRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="478744034994714491">
                 <property name="value" nameId="tpee.1070475926801" value="parameterName" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="478744034994714492">
@@ -4231,7 +4231,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7573235936722710642">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7573235936722710643" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7573235936722710644">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~BaseRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~BaseRefactoring%daddTransientParameter(java%dlang%dString)%cvoid" resolveInfo="addTransientParameter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7573235936722710645">
                 <property name="value" nameId="tpee.1070475926801" value="parameterName" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7573235936722710646">
@@ -4592,7 +4592,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getRefactoringTarget" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7573235936722711675" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722711676">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~IRefactoringTarget" resolveInfo="IRefactoringTarget" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~IRefactoringTarget" resolveInfo="IRefactoringTarget" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722711677">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6215884973916316569">
@@ -4633,7 +4633,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722711244">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722711756">
@@ -4688,7 +4688,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722710995">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722711149">
@@ -4719,7 +4719,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="616550569929040383">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="616550569929040342">
@@ -4776,7 +4776,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722711832">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722711833">
@@ -4828,7 +4828,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1347577327951505969">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951505970">
@@ -4886,7 +4886,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1347577327951505998">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951505999">
@@ -4948,7 +4948,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="478744034994715878">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseRefactoring" resolveInfo="BaseRefactoring" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseRefactoring" resolveInfo="BaseRefactoring" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1347577327951669530">
         <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1347577327951669531">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1347577327951669532">
@@ -4967,7 +4967,7 @@
         </node>
         <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1347577327951693864">
           <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1347577327951695253">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseLoggableRefactoring" resolveInfo="BaseLoggableRefactoring" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseLoggableRefactoring" resolveInfo="BaseLoggableRefactoring" />
           </node>
         </node>
       </node>
@@ -5072,14 +5072,14 @@
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="getTarget" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7573235936722758656" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722758657">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757775">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722758658">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7573235936722758659">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7573235936722758660">
-            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
-            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~IRefactoringTarget$TargetType%dNODE" resolveInfo="NODE" />
+            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~IRefactoringTarget$TargetType" resolveInfo="TargetType" />
+            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~IRefactoringTarget$TargetType%dNODE" resolveInfo="NODE" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="7573235936722758661">
               <property name="linkRole" nameId="tpck.1757699476691236116" value="enumConstantDeclaration" />
               <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="7573235936722758662">
@@ -5098,8 +5098,8 @@
                         <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3060724424231420960">
                           <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7573235936722758800">
                             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7573235936722758815">
-                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~IRefactoringTarget$TargetType%dNODE" resolveInfo="NODE" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~IRefactoringTarget$TargetType" resolveInfo="TargetType" />
+                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~IRefactoringTarget$TargetType%dNODE" resolveInfo="NODE" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3060724424231420965">
@@ -5114,8 +5114,8 @@
                           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7573235936722758842">
                             <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7573235936722758843">
                               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7573235936722758872">
-                                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~IRefactoringTarget$TargetType%dMODEL" resolveInfo="MODEL" />
-                                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
+                                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~IRefactoringTarget$TargetType" resolveInfo="TargetType" />
+                                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~IRefactoringTarget$TargetType%dMODEL" resolveInfo="MODEL" />
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7573235936722758845">
@@ -5139,8 +5139,8 @@
                           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7573235936722758847">
                             <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7573235936722758848">
                               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7573235936722758873">
-                                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="sh94.~IRefactoringTarget$TargetType%dMODULE" resolveInfo="MODULE" />
-                                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="sh94.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
+                                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="udof.~IRefactoringTarget$TargetType" resolveInfo="TargetType" />
+                                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="udof.~IRefactoringTarget$TargetType%dMODULE" resolveInfo="MODULE" />
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7573235936722758850">
@@ -5342,8 +5342,8 @@
         </node>
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7786266509745404909">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~IRefactoringTarget" resolveInfo="IRefactoringTarget" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757773">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~IRefactoringTarget" resolveInfo="IRefactoringTarget" />
     </node>
   </root>
   <root id="7573235936722758880">
@@ -5426,7 +5426,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7573235936722759830" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7573235936722759807">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7573235936722759808">
                 <property name="value" nameId="tpee.1070475926801" value="" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7573235936722759809">
@@ -5524,7 +5524,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7573235936722759830">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722759831">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -5564,7 +5564,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7573235936722759794" resolveInfo="refactoringContext" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7573235936722759782">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetParameter(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getParameter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetParameter(java%dlang%dString)%cjava%dlang%dObject" resolveInfo="getParameter" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7573235936722759783">
                     <property name="value" nameId="tpee.1070475926801" value="" />
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7573235936722759784">
@@ -5633,7 +5633,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7573235936722759794">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7573235936722759795">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -5649,7 +5649,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8041810900052414248">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8041810900052414249">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8041810900052414250">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~BaseRefactoring%dask(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,jetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser%d%d%d)%cboolean" resolveInfo="ask" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~BaseRefactoring%dask(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,jetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser%d%d%d)%cboolean" resolveInfo="ask" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8041810900052414254">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8041810900052414252" resolveInfo="refactoringContext" />
                 </node>
@@ -5725,13 +5725,13 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8041810900052414252">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8041810900052414253">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7573235936722759982" />
-      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8041810900052358731">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseRefactoring" resolveInfo="BaseRefactoring" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757826">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseRefactoring" resolveInfo="BaseRefactoring" />
       </node>
     </node>
   </root>
@@ -5892,7 +5892,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1h.7953996722066536522" resolveInfo="ContextType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7953996722066536545">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066536548">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -5963,7 +5963,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276243" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276241">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278782" />
             </node>
           </node>
@@ -5972,7 +5972,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276243">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276244">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -5989,7 +5989,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276255" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276253">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSelectedModule" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSelectedModule" />
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066276254" />
           </node>
@@ -5998,7 +5998,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276255">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276256">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6015,7 +6015,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276267" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276265">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSelectedNode" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278785" />
             </node>
           </node>
@@ -6024,7 +6024,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276267">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276268">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6041,7 +6041,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276279" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276277">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278786" />
             </node>
           </node>
@@ -6050,7 +6050,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276279">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276280">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6067,7 +6067,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276291" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276289">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolveInfo="getCurrentOperationContext" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278787" />
             </node>
           </node>
@@ -6076,7 +6076,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276291">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276292">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6093,7 +6093,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276303" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276301">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedMPSProject()%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getSelectedMPSProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedMPSProject()%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getSelectedMPSProject" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278788" />
             </node>
           </node>
@@ -6102,7 +6102,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276303">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276304">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6119,7 +6119,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7953996722066276315" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7953996722066276313">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetCurrentScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getCurrentScope" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetCurrentScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getCurrentScope" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7953996722066278789" />
             </node>
           </node>
@@ -6128,7 +6128,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7953996722066276315">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7953996722066276316">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6183,7 +6183,7 @@
         <property name="name" nameId="tpck.1169194664001" value="myRefactoringContext" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3644668945279694384" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945279694385">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3644668945279694386" />
@@ -6211,8 +6211,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3644668945279978508">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3644668945280016583">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3644668945280030587">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateModelChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModelChooser" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateModelChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModelChooser" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3644668945280030640">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3644668945279978509" resolveInfo="refactoringContext" />
             </node>
@@ -6324,7 +6324,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3644668945279978509">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945279978510">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6334,7 +6334,7 @@
       <property name="name" nameId="tpck.1169194664001" value="myRefactoringContext" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3644668945280073766" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945280073767">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="3644668945280073768">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5934994956485963352" resolveInfo="settingsRefContextField" />
@@ -6346,7 +6346,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3644668945280073772" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3644668945280073773">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3644668945280073774">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~IChooserSettings$BaseChooserSettings%d&lt;init&gt;(java%dlang%dString)" resolveInfo="IChooserSettings.BaseChooserSettings" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~IChooserSettings$BaseChooserSettings%d&lt;init&gt;(java%dlang%dString)" resolveInfo="IChooserSettings.BaseChooserSettings" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3644668945280073775">
             <property name="value" nameId="tpee.1070475926801" value="title" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3644668945280073776">
@@ -6384,7 +6384,7 @@
         <property name="name" nameId="tpck.1169194664001" value="context" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945280073790">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="3644668945280073881">
@@ -6392,7 +6392,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945280073791">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="brja.~IChooserSettings$BaseChooserSettings" resolveInfo="IChooserSettings.BaseChooserSettings" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f1r3.~IChooserSettings$BaseChooserSettings" resolveInfo="BaseChooserSettings" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945280073792">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SModel" resolveInfo="SModel" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3644668945280073793">
@@ -6685,7 +6685,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3644668945280074017">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3644668945280074018">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -6727,7 +6727,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5934994956486083424" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934994956486083425">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="5934994956486083428">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sfs4.~BaseChooser%d&lt;init&gt;(jetbrains%dmps%drefactoring%dframework%dRefactoringContext)" resolveInfo="BaseChooser" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cgd9.~BaseChooser%d&lt;init&gt;(jetbrains%dmps%drefactoring%dframework%dRefactoringContext)" resolveInfo="BaseChooser" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5934994956486083429">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5934994956486083426" resolveInfo="refactoringContext" />
           </node>
@@ -6814,7 +6814,7 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956486083427">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5934994956486083431">
@@ -6965,7 +6965,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5934994956485965405" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5934994956485965406" />
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956485965407">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~InvalidInputValueException" resolveInfo="InvalidInputValueException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~InvalidInputValueException" resolveInfo="InvalidInputValueException" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934994956485965408">
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5934994956485965448">
@@ -6989,8 +6989,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956486031337">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sfs4.~BaseChooser" resolveInfo="BaseChooser" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757623">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cgd9.~BaseChooser" resolveInfo="BaseChooser" />
     </node>
   </root>
   <root id="5934994956485960451">
@@ -7085,7 +7085,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5934994956486031351">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5934994956486083397">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5934994956486083398">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sfs4.~BaseChooser%dgetRefactoringContext()%cjetbrains%dmps%drefactoring%dframework%dRefactoringContext" resolveInfo="getRefactoringContext" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cgd9.~BaseChooser%dgetRefactoringContext()%cjetbrains%dmps%drefactoring%dframework%dRefactoringContext" resolveInfo="getRefactoringContext" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5934994956486083399">
                   <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="5934994956486031340" resolveInfo="Chooser" />
@@ -7117,7 +7117,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5934994956486031353">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dsetParameter(java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="setParameter" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5934994956486031354">
                   <property name="value" nameId="tpee.1070475926801" value="name" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5934994956486031355">
@@ -7169,7 +7169,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5934994956486031341" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956486031378">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sfs4.~BaseChooser" resolveInfo="BaseChooser" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cgd9.~BaseChooser" resolveInfo="BaseChooser" />
       </node>
     </node>
   </root>
@@ -7182,7 +7182,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="5934994956486016481">
           <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5934994956486016483">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5934994956486031322">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~InvalidInputValueException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="InvalidInputValueException" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~InvalidInputValueException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="InvalidInputValueException" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5934994956486031323">
                 <property name="value" nameId="tpee.1070475926801" value="" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5934994956486031327">
@@ -7206,7 +7206,7 @@
         </node>
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956486016480">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~InvalidInputValueException" resolveInfo="InvalidInputValueException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~InvalidInputValueException" resolveInfo="InvalidInputValueException" />
       </node>
     </node>
   </root>
@@ -7278,7 +7278,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5934994956487138571">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5934994956487138572">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5934994956487138573">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sfs4.~BaseChooser%dgetRefactoringContext()%cjetbrains%dmps%drefactoring%dframework%dRefactoringContext" resolveInfo="getRefactoringContext" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cgd9.~BaseChooser%dgetRefactoringContext()%cjetbrains%dmps%drefactoring%dframework%dRefactoringContext" resolveInfo="getRefactoringContext" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5934994956487138574">
                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="5934994956487138445" resolveInfo="CustomChooser" />
@@ -7315,7 +7315,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5934994956487138507" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5934994956487138565">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sfs4.~BaseChooser" resolveInfo="BaseChooser" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cgd9.~BaseChooser" resolveInfo="BaseChooser" />
       </node>
     </node>
   </root>
@@ -7331,7 +7331,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3302086321379403337" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3302086321379403311">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dchangeFeatureName(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="changeFeatureName" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dchangeFeatureName(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="changeFeatureName" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3302086321379403312">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3302086321379403313">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3302086321379403314">
@@ -7388,7 +7388,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3302086321379403337">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104008">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -7405,7 +7405,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3302086321379403398" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3302086321379403388">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%ddeleteFeature(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="deleteFeature" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%ddeleteFeature(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="deleteFeature" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3302086321379403389">
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3302086321379403390">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3302086321379403391">
@@ -7430,7 +7430,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3302086321379403398">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4109347764213104010">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -7446,7 +7446,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4312073247720514231">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4312073247720514232">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4312073247720514233">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~BaseRefactoring%daskBool(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cboolean" resolveInfo="askBool" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~BaseRefactoring%daskBool(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cboolean" resolveInfo="askBool" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4312073247720514234">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4312073247720514266" resolveInfo="refactoringContext" />
                 </node>
@@ -7563,13 +7563,13 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4312073247720514266">
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4312073247720514267">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4312073247720514268" />
-      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4312073247720514269">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseRefactoring" resolveInfo="BaseRefactoring" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757821">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseRefactoring" resolveInfo="BaseRefactoring" />
       </node>
     </node>
   </root>
@@ -7585,7 +7585,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8113680833395644496" resolveInfo="refactoringContext" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8113680833395644494">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getSelectedProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getSelectedProject" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8113680833395644495" />
             </node>
           </node>
@@ -7594,7 +7594,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8113680833395644496">
         <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8113680833395644497">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -7621,14 +7621,14 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4347648036456713398" resolveInfo="refactoringContext" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2305403808936309642">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetModelsFromUsages(jetbrains%dmps%dsmodel%dSModel)%cjava%dutil%dList" resolveInfo="getModelsFromUsages" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetModelsFromUsages(jetbrains%dmps%dsmodel%dSModel)%cjava%dutil%dList" resolveInfo="getModelsFromUsages" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2305403808936309643">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2305403808936309644">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2305403808936309645">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4347648036456713398" resolveInfo="refactoringContext" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2305403808936309646">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sh94.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="udof.~RefactoringContext%dgetSelectedModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getSelectedModel" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2305403808936309647">
@@ -7645,13 +7645,13 @@
           <property name="name" nameId="tpck.1169194664001" value="refactoringContext" />
           <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4347648036456713399">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~RefactoringContext" resolveInfo="RefactoringContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~RefactoringContext" resolveInfo="RefactoringContext" />
           </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4347648036456713384" />
-      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4347648036456751057">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sh94.~BaseRefactoring" resolveInfo="BaseRefactoring" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3455061244568757831">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="udof.~BaseRefactoring" resolveInfo="BaseRefactoring" />
       </node>
     </node>
   </root>

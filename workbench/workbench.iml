@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
   </component>
 </module>
 

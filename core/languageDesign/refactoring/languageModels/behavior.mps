@@ -12,9 +12,9 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="udof" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.refactoring.framework(MPS.Classpath/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="brja" modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="f1r3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.refactoring.framework.paramchooser.mps(MPS.Classpath/jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
@@ -608,8 +608,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760569">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760571">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760572">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateNodeChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createNodeChooser" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateNodeChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createNodeChooser" />
             </node>
           </node>
         </node>
@@ -644,8 +644,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760580">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760582">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760586">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateModelChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModelChooser" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateModelChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModelChooser" />
             </node>
           </node>
         </node>
@@ -668,8 +668,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760593">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760595">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913760599">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateModuleChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModuleChooser" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateModuleChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createModuleChooser" />
             </node>
           </node>
         </node>
@@ -692,8 +692,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760606">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760608">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913950">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateStringChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createStringChooser" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateStringChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createStringChooser" />
             </node>
           </node>
         </node>
@@ -716,8 +716,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760618">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760620">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913949">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateIntChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createIntChooser" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateIntChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createIntChooser" />
             </node>
           </node>
         </node>
@@ -740,8 +740,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4413749148913760630">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4413749148913760632">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413749148913913948">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="brja.~MPSChooserFactory%dcreateBooleanChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createBooleanChooser" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="brja.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f1r3.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f1r3.~MPSChooserFactory%dcreateBooleanChooser(jetbrains%dmps%drefactoring%dframework%dRefactoringContext,java%dlang%dString,jetbrains%dmps%drefactoring%dframework%dparamchooser%dmps%dIChooserSettings)%cjetbrains%dmps%drefactoring%dframework%dparamchooser%dIChooser" resolveInfo="createBooleanChooser" />
             </node>
           </node>
         </node>
