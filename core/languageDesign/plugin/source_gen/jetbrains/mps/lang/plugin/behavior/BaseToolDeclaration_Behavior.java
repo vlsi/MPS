@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
@@ -36,9 +34,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ToolType", null);
-    SLinkOperations.setTarget(type, "tool", thisNode, false);
-    return type;
+    return new BaseToolDeclaration_Behavior.QuotationClass_7ol7e8_a0a0e().createNode(thisNode);
   }
 
   public static SNode virtual_createSuperType_1217433657148(SNode thisNode) {
@@ -55,6 +51,24 @@ public class BaseToolDeclaration_Behavior {
 
   public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
+  }
+
+  public static class QuotationClass_7ol7e8_a0a0e {
+    public QuotationClass_7ol7e8_a0a0e() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("tool", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 
   public static class QuotationClass_7ol7e8_a0a0f {
