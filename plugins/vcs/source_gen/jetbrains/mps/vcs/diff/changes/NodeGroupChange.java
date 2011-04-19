@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public abstract class NodeGroupChange extends ModelChange {
   private SNodeId myParentNodeId;
@@ -40,7 +41,7 @@ public abstract class NodeGroupChange extends ModelChange {
   public abstract int getResultEnd();
 
   @Nullable
-  private SNode deleteOldNodesAndReturnAnchor(@NotNull SModel model) {
+  private SNode deleteOldNodesAndReturnAnchor(@NotNull final SModel model) {
     SNode parent = getChangeSet().getOldModel().getNodeById(myParentNodeId);
     assert parent != null;
 
@@ -49,9 +50,15 @@ public abstract class NodeGroupChange extends ModelChange {
       null :
       model.getNodeById(children.get(getBegin() - 1).getSNodeId())
     );
+    List<SNodeId> idsToDelete = ListSequence.fromList(new ArrayList<SNodeId>());
     for (int i = getBegin(); i < getEnd(); i++) {
-      model.getNodeById(children.get(i).getSNodeId()).delete();
+      ListSequence.fromList(idsToDelete).addElement(children.get(i).getSNodeId());
     }
+    ListSequence.fromList(idsToDelete).visitAll(new IVisitor<SNodeId>() {
+      public void visit(SNodeId id) {
+        model.getNodeById(id).delete();
+      }
+    });
     return anchor;
   }
 
