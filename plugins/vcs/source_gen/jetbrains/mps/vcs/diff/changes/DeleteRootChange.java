@@ -30,6 +30,10 @@ public class DeleteRootChange extends ModelChange {
     model.getNodeById(myNodeId).delete();
   }
 
+  protected ModelChange createOppositeChange() {
+    return new AddRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
+  }
+
   public ChangeType getType() {
     return ChangeType.DELETE;
   }

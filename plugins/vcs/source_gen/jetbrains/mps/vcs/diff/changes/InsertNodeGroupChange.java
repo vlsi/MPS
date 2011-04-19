@@ -37,6 +37,10 @@ public class InsertNodeGroupChange extends NodeGroupChange {
     return String.format("Insert %s into position #%d in role %s of node %s", nodeRange(myResultBegin, myResultEnd), myPosition, getRole(), getParentNodeId());
   }
 
+  protected ModelChange createOppositeChange() {
+    return new DeleteNodeGroupChange(getChangeSet().getOppositeChangeSet(), getParentNodeId(), getRole(), myResultBegin, myResultEnd, myPosition);
+  }
+
   public ChangeType getType() {
     return ChangeType.ADD;
   }

@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ChangeSet {
   private final SModel myOldModel;
   private final SModel myNewModel;
   private final List<ModelChange> myModelChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private ChangeSet myOppositeChangeSet = null;
 
   /*package*/ ChangeSet(@NotNull SModel oldModel, @NotNull SModel newModel) {
     myOldModel = oldModel;
@@ -47,6 +49,30 @@ public class ChangeSet {
   @NotNull
   public SModel getNewModel() {
     return myNewModel;
+  }
+
+  @NotNull
+  public ChangeSet getOppositeChangeSet() {
+    if (myOppositeChangeSet == null) {
+      throw new IllegalStateException("opposite chage set is not built");
+    }
+
+    return myOppositeChangeSet;
+  }
+
+  /*package*/ void buildOppositeChangeSet() {
+    if (myOppositeChangeSet == null) {
+      ModelAccess.assertLegalRead();
+
+      myOppositeChangeSet = new ChangeSet(myNewModel, myOldModel);
+      myOppositeChangeSet.myOppositeChangeSet = this;
+
+      myOppositeChangeSet.addAll(ListSequence.fromList(myModelChanges).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        public ModelChange select(ModelChange c) {
+          return c.getOppositeChange();
+        }
+      }));
+    }
   }
 
   /*package*/ void add(@NotNull ModelChange change) {

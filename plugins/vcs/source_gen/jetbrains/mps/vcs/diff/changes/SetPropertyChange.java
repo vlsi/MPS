@@ -32,6 +32,12 @@ public class SetPropertyChange extends NodeChange {
     node.setProperty(myPropertyName, myNewValue);
   }
 
+  protected ModelChange createOppositeChange() {
+    SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
+    assert node != null;
+    return new SetPropertyChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), myPropertyName, node.getProperty(myPropertyName));
+  }
+
   @Override
   public String toString() {
     return String.format("Set property %s to %s in node %s", myPropertyName, myNewValue, getAffectedNodeId());

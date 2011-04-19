@@ -33,6 +33,10 @@ public class AddRootChange extends ModelChange {
     SModelOperations.addRootNode(model, nodeCopier.copyNode(newNode));
   }
 
+  protected ModelChange createOppositeChange() {
+    return new DeleteRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
+  }
+
   public ChangeType getType() {
     return ChangeType.ADD;
   }

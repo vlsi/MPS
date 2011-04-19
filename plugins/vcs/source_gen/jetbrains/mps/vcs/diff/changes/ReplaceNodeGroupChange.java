@@ -39,6 +39,10 @@ public class ReplaceNodeGroupChange extends NodeGroupChange {
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), getRole(), getParentNodeId());
   }
 
+  protected ModelChange createOppositeChange() {
+    return new ReplaceNodeGroupChange(getChangeSet().getOppositeChangeSet(), getParentNodeId(), getRole(), myResultBegin, myResultEnd, myBegin, myEnd);
+  }
+
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

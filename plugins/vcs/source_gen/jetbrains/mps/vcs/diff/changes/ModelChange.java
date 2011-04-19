@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModel;
 
 public abstract class ModelChange {
   private ChangeSet myChangeSet;
+  private ModelChange myOpposite = null;
 
   protected ModelChange(@NotNull ChangeSet changeSet) {
     myChangeSet = changeSet;
@@ -25,6 +26,16 @@ public abstract class ModelChange {
   }
 
   public abstract void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier);
+
+  public ModelChange getOppositeChange() {
+    if (myOpposite == null) {
+      myOpposite = createOppositeChange();
+      myOpposite.myOpposite = this;
+    }
+    return myOpposite;
+  }
+
+  protected abstract ModelChange createOppositeChange();
 
   public abstract ChangeType getType();
 }

@@ -169,8 +169,15 @@ public class ChangeSetBuilder {
   }
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
+    return buildChangeSet(oldModel, newModel, false);
+  }
+
+  public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
     builder.buildChanges();
+    if (withOpposite) {
+      builder.myChangeSet.buildOppositeChangeSet();
+    }
     return builder.myChangeSet;
   }
 

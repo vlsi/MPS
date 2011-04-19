@@ -41,6 +41,10 @@ public class DeleteNodeGroupChange extends NodeGroupChange {
     return String.format("Delete %s in role %s of node %s", nodeRange(myBegin, myEnd), getRole(), getParentNodeId());
   }
 
+  protected ModelChange createOppositeChange() {
+    return new InsertNodeGroupChange(getChangeSet().getOppositeChangeSet(), getParentNodeId(), getRole(), myResultPosition, myBegin, myEnd);
+  }
+
   public ChangeType getType() {
     return ChangeType.DELETE;
   }

@@ -69,4 +69,24 @@ public class SetReferenceChange extends NodeChange {
     );
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
+
+  protected ModelChange createOppositeChange() {
+    SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
+    assert node != null;
+    SReference ref = node.getReference(getRole());
+    SModelReference targetModel = ref.getTargetSModelReference();
+    if (eq_mgdhcs_a0e0g(getChangeSet().getOldModel().getSModelReference(), targetModel)) {
+      // This is internal reference 
+      targetModel = null;
+    }
+
+    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, ref.getTargetNodeId(), ref.getResolveInfo());
+  }
+
+  private static boolean eq_mgdhcs_a0e0g(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }
