@@ -20,7 +20,7 @@ public class TodoViewer_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    TodoViewer_Tool.this.myComponent = new TodoViewer(project);
+    TodoViewer_Tool.this.myComponent = new TodoViewer(project, TodoViewer_Tool.this);
   }
 
   public void dispose() {

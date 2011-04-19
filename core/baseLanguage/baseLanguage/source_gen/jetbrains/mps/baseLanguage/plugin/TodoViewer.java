@@ -13,7 +13,6 @@ import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -41,8 +40,10 @@ public class TodoViewer extends JPanel {
 
   private UsagesView myUsagesView;
   private Project myProject;
+  private TodoViewer_Tool myTool;
 
-  public TodoViewer(final Project project) {
+  public TodoViewer(final Project project, TodoViewer_Tool tool) {
+    this.myTool = tool;
     myProject = project;
     setLayout(new BorderLayout());
     final JLabel label = new JLabel("Click to find TODOs", SwingConstants.CENTER);
@@ -63,7 +64,7 @@ public class TodoViewer extends JPanel {
   }
 
   private BaseGeneratedTool getTool() {
-    return myProject.getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class);
+    return this.myTool;
   }
 
   private Project getProject() {

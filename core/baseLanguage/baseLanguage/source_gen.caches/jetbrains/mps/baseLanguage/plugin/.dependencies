@@ -1034,10 +1034,9 @@
   <dependency className="jetbrains.mps.baseLanguage.plugin.TodoViewer" file="TodoViewer.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.TodoFinder" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -1058,7 +1057,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="javax.swing.Icon" />
