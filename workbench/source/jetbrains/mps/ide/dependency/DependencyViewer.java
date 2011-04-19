@@ -24,6 +24,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
@@ -40,15 +41,17 @@ public class DependencyViewer extends BaseProjectTool {
   private DependencyTree myTree;
   private MyPanel myExternalComponent;
 
-  private ModuleRepositoryListener myListener = new ModuleRepositoryListener() {
+  private ModuleRepositoryListener myListener = new ModuleRepositoryAdapter() {
     public void moduleAdded(IModule module) {
       myTree.rebuildLater();
     }
 
-    public void beforeModuleRemoved(IModule module) {
+    public void moduleRemoved(IModule module) {
+      myTree.rebuildLater();
     }
 
-    public void moduleRemoved(IModule module) {
+    @Override
+    public void repositoryChanged() {
       myTree.rebuildLater();
     }
 

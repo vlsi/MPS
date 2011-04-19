@@ -27,4 +27,6 @@ public interface ModuleRepositoryListener {
   void moduleInitialized(IModule module);
 
   void moduleChanged(IModule module);
+
+  void repositoryChanged();
 }

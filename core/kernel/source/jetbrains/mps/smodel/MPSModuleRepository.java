@@ -55,7 +55,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
-  private List<MPSModuleRepositoryListener> myListeners = new CopyOnWriteArrayList<MPSModuleRepositoryListener>();
 
   private boolean myDirtyFlag = false;
 
@@ -184,7 +183,8 @@ public class MPSModuleRepository implements ApplicationComponent {
       myModuleToOwners.addLink(module, owner);
       myModules.add(module);
     }
-    fireRepositoryChanged();
+    invalidateCaches();
+    fireModuleAdded(module);
     return (TM) module;
   }
 
@@ -257,6 +257,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         myModuleToOwners.removeLink(m, owner);
       }
     }
+    invalidateCaches();
     fireRepositoryChanged();
   }
 
@@ -265,6 +266,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     myDirtyFlag = true;
     myModuleToOwners.clearSecond(owner);
+    invalidateCaches();
     fireRepositoryChanged();
   }
 
@@ -458,14 +460,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     ModelAccess.assertLegalWrite();
   }
 
-  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.remove(listener);
-  }
-
   public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
     myModuleListeners.add(listener);
   }
@@ -475,10 +469,12 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void fireRepositoryChanged() {
-    invalidateCaches();
-
-    for (MPSModuleRepositoryListener listener : myListeners) {
-      listener.repositoryChanged();
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      try {
+        listener.repositoryChanged();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 

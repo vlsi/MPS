@@ -19,22 +19,25 @@ import jetbrains.mps.project.IModule;
 
 public class ModuleRepositoryAdapter implements ModuleRepositoryListener {
   public void moduleAdded(IModule module) {
-
+    repositoryChanged();
   }
 
   public void beforeModuleRemoved(IModule module) {
-
   }
 
   public void moduleRemoved(IModule module) {
-
+    repositoryChanged();
   }
 
   public void moduleInitialized(IModule module) {
-
+    repositoryChanged();
   }
 
   public void moduleChanged(IModule module) {
+    repositoryChanged();
+  }
 
+  @Override
+  public void repositoryChanged() {
   }
 }

@@ -44,37 +44,51 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
     setModuleReference(MODULE_REFERENCE);
-    repository.addRepositoryListener(new MPSModuleRepositoryListener() {
+    repository.addModuleRepositoryListener(new ModuleRepositoryAdapter() {
+      @Override
+      public void moduleAdded(IModule module) {
+        refreshModule(module, false);
+      }
+
+      @Override
+      public void moduleRemoved(IModule module) {
+        refreshModule(module, true);
+      }
+
+      @Override
+      public void moduleInitialized(IModule module) {
+        refreshModule(module, false);
+      }
+
+      @Override
+      public void moduleChanged(IModule module) {
+        refreshModule(module, false);
+      }
+
       @Override
       public void repositoryChanged() {
         refresh();
       }
     });
-    repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
-      @Override
-      public void moduleAdded(IModule module) {
-        refresh();
-      }
-
-      @Override
-      public void beforeModuleRemoved(IModule module) {
-      }
-
-      @Override
-      public void moduleRemoved(IModule module) {
-        refresh();
-      }
-
-      @Override
-      public void moduleInitialized(IModule module) {
-      }
-
-      @Override
-      public void moduleChanged(IModule module) {
-        unloadFor(module);
-      }
-    });
   }
+
+  private void refreshModule(IModule module, boolean isDeleted) {
+    ModelAccess.assertLegalWrite();
+
+    SModelFqName fq = getModelFqName(module);
+    if(isDeleted) {
+      ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+      if(descriptor != null) {
+        removeModel(descriptor);
+      }
+    } else if(myModels.containsKey(fq)) {
+      ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+      descriptor.dropModel();
+    } else {
+      createModel(module);
+    }
+  }
+
 
   private void refresh() {
     ModelAccess.assertLegalWrite();
@@ -91,15 +105,11 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
       }
     }
 
-  }
-
-  private void unloadFor(IModule module) {
-    ModelAccess.assertLegalWrite();
-
-    SModelFqName fq = getModelFqName(module);
-    if (myModels.containsKey(fq)) {
-      ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
-      descriptor.dropModel();
+    for(SModelFqName mm : old) {
+      ProjectStructureSModelDescriptor model = myModels.get(mm);
+      if(model != null) {
+        removeModel(model);
+      }
     }
   }
 
@@ -131,7 +141,6 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-
         removeAll();
         SModelRepository.getInstance().unRegisterModelDescriptors(ProjectStructureModule.this);
         invalidateCaches();

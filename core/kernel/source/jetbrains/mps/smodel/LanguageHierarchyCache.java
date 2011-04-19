@@ -69,7 +69,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void initComponent() {
-    MPSModuleRepository.getInstance().addRepositoryListener(new MPSModuleRepositoryListener() {
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
+      @Override
       public void repositoryChanged() {
         invalidateCache();
       }

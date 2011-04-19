@@ -128,17 +128,27 @@ public class ModuleRepositoryComponent {
     }
   }
 
-  private class DeferringEventHandler extends ModelAccessAdapter implements MPSModuleRepositoryListener {
+  private class DeferringEventHandler extends ModelAccessAdapter {
     private boolean myDeferredUpdate = false;
+    private final ModuleRepositoryAdapter myRepositoryListener;
+
+    private DeferringEventHandler() {
+      myRepositoryListener = new ModuleRepositoryAdapter() {
+        @Override
+        public void repositoryChanged() {
+          DeferringEventHandler.this.repositoryChanged();
+        }
+      };
+    }
 
     public void installListeners() {
       ModelAccess.instance().addCommandListener(this);
-      MPSModuleRepository.getInstance().addRepositoryListener(this);
+      MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     }
 
     public void unInstallListeners() {
+      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
       ModelAccess.instance().removeCommandListener(this);
-      MPSModuleRepository.getInstance().removeRepositoryListener(this);
     }
 
     public void repositoryChanged() {
