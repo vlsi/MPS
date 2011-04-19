@@ -13767,28 +13767,17 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3464091216493131110">
       <property name="name" nameId="tpck.1169194664001" value="getTool" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3464091216493131111" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3464091216493131112">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2f20.~GeneratedTool" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="862470364181519457">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2f20.~BaseGeneratedTool" resolveInfo="BaseGeneratedTool" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3464091216493131113">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3464091216493131114">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3464091216493131115">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3464091216493131116">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3464091216493131117">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3464091216493131041" resolveInfo="myProject" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3464091216493131118">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw1v.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="3464091216493131119">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="81ae.~ProjectPluginManager" />
-                </node>
-              </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4930650860392059031">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4930650860392059030">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3464091216493131041" resolveInfo="myProject" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3464091216493131120">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="81ae.~ProjectPluginManager%dgetTool(java%dlang%dClass)%cjetbrains%dmps%dplugins%dpluginparts%dtool%dBaseGeneratedTool" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="3464091216493131121">
-                <link role="classifier" roleId="tpee.1116615189566" targetNodeId="ykrt.~TodoViewer_Tool" />
-              </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp4k.GetToolInProjectOperation" typeId="tp4k.3339131993542058151" id="4930650860392059650">
+              <link role="tool" roleId="tp4k.3339131993542058152" targetNodeId="1209126436954" resolveInfo="TodoViewer" />
             </node>
           </node>
         </node>

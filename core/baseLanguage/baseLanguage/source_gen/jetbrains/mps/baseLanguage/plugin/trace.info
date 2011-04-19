@@ -664,8 +664,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="16" startPosition="30" endLine="21" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773204" varName="context" />
       <varInfo nodeId="155142699038773202" varName="opening" />
+      <varInfo nodeId="155142699038773204" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="25" startPosition="129" endLine="30" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="161" startPosition="105" endLine="166" endPosition="7">
@@ -681,8 +681,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="220" startPosition="93" endLine="230" endPosition="5">
-      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773947" varName="component" />
+      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="103" startPosition="30" endLine="114" endPosition="7">
@@ -743,8 +743,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="22" startPosition="85" endLine="65" endPosition="19">
-      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773255" varName="binOp" />
+      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -758,8 +758,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="68" startPosition="106" endLine="121" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773495" varName="sideSubtree" />
+      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -797,7 +797,7 @@
     <nodeInfo nodeId="3464091216493131092" fileName="TodoViewer.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3464091216493131095" fileName="TodoViewer.java" startLine="53" startPosition="22" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3464091216493131106" fileName="TodoViewer.java" startLine="60" startPosition="31" endLine="61" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3464091216493131114" fileName="TodoViewer.java" startLine="65" startPosition="35" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3464091216493131114" fileName="TodoViewer.java" startLine="65" startPosition="39" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3464091216493131126" fileName="TodoViewer.java" startLine="69" startPosition="32" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3464091216493131132" fileName="TodoViewer.java" startLine="73" startPosition="26" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="3464091216493131135" fileName="TodoViewer.java" startLine="74" startPosition="80" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -822,7 +822,7 @@
     <nodeInfo nodeId="3464091216493131101" fileName="TodoViewer.java" startLine="59" startPosition="25" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3464091216493131020" fileName="TodoViewer.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Lorg/jdom/Element;Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="3464091216493131029" fileName="TodoViewer.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(Lorg/jdom/Element;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3464091216493131110" fileName="TodoViewer.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#()Ljetbrains/mps/plugins/pluginparts/tool/GeneratedTool;" />
+    <nodeInfo nodeId="3464091216493131110" fileName="TodoViewer.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#()Ljetbrains/mps/plugins/pluginparts/tool/BaseGeneratedTool;" />
     <nodeInfo nodeId="3464091216493131122" fileName="TodoViewer.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
     <nodeInfo nodeId="3464091216493131153" fileName="TodoViewer.java" startLine="77" startPosition="59" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
     <nodeInfo nodeId="3464091216493130940" fileName="TodoViewer.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultsText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;)Ljava/lang/String;" />
@@ -844,7 +844,7 @@
     <scopeInfo nodeId="3464091216493131027" fileName="TodoViewer.java" startLine="128" startPosition="90" endLine="128" endPosition="90" />
     <scopeInfo nodeId="3464091216493131036" fileName="TodoViewer.java" startLine="131" startPosition="91" endLine="131" endPosition="91" />
     <scopeInfo nodeId="3464091216493131105" fileName="TodoViewer.java" startLine="60" startPosition="31" endLine="61" endPosition="29" />
-    <scopeInfo nodeId="3464091216493131113" fileName="TodoViewer.java" startLine="65" startPosition="35" endLine="66" endPosition="93" />
+    <scopeInfo nodeId="3464091216493131113" fileName="TodoViewer.java" startLine="65" startPosition="39" endLine="66" endPosition="93" />
     <scopeInfo nodeId="3464091216493131125" fileName="TodoViewer.java" startLine="69" startPosition="32" endLine="70" endPosition="21" />
     <scopeInfo nodeId="3464091216493131156" fileName="TodoViewer.java" startLine="78" startPosition="27" endLine="79" endPosition="41" />
     <scopeInfo nodeId="3464091216493130929" fileName="TodoViewer.java" startLine="99" startPosition="47" endLine="100" endPosition="72" />

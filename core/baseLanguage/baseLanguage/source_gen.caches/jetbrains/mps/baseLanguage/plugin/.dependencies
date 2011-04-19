@@ -1044,8 +1044,8 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.GeneratedTool" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.project.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

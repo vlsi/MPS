@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -62,7 +62,7 @@ public class TodoViewer extends JPanel {
     }
   }
 
-  private GeneratedTool getTool() {
+  private BaseGeneratedTool getTool() {
     return myProject.getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class);
   }
 
