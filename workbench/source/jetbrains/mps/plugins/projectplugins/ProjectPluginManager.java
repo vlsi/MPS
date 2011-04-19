@@ -31,8 +31,10 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
@@ -140,7 +142,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
           mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
 
-          mySortedPlugins.addAll(PluginUtil.getStandaloneProjPlugins());
+          Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
+          for (PluginContributor c:pluginContributors){
+            BaseProjectPlugin plugin = c.createProjectPlugin();
+            if (plugin==null) continue;
+            mySortedPlugins.add(plugin);
+          }
 
           Set<IModule> modules = new HashSet<IModule>();
           for (Project p : ProjectManager.getInstance().getOpenProjects()) {

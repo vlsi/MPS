@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;
@@ -97,7 +98,12 @@ public class ApplicationPluginManager implements ApplicationComponent {
     Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
     result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
 
-    result.addAll(PluginUtil.getStandaloneAppPlugins());
+    Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
+    for (PluginContributor c:pluginContributors){
+      BaseApplicationPlugin plugin = c.createApplicationPlugin();
+      if (plugin==null) continue;
+      result.add(plugin);
+    }
 
     Set<IModule> modules = new HashSet<IModule>();
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {

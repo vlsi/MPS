@@ -97,27 +97,14 @@ public class PluginUtil {
     }
   }
 
-  private static Collection<BaseApplicationPlugin> myStandaloneAppPlugins = new ArrayList<BaseApplicationPlugin>();
-  private static Collection<BaseProjectPlugin> myStandaloneProjPlugins = new ArrayList<BaseProjectPlugin>();
+  private static Collection<PluginContributor> myPluginContributors = new ArrayList();
 
   public static void addPluginContributor(PluginContributor contributor){
-
+    myPluginContributors.add(contributor);
   }
 
-  public static void addStandaloneAppPlugin(BaseApplicationPlugin plugin) {
-    myStandaloneAppPlugins.add(plugin);
-  }
-
-  public static void addStandaloneProjPlugin(BaseProjectPlugin plugin) {
-    myStandaloneProjPlugins.add(plugin);
-  }
-
-  public static Collection<BaseApplicationPlugin> getStandaloneAppPlugins() {
-    return myStandaloneAppPlugins;
-  }
-
-  public static Collection<BaseProjectPlugin> getStandaloneProjPlugins() {
-    return myStandaloneProjPlugins;
+  public static Collection<PluginContributor> getPluginContributors() {
+    return myPluginContributors;
   }
 
   private static abstract class PluginCreator<T> {
