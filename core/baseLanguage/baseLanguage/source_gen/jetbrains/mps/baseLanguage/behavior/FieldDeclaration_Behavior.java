@@ -46,7 +46,7 @@ public class FieldDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
-  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode) {
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
@@ -120,7 +120,7 @@ public class FieldDeclaration_Behavior {
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459890);
   }
 
   public static String call_getSuffix_3012473318495506736(SNode thisNode, Project project) {
@@ -143,7 +143,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459890);
   }
 
   public static String callSuper_getSuffix_3012473318495506736(SNode thisNode, String callerConceptFqName, Project project) {

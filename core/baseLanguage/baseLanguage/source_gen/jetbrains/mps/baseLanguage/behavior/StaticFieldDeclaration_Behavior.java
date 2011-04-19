@@ -41,7 +41,7 @@ public class StaticFieldDeclaration_Behavior {
     return true;
   }
 
-  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode) {
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
@@ -89,7 +89,7 @@ public class StaticFieldDeclaration_Behavior {
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459921);
   }
 
   public static boolean call_isStatic_8986964027630472415(SNode thisNode) {
@@ -122,7 +122,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459921);
   }
 
   public static boolean callSuper_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
