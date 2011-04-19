@@ -34,6 +34,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.baseLanguage.dataFlow.NullableState;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -621,6 +625,27 @@ __switch__:
       return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false);
     }
     return null;
+  }
+
+  @CheckingMethod
+  public static void checkReturningExpression(final TypeCheckingContext typeCheckingContext, SNode expression, SNode statement, Program program, AnalysisResult<Map<SNode, NullableState>> result) {
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+      List<Instruction> instructions = program.getInstructionsFor(statement);
+      if (!(instructions.isEmpty())) {
+        if (NullableState.canBeNull(result.get(instructions.get(instructions.size() - 1)).get(variable))) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Expression " + expression + " might evaluate to null but is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7249436257879820231", null, errorTarget);
+          }
+        }
+      }
+    } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Null is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7249436257879820267", null, errorTarget);
+      }
+    }
   }
 
   public static class QuotationClass_5ahx9e_a0a0a0a {

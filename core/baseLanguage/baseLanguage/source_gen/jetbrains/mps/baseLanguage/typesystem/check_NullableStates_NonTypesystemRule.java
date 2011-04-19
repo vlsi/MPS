@@ -27,6 +27,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -127,25 +128,12 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           return SLinkOperations.getTarget(it, "annotation", false);
         }
       }).contains(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
-        for (SNode returnStatement : SNodeOperations.getDescendants(method, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
-          SNode expression = SLinkOperations.getTarget(returnStatement, "expression", true);
-          if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-            SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
-            List<Instruction> instructions = program.getInstructionsFor(returnStatement);
-            if (!(instructions.isEmpty())) {
-              if (NullableState.canBeNull(result.get(instructions.get(instructions.size() - 1)).get(variable))) {
-                {
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Expression " + expression + " might evaluate to null but is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5899025696847223994", null, errorTarget);
-                }
-              }
-            }
-          } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
-            {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Null is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4658387821817544361", null, errorTarget);
-            }
-          }
+        for (SNode returnStatement : RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true))) {
+          RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(returnStatement, "expression", true), returnStatement, program, result);
+        }
+        SNode last = IMethodLike_Behavior.call_getLastStatement_1239354409446(method);
+        if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+          RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), last, program, result);
         }
       }
     }
