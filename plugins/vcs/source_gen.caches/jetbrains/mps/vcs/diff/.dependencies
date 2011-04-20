@@ -91,33 +91,30 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.MergeContext" file="MergeContext.java">
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.MergeConflictsBuilder" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContextState" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.NodeCopierWithCache" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.MergeContextState" file="MergeContextState.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -189,6 +186,22 @@
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.NodeCopierWithCache" file="NodeCopierWithCache.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.Warning" file="Warning.java">
     <classNode dependClassName="java.lang.Deprecated" />
