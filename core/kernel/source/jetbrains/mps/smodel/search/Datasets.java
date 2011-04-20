@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.search;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.AbstractCache.DataSetCreator;
 import jetbrains.mps.cache.DataSet;
@@ -24,7 +26,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.util.*;
@@ -111,7 +112,7 @@ class Datasets {
       myConcepts = result.toArray(new SNode[result.size()]);
 
       // depends on concepts and implemented interface references
-      myDependsOnNodes = new HashSet<SNode>(myConcepts.length * 2);
+      myDependsOnNodes = new THashSet<SNode>(myConcepts.length * 2);
       for (SNode concept : myConcepts) {
         myDependsOnNodes.add(concept);
         if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(concept)) {
@@ -151,13 +152,12 @@ class Datasets {
     public void propertyChanged(SModelPropertyEvent event) {
 
     }
-
   }
 
   static class PropertyDeclarationsDataSet extends DataSet {
     public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
-    private Map<String, SNode> myPropertyByName;
-    private List<SNode> myProperties;
+    private Map<String, SNode> myPropertyByName = null; //remain null until element added
+    private List<SNode> myProperties = null; //remain null until element added
     private Set<SNode> myDependsOnNodes;
 
     public PropertyDeclarationsDataSet(AbstractCache ownerCache) {
@@ -169,17 +169,17 @@ class Datasets {
     }
 
     public SNode getPropertyDeclarationByName(String name) {
-      return myPropertyByName.get(name);
+      return myPropertyByName == null ? null : myPropertyByName.get(name);
     }
 
     public List<SNode> getPropertyDeclarations() {
-      return new ArrayList<SNode>(myProperties);
+      return myProperties == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myProperties);
     }
 
     protected void init() {
       List<SNode> allProperties = new ArrayList<SNode>();
-      myProperties = new ArrayList<SNode>();
-      myPropertyByName = new HashMap<String, SNode>();
+      myPropertyByName = null;
+      myProperties = null;
 
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate bottom-up
@@ -189,20 +189,26 @@ class Datasets {
           allProperties.add(prop);
           String name = prop.getName();
           if (name == null) continue;
-          if (myPropertyByName.containsKey(name)) {
+          if (myPropertyByName != null && myPropertyByName.containsKey(name)) {
             // properties can not be "overridden"
             continue;
           }
+
+          if (myProperties == null) {
+            myProperties = new ArrayList<SNode>(1);
+          }
           myProperties.add(prop);
+
+          if (myPropertyByName == null) {
+            myPropertyByName = new THashMap<String, SNode>(1);
+          }
           myPropertyByName.put(name, prop);
         }
       }
 
       // depends on concepts and link declarations
-      myDependsOnNodes = new HashSet<SNode>();
-      for (SNode concept : concepts) {
-        myDependsOnNodes.add(concept);
-      }
+      myDependsOnNodes = new THashSet<SNode>();
+      myDependsOnNodes.addAll(Arrays.asList(concepts));
       for (SNode prop : allProperties) {
         myDependsOnNodes.add(prop);
       }
@@ -240,9 +246,9 @@ class Datasets {
 
   static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
-    private Map<String, SNode> myLinkByRole;
-    private Map<SNode, SNode> myMostSpecificLinkBySpecializedLink;
-    private List<SNode> myMostSpecificLinks;
+    private Map<String, SNode> myLinkByRole = null; //remain null until element added
+    private Map<SNode, SNode> myMostSpecificLinkBySpecializedLink = null; //remain null until element added
+    private List<SNode> myMostSpecificLinks = null; //remain null until element added
     private Set<SNode> myDependsOnNodes;
 
     public LinkDeclarationsDataSet(AbstractCache ownerCache) {
@@ -254,27 +260,24 @@ class Datasets {
     }
 
     public SNode getLinkDeclarationByRole(String role) {
-      return myLinkByRole.get(role);
+      return myLinkByRole == null ? null : myLinkByRole.get(role);
     }
 
     public SNode getMostSpecificLinkDeclarationByRole(String role) {
-      SNode linkDeclaration = myLinkByRole.get(role);
-      if (linkDeclaration != null) {
-        SNode mostSpecificLinkDeclaration = myMostSpecificLinkBySpecializedLink.get(linkDeclaration);
-        if (mostSpecificLinkDeclaration != null) {
-          return mostSpecificLinkDeclaration;
-        }
-        return linkDeclaration;
-      }
-      return null;
+      SNode linkDeclaration = getLinkDeclarationByRole(role);
+      if (linkDeclaration == null) return null;
+      if (myMostSpecificLinkBySpecializedLink == null) return linkDeclaration;
+      SNode mostSpecificLinkDeclaration = myMostSpecificLinkBySpecializedLink.get(linkDeclaration);
+      if (mostSpecificLinkDeclaration == null) return linkDeclaration;
+      return mostSpecificLinkDeclaration;
     }
 
     public List<SNode> getLinkDeclarationsExcludingOverridden() {
-      return new ArrayList<SNode>(myMostSpecificLinks);
+      return myMostSpecificLinks == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myMostSpecificLinks);
     }
 
     protected void init() {
-      myLinkByRole = new HashMap<String, SNode>();
+      myLinkByRole = null;
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       FlattenIterable<SNode> allLinks = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>(concepts.length));
       for (SNode concept : concepts) {
@@ -283,12 +286,16 @@ class Datasets {
         for (SNode link : list) {
           String role1 = SModelUtil.getLinkDeclarationRole(link);
           if (role1 == null) continue;
-          if (myLinkByRole.containsKey(role1)) continue;
+          if (myLinkByRole != null && myLinkByRole.containsKey(role1)) continue;
+
+          if (myLinkByRole == null) {
+            myLinkByRole = new THashMap<String, SNode>(1);
+          }
           myLinkByRole.put(role1, link);
         }
       }
 
-      Map<SNode, SNode> specializedLinks = new HashMap<SNode, SNode>();
+      Map<SNode, SNode> specializedLinks = new THashMap<SNode, SNode>();
       for (SNode link : allLinks) {
         SNode specializedLink = SModelUtil.getLinkDeclarationSpecializedLink(link);
         if (specializedLink != null) {
@@ -296,14 +303,20 @@ class Datasets {
         }
       }
 
-      myMostSpecificLinkBySpecializedLink = new HashMap<SNode, SNode>();
-      myMostSpecificLinks = new ArrayList<SNode>(5);
+      myMostSpecificLinkBySpecializedLink = null;
+      myMostSpecificLinks = null;
       for (SNode link : allLinks) {
         SNode moreSpecificLink = specializedLinks.get(link);
         if (moreSpecificLink == null) {
+          if (myMostSpecificLinks == null) {
+            myMostSpecificLinks = new ArrayList<SNode>(5);
+          }
           myMostSpecificLinks.add(link);
         } else {
           while (moreSpecificLink != null) {
+            if (myMostSpecificLinkBySpecializedLink == null) {
+              myMostSpecificLinkBySpecializedLink = new THashMap<SNode, SNode>();
+            }
             myMostSpecificLinkBySpecializedLink.put(link, moreSpecificLink);
             moreSpecificLink = specializedLinks.get(moreSpecificLink);
           }
@@ -311,10 +324,8 @@ class Datasets {
       }
 
       // depends on concepts and link declarations
-      myDependsOnNodes = new HashSet<SNode>();
-      for (SNode concept : concepts) {
-        myDependsOnNodes.add(concept);
-      }
+      myDependsOnNodes = new THashSet<SNode>();
+      myDependsOnNodes.addAll(Arrays.asList(concepts));
       for (SNode link : allLinks) {
         myDependsOnNodes.add(link);
       }
@@ -346,22 +357,30 @@ class Datasets {
 
     public void propertyChanged(SModelPropertyEvent event) {
       // don't process unless it is link's role
-      if (SNodeUtil.property_LinkDeclaration_role.equals(event.getPropertyName()) && SNodeUtil.isInstanceOfLinkDeclaration(event.getNode())) {
-        String oldRole = event.getOldPropertyValue();
-        if (oldRole != null) {
+      if (!SNodeUtil.property_LinkDeclaration_role.equals(event.getPropertyName()) ||
+        !SNodeUtil.isInstanceOfLinkDeclaration(event.getNode())) return;
+
+      String oldRole = event.getOldPropertyValue();
+      if (oldRole != null) {
+        if (myLinkByRole != null) {
           myLinkByRole.remove(oldRole);
         }
-        String newRole = event.getNewPropertyValue();
-        if (!(newRole == null || myLinkByRole.containsKey(newRole))) {
-          myLinkByRole.put(newRole, event.getNode());
-        }
+      }
+      String newRole = event.getNewPropertyValue();
+      if (newRole == null) return;
+
+      if (myLinkByRole == null) {
+        myLinkByRole = new THashMap<String, SNode>(1);
+        myLinkByRole.put(newRole, event.getNode());
+      } else if (!myLinkByRole.containsKey(newRole)) {
+        myLinkByRole.put(newRole, event.getNode());
       }
     }
   }
 
   static class ConceptPropertiesDataSet extends DataSet {
     public static final String ID = "CONCEPT_PROPERTIES_DATASET";
-    private Map<String, SNode> myPropertyByName;
+    private Map<String, SNode> myPropertyByName = null; //remain null until element added
     private Set<SNode> myDependsOnNodes;
 
     public ConceptPropertiesDataSet(AbstractCache ownerCache) {
@@ -373,13 +392,13 @@ class Datasets {
     }
 
     public SNode getConceptPropertyByName(String name) {
-      return myPropertyByName.get(name);
+      return myPropertyByName == null ? null : myPropertyByName.get(name);
     }
 
     protected void init() {
       List<SNode> allConceptProperties = new ArrayList<SNode>();
       Set<SNode> allConceptPropertyDeclarations = new HashSet<SNode>();
-      myPropertyByName = new HashMap<String, SNode>();
+      myPropertyByName = null;
 
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate up-down
@@ -394,20 +413,21 @@ class Datasets {
           if (propertyName == null || propertyName.length() == 0) continue;
 
           // property is in 'top' concept or inheritable property
-          if (SNodeUtil.getConceptPropertyDeclaration_IsInheritable(conceptPropertyDeclaration) ||
-            concept == concepts[0]) {
-            if (!myPropertyByName.containsKey(propertyName)) {
-              myPropertyByName.put(propertyName, conceptProperty);
-            }
+          if (!SNodeUtil.getConceptPropertyDeclaration_IsInheritable(conceptPropertyDeclaration) &&
+            concept != concepts[0]) continue;
+
+          if (myPropertyByName == null) {
+            myPropertyByName = new THashMap<String, SNode>(1);
+            myPropertyByName.put(propertyName, conceptProperty);
+          } else if (!myPropertyByName.containsKey(propertyName)) {
+            myPropertyByName.put(propertyName, conceptProperty);
           }
         }
       }
 
       // depends on concepts, concept properties and concept property declarations
-      myDependsOnNodes = new HashSet<SNode>();
-      for (SNode concept : concepts) {
-        myDependsOnNodes.add(concept);
-      }
+      myDependsOnNodes = new THashSet<SNode>();
+      myDependsOnNodes.addAll(Arrays.asList(concepts));
       for (SNode prop : allConceptProperties) {
         myDependsOnNodes.add(prop);
       }
