@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
-import jetbrains.mps.editor.runtime.impl.EditorsFinderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
