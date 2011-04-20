@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
@@ -29,7 +31,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private Map<String, Set<SNode>> myNodes = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
 
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
@@ -118,7 +120,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     Set<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
-      set = new HashSet<SNode>(1);
+      set = new THashSet<SNode>(1);
       myNodes.put(conceptFqName, set);
     }
     set.add(node);
