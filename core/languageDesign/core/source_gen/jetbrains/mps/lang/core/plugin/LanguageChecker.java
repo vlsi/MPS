@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -144,10 +143,6 @@ public class LanguageChecker extends BaseEditorChecker {
 
   public boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
-  }
-
-  public EditorMessageOwner getOwner(SNode node, EditorComponent component) {
-    return this;
   }
 
   public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {

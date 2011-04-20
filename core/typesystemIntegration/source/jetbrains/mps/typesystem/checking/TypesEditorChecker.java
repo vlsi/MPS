@@ -188,11 +188,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return messages;
   }
 
-  public EditorMessageOwner getOwner(SNode node, EditorComponent editorComponent) {
-    if (node == null) return null;
-    return this;
-  }
-
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     return true;
   }

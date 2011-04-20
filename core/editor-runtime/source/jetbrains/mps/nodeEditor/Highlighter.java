@@ -467,7 +467,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     boolean anyMessageChanged = false;
     for (final BaseEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-      final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       boolean changed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           if (myStopThread) return false;
@@ -475,7 +474,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null || node.isDisposed()) return false;
 
-          owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {
             IOperationContext operationContext = editor.getOperationContext();
@@ -484,7 +482,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                 messages.addAll(checker.createMessages(node, events, wasCheckedOnce, editorContext));
                 return checker.messagesChanged();
               } catch (IndexNotReadyException ex) {
-                highlightManager.clearForOwner(owners[0], true);
+                highlightManager.clearForOwner(checker, true);
                 checker.clear(node, editor);
                 throw ex;
               }
@@ -502,10 +500,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
       if (changed) {
         anyMessageChanged = true;
-        EditorMessageOwner owner = owners[0];
-        if (owner != null) {
-          highlightManager.clearForOwner(owner, false);
-        }
+        highlightManager.clearForOwner(checker, false);
         for (EditorMessage message : messages) {
           highlightManager.mark(message);
         }
@@ -517,7 +512,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return null;
           SNode node = editor.getEditedNode();
           if (node == null) return null;
-          return checker.getOwner(node, editor);
+          return checker;
         }
       });
       if (myStopThread) return false;

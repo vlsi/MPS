@@ -9,13 +9,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.02.2010
- * Time: 19:34:33
- * To change this template use File | Settings | File Templates.
- */
 public class HighlightUtil {
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, BaseEditorChecker checker, EditorContext editorContext) {
     if (errorReporter == null) {
@@ -23,12 +16,12 @@ public class HighlightUtil {
     }
     final MessageStatus status = errorReporter.getMessageStatus();
     HighlighterMessage error = new HighlighterMessage(
-      node, 
+      node,
       status,
       errorReporter.getErrorTarget(),
       getMessageColor(status),
       message,
-      checker.getOwner(node.getContainingRoot(), editorContext.getNodeEditorComponent()));
+      checker);
     error.setErrorReporter(errorReporter);
     return error;
   }
@@ -38,15 +31,9 @@ public class HighlightUtil {
   }
 
   public static Color getMessageColor(MessageStatus messageStatus) {
-    if (messageStatus == MessageStatus.ERROR) {
-      return Color.RED;
-    }
-    if (messageStatus == MessageStatus.WARNING) {
-      return Color.YELLOW;
-    }
-    if (messageStatus == MessageStatus.OK) {
-      return Color.LIGHT_GRAY;
-    }
+    if (messageStatus == MessageStatus.ERROR) return Color.RED;
+    if (messageStatus == MessageStatus.WARNING) return Color.YELLOW;
+    if (messageStatus == MessageStatus.OK) return Color.LIGHT_GRAY;
     return Color.BLACK;
   }
 }

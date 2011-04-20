@@ -28,12 +28,12 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     for (SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {
       if (RemarkStatement_Behavior.call_isTodo_1213877427548(remark)) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this.getOwner(rootNode, editorComponent)));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this));
       }
     }
     for (SNode textCommentPart : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false, new String[]{})) {
       if (CommentPart_Behavior.call_isToDo_7236590470026152831(textCommentPart)) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this.getOwner(rootNode, editorComponent)));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this));
       }
     }
     return messages;

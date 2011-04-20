@@ -4,34 +4,34 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.ide.resolve.MethodDeclarationsFixer;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.project.MPSProject;
 
 public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private ToDoHighlighter myToDoHighlighter = new ToDoHighlighter();
   private MethodDeclarationsFixer myMethodDeclFixer = new MethodDeclarationsFixer();
   private OverrideMethodsChecker myOverrideMethodsChecker = new OverrideMethodsChecker();
+  private Highlighter myHighlighter;
 
   public BaseLanguageCustomPlugin_CustomProjectPlugin() {
   }
 
   public void doInit(MPSProject project) {
-    Highlighter highlighter = project.getComponent(Highlighter.class);
-    if (highlighter != null) {
-      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
-      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
-      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
+    BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
+    if (BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter != null) {
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.init();
     }
   }
 
   public void doDispose(MPSProject project) {
-    Highlighter highlighter = project.getComponent(Highlighter.class);
-    if (highlighter != null) {
+    if (BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter != null) {
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.dispose();
-      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
-      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
-      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
     }
   }
 }
