@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
@@ -198,7 +199,8 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
   public ProjectStructureSModelDescriptor createModel(IModule module) {
     SModelFqName fqName = getModelFqName(module);
-    SModelId id = SModelId.foreign("project", module.getModuleReference().getModuleId().toString());
+    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModelId id = moduleId != null ? SModelId.foreign("project", moduleId.toString()) : SModelId.generate();
     ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(new SModelReference(fqName, id), module);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
