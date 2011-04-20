@@ -115,7 +115,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     if (myInvalidationWasPerformed) {
       return myInvalidationResultNT;
     }
-    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
+    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
     for (SNode node : myCurrentNodesToInvalidate) {
       doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
@@ -205,7 +205,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       }
       Set<IErrorReporter> errorsSet = rulesToErrorsMap.get(currentRule);
       if (errorsSet == null) {
-        errorsSet = new HashSet<IErrorReporter>(1);
+        errorsSet = new THashSet<IErrorReporter>(1);
         rulesToErrorsMap.put(currentRule, errorsSet);
       }
       errorsSet.add(errorReporter);
@@ -258,7 +258,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     Map<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
     Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);
     if (rules == null) {
-      rules = new HashSet<NonTypesystemRule_Runtime>(1);
+      rules = new THashSet<NonTypesystemRule_Runtime>(1);
       dependentNodes.put(node, rules);
     }
     rules.add(rule);
@@ -332,8 +332,8 @@ class NonTypeSystemComponent extends CheckingComponent {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             nodesReadListener.setAccessReport(true);
-            addDependentNodes(node, rule.o1, new HashSet<SNode>(nodesReadListener.getAccessedNodes()));
-            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+            addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
             nodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
@@ -343,7 +343,7 @@ class NonTypeSystemComponent extends CheckingComponent {
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDependentTypeTerms(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           nodesReadListener.clear();
@@ -354,7 +354,7 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private class MyTypesReadListener implements TypesReadListener {
-    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
+    private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
     private boolean myIsSetAccessReport = false;
 
     public void setAccessReport(boolean accessReport) {
