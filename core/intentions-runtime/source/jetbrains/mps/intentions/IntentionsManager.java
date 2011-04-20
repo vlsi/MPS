@@ -27,7 +27,6 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
-import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -333,7 +332,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       SNode migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
         if (refactoring.isShowAsIntention()) {
-          Intention intention = new MigrationRefactoringAdapter(refactoring, (MigrationScript)migrationScript.getAdapter());
+          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
           ModuleReference moduleRef = language.getModuleReference();
           SNodePointer node = new SNodePointer(migrationScript);
           IntentionsManager.getInstance().addIntention(intention, moduleRef, node);

@@ -16,20 +16,18 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
-  private MigrationScript myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
+  private SNode myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
 
-  public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, MigrationScript migrationScript) {
+  public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, SNode migrationScript) {
     myRefactoring = refactoring;
     myMigrationScript = migrationScript;
   }

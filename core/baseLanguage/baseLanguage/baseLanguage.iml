@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="intentions-runtime" />
   </component>
 </module>
 

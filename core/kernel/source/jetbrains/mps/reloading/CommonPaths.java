@@ -95,6 +95,7 @@ public class CommonPaths {
     addIfExists(result, "/workbench/classes");
     addIfExists(result, "/core/actions-runtime/classes");
     addIfExists(result, "/core/editor-runtime/classes");
+    addIfExists(result, "/core/intentions-runtime/classes");
     addIfExists(result, "/core/plugin-runtime/classes");
     addIfExists(result, "/core/findUsages-runtime/classes");
     addIfExists(result, "/core/refactoring-runtime/classes");

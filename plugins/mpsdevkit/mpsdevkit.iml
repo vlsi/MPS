@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
+    <orderEntry type="module" module-name="intentions-runtime" />
   </component>
 </module>
 

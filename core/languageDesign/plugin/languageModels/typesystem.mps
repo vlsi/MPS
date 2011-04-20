@@ -22,7 +22,6 @@
   <import index="k1li" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="7jsa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="yc6m" modelUID="f:java_stub#d7a92d38-f7db-40d0-8431-763b0c3c9f20#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="u5xh" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
@@ -33,6 +32,7 @@
   <import index="njdp" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.actions(MPS.Classpath/jetbrains.mps.plugins.pluginparts.actions@java_stub)" version="-1" />
   <import index="2f20" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.tool(MPS.Classpath/jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
   <import index="uqw6" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.runconfigs(MPS.Classpath/jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
+  <import index="ye75" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.checkedName(MPS.Classpath/jetbrains.mps.checkedName@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1565,7 +1565,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140666" resolveInfo="p" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140643">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140644">
@@ -1575,7 +1575,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140666" resolveInfo="p" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140647">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
                       </node>
                     </node>
                   </node>
@@ -1602,7 +1602,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140666" resolveInfo="p" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140657">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140658">
@@ -1612,7 +1612,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140666" resolveInfo="p" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140661">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1628770029971140662">
@@ -1715,7 +1715,7 @@
               <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="1628770029971140698" resolveInfo="property" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140705">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dsetValue(java%dlang%dString)%cvoid" resolveInfo="setValue" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dsetValue(java%dlang%dString)%cvoid" resolveInfo="setValue" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1628770029971140706">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dcaptionWithNamingPolicy(java%dlang%dString)%cjava%dlang%dString" resolveInfo="captionWithNamingPolicy" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
@@ -1724,7 +1724,7 @@
                     <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="1628770029971140698" resolveInfo="property" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140709">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                   </node>
                 </node>
               </node>
@@ -1862,7 +1862,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140753">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                 </node>
               </node>
             </node>
@@ -1877,7 +1877,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140759">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                   </node>
                 </node>
               </node>
@@ -1903,7 +1903,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140764">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
                   </node>
                 </node>
                 <node role="warningText" roleId="tpd4.1207055552304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1500939545021979024">
@@ -1924,7 +1924,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140772">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
                     </node>
                   </node>
                 </node>
@@ -1946,7 +1946,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5003188907305524100">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
                           </node>
                         </node>
                       </node>
@@ -1967,7 +1967,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140786">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
                   </node>
                 </node>
                 <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyNameTarget" typeId="tpd4.1227107274859" id="1628770029971140787">
@@ -1976,7 +1976,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1628770029971140794" resolveInfo="p" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1628770029971140790">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yc6m.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ye75.~PropertyReference%dgetProperty()%cjava%dlang%dString" resolveInfo="getProperty" />
                     </node>
                   </node>
                 </node>
@@ -2063,7 +2063,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1628770029971140822">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1628770029971140823">
           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1628770029971140824">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yc6m.~PropertyReference" resolveInfo="PropertyReference" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ye75.~PropertyReference" resolveInfo="PropertyReference" />
           </node>
         </node>
       </node>

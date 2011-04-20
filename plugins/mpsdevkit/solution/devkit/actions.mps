@@ -43,7 +43,6 @@
   <import index="dnd2" modelUID="f:java_stub#cac2fef0-41a6-4fcd-923f-f893d536b2ab#jetbrains.mps.ide.devkit.util(jetbrains.mps.ide.devkit.util@java_stub)" version="-1" />
   <import index="5dgo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.languagesFs(jetbrains.mps.workbench.languagesFs@java_stub)" version="-1" />
   <import index="t6nq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.fileEditor(com.intellij.openapi.fileEditor@java_stub)" version="-1" />
-  <import index="v5m3" modelUID="f:java_stub#d7a92d38-f7db-40d0-8431-763b0c3c9f20#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="7vsr" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
   <import index="54an" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui.popup(com.intellij.openapi.ui.popup@java_stub)" version="-1" />
   <import index="3bar" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.awt(com.intellij.ui.awt@java_stub)" version="-1" />
@@ -77,6 +76,7 @@
   <import index="5q33" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellExplorer(MPS.Classpath/jetbrains.mps.nodeEditor.cellExplorer@java_stub)" version="-1" />
   <import index="supv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="p388" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.intentions(MPS.Classpath/jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -3648,7 +3648,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708110">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~AbstractIntention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~AbstractIntention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708111">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2662234144540708112" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2662234144540708113">
@@ -3675,11 +3675,11 @@
             <property name="name" nameId="tpck.1169194664001" value="intentionContext" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708121">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~IntentionContext" resolveInfo="IntentionContext" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~IntentionContext" resolveInfo="IntentionContext" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2662234144540708122">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2662234144540708123">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionContext%d&lt;init&gt;()" resolveInfo="IntentionContext" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionContext%d&lt;init&gt;()" resolveInfo="IntentionContext" />
               </node>
             </node>
           </node>
@@ -3698,7 +3698,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708134">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~GenerateIntention%dexecute(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dintentions%dIntentionContext)%cvoid" resolveInfo="execute" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~GenerateIntention%dexecute(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dintentions%dIntentionContext)%cvoid" resolveInfo="execute" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708135">
                           <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2662234144540708136" />
                           <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2662234144540708137">
@@ -3729,7 +3729,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708146">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~GenerateIntention%dexecuteUI(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dintentions%dIntentionContext)%cboolean" resolveInfo="executeUI" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~GenerateIntention%dexecuteUI(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dintentions%dIntentionContext)%cboolean" resolveInfo="executeUI" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708147">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2662234144540708148" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2662234144540708149">
@@ -3754,7 +3754,7 @@
       <property name="name" nameId="tpck.1169194664001" value="intention" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2662234144540708155" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708156">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~GenerateIntention" resolveInfo="GenerateIntention" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~GenerateIntention" resolveInfo="GenerateIntention" />
       </node>
       <node role="toStringFunction" roleId="tp4k.1227019158144" type="tp4k.ToStringConceptFunction" typeId="tp4k.1227019068586" id="2662234144540708157">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2662234144540708158">
@@ -4080,11 +4080,11 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2662234144540708294">
               <property name="name" nameId="tpck.1169194664001" value="query" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708295">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor" resolveInfo="IntentionsManager.QueryDescriptor" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~IntentionsManager$QueryDescriptor" resolveInfo="IntentionsManager.QueryDescriptor" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2662234144540708296">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2662234144540708297">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%d&lt;init&gt;()" resolveInfo="IntentionsManager.QueryDescriptor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%d&lt;init&gt;()" resolveInfo="IntentionsManager.QueryDescriptor" />
                 </node>
               </node>
             </node>
@@ -4095,9 +4095,9 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708294" resolveInfo="query" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708301">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%dsetIntentionClass(java%dlang%dClass)%cvoid" resolveInfo="setIntentionClass" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%dsetIntentionClass(java%dlang%dClass)%cvoid" resolveInfo="setIntentionClass" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="2662234144540708302">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="v5m3.~GenerateIntention" resolveInfo="GenerateIntention" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="p388.~GenerateIntention" resolveInfo="GenerateIntention" />
                 </node>
               </node>
             </node>
@@ -4108,7 +4108,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708294" resolveInfo="query" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708306">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%dsetInstantiate(boolean)%cvoid" resolveInfo="setInstantiate" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%dsetInstantiate(boolean)%cvoid" resolveInfo="setInstantiate" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2662234144540708307">
                   <property name="value" nameId="tpee.1068580123138" value="true" />
                 </node>
@@ -4122,7 +4122,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="2662234144540708311">
                 <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="2662234144540708312">
                   <node role="componentType" roleId="cx9y.1238852204892" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708313">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                   </node>
                   <node role="componentType" roleId="cx9y.1238852204892" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2662234144540708314" />
                 </node>
@@ -4131,7 +4131,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2662234144540708316">
                   <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="2662234144540708317">
                     <node role="componentType" roleId="cx9y.1238852204892" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708318">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                     </node>
                     <node role="componentType" roleId="cx9y.1238852204892" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2662234144540708319" />
                   </node>
@@ -4182,7 +4182,7 @@
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708338">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8a0f.~Pair" resolveInfo="Pair" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708339">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                   </node>
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708340">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SNode" resolveInfo="SNode" />
@@ -4191,11 +4191,11 @@
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708341">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2662234144540708342">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager%dgetInstance()%cjetbrains%dmps%dintentions%dIntentionsManager" resolveInfo="getInstance" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v5m3.~IntentionsManager" resolveInfo="IntentionsManager" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager%dgetInstance()%cjetbrains%dmps%dintentions%dIntentionsManager" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="p388.~IntentionsManager" resolveInfo="IntentionsManager" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708343">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager%dgetAvailableIntentions(jetbrains%dmps%dintentions%dIntentionsManager$QueryDescriptor,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dutil%dCollection" resolveInfo="getAvailableIntentions" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager%dgetAvailableIntentions(jetbrains%dmps%dintentions%dIntentionsManager$QueryDescriptor,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dutil%dCollection" resolveInfo="getAvailableIntentions" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2662234144540708344">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708294" resolveInfo="query" />
                   </node>
@@ -4279,7 +4279,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708382">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540708383">
                                 <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2662234144540708384">
                                   <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -4305,7 +4305,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708392">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540708393">
                                   <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2662234144540708394">
                                     <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -4345,7 +4345,7 @@
                         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2662234144540708097" resolveInfo="GenerateIntentionAction" />
                         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2662234144540708407">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708408">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~GenerateIntention" resolveInfo="GenerateIntention" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~GenerateIntention" resolveInfo="GenerateIntention" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540708409">
                             <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2662234144540708410">
@@ -5226,7 +5226,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708754">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~AbstractIntention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~AbstractIntention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708755">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2662234144540708756" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2662234144540708757">
@@ -5257,7 +5257,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708768">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~AbstractIntention%dexecute(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cvoid" resolveInfo="execute" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~AbstractIntention%dexecute(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cvoid" resolveInfo="execute" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708769">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2662234144540708770" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="2662234144540708771">
@@ -5279,7 +5279,7 @@
       <property name="name" nameId="tpck.1169194664001" value="intention" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2662234144540708776" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708777">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
       </node>
       <node role="toStringFunction" roleId="tp4k.1227019158144" type="tp4k.ToStringConceptFunction" typeId="tp4k.1227019068586" id="2662234144540708778">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2662234144540708779">
@@ -5605,11 +5605,11 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2662234144540708915">
               <property name="name" nameId="tpck.1169194664001" value="query" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708916">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor" resolveInfo="IntentionsManager.QueryDescriptor" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~IntentionsManager$QueryDescriptor" resolveInfo="IntentionsManager.QueryDescriptor" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2662234144540708917">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2662234144540708918">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%d&lt;init&gt;()" resolveInfo="IntentionsManager.QueryDescriptor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%d&lt;init&gt;()" resolveInfo="IntentionsManager.QueryDescriptor" />
                 </node>
               </node>
             </node>
@@ -5620,9 +5620,9 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708915" resolveInfo="query" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708922">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%dsetIntentionClass(java%dlang%dClass)%cvoid" resolveInfo="setIntentionClass" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%dsetIntentionClass(java%dlang%dClass)%cvoid" resolveInfo="setIntentionClass" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="2662234144540708923">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="v5m3.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="p388.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
                 </node>
               </node>
             </node>
@@ -5633,7 +5633,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708915" resolveInfo="query" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708927">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%dsetInstantiate(boolean)%cvoid" resolveInfo="setInstantiate" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%dsetInstantiate(boolean)%cvoid" resolveInfo="setInstantiate" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2662234144540708928">
                   <property name="value" nameId="tpee.1068580123138" value="true" />
                 </node>
@@ -5646,7 +5646,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708915" resolveInfo="query" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708932">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager$QueryDescriptor%dsetCurrentNodeOnly(boolean)%cvoid" resolveInfo="setCurrentNodeOnly" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager$QueryDescriptor%dsetCurrentNodeOnly(boolean)%cvoid" resolveInfo="setCurrentNodeOnly" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2662234144540708933">
                   <property name="value" nameId="tpee.1068580123138" value="true" />
                 </node>
@@ -5660,7 +5660,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="2662234144540708937">
                 <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="2662234144540708938">
                   <node role="componentType" roleId="cx9y.1238852204892" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708939">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                   </node>
                   <node role="componentType" roleId="cx9y.1238852204892" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2662234144540708940" />
                 </node>
@@ -5669,7 +5669,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2662234144540708942">
                   <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="2662234144540708943">
                     <node role="componentType" roleId="cx9y.1238852204892" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708944">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                     </node>
                     <node role="componentType" roleId="cx9y.1238852204892" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2662234144540708945" />
                   </node>
@@ -5720,7 +5720,7 @@
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708964">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8a0f.~Pair" resolveInfo="Pair" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708965">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~Intention" resolveInfo="Intention" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~Intention" resolveInfo="Intention" />
                   </node>
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540708966">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SNode" resolveInfo="SNode" />
@@ -5729,11 +5729,11 @@
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2662234144540708967">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2662234144540708968">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v5m3.~IntentionsManager" resolveInfo="IntentionsManager" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager%dgetInstance()%cjetbrains%dmps%dintentions%dIntentionsManager" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="p388.~IntentionsManager" resolveInfo="IntentionsManager" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager%dgetInstance()%cjetbrains%dmps%dintentions%dIntentionsManager" resolveInfo="getInstance" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540708969">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~IntentionsManager%dgetAvailableIntentions(jetbrains%dmps%dintentions%dIntentionsManager$QueryDescriptor,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dutil%dCollection" resolveInfo="getAvailableIntentions" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~IntentionsManager%dgetAvailableIntentions(jetbrains%dmps%dintentions%dIntentionsManager$QueryDescriptor,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dutil%dCollection" resolveInfo="getAvailableIntentions" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2662234144540708970">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2662234144540708915" resolveInfo="query" />
                   </node>
@@ -5817,7 +5817,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540709008">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540709009">
                                 <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2662234144540709010">
                                   <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -5843,7 +5843,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2662234144540709018">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v5m3.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p388.~Intention%dgetDescription(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorContext)%cjava%dlang%dString" resolveInfo="getDescription" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540709019">
                                   <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2662234144540709020">
                                     <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -5891,7 +5891,7 @@
                             </node>
                           </node>
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662234144540709037">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v5m3.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p388.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
                           </node>
                         </node>
                         <node role="actualParameter" roleId="tp4k.1227011543811" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="2662234144540709038">

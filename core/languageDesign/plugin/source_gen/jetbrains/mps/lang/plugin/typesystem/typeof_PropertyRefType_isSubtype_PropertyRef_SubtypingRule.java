@@ -49,7 +49,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#d7a92d38-f7db-40d0-8431-763b0c3c9f20#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)"), SNodeId.fromString("~PropertyReference")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.checkedName(MPS.Classpath/jetbrains.mps.checkedName@java_stub)"), SNodeId.fromString("~PropertyReference")));
         result = quotedNode1_2;
       }
       return result;
@@ -62,7 +62,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#d7a92d38-f7db-40d0-8431-763b0c3c9f20#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)"), SNodeId.fromString("~PropertyReference")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.checkedName(MPS.Classpath/jetbrains.mps.checkedName@java_stub)"), SNodeId.fromString("~PropertyReference")));
         result = quotedNode1_2;
       }
       return result;

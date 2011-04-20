@@ -6,6 +6,7 @@ core/debug-api/classes
 core/runtime/classes
 core/actions-runtime/classes
 core/editor-runtime/classes
+core/intentions-runtime/classes
 core/findUsages-runtime/classes
 core/refactoring-runtime/classes
 core/plugin-runtime/classes
@@ -54,7 +55,6 @@ core/languageDesign/smodel/classes
 core/languageDesign/script/classes
 core/languageDesign/structure/classes
 core/languageDesign/core/classes
-core/languageDesign/refactoring/classes
 core/languageDesign/test/classes
 core/languageDesign/textGen/classes
 core/languageDesign/make/classes
