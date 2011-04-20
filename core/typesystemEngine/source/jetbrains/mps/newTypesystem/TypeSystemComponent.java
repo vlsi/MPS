@@ -349,7 +349,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (nodeToDependOn == null) continue;
       Set<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashSet<SNode>(1);
+        dependentNodes = new THashSet<SNode>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
         myNodeTypesComponent.track(nodeToDependOn);
       }
