@@ -10,6 +10,20 @@
     <projectDevkits />
     <genConfs />
   </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="mps.all">
+          <value>
+            <Library>
+              <option name="name" value="mps.all" />
+              <option name="path" value="${project}/" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>
