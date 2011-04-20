@@ -65,8 +65,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
-  private Set<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
-  private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
+  private Set<BaseEditorChecker> myCheckers = new LinkedHashSet<BaseEditorChecker>(3);
+  private Set<BaseEditorChecker> myCheckersToRemove = new LinkedHashSet<BaseEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private boolean myInspectorMessagesCreated = false;
@@ -212,7 +212,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  public void addChecker(IEditorChecker checker) {
+  public void addChecker(BaseEditorChecker checker) {
     if (MPSCore.getInstance().isTestMode()) return;
 
     if (checker != null) {
@@ -228,7 +228,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  public void removeChecker(IEditorChecker checker) {
+  public void removeChecker(BaseEditorChecker checker) {
     if (MPSCore.getInstance().isTestMode()) return;
 
     if (checker != null) {
@@ -289,8 +289,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       myLastEvents.clear();
     }
 
-    Set<IEditorChecker> checkers = new LinkedHashSet<IEditorChecker>();
-    Set<IEditorChecker> checkersToRemove = new LinkedHashSet<IEditorChecker>();
+    Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
+    Set<BaseEditorChecker> checkersToRemove = new LinkedHashSet<BaseEditorChecker>();
     // to avoid inconsistency between checkers, we collect them from fields here
     // in the synchronized block and then do not read the fields in this iteration anymore
     synchronized (CHECKERS_LOCK) {
@@ -388,12 +388,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, final Set<IEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged) {
+  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
         if (editedNode != null && !editedNode.isDisposed()) {
-          final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
+          final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {
             checkersToRecheck.addAll(checkers);
@@ -403,7 +403,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                 if (myStopThread) {
                   return;
                 }
-                for (IEditorChecker checker : checkers) {
+                for (BaseEditorChecker checker : checkers) {
                   if (checker.hasDramaticalEvent(events)) {
                     checkersToRecheck.add(checker);
                   }
@@ -415,7 +415,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
             return false;
           }
-          List<IEditorChecker> checkersToRecheckList = new ArrayList<IEditorChecker>(checkersToRecheck);
+          List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
           Collections.sort(checkersToRecheckList, new PriorityComparator());
 
           boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
@@ -460,12 +460,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     });
   }
 
-  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
+  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
     if (editor == null || editor.getRootCell() == null) return false;
 
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
-    for (final IEditorChecker checker : checkersToRecheck) {
+    for (final BaseEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       boolean changed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
@@ -511,7 +511,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       }
     }
-    for (final IEditorChecker checker : checkersToRemove) {
+    for (final BaseEditorChecker checker : checkersToRemove) {
       EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
         public EditorMessageOwner compute() {
           if (myStopThread) return null;

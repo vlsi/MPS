@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.List;
 
-public abstract class EditorCheckerAdapter extends BaseEditorChecker implements IEditorChecker, EditorMessageOwner {
+public abstract class EditorCheckerAdapter extends BaseEditorChecker {
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     for (SModelEvent event : events) {
       if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {

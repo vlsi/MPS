@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
-import jetbrains.mps.nodeEditor.IEditorChecker;
+import jetbrains.mps.nodeEditor.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
 public class AutoResolver extends EditorCheckerAdapter {
@@ -118,8 +118,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     return result;
   }
 
-  @Override
-  public boolean isLaterThan(IEditorChecker editorChecker) {
+  public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
   }
 }

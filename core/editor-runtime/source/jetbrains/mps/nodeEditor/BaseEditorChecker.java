@@ -16,27 +16,40 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelEvent;
 
-public abstract class BaseEditorChecker implements IEditorChecker, EditorMessageOwner {
+import java.util.List;
+import java.util.Set;
+
+public abstract class BaseEditorChecker implements EditorMessageOwner {
   private final Object LOCK = new Object();
   private boolean myDisposed = false;
 
+  public abstract Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
+
+  // IMPORTANT: there should be no equal owners for messages from different checkers
+  // for instance, make owners change when checker is reloaded
+  // otherwise old checkers may remove new checker's messages
   public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent) {
     return this;
   }
 
-  public boolean isLaterThan(IEditorChecker editorChecker) {
+  public abstract boolean hasDramaticalEvent(List<SModelEvent> events);
+
+  public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return false;
+  }
+
+  public abstract boolean messagesChanged();
+
+  public void clear(SNode node, EditorComponent editor) {
+
   }
 
   public void dispose() {
     synchronized (LOCK) {
       myDisposed = true;
     }
-  }
-
-  public void clear(SNode node, EditorComponent editor) {
-
   }
 
   protected void checkDisposed() {

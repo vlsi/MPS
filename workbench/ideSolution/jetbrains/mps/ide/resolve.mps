@@ -3800,8 +3800,8 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2378204549815376916" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2378204549815376917">
         <property name="name" nameId="tpck.1169194664001" value="editorChecker" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2378204549815376918">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~IEditorChecker" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5444142882939305892">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~BaseEditorChecker" resolveInfo="BaseEditorChecker" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2378204549815376919">
@@ -3815,9 +3815,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2378204549815376924">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
       </node>
     </node>
   </root>

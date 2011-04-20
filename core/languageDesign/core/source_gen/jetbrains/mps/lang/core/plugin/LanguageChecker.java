@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.HighlighterListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -136,7 +135,7 @@ public class LanguageChecker extends BaseEditorChecker {
     return myMessagesChanged;
   }
 
-  public boolean isLaterThan(IEditorChecker checker) {
+  public boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
     }

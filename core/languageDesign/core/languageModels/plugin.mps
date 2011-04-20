@@ -6197,8 +6197,8 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6431949033427873678" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6431949033427873679">
         <property name="name" nameId="tpck.1169194664001" value="checker" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6431949033427873680">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~IEditorChecker" resolveInfo="IEditorChecker" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5444142882939317985">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qxeo.~BaseEditorChecker" resolveInfo="BaseEditorChecker" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6431949033427873681">

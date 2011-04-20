@@ -206,7 +206,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.IEditorChecker" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />

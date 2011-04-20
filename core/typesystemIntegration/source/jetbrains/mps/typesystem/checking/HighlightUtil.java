@@ -6,7 +6,6 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 import java.awt.Color;
 
@@ -18,7 +17,7 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, IEditorChecker checker, EditorContext editorContext) {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, BaseEditorChecker checker, EditorContext editorContext) {
     if (errorReporter == null) {
       errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeMessageTarget());
     }

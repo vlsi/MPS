@@ -17,8 +17,8 @@ package jetbrains.mps.nodeEditor;
 
 import java.util.Comparator;
 
-public class PriorityComparator implements Comparator<IEditorChecker> {
-  public int compare(IEditorChecker o1, IEditorChecker o2) {
+public class PriorityComparator implements Comparator<BaseEditorChecker> {
+  public int compare(BaseEditorChecker o1, BaseEditorChecker o2) {
     if (o1.isLaterThan(o2)) {
       return 1;
     }
