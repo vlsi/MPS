@@ -37,7 +37,7 @@ import javax.swing.JComponent;
   storages = {
     @Storage(
       id = "other",
-      file = "$WORKSPACE_FILE$"
+      file = "$PROJECT_FILE$"
     )
   }
 )
