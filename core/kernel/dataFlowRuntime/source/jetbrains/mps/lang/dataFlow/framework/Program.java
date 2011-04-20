@@ -167,7 +167,12 @@ public class Program {
 
   public List<Instruction> getInstructionsFor(Object o) {
     if (myStarts.containsKey(o)) {
-      return new ArrayList<Instruction>(myInstructions.subList(getStart(o), getEnd(o)));      
+      int start = getStart(o);
+      int end = getEnd(o);
+      assert start <= end;
+      if (start <= end) {
+        return new ArrayList<Instruction>(myInstructions.subList(start, end));
+      }
     }
     return new ArrayList<Instruction>();
   }
