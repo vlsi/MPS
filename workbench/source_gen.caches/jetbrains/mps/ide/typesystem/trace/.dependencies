@@ -121,6 +121,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />

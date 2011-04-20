@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class TypeSystemTracePanel extends JPanel {
   private TypeSystemTraceTree myTraceTree;
@@ -112,8 +113,7 @@ public class TypeSystemTracePanel extends JPanel {
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setTraceForSelectedNode(state);
-        myTraceTree.rebuildNow();
-        myTraceTree.expandAll();
+        refresh(false);
       }
     };
     ToggleAction showBlockDependencies = new ToggleAction("Show block dependencies", "Show block dependencies in trace", Icons.BLOCK) {
@@ -133,7 +133,7 @@ public class TypeSystemTracePanel extends JPanel {
 
     BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REFRESH) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        refresh();
+        refresh(true);
       }
     };
     BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", Icons.ERROR) {
@@ -145,15 +145,19 @@ public class TypeSystemTracePanel extends JPanel {
     return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showBlockDependencies, refreshAction, nextErrorAction);
   }
 
-  public void refresh() {
+  public void refresh(final boolean checkRoot) {
     if (myEditorComponent == null) {
       return;
     }
-    SNode selectedNode = myEditorComponent.getSelectedNode();
+    final SNode selectedNode = myEditorComponent.getSelectedNode();
     if (selectedNode == null) {
       return;
     }
-    showTraceForNode((TypeCheckingContextNew) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, true);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        showTraceForNode((TypeCheckingContextNew) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
+      }
+    });
     this.validate();
   }
 }
