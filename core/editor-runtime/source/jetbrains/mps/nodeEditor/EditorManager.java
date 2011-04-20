@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
+import jetbrains.mps.editor.runtime.impl.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -442,7 +443,7 @@ public class EditorManager {
   private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = null;
 
-    editor = EditorsFinderManager.getInstance().loadEditor(context, node);
+    editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
     if (editor == null) {
       editor = new DefaultNodeEditor();
     }

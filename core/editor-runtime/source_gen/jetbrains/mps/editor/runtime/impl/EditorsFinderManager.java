@@ -157,7 +157,7 @@ public class EditorsFinderManager implements ApplicationComponent {
             });
           }
         }
-        return findEditor(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
+        return findEditorByConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
       }
     });
   }
