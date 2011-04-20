@@ -6,12 +6,12 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -31,14 +31,14 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class LanguageErrorsComponent {
-  private Map<SNode, Set<IErrorReporter>> myNodesToErrors = MapSequence.fromMap(new HashMap<SNode, Set<IErrorReporter>>());
-  private Map<SNode, Set<SNode>> myDependenciesToNodes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Map<SNode, Set<SNode>> myNodesToDependecies = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Set<SNode> myInvalidNodes = SetSequence.fromSet(new HashSet<SNode>());
-  private Set<SNode> myInvalidation = SetSequence.fromSet(new HashSet<SNode>());
+  private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new THashMap<SNode, Set<IErrorReporter>>();
+  private Map<SNode, Set<SNode>> myDependenciesToNodes = new THashMap<SNode, Set<SNode>>();
+  private Map<SNode, Set<SNode>> myNodesToDependecies = new THashMap<SNode, Set<SNode>>();
+  private Set<SNode> myInvalidNodes = new THashSet<SNode>();
+  private Set<SNode> myInvalidation = new THashSet<SNode>();
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
-  private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+  private Set<SModelDescriptor> myListenedModels = new THashSet<SModelDescriptor>();
   private boolean myCheckedRoot = false;
   private SNode myCurrentNode = null;
   private SNode myRoot;
@@ -72,13 +72,13 @@ public class LanguageErrorsComponent {
     }
     Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
     if (errorNodes == null) {
-      errorNodes = SetSequence.fromSet(new HashSet<SNode>());
+      errorNodes = new THashSet<SNode>(1);
       MapSequence.fromMap(myDependenciesToNodes).put(dependency, errorNodes);
     }
     SetSequence.fromSet(errorNodes).addElement(currentNode);
     Set<SNode> additional = MapSequence.fromMap(myNodesToDependecies).get(currentNode);
     if (additional == null) {
-      additional = SetSequence.fromSet(new HashSet<SNode>());
+      additional = new THashSet<SNode>(1);
       MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
     }
     SetSequence.fromSet(additional).addElement(dependency);
@@ -104,7 +104,7 @@ public class LanguageErrorsComponent {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
     if (reporters == null) {
-      reporters = SetSequence.fromSet(new HashSet<IErrorReporter>());
+      reporters = new THashSet<IErrorReporter>(1);
       MapSequence.fromMap(myNodesToErrors).put(errorNode, reporters);
     }
     SetSequence.fromSet(reporters).addElement(reporter);
@@ -144,8 +144,9 @@ public class LanguageErrorsComponent {
     if (myCheckedRoot && SetSequence.fromSet(myInvalidNodes).isEmpty()) {
       return false;
     }
-    Set<SNode> frontier = SetSequence.fromSetAndArray(new HashSet<SNode>(), root);
-    Set<SNode> newFrontier = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> frontier = new THashSet<SNode>(1);
+    SetSequence.fromSet(frontier).addElement(root);
+    Set<SNode> newFrontier = new THashSet<SNode>(1);
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -163,14 +164,14 @@ public class LanguageErrorsComponent {
         SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
       }
       frontier = newFrontier;
-      newFrontier = SetSequence.fromSet(new HashSet<SNode>());
+      newFrontier = new THashSet<SNode>(1);
     }
     myCheckedRoot = true;
     return true;
   }
 
   public Set<IErrorReporter> getErrors() {
-    Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
+    Set<IErrorReporter> result = new THashSet<IErrorReporter>(1);
     for (SNode errorNode : MapSequence.fromMap(myNodesToErrors).keySet()) {
       SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(myNodesToErrors).get(errorNode)));
     }
@@ -215,7 +216,7 @@ public class LanguageErrorsComponent {
     if (SNodeOperations.getModel(myRoot) == model) {
       return;
     }
-    for (SNode additional : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myDependenciesToNodes).keySet())) {
+    for (SNode additional : new THashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
       if (additional.shouldHaveBeenDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
@@ -238,7 +239,7 @@ public class LanguageErrorsComponent {
   }
 
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
-    final Set<SNode> accessedNodes = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> accessedNodes = new THashSet<SNode>();
     final Object[] result = new Object[1];
     try {
       AbstractNodesReadListener listener = new AbstractNodesReadListener() {
