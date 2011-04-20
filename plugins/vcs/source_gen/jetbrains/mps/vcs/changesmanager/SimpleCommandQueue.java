@@ -77,6 +77,9 @@ public class SimpleCommandQueue {
         try {
           task.run();
         } catch (Throwable e) {
+          if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
+            continue;
+          }
           if (log.isErrorEnabled()) {
             log.error(e.getClass().getName() + " exception in " + getName(), e);
           }
