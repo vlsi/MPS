@@ -26,8 +26,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.smodel.constraints.*;
-import jetbrains.mps.util.ConcurrentHashMapWithNullValuesSupport;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SmallCacheMap;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
@@ -124,9 +124,9 @@ public class InterpretedConstraints extends ConstraintsDescriptor {
   private final String fqName;
 
   // caches for property getters/setters/validators
-  private final Map<String, INodePropertyGetter> propertyGetter = new ConcurrentHashMapWithNullValuesSupport<String, INodePropertyGetter>();
-  private final Map<String, INodePropertySetter> propertySetter = new ConcurrentHashMapWithNullValuesSupport<String, INodePropertySetter>();
-  private final Map<String, INodePropertyValidator> propertyValidator = new ConcurrentHashMapWithNullValuesSupport<String, INodePropertyValidator>();
+  private final Map<String, INodePropertyGetter> propertyGetter = new SmallCacheMap<String, INodePropertyGetter>();
+  private final Map<String, INodePropertySetter> propertySetter = new SmallCacheMap<String, INodePropertySetter>();
+  private final Map<String, INodePropertyValidator> propertyValidator = new SmallCacheMap<String, INodePropertyValidator>();
 
   public InterpretedConstraints(String fqName) {
     this.fqName = fqName;
