@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import gnu.trove.THashMap;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -34,7 +35,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
   private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR;
 
-  private final Map<String, ConceptDescriptor> descriptors = newHashMap();
+  private final Map<String, ConceptDescriptor> descriptors = new THashMap();
 
   public ConceptRegistry(ClassLoaderManager classLoaderManager) {
     classLoaderManager.addReloadHandler(new ReloadAdapter() {
