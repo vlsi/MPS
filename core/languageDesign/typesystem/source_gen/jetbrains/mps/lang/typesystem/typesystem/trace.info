@@ -113,9 +113,11 @@
   <unitInfo fileName="check_MethodCall_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.check_MethodCall_NonTypesystemRule" />
   <unitInfo fileName="typeof_leftOperandConcept_parameter_InferenceRule.java" startLine="19" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_leftOperandConcept_parameter_InferenceRule" />
   <unitInfo fileName="typeof_rightOperandConcept_parameter_InferenceRule.java" startLine="19" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_rightOperandConcept_parameter_InferenceRule" />
+  <unitInfo fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="55" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_MultipleForeachLoopVariable_InferenceRule$QuotationClass_aqgyap_a0a1a2a0" />
   <unitInfo fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeOf_IsSubtypeExpression_InferenceRule" />
+  <unitInfo fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="18" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_MultipleForeachLoopVariable_InferenceRule" />
   <unitInfo fileName="typeof_GetOperationType_InferenceRule.java" startLine="17" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_GetOperationType_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
   <root nodeId="1035511193819763968">
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -955,6 +957,27 @@
     <nodeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="21" startPosition="117" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="8124453027370845370" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="389" />
     <scopeInfo nodeId="8124453027370845368" fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="21" startPosition="117" endLine="26" endPosition="5" />
+  </root>
+  <root nodeId="8290446284380616546">
+    <nodeInfo nodeId="8290446284380616549" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="22" startPosition="123" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616555" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="23" startPosition="77" endLine="24" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616563" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="25" startPosition="56" endLine="26" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616564" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616564" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="28" startPosition="57" endLine="29" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616564" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="29" startPosition="208" endLine="30" endPosition="546" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8290446284380616579" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616579" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="33" startPosition="52" endLine="34" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8290446284380616579" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="34" startPosition="208" endLine="35" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8290446284380616564" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="26" startPosition="112" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8290446284380616579" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="31" startPosition="7" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8290446284380616561" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="24" startPosition="82" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8290446284380616564" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="27" startPosition="7" endLine="30" endPosition="546" />
+    <scopeInfo nodeId="8290446284380616579" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="32" startPosition="7" endLine="35" endPosition="327" />
+    <scopeInfo nodeId="8290446284380616562" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="25" startPosition="56" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="8290446284380616547" fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="22" startPosition="123" endLine="37" endPosition="5">
+      <varInfo nodeId="8290446284380616556" varName="inputSequence" />
+      <varInfo nodeId="8290446284380616550" varName="variable" />
+    </scopeInfo>
   </root>
 </debugInfo>
 
