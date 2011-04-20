@@ -17,8 +17,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoToHelper {
   public GoToHelper() {
@@ -122,9 +121,9 @@ public class GoToHelper {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
           SNode labelNode = getLabelNode(element);
-          if (labelNode.getAdapter() instanceof EnumConstantDeclaration) {
-            if (labelNode.getParent().getAdapter() instanceof EnumClass) {
-              return "Enum constant '" + labelNode.getName() + "' in " + labelNode.getParent().getPresentation();
+          if (SNodeOperations.isInstanceOf(labelNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(labelNode), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+              return "Enum constant '" + labelNode.getName() + "' in " + SNodeOperations.getParent(labelNode).getPresentation();
             }
           }
           return labelNode.getPresentation();
@@ -134,7 +133,7 @@ public class GoToHelper {
 
     protected SNode getLabelNode(NodeNavigationItem element) {
       SNode parentNode = element.getNode().getParent();
-      assert parentNode != null;
+      assert (parentNode != null);
       return parentNode;
     }
   }
