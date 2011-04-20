@@ -18,9 +18,9 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
+import javax.swing.JScrollPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import javax.swing.JScrollPane;
 import javax.swing.JComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,15 +62,25 @@ public class ModelDifferenceDialog extends BaseDialog {
     myProject = project;
     myOperationContext = operationContext;
     myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
+    fillRootToChange();
+    myTree = new ModelDifferenceDialog.ModelDifferenceTree();
+
+    myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+  }
+
+  private void fillRootToChange() {
+    MapSequence.fromMap(myRootToChange).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       if (!(MapSequence.fromMap(myRootToChange).containsKey(c.getRootId()))) {
         MapSequence.fromMap(myRootToChange).put(c.getRootId(), ListSequence.fromList(new ArrayList<ModelChange>()));
       }
       ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(c.getRootId())).addElement(c);
     }
-    myTree = new ModelDifferenceDialog.ModelDifferenceTree();
+  }
 
-    myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+  /*package*/ void rebuildChangeSet() {
+    ChangeSetBuilder.rebuildChangeSet(myChangeSet);
+    fillRootToChange();
   }
 
   protected JComponent getMainComponent() {

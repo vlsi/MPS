@@ -34,9 +34,13 @@ public class ChangeSetBuilder {
   private ChangeSet myChangeSet;
 
   private ChangeSetBuilder(SModel oldModel, SModel newModel) {
-    myOldModel = oldModel;
-    myNewModel = newModel;
-    myChangeSet = new ChangeSet(oldModel, newModel);
+    this(new ChangeSet(oldModel, newModel));
+  }
+
+  private ChangeSetBuilder(ChangeSet changeSet) {
+    myOldModel = changeSet.getOldModel();
+    myNewModel = changeSet.getNewModel();
+    myChangeSet = changeSet;
   }
 
   private void buildPropertyChanges(SNode oldNode, SNode newNode) {
@@ -133,7 +137,7 @@ public class ChangeSetBuilder {
     }
   }
 
-  private void buildChanges() {
+  private void buildChanges(boolean withOpposite) {
     _FunctionTypes._return_P1_E0<? extends Set<SNodeId>, ? super SModel> rootIds = new _FunctionTypes._return_P1_E0<ISetSequence<SNodeId>, SModel>() {
       public ISetSequence<SNodeId> invoke(SModel m) {
         return SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SModelOperations.getRoots(m, null)).<SNodeId>select(new ISelector<SNode, SNodeId>() {
@@ -160,6 +164,10 @@ public class ChangeSetBuilder {
     for (SNodeId rootId : SetSequence.fromSet(oldRootIds).intersect(SetSequence.fromSet(newRootIds))) {
       buildNodeChanges(myOldModel.getNodeById(rootId));
     }
+
+    if (withOpposite) {
+      myChangeSet.buildOppositeChangeSet();
+    }
   }
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
@@ -168,11 +176,14 @@ public class ChangeSetBuilder {
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
-    builder.buildChanges();
-    if (withOpposite) {
-      builder.myChangeSet.buildOppositeChangeSet();
-    }
+    builder.buildChanges(withOpposite);
     return builder.myChangeSet;
+  }
+
+  public static void rebuildChangeSet(ChangeSet changeSet) {
+    ListSequence.fromList(changeSet.getModelChanges()).clear();
+    changeSet.clearOppositeChangeSet();
+    new ChangeSetBuilder(changeSet).buildChanges(true);
   }
 
   private static boolean eq_nbyrtw_a0b0c0e0b(Object a, Object b) {

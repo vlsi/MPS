@@ -60,6 +60,10 @@ public class ChangeSet {
     return myOppositeChangeSet;
   }
 
+  /*package*/ void clearOppositeChangeSet() {
+    myOppositeChangeSet = null;
+  }
+
   /*package*/ void buildOppositeChangeSet() {
     if (myOppositeChangeSet == null) {
       ModelAccess.assertLegalRead();

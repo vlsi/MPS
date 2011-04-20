@@ -891,6 +891,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" file="RootDifferenceDialog.java">
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.NodeCopierWithCache" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -899,12 +900,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="javax.swing.JSplitPane" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
@@ -912,7 +909,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Override" />
@@ -924,7 +920,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="java.lang.Iterable" />
