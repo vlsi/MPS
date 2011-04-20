@@ -26,6 +26,8 @@ import java.awt.Insets;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.CopyUtil;
@@ -138,14 +140,27 @@ public class RootDifferenceDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         assert Sequence.fromIterable(changes).isNotEmpty();
-        SModel modelToApply = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
-        for (ModelChange c : Sequence.fromIterable(changes)) {
-          c.getOppositeChange().apply(modelToApply, new NodeCopier() {
-            public SNode copyNode(SNode node) {
-              return CopyUtil.copyAndPreserveId(node);
-            }
-          });
+        final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
+        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+          public ModelChange select(ModelChange ch) {
+            return ch.getOppositeChange();
+          }
+        });
+        for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
+          if (ch instanceof NodeGroupChange) {
+            ((NodeGroupChange) ch).prepare();
+          }
         }
+        final NodeCopier nodeCopier = new NodeCopier() {
+          public SNode copyNode(SNode node) {
+            return CopyUtil.copyAndPreserveId(node);
+          }
+        };
+        Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            ch.apply(model, nodeCopier);
+          }
+        });
         rehighlight();
       }
     });
