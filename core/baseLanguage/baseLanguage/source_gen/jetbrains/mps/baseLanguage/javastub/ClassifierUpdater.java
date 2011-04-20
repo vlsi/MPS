@@ -29,15 +29,10 @@ import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMEnumValue;
-import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
-import jetbrains.mps.baseLanguage.structure.ClassifierClassExpression;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType;
@@ -441,11 +436,11 @@ public class ClassifierUpdater {
   private SNode createAnnotation(ASMAnnotation annotation) {
     SNode result = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a91().createNode();
     ASMClassType c = (ASMClassType) annotation.getType();
-    addClassifierReference(result, AnnotationInstance.ANNOTATION, c);
+    addClassifierReference(result, "annotation", c);
     Map<String, Object> values = ((Map<String, Object>) annotation.getValues());
     for (String key : MapSequence.fromMap(values).keySet()) {
       SNode value = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a4a91().createNode(getAnnotationValue(MapSequence.fromMap(values).get(key)));
-      addAnnotationMethodReference(value, AnnotationInstanceValue.KEY, c, key);
+      addAnnotationMethodReference(value, "key", c, key);
       ListSequence.fromList(SLinkOperations.getTargets(result, "value", true)).addElement(value);
     }
     return result;
@@ -501,13 +496,13 @@ public class ClassifierUpdater {
       ASMEnumValue enumValue = (ASMEnumValue) value;
       ASMClassType c = (ASMClassType) enumValue.getType();
       SNode res = new ClassifierUpdater.QuotationClass_ol94f8_a0a2a21a02().createNode();
-      addClassifierReference(res, EnumConstantReference.ENUM_CLASS, c);
-      addEnumConstReference(res, EnumConstantReference.ENUM_CONSTANT_DECLARATION, enumValue);
+      addClassifierReference(res, "enumClass", c);
+      addEnumConstReference(res, "enumConstantDeclaration", enumValue);
       return res;
     }
     if (value instanceof ASMClassType) {
       SNode res = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a31a02().createNode();
-      addClassifierReference(res, ClassifierClassExpression.CLASSIFIER, (ASMClassType) value);
+      addClassifierReference(res, "classifier", (ASMClassType) value);
       return res;
     }
     LOG.error("couldn't create annotation value from " + ((value == null ?
@@ -565,7 +560,7 @@ public class ClassifierUpdater {
     if (type instanceof ASMClassType) {
       ASMClassType c = (ASMClassType) type;
       SNode classifierType = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a21a12().createNode();
-      addClassifierReference(classifierType, ClassifierType.CLASSIFIER, c);
+      addClassifierReference(classifierType, "classifier", c);
       return classifierType;
     }
     if (type instanceof ASMParameterizedType) {

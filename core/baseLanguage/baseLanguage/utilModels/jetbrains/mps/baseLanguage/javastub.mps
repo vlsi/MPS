@@ -5861,9 +5861,9 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063451">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5122318299906072678" resolveInfo="result" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2566197375814063453">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~AnnotationInstance" resolveInfo="AnnotationInstance" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~AnnotationInstance%dANNOTATION" resolveInfo="ANNOTATION" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246017">
+              <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1188207840427" resolveInfo="AnnotationInstance" />
+              <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1188208074048" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063454">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063441" resolveInfo="c" />
@@ -5944,9 +5944,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5122318299906072716">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5122318299906072707" resolveInfo="value" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5122318299906072718">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~AnnotationInstanceValue" resolveInfo="AnnotationInstanceValue" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~AnnotationInstanceValue%dKEY" resolveInfo="KEY" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246023">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1188214545140" resolveInfo="AnnotationInstanceValue" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1188214555875" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5122318299906072719">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063441" resolveInfo="c" />
@@ -6455,9 +6455,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063754">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063739" resolveInfo="res" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2566197375814063756">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~EnumConstantReference" resolveInfo="EnumConstantReference" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~EnumConstantReference%dENUM_CLASS" resolveInfo="ENUM_CLASS" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246019">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1083260308424" resolveInfo="EnumConstantReference" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1144432896254" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063757">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5122318299906073049" resolveInfo="c" />
@@ -6470,9 +6470,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063761">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063739" resolveInfo="res" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2566197375814063763">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~EnumConstantReference" resolveInfo="EnumConstantReference" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~EnumConstantReference%dENUM_CONSTANT_DECLARATION" resolveInfo="ENUM_CONSTANT_DECLARATION" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246022">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1083260308424" resolveInfo="EnumConstantReference" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1083260308426" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063764">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063733" resolveInfo="enumValue" />
@@ -6513,9 +6513,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814063811">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063804" resolveInfo="res" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2566197375814063813">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~ClassifierClassExpression" resolveInfo="ClassifierClassExpression" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~ClassifierClassExpression%dCLASSIFIER" resolveInfo="CLASSIFIER" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246024">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1116615150612" resolveInfo="ClassifierClassExpression" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1116615189566" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5122318299906073088">
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5122318299906073089">
@@ -7034,9 +7034,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814064091">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814064084" resolveInfo="classifierType" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2566197375814064093">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~ClassifierType" resolveInfo="ClassifierType" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~ClassifierType%dCLASSIFIER" resolveInfo="CLASSIFIER" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="9215343643469246026">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpee.1107535924139" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2566197375814064094">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814064078" resolveInfo="c" />
