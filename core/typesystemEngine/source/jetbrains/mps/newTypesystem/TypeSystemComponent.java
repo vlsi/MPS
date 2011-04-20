@@ -45,7 +45,7 @@ class TypeSystemComponent extends CheckingComponent {
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
 
-  private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
+  private Set<SNode> myJustInvalidatedNodes = new THashSet<SNode>();
 
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
@@ -262,7 +262,7 @@ class TypeSystemComponent extends CheckingComponent {
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {
-      rulesWhichAffectNodesType = new HashSet<Pair<String, String>>();
+      rulesWhichAffectNodesType = new THashSet<Pair<String, String>>(1);
       myNodesToRules.put(node, rulesWhichAffectNodesType);
     }
     rulesWhichAffectNodesType.add(new Pair<String, String>(ruleModel, ruleId));
