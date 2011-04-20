@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.lang.script.structure.MigrationScript;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ThreadUtils;
@@ -49,12 +49,12 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     return true;
   }
 
-  public void startMigration(List<MigrationScript> scriptNodes, final IScope scope, final IOperationContext context) {
+  public void startMigration(List<SNode> scriptNodes, final IScope scope, final IOperationContext context) {
     if (!(ThreadUtils.isEventDispatchThread())) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
     myScripts = new ArrayList<SNodePointer>();
-    for (MigrationScript scriptNode : scriptNodes) {
+    for (SNode scriptNode : scriptNodes) {
       myScripts.add(new SNodePointer(scriptNode));
     }
     SwingUtilities.invokeLater(new Runnable() {

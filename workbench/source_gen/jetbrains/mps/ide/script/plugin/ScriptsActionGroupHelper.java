@@ -5,13 +5,17 @@ package jetbrains.mps.ide.script.plugin;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.lang.script.structure.MigrationScript;
+import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
 import java.util.Comparator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,11 +31,11 @@ public class ScriptsActionGroupHelper {
     return ourSelectedScripts;
   }
 
-  public static void sortScripts(List<MigrationScript> scripts) {
-    Collections.sort(scripts, new Comparator<MigrationScript>() {
-      public int compare(MigrationScript s1, MigrationScript s2) {
-        String fromBuild1 = s1.getMigrationFromBuild();
-        String fromBuild2 = s2.getMigrationFromBuild();
+  public static void sortScripts(List<SNode> scripts) {
+    Collections.sort(scripts, new Comparator<SNode>() {
+      public int compare(SNode s1, SNode s2) {
+        String fromBuild1 = SPropertyOperations.getString(s1, "migrationFromBuild");
+        String fromBuild2 = SPropertyOperations.getString(s2, "migrationFromBuild");
         if (fromBuild1 == null) {
           fromBuild1 = "";
         }
@@ -39,8 +43,8 @@ public class ScriptsActionGroupHelper {
           fromBuild2 = "";
         }
         if (fromBuild1.compareTo(fromBuild2) == 0) {
-          String cat1 = s1.getCategory();
-          String cat2 = s2.getCategory();
+          String cat1 = SPropertyOperations.getString(s1, "category");
+          String cat2 = SPropertyOperations.getString(s2, "category");
           if (cat1 == null) {
             cat1 = "";
           }
@@ -54,29 +58,30 @@ public class ScriptsActionGroupHelper {
     });
   }
 
-  public static List<MigrationScript> getMigrationScripts(List<Language> languages) {
-    List<MigrationScript> migrationScripts = new ArrayList<MigrationScript>();
+  public static List<SNode> getMigrationScripts(List<Language> languages) {
+    List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
       SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModel == null) {
         continue;
       }
-      migrationScripts.addAll(scriptsModel.getSModel().getRootsAdapters(MigrationScript.class));
+      SModel model = scriptsModel.getSModel();
+      ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript")));
     }
     return migrationScripts;
   }
 
-  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
-    Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
-    for (MigrationScript migrationScript : migrationScripts) {
-      String cat = migrationScript.getCategory();
+  public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
+    Map<String, List<SNode>> byCategory = new HashMap<String, List<SNode>>();
+    for (SNode migrationScript : migrationScripts) {
+      String cat = SPropertyOperations.getString(migrationScript, "category");
       if (cat == null) {
         cat = "<uncategorized>";
       }
       if (!(byCategory.containsKey(cat))) {
-        byCategory.put(cat, new ArrayList<MigrationScript>());
+        byCategory.put(cat, new ArrayList<SNode>());
       }
-      byCategory.get(cat).add(migrationScript);
+      ListSequence.fromList(byCategory.get(cat)).addElement(migrationScript);
     }
     Set<String> sorted = new TreeSet<String>(new Comparator<String>() {
       public int compare(String o1, String o2) {
@@ -92,31 +97,31 @@ public class ScriptsActionGroupHelper {
     sorted.addAll(byCategory.keySet());
     for (String cat : sorted) {
       BaseGroup categoryGroup = new BaseGroup(cat, "");
-      for (MigrationScript script : byCategory.get(cat)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
+      for (SNode script : byCategory.get(cat)) {
+        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "migrationFromBuild")), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
     }
   }
 
-  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
-    Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
-    for (MigrationScript migrationScript : migrationScripts) {
-      String build = migrationScript.getMigrationFromBuild();
+  public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
+    Map<String, List<SNode>> byBuild = new HashMap<String, List<SNode>>();
+    for (SNode migrationScript : migrationScripts) {
+      String build = SPropertyOperations.getString(migrationScript, "migrationFromBuild");
       if (build == null) {
         build = "<unspecified>";
       }
       if (!(byBuild.containsKey(build))) {
-        byBuild.put(build, new ArrayList<MigrationScript>());
+        byBuild.put(build, new ArrayList<SNode>());
       }
-      byBuild.get(build).add(migrationScript);
+      ListSequence.fromList(byBuild.get(build)).addElement(migrationScript);
     }
     Set<String> sorted = new TreeSet<String>(byBuild.keySet());
     for (String build : sorted) {
       BaseGroup categoryGroup = new BaseGroup("migrate from b." + build, "");
-      for (MigrationScript script : byBuild.get(build)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(script.getCategory(), script.getTitle(), null), applyToSelection));
+      for (SNode script : byBuild.get(build)) {
+        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString(script, "category"), SPropertyOperations.getString(script, "title"), null), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
@@ -128,13 +133,14 @@ public class ScriptsActionGroupHelper {
     if (scriptsModel == null) {
       return;
     }
-    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-    if (migrationScripts.isEmpty()) {
+    SModel model = scriptsModel.getSModel();
+    List<SNode> migrationScripts = SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
+    if (ListSequence.fromList(migrationScripts).isEmpty()) {
       return;
     }
     BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleFqName(), "");
-    for (MigrationScript script : migrationScripts) {
-      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild()), applyToSelection));
+    for (SNode script : migrationScripts) {
+      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString(script, "category"), SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "migrationFromBuild")), applyToSelection));
     }
     if (!((migrationScripts.isEmpty()))) {
       languageScriptsGroup.addSeparator();

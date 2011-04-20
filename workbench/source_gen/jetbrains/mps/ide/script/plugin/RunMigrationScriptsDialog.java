@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin;
 
 import javax.swing.JDialog;
 import java.util.List;
-import jetbrains.mps.lang.script.structure.MigrationScript;
+import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import javax.swing.JTable;
 import javax.swing.JButton;
@@ -26,7 +26,9 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.table.DefaultTableModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import javax.swing.JLabel;
@@ -41,7 +43,7 @@ import java.awt.Graphics;
 import javax.swing.UIManager;
 
 public class RunMigrationScriptsDialog extends JDialog {
-  private List<MigrationScript> myScripts;
+  private List<SNode> myScripts;
   private Set<String> mySelectedScriptIds;
   private JTable myTable;
   private JButton myCheckButton;
@@ -51,7 +53,7 @@ public class RunMigrationScriptsDialog extends JDialog {
   private boolean myRunChecked;
   private boolean myOpenSelected;
 
-  public RunMigrationScriptsDialog(Frame owner, List<MigrationScript> scripts, Set<String> selectedScriptIds) throws HeadlessException {
+  public RunMigrationScriptsDialog(Frame owner, List<SNode> scripts, Set<String> selectedScriptIds) throws HeadlessException {
     super(owner, "Migration Scripts", true);
     myScripts = scripts;
     mySelectedScriptIds = selectedScriptIds;
@@ -157,22 +159,22 @@ public class RunMigrationScriptsDialog extends JDialog {
     myRunCheckedButton.setEnabled(getCheckedScripts().size() >= 1);
   }
 
-  public List<MigrationScript> getSelectedScripts() {
-    List<MigrationScript> list = new ArrayList<MigrationScript>();
+  public List<SNode> getSelectedScripts() {
+    List<SNode> list = new ArrayList<SNode>();
     int[] ints = myTable.getSelectedRows();
     for (int anInt : ints) {
       int modelIndex = ((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).convertRowIndexToModel(anInt);
-      list.add(myScripts.get(modelIndex));
+      ListSequence.fromList(list).addElement(ListSequence.fromList(myScripts).getElement(modelIndex));
     }
     return list;
   }
 
-  public List<MigrationScript> getCheckedScripts() {
-    List<MigrationScript> list = new ArrayList<MigrationScript>();
+  public List<SNode> getCheckedScripts() {
+    List<SNode> list = new ArrayList<SNode>();
     int count = myTable.getModel().getRowCount();
     for (int i = 0; i < count; i++) {
       if (((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).isChecked(i)) {
-        list.add(myScripts.get(i));
+        ListSequence.fromList(list).addElement(ListSequence.fromList(myScripts).getElement(i));
       }
     }
     return list;
@@ -188,7 +190,7 @@ public class RunMigrationScriptsDialog extends JDialog {
 
   private class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-      super(new String[]{"", "script", "category", "migrate from b."}, myScripts.size());
+      super(new String[]{"", "script", "category", "migrate from b."}, ListSequence.fromList(myScripts).count());
     }
 
     public boolean isCellEditable(int row, int column) {
@@ -204,20 +206,20 @@ public class RunMigrationScriptsDialog extends JDialog {
 
     public Object getValueAt(int row, int column) {
       if (column == 0) {
-        MigrationScript script = myScripts.get(row);
+        SNode script = ListSequence.fromList(myScripts).getElement(row);
         return mySelectedScriptIds.contains(script.getId());
       }
       if (column == 1) {
-        return "  " + myScripts.get(row).getTitle();
+        return "  " + SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "title");
       }
       if (column == 2) {
-        String cat = myScripts.get(row).getCategory();
+        String cat = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "category");
         return (cat != null ?
           " " + cat :
           ""
         );
       }
-      String build = myScripts.get(row).getMigrationFromBuild();
+      String build = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "migrationFromBuild");
       return (build != null ?
         " " + build :
         ""
@@ -225,7 +227,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
 
     public void setValueAt(Object aValue, int row, int column) {
-      String id = myScripts.get(row).getId();
+      String id = ListSequence.fromList(myScripts).getElement(row).getId();
       if ((Boolean) aValue) {
         mySelectedScriptIds.add(id);
       } else {

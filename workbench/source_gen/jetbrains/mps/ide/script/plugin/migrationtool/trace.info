@@ -249,7 +249,7 @@
     <nodeInfo nodeId="7316415153790564927" fileName="MigrationScriptsTool.java" startLine="48" startPosition="42" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790564944" fileName="MigrationScriptsTool.java" startLine="53" startPosition="49" endLine="54" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7316415153790564948" fileName="MigrationScriptsTool.java" startLine="55" startPosition="5" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790564959" fileName="MigrationScriptsTool.java" startLine="57" startPosition="52" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790564959" fileName="MigrationScriptsTool.java" startLine="57" startPosition="42" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790565031" fileName="MigrationScriptsTool.java" startLine="63" startPosition="71" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790565036" fileName="MigrationScriptsTool.java" startLine="64" startPosition="45" endLine="65" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7316415153790565043" fileName="MigrationScriptsTool.java" startLine="65" startPosition="95" endLine="66" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -271,7 +271,7 @@
     <nodeInfo nodeId="7316415153790565005" fileName="MigrationScriptsTool.java" startLine="112" startPosition="28" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790565012" fileName="MigrationScriptsTool.java" startLine="116" startPosition="31" endLine="117" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790564885" fileName="MigrationScriptsTool.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationScriptsTool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="7316415153790564940" fileName="MigrationScriptsTool.java" startLine="52" startPosition="118" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790564940" fileName="MigrationScriptsTool.java" startLine="52" startPosition="108" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7316415153790564954" fileName="MigrationScriptsTool.java" startLine="56" startPosition="46" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7316415153790565085" fileName="MigrationScriptsTool.java" startLine="74" startPosition="45" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7316415153790564983" fileName="MigrationScriptsTool.java" startLine="89" startPosition="120" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -300,7 +300,7 @@
     <scopeInfo nodeId="7316415153790564917" fileName="MigrationScriptsTool.java" startLine="44" startPosition="38" endLine="45" endPosition="26" />
     <scopeInfo nodeId="7316415153790564926" fileName="MigrationScriptsTool.java" startLine="48" startPosition="42" endLine="49" endPosition="16" />
     <scopeInfo nodeId="7316415153790564943" fileName="MigrationScriptsTool.java" startLine="53" startPosition="49" endLine="54" endPosition="71" />
-    <scopeInfo nodeId="7316415153790564958" fileName="MigrationScriptsTool.java" startLine="57" startPosition="52" endLine="58" endPosition="50" />
+    <scopeInfo nodeId="7316415153790564958" fileName="MigrationScriptsTool.java" startLine="57" startPosition="42" endLine="58" endPosition="50" />
     <scopeInfo nodeId="7316415153790565106" fileName="MigrationScriptsTool.java" startLine="71" startPosition="59" endLine="72" endPosition="167" />
     <scopeInfo nodeId="7316415153790565094" fileName="MigrationScriptsTool.java" startLine="75" startPosition="51" endLine="76" endPosition="32" />
     <scopeInfo nodeId="7316415153790564986" fileName="MigrationScriptsTool.java" startLine="90" startPosition="49" endLine="91" endPosition="71" />
@@ -357,7 +357,7 @@
       <varInfo nodeId="7316415153790564978" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790564971" fileName="MigrationScriptsTool.java" startLine="60" startPosition="47" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="7316415153790564939" fileName="MigrationScriptsTool.java" startLine="52" startPosition="118" endLine="86" endPosition="7" />
+    <scopeInfo nodeId="7316415153790564939" fileName="MigrationScriptsTool.java" startLine="52" startPosition="108" endLine="86" endPosition="7" />
     <scopeInfo nodeId="7316415153790564929" fileName="MigrationScriptsTool.java" startLine="51" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="7316415153790564935" varName="scope" />
       <varInfo nodeId="7316415153790564937" varName="context" />

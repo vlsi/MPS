@@ -6,14 +6,13 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4zw2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="a8em" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench(MPS.Classpath/jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="9ibl" modelUID="f:java_stub#0eddeefa-c2d6-4437-bc2c-de50fd4ce470#jetbrains.mps.lang.script.structure(jetbrains.mps.lang.script/jetbrains.mps.lang.script.structure@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="h65h" modelUID="f:java_stub#0eddeefa-c2d6-4437-bc2c-de50fd4ce470#jetbrains.mps.lang.script.plugin(jetbrains.mps.lang.script/jetbrains.mps.lang.script.plugin@java_stub)" version="-1" />
   <import index="k1li" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.action(MPS.Classpath/jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
@@ -21,12 +20,15 @@
   <import index="bw1v" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="xja" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.editors(MPS.Classpath/jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="8uyp" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.script.plugin(MPS.Classpath/jetbrains.mps.ide.script.plugin@java_stub)" version="-1" />
+  <import index="qk2s" modelUID="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1207489199158">
       <property name="name" nameId="tpck.1169194664001" value="ScriptsForSelection" />
@@ -251,10 +253,8 @@
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1215714011501">
       <property name="name" nameId="tpck.1169194664001" value="allScripts" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1215714011502" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1240242119336">
-        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240242119337">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9ibl.~MigrationScript" resolveInfo="MigrationScript" />
-        </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1663517997507319993">
+        <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tp33.1177457067821" resolveInfo="MigrationScript" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215713862582" />
@@ -354,8 +354,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1215714181279">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1215714181280">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790558065">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~ScriptsActionGroupHelper%dgetMigrationScripts(java%dutil%dList)%cjava%dutil%dList" resolveInfo="getMigrationScripts" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790565440" resolveInfo="ScriptsActionGroupHelper" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790565481" resolveInfo="getMigrationScripts" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558066">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7316415153790558067">
                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1215713983855" resolveInfo="allLanguages" />
@@ -415,15 +415,15 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1215714585270">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790558057">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~ScriptsActionGroupHelper%dpopulateByCategoryGroup(java%dutil%dList,jetbrains%dmps%dworkbench%daction%dBaseGroup,boolean)%cvoid" resolveInfo="populateByCategoryGroup" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790565440" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790565526" resolveInfo="populateByCategoryGroup" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558058">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7316415153790558059">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1215714011501" resolveInfo="allScripts" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7316415153790558060" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7316415153790558061">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1663517997507319997">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215714585260" resolveInfo="byCategoryGroup" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558062">
@@ -479,15 +479,15 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1215714650285">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790558049">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~ScriptsActionGroupHelper%dpopulateByBuildGroup(java%dutil%dList,jetbrains%dmps%dworkbench%daction%dBaseGroup,boolean)%cvoid" resolveInfo="populateByBuildGroup" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790565440" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790565662" resolveInfo="populateByBuildGroup" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558050">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7316415153790558051">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1215714011501" resolveInfo="allScripts" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7316415153790558052" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7316415153790558053">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1663517997507320000">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215714650275" resolveInfo="byBuildGroup" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558054">
@@ -554,12 +554,12 @@
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215714705989">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1215714705990">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790558043">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~ScriptsActionGroupHelper%dpopulateByLanguageGroup(jetbrains%dmps%dsmodel%dLanguage,jetbrains%dmps%dworkbench%daction%dBaseGroup,boolean)%cvoid" resolveInfo="populateByLanguageGroup" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790565440" resolveInfo="ScriptsActionGroupHelper" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790565785" resolveInfo="populateByLanguageGroup" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="7316415153790558044">
                   <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1215714705987" resolveInfo="language" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7316415153790558045">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1663517997507320003">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215714705976" resolveInfo="byLanguageGroup" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790558046">
@@ -582,10 +582,8 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="765469998256375537">
       <property name="name" nameId="tpck.1169194664001" value="getAllScripts" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="765469998256375539" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="765469998256375541">
-        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="765469998256375542">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9ibl.~MigrationScript" resolveInfo="MigrationScript" />
-        </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1663517997507320005">
+        <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tp33.1177457067821" resolveInfo="MigrationScript" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="765469998256375543">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="765469998256375544">
@@ -791,8 +789,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~IScope" resolveInfo="IScope" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790557455">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~AbstractMigrationScriptHelper%dcreateMigrationScope(java%dutil%dList,java%dutil%dList,boolean)%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="createMigrationScope" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~AbstractMigrationScriptHelper" resolveInfo="AbstractMigrationScriptHelper" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790561334" resolveInfo="AbstractMigrationScriptHelper" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790561795" resolveInfo="createMigrationScope" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790557456">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7316415153790557457" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7316415153790557458">
@@ -841,8 +839,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8476129223775352694">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790557465">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~ScriptsActionGroupHelper%dsortScripts(java%dutil%dList)%cvoid" resolveInfo="sortScripts" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790565440" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790565460" resolveInfo="sortScripts" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790557466">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7316415153790557467" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="7316415153790557468">
@@ -854,12 +852,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8476129223775270146">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8476129223775270147">
             <property name="name" nameId="tpck.1169194664001" value="dialog" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7316415153790557029">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8uyp.~RunMigrationScriptsDialog" resolveInfo="RunMigrationScriptsDialog" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1663517997507312868">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qk2s.7316415153790566285" resolveInfo="RunMigrationScriptsDialog" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8476129223775270150">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8476129223775270151">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~RunMigrationScriptsDialog%d&lt;init&gt;(java%dawt%dFrame,java%dutil%dList,java%dutil%dSet)" resolveInfo="RunMigrationScriptsDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790566501" resolveInfo="RunMigrationScriptsDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8476129223775270152">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8476129223775270153" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8476129223775270154">
@@ -1013,14 +1011,14 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8476129223775349228">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8476129223775349237">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7316415153790557470">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~AbstractMigrationScriptHelper%ddoRunScripts(java%dutil%dList,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dsmodel%dIOperationContext)%cvoid" resolveInfo="doRunScripts" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8uyp.~AbstractMigrationScriptHelper" resolveInfo="AbstractMigrationScriptHelper" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qk2s.7316415153790561334" resolveInfo="AbstractMigrationScriptHelper" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790561774" resolveInfo="doRunScripts" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316415153790557471">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7316415153790557472">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1663517997507312869">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8476129223775270147" resolveInfo="dialog" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7316415153790557473">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~RunMigrationScriptsDialog%dgetCheckedScripts()%cjava%dutil%dList" resolveInfo="getCheckedScripts" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790566942" resolveInfo="getCheckedScripts" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7316415153790557474">
@@ -1040,7 +1038,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8476129223775270147" resolveInfo="dialog" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8476129223775349236">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~RunMigrationScriptsDialog%disRunChecked()%cboolean" resolveInfo="isRunChecked" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790566993" resolveInfo="isRunChecked" />
             </node>
           </node>
           <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="3745452943050771344">
@@ -1049,7 +1047,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8476129223775270147" resolveInfo="dialog" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050781895">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~RunMigrationScriptsDialog%disOpenSelected()%cboolean" resolveInfo="isOpenSelected" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790566999" resolveInfo="isOpenSelected" />
               </node>
             </node>
             <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="3745452943050771346">
@@ -1071,25 +1069,20 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771355">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xja.~MPSEditorOpener%deditNode(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dIOperationContext)%cjetbrains%dmps%dide%dIEditor" resolveInfo="editNode" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771356">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771357">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771358">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3745452943050771359">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8476129223775270147" resolveInfo="dialog" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771360">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uyp.~RunMigrationScriptsDialog%dgetSelectedScripts()%cjava%dutil%dList" resolveInfo="getSelectedScripts" />
-                          </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771357">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771358">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3745452943050771359">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8476129223775270147" resolveInfo="dialog" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771361">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dget(int)%cjava%dlang%dObject" resolveInfo="get" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3745452943050771362">
-                            <property name="value" nameId="tpee.1068580320021" value="0" />
-                          </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771360">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qk2s.7316415153790566896" resolveInfo="getSelectedScripts" />
                         </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771363">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~BaseAdapter%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3745452943050771361">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dget(int)%cjava%dlang%dObject" resolveInfo="get" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3745452943050771362">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3745452943050771364">
@@ -1109,10 +1102,8 @@
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="8476129223775221518">
       <property name="name" nameId="tpck.1169194664001" value="scripts" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8476129223775221519" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="8476129223775221644">
-        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8476129223775221646">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9ibl.~MigrationScript" resolveInfo="MigrationScript" />
-        </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1663517997507319934">
+        <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tp33.1177457067821" resolveInfo="MigrationScript" />
       </node>
       <node role="toStringFunction" roleId="tp4k.1227019158144" type="tp4k.ToStringConceptFunction" typeId="tp4k.1227019068586" id="8476129223775221651">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8476129223775221652">
