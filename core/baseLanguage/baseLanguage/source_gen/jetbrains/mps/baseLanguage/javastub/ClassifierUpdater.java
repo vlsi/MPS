@@ -1428,14 +1428,21 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0b0l0u() {
     }
 
-    public SNode createNode(Object parameter_2) {
+    public SNode createNode(Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        List<SNode> nodes = (List<SNode>) parameter_2;
-        for (SNode child : nodes) {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          List<SNode> nodes = (List<SNode>) parameter_4;
+          for (SNode child : nodes) {
+            quotedNode_1.addChild("item", HUtil.copyIfNecessary(child));
+          }
         }
+        result = quotedNode1_3;
       }
       return result;
     }
