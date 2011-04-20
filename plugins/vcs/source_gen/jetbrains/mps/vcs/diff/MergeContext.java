@@ -104,12 +104,12 @@ public class MergeContext {
 
   public void applyChanges(Iterable<ModelChange> changes) {
     applyChangesNoRestoreIds(changes);
-    myNodeCopier.restoreIds();
+    myNodeCopier.restoreIds(false);
   }
 
   public void excludeChanges(Iterable<ModelChange> changes) {
     excludeChangesNoRestoreIds(changes);
-    myNodeCopier.restoreIds();
+    myNodeCopier.restoreIds(false);
   }
 
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {

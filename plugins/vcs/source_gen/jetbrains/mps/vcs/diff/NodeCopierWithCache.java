@@ -12,6 +12,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -39,25 +44,49 @@ public class NodeCopierWithCache implements NodeCopier {
     return copy;
   }
 
-  public void restoreIds() {
-    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
-      if (myModel.getNodeById(id) == null) {
-        // node id is free now! 
-        SNodeId replacedId = MapSequence.fromMap(myIdReplacementCache).get(id);
-        assert replacedId != null;
-        SNode replacedNode = myModel.getNodeById(replacedId);
-        assert replacedNode != null;
-
-        SNode copy = CopyUtil.copyAndPreserveId(replacedNode);
-        copy.setId(id);
-        if (SNodeOperations.getParent(replacedNode) == null) {
-          assert false;
-        } else {
-          SNodeOperations.replaceWithAnother(replacedNode, copy);
+  public void restoreIds(boolean affectOthers) {
+    softRestoreIds();
+    if (affectOthers) {
+      evictOtherDuplicates();
+      softRestoreIds();
+      assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
+        public boolean accept(SNodeId id) {
+          return id == null;
         }
+      });
+    }
+  }
+
+  private void setId(SNode node, SNodeId id) {
+    SModel model = SNodeOperations.getModel(node);
+    if (SNodeOperations.getParent(node) == null) {
+      SNodeOperations.deleteNode(node);
+      node.setId(id);
+      SModelOperations.addRootNode(model, node);
+    } else {
+      SNode stubNode = new SNode(model, INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
+      SNodeOperations.replaceWithAnother(node, stubNode);
+      node.setId(id);
+      SNodeOperations.replaceWithAnother(stubNode, node);
+    }
+  }
+
+  private void softRestoreIds() {
+    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
+      if (MapSequence.fromMap(myIdReplacementCache).get(id) != null && myModel.getNodeById(id) == null) {
+        // node id is free now! 
+        setId(myModel.getNodeById(MapSequence.fromMap(myIdReplacementCache).get(id)), id);
 
         MapSequence.fromMap(myIdReplacementCache).put(id, null);
       }
+    }
+  }
+
+  private void evictOtherDuplicates() {
+    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
+      SNode toBeEvicted = myModel.getNodeById(id);
+      assert toBeEvicted != null;
+      setId(toBeEvicted, SModel.generateUniqueId());
     }
   }
 
