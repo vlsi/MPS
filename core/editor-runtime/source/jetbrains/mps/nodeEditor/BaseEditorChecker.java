@@ -35,6 +35,10 @@ public abstract class BaseEditorChecker implements IEditorChecker, EditorMessage
     }
   }
 
+  public void clear(SNode node, EditorComponent editor) {
+
+  }
+
   protected void checkDisposed() {
     synchronized (LOCK) {
       if (myDisposed) throw new IllegalStateException();

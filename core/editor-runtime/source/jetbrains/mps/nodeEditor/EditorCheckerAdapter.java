@@ -39,12 +39,7 @@ public abstract class EditorCheckerAdapter extends BaseEditorChecker implements 
     return false;
   }
 
-
   public boolean messagesChanged() {
     return true;
-  }
-
-  public void clear(SNode node, EditorComponent editor) {
-
   }
 }

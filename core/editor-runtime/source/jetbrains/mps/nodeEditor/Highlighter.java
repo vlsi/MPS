@@ -19,9 +19,11 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.project.*;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vcs.checkout.CheckoutListener;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.IEditor;
@@ -198,14 +200,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  public void addHighlighterListener(HighlighterListener l){
-    synchronized (CHECKERS_LOCK){
+  public void addHighlighterListener(HighlighterListener l) {
+    synchronized (CHECKERS_LOCK) {
       myListeners.add(l);
     }
   }
 
-  public void removeHighlighterListener(HighlighterListener l){
-    synchronized (CHECKERS_LOCK){
+  public void removeHighlighterListener(HighlighterListener l) {
+    synchronized (CHECKERS_LOCK) {
       myListeners.remove(l);
     }
   }
@@ -275,7 +277,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   protected void doUpdate() {
-    if ( ApplicationManager.getApplication().isDisposed()) {
+    if (ApplicationManager.getApplication().isDisposed()) {
       return;
     }
     // SwingUtilities.invokeLater(new Runnable() {
@@ -442,9 +444,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
-    if (editorComponent instanceof InspectorEditorComponent) {
-      return true;
-    }
+    if (editorComponent instanceof InspectorEditorComponent) return true;
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
@@ -468,13 +468,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
-      final boolean[] messagesChangedContainer = {false};
-      Runnable runnable = new Runnable() {
-        public void run() {
-          if (myStopThread) return;
+      boolean changed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          if (myStopThread) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || node.isDisposed()) return;
+          if (node == null || node.isDisposed()) return false;
+
           owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {
@@ -482,7 +482,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             if (operationContext.isValid()) {
               try {
                 messages.addAll(checker.createMessages(node, events, wasCheckedOnce, editorContext));
-                messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+                return checker.messagesChanged();
               } catch (IndexNotReadyException ex) {
                 highlightManager.clearForOwner(owners[0], true);
                 checker.clear(node, editor);
@@ -490,17 +490,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               }
             }
           }
+
+          return false;
         }
-      };
-      ModelAccess.instance().runReadAction(runnable);
+      });
       if (myStopThread) return false;
 
-      boolean messagesChanged = messagesChangedContainer[0];
       if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
-        messagesChanged = true;
+        changed = true;
       }
 
-      if (messagesChanged) {
+      if (changed) {
         anyMessageChanged = true;
         EditorMessageOwner owner = owners[0];
         if (owner != null) {
@@ -512,31 +512,25 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
     for (final IEditorChecker checker : checkersToRemove) {
-      final EditorMessageOwner[] owners = new EditorMessageOwner[1];
-      Runnable runnable = new Runnable() {
-        public void run() {
-          if (myStopThread) return;
+      EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
+        public EditorMessageOwner compute() {
+          if (myStopThread) return null;
           SNode node = editor.getEditedNode();
-          if (node == null) return;
-          owners[0] = checker.getOwner(node, editor);
+          if (node == null) return null;
+          return checker.getOwner(node, editor);
         }
-      };
-      ModelAccess.instance().runReadAction(runnable);
-      if (myStopThread) {
-        return false;
-      }
-      highlightManager.clearForOwner(owners[0], false);
+      });
+      if (myStopThread) return false;
+
+      highlightManager.clearForOwner(owner, false);
       anyMessageChanged = true;
     }
-    if (myStopThread) {
-      return false;
-    }
+    if (myStopThread) return false;
 
     if (anyMessageChanged) {
       highlightManager.repaintAndRebuildEditorMessages();
       editor.updateStatusBarMessage();
     }
-
 
     return anyMessageChanged;
   }
@@ -561,9 +555,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               Thread.sleep(200);
             }
             while (dumbService.isDumb()) {
-              if (myStopThread) {
-                return;
-              }
+              if (myStopThread) return;
               Thread.sleep(600);
             }
             long current = System.currentTimeMillis();
@@ -572,13 +564,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             if (millisSinceLastCommand < 200) {
               long millis = 200 - millisSinceLastCommand;
               Thread.sleep(millis);
-            } else {
-              break;
-            }
+            } else break;
           }
-          if (myStopThread) {
-            return;
-          }
+          if (myStopThread) return;
 
           try {
             doUpdate();
