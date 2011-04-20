@@ -24,7 +24,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.structure.MigrationScript;

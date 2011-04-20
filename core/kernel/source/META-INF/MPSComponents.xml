@@ -378,7 +378,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptsTool
+      <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
 

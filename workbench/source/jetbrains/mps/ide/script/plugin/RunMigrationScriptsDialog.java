@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.script.plugin;
+package jetbrains.mps.ide.script.plugin;
 
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.util.Pair;

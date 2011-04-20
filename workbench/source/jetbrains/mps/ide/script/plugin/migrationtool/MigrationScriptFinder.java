@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.script.plugin.migrationtool;
+package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.findUsages.FindUsagesManager;
