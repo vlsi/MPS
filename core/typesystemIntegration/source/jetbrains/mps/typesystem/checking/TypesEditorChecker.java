@@ -26,7 +26,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.INodeTypesComponent;
@@ -55,8 +56,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     myHighlighter = highlighter;
   }
 
-  public Set<EditorMessage> createMessages(final SNode node, final IOperationContext operationContext,
-                                           List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(final SNode node, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     myHighlighter.addHighlighterListener(myHighlighterListener);
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
@@ -82,7 +82,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           try {
             myMessagesChanged = true;
             context.setIsNonTypesystemComputation();
-            typesComponent.applyNonTypesystemRulesToRoot(operationContext);
+            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext());
             typesComponent.setCheckedNonTypesystem();
           } catch (Throwable t) {
             LOG.error(t);

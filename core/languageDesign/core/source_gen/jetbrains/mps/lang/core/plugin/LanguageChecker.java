@@ -28,7 +28,6 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -152,7 +151,7 @@ public class LanguageChecker extends BaseEditorChecker {
     return this;
   }
 
-  public Set<EditorMessage> createMessages(SNode node, IOperationContext operationContext, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     SNode root = node.getContainingRoot();
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
@@ -187,7 +186,7 @@ public class LanguageChecker extends BaseEditorChecker {
       if (typecheckingContext != null) {
         typecheckingContext.setIsNonTypesystemComputation();
       }
-      changed = errorsComponent.check(node, myRules, operationContext);
+      changed = errorsComponent.check(node, myRules, editorContext.getOperationContext());
     } finally {
       if (typecheckingContext != null) {
         typecheckingContext.resetIsNonTypesystemComputation();

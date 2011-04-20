@@ -18,17 +18,15 @@ package jetbrains.mps.nodeEditor.bookmark;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 
-import java.util.Set;
-import java.util.List;
-import java.util.HashSet;
 import java.awt.Color;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class BookmarksHighlighter extends EditorCheckerAdapter implements EditorMessageOwner {
-
   private BookmarkManager myBookmarkManager;
   private Highlighter myHighlighter;
   private boolean myChanged = true;
@@ -62,10 +60,9 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     super.dispose();
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
-                                           List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> result = new HashSet<EditorMessage>();
-    List<Pair<SNode,Integer>> bookmarks = myBookmarkManager.getBookmarks(rootNode);
+    List<Pair<SNode, Integer>> bookmarks = myBookmarkManager.getBookmarks(rootNode);
     for (Pair<SNode, Integer> bookmark : bookmarks) {
       result.add(new DefaultEditorMessage(bookmark.o1, Color.BLACK, "bookmark " + (bookmark.o2 == -1 ? "" : bookmark.o2), this));
     }

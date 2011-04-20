@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -23,8 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 public interface IEditorChecker {
-  Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
-                                    List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
+  Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
   // IMPORTANT: there should be no equal owners for messages from different checkers
   // for instance, make owners change when checker is reloaded

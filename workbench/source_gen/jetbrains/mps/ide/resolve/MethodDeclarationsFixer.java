@@ -12,7 +12,6 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -63,7 +62,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }

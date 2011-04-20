@@ -461,9 +461,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
-    if (editor == null || editor.getRootCell() == null) {
-      return false;
-    }
+    if (editor == null || editor.getRootCell() == null) return false;
 
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
@@ -473,9 +471,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final boolean[] messagesChangedContainer = {false};
       Runnable runnable = new Runnable() {
         public void run() {
-          if (myStopThread) {
-            return;
-          }
+          if (myStopThread) return;
+
           SNode node = editor.getEditedNode();
           if (node == null || node.isDisposed()) return;
           owners[0] = checker.getOwner(node, editor);
@@ -484,7 +481,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             IOperationContext operationContext = editor.getOperationContext();
             if (operationContext.isValid()) {
               try {
-                messages.addAll(checker.createMessages(node, operationContext, events, wasCheckedOnce, editorContext));
+                messages.addAll(checker.createMessages(node, events, wasCheckedOnce, editorContext));
                 messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
               } catch (IndexNotReadyException ex) {
                 highlightManager.clearForOwner(owners[0], true);
@@ -496,9 +493,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       };
       ModelAccess.instance().runReadAction(runnable);
-      if (myStopThread) {
-        return false;
-      }
+      if (myStopThread) return false;
+
       boolean messagesChanged = messagesChangedContainer[0];
       if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
         messagesChanged = true;
@@ -519,9 +515,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
       Runnable runnable = new Runnable() {
         public void run() {
-          if (myStopThread) {
-            return;
-          }
+          if (myStopThread) return;
           SNode node = editor.getEditedNode();
           if (node == null) return;
           owners[0] = checker.getOwner(node, editor);
