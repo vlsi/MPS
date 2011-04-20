@@ -5,30 +5,29 @@ package jetbrains.mps.refactoring.framework;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import java.util.HashSet;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptAncestorsProvider implements IDescendantsProvider {
   public ConceptAncestorsProvider() {
   }
 
-  public Set<SNode> getDescendants(SNode nodeAdapter) {
+  public Set<SNode> getDescendants(SNode node) {
     Set<SNode> result = new HashSet<SNode>();
-    if (nodeAdapter.getAdapter() instanceof ConceptDeclaration) {
-      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) nodeAdapter.getAdapter();
-      ConceptDeclaration parent = conceptDeclaration.getExtends();
-      if (parent != null) {
-        result.add(parent.getNode());
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+      SNode conceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      SNode parent = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      if ((parent != null)) {
+        result.add(parent);
       }
-      for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
-        result.add(interfaceConceptReference.getIntfc().getNode());
+      for (SNode interfaceConceptReference : SLinkOperations.getTargets(conceptDeclaration, "implements", true)) {
+        result.add(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
       }
     }
-    if (nodeAdapter.getAdapter() instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration interfaceConceptDeclaration = (InterfaceConceptDeclaration) nodeAdapter.getAdapter();
-      for (InterfaceConceptReference interfaceConceptReference : interfaceConceptDeclaration.getExtendses()) {
-        result.add(interfaceConceptReference.getIntfc().getNode());
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+      SNode interfaceConceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+      for (SNode interfaceConceptReference : SLinkOperations.getTargets(interfaceConceptDeclaration, "extends", true)) {
+        result.add(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
       }
     }
     return result;

@@ -51,11 +51,10 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.ConceptAncestorsProvider" file="ConceptAncestorsProvider.java">
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IDescendantsProvider" />
   </dependency>
@@ -118,15 +117,14 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringContext" file="RefactoringContext.java">
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageHierarchyCache" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="jetbrains.mps.findUsages.UsagesList" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.lang.reflect.Constructor" />
@@ -137,7 +135,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier" />
     <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
@@ -148,14 +147,11 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.structure.Refactoring_Language" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.ILoggableRefactoring" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -163,7 +159,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="java.lang.String" />
@@ -192,7 +188,6 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringTarget" file="RefactoringTarget.java" />
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringUtil" file="RefactoringUtil.java">
-    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -201,33 +196,34 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.lang.reflect.Constructor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.structure.OldRefactoring" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashMap" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.structure.Refactoring" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.OldRefactoringAdapter" />
     <classNode dependClassName="java.lang.String" />

@@ -25,12 +25,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SReference;
@@ -40,7 +37,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
 
 public class RefactoringContext {
@@ -219,16 +216,15 @@ public class RefactoringContext {
   }
 
   private void doChangeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName, boolean delete) {
-    BaseAdapter adapter = feature.getAdapter();
     String oldConceptFQName = "";
     String oldFeatureName = "";
     StructureModificationData.ConceptFeatureKind kind = StructureModificationData.ConceptFeatureKind.NONE;
     StructureModification.RenameNode.RenameType renameType = null;
-    if (adapter instanceof LinkDeclaration) {
-      LinkDeclaration linkDeclaration = (LinkDeclaration) adapter;
-      oldConceptFQName = NameUtil.nodeFQName(linkDeclaration.getParent());
-      oldFeatureName = linkDeclaration.getRole();
-      if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
+    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
+      SNode linkDeclaration = SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      oldConceptFQName = NameUtil.nodeFQName(SNodeOperations.getParent(linkDeclaration));
+      oldFeatureName = SPropertyOperations.getString(linkDeclaration, "role");
+      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
         kind = StructureModificationData.ConceptFeatureKind.CHILD;
         renameType = StructureModification.RenameNode.RenameType.CHILD;
       } else {
@@ -236,33 +232,33 @@ public class RefactoringContext {
         renameType = StructureModification.RenameNode.RenameType.REFERENCE;
       }
       if (delete) {
-        linkDeclaration.delete();
+        SNodeOperations.deleteNode(linkDeclaration);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          linkDeclaration.setRole(newFeatureName);
+          SPropertyOperations.set(linkDeclaration, "role", newFeatureName);
         }
       }
     }
-    if (adapter instanceof PropertyDeclaration) {
-      oldConceptFQName = NameUtil.nodeFQName(adapter.getParent());
-      oldFeatureName = adapter.getName();
+    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
+      oldConceptFQName = NameUtil.nodeFQName(SNodeOperations.getParent(feature));
+      oldFeatureName = feature.getName();
       kind = StructureModificationData.ConceptFeatureKind.PROPERTY;
       renameType = StructureModification.RenameNode.RenameType.PROPERTY;
       if (delete) {
-        adapter.delete();
+        SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           feature.setName(newFeatureName);
         }
       }
     }
-    if (adapter instanceof AbstractConceptDeclaration) {
-      oldConceptFQName = NameUtil.nodeFQName(adapter);
-      oldFeatureName = adapter.getName();
+    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+      oldConceptFQName = NameUtil.nodeFQName(feature);
+      oldFeatureName = feature.getName();
       kind = StructureModificationData.ConceptFeatureKind.CONCEPT;
       renameType = StructureModification.RenameNode.RenameType.CONCEPT;
       if (delete) {
-        adapter.delete();
+        SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           feature.setName(newFeatureName);
@@ -563,7 +559,7 @@ public class RefactoringContext {
       String namespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(className));
       Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
       if (l == null) {
-        l = Refactoring_Language.get();
+        l = MPSModuleRepository.getInstance().getLanguage(ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)"));
       }
       if (l == null) {
         LOG.errorWithTrace("can't find a language " + namespace);

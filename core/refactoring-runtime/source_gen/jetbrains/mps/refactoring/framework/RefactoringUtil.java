@@ -10,15 +10,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Map;
@@ -54,8 +54,8 @@ public class RefactoringUtil {
     final List<SNode> availableRefactorings = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration(Refactoring.concept), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false);
-        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration(OldRefactoring.concept), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false);
+        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false);
+        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false);
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }
@@ -79,9 +79,9 @@ public class RefactoringUtil {
       if (scriptsModelDescriptor != null) {
         SModel scriptsModel = scriptsModelDescriptor.getSModel();
         String packageName = scriptsModel.getLongName();
-        for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
+        for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
           try {
-            String fqName = packageName + "." + refactoring.getName();
+            String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
             Class<AbstractLoggableRefactoring> cls = language.getClass(fqName);
             if (cls == null) {
               LOG.error("Can't find " + fqName);
@@ -101,9 +101,9 @@ public class RefactoringUtil {
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor.getSModel();
       String packageName = refactoringsModel.getLongName();
-      for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
+      for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {
-          String fqName = packageName + "." + refactoring.getName();
+          String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
           Class<IRefactoring> cls = language.getClass(fqName);
           if (cls == null) {
             LOG.error("Can't find " + fqName);
