@@ -12,6 +12,7 @@
   <unitInfo fileName="IPropertyAccessQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" />
   <unitInfo fileName="IAttributeAccessQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
   <unitInfo fileName="Smodel_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Smodel_Language" />
+  <unitInfo fileName="Model_GetModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_GetModule" />
   <unitInfo fileName="AllAttributeQualifier.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AllAttributeQualifier" />
   <unitInfo fileName="OperationParm_SameMetaLevel.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel" />
   <unitInfo fileName="Node_GetContainingRoleOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" />

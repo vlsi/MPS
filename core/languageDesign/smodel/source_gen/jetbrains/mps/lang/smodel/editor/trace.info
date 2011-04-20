@@ -15,6 +15,7 @@
   <unitInfo fileName="Node_IsAttributeOperation_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_IsAttributeOperation_Editor" />
   <unitInfo fileName="SEnum_MembersOperation_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SEnum_MembersOperation_Editor" />
   <unitInfo fileName="IfInstanceOfVariable_Editor.java" startLine="64" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.IfInstanceOfVariable_Editor$IfInstanceOfVariable_name_postfixCellMenu_a0a0" />
+  <unitInfo fileName="Model_GetModule_Editor.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Model_GetModule_Editor" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Styles_StyleSheet" />
   <unitInfo fileName="Concept_GetHierarchy_Editor.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_Editor" />
   <unitInfo fileName="LinkList_RemoveAllChildrenOperation_Editor.java" startLine="15" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkList_RemoveAllChildrenOperation_Editor" />

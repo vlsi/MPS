@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SModelOperations {
   public SModelOperations() {
@@ -175,5 +177,13 @@ public class SModelOperations {
       return null;
     }
     return model.getLongName();
+  }
+
+  public static SNode getModuleStub(SModel model) {
+    SModel m = ProjectStructureModule.getInstance().getModelByModule(model.getModelDescriptor().getModule());
+    return (m == null ?
+      null :
+      ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
+    );
   }
 }

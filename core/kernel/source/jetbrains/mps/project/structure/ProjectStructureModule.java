@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project.structure;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
@@ -40,10 +40,14 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ProjectStructureModule extends AbstractModule implements ApplicationComponent {
 
-  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
+//  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
   private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
   private Map<SModelFqName, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, ProjectStructureSModelDescriptor>();
+
+  public static ProjectStructureModule getInstance() {
+    return ApplicationManager.getApplication().getComponent(ProjectStructureModule.class);
+  }
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
     setModuleReference(MODULE_REFERENCE);
@@ -92,6 +96,14 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     }
   }
 
+  public SModel getModelByModule(IModule module) {
+    ModelAccess.assertLegalRead();
+
+    SModelFqName fq = getModelFqName(module);
+
+    ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+    return descriptor == null ? null : descriptor.getSModel();
+  }
 
   private void refresh() {
     ModelAccess.assertLegalWrite();

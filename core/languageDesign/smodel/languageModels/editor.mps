@@ -552,6 +552,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.5897605856268838718" resolveInfo="ConceptPropertyNameRefExpression" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6995935425733782648">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.6995935425733782641" resolveInfo="Model_GetModule" />
+    </node>
   </roots>
   <root id="1138063451695">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1138412409274">
@@ -4594,6 +4598,12 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5897605856268838742" />
+    </node>
+  </root>
+  <root id="6995935425733782648">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6995935425733787935">
+      <property name="text" nameId="tpc2.1073389577007" value="module" />
+      <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
     </node>
   </root>
 </model>
