@@ -222,7 +222,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager._Adapters" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
@@ -239,7 +238,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
+    <classNode dependClassName="java.lang.AssertionError" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="java.lang.Exception" />
@@ -272,6 +272,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
@@ -284,7 +285,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
@@ -297,7 +298,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />

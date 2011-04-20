@@ -170,6 +170,9 @@ public class ModelChangesManager {
       try {
         listener.changeRemoved(change, getModel());
       } catch (Throwable t) {
+        if (t instanceof InterruptedException || t.getCause() instanceof InterruptedException) {
+          return;
+        }
         if (log.isErrorEnabled()) {
           log.error("Exception on firing changeRemoved event", t);
         }
