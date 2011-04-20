@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.checking;
 
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public abstract class EditorCheckerAdapter extends BaseEditorChecker {
     return false;
   }
 
-  public boolean messagesChanged() {
+  public boolean areMessagesChanged() {
     return true;
   }
 }

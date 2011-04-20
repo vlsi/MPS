@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -201,7 +202,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     super.dispose();
   }
 
-  public boolean messagesChanged() {
+  public boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 

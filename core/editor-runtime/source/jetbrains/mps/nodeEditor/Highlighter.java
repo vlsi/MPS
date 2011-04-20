@@ -30,6 +30,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -404,7 +405,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                   return;
                 }
                 for (BaseEditorChecker checker : checkers) {
-                  if (checker.hasDramaticalEvent(events)) {
+                  if (checker.hasDramaticalEventProtected(events)) {
                     checkersToRecheck.add(checker);
                   }
                 }
@@ -479,11 +480,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             IOperationContext operationContext = editor.getOperationContext();
             if (operationContext.isValid()) {
               try {
-                messages.addAll(checker.createMessages(node, events, wasCheckedOnce, editorContext));
-                return checker.messagesChanged();
+                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext));
+                return checker.areMessagesChangedProtected();
               } catch (IndexNotReadyException ex) {
                 highlightManager.clearForOwner(checker, true);
-                checker.clear(node, editor);
+                checker.clearProtected(node, editor);
                 throw ex;
               }
             }

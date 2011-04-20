@@ -2,26 +2,23 @@
 <debugInfo>
   <unitInfo fileName="Editor_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_Order" />
   <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
-  <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Editor_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
+  <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Editor_TabDescriptor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_TabDescriptor" />
   <root nodeId="1207844373881">
     <nodeInfo nodeId="1215438685387" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="10" startPosition="83" endLine="11" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAutoResolver" />
-    <nodeInfo nodeId="1207844454228" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207844495367" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="17" startPosition="82" endLine="18" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207844535198" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207844554100" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207844554109" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="26" startPosition="30" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207844522220" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="18" startPosition="83" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207844554107" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="25" startPosition="83" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1207844522221" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="87" />
-    <scopeInfo nodeId="1207844554108" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="26" startPosition="30" endLine="27" endPosition="90" />
-    <scopeInfo nodeId="1207844548926" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="28" endPosition="5">
-      <varInfo nodeId="1207844554101" varName="highlighter" />
-    </scopeInfo>
-    <scopeInfo nodeId="1207844406263" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="21" endPosition="5">
-      <varInfo nodeId="1207844495368" varName="highlighter" />
-    </scopeInfo>
+    <nodeInfo nodeId="1700208213243723076" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="38" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
+    <nodeInfo nodeId="1700208213243723081" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="17" startPosition="42" endLine="18" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1700208213243723101" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="19" startPosition="74" endLine="20" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207844535198" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="20" startPosition="84" endLine="21" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207844554109" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="26" startPosition="74" endLine="27" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1700208213243723115" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="27" startPosition="134" endLine="28" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207844522220" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="18" startPosition="115" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207844554107" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="25" startPosition="45" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1207844522221" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="19" startPosition="74" endLine="21" endPosition="131" />
+    <scopeInfo nodeId="1207844554108" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="26" startPosition="74" endLine="28" endPosition="73" />
+    <scopeInfo nodeId="1207844548926" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="25" startPosition="45" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1207844406263" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="17" startPosition="42" endLine="22" endPosition="5" />
   </root>
   <root nodeId="7157723551789028023">
     <nodeInfo nodeId="7157723551789028026" fileName="Editor_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

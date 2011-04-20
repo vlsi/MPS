@@ -5,6 +5,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;

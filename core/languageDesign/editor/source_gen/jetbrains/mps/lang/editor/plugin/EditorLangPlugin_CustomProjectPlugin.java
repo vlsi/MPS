@@ -4,27 +4,28 @@ package jetbrains.mps.lang.editor.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.ide.resolve.AutoResolver;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.project.MPSProject;
 
 public class EditorLangPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private AutoResolver myAutoResolver;
+  private Highlighter myHighlighter;
 
   public EditorLangPlugin_CustomProjectPlugin() {
   }
 
   public void doInit(MPSProject project) {
-    EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver = new AutoResolver();
-    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-    if (highlighter != null) {
-      highlighter.addChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
+    EditorLangPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
+    if (EditorLangPlugin_CustomProjectPlugin.this.myHighlighter != null) {
+      EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver = new AutoResolver();
+      EditorLangPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
     }
   }
 
   public void doDispose(MPSProject project) {
-    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-    if (highlighter != null) {
-      highlighter.removeChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
+    if (EditorLangPlugin_CustomProjectPlugin.this.myHighlighter != null) {
+      EditorLangPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
+      EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver.dispose();
     }
   }
 }

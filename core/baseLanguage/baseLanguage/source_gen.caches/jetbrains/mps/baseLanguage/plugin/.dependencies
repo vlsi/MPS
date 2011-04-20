@@ -790,7 +790,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCheckerAdapter" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.OverridenMethodEditorMessage" file="OverridenMethodEditorMessage.java">
     <classNode dependClassName="java.lang.String" />
@@ -1004,7 +1004,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCheckerAdapter" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.ToDoMessage" file="ToDoMessage.java">
     <classNode dependClassName="java.lang.String" />

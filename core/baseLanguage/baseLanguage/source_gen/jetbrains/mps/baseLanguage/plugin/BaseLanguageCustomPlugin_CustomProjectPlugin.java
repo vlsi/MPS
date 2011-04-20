@@ -28,10 +28,13 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
 
   public void doDispose(MPSProject project) {
     if (BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter != null) {
-      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.dispose();
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
+
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.dispose();
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter.dispose();
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker.dispose();
     }
   }
 }
