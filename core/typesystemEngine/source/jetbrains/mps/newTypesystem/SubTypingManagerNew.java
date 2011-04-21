@@ -58,7 +58,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (null == subType || null == superType) {
       return false;
     }
-    if (isWeak && TypesUtil.match(subType, superType, null, null)) {
+    if (TypesUtil.match(subType, superType, null, null)) {
       return true;
     }
     if (isSubTypeByReplacementRules(subType, superType, isWeak)) {
