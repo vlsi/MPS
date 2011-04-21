@@ -15,10 +15,9 @@
  */
 package com.intellij.ide.util.gotoByName.matchers;
 
-import com.intellij.ide.util.gotoByName.ChooseByNameBase;
+import com.intellij.ide.util.gotoByName.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
@@ -132,7 +131,7 @@ public class DefaultMatcher implements EntityMatcher {
   }
 
   public String getShortNamePattern(String s) {
-    return ChooseByNameBase.getNamePattern_static(myModel, s);
+    return ChooseByNameBaseMPS.getNamePattern_static(myModel, s);
   }
 
   private String getQualifierPattern(String pattern) {

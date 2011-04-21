@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.actions.navigate;
 
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -65,7 +65,7 @@ public class GoToDevkitAction extends BaseAction {
         return result.toArray(new ModuleReference[result.size()]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, DefaultMatcherFactory.createAllMatcher(goToDevkitModel));
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToDevkitModel, DefaultMatcherFactory.createAllMatcher(goToDevkitModel));
 
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

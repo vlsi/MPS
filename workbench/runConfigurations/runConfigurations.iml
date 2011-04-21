@@ -12,7 +12,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="Closures-runtime" />

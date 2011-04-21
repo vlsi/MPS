@@ -11,8 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="idea-patch" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="workbench" />
   </component>

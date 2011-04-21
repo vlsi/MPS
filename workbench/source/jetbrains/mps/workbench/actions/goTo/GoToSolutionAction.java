@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -64,7 +64,7 @@ public class GoToSolutionAction extends BaseAction {
         return solutions.toArray(new ModuleReference[solutions.size()]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, DefaultMatcherFactory.createAllMatcher(goToSolutionModel));
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToSolutionModel, DefaultMatcherFactory.createAllMatcher(goToSolutionModel));
 
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

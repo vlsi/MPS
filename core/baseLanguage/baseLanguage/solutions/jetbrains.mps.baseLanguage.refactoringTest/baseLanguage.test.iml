@@ -18,8 +18,7 @@
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="typesystem" />
     <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="idea-patch" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="dataFlow" />

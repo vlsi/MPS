@@ -65,7 +65,7 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-public abstract class ChooseByNameBase {
+public abstract class ChooseByNameBaseMPS {
   protected final Project myProject;
   protected final ChooseByNameModel myModel;
   protected final String myInitialText;
@@ -125,17 +125,17 @@ public abstract class ChooseByNameBase {
    * @param initialText initial text which will be in the lookup text field
    * @param context
    */
-  protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText, final PsiElement context) {
+  protected ChooseByNameBaseMPS(Project project, ChooseByNameModel model, String initialText, final PsiElement context) {
     this(project, model, initialText);
     myMatcher = new DefaultMatcher(model, context);
   }
 
-  protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText, EntityMatcher matcher) {
+  protected ChooseByNameBaseMPS(Project project, ChooseByNameModel model, String initialText, EntityMatcher matcher) {
     this(project, model, initialText);
     myMatcher = matcher;
   }
 
-  private ChooseByNameBase(Project project, ChooseByNameModel model, String initialText) {
+  private ChooseByNameBaseMPS(Project project, ChooseByNameModel model, String initialText) {
     myProject = project;
     myModel = model;
     myInitialText = initialText;

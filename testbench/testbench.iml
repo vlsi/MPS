@@ -10,13 +10,12 @@
       <sourceFolder url="file://$MODULE_DIR$/tests_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module" module-name="idea-patch" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="ant" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="MPS-platform" />
+    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="ant" />
     <orderEntry type="module" module-name="Closures" />
     <orderEntry type="module" module-name="collections" />

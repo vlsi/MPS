@@ -24,8 +24,7 @@
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="module" module-name="idea-patch" scope="RUNTIME" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" scope="RUNTIME" />
     <orderEntry type="library" name="tools" level="project" />
     <orderEntry type="library" name="XStream" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />

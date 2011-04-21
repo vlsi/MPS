@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
@@ -47,7 +47,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class ImportHelper {
@@ -91,7 +90,7 @@ public class ImportHelper {
         return "Import model:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -129,7 +128,7 @@ public class ImportHelper {
         return "Import language:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToLanguageModel, fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -227,7 +226,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext,initialText);
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, fakePsiContext, initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

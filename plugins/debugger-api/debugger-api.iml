@@ -13,7 +13,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="runConfigurations" exported="" />
   </component>

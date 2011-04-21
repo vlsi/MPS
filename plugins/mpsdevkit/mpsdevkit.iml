@@ -10,9 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module" module-name="idea-patch" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="uiTests" scope="TEST" />
@@ -21,6 +20,17 @@
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="intentions-runtime" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="plugin-runtime" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="typesystem" />
   </component>
 </module>
 

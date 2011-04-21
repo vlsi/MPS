@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNameBase;
+import com.intellij.ide.util.gotoByName.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
@@ -31,7 +31,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.List;
 
-public class SmartChooseByNamePanel extends ChooseByNameBase {
+public class SmartChooseByNamePanel extends ChooseByNameBaseMPS {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 

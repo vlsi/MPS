@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -71,7 +71,7 @@ public class GoToModelAction extends BaseAction {
         return result.toArray(new SModelReference[result.size()]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
 
     popup.setShowListForEmptyPattern(true);
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);

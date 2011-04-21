@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -47,7 +47,7 @@ public class GoToRootNodeAction extends BaseAction {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
-    ChooseByNamePopup popup;
+    ChooseByNamePopupMPS popup;
 
     if (!myUseCache) {
       BaseNodeModel baseNodeModel = new BaseNodeModel(project) {
@@ -63,10 +63,10 @@ public class GoToRootNodeAction extends BaseAction {
           return nodes.toArray(new SNode[0]);
         }
       };
-      popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
+      popup = ChooseByNamePopupMPS.createPopup(project, baseNodeModel, new FakePsiContext());
     } else {
       MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
+      popup = ChooseByNamePopupMPS.createPopup(project, chooseSNodeResult, new FakePsiContext());
     }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
