@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="LanguageDescriptor_name_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_name_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.ConstraintsDescriptor" />
+  <root nodeId="8780540425167303919">
+    <nodeInfo nodeId="8780540425167303923" fileName="LanguageDescriptor_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8780540425167303922" fileName="LanguageDescriptor_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="24" />
+  </root>
+</debugInfo>
+

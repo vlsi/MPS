@@ -17,6 +17,8 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -249,6 +251,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public boolean isPackaged() {
     return FileSystem.getInstance().isPackaged(getModelFile());
+  }
+
+  @Override
+  public boolean isGeneratable() {
+    boolean doNotGenerate = Boolean.parseBoolean(getAttribute(GeneratorManager.DO_NOT_GENERATE));
+    return !doNotGenerate && !isPackaged() && SModelStereotype.isUserModel(this);
+  }
+
+  @Override
+  public String getModelHash() {
+    IFile file = getModelFile();
+    if (file == null) return null;
+
+    return ModelDigestUtil.hash(file);
   }
 
   //this method should be called only with a fully loaded model as parameter

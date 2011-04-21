@@ -69,6 +69,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract ModelLoadResult initialLoad();
 
+  @Override
+  public boolean isGeneratable() {
+    return false;
+  }
+
+  @Override
+  public String getModelHash() {
+    return null;
+  }
+
   public static class ModelLoadResult {
     private ModelLoadingState state;
     private SModel model;

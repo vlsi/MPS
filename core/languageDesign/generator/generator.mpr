@@ -30,6 +30,7 @@
       <languagePath path="${project}/test/inputLang/inputLang.mpl" />
       <languagePath path="${project}/test/outputLang/outputLang.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${project}/languages/descriptor/descriptor.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

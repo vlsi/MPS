@@ -10,6 +10,7 @@ public class BootstrapLanguages {
   public static final ModuleReference CONSTRAINTS = ModuleReference.fromString("3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)");
   public static final ModuleReference CORE = ModuleReference.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)");
   public static final ModuleReference DATA_FLOW = ModuleReference.fromString("7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)");
+  public static final ModuleReference DESCRIPTOR = ModuleReference.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)");
   public static final ModuleReference EDITOR = ModuleReference.fromString("18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)");
   public static final ModuleReference FIND_USAGES = ModuleReference.fromString("64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)");
   public static final ModuleReference PROJECT = ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)");
@@ -58,7 +59,7 @@ public class BootstrapLanguages {
   }
 
   public static Language generatorLanguage() {
-    return (Language) MPSModuleRepository.getInstance().getModule(PROJECT);
+    return (Language) MPSModuleRepository.getInstance().getModule(GENERATOR);
   }
 
   public static Language generatorParametersLanguage() {

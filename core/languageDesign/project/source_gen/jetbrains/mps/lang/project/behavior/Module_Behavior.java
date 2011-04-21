@@ -24,6 +24,10 @@ public class Module_Behavior {
     return SPropertyOperations.getString(thisNode, "namespace");
   }
 
+  public static String call_getModuleReference_9020561928507315628(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "namespace") + ")";
+  }
+
   public static String call_getFqName_6370754048397730432(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432);

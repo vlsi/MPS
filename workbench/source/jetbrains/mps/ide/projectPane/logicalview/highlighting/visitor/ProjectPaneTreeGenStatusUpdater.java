@@ -40,9 +40,9 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (!ProjectPane.isShowGenStatus()) return;
 
     SModelDescriptor md = modelNode.getSModelDescriptor();
-    if (!(md instanceof EditableSModelDescriptor)) return;
+    if (!(md.isGeneratable())) return;
 
-    boolean wasChanged = ((EditableSModelDescriptor) md).isChanged();
+    boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
 
     if (wasChanged) {
       updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());

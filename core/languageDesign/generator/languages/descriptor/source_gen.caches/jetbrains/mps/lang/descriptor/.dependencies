@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.descriptor.map_LanguageDescriptor" file="map_LanguageDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+  </dependency>
+</dependenciesRoot>
+

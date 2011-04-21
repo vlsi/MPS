@@ -121,6 +121,10 @@
     <component>
       <implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.project.structure.LanguageDescriptorModelProvider</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

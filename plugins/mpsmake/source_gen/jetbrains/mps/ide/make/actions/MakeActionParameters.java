@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MakeActionParameters {
   private IOperationContext context;
@@ -44,7 +42,7 @@ public class MakeActionParameters {
     IModule module = this.moduleToMake();
     SModelDescriptor model = this.modelToMake();
     if (model != null) {
-      if (!(isUserEditableModel(model))) {
+      if (!(model.isGeneratable())) {
         return null;
       }
 
@@ -54,7 +52,7 @@ public class MakeActionParameters {
       Iterable<SModelDescriptor> mds = this.models;
       if (!(Sequence.fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
-          return isUserEditableModel(md);
+          return md.isGeneratable();
         }
       }))) {
         return null;
@@ -117,7 +115,7 @@ __switch__:
                     case 8:
                       this._8__yield_nk3wxj_b0a0a0a0a0c0b_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModelDescriptor>() {
                         public boolean accept(SModelDescriptor md) {
-                          return isUserEditableModel(md);
+                          return md.isGeneratable();
                         }
                       })).iterator();
                     case 9:
@@ -149,7 +147,7 @@ __switch__:
                       this.__CP__ = 24;
                       break;
                     case 2:
-                      if (model != null && isUserEditableModel(model)) {
+                      if (model != null && model.isGeneratable()) {
                         this.__CP__ = 3;
                         break;
                       } else if (models != null && models.size() > 1) {
@@ -238,13 +236,6 @@ __switch__:
       }
     });
     return new ModelsToResources(context, smds).resources(dirtyOnly);
-  }
-
-  public boolean isUserEditableModel(SModelDescriptor md) {
-    if (!(SModelStereotype.isUserModel(md))) {
-      return false;
-    }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
   }
 
   private IModule moduleToMake() {
