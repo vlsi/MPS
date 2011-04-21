@@ -445,6 +445,17 @@ public class State {
     return result;
   }
 
+  public Set<Block> getCheckingInequalities() {
+    Set<Block> result = new HashSet<Block>();
+    Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
+    for (Block block: blocks) {
+      if (((RelationBlock)block).isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
+        result.add(block);
+      }
+    }
+    return result;
+  }
+
   private void executeOperationsFromTo(int from, int to) {
     assert from < to;
     for (int i = from + 1; i <= to; i++) {

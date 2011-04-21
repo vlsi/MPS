@@ -115,18 +115,16 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void create(AbstractOperation operation, TypeSystemTraceTreeNode result) {
-    if (operation.getConsequences() != null) {
-      for (AbstractOperation child : operation.getConsequences()) {
-        if (filterNodeType(child) && (!(TraceSettings.isTraceForSelectedNode()) || showNode(child))) {
-          TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext, myCurrentContext.getState(), myEditorComponent);
-          create(child, node);
-          result.add(node);
-          if (child instanceof AddErrorOperation) {
-            myErrorNodes.add(node);
-          }
-        } else {
-          create(child, result);
+    for (AbstractOperation child : operation.getConsequences()) {
+      if (filterNodeType(child) && (!(TraceSettings.isTraceForSelectedNode()) || showNode(child))) {
+        TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext, myCurrentContext.getState(), myEditorComponent);
+        create(child, node);
+        result.add(node);
+        if (child instanceof AddErrorOperation) {
+          myErrorNodes.add(node);
         }
+      } else {
+        create(child, result);
       }
     }
   }

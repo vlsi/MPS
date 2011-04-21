@@ -137,7 +137,6 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type), myEditorComponent));
     }
     Collections.sort(list, new Comparator<TypeTreeNode>() {
-      @Override
       public int compare(TypeTreeNode o1, TypeTreeNode o2) {
         return o1.toString().compareTo(o2.toString());
       }
