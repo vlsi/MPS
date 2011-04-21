@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 @MPSLaunch
 public class TypesTest_BL_Test extends BaseTransformationTest {
@@ -46,27 +46,27 @@ public class TypesTest_BL_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void testBinaryOp() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6017652711700376553"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("6017652711700376487"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("6017652711700376487"));
     }
 
     public void testTernaryOp() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6846030807779035850"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("8287832443125030318"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("8287832443125030318"));
     }
 
     public void testGenericFields() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("454440546580065076"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("2685915532175039796"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("2685915532175039796"));
     }
 
     public void testGenericInstanceMethods() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("454440546580065078"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("6846030807779017565"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("6846030807779017565"));
     }
 
     public void testGenericMethods() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("454440546580065080"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("6846030807779017661"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("6846030807779017661"));
     }
   }
 }

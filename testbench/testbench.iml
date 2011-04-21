@@ -54,7 +54,6 @@
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="typesystem" />
-    <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="make" />
     <orderEntry type="module" module-name="editor.tests" />

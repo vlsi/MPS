@@ -36,7 +36,6 @@
     <orderEntry type="module" module-name="test" exported="" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
-    <orderEntry type="module" module-name="unitTest" exported="" />
     <orderEntry type="module" module-name="actions" exported="" />
     <orderEntry type="module" module-name="behavior" exported="" />
     <orderEntry type="library" exported="" name="Commons-codec" level="project" />

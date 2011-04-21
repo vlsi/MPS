@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 @MPSLaunch
 public class UnusedAssignmentWithIF_Test extends BaseTransformationTest {
@@ -22,7 +22,7 @@ public class UnusedAssignmentWithIF_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1217866439753() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1217866439753"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("1217866140840"));
+      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1217866140840"));
     }
   }
 }

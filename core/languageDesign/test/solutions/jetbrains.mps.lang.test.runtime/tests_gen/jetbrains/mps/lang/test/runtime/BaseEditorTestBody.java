@@ -74,10 +74,10 @@ public class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
+        BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
+        BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
       }
     });
-    this.myEditor = BaseEditorTestBody.openEditor(this.myProject, this.myModel, this.myBefore);
-    this.myStart.setupSelection(this.myEditor);
   }
 
   private CellReference findCellReference(SNode node) {

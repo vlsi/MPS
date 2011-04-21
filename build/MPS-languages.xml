@@ -161,16 +161,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest">
-    <mkdir dir="core/baseLanguage/unitTest/classes" />
+    <mkdir dir="core/baseLanguage/unitTest/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/unitTest/unitTest.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/baseLanguage/unitTest/classes" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/baseLanguage/unitTest/solutions/runtime/classes" />
+      <zipfileset dir="core/baseLanguage/unitTest/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
@@ -183,7 +180,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.lib">
-    <mkdir dir="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/lib" includes="icons/**, resources/**" prefix="module" />
@@ -196,7 +192,6 @@
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-      <zipfileset dir="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.tuples">
@@ -483,13 +478,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.test">
-    <mkdir dir="core/languageDesign/test/classes" />
+    <mkdir dir="core/languageDesign/test/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/test/test.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/test" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/test/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/test/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/test/classes" />
+      <zipfileset dir="core/languageDesign/test/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.test.runtime">

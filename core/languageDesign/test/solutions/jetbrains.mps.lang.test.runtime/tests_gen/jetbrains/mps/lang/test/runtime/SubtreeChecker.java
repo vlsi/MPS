@@ -27,7 +27,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnaly
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SubtreeChecker {
   public SubtreeChecker() {
@@ -134,7 +134,7 @@ public class SubtreeChecker {
       if (nodeToCheck != null) {
         if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))) != null) {
           for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))), "operations", true)) {
-            NodeOperation_Behavior.call_perform_1215601182156(operation, nodeToCheck);
+            BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, nodeToCheck);
           }
         }
       }
