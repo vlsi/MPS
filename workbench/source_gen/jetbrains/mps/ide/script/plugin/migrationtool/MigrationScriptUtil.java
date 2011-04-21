@@ -4,14 +4,18 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -23,6 +27,15 @@ public class MigrationScriptUtil {
   private static final Logger LOG = Logger.getLogger(MigrationScriptUtil.class);
 
   public MigrationScriptUtil() {
+  }
+
+  public static List<SNode> getMigrationScripts(Language language) {
+    SModelDescriptor modelDescr = LanguageAspect.SCRIPTS.get(language);
+    SModel model = (modelDescr == null ?
+      null :
+      modelDescr.getSModel()
+    );
+    return SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
   }
 
   public static List<BaseMigrationScript> getScriptInstances(List<SNodePointer> scriptNodePointers, IOperationContext context) {

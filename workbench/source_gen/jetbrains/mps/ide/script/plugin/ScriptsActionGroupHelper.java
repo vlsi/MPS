@@ -11,11 +11,8 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.Map;
 import java.util.HashMap;
@@ -61,12 +58,7 @@ public class ScriptsActionGroupHelper {
   public static List<SNode> getMigrationScripts(List<Language> languages) {
     List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
-      SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
-      if (scriptsModel == null) {
-        continue;
-      }
-      SModel model = scriptsModel.getSModel();
-      ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript")));
+      ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(MigrationScriptUtil.getMigrationScripts(language)));
     }
     return migrationScripts;
   }
@@ -129,12 +121,7 @@ public class ScriptsActionGroupHelper {
   }
 
   public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
-    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
-    if (scriptsModel == null) {
-      return;
-    }
-    SModel model = scriptsModel.getSModel();
-    List<SNode> migrationScripts = SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
+    List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
     if (ListSequence.fromList(migrationScripts).isEmpty()) {
       return;
     }
