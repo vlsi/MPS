@@ -18,7 +18,11 @@ public class PresentationUtil {
   }
 
   public static String getNodePresentation(EditorComponent editorComponent, SNode node) {
-    return check_6aa0xa_a0a0(check_6aa0xa_a0a0a(check_6aa0xa_a0a0a0(editorComponent, node)));
+    String text = check_6aa0xa_a0a0a(check_6aa0xa_a0a0a0(check_6aa0xa_a0a0a0a(editorComponent, node)));
+    if (text != null && text.length() > 80) {
+      return text.substring(0, 80) + "...";
+    }
+    return text;
   }
 
   public static String getVariablesTooltipPresentation(EditorComponent editorComponent, @NotNull Collection<SNode> variables, State state) {
@@ -48,21 +52,21 @@ public class PresentationUtil {
     return result;
   }
 
-  private static String check_6aa0xa_a0a0(TextBuilder checkedDotOperand) {
+  private static String check_6aa0xa_a0a0a(TextBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getText();
     }
     return null;
   }
 
-  private static TextBuilder check_6aa0xa_a0a0a(EditorCell checkedDotOperand) {
+  private static TextBuilder check_6aa0xa_a0a0a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.renderText();
     }
     return null;
   }
 
-  private static EditorCell check_6aa0xa_a0a0a0(EditorComponent checkedDotOperand, SNode node) {
+  private static EditorCell check_6aa0xa_a0a0a0a(EditorComponent checkedDotOperand, SNode node) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.findNodeCell(node);
     }

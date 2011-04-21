@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.util.List;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
+import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
@@ -102,6 +103,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   private TypeSystemStateTreeNode createInequalitiesNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Inequalities by groups", myOperationContext);
+    Set<String> nodePresentations = new HashSet<String>();
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
       Set<SNode> key = entry.getKey();
       TypeSystemStateTreeNode current;
@@ -110,8 +112,14 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       } else {
         current = new TypeSystemStateTreeNode(key.toString(), myOperationContext);
       }
+      nodePresentations.clear();
       for (InequalityBlock block : entry.getValue()) {
-        current.add(new BlockTreeNode(block, myOperationContext, myState, myEditorComponent));
+        BlockTreeNode node = new BlockTreeNode(block, myOperationContext, myState, myEditorComponent);
+        String presentation = node.toString();
+        if (!(nodePresentations.contains(presentation))) {
+          current.add(node);
+          nodePresentations.add(presentation);
+        }
       }
       if (!(key.isEmpty())) {
         result.add(current);

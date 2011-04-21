@@ -5,6 +5,7 @@ package jetbrains.mps.ide.typesystem.trace;
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -15,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
-import java.awt.Dimension;
 import jetbrains.mps.newTypesystem.state.State;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -35,6 +35,7 @@ public class TypeSystemTracePanel extends JPanel {
   public TypeSystemTracePanel() {
     this.setLayout(new BorderLayout());
     myButtons = new JPanel(new BorderLayout());
+    this.setMinimumSize(new Dimension(700, 700));
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
