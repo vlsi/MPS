@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.descriptor.Language" file="Language.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.Language" file="Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
   </dependency>
 </dependenciesRoot>

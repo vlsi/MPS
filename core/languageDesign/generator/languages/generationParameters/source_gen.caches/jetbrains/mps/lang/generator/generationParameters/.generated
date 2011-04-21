@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2">
+  <dep model="f:project#289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.project.modules/module.jetbrains.mps.lang.generator.generationParameters@project_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cizx5j451zx1zyj4ii5zf7i73iadl1l" />
+  <dep model="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" hash="-cpwotr2y4r2udfrh7kt2qvvbxmaswq2" />
+  <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" hash="-7bokqhbz9fprdpctcil1konlwsy37oj" />
+  <common hash="">
+    <dep model="f:project#289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.project.modules/module.jetbrains.mps.lang.generator.generationParameters@project_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
+    <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+

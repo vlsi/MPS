@@ -4,9 +4,9 @@ package jetbrains.mps.lang.descriptor;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
-public class map_LanguageDescriptor {
+public class Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)");
 
-  public map_LanguageDescriptor() {
+  public Language() {
   }
 }
