@@ -42,7 +42,6 @@ core/baseLanguage/tuples/languages/tuples/classes
 core/baseLanguage/runConfigurations/classes
 core/languageDesign/actions/classes
 core/languageDesign/behavior/languages/behavior/classes
-core/languageDesign/editor/classes
 core/languageDesign/findUsages/classes
 core/languageDesign/typesystem/classes
 core/languageDesign/intentions/classes

@@ -273,13 +273,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor">
-    <mkdir dir="core/languageDesign/editor/classes" />
+    <mkdir dir="core/languageDesign/editor/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/editor/editor.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/editor" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/editor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/editor/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
-      <zipfileset dir="core/languageDesign/editor/classes" />
+      <zipfileset dir="core/languageDesign/editor/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.findUsages">
@@ -617,6 +617,7 @@
       <zipfileset file="core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" prefix="module" />
       <zipfileset dir="core/debug/solutions/jetbrains.mps.debug.evaluation.ui" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug/solutions/jetbrains.mps.debug.evaluation.ui" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset file="lib/tools.jar" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.customViewers">

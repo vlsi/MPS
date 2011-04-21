@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
@@ -68,7 +68,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellKeyMapKeystroke_Behavior.call_getKeyStroke_1213877273475(SLinkOperations.getTarget(_context.getNode(), "keystroke", true));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "keystroke", true), "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"), "call_getKeyStroke_1213877273475", new Class[]{SNode.class}));
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
