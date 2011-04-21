@@ -44,7 +44,6 @@ core/languageDesign/actions/classes
 core/languageDesign/behavior/languages/behavior/classes
 core/languageDesign/findUsages/classes
 core/languageDesign/typesystem/classes
-core/languageDesign/intentions/classes
 core/languageDesign/dataFlow/classes
 core/languageDesign/pattern/classes
 core/languageDesign/quotation/classes

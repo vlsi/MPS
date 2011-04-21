@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="smodel" exported="" />
     <orderEntry type="module" module-name="structure" exported="" />
-    <orderEntry type="module" module-name="intentions" exported="" />
     <orderEntry type="module" module-name="findUsages" exported="" />
     <orderEntry type="module" module-name="core" exported="" />
     <orderEntry type="module" module-name="plugin-runtime" exported="" />

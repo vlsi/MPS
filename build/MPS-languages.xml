@@ -304,13 +304,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.intentions">
-    <mkdir dir="core/languageDesign/intentions/classes" />
+    <mkdir dir="core/languageDesign/intentions/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.intentions.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/intentions/intentions.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/intentions" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/languageDesign/intentions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/intentions/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
-      <zipfileset dir="core/languageDesign/intentions/classes" />
+      <zipfileset dir="core/languageDesign/intentions/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.dataFlow">

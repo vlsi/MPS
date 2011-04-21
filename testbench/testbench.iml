@@ -39,7 +39,6 @@
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="ideUiLanguage" />
-    <orderEntry type="module" module-name="intentions" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="packaging" />
     <orderEntry type="module" module-name="pattern" />

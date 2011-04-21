@@ -47,6 +47,7 @@
   <property name="jetbrains.mps.lang.generator.classes" value="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
   <property name="jetbrains.mps.lang.generator.generationContext.classes" value="core/languageDesign/generator/languages/generationContext/classes_gen" />
   <property name="jetbrains.mps.lang.generator.generationParameters.classes" value="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+  <property name="jetbrains.mps.lang.intentions.classes" value="core/languageDesign/intentions/classes_gen" />
   <property name="jetbrains.mps.lang.pattern.testLang.classes" value="core/languageDesign/pattern/languages/testLang/classes_gen" />
   <property name="jetbrains.mps.lang.project.classes" value="core/languageDesign/project/classes_gen" />
   <property name="jetbrains.mps.lang.script.classes" value="core/languageDesign/script/classes_gen" />
@@ -248,6 +249,9 @@
     <path path="core/languageDesign/generator/languages/generationContext/source_gen" />
     <path path="core/languageDesign/generator/languages/generationParameters/source_gen" />
   </path>
+  <path id="cycle.jetbrains.mps.lang.intentions_tjc.src">
+    <path path="core/languageDesign/intentions/source_gen" />
+  </path>
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.src">
     <path path="core/languageDesign/pattern/languages/testLang/source_gen" />
   </path>
@@ -384,7 +388,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -497,7 +501,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -610,7 +614,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -723,7 +727,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -836,7 +840,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -949,7 +953,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1062,7 +1066,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1179,7 +1183,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1296,7 +1300,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1409,7 +1413,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1522,7 +1526,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1636,7 +1640,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1752,7 +1756,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1866,7 +1870,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -1981,7 +1985,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2095,7 +2099,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2208,7 +2212,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2321,7 +2325,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2435,7 +2439,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2549,7 +2553,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2662,7 +2666,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2775,7 +2779,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -2889,7 +2893,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3010,7 +3014,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3126,7 +3130,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3245,7 +3249,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3358,7 +3362,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3471,7 +3475,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3584,7 +3588,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3697,7 +3701,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3810,7 +3814,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -3923,7 +3927,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4038,7 +4042,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4151,7 +4155,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4264,7 +4268,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4377,7 +4381,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4490,7 +4494,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4603,7 +4607,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4716,7 +4720,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4829,7 +4833,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -4944,7 +4948,119 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/languageDesign/make/classes" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes_gen" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes_gen" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="lib/ant/lib/ant-launcher.jar" />
+    <path path="lib/ant/lib/ant.jar" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
+    <path path="lib/java-diff-utils-1.2.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/buildlanguage/ant/classes" />
+    <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="plugins/mpsdevkit/classes" />
+    <path path="workbench/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.intentions_tjc.classpaths">
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/analyzers/languages/analyzers/classes_gen" />
+    <path path="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="core/baseLanguage/blTypes/classes_gen" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/classes" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/behavior/languages/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes_gen" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/editor/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
+    <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5057,7 +5173,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5170,7 +5286,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5283,7 +5399,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5396,7 +5512,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5509,7 +5625,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5622,7 +5738,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5735,7 +5851,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5848,7 +5964,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -5962,7 +6078,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6078,7 +6194,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6198,7 +6314,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6313,7 +6429,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6437,7 +6553,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6552,7 +6668,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6677,7 +6793,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6792,7 +6908,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -6907,7 +7023,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7020,7 +7136,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7133,7 +7249,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7246,7 +7362,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7360,7 +7476,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7473,7 +7589,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7586,7 +7702,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7700,7 +7816,7 @@
     <path path="core/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="core/languageDesign/generator/test/inputLang/classes_gen" />
     <path path="core/languageDesign/generator/test/outputLang/classes_gen" />
-    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/intentions/classes_gen" />
     <path path="core/languageDesign/make/classes" />
     <path path="core/languageDesign/make/languages/outlook/classes_gen" />
     <path path="core/languageDesign/pattern/classes" />
@@ -7760,7 +7876,7 @@
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.blTypes_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.javadoc_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguageInternal_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.constraints_tjc,compile.cycle.jetbrains.mps.lang.editor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.generator_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.blTypes_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.javadoc_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguageInternal_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.customViewers_tjc,compile.cycle.jetbrains.mps.debug.evaluation_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.constraints_tjc,compile.cycle.jetbrains.mps.lang.editor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.generator_tjc,compile.cycle.jetbrains.mps.lang.intentions_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.project_tjc,compile.cycle.jetbrains.mps.lang.script_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.jetbrains.mps.ypath.runtime_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="core/analyzers/languages/analyzers/source_gen" />
@@ -8327,7 +8443,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.logging_tjc">
+  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.jetbrains.mps.lang.intentions_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.runtime.classes}.tmp" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
@@ -8446,6 +8562,21 @@
     <javac classpathref="cycle.jetbrains.mps.lang.generator_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.generationParameters.classes}">
       <src>
         <path path="core/languageDesign/generator/languages/generationParameters/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.lang.intentions_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.logging_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.lang.intentions.classes}.tmp" />
+    <mkdir dir="core/languageDesign/intentions/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.intentions.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.lang.intentions_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.lang.intentions_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.lang.intentions_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.intentions.classes}">
+      <src>
+        <path path="core/languageDesign/intentions/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -8893,6 +9024,7 @@
     <delete dir="${jetbrains.mps.lang.generator.classes}" />
     <delete dir="${jetbrains.mps.lang.generator.generationContext.classes}" />
     <delete dir="${jetbrains.mps.lang.generator.generationParameters.classes}" />
+    <delete dir="${jetbrains.mps.lang.intentions.classes}" />
     <delete dir="${jetbrains.mps.lang.pattern.testLang.classes}" />
     <delete dir="${jetbrains.mps.lang.project.classes}" />
     <delete dir="${jetbrains.mps.lang.script.classes}" />
