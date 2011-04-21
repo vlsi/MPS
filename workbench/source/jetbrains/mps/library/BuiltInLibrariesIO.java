@@ -20,7 +20,6 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -29,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
