@@ -1,56 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.structure.MigrationScript" file="MigrationScript.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" file="MigrationScriptPart_Instance.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" file="MigrationScriptPart_Instance_Predicate.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" file="MigrationScriptPart_Instance_Updater.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" file="MigrationScriptPart_node.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.script.structure.Script_Language" file="Script_Language.java">
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

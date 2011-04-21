@@ -13,7 +13,6 @@
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="typesystem" exported="" />
-    <orderEntry type="module" module-name="script" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="smodel" exported="" />
     <orderEntry type="module" module-name="structure" exported="" />

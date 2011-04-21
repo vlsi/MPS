@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.script" uuid="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.script" uuid="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.script" />
   </models>
@@ -52,16 +52,6 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
-  <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>

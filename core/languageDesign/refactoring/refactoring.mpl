@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.refactoring" uuid="3ecd7c84-cde3-45de-886c-135ecc69b742" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="true">
+<language namespace="jetbrains.mps.lang.refactoring" uuid="3ecd7c84-cde3-45de-886c-135ecc69b742" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="true">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.refactoring" />
   </models>
@@ -59,16 +59,6 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
-  <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

@@ -38,7 +38,6 @@
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="distrib" />
-    <orderEntry type="module" module-name="findUsages" />
     <orderEntry type="module" module-name="ideUiLanguage" />
     <orderEntry type="module" module-name="intentions" />
     <orderEntry type="module" module-name="MPSSupport" />
@@ -48,7 +47,6 @@
     <orderEntry type="module" module-name="quotation" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="runConfigurations" />
-    <orderEntry type="module" module-name="script" />
     <orderEntry type="module" module-name="sharedConcepts" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="structure" />
