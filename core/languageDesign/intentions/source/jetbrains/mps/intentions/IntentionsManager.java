@@ -318,27 +318,24 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void addMigrationsFromLanguage(Language language) {
-    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
-    if (scriptsModel == null) return;
+    List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
 
-    List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
-
-    Map<BaseMigrationScript, MigrationScript> scripts = new HashMap<BaseMigrationScript, MigrationScript>();
-    for (MigrationScript migrationScript : migrationScripts) {
+    Map<BaseMigrationScript, SNode> scripts = new HashMap<BaseMigrationScript, SNode>();
+    for (SNode migrationScript : migrationScripts) {
       // IOperationContext operationContext = new ModuleContext(language, ...);
       //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
-      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null, migrationScript.getNode());
+      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null, migrationScript);
       if (script == null) continue;
       scripts.put(script, migrationScript);
     }
 
     for (BaseMigrationScript script : scripts.keySet()) {
-      MigrationScript migrationScript = scripts.get(script);
+      SNode migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
         if (refactoring.isShowAsIntention()) {
-          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
+          Intention intention = new MigrationRefactoringAdapter(refactoring, (MigrationScript)migrationScript.getAdapter());
           ModuleReference moduleRef = language.getModuleReference();
-          SNodePointer node = new SNodePointer(migrationScript.getNode());
+          SNodePointer node = new SNodePointer(migrationScript);
           IntentionsManager.getInstance().addIntention(intention, moduleRef, node);
         }
       }
