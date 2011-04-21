@@ -17,7 +17,7 @@ package jetbrains.mps.ide.messages;
 
 import org.junit.Test;
 import org.junit.Assert;
-import jetbrains.mps.ide.messages.MessagesViewTool.FastListModel;
+import jetbrains.mps.ide.messages.MessageList.FastListModel;
 
 public class MessageViewListModelTest {
   private FastListModel myModel = new FastListModel(2);

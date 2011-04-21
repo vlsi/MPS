@@ -38,8 +38,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.IMessage;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
@@ -67,11 +67,12 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
     String scrName = ((cleanMake ?
       "Rebuild" :
       "Make"
     ));
+    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       if (cleanMake) {
@@ -221,14 +222,20 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private class MessageHandler implements IMessageHandler {
-    public MessageHandler() {
+    private String name;
+    private MessagesViewTool mvt;
+
+    public MessageHandler(String name) {
+      this.name = name;
+      this.mvt = context.getProject().getComponent(MessagesViewTool.class);
     }
 
     public void clear() {
+      this.mvt.clear(name);
     }
 
     public void handle(IMessage message) {
-      context.getProject().getComponent(MessagesViewTool.class).add(message);
+      this.mvt.add(message, name);
     }
   }
 }

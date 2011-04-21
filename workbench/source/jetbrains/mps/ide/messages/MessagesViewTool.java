@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.ide.messages;
 
-import com.intellij.ide.BrowserUtil;
-import com.intellij.ide.CopyPasteManagerEx;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
@@ -26,42 +24,20 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.MessageView;
-import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
-import jetbrains.mps.ide.blame.dialog.BlameDialog;
-import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
-import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.*;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @State(
   name = "MessagesViewTool",
@@ -73,50 +49,56 @@ import java.util.concurrent.atomic.AtomicInteger;
   }
 )
 public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MyState>, INavigateableTool {
-  private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
-  private static final int MAX_MESSAGES_SIZE = 30000;
+  /*package*/ static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
+  private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
-  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON) {
-    protected boolean isEnabled() {
-      return hasWarnings();
-    }
-  };
-  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON) {
-    protected boolean isEnabled() {
-      return hasInfo();
-    }
-  };
-  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON) {
-    protected boolean isEnabled() {
-      return hasHintObjects();
-    }
-  };
-
-  private Queue<IMessage> myMessages = new LinkedList<IMessage>();
-  private int myInfos;
-  private int myWarnings;
-  private int myErrors;
-  private int myHintObjects;
-
-  private FastListModel myModel = new FastListModel(MAX_MESSAGES_SIZE);
-  private JPanel myComponent = new JPanel();
-  private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
-  private ActionToolbar myToolbar;
-  private AtomicInteger myMessagesInProgress = new AtomicInteger();
-  private MessageToolSearchPanel mySearchPanel = null;
-
   private Project myProject;
+  private Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
+  private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
 
   public MessagesViewTool(Project project) {
     myProject = project;
+    addList(DEFAULT_LIST, new DefaultMessageList(project));
   }
 
   public Project getProject() {
     return myProject;
   }
 
-  //------------COMPONENT STUFF---------------
+  public void openToolLater(final boolean setActive) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        getDefaultList().show(setActive);
+      }
+    });
+  }
+
+  public void clear() {
+     getDefaultList().clear();
+  }
+
+  public void add(final IMessage message) {
+     getDefaultList().add(message);
+  }
+
+  public void clear(String listName) {
+    MessageList list = getAvailableList(listName, false);
+    if (list != null) {
+      list.clear();
+    }
+  }
+
+  public void add(final IMessage message, String listName) {
+    final MessageList list = getAvailableList(listName, true);
+    list.add(message);
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        list.show(false);
+      }
+    });
+  }
 
   @NotNull
   public String getComponentName() {
@@ -124,16 +106,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void initComponent() {
-    final MessageView service = MessageView.SERVICE.getInstance(myProject);
-    service.runWhenInitialized(new Runnable() {
-      public void run() {
-        initUI();
-        Content content = new ContentFactoryImpl().createContent(myComponent, "Messages", true);
-        content.setCloseable(false);
-        content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-        service.getContentManager().addContent(content);
-      }
-    });
+    getDefaultList().createContent();
   }
 
   public void disposeComponent() {
@@ -151,487 +124,188 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     Logger.removeLoggingHandler(myLoggingHandler);
   }
 
-  //------------UI STUFF---------------
-
-  private void initUI() {
-    myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    myList.setCellRenderer(new MessagesListCellRenderer());
-    myComponent.setLayout(new BorderLayout());
-
-    final JPanel panel = new JPanel(new BorderLayout());
-    panel.add(new JPanel(), BorderLayout.CENTER);
-
-    final DefaultActionGroup group = ActionUtils.groupFromActions(
-      myWarningsAction,
-      myInfoAction,
-      myAutoscrollToSourceAction
-    );
-
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
-
-    myComponent.add(panel, BorderLayout.WEST);
-    final JScrollPane scrollPane = new JScrollPane(myList);
-    myComponent.add(scrollPane, BorderLayout.CENTER);
-
-    myComponent.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (mySearchPanel == null) {
-          mySearchPanel = new MessageToolSearchPanel(myList, getProject());
-          myComponent.add(mySearchPanel, BorderLayout.NORTH);
-        }
-        mySearchPanel.activate();
-      }
-    }, KeyStroke.getKeyStroke("ctrl F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-
-    myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
-
-    myList.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
-      }
-    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    myList.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
-      }
-    }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    myList.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        showHelpForCurrentMessage();
-      }
-    }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    myList.addMouseWheelListener(new MouseWheelListener() {
-      public void mouseWheelMoved(MouseWheelEvent e) {
-        myList.setAutoscrolls(false);
-        scrollPane.dispatchEvent(e);
-      }
-    });
-
-    myList.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent e) {
-        boolean oneClickOpen = e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null);
-        boolean twoClickOpen = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
-        if (oneClickOpen || twoClickOpen) {
-          openCurrentMessageNodeIfPossible();
-        }
-      }
-
-      public void mousePressed(MouseEvent e) {
-        //todo select element under mouse
-        if (e.isPopupTrigger()) {
-          showPopupMenu(e);
-        }
-      }
-
-      public void mouseReleased(MouseEvent e) {
-        if (e.isPopupTrigger()) {
-          showPopupMenu(e);
-        }
-      }
-    });
-
-    myList.addMouseMotionListener(new MouseMotionListener() {
-      public void mouseDragged(MouseEvent e) {
-      }
-
-      public void mouseMoved(MouseEvent e) {
-        int index = myList.locationToIndex(e.getPoint());
-
-        Message item = null;
-        if (index != -1) {
-          item = (Message) myModel.getElementAt(index);
-        }
-
-        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
-          myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        } else {
-          myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-        }
-      }
-    });
-  }
-
-  //------------MESSAGES STUFF---------------
-
-  public boolean hasErrors() {
-    return myErrors > 0;
-  }
-
-  public boolean hasWarnings() {
-    return myWarnings > 0;
-  }
-
-  public boolean hasInfo() {
-    return myInfos > 0;
-  }
-
-  public boolean hasHintObjects() {
-    return myHintObjects > 0;
-  }
-
-  private void showHelpForCurrentMessage() {
-    String helpURL = getHelpUrlForCurrentMessage();
-    if (helpURL == null) return;
-    BrowserUtil.launchBrowser(helpURL);
-  }
-
-  private String getHelpUrlForCurrentMessage() {
-    if (myList.getSelectedValues().length != 1) return null;
-
-    Message message = (Message) (myList.getSelectedValue());
-    return message.getHelpUrl();
-  }
-
-  private void showPopupMenu(MouseEvent evt) {
-    if (myList.getSelectedValue() == null) return;
-
-    DefaultActionGroup group = createActionGroup();
-
-    JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
-    menu.show(myList, evt.getX(), evt.getY());
-  }
-
-  private DefaultActionGroup createActionGroup() {
-    DefaultActionGroup group = new DefaultActionGroup();
-
-    if (myList.getSelectedIndices().length != 0) {
-      group.add(new BaseAction("Copy Text") {
-        {
-          setExecuteOutsideCommand(true);
-        }
-
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          StringBuilder sb = new StringBuilder();
-          for (Object o : myList.getSelectedValues()) {
-            sb.append(((Message) o).getText());
-            sb.append("\n");
-          }
-          CopyPasteManagerEx.getInstance().setContents(new StringSelection(sb.toString()));
-        }
-      });
-    }
-
-    group.addSeparator();
-
-    group.add(new BaseAction("Show Help for This Message") {
-      @Override
-      protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-        boolean enabled = getHelpUrlForCurrentMessage() != null;
-        setEnabledState(e.getPresentation(), enabled);
-      }
-
-      @Override
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        showHelpForCurrentMessage();
-      }
-    });
-
-    group.addSeparator();
-
-    if (myList.getSelectedIndices().length >= 1) {
-      final Object[] messages = myList.getSelectedValues();
-      boolean containsError = false;
-      for (Object message : messages) {
-        if (((Message) message).getKind() == MessageKind.ERROR) {
-          containsError = true;
-          break;
-        }
-      }
-      if (containsError) {
-        group.addSeparator();
-        group.add(new BaseAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
-          {
-            setExecuteOutsideCommand(true);
-          }
-
-          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-            submitToTracker(messages);
-          }
-        });
-      }
-    }
-    if (myList.getSelectedIndices().length == 1) {
-      Throwable exc = null;
-      for (Object message : myList.getSelectedValues()) {
-        exc = ((Message) message).getException();
-      }
-      if (exc != null) {
-        final Throwable toShow = exc;
-        group.add(new BaseAction("Show Exception") {
-          {
-            setExecuteOutsideCommand(true);
-          }
-
-          protected void doExecute(AnActionEvent e, Map<String, Object> params) {
-            showException(toShow);
-          }
-        });
-      }
-    }
-    group.addSeparator();
-
-    group.add(new BaseAction("Clear") {
-      {
-        setExecuteOutsideCommand(true);
-      }
-
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        clear();
-      }
-    });
-
-    return group;
-  }
-
-  private void showException(Throwable toShow) {
-    JFrame frame = WindowManager.getInstance().getFrame(getProject());
-    StringWriter writer = new StringWriter();
-    toShow.printStackTrace(new PrintWriter(writer));
-    StringSelection contents = new StringSelection(writer.toString());
-    CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-    dialog.showDialog();
-  }
-
-  private void submitToTracker(Object[] msgs) {
-    JFrame frame = WindowManager.getInstance().getFrame(getProject());
-    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
-    StringBuilder description = new StringBuilder();
-    boolean first = true;
-    for (Object msg : msgs) {
-      if (!(msg instanceof Message)) continue;
-      Message message = (Message) msg;
-      if (first) {
-        dialog.setIssueTitle(message.getText());
-        first = false;
-      } else {
-        description.append(message.getText()).append('\n');
-      }
-      dialog.addEx(message.getException());
-    }
-    dialog.setDescription(description.toString());
-    dialog.showDialog();
-
-    if (!dialog.isCancelled()) {
-      Response response = dialog.getResult();
-      String message = response.getMessage();
-      if (response.isSuccess()) {
-        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
-      }
-    }
-  }
-
-  private void openCurrentMessageNodeIfPossible() {
-    final Message selectedMessage = (Message) myList.getSelectedValue();
-    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
-
-    /* temp hack: write action instead of read, TODO remove lock*/
-    final Project project = getProject();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
-      }
-    });
-  }
-
-  private boolean isVisible(IMessage m) {
-    switch (m.getKind()) {
-      case ERROR:
-        return true;
-      case WARNING:
-        return myWarningsAction.isSelected(null);
-      case INFORMATION:
-        return myInfoAction.isSelected(null);
-    }
-    return true;
-  }
-
-  private void rebuildModel() {
-    myModel.clear();
-    myList.setFixedCellWidth(myList.getWidth());
-    List<IMessage> messagesToAdd = new ArrayList<IMessage>();
-    int width = 0;
-    for (IMessage m : myMessages) {
-      if (isVisible(m)) {
-        width = Math.max(width, getMessageWidth(m));
-        messagesToAdd.add(m);
-      }
-    }
-    myList.setFixedCellWidth(width);
-
-    for (IMessage m : messagesToAdd) {
-      myModel.add(m);
-    }
-  }
-
-  public void clear() {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myModel.clear();
-        myMessages.clear();
-        myErrors = 0;
-        myWarnings = 0;
-        myInfos = 0;
-        myHintObjects = 0;
-        myList.setFixedCellWidth(myList.getWidth());
-        updateHeader();
-        updateActions();
-      }
-    });
-  }
-
-  public void resetAutoscrollOption() {
-    myList.setAutoscrolls(true);
-  }
-
-  public void add(final IMessage message) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
-
-    myMessagesInProgress.incrementAndGet();
-
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        int messages = myMessagesInProgress.decrementAndGet();
-
-        if (myMessages.size() >= MAX_MESSAGES_SIZE) {
-          IMessage toRemove = myMessages.remove();
-          updateMessageCounters(message, -1);
-          if (isVisible(toRemove)) {
-            myModel.removeFirst();
-          }
-        }
-
-        if (isVisible(message)) {
-          myModel.add(message);
-          int index = myModel.getSize() - 1;
-          if (myList.getAutoscrolls()) {
-            myList.getSelectionModel().setSelectionInterval(index, index);
-          }
-          if (messages == 0) {
-            myList.ensureIndexIsVisible(index);
-          }
-        }
-
-        myMessages.add(message);
-        updateMessageCounters(message, 1);
-
-        int width = getMessageWidth(message);
-        if (width > myList.getFixedCellWidth()) {
-          myList.setFixedCellWidth(width);
-        }
-
-        updateHeader();
-        updateActions();
-      }
-
-      private void updateMessageCounters(IMessage m, int delta) {
-        if (m.getKind() == MessageKind.ERROR) {
-          myErrors += delta;
-        }
-        if (m.getKind() == MessageKind.WARNING) {
-          myWarnings += delta;
-        }
-        if (m.getKind() == MessageKind.INFORMATION) {
-          myInfos += delta;
-        }
-        if (m.getHintObject() != null) {
-          myHintObjects += delta;
-        }
-      }
-    });
-  }
-
-  private void updateHeader() {
-    ToolWindow window = getToolWindow();
-    if (window == null) return;
-
-    if (hasErrors() || hasWarnings() || hasInfo()) {
-      window.setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
-        + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
-        + NameUtil.formatNumericalString(myInfos, "info"));
-    } else {
-      window.setTitle("");
-    }
-  }
-
-  private void updateActions() {
-    if (myToolbar == null) return;
-    myToolbar.updateActionsImmediately();
-  }
-
-  private int getMessageWidth(IMessage message) {
-    Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
-    return renderer.getPreferredSize().width;
-  }
-
   public MyState getState() {
-    return new MyState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
+    return getDefaultList().getState();
   }
 
   public void loadState(MyState state) {
-    myWarningsAction.setSelected(null, state.isWarnings());
-    myInfoAction.setSelected(null, state.isInfo());
-    myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
-  }
-
-  public int getPriority() {
-    return 1;
+    getDefaultList().loadState(state);
   }
 
   public ToolWindow getToolWindow() {
     return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
   }
 
+  public MessageView getMessagesService() {
+    return SERVICE.getInstance(myProject);
+  }
+
   public INavigator getCurrentNavigateableView() {
-    return new INavigator() {
-      public void goToNext() {
-        int i = Math.max(0, myList.getSelectedIndex() + 1);
-
-        for (; i < myModel.getSize(); i++) {
-          if (tryNavigate(i)) return;
-        }
-      }
-
-      public void goToPrevious() {
-        int i = Math.min(myModel.getSize() - 1, myList.getSelectedIndex() - 1);
-
-        for (; i >= 0; i--) {
-          if (tryNavigate(i)) return;
-        }
-      }
-
-      public boolean tryNavigate(int index) {
-        Message msg = ((Message) myModel.getElementAt(index));
-        if (msg.getHintObject() == null) return false;
-        myList.setSelectedIndex(index);
-        myList.ensureIndexIsVisible(index);
-        openCurrentMessageNodeIfPossible();
-        return true;
-      }
-    };
+    return getSelectedList().createNavigator();
   }
 
-  public void openToolLater(final boolean setActive) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        openTool(setActive);
-      }
-    });
+  /** What's this? */
+  public int getPriority() {
+    return 1;
   }
 
-  public void openTool(boolean setActive) {
-    ToolWindow window = getToolWindow();
-    if (!window.isAvailable()) window.setAvailable(true, null);
-    if (!window.isVisible()) window.show(null);
-    if (setActive) window.activate(null);
+  /** What's this? */
+  public void resetAutoscrollOption() {
+    getDefaultList().resetAutoscrollOption();
+  }
+
+  private synchronized void addList(String name, MessageList list) {
+    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
+    if (!myMessageLists.containsKey(name)) {
+      myMessageLists.put(name, lists);
+    }
+    lists.add(list);
+  }
+
+  private synchronized MessageList getAvailableList(String name, boolean createIfNotFound) {
+    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
+    if (!myMessageLists.containsKey(name)) {
+      myMessageLists.put(name, lists);
+    }
+    for (int i=lists.size()-1; i>=0; --i) {
+      MessageList messageList = lists.get(i);
+      Content content = getMessagesService().getContentManager().getContent(messageList.getComponent());
+      if (content == null || !content.isPinned()) {
+        return messageList;
+      }
+    }
+    if (createIfNotFound) {
+      MessageList list = createList(name);
+      lists.add(list);
+      return list;
+    }
+    return null;
+  }
+
+  private synchronized MessageList getSingletonList(String name) {
+    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
+    if (lists == null) return null;
+    assert lists.size() == 1;
+    return lists.get(0);
+  }
+
+  private synchronized MessageList createList(String name) {
+    AuxMessageList list = new AuxMessageList(myProject, name);
+    list.createContent();
+    return list;
+  }
+
+  private synchronized void removeList(MessageList list, String name) {
+    List<MessageList> lists = myMessageLists.get(name);
+    if (lists != null) {
+      lists.remove(list);
+    }
+  }
+
+  private MessageList getDefaultList() {
+    return getSingletonList(DEFAULT_LIST);
+  }
+
+  private MessageList getSelectedList () {
+    Content selectedContent = getMessagesService().getContentManager().getSelectedContent();
+    return myContents.containsKey(selectedContent) ? myContents.get(selectedContent) : getDefaultList();
+  }
+
+  private class DefaultMessageList extends MessageList {
+
+    public DefaultMessageList(Project project) {
+      super(project);
+    }
+
+    @Override
+    public void createContent() {
+      final MessageView service = getMessagesService();
+      service.runWhenInitialized(new Runnable() {
+        public void run() {
+          initUI();
+          Content content = service.getContentManager().getFactory().createContent(getComponent(), "Messages", true);
+          myContents.put (content, DefaultMessageList.this);
+
+          content.setCloseable(false);
+          content.setPinned(false);
+          content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+          service.getContentManager().addContent(content);
+        }
+      });
+    }
+
+    @Override
+    protected void setDisplayInfo(final String name) {
+      final MessageView service = getMessagesService();
+      service.runWhenInitialized(new Runnable() {
+        public void run() {
+          Content content = service.getContentManager().getContent(getComponent());
+          if (content != null) {
+            content.setDisplayName(name);
+          }
+        }
+      });
+    }
+  }
+
+  private class AuxMessageList extends MessageList {
+
+    private String myName;
+
+    public AuxMessageList(Project project, String name) {
+      super(project);
+      myName = name;
+    }
+
+    public String getName () {
+      return myName;
+    }
+
+    @Override
+    public void createContent() {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+
+          final MessageView service = getMessagesService();
+          service.runWhenInitialized(new Runnable() {
+            public void run() {
+              initUI();
+              final Content content = service.getContentManager().getFactory().createContent(getComponent(), myName, true);
+              myContents.put(content, AuxMessageList.this);
+
+              content.setCloseable(true);
+              content.setDisposer(new Disposable() {
+                public void dispose() {
+                  AuxMessageList list = (AuxMessageList) myContents.remove(content);
+                  if (list != null) {
+                    removeList(list, list.getName());
+                  }
+                }
+              });
+              content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+              service.getContentManager().addContent(content);
+            }
+          });
+
+        }
+      });
+    }
+
+    @Override
+    protected void setDisplayInfo(final String name) {
+      final MessageView service = getMessagesService();
+
+      service.runWhenInitialized(new Runnable() {
+        @Override
+        public void run() {
+          Content content = service.getContentManager().getContent(getComponent());
+          if (content != null) {
+            content.setDisplayName((name !=null && name.length()>0) ? myName + ": " + name : myName);
+          }
+        }
+      });
+
+    }
   }
 
 
@@ -671,91 +345,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     public void setAutoscrollToSource(boolean autoscrollToSource) {
       myAutoscrollToSource = autoscrollToSource;
-    }
-  }
-
-  private class MyToggleAction extends ToggleAction {
-    private boolean mySelected;
-    private Icon myIcon;
-
-    public MyToggleAction(String tooltip, Icon icon) {
-      super("", tooltip, icon);
-      myIcon = icon;
-      mySelected = true;
-    }
-
-    public boolean isSelected(AnActionEvent e) {
-      return mySelected;
-    }
-
-    public void setSelected(AnActionEvent e, boolean state) {
-      mySelected = state;
-      rebuildModel();
-    }
-
-    public void update(AnActionEvent e) {
-      super.update(e);
-
-      boolean enabled = isEnabled();
-      Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
-      if (icon == null) {
-        icon = myIcon;
-      }
-      e.getPresentation().setIcon(icon);
-    }
-
-    protected boolean isEnabled() {
-      return true;
-    }
-  }
-
-  static class FastListModel extends AbstractListModel {
-    private int myStart;
-    private int myEnd;
-    private int mySize;
-    private Object[] myItems;
-
-    FastListModel(int size) {
-      myItems = new Object[size];
-      myStart = 0;
-      myEnd = 0;
-    }
-
-    public int getSize() {
-      return mySize;
-    }
-
-    public Object getElementAt(int index) {
-      return myItems[(myStart + index) % myItems.length];
-    }
-
-    public void add(Object item) {
-      if (mySize == myItems.length) throw new RuntimeException("Buffer overflow");
-      myItems[myEnd] = item;
-      myEnd = (myEnd + 1) % myItems.length;
-      mySize++;
-      fireIntervalAdded(this, mySize - 1, mySize - 1);
-    }
-
-    public void removeFirst() {
-      if (mySize == 0) {
-        throw new RuntimeException("Buffer underflow");
-      }
-      myItems[myStart] = null;
-      myStart = (myStart + 1) % myItems.length;
-      mySize--;
-      fireIntervalRemoved(this, 0, 0);
-    }
-
-    public void clear() {
-      myStart = 0;
-      myEnd = 0;
-      int oldSize = mySize;
-      mySize = 0;
-      Arrays.fill(myItems, null);
-      if (oldSize > 0) {
-        fireIntervalRemoved(this, 0, oldSize - 1);
-      }
     }
   }
 }
