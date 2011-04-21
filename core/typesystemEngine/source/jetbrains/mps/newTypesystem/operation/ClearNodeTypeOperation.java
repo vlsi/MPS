@@ -21,18 +21,11 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 1/31/11
- * Time: 1:57 PM
- */
 public class ClearNodeTypeOperation extends AbstractOperation {
   private SNode myNode;
   private SNode myType;
   private List<IErrorReporter> myErrors;
 
-  @Override
   public String getPresentationKind() {
     return PresentationKind.TYPE_REMOVED;
   }
@@ -44,19 +37,16 @@ public class ClearNodeTypeOperation extends AbstractOperation {
     myErrors = errors;
   }
 
-  @Override
   protected void doUndo(State state) {
     state.getNodeMaps().assignNodeType(myNode, myType);
     state.getNodeMaps().addNodeErrors(myNode, myErrors);
   }
 
-  @Override
   protected void doRedo(State state) {
     state.getNodeMaps().removeNodeType(myNode);
     state.getNodeMaps().removeNodeErrors(myNode);
   }
 
-  @Override
   public String getPresentation() {
     return "Type and errors cleared for node: " + myNode;
   }

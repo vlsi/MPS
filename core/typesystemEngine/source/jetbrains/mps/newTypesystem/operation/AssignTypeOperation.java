@@ -23,12 +23,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
- */
 public class AssignTypeOperation extends AbstractOperation {
   final SNode myNode;
   final SNode myType;
@@ -40,27 +34,22 @@ public class AssignTypeOperation extends AbstractOperation {
     myEquationInfo = info;
   }
 
-  @Override
   public void doUndo(State state) {
     state.getNodeMaps().removeNodeType(myNode);
   }
 
-  @Override
   public void doRedo(State state) {
     state.getNodeMaps().assignNodeType(myNode, myType);
   }
 
-  @Override
   public String getPresentation() {
     return "Type assigned (" + myNode + " : " + myType + ")";
   }
 
-  @Override
   public String getPresentationKind() {
     return PresentationKind.TYPE_ASSIGNED;
   }
 
-  @Override
   public List<SNode> getVariables() {
     LinkedList<SNode> nodes = new LinkedList<SNode>();
     if (TypesUtil.isVariable(myType)) {

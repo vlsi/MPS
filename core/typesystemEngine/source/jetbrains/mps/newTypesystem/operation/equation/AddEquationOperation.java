@@ -31,22 +31,18 @@ import java.util.List;
  * Time: 12:54:50 PM
  */
 public class AddEquationOperation extends AbstractEquationOperation {
-
   public AddEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     super(child, parent, source, info);
   }
 
-  @Override
   public void doUndo(State state) {
     state.getEquations().remove(myChild);
   }
 
-  @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
     state.getEquations().add(myChild, myParent);
   }
 
-  @Override
   public void execute(State state) {
     super.execute(state);
     state.substitute(myChild, myParent);
@@ -60,13 +56,10 @@ public class AddEquationOperation extends AbstractEquationOperation {
     return myParent;
   }
 
-  @Override
   public String getPresentation() {
     return "Equation added " + getShortPresentation();
   }
 
-
-  @Override
   public String getPresentationKind() {
     return PresentationKind.EQUATION_ADDED;
   }

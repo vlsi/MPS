@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.operation;
 
 public class PresentationKind {
-
   public static final String EQUATION_ADDED = "equation_added";
   public static final String RELATION_ADDED = "relation_added";
   public static final String RELATION_REMOVED = "relation_removed";

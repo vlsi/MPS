@@ -15,26 +15,16 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 11:53:12 AM
- */
 @Deprecated
 public class CheckAllOperation extends AbstractOperation {
-
-  @Override
   public String getPresentation() {
     return "Difference";
   }
 
-  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
 
   }
 
-  @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
 
   }

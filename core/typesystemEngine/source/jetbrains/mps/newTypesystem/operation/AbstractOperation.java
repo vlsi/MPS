@@ -18,8 +18,8 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,11 +42,7 @@ public abstract class AbstractOperation {
   }
 
   public List<AbstractOperation> getConsequences() {
-    return myConsequences;
-  }
-
-  public void removeConsequence(AbstractOperation op) {
-    myConsequences.remove(op);
+    return myConsequences == null ? Collections.<AbstractOperation>emptyList() : Collections.unmodifiableList(myConsequences);
   }
 
   protected abstract void doUndo(State state);
@@ -64,7 +60,6 @@ public abstract class AbstractOperation {
 
   public void redo(final State state) {
     state.executeStateChangeAction(new Runnable() {
-      @Override
       public void run() {
         doRedo(state);
       }
@@ -94,24 +89,8 @@ public abstract class AbstractOperation {
     return myEquationInfo;
   }
 
-  public Pair<String, String> getRuleModelAndId() {
-    if (myEquationInfo == null) {
-      return null;
-    }
-    return new Pair<String, String>(myEquationInfo.getRuleId(), myEquationInfo.getRuleModel());
-  }
-
   public List<SNode> getVariables() {
     return null;
-  }
-
-  public void playRecursively(State state) {
-    redo(state);
-    if (myConsequences != null) {
-      for (AbstractOperation child : myConsequences) {
-        child.playRecursively(state);
-      }
-    }
   }
 
   public boolean hasEffect() {

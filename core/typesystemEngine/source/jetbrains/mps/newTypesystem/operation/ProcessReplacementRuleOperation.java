@@ -33,7 +33,6 @@ public class ProcessReplacementRuleOperation extends AddRemarkOperation {
     mySuperType = superType;
   }
 
-  @Override
   public String getPresentation() {
     return mySubType + " is subtype of " + mySuperType + " by replacement rule";
   }

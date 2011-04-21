@@ -84,7 +84,7 @@ public class State {
       myThread = Thread.currentThread();
     }
     if (Thread.currentThread() != myThread) {
-      System.out.println(myThread.getName()+" "+Thread.currentThread().getName());
+      System.out.println(myThread.getName() + " " + Thread.currentThread().getName());
     }
   }
 
@@ -148,7 +148,7 @@ public class State {
   }
 
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
-    try{
+    try {
       executeOperation(new ApplyRuleOperation(node, rule, status));
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
@@ -209,8 +209,8 @@ public class State {
   }
 
   public void collectVarsExecuteIfNecessary(Block block) {
-    Set<Pair<SNode,ConditionKind>> initialInputs = block.getInitialInputs();
-    for (Pair<SNode,ConditionKind> input : initialInputs) {
+    Set<Pair<SNode, ConditionKind>> initialInputs = block.getInitialInputs();
+    for (Pair<SNode, ConditionKind> input : initialInputs) {
       SNode type = input.first;
       ConditionKind conditionKind = input.second;
       for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
@@ -244,7 +244,7 @@ public class State {
   }
 
   public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
-     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
+    addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
 
   public NodeMaps getNodeMaps() {
@@ -295,22 +295,10 @@ public class State {
     }
   }
 
-  public AbstractOperation getLastOperation() {
-    AbstractOperation operation = myOperationStack.peek();
-    List<AbstractOperation> consequences = operation.getConsequences();
-    while (!(consequences == null || consequences.isEmpty())) {
-      operation = consequences.get(consequences.size()-1);
-      consequences = operation.getConsequences();
-    }
-    return operation;
-  }
-
   private void visit(AbstractOperation operation, List<AbstractOperation> result) {
     result.add(operation);
-    if (operation.getConsequences() != null) {
-      for (AbstractOperation child : operation.getConsequences()) {
-        visit(child, result);
-      }
+    for (AbstractOperation child : operation.getConsequences()) {
+      visit(child, result);
     }
   }
 
@@ -418,14 +406,10 @@ public class State {
     }));
   }
 
-
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
     firstOp.redo(this);
     if (firstOp.equals(anchor)) {
       return true;
-    }
-    if (firstOp.getConsequences() == null) {
-      return false;
     }
     for (AbstractOperation child : firstOp.getConsequences()) {
       if (executeOperationsBeforeAnchor(child, anchor)) {
@@ -453,19 +437,8 @@ public class State {
 
   public Set<Block> getBlocks(BlockKind kind) {
     Set<Block> result = new HashSet<Block>();
-    for (Block block: myBlocks) {
+    for (Block block : myBlocks) {
       if (block.getBlockKind() == kind) {
-        result.add(block);
-      }
-    }
-    return result;
-  }
-
-  public Set<Block> getCheckingInequalities() {
-    Set<Block> result = new HashSet<Block>();
-    Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
-    for (Block block: blocks) {
-      if (((RelationBlock)block).isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
         result.add(block);
       }
     }
@@ -474,7 +447,7 @@ public class State {
 
   private void executeOperationsFromTo(int from, int to) {
     assert from < to;
-    for (int i = from+1; i <= to; i++) {
+    for (int i = from + 1; i <= to; i++) {
       myOperationsAsList.get(i).redo(this);
     }
   }
@@ -498,6 +471,4 @@ public class State {
       executeOperationsFromTo(fromIndex, toIndex);
     }
   }
-
-  
 }

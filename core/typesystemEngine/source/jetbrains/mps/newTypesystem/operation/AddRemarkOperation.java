@@ -17,13 +17,6 @@ package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.state.State;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 1:42:37 PM
- */
-
 public class AddRemarkOperation extends AbstractOperation {
   private final String myString;
   private Runnable myAction = null;
@@ -42,17 +35,15 @@ public class AddRemarkOperation extends AbstractOperation {
     myString = "";
   }
 
-  @Override
   public String getPresentation() {
     return myString;
   }
 
-  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
   }
 
-  @Override
   public void doRedo(State state) {
+
   }
 
   public void execute(State state) {
@@ -62,7 +53,6 @@ public class AddRemarkOperation extends AbstractOperation {
     }
   }
 
-  @Override
   public boolean hasEffect() {
     return false;
   }

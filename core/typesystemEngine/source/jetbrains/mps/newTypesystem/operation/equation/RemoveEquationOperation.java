@@ -25,22 +25,18 @@ import jetbrains.mps.smodel.SNode;
  * Time: 1:17:49 PM
  */
 public class RemoveEquationOperation extends AbstractEquationOperation {
-
   public RemoveEquationOperation(SNode child, SNode parent, SNode source) {
     super(child, parent, source, null);
   }
 
-  @Override
   public void doUndo(State state) {
     state.getEquations().add(myChild, myParent);
   }
 
-  @Override
   public void doRedo(State state) {
     state.getEquations().remove(myChild);
   }
 
-  @Override
   public String getPresentation() {
     return "Equation removed " + getShortPresentation();
   }

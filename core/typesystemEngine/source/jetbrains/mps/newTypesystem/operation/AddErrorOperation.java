@@ -20,12 +20,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 12:41:21 PM
- */
 public class AddErrorOperation extends AbstractOperation {
   private final SNode myNode;
   private final IErrorReporter myError;
@@ -37,22 +31,18 @@ public class AddErrorOperation extends AbstractOperation {
     myEquationInfo = info;
   }
 
-  @Override
   public String getPresentation() {
     return "Error : " + myError.reportError();
   }
 
-  @Override
   public void doUndo(State state) {
     state.getNodeMaps().removeError(myNode, myError);
   }
 
-  @Override
   public void doRedo(State state) {
     state.getNodeMaps().addError(myNode, myError);
   }
 
-  @Override
   public String getPresentationKind() {
     return PresentationKind.ERROR_ADDED;
   }

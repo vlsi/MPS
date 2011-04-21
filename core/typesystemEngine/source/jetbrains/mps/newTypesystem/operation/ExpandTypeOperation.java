@@ -19,12 +19,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Nov 17, 2010
- * Time: 2:46:01 PM
- */
 public class ExpandTypeOperation extends AssignTypeOperation {
   private final SNode myOldType;
 
@@ -33,22 +27,18 @@ public class ExpandTypeOperation extends AssignTypeOperation {
     myOldType = oldType;
   }
 
-  @Override
   public String getPresentationKind() {
     return PresentationKind.TYPE_EXPANDED;
   }
 
-  @Override
   public String getPresentation() {
     return "Type expanded: " + myNode + " ------> " + myType;
   }
 
-  @Override
   public void doRedo(State state) {
     state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myType);
   }
 
-  @Override
   public void doUndo(State state) {
     state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myOldType);
   }

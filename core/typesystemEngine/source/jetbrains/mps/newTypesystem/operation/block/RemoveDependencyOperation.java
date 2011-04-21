@@ -32,24 +32,14 @@ public class RemoveDependencyOperation extends AbstractBlockOperation {
     myEquationInfo = new EquationInfo(var, " ", block.getNodeModel(), block.getNodeId());
   }
 
-  @Override
   public String getPresentation() {
     return "Block dependency removed: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
 
-/*
-  @Override
-  public Color getColor() {
-    return Colors.WHEN_CONCRETE_REMOVED;
-  }
-*/
-
-  @Override
   public void doUndo(State state) {
     state.addDependency(myBlock, myVar, myConditionKind);
   }
 
-  @Override
   public void doRedo(State state) {
     state.removeDependency(myBlock, myVar, myConditionKind);
   }

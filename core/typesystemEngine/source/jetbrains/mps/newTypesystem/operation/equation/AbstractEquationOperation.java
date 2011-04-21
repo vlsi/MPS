@@ -40,7 +40,6 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
     myEquationInfo = info;
   }
 
-  @Override
   public String getShortPresentation() {
     return myChild + " = " + myParent;
   }
@@ -55,6 +54,4 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
     }
     return nodes;
   }
-
-
 }

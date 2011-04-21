@@ -35,19 +35,16 @@ public class SubstituteEquationOperation extends AbstractOperation {
     mySource = source;
   }
 
-  @Override
   public void doUndo(State state) {
     myAdded.doUndo(state);
     myRemoved.doUndo(state);
   }
 
-  @Override
   public void doRedo(State state) {
     myRemoved.doRedo(state);
     myAdded.doRedo(state);
   }
 
-  @Override
   public String getPresentation() {
     return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
       myAdded.getShortPresentation();

@@ -22,35 +22,29 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class RemoveBlockOperation extends AbstractBlockOperation {
-
   public RemoveBlockOperation(Block block) {
     myBlock = block;
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
-  @Override
   public String getPresentation() {
     String prefix = "Removed : [";
     return prefix + myBlock.getPresentation() + "]";
   }
 
-  @Override
   public void doUndo(State state) {
     state.addBlockNoVars(myBlock);
   }
 
-  @Override
   public void doRedo(State state) {
     state.removeBlockNoVars(myBlock);
   }
 
-  @Override
   public void execute(State state) {
     super.execute(state);
     myBlock.performAction();
   }
 
-  @Override
   public String getPresentationKind() {
     if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
       return PresentationKind.WHEN_CONCRETE_REMOVED;
@@ -58,5 +52,4 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
       return PresentationKind.RELATION_REMOVED;
     }
   }
-
 }

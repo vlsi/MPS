@@ -21,12 +21,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 3/2/11
- * Time: 2:47 PM
- */
 public class ApplyRuleOperation extends AbstractOperation {
   private SNode myNode;
   private ICheckingRule_Runtime myRule;
@@ -39,35 +33,22 @@ public class ApplyRuleOperation extends AbstractOperation {
     mySource = node;
   }
 
-  @Override
   protected void doUndo(State state) {
 
   }
 
-  @Override
   protected void doRedo(State state) {
 
   }
 
-  @Override
   public void execute(State state) {
     myRule.applyRule(myNode, state.getTypeCheckingContext(), myStatus);
   }
 
-  @Override
   public String getPresentation() {
     return "Applying rule " + myRule.getClass().getSimpleName().replace("_InferenceRule", "") + " to node " + myNode;
   }
 
-  @Override
-  public Pair<String, String> getRuleModelAndId() {
-    if (myEquationInfo == null) {
-      return null;
-    }
-    return new Pair<String, String>(myEquationInfo.getRuleId(), myEquationInfo.getRuleModel());
-  }
-
-  @Override
   public boolean hasEffect() {
     return false;
   }

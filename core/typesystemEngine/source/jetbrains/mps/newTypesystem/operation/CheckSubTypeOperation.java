@@ -18,12 +18,6 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Feb 14, 2011
- * Time: 8:00:04 PM
- */
 public class CheckSubTypeOperation extends AddRemarkOperation {
   private SNode mySubType;
   private SNode mySuperType;
@@ -34,7 +28,6 @@ public class CheckSubTypeOperation extends AddRemarkOperation {
     mySuperType = superType;
   }
 
-  @Override
   public String getPresentation() {
     return "checking whether " + mySubType + " is subtype of " + mySuperType;
   }
