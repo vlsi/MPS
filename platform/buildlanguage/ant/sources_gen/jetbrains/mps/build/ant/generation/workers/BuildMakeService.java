@@ -117,14 +117,16 @@ public class BuildMakeService implements IMakeService {
 
       public void setup(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
-        vars._0(BuildMakeService.this.context.getProject());
-        vars._1(BuildMakeService.this.context);
-        vars._2(true);
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-          public ProgressIndicator invoke() {
-            return pind.value;
-          }
-        });
+        if (vars != null) {
+          vars._0(BuildMakeService.this.context.getProject());
+          vars._1(BuildMakeService.this.context);
+          vars._2(true);
+          vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
+            public ProgressIndicator invoke() {
+              return pind.value;
+            }
+          });
+        }
 
         if (ctl != null) {
           ctl.setup(pool);

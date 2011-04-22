@@ -330,8 +330,12 @@ __switch__:
 
     public <T> T parameters(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
-        T vars = targetRange.getTarget(target).createParameters(cls);
-        MapSequence.fromMap(cache).put(target, vars);
+        if (targetRange.hasTarget(target)) {
+          T vars = targetRange.getTarget(target).createParameters(cls);
+          MapSequence.fromMap(cache).put(target, vars);
+        } else {
+          return null;
+        }
       }
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }

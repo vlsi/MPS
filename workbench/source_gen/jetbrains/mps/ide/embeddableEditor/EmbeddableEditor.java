@@ -151,7 +151,9 @@ public class EmbeddableEditor {
       public void setup(IParametersPool ppool) {
         super.setup(ppool);
         Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
-        params._0(classPath);
+        if (params != null) {
+          params._0(classPath);
+        }
       }
     });
     if (res.isSucessful()) {
