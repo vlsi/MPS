@@ -15,7 +15,6 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_Editor" />
@@ -25,6 +24,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
@@ -49,10 +49,10 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Make_Configuration_Editor" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
@@ -150,7 +150,6 @@
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
