@@ -129,11 +129,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="_deprecated" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3021948350273458192">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="ChangeGroup" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8401260027345469827">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="ChangeEditorMessage" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3724655318819677795">
@@ -142,36 +140,29 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3021948350273458186">
       <property name="name" nameId="tpck.1169194664001" value="ChangeGroupBuilder" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7088622708994254413">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="diff" />
       <property name="name" nameId="tpck.1169194664001" value="RootDifferenceDialog" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="742766381634604040">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="ChangeTrapeciumStrip" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6473905640924171094">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="DiffEditor" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="1270946566396265091">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="ChangeGroupInvalidateListener" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5019828647791521160">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="DiffEditorsGroup" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3416287804356520387">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="FoldingAreaButton" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7115262660808722246">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="name" nameId="tpck.1169194664001" value="ButtonsPainter" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
