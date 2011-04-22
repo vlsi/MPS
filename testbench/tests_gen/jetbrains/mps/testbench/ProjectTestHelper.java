@@ -23,9 +23,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -41,6 +40,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.vfs.FileSystem;
@@ -124,7 +124,11 @@ public class ProjectTestHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (IModule mod : pro.getModules()) {
-          models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
+          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            public boolean accept(SModelDescriptor it) {
+              return it.isGeneratable();
+            }
+          }));
         }
       }
     });

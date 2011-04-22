@@ -56,7 +56,8 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Solution solution = (Solution) module;
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor sm : solution.getEditableUserModels()) {
+      for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
+        if(!sm.isGeneratable()) continue;
         if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
           continue;
         }
@@ -72,12 +73,13 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<SModelDescriptor> inputModels = lang.getEditableUserModels();
+      List<SModelDescriptor> inputModels = lang.getOwnModelDescriptors();
 
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project))) ||
+        if (!model.isGeneratable() ||
+          (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project))) ||
           GeneratorManager.isDoNotGenerate(model)) {
           it.remove();
         }

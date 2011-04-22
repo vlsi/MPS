@@ -176,11 +176,19 @@ public class GeneratorWorker extends MpsWorker {
       public void run() {
         for (MPSProject p : go.getProjects()) {
           for (IModule mod : p.getModules()) {
-            models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
+            models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+              public boolean accept(SModelDescriptor it) {
+                return it.isGeneratable();
+              }
+            }));
           }
         }
         for (IModule mod : go.getModules()) {
-          models.value = Sequence.fromIterable(models.value).concat(ListSequence.fromList(mod.getEditableUserModels()));
+          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            public boolean accept(SModelDescriptor it) {
+              return it.isGeneratable();
+            }
+          }));
         }
         if (go.getModels() != null) {
           models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
