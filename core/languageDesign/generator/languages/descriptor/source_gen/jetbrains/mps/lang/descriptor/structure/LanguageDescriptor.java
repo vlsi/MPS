@@ -59,11 +59,11 @@ public class LanguageDescriptor extends BaseConcept implements INamedConcept {
   }
 
   public Language getLanguage() {
-    return (Language) this.getReferent(Language.class, LanguageDescriptor.LANGUAGE);
+    return (Language) this.getChild(Language.class, LanguageDescriptor.LANGUAGE);
   }
 
   public void setLanguage(Language node) {
-    super.setReferent(LanguageDescriptor.LANGUAGE, node);
+    super.setChild(LanguageDescriptor.LANGUAGE, node);
   }
 
   public int get_$attributesCount() {

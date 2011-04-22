@@ -82,7 +82,7 @@ public abstract class ProjectStructureBuilder {
     for (StubSolution sol : source.getStubSolutions()) {
       SLinkOperations.getTargets(result, "stubSolutions", true).add(convert(sol));
     }
-    collectModels(result);
+    collectModels(result, source);
     return result;
   }
 
@@ -94,7 +94,7 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
     SPropertyOperations.set(result, "solutionPath", myFile.getPath());
-    collectModels(result);
+    collectModels(result, source);
     return result;
   }
 
@@ -210,6 +210,7 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getDepGenerators()) {
       SLinkOperations.getTargets(generator, "depGenerators", true).add(convert(ref));
     }
+    collectModels(generator, source);
     return generator;
   }
 
@@ -262,11 +263,11 @@ public abstract class ProjectStructureBuilder {
     return null;
   }
 
-  protected void collectModels(SNode module) {
-    for (SModelReference ref : Sequence.fromIterable(loadReferences(module))) {
+  protected void collectModels(SNode module, ModuleDescriptor descriptor) {
+    for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
       ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
     }
   }
 
-  public abstract Iterable<SModelReference> loadReferences(SNode module);
+  public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 }

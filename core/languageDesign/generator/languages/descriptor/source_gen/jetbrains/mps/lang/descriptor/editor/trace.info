@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="LanguageDescriptor_Editor.java" startLine="70" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.descriptor.editor.LanguageDescriptor_Editor$_Inline_jnz8pu_a1a" />
-  <unitInfo fileName="LanguageDescriptor_Editor.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.descriptor.editor.LanguageDescriptor_Editor" />
+  <unitInfo fileName="LanguageDescriptor_Editor.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.descriptor.editor.LanguageDescriptor_Editor" />
 </debugInfo>
 

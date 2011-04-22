@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.generator.runtime.TemplateModule;
+
+import java.util.Collection;
+
 /**
  * evgeny, 3/11/11
  */
-public interface LanguageRuntime {
+public abstract class LanguageRuntime {
 
-  String getNamespace();
+  public abstract String getNamespace();
+
+  public abstract Collection<TemplateModule> getGenerators();
 }
