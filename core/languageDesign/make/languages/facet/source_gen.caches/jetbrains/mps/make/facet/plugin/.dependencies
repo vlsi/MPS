@@ -83,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
@@ -99,7 +100,7 @@
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />

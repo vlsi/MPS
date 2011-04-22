@@ -39,6 +39,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -457,11 +458,19 @@ public class Generate_Facet implements IFacet {
                   MResource mres = ((MResource) it);
                   IModule module = mres.module();
                   MapSequence.fromMap(retainedModels).put(module, empty);
-                  Iterable<SModelDescriptor> modelsToRetain = ((Iterable<SModelDescriptor>) module.getEditableUserModels());
+                  Iterable<SModelDescriptor> modelsToRetain = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+                    public boolean accept(SModelDescriptor it2) {
+                      return it2.isGeneratable();
+                    }
+                  });
                   if (module instanceof Language) {
                     for (final Generator gen : ((Language) module).getGenerators()) {
                       if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-                        MapSequence.fromMap(retainedModels).put(gen, gen.getEditableUserModels());
+                        MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+                          public boolean accept(SModelDescriptor it2) {
+                            return it2.isGeneratable();
+                          }
+                        }));
                       }
                       modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
                         public Iterable<SModelDescriptor> iterable() {
@@ -472,7 +481,11 @@ public class Generate_Facet implements IFacet {
                   } else if (module instanceof Generator) {
                     final Language slang = ((Generator) module).getSourceLanguage();
                     if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-                      MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getEditableUserModels())).subtract(ListSequence.fromList(module.getEditableUserModels())));
+                      MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+                        public boolean accept(SModelDescriptor it3) {
+                          return it3.isGeneratable();
+                        }
+                      }));
                     }
                     modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
                       public Iterable<SModelDescriptor> iterable() {
