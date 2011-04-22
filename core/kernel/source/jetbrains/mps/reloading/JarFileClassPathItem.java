@@ -45,8 +45,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private Map<String, ZipEntry> myEntries = new THashMap<String, ZipEntry>();
   private MyCache myCache = new MyCache();
 
-  private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
-
   protected JarFileClassPathItem(String path) {
     if (path.endsWith("!/")) {
       path = path.substring(0, path.length() - 2);
@@ -283,14 +281,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public Set<String> getClassesSetFor(String pack) {
       if (!myClasses.containsKey(pack)) {
-        return DEFAULT_VALUE;
+        return Collections.emptySet();
       }
       return myClasses.get(pack);
     }
 
     public Set<String> getSubpackagesSetFor(String pack) {
       if (!mySubpackages.containsKey(pack)) {
-        return DEFAULT_VALUE;
+        return Collections.emptySet();
       }
       return mySubpackages.get(pack);
     }
