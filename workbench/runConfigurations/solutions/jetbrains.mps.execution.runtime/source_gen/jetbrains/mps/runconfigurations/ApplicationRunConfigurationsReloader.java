@@ -23,11 +23,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.LinkedHashSet;
-import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
-import jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator;
 import java.lang.reflect.Method;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -133,8 +133,8 @@ public class ApplicationRunConfigurationsReloader implements ApplicationComponen
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           if (LanguageAspect.PLUGIN.get(language) != null) {
             SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
-            for (RunConfigurationTypeDeclaration rcTypeDecl : model.getRootsAdapters(RunConfigurationTypeDeclaration.class)) {
-              String configurationTypeName = rcTypeDecl.getName() + "_ConfigurationType";
+            for (SNode rcTypeDecl : SModelOperations.getRoots(model, "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration")) {
+              String configurationTypeName = SPropertyOperations.getString(rcTypeDecl, "name") + "_ConfigurationType";
               String configurationName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + configurationTypeName;
               ConfigurationType configurationType = ApplicationRunConfigurationsReloader.createClassInstance(language, configurationName);
               if (configurationType == null) {
@@ -158,16 +158,16 @@ public class ApplicationRunConfigurationsReloader implements ApplicationComponen
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
           if (LanguageAspect.PLUGIN.get(language) != null) {
             SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
-            for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
-              String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + creator.getName();
+            for (SNode creator : SModelOperations.getRoots(model, "jetbrains.mps.lang.plugin.structure.RunConfigCreator")) {
+              String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + SPropertyOperations.getString(creator, "name");
               BaseConfigCreator configCreator = ApplicationRunConfigurationsReloader.createClassInstance(language, creatorClassName);
               if (configCreator == null) {
                 continue;
               }
               creators.add(configCreator);
             }
-            for (UniversalRunConfigCreator creator : model.getRootsAdapters(UniversalRunConfigCreator.class)) {
-              String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + creator.getName();
+            for (SNode creator : SModelOperations.getRoots(model, "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")) {
+              String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + SPropertyOperations.getString(creator, "name");
               BaseConfigCreator configCreator = ApplicationRunConfigurationsReloader.createClassInstance(language, creatorClassName);
               if (configCreator == null) {
                 continue;

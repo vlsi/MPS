@@ -40,20 +40,20 @@
     <nodeInfo nodeId="5145867626676099878" fileName="ApplicationRunConfigurationsReloader.java" startLine="122" startPosition="19" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5145867626676099909" fileName="ApplicationRunConfigurationsReloader.java" startLine="128" startPosition="69" endLine="129" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109598" fileName="ApplicationRunConfigurationsReloader.java" startLine="134" startPosition="60" endLine="135" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5145867626676109615" fileName="ApplicationRunConfigurationsReloader.java" startLine="136" startPosition="126" endLine="137" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5145867626676109623" fileName="ApplicationRunConfigurationsReloader.java" startLine="137" startPosition="89" endLine="138" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109615" fileName="ApplicationRunConfigurationsReloader.java" startLine="136" startPosition="142" endLine="137" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109623" fileName="ApplicationRunConfigurationsReloader.java" startLine="137" startPosition="118" endLine="138" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109636" fileName="ApplicationRunConfigurationsReloader.java" startLine="138" startPosition="121" endLine="139" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109647" fileName="ApplicationRunConfigurationsReloader.java" startLine="140" startPosition="46" endLine="141" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5145867626676109648" fileName="ApplicationRunConfigurationsReloader.java" startLine="142" startPosition="15" endLine="143" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5145867626676099926" fileName="ApplicationRunConfigurationsReloader.java" startLine="148" startPosition="7" endLine="149" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5145867626676099934" fileName="ApplicationRunConfigurationsReloader.java" startLine="153" startPosition="58" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109670" fileName="ApplicationRunConfigurationsReloader.java" startLine="159" startPosition="60" endLine="160" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5145867626676109687" fileName="ApplicationRunConfigurationsReloader.java" startLine="161" startPosition="93" endLine="162" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5145867626676109702" fileName="ApplicationRunConfigurationsReloader.java" startLine="162" startPosition="116" endLine="163" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109687" fileName="ApplicationRunConfigurationsReloader.java" startLine="161" startPosition="124" endLine="162" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109702" fileName="ApplicationRunConfigurationsReloader.java" startLine="162" startPosition="145" endLine="163" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109713" fileName="ApplicationRunConfigurationsReloader.java" startLine="164" startPosition="42" endLine="165" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5145867626676109714" fileName="ApplicationRunConfigurationsReloader.java" startLine="166" startPosition="15" endLine="167" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5145867626676109727" fileName="ApplicationRunConfigurationsReloader.java" startLine="169" startPosition="111" endLine="170" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5145867626676109742" fileName="ApplicationRunConfigurationsReloader.java" startLine="170" startPosition="116" endLine="171" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109727" fileName="ApplicationRunConfigurationsReloader.java" startLine="169" startPosition="133" endLine="170" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5145867626676109742" fileName="ApplicationRunConfigurationsReloader.java" startLine="170" startPosition="145" endLine="171" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5145867626676109753" fileName="ApplicationRunConfigurationsReloader.java" startLine="172" startPosition="42" endLine="173" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5145867626676109754" fileName="ApplicationRunConfigurationsReloader.java" startLine="174" startPosition="15" endLine="175" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5145867626676099951" fileName="ApplicationRunConfigurationsReloader.java" startLine="180" startPosition="7" endLine="181" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -163,16 +163,16 @@
       <varInfo nodeId="5145867626676099884" varName="configClass" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676099978" fileName="ApplicationRunConfigurationsReloader.java" startLine="106" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="5145867626676109686" fileName="ApplicationRunConfigurationsReloader.java" startLine="161" startPosition="93" endLine="167" endPosition="42">
+    <scopeInfo nodeId="5145867626676109686" fileName="ApplicationRunConfigurationsReloader.java" startLine="161" startPosition="124" endLine="167" endPosition="42">
       <varInfo nodeId="5145867626676109688" varName="creatorClassName" />
       <varInfo nodeId="5145867626676109703" varName="configCreator" />
     </scopeInfo>
-    <scopeInfo nodeId="5145867626676109726" fileName="ApplicationRunConfigurationsReloader.java" startLine="169" startPosition="111" endLine="175" endPosition="42">
+    <scopeInfo nodeId="5145867626676109726" fileName="ApplicationRunConfigurationsReloader.java" startLine="169" startPosition="133" endLine="175" endPosition="42">
       <varInfo nodeId="5145867626676109728" varName="creatorClassName" />
       <varInfo nodeId="5145867626676109743" varName="configCreator" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676109796" fileName="ApplicationRunConfigurationsReloader.java" startLine="191" startPosition="48" endLine="197" endPosition="15" />
-    <scopeInfo nodeId="5145867626676109614" fileName="ApplicationRunConfigurationsReloader.java" startLine="136" startPosition="126" endLine="143" endPosition="56">
+    <scopeInfo nodeId="5145867626676109614" fileName="ApplicationRunConfigurationsReloader.java" startLine="136" startPosition="142" endLine="143" endPosition="56">
       <varInfo nodeId="5145867626676109637" varName="configurationType" />
       <varInfo nodeId="5145867626676109616" varName="configurationTypeName" />
       <varInfo nodeId="5145867626676109624" varName="configurationName" />
