@@ -19,7 +19,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 import java.io.IOException;
-import jetbrains.mps.vcs.VcsSettingsHolder;
 
 public class ModelMergeTool implements DiffTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
@@ -95,9 +94,6 @@ public class ModelMergeTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    if (VcsSettingsHolder.instance().getSettings().isTextModeEnabled()) {
-      return false;
-    }
-    return (request instanceof ModelMergeRequest);
+    return request instanceof ModelMergeRequest;
   }
 }

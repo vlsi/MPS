@@ -33,7 +33,6 @@ import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.oldchanges.Change;
-import jetbrains.mps.vcs.VcsSettingsHolder;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.ChangeList;
@@ -56,14 +55,12 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   public void projectOpened() {
-    if (isEnabled()) {
-      ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
-      ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
-      SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
+    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
-      updateLoadedModelStatuses();
-    }
+    updateLoadedModelStatuses();
   }
 
   public void projectClosed() {
@@ -194,10 +191,6 @@ public class ChangesManager extends AbstractProjectComponent {
 
   public static ChangesManager getInstance(Project project) {
     return project.getComponent(ChangesManager.class);
-  }
-
-  public static boolean isEnabled() {
-    return VcsSettingsHolder.instance().getSettings().isChangesManagerEnabled();
   }
 
   private class MyChangeListListener extends ChangeListAdapter {

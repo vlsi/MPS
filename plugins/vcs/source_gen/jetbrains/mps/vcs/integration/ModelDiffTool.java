@@ -24,7 +24,6 @@ import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
-import jetbrains.mps.vcs.VcsSettingsHolder;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
@@ -91,9 +90,6 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    if (VcsSettingsHolder.instance().getSettings().isTextModeEnabled()) {
-      return false;
-    }
     DiffContent[] contents = request.getContents();
     return (contents.length == 2) && isModelFile(contents[0]) && isModelFile(contents[1]);
   }
