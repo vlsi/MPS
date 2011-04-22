@@ -51,15 +51,19 @@ public class ConcurrentSubtypingCache extends SubtypingCache {
 
   private MyBoolean preprocessPutBoolean(Boolean b) {
     if (b == null) return MyBoolean.NULL;
-    if (b) return MyBoolean.TRUE; else return MyBoolean.FALSE;
+    if (b) return MyBoolean.TRUE;
+    else return MyBoolean.FALSE;
   }
 
   private Boolean postprocessGetBoolean(MyBoolean b) {
     if (b == null) return null;
     switch (b) {
-      case FALSE: return false;
-      case TRUE: return true;
-      default: return null;
+      case FALSE:
+        return false;
+      case TRUE:
+        return true;
+      default:
+        return null;
     }
   }
 

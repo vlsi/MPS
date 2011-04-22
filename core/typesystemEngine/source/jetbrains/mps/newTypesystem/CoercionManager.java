@@ -57,7 +57,7 @@ public class CoercionManager {
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      SNode lcs = mySubTyping.createLCS(children, typeCheckingContext );
+      SNode lcs = mySubTyping.createLCS(children, typeCheckingContext);
       return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 

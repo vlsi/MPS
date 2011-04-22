@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -22,7 +23,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 
 public class EquationInfo {
 
@@ -166,28 +170,28 @@ public class EquationInfo {
 
   public void addInequationIdBefore(String modelId, String equationId) {
     if (myInequationIdsBefore == null) {
-      myInequationIdsBefore = new HashSet<Pair<String,String>>(2);
+      myInequationIdsBefore = new THashSet<Pair<String, String>>(2);
     }
     myInequationIdsBefore.add(new Pair<String, String>(modelId, equationId));
   }
 
   public void addInequationIdAfter(String modelId, String equationId) {
     if (myInequationIdsAfter == null) {
-      myInequationIdsAfter = new HashSet<Pair<String, String>>(2);
+      myInequationIdsAfter = new THashSet<Pair<String, String>>(2);
     }
     myInequationIdsAfter.add(new Pair<String, String>(modelId, equationId));
   }
 
   public void addInequationGroupBefore(String groupId) {
     if (myInequationGroupsBefore == null) {
-      myInequationGroupsBefore = new HashSet<String>(2);
+      myInequationGroupsBefore = new THashSet<String>(2);
     }
     myInequationGroupsBefore.add(groupId);
   }
 
   public void addInequationGroupAfter(String groupId) {
     if (myInequationGroupsAfter == null) {
-      myInequationGroupsAfter = new HashSet<String>(2);
+      myInequationGroupsAfter = new THashSet<String>(2);
     }
     myInequationGroupsAfter.add(groupId);
   }
@@ -198,7 +202,7 @@ public class EquationInfo {
 
   public void addRuleToSkip(String ruleClass) {
     if (mySkippedRules == null) {
-      mySkippedRules = new HashSet<String>(1);
+      mySkippedRules = new THashSet<String>(1);
     }
     mySkippedRules.add(ruleClass);
   }
@@ -212,22 +216,22 @@ public class EquationInfo {
   }
 
   public Set<Pair<String, String>> getInequationIdsAfter() {
-    return myInequationIdsAfter == null ? new HashSet<Pair<String, String>>() : myInequationIdsAfter;
+    return myInequationIdsAfter == null ? new THashSet<Pair<String, String>>() : myInequationIdsAfter;
   }
 
   public Set<Pair<String, String>> getInequationIdsBefore() {
-    return myInequationIdsBefore == null ? new HashSet<Pair<String, String>>() : myInequationIdsBefore;
+    return myInequationIdsBefore == null ? new THashSet<Pair<String, String>>() : myInequationIdsBefore;
   }
 
   public Set<String> getInequationGroupsAfter() {
-    return myInequationGroupsAfter == null ? new HashSet<String>() : myInequationGroupsAfter;
+    return myInequationGroupsAfter == null ? new THashSet<String>() : myInequationGroupsAfter;
   }
 
   public Set<String> getInequationGroupsBefore() {
-    return myInequationGroupsBefore == null ? new HashSet<String>() : myInequationGroupsBefore;
+    return myInequationGroupsBefore == null ? new THashSet<String>() : myInequationGroupsBefore;
   }
 
   public Set<String> getSkippedRules() {
-    return mySkippedRules == null ? new HashSet<String>() : mySkippedRules;
+    return mySkippedRules == null ? new THashSet<String>() : mySkippedRules;
   }
 }

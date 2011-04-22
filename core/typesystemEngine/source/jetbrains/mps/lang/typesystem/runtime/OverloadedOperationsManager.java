@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.typesystem.inference.RulesManager;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.RulesManager;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 

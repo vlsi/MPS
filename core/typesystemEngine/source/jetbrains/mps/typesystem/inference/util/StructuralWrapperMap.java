@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
 
 
 public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
-  private Map<IWrapperWrapper, IWrapperWrapper> myMap = new HashMap<IWrapperWrapper, IWrapperWrapper>();
-  private Map<IWrapper, T> myWrapperMap = new HashMap<IWrapper, T>();
-  private Map<IWrapper, IWrapper> myRepresentatorMap = new HashMap<IWrapper, IWrapper>();
-  private Set<IWrapper> myAbsent = new HashSet<IWrapper>();
+  private Map<IWrapperWrapper, IWrapperWrapper> myMap = new THashMap<IWrapperWrapper, IWrapperWrapper>();
+  private Map<IWrapper, T> myWrapperMap = new THashMap<IWrapper, T>();
+  private Map<IWrapper, IWrapper> myRepresentatorMap = new THashMap<IWrapper, IWrapper>();
+  private Set<IWrapper> myAbsent = new THashSet<IWrapper>();
 
   public int size() {
     return myMap.size();

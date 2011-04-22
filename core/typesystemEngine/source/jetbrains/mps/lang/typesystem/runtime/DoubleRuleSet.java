@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 
-import java.util.Set;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Set;
 
 public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   Map<Pair<SNode, SNode>, Set<T>> myRules =
-    new HashMap<Pair<SNode, SNode>, Set<T>>();
+    new THashMap<Pair<SNode, SNode>, Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
@@ -39,7 +39,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
       Pair<SNode, SNode> pair = new Pair<SNode, SNode>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);
       if (existingRules == null) {
-        existingRules = new HashSet<T>();
+        existingRules = new THashSet<T>(1);
         myRules.put(pair,
           existingRules);
       }
@@ -76,7 +76,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
         conceptDeclaration1 = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration1);
       }
     }
-    HashSet<T> hashSet = new HashSet<T>();
+    Set<T> hashSet = new THashSet<T>(1);
     myRules.put(key, hashSet);
     return hashSet;
   }

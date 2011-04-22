@@ -96,7 +96,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
   private boolean myCacheWasCurrentlyRebuiltNonTypesystem = false;
 
   //temp
- // private Map<NonTypesystemRule_Runtime, Integer> myRulesCounter = new HashMap<NonTypesystemRule_Runtime, Integer>();
+  // private Map<NonTypesystemRule_Runtime, Integer> myRulesCounter = new HashMap<NonTypesystemRule_Runtime, Integer>();
 
   // nodes to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
@@ -188,7 +188,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
           result = true;
           Set<SNode> nodes = myBlockedOnSlaveComputation.get(blockingNode);
           if (nodes == null) {
-            nodes = new HashSet<SNode>(1);
+            nodes = new THashSet<SNode>(1);
             myBlockedOnSlaveComputation.put(blockingNode, nodes);
           }
           nodes.add(node);
@@ -330,12 +330,12 @@ public class NodeTypesComponent implements INodeTypesComponent {
         NonTypesystemRule_Runtime currentRule = myNonTypesystemRuleAndNodeBeingChecked.o2;
         Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesToErrorsMap = myNodesAndNTRulesToErrors.get(currentNode);
         if (rulesToErrorsMap == null) {
-          rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
+          rulesToErrorsMap = new THashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
           myNodesAndNTRulesToErrors.put(currentNode, rulesToErrorsMap);
         }
         Set<IErrorReporter> errorsSet = rulesToErrorsMap.get(currentRule);
         if (errorsSet == null) {
-          errorsSet = new HashSet<IErrorReporter>(1);
+          errorsSet = new THashSet<IErrorReporter>(1);
           rulesToErrorsMap.put(currentRule, errorsSet);
         }
         errorsSet.add(errorReporter);
@@ -397,7 +397,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
   }
 
   private void performActionsAfterChecking() {
-    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
+    Map<SNode, List<IErrorReporter>> toAdd = new THashMap<SNode, List<IErrorReporter>>(8);
 
     // setting expanded errors
     for (SNode node : myNodesToErrorsMap.keySet()) {
@@ -439,7 +439,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
     }
 
     // setting expanded types to nodes
-    for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
+    for (Entry<SNode, SNode> contextEntry : new THashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
       SNode type = expandTypeAndPutToContext(term);
@@ -626,12 +626,12 @@ public class NodeTypesComponent implements INodeTypesComponent {
   }
 
   private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
-   /* Integer integer = myRulesCounter.get(rule);
-    if (integer == null) {
-      integer = 0;
-    }
-    integer += nodesToDependOn.size();
-    myRulesCounter.put(rule, integer);*/
+    /* Integer integer = myRulesCounter.get(rule);
+   if (integer == null) {
+     integer = 0;
+   }
+   integer += nodesToDependOn.size();
+   myRulesCounter.put(rule, integer);*/
 
     addDependentNodesNonTypesystem(sNode, rule, nodesToDependOn, false);
   }
@@ -647,7 +647,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
       if (propertyToDependOn == null) continue;
       Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
+        dependentNodes = new THashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
       WeakSet<SNode> nodes = dependentNodes.get(rule);
@@ -660,13 +660,13 @@ public class NodeTypesComponent implements INodeTypesComponent {
   }
 
   private void addDependentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
-    Map<SNode,Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules =
+    Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules =
       isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
       Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
+        dependentNodes = new THashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
         mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
       WeakSet<SNode> nodes = dependentNodes.get(rule);
@@ -682,7 +682,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
     WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
     Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);
     if (rules == null) {
-      rules = new HashSet<NonTypesystemRule_Runtime>(1);
+      rules = new THashSet<NonTypesystemRule_Runtime>(1);
       dependentNodes.put(node, rules);
     }
     rules.add(rule);
@@ -701,13 +701,13 @@ public class NodeTypesComponent implements INodeTypesComponent {
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    HashSet<SNode> hashSet = new HashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
     addDepedentNodesTypesystem(node, hashSet, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
-    HashSet<SNode> hashSet = new HashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
     addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet, true);
   }
@@ -759,7 +759,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
       myInvalidationWasPerformedNT = false;
 
       //temp
-     /* List<Pair<NonTypesystemRule_Runtime, Integer>> list = new ArrayList<Pair<NonTypesystemRule_Runtime, Integer>>();
+      /* List<Pair<NonTypesystemRule_Runtime, Integer>> list = new ArrayList<Pair<NonTypesystemRule_Runtime, Integer>>();
       for (NonTypesystemRule_Runtime rule : myRulesCounter.keySet()) {
         list.add(new Pair<NonTypesystemRule_Runtime, Integer>(rule, myRulesCounter.get(rule)));
       }
@@ -781,7 +781,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
     if (nonTypesystemRules != null) {
       for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-      /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
+        /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
           System.err.println("");
         }*/
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
@@ -810,8 +810,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             myNodesReadListener.setAccessReport(true);
-            addDepedentNodesNonTypesystem(node, rule.o1, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
-            addDepedentPropertiesNonTypesystem(node, rule.o1, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
+            addDepedentNodesNonTypesystem(node, rule.o1, new THashSet<SNode>(myNodesReadListener.myAccessedNodes));
+            addDepedentPropertiesNonTypesystem(node, rule.o1, new THashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
             myNodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
@@ -821,7 +821,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDepedentTypeTermsNonTypesystem(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDepedentTypeTermsNonTypesystem(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           myNodesReadListener.clear();
@@ -893,8 +893,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
   }
 
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>(1);
-    Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
+    Set<SNode> keySet = new THashSet<SNode>(myNodesToErrorsMap.keySet());
     keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
     for (SNode key : keySet) {
       List<IErrorReporter> reporter = getErrors(key);
@@ -921,7 +921,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
     if (myInvalidationWasPerformedNT) {
       return myInvalidationResultNT;
     }
-    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
+    Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
       Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
@@ -1010,12 +1010,12 @@ public class NodeTypesComponent implements INodeTypesComponent {
       return myInvalidationResult;
     }
     boolean result = false;
-    Set<SNode> invalidatedNodes_A = new HashSet<SNode>();
-    Set<SNode> invalidatedNodes_B = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_A = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
+    Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_B = new THashSet<SNode>();
     Set<SNode> currentNodesToInvalidate_A = myCurrentNodesToInvalidate;
-    Set<SNode> currentNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> currentNodesToInvalidate_B = new THashSet<SNode>();
 
     if (myCacheWasCurrentlyRebuiltTypesystem) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
@@ -1053,8 +1053,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
       }
       currentNodesToInvalidate_A = newNodesToInvalidate_A;
       currentNodesToInvalidate_B = newNodesToInvalidate_B;
-      newNodesToInvalidate_A = new HashSet<SNode>();
-      newNodesToInvalidate_B = new HashSet<SNode>();
+      newNodesToInvalidate_A = new THashSet<SNode>();
+      newNodesToInvalidate_B = new THashSet<SNode>();
     }
     result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
     myCurrentNodesToInvalidate.clear();
@@ -1067,7 +1067,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {
-      rulesWhichAffectNodesType = new HashSet<Pair<String, String>>();
+      rulesWhichAffectNodesType = new THashSet<Pair<String, String>>();
       myNodesToRules.put(node, rulesWhichAffectNodesType);
     }
     rulesWhichAffectNodesType.add(new Pair<String, String>(ruleModel, ruleId));
@@ -1076,14 +1076,14 @@ public class NodeTypesComponent implements INodeTypesComponent {
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
     Set<Pair<String, String>> set = myNodesToRules.get(node);
     if (set == null) return null;
-    return new HashSet<Pair<String, String>>(set);
+    return new THashSet<Pair<String, String>>(set);
   }
 
   public void registerTypeVariable(SNode variable) {
     String name = variable.getName();
     Set<SNode> variables = myRegisteredVariables.get(name);
     if (variables == null) {
-      variables = new HashSet<SNode>(1);
+      variables = new THashSet<SNode>(1);
       myRegisteredVariables.put(name, variables);
     }
     variables.add(variable);
@@ -1235,8 +1235,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
   }
 
   private class MyEventsReadListener extends AbstractNodesReadListener {
-    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
-    private Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
+    private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
+    private Set<Pair<SNode, String>> myAccessedProperties = new THashSet<Pair<SNode, String>>(1);
     private boolean myIsSetAccessReport = false;
 
     public void setAccessReport(boolean accessReport) {
@@ -1282,8 +1282,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
     public void clear() {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAccessedNodes = new HashSet<SNode>();
-        myAccessedProperties = new HashSet<Pair<SNode, String>>();
+        myAccessedNodes = new THashSet<SNode>();
+        myAccessedProperties = new THashSet<Pair<SNode, String>>();
       }
     }
   }
@@ -1334,8 +1334,8 @@ public class NodeTypesComponent implements INodeTypesComponent {
 
   private class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
-    private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
-    private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();
+    private Map<SModelDescriptor, Integer> myNodesCount = new THashMap<SModelDescriptor, Integer>();
+    private Map<WeakReference, SModelDescriptor> myDescriptors = new THashMap<WeakReference, SModelDescriptor>();
     private SModelListener myListener;
 
     MyModelListenerManager(SModelListener listener) {
@@ -1383,7 +1383,7 @@ public class NodeTypesComponent implements INodeTypesComponent {
     }
 
     void dispose() {
-      for (SModelDescriptor sm : new HashSet<SModelDescriptor>(myNodesCount.keySet())) {
+      for (SModelDescriptor sm : new THashSet<SModelDescriptor>(myNodesCount.keySet())) {
         sm.removeModelListener(myListener);
       }
     }

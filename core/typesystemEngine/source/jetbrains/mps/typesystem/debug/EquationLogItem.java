@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.typesystem.debug;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import com.intellij.openapi.util.Pair;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class EquationLogItem {

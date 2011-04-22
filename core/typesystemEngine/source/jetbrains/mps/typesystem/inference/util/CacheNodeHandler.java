@@ -27,8 +27,8 @@ public class CacheNodeHandler {
   private int myHash;
 
   public CacheNodeHandler(SNode node) {
-    myNodeRef = new WeakReference<SNode> (node);
-    myHash = hash (node, false);
+    myNodeRef = new WeakReference<SNode>(node);
+    myHash = hash(node, false);
   }
 
   private int hash(SNode node, boolean useAttributes) {
@@ -40,7 +40,7 @@ public class CacheNodeHandler {
         result += targetNode.hashCode();
       }
     }
-    Map<String,String> properties = node.getProperties();
+    Map<String, String> properties = node.getProperties();
     for (String propertyName : properties.keySet()) {
       result += propertyName.hashCode();
     }
@@ -71,7 +71,7 @@ public class CacheNodeHandler {
   }
 
   public String toString() {
-    return "handler " + String.valueOf (getNode());
+    return "handler " + String.valueOf(getNode());
   }
 
   protected SNode getNode() {

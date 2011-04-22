@@ -112,7 +112,7 @@ public class NodeMaps {
       type = myState.createNewRuntimeTypesVariable();
       addNodeToType(node, type, info);
     }
-    return  myState.getRepresentative(type);
+    return myState.getRepresentative(type);
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
@@ -161,7 +161,7 @@ public class NodeMaps {
   }
 
   public void expandAll(boolean finalExpansion) {
-     expandAll(new THashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
+    expandAll(new THashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
   }
 
   public SNode getNode(SNode type) {
@@ -202,7 +202,7 @@ public class NodeMaps {
     if (info != null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
-   // addNodeToError(nodeWithError, errorReporter, info);
+    // addNodeToError(nodeWithError, errorReporter, info);
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 

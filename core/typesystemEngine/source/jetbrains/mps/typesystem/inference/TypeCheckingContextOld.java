@@ -16,6 +16,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.util.Computable;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -55,7 +56,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
 
   public TypeCheckingContextOld(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
-      throw new  NullPointerException("root node in type checking context is null");
+      throw new NullPointerException("root node in type checking context is null");
     }
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
     myTypeChecker = typeChecker;
@@ -87,7 +88,7 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
   }
 
   @Override
-  public SNode getRepresentative (SNode node) {
+  public SNode getRepresentative(SNode node) {
     return getEquationManager().getRepresentator(node);
   }
 
@@ -387,9 +388,9 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
 
   @Override
   public void createGreaterThanInequationStrong(SNode node1,
-                                          SNode node2,
-                                          boolean checkOnly,
-                                          EquationInfo equationInfo) {
+                                                SNode node2,
+                                                boolean checkOnly,
+                                                EquationInfo equationInfo) {
     getNodeTypesComponent().getEquationManager().addInequation(
       node2,
       node1,
@@ -643,11 +644,11 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
       getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
 
       Set<Pair<SNode, List<IErrorReporter>>> errors =
-        new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
+        new THashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
       return errors;
     }
   }
-  
+
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
     return myNodeTypesComponent.getNodesWithErrors();

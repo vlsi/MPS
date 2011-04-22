@@ -24,7 +24,7 @@ public enum RelationKind {
   STRONG_COMPARABLE("~~", "Comparable (strong)", false, false, true),
   WEAK_COMPARABLE_CHECK("~", "Comparable", true, true, true),
   STRONG_COMPARABLE_CHECK("~~", "Comparable (strong)", false, true, true),
-  CHECK_EQUATION("='", "Check-only equation",true, true, false);
+  CHECK_EQUATION("='", "Check-only equation", true, true, false);
 
   private String myRelationSign;
   private String myTitle;

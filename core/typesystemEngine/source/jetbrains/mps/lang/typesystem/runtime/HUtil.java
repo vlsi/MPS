@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class HUtil {
@@ -33,7 +36,7 @@ public class HUtil {
   public static SNode copyIfNecessary(SNode node) {
     if (node != null && (node.getParent() != null || node.isRoot())) {
       // this copies all the atributes, because can be used in migration scripts
-      SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
+      SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
       return copy;
     } else {
       return node;
@@ -51,7 +54,7 @@ public class HUtil {
 
       // this method is used only when quotations create a type
       // so it should not copy attributes, for instance generator macros of a certain type
-      SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
+      SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), false);
 
       if (typeCheckingContext != null) {
         if (isRuntimeTypeVariable(copy)) {
@@ -120,7 +123,7 @@ public class HUtil {
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {
-    List<Pair<String,String>> list = equationInfo.getAdditionalRulesIds();
+    List<Pair<String, String>> list = equationInfo.getAdditionalRulesIds();
     for (Pair<String, String> additionalIds : list) {
       errorReporter.addAdditionalRuleId(additionalIds.o1, additionalIds.o2);
     }

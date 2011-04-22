@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
@@ -22,7 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.*;
 
 public class StructuralNodeSet<T> implements Set<SNode> {
-  private Set<SNodeWrapper> myWrappers = new HashSet<SNodeWrapper>();
+  private Set<SNodeWrapper> myWrappers = new THashSet<SNodeWrapper>();
 
   public StructuralNodeSet() {
   }

@@ -46,7 +46,7 @@ public class CheckEquationBlock extends RelationBlock {
   public void performAction() {
     SNode left = getResolvedInput(myLeftNode);
     SNode right = getResolvedInput(myRightNode);
-    if (!TypesUtil.match(left, right) ) {
+    if (!TypesUtil.match(left, right)) {
       myState.getNodeMaps().reportEquationBroken(myEquationInfo, left, right);
     }
   }
@@ -54,7 +54,7 @@ public class CheckEquationBlock extends RelationBlock {
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
     return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+      new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
   }
 
   @Override

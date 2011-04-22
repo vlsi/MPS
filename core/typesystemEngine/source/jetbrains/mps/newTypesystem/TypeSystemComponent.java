@@ -84,12 +84,12 @@ class TypeSystemComponent extends CheckingComponent {
       return myInvalidationResult;
     }
     boolean result;
-    Set<SNode> invalidatedNodes_A = new HashSet<SNode>();
-    Set<SNode> invalidatedNodes_B = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_A = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
+    Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_B = new THashSet<SNode>();
     Set<SNode> currentNodesToInvalidate_A = myCurrentNodesToInvalidate;
-    Set<SNode> currentNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> currentNodesToInvalidate_B = new THashSet<SNode>();
 
     if (myCacheWasRebuilt) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
@@ -127,8 +127,8 @@ class TypeSystemComponent extends CheckingComponent {
       }
       currentNodesToInvalidate_A = newNodesToInvalidate_A;
       currentNodesToInvalidate_B = newNodesToInvalidate_B;
-      newNodesToInvalidate_A = new HashSet<SNode>();
-      newNodesToInvalidate_B = new HashSet<SNode>();
+      newNodesToInvalidate_A = new THashSet<SNode>();
+      newNodesToInvalidate_B = new THashSet<SNode>();
     }
     result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
     myCurrentNodesToInvalidate.clear();
@@ -295,7 +295,7 @@ class TypeSystemComponent extends CheckingComponent {
           candidatesForFrontier.addAll(sNode.getChildren());
         }
         for (SNode candidate : candidatesForFrontier) {
-            newFrontier.add(candidate);
+          newFrontier.add(candidate);
         }
         if (!myPartlyCheckedNodes.contains(sNode)) {
           MyLanguageCachesReadListener languageCachesReadListener = null;
@@ -363,9 +363,10 @@ class TypeSystemComponent extends CheckingComponent {
     myJustInvalidatedNodes.clear();
   }
 
-  public void addError(SNode node, IErrorReporter reporter)   {
+  public void addError(SNode node, IErrorReporter reporter) {
     myState.addError(node, reporter, null);
   }
+
   public void markUnchecked(SNode node) {
     invalidateNodeTypeSystem(node, true);
   }

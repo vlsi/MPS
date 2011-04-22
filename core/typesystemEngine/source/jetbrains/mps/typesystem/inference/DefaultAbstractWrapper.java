@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public abstract class DefaultAbstractWrapper implements IWrapper {
 
   private Set<IWrapperListener> getWrapperListeners(EquationManager equationManager) {
-    if (equationManager == null) return new HashSet<IWrapperListener>();
+    if (equationManager == null) return new THashSet<IWrapperListener>();
     return equationManager.getWrapperListeners(this);
   }
 
