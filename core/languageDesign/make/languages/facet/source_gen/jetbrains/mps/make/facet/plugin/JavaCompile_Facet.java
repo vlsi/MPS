@@ -20,6 +20,7 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
@@ -114,7 +115,11 @@ public class JavaCompile_Facet implements IFacet {
                 monitor.currentProgress().advanceWork("Compiling", 50, tres.module().getModuleReference().getModuleFqName());
 
                 MPSCompilationResult cr = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
-
+                if (cr != null) {
+                  for (IMessage msg : cr.getMessages()) {
+                    monitor.reportFeedback(new IFeedback.MESSAGE(msg));
+                  }
+                }
                 if (cr == null || !(cr.isOk())) {
                   if (cr != null) {
                     if (cr.getErrors() > 0) {
@@ -241,6 +246,11 @@ public class JavaCompile_Facet implements IFacet {
                 }
 
                 MPSCompilationResult cr = peer.getJavaCompiler().compileModule(tres.module());
+                if (cr != null) {
+                  for (IMessage msg : cr.getMessages()) {
+                    monitor.reportFeedback(new IFeedback.MESSAGE(msg));
+                  }
+                }
                 if (cr == null || !(cr.isOk())) {
                   if (cr != null) {
                     if (cr.getErrors() > 0) {
