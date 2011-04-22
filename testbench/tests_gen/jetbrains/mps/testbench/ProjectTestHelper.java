@@ -16,14 +16,17 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Collections;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Map;
@@ -119,11 +122,24 @@ public class ProjectTestHelper {
     return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make"));
   }
 
+  private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
+    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it instanceof Language;
+      }
+    }).<IModule>translate(new ITranslator2<IModule, IModule>() {
+      public Iterable<IModule> translate(IModule it) {
+        return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+      }
+    }));
+  }
+
   private Iterable<IResource> collectResources(IOperationContext context, final MPSProject pro) {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule mod : pro.getModules()) {
+        Iterable<IModule> modules = pro.getModules();
+        for (IModule mod : withGenerators(modules)) {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
               return it.isGeneratable();

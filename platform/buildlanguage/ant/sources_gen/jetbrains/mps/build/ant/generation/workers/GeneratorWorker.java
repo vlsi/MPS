@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Collections;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -170,25 +172,38 @@ public class GeneratorWorker extends MpsWorker {
 
   }
 
+  private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
+    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it instanceof Language;
+      }
+    }).<IModule>translate(new ITranslator2<IModule, IModule>() {
+      public Iterable<IModule> translate(IModule it) {
+        return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+      }
+    }));
+  }
+
+  private Iterable<SModelDescriptor> getModelsToGenerate(IModule mod) {
+    return Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it.isGeneratable();
+      }
+    });
+  }
+
   private Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (MPSProject p : go.getProjects()) {
-          for (IModule mod : p.getModules()) {
-            models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
-              public boolean accept(SModelDescriptor it) {
-                return it.isGeneratable();
-              }
-            }));
+          for (IModule mod : withGenerators(p.getModules())) {
+            models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((getModelsToGenerate(mod))));
+
           }
         }
-        for (IModule mod : go.getModules()) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
-            public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable();
-            }
-          }));
+        for (IModule mod : withGenerators(go.getModules())) {
+          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(getModelsToGenerate(mod)));
         }
         if (go.getModels() != null) {
           models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
