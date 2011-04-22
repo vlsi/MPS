@@ -21,8 +21,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
-
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
@@ -33,6 +31,10 @@ public interface SModelDescriptor {
   SModel getSModel();
 
   IModule getModule();
+
+  boolean isGeneratable();
+
+  String getModelHash();
 
   //------
 

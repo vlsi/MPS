@@ -54,8 +54,8 @@ public class ProjectStubs extends BaseStubModelRootManager {
     IFile file = ((BaseStubModelDescriptor.FileStubSource) source).getFile();
     final ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
     new ProjectStructureBuilder(descriptor, file, model) {
-      public Iterable<SModelReference> loadReferences(SNode module) {
-        return Sequence.fromIterable(((Iterable<ModelRoot>) descriptor.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
+      public Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor d) {
+        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
           public Iterable<SModelReference> translate(ModelRoot it) {
             return ProjectStubs.this.loadModels(it);
           }

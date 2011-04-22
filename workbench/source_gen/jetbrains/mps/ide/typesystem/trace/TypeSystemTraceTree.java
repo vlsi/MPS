@@ -215,10 +215,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         myNodes.add(typeDifference.getType());
       }
     }
-    if (diff.getConsequences() != null) {
-      for (AbstractOperation childDiff : diff.getConsequences()) {
-        getSliceVars(childDiff);
-      }
+    for (AbstractOperation childDiff : diff.getConsequences()) {
+      getSliceVars(childDiff);
     }
   }
 

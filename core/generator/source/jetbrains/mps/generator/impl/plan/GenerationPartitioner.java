@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
@@ -46,13 +47,13 @@ public class GenerationPartitioner {
   // result
   private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
   private final List<CoherentSetData> myCoherentMappings;
-  private Set<MappingPriorityRule> myConflictingRules;
+  private Set<TemplateMappingPriorityRule> myConflictingRules;
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
     myPriorityMap = new HashMap<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>>();
     myCoherentMappings = new ArrayList<CoherentSetData>();
-    myConflictingRules = new HashSet<MappingPriorityRule>();
+    myConflictingRules = new HashSet<TemplateMappingPriorityRule>();
 
     myModulesMap = new HashMap<ModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
@@ -88,9 +89,8 @@ public class GenerationPartitioner {
 
   private void loadRules() {
     for (TemplateModule generator : myGenerators) {
-      List<MappingPriorityRule> rules = generator.getPriorities();
-      for (MappingPriorityRule rule : rules) {
-        processRule(rule, generator);
+      for (TemplateMappingPriorityRule rule : generator.getPriorities()) {
+        processRule((MappingPriorityRule)rule, generator);
       }
     }
   }
@@ -196,7 +196,7 @@ public class GenerationPartitioner {
     return Collections.emptyList();
   }
 
-  public Set<MappingPriorityRule> getConflictingPriorityRules() {
+  public Set<TemplateMappingPriorityRule> getConflictingPriorityRules() {
     return myConflictingRules;
   }
 

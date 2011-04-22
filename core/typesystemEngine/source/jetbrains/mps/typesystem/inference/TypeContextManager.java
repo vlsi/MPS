@@ -126,10 +126,7 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
-    if (!useOldTypeSystem) {
-      return new TypeCheckingContextNew(node, myTypeChecker);
-    }
-    return new TypeCheckingContextOld(node, myTypeChecker);
+    return new TypeCheckingContextNew(node, myTypeChecker);
   }
 
   public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
@@ -208,10 +205,7 @@ public class TypeContextManager implements ApplicationComponent {
     if (root == null) {
       root = node.getTopmostAncestor();
     }
-    if (!useOldTypeSystem) {
-      return new TypeCheckingContextNew(root, myTypeChecker, true);
-    }
-    return new TypeCheckingContextOld(root, myTypeChecker, true);
+    return new TypeCheckingContextNew(root, myTypeChecker, true);
   }
 
   @Nullable

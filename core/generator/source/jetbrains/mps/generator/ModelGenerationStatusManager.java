@@ -84,23 +84,16 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
-    if (!(sm instanceof EditableSModelDescriptor)) return false;
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) return false;
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    if (GeneratorManager.isDoNotGenerate(sm)) return false;
-    if (esm.isChanged()) return true;
+    if (!sm.isGeneratable()) return false;
+    if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
 
-    IFile modelFile = esm.getModelFile();
-    if (modelFile == null) return true;
-
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
-    if (generationHashes == null) return true;
+    String currentHash = ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+    if (currentHash == null) return true;
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
-    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
+    return !generatedHash.equals(currentHash);
   }
 
   private String getGenerationHash(@NotNull SModelDescriptor sm) {
@@ -139,7 +132,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private String generateHashFileName(GenerationStatus status) {
     SModelDescriptor descriptor = status.getOriginalInputModel();
-    String hash = getContentHash(descriptor);
+    String hash = descriptor.getModelHash();
     if (hash == null) {
       return null;
     }
@@ -171,14 +164,5 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       return null;
     }
     return hashFile.getName().substring(HASH_PREFIX.length());
-  }
-
-  public static String getContentHash(SModelDescriptor sm) {
-    if (!(sm instanceof EditableSModelDescriptor)) return null;
-
-    IFile file = ((EditableSModelDescriptor) sm).getModelFile();
-    if (file == null) return null;
-
-    return ModelDigestUtil.hash(file);
   }
 }

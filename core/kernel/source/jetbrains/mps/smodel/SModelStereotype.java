@@ -36,6 +36,7 @@ public class SModelStereotype {
   public static final String NONE = "";
   public static final String GENERATOR = "generator";
   public static final String TESTS = "tests";
+  public static final String DESCRIPTOR = "descriptor";
   public static final String GENERATED_MODEL = "generatedModel";
   public static final String INTERNAL_COPY = "internal_copy";
   public static final String INTERNAL = "$internal$";
@@ -54,7 +55,7 @@ public class SModelStereotype {
 
   private static boolean isUserModelStereotype(String stereotype) {
     return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype)
-      || TESTS.equals(stereotype);
+      || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
   }
 
   public static boolean isGeneratorModel(SModel model) {

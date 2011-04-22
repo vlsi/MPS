@@ -38,8 +38,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.IMessage;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
@@ -67,11 +67,12 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler();
     String scrName = ((cleanMake ?
       "Rebuild" :
       "Make"
     ));
+    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       if (cleanMake) {
@@ -197,17 +198,21 @@ public class WorkbenchMakeService implements IMakeService {
 
       public void setup(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
-        vars._0(WorkbenchMakeService.this.context.getProject());
-        vars._1(WorkbenchMakeService.this.context);
-        vars._2(WorkbenchMakeService.this.cleanMake);
-        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-          public ProgressIndicator invoke() {
-            return pind.value;
-          }
-        });
+        if (vars != null) {
+          vars._0(WorkbenchMakeService.this.context.getProject());
+          vars._1(WorkbenchMakeService.this.context);
+          vars._2(WorkbenchMakeService.this.cleanMake);
+          vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
+            public ProgressIndicator invoke() {
+              return pind.value;
+            }
+          });
+        }
 
         Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) pool.parameters(new ITarget.Name("textGen"), Object.class);
-        tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        if (tparams != null) {
+          tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        }
 
         if (ctl != null) {
           ctl.setup(pool);
@@ -221,14 +226,20 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private class MessageHandler implements IMessageHandler {
-    public MessageHandler() {
+    private String name;
+    private MessagesViewTool mvt;
+
+    public MessageHandler(String name) {
+      this.name = name;
+      this.mvt = context.getProject().getComponent(MessagesViewTool.class);
     }
 
     public void clear() {
+      this.mvt.clear(name);
     }
 
     public void handle(IMessage message) {
-      context.getProject().getComponent(MessagesViewTool.class).add(message);
+      this.mvt.add(message, name);
     }
   }
 }

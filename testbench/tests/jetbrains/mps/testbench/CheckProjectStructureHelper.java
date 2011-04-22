@@ -188,10 +188,7 @@ public class CheckProjectStructureHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {
-          if (!(sm instanceof EditableSModelDescriptor) || GeneratorManager.isDoNotGenerate(sm)) continue;
-          EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-          if (esm.isPackaged()) continue;
-          if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
+          if(!sm.isGeneratable()) continue;
 
           IModule module = sm.getModule();
           if (module == null) {
@@ -203,12 +200,7 @@ public class CheckProjectStructureHelper {
             errors.add("No generated hash for " + sm.getSModelReference().toString());
             continue;
           }
-          IFile file = ((EditableSModelDescriptor) sm).getModelFile();
-          if (file == null) {
-            errors.add("no model file for " + sm.getSModelReference().toString());
-            continue;
-          }
-          String realHash = ModelGenerationStatusManager.getContentHash(sm);
+          String realHash = sm.getModelHash();
           if (realHash == null) {
             errors.add("cannot gen cache for " + sm.getSModelReference().toString());
             continue;

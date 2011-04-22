@@ -29,20 +29,16 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   }
 
   public void projectOpened() {
-    if (ChangesManager.isEnabled()) {
-      myMessageBusConnection = myProject.getMessageBus().connect();
-      myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorChangesHighlighter.MyEditorComponentCreateListener());
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new EditorChangesHighlighter.MyEditorComponentCreateListener());
 
-      myEditorSettingsListener = new EditorChangesHighlighter.MyEditorSettingsListener();
-      EditorSettings.getInstance().addEditorSettingsListener(myEditorSettingsListener);
-    }
+    myEditorSettingsListener = new EditorChangesHighlighter.MyEditorSettingsListener();
+    EditorSettings.getInstance().addEditorSettingsListener(myEditorSettingsListener);
   }
 
   public void projectClosed() {
-    if (ChangesManager.isEnabled()) {
-      EditorSettings.getInstance().removeEditorSettingsListener(myEditorSettingsListener);
-      myMessageBusConnection.disconnect();
-    }
+    EditorSettings.getInstance().removeEditorSettingsListener(myEditorSettingsListener);
+    myMessageBusConnection.disconnect();
   }
 
   private void addHighighlighter(@NotNull EditorComponent editorComponent, boolean enabled) {

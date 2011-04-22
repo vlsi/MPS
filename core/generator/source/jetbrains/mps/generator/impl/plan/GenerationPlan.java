@@ -5,6 +5,7 @@ import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -28,7 +29,7 @@ public class GenerationPlan {
 
   private Set<Language> myLanguages = new HashSet<Language>();
   private List<List<TemplateMappingConfiguration>> myPlan;
-  private Set<MappingPriorityRule> myConflictingPriorityRules;
+  private Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
   private TemplateSwitchGraph myTemplateSwitchGraph;
 

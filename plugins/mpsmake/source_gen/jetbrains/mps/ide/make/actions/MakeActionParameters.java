@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MakeActionParameters {
   private IOperationContext context;
@@ -44,7 +42,7 @@ public class MakeActionParameters {
     IModule module = this.moduleToMake();
     SModelDescriptor model = this.modelToMake();
     if (model != null) {
-      if (!(isUserEditableModel(model))) {
+      if (!(model.isGeneratable())) {
         return null;
       }
 
@@ -54,7 +52,7 @@ public class MakeActionParameters {
       Iterable<SModelDescriptor> mds = this.models;
       if (!(Sequence.fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
-          return isUserEditableModel(md);
+          return md.isGeneratable();
         }
       }))) {
         return null;
@@ -99,7 +97,7 @@ public class MakeActionParameters {
               private Iterable<SModelDescriptor> _7_models;
               private SModelDescriptor _8__yield_nk3wxj_b0a0a0a0a0c0b;
               private Iterator<SModelDescriptor> _8__yield_nk3wxj_b0a0a0a0a0c0b_it;
-              private List<SModelDescriptor> _14_modelsFromModule;
+              private Iterable<SModelDescriptor> _14_modelsFromModule;
               private SModelDescriptor _15__yield_nk3wxj_c0b0a0a0a0c0b;
               private Iterator<SModelDescriptor> _15__yield_nk3wxj_c0b0a0a0a0c0b_it;
               private Iterable<SModelDescriptor> _21_modelsFromModules;
@@ -117,7 +115,7 @@ __switch__:
                     case 8:
                       this._8__yield_nk3wxj_b0a0a0a0a0c0b_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModelDescriptor>() {
                         public boolean accept(SModelDescriptor md) {
-                          return isUserEditableModel(md);
+                          return md.isGeneratable();
                         }
                       })).iterator();
                     case 9:
@@ -149,7 +147,7 @@ __switch__:
                       this.__CP__ = 24;
                       break;
                     case 2:
-                      if (model != null && isUserEditableModel(model)) {
+                      if (model != null && model.isGeneratable()) {
                         this.__CP__ = 3;
                         break;
                       } else if (models != null && models.size() > 1) {
@@ -196,7 +194,11 @@ __switch__:
                     case 12:
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          _14_modelsFromModule = module.getEditableUserModels();
+                          _14_modelsFromModule = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+                            public boolean accept(SModelDescriptor it) {
+                              return it.isGeneratable();
+                            }
+                          });
                         }
                       });
                       this.__CP__ = 15;
@@ -210,11 +212,16 @@ __switch__:
                         public void run() {
                           if (MakeActionParameters.this.modules != null) {
                             for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
-                              _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
+                              _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(mod.getOwnModelDescriptors()));
                             }
                           } else if (MakeActionParameters.this.cmodule != null) {
-                            _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
+                            _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getOwnModelDescriptors()));
                           }
+                          _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).where(new IWhereFilter<SModelDescriptor>() {
+                            public boolean accept(SModelDescriptor it) {
+                              return it.isGeneratable();
+                            }
+                          });
                         }
                       });
                       this.__CP__ = 22;
@@ -238,13 +245,6 @@ __switch__:
       }
     });
     return new ModelsToResources(context, smds).resources(dirtyOnly);
-  }
-
-  public boolean isUserEditableModel(SModelDescriptor md) {
-    if (!(SModelStereotype.isUserModel(md))) {
-      return false;
-    }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
   }
 
   private IModule moduleToMake() {

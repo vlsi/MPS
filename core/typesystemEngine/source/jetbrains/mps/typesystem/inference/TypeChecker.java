@@ -75,13 +75,8 @@ public class TypeChecker implements ApplicationComponent {
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
-    if (!useOldTypeSystem) {
-      myRuntimeSupport = new RuntimeSupportNew(this);
-      mySubtypingManager = new SubTypingManagerNew(this);
-    } else {
-      myRuntimeSupport = new RuntimeSupport(this);
-      mySubtypingManager = new SubtypingManager(this);
-    }
+    myRuntimeSupport = new RuntimeSupportNew(this);
+    mySubtypingManager = new SubTypingManagerNew(this);
     myRulesManager = new RulesManager(this);
   }
 
@@ -209,7 +204,7 @@ public class TypeChecker implements ApplicationComponent {
     if (myPerformanceTracer != null) {
       myPerformanceTracer = null;
       myRuntimeSupport = new RuntimeSupport(this);
-      mySubtypingManager = new SubtypingManager(this);
+      mySubtypingManager = new SubTypingManagerNew(this);
     }
   }
 

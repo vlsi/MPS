@@ -39,7 +39,6 @@ import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

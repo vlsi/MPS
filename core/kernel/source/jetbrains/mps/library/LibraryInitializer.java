@@ -20,7 +20,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
 
 import java.util.*;

@@ -68,22 +68,20 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   }
 
   public void projectOpened() {
-    if (ChangesManager.isEnabled()) {
-      final ProjectPane projectPane = ProjectPane.getInstance(myProject);
-      MPSTree tree = ProjectPane.getInstance(myProject).getTree();
-      if (tree != null) {
-        registerTreeNodesRecursively(tree.getRootNode());
-        tree.addTreeNodeListener(myTreeNodeListener);
-      } else {
-        projectPane.addComponentCreationListener(new ProjectPane.ComponentCreationListener() {
-          public void componentCreated(ProjectPane pane) {
-            pane.removeComponentCreationListener(this);
-            ProjectTree createdTree = pane.getTree();
-            registerTreeNodesRecursively(createdTree.getRootNode());
-            createdTree.addTreeNodeListener(myTreeNodeListener);
-          }
-        });
-      }
+    final ProjectPane projectPane = ProjectPane.getInstance(myProject);
+    MPSTree tree = ProjectPane.getInstance(myProject).getTree();
+    if (tree != null) {
+      registerTreeNodesRecursively(tree.getRootNode());
+      tree.addTreeNodeListener(myTreeNodeListener);
+    } else {
+      projectPane.addComponentCreationListener(new ProjectPane.ComponentCreationListener() {
+        public void componentCreated(ProjectPane pane) {
+          pane.removeComponentCreationListener(this);
+          ProjectTree createdTree = pane.getTree();
+          registerTreeNodesRecursively(createdTree.getRootNode());
+          createdTree.addTreeNodeListener(myTreeNodeListener);
+        }
+      });
     }
   }
 

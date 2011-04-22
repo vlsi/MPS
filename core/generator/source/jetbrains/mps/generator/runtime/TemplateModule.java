@@ -16,10 +16,8 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * evgeny, 3/10/11
@@ -28,7 +26,7 @@ public interface TemplateModule {
 
   ModuleReference getReference();
 
-  List<MappingPriorityRule> getPriorities();
+  Collection<TemplateMappingPriorityRule> getPriorities();
 
   Collection<TemplateModel> getModels();
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.descriptor.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_name_PropertyConstraint" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_name_PropertyConstraint" file="LanguageDescriptor_name_PropertyConstraint.java">
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
+  </dependency>
+</dependenciesRoot>
+

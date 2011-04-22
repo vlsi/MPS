@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.util.Set;
@@ -27,7 +28,7 @@ import java.util.Set;
 public class EditorMessageWithTarget extends DefaultEditorMessage {
   protected MessageTarget myMessageTarget;
 
-  public EditorMessageWithTarget(SNode errorNode, MessageStatus status, MessageTarget target, Color color, String string, EditorMessageOwner owner) {
+  public EditorMessageWithTarget(SNode errorNode, MessageStatus status, @NotNull MessageTarget target, Color color, String string, EditorMessageOwner owner) {
     super(errorNode, status, color, string, owner);
     myMessageTarget = target;
   }

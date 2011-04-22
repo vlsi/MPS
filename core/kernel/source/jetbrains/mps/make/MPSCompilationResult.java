@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.make;
 
+import jetbrains.mps.messages.IMessage;
+
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Aug 20, 2010
@@ -27,16 +31,22 @@ public class MPSCompilationResult implements Serializable {
   private int myWarnings;
   private boolean myAborted;
   private boolean myCompiledAnything;
+  private List<? extends IMessage> myMessages;
 
   public MPSCompilationResult(int errors, int warnings, boolean aborted) {
     this(errors, warnings, aborted, true);
   }
 
   public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
+    this(errors, warnings, aborted, true, Collections.<IMessage>emptyList());
+  }
+
+  public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled, List<? extends IMessage> messages) {
     myErrors = errors;
     myWarnings = warnings;
     myAborted = aborted;
     myCompiledAnything = compiled;
+    myMessages = messages;
   }
 
   public int getErrors() {
@@ -61,6 +71,10 @@ public class MPSCompilationResult implements Serializable {
 
   public boolean isReloadingNeeded() {
     return isOk() && isCompiledAnything();
+  }
+
+  public List<IMessage> getMessages() {
+    return myMessages != null ? Collections.unmodifiableList(myMessages) : Collections.<IMessage>emptyList();
   }
 
   public String toString() {

@@ -16,11 +16,10 @@
 package jetbrains.mps;
 
 import jetbrains.mps.project.TestResult;
-import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.TestCase;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 
 public class BaseMPSTest extends TestCase {

@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.IOperationContext;
@@ -19,8 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JComponent;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -29,7 +32,7 @@ public class DiffEditor implements EditorMessageOwner {
   private DiffEditor.MainEditorComponent myMainEditorComponent;
   private JPanel myTopComponent;
   private InspectorEditorComponent myInspector;
-  private Map<ModelChange, ChangeEditorMessage> myChangeToMessage = MapSequence.fromMap(new HashMap<ModelChange, ChangeEditorMessage>());
+  private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
 
   public DiffEditor(IOperationContext context, SNode node, String contentTitle) {
     myMainEditorComponent = new DiffEditor.MainEditorComponent(context);
@@ -87,11 +90,14 @@ public class DiffEditor implements EditorMessageOwner {
     );
   }
 
-  public void highlightChange(final ChangeEditorMessage message) {
+  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    final ChangeEditorMessage message = new ChangeEditorMessage(model, change, this, conflictChecker);
     if (message.getNode() == null) {
       return;
     }
-    MapSequence.fromMap(myChangeToMessage).put(message.getChange(), message);
+    // TODO more messages per change 
+    MapSequence.fromMap(myChangeToMessages).put(message.getChange(), ListSequence.fromList(new LinkedList<ChangeEditorMessage>()));
+    ListSequence.fromList(MapSequence.fromMap(myChangeToMessages).get(message.getChange())).addElement(message);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.getHighlightManager().mark(message);
@@ -107,8 +113,8 @@ public class DiffEditor implements EditorMessageOwner {
     });
   }
 
-  public ChangeEditorMessage getMessageForChange(ModelChange change) {
-    return MapSequence.fromMap(myChangeToMessage).get(change);
+  public List<ChangeEditorMessage> getMessageForChange(ModelChange change) {
+    return MapSequence.fromMap(myChangeToMessages).get(change);
   }
 
   public void unhighlightAllChanges() {
@@ -117,7 +123,7 @@ public class DiffEditor implements EditorMessageOwner {
         ec.getHighlightManager().clearForOwner(DiffEditor.this);
       }
     });
-    MapSequence.fromMap(myChangeToMessage).clear();
+    MapSequence.fromMap(myChangeToMessages).clear();
   }
 
   private Iterable<EditorComponent> getEditorComponents() {

@@ -656,6 +656,7 @@ public abstract class AbstractModule implements IModule {
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
+        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.DESCRIPTOR)));
       }
 
       if (AbstractModule.this instanceof Generator) {

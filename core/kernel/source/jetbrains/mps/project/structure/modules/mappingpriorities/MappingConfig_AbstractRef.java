@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.generator.runtime.TemplateMappingConfigRef;
 import jetbrains.mps.smodel.SModelReference;
 
-public class MappingConfig_AbstractRef {
+public class MappingConfig_AbstractRef implements TemplateMappingConfigRef {
   public MappingConfig_AbstractRef getCopy() {
     return new MappingConfig_AbstractRef();
   }

@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
@@ -34,10 +35,7 @@ import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PartitioningHelper {
   public static void showMappingPartitioning(Project project, Frame frame, IScope scope, List<SModelDescriptor> models) {
@@ -49,8 +47,8 @@ public class PartitioningHelper {
 
     Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
     for (TemplateModule generator : plan.getGenerators()) {
-      for (MappingPriorityRule rule : generator.getPriorities()) {
-        myRule2Generator.put(rule, generator);
+      for (TemplateMappingPriorityRule rule : generator.getPriorities()) {
+        myRule2Generator.put((MappingPriorityRule) rule, generator);
       }
     }
 
@@ -59,7 +57,7 @@ public class PartitioningHelper {
     // print all rules
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (TemplateModule generator : plan.getGenerators()) {
-      List<MappingPriorityRule> rules = generator.getPriorities();
+      Collection<TemplateMappingPriorityRule> rules = generator.getPriorities();
       List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
       for (Pair<MappingPriorityRule, String> string : strings) {
         Message msg = new Message(MessageKind.INFORMATION, " " + string.second);

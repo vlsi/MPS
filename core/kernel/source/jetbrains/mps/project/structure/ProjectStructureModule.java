@@ -19,10 +19,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
@@ -82,6 +81,10 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   private void refreshModule(IModule module, boolean isDeleted) {
     ModelAccess.assertLegalWrite();
 
+    if(!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
+      return;
+    }
+
     SModelFqName fq = getModelFqName(module);
     if (isDeleted) {
       ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
@@ -110,6 +113,10 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     Set<SModelFqName> old = new HashSet<SModelFqName>(myModels.keySet());
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
+      if(!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
+        continue;
+      }
+
       SModelFqName fq = getModelFqName(module);
       if (myModels.containsKey(fq)) {
         old.remove(fq);
@@ -262,19 +269,32 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     protected ModelLoadResult initialLoad() {
       ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
       model.setLoading(true);
-      ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
+      final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
       IFile file = myModule.getDescriptorFile();
 
       if (file != null && moduleDescriptor != null) {
         new ProjectStructureBuilder(moduleDescriptor, file, model) {
           @Override
-          public Iterable<SModelReference> loadReferences(SNode module) {
-            return Sequence.<SModelDescriptor>fromIterable(SModelRepository.getInstance().getModelDescriptors(myModule)).select(new ISelector<SModelDescriptor, SModelReference>() {
-              @Override
-              public SModelReference select(SModelDescriptor o) {
-                return o.getSModelReference();
-              }
-            });
+          public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
+            IModule module = moduleDescriptor == descriptor ? myModule :
+              MPSModuleRepository.getInstance().getModule(descriptor.getModuleReference());
+            if(module == null) {
+              return Collections.emptyList();
+            }
+
+            return Sequence.<SModelDescriptor>fromIterable(module.getOwnModelDescriptors()).
+              where(new IWhereFilter<SModelDescriptor>() {
+                @Override
+                public boolean accept(SModelDescriptor o) {
+                  return SModelStereotype.isUserModel(o);
+                }
+              }).
+              select(new ISelector<SModelDescriptor, SModelReference>() {
+                @Override
+                public SModelReference select(SModelDescriptor o) {
+                  return o.getSModelReference();
+                }
+              });
           }
         }.convert();
       }

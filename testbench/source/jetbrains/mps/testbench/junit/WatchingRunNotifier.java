@@ -3,7 +3,6 @@ package jetbrains.mps.testbench.junit;
 import jetbrains.mps.testbench.util.CachingAppender;
 import jetbrains.mps.testbench.util.CachingPrintStream;
 import jetbrains.mps.testbench.util.ThreadWatcher;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.runner.Description;
@@ -11,6 +10,7 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**

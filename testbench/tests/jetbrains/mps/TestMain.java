@@ -50,7 +50,7 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
-import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;

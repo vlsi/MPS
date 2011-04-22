@@ -40,9 +40,6 @@
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.VcsSettingsHolder</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.vcs.VCSHandler</interface-class>
       <implementation-class>jetbrains.mps.vcs.RealVcsHandler</implementation-class>
     </component>
@@ -62,12 +59,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.VcsRootsManager</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.ui.ChangesNotificator</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.ChangesManager</implementation-class>
@@ -115,9 +106,8 @@
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
-    <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
-    <projectConfigurable implementation="jetbrains.mps.vcs.ui.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
+    <projectConfigurable implementation="jetbrains.mps.vcs.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
 
     <!--MPS Patch: our own diff request factory-->
     <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"

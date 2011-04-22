@@ -45,14 +45,16 @@ import java.util.Set;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
+  private ChangeEditorMessage.ConflictChecker myConflictsChecker;
 
-  public ChangeEditorMessage(SModel editedModel, ModelChange change, EditorMessageOwner owner) {
+  public ChangeEditorMessage(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
     super(computeNode(editedModel, change), MessageStatus.OK, computeMessageTarget(editedModel, change), null, "", owner);
     myChange = change;
+    myConflictsChecker = conflictChecker;
   }
 
   public boolean isConflicted() {
-    return false;
+    return myConflictsChecker != null && myConflictsChecker.isChangeConflicted(myChange);
   }
 
   @Override
@@ -351,5 +353,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       a.equals(b) :
       a == b
     );
+  }
+
+  public static interface ConflictChecker {
+    public boolean isChangeConflicted(ModelChange change);
   }
 }

@@ -20,6 +20,8 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -84,6 +86,8 @@ public class ModuleMaker {
       int errorCount = 0;
       int warnCount = 0;
       boolean compiled = false;
+      List<IMessage> messages = new ArrayList<IMessage>();
+
       List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
 
       for (Set<IModule> cycle : schedule) {
@@ -94,9 +98,10 @@ public class ModuleMaker {
         errorCount += result.getErrors();
         warnCount += result.getWarnings();
         compiled = compiled || result.isCompiledAnything();
+        messages.addAll(result.getMessages());
       }
 
-      return new MPSCompilationResult(errorCount, warnCount, false, compiled);
+      return new MPSCompilationResult(errorCount, warnCount, false, compiled, messages);
     } finally {
       indicator.popState();
     }
@@ -104,6 +109,7 @@ public class ModuleMaker {
 
   private MPSCompilationResult compile(Set<IModule> modules) {
     boolean hasAnythingToCompile = false;
+    List<MyMessage> messages = new ArrayList<MyMessage>();
 
     for (IModule m : modules) {
       if (m.isCompileInMPS()) {
@@ -122,7 +128,9 @@ public class ModuleMaker {
       if (areClassesUpToDate(m)) continue;
 
       if (!m.isCompileInMPS()) {
-        LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName(), m);
+        String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName();
+        messages.add(new MyMessage(MessageKind.WARNING, text, m));
+        LOG.debug(text, m);
         continue;
       }
 
@@ -143,7 +151,7 @@ public class ModuleMaker {
     invalidateClasspath(modulesWithRemovals);
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules, classPathItems);
+    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
     compiler.addCompilationResultListener(listener);
     compiler.compile(classPathItems);
     compiler.removeCompilationResultListener(listener);
@@ -171,7 +179,7 @@ public class ModuleMaker {
       module.updateClassPath();
     }
 
-    return new MPSCompilationResult(listener.getErrorCount(), 0, false);
+    return new MPSCompilationResult(listener.getErrorCount(), 0, false, true, messages);
   }
 
   private String getName(char[][] compoundName) {
@@ -270,15 +278,18 @@ public class ModuleMaker {
     private int myOutputtedErrors = 0;
     private final Set<IModule> myModules;
     private IClassPathItem myClassPathItems;
+    private List<MyMessage> myMessages;
 
-    public MyCompilationResultAdapter(Set<IModule> modules, IClassPathItem classPathItems) {
+    public MyCompilationResultAdapter(Set<IModule> modules, IClassPathItem classPathItems, List<MyMessage> messages) {
       myModules = modules;
       myClassPathItems = classPathItems;
+      myMessages = messages;
     }
 
     @Override
     public void onFatalError(String error) {
-      LOG.error("Fatal error. "+error);
+      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. "+error, null));
+      LOG.debug("Fatal error. " + error);
       LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
       myErrorCount += 1;
     }
@@ -301,16 +312,20 @@ public class ModuleMaker {
 
           Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
 
+          String errMsg = messageStirng + " (line: " + cp.getSourceLineNumber() + ")";
           if (cp.isWarning()) {
-            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
+            myMessages.add(new MyMessage(MessageKind.WARNING, errMsg, hintObject));
+            LOG.debug(errMsg, hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              LOG.error("Errors encountered");
+              myMessages.add(new MyMessage(MessageKind.ERROR, "Errors encountered", null));
+              LOG.debug("Errors encountered");
               LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }
             if (myOutputtedErrors < MAX_ERRORS) {
               myOutputtedErrors++;
-              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
+              myMessages.add(new MyMessage(MessageKind.WARNING, errMsg, hintObject));
+              LOG.debug(errMsg, hintObject);
             }
           }
         }
@@ -343,7 +358,9 @@ public class ModuleMaker {
               os = new FileOutputStream(output);
               os.write(cf.getBytes());
             } catch (IOException e) {
-              LOG.error("Can't write to " + output.getAbsolutePath());
+              String errMsg = "Can't write to " + output.getAbsolutePath();
+              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+              LOG.debug(errMsg);
             } finally {
               if (os != null) {
                 try {
@@ -355,17 +372,62 @@ public class ModuleMaker {
             }
           } else {
             if (output.exists() && !(output.delete())) {
-              LOG.error("Can't delete " + output.getPath());
+              String errMsg = "Can't delete " + output.getPath();
+              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+              LOG.error(errMsg);
             }
           }
         } else {
-          LOG.error("I don't know in which module's output path I should place class file for " + fqName);
+          String errMsg = "I don't know in which module's output path I should place class file for " + fqName;
+          myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, null));
+          LOG.error(errMsg);
         }
       }
     }
 
     public int getErrorCount() {
       return myErrorCount;
+    }
+  }
+
+  private static class MyMessage implements IMessage {
+
+    private MessageKind myKind;
+    private String myText;
+    private Object myHintObject;
+
+    public MyMessage (MessageKind kind, String text, Object hintObject) {
+      myKind = kind;
+      myText = text;
+      myHintObject = hintObject;
+    }
+
+    public MessageKind getKind() {
+      return myKind;
+    }
+
+    public Throwable getException() {
+      return null;
+    }
+
+    public String getText() {
+      return myText;
+    }
+
+    public String getSender() {
+      return null;
+    }
+
+    public long getCreationTime() {
+      return 0;
+    }
+
+    public Object getHintObject() {
+      return myHintObject;
+    }
+
+    public String getHelpUrl() {
+      return null;
     }
   }
 }

@@ -106,7 +106,7 @@ public class RootDifferenceDialog extends BaseDialog {
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
-    diffEditor.highlightChange(new ChangeEditorMessage(model, change, diffEditor));
+    diffEditor.highlightChange(model, change, null);
   }
 
   public void rehighlight() {
