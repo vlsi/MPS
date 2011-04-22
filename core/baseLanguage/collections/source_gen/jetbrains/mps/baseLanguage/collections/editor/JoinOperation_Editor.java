@@ -27,6 +27,10 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_9t56qv_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_9t56qv_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_9t56qv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9t56qv_a");
@@ -51,6 +55,14 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_9t56qv_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_9t56qv_a_0");
+    editorCell.addEditorCell(this.createConstant_9t56qv_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9t56qv_b0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_9t56qv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9t56qv_a1a");
@@ -67,7 +79,31 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_9t56qv_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delimeter:");
+    editorCell.setCellId("Constant_9t56qv_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_9t56qv_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("delimiter");
+    provider.setNoTargetText("<no delimiter>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_9t56qv_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("delimiter");
     provider.setNoTargetText("<no delimiter>");

@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

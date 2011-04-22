@@ -46,7 +46,7 @@
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="quotation" />
     <orderEntry type="module" module-name="resources" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="module" module-name="sharedConcepts" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="structure" />

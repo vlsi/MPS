@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="65" endLine="27" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="31" startPosition="65" endLine="35" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="242" startPosition="45" endLine="246" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="270" startPosition="66" endLine="274" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$4" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="256" startPosition="45" endLine="261" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="139" startPosition="90" endLine="146" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="21" startPosition="74" endLine="31" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$1" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="65" endLine="34" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="65" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="279" startPosition="35" endLine="289" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
   <unitInfo fileName="DefaultJavaApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory" />
   <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
@@ -29,11 +29,11 @@
   <unitInfo fileName="TodoViewer_Tool.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
   <unitInfo fileName="ShowTodoViewer_Action.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="304" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Action.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
   <unitInfo fileName="ShowNullDFA_Action.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
   <unitInfo fileName="PrintNodePosition_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action" />
@@ -667,8 +667,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="16" startPosition="30" endLine="21" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773202" varName="opening" />
       <varInfo nodeId="155142699038773204" varName="context" />
+      <varInfo nodeId="155142699038773202" varName="opening" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="25" startPosition="129" endLine="30" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="161" startPosition="105" endLine="166" endPosition="7">
@@ -684,8 +684,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="220" startPosition="93" endLine="230" endPosition="5">
-      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773953" varName="nodeCell" />
+      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="103" startPosition="30" endLine="114" endPosition="7">
@@ -746,8 +746,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="22" startPosition="85" endLine="65" endPosition="19">
-      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773367" varName="parExpr" />
+      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -761,8 +761,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="68" startPosition="106" endLine="121" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773575" varName="binOpCheck" />
+      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -774,10 +774,10 @@
     <unitInfo nodeId="155142699038773182" fileName="ParenthesisUtil.java" startLine="16" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ParenthesisUtil" />
   </root>
   <root nodeId="2566194812863059400">
-    <nodeInfo nodeId="2526721715665566280" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2526721715665547046" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="81" endLine="33" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="133" />
-    <scopeInfo nodeId="7879978511258717716" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="81" endLine="33" endPosition="134" />
+    <nodeInfo nodeId="4030433165042736091" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="15" endLine="27" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4030433165042736098" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="40" startPosition="15" endLine="41" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="15" endLine="27" endPosition="139" />
+    <scopeInfo nodeId="7879978511258717716" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="40" startPosition="15" endLine="41" endPosition="140" />
   </root>
   <root nodeId="3331861101285339078">
     <nodeInfo nodeId="3331861101285428311" fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

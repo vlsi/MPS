@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="id7i" modelUID="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.run.common.structure)" version="-1" />
+      <model index="lc3w" modelUID="jetbrains.mps.execution.common.structure" version="-1" />
+    </dependencies>
+    <move id="id7i.946964771156905387" to="lc3w.946964771156905387" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="id7i" modelUID="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.run.common.structure)" version="-1" />
+      <model index="lc3w" modelUID="jetbrains.mps.execution.common.structure" version="-1" />
+    </dependencies>
+    <move id="id7i.946964771156905387" to="lc3w.946964771156905387" />
+  </StructureModification>
+</history>
+

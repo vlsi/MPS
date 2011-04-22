@@ -16,25 +16,12 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.project.Project;
-import com.sun.jdi.*;
-import com.sun.jdi.event.LocatableEvent;
-import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debug.api.ToRemove;
-import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
-import jetbrains.mps.debug.api.breakpoints.DefaultKind;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.debug.breakpoints.LineBreakpoint;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.PositionInfo;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 @Deprecated
 @ToRemove(version = 2.0)

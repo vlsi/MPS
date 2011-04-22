@@ -1,6 +1,7 @@
 core/idea-patch/classes
 classes
 workbench/classes
+workbench/runConfigurations/classes
 core/debug/classes
 core/debug-api/classes
 core/runtime/classes

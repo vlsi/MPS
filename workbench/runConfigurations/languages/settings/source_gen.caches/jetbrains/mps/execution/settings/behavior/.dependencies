@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_Behavior" file="ApplyTo_Function_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" file="CreateEditor_Function_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.Dispose_Function_Behavior" file="Dispose_Function_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" file="EditorOperationDeclaration_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior" file="PersistentConfigurationTemplate_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.HashSet" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfigurationType_Behavior" file="PersistentConfigurationType_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" file="PersistentConfiguration_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="java.util.HashSet" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" file="PersistentPropertyDeclaration_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_Behavior" file="ResetFrom_Function_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.SettingsEditor_Behavior" file="SettingsEditor_Behavior.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+

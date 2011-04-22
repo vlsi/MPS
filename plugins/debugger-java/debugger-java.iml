@@ -7,13 +7,18 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/sources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.debugger.java/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="library" name="tools" level="project" />
     <orderEntry type="module" module-name="debugger-api" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="debug" />
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="plugin" />
   </component>
 </module>
 

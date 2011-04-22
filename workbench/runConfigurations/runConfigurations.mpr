@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="old.usages" />
+      <solutionPath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages" />
+      <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="old.usages" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.execution.runtime/jetbrains.mps.execution.runtime.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="old" />
+      <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="old.usages" />
+      <languagePath path="${project}/languages/commands/commands.mpl" folder="" />
+      <languagePath path="${project}/languages/common/common.mpl" folder="" />
+      <languagePath path="${project}/languages/configurations/configurations.mpl" />
+      <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
+      <languagePath path="${project}/languages/settings/settings.mpl" folder="" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs>
+      <genConfModule name="commands" moduleRef="jetbrains.mps.execution.commands" />
+      <genConfModule name="common" moduleRef="jetbrains.mps.execution.common" />
+      <genConfModule name="configurations" moduleRef="jetbrains.mps.execution.configurations" />
+      <genConfModule name="configurations.lib" moduleRef="jetbrains.mps.execution.configurations.lib" />
+      <genConfModule name="demo" moduleRef="jetbrains.mps.execution.demo" />
+      <genConfModule name="lib" moduleRef="jetbrains.mps.execution.lib" />
+      <genConfModule name="settings" moduleRef="jetbrains.mps.execution.settings" />
+    </genConfs>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+  </component>
+</project>
+

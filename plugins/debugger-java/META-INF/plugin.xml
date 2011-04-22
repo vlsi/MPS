@@ -22,7 +22,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <configurationType implementation="jetbrains.mps.debugger.java.run.RemoteConfigurationType"/>
+    <configurationType implementation="jetbrains.mps.debugger.java.remote.Remote_Kind"/>
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
   </extensions>
 </idea-plugin>

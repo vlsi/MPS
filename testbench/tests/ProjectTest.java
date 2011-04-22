@@ -92,6 +92,7 @@ public class ProjectTest {
       "/platform/contracts/contracts.mpr",
       "/platform/gwtsupport/GWTSupport.mpr",
       "/workbench/ideSolution/ide.mpr",
+      "/workbench/runConfigurations/runConfigurations.mpr",
 
       "/plugins/vcs/vcs.mpr",
       "/plugins/debugger-java/debuggerJava.mpr",

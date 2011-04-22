@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -62,6 +63,54 @@ public class ConceptFunction_Behavior {
 
   public static String virtual_getName_1216468837268(SNode thisNode) {
     return SConceptPropertyOperations.getString(thisNode, "alias");
+  }
+
+  public static String call_getHeader_2866018809101862250(SNode thisNode) {
+    StringBuilder result = new StringBuilder();
+    // by default 'alias' is not shown. 
+    // if you need presentation like alias(...)->.. 
+    // then use the ConceptFunctionAliased_Component 
+    if (SConceptPropertyOperations.getBoolean(thisNode, "showName")) {
+      result.append(ConceptFunction_Behavior.call_getName_1216468837268(thisNode));
+    }
+    return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
+  }
+
+  public static String call_getHeaderForAliasedEditor_2866018809101869089(SNode thisNode) {
+    StringBuilder result = new StringBuilder();
+    return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
+  }
+
+  public static String call_appendHeader_2866018809101869378(SNode thisNode, StringBuilder result) {
+    result.append("(");
+    List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(thisNode);
+    boolean isFirst = true;
+    for (SNode cfp : parameters) {
+      if (!(isFirst)) {
+        result.append(", ");
+      }
+      isFirst = false;
+      result.append(SConceptPropertyOperations.getString(cfp, "alias"));
+    }
+    result.append(")->");
+    SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+    if (expectedReturnType == null) {
+      result.append("void");
+    } else {
+      result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
+    }
+    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")).isNotEmpty()) {
+      result.append(" throws ");
+      boolean isFirstThrowable = true;
+      for (SNode throwableType : SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")) {
+        if (!(isFirstThrowable)) {
+          result.append(", ");
+        }
+        isFirstThrowable = false;
+        result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(throwableType));
+      }
+    }
+    return result.toString();
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {

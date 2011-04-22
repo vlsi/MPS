@@ -15,6 +15,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
+import jetbrains.mps.execution.configurations.runtime.BaseMpsRunConfiguration;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -23,11 +24,16 @@ import org.jetbrains.annotations.Nullable;
 public class MPSDebugRunner extends GenericProgramRunner {
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
-    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && isOldRunConfiguration(profile);
+    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) &&
+      (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
   }
 
   private boolean isOldRunConfiguration(RunProfile profile) {
     return (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
+  }
+
+  private boolean isNewRunConfiguration(RunProfile profile) {
+    return (profile instanceof BaseMpsRunConfiguration) && (((BaseMpsRunConfiguration) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
   }
 
   @NotNull
@@ -47,16 +53,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
                                                          ExecutionEnvironment env) throws ExecutionException {
     IDebugger debugger;
     //todo get connection settings
-    if (state instanceof BaseRunProfileState) { // obsolete run configurations
-      final BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
-      debugger = new DefaultDebugger() {
-        @NotNull
-        @Override
-        public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
-          return baseRunProfileState.createDebugSessionCreator(project);
-        }
-      };
-    } else if (state instanceof DebuggerRunProfileState) {
+    if (state instanceof DebuggerRunProfileState) {
       debugger = ((DebuggerRunProfileState) state).getDebugger();
     } else {
       throw new ExecutionException("Unknown Run Profile State");
