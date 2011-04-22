@@ -1,62 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" file="AnnotationAspectSubcolumn.java">
+  <dependency className="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" file="AnnotationAspectSubcolumn.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.awt.FontMetrics" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewAction" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="com.intellij.vcsUtil.VcsUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.AnnotationColumn" file="AnnotationColumn.java">
+  <dependency className="jetbrains.mps.vcs.annotate.AnnotationColumn" file="AnnotationColumn.java">
     <classNode dependClassName="com.intellij.openapi.vcs.versionBrowser.CommittedChangeList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.VcsRevisionRange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.ShowAdditionalInfoAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
     <classNode dependClassName="com.intellij.openapi.ide.CopyPasteManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.AnnotationColors" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.EditorUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.CellFinder" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewAction" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.NodeLineContent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.HighlightRevisionSubcolumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate._Adapters" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -86,16 +84,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.ReferenceLineContent" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationHelper" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Separator" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.awt.FontMetrics" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.BackgroundFromStartOption" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.VcsRevisionRange" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
     <classNode dependClassName="java.lang.Integer" />
@@ -105,13 +105,14 @@
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.HighlightRevisionSubcolumn" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.EditorUtils" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePathImpl" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
@@ -121,18 +122,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.PropertyLineContent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
     <classNode extendsClassName="com.intellij.openapi.vcs.annotate.AnnotationListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.AnnotationHelper" file="AnnotationHelper.java">
+  <dependency className="jetbrains.mps.vcs.annotate.AnnotationHelper" file="AnnotationHelper.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.AnnotationProvider" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -153,7 +154,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.BackgroundFromStartOption" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" file="CommitNumberSubcolumn.java">
+  <dependency className="jetbrains.mps.vcs.annotate.CommitNumberSubcolumn" file="CommitNumberSubcolumn.java">
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -177,17 +177,17 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Date" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="java.awt.FontMetrics" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode extendsClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+    <classNode extendsClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.EditorUtils" file="EditorUtils.java">
+  <dependency className="jetbrains.mps.vcs.annotate.EditorUtils" file="EditorUtils.java">
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
@@ -196,22 +196,22 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="java.lang.Iterable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.HighlightRevisionSubcolumn" file="HighlightRevisionSubcolumn.java">
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.VcsRevisionRange" />
+  <dependency className="jetbrains.mps.vcs.annotate.HighlightRevisionSubcolumn" file="HighlightRevisionSubcolumn.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.VcsRevisionRange" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+    <classNode extendsClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
+  <dependency className="jetbrains.mps.vcs.annotate.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.VcsRevisionRange" file="VcsRevisionRange.java">
+  <dependency className="jetbrains.mps.vcs.annotate.VcsRevisionRange" file="VcsRevisionRange.java">
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
@@ -220,38 +220,38 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode dependClassName="com.intellij.util.Consumer" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.CompareWithSelectedRevisionAction" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.ViewAction" file="ViewAction.java">
+  <dependency className="jetbrains.mps.vcs.annotate.ViewAction" file="ViewAction.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowAnnotationColorsAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowShortenNames" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation.ViewActionGroup" file="ViewActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+  <dependency className="jetbrains.mps.vcs.annotate.ViewActionGroup" file="ViewActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.ViewAction" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.annotation._Adapters" file="_Adapters.java">
+  <dependency className="jetbrains.mps.vcs.annotate._Adapters" file="_Adapters.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode extendsClassName="java.lang.Runnable" />

@@ -31,16 +31,16 @@
   <dependency className="jetbrains.mps.vcs.plugin.Annotate_Action" file="Annotate_Action.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationHelper" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationHelper" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
