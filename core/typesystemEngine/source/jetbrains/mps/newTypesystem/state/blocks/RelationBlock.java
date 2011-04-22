@@ -21,7 +21,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
 public abstract class RelationBlock extends Block {
   protected RelationKind myRelationKind;

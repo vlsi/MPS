@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
 public class CheckSubTypeOperation extends AddRemarkOperation {

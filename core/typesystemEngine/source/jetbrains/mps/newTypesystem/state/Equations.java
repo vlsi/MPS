@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
@@ -36,10 +37,10 @@ import java.util.Map.Entry;
  */
 public class Equations {
   @StateObject
-  private final Map<SNode, SNode> myRepresentatives = new LinkedHashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myRepresentatives = new THashMap<SNode, SNode>();
 
   //todo: seems to be useless to use as a part of state but in such case it is a possible source of side effects
-  private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
+  private final Map<String, SNode> myNamesToNodes = new THashMap<String, SNode>();
   private final State myState;
 
   public Equations(State state) {

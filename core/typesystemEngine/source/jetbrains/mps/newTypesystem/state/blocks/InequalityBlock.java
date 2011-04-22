@@ -105,13 +105,14 @@ public class InequalityBlock extends RelationBlock {
       // for final solving
       return;
     }
+/*
 
     if (!TypesUtil.hasVariablesInside(subType) && !TypesUtil.hasVariablesInside(superType)) {
       if (TypesUtil.match(subType, superType)) {
         return;
       }
     }
-
+ */
     //replacement rules
     if (processReplacementRules(subType, superType)) {
       return;

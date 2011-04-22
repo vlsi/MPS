@@ -28,12 +28,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 1/31/11
- * Time: 5:09 PM
- */
 public abstract class CheckingComponent {
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;

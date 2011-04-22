@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem.state;
 
 
 import com.intellij.openapi.util.Pair;
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -36,13 +38,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
+import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:09:38 PM
- */
 public class State {
   private static final Logger LOG = Logger.getLogger(State.class);
 
@@ -62,10 +59,10 @@ public class State {
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
-    new HashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
+    new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
 
   @StateObject
-  private final Set<Block> myBlocks = new HashSet<Block>();
+  private final Set<Block> myBlocks = new THashSet<Block>();
 
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
@@ -156,13 +153,13 @@ public class State {
   }
 
   public void substitute(SNode oldVar, SNode type) {
-    for (ConditionKind conditionKind : new HashSet<ConditionKind>(myBlocksAndInputs.keySet())) {
+    for (ConditionKind conditionKind : new THashSet<ConditionKind>(myBlocksAndInputs.keySet())) {
       ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(conditionKind);
       Set<Block> blocks = map.getByFirst(oldVar);
       if (blocks == null) {
         return;
       }
-      for (Block block : new HashSet<Block>(blocks)) {
+      for (Block block : new THashSet<Block>(blocks)) {
         for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
           addInputAndTrack(block, variable, conditionKind);
         }
@@ -351,37 +348,15 @@ public class State {
   }
 
   public void performActionsAfterChecking() {
-    /*
-    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
-
-    // setting expanded errors
-    for (SNode node : myNodesToErrorsMap.keySet()) {
-      List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
-      if (iErrorReporters != null) {
-        for (IErrorReporter iErrorReporter : iErrorReporters) {
-          String errorString = iErrorReporter.reportError();
-          SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
-            iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
-          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
-          reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
-          List<IErrorReporter> errorReporterList = toAdd.get(node);
-          if (errorReporterList == null) {
-            errorReporterList = new ArrayList<IErrorReporter>(1);
-            toAdd.put(node, errorReporterList);
-          }
-          errorReporterList.add(iErrorReporter);
-        }
-      }
-    }                                          todo ????
-    myNodesToErrorsMap.putAll(toAdd);       */
+    checkNonConcreteWhenConcretes();
+    for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
+      map.getValue().clear();
+    }
+    myBlocks.clear();
   }
 
   public SNode expand(SNode node) {
     return myEquations.expandNode(node, false);
-  }
-
-  public Stack<AbstractOperation> getOperationStack() {
-    return myOperationStack;
   }
 
   public AbstractOperation getOperation() {
@@ -436,7 +411,7 @@ public class State {
   }
 
   public Set<Block> getBlocks(BlockKind kind) {
-    Set<Block> result = new HashSet<Block>();
+    Set<Block> result = new THashSet<Block>();
     for (Block block : myBlocks) {
       if (block.getBlockKind() == kind) {
         result.add(block);
@@ -446,7 +421,7 @@ public class State {
   }
 
   public Set<Block> getCheckingInequalities() {
-    Set<Block> result = new HashSet<Block>();
+    Set<Block> result = new THashSet<Block>();
     Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
     for (Block block: blocks) {
       if (((RelationBlock)block).isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {

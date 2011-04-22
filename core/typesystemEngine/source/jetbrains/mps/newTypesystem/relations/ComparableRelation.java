@@ -16,9 +16,9 @@
 package jetbrains.mps.newTypesystem.relations;
 
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 

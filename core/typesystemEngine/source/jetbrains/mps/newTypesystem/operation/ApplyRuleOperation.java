@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
 
 public class ApplyRuleOperation extends AbstractOperation {
   private SNode myNode;

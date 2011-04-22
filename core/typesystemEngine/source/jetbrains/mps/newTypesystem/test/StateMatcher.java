@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.test;
 
-import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
 
 import java.util.Set;
 

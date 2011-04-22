@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -35,11 +37,11 @@ import java.util.*;
  */
 public class NodeMaps {
   @StateObject
-  private final Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myNodesToTypes = new THashMap<SNode, SNode>();
   @StateObject
-  private final Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myTypesToNodes = new THashMap<SNode, SNode>();
   @StateObject
-  private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
+  private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new THashMap<SNode, List<IErrorReporter>>();
   private final State myState;
 
   public NodeMaps(State state) {
@@ -165,7 +167,7 @@ public class NodeMaps {
   }
 
   public void expandAll(boolean finalExpansion) {
-     expandAll(new HashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
+     expandAll(new THashSet<SNode>(myNodesToTypes.keySet()), finalExpansion);
   }
 
   public SNode getNode(SNode type) {
