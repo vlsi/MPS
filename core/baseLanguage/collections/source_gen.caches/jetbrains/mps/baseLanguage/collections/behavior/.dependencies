@@ -28,6 +28,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.Integer" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_Behavior" file="ConcatOperation_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_Behavior" file="CustomContainerCreator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -421,6 +424,9 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.WhereOperation_Behavior" file="WhereOperation_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
 

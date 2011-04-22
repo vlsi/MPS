@@ -3,6 +3,8 @@
   <unitInfo fileName="IListOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_Behavior" />
   <unitInfo fileName="MapOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_Behavior" />
   <unitInfo fileName="AllConstant_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AllConstant_Behavior" />
+  <unitInfo fileName="ConcatOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_Behavior" />
+  <unitInfo fileName="WhereOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.WhereOperation_Behavior" />
   <unitInfo fileName="SkipStatement_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SkipStatement_Behavior" />
   <unitInfo fileName="MappingType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MappingType_Behavior" />
   <unitInfo fileName="SequenceOperation_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavior" />
@@ -488,6 +490,16 @@
   </root>
   <root nodeId="2141797557973018609">
     <scopeInfo nodeId="2141797557973018611" fileName="IListOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="2504598135591556453">
+    <nodeInfo nodeId="2504598135591556469" fileName="WhereOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2504598135591556455" fileName="WhereOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2504598135591556462" fileName="WhereOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="2504598135591557835">
+    <nodeInfo nodeId="3767231643656599132" fileName="ConcatOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2504598135591557837" fileName="ConcatOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2504598135591557840" fileName="ConcatOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
   </root>
   <root nodeId="3185788474596486341">
     <nodeInfo nodeId="3185788474596488416" fileName="SortOperation_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
