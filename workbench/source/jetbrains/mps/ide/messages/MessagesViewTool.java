@@ -27,6 +27,8 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
@@ -219,6 +221,8 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void createContent() {
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
         public void run() {
@@ -263,6 +267,8 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void createContent() {
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
 

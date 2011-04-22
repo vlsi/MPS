@@ -88,7 +88,21 @@ abstract class MessageList implements IMessageList {
 
   public abstract void createContent();
 
+  public void show(boolean setActive) {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
+    ToolWindow window = getToolWindow();
+    if (!window.isAvailable()) window.setAvailable(true, null);
+    if (!window.isVisible()) window.show(null);
+    if (setActive) window.activate(null);
+
+    Content content = getMessagesService().getContentManager().getContent(myComponent);
+    getMessagesService().getContentManager().setSelectedContent(content);
+  }
+
   public void clear() {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myModel.clear();
@@ -303,16 +317,6 @@ abstract class MessageList implements IMessageList {
         }
       }
     });
-  }
-
-  public void show(boolean setActive) {
-    ToolWindow window = getToolWindow();
-    if (!window.isAvailable()) window.setAvailable(true, null);
-    if (!window.isVisible()) window.show(null);
-    if (setActive) window.activate(null);
-
-    Content content = getMessagesService().getContentManager().getContent(myComponent);
-    getMessagesService().getContentManager().setSelectedContent(content);
   }
 
   protected abstract void setDisplayInfo(String name);
