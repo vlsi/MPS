@@ -35,56 +35,20 @@ import java.util.*;
  */
 public class FileClassPathItem extends RealClassPathItem {
   private String myClassPath;
+  private IFile myBaseFile;
 
   protected FileClassPathItem(String classPath) {
     myClassPath = classPath;
+    myBaseFile = FileSystem.getInstance().getFileByPath(myClassPath);
+  }
+
+  public IFile getBaseFile() {
+    return myBaseFile;
   }
 
   public String getClassPath() {
     checkValidity();
     return myClassPath;
-  }
-
-  public synchronized byte[] getClass(String name) {
-    checkValidity();
-
-    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
-    IFile classfile = FileSystem.getInstance().getFileByPath(path);
-    if (!classfile.exists()) return null;
-
-    try {
-      byte[] result = null;
-      InputStream inp = null;
-      try {
-        inp = classfile.openInputStream();
-        result = ReadUtil.read(inp);
-      } finally {
-        if (inp != null) {
-          inp.close();
-        }
-      }
-
-      return result;
-    } catch (IOException e) {
-      return null;
-    }
-  }
-
-  public ClassifierKind getClassifierKind(String name) {
-    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
-    try {
-      InputStream inp = null;
-      try {
-        inp = new FileInputStream(path);
-        return ClassifierKind.getClassifierKind(inp);
-      } finally {
-        if (inp != null) {
-          inp.close();
-        }
-      }
-    } catch (IOException e) {
-      return null;
-    }
   }
 
   public URL getResource(String name) {

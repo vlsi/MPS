@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
@@ -32,8 +33,8 @@ import java.util.List;
 public class JarFileClassPathItem extends RealClassPathItem {
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
-  private IFile myFile;
   private String myPrefix;
+  private IFile myFile;
 
   protected JarFileClassPathItem(String path) {
     if (path.endsWith("!/")) {
@@ -47,6 +48,10 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  public IFile getBaseFile() {
+    return myFile;
+  }
+
   @Deprecated
   //todo remove
   public String getAbsolutePath() {
@@ -57,62 +62,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public IFile getFile() {
     checkValidity();
     return myFile;
-  }
-
-  public synchronized byte[] getClass(String name) {
-    checkValidity();
-
-    final IFile classFile = myFile.getDescendant(name.replaceAll("\\.", "/") + MPSExtentions.DOT_CLASSFILE);
-    return doWithInputStreamForClass(name, new Callback<byte[], InputStream>() {
-      public byte[] perform(InputStream param) {
-        try {
-          final byte[] result = new byte[(int) classFile.length()];
-          ReadUtil.read(result, param);
-          return result;
-        } catch (IOException e) {
-          return null;
-        }
-      }
-    });
-  }
-
-  public synchronized ClassifierKind getClassifierKind(String name) {
-    checkValidity();
-
-    return doWithInputStreamForClass(name, new Callback<ClassifierKind, InputStream>() {
-      public ClassifierKind perform(InputStream param) {
-        try {
-          return ClassifierKind.getClassifierKind(param);
-        } catch (IOException e) {
-          return null;
-        }
-      }
-    });
-  }
-
-  private <T> T doWithInputStreamForClass(String className, Callback<T, InputStream> call) {
-    IFile classFile = myFile.getDescendant(className.replaceAll("\\.", "/") + MPSExtentions.DOT_CLASSFILE);
-    if (!classFile.exists()) return null;
-    InputStream inp = null;
-    try {
-      inp = classFile.openInputStream();
-      try {
-        return call.perform(inp);
-      } catch (Throwable t) {
-        LOG.error(t);
-        return null;
-      }
-    } catch (IOException e) {
-      return null;
-    } finally {
-      if (inp != null) {
-        try {
-          inp.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
   }
 
   public URL getResource(String name) {
@@ -229,9 +178,5 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
 
     return FileSystem.getInstance().getFileByPath(tmpFile.getAbsolutePath() + "!" + File.separator);
-  }
-
-  private interface Callback<RET, PAR> {
-    RET perform(PAR param);
   }
 }
