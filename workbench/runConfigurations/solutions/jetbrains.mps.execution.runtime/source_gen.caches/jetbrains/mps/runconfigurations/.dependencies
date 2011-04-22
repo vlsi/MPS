@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader" file="ApplicationRunConfigurationsReloader.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.RunConfigCreator" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.runconfigurations.RunConfigurationsReloader" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.runconfigurations.RunConfigurationsReloader" file="RunConfigurationsReloader.java">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="com.intellij.execution.ExecutionManager" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
+    <classNode dependClassName="com.intellij.execution.impl.ProjectRunConfigurationManager" />
+    <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.execution.RunManagerEx" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="com.intellij.execution.ui.RunContentManagerImpl" />
+    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+  </dependency>
+</dependenciesRoot>
+
