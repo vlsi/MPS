@@ -51,9 +51,9 @@ core/languageDesign/quotation/classes
 core/languageDesign/plugin/classes
 core/languageDesign/sharedConcepts/classes
 core/languageDesign/smodel/classes
-core/languageDesign/script/classes
 core/languageDesign/structure/classes
 core/languageDesign/core/classes
+core/languageDesign/refactoring/classes
 core/languageDesign/test/classes
 core/languageDesign/textGen/classes
 core/languageDesign/make/classes
