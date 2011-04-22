@@ -108,8 +108,10 @@ public class GeneratorDescriptorPersistence {
       final String result_wk2vdq_a0a2a0a0a1 = descriptor.getUUID();
       result_wk2vdq_a0a0a1.setAttribute("uuid", "" + result_wk2vdq_a0a2a0a0a1);
     }
-    final boolean result_wk2vdq_a3a0a0a1 = descriptor.isGenerateTemplates();
-    result_wk2vdq_a0a0a1.setAttribute("generate-templates", "" + result_wk2vdq_a3a0a0a1);
+    if (descriptor.isGenerateTemplates()) {
+      final boolean result_wk2vdq_a0a3a0a0a1 = descriptor.isGenerateTemplates();
+      result_wk2vdq_a0a0a1.setAttribute("generate-templates", "" + result_wk2vdq_a0a3a0a0a1);
+    }
 
     final Element result_wk2vdq_a5a0a0a1 = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(result_wk2vdq_a5a0a0a1, descriptor.getModelRoots(), file, macros);
