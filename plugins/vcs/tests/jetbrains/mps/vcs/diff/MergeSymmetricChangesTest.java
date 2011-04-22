@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-
 import java.io.IOException;
 
 /**
