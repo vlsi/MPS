@@ -47,7 +47,7 @@
       <implementation-class>jetbrains.mps.vcs.RealVcsHandler</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.ToolsAppComponent</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.integration.ToolsApplicationComponent</implementation-class>
     </component>
   </application-components>
 
@@ -58,7 +58,7 @@
     </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
-      <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.integration.ModuleVcsPathPresenter</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
@@ -113,14 +113,14 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
-    <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
-    <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
+    <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
+    <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
     <projectConfigurable implementation="jetbrains.mps.vcs.ui.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
 
     <!--MPS Patch: our own diff request factory-->
     <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
-                        serviceImplementation="jetbrains.mps.vcs.diff.MPSDiffRequestFactory"/>
+                        serviceImplementation="jetbrains.mps.vcs.integration.MPSDiffRequestFactory"/>
   </extensions>
 </idea-plugin>

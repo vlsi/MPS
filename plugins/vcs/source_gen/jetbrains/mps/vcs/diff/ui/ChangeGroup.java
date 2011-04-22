@@ -7,7 +7,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.util.Map;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.diff.MergeContext;
+import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.MapSequence;

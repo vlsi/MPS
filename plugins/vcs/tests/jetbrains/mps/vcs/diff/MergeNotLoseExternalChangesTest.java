@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-
 import java.io.IOException;
 
 public class MergeNotLoseExternalChangesTest extends MergeTestCase {
-  public void testOneSimpleChangeFromRepo() throws IOException, ReadException {
+  public void testOneSimpleChangeFromRepo() throws IOException {
     testZip("resources/repositoryChanges.mps.zip", false);
   }
 }

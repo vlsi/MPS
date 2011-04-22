@@ -17,25 +17,24 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-
-import static jetbrains.mps.TestMain.configureMPS;
-
 import com.intellij.openapi.util.IconLoader;
-import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vcs.VcsMergeVersion;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
+import jetbrains.mps.vcs.integration.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.*;
-
-import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,6 +42,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import java.io.File;
 import java.io.IOException;
+
+import static jetbrains.mps.TestMain.configureMPS;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();

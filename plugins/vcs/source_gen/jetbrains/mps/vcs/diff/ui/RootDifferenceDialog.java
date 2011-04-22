@@ -23,7 +23,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vcs.diff.NodeCopierWithCache;
+import jetbrains.mps.vcs.diff.merge.NodeCopierWithCache;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import javax.swing.JComponent;

@@ -27,7 +27,7 @@ import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.util.Ref;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 

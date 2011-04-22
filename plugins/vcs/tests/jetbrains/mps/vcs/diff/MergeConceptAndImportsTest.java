@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-
 import java.io.IOException;
 
 /**
@@ -24,7 +22,7 @@ import java.io.IOException;
  */
 public class MergeConceptAndImportsTest extends MergeTestCase{
 
-  public void testModelImports() throws IOException, ReadException {
+  public void testModelImports() throws IOException {
     testZip("resources/structure.2.mps.zip", false);
   }
 }
