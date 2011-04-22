@@ -33,7 +33,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/findUsages-runtime/findUsages-runtime.iml" filepath="$PROJECT_DIR$/core/findUsages-runtime/findUsages-runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/generator/generator-engine.iml" filepath="$PROJECT_DIR$/core/generator/generator-engine.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/idea-patch/idea-patch.iml" filepath="$PROJECT_DIR$/core/idea-patch/idea-patch.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/core/intentions-runtime/intentions-runtime.iml" group="core" />
