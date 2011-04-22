@@ -35,9 +35,9 @@
       <genConfModule name="commands" moduleRef="jetbrains.mps.execution.commands" />
       <genConfModule name="common" moduleRef="jetbrains.mps.execution.common" />
       <genConfModule name="configurations" moduleRef="jetbrains.mps.execution.configurations" />
+      <genConfModule name="configurations.lib" moduleRef="jetbrains.mps.execution.configurations.lib" />
       <genConfModule name="demo" moduleRef="jetbrains.mps.execution.demo" />
       <genConfModule name="lib" moduleRef="jetbrains.mps.execution.lib" />
-      <genConfModule name="runtime" moduleRef="jetbrains.mps.execution.runtime" />
       <genConfModule name="settings" moduleRef="jetbrains.mps.execution.settings" />
     </genConfs>
   </component>
