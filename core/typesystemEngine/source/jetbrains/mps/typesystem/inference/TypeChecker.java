@@ -209,7 +209,7 @@ public class TypeChecker implements ApplicationComponent {
     if (myPerformanceTracer != null) {
       myPerformanceTracer = null;
       myRuntimeSupport = new RuntimeSupport(this);
-      mySubtypingManager = new SubtypingManager(this);
+      mySubtypingManager = new SubTypingManagerNew(this);
     }
   }
 

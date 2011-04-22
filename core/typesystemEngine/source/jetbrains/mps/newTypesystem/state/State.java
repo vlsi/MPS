@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -349,8 +350,11 @@ public class State {
         WhenConcreteBlock wCBlock = (WhenConcreteBlock) block;
         if (!wCBlock.isSkipError()) {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
-          myTypeCheckingContext.reportTypeError(node, "argument of WHEN CONCRETE block is never concrete",
-            wCBlock.getNodeModel(), wCBlock.getNodeId(), null, null);
+          if (node != null) {
+            SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "argument of WHEN CONCRETE block is never concrete",
+              wCBlock.getNodeModel(), wCBlock.getNodeId());
+            myTypeCheckingContext.reportMessage(node, errorReporter);
+          }
         }
       }
     }
