@@ -63,8 +63,9 @@ public class ChangeGroupBuilder {
     final Map<ModelChange, Integer> rightStarts = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
     final Map<ModelChange, Integer> rightEnds = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
     for (ModelChange change : ListSequence.fromList(myChangeSet.getModelChanges())) {
-      ChangeEditorMessage leftMessage = myLeftEditor.getMessageForChange(change);
-      ChangeEditorMessage rightMessage = myRightEditor.getMessageForChange(change);
+      // TODO more messages per change 
+      ChangeEditorMessage leftMessage = ListSequence.fromList(myLeftEditor.getMessageForChange(change)).first();
+      ChangeEditorMessage rightMessage = ListSequence.fromList(myRightEditor.getMessageForChange(change)).first();
 
       int leftStart = -1;
       int rightStart = -1;
@@ -84,16 +85,16 @@ public class ChangeGroupBuilder {
       }
       if (leftHeight == -1) {
         {
-          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0l0e0c = MultiTuple.<Integer,Integer>from(getLeftComponent().getRootCell().getY(), 0);
-          leftStart = _tmp_a1l5hi_a0l0e0c._0();
-          leftHeight = _tmp_a1l5hi_a0l0e0c._1();
+          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0m0e0c = MultiTuple.<Integer,Integer>from(getLeftComponent().getRootCell().getY(), 0);
+          leftStart = _tmp_a1l5hi_a0m0e0c._0();
+          leftHeight = _tmp_a1l5hi_a0m0e0c._1();
         }
       }
       if (rightHeight == -1) {
         {
-          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0m0e0c = MultiTuple.<Integer,Integer>from(getRightComponent().getRootCell().getY(), 0);
-          rightStart = _tmp_a1l5hi_a0m0e0c._0();
-          rightHeight = _tmp_a1l5hi_a0m0e0c._1();
+          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0n0e0c = MultiTuple.<Integer,Integer>from(getRightComponent().getRootCell().getY(), 0);
+          rightStart = _tmp_a1l5hi_a0n0e0c._0();
+          rightHeight = _tmp_a1l5hi_a0n0e0c._1();
         }
       }
 
