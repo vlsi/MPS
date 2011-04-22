@@ -12,16 +12,16 @@
       <external-templates>
         <generator generatorUID="0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)" />
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
-        <generator generatorUID="1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)" />
         <generator generatorUID="d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)" />
+        <generator generatorUID="1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
         <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-        <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
+        <dependency reexport="false">73c1a490-99fa-4d0d-8292-b8985697c74b(jetbrains.mps.execution.common)</dependency>
         <dependency reexport="false">756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)</dependency>
         <dependency reexport="false">d05c4356-e6a8-4dcf-a81a-3adf36be3c35(jetbrains.mps.execution.settings#946964771156035778)</dependency>
-        <dependency reexport="false">73c1a490-99fa-4d0d-8292-b8985697c74b(jetbrains.mps.execution.common)</dependency>
+        <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)</usedLanguage>

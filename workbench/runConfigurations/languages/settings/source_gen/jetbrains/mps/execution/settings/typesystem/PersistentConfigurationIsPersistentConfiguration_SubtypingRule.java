@@ -32,7 +32,7 @@ public class PersistentConfigurationIsPersistentConfiguration_SubtypingRule exte
   }
 
   public boolean isWeak() {
-    return false;
+    return true;
   }
 
   public boolean surelyKeepsConcept() {

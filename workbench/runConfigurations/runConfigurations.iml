@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.lib/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.configurations.lib2/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/settings/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -21,6 +22,7 @@
     <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="typesystemEngine" />
   </component>
 </module>
 

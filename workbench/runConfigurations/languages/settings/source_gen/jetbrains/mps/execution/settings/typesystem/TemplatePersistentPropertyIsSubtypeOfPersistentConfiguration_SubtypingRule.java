@@ -17,8 +17,8 @@ public class TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_Subtyp
   public TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode smartPersistentPropertyType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_SubtypingRule.QuotationClass_5pnrvt_a0a0a().createNode(SLinkOperations.getTarget(smartPersistentPropertyType, "persistentConfiguration", false), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode templatePersistentPropertyType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_SubtypingRule.QuotationClass_5pnrvt_a0a0a().createNode(SLinkOperations.getTarget(templatePersistentPropertyType, "persistentConfiguration", false), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -32,7 +32,7 @@ public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguratio
   }
 
   public boolean isWeak() {
-    return false;
+    return true;
   }
 
   public boolean surelyKeepsConcept() {

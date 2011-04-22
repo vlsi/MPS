@@ -9,8 +9,10 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.NonNls;
 
 public class IGeneratedToClass_Behavior {
@@ -42,15 +44,18 @@ public class IGeneratedToClass_Behavior {
   }
 
   public static String call_getSuffix_946964771156905483(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483);
   }
 
   public static String call_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488);
   }
 
   public static String call_getFullName_946964771156905503(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503);
   }
 
   public static String callSuper_getSuffix_946964771156905483(SNode thisNode, String callerConceptFqName) {

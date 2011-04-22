@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -27,8 +26,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
     SNode primitive = SLinkOperations.getTarget(new typeof_PersistentPropertyDeclaration_InferenceRule.QuotationClass_sacma3_a0a0a0a().createNode(typeCheckingContext), "descriptor", false);
     {
       SNode _nodeToCheck_1029348928467 = persistentPropertyDeclaration;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477761", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477761", 0, null);
       typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) new typeof_PersistentPropertyDeclaration_InferenceRule.QuotationClass_sacma3_a0a1a0().createNode(primitive, typeCheckingContext), false, _info_12389875345);
     }
   }
