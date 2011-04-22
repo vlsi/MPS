@@ -31,10 +31,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class NodeTypesComponentNew implements INodeTypesComponent {
   private SNode myRootNode;
@@ -110,7 +107,7 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError != null) {
-      putError(nodeWithError, errorReporter);
+       putError(nodeWithError, errorReporter);
     }
   }
 
@@ -226,12 +223,10 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     }
     return result;
   }
-
   //------------Deprecated--------------------
   public EquationManager getEquationManager() {
     return null;
   }
-
   @Override
   public String getNewVarName() {
     return null;
@@ -364,8 +359,8 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     }
 
     private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
-      component.addNodeToInvalidate(eventNode);
-      component.setInvalidationWasPerformed(false);
+       component.addNodeToInvalidate(eventNode);
+       component.setInvalidationWasPerformed(false);
     }
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
@@ -382,7 +377,7 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     }
   }
 
-  class MyModelListenerManager {
+ class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
     private Map<SModelDescriptor, Integer> myNodesCount = new THashMap<SModelDescriptor, Integer>();
     private Map<WeakReference, SModelDescriptor> myDescriptors = new THashMap<WeakReference, SModelDescriptor>();

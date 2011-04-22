@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -44,31 +42,31 @@ public class EquationManager {
   private static final boolean COLLECT_WHEN_CONCRETES = false;
   private TypeChecker myTypeChecker;
 
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMap = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMap = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMapStrong = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMapStrong = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMap_check = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMap_check = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMapStrong_check = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMapStrong_check = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMap_check = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMap_check = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMapStrong_check = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMapStrong_check = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMap = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
-  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMapStrong = new THashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
-  private Map<IWrapper, IWrapper> myEquations = new THashMap<IWrapper, IWrapper>(64, 0.4f);
-  private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new THashMap<IWrapper, WhenConcreteEntity>();
-  private Map<IWrapper, WhenConcreteEntity> myShallowWhenConcreteEntities = new THashMap<IWrapper, WhenConcreteEntity>();
+  private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>(64, 0.4f);
+  private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
+  private Map<IWrapper, WhenConcreteEntity> myShallowWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
 
-  private Map<IWrapper, Set<SNode>> myNonConcreteVars = new THashMap<IWrapper, Set<SNode>>();
+  private Map<IWrapper, Set<SNode>> myNonConcreteVars = new HashMap<IWrapper, Set<SNode>>();
 
-  private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new THashMap<IWrapper, Set<IWrapperListener>>(32);
+  private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>(64, 0.4f);
   private boolean myCollectConcretes = false;
 
   private InequationSystem myInequationSystem = null;
 
-  private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new THashSet<WhenConcreteEntity>();
+  private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
 
   private boolean myUsesCheckOnly = true;
@@ -107,12 +105,12 @@ public class EquationManager {
   }
 
   public void fillWithEquations(EquationManager slave) {
-    //do not put equations and checking inequations
+   //do not put equations and checking inequations
 
     for (IWrapper key : slave.mySubtypesToSupertypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         mySubtypesToSupertypesMap.put(key, map);
       }
       map.putAll(slave.mySubtypesToSupertypesMap.get(key));
@@ -121,7 +119,7 @@ public class EquationManager {
     for (IWrapper key : slave.mySupertypesToSubtypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         mySupertypesToSubtypesMap.put(key, map);
       }
       map.putAll(slave.mySupertypesToSubtypesMap.get(key));
@@ -130,7 +128,7 @@ public class EquationManager {
     for (IWrapper key : slave.mySubtypesToSupertypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         mySubtypesToSupertypesMapStrong.put(key, map);
       }
       map.putAll(slave.mySubtypesToSupertypesMapStrong.get(key));
@@ -139,7 +137,7 @@ public class EquationManager {
     for (IWrapper key : slave.mySupertypesToSubtypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         mySupertypesToSubtypesMapStrong.put(key, map);
       }
       map.putAll(slave.mySupertypesToSubtypesMapStrong.get(key));
@@ -148,7 +146,7 @@ public class EquationManager {
     for (IWrapper key : slave.myComparableTypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = myComparableTypesMap.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         myComparableTypesMap.put(key, map);
       }
       map.putAll(slave.myComparableTypesMap.get(key));
@@ -157,7 +155,7 @@ public class EquationManager {
     for (IWrapper key : slave.myComparableTypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = myComparableTypesMapStrong.get(key);
       if (map == null) {
-        map = new THashMap<IWrapper, EquationInfo>(1);
+        map = new HashMap<IWrapper, EquationInfo>();
         myComparableTypesMapStrong.put(key, map);
       }
       map.putAll(slave.myComparableTypesMapStrong.get(key));
@@ -169,7 +167,7 @@ public class EquationManager {
     for (IWrapper key : slave.myNonConcreteVars.keySet()) {
       Set<SNode> nodeSet = myNonConcreteVars.get(key);
       if (nodeSet == null) {
-        nodeSet = new THashSet<SNode>(1);
+        nodeSet = new HashSet<SNode>();
         myNonConcreteVars.put(key, nodeSet);
       }
       nodeSet.addAll(slave.myNonConcreteVars.get(key));
@@ -178,7 +176,7 @@ public class EquationManager {
     for (IWrapper key : slave.myWrapperListeners.keySet()) {
       Set<IWrapperListener> wrapperListeners = myWrapperListeners.get(key);
       if (wrapperListeners == null) {
-        wrapperListeners = new THashSet<IWrapperListener>(1);
+        wrapperListeners = new HashSet<IWrapperListener>();
         myWrapperListeners.put(key, wrapperListeners);
       }
       wrapperListeners.addAll(slave.myWrapperListeners.get(key));
@@ -239,7 +237,7 @@ public class EquationManager {
   public void addNonConcreteVariable(IWrapper wrapper, SNode variable) {
     Set<SNode> variables = myNonConcreteVars.get(wrapper);
     if (variables == null) {
-      variables = new THashSet<SNode>(1);
+      variables = new HashSet<SNode>();
       myNonConcreteVars.put(wrapper, variables);
     }
     variables.add(variable);
@@ -458,13 +456,13 @@ public class EquationManager {
     if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode(), true)) {
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode(),true)) {
       return;
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator2.getNode(), representator1.getNode(), true)) {
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator2.getNode(), representator1.getNode(),true)) {
       return;
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, this, errorInfo, isWeak)) {
@@ -612,8 +610,8 @@ public class EquationManager {
     Set<SNode> variables = myNonConcreteVars.get(wrapper);
     //processing additional variables
     if (variables != null) {
-      for (SNode var : new THashSet<SNode>(variables)) {
-        /*  if (var.getNode() == null) {
+      for (SNode var : new HashSet<SNode>(variables)) {
+      /*  if (var.getNode() == null) {
           variables.remove(var);
           continue;
         }*/
@@ -904,12 +902,12 @@ public class EquationManager {
 
   public static Set<Pair<SNode, SNode>> createChildEquations(IWrapper wrapper1, IWrapper wrapper2) {
     if (wrapper1 == null || wrapper2 == null) {
-      return new THashSet<Pair<SNode, SNode>>(1);
+      return new HashSet<Pair<SNode, SNode>>();
     }
 
     final SNode node1 = wrapper1.getNode();
     final SNode node2 = wrapper2.getNode();
-    final Set<Pair<SNode, SNode>> result = new THashSet<Pair<SNode, SNode>>();
+    final Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
 
     Set<String> allChildRoles = node1.getChildRoles();
     node2.addChildRoles(allChildRoles);
@@ -940,14 +938,14 @@ public class EquationManager {
 
     Map<IWrapper, EquationInfo> supertypes = subtypesToSupertypesMap.get(subtype);
     if (supertypes == null) {
-      supertypes = new THashMap<IWrapper, EquationInfo>(1);
+      supertypes = new HashMap<IWrapper, EquationInfo>();
       subtypesToSupertypesMap.put(subtype, supertypes);
     }
     supertypes.put(supertype, errorInfo);
 
     Map<IWrapper, EquationInfo> subtypes = supertypesToSubtypesMap.get(supertype);
     if (subtypes == null) {
-      subtypes = new THashMap<IWrapper, EquationInfo>(1);
+      subtypes = new HashMap<IWrapper, EquationInfo>();
       supertypesToSubtypesMap.put(supertype, subtypes);
     }
     subtypes.put(subtype, errorInfo);
@@ -963,14 +961,14 @@ public class EquationManager {
 
     Map<IWrapper, EquationInfo> supertypes = subtypesToSupertypesMapStrong.get(subtype);
     if (supertypes == null) {
-      supertypes = new THashMap<IWrapper, EquationInfo>(1);
+      supertypes = new HashMap<IWrapper, EquationInfo>();
       subtypesToSupertypesMapStrong.put(subtype, supertypes);
     }
     supertypes.put(supertype, errorInfo);
 
     Map<IWrapper, EquationInfo> subtypes = supertypesToSubtypesMapStrong.get(supertype);
     if (subtypes == null) {
-      subtypes = new THashMap<IWrapper, EquationInfo>(1);
+      subtypes = new HashMap<IWrapper, EquationInfo>();
       supertypesToSubtypesMapStrong.put(supertype, subtypes);
     }
     subtypes.put(subtype, errorInfo);
@@ -980,14 +978,14 @@ public class EquationManager {
   private void addComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo) {
     Map<IWrapper, EquationInfo> comparables1 = myComparableTypesMap.get(type1);
     if (comparables1 == null) {
-      comparables1 = new THashMap<IWrapper, EquationInfo>(1);
+      comparables1 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMap.put(type1, comparables1);
     }
     comparables1.put(type2, errorInfo);
 
     Map<IWrapper, EquationInfo> comparables2 = myComparableTypesMap.get(type2);
     if (comparables2 == null) {
-      comparables2 = new THashMap<IWrapper, EquationInfo>(1);
+      comparables2 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMap.put(type2, comparables2);
     }
     comparables2.put(type1, errorInfo);
@@ -996,22 +994,22 @@ public class EquationManager {
   private void addStrongComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo) {
     Map<IWrapper, EquationInfo> comparables1 = myComparableTypesMapStrong.get(type1);
     if (comparables1 == null) {
-      comparables1 = new THashMap<IWrapper, EquationInfo>(1);
+      comparables1 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMapStrong.put(type1, comparables1);
     }
     comparables1.put(type2, errorInfo);
 
     Map<IWrapper, EquationInfo> comparables2 = myComparableTypesMapStrong.get(type2);
     if (comparables2 == null) {
-      comparables2 = new THashMap<IWrapper, EquationInfo>(1);
+      comparables2 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMapStrong.put(type2, comparables2);
     }
     comparables2.put(type1, errorInfo);
   }
 
   private Set<IWrapper> subtypingGraphVertices() {
-    Set<IWrapper> nodes = new THashSet<IWrapper>(mySubtypesToSupertypesMap.keySet());
-    Set<IWrapper> result = new THashSet<IWrapper>(1);
+    Set<IWrapper> nodes = new HashSet<IWrapper>(mySubtypesToSupertypesMap.keySet());
+    Set<IWrapper> result = new HashSet<IWrapper>();
     for (IWrapper node : nodes) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(node);
       if (map == null || map.isEmpty()) {
@@ -1020,7 +1018,7 @@ public class EquationManager {
         result.add(node);
       }
     }
-    nodes = new THashSet<IWrapper>(mySupertypesToSubtypesMap.keySet());
+    nodes = new HashSet<IWrapper>(mySupertypesToSubtypesMap.keySet());
     for (IWrapper node : nodes) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(node);
       if (map == null || map.isEmpty()) {
@@ -1029,7 +1027,7 @@ public class EquationManager {
         result.add(node);
       }
     }
-    nodes = new THashSet<IWrapper>(mySubtypesToSupertypesMapStrong.keySet());
+    nodes = new HashSet<IWrapper>(mySubtypesToSupertypesMapStrong.keySet());
     for (IWrapper node : nodes) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(node);
       if (map == null || map.isEmpty()) {
@@ -1038,7 +1036,7 @@ public class EquationManager {
         result.add(node);
       }
     }
-    nodes = new THashSet<IWrapper>(mySupertypesToSubtypesMapStrong.keySet());
+    nodes = new HashSet<IWrapper>(mySupertypesToSubtypesMapStrong.keySet());
     for (IWrapper node : nodes) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(node);
       if (map == null || map.isEmpty()) {
@@ -1148,10 +1146,10 @@ public class EquationManager {
   }
 
   private void processCheckingEquations() {
-    for (IWrapper wrapper : new THashSet<IWrapper>(mySubtypesToSupertypesMap_check.keySet())) {
+    for (IWrapper wrapper : new HashSet<IWrapper>(mySubtypesToSupertypesMap_check.keySet())) {
       keepInequationsAndEffects(wrapper, wrapper, true);
     }
-    for (IWrapper wrapper : new THashSet<IWrapper>(mySubtypesToSupertypesMapStrong_check.keySet())) {
+    for (IWrapper wrapper : new HashSet<IWrapper>(mySubtypesToSupertypesMapStrong_check.keySet())) {
       keepInequationsAndEffects(wrapper, wrapper, true);
     }
   }
@@ -1164,7 +1162,7 @@ public class EquationManager {
     return typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
-        Set<IWrapper> expandedSubtypes = new THashSet<IWrapper>();
+        Set<IWrapper> expandedSubtypes = new HashSet<IWrapper>();
         for (IWrapper subtype : concreteSubtypes) {
           IWrapper expanded = expandWrapper(null, subtype, myTypeChecker.getRuntimeTypesModel());
           expandedSubtypes.add(expanded);
@@ -1210,9 +1208,9 @@ public class EquationManager {
       supertypesToSubtypesMap.remove(thisType);
       return false;
     }
-    Set<IWrapper> concreteSubtypes = new THashSet<IWrapper>();
+    Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
     boolean hasShallowConcreteSubtypesWithSubtypes = false;
-    for (IWrapper subtypeNode : new THashSet<IWrapper>(subtypes.keySet())) {
+    for (IWrapper subtypeNode : new HashSet<IWrapper>(subtypes.keySet())) {
       if (subtypeNode == null) {
         subtypes.remove(subtypeNode);
         continue;
@@ -1240,7 +1238,7 @@ public class EquationManager {
     }
     if (concreteSubtypes.isEmpty()) return false; // hasShallowConcreteSubtypesWithSubtypes;
 
-    Map<IWrapper, EquationInfo> equationInfoMap = new THashMap<IWrapper, EquationInfo>();
+    Map<IWrapper, EquationInfo> equationInfoMap = new HashMap<IWrapper, EquationInfo>();
     for (IWrapper concreteSubtype : concreteSubtypes) {
       EquationInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtype).get(thisType);
       equationInfoMap.put(concreteSubtype, errorInfo);
@@ -1314,8 +1312,8 @@ public class EquationManager {
       subtypesToSupertypesMap.remove(thisType);
       return false;
     }
-    Set<IWrapper> concreteSupertypes = new THashSet<IWrapper>();
-    for (IWrapper supertypeNode : new THashSet<IWrapper>(supertypes.keySet())) {
+    Set<IWrapper> concreteSupertypes = new HashSet<IWrapper>();
+    for (IWrapper supertypeNode : new HashSet<IWrapper>(supertypes.keySet())) {
       if (supertypeNode == null) {
         supertypes.remove(supertypeNode);
         continue;
@@ -1330,7 +1328,7 @@ public class EquationManager {
     }
     if (concreteSupertypes.isEmpty()) return false;
 
-    Map<IWrapper, EquationInfo> equationInfoMap = new THashMap<IWrapper, EquationInfo>();
+    Map<IWrapper, EquationInfo> equationInfoMap = new HashMap<IWrapper, EquationInfo>();
     for (IWrapper concreteSupertype : concreteSupertypes) {
       EquationInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);
       equationInfoMap.put(concreteSupertype, errorInfo);
@@ -1365,8 +1363,9 @@ public class EquationManager {
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
                                      boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
-    Set<IWrapper> variables = new THashSet<IWrapper>(1);
-    return expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
+    HashSet<IWrapper> variables = new HashSet<IWrapper>();
+    NodeWrapper result = expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
+    return result;
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
@@ -1415,7 +1414,7 @@ public class EquationManager {
           "argument of WHEN CONCRETE block is never concrete", whenConcreteEntity.getNodeModel(), whenConcreteEntity.getNodeId());
       }
     }
-    Map<SNode, SNode> childrenReplacement = new THashMap<SNode, SNode>();
+    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     SNode node = wrapper.getNode();
     if (node == null) {
       return (NodeWrapper) wrapper;
@@ -1446,7 +1445,7 @@ public class EquationManager {
       childReplacement = CopyUtil.copy(childReplacement);
       parent.replaceChild(child, childReplacement);
     }
-    Map<SReference, SNode> referenceReplacement = new THashMap<SReference, SNode>();
+    Map<SReference, SNode> referenceReplacement = new HashMap<SReference, SNode>();
     List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();

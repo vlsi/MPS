@@ -25,6 +25,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public abstract class CheckingComponent {
@@ -62,7 +63,7 @@ public abstract class CheckingComponent {
     setInvalidationWasPerformed(false);
   }
 
-  protected boolean isIncrementalMode() {
+  protected boolean isIncrementalMode(){
     return myNodeTypesComponent.getTypeCheckingContext().isIncrementalMode();
   }
 
@@ -108,7 +109,7 @@ public abstract class CheckingComponent {
       }
     }
 
-    public void nodeUnclassifiedReadAccess(SNode node) {
+      public void nodeUnclassifiedReadAccess(SNode node) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);

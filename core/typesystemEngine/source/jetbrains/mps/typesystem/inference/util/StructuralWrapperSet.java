@@ -15,23 +15,18 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 
 public class StructuralWrapperSet<T> implements Set<IWrapper> {
-  private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new THashMap<IWrapperWrapper, IWrapperWrapper>();
-  private Set<IWrapper> myWrappers = new THashSet<IWrapper>();
-  private Map<IWrapper, T> myWrapperToKey = new THashMap<IWrapper, T>();
+  private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new HashMap<IWrapperWrapper, IWrapperWrapper>();
+  private Set<IWrapper> myWrappers = new LinkedHashSet<IWrapper>();
+  private Map<IWrapper, T> myWrapperToKey = new LinkedHashMap<IWrapper, T>();
 
-  private Map<IWrapper, IWrapper> myRepresentatorsMap = new THashMap<IWrapper, IWrapper>();
-  private Set<IWrapper> myMissing = new THashSet<IWrapper>();
+  private Map<IWrapper, IWrapper> myRepresentatorsMap = new HashMap<IWrapper, IWrapper>();
+  private Set<IWrapper> myMissing = new HashSet<IWrapper>();
 
   public StructuralWrapperSet() {
   }

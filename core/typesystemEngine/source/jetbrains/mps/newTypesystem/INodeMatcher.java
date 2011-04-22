@@ -25,6 +25,5 @@ import jetbrains.mps.smodel.SNode;
  */
 public interface INodeMatcher {
   public boolean matchesWith(SNode node);
-
   public String getConceptFQName();
 }

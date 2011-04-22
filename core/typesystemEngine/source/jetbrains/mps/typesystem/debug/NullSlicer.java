@@ -18,8 +18,8 @@ package jetbrains.mps.typesystem.debug;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class NullSlicer implements ISlicer {

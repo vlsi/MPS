@@ -48,7 +48,7 @@ public class RuntimeSupportNew extends RuntimeSupport {
     if (typeCheckingContext == null) {
       return coerce_(subtype, pattern);
     }
-    TypeCheckingContextNew tcc = ((TypeCheckingContextNew) typeCheckingContext);
+    TypeCheckingContextNew tcc = ((TypeCheckingContextNew)typeCheckingContext);
     return tcc.getSubTyping().coerceSubTypingNew(subtype, pattern, isWeak, tcc.getState());
   }
 
@@ -56,7 +56,7 @@ public class RuntimeSupportNew extends RuntimeSupport {
     if (typeCheckingContext == null) {
       return coerce_(subtype, pattern);
     }
-    TypeCheckingContextNew tcc = ((TypeCheckingContextNew) typeCheckingContext);
+    TypeCheckingContextNew tcc = ((TypeCheckingContextNew)typeCheckingContext);
     return tcc.getSubTyping().coerceSubTypingNew(subtype, pattern, true, tcc.getState());
   }
 }

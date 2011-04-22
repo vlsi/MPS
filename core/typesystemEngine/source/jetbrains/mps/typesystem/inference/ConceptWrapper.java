@@ -16,11 +16,11 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.util.containers.HashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -79,7 +79,7 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
         return false; //todo
       }
 
-      final Set<Pair<SNode, SNode>> childEQs = new THashSet<Pair<SNode, SNode>>(1);
+      final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
       SNode otherNode = wrapper.getNode();
       if (otherNode == null) {
         return false;
@@ -116,9 +116,9 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
     }
 
     ConceptWrapper result = new ConceptWrapper(myConceptFQName);
-    Set<Pair<SNode, SNode>> childEQs = new THashSet<Pair<SNode, SNode>>(1);
+    Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
 
-    Set<String> childRoles = new THashSet<String>(myChildRolesToNodes.keySet());
+    Set<String> childRoles = new HashSet<String>(myChildRolesToNodes.keySet());
     childRoles.addAll(conceptWrapper.myChildRolesToNodes.keySet());
     for (String childRole : childRoles) {
       SNode child1 = myChildRolesToNodes.get(childRole);
@@ -134,7 +134,7 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
       }
     }
 
-    Set<String> referentRoles = new THashSet<String>(myReferentRolesToNodes.keySet());
+    Set<String> referentRoles = new HashSet<String>(myReferentRolesToNodes.keySet());
     referentRoles.addAll(conceptWrapper.myReferentRolesToNodes.keySet());
     for (String referentRole : referentRoles) {
       SNode ref1 = myReferentRolesToNodes.get(referentRole);
@@ -150,7 +150,7 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
       }
     }
 
-    Set<Pair<String, Integer>> childRolesAndIndices = new THashSet<Pair<String, Integer>>(myChildRolesAndIndicesToNodes.keySet());
+    Set<Pair<String, Integer>> childRolesAndIndices = new HashSet<Pair<String, Integer>>(myChildRolesAndIndicesToNodes.keySet());
     childRolesAndIndices.addAll(conceptWrapper.myChildRolesAndIndicesToNodes.keySet());
     for (Pair<String, Integer> childRoleAndIndex : childRolesAndIndices) {
       SNode child1 = myChildRolesAndIndicesToNodes.get(childRoleAndIndex);

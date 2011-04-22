@@ -18,7 +18,6 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import gnu.trove.THashMap;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
@@ -38,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -145,7 +145,7 @@ public class TypeChecker implements ApplicationComponent {
 
   public void enableTypesComputingForCompletion() {
     //todo add assertion that it is in synchronized with below (e.g. in write action)
-    myComputedTypesForCompletion = new THashMap<SNode, SNode>(1);
+    myComputedTypesForCompletion = new HashMap<SNode, SNode>();
     if (mySubtypingCache == null) {
       mySubtypingCache = createSubtypingCache();
     }

@@ -33,7 +33,7 @@ import java.util.Set;
  * Date: 3/11/11
  * Time: 6:44 PM
  */
-public class ComparableRelation extends AbstractRelation {
+public class ComparableRelation extends  AbstractRelation{
   public boolean accept(RelationKind kind) {
     return kind.isComparable();
   }
@@ -51,7 +51,7 @@ public class ComparableRelation extends AbstractRelation {
     List<SNode> types = new LinkedList<SNode>();
     SNode result = null;
     for (SNode type : nodes) {
-      for (SNode toCompare : types) {
+      for (SNode toCompare: types) {
         if (!subTypingManager.isComparable(type, toCompare, true)) {
           result = type;
         }

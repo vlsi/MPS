@@ -16,17 +16,12 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.util.Computable;
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
-import jetbrains.mps.typesystem.inference.util.StructuralWrapperMap;
-import jetbrains.mps.typesystem.inference.util.StructuralWrapperSet;
-import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -127,7 +122,7 @@ public class SubtypingManager {
       if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(node)) {
         for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(node)) {
           if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
-            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument, isWeak)) {
+            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument,isWeak)) {
               return true;
             }
           }
@@ -147,7 +142,7 @@ public class SubtypingManager {
         boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
         for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           if (replacementAllowed) {
-            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode(), isWeak)) {
+            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode(),isWeak)) {
               return true;
             }
           }
@@ -183,7 +178,7 @@ public class SubtypingManager {
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
+      Set<SNode> yetPassedRaw = new HashSet<SNode>();
 
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
@@ -203,7 +198,7 @@ public class SubtypingManager {
         }
       });
       //searching the frontier's ancestors
-      Pair<SubtypingManager, Map<SNode, Set<SNode>>> matchParameter = new Pair<SubtypingManager, Map<SNode, Set<SNode>>>(this, new THashMap<SNode, Set<SNode>>());
+      Pair<SubtypingManager, Map<SNode, Set<SNode>>> matchParameter = new Pair<SubtypingManager, Map<SNode, Set<SNode>>>(this, new HashMap<SNode, Set<SNode>>());
       boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
         //performing a match with a "hack" parameter containing a "secret" map inside
@@ -220,7 +215,7 @@ public class SubtypingManager {
       if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
         // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
         Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
-        Set<Pair<SNode, SNode>> childEqs = new THashSet<Pair<SNode, SNode>>();
+        Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
         for (SNode var : mapWithVars.keySet()) {
           childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
         }
@@ -302,18 +297,18 @@ public class SubtypingManager {
       return;
     }
     List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-    /* boolean possiblyBlindAlley = false;
+   /* boolean possiblyBlindAlley = false;
     if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
       possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
     }*/
     if (subtypingRule_runtimes != null) {
       for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-        /*    if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
+    /*    if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
           //skip a rule, it will give us nothing
           continue;
         }*/
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
-        List<SNode> supertypes = ModelChange.freezeAndCompute(term, new Computable<List<SNode>>() {
+        List<SNode> supertypes = ModelChange.freezeAndCompute(term,new Computable<List<SNode>>() {
           public List<SNode> compute() {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
@@ -350,7 +345,7 @@ public class SubtypingManager {
         for (Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.o1.getSubOrSuperTypes(node, null, subtypingRule.o2);    //todo should typeCheckingContext really be null?
           if (supertypes != null) {
-            result.addAll(toWrappers(new THashSet<SNode>(supertypes), null));
+            result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
           }
         }
       }
@@ -362,16 +357,16 @@ public class SubtypingManager {
   public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
-      /* RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
-    type.setErrorText("uncomparable types");
-    return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);*/
+     /* RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
+      type.setErrorText("uncomparable types");
+      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);*/
       return null; //todo error
     }
     return lcss.iterator().next();
   }
 
   public static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
-    Set<IWrapper> result = new THashSet<IWrapper>();
+    Set<IWrapper> result = new HashSet<IWrapper>();
     for (SNode sNode : nodes) {
       result.add(NodeWrapper.fromNode(sNode, equationManager));
 
@@ -380,7 +375,7 @@ public class SubtypingManager {
   }
 
   public static Set<SNode> toNodes(Set<IWrapper> wrappers) {
-    Set<SNode> result = new THashSet<SNode>();
+    Set<SNode> result = new HashSet<SNode>();
     for (IWrapper wrapper : wrappers) {
       result.add(wrapper.getNode());
     }
@@ -392,7 +387,7 @@ public class SubtypingManager {
   }
 
   public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
-    if (types.size() == 1) return new THashSet<IWrapper>(types);
+    if (types.size() == 1) return new HashSet<IWrapper>(types);
 
     /*if (types.size() == 2) {
       Iterator<IWrapper> iterator = types.iterator();
@@ -413,9 +408,9 @@ public class SubtypingManager {
 
     //hack: for types which are subtypes only according to replacement rules, such as nulltype
     //such as above but for any quantity of types
-    Set<IWrapper> initialTypes = new THashSet<IWrapper>(types);
-    Set<IWrapper> typesToCheck = new THashSet<IWrapper>(types);
-    Set<IWrapper> removed = new THashSet<IWrapper>();
+    Set<IWrapper> initialTypes = new HashSet<IWrapper>(types);
+    Set<IWrapper> typesToCheck = new HashSet<IWrapper>(types);
+    Set<IWrapper> removed = new HashSet<IWrapper>();
     for (IWrapper mayBeSupertype : typesToCheck) {
       if (removed.contains(mayBeSupertype)) continue;
       for (IWrapper mayBeSubtype : typesToCheck) {
@@ -427,10 +422,10 @@ public class SubtypingManager {
       }
     }
     if (initialTypes.size() == 0) {
-      return new THashSet<IWrapper>();
+      return new HashSet<IWrapper>();
     }
     if (initialTypes.size() == 1) {
-      return new THashSet<IWrapper>(initialTypes);
+      return new HashSet<IWrapper>(initialTypes);
     }
 
     StructuralWrapperSet<?> allTypes = new StructuralWrapperSet();
@@ -440,8 +435,8 @@ public class SubtypingManager {
 
     StructuralWrapperMap<StructuralWrapperSet<Integer>> subTypesToSupertypes = new StructuralWrapperMap<StructuralWrapperSet<Integer>>();
 
-    Set<IWrapper> frontier = new THashSet<IWrapper>(initialTypes);
-    Set<IWrapper> newFrontier = new THashSet<IWrapper>();
+    Set<IWrapper> frontier = new HashSet<IWrapper>(initialTypes);
+    Set<IWrapper> newFrontier = new HashSet<IWrapper>();
 
     StructuralWrapperSet subTypesToSupertypesKeySet = new StructuralWrapperSet(subTypesToSupertypes.keySet());
     while (!frontier.isEmpty()) {
@@ -459,7 +454,7 @@ public class SubtypingManager {
       }
 
       frontier = newFrontier;
-      newFrontier = new THashSet<IWrapper>();
+      newFrontier = new HashSet<IWrapper>();
     }
 
     /* System.out.println("alltypes size = " + allTypes.size());
@@ -516,7 +511,7 @@ System.out.println("alltypes = " + allTypes);*/
       new StructuralWrapperSet<StructuralWrapperSet<Integer>>(subTypesToSuperTypes.get(b)) :
       new StructuralWrapperSet();
     superTypesB.add(b);
-    for (IWrapper superTypeA : new THashSet<IWrapper>(superTypesA)) {
+    for (IWrapper superTypeA : new HashSet<IWrapper>(superTypesA)) {
       boolean matches = false;
       for (IWrapper superTypeB : superTypesB) {
         if ((superTypeA.isConcrete() && superTypeB.isConcrete() &&     // todo what if not concrete?
@@ -577,7 +572,7 @@ System.out.println("alltypes = " + allTypes);*/
 
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
-      Set<IWrapper> wrappers = new THashSet<IWrapper>();
+      Set<IWrapper> wrappers = new HashSet<IWrapper>();
       for (SNode child : children) {
         wrappers.add(NodeWrapper.fromNode(child, equationManager));
       }
@@ -672,7 +667,7 @@ System.out.println("alltypes = " + allTypes);*/
   }
 
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
-    Set<SNode> residualNodes = new THashSet<SNode>(nodes);
+    Set<SNode> residualNodes = new HashSet<SNode>(nodes);
     while (residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
       boolean wasChange = false;

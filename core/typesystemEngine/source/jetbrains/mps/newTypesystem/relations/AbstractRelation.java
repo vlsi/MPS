@@ -31,6 +31,5 @@ import java.util.Set;
  */
 public abstract class AbstractRelation {
   public abstract boolean accept(RelationKind kind);
-
   public abstract boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks);
 }

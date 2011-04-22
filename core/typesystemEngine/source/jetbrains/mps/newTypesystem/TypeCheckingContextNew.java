@@ -202,7 +202,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   public SubTypingManagerNew getSubTyping() {
-    return (SubTypingManagerNew) myTypeChecker.getSubtypingManager();
+    return (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
   }
 
   public AbstractOperation getOperation() {
@@ -217,7 +217,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
       myIsInferenceMode = true;
-      try {
+      try{
         return myNodeTypesComponent.computeTypesForNodeInferenceMode(node);
       } finally {
         myIsInferenceMode = false;
@@ -273,12 +273,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createComparableEquation(SNode node1, SNode node2, boolean inference, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, true, inference, equationInfo);
+    myState.addComparable(node1, node2, true, inference,equationInfo);
   }
 
   @Override
   public void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, false, false, equationInfo);
+    myState.addComparable(node1, node2, false, false,  equationInfo);
   }
 
   @Override
@@ -343,7 +343,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SModel getRuntimeTypesModel() {
-    return myTypeChecker.getRuntimeTypesModel();
+   return myTypeChecker.getRuntimeTypesModel();
   }
 
   @Override
@@ -363,7 +363,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void setIsNonTypesystemComputation() {
-    myIsNonTypesystemComputation = true;
+     myIsNonTypesystemComputation = true;
   }
 
   @Override
@@ -381,7 +381,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return null;
   }
 
-  @Override
+   @Override
   public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
@@ -437,7 +437,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public IOperationContext getOperationContext() {
-    return myOperationContext;
+   return myOperationContext;
   }
 
   @Override
@@ -457,15 +457,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
     if (node == null) return null;
-    synchronized (TYPECHECKING_LOCK) {
-      if (this.isInEditorQueries()) {
-        return getTypeOf_resolveMode(node, typeChecker);
-      } else if (typeChecker.isGenerationMode()) {
-        return getTypeOf_generationMode(node);
-      } else {
-        return getTypeOf_normalMode(node);
-      }
-    }
+     synchronized (TYPECHECKING_LOCK) {
+       if (this.isInEditorQueries()) {
+         return getTypeOf_resolveMode(node, typeChecker);
+       } else if (typeChecker.isGenerationMode()) {
+         return getTypeOf_generationMode(node);
+       } else {
+         return getTypeOf_normalMode(node);
+       }
+     }
   }
 
   @Override

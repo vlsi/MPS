@@ -15,15 +15,10 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,10 +30,10 @@ import java.util.Set;
 public class InequationsPrioritiesSynthesizer {
   private static final Logger LOG = Logger.getLogger(InequationsPrioritiesSynthesizer.class);
 
-  private Map<EquationInfo, Pair<IWrapper, IWrapper>> myAllInequations = new THashMap<EquationInfo, Pair<IWrapper, IWrapper>>();
+  private Map<EquationInfo, Pair<IWrapper, IWrapper>> myAllInequations = new HashMap<EquationInfo, Pair<IWrapper, IWrapper>>();
   private EquationManager myEquationManager;
   // private List<Set<EquationInfo>> myInequationsLayers = new ArrayList<Set<EquationInfo>>(6);
-  Map<EquationInfo, Integer> mySyntheticRanks = new THashMap<EquationInfo, Integer>();
+  Map<EquationInfo, Integer> mySyntheticRanks = new HashMap<EquationInfo, Integer>();
 
   public InequationsPrioritiesSynthesizer(EquationManager equationManager) {
     myEquationManager = equationManager;
@@ -100,30 +95,30 @@ public class InequationsPrioritiesSynthesizer {
     List<EquationInfo> allEqInfos = new ArrayList<EquationInfo>(myAllInequations.keySet());
 
     //creating map by id
-    Map<Pair<String, String>, Set<EquationInfo>> ineqIdsToIneqs = new THashMap<Pair<String, String>, Set<EquationInfo>>();
-    Map<String, Set<EquationInfo>> ineqGroupsToIneqs = new THashMap<String, Set<EquationInfo>>();
+    Map<Pair<String, String>, Set<EquationInfo>> ineqIdsToIneqs = new HashMap<Pair<String, String>, Set<EquationInfo>>();
+    Map<String, Set<EquationInfo>> ineqGroupsToIneqs = new HashMap<String, Set<EquationInfo>>();
     for (EquationInfo equationInfo : allEqInfos) {
       Pair<String, String> id = new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId());
       Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(id);
       if (equationInfos == null) {
-        equationInfos = new THashSet<EquationInfo>(1);
+        equationInfos = new HashSet<EquationInfo>();
         ineqIdsToIneqs.put(id, equationInfos);
       }
       equationInfos.add(equationInfo);
       String groupId = equationInfo.getInequationGroup();
       equationInfos = ineqGroupsToIneqs.get(groupId);
       if (equationInfos == null) {
-        equationInfos = new THashSet<EquationInfo>(1);
+        equationInfos = new HashSet<EquationInfo>();
         ineqGroupsToIneqs.put(groupId, equationInfos);
       }
       equationInfos.add(equationInfo);
     }
 
     //creating a graph; needed to set all back references
-    Map<EquationInfo, Set<EquationInfo>> references = new THashMap<EquationInfo, Set<EquationInfo>>();
-    Map<EquationInfo, Set<EquationInfo>> backReferences = new THashMap<EquationInfo, Set<EquationInfo>>();
+    Map<EquationInfo, Set<EquationInfo>> references = new HashMap<EquationInfo, Set<EquationInfo>>();
+    Map<EquationInfo, Set<EquationInfo>> backReferences = new HashMap<EquationInfo, Set<EquationInfo>>();
     for (EquationInfo equationInfo : allEqInfos) {
-      Set<EquationInfo> nextEquationsInfos = new THashSet<EquationInfo>(1);
+      Set<EquationInfo> nextEquationsInfos = new HashSet<EquationInfo>();
       for (Pair<String, String> ineqsAfter : equationInfo.getInequationIdsAfter()) {
         Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(ineqsAfter);
         if (equationInfos != null) {
@@ -136,7 +131,7 @@ public class InequationsPrioritiesSynthesizer {
           nextEquationsInfos.addAll(equationInfos);
         }
       }
-      Set<EquationInfo> prevEquationsInfos = new THashSet<EquationInfo>(1);
+      Set<EquationInfo> prevEquationsInfos = new HashSet<EquationInfo>();
       for (Pair<String, String> ineqsBefore : equationInfo.getInequationIdsBefore()) {
         Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(ineqsBefore);
         if (equationInfos != null) {
@@ -152,13 +147,13 @@ public class InequationsPrioritiesSynthesizer {
       for (EquationInfo nextInfo : nextEquationsInfos) {
         Set<EquationInfo> equationInfos = references.get(equationInfo);
         if (equationInfos == null) {
-          equationInfos = new THashSet<EquationInfo>(1);
+          equationInfos = new HashSet<EquationInfo>();
           references.put(equationInfo, equationInfos);
         }
         equationInfos.add(nextInfo);
         equationInfos = backReferences.get(nextInfo);
         if (equationInfos == null) {
-          equationInfos = new THashSet<EquationInfo>(1);
+          equationInfos = new HashSet<EquationInfo>();
           backReferences.put(nextInfo, equationInfos);
         }
         equationInfos.add(equationInfo);
@@ -166,13 +161,13 @@ public class InequationsPrioritiesSynthesizer {
       for (EquationInfo prevInfo : prevEquationsInfos) {
         Set<EquationInfo> equationInfos = references.get(prevInfo);
         if (equationInfos == null) {
-          equationInfos = new THashSet<EquationInfo>(1);
+          equationInfos = new HashSet<EquationInfo>();
           references.put(prevInfo, equationInfos);
         }
         equationInfos.add(equationInfo);
         equationInfos = backReferences.get(equationInfo);
         if (equationInfos == null) {
-          equationInfos = new THashSet<EquationInfo>(1);
+          equationInfos = new HashSet<EquationInfo>();
           backReferences.put(equationInfo, equationInfos);
         }
         equationInfos.add(prevInfo);
@@ -183,8 +178,8 @@ public class InequationsPrioritiesSynthesizer {
 
     //graph created, lets split it by ranks
     while (!allEqInfos.isEmpty()) {
-      Set<EquationInfo> nextLayer = new THashSet<EquationInfo>();
-      for (EquationInfo equationInfo : new THashSet<EquationInfo>(allEqInfos)) {
+      Set<EquationInfo> nextLayer = new HashSet<EquationInfo>();
+      for (EquationInfo equationInfo : new HashSet<EquationInfo>(allEqInfos)) {
         Set<EquationInfo> prevEquationInfos = backReferences.get(equationInfo);
         if (prevEquationInfos == null || prevEquationInfos.isEmpty()) {
           nextLayer.add(equationInfo);
@@ -226,7 +221,7 @@ public class InequationsPrioritiesSynthesizer {
         }
         Set<EquationInfo> equationInfos = byPriorities[priority];
         if (equationInfos == null) {
-          equationInfos = new THashSet<EquationInfo>(1);
+          equationInfos = new HashSet<EquationInfo>();
           byPriorities[priority] = equationInfos;
         }
         equationInfos.add(equationInfo);

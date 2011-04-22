@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public abstract class AbstractDependency_Runtime implements IDependency_Runtime {
@@ -29,7 +29,7 @@ public abstract class AbstractDependency_Runtime implements IDependency_Runtime 
   public Set<SNode> getSourceNodes(SNode targetNode) {
     SNode node = getSourceNode(targetNode);
     if (node == null) {
-      return new THashSet<SNode>();
+      return new HashSet<SNode>();
     }
     return CollectionUtil.set(node);
   }

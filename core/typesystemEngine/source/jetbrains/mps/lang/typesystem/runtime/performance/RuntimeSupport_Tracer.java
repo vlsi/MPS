@@ -21,7 +21,7 @@ public class RuntimeSupport_Tracer extends RuntimeSupport {
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
+    return  myTypeChecker.computeWithTrace(new Computable<SNode>() {
       @Override
       public SNode compute() {
         return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak);
@@ -31,7 +31,7 @@ public class RuntimeSupport_Tracer extends RuntimeSupport {
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
+    return  myTypeChecker.computeWithTrace(new Computable<SNode>() {
       @Override
       public SNode compute() {
         return RuntimeSupport_Tracer.super.coerce_(subtype, pattern);
@@ -41,7 +41,7 @@ public class RuntimeSupport_Tracer extends RuntimeSupport {
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext typeCheckingContext) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
+    return  myTypeChecker.computeWithTrace(new Computable<SNode>() {
       @Override
       public SNode compute() {
         return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak, typeCheckingContext);
@@ -51,7 +51,7 @@ public class RuntimeSupport_Tracer extends RuntimeSupport {
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final TypeCheckingContext typeCheckingContext) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
+    return  myTypeChecker.computeWithTrace(new Computable<SNode>() {
       @Override
       public SNode compute() {
         return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, typeCheckingContext);

@@ -1,13 +1,8 @@
 package jetbrains.mps.typesystem.newTypesystem.structure;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,19 +16,19 @@ public class Type<Meta, Target> {
 
   protected String myRole;
   protected IReference<Meta> myMeta;
-  protected List<Type<Meta, Target>> myChildren = new ArrayList<Type<Meta, Target>>(2);
-  protected Map<String, IReference<Target>> myReferences = new THashMap<String, IReference<Target>>(0);
+  protected List<Type<Meta, Target>> myChildren = new ArrayList<Type<Meta,Target>>(2);
+  protected Map<String, IReference<Target>> myReferences = new HashMap<String, IReference<Target>>(0);
 
   public List<Type<Meta, Target>> getChildren() {
-    return new ArrayList<Type<Meta, Target>>(myChildren);
+    return new ArrayList<Type<Meta,Target>>(myChildren);
   }
 
   public List<Type<Meta, Target>> getChildren(String role) {
-    List<Type<Meta, Target>> result = new ArrayList<Type<Meta, Target>>();
+    List<Type<Meta, Target>> result = new ArrayList<Type<Meta,Target>>();
     if (role == null) return result;
     for (Type<Meta, Target> t : myChildren) {
       if (role.equals(t.myRole)) {
-        result.add(t);
+         result.add(t);
       }
     }
     return result;
@@ -59,7 +54,7 @@ public class Type<Meta, Target> {
   }
 
   public Set<String> getReferenceRoles() {
-    return new THashSet<String>(myReferences.keySet());
+    return new HashSet<String>(myReferences.keySet());
   }
 
   public void addChild(Type<Meta, Target> child, String role) {
@@ -80,7 +75,7 @@ public class Type<Meta, Target> {
   }
 
   public Set<String> getChildRoles() {
-    Set<String> result = new THashSet<String>();
+    Set<String> result = new HashSet<String>();
     for (Type t : myChildren) {
       result.add(t.myRole);
     }

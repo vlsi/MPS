@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.debug;
 
-import gnu.trove.THashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 
@@ -23,7 +22,7 @@ import java.util.*;
 
 public class SlicerImpl implements ISlicer {
   private List<EquationLogItem> myEquationLogItems = new ArrayList<EquationLogItem>();
-  private Map<SNode, SNode> myNodesToTypes = new THashMap<SNode, SNode>();
+  private Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
   private NodeTypesComponent myNodeTypesComponent;
   private String myRootInfo;
 

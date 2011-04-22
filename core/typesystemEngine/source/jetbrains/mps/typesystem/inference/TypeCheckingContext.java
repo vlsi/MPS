@@ -128,25 +128,20 @@ public abstract class TypeCheckingContext {
   }
 
   public abstract void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
-
   @Deprecated
   public abstract void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo);
-
   @Deprecated
   public abstract void createEquation(IWrapper wrapper1, SNode node2, EquationInfo equationInfo);
-
   @Deprecated
   public abstract void createEquation(IWrapper wrapper1, IWrapper wrapper2, EquationInfo equationInfo);
 
   public abstract void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
-
   public abstract void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
   public abstract void createGreaterThanInequation(SNode node1,
                                                    SNode node2,
                                                    boolean checkOnly,
                                                    EquationInfo equationInfo);
-
   public abstract void createGreaterThanInequationStrong(SNode node1,
                                                          SNode node2,
                                                          boolean checkOnly,
@@ -155,7 +150,6 @@ public abstract class TypeCheckingContext {
   public abstract void createComparableEquation(SNode node1,
                                                 SNode node2,
                                                 EquationInfo equationInfo);
-
   public abstract void createComparableEquation(SNode node1,
                                                 SNode node2, boolean inference,
                                                 EquationInfo equationInfo);
@@ -167,11 +161,8 @@ public abstract class TypeCheckingContext {
   public abstract SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
 
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId);
-
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow);
-
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError);
-
   public abstract void whenConcrete(List<NodeInfo> arguments, Runnable r);
 
   public abstract void dispose();

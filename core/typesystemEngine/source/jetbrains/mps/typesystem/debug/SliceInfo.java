@@ -19,17 +19,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.Collection;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.12.2008
- * Time: 16:38:16
- * To change this template use File | Settings | File Templates.
- */
+* User: Cyril.Konopko
+* Date: 09.12.2008
+* Time: 16:38:16
+* To change this template use File | Settings | File Templates.
+*/
 public class SliceInfo {
   private SNode myNode;
   private SNode myEquatedType;
@@ -38,7 +38,6 @@ public class SliceInfo {
   private String myRuleId;
   private String myReason;
   private List<EquationInfo> myCauses;
-
   public SliceInfo(SNode node, SNode equatedType, String ruleModel, String ruleId, String reason, Collection<EquationInfo> causes) {
     myNode = node;
     myEquatedType = equatedType;

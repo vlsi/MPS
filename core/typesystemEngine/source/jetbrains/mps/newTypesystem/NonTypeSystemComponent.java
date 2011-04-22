@@ -46,7 +46,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
   private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
-  // nodes to rules which depend on this nodes
+    // nodes to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>> myNodesToDependentNodesWithNTRules =
     new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>>();
 
@@ -236,7 +236,7 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private void addDependentNodes(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
-    Map<SNode, Map<NonTypesystemRule_Runtime, Set<SNode>>> mapToNodesWithNTRules =
+    Map<SNode,Map<NonTypesystemRule_Runtime, Set<SNode>>> mapToNodesWithNTRules =
       isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
@@ -266,7 +266,7 @@ class NonTypeSystemComponent extends CheckingComponent {
 
   private void addDependentNodes(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
     addDependentNodes(sNode, rule, nodesToDependOn, false);
-  }
+   }
 
   public void applyNonTypeSystemRulesToRoot(IOperationContext context) {
     SNode root = myNodeTypesComponent.getNode();
@@ -304,7 +304,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     if (nonTypesystemRules != null) {
       for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-        /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
+      /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
           System.err.println("");
         }*/
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
@@ -332,8 +332,8 @@ class NonTypeSystemComponent extends CheckingComponent {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             nodesReadListener.setAccessReport(true);
-            addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-            addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+            addDependentNodes(node, rule.o1, new HashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
             nodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
@@ -343,7 +343,7 @@ class NonTypeSystemComponent extends CheckingComponent {
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDependentTypeTerms(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           nodesReadListener.clear();

@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 public interface Rule_Runtime extends IApplicableToConcept {
   @Deprecated
   boolean isApplicable(SNode argument);
-
   IsApplicableStatus isApplicableAndPattern(SNode argument);
 }

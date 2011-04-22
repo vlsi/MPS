@@ -51,7 +51,7 @@ public class WhenConcreteBlock extends Block {
 
   public SNode getArgument() {
     return myArgument;
-  }
+  }  
 
   @Override
   public void performAction() {
@@ -80,7 +80,7 @@ public class WhenConcreteBlock extends Block {
 
   @Override
   public String getShortPresentation() {
-    return myConditionKind.getPresentation() + myArgument;
+    return myConditionKind.getPresentation() +  myArgument;
   }
 
   @Override

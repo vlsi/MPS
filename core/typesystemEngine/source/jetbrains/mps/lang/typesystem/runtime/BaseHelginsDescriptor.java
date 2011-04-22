@@ -15,23 +15,23 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import gnu.trove.THashSet;
-import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
+import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 
 import java.util.Collections;
 import java.util.Set;
+import java.util.HashSet;
 
 public class BaseHelginsDescriptor implements IHelginsDescriptor {
-  protected Set<InferenceRule_Runtime> myInferenceRules = new THashSet<InferenceRule_Runtime>();
-  protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new THashSet<NonTypesystemRule_Runtime>();
-  protected Set<AbstractDependentComputation_Runtime> myDependentComputations = new THashSet<AbstractDependentComputation_Runtime>();
-  protected Set<SubtypingRule_Runtime> mySubtypingRules = new THashSet<SubtypingRule_Runtime>();
-  protected Set<ComparisonRule_Runtime> myComparisonRules = new THashSet<ComparisonRule_Runtime>();
-  protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new THashSet<InequationReplacementRule_Runtime>();
-  protected Set<IDependency_Runtime> myDependencies = new THashSet<IDependency_Runtime>();
-  protected Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
-  protected Set<IOverloadedOpsTypesProvider> myOverloadedOperationsTypesProviders = new THashSet<IOverloadedOpsTypesProvider>();
+  protected Set<InferenceRule_Runtime> myInferenceRules = new HashSet<InferenceRule_Runtime>();
+  protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new HashSet<NonTypesystemRule_Runtime>();
+  protected Set<AbstractDependentComputation_Runtime> myDependentComputations = new HashSet<AbstractDependentComputation_Runtime>();
+  protected Set<SubtypingRule_Runtime> mySubtypingRules = new HashSet<SubtypingRule_Runtime>();
+  protected Set<ComparisonRule_Runtime> myComparisonRules = new HashSet<ComparisonRule_Runtime>();
+  protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new HashSet<InequationReplacementRule_Runtime>();
+  protected Set<IDependency_Runtime> myDependencies = new HashSet<IDependency_Runtime>();
+  protected Set<IVariableConverter_Runtime> myVariableConverters = new HashSet<IVariableConverter_Runtime>();
+  protected Set<IOverloadedOpsTypesProvider> myOverloadedOperationsTypesProviders = new HashSet<IOverloadedOpsTypesProvider>();
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return Collections.unmodifiableSet(this.myInferenceRules);

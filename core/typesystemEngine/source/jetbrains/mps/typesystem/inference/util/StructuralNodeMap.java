@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class StructuralNodeMap<T> implements Map<SNode, T> {
-  private Map<SNode, SNode> myRepresentatorsMap = new THashMap<SNode, SNode>();
-  private Map<SNode, T> myMap = new THashMap<SNode, T>();
-  private Set<SNode> myAbsentNodes = new THashSet<SNode>();
+  private HashMap<SNode, SNode> myRepresentatorsMap = new HashMap<SNode, SNode>();
+  private HashMap<SNode, T> myMap = new HashMap<SNode, T>();
+  private HashSet<SNode> myAbsentNodes = new HashSet<SNode>();
 
   public SNode getKeyRepresentator(SNode node) {
     return myRepresentatorsMap.get(node);

@@ -59,6 +59,7 @@ public class EquationErrorReporter extends AbstractErrorReporter implements IErr
   }
 
 
+
   public MessageStatus getMessageStatus() {
     return MessageStatus.ERROR;
   }

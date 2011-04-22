@@ -31,7 +31,7 @@ public abstract class RelationBlock extends Block {
   protected EquationInfo myEquationInfo;
 
   public RelationBlock(State state, SNode left, SNode right,
-                       RelationKind kind, EquationInfo equationInfo) {
+                         RelationKind kind, EquationInfo equationInfo) {
     super(state, equationInfo.getRuleModel(), equationInfo.getRuleId());
     myRelationKind = kind;
     myLeftNode = left;
@@ -57,14 +57,14 @@ public abstract class RelationBlock extends Block {
 
   @Override
   public String getPresentation() {
-    return myRelationKind.getTitle() + " : " + getShortPresentation();
+    return myRelationKind.getTitle() + " : " +  getShortPresentation();
   }
 
   public boolean isCheckOnly() {
     return !myState.getTypeCheckingContext().isInferenceMode() && myRelationKind.isCheckOnly();
   }
 
-  @Override
+ @Override
   public String getShortPresentation() {
     return getPresentationInternal(myLeftNode, myRightNode);
   }
@@ -96,5 +96,5 @@ public abstract class RelationBlock extends Block {
     return variables;
   }
 
-  public abstract List<com.intellij.openapi.util.Pair<SNode, SNode>> getInputsAndOutputs();
+  public abstract List<com.intellij.openapi.util.Pair<SNode,SNode>> getInputsAndOutputs();
 }

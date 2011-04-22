@@ -30,7 +30,7 @@ import java.util.Set;
  */
 public class StateMatcher {
 
-  public static boolean match(State state1, State state2) {
+  public static boolean match (State state1, State state2) {
     return matchEquations(state1.getEquations(), state2.getEquations()) &&
       matchBlocks(state1.getBlocks(), state2.getBlocks()) &&
       matchNodeMaps(state1.getNodeMaps(), state2.getNodeMaps());

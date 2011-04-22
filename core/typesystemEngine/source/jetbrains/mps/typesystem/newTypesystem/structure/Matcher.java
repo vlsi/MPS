@@ -38,12 +38,12 @@ public class Matcher {
     Set<String> childRoles = type1.getChildRoles();
     childRoles.addAll(type2.getChildRoles());
     for (String role : childRoles) {
-      List<Type<Meta, Target>> children1 = type1.getChildren(role);
+      List<Type<Meta,Target>> children1 = type1.getChildren(role);
       List<Type<Meta, Target>> children2 = type2.getChildren(role);
       if (children1.size() != children2.size()) {
         return MatchResult.FALSE;
       }
-      for (Iterator<Type<Meta, Target>> i1 = children1.iterator(), i2 = children2.iterator(); i1.hasNext() && i2.hasNext();) {
+      for (Iterator<Type<Meta, Target>> i1 = children1.iterator(), i2 = children2.iterator(); i1.hasNext() && i2.hasNext();  ) {
         Type<Meta, Target> child1 = i1.next();
         Type<Meta, Target> child2 = i2.next();
         MatchResult<Meta, Target> childResult = match(child1, child2);

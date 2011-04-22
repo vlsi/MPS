@@ -25,6 +25,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -94,7 +95,7 @@ public class TypesUtil {
       }
     }
     if (sNode.getReference("concept") != null) {
-      childDepth++;
+      childDepth++; 
     }
     return childDepth + 1;
   }
@@ -102,7 +103,7 @@ public class TypesUtil {
 
   public static List<SNode> getVariables(SNode node) {
     List<SNode> result = new LinkedList<SNode>();
-    getVariablesInside(node, result);
+    getVariablesInside(node,result);
     return result;
   }
 

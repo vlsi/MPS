@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -25,9 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private static final Logger LOG = Logger.getLogger(NodeWrapper.class);
@@ -86,7 +82,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
       if (matchParameter instanceof Pair && ((Pair) matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
         Pair<SubtypingManager, Map<SNode, Set<SNode>>> pair = (Pair<SubtypingManager, Map<SNode, Set<SNode>>>) matchParameter;
         Map<SNode, Set<SNode>> mapWithVars = pair.o2;
-        final Map<SNode, Set<SNode>> candidate = new THashMap<SNode, Set<SNode>>(1);
+        final Map<SNode, Set<SNode>> candidate = new HashMap<SNode, Set<SNode>>();
 
         IMatchModifier matchModifier = new IMatchModifier() {
           public boolean accept(SNode node1, SNode node2) {
@@ -100,7 +96,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
           public void performAction(SNode node1, SNode node2) {
             Set<SNode> nodeSet = candidate.get(node1);
             if (nodeSet == null) {
-              nodeSet = new THashSet<SNode>(1);
+              nodeSet = new HashSet<SNode>();
               candidate.put(node1, nodeSet);
             }
             nodeSet.add(node2);
@@ -118,7 +114,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
             if (candidateSet == null) continue;
             Set<SNode> nodeSet = mapWithVars.get(var);
             if (nodeSet == null) {
-              nodeSet = new THashSet<SNode>(1);
+              nodeSet = new HashSet<SNode>();
               mapWithVars.put(var, nodeSet);
             }
             nodeSet.addAll(candidateSet);
@@ -127,7 +123,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
         return b;
       }
 
-      final Set<Pair<SNode, SNode>> childEQs = new THashSet<Pair<SNode, SNode>>();
+      final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
       boolean b = MatchingUtil.matchNodes(getNode(), wrapper.getNode(), new IMatchModifier() {
         public boolean accept(SNode node1, SNode node2) {
           return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);

@@ -15,27 +15,28 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class DependenciesContainer {
 
-  Map<SNode, Set<IDependency_Runtime>> myDependencies = new THashMap<SNode, Set<IDependency_Runtime>>();
+  Map<SNode, Set<IDependency_Runtime>> myDependencies = new HashMap<SNode, Set<IDependency_Runtime>>();
 
   public void addDependencies(Set<IDependency_Runtime> dependencies) {
     for (IDependency_Runtime dependency : dependencies) {
       SNode concept = SModelUtil.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
       Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
       if (existingRules == null) {
-        existingRules = new THashSet<IDependency_Runtime>(1);
+        existingRules = new HashSet<IDependency_Runtime>();
         myDependencies.put(concept,
           existingRules);
       }
@@ -44,13 +45,13 @@ public class DependenciesContainer {
   }
 
   public Set<SNode> getDependencies(SNode node) {
-    if (node == null) return new THashSet<SNode>(1);
+    if (node == null) return new HashSet<SNode>();
     Set<IDependency_Runtime> dependencies;
     synchronized (RulesManager.RULES_LOCK) {
       SNode conceptDeclaration = node.getConceptDeclarationNode();
       dependencies = get(conceptDeclaration);
     }
-    Set<SNode> result = new THashSet<SNode>(1);
+    Set<SNode> result = new HashSet<SNode>();
     for (IDependency_Runtime dependency_runtime : dependencies) {
       Set<SNode> sourceNodes = dependency_runtime.getSourceNodes(node);
       for (SNode sourceNode : sourceNodes) {
@@ -77,7 +78,7 @@ public class DependenciesContainer {
         conceptDeclaration = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration);
       }
     }
-    Set<IDependency_Runtime> hashSet = new THashSet<IDependency_Runtime>(1);
+    HashSet<IDependency_Runtime> hashSet = new HashSet<IDependency_Runtime>();
     myDependencies.put(key, hashSet);
     return hashSet;
   }

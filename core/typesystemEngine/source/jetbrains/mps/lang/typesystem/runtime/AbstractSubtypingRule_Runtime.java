@@ -17,11 +17,12 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
+
+import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
 

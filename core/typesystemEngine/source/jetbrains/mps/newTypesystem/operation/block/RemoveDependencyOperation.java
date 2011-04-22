@@ -19,6 +19,7 @@ import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class RemoveDependencyOperation extends AbstractBlockOperation {
   private final SNode myVar;
