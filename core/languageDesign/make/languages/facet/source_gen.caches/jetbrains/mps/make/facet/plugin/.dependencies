@@ -73,7 +73,6 @@
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.FacetManifest" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />

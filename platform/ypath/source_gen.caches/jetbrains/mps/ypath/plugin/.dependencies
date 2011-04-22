@@ -21,7 +21,6 @@
     <classNode extendsClassName="jetbrains.mps.reloading.ReloadAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.plugin.DesignPartLoader_CustomApplicationPlugin" file="DesignPartLoader_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ypath.plugin.DesignPartLoader" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>

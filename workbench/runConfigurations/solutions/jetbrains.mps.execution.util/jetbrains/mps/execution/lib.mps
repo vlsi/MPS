@@ -37,7 +37,6 @@
   <roots>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="3107334613900744127">
       <property name="name" nameId="tpck.1169194664001" value="java" />
-      <property name="isDebuggable" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7197035105459954540">
       <property name="name" nameId="tpck.1169194664001" value="ClassRunner" />
