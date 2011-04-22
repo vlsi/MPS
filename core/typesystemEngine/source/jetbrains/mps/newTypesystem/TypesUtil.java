@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -134,7 +135,7 @@ public class TypesUtil {
   }
 
   private static class TypeMatchModifier implements IMatchModifier {
-    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+    final Set<Pair<SNode, SNode>> childEQs = new THashSet<Pair<SNode, SNode>>();
 
     public boolean accept(SNode node1, SNode node2) {
       return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);

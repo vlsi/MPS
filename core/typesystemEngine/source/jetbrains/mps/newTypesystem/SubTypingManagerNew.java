@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import com.intellij.openapi.util.Computable;
+import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.newTypesystem.state.Equations;
@@ -140,7 +141,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subType);
     while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new HashSet<SNode>();
+      Set<SNode> yetPassedRaw = new THashSet<SNode>();
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
@@ -195,7 +196,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   //sub = true to eliminate subTypes
   private List<SNode> eliminateSubOrSuperTypes(Collection<SNode> types, boolean sub) {
     List<SNode> result = new LinkedList<SNode>();
-    Set<SNode> toRemove = new HashSet<SNode>();
+    Set<SNode> toRemove = new THashSet<SNode>();
     for (SNode type : types) {
       boolean toAdd = true;
       for (SNode resultType : result) {
@@ -241,10 +242,10 @@ public class SubTypingManagerNew extends SubtypingManager {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    Set<SNode> result = new HashSet<SNode>();
+    Set<SNode> result = new THashSet<SNode>();
     frontier.add(left);
     while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new HashSet<SNode>();
+      Set<SNode> yetPassedRaw = new THashSet<SNode>();
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
@@ -297,7 +298,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       types.addAll(newNodes);
     }
     types = eliminateSubOrSuperTypes(types, true);
-    return LatticeUtil.meetNodes(new HashSet<SNode>(types));
+    return LatticeUtil.meetNodes(new THashSet<SNode>(types));
   }
 
   private boolean subOrSuperType(SNode left, SNode right, boolean sub, boolean isWeak) {

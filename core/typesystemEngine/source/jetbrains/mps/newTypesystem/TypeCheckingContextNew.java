@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import com.intellij.openapi.util.Computable;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -495,7 +496,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       //non-typesystem checks
       getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
 
-      return new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
+      return new THashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
     }
   }
 

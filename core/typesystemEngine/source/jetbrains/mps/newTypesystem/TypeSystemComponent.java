@@ -84,12 +84,12 @@ class TypeSystemComponent extends CheckingComponent {
       return myInvalidationResult;
     }
     boolean result;
-    Set<SNode> invalidatedNodes_A = new HashSet<SNode>();
-    Set<SNode> invalidatedNodes_B = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_A = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
+    Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_B = new THashSet<SNode>();
     Set<SNode> currentNodesToInvalidate_A = myCurrentNodesToInvalidate;
-    Set<SNode> currentNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> currentNodesToInvalidate_B = new THashSet<SNode>();
 
     if (myCacheWasRebuilt) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
@@ -127,8 +127,8 @@ class TypeSystemComponent extends CheckingComponent {
       }
       currentNodesToInvalidate_A = newNodesToInvalidate_A;
       currentNodesToInvalidate_B = newNodesToInvalidate_B;
-      newNodesToInvalidate_A = new HashSet<SNode>();
-      newNodesToInvalidate_B = new HashSet<SNode>();
+      newNodesToInvalidate_A = new THashSet<SNode>();
+      newNodesToInvalidate_B = new THashSet<SNode>();
     }
     result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
     myCurrentNodesToInvalidate.clear();
@@ -180,13 +180,13 @@ class TypeSystemComponent extends CheckingComponent {
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    HashSet<SNode> hashSet = new HashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
     addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
-    HashSet<SNode> hashSet = new HashSet<SNode>(1);
+    Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
@@ -271,7 +271,7 @@ class TypeSystemComponent extends CheckingComponent {
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
     Set<Pair<String, String>> set = myNodesToRules.get(node);
     if (set == null) return null;
-    return new HashSet<Pair<String, String>>(set);
+    return new THashSet<Pair<String, String>>(set);
   }
 
   private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {

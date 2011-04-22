@@ -29,12 +29,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:38:28 PM
- */
 public class NodeMaps {
   @StateObject
   private final Map<SNode, SNode> myNodesToTypes = new THashMap<SNode, SNode>();

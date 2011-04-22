@@ -72,8 +72,8 @@ public abstract class CheckingComponent {
   }
 
   protected class MyEventsReadListener extends AbstractNodesReadListener {
-    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
-    protected Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
+    private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
+    protected Set<Pair<SNode, String>> myAccessedProperties = new THashSet<Pair<SNode, String>>(1);
     protected boolean myIsSetAccessReport = false;
 
     public void setAccessReport(boolean accessReport) {
@@ -123,8 +123,8 @@ public abstract class CheckingComponent {
     public void clear() {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAccessedNodes = new HashSet<SNode>();
-        myAccessedProperties = new HashSet<Pair<SNode, String>>();
+        myAccessedNodes = new THashSet<SNode>();
+        myAccessedProperties = new THashSet<Pair<SNode, String>>();
       }
     }
   }

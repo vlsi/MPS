@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
+import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
@@ -28,17 +29,11 @@ import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 5:26:43 PM
- */
 public class Inequalities {  //
   private final State myState;
   private ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
   private ManyToManyMap<SNode, RelationBlock> myNodesToBlocks = new ManyToManyMap<SNode, RelationBlock>();
-  private Set<SNode> myNodes = new LinkedHashSet<SNode>();
+  private Set<SNode> myNodes = new THashSet<SNode>();
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
 
@@ -215,7 +210,7 @@ public class Inequalities {  //
   }
 
   private boolean solveRelationForNode(SNode node, AbstractRelation relation) {
-    Map<SNode, RelationBlock> typesToBlocks = new HashMap<SNode, RelationBlock>();
+    Map<SNode, RelationBlock> typesToBlocks = new THashMap<SNode, RelationBlock>();
     assert TypesUtil.isVariable(node);
     Set<RelationBlock> blocks = myNodesToBlocks.getByFirst(node);
     blocks = getRelationBlocks(blocks, relation);
@@ -227,9 +222,9 @@ public class Inequalities {  //
   }
 
   public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
-    Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>();
-    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
-    Set<SNode> emptySet = new HashSet<SNode>();
+    Map<SNode, Set<SNode>> components = new THashMap<SNode, Set<SNode>>();
+    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new THashMap<Set<SNode>, Set<InequalityBlock>>();
+    Set<SNode> emptySet = new THashSet<SNode>();
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
@@ -238,15 +233,15 @@ public class Inequalities {  //
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
         if (emptyBlocks == null) {
-          emptyBlocks = new HashSet<InequalityBlock>();
+          emptyBlocks = new THashSet<InequalityBlock>();
           groupsToInequalities.put(emptySet,emptyBlocks);
         }
         emptyBlocks.add(inequality);
         continue;
       }
-      Set<SNode> currentResult = new HashSet<SNode>();
+      Set<SNode> currentResult = new THashSet<SNode>();
 
-      Set<InequalityBlock> currentInequalities = new HashSet<InequalityBlock>();
+      Set<InequalityBlock> currentInequalities = new THashSet<InequalityBlock>();
       currentInequalities.add(inequality);
       for (SNode var : variables) {
         var = myState.getRepresentative(var);

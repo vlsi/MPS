@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
@@ -259,8 +261,8 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>(1);
-    Set<SNode> keySet = new HashSet<SNode>(nodesToErrorsMap.keySet());
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
+    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
     for (SNode key : keySet) {
       List<IErrorReporter> reporter = getErrors(key);
@@ -377,8 +379,8 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
  class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
-    private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
-    private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();
+    private Map<SModelDescriptor, Integer> myNodesCount = new THashMap<SModelDescriptor, Integer>();
+    private Map<WeakReference, SModelDescriptor> myDescriptors = new THashMap<WeakReference, SModelDescriptor>();
     private SModelListener myListener;
 
     MyModelListenerManager(SModelListener listener) {

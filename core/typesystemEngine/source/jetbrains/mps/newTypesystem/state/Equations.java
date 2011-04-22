@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
@@ -141,7 +142,7 @@ public class Equations {
   }
 
   public SNode expandNode(final SNode node, boolean finalExpansion) {
-    return expandNode(node, new HashSet<SNode>(), finalExpansion);
+    return expandNode(node, new THashSet<SNode>(), finalExpansion);
   }
 
   private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
@@ -172,7 +173,7 @@ public class Equations {
   }
 
   private void replaceChildren(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
-    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
+    Map<SNode, SNode> childrenReplacement = new THashMap<SNode, SNode>();
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion);
       if (newChild != child) {
@@ -236,16 +237,16 @@ public class Equations {
   }
 
   public Set<Entry<SNode,Set<SNode>>> getEquationGroups() {
-    Set<SNode> all = new HashSet<SNode>();
+    Set<SNode> all = new THashSet<SNode>();
     List<String> result = new LinkedList<String>();
-    Map<SNode, Set<SNode>> map = new HashMap<SNode, Set<SNode>>();
+    Map<SNode, Set<SNode>> map = new THashMap<SNode, Set<SNode>>();
     all.addAll(myRepresentatives.keySet());
     for (SNode node : all) {
       node = getNameRepresentative(node);
       SNode representative = getRepresentative(node);
       Set<SNode> value = map.get(representative);
       if (value == null) {
-        value = new HashSet<SNode>();
+        value = new THashSet<SNode>();
         map.put(representative, value);
       }
       if (node != representative) {
