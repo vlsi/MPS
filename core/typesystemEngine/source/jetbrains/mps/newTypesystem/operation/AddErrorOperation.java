@@ -28,7 +28,6 @@ public class AddErrorOperation extends AbstractOperation {
     myNode = node;
     myError = error;
     mySource = myNode;
-    myEquationInfo = info;
   }
 
   public String getPresentation() {

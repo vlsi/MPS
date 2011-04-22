@@ -332,8 +332,8 @@ class NonTypeSystemComponent extends CheckingComponent {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             nodesReadListener.setAccessReport(true);
-            addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-            addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+            addDependentNodes(node, rule.o1, new HashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
             nodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
@@ -343,7 +343,7 @@ class NonTypeSystemComponent extends CheckingComponent {
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDependentTypeTerms(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           nodesReadListener.clear();

@@ -344,7 +344,12 @@ public class State {
   }
 
   public void checkNonConcreteWhenConcretes() {
-    // todo
+    for (Block block : myBlocks) {
+      if (block.getBlockKind().equals(BlockKind.WHEN_CONCRETE)) {
+        WhenConcreteBlock wCBlock = (WhenConcreteBlock) block;
+
+      }
+    }
   }
 
   public void performActionsAfterChecking() {
