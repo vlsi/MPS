@@ -11,8 +11,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -56,9 +58,14 @@ public class BuildAllGenerators_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<IModule> m = ListSequence.fromListWithValues(new ArrayList<IModule>(), MPSModuleRepository.getInstance().getAllGenerators());
+      final Wrappers._T<List<IModule>> m = new Wrappers._T<List<IModule>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          m.value = ListSequence.fromListWithValues(new ArrayList<IModule>(), MPSModuleRepository.getInstance().getAllGenerators());
+        }
+      });
 
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, m, null), true).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, m.value, null), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "BuildAllGenerators", t);

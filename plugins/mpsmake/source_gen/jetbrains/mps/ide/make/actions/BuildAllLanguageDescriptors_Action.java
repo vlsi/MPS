@@ -11,9 +11,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -56,14 +58,19 @@ public class BuildAllLanguageDescriptors_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
-      List<SModelDescriptor> models = Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor it) {
-          return it.isGeneratable() && "descriptor".equals(it.getStereotype());
+      final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
+          models.value = Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
+            public boolean accept(SModelDescriptor it) {
+              return it.isGeneratable() && "descriptor".equals(it.getStereotype());
+            }
+          }).toListSequence();
         }
-      }).toListSequence();
+      });
 
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, null, null, null), true).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "BuildAllLanguageDescriptors", t);
