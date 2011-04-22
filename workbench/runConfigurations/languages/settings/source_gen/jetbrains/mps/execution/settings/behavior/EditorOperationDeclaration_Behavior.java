@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorOperationDeclaration_Behavior {
@@ -26,11 +28,13 @@ public class EditorOperationDeclaration_Behavior {
   }
 
   public static SNode call_getJavaMethod_946964771156066991(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066991);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066991);
   }
 
   public static SNode call_getPublicJavaMethod_203908296139519011(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519011);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519011);
   }
 
   public static SNode callSuper_getJavaMethod_946964771156066991(SNode thisNode, String callerConceptFqName) {

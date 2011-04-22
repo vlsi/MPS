@@ -9,8 +9,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
@@ -61,7 +63,8 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static SNode call_createType_946964771156066501(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501);
   }
 
   public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {

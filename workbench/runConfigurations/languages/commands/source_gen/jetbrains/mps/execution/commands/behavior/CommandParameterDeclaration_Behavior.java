@@ -4,8 +4,10 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CommandParameterDeclaration_Behavior {
   private static Class[] PARAMETERS_856705193941282038 = {SNode.class};
@@ -34,7 +36,8 @@ public class CommandParameterDeclaration_Behavior {
   }
 
   public static boolean call_isInitializable_856705193941282038(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
   }
 
   public static boolean callSuper_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {

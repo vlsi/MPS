@@ -8,8 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -50,7 +52,8 @@ public class PersistentPropertyDeclaration_Behavior {
   }
 
   public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897);
   }
 
   public static boolean callSuper_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {

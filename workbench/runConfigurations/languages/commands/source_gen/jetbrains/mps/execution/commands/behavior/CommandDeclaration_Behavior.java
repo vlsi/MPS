@@ -8,8 +8,10 @@ import org.jetbrains.annotations.NonNls;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,23 +56,28 @@ public class CommandDeclaration_Behavior {
   }
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
   }
 
   public static SNode call_createType_856705193941282121(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121);
   }
 
   public static List<SNode> call_getThrowableTypes_856705193941282132(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_856705193941282132);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_856705193941282132);
   }
 
   public static SNode call_getBody_856705193941282142(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getBody_1239354440022", PARAMETERS_856705193941282142);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getBody_1239354440022", PARAMETERS_856705193941282142);
   }
 
   public static SNode call_getExpectedRetType_856705193941282152(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_856705193941282152);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_856705193941282152);
   }
 
   public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {

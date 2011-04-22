@@ -6,11 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class PersistentConfigurationType_Behavior {
-  private static Class[] PARAMETERS_946964771156066373 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_946964771156066373 = {SNode.class, SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -20,7 +22,8 @@ public class PersistentConfigurationType_Behavior {
   }
 
   public static List<SNode> call_getMembers_946964771156066373(SNode thisNode, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), "virtual_getMembers_1213877402148", PARAMETERS_946964771156066373, contextNode);
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), "virtual_getMembers_1213877402148", PARAMETERS_946964771156066373, contextNode);
   }
 
   public static List<SNode> callSuper_getMembers_946964771156066373(SNode thisNode, String callerConceptFqName, SNode contextNode) {
