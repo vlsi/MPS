@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloadedOpsTypesProvider {
   protected SNode myOperandType;

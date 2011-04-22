@@ -3,7 +3,6 @@ package jetbrains.mps.lang.typesystem.runtime.performance;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeCheckingContextOld;
 
 public class TypeCheckingContext_Tracer extends TypeCheckingContextOld {

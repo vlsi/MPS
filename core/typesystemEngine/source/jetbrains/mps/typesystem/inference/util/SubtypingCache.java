@@ -15,25 +15,25 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class SubtypingCache {
-  private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCache = new HashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
-  private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCache = new HashMap<CacheNodeHandler, Map<String, SNode>>();
+  private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCache = new THashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
+  private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCache = new THashMap<CacheNodeHandler, Map<String, SNode>>();
   private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCache
-    = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+    = new THashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
-  private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCacheWeak = new HashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
-  private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCacheWeak = new HashMap<CacheNodeHandler, Map<String, SNode>>();
+  private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCacheWeak = new THashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
+  private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCacheWeak = new THashMap<CacheNodeHandler, Map<String, SNode>>();
   private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
-    = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+    = new THashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
   public void addCacheEntry(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
     boolean bothMaps = answer != isWeak;
@@ -42,7 +42,7 @@ public class SubtypingCache {
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
     Map<CacheNodeHandler, Boolean> supertypes = cache1.get(subtypeHandler);
     if (supertypes == null) {
-      supertypes = new HashMap<CacheNodeHandler, Boolean>();
+      supertypes = new THashMap<CacheNodeHandler, Boolean>(1);
       cache1.put(subtypeHandler, supertypes);
     }
     supertypes.put(new CacheNodeHandler(supertype), answer);
@@ -51,7 +51,7 @@ public class SubtypingCache {
       CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
       Map<CacheNodeHandler, Boolean> supertypes2 = cache2.get(subtypeHandler2);
       if (supertypes2 == null) {
-        supertypes2 = new HashMap<CacheNodeHandler, Boolean>();
+        supertypes2 = new THashMap<CacheNodeHandler, Boolean>(1);
         cache2.put(subtypeHandler2, supertypes2);
       }
     }
@@ -108,7 +108,7 @@ public class SubtypingCache {
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
     Map<String, SNode> map = cache1.get(subtypeHandler);
     if (map == null) {
-      map = new HashMap<String, SNode>();
+      map = new THashMap<String, SNode>(1);
       cache1.put(subtypeHandler, map);
     }
     map.put(conceptFQName, result);
@@ -117,7 +117,7 @@ public class SubtypingCache {
       CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
       Map<String, SNode> map2 = cache2.get(subtypeHandler2);
       if (map2 == null) {
-        map2 = new HashMap<String, SNode>();
+        map2 = new THashMap<String, SNode>(1);
         cache2.put(subtypeHandler2, map2);
       }
       /*   if (map2.get(conceptFQName) == null) {
@@ -135,7 +135,7 @@ public class SubtypingCache {
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
     Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache1.get(subtypeHandler);
     if (map == null) {
-      map = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
+      map = new THashMap<Class, Pair<SNode, GeneratedMatchingPattern>>(1);
       cache1.put(subtypeHandler, map);
     }
     map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
@@ -144,7 +144,7 @@ public class SubtypingCache {
       CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
       Map<Class, Pair<SNode, GeneratedMatchingPattern>> map2 = cache2.get(subtypeHandler2);
       if (map2 == null) {
-        map2 = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
+        map2 = new THashMap<Class, Pair<SNode, GeneratedMatchingPattern>>(1);
         cache2.put(subtypeHandler2, map2);
       }
       /* if (map2.get(c) == null) {

@@ -236,7 +236,7 @@ public class Equations {
     return result;
   }
 
-  public Set<Entry<SNode,Set<SNode>>> getEquationGroups() {
+  public Set<Entry<SNode, Set<SNode>>> getEquationGroups() {
     Set<SNode> all = new THashSet<SNode>();
     List<String> result = new LinkedList<String>();
     Map<SNode, Set<SNode>> map = new THashMap<SNode, Set<SNode>>();

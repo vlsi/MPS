@@ -40,7 +40,7 @@ public class PropertyErrorTarget implements IErrorTarget {
   }
 
   public boolean sameAs(MessageTarget messageTarget) {
-     if (messageTarget instanceof IErrorTarget) {
+    if (messageTarget instanceof IErrorTarget) {
       return sameAs((IErrorTarget) messageTarget);
     }
     return false;

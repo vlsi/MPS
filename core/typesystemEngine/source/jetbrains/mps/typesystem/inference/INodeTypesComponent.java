@@ -36,21 +36,30 @@ public interface INodeTypesComponent {
 
   //compute types
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode);
+
   public SNode computeTypesForNodeDuringResolving(SNode initialNode);
+
   public SNode computeTypesForNodeInferenceMode(SNode initialNode);
+
   public void computeTypes(boolean refreshTypes);
 
 
   public SNode getType(SNode node);
+
   public SNode getRawTypeFromContext(SNode node);
+
   public List<IErrorReporter> getErrors(SNode node);
+
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors();
+
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node);
 
   public void typeOfNodeCalled(SNode node);
 
   public void addDependencyForCurrent(SNode node);
+
   public void addDependencyOnCurrent(SNode node);
+
   public void addDependencyOnCurrent(SNode node, boolean typeAffected);
 
   public void addNodeToFrontier(SNode node);
@@ -58,12 +67,15 @@ public interface INodeTypesComponent {
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId);
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId);
+
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter);
+
   public void setCheckedTypesystem();
 
-  public boolean isChecked(boolean considerNonTypesystemRules) ;
+  public boolean isChecked(boolean considerNonTypesystemRules);
 
   public void clear();
+
   public void dispose();
 
   public Map<SNode, SNode> getMainContext();
@@ -71,19 +83,24 @@ public interface INodeTypesComponent {
 
   //NonTypeSystem
   public void applyNonTypesystemRulesToRoot(IOperationContext context);
+
   public void setCheckedNonTypesystem();
+
   public boolean isCheckedNonTypesystem();
 
   //old; will be deprecated
   public EquationManager getEquationManager();
 
   public String getNewVarName();
+
   public SNode[] getVariables(String varName);
+
   public void registerTypeVariable(SNode variable);
 
   public ISlicer getSlicer();
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType);
+
   public IWrapper getHoleWrapperRepresentator(IWrapper wrapper);
 
 }

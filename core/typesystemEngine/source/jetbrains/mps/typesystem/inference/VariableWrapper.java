@@ -16,7 +16,6 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.ObjectUtils;
 

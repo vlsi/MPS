@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 
 public abstract class OverloadedOperationsTypesProvider implements IOverloadedOpsTypesProvider {
@@ -26,7 +26,7 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
 
   protected boolean myLeftTypeIsExact = false;
   protected boolean myRightTypeIsExact = false;
-   protected boolean myLeftIsStrong = false;
+  protected boolean myLeftIsStrong = false;
   protected boolean myRightIsStrong = false;
 
 

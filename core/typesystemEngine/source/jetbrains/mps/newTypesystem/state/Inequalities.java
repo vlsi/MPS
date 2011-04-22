@@ -83,7 +83,7 @@ public class Inequalities {  //
 
   public List<RelationBlock> getRelationsToSolve() {
     List<RelationBlock> result = new LinkedList<RelationBlock>();
-    for (Block block: myState.getBlocks()) {
+    for (Block block : myState.getBlocks()) {
       if (block.getBlockKind() != BlockKind.WHEN_CONCRETE) {
         RelationBlock relationBlock = (RelationBlock) block;
         if (!relationBlock.isCheckOnly()) {
@@ -118,7 +118,7 @@ public class Inequalities {  //
       if (inequality.isCheckOnly()) {
         continue;
       }
-      for (Pair<SNode, SNode> pair: inequality.getInputsAndOutputs()) {
+      for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
         if (input != null) {
@@ -132,7 +132,7 @@ public class Inequalities {  //
             addVariablesLink(input, output);
             myNodesToBlocks.addLink(input, inequality);
             if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables= TypesUtil.getVariables(input);
+              List<SNode> inputVariables = TypesUtil.getVariables(input);
               List<SNode> outputVariables = TypesUtil.getVariables(output);
               myNodes.addAll(inputVariables);
               myNodes.addAll(outputVariables);
@@ -165,17 +165,17 @@ public class Inequalities {  //
       }
     }
     List<SNode> sortedNodes = sort(myInputsToOutputs, myNodes);
-    for (SNode node: sortedNodes) {
+    for (SNode node : sortedNodes) {
       if (solveRelationsForNode(node)) {
-       return true;
+        return true;
       }
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
-     // if (inequality.processReplacementRules()) {
-        myState.executeOperation(new RemoveBlockOperation(inequality));
-        return true;
-     // }
+      // if (inequality.processReplacementRules()) {
+      myState.executeOperation(new RemoveBlockOperation(inequality));
+      return true;
+      // }
     }
     return false;
   }
@@ -228,9 +228,9 @@ public class Inequalities {  //
   }
 
   public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
-    Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>();
-    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
-    Set<SNode> emptySet = new HashSet<SNode>();
+    Map<SNode, Set<SNode>> components = new THashMap<SNode, Set<SNode>>(1);
+    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new THashMap<Set<SNode>, Set<InequalityBlock>>();
+    Set<SNode> emptySet = new THashSet<SNode>(1);
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
@@ -239,15 +239,15 @@ public class Inequalities {  //
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
         if (emptyBlocks == null) {
-          emptyBlocks = new HashSet<InequalityBlock>();
-          groupsToInequalities.put(emptySet,emptyBlocks);
+          emptyBlocks = new THashSet<InequalityBlock>(1);
+          groupsToInequalities.put(emptySet, emptyBlocks);
         }
         emptyBlocks.add(inequality);
         continue;
       }
-      Set<SNode> currentResult = new HashSet<SNode>();
+      Set<SNode> currentResult = new THashSet<SNode>();
 
-      Set<InequalityBlock> currentInequalities = new HashSet<InequalityBlock>();
+      Set<InequalityBlock> currentInequalities = new THashSet<InequalityBlock>();
       currentInequalities.add(inequality);
       for (SNode var : variables) {
         var = myState.getRepresentative(var);

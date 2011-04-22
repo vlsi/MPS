@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Set;
-import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RuleSet<T extends IApplicableToConcept> {
-  Map<SNode, Set<T>> myRules = new HashMap<SNode, Set<T>>();
+  Map<SNode, Set<T>> myRules = new THashMap<SNode, Set<T>>();
   Map<SNode, Set<T>> myRulesCache = new ConcurrentHashMap<SNode, Set<T>>();
-
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
@@ -47,7 +46,7 @@ public class RuleSet<T extends IApplicableToConcept> {
     SNode concept = SModelUtil.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
     Set<T> existingRules = myRules.get(concept);
     if (existingRules == null) {
-      existingRules = new HashSet<T>(2);
+      existingRules = new THashSet<T>(2);
       myRules.put(concept, existingRules);
     }
     existingRules.add(rule);
@@ -61,18 +60,18 @@ public class RuleSet<T extends IApplicableToConcept> {
   protected Set<T> get(SNode key) {
     Set<T> cachedResult = myRulesCache.get(key);
     if (cachedResult != null) {
-      return new HashSet<T>(cachedResult);
+      return new THashSet<T>(cachedResult);
     }
 
     Set<T> result = computeRuleSet(key);
-    myRulesCache.put(key, new HashSet<T>(result));
+    myRulesCache.put(key, new THashSet<T>(result));
     return result;
   }
 
   private Set<T> computeRuleSet(SNode concept) {
-    Set<T> result = new HashSet<T>();
-    Set<SNode> frontier = new HashSet<SNode>();
-    Set<SNode> newFrontier = new HashSet<SNode>();
+    Set<T> result = new THashSet<T>();
+    Set<SNode> frontier = new THashSet<SNode>();
+    Set<SNode> newFrontier = new THashSet<SNode>();
     frontier.add(concept);
     while (!frontier.isEmpty()) {
       for (SNode abstractConcept : frontier) {
@@ -105,7 +104,7 @@ public class RuleSet<T extends IApplicableToConcept> {
 
       }
       frontier = newFrontier;
-      newFrontier = new HashSet<SNode>();
+      newFrontier = new THashSet<SNode>();
     }
     return result;
   }

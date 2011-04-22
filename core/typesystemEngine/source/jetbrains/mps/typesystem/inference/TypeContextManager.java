@@ -3,6 +3,7 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
@@ -25,7 +26,7 @@ public class TypeContextManager implements ApplicationComponent {
   //minor
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
-    new HashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
+    new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
 
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
 

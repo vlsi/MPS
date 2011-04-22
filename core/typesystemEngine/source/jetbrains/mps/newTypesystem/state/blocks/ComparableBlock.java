@@ -69,7 +69,7 @@ public class ComparableBlock extends RelationBlock {
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
     return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+      new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
   }
 
   @Override

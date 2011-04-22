@@ -436,8 +436,8 @@ public class State {
   public Set<Block> getCheckingInequalities() {
     Set<Block> result = new THashSet<Block>();
     Set<Block> blocks = getBlocks(BlockKind.INEQUALITY);
-    for (Block block: blocks) {
-      if (((RelationBlock)block).isCheckOnly() && !((RelationBlock)block).getRelationKind().isComparable()) {
+    for (Block block : blocks) {
+      if (((RelationBlock) block).isCheckOnly() && !((RelationBlock) block).getRelationKind().isComparable()) {
         result.add(block);
       }
     }

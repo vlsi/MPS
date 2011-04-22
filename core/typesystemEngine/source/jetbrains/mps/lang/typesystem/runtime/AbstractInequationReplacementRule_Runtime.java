@@ -22,7 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 public abstract class AbstractInequationReplacementRule_Runtime extends InequationReplacementRule_Runtime {
   @Deprecated
   public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
-    processInequation(subtype, supertype, errorInfo, (TypeCheckingContext)null);
+    processInequation(subtype, supertype, errorInfo, (TypeCheckingContext) null);
   }
 
   @Deprecated

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class InequationSystem {
@@ -29,11 +29,11 @@ public class InequationSystem {
     myHoleType = holeType;
   }
 
-  private Set<IWrapper> myEquals = new HashSet<IWrapper>();
-  private Set<IWrapper> mySubtypes = new HashSet<IWrapper>();
-  private Set<IWrapper> myStrongSubtypes = new HashSet<IWrapper>();
-  private Set<IWrapper> mySupertypes = new HashSet<IWrapper>();
-  private Set<IWrapper> myStrongSupertypes = new HashSet<IWrapper>();
+  private Set<IWrapper> myEquals = new THashSet<IWrapper>();
+  private Set<IWrapper> mySubtypes = new THashSet<IWrapper>();
+  private Set<IWrapper> myStrongSubtypes = new THashSet<IWrapper>();
+  private Set<IWrapper> mySupertypes = new THashSet<IWrapper>();
+  private Set<IWrapper> myStrongSupertypes = new THashSet<IWrapper>();
 
   public void addEquation(IWrapper equalWrapper) {
     myEquals.add(equalWrapper);
@@ -94,7 +94,7 @@ public class InequationSystem {
     SModel runtimeTypesModel = getEquationManager().getTypeCheckingContext().getRuntimeTypesModel();
 
     {
-      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myEquals);
+      Set<IWrapper> wrappers = new THashSet<IWrapper>(myEquals);
       myEquals.clear();
       for (IWrapper wrapper : wrappers) {
         myEquals.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
@@ -102,7 +102,7 @@ public class InequationSystem {
     }
 
     {
-      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySubtypes);
+      Set<IWrapper> wrappers = new THashSet<IWrapper>(mySubtypes);
       mySubtypes.clear();
       for (IWrapper wrapper : wrappers) {
         mySubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
@@ -110,7 +110,7 @@ public class InequationSystem {
     }
 
     {
-      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(mySupertypes);
+      Set<IWrapper> wrappers = new THashSet<IWrapper>(mySupertypes);
       mySupertypes.clear();
       for (IWrapper wrapper : wrappers) {
         mySupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
@@ -118,7 +118,7 @@ public class InequationSystem {
     }
 
     {
-      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSubtypes);
+      Set<IWrapper> wrappers = new THashSet<IWrapper>(myStrongSubtypes);
       myStrongSubtypes.clear();
       for (IWrapper wrapper : wrappers) {
         myStrongSubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
@@ -126,7 +126,7 @@ public class InequationSystem {
     }
 
     {
-      HashSet<IWrapper> wrappers = new HashSet<IWrapper>(myStrongSupertypes);
+      Set<IWrapper> wrappers = new THashSet<IWrapper>(myStrongSupertypes);
       myStrongSupertypes.clear();
       for (IWrapper wrapper : wrappers) {
         myStrongSupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
