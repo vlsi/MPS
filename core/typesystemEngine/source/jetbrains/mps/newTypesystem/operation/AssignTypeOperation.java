@@ -31,7 +31,7 @@ public class AssignTypeOperation extends AbstractOperation {
     myNode = node;
     myType = type;
     mySource = node;
-    myEquationInfo = info;
+    setRule(info);
   }
 
   public void doUndo(State state) {

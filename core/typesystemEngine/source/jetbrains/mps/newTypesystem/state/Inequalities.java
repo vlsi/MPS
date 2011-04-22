@@ -57,6 +57,10 @@ public class Inequalities {  //
         return node;
       }
     }
+    System.out.println("cycle");
+    for (SNode node: unsorted) {
+      System.out.println(node);
+    }
     return unsorted.iterator().next();
   }
 

@@ -23,9 +23,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class AddBlockOperation extends AbstractBlockOperation {
   
-  public AddBlockOperation(Block block, boolean traceMode) {
-    myBlock = block;
-    myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
+  public AddBlockOperation(Block block) {
+    super(block);
   }
 
   public String getPresentation() {

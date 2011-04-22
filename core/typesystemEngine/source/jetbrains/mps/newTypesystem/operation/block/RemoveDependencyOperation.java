@@ -26,10 +26,9 @@ public class RemoveDependencyOperation extends AbstractBlockOperation {
   private final ConditionKind myConditionKind;
 
   public RemoveDependencyOperation(Block block, SNode var, ConditionKind conditionKind) {
+    super(block);
     myVar = var;
-    myBlock = block;
     myConditionKind = conditionKind;
-    myEquationInfo = new EquationInfo(var, " ", block.getNodeModel(), block.getNodeId());
   }
 
   public String getPresentation() {

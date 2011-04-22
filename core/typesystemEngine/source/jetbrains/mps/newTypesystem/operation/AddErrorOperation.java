@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
 public class AddErrorOperation extends AbstractOperation {
   private final SNode myNode;
@@ -28,6 +29,7 @@ public class AddErrorOperation extends AbstractOperation {
     myNode = node;
     myError = error;
     mySource = myNode;
+    myRule = new Pair<String, String>(myError.getRuleModel(), myError.getRuleId());
   }
 
   public String getPresentation() {

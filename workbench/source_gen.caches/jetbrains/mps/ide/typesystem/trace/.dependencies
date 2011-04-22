@@ -153,7 +153,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AddErrorOperation" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TraceSettings" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -168,7 +167,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.ApplyRuleOperation" />

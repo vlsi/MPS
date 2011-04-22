@@ -182,7 +182,7 @@ public class State {
   }
 
   public void addBlock(Block block) {
-    executeOperation(new AddBlockOperation(block, myTypeCheckingContext.isInTraceMode()));
+    executeOperation(new AddBlockOperation(block));
   }
 
   public boolean clearNode(SNode node) {

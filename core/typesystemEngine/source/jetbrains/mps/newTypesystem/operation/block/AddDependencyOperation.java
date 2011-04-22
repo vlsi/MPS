@@ -27,10 +27,9 @@ public class AddDependencyOperation extends AbstractBlockOperation {
   private final ConditionKind myConditionKind;
 
   public AddDependencyOperation(Block block, SNode input, ConditionKind conditionKind) {
+    super(block);
     myVar = input;
-    myBlock = block;
     myConditionKind = conditionKind;
-    myEquationInfo = new EquationInfo(input, " ", block.getNodeModel(), block.getNodeId());
   }
 
   public String getPresentation() {

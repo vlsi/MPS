@@ -29,9 +29,8 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -230,15 +229,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (operation == null) {
       return null;
     }
-    final EquationInfo info = operation.getEquationInfo();
+    final Pair<String, String> rule = operation.getRule();
     final SNode source = operation.getSource();
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;
     }
-    if (info != null) {
-      if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
-        return new Pair<String, String>(info.getRuleModel(), info.getRuleId());
-      }
+    if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
+      return rule;
     }
     if (source != null && source.isRegistered()) {
       if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {

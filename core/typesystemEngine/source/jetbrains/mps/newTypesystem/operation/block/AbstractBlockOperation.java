@@ -30,6 +30,11 @@ import java.util.List;
 public abstract class AbstractBlockOperation extends AbstractOperation {
   Block myBlock;
 
+  public AbstractBlockOperation(Block block) {
+    myBlock = block;
+    setRule(block.getNodeModel(), block.getNodeId());
+  }
+
   public Block getBlock() {
     return myBlock;
   }

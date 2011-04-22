@@ -23,8 +23,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class RemoveBlockOperation extends AbstractBlockOperation {
   public RemoveBlockOperation(Block block) {
-    myBlock = block;
-    myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
+     super(block);
   }
 
   public String getPresentation() {

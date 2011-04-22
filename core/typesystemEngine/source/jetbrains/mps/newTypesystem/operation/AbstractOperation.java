@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -32,13 +33,23 @@ import java.util.List;
 public abstract class AbstractOperation {
   private List<AbstractOperation> myConsequences;
   protected SNode mySource = null;
-  protected EquationInfo myEquationInfo = null;
+  protected Pair<String, String> myRule = null;
 
   public void addConsequence(AbstractOperation op) {
     if (myConsequences == null) {
       myConsequences = new LinkedList<AbstractOperation>();
     }
     myConsequences.add(op);
+  }
+
+  protected void setRule(EquationInfo info) {
+    if (info != null) {
+      myRule = new Pair<String, String>(info.getRuleModel(), info.getRuleId());
+    }
+  }
+
+  protected void setRule(String model, String id) {
+    myRule = new Pair<String, String>(model, id);
   }
 
   public List<AbstractOperation> getConsequences() {
@@ -85,8 +96,8 @@ public abstract class AbstractOperation {
     return mySource;
   }
 
-  public EquationInfo getEquationInfo() {
-    return myEquationInfo;
+  public Pair<String, String> getRule() {
+    return myRule;
   }
 
   public List<SNode> getVariables() {

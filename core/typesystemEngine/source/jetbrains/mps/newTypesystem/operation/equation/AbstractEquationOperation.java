@@ -37,7 +37,7 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
     myChild = child;
     mySource = source;
     myParent = parent;
-    myEquationInfo = info;
+     setRule(info);
   }
 
   public String getShortPresentation() {
