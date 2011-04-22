@@ -250,6 +250,10 @@
                 <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883029723">
                   <property name="attributeName" nameId="tpj8.1167698115100" value="uuid" />
                 </node>
+                <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="2677151181237695052">
+                  <property name="attributeName" nameId="tpj8.1167698115100" value="generate-templates" />
+                  <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="2677151181237695053" />
+                </node>
               </node>
               <node role="complexTypeReference" roleId="tpj8.1167851034776" type="tpj8.ComplexTypeReference" typeId="tpj8.1167790566663" id="842994667883029724">
                 <link role="complexType" roleId="tpj8.1167790582664" targetNodeId="842994667883029875" resolveInfo="moduleType" />
@@ -2097,6 +2101,20 @@
                       </node>
                     </node>
                   </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="2677151181237608537">
+                    <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="2677151181237608538" />
+                    <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="2677151181237608539">
+                      <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="ho7a.~GeneratorDescriptor%dsetGenerateTemplates(boolean)%cvoid" resolveInfo="setGenerateTemplates" />
+                      <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2677151181237695048">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2677151181237695047">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883030691" resolveInfo="generatorElement" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="mlj4.AccessAttributeOperation" typeId="mlj4.4991903842868445303" id="2677151181237695054">
+                          <link role="attributeDeclaration" roleId="mlj4.4991903842868445309" targetNodeId="2677151181237695052" resolveInfo="generate-templates" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1772246947774055954" />
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1772246947774055955">
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772246947774055956">
@@ -2683,6 +2701,20 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883030753">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~ModuleDescriptor%dgetUUID()%cjava%dlang%dString" resolveInfo="getUUID" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="2677151181237695056">
+                  <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="2677151181237695057" />
+                  <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="2677151181237695058">
+                    <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="2677151181237695052" resolveInfo="generate-templates" />
+                    <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2677151181237695061">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2677151181237695060">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883030700" resolveInfo="descriptor" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2677151181237695065">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~GeneratorDescriptor%disGenerateTemplates()%cboolean" resolveInfo="isGenerateTemplates" />
                       </node>
                     </node>
                   </node>

@@ -26,6 +26,8 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   private List<ModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
 
+  private boolean myGenerateTemplates = false;
+
   public GeneratorDescriptor() {
     super();
     myDepGenerators = new ArrayList<ModuleReference>();
@@ -46,6 +48,14 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   public List<MappingPriorityRule> getPriorityRules() {
     return myPriorityRules;
+  }
+
+  public boolean isGenerateTemplates() {
+    return myGenerateTemplates;
+  }
+
+  public void setGenerateTemplates(boolean generateTemplates) {
+    myGenerateTemplates = generateTemplates;
   }
 
   @Override
