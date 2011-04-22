@@ -18,6 +18,8 @@
     <orderEntry type="module" module-name="core" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="plugin" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 

@@ -26,6 +26,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 
