@@ -19,6 +19,7 @@
   <unitInfo fileName="BuildLanguageTargetReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.BuildLanguageTargetReference_Editor$_Inline_y1gcgc_a0a" />
   <unitInfo fileName="BlockReference_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.BlockReference_Editor$_Inline_8nsg5j_a1a" />
   <unitInfo fileName="PropertyNodeImport_Editor.java" startLine="68" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PropertyNodeImport_Editor$_Inline_x00uq0_a1a" />
+  <unitInfo fileName="PathHolder_Editor.java" startLine="138" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PathHolder_Editor$_Inline_o0ejdp_a0a" />
   <unitInfo fileName="Block_Editor.java" startLine="149" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor$_Inline_kw2rpr_a3a0" />
   <unitInfo fileName="Antcall_Editor.java" startLine="249" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor$_Inline_xq8xtf_a1a0" />
   <unitInfo fileName="Antcall_Editor.java" startLine="282" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor$_Inline_xq8xtf_a3a0" />
@@ -30,6 +31,7 @@
   <unitInfo fileName="ManifestAttribute_Editor.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor$valueListHandler_s985tr_c0" />
   <unitInfo fileName="Block_Editor.java" startLine="182" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor$entryListHandler_kw2rpr_a2a" />
   <unitInfo fileName="Layout_Editor.java" startLine="501" startPosition="0" endLine="536" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$variableListHandler_ybaf4h_b1i0" />
+  <unitInfo fileName="PathHolder_Editor.java" startLine="171" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PathHolder_Editor$_Inline_o0ejdp_a4a" />
   <unitInfo fileName="Macro_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Macro_Editor" />
   <unitInfo fileName="Module_KeyMap.java" startLine="25" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_KeyMap$Module_KeyMap_Action0" />
   <unitInfo fileName="Layout_Editor.java" startLine="455" startPosition="0" endLine="500" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor$configurationListHandler_ybaf4h_b6a" />
@@ -71,6 +73,7 @@
   <unitInfo fileName="Jar_Editor.java" startLine="22" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
   <unitInfo fileName="Echo_Editor.java" startLine="25" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
   <unitInfo fileName="Replace_Editor.java" startLine="29" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
+  <unitInfo fileName="PathHolder_Editor.java" startLine="21" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PathHolder_Editor" />
   <unitInfo fileName="Zip_Editor.java" startLine="23" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Zip_Editor" />
   <unitInfo fileName="Block_Editor.java" startLine="29" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Block_Editor" />
   <unitInfo fileName="Folder_Editor.java" startLine="29" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Folder_Editor" />
@@ -160,6 +163,10 @@
     <scopeInfo nodeId="1240320622534" fileName="CompositeString_Left_Delete.java" startLine="29" startPosition="75" endLine="31" endPosition="64">
       <varInfo nodeId="1240320622536" varName="rightExpression" />
     </scopeInfo>
+  </root>
+  <root nodeId="6863060912307679655">
+    <nodeInfo nodeId="6863060912307688052" fileName="PathHolder_Editor.java" startLine="134" startPosition="111" endLine="135" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6863060912307688051" fileName="PathHolder_Editor.java" startLine="134" startPosition="111" endLine="135" endPosition="69" />
   </root>
 </debugInfo>
 

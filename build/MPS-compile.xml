@@ -85,6 +85,7 @@
     <path path="core/editor-runtime/classes" />
     <path path="core/findUsages-runtime/classes" />
     <path path="core/generator/classes" />
+    <path path="core/idea-patch/classes" />
     <path path="core/intentions-runtime/classes" />
     <path path="core/kernel/classes" />
     <path path="core/make-runtime/classes" />
@@ -427,8 +428,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -441,7 +440,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -540,8 +538,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -554,7 +550,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -653,8 +648,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -667,7 +660,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -766,8 +758,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -780,7 +770,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -879,8 +868,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -893,7 +880,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -992,8 +978,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1006,7 +990,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1106,8 +1089,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1120,7 +1101,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1226,8 +1206,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1240,7 +1218,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1339,8 +1316,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1353,7 +1328,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1452,8 +1426,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1466,7 +1438,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1565,8 +1536,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1579,7 +1548,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1681,8 +1649,6 @@
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/math/classes_gen" />
     <path path="platform/math/runtimeSolution/classes_gen" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1695,7 +1661,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1796,8 +1761,6 @@
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/math/runtimeSolution/classes_gen" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1810,7 +1773,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1911,8 +1873,6 @@
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/money/classes_gen" />
     <path path="platform/money/runtimeSolution/classes_gen" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -1925,7 +1885,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2025,8 +1984,6 @@
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/money/runtimeSolution/classes_gen" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2039,7 +1996,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2138,8 +2094,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2152,7 +2106,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2251,8 +2204,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2265,7 +2216,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2364,8 +2314,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
@@ -2379,7 +2327,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2478,8 +2425,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2492,7 +2437,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2592,8 +2536,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2606,7 +2548,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2705,8 +2646,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2719,7 +2658,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2819,8 +2757,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2833,7 +2769,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2938,8 +2873,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -2952,7 +2885,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3056,8 +2988,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3070,7 +3000,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3173,8 +3102,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3187,7 +3114,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3288,8 +3214,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3302,7 +3226,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3401,8 +3324,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3415,7 +3336,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3514,8 +3434,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3528,7 +3446,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3627,8 +3544,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3641,7 +3556,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3740,8 +3654,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3754,7 +3666,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3853,8 +3764,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3867,7 +3776,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3966,8 +3874,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -3980,7 +3886,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4081,8 +3986,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4095,7 +3998,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4194,8 +4096,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4208,7 +4108,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4307,8 +4206,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4321,7 +4218,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4420,8 +4316,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4434,7 +4328,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4533,8 +4426,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4547,7 +4438,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4646,8 +4536,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4660,7 +4548,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4759,8 +4646,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4773,7 +4658,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4872,8 +4756,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -4886,7 +4768,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4987,8 +4868,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5001,7 +4880,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5054,6 +4932,7 @@
     <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
     <path path="core/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="core/languageDesign/generator/languages/generationParameters/classes_gen" />
@@ -5099,8 +4978,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5113,7 +4990,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5212,8 +5088,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5226,7 +5100,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5325,8 +5198,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5339,7 +5210,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5438,8 +5308,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5452,7 +5320,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5551,8 +5418,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5565,7 +5430,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5664,8 +5528,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5678,7 +5540,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5777,8 +5638,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -5791,7 +5650,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5890,7 +5748,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
     <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
@@ -5904,7 +5761,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6017,7 +5873,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6117,8 +5972,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/internal/classes_gen" />
@@ -6134,7 +5987,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6233,8 +6085,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
@@ -6254,7 +6104,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6353,8 +6202,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/meta/classes_gen" />
@@ -6368,7 +6215,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6468,8 +6314,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
@@ -6492,7 +6336,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6592,8 +6435,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
@@ -6608,7 +6449,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6707,8 +6547,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
@@ -6732,7 +6570,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6832,8 +6669,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
@@ -6848,7 +6683,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6947,8 +6781,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -6961,7 +6793,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7062,8 +6893,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7076,7 +6905,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7175,8 +7003,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7189,7 +7015,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7288,8 +7113,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7302,7 +7125,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7401,8 +7223,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7416,7 +7236,6 @@
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7515,8 +7334,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7529,7 +7346,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7628,8 +7444,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7642,7 +7456,6 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7741,8 +7554,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7756,7 +7567,6 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7855,8 +7665,6 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="platform/quickQueryLanguage/classes_gen" />
-    <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="platform/uiLanguage/classes_gen" />
@@ -7871,7 +7679,6 @@
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="platform/ypath/solutions/test/classes_gen" />
-    <path path="plugins/mpsdevkit/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />

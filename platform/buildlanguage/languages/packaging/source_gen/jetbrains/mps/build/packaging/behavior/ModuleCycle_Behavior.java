@@ -13,8 +13,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.io.File;
+import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.reloading.CommonPaths;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -35,18 +39,27 @@ public class ModuleCycle_Behavior {
     }
     // getting classpath 
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
-    List<String> stringClasspath = ModuleUtil.retrieveClassPath(classpath);
+    List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        return it.replace(File.separator, Util.SEPARATOR);
+      }
+    }).distinct().toListSequence();
     // creating path holders to use in generator 
     return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath()), homePath, macro);
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(ListSequence.fromList(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath())).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        return it.replace(File.separator, Util.SEPARATOR);
+      }
+    }), homePath, macro);
   }
 
-  public static List<SNode> createPathHolders_1218716903754(List<String> stringClasspath, String homePath, List<SNode> macro) {
+  public static List<SNode> createPathHolders_1218716903754(Iterable<String> stringClasspath, String homePath, List<SNode> macro) {
+    homePath = homePath.replace(File.separator, Util.SEPARATOR);
     List<SNode> pathHolders = new ArrayList<SNode>();
-    for (String string : ListSequence.fromList(stringClasspath)) {
+    for (String string : Sequence.fromIterable(stringClasspath)) {
       SNode holder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
       String relativePath = ModuleUtil.getRelativePath(string, homePath);
       SPropertyOperations.set(holder, "fullPath", relativePath);

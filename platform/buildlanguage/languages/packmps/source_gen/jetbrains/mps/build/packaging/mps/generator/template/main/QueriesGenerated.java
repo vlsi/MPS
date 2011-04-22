@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.build.packaging.behavior.Path_Behavior;
+import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
+import java.io.File;
+import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SModel;
@@ -17,6 +19,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -32,11 +35,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8037435193861318521(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true));
+    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_8037435193861318577(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "fullPath");
+    return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode()).replace(File.separator, Util.SEPARATOR);
   }
 
   public static boolean ifMacro_Condition_1479728067424414700(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -87,7 +90,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8037435193861318628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode module = SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module");
-    return ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(module)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true)));
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(module)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true)));
   }
 
   public static void mappingScript_CodeBlock_3583849467508042413(final IOperationContext operationContext, final MappingScriptContext _context) {

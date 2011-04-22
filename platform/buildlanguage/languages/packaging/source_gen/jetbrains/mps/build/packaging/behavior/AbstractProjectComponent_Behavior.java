@@ -25,7 +25,7 @@ public class AbstractProjectComponent_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static File call_getHomePath_1213877333764(SNode thisNode) {
+  public static File call_getHomeFile_1213877333764(SNode thisNode) {
     return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.Layout")).first()));
   }
 
