@@ -239,7 +239,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader</implementation-class>
+      <implementation-class>jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader</implementation-class>
     </component>
 
   </application-components>
@@ -370,7 +370,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.runconfigurations.RunConfigurationsReloader</implementation-class>
+      <implementation-class>jetbrains.mps.execution.configurations.RunConfigurationsReloader</implementation-class>
     </component>
 
     <component>

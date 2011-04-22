@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:c10c60c4-8193-4b28-a3f2-372a46125628(jetbrains.mps.runconfigurations)">
+<model modelUID="r:c10c60c4-8193-4b28-a3f2-372a46125628(jetbrains.mps.execution.configurations)">
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />

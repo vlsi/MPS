@@ -116,8 +116,8 @@
 
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
 
-    <programRunner id="defaultRunRunner" implementation="jetbrains.mps.runconfigurations.runner.MPSProgramRunner"/>
+    <programRunner id="defaultRunRunner" implementation="jetbrains.mps.execution.configurations.runners.MPSProgramRunner"/>
     <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
-    <stepsBeforeRunProvider implementation="jetbrains.mps.runconfigurations.runner.LegacyBeforeTaskProvider"/>
+    <stepsBeforeRunProvider implementation="jetbrains.mps.execution.configurations.runners.LegacyBeforeTaskProvider"/>
   </extensions>
 </idea-plugin>

@@ -78,7 +78,7 @@
     <nodeInfo nodeId="5145867626676109748" fileName="ApplicationRunConfigurationsReloader.java" startLine="171" startPosition="133" endLine="174" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5145867626676099968" fileName="ApplicationRunConfigurationsReloader.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="5145867626676099973" fileName="ApplicationRunConfigurationsReloader.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5145867626676099986" fileName="ApplicationRunConfigurationsReloader.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/runconfigurations/ApplicationRunConfigurationsReloader;" />
+    <nodeInfo nodeId="5145867626676099986" fileName="ApplicationRunConfigurationsReloader.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/execution/configurations/ApplicationRunConfigurationsReloader;" />
     <nodeInfo nodeId="5145867626676099978" fileName="ApplicationRunConfigurationsReloader.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="5145867626676109797" fileName="ApplicationRunConfigurationsReloader.java" startLine="191" startPosition="48" endLine="197" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5145867626676109679" fileName="ApplicationRunConfigurationsReloader.java" startLine="160" startPosition="75" endLine="168" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -240,10 +240,10 @@
       <varInfo nodeId="5145867626676099935" varName="creators" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676099929" fileName="ApplicationRunConfigurationsReloader.java" startLine="151" startPosition="0" endLine="183" endPosition="0" />
-    <unitInfo nodeId="5145867626676099964" fileName="ApplicationRunConfigurationsReloader.java" startLine="185" startPosition="45" endLine="202" endPosition="5" unitName="jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader$3" />
-    <unitInfo nodeId="5145867626676099922" fileName="ApplicationRunConfigurationsReloader.java" startLine="130" startPosition="45" endLine="148" endPosition="5" unitName="jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader$1" />
-    <unitInfo nodeId="5145867626676099947" fileName="ApplicationRunConfigurationsReloader.java" startLine="155" startPosition="45" endLine="180" endPosition="5" unitName="jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader$2" />
-    <unitInfo nodeId="5145867626676095968" fileName="ApplicationRunConfigurationsReloader.java" startLine="34" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.runconfigurations.ApplicationRunConfigurationsReloader" />
+    <unitInfo nodeId="5145867626676099964" fileName="ApplicationRunConfigurationsReloader.java" startLine="185" startPosition="45" endLine="202" endPosition="5" unitName="jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader$3" />
+    <unitInfo nodeId="5145867626676099922" fileName="ApplicationRunConfigurationsReloader.java" startLine="130" startPosition="45" endLine="148" endPosition="5" unitName="jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader$1" />
+    <unitInfo nodeId="5145867626676099947" fileName="ApplicationRunConfigurationsReloader.java" startLine="155" startPosition="45" endLine="180" endPosition="5" unitName="jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader$2" />
+    <unitInfo nodeId="5145867626676095968" fileName="ApplicationRunConfigurationsReloader.java" startLine="34" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader" />
   </root>
   <root nodeId="5145867626676099642">
     <nodeInfo nodeId="5145867626676112740" fileName="RunConfigurationsReloader.java" startLine="26" startPosition="68" endLine="27" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -389,7 +389,7 @@
       <varInfo nodeId="5145867626676112912" varName="newState" />
     </scopeInfo>
     <scopeInfo nodeId="5145867626676112832" fileName="RunConfigurationsReloader.java" startLine="64" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="5145867626676099642" fileName="RunConfigurationsReloader.java" startLine="26" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.runconfigurations.RunConfigurationsReloader" />
+    <unitInfo nodeId="5145867626676099642" fileName="RunConfigurationsReloader.java" startLine="26" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.execution.configurations.RunConfigurationsReloader" />
   </root>
 </debugInfo>
 
