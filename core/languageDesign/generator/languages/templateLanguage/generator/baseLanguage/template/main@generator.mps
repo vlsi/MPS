@@ -20253,6 +20253,9 @@
                           </node>
                         </node>
                       </node>
+                      <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5558497125362906810">
+                        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5558497125362906812" />
+                      </node>
                     </node>
                   </node>
                 </node>
