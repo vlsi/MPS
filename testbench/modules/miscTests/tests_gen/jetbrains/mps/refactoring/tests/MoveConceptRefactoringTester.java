@@ -5,13 +5,16 @@ package jetbrains.mps.refactoring.tests;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.structure.scripts.MoveConcepts;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
 import jetbrains.mps.ide.ThreadUtils;
@@ -23,8 +26,13 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
 
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String conceptName = "MyVeryGoodConcept1";
-    MoveConcepts moveConcepts = new MoveConcepts();
-    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(moveConcepts));
+    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1198173570106"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class})));
+      }
+    });
+    final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
     final SModelDescriptor[] targetStructureModelDescriptor = new SModelDescriptor[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -37,7 +45,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
-        refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
+        refactoringContext.setParameter("targetModel", targetStructureModelDescriptor[0]);
       }
     });
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);

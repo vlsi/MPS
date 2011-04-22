@@ -32,6 +32,8 @@
     </orderEntry>
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="refactoring-runtime" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 

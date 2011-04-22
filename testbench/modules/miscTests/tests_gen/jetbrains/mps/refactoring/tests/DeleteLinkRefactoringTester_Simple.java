@@ -5,16 +5,20 @@ package jetbrains.mps.refactoring.tests;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.structure.scripts.SafeDeleteLink;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SReference;
@@ -24,8 +28,13 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
   }
 
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
-    SafeDeleteLink safeDeleteLink = new SafeDeleteLink();
-    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(safeDeleteLink));
+    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590291(jetbrains.mps.lang.structure.scripts)", "1201283571431"), "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "call_getGeneratedClassLongName_4598603396803851284", new Class[]{SNode.class})));
+      }
+    });
+    final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
     final String[] linkName = new String[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -33,9 +42,8 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor.getSModel();
         SNode node = SModelOperations.getRootByName(model, "MyVeryGoodConcept1");
-        ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-        SNode link = concept.getLinkDeclarations().get(0).getNode();
-        linkName[0] = link.getProperty("role");
+        SNode link = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "linkDeclaration", true)).first();
+        linkName[0] = SPropertyOperations.getString(link, "role");
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
