@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 
-public class MappingPriorityRule {
+public class MappingPriorityRule implements TemplateMappingPriorityRule {
   public static final String LEFT = "left";
   public static final String TYPE = "type";
   public static final String RIGHT = "right";

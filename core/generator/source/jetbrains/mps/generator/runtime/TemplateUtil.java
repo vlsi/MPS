@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.SNode;
 
 import java.lang.reflect.Array;
@@ -96,6 +98,60 @@ public class TemplateUtil {
         return objects.length;
       }
     };
+  }
+
+  public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft((MappingConfig_AbstractRef) left);
+    rule.setRight((MappingConfig_AbstractRef) right);
+    rule.setType(RuleType.STRICTLY_BEFORE);
+    return rule;
+  }
+
+  public static TemplateMappingPriorityRule createStrictlyTogetherRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft((MappingConfig_AbstractRef) left);
+    rule.setRight((MappingConfig_AbstractRef) right);
+    rule.setType(RuleType.STRICTLY_TOGETHER);
+    return rule;
+  }
+
+  public static TemplateMappingPriorityRule createBeforeOrTogetherRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft((MappingConfig_AbstractRef) left);
+    rule.setRight((MappingConfig_AbstractRef) right);
+    rule.setType(RuleType.BEFORE_OR_TOGETHER);
+    return rule;
+  }
+
+  public static TemplateMappingConfigRef createRefGlobal() {
+    return new MappingConfig_RefAllGlobal();
+  }
+
+  public static TemplateMappingConfigRef createRefLocal() {
+    return new MappingConfig_RefAllLocal();
+  }
+
+  public static TemplateMappingConfigRef createRefSet(TemplateMappingConfigRef ...elements) {
+    MappingConfig_RefSet result = new MappingConfig_RefSet();
+    for (TemplateMappingConfigRef element : elements) {
+      result.getMappingConfigs().add((MappingConfig_AbstractRef) element);
+    }
+    return result;
+  }
+
+  public static TemplateMappingConfigRef createRefNormal(String modelUID, String nodeUID) {
+    MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
+    result.setModelUID(modelUID);
+    result.setNodeID(nodeUID);
+    return result;
+  }
+
+  public static TemplateMappingConfigRef createRefExternal(String moduleReference, TemplateMappingConfigRef inner) {
+    MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
+    result.setGenerator(ModuleReference.fromString(moduleReference));
+    result.setMappingConfig((MappingConfig_AbstractRef) inner);
+    return result;
   }
 
   private static class ArrayIterator<T> implements Iterator<T> {

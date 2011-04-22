@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,8 +45,8 @@ public class TemplateModuleInterpreted implements TemplateModule {
   }
 
   @Override
-  public List<MappingPriorityRule> getPriorities() {
-    return generator.getModuleDescriptor().getPriorityRules();
+  public List<TemplateMappingPriorityRule> getPriorities() {
+    return Collections.<TemplateMappingPriorityRule>unmodifiableList(generator.getModuleDescriptor().getPriorityRules());
   }
 
   @Override

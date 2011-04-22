@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 
 import java.util.*;
 
@@ -29,9 +29,9 @@ public class PartitioningSolver {
 
   private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
   private List<CoherentSetData> myCoherentMappings;
-  private final Set<MappingPriorityRule> myConflictingRules;
+  private final Set<TemplateMappingPriorityRule> myConflictingRules;
 
-  public PartitioningSolver(Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, List<CoherentSetData> coherentMappings, Set<MappingPriorityRule> conflictingRules) {
+  public PartitioningSolver(Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, List<CoherentSetData> coherentMappings, Set<TemplateMappingPriorityRule> conflictingRules) {
     myPriorityMap = priorityMap;
     myCoherentMappings = coherentMappings;
     myConflictingRules = conflictingRules;

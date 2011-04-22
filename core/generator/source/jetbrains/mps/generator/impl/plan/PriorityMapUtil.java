@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -53,7 +53,7 @@ class PriorityMapUtil {
     return result;
   }
 
-  public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, Set<MappingPriorityRule> conflictingRules) {
+  public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, Set<TemplateMappingPriorityRule> conflictingRules) {
     for (CoherentSetData coherentSetData : coherentMappings) {
       Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       // collect

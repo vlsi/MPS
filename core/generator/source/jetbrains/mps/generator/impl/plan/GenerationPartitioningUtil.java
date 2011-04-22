@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -191,10 +192,10 @@ public class GenerationPartitioningUtil {
     return strings;
   }
 
-  public static List<Pair<MappingPriorityRule, String>> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
+  public static List<Pair<MappingPriorityRule, String>> toStrings(Iterable<TemplateMappingPriorityRule> priorityRules, boolean moreDetails) {
     List<Pair<MappingPriorityRule, String>> list = new ArrayList<Pair<MappingPriorityRule, String>>();
-    for (MappingPriorityRule rule : priorityRules) {
-      String text = asString(rule, moreDetails);
+    for (TemplateMappingPriorityRule rule : priorityRules) {
+      String text = asString((MappingPriorityRule) rule, moreDetails);
       if (moreDetails) {
         //todo text = asString(rule.findParent(GeneratorDescriptor.class)) + ": " + text;
       } else {

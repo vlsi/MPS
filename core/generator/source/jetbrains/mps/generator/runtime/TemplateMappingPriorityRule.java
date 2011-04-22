@@ -15,20 +15,8 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
-
-import java.util.Collection;
-
 /**
- * evgeny, 3/10/11
+ * evgeny, 4/22/11
  */
-public interface TemplateModule {
-
-  ModuleReference getReference();
-
-  Collection<TemplateMappingPriorityRule> getPriorities();
-
-  Collection<TemplateModel> getModels();
-
-  String getAlias();
+public interface TemplateMappingPriorityRule {
 }
