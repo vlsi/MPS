@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action" file="BuildAllLanguageDescriptors_Action.java">
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeActionParameters" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeActionImpl" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" file="CheckModelsBeforeGeneration_Action.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -587,6 +610,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeAllModules_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.GenerateModulePopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.CompileProject_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.NamespaceGenerateFiles_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
@@ -596,7 +620,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.RecompileProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeProject_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.ShowMappingsPartitioning_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup" />
     <classNode dependClassName="java.util.List" />
@@ -616,6 +640,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.Make_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.ToolsInternalMake_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Build_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.GenerateModelPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.RebuildModule_Action" />
@@ -636,7 +662,7 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.CleanModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.GenerateFiles_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.RebuildProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
@@ -930,6 +956,12 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" file="ToolbarMake_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.make.actions.ToolsInternalMake_ActionGroup" file="ToolsInternalMake_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />

@@ -13,6 +13,7 @@ import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Favorites_ActionGroup;
+import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -31,6 +32,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new BuildAllLanguageDescriptors_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanAllModules_Action());
     addAction(new CleanModule_Action());
@@ -71,6 +73,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SaveTransientModels_ActionGroup());
     addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
+    addGroup(new ToolsInternalMake_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -90,6 +93,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(ToolsInternalMake_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_make);
