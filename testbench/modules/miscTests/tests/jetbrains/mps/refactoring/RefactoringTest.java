@@ -27,26 +27,26 @@ public class RefactoringTest extends BaseMPSTest {
   }
 
   public void testRenameConceptRefactoring() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester"));
   }
 
   public void testRenameLinkRefactoring_Hierarchy() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Hierarchy"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy"));
   }
 
   public void testRenameLinkRefactoring_Simple() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Simple"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple"));
   }
 
   public void testMoveConceptRefactoring() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.MoveConceptRefactoringTester"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester"));
   }
 
   public void testRenamePropertyRefactoring_Simple() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenamePropertyRefactoringTester_Simple"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple"));
   }
 
   public void testDeleteLinkRefactoring_Simple() {
-    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.DeleteLinkRefactoringTester_Simple"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.DeleteLinkRefactoringTester_Simple"));
   }
 }
