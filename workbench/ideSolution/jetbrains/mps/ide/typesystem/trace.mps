@@ -6382,7 +6382,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374577562" resolveInfo="operation" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577581">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2qgh.~AbstractOperation%dgetEquationInfo()%cjetbrains%dmps%dutil%dPair" resolveInfo="getEquationInfo" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2qgh.~AbstractOperation%dgetRule()%cjetbrains%dmps%dutil%dPair" resolveInfo="getRule" />
               </node>
             </node>
           </node>

@@ -347,7 +347,11 @@ public class State {
     for (Block block : myBlocks) {
       if (block.getBlockKind().equals(BlockKind.WHEN_CONCRETE)) {
         WhenConcreteBlock wCBlock = (WhenConcreteBlock) block;
-
+        if (!wCBlock.isSkipError()) {
+          SNode node = myNodeMaps.getNode(wCBlock.getArgument());
+          myTypeCheckingContext.reportTypeError(node, "argument of WHEN CONCRETE block is never concrete",
+            wCBlock.getNodeModel(), wCBlock.getNodeId(), null, null);
+        }
       }
     }
   }

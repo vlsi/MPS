@@ -34,7 +34,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.ModelAccess;
@@ -231,7 +230,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (operation == null) {
       return null;
     }
-    final EquationInfo info = operation.getEquationInfo();
+    final EquationInfo info = operation.getRule();
     final SNode source = operation.getSource();
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
       return myOperationContext;

@@ -185,12 +185,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false));
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false, false));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow, skipError));
   }
 
   public State getState() {

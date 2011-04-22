@@ -32,16 +32,17 @@ import java.util.Set;
  * Time: 5:56:54 PM
  */
 public class WhenConcreteBlock extends Block {
-  //todo refactor runnable into a runnable with an argument
   private final Runnable myRunnable;
   private final SNode myArgument;
   private final ConditionKind myConditionKind;
+  private final boolean mySkipError;
 
-  public WhenConcreteBlock(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow) {
+  public WhenConcreteBlock(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow, boolean skipError) {
     super(state, nodeModel, nodeId);
     myRunnable = runnable;
     myArgument = argument;
     myConditionKind = isShallow ? ConditionKind.SHALLOW : ConditionKind.CONCRETE;
+    mySkipError = skipError;
   }
 
   public String toString() {
@@ -61,6 +62,10 @@ public class WhenConcreteBlock extends Block {
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
     Pair<SNode, ConditionKind> input = new Pair<SNode, ConditionKind>(myArgument, myConditionKind);
     return CollectionUtil.set(input);
+  }
+
+  public boolean isSkipError() {
+    return mySkipError;
   }
 
   @Override
@@ -87,4 +92,6 @@ public class WhenConcreteBlock extends Block {
   public BlockKind getBlockKind() {
     return BlockKind.WHEN_CONCRETE;
   }
+
+
 }
