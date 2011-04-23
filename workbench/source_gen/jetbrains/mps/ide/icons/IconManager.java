@@ -20,6 +20,8 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -32,7 +34,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -118,7 +119,7 @@ public class IconManager {
         if (model.isDisposed()) {
           return mainIcon;
         }
-        if (model.isNotEditable()) {
+        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model.getModelDescriptor()).isPackaged()) {
           mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
