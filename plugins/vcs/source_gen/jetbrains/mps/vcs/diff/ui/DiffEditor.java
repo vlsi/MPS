@@ -22,7 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -91,16 +90,18 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
-    final ChangeEditorMessage message = new ChangeEditorMessage(model, change, this, conflictChecker);
-    if (message.getNode() == null) {
+    final List<ChangeEditorMessage> messages = ChangeEditorMessage.createMessages(model, change, this, conflictChecker);
+    if (ListSequence.fromList(messages).isEmpty()) {
       return;
     }
-    // TODO more messages per change 
-    MapSequence.fromMap(myChangeToMessages).put(message.getChange(), ListSequence.fromList(new LinkedList<ChangeEditorMessage>()));
-    ListSequence.fromList(MapSequence.fromMap(myChangeToMessages).get(message.getChange())).addElement(message);
+    MapSequence.fromMap(myChangeToMessages).put(change, messages);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
-      public void visit(EditorComponent ec) {
-        ec.getHighlightManager().mark(message);
+      public void visit(final EditorComponent ec) {
+        ListSequence.fromList(messages).visitAll(new IVisitor<ChangeEditorMessage>() {
+          public void visit(ChangeEditorMessage m) {
+            ec.getHighlightManager().mark(m);
+          }
+        });
       }
     });
   }
@@ -113,7 +114,7 @@ public class DiffEditor implements EditorMessageOwner {
     });
   }
 
-  public List<ChangeEditorMessage> getMessageForChange(ModelChange change) {
+  public List<ChangeEditorMessage> getMessagesForChange(ModelChange change) {
     return MapSequence.fromMap(myChangeToMessages).get(change);
   }
 

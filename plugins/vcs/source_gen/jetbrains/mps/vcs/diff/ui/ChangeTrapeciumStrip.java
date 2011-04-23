@@ -41,10 +41,10 @@ public class ChangeTrapeciumStrip extends JComponent {
     int rightOffset = getOffset(getRightEditor());
 
     for (ChangeGroup group : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
-      int leftStart = group.getLeftStart() + leftOffset;
-      int leftEnd = group.getLeftEnd() + leftOffset;
-      int rightStart = group.getRightStart() + rightOffset;
-      int rightEnd = group.getRightEnd() + rightOffset;
+      int leftStart = (int) group.getLeftBounds().start() + leftOffset;
+      int leftEnd = (int) group.getLeftBounds().end() + leftOffset;
+      int rightStart = (int) group.getRightBounds().start() + rightOffset;
+      int rightEnd = (int) group.getRightBounds().end() + rightOffset;
 
       int[] xx = new int[]{0, getWidth(), getWidth(), 0};
       int[] yy = new int[]{leftStart, rightStart, rightEnd, leftEnd};

@@ -4,7 +4,8 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.errors.MessageStatus;
 import java.awt.Color;
@@ -20,35 +21,33 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import java.awt.Rectangle;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.vcs.diff.changes.NodeChange;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
   private ChangeEditorMessage.ConflictChecker myConflictsChecker;
 
-  public ChangeEditorMessage(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
-    super(computeNode(editedModel, change), MessageStatus.OK, computeMessageTarget(editedModel, change), null, "", owner);
+  private ChangeEditorMessage(SNode node, MessageTarget target, EditorMessageOwner owner, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    super(node, MessageStatus.OK, target, null, "", owner);
     myChange = change;
     myConflictsChecker = conflictChecker;
   }
@@ -95,62 +94,49 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       }
     } else {
       if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && eq_myu41h_a0a0a0b0e(myMessageTarget.getRole(), cell.getRole())) {
-        int beginIndex = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
-        int endIndex = ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
-        if (beginIndex != endIndex) {
-          assert cell instanceof EditorCell_Collection;
+        int index = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
+        assert index == ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
+        if (index != -1) {
           EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-          int beginCellIndex = getChildCellIndex(collectionCell, beginIndex);
-          int endCellIndex = getChildCellIndex(collectionCell, endIndex - 1) + 1;
-          for (int i = beginCellIndex; i < endCellIndex; i++) {
-            collectionCell.getChildAt(i).paintSelection(graphics, getColor(), false);
-          }
-          return;
-        } else {
-          // This is delete node change 
-          if (beginIndex != -1) {
-            EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
 
-            if (!(hasChildrenWithDifferentNode(cell))) {
-              cell.paintSelection(graphics, getColor(), false);
-              return;
-            }
-
-            boolean vertical = collectionCell.getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
-            Rectangle bounds = cell.getBounds();
-            int cellIndex = getChildCellIndex(collectionCell, beginIndex);
-            if (vertical) {
-              int y;
-              if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-                y = collectionCell.getChildAt(cellIndex).getY();
-              } else {
-                y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
-              }
-              graphics.setColor(getColor());
-              graphics.drawLine(bounds.x, y, bounds.x + bounds.width, y);
-            } else {
-              // horizontal collection: draw vertical line 
-              int x;
-              if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-                x = collectionCell.getChildAt(cellIndex).getX();
-              } else {
-                x = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxX());
-              }
-              int y1 = bounds.y;
-              int y2 = bounds.y + bounds.height;
-
-              graphics.setColor(getColor());
-              graphics.drawLine(x, y1, x, y2);
-              graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
-              graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
-
-              graphics.setColor(ColorAndGraphicsUtil.brightenColor(getColor(), 0.8f));
-              graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
-              graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
-            }
+          if (!(hasChildrenWithDifferentNode(cell))) {
+            cell.paintSelection(graphics, getColor(), false);
             return;
           }
 
+          boolean vertical = isVertical(collectionCell);
+          Rectangle bounds = cell.getBounds();
+          int cellIndex = getChildCellIndex(collectionCell, index);
+          if (vertical) {
+            int y;
+            if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
+              y = collectionCell.getChildAt(cellIndex).getY();
+            } else {
+              y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
+            }
+            graphics.setColor(getColor());
+            graphics.drawLine(bounds.x, y, bounds.x + bounds.width, y);
+          } else {
+            // horizontal collection: draw vertical line 
+            int x;
+            if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
+              x = collectionCell.getChildAt(cellIndex).getX();
+            } else {
+              x = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxX());
+            }
+            int y1 = bounds.y;
+            int y2 = bounds.y + bounds.height;
+
+            graphics.setColor(getColor());
+            graphics.drawLine(x, y1, x, y2);
+            graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+            graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
+
+            graphics.setColor(ColorAndGraphicsUtil.brightenColor(getColor(), 0.8f));
+            graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+            graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
+          }
+          return;
         }
       }
       graphics.setColor((isConflicted() ?
@@ -162,132 +148,57 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
   }
 
-  private Tuples._2<Integer, Integer> getVerticalBounds(EditorComponent editorComponent) {
-    EditorCell cell = getCell(editorComponent);
+  private Bounds getVerticalBounds(EditorComponent editorComponent) {
     assert myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN;
     ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
-    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0a3a5(cmt.getRole(), cell.getRole())) || check_myu41h_a0d0f(cmt.getChildren(), cell)) {
-      return MultiTuple.<Integer,Integer>from(super.getStart(editorComponent), super.getHeight(editorComponent));
-    } else {
-
+    assert cmt.getBeginIndex() == cmt.getEndIndex();
+    EditorCell_Collection cell = (EditorCell_Collection) getCell(editorComponent);
+    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0e0f(cmt.getRole(), cell.getRole()))) {
+      return getBoundsSuper(editorComponent);
     }
-    EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-    int beginCellIndex = getChildCellIndex(collectionCell, cmt.getBeginIndex());
-    int endCellIndex = getChildCellIndex(collectionCell, cmt.getEndIndex() - 1) + 1;
-    endCellIndex = Math.max(beginCellIndex, endCellIndex);
-    int lastCellIndex = collectionCell.getChildCount() - 1;
+
+    int cellIndex = getChildCellIndex(cell, cmt.getBeginIndex());
+    int lastCellIndex = cell.getChildCount() - 1;
 
     int minY;
     int maxY;
-    if (beginCellIndex > lastCellIndex) {
-      Rectangle lastCellBounds = collectionCell.getChildAt(lastCellIndex).getBounds();
-      minY = (isVertical(cell) ?
+    if (cellIndex > lastCellIndex) {
+      Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
+      minY = (isVertical(getCell(editorComponent)) ?
         (int) lastCellBounds.getMaxY() :
         (int) lastCellBounds.getMinY()
       );
       maxY = (int) lastCellBounds.getMaxY();
-      /*
-        if (maxY == minY) {
-          maxY++;
-        }
-      */
     } else {
-      minY = (int) collectionCell.getChildAt(beginCellIndex).getBounds().getMinY();
-      maxY = (isVertical(cell) ?
+      minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
+      maxY = (isVertical(getCell(editorComponent)) ?
         minY + 1 :
-        (int) collectionCell.getCellAt(beginCellIndex).getBounds().getMaxY()
+        (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
       );
     }
-    for (int i = beginCellIndex; i < endCellIndex; i++) {
-      minY = Math.min(minY, (int) collectionCell.getChildAt(i).getBounds().getMinY());
-      maxY = Math.max(maxY, (int) collectionCell.getChildAt(i).getBounds().getMaxY());
+    return new Bounds(minY, maxY);
+  }
+
+  public Bounds getBounds(EditorComponent component) {
+    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+      return getVerticalBounds(component);
+    } else {
+      return getBoundsSuper(component);
     }
-    return MultiTuple.<Integer,Integer>from(minY, maxY - minY);
+  }
+
+  private Bounds getBoundsSuper(EditorComponent component) {
+    return new Bounds(super.getStart(component), super.getStart(component) + super.getHeight(component));
   }
 
   @Override
   public int getStart(EditorComponent component) {
-    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
-      return (int) getVerticalBounds(component)._0();
-    } else {
-      return super.getStart(component);
-    }
+    return (int) getBounds(component).start();
   }
 
   @Override
   public int getHeight(EditorComponent component) {
-    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
-      return (int) getVerticalBounds(component)._1();
-    } else {
-      return super.getHeight(component);
-    }
-  }
-
-  private static SNode computeNode(SModel editedModel, ModelChange change) {
-    SNodeId id;
-    if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
-      id = change.getRootId();
-    } else if (change instanceof NodeChange) {
-      id = ((NodeChange) change).getAffectedNodeId();
-    } else if (change instanceof NodeGroupChange) {
-      id = ((NodeGroupChange) change).getParentNodeId();
-    } else {
-      return null;
-    }
-    return editedModel.getNodeById(id);
-  }
-
-  private static MessageTarget computeMessageTarget(SModel editedModel, ModelChange change) {
-    if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
-      return new NodeMessageTarget();
-    } else if (change instanceof SetPropertyChange) {
-      return new PropertyMessageTarget(((SetPropertyChange) change).getPropertyName());
-    } else if (change instanceof SetReferenceChange) {
-      return new ReferenceMessageTarget(((SetReferenceChange) change).getRole());
-    } else if (change instanceof NodeGroupChange) {
-      SModel changeModel = change.getChangeSet().getNewModel();
-      NodeGroupChange nodeGroupChange = ((NodeGroupChange) change);
-      boolean reversed = changeModel != editedModel;
-      if (reversed) {
-        changeModel = change.getChangeSet().getOldModel();
-      }
-      SNodeId parentId = nodeGroupChange.getParentNodeId();
-      String role = nodeGroupChange.getRole();
-      List<SNode> changeChildren = changeModel.getNodeById(parentId).getChildren(role);
-      int changeBegin;
-      int changeEnd;
-
-      if (reversed) {
-        changeBegin = nodeGroupChange.getBegin();
-        changeEnd = nodeGroupChange.getEnd();
-      } else {
-        changeBegin = nodeGroupChange.getResultBegin();
-        changeEnd = nodeGroupChange.getResultEnd();
-      }
-
-      SNodeId beginId = (changeBegin < changeChildren.size() ?
-        changeChildren.get(changeBegin).getSNodeId() :
-        null
-      );
-      SNodeId endId = (changeEnd < changeChildren.size() ?
-        changeChildren.get(changeEnd).getSNodeId() :
-        null
-      );
-      int currentChildrenSize = editedModel.getNodeById(parentId).getChildren(role).size();
-
-      int beginIndex = (beginId == null ?
-        currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(beginId)))
-      );
-      int endIndex = (endId == null ?
-        currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
-      );
-
-      assert 0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize;
-      return new ChildrenMessageTarget(role, beginIndex, endIndex, changeChildren);
-    }
-    return null;
+    return getBounds(component).length();
   }
 
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
@@ -327,14 +238,82 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return -1;
   }
 
-  private static boolean check_myu41h_a0a0b0e(Set<SNode> checkedDotOperand, EditorCell cell) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.contains(cell.getSNode());
+  public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    List<ChangeEditorMessage> messages = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
+    SNodeId id;
+    MessageTarget messageTarget;
+    if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
+      id = change.getRootId();
+      messageTarget = new NodeMessageTarget();
+    } else if (change instanceof SetPropertyChange) {
+      id = ((NodeChange) change).getAffectedNodeId();
+      messageTarget = new PropertyMessageTarget(((SetPropertyChange) change).getPropertyName());
+    } else if (change instanceof SetReferenceChange) {
+      id = ((NodeChange) change).getAffectedNodeId();
+      messageTarget = new ReferenceMessageTarget(((SetReferenceChange) change).getRole());
+    } else if (change instanceof NodeGroupChange) {
+      NodeGroupChange ngc = ((NodeGroupChange) change);
+      SModel changeModel = change.getChangeSet().getNewModel();
+      boolean reversed = changeModel != editedModel;
+      if (reversed) {
+        changeModel = change.getChangeSet().getOldModel();
+      }
+
+      String role = ngc.getRole();
+      SNodeId parentId = ngc.getParentNodeId();
+      List<SNode> changeChildren = changeModel.getNodeById(parentId).getChildren(role);
+
+      int changeBegin = (reversed ?
+        ngc.getBegin() :
+        ngc.getResultBegin()
+      );
+      int changeEnd = (reversed ?
+        ngc.getEnd() :
+        ngc.getResultEnd()
+      );
+
+      // We need to check change models because current edited model can have different indices 
+      // (for instance, when some changes are already applied) 
+      SNodeId beginId = (changeBegin < changeChildren.size() ?
+        changeChildren.get(changeBegin).getSNodeId() :
+        null
+      );
+      SNodeId endId = (changeEnd < changeChildren.size() ?
+        changeChildren.get(changeEnd).getSNodeId() :
+        null
+      );
+      int currentChildrenSize = editedModel.getNodeById(parentId).getChildren(role).size();
+
+      int beginIndex = (beginId == null ?
+        currentChildrenSize :
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(beginId)))
+      );
+      int endIndex = (endId == null ?
+        currentChildrenSize :
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
+      );
+
+      assert 0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize;
+      if (beginIndex == endIndex) {
+        // delete nodes 
+        id = parentId;
+        messageTarget = new ChildrenMessageTarget(role, beginIndex, beginIndex, changeChildren);
+      } else {
+        List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
+        for (int i = beginIndex; i < endIndex; i++) {
+          ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker));
+        }
+        return messages;
+      }
+    } else {
+      return null;
     }
-    return false;
+    SNode node = editedModel.getNodeById(id);
+    ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
+    return messages;
   }
 
-  private static boolean check_myu41h_a0d0f(Set<SNode> checkedDotOperand, EditorCell cell) {
+  private static boolean check_myu41h_a0a0b0e(Set<SNode> checkedDotOperand, EditorCell cell) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.contains(cell.getSNode());
     }
@@ -348,7 +327,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     );
   }
 
-  private static boolean eq_myu41h_a0a0a3a5(Object a, Object b) {
+  private static boolean eq_myu41h_a0a0e0f(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

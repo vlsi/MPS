@@ -14,13 +14,12 @@ import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Set;
 import jetbrains.mps.util.DisjointSets;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ChangeGroupBuilder {
@@ -58,70 +57,56 @@ public class ChangeGroupBuilder {
   }
 
   private void calculateChangeGroups() {
-    final Map<ModelChange, Integer> leftStarts = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
-    final Map<ModelChange, Integer> leftEnds = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
-    final Map<ModelChange, Integer> rightStarts = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
-    final Map<ModelChange, Integer> rightEnds = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
+    final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
+    final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
     for (ModelChange change : ListSequence.fromList(myChangeSet.getModelChanges())) {
-      // TODO more messages per change 
-      ChangeEditorMessage leftMessage = ListSequence.fromList(myLeftEditor.getMessageForChange(change)).first();
-      ChangeEditorMessage rightMessage = ListSequence.fromList(myRightEditor.getMessageForChange(change)).first();
+      Bounds leftBounds = findBounds(myLeftEditor.getMessagesForChange(change), getLeftComponent());
+      Bounds rightBounds = findBounds(myRightEditor.getMessagesForChange(change), getRightComponent());
 
-      int leftStart = -1;
-      int rightStart = -1;
-      int leftHeight = -1;
-      int rightHeight = -1;
-
-      if (leftMessage != null) {
-        leftStart = leftMessage.getStart(getLeftComponent());
-        leftHeight = leftMessage.getHeight(getLeftComponent());
-      }
-      if (rightMessage != null) {
-        rightStart = rightMessage.getStart(getRightComponent());
-        rightHeight = rightMessage.getHeight(getRightComponent());
-      }
-      if (leftHeight == -1 && rightHeight == -1) {
+      if (leftBounds.length() == 0 && rightBounds.length() == 0) {
         continue;
       }
-      if (leftHeight == -1) {
-        {
-          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0m0e0c = MultiTuple.<Integer,Integer>from(getLeftComponent().getRootCell().getY(), 0);
-          leftStart = _tmp_a1l5hi_a0m0e0c._0();
-          leftHeight = _tmp_a1l5hi_a0m0e0c._1();
-        }
-      }
-      if (rightHeight == -1) {
-        {
-          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0n0e0c = MultiTuple.<Integer,Integer>from(getRightComponent().getRootCell().getY(), 0);
-          rightStart = _tmp_a1l5hi_a0n0e0c._0();
-          rightHeight = _tmp_a1l5hi_a0n0e0c._1();
-        }
-      }
 
-      MapSequence.fromMap(leftStarts).put(change, leftStart);
-      MapSequence.fromMap(leftEnds).put(change, leftStart + leftHeight);
-      MapSequence.fromMap(rightStarts).put(change, rightStart);
-      MapSequence.fromMap(rightEnds).put(change, rightStart + rightHeight);
+      MapSequence.fromMap(left).put(change, leftBounds);
+      MapSequence.fromMap(right).put(change, rightBounds);
     }
-    DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(MapSequence.fromMap(leftStarts).keySet());
-    for (ModelChange a : SetSequence.fromSet(MapSequence.fromMap(leftStarts).keySet())) {
-      for (ModelChange b : SetSequence.fromSet(MapSequence.fromMap(leftStarts).keySet())) {
-        if (!(MapSequence.fromMap(leftEnds).get(a) - 1 < MapSequence.fromMap(leftStarts).get(b) || MapSequence.fromMap(leftEnds).get(b) - 1 < MapSequence.fromMap(leftStarts).get(a))) {
+    Set<ModelChange> changes = MapSequence.fromMap(left).keySet();
+    DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(changes);
+    for (ModelChange a : SetSequence.fromSet(changes)) {
+      for (ModelChange b : SetSequence.fromSet(changes)) {
+        if (!((int) MapSequence.fromMap(left).get(a).end() - 1 < (int) MapSequence.fromMap(left).get(b).start() || (int) MapSequence.fromMap(left).get(b).end() - 1 < (int) MapSequence.fromMap(left).get(a).start())) {
           ds.unite(a, b);
         }
-        if (!(MapSequence.fromMap(rightEnds).get(a) - 1 < MapSequence.fromMap(rightStarts).get(b) || MapSequence.fromMap(rightEnds).get(b) - 1 < MapSequence.fromMap(rightStarts).get(a))) {
+        if (!((int) MapSequence.fromMap(right).get(a).end() - 1 < (int) MapSequence.fromMap(right).get(b).start() || (int) MapSequence.fromMap(right).get(b).end() - 1 < (int) MapSequence.fromMap(right).get(a).start())) {
           ds.unite(a, b);
         }
       }
     }
-    myChangeGroups = ListSequence.fromListWithValues(new ArrayList<ChangeGroup>(), Sequence.fromIterable(ds.getSets()).<ChangeGroup>select(new ISelector<Set<ModelChange>, ChangeGroup>() {
-      public ChangeGroup select(Set<ModelChange> s) {
-        return new ChangeGroup(leftStarts, leftEnds, rightStarts, rightEnds, SetSequence.fromSet(s).toListSequence(), myMergeContext);
-      }
-    }));
+    myChangeGroups = ListSequence.fromList(new ArrayList<ChangeGroup>());
+    for (Set<ModelChange> s : Sequence.fromIterable(ds.getSets())) {
+      Bounds lb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+        public Bounds select(ModelChange ch) {
+          return MapSequence.fromMap(left).get(ch);
+        }
+      }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
+        public Bounds combine(Bounds a, Bounds b) {
+          return a.merge(b);
+        }
+      });
+      Bounds rb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+        public Bounds select(ModelChange ch) {
+          return MapSequence.fromMap(right).get(ch);
+        }
+      }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
+        public Bounds combine(Bounds a, Bounds b) {
+          return a.merge(b);
+        }
+      });
+      ListSequence.fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, SetSequence.fromSet(s).toListSequence(), myMergeContext));
+    }
     myChangeGroups = ListSequence.fromList(myChangeGroups).sort(new ISelector<ChangeGroup, Comparable<?>>() {
       public Comparable<?> select(ChangeGroup g) {
-        return g.getLeftStart();
+        return (int) g.getLeftBounds().start();
       }
     }, true).toListSequence();
   }
@@ -153,5 +138,21 @@ public class ChangeGroupBuilder {
   @Nullable
   public MergeContext getMergeContext() {
     return myMergeContext;
+  }
+
+  private static Bounds findBounds(Iterable<ChangeEditorMessage> messages, final EditorComponent editorComponent) {
+    if (Sequence.fromIterable(messages).isEmpty()) {
+      int y = editorComponent.getRootCell().getY();
+      return new Bounds(y, y);
+    }
+    return Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
+      public Bounds select(ChangeEditorMessage m) {
+        return m.getBounds(editorComponent);
+      }
+    }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
+      public Bounds combine(Bounds a, Bounds b) {
+        return a.merge(b);
+      }
+    });
   }
 }

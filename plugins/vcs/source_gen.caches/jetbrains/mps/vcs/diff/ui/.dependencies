@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.diff.ui.Bounds" file="Bounds.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ButtonsPainter" file="ButtonsPainter.java">
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -31,32 +39,31 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" file="ChangeEditorMessage.java">
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.PropertyMessageTarget" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ChildrenMessageTarget" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.Bounds" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.util.ColorAndGraphicsUtil" />
@@ -65,8 +72,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTargetEnum" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
@@ -79,20 +85,17 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeGroup" file="ChangeGroup.java">
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.Bounds" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" file="ChangeGroupBuilder.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -102,8 +105,9 @@
     <classNode dependClassName="jetbrains.mps.util.DisjointSets" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -115,12 +119,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.Bounds" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" file="ChangeGroupInvalidateListener.java" />
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" file="ChangeTrapeciumStrip.java">
@@ -160,7 +163,7 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
@@ -176,7 +179,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -343,10 +345,10 @@
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldMergeView" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldMergeView" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldMergeResultView" file="OldMergeResultView.java">
@@ -419,20 +421,21 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldModelChangesTree" file="OldModelChangesTree.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
@@ -440,7 +443,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeType" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
@@ -450,13 +452,13 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.EngagedOnGenerationLanguagesChange" />
     <classNode dependClassName="com.intellij.openapi.keymap.KeymapManager" />
-    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TreeTextUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
@@ -466,7 +468,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TextTreeNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Map" />
@@ -474,7 +476,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
     <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
@@ -484,6 +486,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldModelDifferenceComponent" file="OldModelDifferenceComponent.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
@@ -493,7 +496,7 @@
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="com.intellij.ide.actions.CollapseAllToolbarAction" />
     <classNode dependClassName="javax.swing.JSplitPane" />
@@ -504,9 +507,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
@@ -569,23 +571,23 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" />
     <classNode dependClassName="java.awt.event.WindowEvent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
-    <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.Cursor" />
+    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.wm.FocusWatcher" />
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridLayout" />
-    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="java.awt.Cursor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionListener" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
@@ -593,7 +595,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="com.intellij.util.containers.MultiMap" />
     <classNode dependClassName="java.lang.String" />
@@ -614,7 +616,6 @@
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldChangeEditorMessage" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="java.util.HashSet" />
@@ -626,7 +627,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.Conflict" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" />
     <classNode dependClassName="java.awt.GridLayout" />
@@ -637,11 +637,13 @@
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.Merger" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
     <classNode dependClassName="java.lang.String" />
