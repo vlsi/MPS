@@ -26,7 +26,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
@@ -506,7 +505,7 @@ public class TestMain {
     public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode node) {
-          return node.isInstanceOfConcept(ClassConcept.concept);
+          return node.isInstanceOfConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
         }
       };
       for (final SModel model : outputModels) {
