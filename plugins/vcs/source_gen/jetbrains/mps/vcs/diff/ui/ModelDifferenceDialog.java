@@ -81,6 +81,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   /*package*/ void rebuildChangeSet() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     fillRootToChange();
+    myTree.rebuildLater();
   }
 
   protected JComponent getMainComponent() {

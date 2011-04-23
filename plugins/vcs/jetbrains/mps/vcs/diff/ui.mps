@@ -23835,6 +23835,16 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3784757108400815478" resolveInfo="fillRootToChange" />
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6236996727608130410">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6236996727608130413">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6236996727608130412">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3724655318819767499" resolveInfo="myTree" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6236996727608130417">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpm1.~MPSTree%drebuildLater()%cvoid" resolveInfo="rebuildLater" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3724655318819767468">
