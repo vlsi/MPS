@@ -16,7 +16,7 @@ import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EditorChangesHighlighter extends AbstractProjectComponent implements EditorMessageOwner {
@@ -98,7 +98,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
     }
 
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
-      if (editorComponent instanceof NodeEditorComponent || editorComponent instanceof InspectorEditorComponent) {
+      if (editorComponent instanceof NodeEditorComponent || editorComponent == myProject.getComponent(InspectorTool.class).getInspector()) {
         addHighighlighter(editorComponent, EditorSettings.getInstance().isHighightChanges());
       }
     }

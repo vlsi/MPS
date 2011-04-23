@@ -13586,11 +13586,24 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="5267577397386525111">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="5267577397386525112">
-                <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5267577397386525113">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="w3e1.~InspectorEditorComponent" resolveInfo="InspectorEditorComponent" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7530992553317851830">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7530992553317852087">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7530992553317851834">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7530992553317851833">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="bw1v.~AbstractProjectComponent%dmyProject" resolveInfo="myProject" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7530992553317851838">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw1v.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7530992553317852086">
+                        <link role="classifier" roleId="tpee.1116615189566" targetNodeId="qxeo.~InspectorTool" resolveInfo="InspectorTool" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7530992553317852091">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~InspectorTool%dgetInspector()%cjetbrains%dmps%dnodeEditor%dEditorComponent" resolveInfo="getInspector" />
+                  </node>
                 </node>
-                <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5267577397386525114">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7530992553317851829">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5267577397386525098" resolveInfo="editorComponent" />
                 </node>
               </node>

@@ -133,7 +133,7 @@
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.workbench.highlighter.EditorComponentCreateListener" />
