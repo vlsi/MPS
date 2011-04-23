@@ -352,14 +352,16 @@ public class ModelChangesManager {
     fireFileStatusChanged(fileStatus);
   }
 
-  public void dispose() {
-    myCommandQueue.runTask(new Runnable() {
-      public void run() {
-        for (Change change : ListSequence.fromList(getChangeList())) {
-          fireChangeRemoved(change);
+  public void dispose(boolean notifyListeners) {
+    if (notifyListeners) {
+      myCommandQueue.runTask(new Runnable() {
+        public void run() {
+          for (Change change : ListSequence.fromList(getChangeList())) {
+            fireChangeRemoved(change);
+          }
         }
-      }
-    });
+      });
+    }
     if (myModelListener != null) {
       myModelDescriptor.removeModelListener(myModelListener);
       myModelListener = null;

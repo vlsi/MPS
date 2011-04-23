@@ -70,7 +70,7 @@ public class ChangesManager extends AbstractProjectComponent {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
     for (ModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
-      modelChangesManager.dispose();
+      modelChangesManager.dispose(false);
     }
     MapSequence.fromMap(myModelChanges).clear();
     myCommandQueue.dispose();
@@ -121,7 +121,7 @@ public class ChangesManager extends AbstractProjectComponent {
     myCommandQueue.addTask(new Runnable() {
       public void run() {
         if (MapSequence.fromMap(myModelChanges).containsKey(modelReference)) {
-          MapSequence.fromMap(myModelChanges).get(modelReference).dispose();
+          MapSequence.fromMap(myModelChanges).get(modelReference).dispose(true);
           MapSequence.fromMap(myModelChanges).removeKey(modelReference);
         }
       }
