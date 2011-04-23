@@ -147,6 +147,10 @@ public class BaseMethodDeclaration_Behavior {
     return null;
   }
 
+  public static SNode call_getMethodToImplement_69709522611978987(SNode thisNode, SNode enclosingClassifier) {
+    return ResolveUtil.processMethodToImplement(enclosingClassifier, thisNode);
+  }
+
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
     boolean same = true;
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
@@ -170,9 +174,7 @@ public class BaseMethodDeclaration_Behavior {
       return false;
     }
     if (SNodeOperations.isInstanceOf(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      SNode thisMethod = SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode enclosingClassifier = SNodeOperations.getAncestor(checked, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      SNode patternMethod = ResolveUtil.processMethodToImplement(enclosingClassifier, thisMethod);
+      SNode patternMethod = BaseMethodDeclaration_Behavior.call_getMethodToImplement_69709522611978987(thisNode, SNodeOperations.getAncestor(checked, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
       return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(patternMethod, checked);
     } else {
       return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, checked);

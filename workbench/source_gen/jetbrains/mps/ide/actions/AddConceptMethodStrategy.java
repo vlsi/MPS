@@ -7,12 +7,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddConceptMethodStrategy implements StratergyAddMethodDialog.ContainerStrategy {
@@ -31,13 +30,13 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
   public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> baseMethods) {
     boolean insertion = (myContextMethod != null) && SNodeOperations.getParent(myContextMethod) == myBehavior;
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> methods = new ArrayList<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>();
-    for (SNode methodNode : baseMethods) {
-      SNode behaviorNode = myBehavior;
-      SNode method = ResolveUtil.processMethodToImplement(behaviorNode, methodNode);
-      methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), method));
+    for (SNode m : baseMethods) {
+      SNode methodNode = SNodeOperations.cast(m, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
+      SNode method = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myBehavior));
+      methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(methodNode, method));
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myBehavior), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      SLinkOperations.setTarget(method, "overriddenMethod", SNodeOperations.cast(methodNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
+      SLinkOperations.setTarget(method, "overriddenMethod", methodNode, false);
       SPropertyOperations.set(method, "isVirtual", "" + false);
 
       if (insertion) {

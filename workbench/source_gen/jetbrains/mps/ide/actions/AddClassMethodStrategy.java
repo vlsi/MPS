@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -30,10 +30,10 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
   public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> baseMethods) {
     boolean insertion = myContextMethod != null && SNodeOperations.getParent(myContextMethod) == myClassConcept;
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> methods = new ArrayList<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>();
-    for (SNode methodNode : baseMethods) {
-      SNode classNode = myClassConcept;
-      SNode method = ResolveUtil.processMethodToImplement(classNode, SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), method));
+    for (SNode m : baseMethods) {
+      SNode methodNode = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNode method = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept));
+      methods.add(new StratergyAddMethodDialog.ContainerStrategy.MethodAddition(methodNode, method));
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (insertion) {
