@@ -28,7 +28,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Collections_CustomApplicationPlugin" file="Collections_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin" file="Collections_ProjectPlugin.java">
@@ -127,7 +126,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
