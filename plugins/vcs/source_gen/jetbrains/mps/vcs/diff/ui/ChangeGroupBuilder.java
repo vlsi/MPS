@@ -63,7 +63,7 @@ public class ChangeGroupBuilder {
       Bounds leftBounds = findBounds(myLeftEditor.getMessagesForChange(change), getLeftComponent());
       Bounds rightBounds = findBounds(myRightEditor.getMessagesForChange(change), getRightComponent());
 
-      if (leftBounds.length() == 0 && rightBounds.length() == 0) {
+      if (leftBounds.length() <= 0 && rightBounds.length() <= 0) {
         continue;
       }
 
@@ -140,19 +140,33 @@ public class ChangeGroupBuilder {
     return myMergeContext;
   }
 
+  public int getEditorVerticalOffset() {
+    if (myInspector) {
+      return 0;
+    } else {
+      assert getLeftComponent().getExternalComponent().getY() == getRightComponent().getExternalComponent().getY();
+      return getLeftComponent().getExternalComponent().getY();
+    }
+  }
+
   private static Bounds findBounds(Iterable<ChangeEditorMessage> messages, final EditorComponent editorComponent) {
-    if (Sequence.fromIterable(messages).isEmpty()) {
+    Bounds bounds = null;
+    if (Sequence.fromIterable(messages).isNotEmpty()) {
+      bounds = Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
+        public Bounds select(ChangeEditorMessage m) {
+          return m.getBounds(editorComponent);
+        }
+      }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
+        public Bounds combine(Bounds a, Bounds b) {
+          return a.merge(b);
+        }
+      });
+    }
+    if (bounds == null || bounds.length() <= 0) {
       int y = editorComponent.getRootCell().getY();
       return new Bounds(y, y);
+    } else {
+      return bounds;
     }
-    return Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
-      public Bounds select(ChangeEditorMessage m) {
-        return m.getBounds(editorComponent);
-      }
-    }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
-      public Bounds combine(Bounds a, Bounds b) {
-        return a.merge(b);
-      }
-    });
   }
 }

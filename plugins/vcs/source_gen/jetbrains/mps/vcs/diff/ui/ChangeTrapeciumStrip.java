@@ -10,7 +10,7 @@ import java.awt.Graphics;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import javax.swing.JViewport;
 
 public class ChangeTrapeciumStrip extends JComponent {
   private static final int WIDTH = 30;
@@ -24,8 +24,8 @@ public class ChangeTrapeciumStrip extends JComponent {
         repaint();
       }
     };
-    getLeftEditor().getViewport().addChangeListener(viewportListener);
-    getRightEditor().getViewport().addChangeListener(viewportListener);
+    getLeftViewport().addChangeListener(viewportListener);
+    getRightViewport().addChangeListener(viewportListener);
     setMinimumSize(new Dimension(WIDTH, 1));
     setPreferredSize(new Dimension(WIDTH, 1));
     myChangeGroupBuilder.addInvalidateListener(new ChangeGroupInvalidateListener() {
@@ -37,8 +37,8 @@ public class ChangeTrapeciumStrip extends JComponent {
 
   @Override
   protected void paintComponent(Graphics g) {
-    int leftOffset = getOffset(getLeftEditor());
-    int rightOffset = getOffset(getRightEditor());
+    int leftOffset = getOffset(getLeftViewport());
+    int rightOffset = getOffset(getRightViewport());
 
     for (ChangeGroup group : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
       int leftStart = (int) group.getLeftBounds().start() + leftOffset;
@@ -60,15 +60,15 @@ public class ChangeTrapeciumStrip extends JComponent {
     }
   }
 
-  private EditorComponent getLeftEditor() {
-    return myChangeGroupBuilder.getLeftComponent();
+  private JViewport getLeftViewport() {
+    return myChangeGroupBuilder.getLeftComponent().getViewport();
   }
 
-  private EditorComponent getRightEditor() {
-    return myChangeGroupBuilder.getRightComponent();
+  private JViewport getRightViewport() {
+    return myChangeGroupBuilder.getRightComponent().getViewport();
   }
 
-  private static int getOffset(EditorComponent editor) {
-    return -editor.getViewport().getViewPosition().y + editor.getExternalComponent().getY();
+  private int getOffset(JViewport viewport) {
+    return -viewport.getViewPosition().y + myChangeGroupBuilder.getEditorVerticalOffset();
   }
 }

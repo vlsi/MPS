@@ -135,10 +135,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
+    <classNode dependClassName="javax.swing.JViewport" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" file="DiffButtonsPainter.java">
