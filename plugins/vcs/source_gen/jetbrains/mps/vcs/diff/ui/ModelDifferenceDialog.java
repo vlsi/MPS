@@ -33,13 +33,12 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.JPopupMenu;
 import jetbrains.mps.ide.projectPane.Icons;
-import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.icons.IconManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.smodel.SNode;
+import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -110,7 +109,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, rootTreeNode.myPresentations);
+        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, rootTreeNode.myPresentation);
       }
     });
     rootDialog.value.showDialog();
@@ -158,7 +157,7 @@ public class ModelDifferenceDialog extends BaseDialog {
         }
       }).sort(new ISelector<ModelDifferenceDialog.RootTreeNode, Comparable<?>>() {
         public Comparable<?> select(ModelDifferenceDialog.RootTreeNode rtn) {
-          return rtn.myPresentations;
+          return rtn.myPresentation;
         }
       }, true).visitAll(new IVisitor<ModelDifferenceDialog.RootTreeNode>() {
         public void visit(ModelDifferenceDialog.RootTreeNode rtn) {
@@ -195,29 +194,13 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private class RootTreeNode extends MPSTreeNode {
     private SNodeId myRootId;
-    private String myPresentations;
+    private String myPresentation;
 
     public RootTreeNode(SNodeId rootId) {
       super(myOperationContext);
       myRootId = rootId;
       setNodeIdentifier("" + myRootId);
-
-      List<String> presentations = ListSequence.fromList(new ArrayList<String>());
-      Icon icon = null;
-      for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myChangeSet.getNewModel(), myChangeSet.getOldModel()}))) {
-        SNode root = model.getNodeById(myRootId);
-        if (root != null) {
-          String presentation = root.getPresentation();
-          if (!(ListSequence.fromList(presentations).contains(presentation))) {
-            ListSequence.fromList(presentations).addElement(presentation);
-          }
-          if (icon == null) {
-            icon = IconManager.getIconFor(root);
-          }
-        }
-      }
-      myPresentations = StringUtils.join(presentations, " / ");
-      setIcon(icon);
+      doUpdatePresentation();
     }
 
     @Override
@@ -232,21 +215,17 @@ public class ModelDifferenceDialog extends BaseDialog {
         setColor(ChangeType.CHANGE.getTreeColor());
       }
 
-      List<String> presentations = ListSequence.fromList(new ArrayList<String>());
-      Icon icon = null;
       for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myChangeSet.getOldModel(), myChangeSet.getNewModel()}))) {
         SNode root = model.getNodeById(myRootId);
         if (root != null) {
-          String presentation = root.getPresentation();
-          if (!(ListSequence.fromList(presentations).contains(presentation))) {
-            ListSequence.fromList(presentations).addElement(presentation);
-          }
-          if (icon == null) {
-            icon = IconManager.getIconFor(root);
+          myPresentation = root.getPresentation();
+          Icon iconFor = IconManager.getIconFor(root);
+          if (iconFor != null) {
+            setIcon(iconFor);
           }
         }
       }
-      setText(myPresentations);
+      setText(myPresentation);
     }
 
     @Override
