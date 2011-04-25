@@ -51,18 +51,26 @@ public class Inequalities {  //
     myState = state;
   }
 
+  public void printAll() {
+    System.out.println("Relations");
+    for (Block node: getRelationsToSolve()) {
+      System.out.println(node.getPresentation());
+    }
+  }
+
   private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
     for (SNode node : unsorted) {
       if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
-    /*
+
     System.out.println("cycle");
     for (SNode node: unsorted) {
       System.out.println(node);
     }
-    */
+    printAll();
+
     return unsorted.iterator().next();
   }
 
@@ -105,9 +113,13 @@ public class Inequalities {  //
   }
 
   private void addVariablesLink(SNode input, SNode output) {
-    if (TypesUtil.isVariable(input) && TypesUtil.isVariable(output)) {
-      myInputsToOutputs.addLink(input, output);
+    if (!TypesUtil.isVariable(input)) return;
+    if (!TypesUtil.isVariable(output)) return;
+    if (input == output) return;
+    if (input.getName().equals(output.getName())) {
+      System.out.println("Variable " + input.getName());
     }
+    myInputsToOutputs.addLink(input, output);
   }
 
   private void initializeMaps(List<RelationBlock> inequalities) {
@@ -164,18 +176,18 @@ public class Inequalities {  //
         }
       }
     }
-    List<SNode> sortedNodes = sort(myInputsToOutputs, myNodes);
-    for (SNode node: sortedNodes) {
-      if (solveRelationsForNode(node)) {
+    while (myNodes.size() > 0) {
+      SNode current = getNodeWithNoInput(myInputsToOutputs, myNodes);
+      if (solveRelationsForNode(current)) {
        return true;
       }
+      myNodes.remove(current);
+      myInputsToOutputs.clearFirst(current);
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
-     // if (inequality.processReplacementRules()) {
-        myState.executeOperation(new RemoveBlockOperation(inequality));
-        return true;
-     // }
+      myState.executeOperation(new RemoveBlockOperation(inequality));
+      return true;
     }
     return false;
   }
