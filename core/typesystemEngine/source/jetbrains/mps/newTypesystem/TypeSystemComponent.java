@@ -21,6 +21,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -28,6 +29,7 @@ import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import sun.util.LocaleServiceProviderPool.LocalizedObjectGetter;
 
 import java.util.*;
 
@@ -38,6 +40,7 @@ import java.util.*;
  * Time: 4:58 PM
  */
 class TypeSystemComponent extends CheckingComponent {
+  private static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private boolean myInvalidationResult = false;
 
@@ -189,6 +192,12 @@ class TypeSystemComponent extends CheckingComponent {
   public void addDependencyForCurrent(SNode node) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
+
+    if (myCurrentCheckedNode==null){
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
