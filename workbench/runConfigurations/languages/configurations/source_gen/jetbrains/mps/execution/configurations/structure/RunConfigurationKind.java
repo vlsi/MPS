@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.execution.common.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.plugin.structure.IconResource;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
@@ -20,6 +21,7 @@ public class RunConfigurationKind extends BaseConcept implements INamedConcept, 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ICON_PATH = "iconPath";
+  public static final String ICON = "icon";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public RunConfigurationKind(SNode node) {
@@ -64,6 +66,14 @@ public class RunConfigurationKind extends BaseConcept implements INamedConcept, 
 
   public void setIconPath(IconPath node) {
     super.setChild(RunConfigurationKind.ICON_PATH, node);
+  }
+
+  public IconResource getIcon() {
+    return (IconResource) this.getChild(IconResource.class, RunConfigurationKind.ICON);
+  }
+
+  public void setIcon(IconResource node) {
+    super.setChild(RunConfigurationKind.ICON, node);
   }
 
   public int get_$attributesCount() {

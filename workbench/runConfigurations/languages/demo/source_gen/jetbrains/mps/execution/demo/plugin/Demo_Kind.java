@@ -4,8 +4,6 @@ package jetbrains.mps.execution.demo.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +14,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class Demo_Kind implements ConfigurationType {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.lang.plugin"), true);
+  private static final Icon ICON = null;
 
   public Demo_Kind() {
   }

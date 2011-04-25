@@ -137,8 +137,8 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_ryg3k0_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("iconPath");
-    provider.setNoTargetText("<no iconPath>");
+    provider.setRole("icon");
+    provider.setNoTargetText("<no icon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

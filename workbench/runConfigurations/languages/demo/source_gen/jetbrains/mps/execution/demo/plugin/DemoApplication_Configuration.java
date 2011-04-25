@@ -5,9 +5,6 @@ package jetbrains.mps.execution.demo.plugin;
 import jetbrains.mps.execution.configurations.runtime.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.settings.runtime.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
-import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -36,7 +33,6 @@ import jetbrains.mps.execution.settings.runtime.SettingsEditorEx;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/baseLanguage/baseLanguage/icons/run.png", "jetbrains.mps.execution.demo"), true);
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
@@ -140,10 +136,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new DemoApplication_Configuration_Editor(myNode.getEditor(), myMake.getEditor());
-  }
-
-  public Icon getIcon() {
-    return ICON;
   }
 
   @Override

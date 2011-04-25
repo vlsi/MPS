@@ -85,6 +85,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.structure.IconPath" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconResource" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" file="RunConfigurationExecutor.java">
@@ -117,6 +118,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.execution.common.structure.IGeneratedToClass" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconResource" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement" file="StartProcessHandlerStatement.java">

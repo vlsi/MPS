@@ -63,7 +63,7 @@
     </node>
   </roots>
   <root id="8750596094204760415">
-    <node role="iconPath" roleId="uhxm.4806795137173723123" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076264" />
+    <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4763274727405913090" />
   </root>
   <root id="8750596094204760417">
     <node role="editor" roleId="uhxm.3754890006475816675" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="8750596094204760418">
@@ -351,8 +351,8 @@
         </node>
       </node>
     </node>
-    <node role="iconPath" roleId="uhxm.4806795137173723122" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076263">
-      <property name="path" nameId="uhxm.4806795137173575895" value="${mps_home}/core/baseLanguage/baseLanguage/icons/run.png" />
+    <node role="icon" roleId="uhxm.4763274727405873310" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4763274727405913092">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/resources/run.png" />
     </node>
   </root>
   <root id="7684700299064222828">

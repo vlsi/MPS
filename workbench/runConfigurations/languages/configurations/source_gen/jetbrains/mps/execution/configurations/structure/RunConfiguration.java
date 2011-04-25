@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.structure;
 
 import jetbrains.mps.execution.settings.structure.PersistentConfiguration;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.plugin.structure.IconResource;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -12,6 +13,7 @@ public class RunConfiguration extends PersistentConfiguration {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.RunConfiguration";
   public static final String CONFIGURATION_TYPE = "configurationType";
   public static final String ICON_PATH = "iconPath";
+  public static final String ICON = "icon";
 
   public RunConfiguration(SNode node) {
     super(node);
@@ -31,6 +33,14 @@ public class RunConfiguration extends PersistentConfiguration {
 
   public void setIconPath(IconPath node) {
     super.setChild(RunConfiguration.ICON_PATH, node);
+  }
+
+  public IconResource getIcon() {
+    return (IconResource) this.getChild(IconResource.class, RunConfiguration.ICON);
+  }
+
+  public void setIcon(IconResource node) {
+    super.setChild(RunConfiguration.ICON, node);
   }
 
   public static RunConfiguration newInstance(SModel sm, boolean init) {
