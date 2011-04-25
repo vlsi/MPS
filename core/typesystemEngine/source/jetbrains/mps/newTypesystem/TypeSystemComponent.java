@@ -188,7 +188,7 @@ class TypeSystemComponent extends CheckingComponent {
     hashSet.add(myCurrentCheckedNode);
 
     if (myCurrentCheckedNode==null){
-      LOG.error("Typesystem dependency not tracked. ");
+      //LOG.error("Typesystem dependency not tracked. ");
       return;
     }
 
@@ -200,7 +200,7 @@ class TypeSystemComponent extends CheckingComponent {
     hashSet.add(node);
 
     if (myCurrentCheckedNode==null){
-      LOG.error("Typesystem dependency not tracked. ");
+      //LOG.error("Typesystem dependency not tracked. ");
       return;
     }
 
