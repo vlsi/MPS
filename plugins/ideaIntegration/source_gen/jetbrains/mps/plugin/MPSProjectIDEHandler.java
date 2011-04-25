@@ -28,13 +28,16 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.util.Computable;
@@ -150,13 +153,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showClassUsages(final String fqName) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Classifier cls = SModelUtil_new.findNodeByFQName(fqName, Classifier.class, GlobalScope.getInstance());
+        SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + fqName);
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        findUsages(cls.getNode(), GlobalScope.getInstance(), new ClassUsages_Finder());
+        findUsages(cls, GlobalScope.getInstance(), new ClassUsages_Finder());
       }
     });
   }
@@ -164,38 +167,40 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Classifier cls = SModelUtil_new.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
+        SNode cls = SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
         }
-        BaseMethodDeclaration m = null;
-        for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {
-          if (methodName.equals(method.getName()) && method.getParametersCount() == parameterCount) {
-            m = method;
-            break;
+        Iterable<SNode> seq = (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
           }
-        }
-        if (m == null) {
+        });
+        SNode method = Sequence.fromIterable(seq).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return methodName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
+          }
+        });
+        if (method == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a method " + classFqName + "." + methodName);
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        SNode node = m.getNode();
         GeneratedFinder finder = new ConstructorUsages_Finder();
-        boolean suits = SNodeOperations.isInstanceOf(node, finder.getConcept()) && finder.isApplicable(node);
+        boolean suits = SNodeOperations.isInstanceOf(method, finder.getConcept()) && finder.isApplicable(method);
         if (!(suits)) {
           finder = null;
         }
         if (finder == null) {
           finder = new BaseMethodUsages_Finder();
-          suits = SNodeOperations.isInstanceOf(node, finder.getConcept()) && finder.isApplicable(node);
+          suits = SNodeOperations.isInstanceOf(method, finder.getConcept()) && finder.isApplicable(method);
           if (!(suits)) {
             finder = null;
           }
         }
         assert finder != null : "method type not supported (supported: instance/static/constructor)";
-        findUsages(node, GlobalScope.getInstance(), finder);
+        findUsages(method, GlobalScope.getInstance(), finder);
       }
     });
   }

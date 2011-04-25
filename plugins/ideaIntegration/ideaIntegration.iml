@@ -22,6 +22,8 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="collections-runtime" />
   </component>
 </module>
 
