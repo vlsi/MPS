@@ -64,13 +64,13 @@ public class Inequalities {  //
         return node;
       }
     }
-
+     /*
     System.out.println("cycle");
     for (SNode node: unsorted) {
       System.out.println(node);
     }
     printAll();
-
+       */
     return unsorted.iterator().next();
   }
 
@@ -116,9 +116,9 @@ public class Inequalities {  //
     if (!TypesUtil.isVariable(input)) return;
     if (!TypesUtil.isVariable(output)) return;
     if (input == output) return;
-    if (input.getName().equals(output.getName())) {
+  /*  if (input.getName().equals(output.getName())) {
       System.out.println("Variable " + input.getName());
-    }
+    } */
     myInputsToOutputs.addLink(input, output);
   }
 
