@@ -33,6 +33,7 @@
         <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
         <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
         <dependency reexport="false">fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)</dependency>
+        <dependency reexport="false">40aea410-4b11-411f-9197-07da76ee0e82(jetbrains.mps.plugin.runtime)</dependency>
         <dependency reexport="false">9b67baf0-e986-49af-b77c-998667f458cb(jetbrains.mps.traceInfo)</dependency>
       </dependencies>
       <usedLanguages>
