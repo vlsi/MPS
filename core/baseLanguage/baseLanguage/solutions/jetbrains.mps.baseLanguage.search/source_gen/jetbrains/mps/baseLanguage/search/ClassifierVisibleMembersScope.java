@@ -15,8 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.baseLanguage.structure.IMethodCall;
 
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   protected static Log log = LogFactory.getLog(ClassifierVisibleMembersScope.class);
@@ -60,7 +58,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
         }
       } else
       if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
-        if (((BaseConcept) SNodeOperations.getAdapter(referenceNode)) instanceof IMethodCall) {
+        if (SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
           return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, this.myClassifierType, SLinkOperations.getTargets((SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "actualArgument", true));
         }
       }
