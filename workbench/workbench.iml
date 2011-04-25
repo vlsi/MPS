@@ -14,19 +14,17 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="httpclient" level="project" />
     <orderEntry type="library" name="Commons-codec" level="project" />
-    <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="plugin-runtime" />
   </component>
 </module>
 
