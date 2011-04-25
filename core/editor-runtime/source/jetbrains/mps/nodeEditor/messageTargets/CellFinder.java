@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.messageTargets;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -91,6 +92,9 @@ public class CellFinder {
     }, true), true);
     if (child != null) {
       return child;
+    }
+    if (editorComponent instanceof InspectorEditorComponent && rawCell.getParent() == null) {
+      rawCell = null;
     }
     return rawCell;
   }

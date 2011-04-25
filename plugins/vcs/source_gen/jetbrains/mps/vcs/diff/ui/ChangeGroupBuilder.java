@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ChangeGroupBuilder {
   private MergeContext myMergeContext;
@@ -155,6 +156,10 @@ public class ChangeGroupBuilder {
       bounds = Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
         public Bounds select(ChangeEditorMessage m) {
           return m.getBounds(editorComponent);
+        }
+      }).where(new IWhereFilter<Bounds>() {
+        public boolean accept(Bounds b) {
+          return b.length() > 0;
         }
       }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
         public Bounds combine(Bounds a, Bounds b) {

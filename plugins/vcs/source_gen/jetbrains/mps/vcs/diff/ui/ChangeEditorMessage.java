@@ -152,10 +152,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     assert myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN;
     ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
     assert cmt.getBeginIndex() == cmt.getEndIndex();
-    EditorCell_Collection cell = (EditorCell_Collection) getCell(editorComponent);
-    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0e0f(cmt.getRole(), cell.getRole()))) {
+    EditorCell simpleCell = getCell(editorComponent);
+    if (!(hasChildrenWithDifferentNode(simpleCell) && eq_myu41h_a0a0e0f(cmt.getRole(), simpleCell.getRole()))) {
       return getBoundsSuper(editorComponent);
     }
+    EditorCell_Collection cell = (EditorCell_Collection) simpleCell;
 
     int cellIndex = getChildCellIndex(cell, cmt.getBeginIndex());
     int lastCellIndex = cell.getChildCount() - 1;
@@ -164,14 +165,14 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     int maxY;
     if (cellIndex > lastCellIndex) {
       Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
-      minY = (isVertical(getCell(editorComponent)) ?
+      minY = (isVertical(simpleCell) ?
         (int) lastCellBounds.getMaxY() :
         (int) lastCellBounds.getMinY()
       );
       maxY = (int) lastCellBounds.getMaxY();
     } else {
       minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
-      maxY = (isVertical(getCell(editorComponent)) ?
+      maxY = (isVertical(simpleCell) ?
         minY + 1 :
         (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
       );
