@@ -31,24 +31,22 @@ public class TypeSystemChecker {
   }
 
   public static void checkRollBacks(SNode node) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
-    typeCheckingContext.checkIfNotChecked(node, true);
-    if (typeCheckingContext instanceof TypeCheckingContextNew) {
-      State state = ((TypeCheckingContextNew) typeCheckingContext).getState();
-      State state2 = new State(state.getTypeCheckingContext());
-      AbstractOperation rootOperation = state.getOperation();
-      List<AbstractOperation> operations = state.getOperationsAsList();
-      int num = operations.size() / 3;
-      AbstractOperation operation = operations.get(num);
-      Collections.reverse(operations);
-      state2.executeOperationsBeforeAnchor(rootOperation, operation);
-      for (AbstractOperation toRevert : operations) {
-        if (toRevert.equals(operation)) {
-          break;
-        }
-        toRevert.undo(state);
+    TypeCheckingContextNew typeCheckingContext = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
+    typeCheckingContext.checkRootInTraceMode(true);
+    State state = (typeCheckingContext).getState();
+    State state2 = new State(state.getTypeCheckingContext());
+    AbstractOperation rootOperation = state.getOperation();
+    List<AbstractOperation> operations = state.getOperationsAsList();
+    int num = operations.size() / 3;
+    AbstractOperation operation = operations.get(num);
+    Collections.reverse(operations);
+    state2.executeOperationsBeforeAnchor(rootOperation, operation);
+    for (AbstractOperation toRevert : operations) {
+      if (toRevert.equals(operation)) {
+        break;
       }
-      Assert.assertTrue(StateMatcher.match(state, state2));
+      toRevert.undo(state);
     }
+    Assert.assertTrue(StateMatcher.match(state, state2));
   }
 }
