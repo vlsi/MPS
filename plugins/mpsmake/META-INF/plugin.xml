@@ -32,4 +32,8 @@
   <project-components>
 
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
+  </extensions>
 </idea-plugin>
