@@ -152,9 +152,6 @@ public abstract class ProjectStructureBuilder {
     for (StubModelsEntry entry : source.getStubModelEntries()) {
       SLinkOperations.getTargets(module, "stubModels", true).add(convert(entry));
     }
-    for (String s : source.getSourcePaths()) {
-      SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));
-    }
   }
 
   private SNode convert(ModelRoot source) {

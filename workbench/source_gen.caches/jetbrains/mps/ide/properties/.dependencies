@@ -260,7 +260,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.MappingRuleCreator" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
@@ -333,7 +332,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SourcePathChooser" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />

@@ -104,11 +104,12 @@
   <dependency className="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" file="ProjectDescriptorPersistence.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="org.jdom.Document" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.lang.String" />
@@ -117,16 +118,15 @@
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.util.Macros" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" file="SolutionDescriptorPersistence.java">
     <classNode dependClassName="org.jdom.Document" />

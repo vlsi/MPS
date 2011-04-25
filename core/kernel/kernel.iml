@@ -40,6 +40,7 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Commons-collections" level="project" />
     <orderEntry type="library" name="java-diff-utils" level="project" />
+    <orderEntry type="module" module-name="workbench" />
   </component>
 </module>
 

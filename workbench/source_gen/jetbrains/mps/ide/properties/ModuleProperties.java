@@ -25,7 +25,6 @@ public class ModuleProperties {
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
-  private List<String> mySourcePaths;
   private List<ClassPathEntry> myClassPaths;
   private List<StubModelsEntry> myStubModels;
 
@@ -34,7 +33,6 @@ public class ModuleProperties {
     myDependencies = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
     myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    mySourcePaths = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
     myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     myStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
   }
@@ -95,14 +93,6 @@ public class ModuleProperties {
     myUsedDevkits = usedDevkits;
   }
 
-  public List<String> getSourcePaths() {
-    return mySourcePaths;
-  }
-
-  public void setSourcePaths(List<String> sourcePaths) {
-    mySourcePaths = sourcePaths;
-  }
-
   public List<ClassPathEntry> getClassPaths() {
     return myClassPaths;
   }
@@ -137,9 +127,6 @@ public class ModuleProperties {
     }
     myUsedLanguages.addAll(descriptor.getUsedLanguages());
     myUsedDevkits.addAll(descriptor.getUsedDevkits());
-    for (String p : descriptor.getSourcePaths()) {
-      mySourcePaths.add(p);
-    }
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
       myStubModels.add((entry != null ?
         entry.getCopy() :
@@ -160,8 +147,6 @@ public class ModuleProperties {
     descriptor.getUsedLanguages().addAll(myUsedLanguages);
     descriptor.getUsedDevkits().clear();
     descriptor.getUsedDevkits().addAll(myUsedDevkits);
-    descriptor.getSourcePaths().clear();
-    descriptor.getSourcePaths().addAll(mySourcePaths);
     descriptor.getStubModelEntries().clear();
     descriptor.getStubModelEntries().addAll(myStubModels);
   }

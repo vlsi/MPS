@@ -190,7 +190,7 @@ public class Solution extends AbstractModule {
   }
 
   public boolean areJavaStubsEnabled() {
-    return getModuleDescriptor().getEnableJavaStubs() || !getModuleDescriptor().getSourcePaths().isEmpty();
+    return getModuleDescriptor().getEnableJavaStubs() ;
   }
 
   @Override

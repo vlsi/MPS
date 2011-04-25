@@ -33,7 +33,6 @@ public class ModuleDescriptor {
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
   private List<StubModelsEntry> myStubModels;
-  private List<String> mySourcePaths;
 
   public ModuleDescriptor() {
     myModelRoots = new ArrayList<ModelRoot>();
@@ -41,7 +40,6 @@ public class ModuleDescriptor {
     myUsedLanguages = new ArrayList<ModuleReference>();
     myUsedDevkits = new ArrayList<ModuleReference>();
     myStubModels = new ArrayList<StubModelsEntry>();
-    mySourcePaths = new ArrayList<String>();
   }
 
   public String getUUID() {
@@ -106,10 +104,6 @@ public class ModuleDescriptor {
 
   public List<StubModelsEntry> getStubModelEntries() {
     return myStubModels;
-  }
-
-  public List<String> getSourcePaths() {
-    return mySourcePaths;
   }
 
   public boolean updateModelRefs() {
