@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -19,7 +19,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
   public mapWithTypeVars_subtypeOf_map_InequationReplacementRule() {
   }
 
-  public boolean isApplicableCustom(SNode subtype, SNode supertype) {
+  public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");

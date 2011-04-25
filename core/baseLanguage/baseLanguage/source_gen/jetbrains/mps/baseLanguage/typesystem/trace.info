@@ -2803,7 +2803,7 @@
     <unitInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="50" startPosition="49" endLine="58" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule$1" />
   </root>
   <root nodeId="1204200594298">
-    <nodeInfo nodeId="1490671888444437728" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="23" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1490671888444437728" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="22" startPosition="97" endLine="23" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215774901982" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="28" startPosition="7" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1215774901982" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="29" startPosition="60" endLine="30" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1215774901982" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="30" startPosition="280" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2811,7 +2811,7 @@
     <nodeInfo nodeId="1215774863268" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1215774901982" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="27" startPosition="219" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1215774863268" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1490671888444422589" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="23" endPosition="117" />
+    <scopeInfo nodeId="1490671888444422589" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="22" startPosition="97" endLine="23" endPosition="117" />
     <scopeInfo nodeId="1215774863270" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="38" startPosition="219" endLine="39" endPosition="30" />
     <scopeInfo nodeId="1215774901982" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="28" startPosition="7" endLine="31" endPosition="79" />
     <scopeInfo nodeId="1204200594300" fileName="any_type_supertypeof_nulltype_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="40" endPosition="5" />

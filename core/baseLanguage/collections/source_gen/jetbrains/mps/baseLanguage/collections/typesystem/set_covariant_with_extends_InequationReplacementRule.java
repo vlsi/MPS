@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +17,7 @@ public class set_covariant_with_extends_InequationReplacementRule extends Abstra
   public set_covariant_with_extends_InequationReplacementRule() {
   }
 
-  public boolean isApplicableCustom(SNode subtype, SNode supertype) {
+  public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(supertype, "elementType", true), "jetbrains.mps.baseLanguage.structure.UpperBoundType");
   }
 
