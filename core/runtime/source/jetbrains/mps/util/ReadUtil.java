@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import gnu.trove.TByteArrayList;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,18 +37,7 @@ public class ReadUtil {
   }
 
   public static byte[] read(InputStream is) throws IOException {
-    TByteArrayList buf = new TByteArrayList();
-
-    int baseSize = 4096;
-    byte[] tmp = new byte[baseSize];
-    int off = 0;
-    while (true) {
-      int res = is.read(tmp, off, baseSize);
-      if (res == -1) break;
-      buf.add(tmp, 0, res);
-    }
-
-    return buf.toNativeArray();
+    return read(is, 4096);
   }
 
   public static byte[] read(InputStream is, int size) throws IOException {

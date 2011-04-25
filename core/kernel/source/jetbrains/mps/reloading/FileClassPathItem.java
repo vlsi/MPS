@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.reloading;
 
+import com.intellij.util.containers.EmptyIterable;
+import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.*;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,20 +35,67 @@ import java.util.*;
  */
 public class FileClassPathItem extends RealClassPathItem {
   private String myClassPath;
-  private IFile myBaseFile;
+  private Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
+  private Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
 
   protected FileClassPathItem(String classPath) {
     myClassPath = classPath;
-    myBaseFile = FileSystem.getInstance().getFileByPath(myClassPath);
-  }
-
-  public IFile getBaseFile() {
-    return myBaseFile;
   }
 
   public String getClassPath() {
     checkValidity();
     return myClassPath;
+  }
+
+  public synchronized byte[] getClass(String name) {
+    checkValidity();
+    String namespace = NameUtil.namespaceFromLongName(name);
+    String shortname = NameUtil.shortNameFromLongName(name);
+
+    if (!myAvailableClassesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
+
+    Set<String> classes = myAvailableClassesCache.get(namespace);
+    if (classes == null
+      || !classes.contains(shortname)) {
+      return null;
+    }
+
+    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
+    try {
+      byte[] result = null;
+      InputStream inp = null;
+      try {
+        inp = new FileInputStream(path);
+        result = ReadUtil.read(inp);
+      } finally {
+        if (inp != null) {
+          inp.close();
+        }
+      }
+
+      return result;
+    } catch (IOException e) {
+      return null;
+    }
+  }
+
+  public ClassifierKind getClassifierKind(String name) {
+    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
+    try {
+      InputStream inp = null;
+      try {
+        inp = new FileInputStream(path);
+        return ClassifierKind.getClassifierKind(inp);
+      } finally {
+        if (inp != null) {
+          inp.close();
+        }
+      }
+    } catch (IOException e) {
+      return null;
+    }
   }
 
   public URL getResource(String name) {
@@ -64,53 +111,69 @@ public class FileClassPathItem extends RealClassPathItem {
 
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
+    if (!myAvailableClassesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
 
-    THashSet<String> classes = getAllClasses(namespace);
-
+    Set<String> start = myAvailableClassesCache.get(namespace);
+    if (start == null) return new EmptyIterable<String>();
     Condition<String> cond = new Condition<String>() {
       public boolean met(String className) {
         return !isAnonymous(className);
       }
     };
-    return new ConditionalIterable<String>(classes, cond);
-  }
-
-  private THashSet<String> getAllClasses(String namespace) {
-    IFile dir = getModelDir(namespace);
-    THashSet<String> classes = new THashSet<String>();
-
-    for (IFile file : dir.getChildren()) {
-      String name = file.getName();
-      if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
-        String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
-        classes.add(InternUtil.intern(classname));
-      }
-    }
-    return classes;
+    return new ConditionalIterable<String>(start, cond);
   }
 
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
+    if (!mySubpackagesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
 
-    IFile dir = getModelDir(namespace);
-    THashSet<String> subpacks = new THashSet<String>();
-    for (IFile file : dir.getChildren()) {
-      String name = file.getName();
+    Set<String> result = mySubpackagesCache.get(namespace);
+    if (result == null) return new EmptyIterable<String>();
+    return Collections.unmodifiableSet(result);
+  }
 
-      if (file.isDirectory()) {
-        String fqName = namespace.length() > 0 ? namespace + "." + name : name;
-        subpacks.add(InternUtil.intern(fqName));
+  private synchronized void buildCacheFor(String namespace) {
+    namespace = InternUtil.intern(namespace);
+    Set<String> subpacks = null;
+    Set<String> classes = null;
+    File dir = getModelDir(namespace);
+
+    File[] files = dir.listFiles();
+    if (files != null) {
+      for (File file : files) {
+        String name = file.getName();
+        if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
+          if (classes == null) {
+            classes = new THashSet<String>(files.length);
+          }
+          String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
+          classes.add(InternUtil.intern(classname));
+        } else {
+          if (file.isDirectory()) {
+            if (subpacks == null) {
+              subpacks = new THashSet<String>();
+            }
+            String fqName = namespace.length() > 0 ? namespace + "." + name : name;
+            subpacks.add(InternUtil.intern(fqName));
+          }
+        }
       }
     }
-    return subpacks;
+
+    mySubpackagesCache.put(namespace, subpacks);
+    myAvailableClassesCache.put(namespace, classes);
   }
 
   public long getClassesTimestamp(String namespace) {
     checkValidity();
-    IFile dir = getModelDir(namespace);
+    File dir = getModelDir(namespace);
     long result = dir.lastModified();
     if (dir.exists()) {
-      for (IFile file : dir.getChildren()) {
+      for (File file : dir.listFiles()) {
         if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
           result = Math.max(result, file.lastModified());
         }
@@ -131,11 +194,10 @@ public class FileClassPathItem extends RealClassPathItem {
     visitor.visit(this);
   }
 
-  private IFile getModelDir(String namespace) {
+  private File getModelDir(String namespace) {
     checkValidity();
     if (namespace == null) namespace = "";
-    String dir = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace);
-    return FileSystem.getInstance().getFileByPath(dir);
+    return new File(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
   }
 
   public String toString() {
