@@ -168,6 +168,10 @@ public class NodeMaps {
     return myTypesToNodes.get(type);
   }
 
+  public void clearTypesToNodes() {
+    myTypesToNodes.clear();
+  }
+
   public Set<SNode> getTypeKeySet() {
     return myNodesToTypes.keySet();
   }

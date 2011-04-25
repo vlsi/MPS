@@ -362,10 +362,14 @@ public class State {
 
   public void performActionsAfterChecking() {
     checkNonConcreteWhenConcretes();
-    for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
-      map.getValue().clear();
+    if (!myTypeCheckingContext.isInTraceMode()) {
+      for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
+        map.getValue().clear();
+      }
+      myBlocks.clear();
+      myEquations.clear();
+      myNodeMaps.clearTypesToNodes();
     }
-    myBlocks.clear();
   }
 
   public SNode expand(SNode node) {
