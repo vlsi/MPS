@@ -5,7 +5,6 @@
   </models>
   <accessoryModels />
   <generators />
-  <sourcePath />
   <dependencies>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>

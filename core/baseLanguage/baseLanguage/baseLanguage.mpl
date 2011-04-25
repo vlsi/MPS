@@ -40,7 +40,6 @@
     <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
     <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
   </stubSolutions>
-  <sourcePath />
   <dependencies>
     <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>

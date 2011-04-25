@@ -5,7 +5,6 @@
   </models>
   <accessoryModels />
   <generators />
-  <sourcePath />
   <usedLanguages>
     <usedLanguage>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguage>
     <usedLanguage>3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</usedLanguage>
