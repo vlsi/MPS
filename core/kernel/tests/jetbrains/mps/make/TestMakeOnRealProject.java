@@ -129,20 +129,6 @@ public class TestMakeOnRealProject {
   }
 
   /**
-   * Checks that resources are copied.
-   */
-  @Test
-  public void testResourcesCopy() {
-    doSolutionsCompilation();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        checkResourcesCopied(myCreatedSolution);
-      }
-    });
-  }
-
-  /**
    * Test for correctly scanning for changed sources.
    */
   @Test
@@ -204,13 +190,6 @@ public class TestMakeOnRealProject {
       collectSpecificFilesFromDir(new File(path), "java", sources);
     }
     Assert.assertTrue("classes_gen should contain one class", sources.size() <= classes.size());
-  }
-
-  private void checkResourcesCopied(IModule module) {
-    IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "txt");
-
-    Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }
 
   private ArrayList<File> collectSpecificFilesFromDir(File file, final String extension) {

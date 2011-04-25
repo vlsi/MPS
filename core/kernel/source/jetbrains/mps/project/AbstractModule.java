@@ -488,7 +488,6 @@ public abstract class AbstractModule implements IModule {
 
   public List<String> getSourcePaths() {
     List<String> result = new ArrayList<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
     if (getGeneratorOutputPath() != null) {
       result.add(getGeneratorOutputPath());
     }
