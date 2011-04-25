@@ -301,55 +301,51 @@ class NonTypeSystemComponent extends CheckingComponent {
   private void applyNonTypesystemRulesToNode(SNode node) {
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     MyEventsReadListener nodesReadListener = new MyEventsReadListener();
-    if (nonTypesystemRules != null) {
-      for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
-        Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-        /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
-          System.err.println("");
-        }*/
-        MyTypesReadListener typesReadListener = new MyTypesReadListener();
-        MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
-        if (isIncrementalMode()) {
-          if (myCheckedNodes.contains(nodeAndRule)) {
-            continue;
-          }
-          nodesReadListener.clear();
-          NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-          TypeChecker.getInstance().addTypesReadListener(typesReadListener);
-          LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-          myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-        }
-        try {
-          myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
-        } finally {
-          myRuleAndNodeBeingChecked = null;
-          if (isIncrementalMode()) {
-            LanguageHierarchyCache.getInstance().removeReadAccessListener();
-            TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
-            NodeReadEventsCaster.removeNodesReadListener();
-          }
-        }
-        if (isIncrementalMode()) {
-          synchronized (ACCESS_LOCK) {
-            nodesReadListener.setAccessReport(true);
-            addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-            addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
-            nodesReadListener.setAccessReport(false);
+    if (nonTypesystemRules == null) return;
 
-            languageCachesReadListener.setAccessReport(true);
-            if (languageCachesReadListener.myIsCacheAccessed) {
-              addCacheDependentNodesNonTypesystem(node, rule.o1);
-            }
-            languageCachesReadListener.setAccessReport(false);
-
-            typesReadListener.setAccessReport(true);
-            addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
-            typesReadListener.setAccessReport(false);
-          }
-          nodesReadListener.clear();
-        }
-        myCheckedNodes.add(nodeAndRule);
+    boolean incrementalMode = isIncrementalMode();
+    for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
+      Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
+      MyTypesReadListener typesReadListener = new MyTypesReadListener();
+      MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
+      if (incrementalMode) {
+        if (myCheckedNodes.contains(nodeAndRule)) continue;
+        nodesReadListener.clear();
+        NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
+        TypeChecker.getInstance().addTypesReadListener(typesReadListener);
+        LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
+        myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
       }
+      try {
+        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
+      } finally {
+        myRuleAndNodeBeingChecked = null;
+        if (incrementalMode) {
+          LanguageHierarchyCache.getInstance().removeReadAccessListener();
+          TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
+          NodeReadEventsCaster.removeNodesReadListener();
+        }
+      }
+      if (incrementalMode) {
+        synchronized (ACCESS_LOCK) {
+          nodesReadListener.setAccessReport(true);
+          addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
+          addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+          nodesReadListener.setAccessReport(false);
+
+          languageCachesReadListener.setAccessReport(true);
+          if (languageCachesReadListener.myIsCacheAccessed) {
+            addCacheDependentNodesNonTypesystem(node, rule.o1);
+          }
+          languageCachesReadListener.setAccessReport(false);
+
+          typesReadListener.setAccessReport(true);
+          addDependentTypeTerms(node, rule.o1, new THashSet<SNode>(typesReadListener.myAccessedNodes));
+          typesReadListener.setAccessReport(false);
+        }
+        nodesReadListener.clear();
+      }
+      myCheckedNodes.add(nodeAndRule);
     }
   }
 
