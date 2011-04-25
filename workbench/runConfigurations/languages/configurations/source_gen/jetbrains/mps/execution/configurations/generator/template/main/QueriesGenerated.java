@@ -11,24 +11,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior;
 import jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.execution.configurations.behavior.IconPath_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -59,6 +56,11 @@ public class QueriesGenerated {
     return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_7966814097310699258(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String fullPath = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path");
+    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
+  }
+
   public static Object propertyMacro_GetPropertyValue_7806358006983618075(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return RunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(_context.getNode());
   }
@@ -87,6 +89,11 @@ public class QueriesGenerated {
     return RunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_4763274727405874503(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String fullPath = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path");
+    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
+  }
+
   public static Object propertyMacro_GetPropertyValue_7684700299064368377(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PersistentPropertyDeclaration_Behavior.call_getTypeEditorFqName_946964771156066917(_context.getNode());
   }
@@ -97,34 +104,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7684700299064368420(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PersistentConfiguration_Behavior.call_getGeneratedEditorName_946964771156066479(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4806795137173735579(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (SPropertyOperations.getString(_context.getNode(), "path").startsWith(Macros.MPS_HOME)) {
-      _context.showWarningMessage(_context.getNode(), "Icon path is stored relative to project home. This may not work in builds (packaged).");
-    }
-    return SPropertyOperations.getString(_context.getNode(), "path").replaceAll("\\\\", "\\\\\\\\");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4806795137173735605(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = _context.getInvocationContext().getModule();
-    return (module == null ?
-      null :
-      module.getModuleFqName()
-    );
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3931156975943075222(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // todo this is a hack to support icons in plugins 
-    return IconPath_Behavior.call_getIconResourcePath_1035654111815830578(_context.getNode(), _context.getInvocationContext().getModule());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4762811064051191935(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode root = SNodeOperations.getContainingRoot(_context.getNode());
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.execution.common.structure.IGeneratedToClass")) {
-      return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SNodeOperations.cast(root, "jetbrains.mps.execution.common.structure.IGeneratedToClass"));
-    }
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"));
   }
 
   public static Object referenceMacro_GetReferent_7024026323278238793(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -212,6 +191,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false), "ConfigurationToClass");
   }
 
+  public static boolean ifMacro_Condition_7966814097310699279(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+  }
+
   public static boolean ifMacro_Condition_7806358006983617849(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "canRun");
   }
@@ -233,31 +216,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1754312393816976127(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "iconPath", true), "path"));
+    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_1754312393816976199(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "iconPath", true), "path"));
+    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
-  public static boolean ifMacro_Condition_4806795137173735566(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path") == null;
-  }
-
-  public static boolean ifMacro_Condition_3931156975943044417(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IconPath_Behavior.call_isResoureIcon_1035654111815830674(_context.getNode(), _context.getInvocationContext().getModule()));
-  }
-
-  public static SNode sourceNodeQuery_4806795137173746010(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "iconPath", true);
+  public static boolean ifMacro_Condition_4763274727405874524(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static SNode sourceNodeQuery_4371737370140155848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "debugger", true);
-  }
-
-  public static SNode sourceNodeQuery_1754312393816949351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "iconPath", true);
   }
 
   public static SNode sourceNodeQuery_4762811064051426913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
