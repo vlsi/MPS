@@ -186,6 +186,12 @@ class TypeSystemComponent extends CheckingComponent {
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
+
+    if (myCurrentCheckedNode==null){
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
     addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
