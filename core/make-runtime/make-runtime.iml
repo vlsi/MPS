@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS-platform" scope="RUNTIME" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
