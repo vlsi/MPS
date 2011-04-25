@@ -41,7 +41,6 @@
     <orderEntry type="library" exported="" name="Commons-collections" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
     <orderEntry type="library" exported="" name="PicoContainer" level="project" />
-    <orderEntry type="library" exported="" name="Trove4j" level="project" />
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
