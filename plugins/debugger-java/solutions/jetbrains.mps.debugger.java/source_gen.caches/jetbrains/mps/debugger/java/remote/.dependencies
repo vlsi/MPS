@@ -118,7 +118,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="java.util.ArrayList" />
