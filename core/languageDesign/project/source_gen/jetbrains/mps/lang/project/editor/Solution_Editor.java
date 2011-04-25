@@ -103,10 +103,6 @@ public class Solution_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_w5u0zd_a14d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w5u0zd_b14d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_w5u0zd_c14d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_w5u0zd_d14d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_w5u0zd_e14d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_w5u0zd_f14d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_w5u0zd_g14d0(editorContext, node));
     return editorCell;
   }
 
@@ -430,7 +426,7 @@ public class Solution_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_w5u0zd_a14d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source paths");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "libraries");
     editorCell.setCellId("Constant_w5u0zd_a14d0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -440,37 +436,6 @@ public class Solution_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_w5u0zd_b14d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_w5u0zd_b14d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_w5u0zd_d14d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_w5u0zd_d14d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_w5u0zd_e14d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "libraries");
-    editorCell.setCellId("Constant_w5u0zd_e14d0");
-    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_w5u0zd_f14d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_w5u0zd_f14d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -573,21 +538,7 @@ public class Solution_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_w5u0zd_c14d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Solution_Editor.sourcePathsListHandler_w5u0zd_c14d0(node, "sourcePaths", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_sourcePaths");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_w5u0zd_g14d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Solution_Editor.stubModelsListHandler_w5u0zd_g14d0(node, "stubModels", editorContext);
+    AbstractCellListHandler handler = new Solution_Editor.stubModelsListHandler_w5u0zd_c14d0(node, "stubModels", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_stubModels");
     {
@@ -933,44 +884,8 @@ public class Solution_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class sourcePathsListHandler_w5u0zd_c14d0 extends RefNodeListHandler {
-    public sourcePathsListHandler_w5u0zd_c14d0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        if (elementNode != null) {
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
-    }
-  }
-
-  private static class stubModelsListHandler_w5u0zd_g14d0 extends RefNodeListHandler {
-    public stubModelsListHandler_w5u0zd_g14d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class stubModelsListHandler_w5u0zd_c14d0 extends RefNodeListHandler {
+    public stubModelsListHandler_w5u0zd_c14d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

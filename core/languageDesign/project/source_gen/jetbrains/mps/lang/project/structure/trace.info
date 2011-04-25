@@ -22,6 +22,6 @@
   <unitInfo fileName="Generator.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Generator" />
   <unitInfo fileName="DevKit.java" startLine="12" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.project.structure.DevKit" />
   <unitInfo fileName="Language.java" startLine="12" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Language" />
-  <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
+  <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
 </debugInfo>
 

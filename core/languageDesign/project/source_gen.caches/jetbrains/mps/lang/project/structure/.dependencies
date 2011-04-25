@@ -136,7 +136,6 @@
   <dependency className="jetbrains.mps.lang.project.structure.Module" file="Module.java">
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ModuleDependency" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.project.structure.SourcePath" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ModelReference" />

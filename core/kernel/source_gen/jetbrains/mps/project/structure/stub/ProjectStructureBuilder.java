@@ -180,12 +180,6 @@ public abstract class ProjectStructureBuilder {
     return result;
   }
 
-  private SNode convertSourcePath(String s) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.SourcePath", null);
-    SPropertyOperations.set(result, "value", s);
-    return result;
-  }
-
   private SNode convert(Dependency source) {
     SNode dep = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleDependency", null);
     SPropertyOperations.set(dep, "reexport", "" + source.isReexport());
