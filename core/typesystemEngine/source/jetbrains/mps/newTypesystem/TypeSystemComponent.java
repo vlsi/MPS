@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -343,10 +344,11 @@ class TypeSystemComponent extends CheckingComponent {
 
   //"type affected" means that *type* of this node depends on this set
   // used to decide whether call "type will be recalculated" if node from set invalidated
-  private void addDependentNodesTypeSystem(SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
+  private void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
     Map<SNode, Set<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
+
       Set<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
         dependentNodes = new THashSet<SNode>(1);
