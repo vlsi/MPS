@@ -29,7 +29,6 @@ import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import sun.util.LocaleServiceProviderPool.LocalizedObjectGetter;
 
 import java.util.*;
 
@@ -187,7 +186,7 @@ class TypeSystemComponent extends CheckingComponent {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
 
-    if (myCurrentCheckedNode==null){
+    if (node == null) {
       //LOG.error("Typesystem dependency not tracked. ");
       return;
     }
@@ -199,7 +198,7 @@ class TypeSystemComponent extends CheckingComponent {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
 
-    if (myCurrentCheckedNode==null){
+    if (myCurrentCheckedNode == null) {
       //LOG.error("Typesystem dependency not tracked. ");
       return;
     }
