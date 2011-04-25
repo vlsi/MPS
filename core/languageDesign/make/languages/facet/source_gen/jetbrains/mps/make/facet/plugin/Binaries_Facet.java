@@ -26,10 +26,12 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.plugins.MacrosUtil;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.smodel.ModelAccess;
@@ -96,7 +98,11 @@ public class Binaries_Facet implements IFacet {
                       final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                       final FilesDelta fd = new FilesDelta(outputDir);
                       ListSequence.fromList(deltaList).addElement(fd);
-                      return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).<Tuples._2<IFile, IFile>>select(new ISelector<SNode, Tuples._2<IFile, IFile>>() {
+                      return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).where(new IWhereFilter<SNode>() {
+                        public boolean accept(SNode it) {
+                          return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
+                        }
+                      }).<Tuples._2<IFile, IFile>>select(new ISelector<SNode, Tuples._2<IFile, IFile>>() {
                         public Tuples._2<IFile, IFile> select(SNode bin) {
                           IFile fromFile = FileSystem.getInstance().getFileByPath(MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName()));
                           IFile toFile = outputDir.getDescendant(fromFile.getName());
