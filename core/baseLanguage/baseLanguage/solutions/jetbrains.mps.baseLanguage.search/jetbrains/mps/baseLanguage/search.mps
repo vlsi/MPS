@@ -97,9 +97,6 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4579166930940566542">
       <property name="name" nameId="tpck.1169194664001" value="ParameterScope" />
     </node>
-    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8670825014178690001">
-      <property name="name" nameId="tpck.1169194664001" value="ClassifierPrivateMembersScope" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8442551749397137296">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageUtil" />
     </node>
@@ -16403,70 +16400,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="8670825014178690001">
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8670825014178732529">
-      <property name="name" nameId="tpck.1169194664001" value="isVisible" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8670825014178732534" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="8670825014178732533" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8670825014178732532">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8670825014178732535">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.NotExpression" typeId="tpee.1081516740877" id="8670825014178732541">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="8670825014178732537">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8670825014178636693" resolveInfo="isVisible" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8670825014178732540">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8670825014178732538" resolveInfo="member" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8670825014178732538">
-        <property name="name" nameId="tpck.1169194664001" value="member" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8670825014178732539">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
-        </node>
-      </node>
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8670825014178690002" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8670825014178690003">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8670825014178690004" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8670825014178690005" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8670825014178690006">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="8670825014178730863">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3573019447813594739" resolveInfo="ClassifierVisibleMembersScope" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8670825014178730864">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8670825014178730854" resolveInfo="classifierType" />
-          </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8670825014178730866">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8670825014178730857" resolveInfo="contextNode" />
-          </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8670825014178730868">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8670825014178730860" resolveInfo="constraint" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8670825014178730854">
-        <property name="name" nameId="tpck.1169194664001" value="classifierType" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8670825014178730855">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
-        </node>
-        <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8670825014178730856">
-          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="r27b.~Nullable" resolveInfo="Nullable" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8670825014178730857">
-        <property name="name" nameId="tpck.1169194664001" value="contextNode" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8670825014178730859" />
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8670825014178730860">
-        <property name="name" nameId="tpck.1169194664001" value="constraint" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8670825014178730862" />
-      </node>
-    </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8670825014178730845">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3161373106581143187" resolveInfo="ClassifierVisibleMembersScope" />
     </node>
   </root>
   <root id="8442551749397137296">

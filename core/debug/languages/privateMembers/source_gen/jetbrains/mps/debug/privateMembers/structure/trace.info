@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PrivateMembers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateMembers_Language" />
-  <unitInfo fileName="PrivateInstanceMethodCallOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation" />
   <unitInfo fileName="PrivateFieldReferenceOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation" />
+  <unitInfo fileName="PrivateInstanceMethodCallOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation" />
 </debugInfo>
 

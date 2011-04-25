@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.search.ClassifierPrivateMembersScope;
+import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -36,10 +36,15 @@ public class PrivateInstanceMethodCallOperation_instanceMethodDeclaration_Refere
     }
     SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    return new ClassifierPrivateMembersScope(classifierType, ((_context.getReferenceNode() == null) ?
+    return new ClassifierVisibleMembersScope(classifierType, ((_context.getReferenceNode() == null) ?
       _context.getEnclosingNode() :
       _context.getReferenceNode()
-    ), IClassifiersSearchScope.INSTANCE_METHOD);
+    ), IClassifiersSearchScope.INSTANCE_METHOD) {
+      @Override
+      protected boolean isVisible(SNode member) {
+        return !(super.isVisible(member));
+      }
+    };
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

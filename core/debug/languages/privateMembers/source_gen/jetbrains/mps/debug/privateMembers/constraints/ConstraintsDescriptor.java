@@ -14,6 +14,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PrivateStaticFieldReference_staticFieldDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PrivateStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

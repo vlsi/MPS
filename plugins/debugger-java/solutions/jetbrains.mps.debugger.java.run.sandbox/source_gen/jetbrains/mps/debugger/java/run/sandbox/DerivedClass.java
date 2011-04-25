@@ -15,7 +15,7 @@ public class DerivedClass extends BaseClass {
     return 0;
   }
 
-  public Object getObject() {
+  private Object getObject() {
     return null;
   }
 

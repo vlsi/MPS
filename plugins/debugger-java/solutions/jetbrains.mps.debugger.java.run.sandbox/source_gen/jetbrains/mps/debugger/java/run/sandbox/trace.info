@@ -108,7 +108,7 @@
     <nodeInfo nodeId="7474628078187305917" fileName="DerivedClass.java" startLine="6" startPosition="45" endLine="7" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myStaticField" />
     <nodeInfo nodeId="7474628078187305911" fileName="DerivedClass.java" startLine="8" startPosition="0" endLine="9" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNonStaticField" />
     <nodeInfo nodeId="5661655420496807172" fileName="DerivedClass.java" startLine="14" startPosition="31" endLine="15" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9020439274434630734" fileName="DerivedClass.java" startLine="18" startPosition="29" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9020439274434630734" fileName="DerivedClass.java" startLine="18" startPosition="30" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8841338956805577115" fileName="DerivedClass.java" startLine="22" startPosition="42" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8841338956805577121" fileName="DerivedClass.java" startLine="23" startPosition="51" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5661655420496807181" fileName="DerivedClass.java" startLine="27" startPosition="31" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -119,7 +119,7 @@
     <nodeInfo nodeId="4060685206781456033" fileName="DerivedClass.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="4060685206781456022" fileName="DerivedClass.java" startLine="11" startPosition="25" endLine="11" endPosition="25" />
     <scopeInfo nodeId="5661655420496807170" fileName="DerivedClass.java" startLine="14" startPosition="31" endLine="15" endPosition="13" />
-    <scopeInfo nodeId="9020439274434605521" fileName="DerivedClass.java" startLine="18" startPosition="29" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="9020439274434605521" fileName="DerivedClass.java" startLine="18" startPosition="30" endLine="19" endPosition="16" />
     <scopeInfo nodeId="5661655420496807179" fileName="DerivedClass.java" startLine="27" startPosition="31" endLine="28" endPosition="13" />
     <scopeInfo nodeId="4060685206781456019" fileName="DerivedClass.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <scopeInfo nodeId="4060685206781456036" fileName="DerivedClass.java" startLine="22" startPosition="42" endLine="24" endPosition="48">

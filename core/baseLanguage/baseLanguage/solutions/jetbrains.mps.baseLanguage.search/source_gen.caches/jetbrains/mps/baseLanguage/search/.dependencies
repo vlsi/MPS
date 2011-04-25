@@ -22,58 +22,58 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.BaseLanguageUtil" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.BaseLanguageUtil" file="BaseLanguageUtil.java">
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" file="ClassifierAndSuperClassifiersCache.java">
-    <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
+    <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.generator.JavaModelUtil_new" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.GenericTypesUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
-    <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.GenericTypesUtil" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
     <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
   </dependency>
@@ -98,20 +98,15 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.search.ClassifierPrivateMembersScope" file="ClassifierPrivateMembersScope.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" file="ClassifierVisibleMembersScope.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="java.util.List" />
@@ -119,7 +114,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" file="ClassifierVisibleStaticMembersScope.java">
@@ -135,27 +130,27 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifiersCache" file="ClassifiersCache.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.GenericTypesUtil" file="GenericTypesUtil.java">
@@ -197,12 +192,12 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
@@ -252,7 +247,7 @@
   <dependency className="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" file="ReachableClassifiersScope.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.lang.String" />
@@ -262,7 +257,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
@@ -286,9 +281,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.VisibilityUtil" file="VisibilityUtil.java">
@@ -313,7 +308,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -324,14 +320,13 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierReferenceInfoResolver" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
   </dependency>
@@ -354,11 +349,11 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
   </dependency>
