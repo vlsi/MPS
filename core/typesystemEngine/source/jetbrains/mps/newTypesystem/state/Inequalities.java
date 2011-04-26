@@ -54,7 +54,7 @@ public class Inequalities {  //
   public void printAll() {
     System.out.println("Relations");
     for (Block node: getRelationsToSolve()) {
-      System.out.println(node.getPresentation());
+      System.out.println(node.getExpandedPresentation(myState));
     }
   }
 
@@ -67,26 +67,11 @@ public class Inequalities {  //
      /*
     System.out.println("cycle");
     for (SNode node: unsorted) {
-      System.out.println(node);
+      System.out.println(myState.expand(node));
     }
     printAll();
        */
     return unsorted.iterator().next();
-  }
-
-  private List<SNode> sort(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
-    int size = unsorted.size();
-    List<SNode> result = new LinkedList<SNode>();
-    while (result.size() < size) {
-      SNode current = getNodeWithNoInput(inputsToOutputs, unsorted);
-      result.add(current);
-      unsorted.remove(current);
-      if (unsorted.isEmpty()) {
-        return result;
-      }
-      inputsToOutputs.clearFirst(current);
-    }
-    return result;
   }
 
   public List<RelationBlock> getRelationsToSolve() {
@@ -130,7 +115,7 @@ public class Inequalities {  //
       if (inequality.isCheckOnly()) {
         continue;
       }
-      for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
+      for (Pair<SNode, SNode> pair: inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
         if (input != null) {
@@ -144,7 +129,7 @@ public class Inequalities {  //
             addVariablesLink(input, output);
             myNodesToBlocks.addLink(input, inequality);
             if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables = TypesUtil.getVariables(input);
+              List<SNode> inputVariables= TypesUtil.getVariables(input);
               List<SNode> outputVariables = TypesUtil.getVariables(output);
               myNodes.addAll(inputVariables);
               myNodes.addAll(outputVariables);

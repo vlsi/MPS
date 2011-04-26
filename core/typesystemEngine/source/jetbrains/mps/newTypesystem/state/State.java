@@ -118,11 +118,13 @@ public class State {
   @StateMethod
   public void removeBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
-    if (myInequalities.isSolvingInProcess() && !myBlocks.contains(dataFlowBlock)) {
-      return;
-    }
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
-      assert !map.containsSecond(dataFlowBlock) || myInequalities.isSolvingInProcess();
+      if (myInequalities.isSolvingInProcess()) {
+        //we can remove blocks with vars while solving inequalities
+        map.clearSecond(dataFlowBlock);
+      } else {
+        assert !map.containsSecond(dataFlowBlock);
+      }
     }
     boolean removed = myBlocks.remove(dataFlowBlock);
     assert removed;
@@ -334,6 +336,19 @@ public class State {
     myOperationStack.push(myOperation);
   }
 
+
+  public void clearStateObjects() {
+    if (!myTypeCheckingContext.isInTraceMode()&& false) {
+      for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
+        map.getValue().clear();
+      }
+      myBlocks.clear();
+      myEquations.clear();
+      myNodeMaps.clearTypesToNodes();
+    }
+    clearOperations();
+  }
+
   public void solveInequalities() {
     if (!myInequalities.getRelationsToSolve().isEmpty()) {
       executeOperation(new SolveInequalitiesOperation(new Runnable() {
@@ -362,14 +377,6 @@ public class State {
 
   public void performActionsAfterChecking() {
     checkNonConcreteWhenConcretes();
-    if (!myTypeCheckingContext.isInTraceMode()) {
-      for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
-        map.getValue().clear();
-      }
-      myBlocks.clear();
-      myEquations.clear();
-      myNodeMaps.clearTypesToNodes();
-    }
   }
 
   public SNode expand(SNode node) {
