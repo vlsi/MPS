@@ -27,6 +27,7 @@ public class CopyNode_Action extends GeneratedAction {
     super("Copy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
+    this.addPlace(null);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

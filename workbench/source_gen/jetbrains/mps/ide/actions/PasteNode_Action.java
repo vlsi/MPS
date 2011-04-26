@@ -39,6 +39,7 @@ public class PasteNode_Action extends GeneratedAction {
     super("Paste", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
+    this.addPlace(null);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
