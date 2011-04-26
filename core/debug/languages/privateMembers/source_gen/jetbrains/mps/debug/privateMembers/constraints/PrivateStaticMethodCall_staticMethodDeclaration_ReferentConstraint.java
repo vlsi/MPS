@@ -32,7 +32,7 @@ public class PrivateStaticMethodCall_staticMethodDeclaration_ReferentConstraint 
     ), IClassifiersSearchScope.STATIC_METHOD) {
       @Override
       protected boolean isVisible(SNode node) {
-        return !(super.isVisible(node));
+        return true;
       }
     };
   }

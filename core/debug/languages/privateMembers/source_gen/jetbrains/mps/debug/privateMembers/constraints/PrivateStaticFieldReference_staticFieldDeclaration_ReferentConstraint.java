@@ -32,7 +32,7 @@ public class PrivateStaticFieldReference_staticFieldDeclaration_ReferentConstrai
     ), IClassifiersSearchScope.STATIC_FIELD) {
       @Override
       protected boolean isVisible(SNode member) {
-        return !(super.isVisible(member));
+        return true;
       }
     };
   }

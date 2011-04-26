@@ -19,6 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(classifier, contextNode, IClassifiersSearchScope.STATIC_MEMBER);
+    return QueriesUtil.replaceNodeMenu_parameterObjects(searchScope, classifier);
+  }
+
+  public static List<SNode> replaceNodeMenu_parameterObjects(ISearchScope searchScope, SNode classifier) {
     List<SNode> members = (List<SNode>) searchScope.getNodes();
     List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -36,19 +40,7 @@ public class QueriesUtil {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(newNode, "baseMethodDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
-      SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
-      if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-        SNode call = SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
-        for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
-          ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-        }
-      }
-      for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(oldNode, new IAttributeDescriptor.AllAttributes()))) {
-        String role = oldNode.getRoleOf(attribute);
-        newNode.addChild(role, SNodeOperations.copyNode(attribute));
-      }
-      return newNode;
+      return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, classifier, oldNode);
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
@@ -73,5 +65,21 @@ public class QueriesUtil {
       return newNode;
     }
     throw new RuntimeException("Bad parameter object " + parameterObject);
+  }
+
+  public static SNode fillStaticMethodCall(SNode newNode, SNode parameterObject, SNode classifier, SNode oldNode) {
+    SLinkOperations.setTarget(newNode, "baseMethodDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+    SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+    if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
+      SNode call = SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
+        ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
+      }
+    }
+    for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(oldNode, new IAttributeDescriptor.AllAttributes()))) {
+      String role = oldNode.getRoleOf(attribute);
+      newNode.addChild(role, SNodeOperations.copyNode(attribute));
+    }
+    return newNode;
   }
 }
