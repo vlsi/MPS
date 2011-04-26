@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -17,6 +16,9 @@ import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.PathMacros;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.io.InputStream;
+import java.util.Scanner;
+import jetbrains.mps.logging.Logger;
 
 public class BuildScriptRunner extends BaseRunner {
   private BuildScriptRunnerComponent myComponent;
@@ -50,7 +52,7 @@ public class BuildScriptRunner extends BaseRunner {
         public void play() {
         }
       });
-      BaseOutputReader input = new BaseOutputReader(process.getInputStream()) {
+      BuildScriptRunner.BaseOutputReader input = new BuildScriptRunner.BaseOutputReader(process.getInputStream()) {
         protected void addMessage(final String message) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
@@ -60,7 +62,7 @@ public class BuildScriptRunner extends BaseRunner {
         }
       };
       input.start();
-      BaseOutputReader error = new BaseOutputReader(process.getErrorStream()) {
+      BuildScriptRunner.BaseOutputReader error = new BuildScriptRunner.BaseOutputReader(process.getErrorStream()) {
         protected void addMessage(final String message) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
@@ -146,5 +148,26 @@ public class BuildScriptRunner extends BaseRunner {
     for (String macro : SetSequence.fromSet(macroNames)) {
       ListSequence.fromList(parameters).addElement("-D" + macro + "=" + pathMacros.getValue(macro));
     }
+  }
+
+  private static abstract class BaseOutputReader extends Thread {
+    private InputStream myIs;
+
+    public BaseOutputReader(InputStream is) {
+      this.myIs = is;
+    }
+
+    public void run() {
+      Scanner s = new Scanner(this.myIs);
+      try {
+        while (!(this.isInterrupted()) && s.hasNextLine()) {
+          this.addMessage(s.nextLine());
+        }
+      } catch (Exception e) {
+        Logger.getLogger(BuildScriptRunner.class).error(e);
+      }
+    }
+
+    protected abstract void addMessage(String message);
   }
 }

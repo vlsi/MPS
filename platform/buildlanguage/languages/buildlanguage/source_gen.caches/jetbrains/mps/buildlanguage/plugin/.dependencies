@@ -113,21 +113,25 @@
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="java.lang.Thread" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" />
   </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" file="BuildScriptRunnerComponent.java">

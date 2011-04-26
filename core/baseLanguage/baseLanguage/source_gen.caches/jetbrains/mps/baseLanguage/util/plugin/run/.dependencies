@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader" file="BaseOutputReader.java">
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Scanner" />
-    <classNode extendsClassName="java.lang.Thread" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" file="BaseRunner.java">
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

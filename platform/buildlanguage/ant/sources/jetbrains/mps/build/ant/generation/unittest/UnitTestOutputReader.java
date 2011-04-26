@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.build.ant.generation.unittest;
 
-import jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader;
+import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.InputStream;
+import java.util.Scanner;
 
 public class UnitTestOutputReader {
   private final Process myUnitTestProcess;
@@ -92,5 +95,27 @@ public class UnitTestOutputReader {
       //
     }
     return -1;
+  }
+
+
+  private static abstract class BaseOutputReader extends Thread {
+    private InputStream myIs;
+
+    public BaseOutputReader(InputStream is) {
+      this.myIs = is;
+    }
+
+    public void run() {
+      Scanner s = new Scanner(this.myIs);
+      try {
+        while (!(this.isInterrupted()) && s.hasNextLine()) {
+          this.addMessage(s.nextLine());
+        }
+      } catch (Exception e) {
+        Logger.getLogger(UnitTestOutputReader.class).error(e);
+      }
+    }
+
+    protected abstract void addMessage(String message);
   }
 }

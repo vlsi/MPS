@@ -3,36 +3,6 @@
   <root nodeId="8492459591399146889">
     <unitInfo nodeId="8492459591399146889" fileName="MPSLaunch.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
   </root>
-  <root nodeId="8492459591399146899">
-    <nodeInfo nodeId="8492459591399146900" fileName="BaseOutputReader.java" startLine="9" startPosition="55" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIs" />
-    <nodeInfo nodeId="8492459591399146907" fileName="BaseOutputReader.java" startLine="12" startPosition="43" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399146917" fileName="BaseOutputReader.java" startLine="16" startPosition="21" endLine="17" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399146939" fileName="BaseOutputReader.java" startLine="19" startPosition="58" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399146928" fileName="BaseOutputReader.java" startLine="22" startPosition="27" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399146956" fileName="BaseOutputReader.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMessage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8492459591399146903" fileName="BaseOutputReader.java" startLine="11" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseOutputReader#(Ljava/io/InputStream;)V" />
-    <nodeInfo nodeId="8492459591399146937" fileName="BaseOutputReader.java" startLine="18" startPosition="9" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8492459591399146925" fileName="BaseOutputReader.java" startLine="17" startPosition="39" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8492459591399146915" fileName="BaseOutputReader.java" startLine="15" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <scopeInfo nodeId="8492459591399146906" fileName="BaseOutputReader.java" startLine="12" startPosition="43" endLine="13" endPosition="19" />
-    <scopeInfo nodeId="8492459591399146938" fileName="BaseOutputReader.java" startLine="19" startPosition="58" endLine="20" endPosition="38" />
-    <scopeInfo nodeId="8492459591399146926" fileName="BaseOutputReader.java" startLine="22" startPosition="0" endLine="23" endPosition="56">
-      <varInfo nodeId="8492459591399146934" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399146927" fileName="BaseOutputReader.java" startLine="22" startPosition="27" endLine="23" endPosition="56" />
-    <scopeInfo nodeId="8492459591399146956" fileName="BaseOutputReader.java" startLine="26" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="8492459591399146957" varName="message" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399146903" fileName="BaseOutputReader.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
-      <varInfo nodeId="8492459591399146904" varName="is" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399146936" fileName="BaseOutputReader.java" startLine="18" startPosition="9" endLine="21" endPosition="7" />
-    <scopeInfo nodeId="8492459591399146916" fileName="BaseOutputReader.java" startLine="16" startPosition="21" endLine="24" endPosition="5">
-      <varInfo nodeId="8492459591399146918" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399146915" fileName="BaseOutputReader.java" startLine="15" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="8492459591399146899" fileName="BaseOutputReader.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.BaseOutputReader" />
-  </root>
   <root nodeId="8492459591399147272">
     <nodeInfo nodeId="8492459591399147273" fileName="BaseRunner.java" startLine="32" startPosition="34" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaHome" />
     <nodeInfo nodeId="3038691514508931175" fileName="BaseRunner.java" startLine="33" startPosition="62" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
