@@ -4,16 +4,22 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
+import java.util.List;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -21,6 +27,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 public abstract class DiffModelTree extends MPSTree {
   private IOperationContext myOperationContext;
   private boolean myMultipleRootNames = false;
+  private List<DiffModelTree.RootTreeNode> myRootNodes;
 
   public DiffModelTree(IOperationContext operationContext) {
     rebuildNow();
@@ -30,15 +37,16 @@ public abstract class DiffModelTree extends MPSTree {
 
   protected MPSTreeNode rebuild() {
     final DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
-    Sequence.fromIterable(getAffectedRoots()).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
+    myRootNodes = Sequence.fromIterable(getAffectedRoots()).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
       public DiffModelTree.RootTreeNode select(SNodeId r) {
         return new DiffModelTree.RootTreeNode(r);
       }
     }).sort(new ISelector<DiffModelTree.RootTreeNode, Comparable<?>>() {
       public Comparable<?> select(DiffModelTree.RootTreeNode rtn) {
-        return rtn.myPresentation;
+        return rtn.myVirtualPackage + "|" + rtn.myPresentation;
       }
-    }, true).visitAll(new IVisitor<DiffModelTree.RootTreeNode>() {
+    }, true).toListSequence();
+    ListSequence.fromList(myRootNodes).visitAll(new IVisitor<DiffModelTree.RootTreeNode>() {
       public void visit(DiffModelTree.RootTreeNode rtn) {
         modelNode.add(rtn);
       }
@@ -64,14 +72,30 @@ public abstract class DiffModelTree extends MPSTree {
     myMultipleRootNames = multipleRootNames;
   }
 
-  public SNodeId getNeighbourRoot(SNodeId nodeId, boolean next) {
-    // TODO find tree node, find next/previous, return id 
-    return null;
+  private DiffModelTree.RootTreeNode findRootNode(@NotNull final SNodeId nodeId) {
+    return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
+      public boolean accept(DiffModelTree.RootTreeNode r) {
+        return nodeId.equals(r.myRootId);
+      }
+    });
   }
 
-  public String getNameForRoot(SNodeId nodeId) {
-    // TODO find tree node, return name 
-    return null;
+  @Nullable
+  public SNodeId getNeighbourRoot(@NotNull SNodeId nodeId, boolean next) {
+    int index = ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId));
+    index = (next ?
+      index + 1 :
+      index - 1
+    );
+    if (index == -1 || index == ListSequence.fromList(myRootNodes).count()) {
+      return null;
+    } else {
+      return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
+    }
+  }
+
+  public String getNameForRoot(@NotNull SNodeId nodeId) {
+    return findRootNode(nodeId).myPresentation;
   }
 
   private class ModelTreeNode extends MPSTreeNode {
@@ -89,7 +113,8 @@ public abstract class DiffModelTree extends MPSTree {
 
   public class RootTreeNode extends MPSTreeNode {
     private SNodeId myRootId;
-    private String myPresentation;
+    private String myPresentation = null;
+    private String myVirtualPackage = null;
 
     public RootTreeNode(SNodeId rootId) {
       super(myOperationContext);
@@ -112,6 +137,12 @@ public abstract class DiffModelTree extends MPSTree {
             myPresentation += " / " + presentation;
           }
 
+          if (myVirtualPackage == null) {
+            myVirtualPackage = (SPropertyOperations.getString(root, "virtualPackage") == null ?
+              "" :
+              SPropertyOperations.getString(root, "virtualPackage")
+            );
+          }
           if (icon == null) {
             icon = IconManager.getIconFor(root);
           }
