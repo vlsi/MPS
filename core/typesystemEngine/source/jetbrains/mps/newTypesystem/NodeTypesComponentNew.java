@@ -178,7 +178,11 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   public void addDependencyForCurrent(SNode node) {
-    myTypeSystemComponent.addDependencyForCurrent(node);
+    SNode current = null;
+    if (myIsNonTypeSystemCheckingInProgress) {
+      current = myNonTypeSystemComponent.getCurrentCheckedNode();
+    }
+    myTypeSystemComponent.addDependencyForCurrent(node, current);
   }
 
   @Override

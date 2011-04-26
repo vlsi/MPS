@@ -66,6 +66,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
+  private SNode myCurrentCheckedNode;
 
   public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponentNew nodeTypesComponent) {
     myTypeChecker = typeChecker;
@@ -165,6 +166,10 @@ class NonTypeSystemComponent extends CheckingComponent {
     myInvalidationWasPerformed = true;
     myInvalidationResultNT = result;
     return result;
+  }
+
+  public SNode getCurrentCheckedNode() {
+    return myCurrentCheckedNode;
   }
 
   public void addPropertyToInvalidate(SNode eventNode, String propertyName) {
@@ -299,6 +304,8 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   private void applyNonTypesystemRulesToNode(SNode node) {
+    SNode oldCheckedNode = myCurrentCheckedNode;
+    myCurrentCheckedNode = node;
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     MyEventsReadListener nodesReadListener = new MyEventsReadListener();
     if (nonTypesystemRules == null) return;
@@ -347,6 +354,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       }
       myCheckedNodes.add(nodeAndRule);
     }
+    myCurrentCheckedNode = oldCheckedNode;
   }
 
   private class MyTypesReadListener implements TypesReadListener {

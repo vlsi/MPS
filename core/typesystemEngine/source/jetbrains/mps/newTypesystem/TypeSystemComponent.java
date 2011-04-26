@@ -187,22 +187,23 @@ class TypeSystemComponent extends CheckingComponent {
     hashSet.add(myCurrentCheckedNode);
 
     if (node == null) {
-      //LOG.error("Typesystem dependency not tracked. ");
+      LOG.error("Typesystem dependency not tracked. ");
       return;
     }
 
     addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
-  public void addDependencyForCurrent(SNode node) {
+  public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
-
     if (myCurrentCheckedNode == null) {
-      //LOG.error("Typesystem dependency not tracked. ");
+      myCurrentCheckedNode = nonTSCurrent;
+    }
+    if (myCurrentCheckedNode == null) {
+      LOG.error("Typesystem dependency not tracked. ");
       return;
     }
-
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
