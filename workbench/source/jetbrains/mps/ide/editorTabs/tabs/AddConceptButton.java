@@ -39,11 +39,8 @@ abstract class AddConceptTab {
     this.myPossibleTabs = possibleTabs;
   }
 
-  public AnAction getAction(JComponent shortcutComponent) {
-    AnAction action = new MyAddAction();
-    KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("INSERT"), null);
-    action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), SwingUtilities.getRootPane(shortcutComponent));
-    return action;
+  public AnAction getAction() {
+    return new MyAddAction();
   }
 
   protected abstract SNode getCurrentAspect();

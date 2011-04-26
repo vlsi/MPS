@@ -81,24 +81,44 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     IScope scope = event.getData(MPSDataKeys.SCOPE);
     IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    Integer selectedItemsCount = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
-    TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
 
     boolean isStubModel = SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-    boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
-    if (scope == null || context == null || isStubModel || !singleItemSelected) {
+    if (scope == null || context == null || isStubModel) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
 
-    setEnabledState(event.getPresentation(), true);
+    boolean inEditor = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE) == null;
 
-    if (!(treeNode instanceof PackageNode)) {
+    if (!inEditor) {
+      Integer selectedItemsCount = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
+      boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
+
+      if (!singleItemSelected) {
+        setEnabledState(event.getPresentation(), false);
+        return;
+      }
+
+      TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
+
+      if (!(treeNode instanceof PackageNode)) {
+        myPackage = null;
+      } else {
+        final PackageNode node = (PackageNode) treeNode;
+        myPackage = node.getPackage();
+      }
+    } else{
+      SNode node = event.getData(MPSDataKeys.NODE);
       myPackage = null;
-    } else {
-      final PackageNode node = (PackageNode) treeNode;
-      myPackage = node.getPackage();
+      if (node!=null){
+        SNode root = node.getContainingRoot();
+        if (root!=null){
+          myPackage = root.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+        }
+      }
     }
+
+    setEnabledState(event.getPresentation(), true);
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
@@ -119,7 +139,6 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       addSeparator();
     }
-
 
     Collections.sort(modelLanguages, new ToStringComparator());
 

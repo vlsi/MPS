@@ -130,7 +130,7 @@ public abstract class TabsComponent extends JPanel {
     }
 
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(myAddButton.getAction(this));
+    group.add(myAddButton.getAction());
     for (EditorTab tab : myRealTabs) {
       group.add(tab.getAction(myShortcutComponent));
     }
