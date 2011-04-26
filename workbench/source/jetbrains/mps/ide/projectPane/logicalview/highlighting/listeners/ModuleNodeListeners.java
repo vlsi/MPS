@@ -25,6 +25,7 @@ public class ModuleNodeListeners implements NodeListeners {
   private ProjectModuleTreeNode myNode;
 
   private ProjectPaneTreeErrorChecker myChecker = new ProjectPaneTreeErrorChecker();
+  private MyReloadAdapter myHandler = new MyReloadAdapter();
 
   public ModuleNodeListeners(ProjectModuleTreeNode node) {
     myNode = node;
@@ -32,11 +33,11 @@ public class ModuleNodeListeners implements NodeListeners {
 
   public void startListening() {
     myChecker.visitNode(myNode);
-    ClassLoaderManager.getInstance().addReloadHandler(new MyReloadAdapter());
+    ClassLoaderManager.getInstance().addReloadHandler(myHandler);
   }
 
   public void stopListening() {
-    ClassLoaderManager.getInstance().removeReloadHandler(new MyReloadAdapter());
+    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
