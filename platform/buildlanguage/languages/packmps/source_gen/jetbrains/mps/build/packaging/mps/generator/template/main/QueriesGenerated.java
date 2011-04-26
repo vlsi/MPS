@@ -10,8 +10,6 @@ import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
-import java.io.File;
-import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SModel;
@@ -39,7 +37,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8037435193861318577(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1479728067424414700(final IOperationContext operationContext, final IfMacroContext _context) {
