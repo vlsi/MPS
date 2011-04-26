@@ -15,9 +15,15 @@ import java.util.HashMap;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.SModel;
+import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -41,16 +47,20 @@ public class ModelDifferenceDialog extends BaseDialog {
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
 
-  public ModelDifferenceDialog(Project project, IOperationContext operationContext, SModel oldModel, SModel newModel, String[] contentTitles) {
+  public ModelDifferenceDialog(Project project, IOperationContext operationContext, SModel oldModel, SModel newModel, DiffRequest diffRequest) {
     super(WindowManager.getInstance().getFrame(project), "Difference for model: " + SModelOperations.getModelName(newModel));
-    assert contentTitles.length == 2;
-    myContentTitles = contentTitles;
+    myContentTitles = diffRequest.getContentTitles();
+    assert myContentTitles.length == 2;
     myProject = project;
     myOperationContext = operationContext;
     myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
     fillRootToChange();
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
 
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest));
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    toolbar.updateActionsImmediately();
+    myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
   }
 

@@ -12,10 +12,12 @@ import jetbrains.mps.vcs.diff.merge.MergeContext;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.SModel;
+import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -55,25 +57,21 @@ public class MergeModelsDialog extends BaseDialog {
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
 
-  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, String[] contentTitles) {
+  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
     super(WindowManager.getInstance().getFrame(project), "Merging " + SModelOperations.getModelName(baseModel));
-    assert contentTitles.length == 3;
-    myContentTitles = contentTitles;
+    myContentTitles = request.getContentTitles();
+    assert myContentTitles.length == 3;
     myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myMergeTree.setMultipleRootNames(true);
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text", "Merge models using text merge for XML contents", this, request), new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(new JScrollPane(myMergeTree), BorderLayout.CENTER);
-  }
-
-  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel) {
-    this(project, operationContext, baseModel, mineModel, repositoryModel, new String[]{"Local Version", "Merge Result", "Remote Version"});
   }
 
   protected JComponent getMainComponent() {

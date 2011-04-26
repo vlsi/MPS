@@ -60,7 +60,7 @@ public class ModelMergeTool implements DiffTool {
       }
       IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
       if (MergeModelsDialog.isNewMergeEnabled()) {
-        final MergeModelsDialog dialog = new MergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel, mrequest.getContentTitles());
+        final MergeModelsDialog dialog = new MergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel, mrequest);
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             dialog.toFront();

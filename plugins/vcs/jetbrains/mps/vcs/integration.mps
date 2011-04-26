@@ -542,13 +542,8 @@
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897257910">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897257802" resolveInfo="newModel" />
                                         </node>
-                                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897257911">
-                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4124845871897257912">
-                                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897257745" resolveInfo="request" />
-                                          </node>
-                                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4124845871897257913">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x702.~DiffRequest%dgetContentTitles()%cjava%dlang%dString[]" resolveInfo="getContentTitles" />
-                                          </node>
+                                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4124845871897257912">
+                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897257745" resolveInfo="request" />
                                         </node>
                                       </node>
                                     </node>
@@ -1665,13 +1660,8 @@
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258357">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258230" resolveInfo="newModel" />
                         </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4124845871897258358">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258359">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258169" resolveInfo="mrequest" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4124845871897258360">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iyqm.~MergeRequestImpl%dgetContentTitles()%cjava%dlang%dString[]" resolveInfo="getContentTitles" />
-                          </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4124845871897258359">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897258169" resolveInfo="mrequest" />
                         </node>
                       </node>
                     </node>

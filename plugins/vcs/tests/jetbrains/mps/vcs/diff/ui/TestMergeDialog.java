@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
@@ -129,7 +131,20 @@ public class TestMergeDialog {
               }
             };
 
-            return new MergeModelsDialog(null, context, models[0], models[1], models[2]);
+            return new MergeModelsDialog(null, context, models[0], models[1], models[2], new DiffRequest(null) {
+              public DiffContent[] getContents() {
+                return null;
+              }
+
+              public String[] getContentTitles() {
+                return new String[]{"Local Version", "Merge Result", "Remote Version"};
+              }
+
+              public String getWindowTitle() {
+                return null;
+              }
+            });
+            // Local Version, Merge Result, Remote Version
           }
         });
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
