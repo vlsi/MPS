@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
@@ -19,13 +18,14 @@ import jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior
 import jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -44,6 +44,10 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", false, false) != null);
   }
 
+  public static boolean baseMappingRule_Condition_7244675116808105168(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfiguration") || SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationKind");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7024026323278183387(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -54,11 +58,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3754890006475720275(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7966814097310699258(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String fullPath = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path");
-    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983618075(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -89,11 +88,6 @@ public class QueriesGenerated {
     return RunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4763274727405874503(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String fullPath = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path");
-    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
-  }
-
   public static Object propertyMacro_GetPropertyValue_7684700299064368377(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PersistentPropertyDeclaration_Behavior.call_getTypeEditorFqName_946964771156066917(_context.getNode());
   }
@@ -106,8 +100,17 @@ public class QueriesGenerated {
     return PersistentConfiguration_Behavior.call_getGeneratedEditorName_946964771156066479(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_7244675116808105226(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String fullPath = SPropertyOperations.getString(_context.getNode(), "path");
+    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
+  }
+
   public static Object referenceMacro_GetReferent_7024026323278238793(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToFactoryClass"), "constructor", true)).first();
+  }
+
+  public static Object referenceMacro_GetReferent_7244675116808105346(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "icon", true), "IconResourceToIconField");
   }
 
   public static Object referenceMacro_GetReferent_3754890006475713383(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -159,7 +162,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1754312393816976168(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "RunConfigurationToIconPathField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "icon", true), "IconResourceToIconField");
   }
 
   public static Object referenceMacro_GetReferent_3257967158569773573(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -191,10 +194,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false), "ConfigurationToClass");
   }
 
-  public static boolean ifMacro_Condition_7966814097310699279(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
-  }
-
   public static boolean ifMacro_Condition_7806358006983617849(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "canRun");
   }
@@ -219,16 +218,24 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
-  public static boolean ifMacro_Condition_1754312393816976199(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+  public static boolean ifMacro_Condition_7244675116808166482(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
-  public static boolean ifMacro_Condition_4763274727405874524(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+  public static boolean ifMacro_Condition_7244675116808105247(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "path"));
+  }
+
+  public static SNode sourceNodeQuery_7244675116808105286(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true);
   }
 
   public static SNode sourceNodeQuery_4371737370140155848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "debugger", true);
+  }
+
+  public static SNode sourceNodeQuery_7244675116808166467(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true);
   }
 
   public static SNode sourceNodeQuery_4762811064051426913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
