@@ -20,9 +20,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder;
-import jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder;
 
 public class MethodRefactoringUtils {
   public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext) {
@@ -57,8 +54,7 @@ public class MethodRefactoringUtils {
       }
     }
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
-      SearchQuery query = new SearchQuery(method, GlobalScope.getInstance());
-      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressIndicator, query, new OverridingMethods_Finder());
+      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
         ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
@@ -67,7 +63,6 @@ public class MethodRefactoringUtils {
   }
 
   public static SearchResults findMethodUsages(SNode method, ProgressIndicator progressIndicator) {
-    SearchQuery query = new SearchQuery(method, GlobalScope.getInstance());
-    return FindUtils.getSearchResults(progressIndicator, query, new ExactMethodUsages_Finder());
+    return FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
   }
 }

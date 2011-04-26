@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PropertyImplementation_Constraints.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.PropertyImplementation_Constraints" />
   <unitInfo fileName="LocalInstanceFieldReference_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalInstanceFieldReference_Constraints" />
   <unitInfo fileName="LocalInstanceMethodCall_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalInstanceMethodCall_Constraints" />
   <unitInfo fileName="SuperMethodCall_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.SuperMethodCall_Constraints" />
   <unitInfo fileName="ThisExpression_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ThisExpression_Constraints" />
   <unitInfo fileName="PlaceholderMethodDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.PlaceholderMethodDeclaration_Constraints" />
-  <unitInfo fileName="AnnotationMethodDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.AnnotationMethodDeclaration_Constraints" />
   <unitInfo fileName="ConstructorDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ConstructorDeclaration_Constraints" />
-  <unitInfo fileName="AdditionalForLoopVariable_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.AdditionalForLoopVariable_Constraints" />
-  <unitInfo fileName="BaseStringOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.BaseStringOperation_Constraints" />
-  <unitInfo fileName="IOperation_Constraints.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.IOperation_Constraints" />
-  <unitInfo fileName="InstanceMethodDeclaration_Constraints.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.InstanceMethodDeclaration_Constraints" />
-  <unitInfo fileName="AnnotationInstance_Constraints.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.AnnotationInstance_Constraints" />
-  <unitInfo fileName="ArrayCloneOperation_Constraints.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ArrayCloneOperation_Constraints" />
-  <unitInfo fileName="ArrayLengthOperation_Constraints.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ArrayLengthOperation_Constraints" />
-  <unitInfo fileName="StaticFieldDeclaration_Constraints.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.StaticFieldDeclaration_Constraints" />
   <unitInfo fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ImplicitAnnotationInstanceValue_Constraints" />
   <unitInfo fileName="ClassConcept_Constraints.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ClassConcept_Constraints" />
-  <unitInfo fileName="ArrayLiteral_Constraints.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ArrayLiteral_Constraints" />
   <unitInfo fileName="EnumValuesExpression_shortDescription_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.EnumValuesExpression_shortDescription_PropertyConstraint" />
   <unitInfo fileName="EnumValueOfExpression_shortDescription_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.EnumValueOfExpression_shortDescription_PropertyConstraint" />
   <unitInfo fileName="LocalVariableDeclaration_shortDescription_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalVariableDeclaration_shortDescription_PropertyConstraint" />
