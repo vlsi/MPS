@@ -82,6 +82,9 @@
     <unitInfo nodeId="3038368628266736684" fileName="RemoteProcessHandler.java" startLine="29" startPosition="47" endLine="37" endPosition="7" unitName="jetbrains.mps.debugger.java.remote.RemoteProcessHandler$1" />
     <unitInfo nodeId="3038368628266736631" fileName="RemoteProcessHandler.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RemoteProcessHandler" />
   </root>
+  <root nodeId="7806358006983489356">
+    <nodeInfo nodeId="4763274727405913089" fileName="Remote_Kind.java" startLine="17" startPosition="55" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+  </root>
   <root nodeId="7806358006983511602">
     <nodeInfo nodeId="7806358006983555636" fileName="Remote_Configuration_Editor.java" startLine="9" startPosition="89" endLine="10" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
     <nodeInfo nodeId="7806358006983555639" fileName="Remote_Configuration_Editor.java" startLine="19" startPosition="46" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
