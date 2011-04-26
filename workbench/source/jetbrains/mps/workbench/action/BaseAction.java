@@ -46,7 +46,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
-    setEnabledInModalContext(false);
+    setEnabledInModalContext(true);
   }
 
   public void setExecuteOutsideCommand(boolean executeOutsideCommand) {
