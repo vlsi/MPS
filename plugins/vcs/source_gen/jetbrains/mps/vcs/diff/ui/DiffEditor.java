@@ -42,6 +42,7 @@ public class DiffEditor implements EditorMessageOwner {
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.getLeftEditorHighlighter().setDefaultFoldingAreaPaintersEnabled(false);
+        ec.setPopupMenuEnabled(false);
       }
     });
 

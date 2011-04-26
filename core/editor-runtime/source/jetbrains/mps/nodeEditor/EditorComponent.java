@@ -231,6 +231,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
+  private boolean myPopupMenuEnabled = true;
 
 
   public EditorComponent(IOperationContext operationContext) {
@@ -944,6 +945,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void showPopupMenu(int x, int y) {
+    if (!myPopupMenuEnabled) {
+      //return;
+    }
     BaseGroup baseGroup = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
     baseGroup.setPopup(false);
 
@@ -2423,6 +2427,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void setReadOnly(boolean readOnly) {
     myReadOnly = readOnly;
+  }
+
+  public void setPopupMenuEnabled(boolean popupMenuEnabled) {
+    myPopupMenuEnabled = popupMenuEnabled;
   }
 
   @Nullable
