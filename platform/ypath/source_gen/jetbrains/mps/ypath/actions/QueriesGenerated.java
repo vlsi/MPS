@@ -252,16 +252,12 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode tpaExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
             SLinkOperations.setTarget(tpaExp, "expression", _context.getSourceNode(), true);
             SLinkOperations.setTarget(tpaExp, "treepathAspect", (item), false);
             return tpaExp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -298,7 +294,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode tnko = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence");
             SNode mko = SNodeOperations.cast(SNodeOperations.getParent(tnko), "jetbrains.mps.ypath.structure.MatchKindOperation");
@@ -307,10 +303,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(SLinkOperations.getTarget(mpo, "nodeKindOccurrence", true), "nodeKind", SLinkOperations.getTarget(tnko, "nodeKind", false), false);
             SLinkOperations.setTarget(mpo, "property", (item), false);
             return mpo;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -356,16 +348,12 @@ public class QueriesGenerated {
       Iterable<Pair> parameterObjects = (Iterable<Pair>) calculable.calculate();
       assert parameterObjects != null;
       for (final Pair item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode fe = (SNode) (item).o1;
             Boolean mu = (Boolean) (item).o2;
             IFeature_Behavior.call_setOpposite_1213877499629(_context.getSourceNode(), fe, mu);
             return _context.getSourceNode();
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -430,7 +418,7 @@ public class QueriesGenerated {
       Iterable<Triplet> parameterObjects = (Iterable<Triplet>) calculable.calculate();
       assert parameterObjects != null;
       for (final Triplet item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             TraversalAxis axis = (TraversalAxis) (item).first();
             SNode feat = (SNode) (item).second();
@@ -451,10 +439,6 @@ public class QueriesGenerated {
               }
             }
             return tpoExp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -541,17 +525,13 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
             SNode mnko = SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchKindOperation");
             SLinkOperations.setTarget(SLinkOperations.getTarget(mnko, "nodeKindOccurrence", true), "nodeKind", (item), false);
             return tpoExp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -583,16 +563,12 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
             SNode mdpo = SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation");
             return tpoExp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -687,7 +663,7 @@ public class QueriesGenerated {
       Iterable<Quadruplet> parameterObjects = (Iterable<Quadruplet>) calculable.calculate();
       assert parameterObjects != null;
       for (final Quadruplet item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode aspect = (SNode) (item).first();
             TraversalAxis axis = (TraversalAxis) (item).second();
@@ -710,10 +686,6 @@ public class QueriesGenerated {
               }
             }
             return tpoExp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {

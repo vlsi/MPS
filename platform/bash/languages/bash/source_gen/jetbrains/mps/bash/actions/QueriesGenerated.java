@@ -665,7 +665,7 @@ public class QueriesGenerated {
       Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode redirectedCommand = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
             SNode redirection;
@@ -681,10 +681,6 @@ public class QueriesGenerated {
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
             SLinkOperations.setTarget(redirectedCommand, "command", command, true);
             return redirectedCommand;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getDescriptionText(String text) {

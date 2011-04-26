@@ -22,9 +22,25 @@ import jetbrains.mps.smodel.SNode;
  * Mar 29, 2005
  */
 public abstract class AbstractSideTransformHintSubstituteAction extends AbstractNodeSubstituteAction {
+  // since MPS 2.0
+  @Deprecated
   public AbstractSideTransformHintSubstituteAction(Object parameterNode, SNode sourceNode) {
     // parameter object is always output concept?
     super(parameterNode, sourceNode);
+  }
+
+  /**
+   * @param concept instanceof AbstractConceptDeclaration
+   */
+  public AbstractSideTransformHintSubstituteAction(SNode concept, SNode sourceNode) {
+    super(concept, concept, sourceNode);
+  }
+
+  /**
+   * @param concept instanceof AbstractConceptDeclaration
+   */
+  public AbstractSideTransformHintSubstituteAction(SNode concept, Object parameterNode, SNode sourceNode) {
+    super(concept, parameterNode, sourceNode);
   }
 
   public abstract SNode doSubstitute(String pattern);

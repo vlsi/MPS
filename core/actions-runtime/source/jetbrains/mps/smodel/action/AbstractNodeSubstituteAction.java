@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -45,14 +45,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
     myParameterObject = parameterObject;
-    if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
-      myOutputConcept = (SNode) parameterObject;
-    }
     mySourceNode = sourceNode;
   }
 
   protected AbstractNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode sourceNode) {
-    assert outputConcept == null || outputConcept.getAdapter() instanceof AbstractConceptDeclaration;
     myOutputConcept = outputConcept;
     myParameterObject = parameterObject;
     mySourceNode = sourceNode;
@@ -128,7 +124,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodeIconUtil.getIcon((SNode) myParameterObject, referent_presentation);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodeIconUtil.getIcon((INodeAdapter) myParameterObject, referent_presentation);
+      return NodeIconUtil.getIcon(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
     return Icons.DEFAULT_ICON;
   }

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -33,15 +31,8 @@ public class ModelActions {
   //-------------------
 
   public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, (AbstractConceptDeclaration) childConcept.getAdapter(), childSetter, context);
-  }
-
-
-  @Deprecated
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
-
 
   //-------------------
   // referent substitute

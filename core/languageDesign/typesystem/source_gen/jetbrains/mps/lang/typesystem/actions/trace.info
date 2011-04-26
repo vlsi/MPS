@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="118" startPosition="34" endLine="128" endPosition="7" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="132" startPosition="53" endLine="149" endPosition="9" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="132" startPosition="53" endLine="145" endPosition="9" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="73" startPosition="36" endLine="93" endPosition="7" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="32" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="32" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.typesystem.actions.QueriesGenerated" />
   <root nodeId="1174664633061">
     <nodeInfo nodeId="1174664688998" fileName="QueriesGenerated.java" startLine="38" startPosition="134" endLine="39" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1174664689008" fileName="QueriesGenerated.java" startLine="39" startPosition="247" endLine="40" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

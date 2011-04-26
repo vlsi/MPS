@@ -580,16 +580,12 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), newRegexp);
             SLinkOperations.setTarget(newRegexp, "regexp", _context.getSourceNode(), true);
             return newRegexp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -672,7 +668,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
@@ -680,10 +676,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "right", newRegexp, true);
             return newRegexp;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
         });
       }
@@ -704,7 +696,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
             SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", null);
@@ -713,10 +705,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
             SLinkOperations.setTarget(seq, "right", ref, true);
             return ref;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -743,7 +731,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode res = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), res);
@@ -752,10 +740,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(ref, "symbolClass", (item), false);
             SLinkOperations.setTarget(res, "right", ref, true);
             return ref;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -782,7 +766,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
@@ -791,10 +775,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(ref, "regexp", (item), false);
             SLinkOperations.setTarget(seq, "right", ref, true);
             return SLinkOperations.getTarget(seq, "right", true);
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {

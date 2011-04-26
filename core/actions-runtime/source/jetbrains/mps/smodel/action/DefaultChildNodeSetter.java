@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 
@@ -31,11 +29,6 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   private static final Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
 
   SNode myLinkDeclaration;
-
-  @Deprecated
-  public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
-    this(BaseAdapter.fromAdapter(linkDeclaration));
-  }
 
   public DefaultChildNodeSetter(SNode linkDeclaration) {
     myLinkDeclaration = linkDeclaration;

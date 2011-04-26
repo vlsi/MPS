@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.core.structure.IType;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
@@ -38,36 +35,41 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IChildNodeSetter mySetter;
 
   /**
-   * @deprecated - ambiguity
+   * To be used from generated code.  There is no output concept specified here. Subclasses should implement createChildNode() method.
    */
-  public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    // parameter object is always output concept?
-    super(parameterObject, parentNode);
-
+  protected DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    super(null, parameterObject, parentNode);
     myCurrentChild = currentChild;
-    if (currentChild != null && currentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION) != null) {
-      myOldChild = (SNode) currentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
-    } else {
-      myOldChild = myCurrentChild;
-    }
-
+    setupOldChild();
     myScope = scope;
     mySetter = setter;
   }
 
-
-  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    this((AbstractConceptDeclaration) outputConcept.getAdapter(), parameterObject, parentNode, currentChild, setter, scope);
+  /**
+   * @param concept instanceof AbstractConceptDeclaration
+   */
+  public DefaultChildNodeSubstituteAction(SNode concept, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    super(concept, concept, parentNode);
+    myCurrentChild = currentChild;
+    setupOldChild();
+    myScope = scope;
+    mySetter = setter;
   }
 
-  @Deprecated
-  public DefaultChildNodeSubstituteAction(AbstractConceptDeclaration outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    // parameter object is always output concept?
-    super(BaseAdapter.fromAdapter(outputConcept), parameterObject, parentNode);
+  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    super(outputConcept, parameterObject, parentNode);
     myCurrentChild = currentChild;
     myOldChild = myCurrentChild;
     myScope = scope;
     mySetter = setter;
+  }
+
+  private void setupOldChild() {
+    if (myCurrentChild != null && myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION) != null) {
+      myOldChild = (SNode) myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+    } else {
+      myOldChild = myCurrentChild;
+    }
   }
 
   public IScope getScope() {
@@ -102,19 +104,9 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-    ConceptDeclaration conceptDeclaration = null;
-
-    INodeAdapter parameterNodeAdapter = null;
-    if (getParameterObject() instanceof SNode) {
-      parameterNodeAdapter = BaseAdapter.fromNode((SNode) getParameterObject());
-    } else if (getParameterObject() instanceof ConceptDeclaration) {
-      parameterNodeAdapter = (INodeAdapter) getParameterObject();
-    }
-
-    if (parameterNodeAdapter instanceof ConceptDeclaration) {
-      conceptDeclaration = (ConceptDeclaration) parameterNodeAdapter;
-    } else {
-      throw new RuntimeException("Couldn't create child node. Parameter object: " + getParameterObject());
+    SNode conceptDeclaration = getOutputConcept();
+    if (conceptDeclaration == null) {
+      throw new RuntimeException("Couldn't create child node. Concept declaration was not specified. Parameter object: " + getParameterObject());
     }
     return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model, getScope());
   }
@@ -129,11 +121,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       if (!node.isRoot()) {
         auxModel.addRoot(node);
       }
-      if (SNodeOperations.isInstanceOf(node, IType.concept)) {
-        type = node;
-      } else {
-        type = TypeChecker.getInstance().getTypeOf(node);
-      }
+      type = ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);
       auxModel.removeRoot(node);
     } finally {
       auxModel.setLoading(wasLoading);

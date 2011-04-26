@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
+import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_Behavior;
-import jetbrains.mps.lang.actions.structure.*;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -38,7 +33,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -54,19 +48,17 @@ public class ChildSubstituteActionsHelper {
   public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
   public static final String ABSTRACT = "abstract";
 
+  // Not used
+  @Deprecated
   public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
     public boolean met(SNode object) {
       return true;
     }
   };
 
-  public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, AbstractConceptDeclaration expectedConcept, IScope scope) {
-    return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(concept.getNode(), expectedConcept.getNode(), scope);
-  }
-
   public static List<INodeSubstituteAction> createActions(final SNode parentNode,
                                                           final SNode currentChild,
-                                                          final AbstractConceptDeclaration childConcept,
+                                                          final SNode childConcept,
                                                           final IChildNodeSetter childSetter,
                                                           final IOperationContext context) {
     final List<INodeSubstituteAction>[] result = new List[1];
@@ -82,16 +74,14 @@ public class ChildSubstituteActionsHelper {
     return result[0];
   }
 
-  private static List<INodeSubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    boolean wrapped = !(childSetter instanceof DefaultChildNodeSetter);
-
+  private static List<INodeSubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
     if (childConcept == null) {
       return resultActions;
     }
 
     // special case
-    if (BaseAdapter.fromAdapter(childConcept) == SModelUtil.getBaseConcept()) {
+    if (childConcept == SModelUtil.getBaseConcept()) {
       if ((currentChild == null || currentChild.getConceptFqName().equals(SNodeUtil.concept_BaseConcept))) {
         resultActions = new ArrayList<INodeSubstituteAction>();
         ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
@@ -120,62 +110,31 @@ public class ChildSubstituteActionsHelper {
       }
 
       // pretend we are going to substitute more concrete concept
-      childConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(currentChild.getConceptDeclarationNode());
-      if (childConcept instanceof ConceptDeclaration) {
-        ConceptDeclaration baseConcept = (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
-        while (((ConceptDeclaration) childConcept).getExtends() != null) {
-          ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
-          if (extendedConcept == baseConcept) break;
-          childConcept = extendedConcept;
-        }
-      }
+      childConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
     }
 
-    IScope scope = context.getScope();
-    Language primaryLanguage = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(childConcept));
+    Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
       return resultActions;
     }
 
-    List<NodeSubstituteActionsBuilder> allBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
-
-    LinkDeclaration link = null;
-    if (childSetter instanceof DefaultChildNodeSetter) {
-      link = (LinkDeclaration) BaseAdapter.fromNode(((DefaultChildNodeSetter) childSetter).getLinkDeclaration());
-    }
-
-    List<Language> languages = SModelOperations.getLanguages(parentNode.getModel(), scope);
-    for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
-      AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
-      if (applicableConcept == null) continue;
-      if (SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(applicableConcept), BaseAdapter.fromAdapter(childConcept)) ||
-        SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(childConcept), BaseAdapter.fromAdapter(applicableConcept))) {
-
-        if (satisfiesPrecondition(actionsBuilder, parentNode,
-          applicableConcept, BaseAdapter.fromAdapter(link),
-          currentChild, wrapped, context)) {
-          allBuilders.add(actionsBuilder);
-        }
-      }
-    }
-
-
-    if (!containsRemoveDefaults(allBuilders)) {
+    List<SNode> allBuilders = ChildSubstituteActionsUtil.getActionsBuilders(parentNode, currentChild, childConcept, childSetter, context);
+    if (!ChildSubstituteActionsUtil.containsRemoveDefaults(allBuilders)) {
       resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, context));
     }
 
-    for (NodeSubstituteActionsBuilder builder : allBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
+    for (SNode builder : allBuilders) {
+      List<INodeSubstituteAction> addActions = ChildSubstituteActionsUtil.invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
       resultActions.addAll(addActions);
     }
 
-    for (NodeSubstituteActionsBuilder builder : allBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
+    for (SNode builder : allBuilders) {
+      resultActions = ChildSubstituteActionsUtil.applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept, context);
     }
 
     if (childSetter instanceof DefaultChildNodeSetter) {
-      DefaultChildNodeSetter settter = (DefaultChildNodeSetter) childSetter;
+      DefaultChildNodeSetter setter = (DefaultChildNodeSetter) childSetter;
 
       Iterator<INodeSubstituteAction> it = resultActions.iterator();
       while (it.hasNext()) {
@@ -186,7 +145,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!ModelConstraintsManager.canBeParent(parentNode, conceptNode, settter.myLinkDeclaration, context) ||
+        if (!ModelConstraintsManager.canBeParent(parentNode, conceptNode, setter.myLinkDeclaration, context) ||
           !ModelConstraintsManager.canBeAncestor(parentNode, conceptNode, context)) {
           it.remove();
         }
@@ -196,20 +155,10 @@ public class ChildSubstituteActionsHelper {
     return resultActions;
   }
 
-  private static boolean containsRemoveDefaults(List<NodeSubstituteActionsBuilder> list) {
-    for (NodeSubstituteActionsBuilder builder : list) {
-      if (!builder.getDescendants(RemoveDefaultsPart.class).isEmpty()) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  /*package*/
-  static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
+  private static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
     SNode parentNode,
     SNode currentChild,
-    final AbstractConceptDeclaration childConcept,
+    SNode childConcept,
     IChildNodeSetter childSetter,
     IOperationContext context) {
 
@@ -249,7 +198,7 @@ public class ChildSubstituteActionsHelper {
 
     IScope scope = operationContext.getScope();
 
-    if (!ModelConstraintsManager.getInstance().canBeChild(conceptFqName, operationContext, parentNode, link)) {
+    if (!ModelConstraintsManager.canBeChild(conceptFqName, operationContext, parentNode, link)) {
       return new ArrayList<INodeSubstituteAction>();
     }
 
@@ -302,115 +251,6 @@ public class ChildSubstituteActionsHelper {
     return referentMatchingText;
   }
 
-  private static List<NodeSubstituteActionsBuilder> getAllActionsBuilders(Language language) {
-    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
-    SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
-    if (actionsModelDescr != null) {
-      Iterable<SNode> iter = actionsModelDescr.getSModel().roots();
-      for (SNode root : iter) {
-        INodeAdapter adapter = BaseAdapter.fromNode(root);
-        if (adapter instanceof NodeSubstituteActions) {
-          result.addAll(((NodeSubstituteActions) adapter).getActionsBuilders());
-        }
-      }
-    }
-    return result;
-  }
-
-  private static List<NodeSubstituteActionsBuilder> getAllActionsBuilders(List<Language> languages) {
-    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
-    for (Language language : languages) {
-      result.addAll(getAllActionsBuilders(language));
-    }
-    return result;
-  }
-
-  // --------------------------------
-  // Query methods invocation...
-  // --------------------------------
-
-  private static boolean satisfiesPrecondition(
-    NodeSubstituteActionsBuilder actionsBuilder,
-    SNode parentNode,
-    AbstractConceptDeclaration concept,
-    SNode link,
-    SNode currentTarget,
-    boolean wrapped,
-    IOperationContext context) {
-    // try generatred query method
-    NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
-    // precondition is optional
-    if (precondition != null) {
-      String methodName = NodeSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220278671791(actionsBuilder.getNode());
-      SModel model = actionsBuilder.getModel();
-      try {
-        return (Boolean) QueryMethodGenerated.invoke(
-          methodName,
-          context,
-          new NodeSubstitutePreconditionContext(parentNode, concept.getNode(), currentTarget, link, wrapped),
-          model);
-      } catch (Exception e) {
-        LOG.error(e);
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-
-  private static List<INodeSubstituteAction> applyActionFilter(NodeSubstituteActionsBuilder substituteActionsBuilder,
-                                                               List<INodeSubstituteAction> actions,
-                                                               SNode parentNode,
-                                                               SNode currentChild,
-                                                               SNode childConcept,
-                                                               IOperationContext context) {
-    // remove banned concepts
-    Set<SNode> conceptsToRemove = new HashSet<SNode>();
-    for (RemovePart rp : substituteActionsBuilder.getDescendants(RemovePart.class)) {
-      conceptsToRemove.add(rp.getConceptToRemove().getNode());
-    }
-    if (!conceptsToRemove.isEmpty()) {
-      Iterator<INodeSubstituteAction> it = actions.iterator();
-      while (it.hasNext()) {
-        INodeSubstituteAction action = it.next();
-        Object parameterObject = action.getOutputConcept();
-        if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
-          if (conceptsToRemove.contains(((SNode) parameterObject))) {
-            it.remove();
-          }
-        } else if (parameterObject instanceof AbstractConceptDeclaration) {
-          if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
-            it.remove();
-          }
-        }
-      }
-    }
-
-    // apply custom filters
-    List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getDescendants(RemoveByConditionPart.class);
-    for (RemoveByConditionPart part : removesByCondition) {
-      String methodName = "removeActionsByCondition_" + part.getId();
-      try {
-        QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByConditionContext(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-
-    return actions;
-  }
-
-  private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    String methodName = NodeSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220278926652(builder.getNode());
-    try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
-    } catch (Throwable t) {
-      LOG.error(t);
-      return Collections.emptyList();
-    }
-  }
-
   private static class SmartRefChildNodeSubstituteAction extends DefaultChildNodeSubstituteAction {
     private String myMatchingText;
     private String myVisibleMatchingText;
@@ -437,7 +277,6 @@ public class ChildSubstituteActionsHelper {
       myCurrentChild = currentChild;
       myReferenceNodeConcept = referenceNodeConcept;
       myReferenceLink_final = referenceLink_final;
-      myMatchingText = null;
       myPresentation = presentation;
     }
 
@@ -478,13 +317,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     public String getDescriptionText(String pattern) {
-      BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode(myReferentNode);
-      String result = NodePresentationUtil.descriptionText(parameterNode, true);
-      if (parameterNode.getShortDescription() == null) {
-        return "^" + result;
-      }
-
-      return "^" + result;
+      return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

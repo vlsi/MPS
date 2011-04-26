@@ -31,17 +31,13 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), usage);
             SLinkOperations.setTarget(usage, "operator", (item), false);
             SLinkOperations.setTarget(usage, "leftExpression", _context.getSourceNode(), true);
             return usage;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {

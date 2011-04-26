@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -32,7 +31,7 @@ import java.lang.reflect.Method;
 /*package*/ class NodeFactoryManager_deprecated {
   private static final Logger LOG = Logger.getLogger(NodeFactoryManager_deprecated.class);
 
-  protected static void setupNode_deprecated(ConceptDeclaration concept, SNode node, SNode sampleNode) {
+  protected static void setupNode_deprecated(SNode concept, SNode node, SNode sampleNode) {
     Class factoryClass = getFactoryClass(concept);
     if (factoryClass == null) {
       return;
@@ -64,7 +63,7 @@ import java.lang.reflect.Method;
     }
   }
 
-  private static Class getFactoryClass(ConceptDeclaration conceptDeclaration) {
+  private static Class getFactoryClass(SNode conceptDeclaration) {
     String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(conceptDeclaration));
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert language != null;

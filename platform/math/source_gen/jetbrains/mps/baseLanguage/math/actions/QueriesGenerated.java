@@ -205,13 +205,9 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), new QueriesGenerated.QuotationClass_x583g4_a1b0a0a0a0a0a0e0a0b0i().createNode(_context.getSourceNode())));
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {

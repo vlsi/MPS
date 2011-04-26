@@ -15,18 +15,14 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
-import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
-import jetbrains.mps.lang.actions.structure.*;
+import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
@@ -36,7 +32,7 @@ public class SideTransformHintSubstituteActionsHelper {
 
   private IOperationContext myContext;
   private SNode mySourceNode;
-  private Set<SideTransformTag> myTransformTags = new LinkedHashSet<SideTransformTag>();
+  private Set<String> myTransformTags = new LinkedHashSet<String>();
   private CellSide mySide;
 
   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTags, IOperationContext context) {
@@ -47,12 +43,8 @@ public class SideTransformHintSubstituteActionsHelper {
     mySourceNode = sourceNode;
     if (transformTags != null) {
       for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens();) {
-        String nextTag = tokenizer.nextToken();
-        myTransformTags.add(SideTransformTag.parseValue(nextTag));
+        myTransformTags.add(tokenizer.nextToken());
       }
-    }
-    if (myTransformTags.isEmpty()) {
-      myTransformTags.add(SideTransformTag.default_);
     }
     mySide = side;
   }
@@ -60,20 +52,7 @@ public class SideTransformHintSubstituteActionsHelper {
   public boolean canCreateActions() {
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     try {
-      IScope scope = myContext.getScope();
-      final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
-      List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
-      for (Language language : languages) {
-        SModelDescriptor actionsModel = language.getActionsModelDescriptor();
-        if (actionsModel == null || actionsModel.getSModel() == null) continue;
-        for (SNode builder : actionsModel.getSModel().getFastNodeFinder().getNodes(SideTransformHintSubstituteActionsBuilder.concept, true)) {
-          SideTransformHintSubstituteActionsBuilder adapter = (SideTransformHintSubstituteActionsBuilder) builder.getAdapter();
-          for (SideTransformTag tag : myTransformTags) {
-            if (isApplicable(adapter, tag, sourceConcept)) return true;
-          }
-        }
-      }
-      return false;
+      return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
     } finally {
       TypeChecker.getInstance().clearTypesComputedForCompletion();
     }
@@ -86,7 +65,7 @@ public class SideTransformHintSubstituteActionsHelper {
       public void run() {
         TypeChecker.getInstance().enableTypesComputingForCompletion();
         try {
-          result[0] = createActions_internal();
+          result[0] = SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext);
         } catch (Throwable t) {
           LOG.error(t);
           result[0] = new ArrayList<INodeSubstituteAction>();
@@ -97,138 +76,5 @@ public class SideTransformHintSubstituteActionsHelper {
     });
 
     return result[0];
-  }
-
-  private List<INodeSubstituteAction> createActions_internal() {
-    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders();
-
-    List<RemoveSTByConditionPart> removesByCondition = new ArrayList<RemoveSTByConditionPart>();
-
-    Set<SNode> conceptsToRemove = new HashSet<SNode>();
-    // for each builder create actions and apply all filters
-    for (SideTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
-      for (RemovePart rp : builder.getDescendants(RemovePart.class)) {
-        conceptsToRemove.add(rp.getConceptToRemove().getNode());
-      }
-
-      for (RemoveSTByConditionPart rp : builder.getDescendants(RemoveSTByConditionPart.class)) {
-        removesByCondition.add(rp);
-      }
-
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder);
-      resultActions.addAll(addActions);
-    }
-
-    //remove with conditions
-    for (RemoveSTByConditionPart rbc : removesByCondition) {
-      invokeRemoveByCondition(rbc, resultActions.iterator());
-    }
-
-    //remove with remove concept
-    for (Iterator<INodeSubstituteAction> it = resultActions.iterator(); it.hasNext();) {
-      INodeSubstituteAction action = it.next();
-      Object parameterObject = action.getOutputConcept();
-      if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
-        if (conceptsToRemove.contains(((SNode) parameterObject))) {
-          it.remove();
-          continue;
-        }
-      } else if (parameterObject instanceof AbstractConceptDeclaration) {
-        if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
-          it.remove();
-          continue;
-        }
-      }
-      if (parameterObject instanceof SNode && !ModelConstraintsManager.getInstance().canBeAncestor(mySourceNode.getParent(), (SNode) parameterObject, myContext)) {
-        it.remove();
-      }
-    }
-
-    return resultActions;
-  }
-
-  private List<SideTransformHintSubstituteActionsBuilder> getActionBuilders() {
-    List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<SideTransformHintSubstituteActionsBuilder>();
-    IScope scope = myContext.getScope();
-    final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
-
-    List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
-    for (Language language : languages) {
-      SModelDescriptor actionsModel = language.getActionsModelDescriptor();
-      if (actionsModel == null || actionsModel.getSModel() == null) continue;
-
-      List<SNode> nodes = actionsModel.getSModel().getFastNodeFinder().getNodes(SideTransformHintSubstituteActionsBuilder.concept, true);
-      for (SideTransformHintSubstituteActionsBuilder builder : BaseAdapter.<SideTransformHintSubstituteActionsBuilder>toAdapters(nodes)) {
-        for (SideTransformTag tag : myTransformTags) {
-          if (isApplicable(builder, tag, sourceConcept)) {
-            actionsBuilders.add(builder);
-          }
-        }
-      }
-    }
-    return actionsBuilders;
-  }
-
-  private boolean isApplicable(SideTransformHintSubstituteActionsBuilder actionsBuilder,
-                               SideTransformTag tag,
-                               AbstractConceptDeclaration sourceConcept) {
-    // same tag?
-    SideTransformTag actionTag = actionsBuilder.getTransformTag();
-    if (actionTag != tag) {
-      return false;
-    }
-
-    if (actionsBuilder.getSide() == Side.left && mySide != CellSide.LEFT) {
-      return false;
-    }
-
-    if (actionsBuilder.getSide() == Side.right && mySide != CellSide.RIGHT) {
-      return false;
-    }
-
-    if (!SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(sourceConcept), BaseAdapter.fromAdapter(actionsBuilder.getApplicableConcept()))) {
-      return false;
-    }
-
-    // is applicable ?
-    return satisfiesPrecondition(actionsBuilder);
-  }
-
-  private void invokeRemoveByCondition(RemoveSTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions) {
-    String methodName = RemoveSTByConditionPart_Behavior.call_getQueryMethodName_1220279474449(removeByCondition.getNode());
-    try {
-      QueryMethodGenerated.invoke(methodName, myContext, new RemoveSideTransformActionByConditionContext(actions, mySourceNode), removeByCondition.getModel());
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-  }
-
-  private boolean satisfiesPrecondition(SideTransformHintSubstituteActionsBuilder actionsBuilder) {
-    // try generatred query method
-    SideTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
-    // precondition is optional
-    if (precondition != null) {
-      String methodName = SideTransformHintSubstituteActionsBuilder_Behavior.call_getPreconditionQueryMethodName_1220279571415(actionsBuilder.getNode());
-      SModel model = actionsBuilder.getModel();
-      try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformPreconditionContext(mySourceNode), model);
-      } catch (Exception e) {
-        LOG.error(e);
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  private List<INodeSubstituteAction> invokeActionFactory(SideTransformHintSubstituteActionsBuilder substituteActionsBuilder) {
-    String methodName = SideTransformHintSubstituteActionsBuilder_Behavior.call_getBuilderQueryMethodName_1220279234749(substituteActionsBuilder.getNode());
-    SModel model = substituteActionsBuilder.getModel();
-    try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, myContext, new SideTransformActionsBuilderContext(mySourceNode, mySourceNode.getModel(), null), model);
-    } catch (Exception e) {
-      return new ArrayList<INodeSubstituteAction>();
-    }
   }
 }

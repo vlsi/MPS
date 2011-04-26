@@ -102,16 +102,12 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null);
             SLinkOperations.setTarget(expr, "classifier", (item), false);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
             return expr;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {

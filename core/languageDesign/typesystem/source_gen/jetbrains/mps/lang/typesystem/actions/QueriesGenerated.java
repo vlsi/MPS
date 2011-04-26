@@ -129,7 +129,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -141,10 +141,6 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(left, "normalType", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "leftExpression", left, true);
             return result;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
         });
       }

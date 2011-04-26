@@ -2645,15 +2645,11 @@ __switch__:
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode labelReference = SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
             SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
             return labelReference;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -2727,15 +2723,11 @@ __switch__:
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode labelReference = SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
             SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
             return labelReference;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -2853,14 +2845,10 @@ __switch__:
       Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
             return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
         });
       }
@@ -2897,15 +2885,11 @@ __switch__:
       Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode elseIf = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
             SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), elseIf);
             return elseIf;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -2933,14 +2917,10 @@ __switch__:
       Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode elseIf = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
             return elseIf;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
@@ -3008,16 +2988,12 @@ __switch__:
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
             SLinkOperations.setTarget(expr, "classConcept", (item), false);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
             return expr;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
           }
 
           public String getMatchingText(String text) {
