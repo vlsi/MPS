@@ -10,11 +10,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.Icon;
@@ -36,7 +35,7 @@ public abstract class DiffModelTree extends MPSTree {
   }
 
   protected MPSTreeNode rebuild() {
-    final DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
+    DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
     myRootNodes = Sequence.fromIterable(getAffectedRoots()).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
       public DiffModelTree.RootTreeNode select(SNodeId r) {
         return new DiffModelTree.RootTreeNode(r);
@@ -46,11 +45,23 @@ public abstract class DiffModelTree extends MPSTree {
         return rtn.myVirtualPackage + "|" + rtn.myPresentation;
       }
     }, true).toListSequence();
-    ListSequence.fromList(myRootNodes).visitAll(new IVisitor<DiffModelTree.RootTreeNode>() {
-      public void visit(DiffModelTree.RootTreeNode rtn) {
-        modelNode.add(rtn);
+    for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
+      MPSTreeNode parentNode = modelNode;
+      for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
+        Iterable<MPSTreeNode> children = (Iterable<MPSTreeNode>) parentNode;
+        MPSTreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
+          public boolean accept(MPSTreeNode c) {
+            return c instanceof DiffModelTree.PackageTreeNode && sub.equals(c.getText());
+          }
+        });
+        if (child == null) {
+          child = new DiffModelTree.PackageTreeNode(sub);
+          parentNode.add(child);
+        }
+        parentNode = child;
       }
-    });
+      parentNode.add(rtn);
+    }
     return modelNode;
   }
 
@@ -108,6 +119,13 @@ public abstract class DiffModelTree extends MPSTree {
     protected void doUpdatePresentation() {
       setText(Sequence.fromIterable(getModels()).first().getLongName());
       setIcon(Icons.MODEL_ICON);
+    }
+  }
+
+  private class PackageTreeNode extends MPSTreeNode {
+    private PackageTreeNode(String packageName) {
+      super(myOperationContext);
+      setText(packageName);
     }
   }
 
