@@ -25,6 +25,7 @@
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="plugin-runtime" />
+    <orderEntry type="library" name="Trove" level="project" />
   </component>
 </module>
 
