@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <sourcePath />
   <usedLanguages>
     <usedLanguage>7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)</usedLanguage>
     <usedLanguage>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguage>

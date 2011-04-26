@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.transformation.test.inputModels" />
   </models>
-  <sourcePath />
   <dependencies>
     <dependency reexport="true">ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)</dependency>
   </dependencies>

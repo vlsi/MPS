@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/models/postingrules" namespacePrefix="postingrules" />
   </models>
-  <sourcePath />
   <dependencies>
     <dependency reexport="true">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)</dependency>
   </dependencies>

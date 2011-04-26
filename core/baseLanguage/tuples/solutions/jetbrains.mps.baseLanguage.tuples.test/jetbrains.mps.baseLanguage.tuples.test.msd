@@ -11,7 +11,6 @@
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
-  <sourcePath />
   <dependencies>
     <dependency reexport="false">02f6bdf3-0540-48d1-8551-1d3619454f47(jetbrains.mps.baseLanguage.tuples.shared)</dependency>
   </dependencies>
