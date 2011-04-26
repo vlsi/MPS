@@ -164,6 +164,11 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (classFqName == null || methodName == null) {
+          MPSProjectIDEHandler.LOG.error("Can't find a method " + classFqName + "." + methodName);
+          return;
+
+        }
         SNode cls = SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
