@@ -50,7 +50,7 @@ import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
 * To change this template use File | Settings | File Templates.
 */
 abstract class MessageList implements IMessageList {
-  static final int MAX_SIZE = 30000;
+  static final int MAX_SIZE = 10000;
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
     protected boolean isEnabled() {
