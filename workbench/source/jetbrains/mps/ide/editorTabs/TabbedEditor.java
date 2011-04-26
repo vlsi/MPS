@@ -63,7 +63,11 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   public void dispose() {
-    getCurrentNodeModel().removeModelListener(myModelListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        getCurrentNodeModel().removeModelListener(myModelListener);
+      }
+    });
     myTabsComponent.dispose();
     if (myColorProvider != null) {
       myColorProvider.stop(this);
