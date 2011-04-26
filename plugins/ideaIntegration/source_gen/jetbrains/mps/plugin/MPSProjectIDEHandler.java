@@ -29,16 +29,13 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder;
-import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.util.Computable;
 
@@ -159,7 +156,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        findUsages(cls, GlobalScope.getInstance(), new ClassUsages_Finder());
+        findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder")));
       }
     });
   }
@@ -172,12 +169,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
         }
-        Iterable<SNode> seq = (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
           }
         });
-        SNode method = Sequence.fromIterable(seq).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return methodName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
           }
@@ -187,25 +184,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        GeneratedFinder finder = new ConstructorUsages_Finder();
-        boolean suits = SNodeOperations.isInstanceOf(method, finder.getConcept()) && finder.isApplicable(method);
-        if (!(suits)) {
-          finder = null;
-        }
-        if (finder == null) {
-          finder = new BaseMethodUsages_Finder();
-          suits = SNodeOperations.isInstanceOf(method, finder.getConcept()) && finder.isApplicable(method);
-          if (!(suits)) {
-            finder = null;
-          }
-        }
-        assert finder != null : "method type not supported (supported: instance/static/constructor)";
-        findUsages(method, GlobalScope.getInstance(), finder);
+        IResultProvider provider = FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder"), FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+        findUsages(method, GlobalScope.getInstance(), provider);
       }
     });
   }
 
-  private void findUsages(@NotNull final SNode node, final IScope scope, final IFinder finder) {
+  private void findUsages(@NotNull final SNode node, final IScope scope, final IResultProvider provider) {
     new Thread() {
       public void run() {
         SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
@@ -213,8 +198,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
             return new SearchQuery(node, scope);
           }
         });
-        IFinder[] finders = new IFinder[]{finder};
-        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, false, "No usages for that node");
+        myProject.getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false, "No usages for that node");
       }
     }.start();
   }
