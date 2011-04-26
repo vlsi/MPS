@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions;
 import java.awt.GridBagLayout;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 
 public class DefaultJUnit_Editor extends JPanel {
   private JavaConfigOptions myJavaConfigurationOptions = new JavaConfigOptions();

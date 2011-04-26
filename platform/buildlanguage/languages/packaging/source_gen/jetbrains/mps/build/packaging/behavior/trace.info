@@ -24,6 +24,7 @@
   <unitInfo fileName="IPath_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IPath_Behavior" />
   <unitInfo fileName="Block_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Block_Behavior" />
   <unitInfo fileName="MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_Behavior" />
+  <unitInfo fileName="Module_Behavior.java" startLine="234" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior$QuotationClass_835h7m_a0a1a61" />
   <unitInfo fileName="PathHolder_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
   <unitInfo fileName="Zip_Behavior.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Zip_Behavior" />
   <unitInfo fileName="ICondition_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ICondition_Behavior" />
@@ -31,14 +32,14 @@
   <unitInfo fileName="ICompositeComponent_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior" />
   <unitInfo fileName="Antcall_Behavior.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Antcall_Behavior" />
   <unitInfo fileName="IStringExpression_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
-  <unitInfo fileName="ModuleCycle_Behavior.java" startLine="23" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
   <unitInfo fileName="Copy_Behavior.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Copy_Behavior" />
   <unitInfo fileName="Path_Behavior.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
+  <unitInfo fileName="ModuleCycle_Behavior.java" startLine="25" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
   <unitInfo fileName="IMacroHolder_Behavior.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
   <unitInfo fileName="Variable_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior" />
   <unitInfo fileName="AbstractProjectComponent_Behavior.java" startLine="20" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
   <unitInfo fileName="Layout_Behavior.java" startLine="23" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
-  <unitInfo fileName="Module_Behavior.java" startLine="40" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
+  <unitInfo fileName="Module_Behavior.java" startLine="37" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
   <root nodeId="1213877173053">
     <nodeInfo nodeId="1240317482667" fileName="IStringExpression_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8148924375507879478" fileName="IStringExpression_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

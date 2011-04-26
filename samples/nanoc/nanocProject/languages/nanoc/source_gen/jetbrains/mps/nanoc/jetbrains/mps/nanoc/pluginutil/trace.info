@@ -44,30 +44,6 @@
     <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="30" endPosition="3" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
     <unitInfo nodeId="8247677264794236929" fileName="ExecutableParametersEditor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor" />
   </root>
-  <root nodeId="8247677264794237041">
-    <nodeInfo nodeId="8247677264794237053" fileName="LayoutUtil.java" startLine="12" startPosition="66" endLine="13" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237078" fileName="LayoutUtil.java" startLine="16" startPosition="66" endLine="17" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237103" fileName="LayoutUtil.java" startLine="20" startPosition="66" endLine="21" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237043" fileName="LayoutUtil.java" startLine="8" startPosition="25" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutUtil#()V" />
-    <nodeInfo nodeId="8247677264794237047" fileName="LayoutUtil.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="8247677264794237072" fileName="LayoutUtil.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLabelConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="8247677264794237097" fileName="LayoutUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPanelConstraints#(I)Ljava/awt/GridBagConstraints;" />
-    <scopeInfo nodeId="8247677264794237046" fileName="LayoutUtil.java" startLine="9" startPosition="23" endLine="9" endPosition="23" />
-    <scopeInfo nodeId="8247677264794237052" fileName="LayoutUtil.java" startLine="12" startPosition="66" endLine="13" endPosition="144" />
-    <scopeInfo nodeId="8247677264794237077" fileName="LayoutUtil.java" startLine="16" startPosition="66" endLine="17" endPosition="143" />
-    <scopeInfo nodeId="8247677264794237102" fileName="LayoutUtil.java" startLine="20" startPosition="66" endLine="21" endPosition="137" />
-    <scopeInfo nodeId="8247677264794237043" fileName="LayoutUtil.java" startLine="8" startPosition="25" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="8247677264794237047" fileName="LayoutUtil.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8247677264794237050" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="8247677264794237072" fileName="LayoutUtil.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="8247677264794237075" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="8247677264794237097" fileName="LayoutUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="8247677264794237100" varName="y" />
-    </scopeInfo>
-    <unitInfo nodeId="8247677264794237041" fileName="LayoutUtil.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.LayoutUtil" />
-  </root>
   <root nodeId="8247677264794237122">
     <nodeInfo nodeId="8247677264794237136" fileName="NanocConfigRunPreparationUtil.java" startLine="24" startPosition="88" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8247677264794237144" fileName="NanocConfigRunPreparationUtil.java" startLine="25" startPosition="122" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

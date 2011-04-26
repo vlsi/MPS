@@ -2,12 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.util.Mapper2" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.util.Mapper2" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
@@ -54,6 +53,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BasePrefsPage" />

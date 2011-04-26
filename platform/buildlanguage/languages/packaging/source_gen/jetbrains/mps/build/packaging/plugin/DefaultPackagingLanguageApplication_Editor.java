@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import java.awt.GridBagLayout;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
 import javax.swing.JLabel;
 

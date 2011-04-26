@@ -64,8 +64,9 @@
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" file="LayoutUtil.java">
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" file="MPSLaunch.java">
     <classNode dependClassName="java.lang.annotation.Target" />
@@ -86,6 +87,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.workbench.make.WorkbenchMakeService" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />

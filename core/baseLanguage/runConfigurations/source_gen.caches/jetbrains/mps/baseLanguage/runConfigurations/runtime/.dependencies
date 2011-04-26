@@ -81,7 +81,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.RawLineEditorComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JCheckBox" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -89,6 +88,7 @@
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.GridBagLayout" />

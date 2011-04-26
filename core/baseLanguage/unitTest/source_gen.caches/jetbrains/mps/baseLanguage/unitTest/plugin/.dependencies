@@ -119,9 +119,9 @@
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Editor" file="DefaultJUnit_Editor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode extendsClassName="javax.swing.JPanel" />
@@ -220,8 +220,8 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.AbstractTestWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor" file="JUnitConfigEditor.java">
-    <classNode dependClassName="javax.swing.border.TitledBorder" />
-    <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="javax.swing.JLabel" />
@@ -238,7 +238,7 @@
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.openapi.wm.IdeFocusManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
@@ -248,14 +248,14 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ClonableList" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
+    <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="javax.swing.JRadioButton" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.awt.FlowLayout" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />

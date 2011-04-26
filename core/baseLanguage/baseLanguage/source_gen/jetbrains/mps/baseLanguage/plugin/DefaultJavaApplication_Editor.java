@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import java.awt.GridBagLayout;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.JLabel;
 
 public class DefaultJavaApplication_Editor extends JPanel {

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class TwoFieldsEditor_Configuration_Editor extends SettingsEditorEx<TwoFieldsEditor_Configuration> {

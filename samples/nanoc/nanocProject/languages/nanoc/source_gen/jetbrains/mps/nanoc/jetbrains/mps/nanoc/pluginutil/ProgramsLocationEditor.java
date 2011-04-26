@@ -11,7 +11,7 @@ import javax.swing.JFileChooser;
 import java.io.File;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 
 public class ProgramsLocationEditor extends JPanel {
   private String myGDBLocationFileName;

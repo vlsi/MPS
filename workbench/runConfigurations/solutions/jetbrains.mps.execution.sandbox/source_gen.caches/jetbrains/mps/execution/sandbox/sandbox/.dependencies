@@ -70,12 +70,12 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
     <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
 </dependenciesRoot>

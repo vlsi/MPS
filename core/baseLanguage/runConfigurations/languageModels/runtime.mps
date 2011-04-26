@@ -36,6 +36,7 @@
   <import index="x4jy" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="uqw6" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.runconfigs(MPS.Classpath/jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
+  <import index="wzsw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.common(MPS.Classpath/jetbrains.mps.ide.common@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -1320,8 +1321,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="tpht.1202465811094" resolveInfo="Label" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063345968">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063345969">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399147981" resolveInfo="createLabelConstraints" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreateLabelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createLabelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063345970">
               <property name="value" nameId="tpee.1068580320021" value="0" />
             </node>
@@ -1339,8 +1340,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="1447676209063499871" resolveInfo="ParameterBrowser" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063345974">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063345975">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148006" resolveInfo="createPanelConstraints" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreatePanelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createPanelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063345976">
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
@@ -1376,8 +1377,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="tpht.1202465811094" resolveInfo="Label" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063345989">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063345990">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399147981" resolveInfo="createLabelConstraints" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreateLabelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createLabelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063345991">
               <property name="value" nameId="tpee.1068580320021" value="2" />
             </node>
@@ -1395,8 +1396,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="1447676209063499871" resolveInfo="ParameterBrowser" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063345995">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063345996">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148006" resolveInfo="createPanelConstraints" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreatePanelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createPanelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063345997">
               <property name="value" nameId="tpee.1068580320021" value="3" />
             </node>
@@ -1432,8 +1433,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="tpht.1202465811094" resolveInfo="Label" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063346010">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063346011">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399147981" resolveInfo="createLabelConstraints" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreateLabelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createLabelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063346012">
               <property name="value" nameId="tpee.1068580320021" value="4" />
             </node>
@@ -1451,8 +1452,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="1447676209063491225" resolveInfo="FieldWithBrowseButton" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063346016">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063346017">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148006" resolveInfo="createPanelConstraints" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreatePanelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createPanelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063346018">
               <property name="value" nameId="tpee.1068580320021" value="5" />
             </node>
@@ -1488,8 +1489,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="tpht.1202815836444" resolveInfo="CheckBox" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063346042">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063346043">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399147981" resolveInfo="createLabelConstraints" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreateLabelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createLabelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063346044">
               <property name="value" nameId="tpee.1068580320021" value="9" />
             </node>
@@ -1526,8 +1527,8 @@
         <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="1447676209063491225" resolveInfo="FieldWithBrowseButton" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="1447676209063346057">
           <node role="constraint" roleId="tphr.1202739826872" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1447676209063346058">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399147955" resolveInfo="LayoutUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148006" resolveInfo="createPanelConstraints" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzsw.~LayoutUtil" resolveInfo="LayoutUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~LayoutUtil%dcreatePanelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createPanelConstraints" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1447676209063346059">
               <property name="value" nameId="tpee.1068580320021" value="10" />
             </node>

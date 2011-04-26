@@ -3,17 +3,17 @@
   <unitInfo fileName="IntConst_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.nanoc.editor.IntConst_Editor" />
   <unitInfo fileName="CType_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CType_Editor" />
   <unitInfo fileName="VarRef_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor$_Inline_kzlle8_a0a" />
+  <unitInfo fileName="CBody_Editor.java" startLine="45" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor$statementListHandler_g01rur_a0" />
   <unitInfo fileName="CExpressionStatement_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CExpressionStatement_Editor" />
-  <unitInfo fileName="CBody_Editor.java" startLine="45" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor$statementListHandler_g01rur_a0" />
   <unitInfo fileName="CParenthesis_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CParenthesis_Editor" />
-  <unitInfo fileName="VarDeclStatement_Editor.java" startLine="72" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor$varDeclListHandler_fcfntz_b0" />
+  <unitInfo fileName="VarDeclStatement_Editor.java" startLine="72" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor$varDeclListHandler_fcfntz_b0" />
   <unitInfo fileName="CAssignmentExpression_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CAssignmentExpression_Editor" />
-  <unitInfo fileName="CBody_Editor.java" startLine="21" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor" />
+  <unitInfo fileName="CBody_Editor.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor" />
   <unitInfo fileName="VarRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
   <unitInfo fileName="CBinaryOp_Editor.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBinaryOp_Editor" />
   <unitInfo fileName="VarDecl_Editor.java" startLine="21" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDecl_Editor" />
   <unitInfo fileName="File_Editor.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.nanoc.editor.File_Editor" />
-  <unitInfo fileName="VarDeclStatement_Editor.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
+  <unitInfo fileName="VarDeclStatement_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
   <unitInfo fileName="CWhile_Editor.java" startLine="18" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CWhile_Editor" />
   <unitInfo fileName="CFor_Editor.java" startLine="18" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CFor_Editor" />
   <root nodeId="7211731935130582986">

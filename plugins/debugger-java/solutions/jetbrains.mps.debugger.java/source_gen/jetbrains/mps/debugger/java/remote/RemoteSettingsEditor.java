@@ -8,7 +8,7 @@ import javax.swing.JFormattedTextField;
 import java.awt.GridBagLayout;
 import javax.swing.text.DefaultFormatter;
 import javax.swing.JLabel;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import java.awt.event.KeyAdapter;

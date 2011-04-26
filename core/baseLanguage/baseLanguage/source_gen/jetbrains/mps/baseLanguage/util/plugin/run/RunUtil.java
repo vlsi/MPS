@@ -20,7 +20,9 @@ import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import com.intellij.openapi.application.ModalityState;
 
+@Deprecated
 public class RunUtil {
+  @Deprecated
   public RunUtil() {
   }
 

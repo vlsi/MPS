@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.JComboBox;
 import jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxRenderrer;
 import jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxEditor;

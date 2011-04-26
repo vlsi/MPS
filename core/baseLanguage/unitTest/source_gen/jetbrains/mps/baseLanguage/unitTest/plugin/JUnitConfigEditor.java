@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import com.intellij.openapi.wm.IdeFocusManager;
 import java.awt.GridBagLayout;
-import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.ide.common.LayoutUtil;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

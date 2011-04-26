@@ -13,6 +13,10 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.execution.filters.Filter" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.common.LayoutUtil" file="LayoutUtil.java">
+    <classNode dependClassName="java.awt.GridBagConstraints" />
+    <classNode dependClassName="java.awt.Insets" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.common.PathField" file="PathField.java">
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.BorderLayout" />

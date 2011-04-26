@@ -7,15 +7,11 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JFileChooser" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
-  <dependency className="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.LayoutUtil" file="LayoutUtil.java">
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.Insets" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" file="NanocConfigRunPreparationUtil.java">
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -46,10 +42,10 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JFileChooser" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>

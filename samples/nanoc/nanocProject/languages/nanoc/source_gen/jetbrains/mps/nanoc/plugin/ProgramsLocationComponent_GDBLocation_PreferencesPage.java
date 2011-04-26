@@ -70,4 +70,9 @@ public class ProgramsLocationComponent_GDBLocation_PreferencesPage extends BaseP
     ((ProgramsLocationEditor) component).setGDBLocation(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGDBLocation);
     ((ProgramsLocationEditor) component).setGCCLocation(((ProgramsLocationComponent_PreferencesComponent) ProgramsLocationComponent_GDBLocation_PreferencesPage.this.getPrefsComponent()).getStateObject().myGCCLocation);
   }
+
+  @Override
+  public String getHelpTopic() {
+    return "GDB_Location";
+  }
 }
