@@ -125,6 +125,7 @@ public abstract class DiffModelTree extends MPSTree {
   private class PackageTreeNode extends MPSTreeNode {
     private PackageTreeNode(String packageName) {
       super(myOperationContext);
+      setNodeIdentifier("" + packageName);
       setText(packageName);
     }
   }
