@@ -51,7 +51,10 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.folding.*;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.nodeEditor.selection.*;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -2446,7 +2449,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
-      return getOperationContext().getModule();
+      IOperationContext operationContext = getOperationContext();
+      if (operationContext == null) return null;
+      return operationContext.getModule();
     }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
