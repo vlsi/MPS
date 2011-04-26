@@ -12,7 +12,6 @@ import jetbrains.mps.project.GlobalScope;
 public class RunConfiguration extends PersistentConfiguration {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.RunConfiguration";
   public static final String CONFIGURATION_TYPE = "configurationType";
-  public static final String ICON_PATH = "iconPath";
   public static final String ICON = "icon";
 
   public RunConfiguration(SNode node) {
@@ -25,14 +24,6 @@ public class RunConfiguration extends PersistentConfiguration {
 
   public void setConfigurationType(RunConfigurationKind node) {
     super.setReferent(RunConfiguration.CONFIGURATION_TYPE, node);
-  }
-
-  public IconPath getIconPath() {
-    return (IconPath) this.getChild(IconPath.class, RunConfiguration.ICON_PATH);
-  }
-
-  public void setIconPath(IconPath node) {
-    super.setChild(RunConfiguration.ICON_PATH, node);
   }
 
   public IconResource getIcon() {
