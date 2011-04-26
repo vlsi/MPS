@@ -79,37 +79,25 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     IHolder holder = query.getObjectHolder();
     assert holder instanceof NodeHolder;
     SNode node = ((NodeHolder) holder).getObject();
-    boolean rightConcept = node.isInstanceOfConcept(getConcept());
-    if (!(rightConcept)) {
-      LOG.error(
-        "Trying to use finder that is not applicable to the concept. Returning empty results." +
-          "[finder: \"" + this.getDescription() + "\"; " +
-          "concept: " + node.getConceptFqName(),
-        new Exception()
-      );
-    } else {
-      boolean isApplicable = this.isApplicable(node);
-      if (!(isApplicable)) {
-        LOG.error(
-          "Trying to use finder that is not applicable to the node. Returning empty results." +
-            "[finder: \"" + this.getDescription() + "\"; " +
-            "node: " + node.toString(),
-          new Exception()
-        );
-      } else {
-        List<SNode> resSN = new ArrayList<SNode>();
-        getSearchedNodes(node, query.getScope(), resSN);
-        for (SNode resnode : resSN) {
-          results.getSearchedNodes().add(resnode);
-        }
-
-        List<SNode> res = new ArrayList<SNode>();
-        doFind(node, query.getScope(), res, indicator);
-        Collections.sort(res, getComparator());
-        for (SNode resnode : res) {
-          results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
-        }
+    if (node.isInstanceOfConcept(getConcept()) && isApplicable(node)) {
+      List<SNode> resSN = new ArrayList<SNode>();
+      getSearchedNodes(node, query.getScope(), resSN);
+      for (SNode resnode : resSN) {
+        results.getSearchedNodes().add(resnode);
       }
+
+      List<SNode> res = new ArrayList<SNode>();
+      doFind(node, query.getScope(), res, indicator);
+      Collections.sort(res, getComparator());
+      for (SNode resnode : res) {
+        results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
+      }
+    } else {
+      LOG.debug(
+        "Trying to use finder that is not applicable to the concept. Returning empty results." +
+          "[finder: \"" + getDescription() + "\"; " +
+          "concept: " + node.getConceptFqName()
+      );
     }
     return results;
   }
