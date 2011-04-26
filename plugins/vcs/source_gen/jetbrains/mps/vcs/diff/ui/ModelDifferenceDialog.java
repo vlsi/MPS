@@ -24,25 +24,12 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import javax.swing.JPopupMenu;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
-import jetbrains.mps.vcs.diff.changes.ChangeType;
-import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.smodel.SNode;
-import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.ActionUtils;
+import java.util.Arrays;
+import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 
 public class ModelDifferenceDialog extends BaseDialog {
   private Project myProject;
@@ -100,8 +87,6 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   public void invokeRootDifference(final SNodeId rootId) {
-    final ModelDifferenceDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
-    assert rootTreeNode != null;
     if (myRootsDialogInvoked) {
       return;
     }
@@ -109,7 +94,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, rootTreeNode.myPresentation);
+        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId));
       }
     });
     rootDialog.value.showDialog();
@@ -118,16 +103,6 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   /*package*/ void rootDialogClosed() {
     myRootsDialogInvoked = false;
-  }
-
-  private ModelDifferenceDialog.RootTreeNode findRootTreeNode(SNodeId rootId) {
-    MPSTreeNode modelTreeNode = myTree.getRootNode();
-    for (MPSTreeNode rootTreeNode : Sequence.fromIterable(modelTreeNode)) {
-      if (rootId.equals(((ModelDifferenceDialog.RootTreeNode) rootTreeNode).myRootId)) {
-        return ((ModelDifferenceDialog.RootTreeNode) rootTreeNode);
-      }
-    }
-    return null;
   }
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {
@@ -143,104 +118,30 @@ public class ModelDifferenceDialog extends BaseDialog {
     return "true".equals(System.getProperty("mps.newdiff"));
   }
 
-  private class ModelDifferenceTree extends MPSTree {
-    public ModelDifferenceTree() {
-      rebuildNow();
-      expandAll();
-    }
-
-    protected MPSTreeNode rebuild() {
-      final ModelDifferenceDialog.ModelTreeNode modelNode = new ModelDifferenceDialog.ModelTreeNode();
-      SetSequence.fromSet(MapSequence.fromMap(myRootToChange).keySet()).<ModelDifferenceDialog.RootTreeNode>select(new ISelector<SNodeId, ModelDifferenceDialog.RootTreeNode>() {
-        public ModelDifferenceDialog.RootTreeNode select(SNodeId r) {
-          return new ModelDifferenceDialog.RootTreeNode(r);
-        }
-      }).sort(new ISelector<ModelDifferenceDialog.RootTreeNode, Comparable<?>>() {
-        public Comparable<?> select(ModelDifferenceDialog.RootTreeNode rtn) {
-          return rtn.myPresentation;
-        }
-      }, true).visitAll(new IVisitor<ModelDifferenceDialog.RootTreeNode>() {
-        public void visit(ModelDifferenceDialog.RootTreeNode rtn) {
-          modelNode.add(rtn);
-        }
-      });
-      return modelNode;
-    }
-
-    @Override
-    public void rebuildNow() {
-      super.rebuildNow();
-      expandAll();
-    }
-
-    @Override
-    protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-      return null;
-    }
-  }
-
-  private class ModelTreeNode extends MPSTreeNode {
-    public ModelTreeNode() {
+  private class ModelDifferenceTree extends DiffModelTree {
+    private ModelDifferenceTree() {
       super(myOperationContext);
-      setNodeIdentifier("model");
     }
 
-    @Override
-    protected void doUpdatePresentation() {
-      setText(myChangeSet.getNewModel().getLongName());
-      setIcon(Icons.MODEL_ICON);
-    }
-  }
-
-  private class RootTreeNode extends MPSTreeNode {
-    private SNodeId myRootId;
-    private String myPresentation;
-
-    public RootTreeNode(SNodeId rootId) {
-      super(myOperationContext);
-      myRootId = rootId;
-      setNodeIdentifier("" + myRootId);
-      doUpdatePresentation();
+    protected Iterable<BaseAction> getRootActions(SNodeId rootId) {
+      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this, rootId));
     }
 
-    @Override
-    protected void doUpdatePresentation() {
-      List<ModelChange> changes = MapSequence.fromMap(myRootToChange).get(myRootId);
-
-      if (ListSequence.fromList(changes).first() instanceof AddRootChange) {
-        setColor(ChangeType.ADD.getTreeColor());
-      } else if (ListSequence.fromList(changes).first() instanceof DeleteRootChange) {
-        setColor(ChangeType.DELETE.getTreeColor());
-      } else {
-        setColor(ChangeType.CHANGE.getTreeColor());
+    protected void updateRootCustomPresentation(DiffModelTree.RootTreeNode rootTreeNode) {
+      ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(rootTreeNode.getRootId())).first();
+      ChangeType compositeChangeType = ChangeType.CHANGE;
+      if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
+        compositeChangeType = firstChange.getType();
       }
-
-      for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myChangeSet.getOldModel(), myChangeSet.getNewModel()}))) {
-        SNode root = model.getNodeById(myRootId);
-        if (root != null) {
-          myPresentation = root.getPresentation();
-          Icon iconFor = IconManager.getIconFor(root);
-          if (iconFor != null) {
-            setIcon(iconFor);
-          }
-        }
-      }
-      setText(myPresentation);
+      rootTreeNode.setColor(compositeChangeType.getTreeColor());
     }
 
-    @Override
-    public void doubleClick() {
-      invokeRootDifference(myRootId);
+    protected Iterable<SModel> getModels() {
+      return Arrays.asList(myChangeSet.getNewModel(), myChangeSet.getOldModel());
     }
 
-    @Override
-    public ActionGroup getActionGroup() {
-      BaseAction defaultAction = new BaseAction("Show Difference") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> m) {
-          doubleClick();
-        }
-      };
-      return ActionUtils.groupFromActions(defaultAction);
+    protected Iterable<SNodeId> getAffectedRoots() {
+      return MapSequence.fromMap(myRootToChange).keySet();
     }
   }
 }

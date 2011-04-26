@@ -27,32 +27,21 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import javax.swing.tree.TreeNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.icons.IconManager;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.awt.Color;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
-import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.util.NameUtil;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.vcs.diff.ui.DiffModelTree;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Map;
+import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 
 public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
@@ -74,6 +63,7 @@ public class MergeModelsDialog extends BaseDialog {
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
+    myMergeTree.setMultipleRootNames(true);
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
@@ -131,46 +121,15 @@ public class MergeModelsDialog extends BaseDialog {
 
   @Nullable
   public SNodeId getPreviousRoot(@NotNull SNodeId rootId) {
-    return getNeighbourRoot(rootId, false);
+    return myMergeTree.getNeighbourRoot(rootId, false);
   }
 
   @Nullable
   public SNodeId getNextRoot(@NotNull SNodeId rootId) {
-    return getNeighbourRoot(rootId, true);
-  }
-
-  @Nullable
-  private SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
-    MPSTreeNode modelTreeNode = myMergeTree.getRootNode();
-    MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
-    if (rootTreeNode == null) {
-      return null;
-    } else {
-      TreeNode neighbour = (next ?
-        modelTreeNode.getChildAfter(rootTreeNode) :
-        modelTreeNode.getChildBefore(rootTreeNode)
-      );
-      if (neighbour == null) {
-        return null;
-      } else {
-        return ((MergeModelsDialog.RootTreeNode) neighbour).myRootId;
-      }
-    }
-  }
-
-  private MergeModelsDialog.RootTreeNode findRootTreeNode(SNodeId rootId) {
-    MPSTreeNode modelTreeNode = myMergeTree.getRootNode();
-    for (MPSTreeNode rootTreeNode : Sequence.fromIterable(modelTreeNode)) {
-      if (rootId.equals(((MergeModelsDialog.RootTreeNode) rootTreeNode).myRootId)) {
-        return ((MergeModelsDialog.RootTreeNode) rootTreeNode);
-      }
-    }
-    return null;
+    return myMergeTree.getNeighbourRoot(rootId, true);
   }
 
   public void invokeMergeRoots(final SNodeId rootId) {
-    final MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
-    assert rootTreeNode != null;
     if (myRootsDialogInvoked) {
       return;
     }
@@ -178,7 +137,7 @@ public class MergeModelsDialog extends BaseDialog {
     final Wrappers._T<MergeRootsDialog> mergeRootsDialog = new Wrappers._T<MergeRootsDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeContext, rootId, rootTreeNode.myPresentations);
+        mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeContext, rootId, myMergeTree.getNameForRoot(rootId));
       }
     });
     mergeRootsDialog.value.showDialog();
@@ -188,8 +147,8 @@ public class MergeModelsDialog extends BaseDialog {
   public void acceptVersionForSelectedRoots(boolean mine) {
     final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
     final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
-    for (MergeModelsDialog.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(MergeModelsDialog.RootTreeNode.class, null)))) {
-      for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(rtn.myRootId))) {
+    for (DiffModelTree.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null)))) {
+      for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(rtn.getRootId()))) {
         if (!(myMergeContext.isChangeResolved(change))) {
           if (mine == myMergeContext.isMyChange(change)) {
             ListSequence.fromList(changesToApply).addElement(change);
@@ -220,154 +179,65 @@ public class MergeModelsDialog extends BaseDialog {
     return !("false".equals(System.getProperty("mps.newmerge")));
   }
 
-  private class MergeModelsTree extends MPSTree {
-    public MergeModelsTree() {
-      rebuildNow();
-      expandAll();
-    }
-
-    protected MPSTreeNode rebuild() {
-      final MergeModelsDialog.ModelTreeNode modelNode = new MergeModelsDialog.ModelTreeNode();
-      SetSequence.fromSet(myMergeContext.getAffectedRoots()).<MergeModelsDialog.RootTreeNode>select(new ISelector<SNodeId, MergeModelsDialog.RootTreeNode>() {
-        public MergeModelsDialog.RootTreeNode select(SNodeId r) {
-          return new MergeModelsDialog.RootTreeNode(r);
-        }
-      }).sort(new ISelector<MergeModelsDialog.RootTreeNode, Comparable<?>>() {
-        public Comparable<?> select(MergeModelsDialog.RootTreeNode rtn) {
-          return rtn.myPresentations;
-        }
-      }, true).visitAll(new IVisitor<MergeModelsDialog.RootTreeNode>() {
-        public void visit(MergeModelsDialog.RootTreeNode rtn) {
-          modelNode.add(rtn);
-        }
-      });
-      return modelNode;
-    }
-
-    @Override
-    public void rebuildNow() {
-      super.rebuildNow();
-      expandAll();
-    }
-  }
-
-  private class ModelTreeNode extends MPSTreeNode {
-    public ModelTreeNode() {
+  private class MergeModelsTree extends DiffModelTree {
+    private MergeModelsTree() {
       super(myOperationContext);
-      setNodeIdentifier("model");
     }
 
-    @Override
-    protected void doUpdatePresentation() {
-      setText(myMergeContext.getResultModel().getLongName());
-      setIcon(Icons.MODEL_ICON);
-    }
-  }
-
-  private class RootTreeNode extends MPSTreeNode {
-    private SNodeId myRootId;
-    private String myPresentations;
-
-    public RootTreeNode(SNodeId rootId) {
-      super(myOperationContext);
-      myRootId = rootId;
-      setNodeIdentifier("" + myRootId);
-
-      List<String> presentations = ListSequence.fromList(new ArrayList<String>());
-      Icon icon = null;
-      for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myMergeContext.getBaseModel(), myMergeContext.getMyModel(), myMergeContext.getRepositoryModel()}))) {
-        SNode root = model.getNodeById(myRootId);
-        if (root != null) {
-          String presentation = root.getPresentation();
-          if (!(ListSequence.fromList(presentations).contains(presentation))) {
-            ListSequence.fromList(presentations).addElement(presentation);
-          }
-          if (icon == null) {
-            icon = IconManager.getIconFor(root);
-          }
-        }
-      }
-      myPresentations = StringUtils.join(presentations, " / ");
-      setIcon(icon);
+    protected Iterable<BaseAction> getRootActions(final SNodeId rootId) {
+      MergeModelsDialog md = MergeModelsDialog.this;
+      return Arrays.asList(new InvokeMergeRootsAction(md, rootId), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
-    @Override
-    protected void doUpdatePresentation() {
-      List<ModelChange> changes = ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
+    protected void updateRootCustomPresentation(DiffModelTree.RootTreeNode rootTreeNode) {
+      List<ModelChange> changes = ListSequence.fromList(myMergeContext.getChangesForRoot(rootTreeNode.getRootId())).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return !(myMergeContext.isChangeResolved(ch));
         }
       }).toListSequence();
-      Iterable<ModelChange> conflictedChanges = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
+
+      int conflictedCount = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
         }
-      });
+      }).count();
+      int nonConflictedCount = ListSequence.fromList(changes).count() - conflictedCount;
+      ChangeType compositeChangeType = null;
+      if (conflictedCount != 0) {
+        compositeChangeType = ChangeType.CONFLICTED;
 
-      boolean deleted = false;
-      if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
-        setColor(Color.RED);
-      } else if (ListSequence.fromList(changes).isEmpty()) {
-        deleted = myMergeContext.getResultModel().getNodeById(myRootId) == null;
-      } else if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return ch instanceof AddRootChange;
-        }
-      })) {
-        setColor(FileStatus.ADDED.getColor());
-      } else if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return ch instanceof DeleteRootChange;
-        }
-      })) {
-        setColor(FileStatus.DELETED.getColor());
-      } else if (ListSequence.fromList(changes).isNotEmpty()) {
-        setColor(FileStatus.MODIFIED.getColor());
-      }
+        rootTreeNode.setAdditionalText(nonConflictedCount + "+" + conflictedCount);
+        rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change") + ", " + NameUtil.formatNumericalString(conflictedCount, "conficting change"));
 
-      int conflictedCount = Sequence.fromIterable(conflictedChanges).count();
-      int nonConflctedCount = ListSequence.fromList(changes).count() - conflictedCount;
-      if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
-        setAdditionalText(nonConflctedCount + "+" + conflictedCount);
-        setTooltipText(NameUtil.formatNumericalString(nonConflctedCount, "non-conficting change") + ", " + NameUtil.formatNumericalString(conflictedCount, "conficting change"));
-      } else if (ListSequence.fromList(changes).isNotEmpty()) {
-        setAdditionalText("" + nonConflctedCount);
-        setTooltipText(NameUtil.formatNumericalString(nonConflctedCount, "non-conficting change"));
-      }
-
-      List<String> presentations = ListSequence.fromList(new ArrayList<String>());
-      Icon icon = null;
-      for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myMergeContext.getBaseModel(), myMergeContext.getMyModel(), myMergeContext.getRepositoryModel()}))) {
-        SNode root = model.getNodeById(myRootId);
-        if (root != null) {
-          String presentation = root.getPresentation();
-          if (!(ListSequence.fromList(presentations).contains(presentation))) {
-            ListSequence.fromList(presentations).addElement(presentation);
+      } else {
+        if (ListSequence.fromList(changes).isEmpty()) {
+          rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
+        } else {
+          compositeChangeType = ChangeType.CHANGE;
+          if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
+            public boolean accept(ModelChange ch) {
+              return ch instanceof AddRootChange || ch instanceof DeleteRootChange;
+            }
+          })) {
+            compositeChangeType = ListSequence.fromList(changes).first().getType();
           }
-          if (icon == null) {
-            icon = IconManager.getIconFor(root);
-          }
+
+          rootTreeNode.setAdditionalText("" + nonConflictedCount);
+          rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change"));
         }
       }
-      setText((deleted ?
-        String.format("<html><s>%s</s></html>", myPresentations) :
-        myPresentations
-      ));
+
+      if (compositeChangeType != null) {
+        rootTreeNode.setColor(compositeChangeType.getTreeColor());
+      }
     }
 
-    @Override
-    public void doubleClick() {
-      invokeMergeRoots(myRootId);
+    protected Iterable<SModel> getModels() {
+      return Arrays.asList(myMergeContext.getBaseModel(), myMergeContext.getMyModel(), myMergeContext.getRepositoryModel());
     }
 
-    @Override
-    public ActionGroup getActionGroup() {
-      BaseAction defaultAction = new BaseAction("Merge Root") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> m) {
-          doubleClick();
-        }
-      };
-      return ActionUtils.groupFromActions(defaultAction, AcceptYoursTheirs.yoursInstance(MergeModelsDialog.this), AcceptYoursTheirs.theirsInstance(MergeModelsDialog.this));
+    protected Iterable<SNodeId> getAffectedRoots() {
+      return myMergeContext.getAffectedRoots();
     }
   }
 }
