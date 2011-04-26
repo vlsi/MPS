@@ -212,7 +212,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
       } else {
-        myState.clearOperations();
+        myState.clearStateObjects();
         doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();

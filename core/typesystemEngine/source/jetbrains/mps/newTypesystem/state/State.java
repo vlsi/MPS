@@ -338,7 +338,7 @@ public class State {
 
 
   public void clearStateObjects() {
-    if (!myTypeCheckingContext.isInTraceMode()&& false) {
+    if (!myTypeCheckingContext.isInTraceMode()) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
         map.getValue().clear();
       }
