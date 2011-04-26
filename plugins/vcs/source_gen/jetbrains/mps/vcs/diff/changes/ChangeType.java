@@ -11,9 +11,6 @@ public enum ChangeType {
   CHANGE(new Color(188, 207, 249), FileStatus.COLOR_MODIFIED),
   CONFLICTED(new Color(245, 164, 164), FileStatus.MERGED_WITH_CONFLICTS.getColor());
 
-  @Deprecated
-  public static final Color CONFLICT_COLOR = new Color(245, 164, 164);
-
   private Color myColor;
   private Color myTreeColor;
 

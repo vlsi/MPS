@@ -370,62 +370,59 @@
     <nodeInfo nodeId="8755562548669537463" fileName="ChangeGroup.java" startLine="17" startPosition="30" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightBounds" />
     <nodeInfo nodeId="3021948350273458210" fileName="ChangeGroup.java" startLine="18" startPosition="31" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChanges" />
     <nodeInfo nodeId="3021948350273458214" fileName="ChangeGroup.java" startLine="19" startPosition="38" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeType" />
-    <nodeInfo nodeId="3021948350273458217" fileName="ChangeGroup.java" startLine="20" startPosition="34" endLine="21" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConflicted" />
-    <nodeInfo nodeId="6236996727608083505" fileName="ChangeGroup.java" startLine="23" startPosition="131" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6236996727608083511" fileName="ChangeGroup.java" startLine="24" startPosition="30" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3021948350273458354" fileName="ChangeGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3021948350273458367" fileName="ChangeGroup.java" startLine="28" startPosition="48" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458394" fileName="ChangeGroup.java" startLine="40" startPosition="45" endLine="41" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6236996727608083729" fileName="ChangeGroup.java" startLine="46" startPosition="33" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6236996727608083740" fileName="ChangeGroup.java" startLine="50" startPosition="34" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458474" fileName="ChangeGroup.java" startLine="61" startPosition="41" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458480" fileName="ChangeGroup.java" startLine="65" startPosition="37" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458486" fileName="ChangeGroup.java" startLine="69" startPosition="33" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="27" startPosition="111" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-    <nodeInfo nodeId="3021948350273458376" fileName="ChangeGroup.java" startLine="32" startPosition="61" endLine="36" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458392" fileName="ChangeGroup.java" startLine="39" startPosition="111" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="6236996727608083724" fileName="ChangeGroup.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftBounds#()Ljetbrains/mps/vcs/diff/ui/Bounds;" />
-    <nodeInfo nodeId="6236996727608083731" fileName="ChangeGroup.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightBounds#()Ljetbrains/mps/vcs/diff/ui/Bounds;" />
-    <nodeInfo nodeId="6236996727608083749" fileName="ChangeGroup.java" startLine="54" startPosition="41" endLine="58" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273458469" fileName="ChangeGroup.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChanges#()Ljava/util/List;" />
-    <nodeInfo nodeId="3021948350273458476" fileName="ChangeGroup.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-    <nodeInfo nodeId="3021948350273458482" fileName="ChangeGroup.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflicted#()Z" />
-    <nodeInfo nodeId="3021948350273458387" fileName="ChangeGroup.java" startLine="38" startPosition="7" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="31" startPosition="65" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/vcs/diff/changes/ChangeType;Ljetbrains/mps/vcs/diff/changes/ChangeType;)Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-    <nodeInfo nodeId="6236996727608083742" fileName="ChangeGroup.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBounds#(Z)Ljetbrains/mps/vcs/diff/ui/Bounds;" />
-    <nodeInfo nodeId="3021948350273458358" fileName="ChangeGroup.java" startLine="26" startPosition="24" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3021948350273458245" fileName="ChangeGroup.java" startLine="22" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeGroup#(Ljetbrains/mps/vcs/diff/ui/Bounds;Ljetbrains/mps/vcs/diff/ui/Bounds;Ljava/util/List;Ljetbrains/mps/vcs/diff/merge/MergeContext;)V" />
-    <scopeInfo nodeId="3021948350273458366" fileName="ChangeGroup.java" startLine="28" startPosition="48" endLine="29" endPosition="28" />
-    <scopeInfo nodeId="3021948350273458393" fileName="ChangeGroup.java" startLine="40" startPosition="45" endLine="41" endPosition="86" />
-    <scopeInfo nodeId="6236996727608083727" fileName="ChangeGroup.java" startLine="46" startPosition="33" endLine="47" endPosition="24" />
-    <scopeInfo nodeId="6236996727608083734" fileName="ChangeGroup.java" startLine="50" startPosition="34" endLine="51" endPosition="25" />
-    <scopeInfo nodeId="3021948350273458473" fileName="ChangeGroup.java" startLine="61" startPosition="41" endLine="62" endPosition="21" />
-    <scopeInfo nodeId="3021948350273458479" fileName="ChangeGroup.java" startLine="65" startPosition="37" endLine="66" endPosition="24" />
-    <scopeInfo nodeId="3021948350273458485" fileName="ChangeGroup.java" startLine="69" startPosition="33" endLine="70" endPosition="24" />
-    <scopeInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="27" startPosition="111" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3021948350273458375" fileName="ChangeGroup.java" startLine="32" startPosition="61" endLine="36" endPosition="10" />
-    <scopeInfo nodeId="3021948350273458392" fileName="ChangeGroup.java" startLine="39" startPosition="111" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6236996727608083724" fileName="ChangeGroup.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6236996727608083731" fileName="ChangeGroup.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6236996727608083745" fileName="ChangeGroup.java" startLine="54" startPosition="41" endLine="58" endPosition="6" />
-    <scopeInfo nodeId="3021948350273458469" fileName="ChangeGroup.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3021948350273458476" fileName="ChangeGroup.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3021948350273458482" fileName="ChangeGroup.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="31" startPosition="65" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6236996727608083742" fileName="ChangeGroup.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
+    <nodeInfo nodeId="6236996727608083505" fileName="ChangeGroup.java" startLine="22" startPosition="131" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6236996727608083511" fileName="ChangeGroup.java" startLine="23" startPosition="30" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3021948350273458354" fileName="ChangeGroup.java" startLine="24" startPosition="32" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3021948350273458367" fileName="ChangeGroup.java" startLine="27" startPosition="48" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7755568830356323776" fileName="ChangeGroup.java" startLine="39" startPosition="45" endLine="40" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7755568830356323785" fileName="ChangeGroup.java" startLine="42" startPosition="9" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6236996727608083729" fileName="ChangeGroup.java" startLine="47" startPosition="33" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6236996727608083740" fileName="ChangeGroup.java" startLine="51" startPosition="34" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3021948350273458474" fileName="ChangeGroup.java" startLine="62" startPosition="41" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3021948350273458480" fileName="ChangeGroup.java" startLine="66" startPosition="37" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="26" startPosition="111" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+    <nodeInfo nodeId="3021948350273458376" fileName="ChangeGroup.java" startLine="31" startPosition="61" endLine="35" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7755568830356323774" fileName="ChangeGroup.java" startLine="38" startPosition="100" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="6236996727608083724" fileName="ChangeGroup.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftBounds#()Ljetbrains/mps/vcs/diff/ui/Bounds;" />
+    <nodeInfo nodeId="6236996727608083731" fileName="ChangeGroup.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightBounds#()Ljetbrains/mps/vcs/diff/ui/Bounds;" />
+    <nodeInfo nodeId="6236996727608083749" fileName="ChangeGroup.java" startLine="55" startPosition="41" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3021948350273458469" fileName="ChangeGroup.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChanges#()Ljava/util/List;" />
+    <nodeInfo nodeId="3021948350273458476" fileName="ChangeGroup.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+    <nodeInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="30" startPosition="65" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/vcs/diff/changes/ChangeType;Ljetbrains/mps/vcs/diff/changes/ChangeType;)Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+    <nodeInfo nodeId="7755568830356323763" fileName="ChangeGroup.java" startLine="37" startPosition="7" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6236996727608083742" fileName="ChangeGroup.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBounds#(Z)Ljetbrains/mps/vcs/diff/ui/Bounds;" />
+    <nodeInfo nodeId="3021948350273458358" fileName="ChangeGroup.java" startLine="25" startPosition="24" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3021948350273458245" fileName="ChangeGroup.java" startLine="21" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeGroup#(Ljetbrains/mps/vcs/diff/ui/Bounds;Ljetbrains/mps/vcs/diff/ui/Bounds;Ljava/util/List;Ljetbrains/mps/vcs/diff/merge/MergeContext;)V" />
+    <scopeInfo nodeId="3021948350273458366" fileName="ChangeGroup.java" startLine="27" startPosition="48" endLine="28" endPosition="28" />
+    <scopeInfo nodeId="7755568830356323775" fileName="ChangeGroup.java" startLine="39" startPosition="45" endLine="40" endPosition="86" />
+    <scopeInfo nodeId="7755568830356323764" fileName="ChangeGroup.java" startLine="42" startPosition="9" endLine="43" endPosition="43" />
+    <scopeInfo nodeId="6236996727608083727" fileName="ChangeGroup.java" startLine="47" startPosition="33" endLine="48" endPosition="24" />
+    <scopeInfo nodeId="6236996727608083734" fileName="ChangeGroup.java" startLine="51" startPosition="34" endLine="52" endPosition="25" />
+    <scopeInfo nodeId="3021948350273458473" fileName="ChangeGroup.java" startLine="62" startPosition="41" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="3021948350273458479" fileName="ChangeGroup.java" startLine="66" startPosition="37" endLine="67" endPosition="24" />
+    <scopeInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="26" startPosition="111" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3021948350273458375" fileName="ChangeGroup.java" startLine="31" startPosition="61" endLine="35" endPosition="10" />
+    <scopeInfo nodeId="7755568830356323774" fileName="ChangeGroup.java" startLine="38" startPosition="100" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6236996727608083724" fileName="ChangeGroup.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6236996727608083731" fileName="ChangeGroup.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6236996727608083745" fileName="ChangeGroup.java" startLine="55" startPosition="41" endLine="59" endPosition="6" />
+    <scopeInfo nodeId="3021948350273458469" fileName="ChangeGroup.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="3021948350273458476" fileName="ChangeGroup.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="30" startPosition="65" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6236996727608083742" fileName="ChangeGroup.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6236996727608083747" varName="left" />
     </scopeInfo>
-    <scopeInfo nodeId="3021948350273458248" fileName="ChangeGroup.java" startLine="23" startPosition="131" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="3021948350273458245" fileName="ChangeGroup.java" startLine="22" startPosition="0" endLine="44" endPosition="3">
+    <scopeInfo nodeId="3021948350273458248" fileName="ChangeGroup.java" startLine="22" startPosition="131" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="3021948350273458245" fileName="ChangeGroup.java" startLine="21" startPosition="0" endLine="45" endPosition="3">
       <varInfo nodeId="6236996727608083377" varName="rightBounds" />
       <varInfo nodeId="6236996727608081399" varName="leftBounds" />
       <varInfo nodeId="3021948350273458431" varName="mergeContext" />
       <varInfo nodeId="3021948350273458420" varName="changes" />
     </scopeInfo>
-    <unitInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="27" startPosition="73" endLine="31" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$1" />
-    <unitInfo nodeId="3021948350273458392" fileName="ChangeGroup.java" startLine="39" startPosition="82" endLine="43" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$3" />
-    <unitInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="31" startPosition="22" endLine="38" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$2" />
-    <unitInfo nodeId="3021948350273458192" fileName="ChangeGroup.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <unitInfo nodeId="3021948350273458365" fileName="ChangeGroup.java" startLine="26" startPosition="73" endLine="30" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$1" />
+    <unitInfo nodeId="7755568830356323774" fileName="ChangeGroup.java" startLine="38" startPosition="71" endLine="42" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$3" />
+    <unitInfo nodeId="3021948350273458374" fileName="ChangeGroup.java" startLine="30" startPosition="22" endLine="37" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup$2" />
+    <unitInfo nodeId="3021948350273458192" fileName="ChangeGroup.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
   </root>
   <root nodeId="3416287804356520387">
     <nodeInfo nodeId="3416287804356522286" fileName="FoldingAreaButton.java" startLine="8" startPosition="41" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
@@ -1256,60 +1253,57 @@
     <unitInfo nodeId="7115262660808722246" fileName="ButtonsPainter.java" startLine="25" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ButtonsPainter" />
   </root>
   <root nodeId="742766381634604040">
-    <nodeInfo nodeId="742766381634607565" fileName="ChangeTrapeciumStrip.java" startLine="15" startPosition="54" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WIDTH" />
-    <nodeInfo nodeId="3021948350273458871" fileName="ChangeTrapeciumStrip.java" startLine="17" startPosition="0" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupBuilder" />
-    <nodeInfo nodeId="3021948350273458977" fileName="ChangeTrapeciumStrip.java" startLine="20" startPosition="70" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1696159243610585435" fileName="ChangeTrapeciumStrip.java" startLine="23" startPosition="47" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4294451483718543463" fileName="ChangeTrapeciumStrip.java" startLine="26" startPosition="6" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4294451483718547815" fileName="ChangeTrapeciumStrip.java" startLine="27" startPosition="58" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742766381634676002" fileName="ChangeTrapeciumStrip.java" startLine="28" startPosition="59" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742766381634676009" fileName="ChangeTrapeciumStrip.java" startLine="29" startPosition="44" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1696159243610565785" fileName="ChangeTrapeciumStrip.java" startLine="32" startPosition="45" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4965236727523006313" fileName="ChangeTrapeciumStrip.java" startLine="39" startPosition="45" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3021948350273459364" fileName="ChangeTrapeciumStrip.java" startLine="40" startPosition="50" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3021948350273403023" fileName="ChangeTrapeciumStrip.java" startLine="41" startPosition="52" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4965236727523006280" fileName="ChangeTrapeciumStrip.java" startLine="43" startPosition="93" endLine="44" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4965236727523006287" fileName="ChangeTrapeciumStrip.java" startLine="44" startPosition="71" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4965236727523006296" fileName="ChangeTrapeciumStrip.java" startLine="45" startPosition="67" endLine="46" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4965236727523006303" fileName="ChangeTrapeciumStrip.java" startLine="46" startPosition="74" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4965236727523006364" fileName="ChangeTrapeciumStrip.java" startLine="47" startPosition="70" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4965236727523006365" fileName="ChangeTrapeciumStrip.java" startLine="48" startPosition="0" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4965236727523006376" fileName="ChangeTrapeciumStrip.java" startLine="49" startPosition="57" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8018595893829002475" fileName="ChangeTrapeciumStrip.java" startLine="50" startPosition="69" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4965236727523006394" fileName="ChangeTrapeciumStrip.java" startLine="55" startPosition="9" endLine="56" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4965236727523006401" fileName="ChangeTrapeciumStrip.java" startLine="56" startPosition="31" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4965236727523006406" fileName="ChangeTrapeciumStrip.java" startLine="57" startPosition="29" endLine="58" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4965236727523006416" fileName="ChangeTrapeciumStrip.java" startLine="58" startPosition="59" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7530992553317861663" fileName="ChangeTrapeciumStrip.java" startLine="63" startPosition="39" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7530992553317861676" fileName="ChangeTrapeciumStrip.java" startLine="67" startPosition="40" endLine="68" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3021948350273459338" fileName="ChangeTrapeciumStrip.java" startLine="71" startPosition="45" endLine="72" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="22" startPosition="60" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
-    <nodeInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="31" startPosition="84" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeGroupsInvalidated#()V" />
-    <nodeInfo nodeId="4965236727523006387" fileName="ChangeTrapeciumStrip.java" startLine="51" startPosition="0" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7530992553317861654" fileName="ChangeTrapeciumStrip.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftViewport#()Ljavax/swing/JViewport;" />
-    <nodeInfo nodeId="7530992553317861672" fileName="ChangeTrapeciumStrip.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightViewport#()Ljavax/swing/JViewport;" />
-    <nodeInfo nodeId="7530992553317861625" fileName="ChangeTrapeciumStrip.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOffset#(Ljavax/swing/JViewport;)I" />
-    <nodeInfo nodeId="1696159243610585427" fileName="ChangeTrapeciumStrip.java" startLine="21" startPosition="46" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1696159243610421649" fileName="ChangeTrapeciumStrip.java" startLine="30" startPosition="46" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742766381634675968" fileName="ChangeTrapeciumStrip.java" startLine="19" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeTrapeciumStrip#(Ljetbrains/mps/vcs/diff/ui/ChangeGroupBuilder;)V" />
-    <nodeInfo nodeId="4965236727523006218" fileName="ChangeTrapeciumStrip.java" startLine="42" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="742766381634611274" fileName="ChangeTrapeciumStrip.java" startLine="37" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <scopeInfo nodeId="1696159243610585432" fileName="ChangeTrapeciumStrip.java" startLine="23" startPosition="47" endLine="24" endPosition="18" />
-    <scopeInfo nodeId="1696159243610565784" fileName="ChangeTrapeciumStrip.java" startLine="32" startPosition="45" endLine="33" endPosition="18" />
-    <scopeInfo nodeId="7530992553317861657" fileName="ChangeTrapeciumStrip.java" startLine="63" startPosition="39" endLine="64" endPosition="65" />
-    <scopeInfo nodeId="7530992553317861675" fileName="ChangeTrapeciumStrip.java" startLine="67" startPosition="40" endLine="68" endPosition="66" />
-    <scopeInfo nodeId="3021948350273459333" fileName="ChangeTrapeciumStrip.java" startLine="71" startPosition="45" endLine="72" endPosition="90" />
-    <scopeInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="22" startPosition="60" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="31" startPosition="84" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7530992553317861654" fileName="ChangeTrapeciumStrip.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="7530992553317861672" fileName="ChangeTrapeciumStrip.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7530992553317861625" fileName="ChangeTrapeciumStrip.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <nodeInfo nodeId="742766381634607565" fileName="ChangeTrapeciumStrip.java" startLine="14" startPosition="54" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WIDTH" />
+    <nodeInfo nodeId="3021948350273458871" fileName="ChangeTrapeciumStrip.java" startLine="16" startPosition="0" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupBuilder" />
+    <nodeInfo nodeId="3021948350273458977" fileName="ChangeTrapeciumStrip.java" startLine="19" startPosition="70" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1696159243610585435" fileName="ChangeTrapeciumStrip.java" startLine="22" startPosition="47" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4294451483718543463" fileName="ChangeTrapeciumStrip.java" startLine="25" startPosition="6" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4294451483718547815" fileName="ChangeTrapeciumStrip.java" startLine="26" startPosition="58" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742766381634676002" fileName="ChangeTrapeciumStrip.java" startLine="27" startPosition="59" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742766381634676009" fileName="ChangeTrapeciumStrip.java" startLine="28" startPosition="44" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1696159243610565785" fileName="ChangeTrapeciumStrip.java" startLine="31" startPosition="45" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006313" fileName="ChangeTrapeciumStrip.java" startLine="38" startPosition="45" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3021948350273459364" fileName="ChangeTrapeciumStrip.java" startLine="39" startPosition="50" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3021948350273403023" fileName="ChangeTrapeciumStrip.java" startLine="40" startPosition="52" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4965236727523006280" fileName="ChangeTrapeciumStrip.java" startLine="42" startPosition="93" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965236727523006287" fileName="ChangeTrapeciumStrip.java" startLine="43" startPosition="71" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965236727523006296" fileName="ChangeTrapeciumStrip.java" startLine="44" startPosition="67" endLine="45" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965236727523006303" fileName="ChangeTrapeciumStrip.java" startLine="45" startPosition="74" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965236727523006364" fileName="ChangeTrapeciumStrip.java" startLine="46" startPosition="70" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4965236727523006365" fileName="ChangeTrapeciumStrip.java" startLine="47" startPosition="0" endLine="48" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965236727523006376" fileName="ChangeTrapeciumStrip.java" startLine="48" startPosition="57" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8018595893829002475" fileName="ChangeTrapeciumStrip.java" startLine="49" startPosition="69" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4965236727523006387" fileName="ChangeTrapeciumStrip.java" startLine="50" startPosition="0" endLine="51" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006394" fileName="ChangeTrapeciumStrip.java" startLine="51" startPosition="51" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006401" fileName="ChangeTrapeciumStrip.java" startLine="52" startPosition="31" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006406" fileName="ChangeTrapeciumStrip.java" startLine="53" startPosition="29" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006416" fileName="ChangeTrapeciumStrip.java" startLine="54" startPosition="59" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7530992553317861663" fileName="ChangeTrapeciumStrip.java" startLine="59" startPosition="39" endLine="60" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7530992553317861676" fileName="ChangeTrapeciumStrip.java" startLine="63" startPosition="40" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3021948350273459338" fileName="ChangeTrapeciumStrip.java" startLine="67" startPosition="45" endLine="68" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="21" startPosition="60" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
+    <nodeInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="30" startPosition="84" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeGroupsInvalidated#()V" />
+    <nodeInfo nodeId="7530992553317861654" fileName="ChangeTrapeciumStrip.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftViewport#()Ljavax/swing/JViewport;" />
+    <nodeInfo nodeId="7530992553317861672" fileName="ChangeTrapeciumStrip.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightViewport#()Ljavax/swing/JViewport;" />
+    <nodeInfo nodeId="7530992553317861625" fileName="ChangeTrapeciumStrip.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOffset#(Ljavax/swing/JViewport;)I" />
+    <nodeInfo nodeId="1696159243610585427" fileName="ChangeTrapeciumStrip.java" startLine="20" startPosition="46" endLine="25" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1696159243610421649" fileName="ChangeTrapeciumStrip.java" startLine="29" startPosition="46" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965236727523006218" fileName="ChangeTrapeciumStrip.java" startLine="41" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="742766381634675968" fileName="ChangeTrapeciumStrip.java" startLine="18" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeTrapeciumStrip#(Ljetbrains/mps/vcs/diff/ui/ChangeGroupBuilder;)V" />
+    <nodeInfo nodeId="742766381634611274" fileName="ChangeTrapeciumStrip.java" startLine="36" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <scopeInfo nodeId="1696159243610585432" fileName="ChangeTrapeciumStrip.java" startLine="22" startPosition="47" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="1696159243610565784" fileName="ChangeTrapeciumStrip.java" startLine="31" startPosition="45" endLine="32" endPosition="18" />
+    <scopeInfo nodeId="7530992553317861657" fileName="ChangeTrapeciumStrip.java" startLine="59" startPosition="39" endLine="60" endPosition="65" />
+    <scopeInfo nodeId="7530992553317861675" fileName="ChangeTrapeciumStrip.java" startLine="63" startPosition="40" endLine="64" endPosition="66" />
+    <scopeInfo nodeId="3021948350273459333" fileName="ChangeTrapeciumStrip.java" startLine="67" startPosition="45" endLine="68" endPosition="90" />
+    <scopeInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="21" startPosition="60" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="30" startPosition="84" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="7530992553317861654" fileName="ChangeTrapeciumStrip.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7530992553317861672" fileName="ChangeTrapeciumStrip.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="7530992553317861625" fileName="ChangeTrapeciumStrip.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="3021948350273459336" varName="viewport" />
     </scopeInfo>
-    <scopeInfo nodeId="742766381634675972" fileName="ChangeTrapeciumStrip.java" startLine="20" startPosition="70" endLine="35" endPosition="7">
-      <varInfo nodeId="1696159243610585428" varName="viewportListener" />
-    </scopeInfo>
-    <scopeInfo nodeId="4965236727523006221" fileName="ChangeTrapeciumStrip.java" startLine="43" startPosition="93" endLine="59" endPosition="55">
+    <scopeInfo nodeId="4965236727523006221" fileName="ChangeTrapeciumStrip.java" startLine="42" startPosition="93" endLine="55" endPosition="55">
       <varInfo nodeId="4965236727523006304" varName="rightEnd" />
       <varInfo nodeId="4965236727523006288" varName="leftEnd" />
       <varInfo nodeId="4965236727523006281" varName="leftStart" />
@@ -1317,20 +1311,23 @@
       <varInfo nodeId="4965236727523006297" varName="rightStart" />
       <varInfo nodeId="4965236727523006366" varName="xx" />
     </scopeInfo>
-    <scopeInfo nodeId="742766381634675968" fileName="ChangeTrapeciumStrip.java" startLine="19" startPosition="0" endLine="36" endPosition="3">
+    <scopeInfo nodeId="742766381634675972" fileName="ChangeTrapeciumStrip.java" startLine="19" startPosition="70" endLine="34" endPosition="7">
+      <varInfo nodeId="1696159243610585428" varName="viewportListener" />
+    </scopeInfo>
+    <scopeInfo nodeId="4965236727523006218" fileName="ChangeTrapeciumStrip.java" startLine="41" startPosition="0" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="742766381634675968" fileName="ChangeTrapeciumStrip.java" startLine="18" startPosition="0" endLine="35" endPosition="3">
       <varInfo nodeId="3021948350273458875" varName="changeGroupBuilder" />
     </scopeInfo>
-    <scopeInfo nodeId="4965236727523006218" fileName="ChangeTrapeciumStrip.java" startLine="42" startPosition="0" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="742766381634611279" fileName="ChangeTrapeciumStrip.java" startLine="39" startPosition="45" endLine="60" endPosition="5">
+    <scopeInfo nodeId="742766381634611279" fileName="ChangeTrapeciumStrip.java" startLine="38" startPosition="45" endLine="56" endPosition="5">
       <varInfo nodeId="3021948350273459365" varName="rightOffset" />
       <varInfo nodeId="4965236727523006314" varName="leftOffset" />
     </scopeInfo>
-    <scopeInfo nodeId="742766381634611274" fileName="ChangeTrapeciumStrip.java" startLine="37" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="742766381634611274" fileName="ChangeTrapeciumStrip.java" startLine="36" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="742766381634611277" varName="g" />
     </scopeInfo>
-    <unitInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="22" startPosition="42" endLine="26" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip$1" />
-    <unitInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="31" startPosition="51" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip$2" />
-    <unitInfo nodeId="742766381634604040" fileName="ChangeTrapeciumStrip.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
+    <unitInfo nodeId="1696159243610585431" fileName="ChangeTrapeciumStrip.java" startLine="21" startPosition="42" endLine="25" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip$1" />
+    <unitInfo nodeId="1696159243610565783" fileName="ChangeTrapeciumStrip.java" startLine="30" startPosition="51" endLine="34" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip$2" />
+    <unitInfo nodeId="742766381634604040" fileName="ChangeTrapeciumStrip.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
   </root>
   <root nodeId="7617953927522682042">
     <nodeInfo nodeId="7617953927522682082" fileName="DiffButtonsPainter.java" startLine="14" startPosition="56" endLine="15" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
@@ -1455,7 +1452,7 @@
     <nodeInfo nodeId="903473793367316176" fileName="ChangeEditorMessage.java" startLine="135" startPosition="84" endLine="136" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="903473793367316203" fileName="ChangeEditorMessage.java" startLine="136" startPosition="99" endLine="137" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="903473793367316230" fileName="ChangeEditorMessage.java" startLine="138" startPosition="11" endLine="139" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="903473793367315775" fileName="ChangeEditorMessage.java" startLine="145" startPosition="9" endLine="146" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="903473793367315775" fileName="ChangeEditorMessage.java" startLine="145" startPosition="21" endLine="146" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="903473793367315781" fileName="ChangeEditorMessage.java" startLine="146" startPosition="42" endLine="147" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1504959589938803246" fileName="ChangeEditorMessage.java" startLine="151" startPosition="69" endLine="152" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="3168520796786822834" fileName="ChangeEditorMessage.java" startLine="152" startPosition="69" endLine="153" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1542,11 +1539,11 @@
     <nodeInfo nodeId="6608786863704941938" fileName="ChangeEditorMessage.java" startLine="303" startPosition="89" endLine="306" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="8401260027345469827" fileName="ChangeEditorMessage.java" startLine="317" startPosition="94" endLine="320" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8401260027345476315" fileName="ChangeEditorMessage.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflicted#()Z" />
-    <nodeInfo nodeId="8401260027345528991" fileName="ChangeEditorMessage.java" startLine="60" startPosition="27" endLine="64" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7755568830356323728" fileName="ChangeEditorMessage.java" startLine="60" startPosition="27" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401260027345527122" fileName="ChangeEditorMessage.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
     <nodeInfo nodeId="1696159243610635306" fileName="ChangeEditorMessage.java" startLine="86" startPosition="154" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/nodeEditor/EditorMessage;)Z" />
     <nodeInfo nodeId="903473793367315943" fileName="ChangeEditorMessage.java" startLine="101" startPosition="0" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="903473793367315766" fileName="ChangeEditorMessage.java" startLine="141" startPosition="7" endLine="145" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="903473793367315766" fileName="ChangeEditorMessage.java" startLine="141" startPosition="7" endLine="145" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6974559618470449839" fileName="ChangeEditorMessage.java" startLine="167" startPosition="76" endLine="171" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6974559618470449778" fileName="ChangeEditorMessage.java" startLine="174" startPosition="68" endLine="178" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6236996727608121112" fileName="ChangeEditorMessage.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBoundsSuper#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/diff/ui/Bounds;" />
@@ -1632,7 +1629,7 @@
       <varInfo nodeId="6608786863704941939" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8401260027345476315" fileName="ChangeEditorMessage.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8401260027345476329" fileName="ChangeEditorMessage.java" startLine="60" startPosition="27" endLine="64" endPosition="6" />
+    <scopeInfo nodeId="8401260027345476329" fileName="ChangeEditorMessage.java" startLine="60" startPosition="27" endLine="64" endPosition="18" />
     <scopeInfo nodeId="8401260027345527122" fileName="ChangeEditorMessage.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1696159243610635306" fileName="ChangeEditorMessage.java" startLine="86" startPosition="154" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6236996727608121112" fileName="ChangeEditorMessage.java" startLine="190" startPosition="0" endLine="194" endPosition="0">

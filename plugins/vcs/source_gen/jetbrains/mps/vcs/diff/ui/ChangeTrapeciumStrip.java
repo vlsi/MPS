@@ -8,7 +8,6 @@ import javax.swing.event.ChangeEvent;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.awt.Color;
 import javax.swing.JViewport;
 
@@ -49,10 +48,7 @@ public class ChangeTrapeciumStrip extends JComponent {
       int[] xx = new int[]{0, getWidth(), getWidth(), 0};
       int[] yy = new int[]{leftStart, rightStart, rightEnd, leftEnd};
 
-      g.setColor((group.isConflicted() ?
-        ChangeType.CONFLICT_COLOR :
-        group.getChangeType().getColor()
-      ));
+      g.setColor(group.getChangeType().getColor());
       g.fillPolygon(xx, yy, 4);
       g.setColor(Color.GRAY);
       g.drawLine(0, leftStart, getWidth() - 1, rightStart);

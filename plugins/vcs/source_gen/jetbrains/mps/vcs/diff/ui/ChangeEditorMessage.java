@@ -58,10 +58,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public Color getColor() {
-    return (isConflicted() ?
-      ChangeType.CONFLICT_COLOR :
-      myChange.getType().getColor()
-    );
+    return ((isConflicted() ?
+      ChangeType.CONFLICTED :
+      myChange.getType()
+    )).getColor();
   }
 
   public ModelChange getChange() {
@@ -139,10 +139,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
           return;
         }
       }
-      graphics.setColor((isConflicted() ?
-        ChangeType.CONFLICT_COLOR :
-        ChangeType.CHANGE.getColor()
-      ));
+      graphics.setColor(((isConflicted() ?
+        ChangeType.CONFLICTED :
+        ChangeType.CHANGE
+      )).getColor());
       Rectangle bounds = cell.getBounds();
       graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
     }
