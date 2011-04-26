@@ -20,10 +20,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.EditorUtil;
 
@@ -37,9 +40,21 @@ public class IconResource_Editor extends DefaultNodeEditor {
     alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCollection_79r3b6_a0a(editorContext, node);
-    } else {
       editorCell = this.createConstant_79r3b6_a0a(editorContext, node);
+    } else {
+      editorCell = this.createAlternation_79r3b6_a0a(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_79r3b6_a0a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createCollection_79r3b6_a0a0(editorContext, node);
+    } else {
+      editorCell = this.createProperty_79r3b6_a0a0(editorContext, node);
     }
     return editorCell;
   }
@@ -52,15 +67,15 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_79r3b6_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_79r3b6_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_79r3b6_a0a");
+    editorCell.setCellId("Collection_79r3b6_a0a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createImage_79r3b6_a0a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_79r3b6_b0a0(editorContext, node));
+    editorCell.addEditorCell(this.createImage_79r3b6_a0a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_79r3b6_b0a0a(editorContext, node));
     return editorCell;
   }
 
@@ -75,14 +90,14 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createImage_79r3b6_a0a0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createImage_79r3b6_a0a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, "path");
       }
     }.invoke());
-    editorCell.setCellId("Image_79r3b6_a0a0");
+    editorCell.setCellId("Image_79r3b6_a0a0a");
     editorCell.setDescent(0);
     return editorCell;
   }
@@ -93,7 +108,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_79r3b6_b0a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_79r3b6_b0a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");
@@ -111,7 +126,33 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_79r3b6_a0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("path");
+    provider.setNoTargetText("<no path>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_path_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return StringUtils.isEmpty(SPropertyOperations.getString(node, "path"));
+  }
+
+  private static boolean renderingCondition_79r3b6_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
     if (module == null) {
       return false;
@@ -120,7 +161,16 @@ public class IconResource_Editor extends DefaultNodeEditor {
     if (path == null) {
       return false;
     }
-    return FileSystem.getInstance().getFileByPath(path).exists();
+    IFile file = FileSystem.getInstance().getFileByPath(path);
+    if (!(file.exists())) {
+      return false;
+    }
+    try {
+      new ImageIcon(path);
+      return true;
+    } catch (Throwable t) {
+      return false;
+    }
   }
 
   private static JComponent _QueryFunction_JComponent_79r3b6_a1a(SNode node, EditorContext editorContext) {
