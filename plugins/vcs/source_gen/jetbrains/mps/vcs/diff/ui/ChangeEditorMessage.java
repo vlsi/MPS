@@ -153,31 +153,40 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
     assert cmt.getBeginIndex() == cmt.getEndIndex();
     EditorCell simpleCell = getCell(editorComponent);
-    if (!(hasChildrenWithDifferentNode(simpleCell) && eq_myu41h_a0a0e0f(cmt.getRole(), simpleCell.getRole()))) {
-      return getBoundsSuper(editorComponent);
+    if (simpleCell == null) {
+      return new Bounds(-1, -1);
     }
-    EditorCell_Collection cell = (EditorCell_Collection) simpleCell;
+    if (eq_myu41h_a0f0f(cmt.getRole(), simpleCell.getRole())) {
+      if (hasChildrenWithDifferentNode(simpleCell)) {
+        EditorCell_Collection cell = (EditorCell_Collection) simpleCell;
 
-    int cellIndex = getChildCellIndex(cell, cmt.getBeginIndex());
-    int lastCellIndex = cell.getChildCount() - 1;
+        int cellIndex = getChildCellIndex(cell, cmt.getBeginIndex());
+        int lastCellIndex = cell.getChildCount() - 1;
 
-    int minY;
-    int maxY;
-    if (cellIndex > lastCellIndex) {
-      Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
-      minY = (isVertical(simpleCell) ?
-        (int) lastCellBounds.getMaxY() :
-        (int) lastCellBounds.getMinY()
-      );
-      maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
+        int minY;
+        int maxY;
+        if (cellIndex > lastCellIndex) {
+          Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
+          minY = (isVertical(simpleCell) ?
+            (int) lastCellBounds.getMaxY() :
+            (int) lastCellBounds.getMinY()
+          );
+          maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
+        } else {
+          minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
+          maxY = (isVertical(simpleCell) ?
+            minY + 1 :
+            (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
+          );
+        }
+        return new Bounds(minY, maxY);
+      } else {
+        return getBoundsSuper(editorComponent);
+      }
     } else {
-      minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
-      maxY = (isVertical(simpleCell) ?
-        minY + 1 :
-        (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
-      );
+      int y = (int) simpleCell.getBounds().getMinY();
+      return new Bounds(y, y + 1);
     }
-    return new Bounds(minY, maxY);
   }
 
   public Bounds getBounds(EditorComponent component) {
@@ -328,7 +337,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     );
   }
 
-  private static boolean eq_myu41h_a0a0e0f(Object a, Object b) {
+  private static boolean eq_myu41h_a0f0f(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
