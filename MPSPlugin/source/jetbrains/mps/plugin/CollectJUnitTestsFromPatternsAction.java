@@ -135,10 +135,10 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         protected void run(Result<String> stringResult) throws Throwable {
           stringResult.setResult(null);
 
-          StringBuilder sb = new StringBuilder("@SuiteClasses({");
+          StringBuilder sb = new StringBuilder("@SuiteClassSymbols({");
           String sep = "";
           for (String sc : suiteClasses) {
-            sb.append(sep).append(sc).append(".class");
+            sb.append(sep).append("\"").append(sc).append("\"");
             sep = ",\n";
           }
           sb.append("})");
@@ -149,7 +149,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
             PsiAnnotation oldann = null;
             for (PsiAnnotation ann: pc.getModifierList().getAnnotations()) {
-              if (String.valueOf (ann.getQualifiedName()).contains("SuiteClasses")) {
+              if (String.valueOf (ann.getQualifiedName()).contains("SuiteClassSymbols")) {
                 oldann = ann;
                 break;
               }
