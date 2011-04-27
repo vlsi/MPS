@@ -131,19 +131,7 @@ public class TestMergeDialog {
               }
             };
 
-            return new MergeModelsDialog(null, context, models[0], models[1], models[2], new DiffRequest(null) {
-              public DiffContent[] getContents() {
-                return null;
-              }
-
-              public String[] getContentTitles() {
-                return new String[]{"Local Version", "Merge Result", "Remote Version"};
-              }
-
-              public String getWindowTitle() {
-                return null;
-              }
-            });
+            return new MergeModelsDialog(null, context, models[0], models[1], models[2], new SimpleDiffRequest(null, "Local Version", "Merge Result", "Remote Version"));
             // Local Version, Merge Result, Remote Version
           }
         });

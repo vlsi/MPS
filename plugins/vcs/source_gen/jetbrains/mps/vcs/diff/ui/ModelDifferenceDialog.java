@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -31,7 +32,6 @@ import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
@@ -49,14 +49,18 @@ public class ModelDifferenceDialog extends BaseDialog {
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
 
-  public ModelDifferenceDialog(Project project, IOperationContext operationContext, SModel oldModel, SModel newModel, DiffRequest diffRequest) {
+  public ModelDifferenceDialog(Project project, IOperationContext operationContext, final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(WindowManager.getInstance().getFrame(project), "Difference for model: " + SModelOperations.getModelName(newModel));
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
     myProject = project;
     myOperationContext = operationContext;
-    myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
-    fillRootToChange();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
+        fillRootToChange();
+      }
+    });
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest));

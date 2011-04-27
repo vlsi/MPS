@@ -16,9 +16,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import java.awt.Frame;
-import com.intellij.openapi.application.ModalityState;
 
 public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -60,6 +63,14 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -69,10 +80,14 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
       final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          String[] titles = new String[]{"Disk", "Memory"};
-          new OldModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference", true, titles).showDialog();
+          if (ModelDifferenceDialog.isNewDiffEnabled()) {
+            new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), disk, memory, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory")).showDialog();
+          } else {
+            new OldModelDifferenceDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference Between Disk and Memory", true, new String[]{"Disk", "Memory"}).showDialog();
+          }
+
         }
-      }, ModalityState.NON_MODAL);
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);

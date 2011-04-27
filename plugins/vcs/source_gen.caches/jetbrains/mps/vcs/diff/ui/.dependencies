@@ -749,5 +749,11 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.GoToNeighbourRootActions" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.SimpleDiffRequest" file="SimpleDiffRequest.java">
+    <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="com.intellij.openapi.diff.DiffRequest" />
+  </dependency>
 </dependenciesRoot>
 
