@@ -197,6 +197,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private HashMap<CellActionType, EditorCellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
+  private NodeInformationDialog myNodeInformationDialog;
   private HashMap myUserDataMap = new HashMap();
 
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
@@ -2252,6 +2253,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNodeSubstituteChooser;
   }
 
+  void setNodeInformationDialog(NodeInformationDialog dialog) {
+    myNodeInformationDialog = dialog;
+  }
+
+  public boolean hasNodeInformationDialog() {
+    return myNodeInformationDialog != null;
+  }
 
   public void paint(Graphics g) {
     super.paint(g);

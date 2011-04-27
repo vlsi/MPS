@@ -27,8 +27,23 @@ import java.awt.Point;
 import com.intellij.openapi.util.Computable;
 
 public class NodeInformationDialog extends AbstractNodeInformationDialog {
-  public NodeInformationDialog(Frame owner, Point location, SNode node) {
+  private EditorComponent myEditorComponent;
+
+  public NodeInformationDialog(EditorComponent editorComponent, Frame owner, Point location, SNode node) {
     super(owner, location, node);
+    myEditorComponent = editorComponent;
+  }
+
+  @Override
+  public void setVisible(boolean b) {
+    super.setVisible(b);
+    myEditorComponent.setNodeInformationDialog( b ? this : null);
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    myEditorComponent.setNodeInformationDialog(null);
   }
 
   protected String createNodeInfo(final SNode node) {

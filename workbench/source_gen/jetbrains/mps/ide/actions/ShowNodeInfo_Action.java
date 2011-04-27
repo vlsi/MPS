@@ -72,7 +72,7 @@ public class ShowNodeInfo_Action extends GeneratedAction {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new NodeInformationDialog(frame, point, node).setVisible(true);
+          new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, node).setVisible(true);
         }
       });
     } catch (Throwable t) {

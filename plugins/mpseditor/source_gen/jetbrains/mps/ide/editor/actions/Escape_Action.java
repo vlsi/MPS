@@ -24,7 +24,7 @@ public class Escape_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible());
+    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -61,7 +61,7 @@ public class Escape_Action extends GeneratedAction {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
 
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().clearSelection();
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getDeepestSelection());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Escape", t);

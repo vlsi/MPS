@@ -2843,10 +2843,10 @@
     <nodeInfo nodeId="6277919470776408492" fileName="ShowNodeInfo_Action.java" startLine="69" startPosition="113" endLine="70" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6589517362722860694" fileName="ShowNodeInfo_Action.java" startLine="70" startPosition="161" endLine="71" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6589517362722860701" fileName="ShowNodeInfo_Action.java" startLine="71" startPosition="78" endLine="72" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6187394498255587046" fileName="ShowNodeInfo_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6187394498255587046" fileName="ShowNodeInfo_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6187394498255587042" fileName="ShowNodeInfo_Action.java" startLine="73" startPosition="49" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6187394498255586925" fileName="ShowNodeInfo_Action.java" startLine="72" startPosition="76" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="6187394498255587045" fileName="ShowNodeInfo_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="73" />
+    <scopeInfo nodeId="6187394498255587045" fileName="ShowNodeInfo_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="137" />
     <scopeInfo nodeId="6187394498255587042" fileName="ShowNodeInfo_Action.java" startLine="73" startPosition="49" endLine="77" endPosition="0" />
     <unitInfo nodeId="6187394498255587040" fileName="ShowNodeInfo_Action.java" startLine="73" startPosition="37" endLine="77" endPosition="7" unitName="jetbrains.mps.ide.actions.ShowNodeInfo_Action$1" />
   </root>
