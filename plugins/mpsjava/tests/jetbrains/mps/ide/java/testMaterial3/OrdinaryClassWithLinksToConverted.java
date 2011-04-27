@@ -29,7 +29,7 @@ public class OrdinaryClassWithLinksToConverted extends OrdinaryClassWithInnerCla
   public OrdinaryClassWithLinksToConverted(SNode node) {
     super(node);
     myProtected = 2;
-    getAlias();
+    getNodeId();
   }
 
 

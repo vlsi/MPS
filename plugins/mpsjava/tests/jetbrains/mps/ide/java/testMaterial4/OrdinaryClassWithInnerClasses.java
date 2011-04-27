@@ -17,6 +17,7 @@ package jetbrains.mps.ide.java.testMaterial4;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 20:02:01
  * To change this template use File | Settings | File Templates.
  */
-public class OrdinaryClassWithInnerClasses extends BaseConcept {
+public class OrdinaryClassWithInnerClasses extends SNodePointer {
   protected int myProtected;
 
   public OrdinaryClassWithInnerClasses(SNode node) {

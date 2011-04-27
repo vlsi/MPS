@@ -17,6 +17,7 @@ package jetbrains.mps.ide.java.testMaterial3;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 18:19:33
  * To change this template use File | Settings | File Templates.
  */
-public class OrdinaryClassWithLinksToAspect extends BaseConcept {
+public class OrdinaryClassWithLinksToAspect extends SNodePointer {
   public OrdinaryClassWithLinksToAspect(SNode node) {
     super(node);    //To change body of overridden methods use File | Settings | File Templates.
   }
