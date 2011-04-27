@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -47,18 +48,20 @@ public abstract class DiffModelTree extends MPSTree {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       MPSTreeNode parentNode = modelNode;
-      for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
-        Iterable<MPSTreeNode> children = (Iterable<MPSTreeNode>) parentNode;
-        MPSTreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
-          public boolean accept(MPSTreeNode c) {
-            return c instanceof DiffModelTree.PackageTreeNode && sub.equals(c.getText());
+      if (StringUtils.isNotEmpty(rtn.myVirtualPackage)) {
+        for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
+          Iterable<MPSTreeNode> children = (Iterable<MPSTreeNode>) parentNode;
+          MPSTreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
+            public boolean accept(MPSTreeNode c) {
+              return c instanceof DiffModelTree.PackageTreeNode && sub.equals(c.getText());
+            }
+          });
+          if (child == null) {
+            child = new DiffModelTree.PackageTreeNode(sub);
+            parentNode.add(child);
           }
-        });
-        if (child == null) {
-          child = new DiffModelTree.PackageTreeNode(sub);
-          parentNode.add(child);
+          parentNode = child;
         }
-        parentNode = child;
       }
       parentNode.add(rtn);
     }
@@ -94,6 +97,9 @@ public abstract class DiffModelTree extends MPSTree {
   @Nullable
   public SNodeId getNeighbourRoot(@NotNull SNodeId nodeId, boolean next) {
     int index = ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId));
+    if (index == -1) {
+      return null;
+    }
     index = (next ?
       index + 1 :
       index - 1
