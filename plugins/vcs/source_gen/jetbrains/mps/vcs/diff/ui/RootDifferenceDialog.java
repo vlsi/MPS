@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -43,11 +44,21 @@ public class RootDifferenceDialog extends BaseDialog {
 
   public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName) {
     super(modelDialog, "Difference for " + rootName);
+    init(modelDialog, rootId);
+  }
+
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Frame frame) {
+    super(frame, "Difference for " + rootName);
+    init(modelDialog, rootId);
+  }
+
+  private void init(ModelDifferenceDialog modelDialog, SNodeId rootId) {
+    // Two constructors and init method is needed because different superconstructors should be invoked 
     myModelDialog = modelDialog;
     myRootId = rootId;
 
-    myOldEditor = addEditor(0, modelDialog.getChangeSet().getOldModel());
-    myNewEditor = addEditor(1, modelDialog.getChangeSet().getNewModel());
+    myOldEditor = addEditor(0, myModelDialog.getChangeSet().getOldModel());
+    myNewEditor = addEditor(1, myModelDialog.getChangeSet().getNewModel());
 
     linkEditors(true);
     linkEditors(false);
@@ -171,6 +182,7 @@ public class RootDifferenceDialog extends BaseDialog {
     }
 
     protected void goTo(@NotNull SNodeId rootId) {
+      myModelDialog.startGoingToNeighbour();
       dispose();
       myModelDialog.invokeRootDifference(rootId);
     }

@@ -16,14 +16,17 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
+import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.StringReader;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -43,20 +46,33 @@ public class VcsActionsHelper {
   public VcsActionsHelper() {
   }
 
-  public static void showRootDifference(Frame frame, final IOperationContext context, SModel model, final SNode node, Project project) {
+  public static void showRootDifference(Frame frame, final IOperationContext context, final SModel model, final SNode node, final Project project) {
     try {
       VirtualFile file = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile());
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
-      final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(frame, model, oldModel, true, true);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          dialog.init(context, node, "Local", revisionNumber.asString());
-        }
-      });
-      dialog.showDialog();
+      final SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
+      if (ModelDifferenceDialog.isNewDiffEnabled()) {
+        final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
+        final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            modelDialog.value = new ModelDifferenceDialog(project, context, oldModel, model, new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
+            id.value = node.getSNodeId();
+          }
+        });
+        modelDialog.value.invokeRootDifference(id.value);
+
+      } else {
+        final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(frame, model, oldModel, true, true);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            dialog.init(context, node, "Your Version", revisionNumber.asString() + " (Read-Only)");
+          }
+        });
+        dialog.showDialog();
+      }
     } catch (VcsException e) {
       if (log.isErrorEnabled()) {
         log.error("", e);

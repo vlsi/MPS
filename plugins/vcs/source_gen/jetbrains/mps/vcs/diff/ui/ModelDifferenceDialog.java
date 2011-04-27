@@ -47,6 +47,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myRootsDialogInvoked = false;
+  private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
 
   public ModelDifferenceDialog(Project project, IOperationContext operationContext, final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
@@ -107,15 +108,24 @@ public class ModelDifferenceDialog extends BaseDialog {
     return myTree.getNeighbourRoot(rootId, next);
   }
 
+  /*package*/ void startGoingToNeighbour() {
+    myGoingToNeighbour = true;
+  }
+
   public void invokeRootDifference(final SNodeId rootId) {
     if (myRootsDialogInvoked) {
       return;
     }
+    myGoingToNeighbour = false;
     myRootsDialogInvoked = true;
     final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId));
+        if (isVisible()) {
+          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId));
+        } else {
+          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), WindowManager.getInstance().getFrame(myProject));
+        }
       }
     });
     rootDialog.value.showDialog();
@@ -124,6 +134,9 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   /*package*/ void rootDialogClosed() {
     myRootsDialogInvoked = false;
+    if (!(myGoingToNeighbour) && !(isVisible())) {
+      dispose();
+    }
   }
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {

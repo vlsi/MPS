@@ -732,6 +732,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
