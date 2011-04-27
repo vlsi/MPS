@@ -169,7 +169,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         (int) lastCellBounds.getMaxY() :
         (int) lastCellBounds.getMinY()
       );
-      maxY = (int) lastCellBounds.getMaxY();
+      maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
     } else {
       minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
       maxY = (isVertical(simpleCell) ?
