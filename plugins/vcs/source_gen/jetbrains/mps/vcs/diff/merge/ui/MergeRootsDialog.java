@@ -35,6 +35,8 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class MergeRootsDialog extends BaseDialog {
   private MergeContext myMergeContext;
@@ -76,7 +78,8 @@ public class MergeRootsDialog extends BaseDialog {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this), Separator.getInstance(), GoToNeighbourMergeRoot.previousInstance(this), GoToNeighbourMergeRoot.nextInstance(this));
+    MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
@@ -228,5 +231,20 @@ public class MergeRootsDialog extends BaseDialog {
     }
     myModelsDialog.rootsDialogClosed();
     super.dispose();
+  }
+
+  private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
+    public MyGoToNeighbourRootActions() {
+    }
+
+    protected void goTo(@NotNull SNodeId rootId) {
+      saveAndClose();
+      myModelsDialog.invokeMergeRoots(rootId);
+    }
+
+    @Nullable
+    protected SNodeId getNeighbourId(boolean next) {
+      return myModelsDialog.getNeighbourRoot(myRootId, next);
+    }
   }
 }

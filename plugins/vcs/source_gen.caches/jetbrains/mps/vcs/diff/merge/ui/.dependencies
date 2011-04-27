@@ -20,7 +20,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.merge.ui.GoToNeighbourMergeRoot" file="GoToNeighbourMergeRoot.java">
+  <dependency className="jetbrains.mps.vcs.diff.merge.ui.GoToNeighbourRootActions" file="GoToNeighbourRootActions.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
@@ -30,8 +30,8 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.ui.InvokeMergeRootsAction" file="InvokeMergeRootsAction.java">
@@ -145,7 +145,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.ApplyNonConflictsForRoot" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeButtonsPainter" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" />
@@ -162,25 +161,28 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.GoToNeighbourMergeRoot" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContextState" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.merge.ui.GoToNeighbourRootActions" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
 </dependenciesRoot>

@@ -118,13 +118,8 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   @Nullable
-  public SNodeId getPreviousRoot(@NotNull SNodeId rootId) {
-    return myMergeTree.getNeighbourRoot(rootId, false);
-  }
-
-  @Nullable
-  public SNodeId getNextRoot(@NotNull SNodeId rootId) {
-    return myMergeTree.getNeighbourRoot(rootId, true);
+  public SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
+    return myMergeTree.getNeighbourRoot(rootId, next);
   }
 
   public void invokeMergeRoots(final SNodeId rootId) {
