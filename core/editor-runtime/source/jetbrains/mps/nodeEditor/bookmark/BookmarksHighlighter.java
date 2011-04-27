@@ -54,11 +54,11 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     myHighlighter.addHighlighterListener(myHighlightListener);
   }
 
-  public void dispose() {
+  public void doDispose() {
     myHighlighter.removeHighlighterListener(myHighlightListener);
     myBookmarkManager.removeBookmarkListener(myListener);
 
-    super.dispose();
+    super.doDispose();
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {

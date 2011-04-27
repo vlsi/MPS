@@ -197,9 +197,9 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return true; //processed in another place
   }
 
-  public void dispose() {
+  public void doDispose() {
     myHighlighter.removeHighlighterListener(myHighlighterListener);
-    super.dispose();
+    super.doDispose();
   }
 
   public boolean areMessagesChanged() {

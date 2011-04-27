@@ -82,7 +82,7 @@ public class LanguageChecker extends BaseEditorChecker {
     myHighlighter.addHighlighterListener(this.myHighlighterListener);
   }
 
-  public void dispose() {
+  public void doDispose() {
     myHighlighter.removeHighlighterListener(this.myHighlighterListener);
     for (SNode root : MapSequence.fromMap(myRootsToComponents).keySet()) {
       MapSequence.fromMap(myRootsToComponents).get(root).dispose();
@@ -94,6 +94,7 @@ public class LanguageChecker extends BaseEditorChecker {
     for (SModelDescriptor modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
       removeModelListener(modelDescriptor);
     }
+    super.doDispose();
   }
 
   private void modelDescriptorRemoved(SModelDescriptor modelDescriptor) {

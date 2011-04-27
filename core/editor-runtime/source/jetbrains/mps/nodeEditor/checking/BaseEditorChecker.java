@@ -93,16 +93,21 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   }
 
+  protected void doDispose(){
+
+  }
+
   //--------dispose stuff---------
   //todo extract a framework
 
   private final Object LOCK = new Object();
   private boolean myDisposed = false;
 
-  public void dispose() {
+  public final void dispose() {
     synchronized (LOCK) {
       myDisposed = true;
     }
+    doDispose();
   }
 
   private void performUninterruptableAction(Runnable r) {

@@ -58,8 +58,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
-  public void dispose() {
+  public void doDispose() {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    super.doDispose();
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
