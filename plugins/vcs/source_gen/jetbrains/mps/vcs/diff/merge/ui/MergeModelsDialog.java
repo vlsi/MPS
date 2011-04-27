@@ -199,11 +199,10 @@ public class MergeModelsDialog extends BaseDialog {
       if (conflictedCount != 0) {
         compositeChangeType = ChangeType.CONFLICTED;
 
-        rootTreeNode.setAdditionalText(nonConflictedCount + "+" + conflictedCount);
+        rootTreeNode.setAdditionalText("with conflicts");
         rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change") + ", " + NameUtil.formatNumericalString(conflictedCount, "conficting change"));
-
       } else {
-        if (ListSequence.fromList(changes).isEmpty()) {
+        if (nonConflictedCount == 0) {
           if (myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
           }
@@ -217,7 +216,18 @@ public class MergeModelsDialog extends BaseDialog {
             compositeChangeType = ListSequence.fromList(changes).first().getType();
           }
 
-          rootTreeNode.setAdditionalText("" + nonConflictedCount);
+          int myChangesCount = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
+            public boolean accept(ModelChange ch) {
+              return myMergeContext.isMyChange(ch);
+            }
+          }).count();
+          if (myChangesCount == nonConflictedCount) {
+            rootTreeNode.setAdditionalText("local");
+          } else if (myChangesCount == 0) {
+            rootTreeNode.setAdditionalText("remote");
+          } else {
+            rootTreeNode.setAdditionalText("both modified");
+          }
           rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change"));
         }
       }
