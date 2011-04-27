@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.java.testMaterial4;
 
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
