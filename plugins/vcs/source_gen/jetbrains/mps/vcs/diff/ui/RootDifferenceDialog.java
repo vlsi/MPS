@@ -27,6 +27,8 @@ import jetbrains.mps.vcs.diff.merge.NodeCopierWithCache;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class RootDifferenceDialog extends BaseDialog {
   private ModelDifferenceDialog myModelDialog;
@@ -52,8 +54,9 @@ public class RootDifferenceDialog extends BaseDialog {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
-    // TODO add next/prev actions 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions();
+
+    RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
@@ -161,5 +164,20 @@ public class RootDifferenceDialog extends BaseDialog {
   public void dispose() {
     myModelDialog.rootDialogClosed();
     super.dispose();
+  }
+
+  public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
+    public MyGoToNeighbourRootActions() {
+    }
+
+    protected void goTo(@NotNull SNodeId rootId) {
+      dispose();
+      myModelDialog.invokeRootDifference(rootId);
+    }
+
+    @Nullable
+    protected SNodeId getNeighbourId(boolean next) {
+      return myModelDialog.getNeighbourRoot(myRootId, next);
+    }
   }
 }

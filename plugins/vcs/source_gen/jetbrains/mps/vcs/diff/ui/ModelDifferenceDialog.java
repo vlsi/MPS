@@ -28,6 +28,8 @@ import javax.swing.JScrollPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -94,6 +96,11 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   /*package*/ IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  @Nullable
+  public SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
+    return myTree.getNeighbourRoot(rootId, next);
   }
 
   public void invokeRootDifference(final SNodeId rootId) {
