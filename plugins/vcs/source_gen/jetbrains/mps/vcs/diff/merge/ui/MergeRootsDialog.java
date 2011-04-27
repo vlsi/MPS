@@ -76,7 +76,7 @@ public class MergeRootsDialog extends BaseDialog {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(GoToNeighbourMergeRoot.previousInstance(myMergeContext, this), GoToNeighbourMergeRoot.nextInstance(myMergeContext, this), Separator.getInstance(), new ApplyNonConflictsForRoot(myMergeContext, this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this), Separator.getInstance(), GoToNeighbourMergeRoot.previousInstance(this), GoToNeighbourMergeRoot.nextInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
