@@ -7,38 +7,20 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.ArrayType;
-import jetbrains.mps.baseLanguage.structure.VariableArityType;
-import jetbrains.mps.baseLanguage.structure.PrimitiveType;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.TypeVariableReference;
-import jetbrains.mps.baseLanguage.structure.UpperBoundType;
-import jetbrains.mps.baseLanguage.structure.LowerBoundType;
-import jetbrains.mps.baseLanguage.structure.WildCardType;
 import java.util.HashSet;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.baseLanguage.structure.AnonymousClass;
 
 public class ForeignReferencesConvertor {
   private static Set<String> ourAllowedClassifierConcepts;
@@ -51,7 +33,7 @@ public class ForeignReferencesConvertor {
     if (regularModel == null) {
       return null;
     }
-    INodeAdapter target;
+    SNode target;
     SModel model = regularModel.getSModel();
     switch (targetKind) {
       case CLASS:
@@ -69,7 +51,7 @@ public class ForeignReferencesConvertor {
     if (target == null) {
       return new SNodePointer(modelReference, nodeId);
     }
-    return new SNodePointer(target.getNode());
+    return new SNodePointer(target);
   }
 
   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {
@@ -77,42 +59,42 @@ public class ForeignReferencesConvertor {
     return sModelDescriptor;
   }
 
-  private Classifier getMPSClassByIdString(SModel model, String idString) {
+  private SNode getMPSClassByIdString(SModel model, String idString) {
     if (idString.startsWith(SNodeId.Foreign.ID_PREFIX)) {
       idString = idString.substring(SNodeId.Foreign.ID_PREFIX.length());
     }
     String className = idString;
     SNode node = SModelOperations.getRootByName(model, className);
-    if (node == null) {
+    if ((node == null)) {
       return null;
     }
     if (ourAllowedClassifierConcepts.contains(node.getConceptFqName())) {
-      return (Classifier) node.getAdapter();
+      return SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
     } else {
       return null;
     }
   }
 
-  private Classifier getMPSClassById(SModel model, SNodeId nodeId) {
+  private SNode getMPSClassById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
     return getMPSClassByIdString(model, idString);
   }
 
-  private INamedConcept getMPSFieldById(SModel model, SNodeId nodeId) {
+  private SNode getMPSFieldById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
-    Classifier classifier = getMPSClassByIdString(model, NameUtil.namespaceFromLongName(idString));
-    if (classifier == null) {
+    SNode classifier = getMPSClassByIdString(model, NameUtil.namespaceFromLongName(idString));
+    if ((classifier == null)) {
       return null;
     }
     String fieldName = NameUtil.shortNameFromLongName(idString);
-    for (StaticFieldDeclaration field : classifier.getStaticFields()) {
-      if (field.getName().equals(fieldName)) {
+    for (SNode field : SLinkOperations.getTargets(classifier, "staticField", true)) {
+      if (SPropertyOperations.getString(field, "name").equals(fieldName)) {
         return field;
       }
     }
-    if (classifier instanceof ClassConcept) {
-      for (FieldDeclaration field : ((ClassConcept) classifier).getFields()) {
-        if (field.getName().equals(fieldName)) {
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      for (SNode field : SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)) {
+        if (SPropertyOperations.getString(field, "name").equals(fieldName)) {
           return field;
         }
       }
@@ -120,44 +102,44 @@ public class ForeignReferencesConvertor {
     return null;
   }
 
-  private BaseMethodDeclaration getMPSMethodById(SModel model, SNodeId nodeId) {
+  private SNode getMPSMethodById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
     int offset1 = idString.lastIndexOf('(');
     String methodAndClassName = idString.substring(0, offset1);
     String className = NameUtil.namespaceFromLongName(methodAndClassName);
-    Classifier classifier = getMPSClassByIdString(model, className);
-    if (classifier == null) {
+    SNode classifier = getMPSClassByIdString(model, className);
+    if ((classifier == null)) {
       return null;
     }
     String methodName = NameUtil.shortNameFromLongName(methodAndClassName);
     int offset2 = idString.lastIndexOf(')');
     String signature = idString.substring(offset1 + 1, offset2);
     boolean constructor = "<init>".equals(methodName);
-    List<BaseMethodDeclaration> goodMethods = new ArrayList<BaseMethodDeclaration>();
-    for (InstanceMethodDeclaration method : classifier.getMethods()) {
-      if (methodName.equals(method.getName())) {
-        goodMethods.add(method);
+    List<SNode> goodMethods = new ArrayList<SNode>();
+    for (SNode method : SLinkOperations.getTargets(classifier, "method", true)) {
+      if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
+        ListSequence.fromList(goodMethods).addElement(method);
       }
     }
-    if (classifier instanceof ClassConcept) {
-      ClassConcept classConcept = (ClassConcept) classifier;
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (constructor) {
-        for (ConstructorDeclaration method : classConcept.getConstructors()) {
-          goodMethods.add(method);
+        for (SNode method : SLinkOperations.getTargets(classConcept, "constructor", true)) {
+          ListSequence.fromList(goodMethods).addElement(method);
         }
       } else {
-        for (StaticMethodDeclaration method : classConcept.getStaticMethods()) {
-          if (methodName.equals(method.getName())) {
+        for (SNode method : SLinkOperations.getTargets(classConcept, "staticMethod", true)) {
+          if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
             goodMethods.add(method);
           }
         }
       }
     }
-    for (BaseMethodDeclaration method : goodMethods) {
-      Iterator<ParameterDeclaration> iterator = method.parameters();
+    for (SNode method : goodMethods) {
+      Iterator<SNode> iterator = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
       StringBuilder sb = new StringBuilder();
       while (iterator.hasNext()) {
-        sb.append(mpsTypeAsString(iterator.next().getType()));
+        sb.append(mpsTypeAsString(SLinkOperations.getTarget(iterator.next(), "type", true)));
         if (iterator.hasNext()) {
           sb.append(',');
         }
@@ -169,46 +151,46 @@ public class ForeignReferencesConvertor {
     return null;
   }
 
-  public String mpsTypeAsString(Type type) {
-    if (type instanceof ClassifierType) {
+  public String mpsTypeAsString(SNode type) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       StringBuilder sb = new StringBuilder();
-      ClassifierType classifierType = (ClassifierType) type;
-      Classifier classifier = classifierType.getClassifier();
-      sb.append(classifier.getModel().getLongName()).append('.').append(classifier.getName());
-      List<Type> typeParameters = classifierType.getParameters();
-      if (typeParameters != null && !(typeParameters.isEmpty())) {
+      SNode classifierType = SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+      sb.append(SNodeOperations.getModel(classifier).getLongName()).append('.').append(SPropertyOperations.getString(classifier, "name"));
+      List<SNode> typeParameters = SLinkOperations.getTargets(classifierType, "parameter", true);
+      if (typeParameters != null && !(ListSequence.fromList(typeParameters).isEmpty())) {
         sb.append('<');
         appendTypesList(sb, typeParameters);
         sb.append('>');
       }
       return sb.toString();
     }
-    if (type instanceof ArrayType) {
-      return mpsTypeAsString(((ArrayType) type).getComponentType()) + "[]";
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+      return mpsTypeAsString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true)) + "[]";
     }
-    if (type instanceof VariableArityType) {
-      return mpsTypeAsString(((VariableArityType) type).getComponentType()) + "...";
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      return mpsTypeAsString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true)) + "...";
     }
-    if (type instanceof PrimitiveType) {
-      return SModelUtil_new.getAlias(type.getNode().getConceptDeclarationNode());
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      return SModelUtil_new.getAlias(SNodeOperations.getConceptDeclaration(type));
     }
-    if (type instanceof TypeVariableReference) {
-      return ((TypeVariableReference) type).getTypeVariableDeclaration().getName();
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), "name");
     }
-    if (type instanceof UpperBoundType) {
-      return "? extends " + mpsTypeAsString(((UpperBoundType) type).getBound());
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+      return "? extends " + mpsTypeAsString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
     }
-    if (type instanceof LowerBoundType) {
-      return "? super " + mpsTypeAsString(((LowerBoundType) type).getBound());
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+      return "? super " + mpsTypeAsString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true));
     }
-    if (type instanceof WildCardType) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       return "?";
     }
     return null;
   }
 
-  private void appendTypesList(StringBuilder sb, List<Type> types) {
-    Iterator<Type> iterator = types.iterator();
+  private void appendTypesList(StringBuilder sb, List<SNode> types) {
+    Iterator<SNode> iterator = ListSequence.fromList(types).iterator();
     while (iterator.hasNext()) {
       sb.append(mpsTypeAsString(iterator.next()));
       if (iterator.hasNext()) {
@@ -219,10 +201,10 @@ public class ForeignReferencesConvertor {
 
   static {
     ourAllowedClassifierConcepts = new HashSet<String>();
-    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_ClassConcept);
-    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_Interface);
-    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_EnumClass);
-    ourAllowedClassifierConcepts.add(AnonymousClass.concept);
-    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_Annotation);
+    ourAllowedClassifierConcepts.add("jetbrains.mps.baseLanguage.structure.ClassConcept");
+    ourAllowedClassifierConcepts.add("jetbrains.mps.baseLanguage.structure.Interface");
+    ourAllowedClassifierConcepts.add("jetbrains.mps.baseLanguage.structure.EnumClass");
+    ourAllowedClassifierConcepts.add("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    ourAllowedClassifierConcepts.add("jetbrains.mps.baseLanguage.structure.Annotation");
   }
 }

@@ -28,11 +28,13 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import java.util.LinkedHashSet;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -234,7 +236,7 @@ public class JavaCompiler {
   public void compile() {
     if (myBaseModelToAddSource != null) {
       if (!(JavaCompiler.checkBaseModelMatchesSourceDirectory(myBaseModelToAddSource, mySourceDir))) {
-        LOG.error("model fq name " + myBaseModelToAddSource.getLongName() + " does not match source directory " + mySourceDir.getAbsolutePath());
+        LOG.error("model fq name " + SModelOperations.getModelName(myBaseModelToAddSource) + " does not match source directory " + mySourceDir.getAbsolutePath());
         return;
       }
     }
@@ -268,22 +270,22 @@ public class JavaCompiler {
   public List<SNode> compileIsolated(String source, FeatureKind featureKind) {
     initClassPathItem(myModule);
     SourceWrapper wrapper = SourceWrapper.wrapSource(source, myBaseModelToAddSource, featureKind);
-    addSource(myBaseModelToAddSource.getLongName() + "." + wrapper.getShortClassName(), wrapper.getWrappedSource());
-    myPackageFQNamesToModels.put(myBaseModelToAddSource.getLongName(), myBaseModelToAddSource);
+    addSource(SModelOperations.getModelName(myBaseModelToAddSource) + "." + wrapper.getShortClassName(), wrapper.getWrappedSource());
+    myPackageFQNamesToModels.put(SModelOperations.getModelName(myBaseModelToAddSource), myBaseModelToAddSource);
     compileOnce();
-    List<Classifier> classifierList = ModelAccess.instance().runWriteAction(new Computable<List<Classifier>>() {
+    List<SNode> classifierList = ModelAccess.instance().runWriteAction(new Computable<List<SNode>>() {
       @Override
-      public List<Classifier> compute() {
+      public List<SNode> compute() {
         return buildAST(true);
       }
     });
     if (classifierList.isEmpty()) {
       return new ArrayList<SNode>();
     }
-    List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(classifierList.get(0));
+    List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(ListSequence.fromList(classifierList).first());
     for (SNode node : sNodeList) {
-      if (node.getParent() != null) {
-        node.getParent().removeChild(node);
+      if ((SNodeOperations.getParent(node) != null)) {
+        SNodeOperations.detachNode(node);
       }
     }
     return sNodeList;
@@ -367,7 +369,7 @@ public class JavaCompiler {
     buildAST(false);
   }
 
-  private List<Classifier> buildAST(boolean isolated) {
+  private List<SNode> buildAST(boolean isolated) {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
     return new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels, isolated);
@@ -378,7 +380,7 @@ public class JavaCompiler {
   }
 
   public static boolean checkBaseModelMatchesSourceDirectory(SModel model, File sourceDir) {
-    String pathPostfix = NameUtil.pathFromNamespace(model.getLongName());
+    String pathPostfix = NameUtil.pathFromNamespace(SModelOperations.getModelName(model));
     return sourceDir.getAbsolutePath().endsWith(pathPostfix);
   }
 

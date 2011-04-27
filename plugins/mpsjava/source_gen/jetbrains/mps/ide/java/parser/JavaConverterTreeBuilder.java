@@ -5,116 +5,58 @@ package jetbrains.mps.ide.java.parser;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.smodel.SNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
-import jetbrains.mps.baseLanguage.structure.ParenthesizedExpression;
-import jetbrains.mps.baseLanguage.structure.Statement;
-import jetbrains.mps.baseLanguage.structure.ExpressionStatement;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.eclipse.jdt.internal.compiler.ast.Statement;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.BooleanConstant;
-import jetbrains.mps.baseLanguage.structure.IntegerConstant;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
-import jetbrains.mps.baseLanguage.structure.CharConstant;
+import org.eclipse.jdt.internal.compiler.impl.CharConstant;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.structure.FloatingPointConstant;
 import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
-import jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant;
 import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
 import org.eclipse.jdt.internal.compiler.impl.IntConstant;
-import jetbrains.mps.baseLanguage.structure.LongLiteral;
 import org.eclipse.jdt.internal.compiler.impl.LongConstant;
 import org.eclipse.jdt.internal.compiler.impl.ShortConstant;
-import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import org.eclipse.jdt.internal.compiler.impl.StringConstant;
-import jetbrains.mps.baseLanguage.structure.BinaryOperation;
 import org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression;
-import jetbrains.mps.baseLanguage.structure.AndExpression;
 import org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression;
-import jetbrains.mps.baseLanguage.structure.OrExpression;
 import org.eclipse.jdt.internal.compiler.ast.ArrayAllocationExpression;
-import jetbrains.mps.baseLanguage.structure.Type;
-import jetbrains.mps.baseLanguage.structure.ArrayType;
-import jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.baseLanguage.structure.GenericNewExpression;
-import jetbrains.mps.baseLanguage.structure.ArrayCreator;
-import jetbrains.mps.baseLanguage.structure.DimensionExpression;
-import jetbrains.mps.baseLanguage.structure.ArrayLiteral;
 import org.eclipse.jdt.internal.compiler.ast.ArrayInitializer;
 import org.eclipse.jdt.internal.compiler.ast.ArrayReference;
-import jetbrains.mps.baseLanguage.structure.ArrayAccessExpression;
 import org.eclipse.jdt.internal.compiler.ast.Assignment;
-import jetbrains.mps.baseLanguage.structure.AssignmentExpression;
 import org.eclipse.jdt.internal.compiler.ast.BinaryExpression;
 import org.eclipse.jdt.internal.compiler.ast.OperatorIds;
-import jetbrains.mps.baseLanguage.structure.ShiftLeftExpression;
-import jetbrains.mps.baseLanguage.structure.ShiftRightExpression;
-import jetbrains.mps.baseLanguage.structure.PlusExpression;
-import jetbrains.mps.baseLanguage.structure.MinusExpression;
-import jetbrains.mps.baseLanguage.structure.RemExpression;
-import jetbrains.mps.baseLanguage.structure.BitwiseXorExpression;
-import jetbrains.mps.baseLanguage.structure.BitwiseAndExpression;
-import jetbrains.mps.baseLanguage.structure.MulExpression;
-import jetbrains.mps.baseLanguage.structure.BitwiseOrExpression;
-import jetbrains.mps.baseLanguage.structure.DivExpression;
-import jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression;
-import jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression;
-import jetbrains.mps.baseLanguage.structure.GreaterThanExpression;
-import jetbrains.mps.baseLanguage.structure.LessThanExpression;
 import org.eclipse.jdt.internal.compiler.ast.CombinedBinaryExpression;
 import org.eclipse.jdt.internal.compiler.ast.CompoundAssignment;
-import jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.MulAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.DivAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.AndAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.OrAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.XorAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.RemAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression;
-import jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression;
 import org.eclipse.jdt.internal.compiler.ast.ConditionalExpression;
-import jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression;
 import org.eclipse.jdt.internal.compiler.ast.EqualExpression;
-import jetbrains.mps.baseLanguage.structure.EqualsExpression;
-import jetbrains.mps.baseLanguage.structure.NotEqualsExpression;
-import jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement;
 import org.eclipse.jdt.internal.compiler.ast.ExplicitConstructorCall;
-import jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation;
-import jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation;
 import jetbrains.mps.smodel.SReference;
 import org.eclipse.jdt.internal.compiler.ast.InstanceOfExpression;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
-import jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation;
-import jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression;
-import jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
-import jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression;
-import jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression;
 import org.eclipse.jdt.internal.compiler.ast.CastExpression;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
-import jetbrains.mps.baseLanguage.structure.ThisExpression;
 import org.eclipse.jdt.internal.compiler.ast.NormalAnnotation;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import org.eclipse.jdt.internal.compiler.ast.MemberValuePair;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue;
-import jetbrains.mps.smodel.SNode;
 import org.eclipse.jdt.internal.compiler.ast.MarkerAnnotation;
 import org.eclipse.jdt.internal.compiler.ast.SingleMemberAnnotation;
-import jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.lookup.AnnotationBinding;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
@@ -124,100 +66,49 @@ import org.eclipse.jdt.internal.compiler.ast.FieldReference;
 import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedFieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ProblemBinding;
-import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
-import jetbrains.mps.baseLanguage.structure.VariableReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
-import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
-import jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference;
-import jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference;
-import jetbrains.mps.baseLanguage.structure.FieldReferenceOperation;
-import jetbrains.mps.baseLanguage.structure.DotExpression;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
 import org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.NestedTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.SyntheticMethodBinding;
-import jetbrains.mps.baseLanguage.structure.EnumValuesExpression;
 import org.eclipse.jdt.internal.compiler.ast.MessageSend;
-import jetbrains.mps.baseLanguage.structure.EnumValueOfExpression;
-import jetbrains.mps.baseLanguage.structure.IMethodCall;
-import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedSuperReference;
-import jetbrains.mps.baseLanguage.structure.SuperMethodCall;
-import jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation;
-import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import org.eclipse.jdt.internal.compiler.lookup.ProblemMethodBinding;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
-import jetbrains.mps.baseLanguage.structure.ClassCreator;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression;
-import jetbrains.mps.baseLanguage.structure.AbstractCreator;
-import jetbrains.mps.baseLanguage.structure.AnonymousClassCreator;
-import jetbrains.mps.baseLanguage.structure.AnonymousClass;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ClassLiteralAccess;
-import jetbrains.mps.baseLanguage.structure.ClassifierClassExpression;
 import org.eclipse.jdt.internal.compiler.lookup.BaseTypeBinding;
-import jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression;
-import jetbrains.mps.baseLanguage.structure.PrimitiveType;
 import org.eclipse.jdt.internal.compiler.ast.UnaryExpression;
-import jetbrains.mps.baseLanguage.structure.UnaryMinus;
-import jetbrains.mps.baseLanguage.structure.NotExpression;
-import jetbrains.mps.baseLanguage.structure.BitwiseNotExpression;
 import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.lookup.Binding;
-import jetbrains.mps.baseLanguage.structure.UnresolvedNameReference;
-import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.LocalVariableReference;
-import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-import jetbrains.mps.baseLanguage.structure.ParameterReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
-import jetbrains.mps.baseLanguage.structure.ArrayLengthOperation;
 import org.eclipse.jdt.internal.compiler.ast.AssertStatement;
-import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import org.eclipse.jdt.internal.compiler.ast.Block;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 import org.eclipse.jdt.internal.compiler.ast.BreakStatement;
-import jetbrains.mps.baseLanguage.structure.SwitchCase;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
 import org.eclipse.jdt.internal.compiler.ast.ContinueStatement;
 import org.eclipse.jdt.internal.compiler.ast.DoStatement;
-import jetbrains.mps.baseLanguage.structure.DoWhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.EmptyStatement;
-import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForStatement;
-import jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable;
 import org.eclipse.jdt.internal.compiler.ast.IfStatement;
 import org.eclipse.jdt.internal.compiler.ast.LabeledStatement;
-import jetbrains.mps.baseLanguage.structure.AbstractLoopStatement;
-import jetbrains.mps.baseLanguage.structure.SwitchStatement;
+import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
 import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
 import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
-import jetbrains.mps.baseLanguage.structure.CatchClause;
-import jetbrains.mps.baseLanguage.structure.TryCatchStatement;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Initializer;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import org.eclipse.jdt.internal.compiler.lookup.LocalTypeBinding;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
-import jetbrains.mps.baseLanguage.structure.StaticInitializer;
-import jetbrains.mps.baseLanguage.structure.InstanceInitializer;
-import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
-import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.AbstractVariableDeclaration;
-import jetbrains.mps.baseLanguage.structure.HasAnnotation;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
@@ -225,56 +116,56 @@ public class JavaConverterTreeBuilder {
   private SModel myCurrentModel;
   private Map<String, SModel> myModelMap;
   private boolean myIsolated = false;
-  private Classifier myCurrentClass;
+  private SNode myCurrentClass;
   private TypeDeclaration myCurrentTypeDeclaration;
-  private BaseMethodDeclaration myCurrentMethod;
+  private SNode myCurrentMethod;
   private TypesProvider myTypesProvider;
 
   public JavaConverterTreeBuilder() {
   }
 
-  public Expression processExpressionRefl(org.eclipse.jdt.internal.compiler.ast.Expression expression) {
-    Expression result = null;
+  public SNode processExpressionRefl(Expression expression) {
+    SNode result = null;
     if (expression instanceof Literal && expression.constant != null && expression.constant != Constant.NotAConstant) {
-      result = (Expression) dispatchRefl("processConstant", expression.constant);
+      result = SNodeOperations.cast(dispatchRefl("processConstant", expression.constant), "jetbrains.mps.baseLanguage.structure.Expression");
     }
-    if (result == null) {
-      result = (Expression) dispatchRefl("processExpression", expression);
+    if ((result == null)) {
+      result = SNodeOperations.cast(dispatchRefl("processExpression", expression), "jetbrains.mps.baseLanguage.structure.Expression");
     }
     if (expression != null) {
       int parenthesisCount = (expression.bits & ASTNode.ParenthesizedMASK) >> ASTNode.ParenthesizedSHIFT;
       for (int parenthsCreated = 0; parenthsCreated < parenthesisCount; parenthsCreated++) {
-        ParenthesizedExpression parenthesizedExpression = ParenthesizedExpression.newInstance(myCurrentModel);
-        parenthesizedExpression.setExpression(result);
+        SNode parenthesizedExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+        SLinkOperations.setTarget(parenthesizedExpression, "expression", result, true);
         result = parenthesizedExpression;
       }
     }
     return result;
   }
 
-  public Statement processStatementRefl(org.eclipse.jdt.internal.compiler.ast.Statement x) {
-    Statement statement;
-    if (x instanceof org.eclipse.jdt.internal.compiler.ast.Expression) {
-      Expression expr = processExpressionRefl((org.eclipse.jdt.internal.compiler.ast.Expression) x);
-      if (expr == null) {
+  public SNode processStatementRefl(Statement x) {
+    SNode statement;
+    if (x instanceof Expression) {
+      SNode expr = processExpressionRefl((Expression) x);
+      if ((expr == null)) {
         return null;
       }
-      ExpressionStatement expressionStatement = ExpressionStatement.newInstance(myCurrentModel);
-      expressionStatement.setExpression(expr);
+      SNode expressionStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      SLinkOperations.setTarget(expressionStatement, "expression", expr, true);
       statement = expressionStatement;
     } else {
-      statement = (Statement) dispatchRefl("processStatement", x);
+      statement = SNodeOperations.cast(dispatchRefl("processStatement", x), "jetbrains.mps.baseLanguage.structure.Statement");
     }
     return statement;
   }
 
-  protected INodeAdapter dispatchRefl(String name, Object child) {
+  protected SNode dispatchRefl(String name, Object child) {
     if (child == null) {
       return null;
     }
     try {
       Method method = getClass().getDeclaredMethod(name, child.getClass());
-      return (INodeAdapter) method.invoke(this, child);
+      return (SNode) method.invoke(this, child);
     } catch (Throwable e) {
       if (e instanceof InvocationTargetException) {
         e = ((InvocationTargetException) e).getTargetException();
@@ -283,212 +174,212 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  /*package*/ List<ExpressionStatement> processExpressionStatements(org.eclipse.jdt.internal.compiler.ast.Statement[] statements) {
-    List<ExpressionStatement> expressionStatements = new ArrayList<ExpressionStatement>();
+  /*package*/ List<SNode> processExpressionStatements(Statement[] statements) {
+    List<SNode> expressionStatements = new ArrayList<SNode>();
     if (statements != null) {
       for (int i = 0, n = statements.length; i < n; ++i) {
-        Statement statement = processStatementRefl(statements[i]);
-        if (statement != null) {
-          expressionStatements.add((ExpressionStatement) statement);
+        SNode statement = processStatementRefl(statements[i]);
+        if ((statement != null)) {
+          ListSequence.fromList(expressionStatements).addElement(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         }
       }
     }
     return expressionStatements;
   }
 
-  /*package*/ BooleanConstant processConstant(org.eclipse.jdt.internal.compiler.impl.BooleanConstant x) {
-    BooleanConstant result = BooleanConstant.newInstance(myCurrentModel);
-    result.setValue(x.booleanValue());
+  /*package*/ SNode processConstant(BooleanConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    SPropertyOperations.set(result, "value", "" + x.booleanValue());
     return result;
   }
 
-  /*package*/ IntegerConstant processConstant(ByteConstant x) {
-    IntegerConstant result = IntegerConstant.newInstance(myCurrentModel);
-    result.setValue(x.byteValue());
+  /*package*/ SNode processConstant(ByteConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + x.byteValue());
     return result;
   }
 
-  /*package*/ CharConstant processConstant(org.eclipse.jdt.internal.compiler.impl.CharConstant x) {
-    CharConstant result = CharConstant.newInstance(myCurrentModel);
+  /*package*/ SNode processConstant(CharConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CharConstant", null);
     String value = NameUtil.escapeChar(x.charValue());
-    result.setCharConstant(value);
+    SPropertyOperations.set(result, "charConstant", value);
     return result;
   }
 
-  /*package*/ FloatingPointConstant processConstant(DoubleConstant x) {
-    FloatingPointConstant result = FloatingPointConstant.newInstance(myCurrentModel);
-    result.setValue(x.doubleValue() + "");
+  /*package*/ SNode processConstant(DoubleConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
+    SPropertyOperations.set(result, "value", x.doubleValue() + "");
     return result;
   }
 
-  /*package*/ FloatingPointFloatConstant processConstant(FloatConstant x) {
-    FloatingPointFloatConstant result = FloatingPointFloatConstant.newInstance(myCurrentModel);
-    result.setValue(x.floatValue() + "f");
+  /*package*/ SNode processConstant(FloatConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
+    SPropertyOperations.set(result, "value", x.floatValue() + "f");
     return result;
   }
 
-  /*package*/ IntegerConstant processConstant(IntConstant x) {
-    IntegerConstant result = IntegerConstant.newInstance(myCurrentModel);
-    result.setValue(x.intValue());
+  /*package*/ SNode processConstant(IntConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + x.intValue());
     return result;
   }
 
-  /*package*/ LongLiteral processConstant(LongConstant x) {
-    LongLiteral result = LongLiteral.newInstance(myCurrentModel);
-    result.setValue(x.longValue() + "L");
+  /*package*/ SNode processConstant(LongConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LongLiteral", null);
+    SPropertyOperations.set(result, "value", x.longValue() + "L");
     return result;
   }
 
-  /*package*/ IntegerConstant processConstant(ShortConstant x) {
-    IntegerConstant result = IntegerConstant.newInstance(myCurrentModel);
-    result.setValue(x.shortValue());
+  /*package*/ SNode processConstant(ShortConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + x.shortValue());
     return result;
   }
 
-  /*package*/ StringLiteral processConstant(StringConstant x) {
-    StringLiteral result = StringLiteral.newInstance(myCurrentModel);
-    result.setValue(NameUtil.escapeString(x.stringValue()));
+  /*package*/ SNode processConstant(StringConstant x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SPropertyOperations.set(result, "value", NameUtil.escapeString(x.stringValue()));
     return result;
   }
 
-  /*package*/ BinaryOperation processBinaryOperation(org.eclipse.jdt.internal.compiler.ast.Expression left, org.eclipse.jdt.internal.compiler.ast.Expression right, BinaryOperation binaryOperation) {
-    binaryOperation.setLeftExpression(processExpressionRefl(left));
-    binaryOperation.setRightExpression(processExpressionRefl(right));
+  /*package*/ SNode processBinaryOperation(Expression left, Expression right, SNode binaryOperation) {
+    SLinkOperations.setTarget(binaryOperation, "leftExpression", processExpressionRefl(left), true);
+    SLinkOperations.setTarget(binaryOperation, "rightExpression", processExpressionRefl(right), true);
     return binaryOperation;
   }
 
-  /*package*/ Expression processExpression(AND_AND_Expression x) {
-    AndExpression andExpression = AndExpression.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(AND_AND_Expression x) {
+    SNode andExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AndExpression", null);
     return processBinaryOperation(x.left, x.right, andExpression);
   }
 
-  /*package*/ Expression processExpression(OR_OR_Expression x) {
-    OrExpression orExpression = OrExpression.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(OR_OR_Expression x) {
+    SNode orExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.OrExpression", null);
     return processBinaryOperation(x.left, x.right, orExpression);
   }
 
-  /*package*/ Expression processExpression(ArrayAllocationExpression x) {
-    Type type = createType(x.resolvedType);
-    if (!((type instanceof ArrayType))) {
+  /*package*/ SNode processExpression(ArrayAllocationExpression x) {
+    SNode type = createType(x.resolvedType);
+    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
       throw new JavaConverterException("a type of array allocation should be an array type");
     }
-    ArrayType arrayType = (ArrayType) type;
+    SNode arrayType = SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType");
     if (x.initializer != null) {
-      List<Expression> initializers = new ArrayList<Expression>();
+      List<SNode> initializers = new ArrayList<SNode>();
       if (x.initializer.expressions != null) {
-        for (org.eclipse.jdt.internal.compiler.ast.Expression expression : x.initializer.expressions) {
-          initializers.add(processExpressionRefl(expression));
+        for (Expression expression : x.initializer.expressions) {
+          ListSequence.fromList(initializers).addElement(processExpressionRefl(expression));
         }
       }
-      ArrayCreatorWithInitializer arrayCreator = ArrayCreatorWithInitializer.newInstance(myCurrentModel);
-      for (Expression initializer : initializers) {
-        arrayCreator.addInitValue(initializer);
+      SNode arrayCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", null);
+      for (SNode initializer : initializers) {
+        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "initValue", true)).addElement(initializer);
       }
-      arrayCreator.setComponentType(CopyUtil.copy(arrayType.getComponentType()));
-      GenericNewExpression genericNewExpression = GenericNewExpression.newInstance(myCurrentModel);
-      genericNewExpression.setCreator(arrayCreator);
+      SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(arrayType, "componentType", true)), true);
+      SNode genericNewExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+      SLinkOperations.setTarget(genericNewExpression, "creator", arrayCreator, true);
       return genericNewExpression;
     } else {
-      List<Expression> dims = new ArrayList<Expression>();
-      for (org.eclipse.jdt.internal.compiler.ast.Expression dimension : x.dimensions) {
+      List<SNode> dims = new ArrayList<SNode>();
+      for (Expression dimension : x.dimensions) {
         if (dimension == null) {
-          dims.add(null);
+          ListSequence.fromList(dims).addElement(null);
         } else {
-          dims.add(processExpressionRefl(dimension));
+          ListSequence.fromList(dims).addElement(processExpressionRefl(dimension));
         }
       }
-      ArrayCreator arrayCreator = ArrayCreator.newInstance(myCurrentModel);
-      for (Expression dim : dims) {
-        DimensionExpression dimensionExpression = DimensionExpression.newInstance(myCurrentModel);
-        arrayCreator.addDimensionExpression(dimensionExpression);
+      SNode arrayCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
+      for (SNode dim : dims) {
+        SNode dimensionExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DimensionExpression", null);
+        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).addElement(dimensionExpression);
         if (dim != null) {
-          dimensionExpression.setExpression(dim);
+          SLinkOperations.setTarget(dimensionExpression, "expression", dim, true);
         }
       }
-      Type deepestComponentType = arrayType.getComponentType();
-      while (deepestComponentType instanceof ArrayType) {
-        deepestComponentType = ((ArrayType) deepestComponentType).getComponentType();
+      SNode deepestComponentType = SLinkOperations.getTarget(arrayType, "componentType", true);
+      while (SNodeOperations.isInstanceOf(deepestComponentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+        deepestComponentType = SLinkOperations.getTarget(SNodeOperations.cast(deepestComponentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
       }
-      arrayCreator.setComponentType(CopyUtil.copy(deepestComponentType));
-      GenericNewExpression genericNewExpression = GenericNewExpression.newInstance(myCurrentModel);
-      genericNewExpression.setCreator(arrayCreator);
+      SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(deepestComponentType), true);
+      SNode genericNewExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+      SLinkOperations.setTarget(genericNewExpression, "creator", arrayCreator, true);
       return genericNewExpression;
     }
   }
 
-  /*package*/ ArrayLiteral processExpression(ArrayInitializer x) {
-    List<Expression> initializers = new ArrayList<Expression>();
+  /*package*/ SNode processExpression(ArrayInitializer x) {
+    List<SNode> initializers = new ArrayList<SNode>();
     if (x.expressions != null) {
-      for (org.eclipse.jdt.internal.compiler.ast.Expression expression : x.expressions) {
-        initializers.add(processExpressionRefl(expression));
+      for (Expression expression : x.expressions) {
+        ListSequence.fromList(initializers).addElement(processExpressionRefl(expression));
       }
     }
-    ArrayLiteral arrayLiteral = ArrayLiteral.newInstance(myCurrentModel);
-    for (Expression initializer : initializers) {
-      arrayLiteral.addItem(initializer);
+    SNode arrayLiteral = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
+    for (SNode initializer : initializers) {
+      ListSequence.fromList(SLinkOperations.getTargets(arrayLiteral, "item", true)).addElement(initializer);
     }
     return arrayLiteral;
   }
 
-  /*package*/ Expression processExpression(ArrayReference x) {
-    ArrayAccessExpression accessExpression = ArrayAccessExpression.newInstance(myCurrentModel);
-    accessExpression.setArray(processExpressionRefl(x.receiver));
-    accessExpression.setIndex(processExpressionRefl(x.position));
+  /*package*/ SNode processExpression(ArrayReference x) {
+    SNode accessExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
+    SLinkOperations.setTarget(accessExpression, "array", processExpressionRefl(x.receiver), true);
+    SLinkOperations.setTarget(accessExpression, "index", processExpressionRefl(x.position), true);
     return accessExpression;
   }
 
-  /*package*/ Expression processExpression(Assignment x) {
-    AssignmentExpression assignmentExpression = AssignmentExpression.newInstance(myCurrentModel);
-    assignmentExpression.setLValue(processExpressionRefl(x.lhs));
-    assignmentExpression.setRValue(processExpressionRefl(x.expression));
+  /*package*/ SNode processExpression(Assignment x) {
+    SNode assignmentExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+    SLinkOperations.setTarget(assignmentExpression, "lValue", processExpressionRefl(x.lhs), true);
+    SLinkOperations.setTarget(assignmentExpression, "rValue", processExpressionRefl(x.expression), true);
     return assignmentExpression;
   }
 
-  /*package*/ Expression processExpression(BinaryExpression x) {
-    BinaryOperation op;
+  /*package*/ SNode processExpression(BinaryExpression x) {
+    SNode op;
     int binOp = (x.bits & ASTNode.OperatorMASK) >> ASTNode.OperatorSHIFT;
     switch (binOp) {
       case OperatorIds.LEFT_SHIFT:
-        op = ShiftLeftExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression", null);
         break;
       case OperatorIds.RIGHT_SHIFT:
-        op = ShiftRightExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression", null);
         break;
       case OperatorIds.PLUS:
-        op = PlusExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PlusExpression", null);
         break;
       case OperatorIds.MINUS:
-        op = MinusExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.MinusExpression", null);
         break;
       case OperatorIds.REMAINDER:
-        op = RemExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.RemExpression", null);
         break;
       case OperatorIds.XOR:
-        op = BitwiseXorExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", null);
         break;
       case OperatorIds.AND:
-        op = BitwiseAndExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", null);
         break;
       case OperatorIds.MULTIPLY:
-        op = MulExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.MulExpression", null);
         break;
       case OperatorIds.OR:
-        op = BitwiseOrExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", null);
         break;
       case OperatorIds.DIVIDE:
-        op = DivExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DivExpression", null);
         break;
       case OperatorIds.LESS_EQUAL:
-        op = LessThanOrEqualsExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", null);
         break;
       case OperatorIds.GREATER_EQUAL:
-        op = GreaterThanOrEqualsExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", null);
         break;
       case OperatorIds.GREATER:
-        op = GreaterThanExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
         break;
       case OperatorIds.LESS:
-        op = LessThanExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LessThanExpression", null);
         break;
       default:
         throw new JavaConverterException("Unsupported operator for BinaryExpression");
@@ -496,70 +387,70 @@ public class JavaConverterTreeBuilder {
     return processBinaryOperation(x.left, x.right, op);
   }
 
-  /*package*/ Expression processExpression(CombinedBinaryExpression x) {
+  /*package*/ SNode processExpression(CombinedBinaryExpression x) {
     return processExpression((BinaryExpression) x);
   }
 
-  /*package*/ Expression processExpression(CompoundAssignment x) {
-    BaseAssignmentExpression op;
+  /*package*/ SNode processExpression(CompoundAssignment x) {
+    SNode op;
     switch (x.operator) {
       case OperatorIds.PLUS:
-        op = PlusAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", null);
         break;
       case OperatorIds.MINUS:
-        op = MinusAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression", null);
         break;
       case OperatorIds.MULTIPLY:
-        op = MulAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", null);
         break;
       case OperatorIds.DIVIDE:
-        op = DivAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression", null);
         break;
       case OperatorIds.AND:
-        op = AndAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression", null);
         break;
       case OperatorIds.OR:
-        op = OrAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression", null);
         break;
       case OperatorIds.XOR:
-        op = XorAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression", null);
         break;
       case OperatorIds.REMAINDER:
-        op = RemAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression", null);
         break;
       case OperatorIds.LEFT_SHIFT:
-        op = LeftShiftAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression", null);
         break;
       case OperatorIds.RIGHT_SHIFT:
-        op = RightShiftAssignmentExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression", null);
         break;
       default:
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
     }
-    op.setLValue(processExpressionRefl(x.lhs));
-    op.setRValue(processExpressionRefl(x.expression));
+    SLinkOperations.setTarget(op, "lValue", processExpressionRefl(x.lhs), true);
+    SLinkOperations.setTarget(op, "rValue", processExpressionRefl(x.expression), true);
     return op;
   }
 
-  /*package*/ Expression processExpression(ConditionalExpression x) {
-    Expression ifTest = processExpressionRefl(x.condition);
-    Expression thenExpr = processExpressionRefl(x.valueIfTrue);
-    Expression elseExpr = processExpressionRefl(x.valueIfFalse);
-    TernaryOperatorExpression tOp = TernaryOperatorExpression.newInstance(myCurrentModel);
-    tOp.setCondition(ifTest);
-    tOp.setIfTrue(thenExpr);
-    tOp.setIfFalse(elseExpr);
+  /*package*/ SNode processExpression(ConditionalExpression x) {
+    SNode ifTest = processExpressionRefl(x.condition);
+    SNode thenExpr = processExpressionRefl(x.valueIfTrue);
+    SNode elseExpr = processExpressionRefl(x.valueIfFalse);
+    SNode tOp = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
+    SLinkOperations.setTarget(tOp, "condition", ifTest, true);
+    SLinkOperations.setTarget(tOp, "ifTrue", thenExpr, true);
+    SLinkOperations.setTarget(tOp, "ifFalse", elseExpr, true);
     return tOp;
   }
 
-  /*package*/ Expression processExpression(EqualExpression x) {
-    BinaryOperation op;
+  /*package*/ SNode processExpression(EqualExpression x) {
+    SNode op;
     switch ((x.bits & ASTNode.OperatorMASK) >> ASTNode.OperatorSHIFT) {
       case OperatorIds.EQUAL_EQUAL:
-        op = EqualsExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
         break;
       case OperatorIds.NOT_EQUAL:
-        op = NotEqualsExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null);
         break;
       default:
         throw new JavaConverterException("Unexpected operator for EqualExpression");
@@ -567,139 +458,139 @@ public class JavaConverterTreeBuilder {
     return processBinaryOperation(x.left, x.right, op);
   }
 
-  /*package*/ ConstructorInvocationStatement processExpression(ExplicitConstructorCall x) {
+  /*package*/ SNode processExpression(ExplicitConstructorCall x) {
     if (x.isImplicitSuper()) {
       return null;
     }
-    ConstructorInvocationStatement result = (x.isSuperAccess() ?
-      SuperConstructorInvocation.newInstance(myCurrentModel) :
-      ThisConstructorInvocation.newInstance(myCurrentModel)
+    SNode result = (x.isSuperAccess() ?
+      SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null) :
+      SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null)
     );
     addCallArgs(x.arguments, result);
-    SReference methodReference = myTypesProvider.createMethodReference(x.binding, ConstructorInvocationStatement.BASE_METHOD_DECLARATION, result.getNode());
+    SReference methodReference = myTypesProvider.createMethodReference(x.binding, "baseMethodDeclaration", result);
     if (methodReference != null) {
-      result.getNode().addReference(methodReference);
+      result.addReference(methodReference);
     }
     return result;
   }
 
-  /*package*/ Expression processExpression(InstanceOfExpression x) {
-    Expression expr = processExpressionRefl(x.expression);
-    Type testType = createType(x.type.resolvedType);
-    jetbrains.mps.baseLanguage.structure.InstanceOfExpression instanceOfExpression = jetbrains.mps.baseLanguage.structure.InstanceOfExpression.newInstance(myCurrentModel);
-    instanceOfExpression.setLeftExpression(expr);
-    instanceOfExpression.setClassType(testType);
+  /*package*/ SNode processExpression(InstanceOfExpression x) {
+    SNode expr = processExpressionRefl(x.expression);
+    SNode testType = createType(x.type.resolvedType);
+    SNode instanceOfExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
+    SLinkOperations.setTarget(instanceOfExpression, "leftExpression", expr, true);
+    SLinkOperations.setTarget(instanceOfExpression, "classType", testType, true);
     return instanceOfExpression;
   }
 
-  private Type createType(TypeBinding binding) {
+  private SNode createType(TypeBinding binding) {
     return myTypesProvider.createType(binding);
   }
 
-  /*package*/ Expression processExpression(PostfixExpression x) {
-    AbstractUnaryNumberOperation op;
+  /*package*/ SNode processExpression(PostfixExpression x) {
+    SNode op;
     switch (x.operator) {
       case OperatorIds.MINUS:
-        op = PostfixDecrementExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
         break;
       case OperatorIds.PLUS:
-        op = PostfixIncrementExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
         break;
       default:
         throw new JavaConverterException("Unexpected postfix operator");
     }
-    op.setExpression(processExpressionRefl(x.lhs));
+    SLinkOperations.setTarget(op, "expression", processExpressionRefl(x.lhs), true);
     return op;
   }
 
-  /*package*/ Expression processExpression(PrefixExpression x) {
-    AbstractUnaryNumberOperation op;
+  /*package*/ SNode processExpression(PrefixExpression x) {
+    SNode op;
     switch (x.operator) {
       case OperatorIds.MINUS:
-        op = PrefixDecrementExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
         break;
       case OperatorIds.PLUS:
-        op = PrefixIncrementExpression.newInstance(myCurrentModel);
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", null);
         break;
       default:
         throw new JavaConverterException("Unexpected prefix operator");
     }
-    op.setExpression(processExpressionRefl(x.lhs));
+    SLinkOperations.setTarget(op, "expression", processExpressionRefl(x.lhs), true);
     return op;
   }
 
-  /*package*/ Expression processExpression(CastExpression x) {
-    jetbrains.mps.baseLanguage.structure.CastExpression result = jetbrains.mps.baseLanguage.structure.CastExpression.newInstance(myCurrentModel);
-    result.setExpression(processExpressionRefl(x.expression));
-    if (x.type instanceof org.eclipse.jdt.internal.compiler.ast.Expression) {
-      result.setType(createType(((org.eclipse.jdt.internal.compiler.ast.Expression) x.type).resolvedType));
+  /*package*/ SNode processExpression(CastExpression x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CastExpression", null);
+    SLinkOperations.setTarget(result, "expression", processExpressionRefl(x.expression), true);
+    if (x.type instanceof Expression) {
+      SLinkOperations.setTarget(result, "type", createType(((Expression) x.type).resolvedType), true);
     }
     return result;
   }
 
-  /*package*/ Expression processExpression(NullLiteral x) {
-    return jetbrains.mps.baseLanguage.structure.NullLiteral.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(NullLiteral x) {
+    return SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
 
-  /*package*/ Expression processExpression(SuperReference x) {
+  /*package*/ SNode processExpression(SuperReference x) {
     throw new JavaConverterException("we have no super-references; this case should be analyzed as method call");
   }
 
-  /*package*/ Expression processExpression(ThisReference x) {
-    return ThisExpression.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(ThisReference x) {
+    return SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThisExpression", null);
   }
 
-  /*package*/ Expression processExpression(NormalAnnotation x) {
-    AnnotationInstance annotationInstance = prepareAnnotationInstance(x);
+  /*package*/ SNode processExpression(NormalAnnotation x) {
+    SNode annotationInstance = prepareAnnotationInstance(x);
     MemberValuePair[] pairs = x.memberValuePairs();
     if (pairs != null) {
       for (MemberValuePair pair : pairs) {
-        AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
-        value.setValue(processExpressionRefl(pair.value));
-        SNode valueNode = value.getNode();
+        SNode value = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
+        SLinkOperations.setTarget(value, "value", processExpressionRefl(pair.value), true);
+        SNode valueNode = value;
         if (pair.binding == null) {
-          valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
+          valueNode.addReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
         } else {
-          valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+          valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
         }
-        annotationInstance.addValue(value);
+        ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
       }
     }
     return annotationInstance;
   }
 
-  /*package*/ Expression processExpression(MarkerAnnotation x) {
+  /*package*/ SNode processExpression(MarkerAnnotation x) {
     return prepareAnnotationInstance(x);
   }
 
-  /*package*/ Expression processExpression(SingleMemberAnnotation x) {
-    AnnotationInstance annotationInstance = prepareAnnotationInstance(x);
-    ImplicitAnnotationInstanceValue value = ImplicitAnnotationInstanceValue.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(SingleMemberAnnotation x) {
+    SNode annotationInstance = prepareAnnotationInstance(x);
+    SNode value = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", null);
     MemberValuePair[] pairs = x.memberValuePairs();
     if (pairs != null) {
       MemberValuePair pair = pairs[0];
-      value.setValue(processExpressionRefl(pair.value));
-      SNode valueNode = value.getNode();
+      SLinkOperations.setTarget(value, "value", processExpressionRefl(pair.value), true);
+      SNode valueNode = value;
       if (pair.binding == null) {
-        valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
+        valueNode.addReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
       } else {
-        valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+        valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
       }
-      annotationInstance.addValue(value);
+      ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
     }
     return annotationInstance;
   }
 
-  /*package*/ AnnotationInstance prepareAnnotationInstance(Annotation annotation) {
-    AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
-    SNode sourceNode = annotationInstance.getNode();
+  /*package*/ SNode prepareAnnotationInstance(Annotation annotation) {
+    SNode annotationInstance = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
+    SNode sourceNode = annotationInstance;
     AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
     SReference classifierReference;
     if (annotationBinding == null) {
       TypeReference type = annotation.type;
-      classifierReference = myTypesProvider.createErrorClassifierReference(AnnotationInstance.ANNOTATION, type.resolvedType, sourceNode);
+      classifierReference = myTypesProvider.createErrorClassifierReference("annotation", type.resolvedType, sourceNode);
     } else {
-      classifierReference = myTypesProvider.createClassifierReference(annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode);
+      classifierReference = myTypesProvider.createClassifierReference(annotationBinding.getAnnotationType(), "annotation", sourceNode);
     }
     if (classifierReference != null) {
       sourceNode.addReference(classifierReference);
@@ -707,14 +598,14 @@ public class JavaConverterTreeBuilder {
     return annotationInstance;
   }
 
-  /*package*/ Expression processExpression(QualifiedThisReference x) {
-    ThisExpression thisRef = ThisExpression.newInstance(myCurrentModel);
+  /*package*/ SNode processExpression(QualifiedThisReference x) {
+    SNode thisRef = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     TypeBinding typeBinding = x.qualification.resolvedType;
-    thisRef.getNode().addReference(myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, ThisExpression.CLASS_CONCEPT, thisRef.getNode()));
+    thisRef.addReference(myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, "classConcept", thisRef));
     return thisRef;
   }
 
-  /*package*/ Expression processExpression(FieldReference x) {
+  /*package*/ SNode processExpression(FieldReference x) {
     FieldBinding fieldBinding = x.binding;
     return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
   }
@@ -727,58 +618,58 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private Expression fieldReferenceFromProblem(ProblemBinding binding, String firstName, String secondName) {
-    StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
-    SNode sourceNode = sfr.getNode();
-    sourceNode.addReference(myTypesProvider.createErrorReference(StaticFieldReference.CLASSIFIER, firstName, sourceNode));
-    sourceNode.addReference(myTypesProvider.createErrorReference(VariableReference.VARIABLE_DECLARATION, secondName, sourceNode));
+  private SNode fieldReferenceFromProblem(ProblemBinding binding, String firstName, String secondName) {
+    SNode sfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+    SNode sourceNode = sfr;
+    sourceNode.addReference(myTypesProvider.createErrorReference("classifier", firstName, sourceNode));
+    sourceNode.addReference(myTypesProvider.createErrorReference("variableDeclaration", secondName, sourceNode));
     return sfr;
   }
 
-  private Expression expressionFromFieldBinding(FieldBinding fieldBinding, Expression instanceExpression) {
+  private SNode expressionFromFieldBinding(FieldBinding fieldBinding, SNode instanceExpression) {
     String role;
     SNode sourceNode;
-    Expression result;
+    SNode result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
     if (fieldBinding.isStatic()) {
       SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
-      if (BaseAdapter.isInstance(classifierPointer.getNode(), EnumClass.class)) {
-        EnumConstantReference enumConstantReference = EnumConstantReference.newInstance(myCurrentModel);
-        role = EnumConstantReference.ENUM_CONSTANT_DECLARATION;
-        sourceNode = enumConstantReference.getNode();
-        enumConstantReference.getNode().addReference(SReference.create(EnumConstantReference.ENUM_CLASS, sourceNode, classifierPointer));
+      if (SNodeOperations.isInstanceOf(((SNode) classifierPointer.getNode()), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+        SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+        role = "enumConstantDeclaration";
+        sourceNode = enumConstantReference;
+        enumConstantReference.addReference(SReference.create("enumClass", sourceNode, classifierPointer));
         result = enumConstantReference;
       } else
       if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
-        role = VariableReference.VARIABLE_DECLARATION;
-        LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
-        sourceNode = lsfr.getNode();
+        role = "variableDeclaration";
+        SNode lsfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null);
+        sourceNode = lsfr;
         result = lsfr;
       } else {
-        StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
-        sourceNode = sfr.getNode();
-        role = VariableReference.VARIABLE_DECLARATION;
-        sfr.getNode().addReference(SReference.create(StaticFieldReference.CLASSIFIER, sourceNode, classifierPointer));
+        SNode sfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+        sourceNode = sfr;
+        role = "variableDeclaration";
+        sfr.addReference(SReference.create("classifier", sourceNode, classifierPointer));
         result = sfr;
       }
     } else {
       if (instanceExpression == null) {
-        role = VariableReference.VARIABLE_DECLARATION;
-        LocalInstanceFieldReference lifr = LocalInstanceFieldReference.newInstance(myCurrentModel);
-        sourceNode = lifr.getNode();
+        role = "variableDeclaration";
+        SNode lifr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        sourceNode = lifr;
         result = lifr;
       } else {
-        role = FieldReferenceOperation.FIELD_DECLARATION;
-        Expression instance;
+        role = "fieldDeclaration";
+        SNode instance;
         instance = instanceExpression;
         if (declaredClassBinding == null) {
           return createArrayLengthExpression(instance, fieldBinding);
         }
-        FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
-        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-        dotExpression.setOperation(fieldRef);
-        dotExpression.setOperand(instance);
-        sourceNode = fieldRef.getNode();
+        SNode fieldRef = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+        SNode dotExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+        SLinkOperations.setTarget(dotExpression, "operation", fieldRef, true);
+        SLinkOperations.setTarget(dotExpression, "operand", instance, true);
+        sourceNode = fieldRef;
         result = dotExpression;
       }
     }
@@ -809,10 +700,10 @@ public class JavaConverterTreeBuilder {
     return false;
   }
 
-  private ThisExpression createThisExpression(MethodBinding binding, org.eclipse.jdt.internal.compiler.ast.Expression receiver) {
+  private SNode createThisExpression(MethodBinding binding, Expression receiver) {
     ReferenceBinding methodDeclaringClass = binding.declaringClass;
     SourceTypeBinding currentClass = myCurrentTypeDeclaration.binding;
-    ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+    SNode thisExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     if (currentClass == methodDeclaringClass) {
       return thisExpression;
     }
@@ -825,28 +716,28 @@ public class JavaConverterTreeBuilder {
         break;
       }
     }
-    thisExpression.getNode().addReference(myTypesProvider.createClassifierReference((ReferenceBinding) currentClass, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+    thisExpression.addReference(myTypesProvider.createClassifierReference((ReferenceBinding) currentClass, "classConcept", thisExpression));
     return thisExpression;
   }
 
-  /*package*/ Expression processValuesExpression(SyntheticMethodBinding binding) {
-    EnumValuesExpression expression = EnumValuesExpression.newInstance(myCurrentModel);
-    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValuesExpression.ENUM_CLASS, expression.getNode());
-    expression.getNode().addReference(classifierReference);
+  /*package*/ SNode processValuesExpression(SyntheticMethodBinding binding) {
+    SNode expression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, "enumClass", expression);
+    expression.addReference(classifierReference);
     return expression;
   }
 
-  /*package*/ Expression processValueOfExpression(SyntheticMethodBinding binding, MessageSend x) {
-    EnumValueOfExpression expression = EnumValueOfExpression.newInstance(myCurrentModel);
-    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValueOfExpression.ENUM_CLASS, expression.getNode());
-    expression.getNode().addReference(classifierReference);
+  /*package*/ SNode processValueOfExpression(SyntheticMethodBinding binding, MessageSend x) {
+    SNode expression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, "enumClass", expression);
+    expression.addReference(classifierReference);
     if (x.arguments != null) {
-      expression.setValue(processExpressionRefl(x.arguments[0]));
+      SLinkOperations.setTarget(expression, "value", processExpressionRefl(x.arguments[0]), true);
     }
     return expression;
   }
 
-  /*package*/ Expression processExpression(MessageSend x) {
+  /*package*/ SNode processExpression(MessageSend x) {
     if (x.binding instanceof SyntheticMethodBinding) {
       SyntheticMethodBinding syntheticMethodBinding = (SyntheticMethodBinding) x.binding;
       if (syntheticMethodBinding.purpose == SyntheticMethodBinding.EnumValues) {
@@ -856,59 +747,59 @@ public class JavaConverterTreeBuilder {
         return processValueOfExpression(syntheticMethodBinding, x);
       }
     }
-    IMethodCall methodCall = null;
-    Expression result;
+    SNode methodCall = null;
+    SNode result;
     if (x.binding != null && x.binding.isStatic()) {
-      StaticMethodCall smc = StaticMethodCall.newInstance(myCurrentModel);
+      SNode smc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       methodCall = smc;
       result = smc;
-      SReference classifierReference = myTypesProvider.createClassifierReference(x.binding.declaringClass, StaticMethodCall.CLASS_CONCEPT, smc.getNode());
-      smc.getNode().addReference(classifierReference);
+      SReference classifierReference = myTypesProvider.createClassifierReference(x.binding.declaringClass, "classConcept", smc);
+      smc.addReference(classifierReference);
     } else
     if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
-      SuperMethodCall smc = SuperMethodCall.newInstance(myCurrentModel);
+      SNode smc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SuperMethodCall", null);
       methodCall = smc;
       result = smc;
     } else {
       if (x.receiver instanceof ThisReference && x.receiver.isImplicitThis()) {
-        LocalInstanceMethodCall limc = LocalInstanceMethodCall.newInstance(myCurrentModel);
+        SNode limc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
         methodCall = limc;
         result = limc;
       } else {
-        Expression qualifier;
-        InstanceMethodCallOperation imco = InstanceMethodCallOperation.newInstance(myCurrentModel);
+        SNode qualifier;
+        SNode imco = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
         methodCall = imco;
         qualifier = processExpressionRefl(x.receiver);
-        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-        dotExpression.setOperand(qualifier);
-        dotExpression.setOperation(imco);
+        SNode dotExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+        SLinkOperations.setTarget(dotExpression, "operand", qualifier, true);
+        SLinkOperations.setTarget(dotExpression, "operation", imco, true);
         result = dotExpression;
       }
     }
     SReference methodReference;
     if (x.binding == null) {
-      methodReference = myTypesProvider.createErrorReference(BaseMethodCall.BASE_METHOD_DECLARATION, new String(x.selector), methodCall.getNode());
+      methodReference = myTypesProvider.createErrorReference("baseMethodDeclaration", new String(x.selector), methodCall);
     } else
     if (x.binding instanceof ProblemMethodBinding) {
       ProblemMethodBinding problemMethodBinding = (ProblemMethodBinding) x.binding;
-      methodReference = myTypesProvider.createErrorReference(BaseMethodCall.BASE_METHOD_DECLARATION, new String(problemMethodBinding.selector), methodCall.getNode());
+      methodReference = myTypesProvider.createErrorReference("baseMethodDeclaration", new String(problemMethodBinding.selector), methodCall);
     } else {
-      methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
+      methodReference = myTypesProvider.createMethodReference(x.binding, "baseMethodDeclaration", methodCall);
     }
     if (methodReference != null) {
-      methodCall.getNode().addReference(methodReference);
+      methodCall.addReference(methodReference);
     }
     addMethodTypeArgs(x.typeArguments, methodCall);
     addCallArgs(x.arguments, methodCall);
     return result;
   }
 
-  /*package*/ Expression processExpression(AllocationExpression x) {
+  /*package*/ SNode processExpression(AllocationExpression x) {
     MethodBinding b = x.binding;
-    ClassCreator classCreator = ClassCreator.newInstance(myCurrentModel);
-    SReference methodReference = myTypesProvider.createMethodReference(b, ClassCreator.BASE_METHOD_DECLARATION, classCreator.getNode());
+    SNode classCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ClassCreator", null);
+    SReference methodReference = myTypesProvider.createMethodReference(b, "baseMethodDeclaration", classCreator);
     if (methodReference != null) {
-      classCreator.getNode().addReference(methodReference);
+      classCreator.addReference(methodReference);
     }
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
@@ -918,98 +809,98 @@ public class JavaConverterTreeBuilder {
       TypeBinding[] typeArguments = ptb.arguments;
       if (typeArguments != null) {
         for (TypeBinding typeBinding : typeArguments) {
-          classCreator.addTypeParameter(createType(typeBinding));
+          ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(createType(typeBinding));
         }
       }
     }
     addMethodTypeArgs(x.typeArguments, classCreator);
     addCallArgs(x.arguments, classCreator);
-    GenericNewExpression result = GenericNewExpression.newInstance(myCurrentModel);
-    result.setCreator(classCreator);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+    SLinkOperations.setTarget(result, "creator", classCreator, true);
     return result;
   }
 
-  /*package*/ Expression processExpression(QualifiedAllocationExpression x) {
+  /*package*/ SNode processExpression(QualifiedAllocationExpression x) {
     MethodBinding b = x.binding;
-    AbstractCreator creator = null;
+    SNode creator = null;
     if (x.anonymousType != null) {
-      AnonymousClassCreator anonymousClassCreator = AnonymousClassCreator.newInstance(myCurrentModel);
+      SNode anonymousClassCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
       creator = anonymousClassCreator;
-      AnonymousClass anonymousClass = (AnonymousClass) myTypesProvider.getRaw(x.anonymousType.binding);
+      SNode anonymousClass = SNodeOperations.cast(myTypesProvider.getRaw(x.anonymousType.binding), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
       MethodBinding superConstructorBinding = ((ConstructorDeclaration) x.anonymousType.methods[0]).constructorCall.binding;
-      SReference methodReference = myTypesProvider.createMethodReference(superConstructorBinding, AnonymousClass.BASE_METHOD_DECLARATION, anonymousClass.getNode());
-      anonymousClass.getNode().addReference(methodReference);
+      SReference methodReference = myTypesProvider.createMethodReference(superConstructorBinding, "baseMethodDeclaration", anonymousClass);
+      anonymousClass.addReference(methodReference);
       addCallArgs(x.arguments, anonymousClass);
-      anonymousClassCreator.setCls(anonymousClass);
+      SLinkOperations.setTarget(anonymousClassCreator, "cls", anonymousClass, true);
     } else {
       if (x.enclosingInstance() == null) {
         return processExpression((AllocationExpression) x);
       }
     }
-    GenericNewExpression result = GenericNewExpression.newInstance(myCurrentModel);
-    result.setCreator(creator);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+    SLinkOperations.setTarget(result, "creator", creator, true);
     return result;
   }
 
-  private void addMethodTypeArgs(TypeReference[] typeArgs, IMethodCall call) {
+  private void addMethodTypeArgs(TypeReference[] typeArgs, SNode call) {
     if (typeArgs == null) {
       return;
     }
     for (TypeReference typeArg : typeArgs) {
-      Type type = myTypesProvider.createType(typeArg.resolvedType);
-      call.addChild(IMethodCall.TYPE_ARGUMENT, type);
+      SNode type = myTypesProvider.createType(typeArg.resolvedType);
+      call.addChild("typeArgument", type);
     }
   }
 
-  private void addCallArgs(org.eclipse.jdt.internal.compiler.ast.Expression[] args, IMethodCall call) {
+  private void addCallArgs(Expression[] args, SNode call) {
     if (args == null) {
-      args = new org.eclipse.jdt.internal.compiler.ast.Expression[0];
+      args = new Expression[0];
     }
-    for (org.eclipse.jdt.internal.compiler.ast.Expression arg : args) {
-      Expression expression = processExpressionRefl(arg);
-      call.addActualArgument(expression);
+    for (Expression arg : args) {
+      SNode expression = processExpressionRefl(arg);
+      ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(expression);
     }
   }
 
-  /*package*/ Expression processExpression(ClassLiteralAccess x) {
+  /*package*/ SNode processExpression(ClassLiteralAccess x) {
     if (x.targetType instanceof ReferenceBinding) {
-      ClassifierClassExpression classExpression = ClassifierClassExpression.newInstance(myCurrentModel);
-      SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType, ClassifierClassExpression.CLASSIFIER, classExpression.getNode());
-      classExpression.getNode().addReference(classifierReference);
+      SNode classExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
+      SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType, "classifier", classExpression);
+      classExpression.addReference(classifierReference);
       return classExpression;
     }
     if (x.targetType instanceof BaseTypeBinding) {
-      PrimitiveClassExpression classExpression = PrimitiveClassExpression.newInstance(myCurrentModel);
-      classExpression.setPrimitiveType((PrimitiveType) myTypesProvider.createType(x.targetType));
+      SNode classExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
+      SLinkOperations.setTarget(classExpression, "primitiveType", SNodeOperations.cast(myTypesProvider.createType(x.targetType), "jetbrains.mps.baseLanguage.structure.PrimitiveType"), true);
       return classExpression;
     }
     LOG.error("unknown class expression type");
     return null;
   }
 
-  /*package*/ Expression processExpression(UnaryExpression x) {
+  /*package*/ SNode processExpression(UnaryExpression x) {
     int operator = ((x.bits & ASTNode.OperatorMASK) >> ASTNode.OperatorSHIFT);
     switch (operator) {
       case OperatorIds.MINUS:
-        UnaryMinus unaryMinus = UnaryMinus.newInstance(myCurrentModel);
-        unaryMinus.setExpression(processExpressionRefl(x.expression));
+        SNode unaryMinus = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.UnaryMinus", null);
+        SLinkOperations.setTarget(unaryMinus, "expression", processExpressionRefl(x.expression), true);
         return unaryMinus;
       case OperatorIds.NOT:
-        NotExpression notExpression = NotExpression.newInstance(myCurrentModel);
-        notExpression.setExpression(processExpressionRefl(x.expression));
+        SNode notExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.NotExpression", null);
+        SLinkOperations.setTarget(notExpression, "expression", processExpressionRefl(x.expression), true);
         return notExpression;
       case OperatorIds.PLUS:
         return processExpressionRefl(x.expression);
       case OperatorIds.TWIDDLE:
-        BitwiseNotExpression twiddle = BitwiseNotExpression.newInstance(myCurrentModel);
-        twiddle.setExpression(processExpressionRefl(x.expression));
+        SNode twiddle = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", null);
+        SLinkOperations.setTarget(twiddle, "expression", processExpressionRefl(x.expression), true);
         return twiddle;
       default:
         throw new JavaConverterException("Unexpected operator for unary expression");
     }
   }
 
-  /*package*/ Expression processExpression(SingleNameReference x) {
+  /*package*/ SNode processExpression(SingleNameReference x) {
     Binding binding = x.binding;
     if (binding instanceof FieldBinding) {
       return expressionFromFieldBinding((FieldBinding) binding, null);
@@ -1018,26 +909,26 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private Expression varFromVariableBinding(Binding binding) {
+  private SNode varFromVariableBinding(Binding binding) {
     if (binding instanceof ProblemBinding) {
-      UnresolvedNameReference varReference = UnresolvedNameReference.newInstance(myCurrentModel);
-      varReference.setResolveName(new String(((ProblemBinding) binding).name));
+      SNode varReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", null);
+      SPropertyOperations.set(varReference, "resolveName", new String(((ProblemBinding) binding).name));
       return varReference;
     }
-    INodeAdapter target = myTypesProvider.getRaw(binding);
-    if (!((target instanceof VariableDeclaration))) {
+    SNode target = myTypesProvider.getRaw(binding);
+    if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       return null;
     }
-    VariableDeclaration variable = (VariableDeclaration) target;
-    Expression result;
-    if (variable instanceof LocalVariableDeclaration) {
-      LocalVariableReference reference = LocalVariableReference.newInstance(myCurrentModel);
-      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
+    SNode variable = SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+    SNode result;
+    if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SLinkOperations.setTarget(reference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
       result = reference;
     } else
-    if (variable instanceof ParameterDeclaration) {
-      ParameterReference parameterReference = ParameterReference.newInstance(myCurrentModel);
-      parameterReference.setParameterDeclaration((ParameterDeclaration) variable);
+    if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+      SLinkOperations.setTarget(parameterReference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), false);
       result = parameterReference;
     } else {
       throw new JavaConverterException("Unknown VariableDeclaration subclass.");
@@ -1045,9 +936,9 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  /*package*/ Expression processExpression(QualifiedNameReference x) {
+  /*package*/ SNode processExpression(QualifiedNameReference x) {
     Binding binding = x.binding;
-    Expression result;
+    SNode result;
     if (binding instanceof ProblemBinding) {
       result = fieldReferenceFromProblem((ProblemBinding) binding, new String(x.tokens[0]), new String(x.tokens[1]));
     } else
@@ -1065,22 +956,22 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  private Expression createArrayLengthExpression(Expression operand, FieldBinding fieldBinding) {
+  private SNode createArrayLengthExpression(SNode operand, FieldBinding fieldBinding) {
     if ("length".equals(new String(fieldBinding.name))) {
-      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-      dotExpression.setOperand(operand);
-      dotExpression.setOperation(ArrayLengthOperation.newInstance(myCurrentModel));
+      SNode dotExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SLinkOperations.setTarget(dotExpression, "operand", operand, true);
+      SLinkOperations.setTarget(dotExpression, "operation", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", null), true);
       return dotExpression;
     } else {
       throw new JavaConverterException("error matching field binding");
     }
   }
 
-  /*package*/ List<Statement> processStatements(org.eclipse.jdt.internal.compiler.ast.Statement[] statements) {
-    List<Statement> result = new ArrayList<Statement>();
+  /*package*/ List<SNode> processStatements(Statement[] statements) {
+    List<SNode> result = new ArrayList<SNode>();
     if (statements != null) {
-      for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : statements) {
-        Statement statement = processStatementRefl(stmt);
+      for (Statement stmt : statements) {
+        SNode statement = processStatementRefl(stmt);
         if (statement != null) {
           result.add(statement);
         }
@@ -1089,275 +980,275 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  /*package*/ Statement processStatement(AssertStatement x) {
-    Expression expr = processExpressionRefl(x.assertExpression);
-    Expression arg = processExpressionRefl(x.exceptionArgument);
-    jetbrains.mps.baseLanguage.structure.AssertStatement result = jetbrains.mps.baseLanguage.structure.AssertStatement.newInstance(myCurrentModel);
-    result.setCondition(expr);
-    result.setMessage(arg);
+  /*package*/ SNode processStatement(AssertStatement x) {
+    SNode expr = processExpressionRefl(x.assertExpression);
+    SNode arg = processExpressionRefl(x.exceptionArgument);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AssertStatement", null);
+    SLinkOperations.setTarget(result, "condition", expr, true);
+    SLinkOperations.setTarget(result, "message", arg, true);
     return result;
   }
 
-  /*package*/ BlockStatement processStatement(Block x) {
+  /*package*/ SNode processStatement(Block x) {
     if (x == null) {
       return null;
     }
-    BlockStatement blockStatement = BlockStatement.newInstance(myCurrentModel);
-    StatementList statementList = StatementList.newInstance(myCurrentModel);
-    blockStatement.setStatements(statementList);
-    for (Statement statement : processStatements(x.statements)) {
-      statementList.addStatement(statement);
+    SNode blockStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SNode statementList = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+    SLinkOperations.setTarget(blockStatement, "statements", statementList, true);
+    for (SNode statement : processStatements(x.statements)) {
+      ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(statement);
     }
     return blockStatement;
   }
 
-  /*package*/ Statement processStatement(BreakStatement x) {
-    jetbrains.mps.baseLanguage.structure.BreakStatement result = jetbrains.mps.baseLanguage.structure.BreakStatement.newInstance(myCurrentModel);
+  /*package*/ SNode processStatement(BreakStatement x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BreakStatement", null);
     if (x.label != null) {
-      result.setLabel(new String(x.label));
+      SPropertyOperations.set(result, "label", new String(x.label));
     }
     return result;
   }
 
-  /*package*/ SwitchCase processCaseStatement(CaseStatement x) {
-    Expression expression = processExpressionRefl(x.constantExpression);
-    SwitchCase switchCase = SwitchCase.newInstance(myCurrentModel);
-    switchCase.setExpression(expression);
-    switchCase.setBody(StatementList.newInstance(myCurrentModel));
+  /*package*/ SNode processCaseStatement(CaseStatement x) {
+    SNode expression = processExpressionRefl(x.constantExpression);
+    SNode switchCase = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SwitchCase", null);
+    SLinkOperations.setTarget(switchCase, "expression", expression, true);
+    SLinkOperations.setTarget(switchCase, "body", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
     return switchCase;
   }
 
-  /*package*/ Statement processStatement(ContinueStatement x) {
-    jetbrains.mps.baseLanguage.structure.ContinueStatement result = jetbrains.mps.baseLanguage.structure.ContinueStatement.newInstance(myCurrentModel);
+  /*package*/ SNode processStatement(ContinueStatement x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ContinueStatement", null);
     if (x.label != null) {
-      result.setLabel(new String(x.label));
+      SPropertyOperations.set(result, "label", new String(x.label));
     }
     return result;
   }
 
-  /*package*/ Statement processStatement(DoStatement x) {
-    Expression loopTest = processExpressionRefl(x.condition);
-    Statement loopBody = processStatementRefl(x.action);
-    DoWhileStatement doWhileStatement = DoWhileStatement.newInstance(myCurrentModel);
-    doWhileStatement.setCondition(loopTest);
-    StatementList body = getStatementListFromStatement(loopBody);
-    doWhileStatement.setBody(body);
+  /*package*/ SNode processStatement(DoStatement x) {
+    SNode loopTest = processExpressionRefl(x.condition);
+    SNode loopBody = processStatementRefl(x.action);
+    SNode doWhileStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DoWhileStatement", null);
+    SLinkOperations.setTarget(doWhileStatement, "condition", loopTest, true);
+    SNode body = getStatementListFromStatement(loopBody);
+    SLinkOperations.setTarget(doWhileStatement, "body", body, true);
     return doWhileStatement;
   }
 
-  /*package*/ Statement processStatement(EmptyStatement x) {
-    return Statement.newInstance(myCurrentModel);
+  /*package*/ SNode processStatement(EmptyStatement x) {
+    return SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.Statement", null);
   }
 
-  /*package*/ LocalVariableDeclarationStatement processStatement(LocalDeclaration x) {
-    LocalVariableDeclaration localVariableDeclaration = getLocalVariableDeclaration(x);
-    LocalVariableDeclarationStatement result = LocalVariableDeclarationStatement.newInstance(myCurrentModel);
-    result.setLocalVariableDeclaration(localVariableDeclaration);
+  /*package*/ SNode processStatement(LocalDeclaration x) {
+    SNode localVariableDeclaration = getLocalVariableDeclaration(x);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+    SLinkOperations.setTarget(result, "localVariableDeclaration", localVariableDeclaration, true);
     return result;
   }
 
-  private LocalVariableDeclaration getLocalVariableDeclaration(LocalDeclaration x) {
-    LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.binding);
-    if (local == null) {
+  private SNode getLocalVariableDeclaration(LocalDeclaration x) {
+    SNode local = SNodeOperations.cast(myTypesProvider.getRaw(x.binding), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    if ((local == null)) {
       return null;
     }
-    Expression initializer = processExpressionRefl(x.initialization);
-    local.setInitializer(initializer);
+    SNode initializer = processExpressionRefl(x.initialization);
+    SLinkOperations.setTarget(local, "initializer", initializer, true);
     addVariableAnnotations(local, x);
     return local;
   }
 
-  /*package*/ Statement processStatement(ReturnStatement x) {
-    jetbrains.mps.baseLanguage.structure.ReturnStatement result = jetbrains.mps.baseLanguage.structure.ReturnStatement.newInstance(myCurrentModel);
-    result.setExpression(processExpressionRefl(x.expression));
+  /*package*/ SNode processStatement(ReturnStatement x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+    SLinkOperations.setTarget(result, "expression", processExpressionRefl(x.expression), true);
     return result;
   }
 
-  /*package*/ Statement processStatement(ForeachStatement x) {
-    jetbrains.mps.baseLanguage.structure.ForeachStatement result = jetbrains.mps.baseLanguage.structure.ForeachStatement.newInstance(myCurrentModel);
-    Statement action = processStatementRefl(x.action);
-    StatementList body = getStatementListFromStatement(action);
-    LocalVariableDeclaration elementVar = (LocalVariableDeclaration) myTypesProvider.getRaw(x.elementVariable.binding);
-    Expression iterable = processExpressionRefl(x.collection);
-    result.setIterable(iterable);
-    result.setVariable(elementVar);
-    result.setBody(body);
+  /*package*/ SNode processStatement(ForeachStatement x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
+    SNode action = processStatementRefl(x.action);
+    SNode body = getStatementListFromStatement(action);
+    SNode elementVar = SNodeOperations.cast(myTypesProvider.getRaw(x.elementVariable.binding), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    SNode iterable = processExpressionRefl(x.collection);
+    SLinkOperations.setTarget(result, "iterable", iterable, true);
+    SLinkOperations.setTarget(result, "variable", elementVar, true);
+    SLinkOperations.setTarget(result, "body", body, true);
     return result;
   }
 
-  /*package*/ Statement processStatement(ForStatement x) {
-    List<Statement> init = processStatements(x.initializations);
-    Expression expr = processExpressionRefl(x.condition);
-    jetbrains.mps.baseLanguage.structure.ForStatement forStatement = jetbrains.mps.baseLanguage.structure.ForStatement.newInstance(myCurrentModel);
-    forStatement.setCondition(expr);
+  /*package*/ SNode processStatement(ForStatement x) {
+    List<SNode> init = processStatements(x.initializations);
+    SNode expr = processExpressionRefl(x.condition);
+    SNode forStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForStatement", null);
+    SLinkOperations.setTarget(forStatement, "condition", expr, true);
     if (!(init.isEmpty())) {
       boolean first = true;
-      for (Statement statement : init) {
-        if (statement instanceof LocalVariableDeclarationStatement) {
-          LocalVariableDeclarationStatement lvds = (LocalVariableDeclarationStatement) statement;
-          LocalVariableDeclaration variableDeclaration = lvds.getLocalVariableDeclaration();
-          lvds.removeChild(variableDeclaration);
+      for (SNode statement : init) {
+        if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+          SNode lvds = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+          SNode variableDeclaration = SLinkOperations.getTarget(lvds, "localVariableDeclaration", true);
+          SNodeOperations.detachNode(variableDeclaration);
           if (first) {
-            forStatement.setVariable(variableDeclaration);
+            SLinkOperations.setTarget(forStatement, "variable", variableDeclaration, true);
             first = false;
           } else {
-            AdditionalForLoopVariable additionalForLoopVariable = AdditionalForLoopVariable.newInstance(myCurrentModel);
+            SNode additionalForLoopVariable = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null);
             myTypesProvider.replaceUnsafe(variableDeclaration, additionalForLoopVariable);
-            additionalForLoopVariable.setName(variableDeclaration.getName());
-            Expression inititalizer = variableDeclaration.getInitializer();
-            if (inititalizer != null) {
-              inititalizer.getParent().removeChild(inititalizer);
-              additionalForLoopVariable.setInitializer(inititalizer);
+            SPropertyOperations.set(additionalForLoopVariable, "name", SPropertyOperations.getString(variableDeclaration, "name"));
+            SNode inititalizer = SLinkOperations.getTarget(variableDeclaration, "initializer", true);
+            if ((inititalizer != null)) {
+              SNodeOperations.detachNode(inititalizer);
+              SLinkOperations.setTarget(additionalForLoopVariable, "initializer", inititalizer, true);
             }
-            forStatement.addAdditionalVar(additionalForLoopVariable);
+            ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).addElement(additionalForLoopVariable);
           }
         }
       }
     }
-    List<ExpressionStatement> incr = processExpressionStatements(x.increments);
+    List<SNode> incr = processExpressionStatements(x.increments);
     if (!(incr.isEmpty())) {
-      for (ExpressionStatement expressionStatement : incr) {
-        Expression expression = expressionStatement.getExpression();
-        expression.getParent().removeChild(expression);
-        forStatement.addIteration(expression);
+      for (SNode expressionStatement : incr) {
+        SNode expression = SLinkOperations.getTarget(expressionStatement, "expression", true);
+        SNodeOperations.detachNode(expression);
+        ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(expression);
       }
     }
-    Statement loopBody = processStatementRefl(x.action);
-    StatementList body = getStatementListFromStatement(loopBody);
-    forStatement.setBody(body);
+    SNode loopBody = processStatementRefl(x.action);
+    SNode body = getStatementListFromStatement(loopBody);
+    SLinkOperations.setTarget(forStatement, "body", body, true);
     return forStatement;
   }
 
-  /*package*/ Statement processStatement(IfStatement x) {
-    Expression expr = processExpressionRefl(x.condition);
-    Statement thenStmt = processStatementRefl(x.thenStatement);
-    Statement elseStmt = processStatementRefl(x.elseStatement);
-    jetbrains.mps.baseLanguage.structure.IfStatement result = jetbrains.mps.baseLanguage.structure.IfStatement.newInstance(myCurrentModel);
-    result.setCondition(expr);
-    if (elseStmt != null) {
-      result.setIfFalseStatement(elseStmt);
+  /*package*/ SNode processStatement(IfStatement x) {
+    SNode expr = processExpressionRefl(x.condition);
+    SNode thenStmt = processStatementRefl(x.thenStatement);
+    SNode elseStmt = processStatementRefl(x.elseStatement);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IfStatement", null);
+    SLinkOperations.setTarget(result, "condition", expr, true);
+    if ((elseStmt != null)) {
+      SLinkOperations.setTarget(result, "ifFalseStatement", elseStmt, true);
     }
-    StatementList ifTrue = getStatementListFromStatement(thenStmt);
-    result.setIfTrue(ifTrue);
+    SNode ifTrue = getStatementListFromStatement(thenStmt);
+    SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
     return result;
   }
 
-  /*package*/ Statement processStatement(LabeledStatement x) {
-    Statement statement = processStatementRefl(x.statement);
-    if (statement == null) {
+  /*package*/ SNode processStatement(LabeledStatement x) {
+    SNode statement = processStatementRefl(x.statement);
+    if ((statement == null)) {
       return null;
     }
-    if (statement instanceof AbstractLoopStatement) {
-      AbstractLoopStatement loopStatement = (AbstractLoopStatement) statement;
-      loopStatement.setLabel(new String(x.label));
+    if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
+      SNode loopStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
+      SPropertyOperations.set(loopStatement, "label", new String(x.label));
     } else
-    if (statement instanceof SwitchStatement) {
-      SwitchStatement switchStatement = (SwitchStatement) statement;
-      switchStatement.setLabel(new String(x.label));
+    if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
+      SNode switchStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement");
+      SPropertyOperations.set(switchStatement, "label", new String(x.label));
     }
     return statement;
   }
 
-  /*package*/ Statement processStatement(org.eclipse.jdt.internal.compiler.ast.SwitchStatement x) {
-    Expression expression = processExpressionRefl(x.expression);
-    SwitchStatement result = SwitchStatement.newInstance(myCurrentModel);
-    result.setExpression(expression);
-    result.setDefaultBlock(StatementList.newInstance(myCurrentModel));
+  /*package*/ SNode processStatement(SwitchStatement x) {
+    SNode expression = processExpressionRefl(x.expression);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SwitchStatement", null);
+    SLinkOperations.setTarget(result, "expression", expression, true);
+    SLinkOperations.setTarget(result, "defaultBlock", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
     if (x.statements != null) {
-      StatementList currentSwitchCase = null;
-      for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : x.statements) {
+      SNode currentSwitchCase = null;
+      for (Statement stmt : x.statements) {
         if (stmt instanceof CaseStatement) {
           CaseStatement caseStatement = (CaseStatement) stmt;
           if (caseStatement.constantExpression == null) {
-            currentSwitchCase = result.getDefaultBlock();
+            currentSwitchCase = SLinkOperations.getTarget(result, "defaultBlock", true);
           } else {
-            SwitchCase switchCase = processCaseStatement((CaseStatement) stmt);
-            if (switchCase != null) {
-              result.addCase(switchCase);
+            SNode switchCase = processCaseStatement((CaseStatement) stmt);
+            if ((switchCase != null)) {
+              ListSequence.fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
             }
-            currentSwitchCase = (switchCase == null ?
+            currentSwitchCase = ((switchCase == null) ?
               null :
-              switchCase.getBody()
+              SLinkOperations.getTarget(switchCase, "body", true)
             );
           }
         } else
-        if (currentSwitchCase != null) {
-          currentSwitchCase.addStatement(processStatementRefl(stmt));
+        if ((currentSwitchCase != null)) {
+          ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(processStatementRefl(stmt));
         }
       }
     }
     return result;
   }
 
-  /*package*/ Statement processStatement(SynchronizedStatement x) {
-    jetbrains.mps.baseLanguage.structure.SynchronizedStatement result = jetbrains.mps.baseLanguage.structure.SynchronizedStatement.newInstance(myCurrentModel);
-    Statement block = processStatementRefl(x.block);
-    Expression expr = processExpressionRefl(x.expression);
-    result.setExpression(expr);
-    result.setBlock(getStatementListFromStatement(block));
+  /*package*/ SNode processStatement(SynchronizedStatement x) {
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", null);
+    SNode block = processStatementRefl(x.block);
+    SNode expr = processExpressionRefl(x.expression);
+    SLinkOperations.setTarget(result, "expression", expr, true);
+    SLinkOperations.setTarget(result, "block", getStatementListFromStatement(block), true);
     return result;
   }
 
-  /*package*/ Statement processStatement(ThrowStatement x) {
-    Expression toThrow = processExpressionRefl(x.exception);
-    jetbrains.mps.baseLanguage.structure.ThrowStatement throwStatement = jetbrains.mps.baseLanguage.structure.ThrowStatement.newInstance(myCurrentModel);
-    throwStatement.setThrowable(toThrow);
+  /*package*/ SNode processStatement(ThrowStatement x) {
+    SNode toThrow = processExpressionRefl(x.exception);
+    SNode throwStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
+    SLinkOperations.setTarget(throwStatement, "throwable", toThrow, true);
     return throwStatement;
   }
 
-  /*package*/ Statement processStatement(TryStatement x) {
-    Statement tryBlock = processStatementRefl(x.tryBlock);
-    List<LocalVariableDeclaration> catchArgs = new ArrayList<LocalVariableDeclaration>();
-    List<Statement> catchBlocks = new ArrayList<Statement>();
-    Statement finallyBlock = processStatementRefl(x.finallyBlock);
+  /*package*/ SNode processStatement(TryStatement x) {
+    SNode tryBlock = processStatementRefl(x.tryBlock);
+    List<SNode> catchArgs = new ArrayList<SNode>();
+    List<SNode> catchBlocks = new ArrayList<SNode>();
+    SNode finallyBlock = processStatementRefl(x.finallyBlock);
     if (x.catchBlocks != null) {
       for (int i = 0, c = x.catchArguments.length; i < c; ++i) {
-        LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.catchArguments[i].binding);
-        catchArgs.add(local);
+        SNode local = SNodeOperations.cast(myTypesProvider.getRaw(x.catchArguments[i].binding), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        ListSequence.fromList(catchArgs).addElement(local);
       }
       for (int i = 0, c = x.catchBlocks.length; i < c; ++i) {
-        catchBlocks.add(processStatementRefl(x.catchBlocks[i]));
+        ListSequence.fromList(catchBlocks).addElement(processStatementRefl(x.catchBlocks[i]));
       }
     }
-    if (finallyBlock != null) {
-      jetbrains.mps.baseLanguage.structure.TryStatement tryStatement = jetbrains.mps.baseLanguage.structure.TryStatement.newInstance(myCurrentModel);
+    if ((finallyBlock != null)) {
+      SNode tryStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TryStatement", null);
       for (int i = 0; i < catchBlocks.size(); i++) {
-        Statement catchBlock = catchBlocks.get(i);
-        LocalVariableDeclaration lvd = catchArgs.get(i);
-        CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
-        tryStatement.addCatchClause(catchClause);
-        catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
-        catchClause.setThrowable(lvd);
+        SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
+        SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
+        SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
+        ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
+        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock), true);
+        SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
-      tryStatement.setFinallyBody(getStatementListFromStatement(finallyBlock));
-      tryStatement.setBody(getStatementListFromStatement(tryBlock));
+      SLinkOperations.setTarget(tryStatement, "finallyBody", getStatementListFromStatement(finallyBlock), true);
+      SLinkOperations.setTarget(tryStatement, "body", getStatementListFromStatement(tryBlock), true);
       return tryStatement;
     } else {
-      TryCatchStatement tryCatchStatement = TryCatchStatement.newInstance(myCurrentModel);
+      SNode tryCatchStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TryCatchStatement", null);
       for (int i = 0; i < catchBlocks.size(); i++) {
-        Statement catchBlock = catchBlocks.get(i);
-        LocalVariableDeclaration lvd = catchArgs.get(i);
-        CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
-        tryCatchStatement.addCatchClause(catchClause);
-        catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
-        catchClause.setThrowable(lvd);
+        SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
+        SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
+        SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(catchClause);
+        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock), true);
+        SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
-      tryCatchStatement.setBody(getStatementListFromStatement(tryBlock));
+      SLinkOperations.setTarget(tryCatchStatement, "body", getStatementListFromStatement(tryBlock), true);
       return tryCatchStatement;
     }
   }
 
-  /*package*/ Statement processStatement(WhileStatement x) {
-    Expression loopTest = processExpressionRefl(x.condition);
-    Statement loopBody = processStatementRefl(x.action);
-    jetbrains.mps.baseLanguage.structure.WhileStatement result = jetbrains.mps.baseLanguage.structure.WhileStatement.newInstance(myCurrentModel);
-    result.setCondition(loopTest);
-    result.setBody(getStatementListFromStatement(loopBody));
+  /*package*/ SNode processStatement(WhileStatement x) {
+    SNode loopTest = processExpressionRefl(x.condition);
+    SNode loopBody = processStatementRefl(x.action);
+    SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.WhileStatement", null);
+    SLinkOperations.setTarget(result, "condition", loopTest, true);
+    SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody), true);
     return result;
   }
 
-  public Classifier processType(TypeDeclaration x) {
-    Classifier classifier = (Classifier) myTypesProvider.getRaw(x.binding);
+  public SNode processType(TypeDeclaration x) {
+    SNode classifier = SNodeOperations.cast(myTypesProvider.getRaw(x.binding), "jetbrains.mps.baseLanguage.structure.Classifier");
     if (x.binding.isAnnotationType()) {
       if (x.methods != null) {
         for (AbstractMethodDeclaration method : x.methods) {
@@ -1372,8 +1263,8 @@ public class JavaConverterTreeBuilder {
       if (x.fields != null) {
         for (FieldDeclaration fieldDeclaration : x.fields) {
           if (fieldDeclaration instanceof Initializer) {
-            assert (classifier instanceof ClassConcept);
-            processInitializer((Initializer) fieldDeclaration, (ClassConcept) classifier);
+            assert (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            processInitializer((Initializer) fieldDeclaration, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
           } else {
             processField(fieldDeclaration);
           }
@@ -1382,7 +1273,7 @@ public class JavaConverterTreeBuilder {
       if (x.methods != null) {
         for (AbstractMethodDeclaration method : x.methods) {
           if (method.isConstructor()) {
-            assert (myCurrentClass instanceof ClassConcept);
+            assert (SNodeOperations.isInstanceOf(myCurrentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
             if (x.binding instanceof LocalTypeBinding) {
             } else {
               processConstructor((ConstructorDeclaration) method);
@@ -1410,17 +1301,17 @@ public class JavaConverterTreeBuilder {
     if (b == null) {
       return;
     }
-    BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
+    SNode method = SNodeOperations.cast(myTypesProvider.getRaw(b), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     for (ReferenceBinding referenceBinding : b.thrownExceptions) {
-      ClassifierType exceptionType = (ClassifierType) myTypesProvider.createType(referenceBinding);
-      method.addThrowsItem(exceptionType);
+      SNode exceptionType = SNodeOperations.cast(myTypesProvider.createType(referenceBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addElement(exceptionType);
     }
   }
 
   /*package*/ void addMethodParametersAnnotations(AbstractMethodDeclaration x) {
     if (x.arguments != null) {
       for (Argument argument : x.arguments) {
-        ParameterDeclaration parameterDeclaration = (ParameterDeclaration) myTypesProvider.getRaw(argument.binding);
+        SNode parameterDeclaration = SNodeOperations.cast(myTypesProvider.getRaw(argument.binding), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
         addVariableAnnotations(parameterDeclaration, argument);
       }
     }
@@ -1428,11 +1319,11 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ void processAnnotationMethod(AnnotationMethodDeclaration x) {
     MethodBinding b = x.binding;
-    jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration method = (jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration) myTypesProvider.getRaw(b);
+    SNode method = SNodeOperations.cast(myTypesProvider.getRaw(b), "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
     try {
       myCurrentMethod = method;
       if (x.defaultValue != null) {
-        method.setDefaultValue(processExpressionRefl(x.defaultValue));
+        SLinkOperations.setTarget(method, "defaultValue", processExpressionRefl(x.defaultValue), true);
       }
       addMethodAnnotations(method, x);
       myCurrentMethod = null;
@@ -1443,8 +1334,8 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ void processMethod(AbstractMethodDeclaration x) {
     MethodBinding b = x.binding;
-    BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
-    if (method == null) {
+    SNode method = SNodeOperations.cast(myTypesProvider.getRaw(b), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if ((method == null)) {
       return;
     }
     try {
@@ -1452,13 +1343,13 @@ public class JavaConverterTreeBuilder {
         throw new JavaConverterException("Native methods not supported");
       }
       myCurrentMethod = method;
-      StatementList methodBody = method.getBody();
-      if (methodBody == null) {
-        methodBody = StatementList.newInstance(myCurrentModel);
-        method.setBody(methodBody);
+      SNode methodBody = SLinkOperations.getTarget(method, "body", true);
+      if ((methodBody == null)) {
+        methodBody = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+        SLinkOperations.setTarget(method, "body", methodBody, true);
       }
-      for (Statement statement : processStatements(x.statements)) {
-        methodBody.addStatement(statement);
+      for (SNode statement : processStatements(x.statements)) {
+        ListSequence.fromList(SLinkOperations.getTargets(methodBody, "statement", true)).addElement(statement);
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(method, x);
@@ -1469,24 +1360,24 @@ public class JavaConverterTreeBuilder {
   }
 
   /*package*/ void processConstructor(ConstructorDeclaration x) {
-    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration ctor = (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(x.binding);
+    SNode ctor = SNodeOperations.cast(myTypesProvider.getRaw(x.binding), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     try {
       myCurrentMethod = ctor;
-      ConstructorInvocationStatement superOrThisCall = null;
+      SNode superOrThisCall = null;
       ExplicitConstructorCall ctorCall = x.constructorCall;
       if (ctorCall != null) {
         superOrThisCall = processExpression(ctorCall);
       }
-      StatementList body = ctor.getBody();
-      if (body == null) {
-        body = StatementList.newInstance(myCurrentModel);
-        ctor.setBody(body);
+      SNode body = SLinkOperations.getTarget(ctor, "body", true);
+      if ((body == null)) {
+        body = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+        SLinkOperations.setTarget(ctor, "body", body, true);
       }
-      if (superOrThisCall != null) {
-        body.addStatement(superOrThisCall);
+      if ((superOrThisCall != null)) {
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(superOrThisCall);
       }
-      for (Statement statement : processStatements(x.statements)) {
-        body.addStatement(statement);
+      for (SNode statement : processStatements(x.statements)) {
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(ctor, x);
@@ -1496,60 +1387,61 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  /*package*/ void processInitializer(Initializer initializer, ClassConcept classConcept) {
-    StatementList body;
+  /*package*/ void processInitializer(Initializer initializer, SNode classConcept) {
+    SNode body;
     if (initializer.isStatic()) {
-      StaticInitializer staticInitializer = StaticInitializer.newInstance(myCurrentModel);
-      classConcept.setClassInitializer(staticInitializer);
-      staticInitializer.setStatementList(StatementList.newInstance(myCurrentModel));
-      body = staticInitializer.getStatementList();
+      SNode staticInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
+      SLinkOperations.setTarget(classConcept, "classInitializer", staticInitializer, true);
+      SLinkOperations.setTarget(staticInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+      body = SLinkOperations.getTarget(staticInitializer, "statementList", true);
     } else {
-      InstanceInitializer instanceInitializer = InstanceInitializer.newInstance(myCurrentModel);
-      classConcept.setInstanceInitializer(instanceInitializer);
-      instanceInitializer.setStatementList(StatementList.newInstance(myCurrentModel));
-      body = instanceInitializer.getStatementList();
+      SNode instanceInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
+      SLinkOperations.setTarget(classConcept, "instanceInitializer", instanceInitializer, true);
+      SLinkOperations.setTarget(instanceInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+      body = SLinkOperations.getTarget(instanceInitializer, "statementList", true);
     }
     if (initializer.block != null && initializer.block.statements != null) {
-      List<Statement> stmts = processStatements(initializer.block.statements);
-      for (Statement statement : stmts) {
-        body.addStatement(statement);
+      List<SNode> stmts = processStatements(initializer.block.statements);
+      for (SNode statement : stmts) {
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
       }
     }
   }
 
   /*package*/ void processField(FieldDeclaration declaration) {
-    INodeAdapter adapter = myTypesProvider.getRaw(declaration.binding);
-    if (adapter == null) {
+    SNode adapter = myTypesProvider.getRaw(declaration.binding);
+    if ((adapter == null)) {
       return;
     }
-    if (adapter instanceof jetbrains.mps.baseLanguage.structure.FieldDeclaration || adapter instanceof StaticFieldDeclaration) {
-      VariableDeclaration field = (VariableDeclaration) adapter;
+    if (SNodeOperations.isInstanceOf(adapter, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(adapter, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+      SNode field = SNodeOperations.cast(adapter, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       try {
-        Expression initializer = null;
+        SNode initializer = null;
         if (declaration.initialization != null) {
           initializer = processExpressionRefl(declaration.initialization);
         }
         if (initializer != null) {
-          field.setInitializer(initializer);
+          SLinkOperations.setTarget(field, "initializer", initializer, true);
         }
         addVariableAnnotations(field, declaration);
       } catch (Throwable e) {
         throw new JavaConverterException(e);
       }
     }
-    if (adapter instanceof EnumConstantDeclaration) {
+
+    if (SNodeOperations.isInstanceOf(adapter, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       try {
-        EnumConstantDeclaration enumConstant = (EnumConstantDeclaration) adapter;
-        assert (myCurrentClass instanceof EnumClass);
+        SNode enumConstant = SNodeOperations.cast(adapter, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+        assert (SNodeOperations.isInstanceOf(myCurrentClass, "jetbrains.mps.baseLanguage.structure.EnumClass"));
         AllocationExpression initializer = (AllocationExpression) declaration.initialization;
         MethodBinding constructorBinding;
         if (initializer instanceof QualifiedAllocationExpression) {
           TypeDeclaration anonymousEnumClass = ((QualifiedAllocationExpression) initializer).anonymousType;
           constructorBinding = ((ConstructorDeclaration) anonymousEnumClass.methods[0]).constructorCall.binding;
-          EnumClass enumClassConstantBody = (EnumClass) myTypesProvider.getRaw(anonymousEnumClass.binding);
-          for (InstanceMethodDeclaration imd : enumClassConstantBody.getMethods()) {
-            enumClassConstantBody.removeChild(imd);
-            enumConstant.addMethod(imd);
+          SNode enumClassConstantBody = SNodeOperations.cast(myTypesProvider.getRaw(anonymousEnumClass.binding), "jetbrains.mps.baseLanguage.structure.EnumClass");
+          for (SNode imd : SLinkOperations.getTargets(enumClassConstantBody, "method", true)) {
+            SNodeOperations.detachNode(imd);
+            ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).addElement(imd);
           }
           for (AbstractMethodDeclaration m : anonymousEnumClass.methods) {
             if (m instanceof ConstructorDeclaration) {
@@ -1560,12 +1452,12 @@ public class JavaConverterTreeBuilder {
         } else {
           constructorBinding = initializer.binding;
         }
-        jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor = (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(constructorBinding.original());
-        enumConstant.setConstructor(constructor);
-        org.eclipse.jdt.internal.compiler.ast.Expression[] arguments = initializer.arguments;
+        SNode constructor = SNodeOperations.cast(myTypesProvider.getRaw(constructorBinding.original()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        SLinkOperations.setTarget(enumConstant, "baseMethodDeclaration", constructor, false);
+        Expression[] arguments = initializer.arguments;
         if (arguments != null) {
-          for (org.eclipse.jdt.internal.compiler.ast.Expression arg : arguments) {
-            enumConstant.addActualArgument(processExpressionRefl(arg));
+          for (Expression arg : arguments) {
+            ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).addElement(processExpressionRefl(arg));
           }
         }
         addEnumConstAnnotations(enumConstant, declaration);
@@ -1575,7 +1467,7 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
+  private void addVariableAnnotations(SNode variableDeclaration, AbstractVariableDeclaration var) {
     if (var.annotations != null) {
       for (Annotation annotation : var.annotations) {
         addAnnotation(variableDeclaration, annotation);
@@ -1583,7 +1475,7 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private void addEnumConstAnnotations(EnumConstantDeclaration enumConst, FieldDeclaration field) {
+  private void addEnumConstAnnotations(SNode enumConst, FieldDeclaration field) {
     if (field.annotations != null) {
       for (Annotation annotation : field.annotations) {
         addAnnotation(enumConst, annotation);
@@ -1591,7 +1483,7 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
+  private void addMethodAnnotations(SNode methodDeclaration, AbstractMethodDeclaration method) {
     if (method.annotations != null) {
       for (Annotation annotation : method.annotations) {
         addAnnotation(methodDeclaration, annotation);
@@ -1599,7 +1491,7 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
+  private void addClassifierAnnotations(SNode classifier, TypeDeclaration typeDeclaration) {
     if (typeDeclaration.annotations != null) {
       for (Annotation annotation : typeDeclaration.annotations) {
         addAnnotation(classifier, annotation);
@@ -1607,13 +1499,13 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  private void addAnnotation(HasAnnotation hasAnnotation, Annotation annotation) {
-    AnnotationInstance annotationInstance = (AnnotationInstance) processExpressionRefl(annotation);
-    hasAnnotation.addAnnotation(annotationInstance);
+  private void addAnnotation(SNode hasAnnotation, Annotation annotation) {
+    SNode annotationInstance = SNodeOperations.cast(processExpressionRefl(annotation), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+    ListSequence.fromList(SLinkOperations.getTargets(hasAnnotation, "annotation", true)).addElement(annotationInstance);
   }
 
-  public List<Classifier> exec(ReferentsCreator referentsCreator, Map<String, SModel> modelMap, boolean isolated) {
-    List<Classifier> result = new ArrayList<Classifier>();
+  public List<SNode> exec(ReferentsCreator referentsCreator, Map<String, SModel> modelMap, boolean isolated) {
+    List<SNode> result = new ArrayList<SNode>();
     myTypesProvider = referentsCreator.getTypesProvider();
     myModelMap = modelMap;
     myCurrentClass = null;
@@ -1623,10 +1515,10 @@ public class JavaConverterTreeBuilder {
     for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
       myCurrentModel = getModelByTypeDeclaration(type.binding);
       if (myCurrentModel != null) {
-        Classifier classifier = processType(type);
+        SNode classifier = processType(type);
         if (referentsCreator.isTopLevelClassifier(type)) {
           if (!(myIsolated)) {
-            myCurrentModel.addRoot(classifier.getNode());
+            SModelOperations.addRootNode(myCurrentModel, classifier);
           }
           result.add(classifier);
         }
@@ -1651,15 +1543,15 @@ public class JavaConverterTreeBuilder {
     return sModel;
   }
 
-  private StatementList getStatementListFromStatement(Statement possibleBlock) {
-    StatementList result;
-    if (possibleBlock instanceof BlockStatement) {
-      result = ((BlockStatement) possibleBlock).getStatements();
-      possibleBlock.removeChild(result);
+  private SNode getStatementListFromStatement(SNode possibleBlock) {
+    SNode result;
+    if (SNodeOperations.isInstanceOf(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      result = SLinkOperations.getTarget(SNodeOperations.cast(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
+      SNodeOperations.detachNode(result);
     } else {
-      result = StatementList.newInstance(myCurrentModel);
-      if (possibleBlock != null) {
-        result.addStatement(possibleBlock);
+      result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+      if ((possibleBlock != null)) {
+        ListSequence.fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
       }
     }
     return result;
