@@ -204,7 +204,9 @@ public class MergeModelsDialog extends BaseDialog {
 
       } else {
         if (ListSequence.fromList(changes).isEmpty()) {
-          rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
+          if (myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
+            rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
+          }
         } else {
           compositeChangeType = ChangeType.CHANGE;
           if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
