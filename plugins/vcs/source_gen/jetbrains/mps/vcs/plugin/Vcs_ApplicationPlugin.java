@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
@@ -27,22 +26,17 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddToVcs_Action());
     addAction(new Annotate_Action());
-    addAction(new DumpChangesManager_Action());
-    addAction(new ForceRefreshModelChanges_Action());
     addAction(new GoToNextChange_Action());
     addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreInVcs_Action());
     addAction(new InstallCustomMergeDriver_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
-    addAction(new SaveModelDifference_Action());
-    addAction(new ShowDifference_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
-    addAction(new ShowDiffererenesWithCurrentRevision_Action());
+    addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 
     addGroup(new AnnotateGroup_ActionGroup());
     addGroup(new ChangesStrip_ActionGroup());
-    addGroup(new EditorInternalVCS_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
     addGroup(new InstallCustomMergeDriverGroup_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
@@ -55,7 +49,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToVCS_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
-    insertGroupIntoAnother(EditorInternalVCS_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);

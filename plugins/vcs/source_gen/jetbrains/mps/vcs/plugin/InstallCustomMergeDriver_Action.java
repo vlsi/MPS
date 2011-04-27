@@ -103,7 +103,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
         try {
           raf = new RandomAccessFile(globalConfigPath, "rw");
           raf.seek(raf.length());
-          String stringToWrite = "\n[merge \"mps\"]\tname = MPS merge driver\n\tdriver = %s %O %A %B %L\n";
+          String stringToWrite = "\n[merge \"mps\"]\tname = MPS merge driver\n\tdriver = %s %%O %%A %%B %%L\n";
           stringToWrite = String.format(stringToWrite, MergeDriverMain.getCommandLine());
           stringToWrite = stringToWrite.replace("\n", System.getProperty("line.separator"));
           stringToWrite = stringToWrite.replace("\\", "\\\\");

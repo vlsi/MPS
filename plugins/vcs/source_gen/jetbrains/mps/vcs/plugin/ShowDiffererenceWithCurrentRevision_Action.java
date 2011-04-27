@@ -24,18 +24,18 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 
-public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowDiffererenesWithCurrentRevision_Action.class.getResource("diff.png"));
-  protected static Log log = LogFactory.getLog(ShowDiffererenesWithCurrentRevision_Action.class);
+public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction {
+  private static final Icon ICON = new ImageIcon(ShowDiffererenceWithCurrentRevision_Action.class.getResource("diff.png"));
+  protected static Log log = LogFactory.getLog(ShowDiffererenceWithCurrentRevision_Action.class);
 
-  public ShowDiffererenesWithCurrentRevision_Action() {
-    super("Compare with the Same Repository Revision", "", ICON);
+  public ShowDiffererenceWithCurrentRevision_Action() {
+    super("Compare with the Same Repository Version", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IconUtil.useIcon(ShowDiffererenesWithCurrentRevision_Action.this, event.getPresentation(), "icons/diff.png");
+    IconUtil.useIcon(ShowDiffererenceWithCurrentRevision_Action.this, event.getPresentation(), "icons/diff.png");
     if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
       return false;
     }
@@ -55,7 +55,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);
+        log.error("User's action doUpdate method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
       }
       this.disable(event.getPresentation());
     }
@@ -93,7 +93,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
       VcsActionsHelper.showRootDifference(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);
+        log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
       }
     }
   }
