@@ -10,8 +10,11 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
 public class GeneratorProperties extends ModuleProperties {
+  public static final String GENERATE_TEMPLATES = "generateTemplates";
+
   private List<ModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
+  private boolean myGenerateTemplates;
 
   public GeneratorProperties() {
     myDepGenerators = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
@@ -26,11 +29,20 @@ public class GeneratorProperties extends ModuleProperties {
     return myPriorityRules;
   }
 
+  public boolean isGenerateTemplates() {
+    return myGenerateTemplates;
+  }
+
+  public void setGenerateTemplates(boolean value) {
+    myGenerateTemplates = value;
+  }
+
   @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof GeneratorDescriptor;
     super.loadFrom(descriptor);
     GeneratorDescriptor d = (GeneratorDescriptor) descriptor;
+    myGenerateTemplates = d.isGenerateTemplates();
     for (ModuleReference ref : d.getDepGenerators()) {
       myDepGenerators.add(ref);
     }
@@ -51,5 +63,6 @@ public class GeneratorProperties extends ModuleProperties {
     d.getDepGenerators().addAll(myDepGenerators);
     d.getPriorityRules().clear();
     d.getPriorityRules().addAll(myPriorityRules);
+    d.setGenerateTemplates(myGenerateTemplates);
   }
 }

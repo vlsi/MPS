@@ -6,6 +6,9 @@ import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ModuleContext;
+import javax.swing.JPanel;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -22,6 +25,12 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
 
   public GeneratorProperties getProperties() {
     return myProperties;
+  }
+
+  public JPanel createCheckboxPanel() {
+    List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
+    list.add(new StandardComponents.CheckboxDescriptor(myProperties, GeneratorProperties.GENERATE_TEMPLATES, "Generate Templates"));
+    return StandardComponents.createCheckboxPanel(this, list);
   }
 
   protected String getErrorString() {
