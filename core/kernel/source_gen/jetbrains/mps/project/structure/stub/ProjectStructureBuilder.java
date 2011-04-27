@@ -191,6 +191,7 @@ public abstract class ProjectStructureBuilder {
     SNode generator = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.Generator", null);
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
+    SPropertyOperations.set(generator, "generateTemplates", "" + source.isGenerateTemplates());
     SPropertyOperations.set(generator, "namespace", (StringUtils.isNotEmpty(source.getNamespace()) ?
       source.getNamespace() :
       null

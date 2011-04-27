@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Generator extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Generator";
   public static final String GENERATOR_U_I_D = "generatorUID";
+  public static final String GENERATE_TEMPLATES = "generateTemplates";
   public static final String PRIORITY_RULES = "priorityRules";
   public static final String DEP_GENERATORS = "depGenerators";
 
@@ -25,6 +26,14 @@ public class Generator extends Module {
 
   public void setGeneratorUID(String value) {
     this.setProperty(Generator.GENERATOR_U_I_D, value);
+  }
+
+  public boolean getGenerateTemplates() {
+    return this.getBooleanProperty(Generator.GENERATE_TEMPLATES);
+  }
+
+  public void setGenerateTemplates(boolean value) {
+    this.setBooleanProperty(Generator.GENERATE_TEMPLATES, value);
   }
 
   public int getPriorityRulesesCount() {
