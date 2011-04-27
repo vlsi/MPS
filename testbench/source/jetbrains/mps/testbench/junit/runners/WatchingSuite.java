@@ -4,7 +4,6 @@ import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
-import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 
@@ -15,7 +14,7 @@ import org.junit.runners.model.RunnerBuilder;
  * Time: 3:36:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WatchingSuite extends Suite{
+public class WatchingSuite extends SymbolicSuite{
 
 
   public WatchingSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
