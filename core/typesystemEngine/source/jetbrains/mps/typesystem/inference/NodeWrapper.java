@@ -90,7 +90,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
         IMatchModifier matchModifier = new IMatchModifier() {
           public boolean accept(SNode node1, SNode node2) {
-            return HUtil.isRuntimeTypeVariable(node1);
+            return HUtil.isRuntimeTypeVariable(node1) && node2 != null;
           }
 
           public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
