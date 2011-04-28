@@ -29,8 +29,6 @@
     <nodeInfo nodeId="7157723551789028047" fileName="Editor_TabDescriptor.java" startLine="60" startPosition="52" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7157723551789028040" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="66" endLine="65" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7157723551789028037" fileName="Editor_TabDescriptor.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="7157723551789028025" fileName="Editor_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" />
-    <scopeInfo nodeId="7157723551789028030" fileName="Editor_TabDescriptor.java" startLine="45" startPosition="43" endLine="46" endPosition="115" />
     <scopeInfo nodeId="7157723551789028046" fileName="Editor_TabDescriptor.java" startLine="60" startPosition="52" endLine="61" endPosition="87" />
     <scopeInfo nodeId="7157723551789028039" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="66" endLine="65" endPosition="100" />
     <scopeInfo nodeId="7157723551789028052" fileName="Editor_TabDescriptor.java" startLine="54" startPosition="43" endLine="57" endPosition="690">

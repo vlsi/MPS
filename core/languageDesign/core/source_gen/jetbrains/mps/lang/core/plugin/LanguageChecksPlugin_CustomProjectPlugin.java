@@ -24,7 +24,7 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
   public void doDispose(MPSProject project) {
     if (LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter != null) {
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
-      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker.doDispose();
+      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker.dispose();
     }
   }
 }

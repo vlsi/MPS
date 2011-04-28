@@ -104,11 +104,11 @@
     <nodeInfo nodeId="5444142882939276931" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="18" startPosition="78" endLine="19" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="703258188832022123" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="19" startPosition="145" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="703258188832022148" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="78" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="703258188832022155" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="26" startPosition="137" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="703258188832022155" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="26" startPosition="137" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="703258188832022121" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="17" startPosition="119" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="703258188832022146" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="703258188832022122" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="18" startPosition="78" endLine="20" endPosition="134" />
-    <scopeInfo nodeId="703258188832022147" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="78" endLine="27" endPosition="74" />
+    <scopeInfo nodeId="703258188832022147" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="25" startPosition="78" endLine="27" endPosition="72" />
     <scopeInfo nodeId="3382625879346929967" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="24" startPosition="45" endLine="28" endPosition="5" />
     <scopeInfo nodeId="3382625879346929486" fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="16" startPosition="42" endLine="21" endPosition="5" />
   </root>

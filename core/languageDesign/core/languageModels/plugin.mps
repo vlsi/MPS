@@ -7218,7 +7218,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="703258188832022160">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="806231529270480546" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rgbs.~BaseEditorChecker%ddispose()%cvoid" resolveInfo="dispose" />
                 </node>
               </node>
             </node>
