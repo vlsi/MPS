@@ -21,7 +21,7 @@ public class typeof_UIObjectProviderStatement_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = uiops;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "3546006303814984658", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "3546006303814984655", true), (SNode) new typeof_UIObjectProviderStatement_InferenceRule.QuotationClass_7kkwqh_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "3546006303814984655", true), (SNode) new typeof_UIObjectProviderStatement_InferenceRule.QuotationClass_7kkwqh_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

@@ -22,7 +22,7 @@ public class checkTypesInForStatement_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(forStatement, "condition", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5915179142332709362", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5915179142332709358", true), (SNode) new checkTypesInForStatement_InferenceRule.QuotationClass_34h6jd_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5915179142332709358", true), (SNode) new checkTypesInForStatement_InferenceRule.QuotationClass_34h6jd_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

@@ -22,12 +22,12 @@ public class typeof_BeginWorkStatement_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(bws, "expected", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740075", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740081", true), (SNode) new typeof_BeginWorkStatement_InferenceRule.QuotationClass_v3yq4_a0a0a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740081", true), (SNode) new typeof_BeginWorkStatement_InferenceRule.QuotationClass_v3yq4_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(bws, "ofTotal", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740088", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740094", true), (SNode) new typeof_BeginWorkStatement_InferenceRule.QuotationClass_v3yq4_a0a1a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "187226666892740094", true), (SNode) new typeof_BeginWorkStatement_InferenceRule.QuotationClass_v3yq4_a0a1a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
   }
 

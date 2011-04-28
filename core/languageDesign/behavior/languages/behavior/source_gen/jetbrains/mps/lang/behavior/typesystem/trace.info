@@ -135,7 +135,7 @@
     <nodeInfo nodeId="6496299201655593476" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="46" startPosition="34" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="48" startPosition="9" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="49" startPosition="49" endLine="50" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="50" startPosition="208" endLine="51" endPosition="414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="50" startPosition="208" endLine="51" endPosition="420" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6496299201655593500" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="55" startPosition="5" endLine="56" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6496299201655593500" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="56" startPosition="51" endLine="57" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6496299201655593500" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="57" startPosition="204" endLine="58" endPosition="360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -152,7 +152,7 @@
     <scopeInfo nodeId="6496299201655593476" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="43" startPosition="46" endLine="44" endPosition="16" />
     <scopeInfo nodeId="6496299201655593438" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="24" startPosition="92" endLine="26" endPosition="240" />
     <scopeInfo nodeId="6496299201655593464" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="30" startPosition="34" endLine="32" endPosition="289" />
-    <scopeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="48" startPosition="9" endLine="51" endPosition="414" />
+    <scopeInfo nodeId="6496299201655593492" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="48" startPosition="9" endLine="51" endPosition="420" />
     <scopeInfo nodeId="6496299201655593500" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="55" startPosition="5" endLine="58" endPosition="360" />
     <scopeInfo nodeId="6496299201655593491" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="47" startPosition="46" endLine="52" endPosition="9" />
     <scopeInfo nodeId="6496299201655593476" fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="39" startPosition="20" endLine="52" endPosition="9" />

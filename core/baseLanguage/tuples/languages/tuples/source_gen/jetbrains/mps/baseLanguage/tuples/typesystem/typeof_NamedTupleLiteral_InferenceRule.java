@@ -46,7 +46,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cmpRef, "value", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830131", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830133", true), (SNode) matchedType, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1901065672425830133", true), (SNode) matchedType, false, true, _info_12389875345);
       }
     }
     List<SNode> PTYPES = new ArrayList<SNode>();

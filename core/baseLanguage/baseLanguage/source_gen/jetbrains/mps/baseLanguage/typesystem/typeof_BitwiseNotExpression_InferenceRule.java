@@ -25,7 +25,7 @@ public class typeof_BitwiseNotExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "expression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225895391914", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225895391921", true), (SNode) SLinkOperations.getTarget(new typeof_BitwiseNotExpression_InferenceRule.QuotationClass_1za8kf_a0a0a0a().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225895391921", true), (SNode) SLinkOperations.getTarget(new typeof_BitwiseNotExpression_InferenceRule.QuotationClass_1za8kf_a0a0a0a().createNode(typeCheckingContext), "descriptor", false), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = expression;

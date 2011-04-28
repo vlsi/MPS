@@ -23,14 +23,14 @@ public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccInfo, "targetNode", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103445", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode) new typeof_ConceptClauseLinkInfo_InferenceRule.QuotationClass_157var_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode) new typeof_ConceptClauseLinkInfo_InferenceRule.QuotationClass_157var_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
     SNode link = SLinkOperations.getTarget(ccInfo, "linkDeclaration", false);
     if ((link != null) && (SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1"))) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccInfo, "childIndex", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953140", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953142", true), (SNode) new typeof_ConceptClauseLinkInfo_InferenceRule.QuotationClass_157var_a0a0a2a0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953142", true), (SNode) new typeof_ConceptClauseLinkInfo_InferenceRule.QuotationClass_157var_a0a0a2a0().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }

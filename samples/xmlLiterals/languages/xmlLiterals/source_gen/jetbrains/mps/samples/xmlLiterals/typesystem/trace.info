@@ -18,17 +18,17 @@
   <root nodeId="9152904044274516047">
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="26" startPosition="94" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="24" startPosition="118" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="365" />
+    <scopeInfo nodeId="9152904044274518113" fileName="typeof_TextMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="371" />
     <scopeInfo nodeId="9152904044274516048" fileName="typeof_TextMacro_InferenceRule.java" startLine="24" startPosition="118" endLine="29" endPosition="5" />
   </root>
   <root nodeId="9152904044274518139">
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="26" startPosition="94" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="27" startPosition="210" endLine="28" endPosition="374" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="24" startPosition="118" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="368" />
+    <scopeInfo nodeId="9152904044274518151" fileName="typeof_ElementMacro_InferenceRule.java" startLine="25" startPosition="5" endLine="28" endPosition="374" />
     <scopeInfo nodeId="9152904044274518140" fileName="typeof_ElementMacro_InferenceRule.java" startLine="24" startPosition="118" endLine="29" endPosition="5" />
   </root>
 </debugInfo>

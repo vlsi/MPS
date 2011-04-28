@@ -43,7 +43,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = argument;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854571586", 0, null);
-          typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode) SLinkOperations.getTarget(parameter, "type", true), false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode) SLinkOperations.getTarget(parameter, "type", true), false, true, _info_12389875345);
         }
       }
     }

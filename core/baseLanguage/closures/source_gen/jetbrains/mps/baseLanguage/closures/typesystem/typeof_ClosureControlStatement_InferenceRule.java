@@ -42,7 +42,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccs, "controlClosure", true);
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", 0, null);
-          typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), (SNode) ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), (SNode) ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), false, false, _info_12389875345);
         }
       }
       List<SNode> params = SLinkOperations.getTargets(ccs, "actualParameter", true);
@@ -68,7 +68,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
           {
             SNode _nodeToCheck_1029348928467 = param;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", 0, null);
-            typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode) pt, false, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode) pt, false, true, _info_12389875345);
           }
         }
       }

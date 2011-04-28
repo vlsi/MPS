@@ -27,7 +27,7 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
     SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck));
     {
       IMatchingPattern pattern_hm5x7h_b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-      SNode coercedNode_hm5x7h_b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_hm5x7h_b0, typeCheckingContext);
+      SNode coercedNode_hm5x7h_b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_hm5x7h_b0);
       if (coercedNode_hm5x7h_b0 != null) {
         if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_hm5x7h_b0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
           {

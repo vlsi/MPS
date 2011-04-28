@@ -29,7 +29,7 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
             {
               SNode _nodeToCheck_1029348928467 = op;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749153", 0, null);
-              typeCheckingContext.createLessThanInequation((SNode) MathTypeUtil.qFloat, (SNode) MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(t)), false, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) MathTypeUtil.qFloat, (SNode) MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(t)), false, true, _info_12389875345);
             }
             {
               SNode _nodeToCheck_1029348928467 = op;

@@ -25,7 +25,7 @@ public class typeof_ResultStatement_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "foundNode", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1200308962544", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1200308962549", true), (SNode) new typeof_ResultStatement_InferenceRule.QuotationClass_eg3zyl_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1200308962549", true), (SNode) new typeof_ResultStatement_InferenceRule.QuotationClass_eg3zyl_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

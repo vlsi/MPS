@@ -24,7 +24,7 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(initializer, "expression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567359", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567364", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qBigComplex), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567364", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qBigComplex), true, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = initializer;
@@ -34,7 +34,7 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(initializer, "rowsCount", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567381", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567386", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567386", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), false, true, _info_12389875345);
     }
   }
 

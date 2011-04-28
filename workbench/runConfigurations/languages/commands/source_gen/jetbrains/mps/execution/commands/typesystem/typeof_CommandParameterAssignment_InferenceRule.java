@@ -19,7 +19,7 @@ public class typeof_CommandParameterAssignment_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(commandParameterAssignment, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863712", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863721", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(commandParameterAssignment, "parameterDeclaration", false), "type", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863721", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(commandParameterAssignment, "parameterDeclaration", false), "type", true), false, false, _info_12389875345);
     }
   }
 

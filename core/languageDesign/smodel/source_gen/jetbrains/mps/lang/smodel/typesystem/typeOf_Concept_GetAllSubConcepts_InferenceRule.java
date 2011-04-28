@@ -27,14 +27,14 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(node, "scope", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683977996", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683977998", true), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683977998", true), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
     if (SLinkOperations.getTarget(node, "smodel", true) != null) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(node, "smodel", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683989238", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683989240", true), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683989240", true), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a0a1a0().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(node);
@@ -42,7 +42,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = leftExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542319449", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542311993", false), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a4a0().createNode(typeCheckingContext.getRepresentative(C_typevar_1225542306711), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542311993", false), (SNode) new typeOf_Concept_GetAllSubConcepts_InferenceRule.QuotationClass_bc8hh4_a0a4a0().createNode(typeCheckingContext.getRepresentative(C_typevar_1225542306711), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = node;

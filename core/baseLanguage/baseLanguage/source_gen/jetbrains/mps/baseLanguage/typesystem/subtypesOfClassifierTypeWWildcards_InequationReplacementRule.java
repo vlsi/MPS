@@ -29,7 +29,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   public subtypesOfClassifierTypeWWildcards_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       final SNode t = subtype;
       typeCheckingContext.whenConcrete(t, new Runnable() {
@@ -58,7 +58,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, null);
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                      typeCheckingContext.createGreaterThanInequation((SNode) myParam, (SNode) finalTypeParam, false, _info_12389875345);
+                      typeCheckingContext.createGreaterThanInequality((SNode) myParam, (SNode) finalTypeParam, false, true, _info_12389875345);
                     }
                     {
                       final SNode concreteParam = myParam;
@@ -92,7 +92,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
       final SNode t = subtype;

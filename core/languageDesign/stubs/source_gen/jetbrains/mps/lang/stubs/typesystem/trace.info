@@ -22,11 +22,11 @@
     <nodeInfo nodeId="972176972348206638" fileName="typeof_Stereotype_InferenceRule.java" startLine="24" startPosition="200" endLine="25" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="28" startPosition="97" endLine="29" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="29" startPosition="200" endLine="30" endPosition="356" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="29" startPosition="200" endLine="30" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="972176972348206638" fileName="typeof_Stereotype_InferenceRule.java" startLine="21" startPosition="123" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="26" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="972176972348206638" fileName="typeof_Stereotype_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="339" />
-    <scopeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="356" />
+    <scopeInfo nodeId="972176972348244532" fileName="typeof_Stereotype_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="362" />
     <scopeInfo nodeId="972176972348203853" fileName="typeof_Stereotype_InferenceRule.java" startLine="21" startPosition="123" endLine="31" endPosition="5" />
   </root>
 </debugInfo>

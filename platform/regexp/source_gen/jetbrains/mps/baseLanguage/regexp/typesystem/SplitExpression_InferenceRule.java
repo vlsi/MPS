@@ -25,7 +25,7 @@ public class SplitExpression_InferenceRule extends AbstractInferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(se, "expr", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183642", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183643", true), (SNode) new SplitExpression_InferenceRule.QuotationClass_l306ck_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183643", true), (SNode) new SplitExpression_InferenceRule.QuotationClass_l306ck_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = se;

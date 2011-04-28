@@ -19,7 +19,7 @@ public class typeof_ChildAspect_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ca, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "6424935405034937393", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "6424935405034937385", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(ca, "definition", false), "aspectType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "6424935405034937385", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(ca, "definition", false), "aspectType", true), false, true, _info_12389875345);
     }
   }
 

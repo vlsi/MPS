@@ -27,7 +27,7 @@ public class typeof_IfInstanceOfStatement_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(instanceOfStatement, "nodeExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1883223317721107029", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1883223317721107021", true), (SNode) new typeof_IfInstanceOfStatement_InferenceRule.QuotationClass_pi3z1z_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1883223317721107021", true), (SNode) new typeof_IfInstanceOfStatement_InferenceRule.QuotationClass_pi3z1z_a0a1a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

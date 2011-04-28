@@ -19,7 +19,7 @@ public class typeof_SimpleBuilderPropertyBuilder_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(builder, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8000882773529084503", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8000882773529084495", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(builder, "declaration", false), "type", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8000882773529084495", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(builder, "declaration", false), "type", true), false, true, _info_12389875345);
     }
   }
 

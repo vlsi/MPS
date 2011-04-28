@@ -23,7 +23,7 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "complexExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989250", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989252", true), (SNode) new typeof_ComplexExpression_InferenceRule.QuotationClass_l75no8_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989252", true), (SNode) new typeof_ComplexExpression_InferenceRule.QuotationClass_l75no8_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;

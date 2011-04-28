@@ -24,7 +24,7 @@ public class typeof_GetSizeOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = input;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847420828", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847389619", true), (SNode) new typeof_GetSizeOperation_InferenceRule.QuotationClass_jdnuju_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184847379888), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847389619", true), (SNode) new typeof_GetSizeOperation_InferenceRule.QuotationClass_jdnuju_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184847379888), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

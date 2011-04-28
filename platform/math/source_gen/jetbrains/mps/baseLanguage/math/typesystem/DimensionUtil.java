@@ -81,7 +81,7 @@ public class DimensionUtil {
               {
                 SNode _nodeToCheck_1029348928467 = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652074322", 0, null);
-                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
               }
             } else {
               boolean matches_48zlf8_b0a5a0a0 = false;
@@ -126,13 +126,13 @@ public class DimensionUtil {
                 {
                   SNode _nodeToCheck_1029348928467 = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, null);
-                  typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
+                  typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
                 }
               } else {
                 {
                   SNode _nodeToCheck_1029348928467 = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652104638", 0, null);
-                  typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
+                  typeCheckingContext.createLessThanInequality((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
                 }
                 if (row) {
                   if (cbd && f != 0 && f != 1) {

@@ -29,10 +29,10 @@
   <root nodeId="1211980347427">
     <nodeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="27" startPosition="196" endLine="28" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="27" startPosition="196" endLine="28" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="33" startPosition="48" endLine="34" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="34" startPosition="196" endLine="35" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="34" startPosition="196" endLine="35" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="39" startPosition="23" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="40" startPosition="22" endLine="41" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -56,8 +56,8 @@
     <nodeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="37" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="44" startPosition="47" endLine="45" endPosition="16" />
     <scopeInfo nodeId="1214922451305" fileName="typeof_AssertMatch_InferenceRule.java" startLine="47" startPosition="46" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="355" />
-    <scopeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="32" startPosition="7" endLine="35" endPosition="355" />
+    <scopeInfo nodeId="1211982433132" fileName="typeof_AssertMatch_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="361" />
+    <scopeInfo nodeId="1211982429078" fileName="typeof_AssertMatch_InferenceRule.java" startLine="32" startPosition="7" endLine="35" endPosition="361" />
     <scopeInfo nodeId="1214922658994" fileName="typeof_AssertMatch_InferenceRule.java" startLine="52" startPosition="9" endLine="55" endPosition="377" />
     <scopeInfo nodeId="1211980450437" fileName="typeof_AssertMatch_InferenceRule.java" startLine="24" startPosition="103" endLine="29" endPosition="7" />
     <scopeInfo nodeId="1211981351114" fileName="typeof_AssertMatch_InferenceRule.java" startLine="31" startPosition="102" endLine="36" endPosition="7" />
@@ -86,9 +86,9 @@
   <root nodeId="1228148619872">
     <nodeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="26" startPosition="194" endLine="27" endPosition="361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="26" startPosition="194" endLine="27" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="23" startPosition="123" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="361" />
+    <scopeInfo nodeId="1228148726945" fileName="typeof_ModelExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="362" />
     <scopeInfo nodeId="1228148619873" fileName="typeof_ModelExpression_InferenceRule.java" startLine="23" startPosition="123" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1228148844375">

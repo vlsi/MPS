@@ -213,7 +213,7 @@ __switch__:
     {
       SNode _nodeToCheck_1029348928467 = query;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671793009", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671782084", false), (SNode) new QueriesUtil.QuotationClass_w9106s_a0a2a4().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226671782084", false), (SNode) new QueriesUtil.QuotationClass_w9106s_a0a2a4().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext.getRepresentative(Concept_typevar_1226671834537), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = null;

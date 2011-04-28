@@ -36,7 +36,7 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
       {
         SNode _nodeToCheck_1029348928467 = rule;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1805153994417064796", 0, null);
-        typeCheckingContext.createLessThanInequationStrong((SNode) new typeof_PatternReduction_MappingRule_InferenceRule.QuotationClass_xjg16h_a0a1a1a0().createNode(PatternReduction_MappingRule_Behavior.call_getTemplateType_1805153994417123441(rule), typeCheckingContext), (SNode) new typeof_PatternReduction_MappingRule_InferenceRule.QuotationClass_xjg16h_a0a1a1a0_0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "targetConcept", false), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) new typeof_PatternReduction_MappingRule_InferenceRule.QuotationClass_xjg16h_a0a1a1a0().createNode(PatternReduction_MappingRule_Behavior.call_getTemplateType_1805153994417123441(rule), typeCheckingContext), (SNode) new typeof_PatternReduction_MappingRule_InferenceRule.QuotationClass_xjg16h_a0a1a1a0_0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "targetConcept", false), typeCheckingContext), false, false, _info_12389875345);
       }
     }
   }

@@ -25,12 +25,12 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, "processHandler", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863838", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863844", true), (SNode) new typeof_RedirectOutputExpression_InferenceRule.QuotationClass_91b0fg_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863844", true), (SNode) new typeof_RedirectOutputExpression_InferenceRule.QuotationClass_91b0fg_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, "listener", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863848", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863854", true), (SNode) new typeof_RedirectOutputExpression_InferenceRule.QuotationClass_91b0fg_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863854", true), (SNode) new typeof_RedirectOutputExpression_InferenceRule.QuotationClass_91b0fg_a0a1a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 

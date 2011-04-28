@@ -186,7 +186,7 @@ public class RulesUtil {
           {
             SNode _nodeToCheck_1029348928467 = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3056149436216256793", 0, null);
-            typeCheckingContext.createGreaterThanInequation((SNode) new RulesUtil.QuotationClass_yxkngc_a0a0a1a6().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), (SNode) typeCheckingContext.getRepresentative(LeftType), false, _info_12389875345);
+            typeCheckingContext.createGreaterThanInequality((SNode) new RulesUtil.QuotationClass_yxkngc_a0a0a1a6().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), (SNode) typeCheckingContext.getRepresentative(LeftType), false, true, _info_12389875345);
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8844001996561701137", true, false);
@@ -269,7 +269,7 @@ public class RulesUtil {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(opParm, "conceptArgument", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669167291", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), (SNode) new RulesUtil.QuotationClass_yxkngc_a0a1a0a2a9().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226669497837), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), (SNode) new RulesUtil.QuotationClass_yxkngc_a0a1a0a2a9().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1226669497837), typeCheckingContext), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = null;

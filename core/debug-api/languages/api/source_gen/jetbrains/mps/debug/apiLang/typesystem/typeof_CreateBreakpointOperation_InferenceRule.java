@@ -25,7 +25,7 @@ public class typeof_CreateBreakpointOperation_InferenceRule extends AbstractInfe
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debug.apiLang.typesystem)", "5365453833390548276", 0, null);
-        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debug.apiLang.typesystem)", "5365453833390548258", true), (SNode) new typeof_CreateBreakpointOperation_InferenceRule.QuotationClass_btj441_a0a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debug.apiLang.typesystem)", "5365453833390548258", true), (SNode) new typeof_CreateBreakpointOperation_InferenceRule.QuotationClass_btj441_a0a0a1a0().createNode(typeCheckingContext), false, false, _info_12389875345);
       }
     }
   }

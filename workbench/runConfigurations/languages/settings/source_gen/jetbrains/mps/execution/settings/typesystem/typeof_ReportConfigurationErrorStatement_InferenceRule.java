@@ -22,7 +22,7 @@ public class typeof_ReportConfigurationErrorStatement_InferenceRule extends Abst
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(reportConfigurationErrorStatement, "expression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477741", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477744", true), (SNode) new typeof_ReportConfigurationErrorStatement_InferenceRule.QuotationClass_ml4iko_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477744", true), (SNode) new typeof_ReportConfigurationErrorStatement_InferenceRule.QuotationClass_ml4iko_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

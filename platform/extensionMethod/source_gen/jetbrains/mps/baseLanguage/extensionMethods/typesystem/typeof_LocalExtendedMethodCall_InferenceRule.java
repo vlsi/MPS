@@ -53,7 +53,7 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = methodCall;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "3386826992796746362", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) new typeof_LocalExtendedMethodCall_InferenceRule.QuotationClass_8kfrad_a0a8a5a0_0().createNode(currentClassifier, typeCheckingContext), (SNode) new typeof_LocalExtendedMethodCall_InferenceRule.QuotationClass_8kfrad_a0a8a5a0().createNode(methodClassifier, typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) new typeof_LocalExtendedMethodCall_InferenceRule.QuotationClass_8kfrad_a0a8a5a0_0().createNode(currentClassifier, typeCheckingContext), (SNode) new typeof_LocalExtendedMethodCall_InferenceRule.QuotationClass_8kfrad_a0a8a5a0().createNode(methodClassifier, typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }

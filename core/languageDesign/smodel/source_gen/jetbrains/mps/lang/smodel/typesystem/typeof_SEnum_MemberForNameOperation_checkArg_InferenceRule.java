@@ -22,7 +22,7 @@ public class typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "nameExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321449347", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321440339", true), (SNode) new typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule.QuotationClass_rhg2pa_a0a0a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321440339", true), (SNode) new typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule.QuotationClass_rhg2pa_a0a0a0().createNode(typeCheckingContext), true, false, _info_12389875345);
     }
   }
 

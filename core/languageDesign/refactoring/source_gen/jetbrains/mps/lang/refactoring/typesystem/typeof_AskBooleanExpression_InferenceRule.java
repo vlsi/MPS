@@ -30,12 +30,12 @@ public class typeof_AskBooleanExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "text", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720567569", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720567561", true), (SNode) new typeof_AskBooleanExpression_InferenceRule.QuotationClass_iikyzp_a0a1a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720567561", true), (SNode) new typeof_AskBooleanExpression_InferenceRule.QuotationClass_iikyzp_a0a1a0().createNode(typeCheckingContext), true, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "parameter", false);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720714583", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720714575", true), (SNode) new typeof_AskBooleanExpression_InferenceRule.QuotationClass_iikyzp_a0a2a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "4312073247720714575", true), (SNode) new typeof_AskBooleanExpression_InferenceRule.QuotationClass_iikyzp_a0a2a0().createNode(typeCheckingContext), true, false, _info_12389875345);
     }
   }
 

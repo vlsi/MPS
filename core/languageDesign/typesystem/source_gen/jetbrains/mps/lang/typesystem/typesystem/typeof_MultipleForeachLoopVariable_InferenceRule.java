@@ -27,7 +27,7 @@ public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractIn
       {
         SNode _nodeToCheck_1029348928467 = inputSequence;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8290446284380616564", 0, null);
-        typeCheckingContext.createGreaterThanInequation((SNode) new typeof_MultipleForeachLoopVariable_InferenceRule.QuotationClass_aqgyap_a0a1a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_8290446284380616563), typeCheckingContext.getRepresentative(elementType_typevar_8290446284380616563), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8290446284380616577", true), false, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) new typeof_MultipleForeachLoopVariable_InferenceRule.QuotationClass_aqgyap_a0a1a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_8290446284380616563), typeCheckingContext.getRepresentative(elementType_typevar_8290446284380616563), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8290446284380616577", true), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = variable;

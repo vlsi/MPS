@@ -41,21 +41,21 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
         {
           SNode _nodeToCheck_1029348928467 = value;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295979", 0, null);
-          typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295984", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a6a0().createNode(typeCheckingContext), false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295984", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a6a0().createNode(typeCheckingContext), false, true, _info_12389875345);
         }
       } else
       if (DataTypeDeclaration_Behavior.call_isSimpleInteger_1220268868375(dataType)) {
         {
           SNode _nodeToCheck_1029348928467 = value;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295992", 0, null);
-          typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295997", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0g0a().createNode(typeCheckingContext), false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295997", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0g0a().createNode(typeCheckingContext), false, true, _info_12389875345);
         }
       } else
       if (DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(dataType)) {
         {
           SNode _nodeToCheck_1029348928467 = value;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059296005", 0, null);
-          typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059296010", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a6a0().createNode(typeCheckingContext), false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059296010", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a6a0().createNode(typeCheckingContext), false, true, _info_12389875345);
         }
       } else
       if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(dataType)) {
@@ -64,20 +64,20 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
             {
               SNode _nodeToCheck_1029348928467 = value;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430014537", 0, null);
-              typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430014542", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0g0a().createNode(typeCheckingContext), false, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430014542", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0g0a().createNode(typeCheckingContext), false, true, _info_12389875345);
             }
           } else
           if (DataTypeDeclaration_Behavior.call_isEnumOfBoolean_1220268971570(dataType)) {
             {
               SNode _nodeToCheck_1029348928467 = value;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430042913", 0, null);
-              typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430042918", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0a6a0().createNode(typeCheckingContext), false, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430042918", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0a6a0().createNode(typeCheckingContext), false, true, _info_12389875345);
             }
           } else {
             {
               SNode _nodeToCheck_1029348928467 = value;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059478770", 0, null);
-              typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059478775", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0a0g0a().createNode(typeCheckingContext), false, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059478775", true), (SNode) new typeof_Property_SetOperation_InferenceRule.QuotationClass_txyj5n_a0a0a0a0a0a0a0a0g0a().createNode(typeCheckingContext), false, true, _info_12389875345);
             }
           }
         }

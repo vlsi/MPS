@@ -22,7 +22,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
   public indexedTuple_assignableTo_indexedTuple_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", null, errorTarget);
@@ -46,13 +46,13 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", 0, null);
           _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          typeCheckingContext.createLessThanInequation((SNode) lmt, (SNode) rmt, false, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) lmt, (SNode) rmt, false, true, _info_12389875345);
         }
       }
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
       result_14532009 = false;

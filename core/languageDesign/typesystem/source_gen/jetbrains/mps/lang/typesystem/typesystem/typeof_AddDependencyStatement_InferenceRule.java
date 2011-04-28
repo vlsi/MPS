@@ -22,7 +22,7 @@ public class typeof_AddDependencyStatement_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(statement, "dependency", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220357537248", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220357522695", true), (SNode) new typeof_AddDependencyStatement_InferenceRule.QuotationClass_e8cier_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220357522695", true), (SNode) new typeof_AddDependencyStatement_InferenceRule.QuotationClass_e8cier_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

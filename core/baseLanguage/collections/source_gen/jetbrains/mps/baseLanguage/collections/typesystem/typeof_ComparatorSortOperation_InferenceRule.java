@@ -25,18 +25,18 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(cso);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254825", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254827", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a1a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254827", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a1a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, true, _info_12389875345);
     }
     final SNode resType_typevar_1209728259189 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cso, "closure", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259190", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259192", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a3a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259192", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a3a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cso, "ascending", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259222", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259224", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a4a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259224", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a4a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = cso;

@@ -29,7 +29,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
       {
         SNode _nodeToCheck_1029348928467 = p;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948978", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948980", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_668767903263948977), true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948980", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_668767903263948977), true, true, _info_12389875345);
       }
       ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_668767903263948977));
     }
@@ -37,7 +37,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948996", 0, null);
-      typeCheckingContext.createGreaterThanInequation((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948998", true), false, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948998", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = invoke;

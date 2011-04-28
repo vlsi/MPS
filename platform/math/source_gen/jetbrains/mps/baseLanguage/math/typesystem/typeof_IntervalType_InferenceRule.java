@@ -25,7 +25,7 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = intervalType;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425320", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_zf55c1_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_zf55c1_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 

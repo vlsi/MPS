@@ -25,7 +25,7 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "map", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083568591", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083507709", true), (SNode) new typeof_MapElement_InferenceRule.QuotationClass_y91lxu_a0a2a0().createNode(typeCheckingContext.getRepresentative(keyType_typevar_1198083488673), typeCheckingContext.getRepresentative(valueType_typevar_1198083495346), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083507709", true), (SNode) new typeof_MapElement_InferenceRule.QuotationClass_y91lxu_a0a2a0().createNode(typeCheckingContext.getRepresentative(keyType_typevar_1198083488673), typeCheckingContext.getRepresentative(valueType_typevar_1198083495346), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = mapElement;
@@ -35,7 +35,7 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "key", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198084142390", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198084142392", true), (SNode) typeCheckingContext.getRepresentative(keyType_typevar_1198083488673), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198084142392", true), (SNode) typeCheckingContext.getRepresentative(keyType_typevar_1198083488673), false, true, _info_12389875345);
     }
   }
 

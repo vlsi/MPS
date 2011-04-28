@@ -57,7 +57,7 @@
     <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="46" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="46" startPosition="77" endLine="47" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="47" startPosition="208" endLine="48" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="48" startPosition="66" endLine="49" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="48" startPosition="66" endLine="49" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238854492399" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="57" startPosition="198" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="61" startPosition="16" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -75,7 +75,7 @@
     <nodeInfo nodeId="1238854492399" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="65" startPosition="20" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="68" startPosition="9" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238854492399" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="25" startPosition="217" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1238854492399" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="25" startPosition="253" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="44" startPosition="34" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="44" startPosition="34" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="64" startPosition="132" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="1238854545576" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="73" startPosition="34" endLine="74" endPosition="135" />
     <scopeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="73" startPosition="34" endLine="74" endPosition="135" />
     <scopeInfo nodeId="1238854492399" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="26" startPosition="198" endLine="29" endPosition="77" />
-    <scopeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="49" endPosition="107" />
+    <scopeInfo nodeId="1238854598691" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="49" endPosition="113" />
     <scopeInfo nodeId="1238854545576" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="44" startPosition="34" endLine="50" endPosition="9" />
     <scopeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="65" startPosition="20" endLine="74" endPosition="135" />
     <scopeInfo nodeId="1238854545571" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="36" startPosition="20" endLine="50" endPosition="9" />
@@ -103,14 +103,14 @@
       <varInfo nodeId="1238854545573" varName="lmt" />
     </scopeInfo>
     <scopeInfo nodeId="1238854440950" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="1238854440950" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="25" startPosition="217" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="1238854440950" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="25" startPosition="253" endLine="52" endPosition="5" />
   </root>
   <root nodeId="1238857867840">
     <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="121" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="30" startPosition="58" endLine="31" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="34" startPosition="87" endLine="35" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="35" startPosition="204" endLine="36" endPosition="384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="35" startPosition="204" endLine="36" endPosition="390" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238863900100" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="38" startPosition="118" endLine="39" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="44" startPosition="7" endLine="45" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="258" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -131,7 +131,7 @@
     <nodeInfo nodeId="1238863666749" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="37" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1238859427576" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="29" startPosition="121" endLine="31" endPosition="296" />
     <scopeInfo nodeId="1238864218062" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="258" endLine="50" endPosition="287" />
-    <scopeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="36" endPosition="384" />
+    <scopeInfo nodeId="1238857999186" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="36" endPosition="390" />
     <scopeInfo nodeId="1238864299354" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="54" startPosition="15" endLine="57" endPosition="302" />
     <scopeInfo nodeId="1238864283554" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="52" startPosition="255" endLine="58" endPosition="15">
       <varInfo nodeId="1238864556765" varName="mtypes" />
@@ -154,7 +154,7 @@
     <nodeInfo nodeId="1239900488863" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="107" endLine="45" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="7" endLine="47" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="47" startPosition="92" endLine="48" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="212" endLine="49" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="212" endLine="49" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239895282057" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="5" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239967995591" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="169" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239968089672" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="61" endLine="55" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -176,7 +176,7 @@
     <nodeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="48" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="2912004279740801476" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="52" endLine="37" endPosition="101" />
     <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="10" endLine="41" endPosition="242" />
-    <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="7" endLine="49" endPosition="281" />
+    <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="7" endLine="49" endPosition="287" />
     <scopeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="9" endLine="60" endPosition="186" />
     <scopeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="65" startPosition="5" endLine="68" endPosition="421" />
     <scopeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="306" endLine="39" endPosition="0" />
@@ -210,7 +210,7 @@
     <nodeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="47" startPosition="11" endLine="48" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="48" startPosition="79" endLine="49" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="49" startPosition="210" endLine="50" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="50" startPosition="68" endLine="51" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="50" startPosition="68" endLine="51" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2213502935616215826" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="56" startPosition="230" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2213502935616215826" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="57" startPosition="60" endLine="58" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2213502935616215826" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="58" startPosition="253" endLine="59" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -244,7 +244,7 @@
     <nodeInfo nodeId="1239968650550" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="69" startPosition="7" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239968650550" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="32" startPosition="7" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2213502935616215813" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="65" startPosition="35" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2213502935616215813" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2213502935616215813" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="26" startPosition="253" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1239968650550" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="39" startPosition="41" endLine="40" endPosition="18" />
     <scopeInfo nodeId="1239968650550" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="42" startPosition="41" endLine="43" endPosition="18" />
     <scopeInfo nodeId="1239968591797" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="67" startPosition="192" endLine="68" endPosition="32" />
@@ -256,7 +256,7 @@
     <scopeInfo nodeId="1239968591797" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="28" startPosition="192" endLine="31" endPosition="79" />
     <scopeInfo nodeId="2213502935616215826" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="56" startPosition="230" endLine="59" endPosition="79" />
     <scopeInfo nodeId="2213502935616215825" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="87" startPosition="12" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="47" startPosition="11" endLine="51" endPosition="107" />
+    <scopeInfo nodeId="1239968769054" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="47" startPosition="11" endLine="51" endPosition="113" />
     <scopeInfo nodeId="2213502935616215825" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="55" startPosition="12" endLine="60" endPosition="7" />
     <scopeInfo nodeId="1239968650555" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="46" startPosition="34" endLine="52" endPosition="11" />
     <scopeInfo nodeId="1239968650550" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="75" startPosition="22" endLine="84" endPosition="135" />
@@ -272,7 +272,7 @@
     <scopeInfo nodeId="2213502935616215814" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="66" startPosition="127" endLine="86" endPosition="7" />
     <scopeInfo nodeId="1239579497087" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="65" startPosition="35" endLine="91" endPosition="5" />
     <scopeInfo nodeId="2213502935616215814" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="27" startPosition="127" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="1239579497087" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="26" startPosition="217" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1239579497087" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="26" startPosition="253" endLine="61" endPosition="5" />
   </root>
   <root nodeId="1239579751280">
     <nodeInfo nodeId="1239974175631" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="27" startPosition="122" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -281,7 +281,7 @@
     <nodeInfo nodeId="1239974375447" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="31" startPosition="100" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="35" startPosition="102" endLine="36" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="36" startPosition="210" endLine="37" endPosition="415" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="36" startPosition="210" endLine="37" endPosition="416" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3504058432724727903" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3504058432724729120" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="40" startPosition="109" endLine="41" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3504058432724729132" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="41" startPosition="202" endLine="42" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -305,7 +305,7 @@
     <scopeInfo nodeId="3504058432724729040" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="40" startPosition="109" endLine="42" endPosition="61">
       <varInfo nodeId="3504058432724729121" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="37" endPosition="415" />
+    <scopeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="37" endPosition="416" />
     <scopeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="54" startPosition="5" endLine="57" endPosition="251" />
     <scopeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="29" startPosition="197" endLine="33" endPosition="5" />
     <scopeInfo nodeId="3504058432724729014" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="47" startPosition="30" endLine="51" endPosition="9">

@@ -22,7 +22,7 @@ public class typeof_MoveNodesToModelExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "destination", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1199620849752", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1199620849757", true), (SNode) new typeof_MoveNodesToModelExpression_InferenceRule.QuotationClass_jtfb1h_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1199620849757", true), (SNode) new typeof_MoveNodesToModelExpression_InferenceRule.QuotationClass_jtfb1h_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

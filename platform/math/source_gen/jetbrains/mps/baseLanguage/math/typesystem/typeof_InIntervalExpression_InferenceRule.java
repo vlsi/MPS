@@ -29,7 +29,7 @@ public class typeof_InIntervalExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "leftExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425240", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425244", true), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1235747425227), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425244", true), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1235747425227), false, false, _info_12389875345);
     }
   }
 

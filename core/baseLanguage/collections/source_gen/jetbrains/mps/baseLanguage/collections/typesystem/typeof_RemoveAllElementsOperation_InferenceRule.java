@@ -27,17 +27,17 @@ public class typeof_RemoveAllElementsOperation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(op);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319401", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319407", true), (SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(op, typeCheckingContext.getRepresentative(elementType_typevar_1184856319398)), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319407", true), (SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(op, typeCheckingContext.getRepresentative(elementType_typevar_1184856319398)), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "argument", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319409", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319415", true), (SNode) new typeof_RemoveAllElementsOperation_InferenceRule.QuotationClass_9j9g7f_a0a3a0().createNode(typeCheckingContext.getRepresentative(expectedElementType_typevar_1184856319399), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319415", true), (SNode) new typeof_RemoveAllElementsOperation_InferenceRule.QuotationClass_9j9g7f_a0a3a0().createNode(typeCheckingContext.getRepresentative(expectedElementType_typevar_1184856319399), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184856319417", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(expectedElementType_typevar_1184856319399), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1184856319398), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(expectedElementType_typevar_1184856319399), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1184856319398), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

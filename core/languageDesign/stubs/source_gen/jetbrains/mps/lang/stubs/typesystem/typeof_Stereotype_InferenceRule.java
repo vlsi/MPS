@@ -27,7 +27,7 @@ public class typeof_Stereotype_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stereotype, "langName", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:cfd36f38-4b85-4dbc-852c-079f3960dd0b(jetbrains.mps.lang.stubs.typesystem)", "972176972348244532", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cfd36f38-4b85-4dbc-852c-079f3960dd0b(jetbrains.mps.lang.stubs.typesystem)", "972176972348206648", true), (SNode) new typeof_Stereotype_InferenceRule.QuotationClass_oclwdn_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cfd36f38-4b85-4dbc-852c-079f3960dd0b(jetbrains.mps.lang.stubs.typesystem)", "972176972348206648", true), (SNode) new typeof_Stereotype_InferenceRule.QuotationClass_oclwdn_a0a1a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

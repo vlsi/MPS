@@ -27,7 +27,7 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743684", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743686", true), (SNode) new typeof_EnumValueOfExpression_InferenceRule.QuotationClass_ib1j5f_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743686", true), (SNode) new typeof_EnumValueOfExpression_InferenceRule.QuotationClass_ib1j5f_a0a1a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 

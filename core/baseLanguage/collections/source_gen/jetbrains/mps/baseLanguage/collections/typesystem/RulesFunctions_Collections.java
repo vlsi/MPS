@@ -56,7 +56,7 @@ public class RulesFunctions_Collections {
       {
         SNode _nodeToCheck_1029348928467 = input;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184843140648", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184843134901", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a2().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184784638219), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184843134901", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a2().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184784638219), typeCheckingContext), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = target;
@@ -77,7 +77,7 @@ public class RulesFunctions_Collections {
       {
         SNode _nodeToCheck_1029348928467 = input;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804663", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804669", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a3().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184844804662), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804669", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a3().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184844804662), typeCheckingContext), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = target;
@@ -98,12 +98,12 @@ public class RulesFunctions_Collections {
       {
         SNode _nodeToCheck_1029348928467 = input;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850451265", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850451271", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a4().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184850451264), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850451271", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a4().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184850451264), typeCheckingContext), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = target;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850492036", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(target, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850492037", true), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1184850451264), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(target, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184850492037", true), (SNode) typeCheckingContext.getRepresentative(elementType_typevar_1184850451264), false, true, _info_12389875345);
       }
     }
   }

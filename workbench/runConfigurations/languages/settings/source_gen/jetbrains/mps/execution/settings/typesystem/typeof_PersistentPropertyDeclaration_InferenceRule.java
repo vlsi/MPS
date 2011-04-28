@@ -27,7 +27,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
     {
       SNode _nodeToCheck_1029348928467 = persistentPropertyDeclaration;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477761", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) new typeof_PersistentPropertyDeclaration_InferenceRule.QuotationClass_sacma3_a0a1a0().createNode(primitive, typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) new typeof_PersistentPropertyDeclaration_InferenceRule.QuotationClass_sacma3_a0a1a0().createNode(primitive, typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

@@ -25,12 +25,12 @@ public class typeof_TailListOperation_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(op);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575122", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575130", true), (SNode) new typeof_TailListOperation_InferenceRule.QuotationClass_mm46f4_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_5232196642625575121), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575130", true), (SNode) new typeof_TailListOperation_InferenceRule.QuotationClass_mm46f4_a0a1a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_5232196642625575121), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "fromIndex", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575134", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575139", true), (SNode) new typeof_TailListOperation_InferenceRule.QuotationClass_mm46f4_a0a2a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575139", true), (SNode) new typeof_TailListOperation_InferenceRule.QuotationClass_mm46f4_a0a2a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

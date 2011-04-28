@@ -22,7 +22,7 @@ public class typeof_DefaultGeneratorParameter_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "Type of generation parameter should be string, boolean or int", "r:6bf8c04d-71a0-4d35-a802-6419d6241f0a(jetbrains.mps.lang.generator.generationParameters.typesystem)", "5540778578667542587", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(parameter, "type", true), (SNode) new typeof_DefaultGeneratorParameter_InferenceRule.QuotationClass_b7w76n_a0a0a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(parameter, "type", true), (SNode) new typeof_DefaultGeneratorParameter_InferenceRule.QuotationClass_b7w76n_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
   }
 

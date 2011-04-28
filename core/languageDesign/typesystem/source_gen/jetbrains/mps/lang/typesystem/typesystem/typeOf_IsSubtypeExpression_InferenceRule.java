@@ -27,12 +27,12 @@ public class typeOf_IsSubtypeExpression_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expr, "subtypeExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085474037", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085474029", true), (SNode) new typeOf_IsSubtypeExpression_InferenceRule.QuotationClass_hg4gso_a0a1a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085474029", true), (SNode) new typeOf_IsSubtypeExpression_InferenceRule.QuotationClass_hg4gso_a0a1a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expr, "supertypeExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085479158", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085479164", true), (SNode) new typeOf_IsSubtypeExpression_InferenceRule.QuotationClass_hg4gso_a0a2a0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9117630184085479164", true), (SNode) new typeOf_IsSubtypeExpression_InferenceRule.QuotationClass_hg4gso_a0a2a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
   }
 

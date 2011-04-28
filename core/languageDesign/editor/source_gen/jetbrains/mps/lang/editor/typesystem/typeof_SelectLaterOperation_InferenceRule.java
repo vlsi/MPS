@@ -25,7 +25,7 @@ public class typeof_SelectLaterOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "editorContext", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1201270048564", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1201270098250", true), (SNode) new typeof_SelectLaterOperation_InferenceRule.QuotationClass_fnbesd_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1201270098250", true), (SNode) new typeof_SelectLaterOperation_InferenceRule.QuotationClass_fnbesd_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 

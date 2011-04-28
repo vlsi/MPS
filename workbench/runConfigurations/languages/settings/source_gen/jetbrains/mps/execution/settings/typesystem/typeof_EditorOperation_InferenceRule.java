@@ -41,7 +41,7 @@ public class typeof_EditorOperation_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTargets(editorOperation, "arguments", true).get(i);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251117", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251119", true), (SNode) typeCheckingContext.typeOf(ListSequence.fromList(parameters).getElement(i), "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251127", true), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251119", true), (SNode) typeCheckingContext.typeOf(ListSequence.fromList(parameters).getElement(i), "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251127", true), false, true, _info_12389875345);
       }
     }
 

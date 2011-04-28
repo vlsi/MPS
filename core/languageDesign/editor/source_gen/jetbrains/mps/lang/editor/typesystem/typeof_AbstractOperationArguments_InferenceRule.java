@@ -46,7 +46,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
           {
             SNode _nodeToCheck_1029348928467 = argument;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418947751", 0, null);
-            typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418947748", true), (SNode) type, false, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418947748", true), (SNode) type, false, true, _info_12389875345);
           }
         }
       }

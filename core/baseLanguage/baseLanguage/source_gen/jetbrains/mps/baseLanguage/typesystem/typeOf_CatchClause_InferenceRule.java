@@ -25,7 +25,7 @@ public class typeOf_CatchClause_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(catchClause, "throwable", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176896807264", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176896800008", true), (SNode) new typeOf_CatchClause_InferenceRule.QuotationClass_mx0n09_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176896800008", true), (SNode) new typeOf_CatchClause_InferenceRule.QuotationClass_mx0n09_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

@@ -23,7 +23,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(editorExpression, "persistentPropertyDeclaration", false);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477881", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477883", true), (SNode) new typeof_EditorExpression_InferenceRule.QuotationClass_a3jan8_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477883", true), (SNode) new typeof_EditorExpression_InferenceRule.QuotationClass_a3jan8_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880), typeCheckingContext), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = editorExpression;

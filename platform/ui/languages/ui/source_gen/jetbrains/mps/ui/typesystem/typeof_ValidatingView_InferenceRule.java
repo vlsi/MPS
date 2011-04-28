@@ -30,7 +30,7 @@ public class typeof_ValidatingView_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(vv, "validator", true), "validateBlock", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "4643695836678775501", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "4643695836678775481", true), (SNode) new typeof_ValidatingView_InferenceRule.QuotationClass_ndilr2_a0a2a0().createNode(typeCheckingContext.getRepresentative(PROPERTY_TYPE_typevar_4643695836678775513), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "4643695836678775481", true), (SNode) new typeof_ValidatingView_InferenceRule.QuotationClass_ndilr2_a0a2a0().createNode(typeCheckingContext.getRepresentative(PROPERTY_TYPE_typevar_4643695836678775513), typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

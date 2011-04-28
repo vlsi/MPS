@@ -23,7 +23,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
   public namedTuple_assignableTo_namedTuple_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -48,7 +48,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, null);
             _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-            typeCheckingContext.createLessThanInequation((SNode) lp, (SNode) rp, false, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) lp, (SNode) rp, false, true, _info_12389875345);
           }
         }
       }
@@ -61,7 +61,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {

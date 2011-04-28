@@ -17,13 +17,13 @@
     <nodeInfo nodeId="7155962213902745776" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="29" startPosition="37" endLine="30" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="31" startPosition="9" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="32" startPosition="57" endLine="33" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="33" startPosition="220" endLine="34" endPosition="601" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="33" startPosition="220" endLine="34" endPosition="607" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3041831561922455922" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="20" startPosition="135" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="30" startPosition="133" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2299894485109775405" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="28" startPosition="305" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2299894485109627432" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="26" startPosition="141" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="3041831561922455922" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="381" />
-    <scopeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="31" startPosition="9" endLine="34" endPosition="601" />
+    <scopeInfo nodeId="2299894485109903431" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="31" startPosition="9" endLine="34" endPosition="607" />
     <scopeInfo nodeId="2299894485109775406" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="29" startPosition="37" endLine="35" endPosition="9">
       <varInfo nodeId="7155962213902745777" varName="actualParam" />
     </scopeInfo>

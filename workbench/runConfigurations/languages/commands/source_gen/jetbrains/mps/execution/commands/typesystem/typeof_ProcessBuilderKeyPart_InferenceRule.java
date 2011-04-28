@@ -22,12 +22,12 @@ public class typeof_ProcessBuilderKeyPart_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(processBuilderKeyPart, "key", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863792", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863798", true), (SNode) new typeof_ProcessBuilderKeyPart_InferenceRule.QuotationClass_87yzhz_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863798", true), (SNode) new typeof_ProcessBuilderKeyPart_InferenceRule.QuotationClass_87yzhz_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(processBuilderKeyPart, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863802", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863811", true), (SNode) new typeof_ProcessBuilderKeyPart_InferenceRule.QuotationClass_87yzhz_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863811", true), (SNode) new typeof_ProcessBuilderKeyPart_InferenceRule.QuotationClass_87yzhz_a0a1a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 

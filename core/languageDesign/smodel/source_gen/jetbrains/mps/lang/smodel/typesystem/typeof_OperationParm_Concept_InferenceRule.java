@@ -26,7 +26,7 @@ public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207344198913", 0, null);
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207344198915", false), (SNode) new typeof_OperationParm_Concept_InferenceRule.QuotationClass_eac4ma_a0a1a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207344198915", false), (SNode) new typeof_OperationParm_Concept_InferenceRule.QuotationClass_eac4ma_a0a1a1a0().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }

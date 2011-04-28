@@ -23,7 +23,7 @@ public class iterator_subtypeOf_iterator_InequationReplacementRule extends Abstr
   public iterator_subtypeOf_iterator_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Incompatible types", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240153585729", null, errorTarget);
@@ -33,11 +33,11 @@ public class iterator_subtypeOf_iterator_InequationReplacementRule extends Abstr
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470147423", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, true, _info_12389875345);
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))))) {
       result_14532009 = false;

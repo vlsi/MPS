@@ -19,7 +19,7 @@ public class typeof_FileGeneratorType_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = type;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1218036807802", 0, null);
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1218036800689", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(type, "generator", false), "extendedClass", false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1218036814948", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1218036800689", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(type, "generator", false), "extendedClass", false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1218036814948", true), false, false, _info_12389875345);
     }
   }
 

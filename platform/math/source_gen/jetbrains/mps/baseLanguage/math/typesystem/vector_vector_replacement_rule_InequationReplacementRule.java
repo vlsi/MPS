@@ -21,12 +21,12 @@ public class vector_vector_replacement_rule_InequationReplacementRule extends Ab
   public vector_vector_replacement_rule_InequationReplacementRule() {
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275106407", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, true, _info_12389875345);
     }
     if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "height") != 0) {
       if (!(SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height"))) {
@@ -39,7 +39,7 @@ public class vector_vector_replacement_rule_InequationReplacementRule extends Ab
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);
     if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "height") != 0) {

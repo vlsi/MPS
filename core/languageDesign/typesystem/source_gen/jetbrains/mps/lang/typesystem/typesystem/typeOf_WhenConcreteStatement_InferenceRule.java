@@ -22,7 +22,7 @@ public class typeOf_WhenConcreteStatement_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(whenConcreteStatement, "argument", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185805532321", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185805519376", true), (SNode) new typeOf_WhenConcreteStatement_InferenceRule.QuotationClass_pdvj18_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185805519376", true), (SNode) new typeOf_WhenConcreteStatement_InferenceRule.QuotationClass_pdvj18_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

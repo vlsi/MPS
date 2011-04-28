@@ -26,7 +26,7 @@ public class typeof_FoldLeftOperation_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396614", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396622", true), (SNode) new typeof_FoldLeftOperation_InferenceRule.QuotationClass_qjaq37_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069396613), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396622", true), (SNode) new typeof_FoldLeftOperation_InferenceRule.QuotationClass_qjaq37_a0a2a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1522217801069396613), typeCheckingContext), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
@@ -41,7 +41,7 @@ public class typeof_FoldLeftOperation_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "closure", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396633", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396647", true), (SNode) new typeof_FoldLeftOperation_InferenceRule.QuotationClass_qjaq37_a0a5a0().createNode(typeCheckingContext.getRepresentative(seedType_typevar_1522217801069396654), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069396613), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069396654), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1522217801069396647", true), (SNode) new typeof_FoldLeftOperation_InferenceRule.QuotationClass_qjaq37_a0a5a0().createNode(typeCheckingContext.getRepresentative(seedType_typevar_1522217801069396654), typeCheckingContext.getRepresentative(elementType_typevar_1522217801069396613), typeCheckingContext.getRepresentative(seedType_typevar_1522217801069396654), typeCheckingContext), false, true, _info_12389875345);
     }
   }
 

@@ -22,7 +22,7 @@ public class typeof_EmitVariableStatement_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "variable", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1206444774891", 0, null);
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1206444746282", true), (SNode) new typeof_EmitVariableStatement_InferenceRule.QuotationClass_u2fqkk_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1206444746282", true), (SNode) new typeof_EmitVariableStatement_InferenceRule.QuotationClass_u2fqkk_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
   }
 
