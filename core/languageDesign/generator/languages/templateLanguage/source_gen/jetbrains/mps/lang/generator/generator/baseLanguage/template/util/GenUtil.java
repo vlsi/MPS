@@ -45,11 +45,11 @@ public class GenUtil {
   }
 
   public static boolean isGeneratable(SModel model) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.GeneratorDescriptor")).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "generate");
-      }
-    });
+    SNode node = SModelOperations.getModuleStub(model);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.project.structure.Generator")) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.project.structure.Generator"), "generateTemplates");
+    }
+    return false;
   }
 
   public static String asIdentifier(String s) {

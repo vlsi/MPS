@@ -17,8 +17,12 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class SModelOperations {
   public SModelOperations() {
@@ -180,10 +184,35 @@ public class SModelOperations {
   }
 
   public static SNode getModuleStub(SModel model) {
-    SModel m = ProjectStructureModule.getInstance().getModelByModule(model.getModelDescriptor().getModule());
-    return (m == null ?
-      null :
-      ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
+    final IModule module = model.getModelDescriptor().getModule();
+    if (module instanceof Generator) {
+      Language lang = ((Generator) module).getSourceLanguage();
+      SModel m = ProjectStructureModule.getInstance().getModelByModule(lang);
+      if (m == null) {
+        return null;
+      }
+      SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
+      return (l == null ?
+        null :
+        ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return eq_kkj9n5_a0a0a0a0a0a4a1a11(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+          }
+        })
+      );
+    } else {
+      SModel m = ProjectStructureModule.getInstance().getModelByModule(module);
+      return (m == null ?
+        null :
+        ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
+      );
+    }
+  }
+
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
     );
   }
 }

@@ -5,7 +5,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="self" generatorUID="jetbrains.mps.transformation.test.outputLang#1209603905948" uuid="de2f9603-575d-4d84-b063-776b6d27a0b9">
+    <generator name="self" generatorUID="jetbrains.mps.transformation.test.outputLang#1209603905948" uuid="de2f9603-575d-4d84-b063-776b6d27a0b9" generate-templates="true">
       <models>
         <modelRoot path="${language_descriptor}/generator/self/template" namespacePrefix="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template" />
       </models>
