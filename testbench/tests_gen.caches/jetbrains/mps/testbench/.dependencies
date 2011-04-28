@@ -25,7 +25,6 @@
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="difflib.Delta" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />

@@ -50,7 +50,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import difflib.Patch;
 import difflib.DiffUtils;
-import difflib.Delta;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Queue;
@@ -297,7 +296,7 @@ public class ProjectTestHelper {
           if (!(onext.isDirectory())) {
             List<String> olines = fileToStrings(onext);
             Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
-            for (Delta d : patch.getDeltas()) {
+            if (!(patch.getDeltas().isEmpty())) {
               ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
             }
           } else {
