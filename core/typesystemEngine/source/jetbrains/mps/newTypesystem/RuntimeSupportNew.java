@@ -35,12 +35,12 @@ public class RuntimeSupportNew extends RuntimeSupport {
 
   @Override
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
-    SubTypingManagerNew subTyping = new SubTypingManagerNew(myTypeChecker);
+    SubTypingManagerNew subTyping = (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
     return subTyping.coerceSubTypingNew(subtype, pattern, isWeak, null);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
-    SubTypingManagerNew subTyping = new SubTypingManagerNew(myTypeChecker);
+    SubTypingManagerNew subTyping = (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
     return subTyping.coerceSubTypingNew(subtype, pattern, true, null);
   }
 
