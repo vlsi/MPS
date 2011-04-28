@@ -1145,8 +1145,8 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8961331321403242048(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
@@ -1159,8 +1159,8 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8961331321403162191(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
@@ -1917,14 +1917,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8961331321403162002(final IOperationContext operationContext, final IfMacroContext _context) {
-    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
 
-    return Sequence.fromIterable(selected).all(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    return Sequence.fromIterable(selected).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         String name = (String) _context.getTransientObject(it);
         return name.startsWith("tnode");
       }
@@ -1932,8 +1932,8 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8961331321403242082(final IOperationContext operationContext, final IfMacroContext _context) {
-    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
@@ -1943,16 +1943,16 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8961331321403162164(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     }).count() > 1;
   }
 
   public static boolean ifMacro_Condition_8961331321403162224(final IOperationContext operationContext, final IfMacroContext _context) {
-    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
@@ -3400,16 +3400,16 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8961331321403161981(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
   }
 
   public static Iterable sourceNodesQuery_8961331321403242135(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<Object>() {
-      public boolean accept(Object it) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("nodes"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
         return _context.getTransientObject(it) != null;
       }
     });
