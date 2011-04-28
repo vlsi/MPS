@@ -134,6 +134,7 @@ public class NodeMaps {
   }
 
   public SNode getType(SNode node) {
+    if (node == null) return null;
     SNode type = myNodesToTypes.get(node);
     return myState.getRepresentative(type);
   }
