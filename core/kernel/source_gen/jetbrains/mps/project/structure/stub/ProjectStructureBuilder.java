@@ -127,7 +127,8 @@ public abstract class ProjectStructureBuilder {
   private SNode convert(SModelReference source) {
     SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
     SPropertyOperations.set(result, "uuid", source.getSModelId().toString());
-    SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().toString());
+    SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().getLongName());
+    SPropertyOperations.set(result, "stereotype", source.getSModelFqName().getStereotype());
     return result;
   }
 

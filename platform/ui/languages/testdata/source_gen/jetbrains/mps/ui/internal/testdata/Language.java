@@ -14,7 +14,7 @@ public class Language extends LanguageRuntime {
   private final Collection<TemplateModule> generators;
 
   public Language() {
-    generators = TemplateUtil.<TemplateModule>asCollection(new Generator());
+    generators = TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator("e74587b1-adac-4bf9-b6a0-54d79628958d(jetbrains.mps.ui.internal.testdata#8977668887013976554)"));
   }
 
   public String getNamespace() {

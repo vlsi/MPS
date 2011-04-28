@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Language.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.Language" />
-  <unitInfo fileName="Generator.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.Generator" />
+  <unitInfo fileName="Generator.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.Generator" />
 </debugInfo>
 

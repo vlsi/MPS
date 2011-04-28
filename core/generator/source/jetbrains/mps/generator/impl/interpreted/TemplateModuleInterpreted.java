@@ -20,6 +20,7 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,7 +35,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
   private Generator generator;
   private Collection<TemplateModel> models;
 
-  public TemplateModuleInterpreted(Generator generator) {
+  public TemplateModuleInterpreted(@NotNull Generator generator) {
     this.generator = generator;
     this.models = new ArrayList<TemplateModel>();
   }

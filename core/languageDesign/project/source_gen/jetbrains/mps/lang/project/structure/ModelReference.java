@@ -12,6 +12,7 @@ public class ModelReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.project.structure.ModelReference";
   public static final String UUID = "uuid";
   public static final String QUALIFIED_NAME = "qualifiedName";
+  public static final String STEREOTYPE = "stereotype";
 
   public ModelReference(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class ModelReference extends BaseConcept {
 
   public void setQualifiedName(String value) {
     this.setProperty(ModelReference.QUALIFIED_NAME, value);
+  }
+
+  public String getStereotype() {
+    return this.getProperty(ModelReference.STEREOTYPE);
+  }
+
+  public void setStereotype(String value) {
+    this.setProperty(ModelReference.STEREOTYPE, value);
   }
 
   public static ModelReference newInstance(SModel sm, boolean init) {

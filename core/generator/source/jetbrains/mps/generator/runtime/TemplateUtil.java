@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 
 import java.lang.reflect.Array;
@@ -100,6 +103,11 @@ public class TemplateUtil {
     };
   }
 
+  public static TemplateModule createInterpretedGenerator(String moduleReference) {
+    Generator g = MPSModuleRepository.getInstance().getGenerator(ModuleReference.fromString(moduleReference));
+    return new TemplateModuleInterpreted(g);
+  }
+
   public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
     MappingPriorityRule rule = new MappingPriorityRule();
     rule.setLeft((MappingConfig_AbstractRef) left);
@@ -177,5 +185,4 @@ public class TemplateUtil {
       throw new UnsupportedOperationException();
     }
   }
-
 }

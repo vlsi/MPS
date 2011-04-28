@@ -8,13 +8,13 @@
   <unitInfo fileName="MappingConfigExternalRef.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigExternalRef" />
   <unitInfo fileName="MappingConfigNormalRef.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigNormalRef" />
   <unitInfo fileName="ModuleDependency.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleDependency" />
-  <unitInfo fileName="ModelReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelReference" />
   <unitInfo fileName="ModelRootManager.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelRootManager" />
   <unitInfo fileName="ModuleReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleReference" />
   <unitInfo fileName="StubSolution.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StubSolution" />
   <unitInfo fileName="MappingConfigRefSet.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefSet" />
   <unitInfo fileName="RuleType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType_PropertySupport" />
   <unitInfo fileName="Solution.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Solution" />
+  <unitInfo fileName="ModelReference.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelReference" />
   <unitInfo fileName="ModelRoot.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelRoot" />
   <unitInfo fileName="StubEntry.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StubEntry" />
   <unitInfo fileName="MappingPriorityRule.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingPriorityRule" />
