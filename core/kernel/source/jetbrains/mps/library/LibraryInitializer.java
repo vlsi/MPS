@@ -19,6 +19,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -80,6 +81,7 @@ public class LibraryInitializer {
     if (myFirstLoad) {
       myFirstLoad = false;
       myCLM.init();
+      LanguageRegistry.getInstance().init();
     }
   }
 

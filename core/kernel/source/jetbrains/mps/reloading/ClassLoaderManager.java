@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
@@ -122,6 +123,9 @@ public class ClassLoaderManager implements ApplicationComponent {
           l.unload();
         }
       });
+
+      indicator.setText2("Updating language registry...");
+      LanguageRegistry.getInstance().reloadLanguages();
 
       indicator.setText2("Reloading classes...");
       callListeners(new ListenerCaller() {

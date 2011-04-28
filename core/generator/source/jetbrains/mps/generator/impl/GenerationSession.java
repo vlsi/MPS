@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -533,7 +534,7 @@ public class GenerationSession {
   }
 
   private void printGenerationStepData(SModel inputModel) {
-    List<String> references = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
+    List<String> references = ModelContentUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(references);
     myLogger.info("languages used:");
     for (String reference : references) {

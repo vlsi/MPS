@@ -30,5 +30,7 @@ public interface TemplateModule {
 
   Collection<TemplateModel> getModels();
 
+  //Collection<String> getUsedLanguages();
+
   String getAlias();
 }

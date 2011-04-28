@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -37,21 +36,12 @@ public class GenerationPartitioningUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
 
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
-    // scanners framework wasn't finished :(
-//    AbstractModelScanner modelScanner = new SimpleModelScanner();
-//    if(TemplateLanguageUtil.isTemplatesModel(inputModel)) {
-//      modelScanner = new TemplateQueriesOnlyScanner();
-//    }
-//    Set<Language> usedLanguages = new HashSet<Language>();
-//    Set<Generator> engagedGenerators = new HashSet<Generator>();
-//    modelScanner.collectUsedLanguagesAndEngagedGenerators(inputModel, true, usedLanguages, engagedGenerators, scope);
-
     // collect generators brutally
-    return collectGenerators(inputModel, false, true, new ArrayList<Generator>(), new HashSet<Language>(), scope);
+    return collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
-  private static List<Generator> collectGenerators(SModel inputModel, boolean excludeTLBase, boolean scanTemplates, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
-    List<Language> languages = getUsedLanguages(inputModel, excludeTLBase, scope);
+  private static List<Generator> collectGenerators(SModel inputModel, boolean isTemplateModel, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
+    List<Language> languages = ModelContentUtil.getUsedLanguages(inputModel, isTemplateModel, scope);
 
     for (Language language : languages) {
       if (processedLanguages.contains(language)) continue;
@@ -63,93 +53,28 @@ public class GenerationPartitioningUtil {
       if (generators.size() > 1) {
         LOG.warning("LANG '" + language.getModuleFqName() + "' has " + generators.size() + " generators. use 1st: '" + generator.getName() + "'");
       }
-      collectGenerators(generator, scanTemplates, collectedGenerators, processedLanguages);
+      collectGenerators(generator, collectedGenerators, processedLanguages);
     }
     return collectedGenerators;
   }
 
-  private static List<Generator> collectGenerators(Generator generator, boolean scanTemplates, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
+  private static List<Generator> collectGenerators(Generator generator, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
     if (collectedGenerators.contains(generator)) return collectedGenerators;
 
     collectedGenerators.add(generator);
-    if (scanTemplates) {
-      List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
-      for (SModelDescriptor templateModel : templateModels) {
-        collectGenerators(templateModel.getSModel(), true, true, collectedGenerators, processedLanguages, generator.getScope());
-      }
+    List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
+    for (SModelDescriptor templateModel : templateModels) {
+      collectGenerators(templateModel.getSModel(), true, collectedGenerators, processedLanguages, generator.getScope());
     }
 
     for (Generator refGenerator : generator.getReferencedGenerators()) {
-      collectGenerators(refGenerator, scanTemplates, collectedGenerators, processedLanguages);
+      collectGenerators(refGenerator, collectedGenerators, processedLanguages);
     }
 
     return collectedGenerators;
   }
 
 
-  private static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
-    Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
-      namespaces.add(ref.getModuleFqName());
-    }
-    for (SNode root : model.roots()) {
-      collectLanguageNamespaces(root, namespaces, excludeTLBase);
-    }
-    List<Language> result = new ArrayList<Language>();
-    for (String namespace : namespaces) {
-      Language language = scope.getLanguage(new ModuleReference(namespace));
-      if (language != null) {
-        result.add(language);
-      } else {
-        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
-      }
-    }
-    return result;
-  }
-
-  public static List<String> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
-    Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
-      namespaces.add(ref.getModuleFqName());
-    }
-    for (SNode root : model.roots()) {
-      collectLanguageNamespaces(root, namespaces, excludeTLBase);
-    }
-    return new ArrayList<String>(namespaces);
-  }
-
-  private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
-    String namespace1 = node.getLanguageNamespace();
-    if (!namespace1.equals("jetbrains.mps.lang.generator")) {
-      namespaces.add(namespace1);
-      for (SNode child : node.getChildren()) {
-        collectLanguageNamespaces(child, namespaces, excludeTLBase);
-      }
-    } else {
-      if (excludeTLBase) {
-        // only look into 'content' in template declartions
-        if (node.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration)) {
-          SNode content = RuleUtil.getTemplateDeclaration_ContentNode(node);
-          if (content != null) {
-            collectLanguageNamespaces(content, namespaces, excludeTLBase);
-          }
-        }
-      } else {
-        namespaces.add(namespace1);
-        // todo: committed because this way we don't look into code inside macros (while we need to generate this code!)
-//        // look into any node except 'content' in template declartions
-//        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
-//          for (SNode child : node.getChildren()) {
-//            collectLanguageNamespaces(child, namespaces, excludeTLBase);
-//          }
-//        }
-        // todo: tmp scan all children
-        for (SNode child : node.getChildren()) {
-          collectLanguageNamespaces(child, namespaces, excludeTLBase);
-        }
-      }
-    }
-  }
 
 
   public static List<String> toStrings(List<TemplateMappingConfiguration> mappings) {

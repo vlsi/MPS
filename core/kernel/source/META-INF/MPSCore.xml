@@ -19,6 +19,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.language.LanguageRegistry</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.reloading.ClassLoaderManager</implementation-class>
     </component>
 
