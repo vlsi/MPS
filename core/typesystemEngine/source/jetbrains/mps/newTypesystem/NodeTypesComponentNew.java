@@ -369,7 +369,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
     private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
       component.addNodeToInvalidate(eventNode);
-      component.setInvalidationWasPerformed(false);
     }
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {

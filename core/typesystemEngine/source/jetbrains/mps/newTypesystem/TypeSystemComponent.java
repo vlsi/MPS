@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -363,7 +365,7 @@ class TypeSystemComponent extends CheckingComponent {
     Map<SNode, Set<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-
+      if (sNode == nodeToDependOn) continue;
       Set<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
         dependentNodes = new THashSet<SNode>(1);

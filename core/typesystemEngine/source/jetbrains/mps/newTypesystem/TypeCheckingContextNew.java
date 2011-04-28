@@ -171,7 +171,9 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError == null) return;//todo
+    if (nodeWithError == null) {
+      return;//todo
+    }
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
     getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
   }
