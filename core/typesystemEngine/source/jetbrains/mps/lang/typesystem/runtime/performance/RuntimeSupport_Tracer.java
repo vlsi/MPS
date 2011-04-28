@@ -3,6 +3,7 @@ package jetbrains.mps.lang.typesystem.runtime.performance;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
+import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -14,7 +15,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
  * Time: 20:25:34
  * To change this template use File | Settings | File Templates.
  */
-public class RuntimeSupport_Tracer extends RuntimeSupport {
+public class RuntimeSupport_Tracer extends RuntimeSupportNew {
   public RuntimeSupport_Tracer(TypeChecker typeChecker) {
     super(typeChecker);
   }
