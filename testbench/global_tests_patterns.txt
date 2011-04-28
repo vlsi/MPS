@@ -4,11 +4,11 @@
 +**/editorTest/*_Test.java
 +dataFlow-runtime:jetbrains/mps/dataFlow/lang/framework/**/*Test.java
 +runtime:jetbrains/mps/runtime/**/*Test.java
+-runtime:jetbrains/mps/runtime/**/InternerTest.java
 +Closures:jetbrains/mps/closures/**/*Test.java
 +collections:jetbrains/mps/baseLanguage/collections/**/*Test.java
 +collections:jetbrains/mps/internalCollections/**/*Test.java
 +dates:jetbrains/mps/baseLanguage/dates/unittest/**/*Test.java
-+generator-engine:jetbrains/mps/generator/test/*Test.java
 +generator-engine:jetbrains/mps/traceInfo/test/*Test.java
 +kernel:jetbrains/mps/make/**/*Test*.java
 +kernel:jetbrains/mps/diff/**/DiffTestCase.java
@@ -28,5 +28,4 @@
 +analyzers:**/*_Test.java
 +**/math/*Test.java
 +make:**/*_Test.java
-+migration:jetbrains/mps/ide/migration/persistence/*Test.java
 +vcs:jetbrains/mps/DiskMemoryConflictsTest.java

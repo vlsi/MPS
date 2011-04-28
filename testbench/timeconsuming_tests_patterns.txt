@@ -1,0 +1,3 @@
++generator-engine:jetbrains/mps/generator/test/*Test.java
++migration:jetbrains/mps/ide/migration/persistence/*Test.java
++runtime:jetbrains/mps/runtime/**/InternerTest.java
