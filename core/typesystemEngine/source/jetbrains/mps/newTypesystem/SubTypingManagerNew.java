@@ -47,7 +47,7 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2)) {
+      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
         return true;
       }
     }

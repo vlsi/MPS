@@ -36,7 +36,7 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
+@Deprecated
 public class EquationManager {
 
   private static final Logger LOG = Logger.getLogger(EquationManager.class);

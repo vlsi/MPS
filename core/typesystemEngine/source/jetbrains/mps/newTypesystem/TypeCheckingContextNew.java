@@ -284,6 +284,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThen, EquationInfo equationInfo) {
+    myState.addInequality(node1, node2, isWeak, checkOnly, equationInfo, lessThen);
+  }
+
+  @Override
+  public void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThen, EquationInfo equationInfo) {
+    myState.addInequality(node2, node1, isWeak, checkOnly, equationInfo, lessThen);
+  }
+
+  @Override
   public INodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
@@ -292,7 +302,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode typeOf(SNode node) {
     return typeOf(node, null, null, true);
   }
-
 
   @Override
   public void addDependencyForCurrent(SNode node) {

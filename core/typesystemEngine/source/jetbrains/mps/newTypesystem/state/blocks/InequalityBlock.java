@@ -41,10 +41,10 @@ import java.util.Set;
  * Time: 12:11:13 PM
  */
 public class InequalityBlock extends RelationBlock {
-  private boolean lessThen;
+  private boolean lessThan;
 
   public SNode getOutput() {
-    if (lessThen) {
+    if (lessThan) {
       return myLeftNode;
     } else {
       return myRightNode;
@@ -55,7 +55,7 @@ public class InequalityBlock extends RelationBlock {
     if (isCheckOnly()) {
       return null;
     }
-    if (lessThen) {
+    if (lessThan) {
       return myRightNode;
     } else {
       return myLeftNode;
@@ -71,7 +71,7 @@ public class InequalityBlock extends RelationBlock {
 
   public InequalityBlock(State state, SNode left, SNode right, boolean lessThen, RelationKind kind, EquationInfo equationInfo) {
     super(state, left, right, kind, equationInfo);
-    this.lessThen = lessThen;
+    this.lessThan = lessThen;
   }
 
   @Override
@@ -89,7 +89,7 @@ public class InequalityBlock extends RelationBlock {
       final IsApplicable2Status status = inequalityReplacementRule.o2;
       myState.executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
         public void run() {
-          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status);
+          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
         }
       }));
       return true;
@@ -137,7 +137,7 @@ public class InequalityBlock extends RelationBlock {
 
   private String getPresentationInternal(SNode left, SNode right) {
     String sign = myRelationKind.getRelationSign();
-    if (lessThen) {
+    if (lessThan) {
       sign = ":" + sign;
     } else {
       sign = sign + ":";

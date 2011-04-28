@@ -39,7 +39,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.Map.Entry;
-
+@Deprecated
 public class NodeTypesComponent implements INodeTypesComponent {
 
   private static final char A_CHAR = 'a';

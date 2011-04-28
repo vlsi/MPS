@@ -142,27 +142,25 @@ public abstract class TypeCheckingContext {
 
   public abstract void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
-  public abstract void createGreaterThanInequation(SNode node1,
-                                                   SNode node2,
-                                                   boolean checkOnly,
-                                                   EquationInfo equationInfo);
+  public abstract void createGreaterThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
-  public abstract void createGreaterThanInequationStrong(SNode node1,
-                                                         SNode node2,
-                                                         boolean checkOnly,
-                                                         EquationInfo equationInfo);
+  public abstract void createGreaterThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
-  public abstract void createComparableEquation(SNode node1,
-                                                SNode node2,
-                                                EquationInfo equationInfo);
+  public abstract void createComparableEquation(SNode node1, SNode node2, EquationInfo equationInfo);
 
-  public abstract void createComparableEquation(SNode node1,
-                                                SNode node2, boolean inference,
-                                                EquationInfo equationInfo);
+  public abstract void createComparableEquation(SNode node1, SNode node2, boolean inference, EquationInfo equationInfo);
 
-  public abstract void createComparableEquationStrong(SNode node1,
-                                                      SNode node2,
-                                                      EquationInfo equationInfo);
+  public abstract void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo);
+
+  public void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, EquationInfo equationInfo) {
+    createLessThanInequality(node1, node2, checkOnly, isWeak, true, equationInfo);
+  }
+  public void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, EquationInfo equationInfo) {
+    createGreaterThanInequality(node1, node2, checkOnly, isWeak, false, equationInfo);
+  }
+
+  public abstract void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThan, EquationInfo equationInfo);
+  public abstract void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThan, EquationInfo equationInfo);
 
   public abstract SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
 

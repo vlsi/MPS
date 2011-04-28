@@ -430,6 +430,24 @@ public class TypeCheckingContextOld extends TypeCheckingContext {
       false);
   }
 
+  @Override
+  public void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean reversed, EquationInfo equationInfo) {
+    if (isWeak) {
+      createLessThanInequation(node1, node2, checkOnly,equationInfo);
+    } else {
+      createLessThanInequationStrong(node1, node2, checkOnly, equationInfo);
+    }
+  }
+
+  @Override
+  public void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean reversed, EquationInfo equationInfo) {
+    if (isWeak) {
+      createGreaterThanInequation(node1, node2, checkOnly, equationInfo);
+    } else {
+      createGreaterThanInequationStrong(node1, node2, checkOnly, equationInfo);
+    }
+  }
+
 
   @Override
   public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
