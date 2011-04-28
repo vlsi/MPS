@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
@@ -55,7 +56,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
 
       oldState = myLoadingState;
-      ModelLoadResult result = initialLoad();
+      ModelLoadResult result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>(){
+        @Override
+        public ModelLoadResult compute() {
+          return initialLoad();
+        }
+      });
       mySModel = result.model;
       mySModel.setModelDescriptor(this);
       myLoadingState = result.state;

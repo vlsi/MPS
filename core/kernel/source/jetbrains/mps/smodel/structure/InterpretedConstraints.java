@@ -295,7 +295,7 @@ public class InterpretedConstraints extends ConstraintsDescriptor {
   }
 
   @Override
-  public INodePropertyGetter getNodePropertyGetter(String propertyName) {
+  public INodePropertyGetter getNodePropertyGetter(final String propertyName) {
     if (isBootstrapProperty(propertyName)) {
       return null;
     }
@@ -304,14 +304,20 @@ public class InterpretedConstraints extends ConstraintsDescriptor {
       return propertyGetter.get(propertyName);
     }
 
-    INodePropertyGetter getter = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_GETTER);
+    INodePropertyGetter getter = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyGetter>() {
+      @Override
+      public INodePropertyGetter compute() {
+        return computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_GETTER);
+      }
+    });
+
     propertyGetter.put(propertyName, getter);
 
     return getter;
   }
 
   @Override
-  public INodePropertySetter getNodePropertySetter(String propertyName) {
+  public INodePropertySetter getNodePropertySetter(final String propertyName) {
     if (isBootstrapProperty(propertyName)) {
       return null;
     }
@@ -320,19 +326,29 @@ public class InterpretedConstraints extends ConstraintsDescriptor {
       return propertySetter.get(propertyName);
     }
 
-    INodePropertySetter setter = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_SETTER);
+    INodePropertySetter setter = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertySetter>() {
+      @Override
+      public INodePropertySetter compute() {
+        return computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_SETTER);
+      }
+    });
     propertySetter.put(propertyName, setter);
 
     return setter;
   }
 
   @Override
-  public INodePropertyValidator getNodePropertyValidator(String propertyName) {
+  public INodePropertyValidator getNodePropertyValidator(final String propertyName) {
     if (propertyValidator.containsKey(propertyName)) {
       return propertyValidator.get(propertyName);
     }
 
-    INodePropertyValidator validator = computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_VALIDATOR);
+    INodePropertyValidator validator = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
+      @Override
+      public INodePropertyValidator compute() {
+        return computeInConceptHierarchy(fqName, propertyName, COMPUTE_FUNCTION_FOR_PROPERTY_VALIDATOR);
+      }
+    });
     propertyValidator.put(propertyName, validator);
 
     return validator;
