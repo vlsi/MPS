@@ -1792,12 +1792,9 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3906874221886742454" resolveInfo="GoToSolution" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3906874221886742603">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3906874221886742604">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lj90.~GoToSolutionAction%d&lt;init&gt;()" resolveInfo="GoToSolutionAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lj90.~GoToModuleAction%d&lt;init&gt;()" resolveInfo="GoToModuleAction" />
           </node>
         </node>
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4753172061859538913">
-        <property name="name" nameId="tpck.1169194664001" value="gotoModules" />
       </node>
     </node>
   </root>

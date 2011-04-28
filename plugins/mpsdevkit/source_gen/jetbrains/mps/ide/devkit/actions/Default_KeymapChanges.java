@@ -23,8 +23,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", getShortcut("alt F12"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.SurroundWithIntentions_Action", getShortcut("ctrl alt T"));
     // simple parameterized 
-    addComplexShortcut("jetbrains.mps.ide.devkit.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift D")));
-    addComplexShortcut("jetbrains.mps.ide.devkit.actions.GoToLanguage_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift L")));
     // complex 
   }
 

@@ -91,7 +91,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GeneratorActions_Properties_ActionGroup());
     addGroup(new GotoConceptAspect_ActionGroup());
-    addGroup(new GotoModuleEx_ActionGroup());
     addGroup(new LanguageActionsEx_ActionGroup());
     addGroup(new LanguageNewActionsEx_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
@@ -129,7 +128,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
-    insertGroupIntoAnother(GotoModuleEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoModules);
     insertGroupIntoAnother(TraceActions_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
@@ -141,7 +139,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     ListSequence.fromList(res).addElement(new Trace_KeymapChanges());
-    ListSequence.fromList(res).addElement(new XWin_KeymapChanges());
     return res;
   }
 }

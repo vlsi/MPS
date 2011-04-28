@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.devkit.actions.navigate;
+package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.navigation.NavigationItem;
@@ -22,22 +22,23 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class GoToLanguageAction extends BaseAction {
+public class GoToModuleAction extends BaseAction {
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -45,7 +46,7 @@ public class GoToLanguageAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
+    BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
       public NavigationItem doGetNavigationItem(final ModuleReference ref) {
         return new BaseModuleItem(ref) {
           public void navigate(boolean requestFocus) {
@@ -57,18 +58,15 @@ public class GoToLanguageAction extends BaseAction {
       }
 
       public ModuleReference[] find(IScope scope) {
-        List<ModuleReference> result = new ArrayList<ModuleReference>();
-        for (Language l : scope.getVisibleLanguages()) {
-          result.add(l.getModuleReference());
+        List<ModuleReference> modules = new ArrayList<ModuleReference>();
+        for (IModule module : scope.getVisibleModules()) {
+          if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) continue;
+          modules.add(module.getModuleReference());
         }
-        return result.toArray(new ModuleReference[result.size()]);
-      }
-
-      public String getPromptText() {
-        return "Go to language:";
+        return modules.toArray(new ModuleReference[modules.size()]);
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToLanguageModel, DefaultMatcherFactory.createAllMatcher(goToLanguageModel));
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));
 
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }
