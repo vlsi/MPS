@@ -52,7 +52,6 @@
     <orderEntry type="library" scope="PROVIDED" name="IDEA-vcs-plugins" level="project" />
     <orderEntry type="module" module-name="make-runtime" exported="" />
     <orderEntry type="module" module-name="startup" />
-    <orderEntry type="module" module-name="actions-runtime" exported="" />
     <orderEntry type="module" module-name="findUsages-runtime" exported="" />
     <orderEntry type="module" module-name="refactoring-runtime" exported="" />
   </component>
