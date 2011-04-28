@@ -13,7 +13,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
 
 public class FindInstancesByCondition_Action extends GeneratedAction {
@@ -61,7 +60,7 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), ((IModule) MapSequence.fromMap(_params).get("langModule")));
       if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
         testDialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
       }

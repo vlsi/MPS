@@ -10,13 +10,14 @@ import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.IModule;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -43,7 +44,7 @@ public class FindInstancesDialog extends BaseDialog {
   private SNode myNode;
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
-  public FindInstancesDialog(final IOperationContext context, final Language language) {
+  public FindInstancesDialog(final IOperationContext context, final IModule module) {
     super(context.getMainFrame(), "Find Instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
@@ -61,18 +62,22 @@ public class FindInstancesDialog extends BaseDialog {
         FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, FindInstancesDialog.this.myNode);
       }
     });
-    final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        languageList.value = language.getAllExtendedLanguages();
+    if (module instanceof Language) {
+      final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          languageList.value = ((Language) module).getAllExtendedLanguages();
+        }
+      });
+      for (Language extendedLanguage : languageList.value) {
+        this.myEditor.addLanguageStructureModel(extendedLanguage);
       }
-    });
-    for (Language extendedLanguage : languageList.value) {
-      this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
     this.myEditor.addLanguageStructureModel(BootstrapLanguages.collectionsLanguage());
-    this.myEditor.addLanguageStructureModel(language);
+    if (module instanceof Language) {
+      this.myEditor.addLanguageStructureModel((Language) module);
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         FindInstancesDialog.this.myScope = new ScopeEditor(new ScopeOptions());
