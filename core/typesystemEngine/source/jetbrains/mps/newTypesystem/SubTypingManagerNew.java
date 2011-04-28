@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class SubTypingManagerNew extends SubtypingManager {
-  private TypeChecker myTypeChecker;
+  protected TypeChecker myTypeChecker;
   private CoercionManager myCoercionManager;
 
   public SubTypingManagerNew(TypeChecker typeChecker) {
