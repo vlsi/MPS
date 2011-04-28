@@ -846,8 +846,8 @@
     <scopeInfo nodeId="7316415153790567451" fileName="RunMigrationScriptsDialog.java" startLine="299" startPosition="43" endLine="306" endPosition="41" />
     <scopeInfo nodeId="7316415153790566501" fileName="RunMigrationScriptsDialog.java" startLine="55" startPosition="0" endLine="63" endPosition="3">
       <varInfo nodeId="7316415153790566506" varName="scripts" />
-      <varInfo nodeId="7316415153790566504" varName="owner" />
       <varInfo nodeId="7316415153790566509" varName="selectedScriptIds" />
+      <varInfo nodeId="7316415153790566504" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790566946" fileName="RunMigrationScriptsDialog.java" startLine="172" startPosition="42" endLine="180" endPosition="16">
       <varInfo nodeId="7316415153790566955" varName="count" />
@@ -866,8 +866,8 @@
       <varInfo nodeId="7316415153790566390" varName="modelIndex" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790566825" fileName="RunMigrationScriptsDialog.java" startLine="145" startPosition="32" endLine="159" endPosition="67">
-      <varInfo nodeId="7316415153790566834" varName="enableCheck" />
       <varInfo nodeId="7316415153790566838" varName="enableUnCheck" />
+      <varInfo nodeId="7316415153790566834" varName="enableCheck" />
       <varInfo nodeId="7316415153790566827" varName="ints" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790567413" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="145" endLine="310" endPosition="21">
@@ -876,8 +876,8 @@
     <scopeInfo nodeId="7316415153790566822" fileName="RunMigrationScriptsDialog.java" startLine="144" startPosition="0" endLine="161" endPosition="0" />
     <scopeInfo nodeId="7316415153790567254" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="76" endLine="312" endPosition="0">
       <varInfo nodeId="7316415153790567261" varName="isSelected" />
-      <varInfo nodeId="7316415153790567259" varName="value" />
       <varInfo nodeId="7316415153790567267" varName="column" />
+      <varInfo nodeId="7316415153790567259" varName="value" />
       <varInfo nodeId="7316415153790567257" varName="table" />
       <varInfo nodeId="7316415153790567263" varName="hasFocus" />
       <varInfo nodeId="7316415153790567265" varName="row" />
@@ -903,8 +903,8 @@
       <varInfo nodeId="7316415153790566400" varName="column" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790567492" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="48" endLine="347" endPosition="11">
-      <varInfo nodeId="7316415153790567494" varName="col" />
       <varInfo nodeId="7316415153790567518" varName="sortingOrder" />
+      <varInfo nodeId="7316415153790567494" varName="col" />
       <varInfo nodeId="7316415153790567569" varName="selectedRows" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790567282" fileName="RunMigrationScriptsDialog.java" startLine="315" startPosition="50" endLine="349" endPosition="0">
@@ -918,8 +918,8 @@
       <varInfo nodeId="7316415153790566395" varName="table" />
     </scopeInfo>
     <scopeInfo nodeId="7316415153790566538" fileName="RunMigrationScriptsDialog.java" startLine="65" startPosition="23" endLine="142" endPosition="20">
-      <varInfo nodeId="7316415153790566578" varName="panel" />
       <varInfo nodeId="7316415153790566645" varName="buttonsFlow" />
+      <varInfo nodeId="7316415153790566578" varName="panel" />
       <varInfo nodeId="7316415153790566591" varName="tm" />
       <varInfo nodeId="7316415153790566540" varName="contentPane" />
       <varInfo nodeId="7316415153790566765" varName="buttons" />
