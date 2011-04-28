@@ -104,8 +104,6 @@
     <nodeInfo nodeId="3911341278723505416" fileName="Generator_TabDescriptor.java" startLine="161" startPosition="0" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3911341278723505672" fileName="Generator_TabDescriptor.java" startLine="91" startPosition="131" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="3911341278723505291" fileName="Generator_TabDescriptor.java" startLine="64" startPosition="32" endLine="64" endPosition="32" />
-    <scopeInfo nodeId="3911341278723505279" fileName="Generator_TabDescriptor.java" startLine="67" startPosition="40" endLine="68" endPosition="53" />
-    <scopeInfo nodeId="3911341278723505284" fileName="Generator_TabDescriptor.java" startLine="71" startPosition="43" endLine="72" endPosition="115" />
     <scopeInfo nodeId="3911341278723505716" fileName="Generator_TabDescriptor.java" startLine="103" startPosition="33" endLine="104" endPosition="21" />
     <scopeInfo nodeId="3911341278723505739" fileName="Generator_TabDescriptor.java" startLine="109" startPosition="72" endLine="110" endPosition="69" />
     <scopeInfo nodeId="3911341278723505360" fileName="Generator_TabDescriptor.java" startLine="140" startPosition="37" endLine="141" endPosition="20" />
