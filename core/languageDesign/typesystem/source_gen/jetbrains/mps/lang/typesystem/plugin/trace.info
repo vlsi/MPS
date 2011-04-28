@@ -163,8 +163,6 @@
     <nodeInfo nodeId="7157723551789225075" fileName="Typesystem_TabDescriptor.java" startLine="58" startPosition="70" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
     <nodeInfo nodeId="7157723551789225070" fileName="Typesystem_TabDescriptor.java" startLine="57" startPosition="76" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7157723551789225046" fileName="Typesystem_TabDescriptor.java" startLine="40" startPosition="32" endLine="40" endPosition="32" />
-    <scopeInfo nodeId="7157723551789225034" fileName="Typesystem_TabDescriptor.java" startLine="43" startPosition="40" endLine="44" endPosition="53" />
-    <scopeInfo nodeId="7157723551789225039" fileName="Typesystem_TabDescriptor.java" startLine="47" startPosition="43" endLine="48" endPosition="115" />
     <scopeInfo nodeId="7157723551789225099" fileName="Typesystem_TabDescriptor.java" startLine="64" startPosition="44" endLine="65" endPosition="19" />
     <scopeInfo nodeId="7157723551789225107" fileName="Typesystem_TabDescriptor.java" startLine="67" startPosition="44" endLine="68" endPosition="20" />
     <scopeInfo nodeId="7157723551789225138" fileName="Typesystem_TabDescriptor.java" startLine="75" startPosition="91" endLine="76" endPosition="21" />
