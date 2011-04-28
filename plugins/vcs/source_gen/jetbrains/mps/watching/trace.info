@@ -161,6 +161,158 @@
     <unitInfo nodeId="4707157387247361019" fileName="ModuleFileProcessor.java" startLine="65" startPosition="52" endLine="69" endPosition="5" unitName="jetbrains.mps.watching.ModuleFileProcessor$1" />
     <unitInfo nodeId="4707157387247360865" fileName="ModuleFileProcessor.java" startLine="14" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.watching.ModuleFileProcessor" />
   </root>
+  <root nodeId="4707157387247361035">
+    <nodeInfo nodeId="4707157387247361038" fileName="WatchedRoots.java" startLine="24" startPosition="59" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraryManager" />
+    <nodeInfo nodeId="4707157387247361041" fileName="WatchedRoots.java" startLine="25" startPosition="48" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
+    <nodeInfo nodeId="4707157387247361044" fileName="WatchedRoots.java" startLine="26" startPosition="56" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadHandler" />
+    <nodeInfo nodeId="4707157387247361047" fileName="WatchedRoots.java" startLine="27" startPosition="40" endLine="28" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibrariesRequests" />
+    <nodeInfo nodeId="4707157387247361056" fileName="WatchedRoots.java" startLine="28" startPosition="134" endLine="29" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectLibrariesRequests" />
+    <nodeInfo nodeId="4707157387247361065" fileName="WatchedRoots.java" startLine="29" startPosition="141" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalFileSystem" />
+    <nodeInfo nodeId="4707157387247361068" fileName="WatchedRoots.java" startLine="30" startPosition="50" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
+    <nodeInfo nodeId="4707157387247361071" fileName="WatchedRoots.java" startLine="31" startPosition="48" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManagerListener" />
+    <nodeInfo nodeId="4707157387247361086" fileName="WatchedRoots.java" startLine="34" startPosition="145" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361090" fileName="WatchedRoots.java" startLine="35" startPosition="38" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361094" fileName="WatchedRoots.java" startLine="36" startPosition="38" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361098" fileName="WatchedRoots.java" startLine="37" startPosition="46" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361106" fileName="WatchedRoots.java" startLine="42" startPosition="36" endLine="43" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247361374" fileName="WatchedRoots.java" startLine="49" startPosition="35" endLine="50" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361122" fileName="WatchedRoots.java" startLine="52" startPosition="6" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361124" fileName="WatchedRoots.java" startLine="53" startPosition="29" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361378" fileName="WatchedRoots.java" startLine="57" startPosition="50" endLine="58" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361389" fileName="WatchedRoots.java" startLine="62" startPosition="51" endLine="63" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361145" fileName="WatchedRoots.java" startLine="65" startPosition="6" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361154" fileName="WatchedRoots.java" startLine="69" startPosition="41" endLine="70" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361160" fileName="WatchedRoots.java" startLine="70" startPosition="83" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361166" fileName="WatchedRoots.java" startLine="74" startPosition="48" endLine="75" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361180" fileName="WatchedRoots.java" startLine="76" startPosition="58" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361190" fileName="WatchedRoots.java" startLine="78" startPosition="5" endLine="79" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361205" fileName="WatchedRoots.java" startLine="82" startPosition="131" endLine="83" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361214" fileName="WatchedRoots.java" startLine="83" startPosition="90" endLine="84" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361223" fileName="WatchedRoots.java" startLine="84" startPosition="87" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361227" fileName="WatchedRoots.java" startLine="85" startPosition="51" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361247" fileName="WatchedRoots.java" startLine="90" startPosition="29" endLine="91" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361257" fileName="WatchedRoots.java" startLine="91" startPosition="102" endLine="92" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361279" fileName="WatchedRoots.java" startLine="97" startPosition="32" endLine="98" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361291" fileName="WatchedRoots.java" startLine="99" startPosition="33" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361296" fileName="WatchedRoots.java" startLine="101" startPosition="7" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361312" fileName="WatchedRoots.java" startLine="106" startPosition="93" endLine="107" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361324" fileName="WatchedRoots.java" startLine="108" startPosition="34" endLine="109" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247361343" fileName="WatchedRoots.java" startLine="111" startPosition="67" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361347" fileName="WatchedRoots.java" startLine="112" startPosition="23" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4707157387247361352" fileName="WatchedRoots.java" startLine="116" startPosition="21" endLine="117" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361357" fileName="WatchedRoots.java" startLine="119" startPosition="5" endLine="120" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247361363" fileName="WatchedRoots.java" startLine="123" startPosition="34" endLine="124" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361368" fileName="WatchedRoots.java" startLine="124" startPosition="62" endLine="125" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361173" fileName="WatchedRoots.java" startLine="75" startPosition="47" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247361286" fileName="WatchedRoots.java" startLine="98" startPosition="81" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247361348" fileName="WatchedRoots.java" startLine="115" startPosition="7" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247361242" fileName="WatchedRoots.java" startLine="89" startPosition="115" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247361333" fileName="WatchedRoots.java" startLine="110" startPosition="45" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247361102" fileName="WatchedRoots.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4707157387247361119" fileName="WatchedRoots.java" startLine="47" startPosition="43" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onAfterReload#()V" />
+    <nodeInfo nodeId="4707157387247361135" fileName="WatchedRoots.java" startLine="55" startPosition="60" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4707157387247361140" fileName="WatchedRoots.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosing#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4707157387247361150" fileName="WatchedRoots.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processLibrariesChange#()V" />
+    <nodeInfo nodeId="4707157387247361359" fileName="WatchedRoots.java" startLine="122" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="4707157387247361074" fileName="WatchedRoots.java" startLine="33" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchedRoots#(Lcom/intellij/openapi/vfs/LocalFileSystem;Ljetbrains/mps/reloading/ClassLoaderManager;Ljetbrains/mps/library/LibraryManager;Lcom/intellij/openapi/project/ProjectManager;)V" />
+    <nodeInfo nodeId="4707157387247361113" fileName="WatchedRoots.java" startLine="46" startPosition="31" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361328" fileName="WatchedRoots.java" startLine="109" startPosition="28" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247361194" fileName="WatchedRoots.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processLibrariesChange#(Ljava/util/Set;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4707157387247361231" fileName="WatchedRoots.java" startLine="88" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4707157387247361274" fileName="WatchedRoots.java" startLine="96" startPosition="121" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247361162" fileName="WatchedRoots.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processProjectLibrariesChange#()V" />
+    <nodeInfo nodeId="4707157387247361263" fileName="WatchedRoots.java" startLine="95" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4707157387247361129" fileName="WatchedRoots.java" startLine="54" startPosition="59" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247361319" fileName="WatchedRoots.java" startLine="107" startPosition="52" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247361301" fileName="WatchedRoots.java" startLine="105" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="librarySubtract#(Ljava/util/Collection;Ljava/util/Collection;)Ljava/util/List;" />
+    <nodeInfo nodeId="4707157387247361109" fileName="WatchedRoots.java" startLine="45" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <scopeInfo nodeId="4707157387247361105" fileName="WatchedRoots.java" startLine="42" startPosition="36" endLine="43" endPosition="27" />
+    <scopeInfo nodeId="4707157387247361373" fileName="WatchedRoots.java" startLine="49" startPosition="35" endLine="50" endPosition="33" />
+    <scopeInfo nodeId="4707157387247361377" fileName="WatchedRoots.java" startLine="57" startPosition="50" endLine="58" endPosition="127" />
+    <scopeInfo nodeId="4707157387247361388" fileName="WatchedRoots.java" startLine="62" startPosition="51" endLine="63" endPosition="127" />
+    <scopeInfo nodeId="4707157387247361179" fileName="WatchedRoots.java" startLine="76" startPosition="58" endLine="77" endPosition="80" />
+    <scopeInfo nodeId="4707157387247361290" fileName="WatchedRoots.java" startLine="99" startPosition="33" endLine="100" endPosition="58" />
+    <scopeInfo nodeId="4707157387247361351" fileName="WatchedRoots.java" startLine="116" startPosition="21" endLine="117" endPosition="28" />
+    <scopeInfo nodeId="4707157387247361153" fileName="WatchedRoots.java" startLine="69" startPosition="41" endLine="71" endPosition="36" />
+    <scopeInfo nodeId="4707157387247361246" fileName="WatchedRoots.java" startLine="90" startPosition="29" endLine="92" endPosition="45">
+      <varInfo nodeId="4707157387247361248" varName="watchRequest" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361342" fileName="WatchedRoots.java" startLine="111" startPosition="67" endLine="113" endPosition="16" />
+    <scopeInfo nodeId="4707157387247361362" fileName="WatchedRoots.java" startLine="123" startPosition="34" endLine="125" endPosition="76" />
+    <scopeInfo nodeId="4707157387247361173" fileName="WatchedRoots.java" startLine="75" startPosition="47" endLine="78" endPosition="5">
+      <varInfo nodeId="4707157387247361177" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361085" fileName="WatchedRoots.java" startLine="34" startPosition="145" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="4707157387247361204" fileName="WatchedRoots.java" startLine="82" startPosition="131" endLine="86" endPosition="45">
+      <varInfo nodeId="4707157387247361215" varName="toAdd" />
+      <varInfo nodeId="4707157387247361206" varName="toRemove" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361241" fileName="WatchedRoots.java" startLine="89" startPosition="115" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="4707157387247361242" fileName="WatchedRoots.java" startLine="89" startPosition="115" endLine="93" endPosition="5">
+      <varInfo nodeId="4707157387247361244" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361332" fileName="WatchedRoots.java" startLine="110" startPosition="45" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="4707157387247361102" fileName="WatchedRoots.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="4707157387247361119" fileName="WatchedRoots.java" startLine="47" startPosition="43" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4707157387247361135" fileName="WatchedRoots.java" startLine="55" startPosition="60" endLine="60" endPosition="0">
+      <varInfo nodeId="4707157387247361138" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361140" fileName="WatchedRoots.java" startLine="60" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="4707157387247361143" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361150" fileName="WatchedRoots.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4707157387247361165" fileName="WatchedRoots.java" startLine="74" startPosition="48" endLine="79" endPosition="61">
+      <varInfo nodeId="4707157387247361167" varName="libs" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361278" fileName="WatchedRoots.java" startLine="97" startPosition="32" endLine="102" endPosition="34">
+      <varInfo nodeId="4707157387247361280" varName="watchRequest" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361359" fileName="WatchedRoots.java" startLine="122" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="4707157387247361074" fileName="WatchedRoots.java" startLine="33" startPosition="0" endLine="39" endPosition="3">
+      <varInfo nodeId="4707157387247361077" varName="lfs" />
+      <varInfo nodeId="4707157387247361083" varName="projectManager" />
+      <varInfo nodeId="4707157387247361079" varName="classLoaderManager" />
+      <varInfo nodeId="4707157387247361081" varName="libraryManager" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361328" fileName="WatchedRoots.java" startLine="109" startPosition="28" endLine="115" endPosition="7">
+      <varInfo nodeId="4707157387247361330" varName="possibleMatching" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361194" fileName="WatchedRoots.java" startLine="81" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="4707157387247361200" varName="libraryToRequest" />
+      <varInfo nodeId="4707157387247361197" varName="currentLibraries" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361231" fileName="WatchedRoots.java" startLine="88" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4707157387247361237" varName="librariesRequests" />
+      <varInfo nodeId="4707157387247361234" varName="toAdd" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361273" fileName="WatchedRoots.java" startLine="96" startPosition="121" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="4707157387247361274" fileName="WatchedRoots.java" startLine="96" startPosition="121" endLine="103" endPosition="5">
+      <varInfo nodeId="4707157387247361276" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361162" fileName="WatchedRoots.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="4707157387247361263" fileName="WatchedRoots.java" startLine="95" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="4707157387247361269" varName="librariesRequests" />
+      <varInfo nodeId="4707157387247361266" varName="toRemove" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361323" fileName="WatchedRoots.java" startLine="108" startPosition="34" endLine="118" endPosition="7">
+      <varInfo nodeId="4707157387247361325" varName="found" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361319" fileName="WatchedRoots.java" startLine="107" startPosition="52" endLine="119" endPosition="5">
+      <varInfo nodeId="4707157387247361321" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361311" fileName="WatchedRoots.java" startLine="106" startPosition="93" endLine="120" endPosition="18">
+      <varInfo nodeId="4707157387247361313" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361301" fileName="WatchedRoots.java" startLine="105" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="4707157387247361308" varName="what" />
+      <varInfo nodeId="4707157387247361305" varName="from" />
+    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361112" fileName="WatchedRoots.java" startLine="46" startPosition="31" endLine="66" endPosition="73" />
+    <scopeInfo nodeId="4707157387247361109" fileName="WatchedRoots.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="4707157387247361118" fileName="WatchedRoots.java" startLine="47" startPosition="26" endLine="52" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$1" />
+    <unitInfo nodeId="4707157387247361134" fileName="WatchedRoots.java" startLine="55" startPosition="35" endLine="65" endPosition="5" unitName="jetbrains.mps.watching.WatchedRoots$2" />
+    <unitInfo nodeId="4707157387247361035" fileName="WatchedRoots.java" startLine="24" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.watching.WatchedRoots" />
+  </root>
   <root nodeId="4707157387247361399">
     <nodeInfo nodeId="4707157387247361401" fileName="BeforeModelEventProcessor.java" startLine="10" startPosition="68" endLine="11" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="4707157387247361423" fileName="BeforeModelEventProcessor.java" startLine="17" startPosition="79" endLine="18" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1034,6 +1186,83 @@
     <unitInfo nodeId="4707157387247362846" fileName="ModelChangesWatcher.java" startLine="67" startPosition="18" endLine="76" endPosition="5" unitName="jetbrains.mps.watching.ModelChangesWatcher$2" />
     <unitInfo nodeId="4707157387247362641" fileName="ModelChangesWatcher.java" startLine="218" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.watching.ModelChangesWatcher$BulkFileChangesListener" />
     <unitInfo nodeId="4707157387247362638" fileName="ModelChangesWatcher.java" startLine="40" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.watching.ModelChangesWatcher" />
+  </root>
+  <root nodeId="4754438908022046526">
+    <nodeInfo nodeId="4754438908022061268" fileName="ModelFocusSynchronizer.java" startLine="37" startPosition="29" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4754438908022061222" fileName="ModelFocusSynchronizer.java" startLine="41" startPosition="55" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4754438908022061230" fileName="ModelFocusSynchronizer.java" startLine="42" startPosition="69" endLine="43" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4754438908022061246" fileName="ModelFocusSynchronizer.java" startLine="44" startPosition="37" endLine="45" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022061280" fileName="ModelFocusSynchronizer.java" startLine="47" startPosition="37" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022062086" fileName="ModelFocusSynchronizer.java" startLine="52" startPosition="13" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4754438908022058207" fileName="ModelFocusSynchronizer.java" startLine="53" startPosition="0" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4754438908022063394" fileName="ModelFocusSynchronizer.java" startLine="55" startPosition="62" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7042922670432907216" fileName="ModelFocusSynchronizer.java" startLine="57" startPosition="67" endLine="58" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7042922670432941835" fileName="ModelFocusSynchronizer.java" startLine="59" startPosition="40" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7042922670432941860" fileName="ModelFocusSynchronizer.java" startLine="61" startPosition="53" endLine="62" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022062093" fileName="ModelFocusSynchronizer.java" startLine="63" startPosition="19" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022066292" fileName="ModelFocusSynchronizer.java" startLine="67" startPosition="13" endLine="68" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022054567" fileName="ModelFocusSynchronizer.java" startLine="77" startPosition="36" endLine="78" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4754438908022058197" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="60" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onFrameDeactivated#()V" />
+    <nodeInfo nodeId="4754438908022061237" fileName="ModelFocusSynchronizer.java" startLine="43" startPosition="80" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4754438908022061258" fileName="ModelFocusSynchronizer.java" startLine="46" startPosition="19" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7042922670432941841" fileName="ModelFocusSynchronizer.java" startLine="60" startPosition="50" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4754438908022048214" fileName="ModelFocusSynchronizer.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="4754438908022048204" fileName="ModelFocusSynchronizer.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="4754438908022048208" fileName="ModelFocusSynchronizer.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7042922670432941824" fileName="ModelFocusSynchronizer.java" startLine="58" startPosition="89" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4754438908022058311" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="96" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4754438908022063402" fileName="ModelFocusSynchronizer.java" startLine="56" startPosition="71" endLine="66" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4754438908022058298" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="84" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4754438908022062088" fileName="ModelFocusSynchronizer.java" startLine="54" startPosition="96" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4754438908022058284" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="76" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6532317234946889573" fileName="ModelFocusSynchronizer.java" startLine="36" startPosition="60" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6532317234946889092" fileName="ModelFocusSynchronizer.java" startLine="35" startPosition="38" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022058201" fileName="ModelFocusSynchronizer.java" startLine="34" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onFrameActivated#()V" />
+    <nodeInfo nodeId="4754438908022058185" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="70" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4754438908022046528" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="69" endLine="73" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFocusSynchronizer#(Lcom/intellij/ide/FrameStateManager;)V" />
+    <scopeInfo nodeId="4754438908022058200" fileName="ModelFocusSynchronizer.java" startLine="32" startPosition="40" endLine="32" endPosition="40" />
+    <scopeInfo nodeId="4754438908022048217" fileName="ModelFocusSynchronizer.java" startLine="81" startPosition="31" endLine="81" endPosition="31" />
+    <scopeInfo nodeId="4754438908022048207" fileName="ModelFocusSynchronizer.java" startLine="84" startPosition="34" endLine="84" endPosition="34" />
+    <scopeInfo nodeId="4754438908022061238" fileName="ModelFocusSynchronizer.java" startLine="44" startPosition="37" endLine="45" endPosition="41" />
+    <scopeInfo nodeId="4754438908022061259" fileName="ModelFocusSynchronizer.java" startLine="47" startPosition="37" endLine="48" endPosition="76" />
+    <scopeInfo nodeId="7042922670432941843" fileName="ModelFocusSynchronizer.java" startLine="61" startPosition="53" endLine="62" endPosition="62" />
+    <scopeInfo nodeId="4754438908022048213" fileName="ModelFocusSynchronizer.java" startLine="77" startPosition="36" endLine="78" endPosition="32" />
+    <scopeInfo nodeId="4754438908022058197" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="60" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4754438908022048214" fileName="ModelFocusSynchronizer.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4754438908022048204" fileName="ModelFocusSynchronizer.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="7042922670432941825" fileName="ModelFocusSynchronizer.java" startLine="59" startPosition="40" endLine="64" endPosition="78">
+      <varInfo nodeId="7042922670432941836" varName="fileToRefresh" />
+    </scopeInfo>
+    <scopeInfo nodeId="4754438908022048208" fileName="ModelFocusSynchronizer.java" startLine="74" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4754438908022058312" fileName="ModelFocusSynchronizer.java" startLine="41" startPosition="55" endLine="49" endPosition="19">
+      <varInfo nodeId="4754438908022061231" varName="node" />
+      <varInfo nodeId="4754438908022061223" varName="nvf" />
+    </scopeInfo>
+    <scopeInfo nodeId="4754438908022063403" fileName="ModelFocusSynchronizer.java" startLine="57" startPosition="67" endLine="65" endPosition="17">
+      <varInfo nodeId="7042922670432907217" varName="modelFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="4754438908022058301" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="96" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="4754438908022062091" fileName="ModelFocusSynchronizer.java" startLine="55" startPosition="62" endLine="66" endPosition="15">
+      <varInfo nodeId="4754438908022063395" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4754438908022058287" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="84" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="4754438908022058298" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="84" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="4754438908022062088" fileName="ModelFocusSynchronizer.java" startLine="54" startPosition="96" endLine="67" endPosition="13" />
+    <scopeInfo nodeId="4754438908022058284" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="76" endLine="52" endPosition="13" />
+    <scopeInfo nodeId="6532317234946889574" fileName="ModelFocusSynchronizer.java" startLine="37" startPosition="29" endLine="68" endPosition="29">
+      <varInfo nodeId="4754438908022061269" varName="models" />
+      <varInfo nodeId="4754438908022058208" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="6532317234946889573" fileName="ModelFocusSynchronizer.java" startLine="36" startPosition="60" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="4754438908022058204" fileName="ModelFocusSynchronizer.java" startLine="35" startPosition="38" endLine="70" endPosition="11" />
+    <scopeInfo nodeId="4754438908022058201" fileName="ModelFocusSynchronizer.java" startLine="34" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4754438908022046531" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="70" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="4754438908022046528" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="69" endLine="73" endPosition="3">
+      <varInfo nodeId="4754438908022054579" varName="frameStateManager" />
+    </scopeInfo>
+    <unitInfo nodeId="6532317234946889573" fileName="ModelFocusSynchronizer.java" startLine="36" startPosition="48" endLine="70" endPosition="9" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+    <unitInfo nodeId="4754438908022058195" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="38" endLine="72" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
+    <unitInfo nodeId="4754438908022046526" fileName="ModelFocusSynchronizer.java" startLine="29" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
   </root>
 </debugInfo>
 

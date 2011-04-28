@@ -93,30 +93,30 @@
     <classNode extendsClassName="jetbrains.mps.watching.EventProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.watching.ModelFocusSynchronizer" file="ModelFocusSynchronizer.java">
-    <classNode dependClassName="com.intellij.ide.FrameStateManager" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshQueue" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshSession" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshSession" />
+    <classNode dependClassName="com.intellij.ide.FrameStateManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
-    <classNode dependClassName="com.intellij.ide.FrameStateListener" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
-    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="com.intellij.ide.FrameStateListener" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
   <dependency className="jetbrains.mps.watching.ModuleFileProcessor" file="ModuleFileProcessor.java">
@@ -174,21 +174,21 @@
   </dependency>
   <dependency className="jetbrains.mps.watching.WatchedRoots" file="WatchedRoots.java">
     <classNode dependClassName="jetbrains.mps.library.ProjectLibraryManager" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.library.Library" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
+    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManagerAdapter" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.library.LibraryManager" />

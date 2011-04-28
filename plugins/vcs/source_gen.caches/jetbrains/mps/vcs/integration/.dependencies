@@ -99,41 +99,41 @@
   <dependency className="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">
     <classNode dependClassName="com.intellij.openapi.vcs.ui.RefreshableOnComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.project.OptimizeImportsHelper" />
-    <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.integration.ProjectCheckoutListener" file="ProjectCheckoutListener.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FilenameFilter" />
+    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
-    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="java.io.FilenameFilter" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkout.CheckoutListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.integration.ToolsApplicationComponent" file="ToolsApplicationComponent.java">
