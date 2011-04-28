@@ -110,6 +110,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Build_ActionGroup());
     addGroup(new Code_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
+    addGroup(new DebugActions_ActionGroup());
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
@@ -181,6 +182,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopupWrapper_ActionGroup.ID, null);
     insertGroupIntoAnother(Bookmarks_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Build_ActionGroup.ID, "BuildMenu", null);
+    insertGroupIntoAnother(DebugActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);

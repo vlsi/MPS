@@ -18,7 +18,7 @@ import jetbrains.mps.ide.actions.GoToEditorPopupAddition_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.DevkitActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
-import jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup;
+import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -128,7 +128,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
-    insertGroupIntoAnother(TraceActions_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);

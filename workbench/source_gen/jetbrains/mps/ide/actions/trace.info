@@ -6,6 +6,7 @@
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="34" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_g" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="85" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$GoToBookmark_ShortcutChange_qjewi8_ec" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="96" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$SetBookmark_ShortcutChange_qjewi8_fc" />
+  <unitInfo fileName="DebugActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
   <unitInfo fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
   <unitInfo fileName="PackageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" />
   <unitInfo fileName="JUnitTestMethodActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
@@ -159,7 +160,7 @@
   <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="11" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
   <unitInfo fileName="NewModel_Action.java" startLine="29" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModel_Action" />
   <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1215882221908" fileName="NodeActions_ActionGroup.java" startLine="26" startPosition="9" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2268726300190761975" fileName="NodeActions_ActionGroup.java" startLine="27" startPosition="90" endLine="28" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

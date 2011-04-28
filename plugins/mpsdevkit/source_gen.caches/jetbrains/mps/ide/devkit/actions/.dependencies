@@ -726,12 +726,12 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowGenerationTrace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.AddLanguageDesingDevKitToLanguages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.EditorInternalEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.RenameAspects_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LoadNonStubModels_Action" />
@@ -742,10 +742,10 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.RenameLanguage_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModulePropertiesGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GenerateGeneratorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.AddGeneralPurposeDevKitToLanguageModels_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ModulePropertiesGroupEx_ActionGroup" />
@@ -793,7 +793,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GenerationIntentions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTrace_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GenerateGeneratorPopup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CellProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.FixDependenciesEverywhere_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowModelRepository_Action" />

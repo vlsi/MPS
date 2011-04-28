@@ -1121,6 +1121,12 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Structure" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1951613054411714136">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
+      <property name="name" nameId="tpck.1169194664001" value="DebugActions" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Debug" />
+    </node>
   </roots>
   <root id="1204991215587">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148449406">
@@ -28524,6 +28530,12 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="1951613054411714136">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1951613054411714140" />
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1951613054411714142">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
     </node>
   </root>
 </model>
