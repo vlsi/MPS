@@ -18,6 +18,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
 
 public class WrappersUtils {
@@ -73,8 +74,8 @@ public class WrappersUtils {
       if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-          if (!(ListSequence.fromList(vdecls).contains(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false)))) {
-            ListSequence.fromList(vdecls).addElement(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
+          if (!(ListSequence.fromList(vdecls).contains(vd)) && !(SPropertyOperations.getBoolean(vd, "isFinal"))) {
+            ListSequence.fromList(vdecls).addElement(vd);
           }
         }
       }

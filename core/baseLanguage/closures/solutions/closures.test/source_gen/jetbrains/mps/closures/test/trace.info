@@ -3649,225 +3649,246 @@
     <unitInfo nodeId="1202741884865" fileName="Worker.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.closures.test.Worker" />
   </root>
   <root nodeId="1202834707004">
-    <nodeInfo nodeId="1202834740475" fileName="ExternalReferences_Test.java" startLine="13" startPosition="64" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202834760204" fileName="ExternalReferences_Test.java" startLine="16" startPosition="31" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202834771939" fileName="ExternalReferences_Test.java" startLine="19" startPosition="15" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207147556606" fileName="ExternalReferences_Test.java" startLine="23" startPosition="60" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207147638202" fileName="ExternalReferences_Test.java" startLine="27" startPosition="33" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207147708979" fileName="ExternalReferences_Test.java" startLine="31" startPosition="5" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207147718352" fileName="ExternalReferences_Test.java" startLine="32" startPosition="30" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207154763054" fileName="ExternalReferences_Test.java" startLine="36" startPosition="61" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="54" endLine="44" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="51" startPosition="30" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="52" startPosition="56" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="54" startPosition="29" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="55" startPosition="40" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="56" startPosition="39" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="58" startPosition="29" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1207247582946" fileName="ExternalReferences_Test.java" startLine="58" startPosition="29" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="59" startPosition="36" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="60" startPosition="40" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="62" startPosition="30" endLine="63" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="65" startPosition="33" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207154763081" fileName="ExternalReferences_Test.java" startLine="74" startPosition="5" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207154763087" fileName="ExternalReferences_Test.java" startLine="75" startPosition="30" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215542895878" fileName="ExternalReferences_Test.java" startLine="79" startPosition="61" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215543306710" fileName="ExternalReferences_Test.java" startLine="82" startPosition="30" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453515" fileName="ExternalReferences_Test.java" startLine="83" startPosition="41" endLine="84" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1215543157916" fileName="ExternalReferences_Test.java" startLine="86" startPosition="15" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202834887923" fileName="ExternalReferences_Test.java" startLine="94" startPosition="34" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202834942837" fileName="ExternalReferences_Test.java" startLine="99" startPosition="6" endLine="100" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="105" startPosition="39" endLine="106" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219840091929" fileName="ExternalReferences_Test.java" startLine="108" startPosition="35" endLine="109" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219840180560" fileName="ExternalReferences_Test.java" startLine="111" startPosition="19" endLine="112" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219840019865" fileName="ExternalReferences_Test.java" startLine="114" startPosition="6" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202835099576" fileName="ExternalReferences_Test.java" startLine="119" startPosition="31" endLine="120" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="field" />
-    <nodeInfo nodeId="1202989407524" fileName="ExternalReferences_Test.java" startLine="120" startPosition="23" endLine="121" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />
-    <nodeInfo nodeId="1202989419872" fileName="ExternalReferences_Test.java" startLine="123" startPosition="41" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202835117009" fileName="ExternalReferences_Test.java" startLine="124" startPosition="23" endLine="125" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202835091863" fileName="ExternalReferences_Test.java" startLine="127" startPosition="34" endLine="128" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202835091869" fileName="ExternalReferences_Test.java" startLine="132" startPosition="6" endLine="133" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237139647477" fileName="ExternalReferences_Test.java" startLine="136" startPosition="47" endLine="137" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237139679773" fileName="ExternalReferences_Test.java" startLine="140" startPosition="33" endLine="141" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9188746615686021950" fileName="ExternalReferences_Test.java" startLine="149" startPosition="30" endLine="150" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9188746615686021957" fileName="ExternalReferences_Test.java" startLine="152" startPosition="7" endLine="153" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668669956905496004" fileName="ExternalReferences_Test.java" startLine="156" startPosition="48" endLine="157" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668669956905496040" fileName="ExternalReferences_Test.java" startLine="159" startPosition="40" endLine="160" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7668669956905496047" fileName="ExternalReferences_Test.java" startLine="162" startPosition="7" endLine="163" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="166" startPosition="101" endLine="167" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668669956905402826" fileName="ExternalReferences_Test.java" startLine="169" startPosition="25" endLine="170" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7668669956905496001" fileName="ExternalReferences_Test.java" startLine="172" startPosition="15" endLine="173" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="15" startPosition="59" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="26" startPosition="51" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="93" startPosition="59" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="107" startPosition="53" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="126" startPosition="59" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="139" startPosition="55" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
-    <nodeInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="148" startPosition="82" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="158" startPosition="89" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="168" startPosition="43" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
-    <nodeInfo nodeId="1202834747930" fileName="ExternalReferences_Test.java" startLine="14" startPosition="52" endLine="19" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207147635845" fileName="ExternalReferences_Test.java" startLine="25" startPosition="34" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="81" startPosition="48" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()[B" />
-    <nodeInfo nodeId="1202834879724" fileName="ExternalReferences_Test.java" startLine="92" startPosition="45" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219840070298" fileName="ExternalReferences_Test.java" startLine="106" startPosition="68" endLine="111" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202835091859" fileName="ExternalReferences_Test.java" startLine="125" startPosition="30" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237139666469" fileName="ExternalReferences_Test.java" startLine="138" startPosition="81" endLine="143" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9188746615686021944" fileName="ExternalReferences_Test.java" startLine="147" startPosition="47" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668669956905496033" fileName="ExternalReferences_Test.java" startLine="157" startPosition="16" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668669956905402800" fileName="ExternalReferences_Test.java" startLine="167" startPosition="52" endLine="172" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215542924120" fileName="ExternalReferences_Test.java" startLine="80" startPosition="75" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207147589491" fileName="ExternalReferences_Test.java" startLine="24" startPosition="51" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1237139653263" fileName="ExternalReferences_Test.java" startLine="137" startPosition="10" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1202834859552" fileName="ExternalReferences_Test.java" startLine="91" startPosition="31" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1202834846315" fileName="ExternalReferences_Test.java" startLine="90" startPosition="55" endLine="99" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9188746615686005180" fileName="ExternalReferences_Test.java" startLine="146" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps7432#()V" />
-    <nodeInfo nodeId="1202834729471" fileName="ExternalReferences_Test.java" startLine="12" startPosition="55" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_localVariableDeclaration#()V" />
-    <nodeInfo nodeId="1219840019850" fileName="ExternalReferences_Test.java" startLine="104" startPosition="31" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1202835091853" fileName="ExternalReferences_Test.java" startLine="122" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7668669956905495995" fileName="ExternalReferences_Test.java" startLine="155" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps10242#()V" />
-    <nodeInfo nodeId="7668669956905391787" fileName="ExternalReferences_Test.java" startLine="165" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mps10242_helper#(nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
-    <nodeInfo nodeId="1215542888032" fileName="ExternalReferences_Test.java" startLine="78" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalVariable3#()V" />
-    <nodeInfo nodeId="1219840019844" fileName="ExternalReferences_Test.java" startLine="103" startPosition="56" endLine="114" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237139637669" fileName="ExternalReferences_Test.java" startLine="135" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps4102#()V" />
-    <nodeInfo nodeId="1207147536382" fileName="ExternalReferences_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalvariable#()V" />
-    <nodeInfo nodeId="1202834834320" fileName="ExternalReferences_Test.java" startLine="89" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_methodParameter#()V" />
-    <nodeInfo nodeId="1202835091847" fileName="ExternalReferences_Test.java" startLine="118" startPosition="45" endLine="132" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219840019841" fileName="ExternalReferences_Test.java" startLine="102" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_methodParameter2#()V" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="48" startPosition="22" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1202835084830" fileName="ExternalReferences_Test.java" startLine="117" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_field#()V" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="46" startPosition="48" endLine="65" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="45" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="42" startPosition="49" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="42" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="40" startPosition="43" endLine="70" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="39" startPosition="74" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1207247577646" fileName="ExternalReferences_Test.java" startLine="38" startPosition="34" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1207154763058" fileName="ExternalReferences_Test.java" startLine="37" startPosition="51" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1207154745003" fileName="ExternalReferences_Test.java" startLine="35" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalVariable2#()V" />
-    <scopeInfo nodeId="1207247577647" fileName="ExternalReferences_Test.java" startLine="72" startPosition="19" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="1202834755156" fileName="ExternalReferences_Test.java" startLine="16" startPosition="31" endLine="17" endPosition="27" />
-    <scopeInfo nodeId="1207147635847" fileName="ExternalReferences_Test.java" startLine="27" startPosition="33" endLine="28" endPosition="29" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="58" startPosition="29" endLine="59" endPosition="36" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="62" startPosition="30" endLine="63" endPosition="39" />
-    <scopeInfo nodeId="1202834881128" fileName="ExternalReferences_Test.java" startLine="94" startPosition="34" endLine="95" endPosition="32" />
-    <scopeInfo nodeId="1219840071908" fileName="ExternalReferences_Test.java" startLine="108" startPosition="35" endLine="109" endPosition="43" />
-    <scopeInfo nodeId="1202835091862" fileName="ExternalReferences_Test.java" startLine="127" startPosition="34" endLine="128" endPosition="36" />
-    <scopeInfo nodeId="1237139671981" fileName="ExternalReferences_Test.java" startLine="140" startPosition="33" endLine="141" endPosition="25" />
-    <scopeInfo nodeId="9188746615686021949" fileName="ExternalReferences_Test.java" startLine="149" startPosition="30" endLine="150" endPosition="23" />
-    <scopeInfo nodeId="7668669956905496039" fileName="ExternalReferences_Test.java" startLine="159" startPosition="40" endLine="160" endPosition="22" />
-    <scopeInfo nodeId="7668669956905402825" fileName="ExternalReferences_Test.java" startLine="169" startPosition="25" endLine="170" endPosition="47" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="51" startPosition="30" endLine="53" endPosition="37" />
-    <scopeInfo nodeId="1215542924122" fileName="ExternalReferences_Test.java" startLine="82" startPosition="30" endLine="84" endPosition="28" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="54" startPosition="29" endLine="57" endPosition="36" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="58" startPosition="29" endLine="61" endPosition="30" />
-    <scopeInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="15" startPosition="59" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="26" startPosition="51" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="93" startPosition="59" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="107" startPosition="53" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="126" startPosition="59" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="139" startPosition="55" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="148" startPosition="82" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="158" startPosition="89" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="168" startPosition="43" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="1207147589492" fileName="ExternalReferences_Test.java" startLine="25" startPosition="34" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="81" startPosition="48" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1202834859555" fileName="ExternalReferences_Test.java" startLine="92" startPosition="45" endLine="97" endPosition="19" />
-    <scopeInfo nodeId="1237139653264" fileName="ExternalReferences_Test.java" startLine="138" startPosition="81" endLine="143" endPosition="17" />
-    <scopeInfo nodeId="9188746615686005183" fileName="ExternalReferences_Test.java" startLine="147" startPosition="47" endLine="153" endPosition="38">
+    <nodeInfo nodeId="1202834740475" fileName="ExternalReferences_Test.java" startLine="15" startPosition="64" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202834760204" fileName="ExternalReferences_Test.java" startLine="18" startPosition="31" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202834771939" fileName="ExternalReferences_Test.java" startLine="21" startPosition="15" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207147556606" fileName="ExternalReferences_Test.java" startLine="25" startPosition="60" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207147638202" fileName="ExternalReferences_Test.java" startLine="29" startPosition="33" endLine="30" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207147708979" fileName="ExternalReferences_Test.java" startLine="33" startPosition="5" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207147718352" fileName="ExternalReferences_Test.java" startLine="34" startPosition="30" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207154763054" fileName="ExternalReferences_Test.java" startLine="38" startPosition="61" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="45" startPosition="54" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="53" startPosition="30" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="54" startPosition="56" endLine="55" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="56" startPosition="29" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="57" startPosition="40" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="58" startPosition="39" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="60" startPosition="29" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207247582946" fileName="ExternalReferences_Test.java" startLine="60" startPosition="29" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="61" startPosition="36" endLine="62" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="62" startPosition="40" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="64" startPosition="30" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="67" startPosition="33" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207154763081" fileName="ExternalReferences_Test.java" startLine="76" startPosition="5" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207154763087" fileName="ExternalReferences_Test.java" startLine="77" startPosition="30" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215542895878" fileName="ExternalReferences_Test.java" startLine="81" startPosition="61" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215543306710" fileName="ExternalReferences_Test.java" startLine="84" startPosition="30" endLine="85" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453515" fileName="ExternalReferences_Test.java" startLine="85" startPosition="41" endLine="86" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1215543157916" fileName="ExternalReferences_Test.java" startLine="88" startPosition="15" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202834887923" fileName="ExternalReferences_Test.java" startLine="96" startPosition="34" endLine="97" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202834942837" fileName="ExternalReferences_Test.java" startLine="101" startPosition="6" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="107" startPosition="39" endLine="108" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219840091929" fileName="ExternalReferences_Test.java" startLine="110" startPosition="35" endLine="111" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219840180560" fileName="ExternalReferences_Test.java" startLine="113" startPosition="19" endLine="114" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219840019865" fileName="ExternalReferences_Test.java" startLine="116" startPosition="6" endLine="117" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202835099576" fileName="ExternalReferences_Test.java" startLine="121" startPosition="31" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="field" />
+    <nodeInfo nodeId="1202989407524" fileName="ExternalReferences_Test.java" startLine="122" startPosition="23" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />
+    <nodeInfo nodeId="1202989419872" fileName="ExternalReferences_Test.java" startLine="125" startPosition="41" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202835117009" fileName="ExternalReferences_Test.java" startLine="126" startPosition="23" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202835091863" fileName="ExternalReferences_Test.java" startLine="129" startPosition="34" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202835091869" fileName="ExternalReferences_Test.java" startLine="134" startPosition="6" endLine="135" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237139647477" fileName="ExternalReferences_Test.java" startLine="138" startPosition="47" endLine="139" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237139679773" fileName="ExternalReferences_Test.java" startLine="142" startPosition="33" endLine="143" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9188746615686021950" fileName="ExternalReferences_Test.java" startLine="151" startPosition="30" endLine="152" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9188746615686021957" fileName="ExternalReferences_Test.java" startLine="154" startPosition="7" endLine="155" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668669956905496004" fileName="ExternalReferences_Test.java" startLine="158" startPosition="48" endLine="159" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668669956905496040" fileName="ExternalReferences_Test.java" startLine="161" startPosition="40" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7668669956905496047" fileName="ExternalReferences_Test.java" startLine="164" startPosition="7" endLine="165" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3384408096809871210" fileName="ExternalReferences_Test.java" startLine="168" startPosition="48" endLine="169" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3384408096809871226" fileName="ExternalReferences_Test.java" startLine="170" startPosition="24" endLine="171" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3384408096809871234" fileName="ExternalReferences_Test.java" startLine="172" startPosition="12" endLine="173" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3384408096809872773" fileName="ExternalReferences_Test.java" startLine="176" startPosition="51" endLine="177" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3384408096809879327" fileName="ExternalReferences_Test.java" startLine="179" startPosition="7" endLine="180" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3384408096809872785" fileName="ExternalReferences_Test.java" startLine="180" startPosition="36" endLine="181" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="184" startPosition="101" endLine="185" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668669956905402826" fileName="ExternalReferences_Test.java" startLine="187" startPosition="25" endLine="188" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7668669956905496001" fileName="ExternalReferences_Test.java" startLine="190" startPosition="15" endLine="191" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3384408096809871232" fileName="ExternalReferences_Test.java" startLine="172" startPosition="10" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="17" startPosition="59" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="28" startPosition="51" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="95" startPosition="59" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="109" startPosition="53" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="128" startPosition="59" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="141" startPosition="55" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="150" startPosition="82" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="160" startPosition="89" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="3384408096809872771" fileName="ExternalReferences_Test.java" startLine="175" startPosition="124" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="186" startPosition="43" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
+    <nodeInfo nodeId="1202834747930" fileName="ExternalReferences_Test.java" startLine="16" startPosition="52" endLine="21" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207147635845" fileName="ExternalReferences_Test.java" startLine="27" startPosition="34" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="83" startPosition="48" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()[B" />
+    <nodeInfo nodeId="1202834879724" fileName="ExternalReferences_Test.java" startLine="94" startPosition="45" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219840070298" fileName="ExternalReferences_Test.java" startLine="108" startPosition="68" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202835091859" fileName="ExternalReferences_Test.java" startLine="127" startPosition="30" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237139666469" fileName="ExternalReferences_Test.java" startLine="140" startPosition="81" endLine="145" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9188746615686021944" fileName="ExternalReferences_Test.java" startLine="149" startPosition="47" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668669956905496033" fileName="ExternalReferences_Test.java" startLine="159" startPosition="16" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3384408096809871216" fileName="ExternalReferences_Test.java" startLine="169" startPosition="21" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3384408096809872762" fileName="ExternalReferences_Test.java" startLine="174" startPosition="5" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668669956905402800" fileName="ExternalReferences_Test.java" startLine="185" startPosition="52" endLine="190" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215542924120" fileName="ExternalReferences_Test.java" startLine="82" startPosition="75" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207147589491" fileName="ExternalReferences_Test.java" startLine="26" startPosition="51" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1237139653263" fileName="ExternalReferences_Test.java" startLine="139" startPosition="10" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1202834859552" fileName="ExternalReferences_Test.java" startLine="93" startPosition="31" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1202834846315" fileName="ExternalReferences_Test.java" startLine="92" startPosition="55" endLine="101" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9188746615686005180" fileName="ExternalReferences_Test.java" startLine="148" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps7432#()V" />
+    <nodeInfo nodeId="1202834729471" fileName="ExternalReferences_Test.java" startLine="14" startPosition="55" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_localVariableDeclaration#()V" />
+    <nodeInfo nodeId="1219840019850" fileName="ExternalReferences_Test.java" startLine="106" startPosition="31" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1202835091853" fileName="ExternalReferences_Test.java" startLine="124" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7668669956905495995" fileName="ExternalReferences_Test.java" startLine="157" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps10242#()V" />
+    <nodeInfo nodeId="7668669956905391787" fileName="ExternalReferences_Test.java" startLine="183" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mps10242_helper#(nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
+    <nodeInfo nodeId="1215542888032" fileName="ExternalReferences_Test.java" startLine="80" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalVariable3#()V" />
+    <nodeInfo nodeId="1219840019844" fileName="ExternalReferences_Test.java" startLine="105" startPosition="56" endLine="116" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237139637669" fileName="ExternalReferences_Test.java" startLine="137" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps4102#()V" />
+    <nodeInfo nodeId="1207147536382" fileName="ExternalReferences_Test.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalvariable#()V" />
+    <nodeInfo nodeId="1202834834320" fileName="ExternalReferences_Test.java" startLine="91" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_methodParameter#()V" />
+    <nodeInfo nodeId="1202835091847" fileName="ExternalReferences_Test.java" startLine="120" startPosition="45" endLine="134" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1219840019841" fileName="ExternalReferences_Test.java" startLine="104" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_methodParameter2#()V" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="50" startPosition="22" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3384408096809871206" fileName="ExternalReferences_Test.java" startLine="167" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps12286#()V" />
+    <nodeInfo nodeId="1202835084830" fileName="ExternalReferences_Test.java" startLine="119" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_field#()V" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="48" startPosition="48" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="47" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="44" startPosition="49" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="42" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="42" startPosition="43" endLine="72" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="74" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1207247577646" fileName="ExternalReferences_Test.java" startLine="40" startPosition="34" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207154763058" fileName="ExternalReferences_Test.java" startLine="39" startPosition="51" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1207154745003" fileName="ExternalReferences_Test.java" startLine="37" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alteredLocalVariable2#()V" />
+    <scopeInfo nodeId="1207247577647" fileName="ExternalReferences_Test.java" startLine="74" startPosition="19" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="1202834755156" fileName="ExternalReferences_Test.java" startLine="18" startPosition="31" endLine="19" endPosition="27" />
+    <scopeInfo nodeId="1207147635847" fileName="ExternalReferences_Test.java" startLine="29" startPosition="33" endLine="30" endPosition="29" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="60" startPosition="29" endLine="61" endPosition="36" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="64" startPosition="30" endLine="65" endPosition="39" />
+    <scopeInfo nodeId="1202834881128" fileName="ExternalReferences_Test.java" startLine="96" startPosition="34" endLine="97" endPosition="32" />
+    <scopeInfo nodeId="1219840071908" fileName="ExternalReferences_Test.java" startLine="110" startPosition="35" endLine="111" endPosition="43" />
+    <scopeInfo nodeId="1202835091862" fileName="ExternalReferences_Test.java" startLine="129" startPosition="34" endLine="130" endPosition="36" />
+    <scopeInfo nodeId="1237139671981" fileName="ExternalReferences_Test.java" startLine="142" startPosition="33" endLine="143" endPosition="25" />
+    <scopeInfo nodeId="9188746615686021949" fileName="ExternalReferences_Test.java" startLine="151" startPosition="30" endLine="152" endPosition="23" />
+    <scopeInfo nodeId="7668669956905496039" fileName="ExternalReferences_Test.java" startLine="161" startPosition="40" endLine="162" endPosition="22" />
+    <scopeInfo nodeId="3384408096809871217" fileName="ExternalReferences_Test.java" startLine="170" startPosition="24" endLine="171" endPosition="17" />
+    <scopeInfo nodeId="3384408096809871233" fileName="ExternalReferences_Test.java" startLine="172" startPosition="12" endLine="173" endPosition="18" />
+    <scopeInfo nodeId="3384408096809872772" fileName="ExternalReferences_Test.java" startLine="176" startPosition="51" endLine="177" endPosition="27" />
+    <scopeInfo nodeId="7668669956905402825" fileName="ExternalReferences_Test.java" startLine="187" startPosition="25" endLine="188" endPosition="47" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="53" startPosition="30" endLine="55" endPosition="37" />
+    <scopeInfo nodeId="1215542924122" fileName="ExternalReferences_Test.java" startLine="84" startPosition="30" endLine="86" endPosition="28" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="56" startPosition="29" endLine="59" endPosition="36" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="60" startPosition="29" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="17" startPosition="59" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="28" startPosition="51" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="95" startPosition="59" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="109" startPosition="53" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="128" startPosition="59" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="141" startPosition="55" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="150" startPosition="82" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="160" startPosition="89" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="3384408096809872771" fileName="ExternalReferences_Test.java" startLine="175" startPosition="124" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="186" startPosition="43" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="1207147589492" fileName="ExternalReferences_Test.java" startLine="27" startPosition="34" endLine="32" endPosition="17" />
+    <scopeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="83" startPosition="48" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1202834859555" fileName="ExternalReferences_Test.java" startLine="94" startPosition="45" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="1237139653264" fileName="ExternalReferences_Test.java" startLine="140" startPosition="81" endLine="145" endPosition="17" />
+    <scopeInfo nodeId="9188746615686005183" fileName="ExternalReferences_Test.java" startLine="149" startPosition="47" endLine="155" endPosition="38">
       <varInfo nodeId="9188746615686021945" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1202834729473" fileName="ExternalReferences_Test.java" startLine="13" startPosition="64" endLine="20" endPosition="40">
+    <scopeInfo nodeId="1202834729473" fileName="ExternalReferences_Test.java" startLine="15" startPosition="64" endLine="22" endPosition="40">
       <varInfo nodeId="1202834740476" varName="foo" />
       <varInfo nodeId="1202834747931" varName="bar" />
     </scopeInfo>
-    <scopeInfo nodeId="1207147589491" fileName="ExternalReferences_Test.java" startLine="24" startPosition="51" endLine="31" endPosition="5">
+    <scopeInfo nodeId="1207147589491" fileName="ExternalReferences_Test.java" startLine="26" startPosition="51" endLine="33" endPosition="5">
       <varInfo nodeId="1207147589494" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="105" startPosition="39" endLine="112" endPosition="35" />
-    <scopeInfo nodeId="1202835091858" fileName="ExternalReferences_Test.java" startLine="123" startPosition="41" endLine="130" endPosition="19" />
-    <scopeInfo nodeId="1237139653263" fileName="ExternalReferences_Test.java" startLine="137" startPosition="10" endLine="144" endPosition="5">
+    <scopeInfo nodeId="1219840019855" fileName="ExternalReferences_Test.java" startLine="107" startPosition="39" endLine="114" endPosition="35" />
+    <scopeInfo nodeId="1202835091858" fileName="ExternalReferences_Test.java" startLine="125" startPosition="41" endLine="132" endPosition="19" />
+    <scopeInfo nodeId="1237139653263" fileName="ExternalReferences_Test.java" startLine="139" startPosition="10" endLine="146" endPosition="5">
       <varInfo nodeId="1237139653266" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7668669956905495998" fileName="ExternalReferences_Test.java" startLine="156" startPosition="48" endLine="163" endPosition="31">
+    <scopeInfo nodeId="7668669956905495998" fileName="ExternalReferences_Test.java" startLine="158" startPosition="48" endLine="165" endPosition="31">
       <varInfo nodeId="7668669956905496034" varName="res" />
       <varInfo nodeId="7668669956905496005" varName="num" />
     </scopeInfo>
-    <scopeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="166" startPosition="101" endLine="173" endPosition="20" />
-    <scopeInfo nodeId="1215542888034" fileName="ExternalReferences_Test.java" startLine="79" startPosition="61" endLine="87" endPosition="45">
+    <scopeInfo nodeId="7668669956905391790" fileName="ExternalReferences_Test.java" startLine="184" startPosition="101" endLine="191" endPosition="20" />
+    <scopeInfo nodeId="1215542888034" fileName="ExternalReferences_Test.java" startLine="81" startPosition="61" endLine="89" endPosition="45">
       <varInfo nodeId="1215542895879" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="1202834859552" fileName="ExternalReferences_Test.java" startLine="91" startPosition="31" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1202834859552" fileName="ExternalReferences_Test.java" startLine="93" startPosition="31" endLine="101" endPosition="0">
       <varInfo nodeId="1202834866728" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="1237139637671" fileName="ExternalReferences_Test.java" startLine="136" startPosition="47" endLine="144" endPosition="5">
+    <scopeInfo nodeId="1237139637671" fileName="ExternalReferences_Test.java" startLine="138" startPosition="47" endLine="146" endPosition="5">
       <varInfo nodeId="1237139647478" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="9188746615686005180" fileName="ExternalReferences_Test.java" startLine="146" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="1202834729471" fileName="ExternalReferences_Test.java" startLine="12" startPosition="55" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1207147536384" fileName="ExternalReferences_Test.java" startLine="23" startPosition="60" endLine="33" endPosition="38">
+    <scopeInfo nodeId="9188746615686005180" fileName="ExternalReferences_Test.java" startLine="148" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="1202834729471" fileName="ExternalReferences_Test.java" startLine="14" startPosition="55" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1207147536384" fileName="ExternalReferences_Test.java" startLine="25" startPosition="60" endLine="35" endPosition="38">
       <varInfo nodeId="1207147556607" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1202834834322" fileName="ExternalReferences_Test.java" startLine="90" startPosition="55" endLine="100" endPosition="56">
+    <scopeInfo nodeId="1202834834322" fileName="ExternalReferences_Test.java" startLine="92" startPosition="55" endLine="102" endPosition="56">
       <varInfo nodeId="1202834846316" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="1219840019850" fileName="ExternalReferences_Test.java" startLine="104" startPosition="31" endLine="114" endPosition="0">
+    <scopeInfo nodeId="1219840019850" fileName="ExternalReferences_Test.java" startLine="106" startPosition="31" endLine="116" endPosition="0">
       <varInfo nodeId="1219840019851" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="1202835091853" fileName="ExternalReferences_Test.java" startLine="122" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="1202835091853" fileName="ExternalReferences_Test.java" startLine="124" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="1202835091854" varName="foo" />
     </scopeInfo>
-    <scopeInfo nodeId="7668669956905495995" fileName="ExternalReferences_Test.java" startLine="155" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="7668669956905391787" fileName="ExternalReferences_Test.java" startLine="165" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="7668669956905495995" fileName="ExternalReferences_Test.java" startLine="157" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="7668669956905391787" fileName="ExternalReferences_Test.java" startLine="183" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="7668669956905391792" varName="t" />
       <varInfo nodeId="7668669956905402805" varName="fun" />
     </scopeInfo>
-    <scopeInfo nodeId="1215542888032" fileName="ExternalReferences_Test.java" startLine="78" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1237139637669" fileName="ExternalReferences_Test.java" startLine="135" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="1219840019843" fileName="ExternalReferences_Test.java" startLine="103" startPosition="56" endLine="115" endPosition="56">
+    <scopeInfo nodeId="1215542888032" fileName="ExternalReferences_Test.java" startLine="80" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1237139637669" fileName="ExternalReferences_Test.java" startLine="137" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="1219840019843" fileName="ExternalReferences_Test.java" startLine="105" startPosition="56" endLine="117" endPosition="56">
       <varInfo nodeId="1219840019845" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="1207147536382" fileName="ExternalReferences_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1202834834320" fileName="ExternalReferences_Test.java" startLine="89" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="1219840019841" fileName="ExternalReferences_Test.java" startLine="102" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="1202835084832" fileName="ExternalReferences_Test.java" startLine="118" startPosition="45" endLine="133" endPosition="56">
+    <scopeInfo nodeId="1207147536382" fileName="ExternalReferences_Test.java" startLine="24" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1202834834320" fileName="ExternalReferences_Test.java" startLine="91" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="3384408096809871209" fileName="ExternalReferences_Test.java" startLine="168" startPosition="48" endLine="181" endPosition="56">
+      <varInfo nodeId="3384408096809872763" varName="f" />
+      <varInfo nodeId="3384408096809871211" varName="foo" />
+    </scopeInfo>
+    <scopeInfo nodeId="1219840019841" fileName="ExternalReferences_Test.java" startLine="104" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1202835084832" fileName="ExternalReferences_Test.java" startLine="120" startPosition="45" endLine="135" endPosition="56">
       <varInfo nodeId="1202835091848" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="48" startPosition="22" endLine="64" endPosition="21" />
-    <scopeInfo nodeId="1202835084830" fileName="ExternalReferences_Test.java" startLine="117" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="46" startPosition="48" endLine="66" endPosition="31" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="42" startPosition="49" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="42" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="40" startPosition="43" endLine="70" endPosition="12" />
-    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="39" startPosition="74" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1207154763059" fileName="ExternalReferences_Test.java" startLine="38" startPosition="34" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="1207247577646" fileName="ExternalReferences_Test.java" startLine="38" startPosition="34" endLine="73" endPosition="7">
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="50" startPosition="22" endLine="66" endPosition="21" />
+    <scopeInfo nodeId="3384408096809871206" fileName="ExternalReferences_Test.java" startLine="167" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="1202835084830" fileName="ExternalReferences_Test.java" startLine="119" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="48" startPosition="48" endLine="68" endPosition="31" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="47" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="44" startPosition="49" endLine="70" endPosition="16" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="42" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="42" startPosition="43" endLine="72" endPosition="12" />
+    <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="74" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1207154763059" fileName="ExternalReferences_Test.java" startLine="40" startPosition="34" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="1207247577646" fileName="ExternalReferences_Test.java" startLine="40" startPosition="34" endLine="75" endPosition="7">
       <varInfo nodeId="1207247577650" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="1207154763058" fileName="ExternalReferences_Test.java" startLine="37" startPosition="51" endLine="74" endPosition="5">
+    <scopeInfo nodeId="1207154763058" fileName="ExternalReferences_Test.java" startLine="39" startPosition="51" endLine="76" endPosition="5">
       <varInfo nodeId="1207154763070" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1207154745005" fileName="ExternalReferences_Test.java" startLine="36" startPosition="61" endLine="76" endPosition="38">
+    <scopeInfo nodeId="1207154745005" fileName="ExternalReferences_Test.java" startLine="38" startPosition="61" endLine="78" endPosition="38">
       <varInfo nodeId="1207154763055" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1207154745003" fileName="ExternalReferences_Test.java" startLine="35" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="15" startPosition="18" endLine="19" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$1" />
-    <unitInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="26" startPosition="10" endLine="30" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$2" />
-    <unitInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="93" startPosition="19" endLine="97" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
-    <unitInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="107" startPosition="12" endLine="111" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$7" />
-    <unitInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="126" startPosition="19" endLine="130" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
-    <unitInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="139" startPosition="14" endLine="143" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
-    <unitInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="148" startPosition="42" endLine="152" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$9" />
-    <unitInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="158" startPosition="39" endLine="162" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$10" />
-    <unitInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="168" startPosition="8" endLine="172" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$11" />
-    <unitInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="81" startPosition="8" endLine="86" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
-    <unitInfo nodeId="1202834856377" fileName="ExternalReferences_Test.java" startLine="91" startPosition="21" endLine="99" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
-    <unitInfo nodeId="1219840019849" fileName="ExternalReferences_Test.java" startLine="104" startPosition="21" endLine="114" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
-    <unitInfo nodeId="1202835091852" fileName="ExternalReferences_Test.java" startLine="119" startPosition="21" endLine="132" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$7" />
-    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="25" endLine="68" endPosition="15" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
-    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="21" endLine="70" endPosition="11" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
-    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="39" startPosition="23" endLine="72" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$3" />
+    <scopeInfo nodeId="1207154745003" fileName="ExternalReferences_Test.java" startLine="37" startPosition="0" endLine="80" endPosition="0" />
+    <unitInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="17" startPosition="18" endLine="21" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$1" />
+    <unitInfo nodeId="1207147635846" fileName="ExternalReferences_Test.java" startLine="28" startPosition="10" endLine="32" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$2" />
+    <unitInfo nodeId="1202834881127" fileName="ExternalReferences_Test.java" startLine="95" startPosition="19" endLine="99" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
+    <unitInfo nodeId="1219840071907" fileName="ExternalReferences_Test.java" startLine="109" startPosition="12" endLine="113" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$7" />
+    <unitInfo nodeId="1202835091861" fileName="ExternalReferences_Test.java" startLine="128" startPosition="19" endLine="132" endPosition="9" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
+    <unitInfo nodeId="1237139671980" fileName="ExternalReferences_Test.java" startLine="141" startPosition="14" endLine="145" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
+    <unitInfo nodeId="9188746615686021948" fileName="ExternalReferences_Test.java" startLine="150" startPosition="42" endLine="154" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$9" />
+    <unitInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="160" startPosition="39" endLine="164" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$10" />
+    <unitInfo nodeId="3384408096809872771" fileName="ExternalReferences_Test.java" startLine="175" startPosition="88" endLine="179" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$11" />
+    <unitInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="186" startPosition="8" endLine="190" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$12" />
+    <unitInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="83" startPosition="8" endLine="88" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
+    <unitInfo nodeId="1202834856377" fileName="ExternalReferences_Test.java" startLine="93" startPosition="21" endLine="101" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
+    <unitInfo nodeId="1219840019849" fileName="ExternalReferences_Test.java" startLine="106" startPosition="21" endLine="116" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
+    <unitInfo nodeId="1202835091852" fileName="ExternalReferences_Test.java" startLine="121" startPosition="21" endLine="134" endPosition="5" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$7" />
+    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="45" startPosition="25" endLine="70" endPosition="15" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
+    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="43" startPosition="21" endLine="72" endPosition="11" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
+    <unitInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="41" startPosition="23" endLine="74" endPosition="7" unitName="jetbrains.mps.closures.test.ExternalReferences_Test$3" />
   </root>
   <root nodeId="1202990080856">
     <nodeInfo nodeId="1202990085056" fileName="Parent_Test.java" startLine="7" startPosition="43" endLine="8" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />

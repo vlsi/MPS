@@ -8,6 +8,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
 public class ExternalReferences_Test extends TestCase {
   public void test_localVariableDeclaration() throws Exception {
@@ -161,6 +163,22 @@ __switch__:
       }
     });
     Assert.assertSame(42, res);
+  }
+
+  public void test_mps12286() throws Exception {
+    final String foo;
+    if (true == false) {
+      foo = null;
+    } else {
+      foo = "bar";
+    }
+    String f = Sequence.fromIterable(Sequence.<Integer>singleton(42)).foldLeft(foo, new ILeftCombinator<Integer, String>() {
+      public String combine(String s, Integer it) {
+        return "" + it + s;
+      }
+    });
+    Assert.assertEquals("42bar", f);
+    Assert.assertTrue((foo).getClass() == String.class);
   }
 
   public <T> T mps10242_helper(T t, final _FunctionTypes._return_P1_E0<? extends T, ? super T> fun) {

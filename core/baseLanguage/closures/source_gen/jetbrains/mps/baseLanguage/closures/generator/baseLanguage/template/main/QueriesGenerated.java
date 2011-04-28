@@ -3974,7 +3974,9 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1203003871207(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       for (SNode vd : ClosureLiteralUtil.collectNonFinalVariableDeclarations(cl)) {
-        SPropertyOperations.set(SNodeOperations.cast(vd, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal", "" + (true));
+        if (!(Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(_context, vd))) {
+          SPropertyOperations.set(SNodeOperations.cast(vd, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal", "" + (true));
+        }
       }
     }
   }

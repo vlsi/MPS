@@ -72,6 +72,8 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.closures.test.FinalClosureParameter_Test" file="FinalClosureParameter_Test.java">
