@@ -1725,7 +1725,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4503715620529400181">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.4503715620529394035" resolveInfo="InvokeIdeaDiffAction" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4503715620529400182">
-                    <property name="value" nameId="tpee.1070475926801" value="Merge as Text" />
+                    <property name="value" nameId="tpee.1070475926801" value="Merge as Text (Use Carefully!)" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4503715620529400184">
                     <property name="value" nameId="tpee.1070475926801" value="Merge models using text merge for XML contents" />

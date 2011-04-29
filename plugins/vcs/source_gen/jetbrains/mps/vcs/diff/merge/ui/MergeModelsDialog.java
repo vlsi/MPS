@@ -67,7 +67,7 @@ public class MergeModelsDialog extends BaseDialog {
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myMergeTree.setMultipleRootNames(true);
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text", "Merge models using text merge for XML contents", this, request), new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request), new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
