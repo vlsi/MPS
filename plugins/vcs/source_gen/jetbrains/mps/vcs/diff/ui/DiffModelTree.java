@@ -159,7 +159,10 @@ public abstract class DiffModelTree extends MPSTree {
           if (myPresentation == null) {
             myPresentation = presentation;
           } else if (myMultipleRootNames) {
-            myPresentation += " / " + presentation;
+            if (("/ " + myPresentation + " /").contains("/ " + presentation + " /")) {
+            } else {
+              myPresentation += " / " + presentation;
+            }
           }
 
           if (myVirtualPackage == null) {
