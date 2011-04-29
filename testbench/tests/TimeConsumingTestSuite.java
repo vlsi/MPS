@@ -23,13 +23,17 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.generator.test.IncrementalGenerationTest",
+@SuiteClassSymbols({"jetbrains.mps.build.ant.BrokenReferencesTestTest",
+  "jetbrains.mps.build.ant.GenerateTaskFilesCreationTest",
+  "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
+  "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",
+  "jetbrains.mps.generator.test.IncrementalGenerationTest",
   "jetbrains.mps.generator.test.ParallelGenerationMeasuringTest",
   "jetbrains.mps.generator.test.ParallelPoolTest",
   "jetbrains.mps.ide.migration.persistence.PersistenceTest",
   "jetbrains.mps.runtime.InternerTest"})
 @RunWith(WatchingSuite.class)
-public class TimeConsumingTestSuite extends TestSuite {
+public class TimeConsumingTestSuite {
   @BeforeClass
   public static void make () throws Exception {
     new MpsMakeHelper().make();

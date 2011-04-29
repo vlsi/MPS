@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
@@ -56,10 +71,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test",
   "jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test",
   "jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test",
-  "jetbrains.mps.build.ant.BrokenReferencesTestTest",
-  "jetbrains.mps.build.ant.GenerateTaskFilesCreationTest",
-  "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
-  "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",
   "jetbrains.mps.closures.test.AdvancedFunctionTypes_Test",
   "jetbrains.mps.closures.test.Child_Test",
   "jetbrains.mps.closures.test.ClassifierAdapters_Test",

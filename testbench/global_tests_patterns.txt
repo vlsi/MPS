@@ -20,8 +20,6 @@
 +math-runtime:**/*Test.java
 -**/*UITest.java
 -**/*UITests.java
-+ant:**/*Test.java
--ant:**/GenerateTaskTest.java
 +smodel:**/*_Test.java
 +regexp:**/*_Test.java
 +debugTests:**/*_Test.java
