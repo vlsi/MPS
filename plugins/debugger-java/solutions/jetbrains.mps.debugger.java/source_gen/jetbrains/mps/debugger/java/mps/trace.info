@@ -5,7 +5,7 @@
   <unitInfo fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Factory" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="MPSInstance_Configuration_Editor.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Editor" />
-  <unitInfo fileName="DebugMPS_Kind.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.DebugMPS_Kind" />
+  <unitInfo fileName="DebugMPS_Kind.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.DebugMPS_Kind" />
   <unitInfo fileName="MPSInstance_Configuration_RunProfileState.java" startLine="30" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" />
   <unitInfo fileName="MPSInstance_Configuration.java" startLine="26" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
   <root nodeId="3271576760503781388">
@@ -13,7 +13,7 @@
     <scopeInfo nodeId="3271576760503781391" fileName="MPSInstance_Configuration_Editor.java" startLine="18" startPosition="32" endLine="19" endPosition="24" />
   </root>
   <root nodeId="3271576760503788622">
-    <nodeInfo nodeId="3271576760503788623" fileName="DebugMPS_Kind.java" startLine="18" startPosition="57" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="3271576760503788623" fileName="DebugMPS_Kind.java" startLine="17" startPosition="57" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
   </root>
   <root nodeId="3271576760503799855">
     <nodeInfo nodeId="628837520991531670" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="51" startPosition="49" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

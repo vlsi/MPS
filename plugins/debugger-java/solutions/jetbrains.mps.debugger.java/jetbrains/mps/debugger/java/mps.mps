@@ -58,7 +58,9 @@
     <node role="icon" roleId="uhxm.4763274727405873310" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3271576760503781392" />
   </root>
   <root id="3271576760503788622">
-    <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3271576760503788623" />
+    <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3271576760503788623">
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/kernel/source/MPS_16.png" />
+    </node>
   </root>
   <root id="3271576760503799855">
     <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="3271576760503799856">
