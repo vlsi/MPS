@@ -32,7 +32,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
 
-      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.doDispose();
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.dispose();
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter.dispose();
       BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker.dispose();
     }
