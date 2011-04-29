@@ -78,7 +78,7 @@
   <unitInfo fileName="ShowNodeInInspector_Action.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
   <unitInfo fileName="AddToFavoritesGroup_ActionGroup.java" startLine="24" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup" />
   <unitInfo fileName="GoToFile_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToFile_Action" />
-  <unitInfo fileName="GoToSolution_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToSolution_Action" />
+  <unitInfo fileName="GoToModule_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModule_Action" />
   <unitInfo fileName="GoToModel_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModel_Action" />
   <unitInfo fileName="GoToNamedNode_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNamedNode_Action" />
   <unitInfo fileName="GoToRootNode_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
@@ -835,7 +835,7 @@
     <nodeInfo nodeId="1744445256079579869" fileName="Goto_ActionGroup.java" startLine="42" startPosition="92" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3906874221886742595" fileName="Goto_ActionGroup.java" startLine="44" startPosition="7" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3906874221886742596" fileName="Goto_ActionGroup.java" startLine="45" startPosition="43" endLine="46" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3906874221886742602" fileName="Goto_ActionGroup.java" startLine="46" startPosition="156" endLine="47" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3906874221886742602" fileName="Goto_ActionGroup.java" startLine="46" startPosition="156" endLine="47" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6763225944573427888" fileName="Goto_ActionGroup.java" startLine="27" startPosition="159" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1744445256079579869" fileName="Goto_ActionGroup.java" startLine="38" startPosition="43" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="6763225944573427888" fileName="Goto_ActionGroup.java" startLine="28" startPosition="7" endLine="32" endPosition="48" />
@@ -2312,12 +2312,12 @@
     <scopeInfo nodeId="3906874221886742412" fileName="GoToModel_Action.java" startLine="65" startPosition="54" endLine="66" endPosition="14" />
   </root>
   <root nodeId="3906874221886742454">
-    <nodeInfo nodeId="3906874221886742474" fileName="GoToSolution_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
-    <nodeInfo nodeId="3906874221886742460" fileName="GoToSolution_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3906874221886742467" fileName="GoToSolution_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3906874221886742479" fileName="GoToSolution_Action.java" startLine="65" startPosition="54" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3906874221886742459" fileName="GoToSolution_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="52" />
-    <scopeInfo nodeId="3906874221886742478" fileName="GoToSolution_Action.java" startLine="65" startPosition="54" endLine="66" endPosition="14" />
+    <nodeInfo nodeId="3906874221886742474" fileName="GoToModule_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
+    <nodeInfo nodeId="3906874221886742460" fileName="GoToModule_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3906874221886742467" fileName="GoToModule_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3906874221886742479" fileName="GoToModule_Action.java" startLine="65" startPosition="54" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3906874221886742459" fileName="GoToModule_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="50" />
+    <scopeInfo nodeId="3906874221886742478" fileName="GoToModule_Action.java" startLine="65" startPosition="54" endLine="66" endPosition="14" />
   </root>
   <root nodeId="3906874221886749855">
     <nodeInfo nodeId="3906874221886749856" fileName="FileDelete_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />

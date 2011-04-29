@@ -44,7 +44,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       }
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addParameterizedAction(new GoToModel_Action(new GoToModelAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModelAction());
-      Goto_ActionGroup.this.addParameterizedAction(new GoToSolution_Action(new GoToModuleAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModuleAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToModule_Action(new GoToModuleAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModuleAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

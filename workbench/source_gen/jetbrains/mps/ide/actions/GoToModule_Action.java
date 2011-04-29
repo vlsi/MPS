@@ -11,14 +11,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
-public class GoToSolution_Action extends GeneratedAction {
+public class GoToModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToSolution_Action.class);
+  protected static Log log = LogFactory.getLog(GoToModule_Action.class);
 
   private AnAction action;
 
-  public GoToSolution_Action(AnAction action_par) {
-    super("Go to Solution", "", ICON);
+  public GoToModule_Action(AnAction action_par) {
+    super("Go to Module", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -26,10 +26,10 @@ public class GoToSolution_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToSolution_Action.this.action.update(event);
+      GoToModule_Action.this.action.update(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToSolution", t);
+        log.error("User's action doUpdate method failed. Action:" + "GoToModule", t);
       }
       this.disable(event.getPresentation());
     }
@@ -44,10 +44,10 @@ public class GoToSolution_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToSolution_Action.this.action.actionPerformed(event);
+      GoToModule_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToSolution", t);
+        log.error("User's action execute method failed. Action:" + "GoToModule", t);
       }
     }
   }

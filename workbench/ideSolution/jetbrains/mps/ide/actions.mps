@@ -723,8 +723,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.GotoActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3906874221886742454">
-      <property name="name" nameId="tpck.1169194664001" value="GoToSolution" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Solution" />
+      <property name="name" nameId="tpck.1169194664001" value="GoToModule" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Go to Module" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.GotoActions" />
     </node>
@@ -27478,6 +27478,10 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606374">
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_S" />
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
+      </node>
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1468272566021311110">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606443">
