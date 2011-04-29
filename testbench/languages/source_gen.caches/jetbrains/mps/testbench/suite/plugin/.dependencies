@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.testbench.suite.plugin.CollectTestsGroup_ActionGroup" file="CollectTestsGroup_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.suite.plugin.CollectTests_Action" file="CollectTests_Action.java">
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="jetbrains.mps.testbench.suite.util.TestCollector" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.suite.plugin.Suite_ApplicationPlugin" file="Suite_ApplicationPlugin.java">
+    <classNode dependClassName="jetbrains.mps.testbench.suite.plugin.CollectTests_Action" />
+    <classNode dependClassName="jetbrains.mps.testbench.suite.plugin.CollectTestsGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.suite.plugin.Suite_ProjectPlugin" file="Suite_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+</dependenciesRoot>
+

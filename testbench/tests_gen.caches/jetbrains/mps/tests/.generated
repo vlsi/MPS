@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b5bqkhntlu0tgv8o0aycco17dpy1zdv">
-  <common hash="-c4gzq9i8a2k8nghc0c6vyhhexz5t6pn" />
-  <source id="1280144168199633192" hash="8z7rxbtbti2lmzk7mt9gkhh8jtbkymi" />
-  <source id="1280144168199634336" hash="-18az3f7h8sjv0w81kzru7ofmujis40d" />
-  <source id="1280144168199745446" hash="-crzkc2g40xn2wokstemqceeld31gbp2" />
+<dependencies version="2" modelHash="-bhkin9tqg4nl8y6mq6uxql9udcettb9">
+  <common hash="agclblr3kuhf2cweeytnykabgm73u08" />
+  <source id="1353856996306438776" name="jetbrains.mps.vcs" hash="-aq97yzo5ezp1daxzlaciqsap3pdyuie">
+    <file name="jetbrains.mps.vcs" />
+  </source>
 </dependencies>
 
