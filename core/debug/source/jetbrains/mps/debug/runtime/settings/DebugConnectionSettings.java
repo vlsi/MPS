@@ -96,6 +96,11 @@ public abstract class DebugConnectionSettings implements IDebuggerSettings {
     return getCommandLine(serverMode, myUseSockets, isSuspend(), myHostName, myPort, mySharedMemoryAddress);
   }
 
+  @Override
+  public boolean isEmpty() {
+    return false;
+  }
+
   public String getAddress() {
     return getAddress(myUseSockets, myHostName, myPort, mySharedMemoryAddress);
   }

@@ -1,6 +1,8 @@
 package jetbrains.mps.debug.runtime.settings;
 
 public class RemoteConnectionSettings extends DebugConnectionSettings {
+  private boolean mySuspend = false;
+
   public RemoteConnectionSettings(String hostName, int port) {
     super(hostName, port);
   }
@@ -20,6 +22,10 @@ public class RemoteConnectionSettings extends DebugConnectionSettings {
 
   @Override
   public boolean isSuspend() {
-    return false;
+    return mySuspend;
+  }
+
+  public void setSuspend(boolean suspend) {
+    mySuspend = suspend;
   }
 }

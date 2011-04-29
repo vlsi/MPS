@@ -20,4 +20,5 @@ import org.jetbrains.annotations.NotNull;
 public interface IDebuggerSettings {
   @NotNull
   String getCommandLine(boolean application);
+  boolean isEmpty();
 }

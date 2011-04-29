@@ -32,4 +32,9 @@ public class EmptyDebuggerSettings implements IDebuggerSettings {
   public String getCommandLine(boolean application) {
     return "";
   }
+
+  @Override
+  public boolean isEmpty() {
+    return true;
+  }
 }
