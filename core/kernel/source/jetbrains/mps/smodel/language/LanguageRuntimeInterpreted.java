@@ -41,7 +41,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
     } else {
       myTemplateModules = new ArrayList<TemplateModule>(generators.size());
       for (Generator generator : generators) {
-        myTemplateModules.add(new TemplateModuleInterpreted(generator));
+        myTemplateModules.add(new TemplateModuleInterpreted(this, generator));
       }
     }
   }

@@ -19,11 +19,14 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -35,11 +38,56 @@ import java.util.*;
 public class GenerationPartitioningUtil {
   private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
 
+  public static List<TemplateModule> getTemplateModules(SModel inputModel) {
+    Queue<String> queue = new LinkedList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel, false));
+    Set<String> processed = new HashSet<String>(queue);
+    List<TemplateModule> result = new ArrayList<TemplateModule>();
+
+    while (!queue.isEmpty()) {
+      String next = queue.remove();
+      LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
+      if(language == null) {
+        LOG.error("couldn't find language for namespace `" + next + "'");
+        continue;
+      }
+
+      for (TemplateModule generator : language.getGenerators()) {
+        result.add(generator);
+
+        // handle Used languages
+        for (String used : generator.getUsedLanguages()) {
+          if (!processed.contains(used)) {
+            processed.add(used);
+            queue.add(used);
+          }
+        }
+
+        // handle Referenced generators
+        Collection<String> referencedModules = generator.getReferencedModules();
+        if (referencedModules != null) {
+          for (String referenced : referencedModules) {
+            int slash = referenced.indexOf('/');
+            String sourceLanguage = referenced.substring(0, slash);
+            if (!processed.contains(sourceLanguage)) {
+              processed.add(sourceLanguage);
+              queue.add(sourceLanguage);
+            }
+          }
+        }
+      }
+    }
+
+    return result;
+  }
+
+
+  @Deprecated
   public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
     // collect generators brutally
     return collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
   }
 
+  @Deprecated
   private static List<Generator> collectGenerators(SModel inputModel, boolean isTemplateModel, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
     List<Language> languages = ModelContentUtil.getUsedLanguages(inputModel, isTemplateModel, scope);
 
@@ -58,6 +106,7 @@ public class GenerationPartitioningUtil {
     return collectedGenerators;
   }
 
+  @Deprecated
   private static List<Generator> collectGenerators(Generator generator, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
     if (collectedGenerators.contains(generator)) return collectedGenerators;
 
@@ -73,8 +122,6 @@ public class GenerationPartitioningUtil {
 
     return collectedGenerators;
   }
-
-
 
 
   public static List<String> toStrings(List<TemplateMappingConfiguration> mappings) {

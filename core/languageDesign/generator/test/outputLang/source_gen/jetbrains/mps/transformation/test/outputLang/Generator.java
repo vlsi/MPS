@@ -9,14 +9,19 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("de2f9603-575d-4d84-b063-776b6d27a0b9(jetbrains.mps.transformation.test.outputLang#1209603905948)");
 
+  private Language sourceLanguage;
   private final Collection<TemplateModel> models;
+  private Collection<String> usedLanguages;
 
-  public Generator() {
+  public Generator(Language sourceLanguage) {
+    this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this));
+    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage");
   }
 
   public String getAlias() {
@@ -33,5 +38,17 @@ public class Generator implements TemplateModule {
 
   public ModuleReference getReference() {
     return MODULE_REFERENCE;
+  }
+
+  public Collection<String> getUsedLanguages() {
+    return usedLanguages;
+  }
+
+  public LanguageRuntime getSourceLanguage() {
+    return sourceLanguage;
+  }
+
+  public Collection<String> getReferencedModules() {
+    return null;
   }
 }

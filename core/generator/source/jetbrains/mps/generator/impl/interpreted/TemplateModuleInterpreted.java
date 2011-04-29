@@ -15,29 +15,36 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * evgeny, 3/10/11
  */
 public class TemplateModuleInterpreted implements TemplateModule {
 
+  private LanguageRuntime sourceLanguage;
   private Generator generator;
   private Collection<TemplateModel> models;
 
-  public TemplateModuleInterpreted(@NotNull Generator generator) {
+  public TemplateModuleInterpreted(LanguageRuntime sourceLanguage, @NotNull Generator generator) {
+    this.sourceLanguage = sourceLanguage;
     this.generator = generator;
     this.models = new ArrayList<TemplateModel>();
+  }
+
+  @Override
+  public LanguageRuntime getSourceLanguage() {
+    return sourceLanguage;
   }
 
   @Override
@@ -53,6 +60,26 @@ public class TemplateModuleInterpreted implements TemplateModule {
   @Override
   public Collection<TemplateModel> getModels() {
     return models;
+  }
+
+  @Override
+  public Collection<String> getReferencedModules() {
+    List<Generator> referencedGenerators = generator.getReferencedGenerators();
+    List<String> result = new ArrayList<String>(referencedGenerators.size());
+    for (Generator referencedGenerator : referencedGenerators) {
+      String moduleId = referencedGenerator.getSourceLanguage().getModuleFqName() + "/" + referencedGenerator.getModuleFqName();
+      result.add(moduleId);
+    }
+    return result;
+  }
+
+  @Override
+  public Collection<String> getUsedLanguages() {
+    Set<String> languages = new HashSet<String>();
+    for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
+      languages.addAll(ModelContentUtil.getUsedLanguageNamespaces(templateModel.getSModel(), true));
+    }
+    return languages;
   }
 
   @Override

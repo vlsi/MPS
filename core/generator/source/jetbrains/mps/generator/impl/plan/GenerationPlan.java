@@ -8,6 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -27,7 +28,7 @@ public class GenerationPlan {
   private Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;
 
-  private Set<Language> myLanguages = new HashSet<Language>();
+//  private Set<Language> myLanguages = new HashSet<Language>();
   private List<List<TemplateMappingConfiguration>> myPlan;
   private Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
@@ -36,13 +37,13 @@ public class GenerationPlan {
   public GenerationPlan(@NotNull SModel inputModel, IScope scope) {
     myInputName = inputModel.getLongName();
     try {
-      List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
-      for (Generator generator : generators) {
-        myLanguages.add(generator.getSourceLanguage());
-      }
+      myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel);
+      checkOldGenerators(inputModel, scope);
 
-      myGenerators = convert(generators);
       initTemplateModels();
+//      for (Generator generator : generators) {
+//        myLanguages.add(generator.getSourceLanguage());
+//      }
 
       GenerationPartitioner partitioner = new GenerationPartitioner(myGenerators);
       myPlan = partitioner.createMappingSets();
@@ -52,6 +53,25 @@ public class GenerationPlan {
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
       throw new RuntimeException("Couldn't compute generation steps for model '" + inputModel.getLongName() + "'", t);
+    }
+  }
+
+  private void checkOldGenerators(@NotNull SModel inputModel, IScope scope) {
+    List<Generator> generatorsOld = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
+
+    Set<ModuleReference> refs = new HashSet<ModuleReference>();
+    for (Generator generator : generatorsOld) {
+      refs.add(generator.getModuleReference());
+    }
+
+    for(TemplateModule module : myGenerators) {
+      if(!refs.remove(module.getReference())) {
+        throw new RuntimeException("Generator " + module.getAlias() + " presents only in new algorithm");
+      }
+    }
+
+    for(ModuleReference ref : refs) {
+      throw new RuntimeException("Generator " + ref.toString() + " is absent in a new algorithm");
     }
   }
 
@@ -138,30 +158,30 @@ public class GenerationPlan {
     return myTemplateModels;
   }
 
-  public static Collection<TemplateModule> convert(Collection<Generator> generators) {
-    List<TemplateModule> modules = new ArrayList<TemplateModule>(generators.size());
-    for (Generator generator : generators) {
-      TemplateModule module = new TemplateModuleInterpreted(generator);
-      List<SModelDescriptor> list = generator.getOwnTemplateModels();
-      for (SModelDescriptor descriptor : list) {
-        TemplateModel templateModel = null;
-        if(USE_GENERATED) {
-          templateModel = getGeneratedTemplateModel(module, descriptor);
-        }
-        if(templateModel == null) {
-          SModel model = descriptor.getSModel();
-          if (model != null) {
-            templateModel = new TemplateModelInterpreted(module, model);
-          }
-        }
-        if(templateModel != null) {
-          module.getModels().add(templateModel);
-        }
-      }
-      modules.add(module);
-    }
-    return modules;
-  }
+//  public static Collection<TemplateModule> convert(Collection<Generator> generators) {
+//    List<TemplateModule> modules = new ArrayList<TemplateModule>(generators.size());
+//    for (Generator generator : generators) {
+//      TemplateModule module = new TemplateModuleInterpreted(null, generator);
+//      List<SModelDescriptor> list = generator.getOwnTemplateModels();
+//      for (SModelDescriptor descriptor : list) {
+//        TemplateModel templateModel = null;
+//        if(USE_GENERATED) {
+//          templateModel = getGeneratedTemplateModel(module, descriptor);
+//        }
+//        if(templateModel == null) {
+//          SModel model = descriptor.getSModel();
+//          if (model != null) {
+//            templateModel = new TemplateModelInterpreted(module, model);
+//          }
+//        }
+//        if(templateModel != null) {
+//          module.getModels().add(templateModel);
+//        }
+//      }
+//      modules.add(module);
+//    }
+//    return modules;
+//  }
 
   private static TemplateModel getGeneratedTemplateModel(TemplateModule module, SModelDescriptor descriptor) {
     try {

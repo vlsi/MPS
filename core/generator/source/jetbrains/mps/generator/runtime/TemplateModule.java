@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 
 import java.util.Collection;
 
@@ -24,13 +25,17 @@ import java.util.Collection;
  */
 public interface TemplateModule {
 
+  LanguageRuntime getSourceLanguage();
+
   ModuleReference getReference();
 
   Collection<TemplateMappingPriorityRule> getPriorities();
 
   Collection<TemplateModel> getModels();
 
-  //Collection<String> getUsedLanguages();
+  Collection<String> getReferencedModules();
+
+  Collection<String> getUsedLanguages();
 
   String getAlias();
 }

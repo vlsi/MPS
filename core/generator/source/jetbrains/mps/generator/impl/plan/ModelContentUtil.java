@@ -23,10 +23,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * evgeny, 4/28/11
@@ -35,6 +32,7 @@ public class ModelContentUtil {
 
   private static final Logger LOG = Logger.getLogger(ModelContentUtil.class);
 
+  @Deprecated
   public static List<Language> getUsedLanguages(SModel model, boolean isTemplateModel, IScope scope) {
     Set<String> namespaces = new HashSet<String>();
     for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
@@ -55,7 +53,7 @@ public class ModelContentUtil {
     return result;
   }
 
-  public static List<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
+  public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
     Set<String> namespaces = new HashSet<String>();
     for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
@@ -63,7 +61,7 @@ public class ModelContentUtil {
     for (SNode root : model.roots()) {
       collectLanguageNamespaces(root, namespaces, isTemplateModel);
     }
-    return new ArrayList<String>(namespaces);
+    return namespaces;
   }
 
   private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean isTemplateModel) {

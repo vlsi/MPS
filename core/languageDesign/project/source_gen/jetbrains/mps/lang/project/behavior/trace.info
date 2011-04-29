@@ -3,10 +3,16 @@
   <unitInfo fileName="Generator_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Generator_Behavior" />
   <unitInfo fileName="ModelReference_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModelReference_Behavior" />
   <unitInfo fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
+  <unitInfo fileName="ModuleReference_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.ModuleReference_Behavior" />
   <unitInfo fileName="MappingConfigExternalRef_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_Behavior" />
   <unitInfo fileName="MappingConfigRefSet_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" />
   <unitInfo fileName="MappingConfigNormalRef_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
   <unitInfo fileName="Module_Behavior.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
+  <root nodeId="1250389701475344621">
+    <nodeInfo nodeId="1250389701475344628" fileName="ModuleReference_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1250389701475344623" fileName="ModuleReference_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1250389701475344627" fileName="ModuleReference_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="130" />
+  </root>
   <root nodeId="2721285250110256912">
     <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2721285250110256914" fileName="MappingConfigRefBase_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />

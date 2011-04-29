@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -103,9 +104,9 @@ public class TemplateUtil {
     };
   }
 
-  public static TemplateModule createInterpretedGenerator(String moduleReference) {
+  public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
     Generator g = MPSModuleRepository.getInstance().getGenerator(ModuleReference.fromString(moduleReference));
-    return new TemplateModuleInterpreted(g);
+    return new TemplateModuleInterpreted(sourceLanguage, g);
   }
 
   public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {

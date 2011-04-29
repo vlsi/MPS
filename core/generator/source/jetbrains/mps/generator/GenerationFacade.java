@@ -20,10 +20,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -45,12 +44,12 @@ public class GenerationFacade {
     return mappings;
   }
 
-  public static Collection<Generator> getPossiblyEngagedGenerators(SModel model) {
-    return GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model, GlobalScope.getInstance());
+  public static Collection<TemplateModule> getPossiblyEngagedGenerators(SModel model) {
+    return GenerationPartitioningUtil.getTemplateModules(model);
   }
 
-  public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<Generator> generators) {
-    GenerationPartitioner partitioner = new GenerationPartitioner(GenerationPlan.convert(generators));
+  public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<TemplateModule> generators) {
+    GenerationPartitioner partitioner = new GenerationPartitioner(generators);
     List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets();
 
     // convert

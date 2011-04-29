@@ -9,14 +9,19 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("45250695-332a-4a0e-94bc-014e09fa751d(jetbrains.mps.transformation.test.inputLang#1195164860857)");
 
+  private Language sourceLanguage;
   private final Collection<TemplateModel> models;
+  private Collection<String> usedLanguages;
 
-  public Generator() {
+  public Generator(Language sourceLanguage) {
+    this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl(this));
+    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.lang.generator.generationParameters", "jetbrains.mps.lang.smodel", "jetbrains.mps.transformation.test.outputLang");
   }
 
   public String getAlias() {
@@ -33,5 +38,17 @@ public class Generator implements TemplateModule {
 
   public ModuleReference getReference() {
     return MODULE_REFERENCE;
+  }
+
+  public Collection<String> getUsedLanguages() {
+    return usedLanguages;
+  }
+
+  public LanguageRuntime getSourceLanguage() {
+    return sourceLanguage;
+  }
+
+  public Collection<String> getReferencedModules() {
+    return null;
   }
 }
