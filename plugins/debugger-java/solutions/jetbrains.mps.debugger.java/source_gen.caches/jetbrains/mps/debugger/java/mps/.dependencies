@@ -45,10 +45,16 @@
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.IPersistentConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Editor" file="MPSInstance_Configuration_Editor.java">
+    <classNode dependClassName="jetbrains.mps.debugger.java.mps.Mps_Command" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.RawLineEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Factory" file="MPSInstance_Configuration_Factory.java">
@@ -61,7 +67,6 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" file="MPSInstance_Configuration_RunProfileState.java">
-    <classNode dependClassName="jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -82,7 +87,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.runtime.DefaultExecutionConsole" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.debugger.java.mps.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
@@ -96,6 +101,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />

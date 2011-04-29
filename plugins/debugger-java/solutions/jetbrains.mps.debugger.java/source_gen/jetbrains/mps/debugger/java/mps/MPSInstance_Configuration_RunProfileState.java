@@ -14,7 +14,6 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.execution.configurations.runtime.ConsoleProcessListener;
@@ -49,16 +48,8 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    String commandLine;
-    if (myDebuggerSettings.isEmpty()) {
-      RemoteConnectionSettings connectionSettings = new RemoteConnectionSettings("localhost", 5005);
-      connectionSettings.setSuspend(true);
-      commandLine = connectionSettings.getCommandLine(true);
-    } else {
-      commandLine = myDebuggerSettings.getCommandLine(true);
-    }
     {
-      ProcessHandler _processHandler = new Mps_Command().createProcess(commandLine);
+      ProcessHandler _processHandler = new Mps_Command().setVirtualMachineParameters(myRunConfiguration.getVmOptions()).setJrePath(myRunConfiguration.getJrePath()).createProcess(myDebuggerSettings.getCommandLine(true));
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

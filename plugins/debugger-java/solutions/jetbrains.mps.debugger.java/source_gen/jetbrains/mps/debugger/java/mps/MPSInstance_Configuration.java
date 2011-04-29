@@ -46,6 +46,22 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
 
+  public String getVmOptions() {
+    return myState.myVmOptions;
+  }
+
+  public String getJrePath() {
+    return myState.myJrePath;
+  }
+
+  public void setVmOptions(String value) {
+    myState.myVmOptions = value;
+  }
+
+  public void setJrePath(String value) {
+    myState.myJrePath = value;
+  }
+
   @Override
   public MPSInstance_Configuration clone() {
     MPSInstance_Configuration clone = null;
@@ -91,12 +107,17 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public class MyState {
+    public String myVmOptions;
+    public String myJrePath;
+
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
+      state.myVmOptions = myVmOptions;
+      state.myJrePath = myJrePath;
       return state;
     }
   }
