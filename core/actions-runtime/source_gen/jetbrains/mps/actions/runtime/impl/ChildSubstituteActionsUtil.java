@@ -43,7 +43,7 @@ public class ChildSubstituteActionsUtil {
     SNode childConcept = SNodeOperations.getConceptDeclaration(currentChild);
     SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     if (SNodeOperations.isInstanceOf(childConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode concreteChildConcept = SNodeOperations.castConcept(childConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      SNode concreteChildConcept = SNodeOperations.cast(((SNode) childConcept), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       while ((SLinkOperations.getTarget(concreteChildConcept, "extends", false) != null) && SLinkOperations.getTarget(concreteChildConcept, "extends", false) != baseConcept) {
         concreteChildConcept = SLinkOperations.getTarget(concreteChildConcept, "extends", false);
       }

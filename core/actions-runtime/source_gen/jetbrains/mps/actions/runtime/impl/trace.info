@@ -4,7 +4,7 @@
     <nodeInfo nodeId="2114063490211283609" fileName="ChildSubstituteActionsUtil.java" startLine="36" startPosition="41" endLine="37" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2114063490211317371" fileName="ChildSubstituteActionsUtil.java" startLine="42" startPosition="66" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2114063490211317382" fileName="ChildSubstituteActionsUtil.java" startLine="43" startPosition="77" endLine="44" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2114063490211317337" fileName="ChildSubstituteActionsUtil.java" startLine="45" startPosition="114" endLine="46" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2114063490211317337" fileName="ChildSubstituteActionsUtil.java" startLine="45" startPosition="114" endLine="46" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2114063490211317355" fileName="ChildSubstituteActionsUtil.java" startLine="47" startPosition="175" endLine="48" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2114063490211317361" fileName="ChildSubstituteActionsUtil.java" startLine="49" startPosition="7" endLine="50" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2114063490211317389" fileName="ChildSubstituteActionsUtil.java" startLine="51" startPosition="5" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -51,7 +51,7 @@
     <nodeInfo nodeId="2114063490211303979" fileName="ChildSubstituteActionsUtil.java" startLine="156" startPosition="21" endLine="157" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2114063490211304000" fileName="ChildSubstituteActionsUtil.java" startLine="159" startPosition="5" endLine="160" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2114063490211106084" fileName="ChildSubstituteActionsUtil.java" startLine="38" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChildSubstituteActionsUtil#()V" />
-    <nodeInfo nodeId="2114063490211317342" fileName="ChildSubstituteActionsUtil.java" startLine="46" startPosition="138" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2114063490211317342" fileName="ChildSubstituteActionsUtil.java" startLine="46" startPosition="141" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2263578067951145097" fileName="ChildSubstituteActionsUtil.java" startLine="56" startPosition="22" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2263578067951145164" fileName="ChildSubstituteActionsUtil.java" startLine="65" startPosition="102" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2263578067951145172" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="191" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -153,8 +153,8 @@
     <scopeInfo nodeId="8875053940361530066" fileName="ChildSubstituteActionsUtil.java" startLine="85" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="8875053940361530079" varName="parentNode" />
       <varInfo nodeId="8875053940361530088" varName="childSetter" />
-      <varInfo nodeId="8875053940361530076" varName="builder" />
       <varInfo nodeId="8875053940361530091" varName="context" />
+      <varInfo nodeId="8875053940361530076" varName="builder" />
       <varInfo nodeId="8875053940361530082" varName="currentChild" />
       <varInfo nodeId="8875053940361530085" varName="childConcept" />
     </scopeInfo>
@@ -198,8 +198,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8875053940361531979" fileName="ChildSubstituteActionsUtil.java" startLine="96" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="8875053940361531990" varName="parentNode" />
-      <varInfo nodeId="8875053940361531983" varName="builder" />
       <varInfo nodeId="8875053940361531999" varName="context" />
+      <varInfo nodeId="8875053940361531983" varName="builder" />
       <varInfo nodeId="8875053940361531993" varName="currentChild" />
       <varInfo nodeId="8875053940361531996" varName="childConcept" />
       <varInfo nodeId="8875053940361531985" varName="actions" />
@@ -257,10 +257,10 @@
     <scopeInfo nodeId="580018013244120215" fileName="NodeFactoryUtil.java" startLine="45" startPosition="129" endLine="53" endPosition="5" />
     <scopeInfo nodeId="580018013244120212" fileName="NodeFactoryUtil.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="580018013244120229" varName="model" />
-      <varInfo nodeId="580018013244120217" varName="factory" />
       <varInfo nodeId="580018013244120223" varName="sampleNode" />
-      <varInfo nodeId="580018013244120220" varName="newNode" />
+      <varInfo nodeId="580018013244120217" varName="factory" />
       <varInfo nodeId="580018013244120226" varName="enclosingNode" />
+      <varInfo nodeId="580018013244120220" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="580018013244132916" fileName="NodeFactoryUtil.java" startLine="28" startPosition="96" endLine="42" endPosition="24">
       <varInfo nodeId="580018013244136413" varName="model" />
