@@ -200,7 +200,12 @@ public class MergeModelsDialog extends BaseDialog {
         compositeChangeType = ChangeType.CONFLICTED;
 
         rootTreeNode.setAdditionalText("with conflicts");
-        rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change") + ", " + NameUtil.formatNumericalString(conflictedCount, "conficting change"));
+        String text = NameUtil.formatNumericalString(conflictedCount, "conficting change");
+        if (nonConflictedCount == 0) {
+          rootTreeNode.setTooltipText(text);
+        } else {
+          rootTreeNode.setTooltipText(text + " of " + ListSequence.fromList(changes).count() + " total");
+        }
       } else {
         if (nonConflictedCount == 0) {
           if (myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
@@ -228,7 +233,7 @@ public class MergeModelsDialog extends BaseDialog {
           } else {
             rootTreeNode.setAdditionalText("both modified");
           }
-          rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, "non-conficting change"));
+          rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, " change"));
         }
       }
 

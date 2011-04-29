@@ -49,13 +49,13 @@ public class MergeConfirmation {
       }
     });
     if (Sequence.fromIterable(conflictedChanges).count() != 0) {
-      if (Messages.showYesNoDialog(dialog, String.format("You have %s left. You should resolve them manually.\n" + "Are you sure want to close merge roots dialog without resolving them?", NameUtil.formatNumericalString(Sequence.fromIterable(conflictedChanges).count(), "unresolved conflicting changes")), "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
+      if (Messages.showYesNoDialog(dialog, String.format("You have %s left. You should resolve them manually.\n" + "Are you sure want to close merge roots dialog without resolving them?", NameUtil.formatNumericalString(Sequence.fromIterable(conflictedChanges).count(), "unresolved conflicting change")), "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
         return SAVE_AS_IS;
       } else {
         return RETURN;
       }
     } else if (ListSequence.fromList(changes).count() != 0) {
-      int answer = Messages.showYesNoCancelDialog(dialog, String.format("You have %s left. Do you want to resolve them automatically?", NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "unresolved changes")), "Unresolved Changes", Messages.getQuestionIcon());
+      int answer = Messages.showYesNoCancelDialog(dialog, String.format("You have %s left. Do you want to resolve them automatically?", NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "unresolved change")), "Unresolved Changes", Messages.getQuestionIcon());
       if (answer == 0) {
         return RESOLVE_AUTOMATICALLY;
       } else if (answer == 1) {
