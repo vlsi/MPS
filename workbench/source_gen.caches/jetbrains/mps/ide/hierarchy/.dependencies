@@ -74,12 +74,12 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.icons.Icons" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
   </dependency>
@@ -179,6 +179,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.LanguageHierarchyCache" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.INavigateableTool" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.hierarchy.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="javax.swing.Icon" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent" file="LanguageHierarchiesComponent.java">
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />

@@ -75,6 +75,10 @@
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" file="IJavaNodeChangeListener.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="javax.swing.Icon" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions" file="JavaConfigOptions.java">
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.event.ActionListener" />
@@ -161,7 +165,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.icons.Icons" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IconContainer" />
     <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="com.intellij.ui.InsertPathAction" />

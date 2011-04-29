@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.intellij.openapi.ui.Messages;
 import javax.swing.Icon;
-import jetbrains.mps.baseLanguage.icons.Icons;
 import javax.swing.JTextField;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ui.InsertPathAction;
@@ -27,7 +26,7 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
       }
     });
     this.add(this.myField, BorderLayout.CENTER);
-    final Icon icon = Icons.SHOW_VIEWER_ICON;
+    final Icon icon = IconContainer.ICON_a0d0a;
     if (icon != null) {
       this.myField.setButtonIcon(icon);
       this.setDescriptor(null);

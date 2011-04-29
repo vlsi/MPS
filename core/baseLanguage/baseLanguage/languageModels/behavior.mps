@@ -12,6 +12,7 @@
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -45,6 +46,7 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="-1" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877208326">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
@@ -3282,9 +3284,10 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081915">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633081916">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSTATIC_MARK_ICON" resolveInfo="STATIC_MARK_ICON" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982798">
+                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982799">
+                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -8493,9 +8496,10 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081822">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633081823">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dFINAL_MARK_ICON" resolveInfo="FINAL_MARK_ICON" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891972946">
+                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891972947">
+                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -10069,9 +10073,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082298">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633082299">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSTATIC_MARK_ICON" resolveInfo="STATIC_MARK_ICON" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982804">
+                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982805">
+                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
+                </node>
               </node>
             </node>
           </node>
@@ -11044,9 +11049,10 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756632959828">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756632959829">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dRUNNABLE_MARK_ICON" resolveInfo="RUNNABLE_MARK_ICON" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982790">
+                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982791">
+                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/runnableMark.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -11071,9 +11077,10 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633080881">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633080882">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dFINAL_MARK_ICON" resolveInfo="FINAL_MARK_ICON" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982792">
+                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982793">
+                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -17709,9 +17716,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083419">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633083420">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSTATIC_MARK_ICON" resolveInfo="STATIC_MARK_ICON" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982800">
+                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982801">
+                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
+                </node>
               </node>
             </node>
           </node>
@@ -17723,9 +17731,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083426">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633083427">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dFINAL_MARK_ICON" resolveInfo="FINAL_MARK_ICON" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982802">
+                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982803">
+                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
+                </node>
               </node>
             </node>
           </node>
@@ -18901,9 +18910,10 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082329">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633082330">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dFINAL_MARK_ICON" resolveInfo="FINAL_MARK_ICON" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982811">
+                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982812">
+                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -21320,9 +21330,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082260">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633082261">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSTATIC_MARK_ICON" resolveInfo="STATIC_MARK_ICON" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982808">
+                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982809">
+                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
+                </node>
               </node>
             </node>
           </node>
@@ -26278,9 +26289,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082373">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5039675756633082374">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSTATIC_MARK_ICON" resolveInfo="STATIC_MARK_ICON" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982806">
+                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982807">
+                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
+                </node>
               </node>
             </node>
           </node>

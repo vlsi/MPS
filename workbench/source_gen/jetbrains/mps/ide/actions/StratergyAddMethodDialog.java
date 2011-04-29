@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.HashMap;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import jetbrains.mps.baseLanguage.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
@@ -167,7 +166,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
 
     private SortByNameAction(Project p) {
       super("Sort Alphabetically");
-      getTemplatePresentation().setIcon(Icons.SORT_ALPHABETICALLY_ICON);
+      getTemplatePresentation().setIcon(IconContainer.ICON_a0a1a0d);
       myProject = p;
     }
 

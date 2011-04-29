@@ -19535,9 +19535,10 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7824118464175997677">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4zw2.~Presentation%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7824118464175997678">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSORT_ALPHABETICALLY_ICON" resolveInfo="SORT_ALPHABETICALLY_ICON" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="4343284707817311196">
+                  <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4343284707817311197">
+                    <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/baseLanguage/baseLanguage/icons/sortAlpha.png" />
+                  </node>
                 </node>
               </node>
             </node>

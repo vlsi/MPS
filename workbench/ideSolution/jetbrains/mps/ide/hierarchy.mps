@@ -3,6 +3,7 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -43,10 +44,10 @@
   <import index="7mi2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util.annotation(jetbrains.mps.util.annotation@java_stub)" version="-1" implicit="yes" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" implicit="yes" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
-  <import index="fxlw" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.icons(jetbrains.mps.baseLanguage.icons@java_stub)" version="-1" implicit="yes" />
   <import index="205" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" implicit="yes" />
   <import index="gw47" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.util(jetbrains.mps.ide.util@java_stub)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5797068448049410631">
       <property name="name" nameId="tpck.1169194664001" value="HierarchyViewTool" />
@@ -2920,9 +2921,10 @@
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5797068448049411498">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dHIERARCHY_VIEW_ICON" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="4343284707817248517">
+            <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4343284707817248518">
+              <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/baseLanguage/baseLanguage/icons/classHierarchyView.png" />
+            </node>
           </node>
         </node>
       </node>

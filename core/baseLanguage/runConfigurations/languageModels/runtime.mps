@@ -29,7 +29,6 @@
   <import index="omxt" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" />
   <import index="zn1y" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(com.intellij.ui@java_stub)" version="-1" />
-  <import index="fxlw" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.icons(jetbrains.mps.baseLanguage.icons@java_stub)" version="-1" />
   <import index="8a0f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="qwup" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <import index="h5ia" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -2647,9 +2646,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1447676209063499990">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1447676209063499991">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxlw.~Icons" resolveInfo="Icons" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxlw.~Icons%dSHOW_VIEWER_ICON" resolveInfo="SHOW_VIEWER_ICON" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="4343284707817204417">
+              <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4343284707817204418">
+                <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/baseLanguage/baseLanguage/icons/showViewer.png" />
+              </node>
             </node>
           </node>
         </node>

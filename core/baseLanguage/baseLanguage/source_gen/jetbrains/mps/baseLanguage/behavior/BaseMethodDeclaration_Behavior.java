@@ -8,7 +8,6 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -40,7 +39,7 @@ public class BaseMethodDeclaration_Behavior {
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
-      markIcons.add(Icons.FINAL_MARK_ICON);
+      markIcons.add(IconContainer.ICON_a0a0a1a0_0);
     }
     return markIcons;
   }
