@@ -43,6 +43,7 @@
       <languagePath path="${project}/languages/script/script.mpl" folder="" />
       <languagePath path="${project}/languages/outlook/outlook.mpl" folder="" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${mps_home}/testbench/languages/suite.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
