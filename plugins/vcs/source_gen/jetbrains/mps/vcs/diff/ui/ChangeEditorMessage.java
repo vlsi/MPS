@@ -14,14 +14,13 @@ import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
-import org.apache.commons.lang.ObjectUtils;
-import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.awt.Rectangle;
+import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -40,7 +39,6 @@ import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
@@ -76,125 +74,146 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
-    if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && check_myu41h_a0a0b0e(((ChildrenMessageTarget) myMessageTarget).getChildren(), cell) || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
+    boolean shouldPaintSelection = (targetIsNode ?
+      getNode() == cell.getSNode() :
+      !(cell instanceof EditorCell_Collection)
+    );
+    if (shouldPaintSelection) {
       cell.paintSelection(graphics, getColor(), false);
-
-      // This is a workaround for case when any change message is going to be painted over 
-      // "conflicted" red frame. In this case, we repaint conflicted red frame again 
-      EditorCell_Collection parent = cell.getParent();
-      if (parent != null && parent.getChildCount() == 1) {
-        EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
-          public boolean accept(EditorMessage m) {
-            return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
-          }
-        });
-        if (messageToRepaint != null) {
-          messageToRepaint.paint(graphics, component, parent);
-        }
-      }
+      repaintConflictedMessages(graphics, cell);
     } else {
-      if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && eq_myu41h_a0a0a0b0e(myMessageTarget.getRole(), cell.getRole())) {
-        int index = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
-        assert index == ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
-        if (index != -1) {
-          EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-
-          if (!(hasChildrenWithDifferentNode(cell))) {
-            cell.paintSelection(graphics, getColor(), false);
-            return;
-          }
-
-          boolean vertical = isVertical(collectionCell);
-          Rectangle bounds = cell.getBounds();
-          int cellIndex = getChildCellIndex(collectionCell, index);
-          if (vertical) {
-            int y;
-            if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-              y = collectionCell.getChildAt(cellIndex).getY();
-            } else {
-              y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
-            }
-            graphics.setColor(getColor());
-            graphics.drawLine(bounds.x, y, bounds.x + bounds.width, y);
-          } else {
-            // horizontal collection: draw vertical line 
-            int x;
-            if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-              x = collectionCell.getChildAt(cellIndex).getX();
-            } else {
-              x = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxX());
-            }
-            int y1 = bounds.y;
-            int y2 = bounds.y + bounds.height;
-
-            graphics.setColor(getColor());
-            graphics.drawLine(x, y1, x, y2);
-            graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
-            graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
-
-            graphics.setColor(ColorAndGraphicsUtil.brightenColor(getColor(), 0.8f));
-            graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
-            graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
-          }
-          return;
-        }
+      if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+        drawDeletedChild(graphics, cell);
+      } else {
+        Rectangle bounds = cell.getBounds();
+        graphics.setColor(((isConflicted() ?
+          ChangeType.CONFLICTED :
+          ChangeType.CHANGE
+        )).getColor());
+        graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
       }
-      graphics.setColor(((isConflicted() ?
-        ChangeType.CONFLICTED :
-        ChangeType.CHANGE
-      )).getColor());
-      Rectangle bounds = cell.getBounds();
-      graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
     }
   }
 
-  private Bounds getVerticalBounds(EditorComponent editorComponent) {
-    assert myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN;
-    ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
-    assert cmt.getBeginIndex() == cmt.getEndIndex();
-    EditorCell simpleCell = getCell(editorComponent);
-    if (simpleCell == null) {
-      return new Bounds(-1, -1);
-    }
-    if (eq_myu41h_a0f0f(cmt.getRole(), simpleCell.getRole())) {
-      if (hasChildrenWithDifferentNode(simpleCell)) {
-        EditorCell_Collection cell = (EditorCell_Collection) simpleCell;
-
-        int cellIndex = getChildCellIndex(cell, cmt.getBeginIndex());
-        int lastCellIndex = cell.getChildCount() - 1;
-
-        int minY;
-        int maxY;
-        if (cellIndex > lastCellIndex) {
-          Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
-          minY = (isVertical(simpleCell) ?
-            (int) lastCellBounds.getMaxY() :
-            (int) lastCellBounds.getMinY()
-          );
-          maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
-        } else {
-          minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
-          maxY = (isVertical(simpleCell) ?
-            minY + 1 :
-            (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
-          );
+  private void repaintConflictedMessages(Graphics graphics, EditorCell cell) {
+    // This is a workaround for case when any change message is going to be painted over 
+    // "conflicted" red frame. In this case, we repaint conflicted red frame again 
+    EditorCell_Collection parent = cell.getParent();
+    if (parent != null && parent.getChildCount() == 1) {
+      EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
+        public boolean accept(EditorMessage m) {
+          return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
         }
-        return new Bounds(minY, maxY);
-      } else {
-        return getBoundsSuper(editorComponent);
+      });
+      if (messageToRepaint != null) {
+        messageToRepaint.paint(graphics, cell.getEditor(), parent);
+      }
+    }
+  }
+
+  private void drawDeletedChild(Graphics graphics, EditorCell cell) {
+    Rectangle bounds = cell.getBounds();
+    if (myMessageTarget.getRole().equals(cell.getRole())) {
+      int index = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
+      assert index == ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
+      if (index != -1) {
+        EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
+
+        if (hasChildrenWithDifferentNode(cell)) {
+          int cellIndex = getChildCellIndex(collectionCell, index);
+          if (isVertical(collectionCell)) {
+            drawHorizontalLine(graphics, collectionCell, cellIndex);
+          } else {
+            drawVerticalLineWithArrows(graphics, collectionCell, cellIndex);
+          }
+        } else {
+          cell.paintSelection(graphics, getColor(), false);
+        }
       }
     } else {
-      int y = (int) simpleCell.getBounds().getMinY();
-      return new Bounds(y, y + 1);
+      graphics.setColor(getColor());
+      graphics.drawLine(bounds.x, bounds.y, bounds.x + bounds.width, bounds.y);
     }
+  }
+
+  private void drawHorizontalLine(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
+    Rectangle bounds = collectionCell.getBounds();
+    int y;
+    if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
+      y = collectionCell.getChildAt(cellIndex).getY();
+    } else {
+      y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
+    }
+    graphics.setColor(getColor());
+    graphics.drawLine((int) bounds.getMinX(), y, (int) bounds.getMaxX(), y);
+  }
+
+  private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
+    int x;
+    Rectangle childCellBounds;
+    if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
+      childCellBounds = collectionCell.getCellAt(cellIndex).getBounds();
+      x = childCellBounds.x;
+    } else {
+      childCellBounds = collectionCell.getCellAt(collectionCell.getChildCount() - 1).getBounds();
+      x = (int) childCellBounds.getMaxX();
+    }
+    int y1 = childCellBounds.y;
+    int y2 = (int) childCellBounds.getMaxY();
+
+    graphics.setColor(getColor());
+    graphics.drawLine(x, y1, x, y2);
+    graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+    graphics.fillPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
+
+    graphics.setColor(ColorAndGraphicsUtil.brightenColor(getColor(), 0.8f));
+    graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
+    graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
   }
 
   public Bounds getBounds(EditorComponent component) {
-    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
-      return getVerticalBounds(component);
-    } else {
+    if (myMessageTarget.getTarget() != MessageTargetEnum.CHILDREN) {
       return getBoundsSuper(component);
+    } else {
+      ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
+      EditorCell cell = getCell(component);
+      if (cell == null) {
+        return new Bounds(-1, -1);
+      }
+      if (cmt.getRole().equals(cell.getRole())) {
+        if (hasChildrenWithDifferentNode(cell)) {
+          return getBoundsForChild((EditorCell_Collection) cell, cmt.getBeginIndex());
+        } else {
+          return getBoundsSuper(component);
+        }
+      } else {
+        int y = (int) cell.getBounds().getMinY();
+        return new Bounds(y, y + 1);
+      }
     }
+  }
+
+  private Bounds getBoundsForChild(EditorCell_Collection cell, int index) {
+    int cellIndex = getChildCellIndex(cell, index);
+    int lastCellIndex = cell.getChildCount() - 1;
+
+    int minY;
+    int maxY;
+    if (cellIndex > lastCellIndex) {
+      Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
+      minY = (isVertical(cell) ?
+        (int) lastCellBounds.getMaxY() :
+        (int) lastCellBounds.getMinY()
+      );
+      maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
+    } else {
+      minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
+      maxY = (isVertical(cell) ?
+        minY + 1 :
+        (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
+      );
+    }
+    return new Bounds(minY, maxY);
   }
 
   private Bounds getBoundsSuper(EditorComponent component) {
@@ -321,27 +340,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     SNode node = editedModel.getNodeById(id);
     ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
     return messages;
-  }
-
-  private static boolean check_myu41h_a0a0b0e(Set<SNode> checkedDotOperand, EditorCell cell) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.contains(cell.getSNode());
-    }
-    return false;
-  }
-
-  private static boolean eq_myu41h_a0a0a0b0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_myu41h_a0f0f(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public static interface ConflictChecker {
