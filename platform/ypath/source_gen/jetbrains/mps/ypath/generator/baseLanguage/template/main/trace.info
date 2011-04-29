@@ -83,13 +83,13 @@
     <scopeInfo nodeId="1184762279214" fileName="QueriesGenerated.java" startLine="42" startPosition="146" endLine="47" endPosition="20" />
     <scopeInfo nodeId="1183990372957" fileName="QueriesGenerated.java" startLine="272" startPosition="145" endLine="280" endPosition="15">
       <varInfo nodeId="1183991323713" varName="body" />
-      <varInfo nodeId="1183991427792" varName="imd" />
       <varInfo nodeId="1183991287928" varName="fun" />
+      <varInfo nodeId="1183991427792" varName="imd" />
     </scopeInfo>
     <scopeInfo nodeId="1183991612088" fileName="QueriesGenerated.java" startLine="283" startPosition="145" endLine="291" endPosition="15">
       <varInfo nodeId="1183991654216" varName="body" />
-      <varInfo nodeId="1183991670284" varName="imd" />
       <varInfo nodeId="1183991630815" varName="fun" />
+      <varInfo nodeId="1183991670284" varName="imd" />
     </scopeInfo>
     <scopeInfo nodeId="1184771402283" fileName="QueriesGenerated.java" startLine="302" startPosition="145" endLine="310" endPosition="15">
       <varInfo nodeId="1184771527024" varName="df" />
@@ -97,10 +97,10 @@
       <varInfo nodeId="1184771558406" varName="stmts" />
     </scopeInfo>
     <scopeInfo nodeId="1184763478622" fileName="QueriesGenerated.java" startLine="313" startPosition="145" endLine="326" endPosition="15">
-      <varInfo nodeId="1184763656956" varName="method" />
       <varInfo nodeId="1184763508166" varName="feature" />
-      <varInfo nodeId="1184763982963" varName="designClass" />
+      <varInfo nodeId="1184763656956" varName="method" />
       <varInfo nodeId="1184848137818" varName="fun" />
+      <varInfo nodeId="1184763982963" varName="designClass" />
     </scopeInfo>
     <unitInfo nodeId="1225096927010" fileName="QueriesGenerated.java" startLine="35" startPosition="210" endLine="39" endPosition="5" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.main.QueriesGenerated$1" />
     <unitInfo nodeId="1225096927360" fileName="QueriesGenerated.java" startLine="43" startPosition="109" endLine="47" endPosition="5" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.main.QueriesGenerated$2" />
@@ -373,8 +373,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1225096925869" fileName="QueriesGenerated.java" startLine="674" startPosition="139" endLine="678" endPosition="0" />
     <scopeInfo nodeId="1179334580328" fileName="QueriesGenerated.java" startLine="672" startPosition="144" endLine="679" endPosition="162">
-      <varInfo nodeId="1184848738761" varName="tpae" />
       <varInfo nodeId="1179334582961" varName="tpoe" />
+      <varInfo nodeId="1184848738761" varName="tpae" />
     </scopeInfo>
     <unitInfo nodeId="1225096925869" fileName="QueriesGenerated.java" startLine="674" startPosition="116" endLine="678" endPosition="5" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.main.QueriesGenerated$9" />
   </root>

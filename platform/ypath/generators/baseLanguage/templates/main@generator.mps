@@ -19,8 +19,8 @@
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="98m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="dzbb" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.design(jetbrains.mps.ypath.design@java_stub)" version="-1" />
   <import index="fjjo" modelUID="r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)" version="-1" />
+  <import index="6rte" modelUID="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -7051,13 +7051,13 @@
         </node>
       </node>
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1184771178478">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469545" resolveInfo="IParameterizedFeatureDesign" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1192793539297">
           <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1192793323140" resolveInfo="switch_ParamFeature" />
         </node>
       </node>
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198141871694">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IParameterizedFeatureDesign$Stub" resolveInfo="IParameterizedFeatureDesign.Stub" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469546" resolveInfo="Stub" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1198141896096">
           <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1198141795364" resolveInfo="switch_ParamFeature_Design_class" />
         </node>
@@ -7186,11 +7186,11 @@
           </node>
         </node>
       </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196881758445">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IGenericFeatureDesign" resolveInfo="IGenericFeatureDesign" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6018687884935419865">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469632" resolveInfo="IGenericFeatureDesign" />
       </node>
-      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198141928761">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IGenericFeatureDesign$Stub" resolveInfo="IGenericFeatureDesign.Stub" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6018687884935419866">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469635" resolveInfo="IGenericFeatureDesign.Stub" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184762008143" />
@@ -7492,7 +7492,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpki.1191843944385" resolveInfo="IGenericFeature" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1192793392572">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1192793393645">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IGenericParameterizedFeatureDesign" resolveInfo="IGenericParameterizedFeatureDesign" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469542" resolveInfo="IGenericParameterizedFeatureDesign" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1192793393646">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1192793393647">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1192793393648">
@@ -7537,7 +7537,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpki.1191843944385" resolveInfo="IGenericFeature" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1194863942931">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1194864092493">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469544" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1194864092494">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1194864092495">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1194864092496">
@@ -7577,7 +7577,7 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1192887466585">
       <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1192887473910">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469545" resolveInfo="IParameterizedFeatureDesign" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1192887473911">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1192887473912">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1192887473913">
@@ -7606,7 +7606,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpki.1191843944385" resolveInfo="IGenericFeature" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1198141795366">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198141795367">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IGenericParameterizedFeatureDesign$Stub" resolveInfo="IGenericParameterizedFeatureDesign.Stub" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469543" resolveInfo="Stub" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1198141795368">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1198141795369">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1198141795370">
@@ -7651,7 +7651,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpki.1191843944385" resolveInfo="IGenericFeature" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1198141795386">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198141795387">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IWritableGenericParameterizedFeatureDesign$Stub" resolveInfo="IWritableGenericParameterizedFeatureDesign.Stub" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469673" resolveInfo="Stub" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1198141795388">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1198141795389">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1198141795390">
@@ -7691,7 +7691,7 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1198141795404">
       <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198141795405">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dzbb.~IParameterizedFeatureDesign$Stub" resolveInfo="IParameterizedFeatureDesign.Stub" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rte.6854028447099469546" resolveInfo="Stub" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.VoidType" typeId="tpee.1068581517677" id="1198141795406">
           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1198141795407">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1198141795408">
