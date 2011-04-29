@@ -40,9 +40,9 @@ public class GenerationPartitioner {
   private final Collection<TemplateModule> myGenerators;
 
   // maps
-  private final Map<ModuleReference,TemplateModule> myModulesMap;
-  private final Map<SModelReference,TemplateModel> myModelMap;
-  private final Map<SNodePointer,TemplateMappingConfiguration> myMappingsMap;
+  private final Map<ModuleReference, TemplateModule> myModulesMap;
+  private final Map<SModelReference, TemplateModel> myModelMap;
+  private final Map<SNodePointer, TemplateMappingConfiguration> myMappingsMap;
 
   // result
   private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
@@ -58,7 +58,7 @@ public class GenerationPartitioner {
     myModulesMap = new HashMap<ModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
     myMappingsMap = new HashMap<SNodePointer, TemplateMappingConfiguration>();
-    for(TemplateModule module : myGenerators) {
+    for (TemplateModule module : myGenerators) {
       myModulesMap.put(module.getReference(), module);
       for (TemplateModel model : module.getModels()) {
         myModelMap.put(model.getSModelReference(), model);
@@ -74,7 +74,7 @@ public class GenerationPartitioner {
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
     for (TemplateModule generator : myGenerators) {
       for (TemplateModel model : generator.getModels()) {
-        for(TemplateMappingConfiguration m : model.getConfigurations()) {
+        for (TemplateMappingConfiguration m : model.getConfigurations()) {
           myPriorityMap.put(m, new HashMap<TemplateMappingConfiguration, PriorityData>());
         }
       }
@@ -89,8 +89,12 @@ public class GenerationPartitioner {
 
   private void loadRules() {
     for (TemplateModule generator : myGenerators) {
-      for (TemplateMappingPriorityRule rule : generator.getPriorities()) {
-        processRule((MappingPriorityRule)rule, generator);
+      Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
+      if (priorities == null) {
+        continue;
+      }
+      for (TemplateMappingPriorityRule rule : priorities) {
+        processRule((MappingPriorityRule) rule, generator);
       }
     }
   }
@@ -136,7 +140,7 @@ public class GenerationPartitioner {
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
       List<TemplateMappingConfiguration> mappingConf = new ArrayList<TemplateMappingConfiguration>();
       for (TemplateModel templateModel : refGenerator.getModels()) {
-        for(TemplateMappingConfiguration n : templateModel.getConfigurations()) {
+        for (TemplateMappingConfiguration n : templateModel.getConfigurations()) {
           mappingConf.add(n);
         }
       }
@@ -179,7 +183,7 @@ public class GenerationPartitioner {
             return refModel.getConfigurations();
           } else {
             SNodePointer node = new SNodePointer(reference, SNodeId.fromString(nodeID));
-            for(TemplateMappingConfiguration m : refModel.getConfigurations()) {
+            for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
               if (node != null && node.equals(m.getMappingNode())) {
                 return Collections.singletonList(m);
               }
