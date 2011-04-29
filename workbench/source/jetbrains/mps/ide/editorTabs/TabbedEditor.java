@@ -65,7 +65,9 @@ public class TabbedEditor extends BaseNodeEditor {
   public void dispose() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        getCurrentNodeModel().removeModelListener(myModelListener);
+        SModelDescriptor model = getCurrentNodeModel();
+        if (model == null) return;
+        model.removeModelListener(myModelListener);
       }
     });
     myTabsComponent.dispose();
@@ -120,9 +122,7 @@ public class TabbedEditor extends BaseNodeEditor {
   private SModelDescriptor getCurrentNodeModel() {
     SNodePointer n = getCurrentlyEditedNode();
     if (n == null) return null;
-    SNode node = n.getNode();
-    if (node == null) return null;
-    return node.getModel().getModelDescriptor();
+    return SModelRepository.getInstance().getModelDescriptor(n.getModelReference());
   }
 
   private boolean updateProperties() {
