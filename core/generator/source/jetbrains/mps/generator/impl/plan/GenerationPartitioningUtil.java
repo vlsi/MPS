@@ -51,7 +51,12 @@ public class GenerationPartitioningUtil {
         continue;
       }
 
-      for (TemplateModule generator : language.getGenerators()) {
+      Collection<TemplateModule> generators = language.getGenerators();
+      if(generators == null) {
+        continue;
+      }
+
+      for (TemplateModule generator : generators) {
         result.add(generator);
 
         // handle Used languages

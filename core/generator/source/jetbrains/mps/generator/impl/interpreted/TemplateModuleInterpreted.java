@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +41,12 @@ public class TemplateModuleInterpreted implements TemplateModule {
     this.sourceLanguage = sourceLanguage;
     this.generator = generator;
     this.models = new ArrayList<TemplateModel>();
+    for (SModelDescriptor sModelDescriptor : generator.getOwnTemplateModels()) {
+      SModel sModel = sModelDescriptor.getSModel();
+      if(sModel != null) {
+        models.add(new TemplateModelInterpreted(this, sModel));
+      }
+    }
   }
 
   @Override
@@ -59,7 +66,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
 
   @Override
   public Collection<TemplateModel> getModels() {
-    return models;
+    return Collections.unmodifiableCollection(models);
   }
 
   @Override

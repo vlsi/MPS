@@ -8,6 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
@@ -23,7 +24,7 @@ import java.util.*;
  */
 public class GenerationPlan {
 
-  private static boolean USE_GENERATED = false;
+  private static final Logger LOG = Logger.getLogger(GenerationPlan.class);
 
   private Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;
@@ -52,6 +53,7 @@ public class GenerationPlan {
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
+      LOG.error(t);
       throw new RuntimeException("Couldn't compute generation steps for model '" + inputModel.getLongName() + "'", t);
     }
   }
