@@ -62,6 +62,11 @@ public class IconResource_Behavior {
     }
   }
 
+  public static String call_getFilename_6759767305208076279(SNode thisNode) {
+    String fullPath = SPropertyOperations.getString(thisNode, "path");
+    return fullPath.substring(fullPath.lastIndexOf("/") + 1);
+  }
+
   public static void call_generate_8976425910813640826(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);

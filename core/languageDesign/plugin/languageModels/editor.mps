@@ -521,6 +521,9 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8976425910813827732">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.2330114057060456691" resolveInfo="IconResource" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6759767305207977807">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.6759767305207977805" resolveInfo="IconResourceExpression" />
+    </node>
   </roots>
   <root id="1203088085791">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1206113671258">
@@ -6925,6 +6928,23 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="6759767305207977807">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6759767305207978086">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6759767305207978089">
+        <property name="text" nameId="tpc2.1073389577007" value="icon" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6759767305207978091">
+        <property name="text" nameId="tpc2.1073389577007" value="{" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6759767305207978093">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.6759767305207977806" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6759767305207978095">
+        <property name="text" nameId="tpc2.1073389577007" value="}" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6759767305207978088" />
     </node>
   </root>
 </model>

@@ -138,6 +138,7 @@
   <unitInfo fileName="GetPreferencesComponentOperation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation" />
   <unitInfo fileName="GetToolOperation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetToolOperation" />
   <unitInfo fileName="SingletabbedEditorTab.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab" />
+  <unitInfo fileName="IconResourceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IconResourceExpression" />
   <unitInfo fileName="EditorTabReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTabReference" />
   <unitInfo fileName="GroupAccessOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GroupAccessOperation" />
   <unitInfo fileName="ActionAccessOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionAccessOperation" />

@@ -1243,6 +1243,10 @@
       <property name="name" nameId="tpck.1169194664001" value="ToolPosition" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6759767305207977805">
+      <property name="name" nameId="tpck.1169194664001" value="IconResourceExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
   </roots>
   <root id="1203071663527">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203852126300">
@@ -4918,6 +4922,14 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664571">
       <property name="externalValue" nameId="tpce.1083923523172" value="right" />
       <property name="internalValue" nameId="tpce.1083923523171" value="RIGHT" />
+    </node>
+  </root>
+  <root id="6759767305207977805">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6759767305207977806">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="icon" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2330114057060456691" resolveInfo="IconResource" />
     </node>
   </root>
 </model>

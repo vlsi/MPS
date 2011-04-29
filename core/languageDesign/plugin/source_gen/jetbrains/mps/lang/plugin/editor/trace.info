@@ -129,6 +129,7 @@
   <unitInfo fileName="TabbedToolDeclaration_Editor.java" startLine="495" startPosition="0" endLine="545" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedToolDeclaration_Editor$fieldDeclarationListHandler_txf5qz_f1b0" />
   <unitInfo fileName="ToolDeclaration_Editor.java" startLine="570" startPosition="0" endLine="620" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolDeclaration_Editor$fieldDeclarationListHandler_du6pr9_f1b0" />
   <unitInfo fileName="ActionParameter_NameCellComponent.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent" />
+  <unitInfo fileName="IconResourceExpression_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IconResourceExpression_Editor" />
   <unitInfo fileName="UpdateGroupBlock_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UpdateGroupBlock_Editor" />
   <unitInfo fileName="IRunConfigPropertyInstance_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IRunConfigPropertyInstance_Editor" />
   <unitInfo fileName="OrderReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.OrderReference_Editor" />

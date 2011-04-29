@@ -64,8 +64,8 @@
   <unitInfo fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AbstractEnhancedConceptFunction_Behavior" />
   <unitInfo fileName="ParametrizedExecuteConsole_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteConsole_Behavior" />
   <unitInfo fileName="Order_Behavior.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.Order_Behavior" />
-  <unitInfo fileName="IconResource_Behavior.java" startLine="21" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
   <unitInfo fileName="ActionDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
+  <unitInfo fileName="IconResource_Behavior.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
   <unitInfo fileName="ICheckedNamePolicy_Behavior.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior" />
   <unitInfo fileName="BaseToolDeclaration_Behavior.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
   <unitInfo fileName="ActionParameterDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_Behavior" />
@@ -672,6 +672,8 @@
     <nodeInfo nodeId="4076419548984269376" fileName="IconResource_Behavior.java" startLine="57" startPosition="9" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4076419548984269380" fileName="IconResource_Behavior.java" startLine="58" startPosition="26" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4076419548984269386" fileName="IconResource_Behavior.java" startLine="60" startPosition="27" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6759767305208076287" fileName="IconResource_Behavior.java" startLine="65" startPosition="77" endLine="66" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6759767305208076295" fileName="IconResource_Behavior.java" startLine="66" startPosition="70" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4076419548984269335" fileName="IconResource_Behavior.java" startLine="45" startPosition="89" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4076419548984269352" fileName="IconResource_Behavior.java" startLine="49" startPosition="115" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4076419548984269366" fileName="IconResource_Behavior.java" startLine="53" startPosition="62" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -687,6 +689,9 @@
     </scopeInfo>
     <scopeInfo nodeId="4076419548984269385" fileName="IconResource_Behavior.java" startLine="60" startPosition="27" endLine="61" endPosition="19" />
     <scopeInfo nodeId="4076419548984269375" fileName="IconResource_Behavior.java" startLine="57" startPosition="9" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="6759767305208076282" fileName="IconResource_Behavior.java" startLine="65" startPosition="77" endLine="67" endPosition="61">
+      <varInfo nodeId="6759767305208076288" varName="fullPath" />
+    </scopeInfo>
     <scopeInfo nodeId="7846267543229743638" fileName="IconResource_Behavior.java" startLine="29" startPosition="25" endLine="39" endPosition="91">
       <varInfo nodeId="7846267543229743646" varName="model" />
       <varInfo nodeId="7846267543229743692" varName="sourceFile" />
