@@ -35,6 +35,7 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -79,7 +80,7 @@ public class MergeRootsDialog extends BaseDialog {
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
     MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next());
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
@@ -222,12 +223,24 @@ public class MergeRootsDialog extends BaseDialog {
     dispose();
   }
 
+  /*package*/ MergeContext getMergeContext() {
+    return myMergeContext;
+  }
+
+  public void resetState() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myMergeContext.restoreState(myStateToRestore);
+      }
+    });
+  }
+
   @Override
   public void dispose() {
     if (myStateToRestore == null) {
       myModelsDialog.rebuildLater();
     } else {
-      myMergeContext.restoreState(myStateToRestore);
+      resetState();
     }
     myModelsDialog.rootsDialogClosed();
     super.dispose();

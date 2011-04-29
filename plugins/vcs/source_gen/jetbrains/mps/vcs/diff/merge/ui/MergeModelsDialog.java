@@ -9,6 +9,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
+import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.SModel;
@@ -17,8 +18,8 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction;
 import com.intellij.openapi.actionSystem.Separator;
+import jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -47,10 +48,12 @@ import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 
 public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
+  public static final Icon RESET = IconLoader.getIcon("/actions/reset.png", Icons.class);
 
   private Project myProject;
   private IOperationContext myOperationContext;
   private MergeContext myMergeContext;
+  private MergeContextState myInitialState;
   private MergeModelsDialog.MergeModelsTree myMergeTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myApplyChanges = false;
@@ -64,10 +67,11 @@ public class MergeModelsDialog extends BaseDialog {
     myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
+    myInitialState = myMergeContext.getCurrentState();
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myMergeTree.setMultipleRootNames(true);
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request), new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
@@ -166,6 +170,15 @@ public class MergeModelsDialog extends BaseDialog {
 
   /*package*/ String[] getContentTitles() {
     return myContentTitles;
+  }
+
+  /*package*/ MergeContext getMergeContext() {
+    return myMergeContext;
+  }
+
+  public void resetState() {
+    myMergeContext.restoreState(myInitialState);
+    rebuildLater();
   }
 
   public static boolean isNewMergeEnabled() {

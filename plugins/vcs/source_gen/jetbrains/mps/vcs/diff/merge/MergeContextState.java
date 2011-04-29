@@ -32,4 +32,8 @@ public class MergeContextState {
       }
     });
   }
+
+  /*package*/ MergeContextState(MergeContextState copy) {
+    this(copy.myResultModel, copy.myAppliedChanges, copy.myExcludedChanges, copy.myIdReplacementCache);
+  }
 }

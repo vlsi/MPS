@@ -6,17 +6,16 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
-public class MergeNonConflictingRoots extends BaseAction {
+public class ResetState extends BaseAction {
   private MergeModelsDialog myMergeModelsDialog;
 
-  public MergeNonConflictingRoots(MergeModelsDialog mergeModelsDialog) {
-    super("Automatically Merge Non-Conflicting Roots", null, MergeModelsDialog.APPLY_NON_CONFLICTS);
+  public ResetState(MergeModelsDialog mergeModelsDialog) {
+    super("Reset Merge State", null, MergeModelsDialog.RESET);
     myMergeModelsDialog = mergeModelsDialog;
     setDisableOnNoProject(false);
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myMergeModelsDialog.getMergeContext().applyAllChangesForNonConflictingRoots();
-    myMergeModelsDialog.rebuildLater();
+    myMergeModelsDialog.resetState();
   }
 }

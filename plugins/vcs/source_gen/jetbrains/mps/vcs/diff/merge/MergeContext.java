@@ -186,10 +186,11 @@ public class MergeContext {
   }
 
   public void restoreState(MergeContextState state) {
-    myResultModel = state.myResultModel;
-    myAppliedChanges = state.myAppliedChanges;
-    myExcludedChanges = state.myExcludedChanges;
-    myNodeCopier.setState(state.myIdReplacementCache, myResultModel);
+    MergeContextState stateCopy = new MergeContextState(state);
+    myResultModel = stateCopy.myResultModel;
+    myAppliedChanges = stateCopy.myAppliedChanges;
+    myExcludedChanges = stateCopy.myExcludedChanges;
+    myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
   }
 
   private static boolean eq_358wfv_a0a0a0a0a0a0a0b(Object a, Object b) {
