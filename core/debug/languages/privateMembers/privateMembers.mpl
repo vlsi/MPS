@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.debug.privateMembers" uuid="80208897-4572-437d-b50e-8f050cba9566" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.debug.privateMembers" uuid="80208897-4572-437d-b50e-8f050cba9566" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.debug.privateMembers" />
   </models>

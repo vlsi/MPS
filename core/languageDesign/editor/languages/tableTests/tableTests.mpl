@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.editor.tableTests" uuid="df8799e7-254a-406f-bd67-f4cc27337152" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.editor.tableTests" uuid="df8799e7-254a-406f-bd67-f4cc27337152" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.lang.editor.table.example" />
   </models>

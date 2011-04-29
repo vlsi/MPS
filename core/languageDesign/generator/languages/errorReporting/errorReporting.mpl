@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.transformation.test.errorReporting" uuid="99a58581-8518-40c8-81f1-e364306f5ffc" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.transformation.test.errorReporting" uuid="99a58581-8518-40c8-81f1-e364306f5ffc" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.transformation.test.errorReporting" />
   </models>

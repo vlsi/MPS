@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.extensionMethods" uuid="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.extensionMethods" uuid="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.extensionMethods" />
   </models>

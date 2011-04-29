@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.make.facet" uuid="696c1165-4a59-463b-bc5d-902caab85dd0" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.make.facet" uuid="696c1165-4a59-463b-bc5d-902caab85dd0" compileInMPS="false" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.make.facet" />
   </models>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.make.outlook" uuid="dc54e1b2-86b3-49d2-9014-a76af17af22a" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.make.outlook" uuid="dc54e1b2-86b3-49d2-9014-a76af17af22a" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.make.outlook" />
   </models>
