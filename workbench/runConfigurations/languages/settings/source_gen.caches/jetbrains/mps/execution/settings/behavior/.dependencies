@@ -47,6 +47,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_Behavior" file="EditorPropertyDeclaration_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior" file="PersistentConfigurationTemplate_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Class" />

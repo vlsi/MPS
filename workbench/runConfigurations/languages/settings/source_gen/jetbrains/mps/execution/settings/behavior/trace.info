@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorPropertyDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_Behavior" />
   <unitInfo fileName="SettingsEditor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.SettingsEditor_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="76" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="34" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
@@ -14,6 +15,11 @@
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="22" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
+  <root nodeId="3677530513558609526">
+    <nodeInfo nodeId="3677530513558611754" fileName="EditorPropertyDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3677530513558609528" fileName="EditorPropertyDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3677530513558609535" fileName="EditorPropertyDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" />
+  </root>
   <root nodeId="946964771156066370">
     <nodeInfo nodeId="946964771156066376" fileName="PersistentConfigurationType_Behavior.java" startLine="20" startPosition="97" endLine="21" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="946964771156066372" fileName="PersistentConfigurationType_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
