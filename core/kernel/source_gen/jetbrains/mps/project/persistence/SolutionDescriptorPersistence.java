@@ -50,12 +50,10 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0g0c0a.setDontLoadClasses(result_8ckma3_a4a0a0g0c0a);
           final boolean result_8ckma3_a5a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
           result_8ckma3_a0a0g0c0a.setCompileInMPS(result_8ckma3_a5a0a0g0c0a);
-          final boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), false);
-          result_8ckma3_a0a0g0c0a.setEnableJavaStubs(result_8ckma3_a6a0a0g0c0a);
 
           if (StringUtils.isNotEmpty(solutionElement.getAttributeValue("generatorOutputPath"))) {
-            final String result_8ckma3_a0a8a0a0g0c0a = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
-            result_8ckma3_a0a0g0c0a.setOutputPath(result_8ckma3_a0a8a0a0g0c0a);
+            final String result_8ckma3_a0a7a0a0g0c0a = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
+            result_8ckma3_a0a0g0c0a.setOutputPath(result_8ckma3_a0a7a0a0g0c0a);
           }
 
           result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
@@ -109,21 +107,19 @@ public class SolutionDescriptorPersistence {
         }
         final boolean result_8ckma3_a3a0a0d0b = descriptor.getCompileInMPS();
         result_8ckma3_a0a0d0b.setAttribute("compileInMPS", "" + result_8ckma3_a3a0a0d0b);
-        final boolean result_8ckma3_a4a0a0d0b = descriptor.getEnableJavaStubs();
-        result_8ckma3_a0a0d0b.setAttribute("java-stubs-enabled", "" + result_8ckma3_a4a0a0d0b);
         if (descriptor.getOutputPath() != null) {
-          final String result_8ckma3_a0a5a0a0d0b = macros.shrinkPath(descriptor.getOutputPath(), file);
-          result_8ckma3_a0a0d0b.setAttribute("generatorOutputPath", "" + result_8ckma3_a0a5a0a0d0b);
+          final String result_8ckma3_a0a4a0a0d0b = macros.shrinkPath(descriptor.getOutputPath(), file);
+          result_8ckma3_a0a0d0b.setAttribute("generatorOutputPath", "" + result_8ckma3_a0a4a0a0d0b);
         }
 
-        final Element result_8ckma3_a7a0a0d0b = new Element("models");
-        ModuleDescriptorPersistence.saveModelRoots(result_8ckma3_a7a0a0d0b, descriptor.getModelRoots(), file, macros);
-        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a7a0a0d0b);
+        final Element result_8ckma3_a6a0a0d0b = new Element("models");
+        ModuleDescriptorPersistence.saveModelRoots(result_8ckma3_a6a0a0d0b, descriptor.getModelRoots(), file, macros);
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a6a0a0d0b);
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          final Element result_8ckma3_a0a9a0a0d0b = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a9a0a0d0b, descriptor.getStubModelEntries(), file, macros);
-          result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a9a0a0d0b);
+          final Element result_8ckma3_a0a8a0a0d0b = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a8a0a0d0b, descriptor.getStubModelEntries(), file, macros);
+          result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a8a0a0d0b);
         }
 
         ModuleDescriptorPersistence.saveDependencies(result_8ckma3_a0a0d0b, descriptor);

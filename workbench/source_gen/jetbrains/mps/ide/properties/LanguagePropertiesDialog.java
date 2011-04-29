@@ -32,9 +32,6 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   public JPanel createCheckboxPanel() {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
-    if (InternalFlag.isInternalMode()) {
-      list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
-    }
     list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
     if (InternalFlag.isInternalMode()) {
       list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));

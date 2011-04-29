@@ -109,7 +109,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       descriptor.setNamespace(ss.getName());
 
       descriptor.setCompileInMPS(false);
-      descriptor.setEnableJavaStubs(true);
 
       //todo what should be here?
       descriptor.setDontLoadClasses(true);
@@ -646,10 +645,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   //-----------stubs--------------
-
-  public boolean areJavaStubsEnabled() {
-    return getModuleDescriptor().getEnableJavaStubs();
-  }
 
   public List<StubPath> getRuntimeStubPaths() {
     List<StubPath> result = new ArrayList<StubPath>();

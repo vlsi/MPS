@@ -474,10 +474,6 @@
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883029811">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="generatorOutputPath" />
                   </node>
-                  <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883029812">
-                    <property name="attributeName" nameId="tpj8.1167698115100" value="java-stubs-enabled" />
-                    <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883029813" />
-                  </node>
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883029814">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="compileInMPS" />
                     <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883029815" />
@@ -1092,10 +1088,6 @@
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883030024">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="compileInMPS" />
                     <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883030025" />
-                  </node>
-                  <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883030026">
-                    <property name="attributeName" nameId="tpj8.1167698115100" value="java-stubs-enabled" />
-                    <node role="type" roleId="tpj8.5496586556363185428" type="tpj8.BooleanSchemaType" typeId="tpj8.5496586556363185398" id="842994667883030027" />
                   </node>
                   <node role="typeExpression" roleId="tpj8.1167795626698" type="tpj8.AttributeDeclaration" typeId="tpj8.1167697887602" id="842994667883030028">
                     <property name="attributeName" nameId="tpj8.1167698115100" value="generatorOutputPath" />
@@ -3804,20 +3796,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="842994667883031221">
-                        <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883031222" />
-                        <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="842994667883031223">
-                          <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="ho7a.~ModuleDescriptor%dsetEnableJavaStubs(boolean)%cvoid" resolveInfo="setEnableJavaStubs" />
-                          <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031224">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883031225">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031188" resolveInfo="languageElement" />
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="mlj4.AccessAttributeOperation" typeId="mlj4.4991903842868445303" id="842994667883031226">
-                              <link role="attributeDeclaration" roleId="mlj4.4991903842868445309" targetNodeId="842994667883029812" resolveInfo="java-stubs-enabled" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="842994667883031227" />
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="842994667883031228">
                         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883031229">
@@ -4938,20 +4916,6 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031553">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~LanguageDescriptor%dgetGenPath()%cjava%dlang%dString" resolveInfo="getGenPath" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="842994667883031554">
-                    <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883031555" />
-                    <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883031556">
-                      <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="842994667883029812" resolveInfo="java-stubs-enabled" />
-                      <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883031557">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883031558">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883031739" resolveInfo="descriptor" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883031559">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~ModuleDescriptor%dgetEnableJavaStubs()%cboolean" resolveInfo="getEnableJavaStubs" />
                         </node>
                       </node>
                     </node>
@@ -8892,20 +8856,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="842994667883032923">
-                        <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883032924" />
-                        <node role="builder" roleId="pmg0.4797501453850567416" type="pmg0.BeanPropertyBuilder" typeId="pmg0.2679357232283750087" id="842994667883032925">
-                          <link role="setter" roleId="pmg0.2679357232283750088" targetNodeId="ho7a.~ModuleDescriptor%dsetEnableJavaStubs(boolean)%cvoid" resolveInfo="setEnableJavaStubs" />
-                          <node role="value" roleId="pmg0.2679357232283750106" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883032926">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="842994667883032927">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032868" resolveInfo="solutionElement" />
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="mlj4.AccessAttributeOperation" typeId="mlj4.4991903842868445303" id="842994667883032928">
-                              <link role="attributeDeclaration" roleId="mlj4.4991903842868445309" targetNodeId="842994667883030026" resolveInfo="java-stubs-enabled" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="842994667883032929" />
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="842994667883032930">
                         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883032931">
@@ -9388,20 +9338,6 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033116">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~ModuleDescriptor%dgetCompileInMPS()%cboolean" resolveInfo="getCompileInMPS" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="pmg0.BuilderStatement" typeId="pmg0.7057666463730155299" id="842994667883033117">
-                    <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="842994667883033118" />
-                    <node role="builder" roleId="pmg0.4797501453850567416" type="mlj4.AttributeBuilder" typeId="mlj4.7225751495667376018" id="842994667883033119">
-                      <link role="attributeDeclaration" roleId="mlj4.7225751495667376019" targetNodeId="842994667883030026" resolveInfo="java-stubs-enabled" />
-                      <node role="value" roleId="mlj4.7225751495667403566" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842994667883033120">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="842994667883033121">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883033236" resolveInfo="descriptor" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="842994667883033122">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~ModuleDescriptor%dgetEnableJavaStubs()%cboolean" resolveInfo="getEnableJavaStubs" />
                         </node>
                       </node>
                     </node>

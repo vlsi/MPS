@@ -32,7 +32,6 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
     list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
     if (InternalFlag.isInternalMode()) {
-      list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));
       list.add(new StandardComponents.CheckboxDescriptor(myProperties, SolutionProperties.DONT_LOAD_CLASSPATH, "Load Classes with App Classloader", true));
     }
     return StandardComponents.createCheckboxPanel(this, list);

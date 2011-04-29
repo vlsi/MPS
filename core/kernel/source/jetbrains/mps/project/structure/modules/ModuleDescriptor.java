@@ -26,8 +26,6 @@ public class ModuleDescriptor {
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private boolean myEnableJavaStubs;
-
   private List<ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
@@ -76,14 +74,6 @@ public class ModuleDescriptor {
 
   public void setCompileInMPS(boolean compileInMPS) {
     myCompileInMPS = compileInMPS;
-  }
-
-  public boolean getEnableJavaStubs() {
-    return myEnableJavaStubs;
-  }
-
-  public void setEnableJavaStubs(boolean enableJavaStubs) {
-    myEnableJavaStubs = enableJavaStubs;
   }
 
   public List<ModelRoot> getModelRoots() {

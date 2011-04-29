@@ -136,7 +136,6 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(module, "uuid", source.getUUID());
     SPropertyOperations.set(module, "namespace", source.getNamespace());
     SPropertyOperations.set(module, "compileInMPS", "" + source.getCompileInMPS());
-    SPropertyOperations.set(module, "enableJavaStubs", "" + source.getEnableJavaStubs());
 
     for (ModelRoot root : source.getModelRoots()) {
       SLinkOperations.getTargets(module, "modelRoots", true).add(convert(root));

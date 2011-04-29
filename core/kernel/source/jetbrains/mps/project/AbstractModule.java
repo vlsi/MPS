@@ -188,10 +188,6 @@ public abstract class AbstractModule implements IModule {
 
   //----stubs
 
-  public boolean areJavaStubsEnabled() {
-    return true;
-  }
-
   public List<StubPath> getAllStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();
     result.addAll(getStubPaths());
@@ -292,7 +288,7 @@ public abstract class AbstractModule implements IModule {
     IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
-    boolean hasClasspath = descriptor.getEnableJavaStubs(), skipClasspath = false;
+    boolean hasClasspath = false, skipClasspath = false;
     List<String> innerJars = new ArrayList<String>();
     List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
 
