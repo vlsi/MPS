@@ -7,7 +7,7 @@
     <option name="localVariableSuffix" value="" />
     <option name="parameterPrefix" value="" />
     <option name="parameterSuffix" value="" />
-    <option name="staticFieldPrefix" value="my" />
+    <option name="staticFieldPrefix" value="our" />
     <option name="staticFieldSuffix" value="" />
   </component>
   <component name="DependencyValidationManager">
