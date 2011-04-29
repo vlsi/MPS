@@ -1,17 +1,16 @@
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.rules.TestWatchman;
 import org.junit.runner.RunWith;
@@ -34,69 +33,53 @@ import java.util.List;
 @RunWith(WatchingParameterized.class)
 public class ProjectTest {
 
-  public static String[] PROJECTS = new String[]  {
-      "/MPS.mpr"
-  };
+  public static String PROJECT = "/MPS.mpr";
 
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
+  private static MPSProject mpsProject;
 
   public static class Fixture {
-    private final String projectPath;
-    private File projectFile;
-    private MPSProject project;
+    String fixtureId;
     Token token;
     List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
 
-    Fixture(String projectPath) {
-      this.projectPath = projectPath;
-      this.projectFile = new File(System.getProperty("user.dir")+ projectPath);
+    Fixture(IModule module, Project project) {
+      fixtureId = getFixtureId(module, project);
+      this.token = HELPER.getToken(module, project);
       methods.addAll(METHODS);
     }
 
-    void before (FrameworkMethod mth) {
-      if (methods.size() == METHODS.size()) {
-        loadProject();
+    private String getFixtureId(IModule module, Project project) {
+      String modulePath = module.getDescriptorFile().getPath();
+      String projectBaseDir = project.getBaseDir().getPath();
+      if (modulePath.startsWith(projectBaseDir)) {
+        modulePath = modulePath.substring(projectBaseDir.length());
       }
-      methods.remove (mth);
+      return  modulePath;
     }
 
     void after (FrameworkMethod mth) {
+      methods.remove(mth);
       if (methods.size() == 0) {
-        disposeProject();
+        HELPER.cleanUp(token);
       }
-    }
-
-    private void loadProject () {
-      long start = System.currentTimeMillis();
-      this.project = TestMain.loadProject(projectFile);
-      this.token = HELPER.getToken(project);
-    }
-
-    private void disposeProject () {
-      long start = System.currentTimeMillis();
-      HELPER.cleanUp(token);
-
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          project.dispose(false);
-          IdeEventQueue.getInstance().flushQueue();
-          System.gc();
-        }
-      });
     }
 
     @Override
     public String toString() {
-      return projectPath;
+      return fixtureId;
     }
   }
 
   @Parameters
   public static List<Object[]> FIXTURES() {
+    HELPER = new ProjectTestHelper();
+    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
-    for (String pn: PROJECTS) {
-      fixtures.add(new Object[] {new Fixture(pn)});
+    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")+ PROJECT));
+    for (IModule module : mpsProject.getModules()) {
+      fixtures.add(new Object[] {new Fixture(module, mpsProject.getProject())});
     }
     return fixtures;
   }
@@ -108,10 +91,15 @@ public class ProjectTest {
     new MpsMakeHelper().make();
   }
 
-  @BeforeClass
-  public static void init() {
-    HELPER = new ProjectTestHelper();
-    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
+  @AfterClass
+  public static void disposeProject() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        mpsProject.dispose(false);
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
   }
 
 
@@ -125,11 +113,6 @@ public class ProjectTest {
   @Rule
   public TestWatchman watchman = new TestWatchman() {
     @Override
-    public void starting(FrameworkMethod method) {
-      fixture.before(method);
-    }
-
-    @Override
     public void finished(FrameworkMethod method) {
       fixture.after(method);
     }
@@ -137,7 +120,7 @@ public class ProjectTest {
 
   @Test
   @Order(1)
-  public void buildProject () throws Exception {
+  public void buildModule () throws Exception {
     if (!HELPER.build(fixture.token)){
       List<String> errors = HELPER.buildErrors(fixture.token);
       Assert.assertTrue("Build errors:\n"+IterableUtils.join(errors, "\n"),errors.isEmpty());
@@ -148,17 +131,15 @@ public class ProjectTest {
 
   @Test
   @Order(2)
-  public void diffProject () throws Exception {
+  public void diffModule () throws Exception {
     List<String> diffReport = HELPER.getDiffReport(fixture.token);
     Assert.assertTrue("Difference:\n"+ IterableUtils.join(diffReport, "\n"),diffReport.isEmpty());
   }
 
 
-  @Test
+//  @Test
   @Order(4)
   public void testProject () throws Exception {
     HELPER.test(fixture.token);
   }
-
-
 }
