@@ -18,7 +18,7 @@ public class Mps_Command {
 
   public ProcessHandler createProcess(String debuggerSettings) throws ExecutionException {
     String mpsProperties = "-Didea.properties.file=" + PathManager.getHomePath() + File.separator + "bin" + File.separator + "mps.debug.properties";
-    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter("-client -Dmps.internal=true -ea " + mpsProperties + " " + debuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setProgramParameter("nosplash").createProcess();
+    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter("-client -Dmps.internal=true -ea " + mpsProperties + " " + debuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).createProcess();
   }
 
   public static IDebugger getDebugger() {

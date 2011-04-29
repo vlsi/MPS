@@ -293,12 +293,6 @@
                 </node>
               </node>
             </node>
-            <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7364083846322303184">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.3107334613900744445" resolveInfo="programParameter" />
-              <node role="value" roleId="rzqf.856705193941281766" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7364083846322303185">
-                <property name="value" nameId="tpee.1070475926801" value="nosplash" />
-              </node>
-            </node>
           </node>
         </node>
       </node>
