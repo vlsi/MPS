@@ -17,22 +17,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import javax.swing.ImageIcon;
+import jetbrains.mps.lang.plugin.behavior.IconResource_Behavior;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.EditorUtil;
 
 public class IconResource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_79r3b6_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createProperty_79r3b6_a(editorContext, node);
   }
 
   private EditorCell createAlternation_79r3b6_a0(EditorContext editorContext, SNode node) {
@@ -54,7 +55,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     if (alternationCondition) {
       editorCell = this.createCollection_79r3b6_a0a0(editorContext, node);
     } else {
-      editorCell = this.createProperty_79r3b6_a0a0(editorContext, node);
+      editorCell = this.createConstant_79r3b6_a0a0(editorContext, node);
     }
     return editorCell;
   }
@@ -75,7 +76,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createImage_79r3b6_a0a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_79r3b6_b0a0a(editorContext, node));
     return editorCell;
   }
 
@@ -85,6 +85,17 @@ public class IconResource_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_79r3b6_a0a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<invalid path>");
+    editorCell.setCellId("Constant_79r3b6_a0a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,34 +119,26 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_79r3b6_b0a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_79r3b6_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_path");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_79r3b6_a0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("path");
-    provider.setNoTargetText("<no path>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_path_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -153,27 +156,17 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
-    if (module == null) {
-      return false;
-    }
-    String path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "path"), module.getModuleFqName());
-    if (path == null) {
-      return false;
-    }
-    IFile file = FileSystem.getInstance().getFileByPath(path);
-    if (!(file.exists())) {
-      return false;
-    }
-    try {
-      new ImageIcon(path);
-      return true;
-    } catch (Throwable t) {
-      return false;
-    }
+    return IconResource_Behavior.call_isValid_4076419548984269320(node);
   }
 
   private static JComponent _QueryFunction_JComponent_79r3b6_a1a(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "path", editorContext);
+  }
+
+  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(SNode node, EditorContext editorContext) {
+    return (IconResource_Behavior.call_isValid_4076419548984269320(node) ?
+      Color.BLACK :
+      Color.RED
+    );
   }
 }

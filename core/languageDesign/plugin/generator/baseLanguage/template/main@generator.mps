@@ -14,6 +14,8 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
   <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -421,6 +423,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3038738109028888981">
       <property name="name" nameId="tpck.1169194664001" value="Order" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+    </node>
+    <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="4076419548984408779">
+      <property name="name" nameId="tpck.1169194664001" value="s" />
+      <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
     </node>
   </roots>
   <root id="1203086899006">
@@ -4151,6 +4157,9 @@
   <root id="1204478979997">
     <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="2713887941725402116">
       <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="2713887941725402117" resolveInfo="script" />
+    </node>
+    <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="4076419548984408778">
+      <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="4076419548984408779" resolveInfo="script" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5993207197418807407">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
@@ -14620,6 +14629,11 @@
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3038738109028971490">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="600.~TabsComparator" resolveInfo="TabsComparator" />
+    </node>
+  </root>
+  <root id="4076419548984408779">
+    <node role="codeBlock" roleId="tpf8.1195501105008" type="tpf8.MappingScript_CodeBlock" typeId="tpf8.1195500722856" id="4076419548984408780">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4076419548984408781" />
     </node>
   </root>
 </model>

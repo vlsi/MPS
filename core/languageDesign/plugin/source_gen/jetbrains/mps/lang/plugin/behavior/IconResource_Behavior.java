@@ -12,6 +12,8 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.project.IModule;
+import javax.swing.ImageIcon;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -37,6 +39,27 @@ public class IconResource_Behavior {
         IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
       }
     });
+  }
+
+  public static boolean call_isValid_4076419548984269320(SNode thisNode) {
+    IModule module = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+    if (module == null) {
+      return false;
+    }
+    String path = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
+    if (path == null) {
+      return false;
+    }
+    IFile file = FileSystem.getInstance().getFileByPath(path);
+    if (!(file.exists())) {
+      return false;
+    }
+    try {
+      new ImageIcon(path);
+      return true;
+    } catch (Throwable t) {
+      return false;
+    }
   }
 
   public static void call_generate_8976425910813640826(SNode thisNode) {
