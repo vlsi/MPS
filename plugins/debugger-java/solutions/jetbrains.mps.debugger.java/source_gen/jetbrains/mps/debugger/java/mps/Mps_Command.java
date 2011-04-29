@@ -6,7 +6,6 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.util.PathManager;
 import java.io.File;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -14,10 +13,18 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 
 public class Mps_Command {
-  private String myVirtualMachineParameters;
+  private String myDebuggerSettings = "";
+  private String myVirtualMachineParameters = Mps_Command.getDefaultVirtualMachineParameters();
   private String myJrePath;
 
   public Mps_Command() {
+  }
+
+  public Mps_Command setDebuggerSettings(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+    return this;
   }
 
   public Mps_Command setVirtualMachineParameters(String virtualMachineParameters) {
@@ -34,13 +41,9 @@ public class Mps_Command {
     return this;
   }
 
-  public ProcessHandler createProcess(String debuggerSettings) throws ExecutionException {
+  public ProcessHandler createProcess() throws ExecutionException {
     String mpsProperties = "-Didea.properties.file=" + PathManager.getHomePath() + File.separator + "bin" + File.separator + "mps.debug.properties";
-    String vmOptions = (StringUtils.isEmpty(myVirtualMachineParameters) ?
-      Mps_Command.getDefaultVirtualMachineParameters() :
-      myVirtualMachineParameters
-    );
-    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(vmOptions + " " + mpsProperties + " " + debuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
+    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties + " " + myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
   }
 
   public static IDebugger getDebugger() {

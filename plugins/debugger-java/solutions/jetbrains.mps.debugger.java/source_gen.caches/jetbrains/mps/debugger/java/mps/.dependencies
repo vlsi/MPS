@@ -101,7 +101,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Java_Command" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />

@@ -424,29 +424,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6269383727488505981">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6269383727488505982">
-            <property name="name" nameId="tpck.1169194664001" value="vmOptions" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6269383727488505983" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="6269383727488505993">
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6269383727488505997">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6269383727488505998" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6269383727488505999">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="6269383727488505973" resolveInfo="getDefaultVirtualMachineParameters" />
-                </node>
-              </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6269383727488506000">
-                <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6269383727488505970" resolveInfo="virtualMachineParameters" />
-              </node>
-              <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6269383727488505988">
-                <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6269383727488505987">
-                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6269383727488505970" resolveInfo="virtualMachineParameters" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.IsEmptyOperation" typeId="tpee.1225271369338" id="6269383727488505992" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7364083846322303154">
           <node role="expression" roleId="tpee.1068580123156" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="7364083846322303155">
             <link role="command" roleId="rzqf.856705193941281782" targetNodeId="awpe.3107334613900744127" resolveInfo="java" />
@@ -499,8 +476,8 @@
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6269383727488506004">
                         <property name="value" nameId="tpee.1070475926801" value=" " />
                       </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6269383727488505985">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6269383727488505982" resolveInfo="vmOptions" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="3112651700635782377">
+                        <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6269383727488505970" resolveInfo="virtualMachineParameters" />
                       </node>
                     </node>
                   </node>
@@ -537,12 +514,20 @@
     </node>
     <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="7364083846322303186">
       <property name="name" nameId="tpck.1169194664001" value="debuggerSettings" />
-      <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7364083846322303188" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3112651700635739251">
+        <property name="value" nameId="tpee.1070475926801" value="" />
+      </node>
     </node>
     <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488505970">
       <property name="name" nameId="tpck.1169194664001" value="virtualMachineParameters" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6269383727488505972" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3112651700635782374">
+        <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3112651700635782375" />
+        <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="3112651700635782376">
+          <link role="member" roleId="tp4f.1205756909548" targetNodeId="6269383727488505973" resolveInfo="getDefaultVirtualMachineParameters" />
+        </node>
+      </node>
     </node>
     <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488509265">
       <property name="name" nameId="tpck.1169194664001" value="jrePath" />
