@@ -3,8 +3,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.lang.core.Language;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
@@ -51,12 +53,22 @@ public class ProjectTest {
     }
 
     private String getFixtureId(IModule module, Project project) {
-      String modulePath = module.getDescriptorFile().getPath();
-      String projectBaseDir = project.getBaseDir().getPath();
-      if (modulePath.startsWith(projectBaseDir)) {
-        modulePath = modulePath.substring(projectBaseDir.length());
+      String suffix;
+      if (module instanceof Language) {
+        suffix = " [language]";
+      } else if (module instanceof Solution) {
+        suffix = " [solution]";
+      } else {
+        suffix = " [" + module.getClass().getSimpleName() + "]";
       }
-      return  modulePath;
+
+      return module.getModuleFqName() + suffix;
+//      String modulePath = module.getDescriptorFile().getPath();
+//      String projectBaseDir = project.getBaseDir().getPath();
+//      if (modulePath.startsWith(projectBaseDir)) {
+//        modulePath = modulePath.substring(projectBaseDir.length());
+//      }
+//      return  modulePath;
     }
 
     void after (FrameworkMethod mth) {
