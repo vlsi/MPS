@@ -28,7 +28,6 @@ import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
 
 public class BaseTransformationTest extends TestCase {
@@ -108,31 +107,31 @@ public class BaseTransformationTest extends TestCase {
   }
 
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
-    final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
+    final Class clazz;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clazz.value = BaseTransformationTest.this.myModel.getModule().getClass(className);
-        String classloader = clazz.value.getClassLoader().toString();
+        clazz = BaseTransformationTest.this.myModel.getModule().getClass(className);
+        String classloader = clazz.getClassLoader().toString();
         String module = BaseTransformationTest.this.myModel.getModule().getModuleFqName();
-        assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;
+        assert classloader.contains(module) : "class: " + clazz + "; classloader: " + classloader + "; module: " + module;
       }
     });
-    final Object obj = clazz.value.newInstance();
-    clazz.value.getField("myModel").set(obj, this.myTransidentModel);
-    clazz.value.getField("myProject").set(obj, this.myProject);
+    final Object obj = clazz.newInstance();
+    clazz.getField("myModel").set(obj, this.myTransidentModel);
+    clazz.getField("myProject").set(obj, this.myProject);
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
+              exception[0] = BaseTransformationTest.this.tryToRunTest(clazz, methodName, obj);
             }
           });
         }
       });
     } else {
-      exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
+      exception[0] = BaseTransformationTest.this.tryToRunTest(clazz, methodName, obj);
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
