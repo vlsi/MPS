@@ -18,9 +18,10 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
@@ -29,13 +30,13 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior;
 
 public class CollectTests_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -103,13 +104,17 @@ public class CollectTests_Action extends GeneratedAction {
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
+    final SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
     final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
+    final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         solutions.value = CollectTests_Action.this.allSolutions(_params);
+        existing.value = CollectTests_Action.this.existingSolutions(model, _params);
       }
     });
-    final SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
+    ListSequence.fromList(solutions.value).removeSequence(ListSequence.fromList(existing.value));
+
     int done = 0;
     for (ModuleReference mref : solutions.value) {
       if (proInd.isCanceled()) {
@@ -190,5 +195,13 @@ public class CollectTests_Action extends GeneratedAction {
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
+  }
+
+  private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).<ModuleReference>select(new ISelector<SNode, ModuleReference>() {
+      public ModuleReference select(SNode ms) {
+        return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(ms, "moduleRef", true));
+      }
+    }).toListSequence();
   }
 }
