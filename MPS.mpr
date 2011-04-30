@@ -17,14 +17,12 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/core/actions-runtime/jetbrains.mps.actions.runtime.msd" />
-      <solutionPath path="${project}/core/baseLanguage/baseLanguage/sandbox/sandbox.msd" />
       <solutionPath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/jetbrains.mps.baseLanguage.index.msd" />
       <solutionPath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
       <solutionPath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" />
       <solutionPath path="${project}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" />
       <solutionPath path="${project}/core/baseLanguage/checkDot/languages/checkedDots/sandbox/jetbrains.mps.baseLanguage.checkedDots.sandbox.msd" />
       <solutionPath path="${project}/core/baseLanguage/closures/runtime/closures.runtime.msd" />
-      <solutionPath path="${project}/core/baseLanguage/closures/solutions/closures.sandbox/closures.sandbox.msd" />
       <solutionPath path="${project}/core/baseLanguage/closures/solutions/closures.test/closures.test.msd" />
       <solutionPath path="${project}/core/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" />
       <solutionPath path="${project}/core/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" />
@@ -41,7 +39,6 @@
       <solutionPath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/jetbrains.mps.baseLanguage.tuples.sandbox.msd" />
       <solutionPath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/jetbrains.mps.baseLanguage.tuples.shared.msd" />
       <solutionPath path="${project}/core/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/jetbrains.mps.baseLanguage.tuples.test.msd" />
-      <solutionPath path="${project}/core/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
       <solutionPath path="${project}/core/baseLanguage/unitTest/solutions/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
       <solutionPath path="${project}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" />
       <solutionPath path="${project}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" />
@@ -61,7 +58,6 @@
       <solutionPath path="${project}/core/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" />
       <solutionPath path="${project}/core/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
       <solutionPath path="${project}/core/languageDesign/generator/test/incremental/jetbrains.mps.transformation.test.incremental.msd" />
-      <solutionPath path="${project}/core/languageDesign/generator/test/inputModels/inputModels.msd" />
       <solutionPath path="${project}/core/languageDesign/generator/test/sandbox/sandbox.msd" />
       <solutionPath path="${project}/core/languageDesign/make/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" />
       <solutionPath path="${project}/core/languageDesign/make/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" />
@@ -69,25 +65,19 @@
       <solutionPath path="${project}/core/languageDesign/smodel/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
       <solutionPath path="${project}/core/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" />
       <solutionPath path="${project}/core/languageDesign/smodel/solutions/samples/smodelLanguage-samples.msd" />
-      <solutionPath path="${project}/core/languageDesign/smodel/solutions/sandbox/sandbox.msd" />
-      <solutionPath path="${project}/core/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" />
       <solutionPath path="${project}/core/languageDesign/structure/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" />
-      <solutionPath path="${project}/core/languageDesign/test/solutions/jetbrains.mps.transformationTest.test/jetbrains.mps.transformationTest.test.msd" />
       <solutionPath path="${project}/core/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" />
       <solutionPath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
-      <solutionPath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
       <solutionPath path="${project}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" />
       <solutionPath path="${project}/platform/builders/sandbox/jetbrains.mps.builders.msd" />
       <solutionPath path="${project}/platform/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" />
-      <solutionPath path="${project}/platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" />
       <solutionPath path="${project}/platform/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" />
       <solutionPath path="${project}/platform/dates/unittest/dates.msd" />
       <solutionPath path="${project}/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" />
       <solutionPath path="${project}/platform/gtext/runtime/jetbrains.mps.gtext.runtime.msd" />
       <solutionPath path="${project}/platform/gwtsupport/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" />
       <solutionPath path="${project}/platform/gwtsupport/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" />
-      <solutionPath path="${project}/platform/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" />
       <solutionPath path="${project}/platform/mps-lite/solutions/mpslite.sandbox/mpslite.sandbox.msd" />
       <solutionPath path="${project}/platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" />
       <solutionPath path="${project}/platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" />
@@ -238,9 +228,7 @@
       <languagePath path="${project}/workbench/runConfigurations/languages/demo/demo.mpl" />
       <languagePath path="${project}/workbench/runConfigurations/languages/settings/settings.mpl" />
     </projectLanguages>
-    <projectDevkits>
-      <devkitPath path="${project}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-    </projectDevkits>
+    <projectDevkits />
     <genConfs />
   </component>
   <component name="ProjectLibraryManager">
